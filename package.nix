@@ -1,7 +1,6 @@
 {
   stdenv,
   lib,
-  src,
   fetchFromGitHub,
   makeDesktopItem,
   cmake,
@@ -13,7 +12,12 @@ stdenv.mkDerivation rec {
   pname = "drawy";
   version = "1.0.0";
 
-  inherit src;
+  src = fetchFromGitHub {
+    owner = "Prayag2";
+    repo = pname;
+    rev = "1.0.0-alpha";
+    sha256 = "sha256-5hv6iBTXTXwsmtjzRA+dAIzx/5jtWcOEfORMK0l1DSk=";
+  };
 
   strictDeps = true;
 
@@ -57,7 +61,10 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Your handy, infinite, brainstorming tool";
-    maintainers = with maintainers; [ quarterstar ];
+    maintainers = with maintainers; [
+      quarterstar
+      yzhou216
+    ];
     homepage = "https://github.com/Prayag2/drawy";
     license = licenses.gpl3Only;
     platforms = platforms.linux;

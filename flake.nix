@@ -86,7 +86,6 @@
         in
         {
           default = pkgs.qt6Packages.callPackage ./package.nix {
-            src = ./.;
           };
         }
       );
