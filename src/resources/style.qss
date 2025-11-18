@@ -28,7 +28,7 @@
     border-radius: 8px;
     border: 2px solid #353442;
     font-family: "Inter";
-    padding: -2px;
+    padding: -4px;
 }
 
 .drawlyFrame QLabel {
@@ -106,6 +106,10 @@ QSpinBox::down-arrow {
     border-radius: 4px;
     border: none;
     background: #353442;
+}
+
+.drawyPropertyBar {
+    padding: 2px;
 }
 
 .drawyPropertyBarActionButton:hover {
