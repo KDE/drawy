@@ -31,6 +31,7 @@ ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
     m_widget = new QWidget{parent};
 
     QHBoxLayout *layout{new QHBoxLayout(m_widget)};
+    layout->setContentsMargins(0, 0, 0, 0);
 
     QPushButton *deleteButton{new QPushButton("", m_widget)};
     QPushButton *groupButton{new QPushButton("", m_widget)};

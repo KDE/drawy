@@ -27,25 +27,27 @@ Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which ai
 
 # Keyboard Shortcuts
 Future releases will allow you to change the keyboard shortcuts. For now they are hardcoded. Here's a list of all available keyboard shortcuts:
-| Key Combination      | Description            |
-| :------------------ | :---------------------: |
-| <kbd>Ctrl+Z</kbd>   | Undo                   |
-| <kbd>Ctrl+Y</kbd>, <kbd>Ctrl+Shift+Z</kbd> | Redo   |
-| <kbd>Ctrl++</kbd>   | Zoom In                |
-| <kbd>Ctrl+-</kbd>   | Zoom Out               |
-| <kbd>P</kbd>, <kbd>B</kbd> | Freeform Tool   |
-| <kbd>E</kbd>        | Eraser Tool            |
-| <kbd>S</kbd>        | Selection Tool         |
-| <kbd>R</kbd>        | Rectangle Tool         |
-| <kbd>O</kbd>        | Ellipse Tool           |
-| <kbd>L</kbd>        | Line Tool              |
-| <kbd>A</kbd>        | Arrow Tool             |
-| <kbd>M</kbd>        | Move Tool              |
-| <kbd>T</kbd>        | Text Tool              |
-| <kbd>Ctrl+A</kbd>   | Select All             |
-| <kbd>Delete</kbd>   | Delete                 |
-| <kbd>Ctrl+S</kbd>   | Save                   |
-| <kbd>Ctrl+O</kbd>   | Open File              |
+| Key Combination                                                             | Description       |
+|:---------------------------------------------------------------------------:|:-----------------:|
+| <kbd>Ctrl</kdb>+<kdb>Z</kbd>                                                | Undo              |
+| <kbd>Ctrl</kdb>+<kdb>Y</kbd>, <kbd>Ctrl</kdb>+<kdb>Shift</kdb>+<kdb>Z</kbd> | Redo              |
+| <kbd>Ctrl</kdb>+<kdb>+</kbd>                                                | Zoom In           |
+| <kbd>Ctrl</kdb>+<kdb>-</kbd>                                                | Zoom Out          |
+| <kbd>Ctrl</kdb>+<kdb>G</kbd>                                                | Group selection   |
+| <kbd>Ctrl</kdb>+<kbd>Shift</kbd>+<kdb>G</kbd>                               | Ungroup selection |
+| <kbd>P</kbd>, <kbd>B</kbd>                                                  | Freeform Tool     |
+| <kbd>E</kbd>                                                                | Eraser Tool       |
+| <kbd>S</kbd>                                                                | Selection Tool    |
+| <kbd>R</kbd>                                                                | Rectangle Tool    |
+| <kbd>O</kbd>                                                                | Ellipse Tool      |
+| <kbd>L</kbd>                                                                | Line Tool         |
+| <kbd>A</kbd>                                                                | Arrow Tool        |
+| <kbd>M</kbd>                                                                | Move Tool         |
+| <kbd>T</kbd>                                                                | Text Tool         |
+| <kbd>Ctrl+A</kbd>                                                           | Select All        |
+| <kbd>Delete</kbd>                                                           | Delete selection  |
+| <kbd>Ctrl+S</kbd>                                                           | Save              |
+| <kbd>Ctrl+O</kbd>                                                           | Open File         |
 
 # Contributing
 Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) before opening pull requests.

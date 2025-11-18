@@ -124,7 +124,7 @@ const QVector<Property::Type> SelectionTool::properties() const {
     QVector<Property::Type> output(result.begin(), result.end());
 
     if (!selectedItems.empty()) {
-        output += QVector{ Property::Actions };
+        output += QVector<Property::Type>{ Property::Actions };
     }
     
     return output;
