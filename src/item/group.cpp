@@ -18,7 +18,7 @@ void GroupItem::translate(const QPointF &amount) {
     }
 }
 
-void GroupItem::group(const std::unordered_set<std::shared_ptr<Item>>& items) {
+void GroupItem::group(const QVector<std::shared_ptr<Item>>& items) {
     m_items = items;
 }
 
@@ -43,7 +43,7 @@ bool GroupItem::intersects(const QLineF &line) {
 };
 
 
-std::unordered_set<std::shared_ptr<Item>> GroupItem::unGroup() {
+QVector<std::shared_ptr<Item>> GroupItem::unGroup() {
     return m_items;
 }
 

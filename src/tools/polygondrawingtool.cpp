@@ -18,6 +18,7 @@
 
 #include "polygondrawingtool.h"
 
+#include "../components/toolbar.h"
 #include "../canvas/canvas.h"
 #include "../command/commandhistory.h"
 #include "../command/insertitemcommand.h"
@@ -31,6 +32,8 @@
 #include "../item/factory/itemfactory.h"
 #include "../item/polygon.h"
 #include "../properties/widgets/propertymanager.h"
+#include "../command/selectcommand.h"
+#include <memory>
 
 PolygonDrawingTool::PolygonDrawingTool() {
     m_cursor = QCursor(Qt::CrossCursor);
@@ -93,8 +96,8 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context) {
         RenderingContext &renderingContext{context->renderingContext()};
         CommandHistory &commandHistory{spatialContext.commandHistory()};
 
-        commandHistory.insert(
-            std::make_shared<InsertItemCommand>(QVector<std::shared_ptr<Item>>{curItem}));
+        QVector<std::shared_ptr<Item>> itemVector{curItem};
+        commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
 
         QPainter &overlayPainter{renderingContext.overlayPainter()};
         renderingContext.canvas().overlay()->fill(Qt::transparent);

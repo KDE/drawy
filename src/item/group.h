@@ -33,8 +33,8 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    void group(const std::unordered_set<std::shared_ptr<Item>>& items);
-    std::unordered_set<std::shared_ptr<Item>> unGroup();
+    void group(const QVector<std::shared_ptr<Item>>& items);
+    QVector<std::shared_ptr<Item>> unGroup();
 
     void setProperty(const Property::Type propertyType, Property newObj) override;
     const Property property(const Property::Type propertyType) const override;
@@ -46,7 +46,7 @@ public:
     Item::Type type() const override;
 
 private:
-    std::unordered_set<std::shared_ptr<Item>> m_items;
+    QVector<std::shared_ptr<Item>> m_items;
 
     void m_draw(QPainter &painter, const QPointF &offset) const override;
 };

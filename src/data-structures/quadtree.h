@@ -59,10 +59,12 @@ public:
     ~QuadTree();
 
     int size() const;
-    void insertItem(ItemPtr item);
+    void insertItem(ItemPtr item, bool updateOrder = true);
     void deleteItem(ItemPtr item, bool updateOrder = true);
     void updateItem(ItemPtr item, const QRectF &oldBoundingBox);
     void deleteItems(const QRectF &boundingBox);
+
+    void reorder(QVector<ItemPtr>& items) const;
 
     QVector<ItemPtr> getAllItems() const;
     void clear();
@@ -77,7 +79,7 @@ public:
     const QRectF &boundingBox() const;
 
 private:
-    bool insert(ItemPtr item);
+    bool insert(ItemPtr item, bool updateOrder);
     void update(ItemPtr item, const QRectF &oldBoundingBox, bool inserted);
 
     template <typename Shape, typename QueryCondition>

@@ -30,6 +30,13 @@
 RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{items} {
 }
 
+RemoveItemCommand::~RemoveItemCommand() {
+    auto &quadtree{ApplicationContext::instance()->spatialContext().quadtree()};
+    for (const auto item : m_items) {
+        quadtree.deleteItem(item);
+    }
+}
+
 void RemoveItemCommand::execute(ApplicationContext *context) {
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
@@ -40,7 +47,7 @@ void RemoveItemCommand::execute(ApplicationContext *context) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
-        quadtree.deleteItem(item);
+        quadtree.deleteItem(item, false);
         cacheGrid.markDirty(dirtyRegion);
     }
 }
@@ -53,7 +60,7 @@ void RemoveItemCommand::undo(ApplicationContext *context) {
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
-        quadtree.insertItem(item);
+        quadtree.insertItem(item, false);
         cacheGrid.markDirty(dirtyRegion);
     }
 }

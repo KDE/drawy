@@ -42,16 +42,19 @@ void UngroupCommand::execute(ApplicationContext *context) {
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
+    selectedItems.clear();
+
+    int count = 0;
+
     QRectF dirtyRegion{};
     for (const auto group : m_groups) {
         quadtree.deleteItem(group);
-        selectedItems.erase(group);
 
-        dirtyRegion |= m_groups.back()->boundingBox();
+        dirtyRegion |= group->boundingBox();
 
-        auto subItems{m_groups.back()->unGroup()};
+        auto subItems{group->unGroup()};
         for (const auto subItem : subItems) {
-            quadtree.insertItem(subItem);
+            quadtree.insertItem(subItem, false);
             selectedItems.insert(subItem);
         }
     }
@@ -63,16 +66,17 @@ void UngroupCommand::undo(ApplicationContext *context) {
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
+    selectedItems.clear();
+
     QRectF dirtyRegion{};
     for (const auto group : m_groups) {
         quadtree.insertItem(group);
         selectedItems.insert(group);
-        dirtyRegion |= m_groups.back()->boundingBox();
+        dirtyRegion |= group->boundingBox();
 
         auto subItems{group->unGroup()};
         for (const auto subItem : subItems) {
-            quadtree.deleteItem(subItem);
-            selectedItems.erase(subItem);
+            quadtree.deleteItem(subItem, false);
         }
     }
 
