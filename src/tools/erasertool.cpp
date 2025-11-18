@@ -83,7 +83,6 @@ void EraserTool::mouseMoved(ApplicationContext *context) {
             if (m_toBeErased.count(item) > 0)
                 continue;
 
-            // TODO: Remove magic numbers
             item->setProperty(Property::Opacity,
                               Property{Common::eraseItemOpacity, Property::Opacity});
 

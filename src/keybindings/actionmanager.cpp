@@ -17,8 +17,13 @@
 */
 
 #include "actionmanager.h"
+#include <qkeysequence.h>
 
+#include "../command/selectcommand.h"
+#include "../command/deselectcommand.h"
 #include "../command/commandhistory.h"
+#include "../command/groupcommand.h"
+#include "../command/ungroupcommand.h"
 #include "../command/removeitemcommand.h"
 #include "../components/propertybar.h"
 #include "../components/toolbar.h"
@@ -103,55 +108,36 @@ ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, 
                                       [&]() { this->switchToMoveTool(); },
                                       context}};
 
+    Action *groupAction{new Action{"Group Elements",
+                                      "Groups selected items",
+                                      [&]() { this->groupItems(); },
+                                      context}};
+
+    Action *unGroupAction{new Action{"Ungroup Elements",
+                                      "Ungroups selected groups",
+                                      [&]() { this->ungroupItems(); },
+                                      context}};
+
     Action *selectAllAction{new Action{
         "Select All",
         "Select all items",
-        [&, context]() {
-            this->switchToSelectionTool();
-
-            auto allItems{context->spatialContext().quadtree().getAllItems()};
-            context->selectionContext().selectedItems().insert(allItems.begin(), allItems.end());
-
-            context->uiContext().propertyBar().updateToolProperties();
-            context->renderingContext().markForRender();
-            context->renderingContext().markForUpdate();
-        },
+        [&, context]() { this->selectAll(); },
         context}};
 
     Action *deleteAction{new Action{
         "Delete",
         "Deletes selected items",
-        [&, context]() {
-            auto &selectedItems{context->selectionContext().selectedItems()};
-            auto &transformer{context->spatialContext().coordinateTransformer()};
-            auto &commandHistory{context->spatialContext().commandHistory()};
-
-            QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
-
-            context->renderingContext().markForRender();
-            context->renderingContext().markForUpdate();
-
-            context->selectionContext().selectedItems().clear();
-        },
+        [&, context]() { this->deleteSelection(); },
         context}};
 
     Action *saveAction{new Action{"Save",
                                   "Save canvas",
-                                  [&, context]() {
-                                      Serializer serializer{};
-
-                                      serializer.serialize(context);
-                                      serializer.saveToFile();
-                                  },
+                                  [&, context]() { this->saveToFile(); },
                                   context}};
 
     Action *openFileAction{new Action{"Open File",
                                       "Open an existing file",
-                                      [&, context]() {
-                                          Loader loader{};
-                                          loader.loadFromFile(context);
-                                      },
+                                      [&, context]() { this->loadFromFile(); },
                                       context}};
 
     keybindManager.addKeybinding(undoAction, "Ctrl+Z");
@@ -173,6 +159,8 @@ ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, 
     keybindManager.addKeybinding(deleteAction, "Delete");
     keybindManager.addKeybinding(saveAction, "Ctrl+S");
     keybindManager.addKeybinding(openFileAction, "Ctrl+O");
+    keybindManager.addKeybinding(groupAction, "Ctrl+G");
+    keybindManager.addKeybinding(unGroupAction, "Ctrl+Shift+G");
 }
 
 void ActionManager::undo() {
@@ -229,6 +217,70 @@ void ActionManager::switchToSelectionTool() {
 
 void ActionManager::switchToTextTool() {
     m_context->uiContext().toolBar().changeTool(Tool::Text);
+}
+
+void ActionManager::groupItems() {
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    if (selectedItems.size() <= 1)
+        return;
+
+    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext().commandHistory().insert(std::make_shared<GroupCommand>(items));
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
+}
+
+void ActionManager::ungroupItems() {
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    if (selectedItems.empty())
+        return;
+
+    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext().commandHistory().insert(std::make_shared<UngroupCommand>(items));
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
+}
+
+void ActionManager::deleteSelection() {
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &transformer{m_context->spatialContext().coordinateTransformer()};
+    auto &commandHistory{m_context->spatialContext().commandHistory()};
+
+    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
+
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
+
+    QVector<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext().commandHistory().insert(
+        std::make_shared<DeselectCommand>(selectedItemsVector)
+    );
+}
+
+void ActionManager::selectAll() {
+    this->switchToSelectionTool();
+
+    auto allItems{m_context->spatialContext().quadtree().getAllItems()};
+    m_context->spatialContext().commandHistory().insert(
+        std::make_shared<SelectCommand>(allItems)
+    );
+
+    m_context->uiContext().propertyBar().updateToolProperties();
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
+}
+
+void ActionManager::saveToFile() {
+    Serializer serializer{};
+    
+    serializer.serialize(m_context);
+    serializer.saveToFile();
+}
+
+void ActionManager::loadFromFile() {
+    Loader loader{};
+    loader.loadFromFile(m_context);
 }
 
 void ActionManager::increaseThickness() {

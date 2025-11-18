@@ -16,31 +16,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef POLYGON_H
-#define POLYGON_H
+#ifndef GROUP_H
+#define GROUP_H
 
 #include "item.h"
 
-class PolygonItem : public Item {
+class GroupItem : public Item {
 public:
-    PolygonItem();
-
-    virtual void setStart(QPointF start);
-    virtual void setEnd(QPointF end);
+    GroupItem() = default;
 
     void draw(QPainter &painter, const QPointF &offset) override;
     void erase(QPainter &painter, const QPointF &offset) const override;
 
+    bool intersects(const QRectF &rect) override;
+    bool intersects(const QLineF &rect) override;
+
     void translate(const QPointF &amount) override;
 
-    const QPointF &start() const;
-    const QPointF &end() const;
+    void group(const std::unordered_set<std::shared_ptr<Item>>& items);
+    std::unordered_set<std::shared_ptr<Item>> unGroup();
+
+    void setProperty(const Property::Type propertyType, Property newObj) override;
+    const Property property(const Property::Type propertyType) const override;
+    const QVector<Property> properties() const override;
+    const QVector<Property::Type> propertyTypes() const override;
+
+    const QRectF boundingBox() const override;
+
+    Item::Type type() const override;
 
 private:
-    QPointF m_start{};
-    QPointF m_end{};
+    std::unordered_set<std::shared_ptr<Item>> m_items;
 
-    void m_updateBoundingBox();
+    void m_draw(QPainter &painter, const QPointF &offset) const override;
 };
 
-#endif  // POLYGON_H
+#endif  // GROUP_H

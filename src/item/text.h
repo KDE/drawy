@@ -32,9 +32,6 @@ public:
     bool intersects(const QLineF &rect) override;
 
     void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter,
-               const QPointF &offset,
-               QColor color = Qt::transparent) const override;
 
     void translate(const QPointF &amount) override;
 

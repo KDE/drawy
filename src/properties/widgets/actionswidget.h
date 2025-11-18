@@ -16,31 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef POLYGON_H
-#define POLYGON_H
+#ifndef ACTIONSWIDGET_H
+#define ACTIONSWIDGET_H
 
-#include "item.h"
+#include "propertywidget.h"
 
-class PolygonItem : public Item {
+class ActionsWidget : public PropertyWidget {
 public:
-    PolygonItem();
+    ActionsWidget(QWidget *parent = nullptr);
 
-    virtual void setStart(QPointF start);
-    virtual void setEnd(QPointF end);
-
-    void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter, const QPointF &offset) const override;
-
-    void translate(const QPointF &amount) override;
-
-    const QPointF &start() const;
-    const QPointF &end() const;
-
-private:
-    QPointF m_start{};
-    QPointF m_end{};
-
-    void m_updateBoundingBox();
+    QString name() const override;
+    const Property value() const override;
 };
 
-#endif  // POLYGON_H
+#endif  // TOOLACTIONS_H

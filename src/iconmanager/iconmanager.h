@@ -44,6 +44,9 @@ public:
         ACTION_REDO,
         ACTION_DARK_MODE,
         ACTION_LIGHT_MODE,
+        ACTION_GROUP,
+        ACTION_UNGROUP,
+        ACTION_DELETE,
         UI_ANGLE_UP,
         UI_ANGLE_DOWN,
     };

@@ -93,7 +93,7 @@ bool QuadTree::insert(std::shared_ptr<Item> item) {
     return inserted;
 }
 
-void QuadTree::deleteItem(std::shared_ptr<Item> const item) {
+void QuadTree::deleteItem(std::shared_ptr<Item> const item, bool updateOrder) {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return;
     }
@@ -101,7 +101,10 @@ void QuadTree::deleteItem(std::shared_ptr<Item> const item) {
     auto it = std::find(m_items.begin(), m_items.end(), item);
     if (it != m_items.end()) {
         m_items.erase(it);
-        m_orderedList->remove(item);
+
+        if (updateOrder)
+            m_orderedList->remove(item);
+
         return;
     }
 

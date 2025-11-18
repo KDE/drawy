@@ -16,31 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef POLYGON_H
-#define POLYGON_H
+#ifndef UNGROUPCOMMAND_H
+#define UNGROUPCOMMAND_H
 
-#include "item.h"
+#include "itemcommand.h"
+class ApplicationContext;
+class GroupItem;
 
-class PolygonItem : public Item {
+class UngroupCommand : public ItemCommand {
 public:
-    PolygonItem();
+    UngroupCommand(QVector<std::shared_ptr<Item>> items);
+    ~UngroupCommand();
 
-    virtual void setStart(QPointF start);
-    virtual void setEnd(QPointF end);
-
-    void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter, const QPointF &offset) const override;
-
-    void translate(const QPointF &amount) override;
-
-    const QPointF &start() const;
-    const QPointF &end() const;
+    void execute(ApplicationContext *context) override;
+    void undo(ApplicationContext *context) override;
 
 private:
-    QPointF m_start{};
-    QPointF m_end{};
-
-    void m_updateBoundingBox();
+    QVector<std::shared_ptr<GroupItem>> m_groups;
 };
 
-#endif  // POLYGON_H
+#endif  // UNGROUPCOMMAND_H

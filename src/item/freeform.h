@@ -32,9 +32,6 @@ public:
     static int minPointDistance();
 
     void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter,
-               const QPointF &offset,
-               QColor color = Qt::transparent) const override;
     void quickDraw(QPainter &painter, const QPointF &offset) const;
 
     bool intersects(const QRectF &rect) override;

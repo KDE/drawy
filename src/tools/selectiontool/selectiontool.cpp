@@ -17,6 +17,7 @@
 */
 
 #include "selectiontool.h"
+#include <qnamespace.h>
 
 #include "../../command/commandhistory.h"
 #include "../../command/moveitemcommand.h"
@@ -64,7 +65,8 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     QPointF worldCurPos{transformer.viewToWorld(uiContext.event().pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext.selectionBox().contains(worldCurPos)) {
+    if (selectionContext.selectionBox().contains(worldCurPos) &&
+        !(uiContext.event().modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
@@ -119,7 +121,13 @@ const QVector<Property::Type> SelectionTool::properties() const {
         }
     }
 
-    return QVector<Property::Type>(result.begin(), result.end());
+    QVector<Property::Type> output(result.begin(), result.end());
+
+    if (!selectedItems.empty()) {
+        output += QVector<Property::Type>{ Property::Actions };
+    }
+    
+    return output;
 }
 
 Tool::Type SelectionTool::type() const {

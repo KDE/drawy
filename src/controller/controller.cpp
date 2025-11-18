@@ -68,6 +68,7 @@ void Controller::mousePressed(QMouseEvent *event) {
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
+    contextEvent.setModifiers(event->modifiers());
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = true;
@@ -90,6 +91,7 @@ void Controller::mouseDoubleClick(QMouseEvent *event) {
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
+    contextEvent.setModifiers(event->modifiers());
 
     toolBar.curTool().mouseDoubleClick(m_context);
 }
@@ -101,6 +103,7 @@ void Controller::mouseTripleClick(QMouseEvent *event) {
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
+    contextEvent.setModifiers(event->modifiers());
 
     toolBar.curTool().mouseTripleClick(m_context);
 }
@@ -114,6 +117,7 @@ void Controller::mouseMoved(QMouseEvent *event) {
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
+    contextEvent.setModifiers(event->modifiers());
 
     if (m_movingWithMiddleClick) {
         toolBar.tool(Tool::Move).mouseMoved(m_context);
@@ -130,6 +134,7 @@ void Controller::mouseReleased(QMouseEvent *event) {
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
+    contextEvent.setModifiers(event->modifiers());
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = false;

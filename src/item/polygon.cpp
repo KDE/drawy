@@ -70,16 +70,19 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset) {
     m_draw(painter, offset);
 }
 
-void PolygonItem::erase(QPainter &painter, const QPointF &offset, QColor color) const {
+void PolygonItem::erase(QPainter &painter, const QPointF &offset) const {
     QPen pen{};
 
     pen.setWidth(property(Property::StrokeWidth).value<int>() * 10);
-    pen.setColor(color);
-    painter.setPen(pen);
+    pen.setColor(Qt::transparent);
 
+    painter.save();
+    painter.setPen(pen);
     painter.setCompositionMode(QPainter::CompositionMode_Source);
+
     m_draw(painter, offset);
-    painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+
+    painter.restore();
 }
 
 void PolygonItem::translate(const QPointF &amount) {

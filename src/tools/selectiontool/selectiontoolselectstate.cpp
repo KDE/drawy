@@ -17,7 +17,11 @@
 */
 
 #include "selectiontoolselectstate.h"
+#include <qnamespace.h>
 
+#include "../../command/selectcommand.h"
+#include "../../command/deselectcommand.h"
+#include "../../command/commandhistory.h"
 #include "../../canvas/canvas.h"
 #include "../../components/propertybar.h"
 #include "../../context/applicationcontext.h"
@@ -33,8 +37,9 @@
 
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context) {
     auto &uiContext{context->uiContext()};
+    auto &event{uiContext.event()};
 
-    if (uiContext.event().button() == Qt::LeftButton) {
+    if (event.button() == Qt::LeftButton) {
         m_lastPos = uiContext.event().pos();
 
         auto &spatialContext{context->spatialContext()};
@@ -49,12 +54,24 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context) {
                                                  })};
 
         bool lockState = true;
+        auto &selectedItems{selectionContext.selectedItems()};
+        auto &commandHistory{spatialContext.commandHistory()};
 
-        selectionContext.selectedItems().clear();
+        if (!(event.modifiers() & Qt::ShiftModifier)) {
+            QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            commandHistory.insert(std::make_shared<DeselectCommand>(items));
+        }
+
         if (intersectingItems.empty()) {
             m_isActive = true;
         } else {
-            selectionContext.selectedItems().insert(intersectingItems.back());
+            auto& item{intersectingItems.back()};
+            if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+                // deselect the item if selected
+                commandHistory.insert(std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
+            } else {
+                commandHistory.insert(std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
+            }
             m_isActive = false;
             lockState = false;
         }
@@ -119,6 +136,18 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context) {
 bool SelectionToolSelectState::mouseReleased(ApplicationContext *context) {
     if (m_isActive) {
         auto &renderingContext{context->renderingContext()};
+        auto &selectedItems{context->selectionContext().selectedItems()};
+        auto &commandHistory{context->spatialContext().commandHistory()};
+
+        if (!selectedItems.empty()) {
+            QVector<std::shared_ptr<Item>> items{};
+            for (const auto item : selectedItems) {
+                items.push_back(item);
+            }
+
+            selectedItems.clear();
+            commandHistory.insert(std::make_shared<SelectCommand>(items));
+        }
 
         renderingContext.canvas().overlay()->fill(Qt::transparent);
         renderingContext.markForUpdate();

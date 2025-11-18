@@ -60,7 +60,7 @@ public:
 
     int size() const;
     void insertItem(ItemPtr item);
-    void deleteItem(ItemPtr item);
+    void deleteItem(ItemPtr item, bool updateOrder = true);
     void updateItem(ItemPtr item, const QRectF &oldBoundingBox);
     void deleteItems(const QRectF &boundingBox);
 

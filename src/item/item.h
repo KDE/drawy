@@ -32,24 +32,22 @@ public:
     virtual bool intersects(const QLineF &rect) = 0;
 
     virtual void draw(QPainter &painter, const QPointF &offset) = 0;
-    virtual void erase(QPainter &painter,
-                       const QPointF &offset,
-                       QColor color = Qt::transparent) const = 0;
+    virtual void erase(QPainter &painter, const QPointF &offset) const;
 
     virtual void translate(const QPointF &amount) = 0;
 
-    const QRectF boundingBox() const;
+    virtual const QRectF boundingBox() const;
 
     void setBoundingBoxPadding(int padding);
     int boundingBoxPadding() const;
 
-    const QVector<Property::Type> propertyTypes() const;
-    const QVector<Property> properties() const;
 
-    void setProperty(const Property::Type propertyType, Property newObj);
-    const Property &property(const Property::Type propertyType) const;
+    virtual void setProperty(const Property::Type propertyType, Property newObj);
+    virtual const Property property(const Property::Type propertyType) const;
+    virtual const QVector<Property> properties() const;
+    virtual const QVector<Property::Type> propertyTypes() const;
 
-    enum Type { Freeform, Rectangle, Ellipse, Line, Arrow, Text };
+    enum Type { Freeform, Rectangle, Ellipse, Line, Arrow, Text, Group };
 
     virtual Type type() const = 0;
 

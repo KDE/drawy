@@ -22,12 +22,14 @@
 #include "fontsizewidget.h"
 #include "strokecolorwidget.h"
 #include "strokewidthwidget.h"
+#include "actionswidget.h"
 
 PropertyManager::PropertyManager(QWidget *parent) : QObject{parent} {
     m_widgets[Property::StrokeWidth] = new StrokeWidthWidget(parent);
     m_widgets[Property::StrokeColor] = new StrokeColorWidget(parent);
     m_widgets[Property::EraserSize] = new EraserSizeWidget(parent);
     m_widgets[Property::FontSize] = new FontSizeWidget(parent);
+    m_widgets[Property::Actions] = new ActionsWidget(parent);
 
     for (const auto &[_, widget] : m_widgets) {
         QObject::connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

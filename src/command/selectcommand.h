@@ -16,31 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef POLYGON_H
-#define POLYGON_H
+#ifndef SELECTCOMMAND_H
+#define SELECTCOMMAND_H
 
-#include "item.h"
+#include "itemcommand.h"
+class ApplicationContext;
 
-class PolygonItem : public Item {
+class SelectCommand : public ItemCommand {
 public:
-    PolygonItem();
+    SelectCommand(QVector<std::shared_ptr<Item>> items);
+    ~SelectCommand();
 
-    virtual void setStart(QPointF start);
-    virtual void setEnd(QPointF end);
-
-    void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter, const QPointF &offset) const override;
-
-    void translate(const QPointF &amount) override;
-
-    const QPointF &start() const;
-    const QPointF &end() const;
-
-private:
-    QPointF m_start{};
-    QPointF m_end{};
-
-    void m_updateBoundingBox();
+    void execute(ApplicationContext *context) override;
+    void undo(ApplicationContext *context) override;
 };
 
-#endif  // POLYGON_H
+#endif  // SELECTCOMMAND_H

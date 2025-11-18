@@ -22,6 +22,9 @@
         <file>icons/fa-dark/action-zoom_out.svg</file>
         <file>icons/fa-dark/action-undo.svg</file>
         <file>icons/fa-dark/action-redo.svg</file>
+        <file>icons/fa-dark/action-group.svg</file>
+        <file>icons/fa-dark/action-ungroup.svg</file>
+        <file>icons/fa-dark/action-delete.svg</file>
         <file>icons/fa-dark/action-dark_mode.svg</file>
         <file>icons/fa-dark/action-light_mode.svg</file>
         <file>icons/fa-dark/ui-angle_up.svg</file>
@@ -41,6 +44,9 @@
         <file>icons/fa-light/action-zoom_out.svg</file>
         <file>icons/fa-light/action-undo.svg</file>
         <file>icons/fa-light/action-redo.svg</file>
+        <file>icons/fa-light/action-group.svg</file>
+        <file>icons/fa-light/action-ungroup.svg</file>
+        <file>icons/fa-light/action-delete.svg</file>
         <file>icons/fa-light/action-dark_mode.svg</file>
         <file>icons/fa-light/action-light_mode.svg</file>
         <file>icons/fa-light/ui-angle_up.svg</file>
