@@ -57,22 +57,25 @@ void QuadTree::subdivide() {
     m_bottomLeft = std::make_unique<QuadTree>(bottomLeftRect, m_capacity, m_orderedList);
 }
 
-void QuadTree::insertItem(std::shared_ptr<Item> item) {
+void QuadTree::insertItem(std::shared_ptr<Item> item, bool updateOrder) {
     expand(item->boundingBox().topLeft());
     expand(item->boundingBox().topRight());
     expand(item->boundingBox().bottomRight());
     expand(item->boundingBox().bottomLeft());
-    insert(item);
+    insert(item, updateOrder);
 }
 
-bool QuadTree::insert(std::shared_ptr<Item> item) {
+bool QuadTree::insert(std::shared_ptr<Item> item, bool updateOrder) {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return false;
     }
 
     if (m_items.size() < m_capacity) {
         m_items.push_back(item);
-        m_orderedList->insert(item);
+        
+        if (updateOrder)
+            m_orderedList->insert(item);
+
         return true;
     }
 
@@ -81,19 +84,19 @@ bool QuadTree::insert(std::shared_ptr<Item> item) {
         subdivide();
 
     bool inserted = false;
-    if (m_topLeft->insert(item))
+    if (m_topLeft->insert(item, updateOrder))
         inserted = true;
-    if (m_topRight->insert(item))
+    if (m_topRight->insert(item, updateOrder))
         inserted = true;
-    if (m_bottomRight->insert(item))
+    if (m_bottomRight->insert(item, updateOrder))
         inserted = true;
-    if (m_bottomLeft->insert(item))
+    if (m_bottomLeft->insert(item, updateOrder))
         inserted = true;
 
     return inserted;
 }
 
-void QuadTree::deleteItem(std::shared_ptr<Item> const item) {
+void QuadTree::deleteItem(std::shared_ptr<Item> const item, bool updateOrder) {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return;
     }
@@ -101,16 +104,19 @@ void QuadTree::deleteItem(std::shared_ptr<Item> const item) {
     auto it = std::find(m_items.begin(), m_items.end(), item);
     if (it != m_items.end()) {
         m_items.erase(it);
-        m_orderedList->remove(item);
+
+        if (updateOrder)
+            m_orderedList->remove(item);
+
         return;
     }
 
     // If the node is subdivided, attempt to delete the item from children
     if (m_topLeft != nullptr) {
-        m_topLeft->deleteItem(item);
-        m_topRight->deleteItem(item);
-        m_bottomLeft->deleteItem(item);
-        m_bottomRight->deleteItem(item);
+        m_topLeft->deleteItem(item, updateOrder);
+        m_topRight->deleteItem(item, updateOrder);
+        m_bottomLeft->deleteItem(item, updateOrder);
+        m_bottomRight->deleteItem(item, updateOrder);
     }
 }
 
@@ -123,6 +129,12 @@ void QuadTree::clear() {
         m_bottomRight->clear();
         m_bottomLeft->clear();
     }
+}
+
+void QuadTree::reorder(QVector<ItemPtr>& items) const {
+    std::sort(items.begin(), items.end(), [&](auto &firstItem, auto &secondItem) {
+        return m_orderedList->zIndex(firstItem) < m_orderedList->zIndex(secondItem);
+    });
 }
 
 void QuadTree::updateItem(std::shared_ptr<Item> item, const QRectF &oldBoundingBox) {

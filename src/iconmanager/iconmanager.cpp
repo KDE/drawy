@@ -38,6 +38,9 @@ IconManager::IconManager(QObject *parent) : QObject{parent} {
                   {ACTION_REDO, "action-redo"},
                   {ACTION_DARK_MODE, "action-dark_mode"},
                   {ACTION_LIGHT_MODE, "action-light_mode"},
+                  {ACTION_GROUP, "action-group"},
+                  {ACTION_UNGROUP, "action-ungroup"},
+                  {ACTION_DELETE, "action-delete"},
                   {UI_ANGLE_DOWN, "ui-angle_up"},
                   {UI_ANGLE_UP, "ui-angle_down"}};
 }

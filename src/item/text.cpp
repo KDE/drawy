@@ -156,9 +156,6 @@ void TextItem::draw(QPainter &painter, const QPointF &offset) {
     painter.restore();
 }
 
-void TextItem::erase(QPainter &painter, const QPointF &offset, QColor color) const {
-}
-
 void TextItem::translate(const QPointF &amount) {
     m_boundingBox.translate(amount);
 }

@@ -20,7 +20,10 @@
 #define SELECTIONTOOLSELECTSTATE_H
 
 #include "selectiontoolstate.h"
+#include <unordered_set>
+#include <memory>
 #include <QPointF>
+class Item;
 
 class SelectionToolSelectState : public SelectionToolState {
 public:

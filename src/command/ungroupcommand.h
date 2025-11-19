@@ -2,9 +2,6 @@
 * Drawy - A simple brainstorming tool with an infinite canvas
 * Copyright (C) 2025 - Prayag Jain <prayagjain2@gmail.com>
 *
-* Authors:
-* 1. <name> - <email> 
-*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -19,3 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef UNGROUPCOMMAND_H
+#define UNGROUPCOMMAND_H
+
+#include "itemcommand.h"
+class ApplicationContext;
+class GroupItem;
+
+class UngroupCommand : public ItemCommand {
+public:
+    UngroupCommand(QVector<std::shared_ptr<Item>> items);
+    ~UngroupCommand();
+
+    void execute(ApplicationContext *context) override;
+    void undo(ApplicationContext *context) override;
+
+private:
+    QVector<std::shared_ptr<GroupItem>> m_groups;
+};
+
+#endif  // UNGROUPCOMMAND_H

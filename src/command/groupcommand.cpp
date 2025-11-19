@@ -16,47 +16,57 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "removeitemcommand.h"
+#include "groupcommand.h"
 
-#include "../common/constants.h"
+#include "commandhistory.h"
+#include "selectcommand.h"
+#include "deselectcommand.h"
 #include "../context/applicationcontext.h"
 #include "../context/coordinatetransformer.h"
 #include "../context/selectioncontext.h"
 #include "../context/spatialcontext.h"
 #include "../data-structures/cachegrid.h"
 #include "../data-structures/quadtree.h"
-#include "../item/item.h"
+#include "../item/group.h"
 
-RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{items} {
+GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{items} {
+    m_group = std::make_shared<GroupItem>();
+
+    // sort according to z order
+    ApplicationContext::instance()->spatialContext().quadtree().reorder(m_items);
 }
 
-RemoveItemCommand::~RemoveItemCommand() {
+GroupCommand::~GroupCommand() {
 }
 
-void RemoveItemCommand::execute(ApplicationContext *context) {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
+void GroupCommand::execute(ApplicationContext *context) {
     auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &selectedItems{context->selectionContext().selectedItems()};
+    
+    for (const auto item : m_items) {
+        quadtree.deleteItem(item, false);
+    }
+
+    m_group->group(m_items);
+    quadtree.insertItem(m_group);
+
+    selectedItems.clear();
+    selectedItems.insert(m_group);
+
+    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
+}
+
+void GroupCommand::undo(ApplicationContext *context) {
+    auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
-    for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+    quadtree.deleteItem(m_group);
+    selectedItems.clear();
 
-        selectedItems.erase(item);
-        quadtree.deleteItem(item, false);
-        cacheGrid.markDirty(dirtyRegion);
-    }
-}
-
-void RemoveItemCommand::undo(ApplicationContext *context) {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
-
-    for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
-
+    for (const auto item : m_items) {
+        selectedItems.insert(item);
         quadtree.insertItem(item, false);
-        cacheGrid.markDirty(dirtyRegion);
     }
+
+    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
 }

@@ -42,6 +42,12 @@ public:
     void switchToArrowTool();
     void switchToMoveTool();
     void switchToTextTool();
+    void selectAll();
+    void deleteSelection();
+    void groupItems();
+    void ungroupItems();
+    void saveToFile();
+    void loadFromFile();
 
 private:
     ApplicationContext *m_context;

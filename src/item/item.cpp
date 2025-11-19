@@ -37,7 +37,7 @@ void Item::setBoundingBoxPadding(int padding) {
     m_boundingBoxPadding = padding;
 }
 
-const Property &Item::property(const Property::Type propertyType) const {
+const Property Item::property(const Property::Type propertyType) const {
     if (m_properties.find(propertyType) == m_properties.end()) {
         throw std::logic_error("Item does not support this property.");
     }
@@ -73,8 +73,8 @@ void Item::setProperty(const Property::Type propertyType, Property newObj) {
     updateAfterProperty();
 }
 
-void Item::updateAfterProperty() {
-}
+void Item::updateAfterProperty() {}
+void Item::erase(QPainter &painter, const QPointF &offset) const {}
 
 int Item::boundingBoxPadding() const {
     return m_boundingBoxPadding;

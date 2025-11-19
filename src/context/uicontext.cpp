@@ -184,7 +184,9 @@ IconManager &UIContext::iconManager() const {
 }
 
 void UIContext::toolChanged(Tool &tool) {
-    m_applicationContext->selectionContext().selectedItems().clear();
+    if (tool.type() != Tool::Selection) {
+        m_applicationContext->selectionContext().selectedItems().clear();
+    }
 
     Common::renderCanvas(m_applicationContext);
 

@@ -114,12 +114,6 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset) {
     m_draw(painter, offset);
 }
 
-void FreeformItem::erase(QPainter &painter, const QPointF &offset, QColor color) const {
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
-    painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
-}
-
 QPointF FreeformItem::optimizePoint(const QPointF &newPoint) {
     m_currentWindow.push_back(newPoint);
     m_currentWindowSum += newPoint;

@@ -33,7 +33,7 @@ PropertyBar::PropertyBar(QWidget *parent) : QFrame{parent} {
     this->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     this->setAutoFillBackground(true);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    this->setProperty("class", "drawlyFrame");
+    this->setProperty("class", "drawlyFrame drawyPropertyBar");
 
     m_layout = new QVBoxLayout{this};
     setLayout(m_layout);
