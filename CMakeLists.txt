@@ -10,6 +10,12 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(KF_MIN_VERSION "6.19.0")
+find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
+
+include(ECMPoQmTools)
 
 # Find Qt6
 find_package(Qt6 REQUIRED
@@ -17,9 +23,6 @@ find_package(Qt6 REQUIRED
         OpenGLWidgets
         LinguistTools
 )
-
-# Translation files.
-set(TS_FILES ${CMAKE_SOURCE_DIR}/translations/drawy_en_GB.ts)
 
 # Source directory.
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
@@ -35,12 +38,12 @@ file(GLOB_RECURSE SRC_FILES
 # Combine translation files with the source files.
 set(PROJECT_SOURCES ${TS_FILES} ${SRC_FILES})
 
+ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
+
 qt_add_executable(${PROJECT_NAME}
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
 )
-
-qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 # ZSTD for compression
 find_package(PkgConfig REQUIRED)
@@ -79,3 +82,5 @@ if (UNIX AND NOT APPLE)
   install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME io.github.prayag2.Drawy.svg)
   install(FILES deploy/linux/io.github.prayag2.Drawy.metainfo.xml.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/metainfo/ RENAME io.github.prayag2.Drawy.metainfo.xml)
 endif()
+
+ecm_install_po_files_as_qm(poqm)
