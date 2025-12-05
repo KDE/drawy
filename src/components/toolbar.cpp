@@ -81,3 +81,5 @@ Tool &ToolBar::tool(Tool::Type type) const {
 void ToolBar::onToolChanged(int id) {
     emit toolChanged(curTool());
 }
+
+#include "moc_toolbar.cpp"

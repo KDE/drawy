@@ -90,3 +90,5 @@ void MainWindow::m_applyCustomStyles() {
         qWarning() << "Failed to load font: Inter";
     }
 }
+
+#include "moc_window.cpp"

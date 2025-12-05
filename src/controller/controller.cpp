@@ -188,3 +188,5 @@ void Controller::wheel(QWheelEvent *event) {
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
 }
+
+#include "moc_controller.cpp"

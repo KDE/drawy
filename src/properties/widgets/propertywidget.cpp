@@ -10,3 +10,5 @@ PropertyWidget::PropertyWidget(QWidget *parent) : QObject{parent} {
 QWidget *PropertyWidget::widget() const {
     return m_widget;
 }
+
+#include "moc_propertywidget.cpp"
