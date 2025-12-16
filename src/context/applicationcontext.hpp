@@ -30,7 +30,7 @@ class SelectionContext;
  */
 class ApplicationContext : public QObject {
 public:
-    ~ApplicationContext();
+    ~ApplicationContext() override;
 
     static ApplicationContext *instance(QWidget *parent = nullptr) {
         if (!m_instance) {

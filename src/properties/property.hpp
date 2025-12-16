@@ -19,6 +19,7 @@
 #pragma once
 
 #include <QVariant>
+#include <utility>
 
 class Property {
 public:
@@ -27,9 +28,9 @@ public:
     enum Type { StrokeWidth, StrokeColor, Opacity, FontSize, EraserSize, Actions, Null};
 
     template <typename T>
-    Property(T value, Type type) {
-        m_value = value;
-        m_type = type;
+    Property(T value, Type type) : m_value(std::move(value)), m_type(type) {
+        
+        
     }
 
     template <typename T>

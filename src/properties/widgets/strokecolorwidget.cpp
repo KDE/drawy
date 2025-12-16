@@ -25,14 +25,14 @@
 
 #include "../property.hpp"
 
-// TODO: Use a better widget and a better way to return colors instead of button id
-StrokeColorWidget::StrokeColorWidget(QWidget *parent) : PropertyWidget{parent} {
+// TODO: Use a better widget
+StrokeColorWidget::StrokeColorWidget(QWidget *parent) : PropertyWidget{parent}, m_group(new QButtonGroup{m_widget}) {
     m_widget = new QWidget{parent};
 
     QHBoxLayout *layout{new QHBoxLayout{m_widget}};
     layout->setContentsMargins(0, 0, 0, 0);
 
-    m_group = new QButtonGroup{m_widget};
+
     m_widget->setLayout(layout);
 
     QVector<QColor> colors{QColor{255, 255, 255},
@@ -45,9 +45,10 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent) : PropertyWidget{parent} {
         QPushButton *btn{new QPushButton{"", m_widget}};
         btn->setCheckable(true);
         btn->setStyleSheet("background-color: " + color.name());
+        btn->setProperty("color-value", color);
 
         layout->addWidget(btn);
-        m_group->addButton(btn, color.rgba());
+        m_group->addButton(btn);
     }
 
     layout->setSpacing(0);
@@ -63,6 +64,5 @@ QString StrokeColorWidget::name() const {
 };
 
 const Property StrokeColorWidget::value() const {
-    return Property{QColor::fromRgba(static_cast<quint64>(m_group->checkedId())),
-                    Property::StrokeColor};
+    return Property{m_group->checkedButton()->property("color-value"), Property::StrokeColor};
 };

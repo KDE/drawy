@@ -29,7 +29,7 @@ class Canvas;
 class SpatialContext : public QObject {
 public:
     SpatialContext(ApplicationContext *context);
-    ~SpatialContext();
+    ~SpatialContext() override;
 
     void setSpatialContext();
 

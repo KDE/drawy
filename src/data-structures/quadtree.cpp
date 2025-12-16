@@ -21,6 +21,7 @@
 #include <QDebug>
 #include <cstdlib>
 #include <memory>
+#include <utility>
 
 #include "../item/item.hpp"
 #include "orderedlist.hpp"
@@ -33,8 +34,8 @@ QuadTree::QuadTree(QRectF region, int capacity) : m_boundingBox{region}, m_capac
 
 QuadTree::QuadTree(QRectF region, int capacity, std::shared_ptr<OrderedList> orderedList)
     : m_boundingBox{region},
-      m_capacity{capacity} {
-    m_orderedList = orderedList;
+      m_capacity{capacity}, m_orderedList(std::move(orderedList)) {
+    
 }
 
 QuadTree::~QuadTree() {
@@ -58,7 +59,7 @@ void QuadTree::subdivide() {
     m_bottomLeft = std::make_unique<QuadTree>(bottomLeftRect, m_capacity, m_orderedList);
 }
 
-void QuadTree::insertItem(std::shared_ptr<Item> item, bool updateOrder) {
+void QuadTree::insertItem(const std::shared_ptr<Item>& item, bool updateOrder) {
     expand(item->boundingBox().topLeft());
     expand(item->boundingBox().topRight());
     expand(item->boundingBox().bottomRight());
@@ -66,7 +67,7 @@ void QuadTree::insertItem(std::shared_ptr<Item> item, bool updateOrder) {
     insert(item, updateOrder);
 }
 
-bool QuadTree::insert(std::shared_ptr<Item> item, bool updateOrder) {
+bool QuadTree::insert(const std::shared_ptr<Item>& item, bool updateOrder) {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return false;
     }
@@ -97,7 +98,7 @@ bool QuadTree::insert(std::shared_ptr<Item> item, bool updateOrder) {
     return inserted;
 }
 
-void QuadTree::deleteItem(std::shared_ptr<Item> const item, bool updateOrder) {
+void QuadTree::deleteItem(std::shared_ptr<Item> const& item, bool updateOrder) {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return;
     }
@@ -138,7 +139,7 @@ void QuadTree::reorder(QVector<ItemPtr>& items) const {
     });
 }
 
-void QuadTree::updateItem(std::shared_ptr<Item> item, const QRectF &oldBoundingBox) {
+void QuadTree::updateItem(const std::shared_ptr<Item>& item, const QRectF &oldBoundingBox) {
     expand(item->boundingBox().topLeft());
     expand(item->boundingBox().topRight());
     expand(item->boundingBox().bottomRight());
@@ -147,7 +148,7 @@ void QuadTree::updateItem(std::shared_ptr<Item> item, const QRectF &oldBoundingB
     update(item, oldBoundingBox, false);
 }
 
-void QuadTree::update(std::shared_ptr<Item> item, const QRectF &oldBoundingBox, bool inserted) {
+void QuadTree::update(const std::shared_ptr<Item>& item, const QRectF &oldBoundingBox, bool inserted) {
     if (!m_boundingBox.intersects(oldBoundingBox) &&
         !m_boundingBox.intersects(item->boundingBox())) {
         return;

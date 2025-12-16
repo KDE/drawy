@@ -30,13 +30,13 @@
 #include "../tools/tool.hpp"
 #include "toolbar.hpp"
 
-PropertyBar::PropertyBar(QWidget *parent) : QFrame{parent} {
+PropertyBar::PropertyBar(QWidget *parent) : QFrame{parent}, m_layout(new QVBoxLayout{this}) {
     this->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     this->setAutoFillBackground(true);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     this->setProperty("class", "drawlyFrame drawyPropertyBar");
 
-    m_layout = new QVBoxLayout{this};
+    
     setLayout(m_layout);
 }
 
@@ -52,7 +52,7 @@ void PropertyBar::updateToolProperties() {
 // PUBLIC SLOTS
 void PropertyBar::updateProperties(Tool &tool) {
     // remove existing widgets
-    QLayoutItem *curItem;
+    QLayoutItem *curItem = nullptr;
     while ((curItem = m_layout->takeAt(0)) != nullptr) {
         QWidget *widget = curItem->widget();
         if (widget) {

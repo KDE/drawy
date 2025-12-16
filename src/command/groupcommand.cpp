@@ -18,6 +18,8 @@
 
 #include "groupcommand.hpp"
 
+#include <utility>
+
 #include "commandhistory.hpp"
 #include "selectcommand.hpp"
 #include "deselectcommand.hpp"
@@ -29,21 +31,18 @@
 #include "../data-structures/quadtree.hpp"
 #include "../item/group.hpp"
 
-GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{items} {
+GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {
     m_group = std::make_shared<GroupItem>();
 
     // sort according to z order
     ApplicationContext::instance()->spatialContext().quadtree().reorder(m_items);
 }
 
-GroupCommand::~GroupCommand() {
-}
-
 void GroupCommand::execute(ApplicationContext *context) {
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
-    for (const auto item : m_items) {
+    for (const auto& item : m_items) {
         quadtree.deleteItem(item, false);
     }
 
@@ -63,7 +62,7 @@ void GroupCommand::undo(ApplicationContext *context) {
     quadtree.deleteItem(m_group);
     selectedItems.clear();
 
-    for (const auto item : m_items) {
+    for (const auto& item : m_items) {
         selectedItems.insert(item);
         quadtree.insertItem(item, false);
     }

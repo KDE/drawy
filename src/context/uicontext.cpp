@@ -72,15 +72,15 @@ void UIContext::setUIContext() {
 
     m_event = new Event();
 
-    m_toolBar->addTool(new SelectionTool(), Tool::Selection);
-    m_toolBar->addTool(new FreeformTool(), Tool::Freeform);
-    m_toolBar->addTool(new RectangleTool(), Tool::Rectangle);
-    m_toolBar->addTool(new EllipseTool(), Tool::Ellipse);
-    m_toolBar->addTool(new ArrowTool(), Tool::Arrow);
-    m_toolBar->addTool(new LineTool(), Tool::Line);
-    m_toolBar->addTool(new EraserTool(), Tool::Eraser);
-    m_toolBar->addTool(new TextTool(), Tool::Text);
-    m_toolBar->addTool(new MoveTool(), Tool::Move);
+    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Selection);
+    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Freeform);
+    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Rectangle);
+    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Ellipse);
+    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Arrow);
+    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Line);
+    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Eraser);
+    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Text);
+    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Move);
 
     // TODO: Define their functions somewhere else
     m_actionBar->addButton("Save to File", IconManager::ACTION_SAVE, 6);

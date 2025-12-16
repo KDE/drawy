@@ -22,6 +22,7 @@ class ApplicationContext;
 
 class Command {
 public:
+    virtual ~Command() = default;
     virtual void execute(ApplicationContext *context) = 0;
     virtual void undo(ApplicationContext *context) = 0;
 };

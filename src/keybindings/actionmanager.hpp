@@ -30,8 +30,6 @@ public:
     void zoomOut();
     void undo();
     void redo();
-    void increaseThickness();
-    void decreaseThickness();
     void switchToFreeformTool();
     void switchToEraserTool();
     void switchToSelectionTool();

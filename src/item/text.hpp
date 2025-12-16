@@ -26,7 +26,7 @@
 class TextItem : public Item {
 public:
     TextItem();
-    ~TextItem();
+    ~TextItem() override;
 
     bool intersects(const QRectF &rect) override;
     bool intersects(const QLineF &rect) override;
@@ -58,7 +58,7 @@ public:
 
     const QString &text() const;
     void insertText(const QString &text);
-    void deleteSubStr(int start, int end);
+    void deleteSubStr(qsizetype start, qsizetype end);
     void deleteSelection();
 
     bool hasSelection() const;
@@ -94,5 +94,5 @@ private:
     qsizetype m_selectionStart{};
     qsizetype m_selectionEnd{};
     qsizetype m_caretPosInLine{};
-    Mode m_mode;
+    Mode m_mode{NORMAL};
 };

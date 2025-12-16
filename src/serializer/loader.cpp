@@ -24,7 +24,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
-#include <format>
 #include <memory>
 
 #include "../common/constants.hpp"
@@ -94,7 +93,7 @@ void Loader::loadFromFile(ApplicationContext *context) {
     QuadTree &quadtree{context->spatialContext().quadtree()};
 
     QJsonArray itemsArray = array(value(docObj, "items"));
-    for (const QJsonValue &v : itemsArray) {
+    for (const QJsonValueRef &v : itemsArray) {
         QJsonObject itemObj = object(v);
         std::shared_ptr<Item> item = createItem(itemObj);
         quadtree.insertItem(item);
@@ -176,12 +175,10 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj) {
     }
 
     QJsonArray properties = array(value(obj, "properties"));
-    for (const QJsonValue &propertyValue : properties) {
+    for (const QJsonValueRef &propertyValue : properties) {
         Property prop{createProperty(object(propertyValue))};
         item->setProperty(prop.type(), prop);
     }
-
-    item->setBoundingBoxPadding(value(obj, "bounding_box_padding").toInt());
 
     return item;
 }

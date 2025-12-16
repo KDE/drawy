@@ -23,5 +23,6 @@
 class EllipseFactory : public ItemFactory {
 public:
     EllipseFactory();
+    ~EllipseFactory() override = default;
     std::shared_ptr<Item> create() const override;
 };

@@ -126,7 +126,7 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint) {
         m_currentWindow.pop_front();
     }
 
-    return m_currentWindowSum / m_currentWindow.size();
+    return m_currentWindowSum / static_cast<qreal>(m_currentWindow.size());
 }
 
 void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const {
@@ -191,7 +191,7 @@ void FreeformItem::m_draw(QPainter &painter, const QPointF &offset) const {
     }
 }
 
-int FreeformItem::size() const {
+qsizetype FreeformItem::size() const {
     return m_points.size();
 }
 
@@ -218,7 +218,6 @@ QVector<std::shared_ptr<Item>> FreeformItem::split() const {
             // create a copy
             std::shared_ptr<FreeformItem> newItem{std::make_shared<FreeformItem>()};
             newItem->m_properties = m_properties;
-            newItem->m_boundingBoxPadding = m_boundingBoxPadding;
 
             items.push_back(newItem);
         }

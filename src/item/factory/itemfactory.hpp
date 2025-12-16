@@ -24,5 +24,6 @@ class Item;
 class ItemFactory {
 public:
     ItemFactory();
+    virtual ~ItemFactory() = default;
     virtual std::shared_ptr<Item> create() const = 0;
 };

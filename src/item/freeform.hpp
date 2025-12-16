@@ -26,7 +26,7 @@
 class FreeformItem : public Item, public std::enable_shared_from_this<FreeformItem> {
 public:
     FreeformItem();
-    ~FreeformItem() = default;
+    ~FreeformItem() override = default;
     FreeformItem(const FreeformItem &freeform);
 
     static int minPointDistance();
@@ -40,7 +40,7 @@ public:
     void translate(const QPointF &amount) override;
 
     QVector<std::shared_ptr<Item>> split() const;
-    int size() const;
+    qsizetype size() const;
     int maxSize() const;
 
     virtual void addPoint(const QPointF &point, const qreal pressure, bool optimize = true);

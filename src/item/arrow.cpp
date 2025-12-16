@@ -43,9 +43,9 @@ void ArrowItem::calcArrowPoints() {
     int maxArrowSize{static_cast<int>(m_maxArrowSize)};
     int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
-    m_arrowP1 = QPoint(x2 - arrowSize * std::cos(angle - (M_PI / 180) * 30),
+    m_arrowP1 = QPointF(x2 - arrowSize * std::cos(angle - (M_PI / 180) * 30),
                        y2 - arrowSize * std::sin(angle - (M_PI / 180) * 30));
-    m_arrowP2 = QPoint(x2 - arrowSize * std::cos(angle + (M_PI / 180) * 30),
+    m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + (M_PI / 180) * 30),
                        y2 - arrowSize * std::sin(angle + (M_PI / 180) * 30));
 }
 

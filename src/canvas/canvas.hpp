@@ -26,7 +26,7 @@ class Canvas : public QWidget {
 
 public:
     explicit Canvas(QWidget *parent = nullptr);
-    ~Canvas();
+    ~Canvas() override;
 
     QPixmap *const canvas() const;
     QPixmap *const overlay() const;

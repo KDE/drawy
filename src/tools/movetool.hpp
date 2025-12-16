@@ -26,7 +26,7 @@ class Item;
 class MoveTool : public Tool {
 public:
     MoveTool();
-    ~MoveTool() = default;
+    ~MoveTool() override = default;
 
     void mousePressed(ApplicationContext *context) override;
     void mouseMoved(ApplicationContext *context) override;

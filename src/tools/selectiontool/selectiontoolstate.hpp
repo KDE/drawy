@@ -22,6 +22,8 @@ class ApplicationContext;
 
 class SelectionToolState {
 public:
+    virtual ~SelectionToolState() = default;
+
     // The bool return value indicates whether to lock the state or not
     virtual bool mousePressed(ApplicationContext *context) = 0;
     virtual void mouseMoved(ApplicationContext *context) = 0;

@@ -19,6 +19,7 @@
 #include "updatepropertycommand.hpp"
 
 #include <QRectF>
+#include <utility>
 
 #include "../context/applicationcontext.hpp"
 #include "../context/coordinatetransformer.hpp"
@@ -29,8 +30,8 @@
 
 UpdatePropertyCommand::UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items,
                                              Property newProperty)
-    : ItemCommand{items},
-      m_newProperty{newProperty} {
+    : ItemCommand{std::move(items)},
+      m_newProperty{std::move(newProperty)} {
 }
 
 void UpdatePropertyCommand::execute(ApplicationContext *context) {

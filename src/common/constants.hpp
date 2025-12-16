@@ -45,6 +45,8 @@ inline constexpr QColor darkForegroundColor{211, 211, 211};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int eraseItemOpacity{50};
 
+inline constexpr int boundingBoxPadding{10}; // in pixels
+
 inline constexpr int translationDelta{1};        // in pixels
 inline constexpr int shiftTranslationDelta{10};  // in pixels, when holding shift
 

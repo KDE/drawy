@@ -25,7 +25,7 @@
 
 template <typename Shape>
 QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape) const {
-    return queryItems(shape, [](std::shared_ptr<Item> item, const Shape &shape) {
+    return queryItems(shape, [](const std::shared_ptr<Item>& item, const Shape &shape) {
         return item->intersects(shape);
     });
 }

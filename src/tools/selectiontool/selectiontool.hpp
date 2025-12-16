@@ -24,7 +24,7 @@ class SelectionToolState;
 class SelectionTool : public Tool {
 public:
     SelectionTool();
-    ~SelectionTool() = default;
+    ~SelectionTool() override = default;
 
     QString tooltip() const override;
     IconManager::Icon icon() const override;

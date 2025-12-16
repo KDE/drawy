@@ -26,11 +26,11 @@
 
 ApplicationContext *ApplicationContext::m_instance = nullptr;
 
-ApplicationContext::ApplicationContext(QWidget *parent) : QObject{parent}, m_parentWidget{parent} {
-    m_selectionContext = new SelectionContext(this);
-    m_renderingContext = new RenderingContext(this);
-    m_uiContext = new UIContext(this);
-    m_spatialContext = new SpatialContext(this);
+ApplicationContext::ApplicationContext(QWidget *parent) : QObject{parent}, m_parentWidget{parent}, m_renderingContext(new RenderingContext(this)), m_selectionContext(new SelectionContext(this)), m_spatialContext(new SpatialContext(this)), m_uiContext(new UIContext(this)) {
+    
+    
+    
+    
 }
 
 ApplicationContext::~ApplicationContext() {

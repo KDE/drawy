@@ -18,6 +18,8 @@
 
 #include "deselectcommand.hpp"
 
+#include <utility>
+
 #include "../context/applicationcontext.hpp"
 #include "../context/coordinatetransformer.hpp"
 #include "../context/selectioncontext.hpp"
@@ -25,16 +27,13 @@
 #include "../item/item.hpp"
 #include "../data-structures/cachegrid.hpp"
 
-DeselectCommand::DeselectCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{items} {}
-
-DeselectCommand::~DeselectCommand() {
-}
+DeselectCommand::DeselectCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {}
 
 void DeselectCommand::execute(ApplicationContext *context) {
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};
-    for (const auto item : m_items) {
+    for (const auto& item : m_items) {
         dirtyRegion |= item->boundingBox();
         selectedItems.erase(item);
     }
@@ -46,7 +45,7 @@ void DeselectCommand::undo(ApplicationContext *context) {
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};
-    for (const auto item : m_items) {
+    for (const auto& item : m_items) {
         dirtyRegion |= item->boundingBox();
         selectedItems.insert(item);
     }

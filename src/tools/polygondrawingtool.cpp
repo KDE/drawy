@@ -55,7 +55,6 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context) {
         curItem->setProperty(Property::StrokeColor,
                              uiContext.propertyManager().value(Property::StrokeColor));
 
-        curItem->setBoundingBoxPadding(10 * renderingContext.canvas().scale());
         curItem->setStart(transformer.viewToWorld(uiContext.event().pos()));
 
         qreal zoom{renderingContext.zoomFactor()};

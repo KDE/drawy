@@ -26,12 +26,12 @@ void EllipseItem::m_draw(QPainter &painter, const QPointF &offset) const {
 }
 
 bool EllipseItem::onEllipse(QLineF line) const {
-    int sw{m_boundingBoxPadding + property(Property::StrokeWidth).value<int>()};
-    double X{m_boundingBox.x() + sw}, Y{m_boundingBox.y() + sw};
-    double W{m_boundingBox.width() - 2 * sw}, H{m_boundingBox.height() - 2 * sw};
+    int sw{boundingBoxPadding() + property(Property::StrokeWidth).value<int>()};
+    double bX{m_boundingBox.x() + sw}, bY{m_boundingBox.y() + sw};
+    double bW{m_boundingBox.width() - 2 * sw}, bH{m_boundingBox.height() - 2 * sw};
 
-    double h{X + W / 2}, k{Y + H / 2};
-    double a{W / 2}, b{H / 2};
+    double h{bX + bW / 2}, k{bY + bH / 2};
+    double a{bW / 2}, b{bH / 2};
     double x1{line.x1()}, y1{line.y1()};
     double x2{line.x2()}, y2{line.y2()};
 
@@ -42,17 +42,17 @@ bool EllipseItem::onEllipse(QLineF line) const {
     double ps{p * p};
     double qs{q * q};
 
-    double A{ps * bs + qs * as};
-    double B{2 * (x1 * p * bs - p * h * bs + y1 * q * as - q * k * as)};
-    double C{static_cast<long long>(x1) * x1 * bs + bs * h * h - 2 * x1 * h * bs +
-             static_cast<long long>(y1) * y1 * as + as * k * k - 2 * y1 * k * as - as * bs};
+    double firstTerm{ps * bs + qs * as};
+    double secondTerm{2 * (x1 * p * bs - p * h * bs + y1 * q * as - q * k * as)};
+    double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs +
+             y1 * y1 * as + as * k * k - 2 * y1 * k * as - as * bs};
 
-    double discriminant{B * B - 4 * A * C};
+    double discriminant{secondTerm * secondTerm - 4 * firstTerm * thirdTerm};
     if (discriminant < 0)
         return false;
 
-    double t1{(-B + sqrt(discriminant)) / (2.0 * A)};
-    double t2{(-B - sqrt(discriminant)) / (2.0 * A)};
+    double t1{(-secondTerm + sqrt(discriminant)) / (2.0 * firstTerm)};
+    double t2{(-secondTerm - sqrt(discriminant)) / (2.0 * firstTerm)};
 
     return (t1 >= 0.0 && t1 <= 1.0) || (t2 >= 0.0 && t2 <= 1.0);
 }

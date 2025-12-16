@@ -42,6 +42,7 @@
 ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, QObject(context) {
     KeybindManager &keybindManager{m_context->uiContext().keybindManager()};
 
+    // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
     Action *undoAction{new Action{"Undo", "Undo last action", [&]() { this->undo(); }, context}};
 
     Action *redoAction{
@@ -50,16 +51,6 @@ ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, 
     Action *zoomInAction{new Action{"Zoom In", "Zoom in", [&]() { this->zoomIn(); }, context}};
 
     Action *zoomOutAction{new Action{"Zoom Out", "Zoom out", [&]() { this->zoomOut(); }, context}};
-
-    Action *increaseThicknessAction{new Action{"Increase Thickness",
-                                               "Increase brush thickness",
-                                               [&]() { this->increaseThickness(); },
-                                               context}};
-
-    Action *decreaseThicknessAction{new Action{"Decrease Thickness",
-                                               "Decrease brush thickness",
-                                               [&]() { this->decreaseThickness(); },
-                                               context}};
 
     Action *freeformToolAction{new Action{"Freeform Tool",
                                           "Switch to freeform drawing tool",
@@ -279,12 +270,4 @@ void ActionManager::saveToFile() {
 void ActionManager::loadFromFile() {
     Loader loader{};
     loader.loadFromFile(m_context);
-}
-
-void ActionManager::increaseThickness() {
-    // TODO: implement
-}
-
-void ActionManager::decreaseThickness() {
-    // TODO: implement
 }

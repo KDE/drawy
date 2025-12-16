@@ -23,7 +23,7 @@
 class EllipseItem : public PolygonItem {
 public:
     EllipseItem();
-    virtual ~EllipseItem() = default;
+    ~EllipseItem() override = default;
 
     bool intersects(const QRectF &rect) override;
     bool intersects(const QLineF &rect) override;

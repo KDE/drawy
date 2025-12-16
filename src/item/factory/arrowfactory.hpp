@@ -23,5 +23,6 @@
 class ArrowFactory : public ItemFactory {
 public:
     ArrowFactory();
+    ~ArrowFactory() override = default;
     std::shared_ptr<Item> create() const override;
 };

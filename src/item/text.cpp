@@ -33,16 +33,16 @@
  * TODO: This file needs some refactoring as well, feel free to open a PR
  */
 
-TextItem::TextItem() {
+TextItem::TextItem() : m_selectionStart(INVALID),   m_selectionEnd(INVALID), m_text("") {
     m_properties[Property::StrokeColor] = Property{QColor(Qt::white), Property::StrokeColor};
     m_properties[Property::Opacity] = Property{255, Property::Opacity};
     m_properties[Property::FontSize] = Property{18, Property::FontSize};
 
-    m_selectionStart = INVALID;
-    m_selectionEnd = INVALID;
-    m_caretIndex = 0;
-    m_text = "";
-    m_mode = NORMAL;
+
+
+
+
+
 }
 
 TextItem::~TextItem() {
@@ -222,7 +222,7 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const {
 
     qsizetype low{0}, high{m_text.size()}, index{0};
     while (low <= high) {
-        double mid{low + (high - low) / 2.0};
+        qsizetype mid{low + (high - low) / 2};
 
         const double prefixWidth{
             metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(mid)).width()};
@@ -304,7 +304,7 @@ void TextItem::updateBoundingBox() {
     m_boundingBox.setHeight(size.height());
 }
 
-void TextItem::deleteSubStr(int start, int end) {
+void TextItem::deleteSubStr(qsizetype start, qsizetype end) {
     if (start < 0 || start >= m_text.size() || end < 0 || end >= m_text.size())
         return;
 
@@ -394,7 +394,7 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
 }
 
 qsizetype TextItem::getPrevBreak(qsizetype position) const {
-    auto isBreak = [&](int pos) {
+    auto isBreak = [&](qsizetype pos) {
         for (auto &sep : Common::wordSeparators) {
             if (m_text[pos] == sep)
                 return true;

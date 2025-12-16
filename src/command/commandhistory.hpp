@@ -31,7 +31,7 @@ public:
 
     void undo();
     void redo();
-    void insert(std::shared_ptr<Command> command);
+    void insert(const std::shared_ptr<Command>& command);
 
     static constexpr int maxCommands{100};  // arbitrary
 

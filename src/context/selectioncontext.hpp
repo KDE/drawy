@@ -28,7 +28,7 @@ class ApplicationContext;
 class SelectionContext : public QObject {
 public:
     SelectionContext(ApplicationContext *context);
-    ~SelectionContext();
+    ~SelectionContext() override;
 
     std::unordered_set<std::shared_ptr<Item>> &selectedItems();
     QRectF selectionBox() const;
@@ -36,7 +36,7 @@ public:
     void reset();
 
 public slots:
-    void updatePropertyOfSelectedItems(Property property);
+    void updatePropertyOfSelectedItems(const Property& property);
 
 private:
     std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};

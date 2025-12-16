@@ -19,8 +19,9 @@
 #include "itemcommand.hpp"
 
 #include <QDebug>
+#include <utility>
 
-ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items) : m_items{items} {
+ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items) : m_items{std::move(items)} {
 }
 
 ItemCommand::~ItemCommand() {

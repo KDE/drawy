@@ -36,14 +36,14 @@ private:
 public:
     ~OrderedList();
 
-    void insert(ItemPtr item);
-    void remove(ItemPtr item);
+    void insert(const ItemPtr& item);
+    void remove(const ItemPtr& item);
 
-    void bringForward(ItemPtr item);
-    void sendBackward(ItemPtr item);
-    void sendToBack(ItemPtr item);
-    void bringToFront(ItemPtr item);
-    bool hasItem(ItemPtr item) const;
+    void bringForward(const ItemPtr& item);
+    void sendBackward(const ItemPtr& item);
+    void sendToBack(const ItemPtr& item);
+    void bringToFront(const ItemPtr& item);
+    bool hasItem(const ItemPtr& item) const;
 
-    int zIndex(ItemPtr item) const;
+    int zIndex(const ItemPtr& item) const;
 };

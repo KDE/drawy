@@ -75,8 +75,6 @@ void FreeformTool::mousePressed(ApplicationContext *context) {
         curItem->setProperty(Property::StrokeColor,
                              uiContext.propertyManager().value(Property::StrokeColor));
 
-        curItem->setBoundingBoxPadding(10 * renderingContext.canvas().scale());
-
         m_lastPoint = uiContext.event().pos();
 
         curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext.event().pressure());

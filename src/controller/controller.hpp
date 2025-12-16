@@ -30,7 +30,7 @@ class Controller : public QObject {
 
 public:
     Controller(QObject *parent = nullptr);
-    ~Controller();
+    ~Controller() override;
 
 public slots:
     void mousePressed(QMouseEvent *event);

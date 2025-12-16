@@ -29,11 +29,11 @@ class ToolBar : public QFrame {
     Q_OBJECT
 public:
     explicit ToolBar(QWidget *parent = nullptr);
-    ~ToolBar();
+    ~ToolBar() override;
 
     Tool &curTool() const;
-    void addTool(Tool *tool, Tool::Type type);
-    QVector<Tool *> tools() const;
+    void addTool(const std::shared_ptr<Tool>& tool, Tool::Type type);
+    QVector<std::shared_ptr<Tool>> tools() const;
 
     Tool &tool(Tool::Type type) const;
     void changeTool(Tool::Type type);
@@ -44,7 +44,7 @@ signals:
 private:
     QButtonGroup *m_group{};
     QHBoxLayout *m_layout{};
-    std::unordered_map<int, Tool *> m_tools{};
+    std::unordered_map<int, std::shared_ptr<Tool>> m_tools{};
     void createButtons() const;
 
 private slots:

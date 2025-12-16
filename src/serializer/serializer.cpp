@@ -56,7 +56,7 @@ void Serializer::serialize(ApplicationContext *context) {
     m_object["zoom_factor"] = zoomFactor;
 }
 
-QJsonObject Serializer::toJson(std::shared_ptr<Item> item) {
+QJsonObject Serializer::toJson(const std::shared_ptr<Item>& item) {
     QJsonObject obj{};
 
     obj["type"] = QJsonValue(static_cast<int>(item->type()));

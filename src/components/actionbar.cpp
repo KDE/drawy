@@ -19,12 +19,13 @@
 #include "actionbar.hpp"
 
 #include <stdexcept>
+#include <format>
 
 #include "../context/applicationcontext.hpp"
 #include "../context/uicontext.hpp"
 
-ActionBar::ActionBar(QWidget *parent) : QFrame{parent} {
-    m_layout = new QHBoxLayout{this};
+ActionBar::ActionBar(QWidget *parent) : QFrame{parent}, m_layout(new QHBoxLayout{this}) {
+
     m_layout->setSpacing(10);
     this->setLayout(m_layout);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -48,8 +49,8 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id
 
 QPushButton &ActionBar::button(int id) {
     if (!m_map.contains(id)) {
-        throw std::logic_error(
-            QString::asprintf("Button with id %d was not found.", id).toStdString());
+        throw std::logic_error(std::format("Button with id {} was not found.", id));
     }
+
     return *m_map[id];
 }

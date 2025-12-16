@@ -30,8 +30,8 @@ class RenderingContext;
  *  3. View (the viewport) */
 class CoordinateTransformer {
 private:
-    SpatialContext *m_spatialContext;
-    RenderingContext *m_renderingContext;
+    SpatialContext *m_spatialContext{};
+    RenderingContext *m_renderingContext{};
     ApplicationContext *m_applicationContext;
 
 public:

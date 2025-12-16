@@ -18,16 +18,16 @@
 
 #include "moveitemcommand.hpp"
 
-#include "../common/constants.hpp"
+#include <utility>
+
 #include "../context/applicationcontext.hpp"
 #include "../context/coordinatetransformer.hpp"
 #include "../context/spatialcontext.hpp"
 #include "../data-structures/cachegrid.hpp"
-#include "../data-structures/quadtree.hpp"
 #include "../item/item.hpp"
 
 MoveItemCommand::MoveItemCommand(QVector<std::shared_ptr<Item>> items, QPointF delta)
-    : ItemCommand{items},
+    : ItemCommand{std::move(items)},
       m_delta{delta} {
 }
 
@@ -37,8 +37,6 @@ void MoveItemCommand::execute(ApplicationContext *context) {
     auto &cacheGrid{context->spatialContext().cacheGrid()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
-
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         item->translate(m_delta);
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
@@ -51,8 +49,6 @@ void MoveItemCommand::undo(ApplicationContext *context) {
     auto &cacheGrid{context->spatialContext().cacheGrid()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
-
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         item->translate(-m_delta);
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());

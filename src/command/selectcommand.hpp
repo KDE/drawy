@@ -25,7 +25,6 @@ class ApplicationContext;
 class SelectCommand : public ItemCommand {
 public:
     SelectCommand(QVector<std::shared_ptr<Item>> items);
-    ~SelectCommand();
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

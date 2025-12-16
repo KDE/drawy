@@ -64,14 +64,13 @@ void TextTool::mousePressed(ApplicationContext *context) {
 
         QPointF worldPos{transformer.viewToWorld(uiContext.event().pos())};
         QVector<std::shared_ptr<Item>> intersectingItems{
-            quadTree.queryItems(worldPos, [](std::shared_ptr<Item> item, const QPointF &point) {
+            quadTree.queryItems(worldPos, [](const std::shared_ptr<Item>& item, const QPointF &point) {
                 return item->type() == Item::Text && item->boundingBox().contains(point);
             })};
 
         if (intersectingItems.empty()) {
             if (m_curItem == nullptr) {
                 m_curItem = std::dynamic_pointer_cast<TextItem>(m_itemFactory->create());
-                m_curItem->setBoundingBoxPadding(10 * renderingContext.canvas().scale());
 
                 m_curItem->setProperty(Property::StrokeColor,
                                        uiContext.propertyManager().value(Property::StrokeColor));
@@ -129,7 +128,7 @@ void TextTool::mouseMoved(ApplicationContext *context) {
 
     QPointF worldPos{transformer.viewToWorld(uiContext.event().pos())};
     QVector<std::shared_ptr<Item>> intersectingItems{
-        quadTree.queryItems(worldPos, [](std::shared_ptr<Item> item, const QPointF &point) {
+        quadTree.queryItems(worldPos, [](const std::shared_ptr<Item>& item, const QPointF &point) {
             return item->type() == Item::Text && item->boundingBox().contains(point);
         })};
 

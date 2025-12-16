@@ -58,7 +58,7 @@ void CommandHistory::redo() {
     m_redoStack->pop_front();
 }
 
-void CommandHistory::insert(std::shared_ptr<Command> command) {
+void CommandHistory::insert(const std::shared_ptr<Command>& command) {
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }

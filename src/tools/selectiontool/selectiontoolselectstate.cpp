@@ -47,7 +47,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context) {
 
         QVector<std::shared_ptr<Item>> intersectingItems{
             spatialContext.quadtree().queryItems(transformer.viewToWorld(m_lastPos),
-                                                 [](std::shared_ptr<Item> item, auto &pos) {
+                                                 [](const std::shared_ptr<Item>& item, auto &pos) {
                                                      return item->boundingBox().contains(pos);
                                                  })};
 
@@ -108,7 +108,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context) {
 
     QVector<std::shared_ptr<Item>> intersectingItems{
         spatialContext.quadtree().queryItems(worldSelectionBox,
-                                             [](std::shared_ptr<Item> item, const QRectF &rect) {
+                                             [](const std::shared_ptr<Item>& item, const QRectF &rect) {
                                                  return rect.contains(item->boundingBox());
                                              })};
 
@@ -139,7 +139,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context) {
 
         if (!selectedItems.empty()) {
             QVector<std::shared_ptr<Item>> items{};
-            for (const auto item : selectedItems) {
+            for (const auto& item : selectedItems) {
                 items.push_back(item);
             }
 

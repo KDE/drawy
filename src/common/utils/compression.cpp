@@ -27,6 +27,7 @@
 
 #include <io/CompressedInputStream.hpp>
 #include <io/CompressedOutputStream.hpp>
+#include <ios>
 #include <sstream>
 
 namespace Common::Utils::Compression {
@@ -34,7 +35,7 @@ QByteArray compressData(const QByteArray &data) {
     std::ostringstream stream{std::ios::binary};
 
     kanzi::CompressedOutputStream cStream{stream, 1, "HUFFMAN", "LZX"};
-    cStream.write(data.constData(), static_cast<size_t>(data.size()));
+    cStream.write(data.constData(), static_cast<std::streamsize>(data.size()));
     cStream.close();
 
     std::string result = stream.str();

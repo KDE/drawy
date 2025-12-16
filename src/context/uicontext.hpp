@@ -33,7 +33,7 @@ class IconManager;
 class UIContext : public QObject {
 public:
     UIContext(ApplicationContext *context);
-    ~UIContext();
+    ~UIContext() override;
 
     void setUIContext();
 

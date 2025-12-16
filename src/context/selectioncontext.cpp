@@ -43,14 +43,14 @@ std::unordered_set<std::shared_ptr<Item>> &SelectionContext::selectedItems() {
 
 QRectF SelectionContext::selectionBox() const {
     QRectF selectionBox;
-    for (auto item : m_selectedItems) {
+    for (const auto& item : m_selectedItems) {
         selectionBox |= item->boundingBox();
     }
     return selectionBox;
 }
 
 // PUBLIC SLOTS
-void SelectionContext::updatePropertyOfSelectedItems(Property property) {
+void SelectionContext::updatePropertyOfSelectedItems(const Property& property) {
     QVector<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
     auto &commandHistory{m_applicationContext->spatialContext().commandHistory()};

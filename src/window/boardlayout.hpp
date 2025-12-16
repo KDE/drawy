@@ -24,7 +24,7 @@ class BoardLayout : public QLayout {
     Q_OBJECT
 public:
     BoardLayout(QWidget *parent = nullptr);
-    ~BoardLayout();
+    ~BoardLayout() override;
 
     void addItem(QLayoutItem *item) override;
     QLayoutItem *itemAt(int index) const override;
