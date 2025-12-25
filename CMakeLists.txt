@@ -40,11 +40,14 @@ qt_add_executable(${PROJECT_NAME}
     ${PROJECT_SOURCES}
 )
 
-add_subdirectory(deps)
-
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
+# ZSTD for compression
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(ZSTD REQUIRED libzstd)
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${ZSTD_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LIBRARIES})
 
 # Set bundle properties for macOS / iOS.
 if (APPLE)
@@ -68,6 +71,8 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
 
 if (UNIX AND NOT APPLE)
   install(PROGRAMS deploy/linux/io.github.prayag2.Drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME io.github.prayag2.Drawy.desktop)

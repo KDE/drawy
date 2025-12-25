@@ -43,6 +43,8 @@
                 cmake
                 bear
                 entr
+                zstd.dev
+                pkg-config
               ]);
           };
       });

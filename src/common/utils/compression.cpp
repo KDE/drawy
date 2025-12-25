@@ -19,55 +19,48 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-// NOTE: qt headers MUST be placed before
-// kansi otherwise there will be a macro conflict
-// fuck headers!!
-
 #include "compression.hpp"
 
-#include <io/CompressedInputStream.hpp>
-#include <io/CompressedOutputStream.hpp>
-#include <ios>
-#include <sstream>
+#include <QDebug>
+#include <zstd.h>
 
 namespace Common::Utils::Compression {
 QByteArray compressData(const QByteArray &data) {
-    std::ostringstream stream{std::ios::binary};
+    size_t requiredOutputSize = ZSTD_compressBound(data.size());
 
-    kanzi::CompressedOutputStream cStream{stream, 1, "HUFFMAN", "LZX"};
-    cStream.write(data.constData(), static_cast<std::streamsize>(data.size()));
-    cStream.close();
+    QByteArray output{static_cast<qsizetype>(requiredOutputSize), '\0'};
 
-    std::string result = stream.str();
-    return QByteArray(result.data(), static_cast<int>(result.size()));
+    size_t result = ZSTD_compress(output.data(), requiredOutputSize, data.data(), data.size(), 4);
+
+    if (ZSTD_isError(result))
+        throw std::runtime_error(ZSTD_getErrorName(result));
+
+    output.resize(result);
+    return output;
 }
 
 QByteArray decompressData(const QByteArray &data) {
-    std::string compressed{data.constData(), static_cast<size_t>(data.size())};
+    unsigned long long originalSize =
+        ZSTD_getFrameContentSize(data.data(), data.size());
 
-    std::istringstream stream{compressed, std::ios::binary};
+    if (originalSize == ZSTD_CONTENTSIZE_ERROR)
+        throw std::runtime_error("Invalid ZSTD frame");
 
-    kanzi::CompressedInputStream cStream{stream, 1, "HUFFMAN", "LZX"};
+    if (originalSize == ZSTD_CONTENTSIZE_UNKNOWN)
+        throw std::runtime_error("Unknown decompressed size");
 
-    std::ostringstream out{std::ios::binary};
-    std::vector<char> buffer(4096);
+    QByteArray output(originalSize, '\0');
 
-    while (true) {
-        cStream.read(buffer.data(), static_cast<std::streamsize>(buffer.size()));
+    size_t result = ZSTD_decompress(
+        output.data(),
+        originalSize,
+        data.data(),
+        data.size()
+    );
 
-        std::streamsize n = cStream.gcount();
-        if (n <= 0)
-            break;
+    if (ZSTD_isError(result))
+        throw std::runtime_error(ZSTD_getErrorName(result));
 
-        out.write(buffer.data(), n);
-
-        if (cStream.eof())
-            break;
-    }
-
-    cStream.close();
-
-    std::string result = out.str();
-    return QByteArray(result.data(), static_cast<int>(result.size()));
+    return output;
 }
 }  // namespace Common::Utils::Compression
