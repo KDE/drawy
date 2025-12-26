@@ -4,6 +4,8 @@
 
 #include "ungroupcommand.hpp"
 
+#include <memory>
+
 #include "../context/applicationcontext.hpp"
 #include "../context/coordinatetransformer.hpp"
 #include "../context/selectioncontext.hpp"
@@ -11,10 +13,9 @@
 #include "../data-structures/cachegrid.hpp"
 #include "../data-structures/quadtree.hpp"
 #include "../item/group.hpp"
-#include <memory>
 
-UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>>& items) : ItemCommand{items} {
-    for (const auto& item : items) {
+UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items) : ItemCommand{items} {
+    for (const auto &item : items) {
         if (item->type() == Item::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
         }
@@ -30,13 +31,13 @@ void UngroupCommand::execute(ApplicationContext *context) {
     int count = 0;
 
     QRectF dirtyRegion{};
-    for (const auto& group : m_groups) {
+    for (const auto &group : m_groups) {
         quadtree.deleteItem(group);
 
         dirtyRegion |= group->boundingBox();
 
         auto subItems{group->unGroup()};
-        for (const auto& subItem : subItems) {
+        for (const auto &subItem : subItems) {
             quadtree.insertItem(subItem, false);
             selectedItems.insert(subItem);
         }
@@ -52,13 +53,13 @@ void UngroupCommand::undo(ApplicationContext *context) {
     selectedItems.clear();
 
     QRectF dirtyRegion{};
-    for (const auto& group : m_groups) {
+    for (const auto &group : m_groups) {
         quadtree.insertItem(group);
         selectedItems.insert(group);
         dirtyRegion |= group->boundingBox();
 
         auto subItems{group->unGroup()};
-        for (const auto& subItem : subItems) {
+        for (const auto &subItem : subItems) {
             quadtree.deleteItem(subItem, false);
         }
     }

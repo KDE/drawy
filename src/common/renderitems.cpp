@@ -35,7 +35,7 @@ void Common::renderCanvas(ApplicationContext *context) {
 
     QPainter &canvasPainter{context->renderingContext().canvasPainter()};
 
-    for (const auto& cell : visibleCells) {
+    for (const auto &cell : visibleCells) {
         // canvasPainter.save();
         // QPen pen; pen.setColor(Qt::white); canvasPainter.setPen(pen);
         // canvasPainter.drawRect(transformer.gridToView(cell->rect()));
@@ -48,7 +48,7 @@ void Common::renderCanvas(ApplicationContext *context) {
             QVector<std::shared_ptr<Item>> intersectingItems{
                 context->spatialContext().quadtree().queryItems(
                     transformer.gridToWorld(cell->rect()),
-                    [](const auto& a, auto b) { return true; })};
+                    [](const auto &a, auto b) { return true; })};
 
             if (intersectingItems.empty())
                 continue;
@@ -60,7 +60,7 @@ void Common::renderCanvas(ApplicationContext *context) {
             cell->painter().resetTransform();
             cell->painter().scale(zoomFactor, zoomFactor);
 
-            for (const auto& intersectingItem : intersectingItems) {
+            for (const auto &intersectingItem : intersectingItems) {
                 intersectingItem->draw(cell->painter(), topLeftPoint);
             }
         }
@@ -82,7 +82,7 @@ void Common::renderCanvas(ApplicationContext *context) {
 
     canvasPainter.setPen(pen);
 
-    for (const auto& item : selectedItems) {
+    for (const auto &item : selectedItems) {
         QRectF curBox{transformer.worldToView(item->boundingBox()).normalized()};
         canvasPainter.drawRect(curBox);
         selectionBox |= curBox;

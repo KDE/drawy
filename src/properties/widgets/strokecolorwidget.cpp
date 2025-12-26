@@ -12,12 +12,13 @@
 #include "../property.hpp"
 
 // TODO: Use a better widget
-StrokeColorWidget::StrokeColorWidget(QWidget *parent) : PropertyWidget{parent}, m_group(new QButtonGroup{m_widget}) {
+StrokeColorWidget::StrokeColorWidget(QWidget *parent)
+    : PropertyWidget{parent},
+      m_group(new QButtonGroup{m_widget}) {
     m_widget = new QWidget{parent};
 
     QHBoxLayout *layout{new QHBoxLayout{m_widget}};
     layout->setContentsMargins(0, 0, 0, 0);
-
 
     m_widget->setLayout(layout);
 

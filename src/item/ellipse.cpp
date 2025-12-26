@@ -30,8 +30,8 @@ bool EllipseItem::onEllipse(QLineF line) const {
 
     double firstTerm{ps * bs + qs * as};
     double secondTerm{2 * (x1 * p * bs - p * h * bs + y1 * q * as - q * k * as)};
-    double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs +
-             y1 * y1 * as + as * k * k - 2 * y1 * k * as - as * bs};
+    double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs + y1 * y1 * as + as * k * k -
+                     2 * y1 * k * as - as * bs};
 
     double discriminant{secondTerm * secondTerm - 4 * firstTerm * thirdTerm};
     if (discriminant < 0)

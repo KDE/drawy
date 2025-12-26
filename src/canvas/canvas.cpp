@@ -11,7 +11,6 @@
 // PUBLIC
 Canvas::Canvas(QWidget *parent) : QWidget{parent}, m_maxSize(m_sizeHint) {
     m_sizeHint = screen()->size() * m_scale;
-    
 
     m_canvas = new QPixmap(m_sizeHint);
     m_overlay = new QPixmap(m_sizeHint);

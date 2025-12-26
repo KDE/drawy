@@ -2,16 +2,17 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "../common/utils/math.hpp"
-#include "../item/item.hpp"
-#include "orderedlist.hpp"
 #include <cstdlib>
 #include <memory>
 #include <unordered_map>
 
+#include "../common/utils/math.hpp"
+#include "../item/item.hpp"
+#include "orderedlist.hpp"
+
 template <typename Shape>
 QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape) const {
-    return queryItems(shape, [](const std::shared_ptr<Item>& item, const Shape &shape) {
+    return queryItems(shape, [](const std::shared_ptr<Item> &item, const Shape &shape) {
         return item->intersects(shape);
     });
 }

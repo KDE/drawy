@@ -3,10 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "selectiontoolselectstate.hpp"
-#include "../../command/selectcommand.hpp"
-#include "../../command/deselectcommand.hpp"
-#include "../../command/commandhistory.hpp"
+
 #include "../../canvas/canvas.hpp"
+#include "../../command/commandhistory.hpp"
+#include "../../command/deselectcommand.hpp"
+#include "../../command/selectcommand.hpp"
 #include "../../components/propertybar.hpp"
 #include "../../context/applicationcontext.hpp"
 #include "../../context/coordinatetransformer.hpp"
@@ -33,7 +34,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context) {
 
         QVector<std::shared_ptr<Item>> intersectingItems{
             spatialContext.quadtree().queryItems(transformer.viewToWorld(m_lastPos),
-                                                 [](const std::shared_ptr<Item>& item, auto &pos) {
+                                                 [](const std::shared_ptr<Item> &item, auto &pos) {
                                                      return item->boundingBox().contains(pos);
                                                  })};
 
@@ -49,12 +50,15 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context) {
         if (intersectingItems.empty()) {
             m_isActive = true;
         } else {
-            auto& item{intersectingItems.back()};
-            if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+            auto &item{intersectingItems.back()};
+            if ((event.modifiers() & Qt::ShiftModifier) &&
+                selectedItems.find(item) != selectedItems.end()) {
                 // deselect the item if selected
-                commandHistory.insert(std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory.insert(
+                    std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
             } else {
-                commandHistory.insert(std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory.insert(
+                    std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
             }
             m_isActive = false;
             lockState = false;
@@ -92,11 +96,11 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context) {
     QRectF selectionBox{m_lastPos, curPos};
     QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
 
-    QVector<std::shared_ptr<Item>> intersectingItems{
-        spatialContext.quadtree().queryItems(worldSelectionBox,
-                                             [](const std::shared_ptr<Item>& item, const QRectF &rect) {
-                                                 return rect.contains(item->boundingBox());
-                                             })};
+    QVector<std::shared_ptr<Item>> intersectingItems{spatialContext.quadtree().queryItems(
+        worldSelectionBox,
+        [](const std::shared_ptr<Item> &item, const QRectF &rect) {
+            return rect.contains(item->boundingBox());
+        })};
 
     selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
     context->uiContext().propertyBar().updateToolProperties();
@@ -125,7 +129,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context) {
 
         if (!selectedItems.empty()) {
             QVector<std::shared_ptr<Item>> items{};
-            for (const auto& item : selectedItems) {
+            for (const auto &item : selectedItems) {
                 items.push_back(item);
             }
 

@@ -15,7 +15,8 @@
 #include "../data-structures/quadtree.hpp"
 #include "../item/item.hpp"
 
-RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {
+RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items)
+    : ItemCommand{std::move(items)} {
 }
 
 void RemoveItemCommand::execute(ApplicationContext *context) {

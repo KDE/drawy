@@ -19,7 +19,6 @@ CacheCell::CacheCell(const QPoint &point) : m_point{point}, m_dirty(true) {
     m_painter->setClipRegion(m_image->rect());
 
     CacheCell::counter++;
-    
 }
 
 CacheCell::~CacheCell() {
@@ -90,7 +89,7 @@ QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect) {
 
 void CacheGrid::markDirty(const QRect &rect) {
     QVector<std::shared_ptr<CacheCell>> dirtyCells{queryCells(rect)};
-    for (const std::shared_ptr<CacheCell>& cell : dirtyCells) {
+    for (const std::shared_ptr<CacheCell> &cell : dirtyCells) {
         cell->setDirty(true);
     }
 }
@@ -142,7 +141,7 @@ void CacheGrid::setSize(int newSize) {
 }
 
 void CacheGrid::markAllDirty() {
-    for (const auto& cell : m_grid) {
+    for (const auto &cell : m_grid) {
         cell->setDirty(true);
     }
 }
