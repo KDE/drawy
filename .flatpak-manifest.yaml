@@ -1,4 +1,4 @@
-id: io.github.prayag2.Drawy
+id: org.kde.Drawy
 runtime: org.kde.Platform
 runtime-version: '6.10'
 sdk: org.kde.Sdk
