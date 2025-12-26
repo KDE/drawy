@@ -18,7 +18,7 @@ public:
     ~ToolBar() override;
 
     Tool &curTool() const;
-    void addTool(const std::shared_ptr<Tool>& tool, Tool::Type type);
+    void addTool(const std::shared_ptr<Tool> &tool, Tool::Type type);
     QVector<std::shared_ptr<Tool>> tools() const;
 
     Tool &tool(Tool::Type type) const;

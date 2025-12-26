@@ -19,7 +19,7 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    void group(const QVector<std::shared_ptr<Item>>& items);
+    void group(const QVector<std::shared_ptr<Item>> &items);
     QVector<std::shared_ptr<Item>> unGroup();
 
     void setProperty(const Property::Type propertyType, Property newObj) override;

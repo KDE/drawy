@@ -18,8 +18,9 @@
 #include "../event/event.hpp"
 #include "../tools/tool.hpp"
 
-Controller::Controller(QObject *parent) : QObject{parent}, m_context(ApplicationContext::instance(dynamic_cast<QWidget *>(parent))) {
-    
+Controller::Controller(QObject *parent)
+    : QObject{parent},
+      m_context(ApplicationContext::instance(dynamic_cast<QWidget *>(parent))) {
     m_context->setContexts();
 }
 

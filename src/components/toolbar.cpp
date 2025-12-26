@@ -8,9 +8,10 @@
 #include "../context/uicontext.hpp"
 #include "../iconmanager/iconmanager.hpp"
 
-ToolBar::ToolBar(QWidget *parent) : QFrame{parent}, m_group(new QButtonGroup(this)), m_layout(new QHBoxLayout(this)) {
-
-
+ToolBar::ToolBar(QWidget *parent)
+    : QFrame{parent},
+      m_group(new QButtonGroup(this)),
+      m_layout(new QHBoxLayout(this)) {
     this->setLayout(m_layout);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     this->setFrameShape(QFrame::StyledPanel);
@@ -21,7 +22,8 @@ ToolBar::ToolBar(QWidget *parent) : QFrame{parent}, m_group(new QButtonGroup(thi
     QObject::connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
 
-ToolBar::~ToolBar() {}
+ToolBar::~ToolBar() {
+}
 
 Tool &ToolBar::curTool() const {
     int curID{m_group->checkedId()};
@@ -41,7 +43,7 @@ QVector<std::shared_ptr<Tool>> ToolBar::tools() const {
     return result;
 }
 
-void ToolBar::addTool(const std::shared_ptr<Tool>& tool, Tool::Type type) {
+void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type) {
     if (tool == nullptr)
         return;
 

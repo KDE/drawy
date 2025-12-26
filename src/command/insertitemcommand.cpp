@@ -13,7 +13,8 @@
 #include "../data-structures/cachegrid.hpp"
 #include "../data-structures/quadtree.hpp"
 
-InsertItemCommand::InsertItemCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {
+InsertItemCommand::InsertItemCommand(QVector<std::shared_ptr<Item>> items)
+    : ItemCommand{std::move(items)} {
 }
 
 void InsertItemCommand::execute(ApplicationContext *context) {

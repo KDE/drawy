@@ -22,7 +22,6 @@ PropertyBar::PropertyBar(QWidget *parent) : QFrame{parent}, m_layout(new QVBoxLa
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     this->setProperty("class", "drawlyFrame drawyPropertyBar");
 
-    
     setLayout(m_layout);
 }
 

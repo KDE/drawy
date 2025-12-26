@@ -19,16 +19,10 @@
  * TODO: This file needs some refactoring as well, feel free to open a PR
  */
 
-TextItem::TextItem() : m_selectionStart(INVALID),   m_selectionEnd(INVALID), m_text("") {
+TextItem::TextItem() : m_selectionStart(INVALID), m_selectionEnd(INVALID), m_text("") {
     m_properties[Property::StrokeColor] = Property{QColor(Qt::white), Property::StrokeColor};
     m_properties[Property::Opacity] = Property{255, Property::Opacity};
     m_properties[Property::FontSize] = Property{18, Property::FontSize};
-
-
-
-
-
-
 }
 
 TextItem::~TextItem() {

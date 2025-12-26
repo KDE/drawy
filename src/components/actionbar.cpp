@@ -4,14 +4,13 @@
 
 #include "actionbar.hpp"
 
-#include <stdexcept>
 #include <format>
+#include <stdexcept>
 
 #include "../context/applicationcontext.hpp"
 #include "../context/uicontext.hpp"
 
 ActionBar::ActionBar(QWidget *parent) : QFrame{parent}, m_layout(new QHBoxLayout{this}) {
-
     m_layout->setSpacing(10);
     this->setLayout(m_layout);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);

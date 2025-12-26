@@ -3,31 +3,33 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "group.hpp"
+
 #include <stdexcept>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset) {
-    for (const auto& item : m_items) {
-        item->draw(painter, offset); }
+    for (const auto &item : m_items) {
+        item->draw(painter, offset);
+    }
 }
 
 void GroupItem::erase(QPainter &painter, const QPointF &offset) const {
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         item->erase(painter, offset);
     }
 }
 
 void GroupItem::translate(const QPointF &amount) {
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         item->translate(amount);
     }
 }
 
-void GroupItem::group(const QVector<std::shared_ptr<Item>>& items) {
+void GroupItem::group(const QVector<std::shared_ptr<Item>> &items) {
     m_items = items;
 }
 
 bool GroupItem::intersects(const QRectF &rect) {
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         if (item->intersects(rect)) {
             return true;
         }
@@ -37,7 +39,7 @@ bool GroupItem::intersects(const QRectF &rect) {
 };
 
 bool GroupItem::intersects(const QLineF &line) {
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         if (item->intersects(line)) {
             return true;
         }
@@ -46,7 +48,6 @@ bool GroupItem::intersects(const QLineF &line) {
     return false;
 };
 
-
 QVector<std::shared_ptr<Item>> GroupItem::unGroup() {
     return m_items;
 }
@@ -54,7 +55,7 @@ QVector<std::shared_ptr<Item>> GroupItem::unGroup() {
 const QRectF GroupItem::boundingBox() const {
     QRectF result{};
 
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         result |= item->boundingBox();
     }
 
@@ -66,7 +67,7 @@ Item::Type GroupItem::type() const {
 }
 
 void GroupItem::setProperty(const Property::Type propertyType, Property newObj) {
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         item->setProperty(propertyType, newObj);
     }
 };
@@ -77,7 +78,7 @@ const Property GroupItem::property(const Property::Type propertyType) const {
     }
 
     Property property{};
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         try {
             if (property.type() != Property::Null) {
                 if (property.variant() != item->property(propertyType).variant()) {
@@ -86,7 +87,7 @@ const Property GroupItem::property(const Property::Type propertyType) const {
             } else {
                 property = item->property(propertyType);
             }
-        } catch (const std::logic_error& e) {
+        } catch (const std::logic_error &e) {
             // ignore
         }
     }
@@ -97,7 +98,7 @@ const Property GroupItem::property(const Property::Type propertyType) const {
 const QVector<Property> GroupItem::properties() const {
     QVector<Property> result{};
 
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         result += item->properties();
     }
 
@@ -106,7 +107,7 @@ const QVector<Property> GroupItem::properties() const {
 
 const QVector<Property::Type> GroupItem::propertyTypes() const {
     std::unordered_set<Property::Type> types;
-    for (const auto& item : m_items) {
+    for (const auto &item : m_items) {
         auto &itemPropertyTypes{item->propertyTypes()};
         types.insert(itemPropertyTypes.begin(), itemPropertyTypes.end());
     }

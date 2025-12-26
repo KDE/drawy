@@ -22,7 +22,7 @@ public:
     void reset();
 
 public slots:
-    void updatePropertyOfSelectedItems(const Property& property);
+    void updatePropertyOfSelectedItems(const Property &property);
 
 private:
     std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};

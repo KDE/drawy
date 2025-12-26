@@ -66,7 +66,7 @@ void EraserTool::mouseMoved(ApplicationContext *context) {
         QVector<std::shared_ptr<Item>> toBeErased{
             spatialContext.quadtree().queryItems(worldEraserRect)};
 
-        for (const std::shared_ptr<Item>& item : toBeErased) {
+        for (const std::shared_ptr<Item> &item : toBeErased) {
             if (m_toBeErased.count(item) > 0)
                 continue;
 
@@ -106,7 +106,7 @@ void EraserTool::mouseReleased(ApplicationContext *context) {
         CommandHistory &commandHistory{spatialContext.commandHistory()};
 
         QVector<std::shared_ptr<Item>> erasedItems;
-        for (const std::shared_ptr<Item>& item : m_toBeErased) {
+        for (const std::shared_ptr<Item> &item : m_toBeErased) {
             if (selectionContext.selectedItems().count(item) > 0) {
                 selectionContext.selectedItems().erase(item);
             }

@@ -21,7 +21,7 @@ public:
 private:
     static QJsonObject toJson(const QRectF &rect);
     static QJsonObject toJson(const QPointF &point);
-    static QJsonObject toJson(const std::shared_ptr<Item>& item);
+    static QJsonObject toJson(const std::shared_ptr<Item> &item);
     static QJsonObject toJson(const Property &property);
 
     template <typename T>

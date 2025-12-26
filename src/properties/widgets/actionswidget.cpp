@@ -3,14 +3,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "actionswidget.hpp"
-#include "../../context/applicationcontext.hpp"
-#include "../../context/uicontext.hpp"
-#include "../../keybindings/actionmanager.hpp"
-#include "../../iconmanager/iconmanager.hpp"
-#include "../property.hpp"
+
 #include <QBoxLayout>
 #include <QPushButton>
 #include <QWidget>
+
+#include "../../context/applicationcontext.hpp"
+#include "../../context/uicontext.hpp"
+#include "../../iconmanager/iconmanager.hpp"
+#include "../../keybindings/actionmanager.hpp"
+#include "../property.hpp"
 
 ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
     m_widget = new QWidget{parent};
@@ -41,9 +43,15 @@ ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
 
     ActionManager &actionManager{ApplicationContext::instance()->uiContext().actionManager()};
 
-    QObject::connect(deleteButton, &QPushButton::clicked, this, [&](){ actionManager.deleteSelection(); });
-    QObject::connect(groupButton, &QPushButton::clicked, this, [&](){ actionManager.groupItems(); });
-    QObject::connect(ungroupButton, &QPushButton::clicked, this, [&](){ actionManager.ungroupItems(); });
+    QObject::connect(deleteButton, &QPushButton::clicked, this, [&]() {
+        actionManager.deleteSelection();
+    });
+    QObject::connect(groupButton, &QPushButton::clicked, this, [&]() {
+        actionManager.groupItems();
+    });
+    QObject::connect(ungroupButton, &QPushButton::clicked, this, [&]() {
+        actionManager.ungroupItems();
+    });
 
     m_widget->hide();
 }

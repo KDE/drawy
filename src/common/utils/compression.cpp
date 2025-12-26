@@ -4,8 +4,9 @@
 
 #include "compression.hpp"
 
-#include <QDebug>
 #include <zstd.h>
+
+#include <QDebug>
 
 namespace Common::Utils::Compression {
 QByteArray compressData(const QByteArray &data) {
@@ -23,8 +24,7 @@ QByteArray compressData(const QByteArray &data) {
 }
 
 QByteArray decompressData(const QByteArray &data) {
-    unsigned long long originalSize =
-        ZSTD_getFrameContentSize(data.data(), data.size());
+    unsigned long long originalSize = ZSTD_getFrameContentSize(data.data(), data.size());
 
     if (originalSize == ZSTD_CONTENTSIZE_ERROR)
         throw std::runtime_error("Invalid ZSTD frame");
@@ -34,12 +34,7 @@ QByteArray decompressData(const QByteArray &data) {
 
     QByteArray output(originalSize, '\0');
 
-    size_t result = ZSTD_decompress(
-        output.data(),
-        originalSize,
-        data.data(),
-        data.size()
-    );
+    size_t result = ZSTD_decompress(output.data(), originalSize, data.data(), data.size());
 
     if (ZSTD_isError(result))
         throw std::runtime_error(ZSTD_getErrorName(result));

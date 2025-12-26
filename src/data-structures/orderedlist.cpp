@@ -11,7 +11,7 @@ OrderedList::~OrderedList() {
     qDebug() << "Object deleted: OrderedList";
 }
 
-bool OrderedList::hasItem(const ItemPtr& item) const {
+bool OrderedList::hasItem(const ItemPtr &item) const {
     if (m_itemIterMap.find(item) == m_itemIterMap.end()) {
         return false;
     }
@@ -21,7 +21,7 @@ bool OrderedList::hasItem(const ItemPtr& item) const {
     return true;
 }
 
-void OrderedList::insert(const ItemPtr& item) {
+void OrderedList::insert(const ItemPtr &item) {
     // item already exists
     if (hasItem(item)) {
         return;
@@ -38,7 +38,7 @@ void OrderedList::insert(const ItemPtr& item) {
     m_itemIterMap[item] = std::prev(m_itemList.end());
 }
 
-void OrderedList::remove(const ItemPtr& item) {
+void OrderedList::remove(const ItemPtr &item) {
     // item already deleted
     if (!hasItem(item)) {
         return;
@@ -50,7 +50,7 @@ void OrderedList::remove(const ItemPtr& item) {
     m_zIndex.erase(item);
 }
 
-void OrderedList::bringForward(const ItemPtr& item) {
+void OrderedList::bringForward(const ItemPtr &item) {
     if (!hasItem(item)) {
         throw std::runtime_error("Item was not found in the iterator map");
     }
@@ -71,7 +71,7 @@ void OrderedList::bringForward(const ItemPtr& item) {
     m_zIndex[*nextIterator] = val;
 }
 
-void OrderedList::sendBackward(const ItemPtr& item) {
+void OrderedList::sendBackward(const ItemPtr &item) {
     if (!hasItem(item)) {
         throw std::runtime_error("Item was not found in the iterator map");
     }
@@ -92,7 +92,7 @@ void OrderedList::sendBackward(const ItemPtr& item) {
     m_zIndex[*prevIterator] = val;
 };
 
-void OrderedList::sendToBack(const ItemPtr& item) {
+void OrderedList::sendToBack(const ItemPtr &item) {
     if (!hasItem(item)) {
         throw std::runtime_error("Item was not found in the iterator map");
     }
@@ -107,7 +107,7 @@ void OrderedList::sendToBack(const ItemPtr& item) {
     m_zIndex[item] = m_zIndex[*firstIterator] - 1;
 }
 
-void OrderedList::bringToFront(const ItemPtr& item) {
+void OrderedList::bringToFront(const ItemPtr &item) {
     if (!hasItem(item)) {
         throw std::runtime_error("Item was not found in the iterator map");
     }
@@ -122,7 +122,7 @@ void OrderedList::bringToFront(const ItemPtr& item) {
     m_zIndex[item] = m_zIndex[*lastIterator] + 1;
 }
 
-int OrderedList::zIndex(const ItemPtr& item) const {
+int OrderedList::zIndex(const ItemPtr &item) const {
     if (!hasItem(item)) {
         throw std::runtime_error("Item not found in zIndex map");
     }
