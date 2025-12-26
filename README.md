@@ -1,64 +1,40 @@
-<img src="assets/logo-256.png" width=100/>
-
-# Drawy
+# <img src="./assets/logo-32.png" align="left" width="32">‎ Drawy
 Your handy, infinite, brainstorming tool!  
-
-<img src="./assets/screenshot.png" style="width: 100%"/>
-
   
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
 
-## Compiling from Source
+### Compiling from Source
 - Install `cmake`, `g++`, `zstd`
 - Install Qt 6.9 or above from [here](https://www.qt.io/download-qt-installer-oss) or using [aqtinstall](https://github.com/miurahr/aqtinstall)
-- Clone this repository: `git clone https://invent.kde.org/prayag/drawy && cd drawy`
-- Setup cmake: `cmake -B build -S . -DCMAKE_BUILD_TYPE=Release`
-- Compile: `cmake --build build --config Release`
-- Run: `./build/drawy`
+```
+git clone https://invent.kde.org/prayag/drawy
+cd drawy
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+./build/drawy
+```
+### Keyboard Shortcuts
+Default keyboard shortcuts can be viewed here: [KEYBINDINGS.md](docs/keybindings.md)
 
-# Keyboard Shortcuts
-Future releases will allow you to change the keyboard shortcuts. For now they are hardcoded. Here's a list of all available keyboard shortcuts:
-| Key Combination                                                             | Description       |
-|:---------------------------------------------------------------------------:|:-----------------:|
-| <kbd>Ctrl</kbd> + <kbd>Z</kbd>                                              | Undo              |
-| <kbd>Ctrl</kbd> + <kbd>Y</kbd>, <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo              |
-| <kbd>Ctrl</kbd> + <kbd>+</kbd>                                                | Zoom In           |
-| <kbd>Ctrl</kbd> + <kbd>-</kbd>                                                | Zoom Out          |
-| <kbd>Ctrl</kbd> + <kbd>G</kbd>                                                | Group selection   |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>                               | Ungroup selection |
-| <kbd>P</kbd>, <kbd>B</kbd>                                                  | Freeform Tool     |
-| <kbd>E</kbd>                                                                | Eraser Tool       |
-| <kbd>S</kbd>                                                                | Selection Tool    |
-| <kbd>R</kbd>                                                                | Rectangle Tool    |
-| <kbd>O</kbd>                                                                | Ellipse Tool      |
-| <kbd>L</kbd>                                                                | Line Tool         |
-| <kbd>A</kbd>                                                                | Arrow Tool        |
-| <kbd>M</kbd>                                                                | Move Tool         |
-| <kbd>T</kbd>                                                                | Text Tool         |
-| <kbd>Ctrl</kbd>+<kbd>A</kbd>                                                           | Select All        |
-| <kbd>Delete</kbd>                                                           | Delete selection  |
-| <kbd>Ctrl</kbd>+<kbd>S</kbd>                                                           | Save              |
-| <kbd>Ctrl</kbd>+<kbd>O</kbd>                                                           | Open File         |
-
-# Contributing
+### Contributing
 Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) before opening pull requests.
 
-# License
+### License
 This project uses the GNU General Public License V3.
 
-# TODOs
+### TODOs
 Started: `2025-01-02 04:40PM`  
 Development is divided into phases.  
 The project will eventually be open sourced. However, I will work on the first few phases myself, to maximize learning.  
 The following is a list of features I'll be planning to add to it:  
 
-## Phase 1 (Basic Features)
+#### Phase 1 (Basic Features)
 - [x] A simple fixed size canvas to draw on using a black coloured stroke.
 - [x] Different shapes like rectangle, ellipse, arrow, line and stroke.
 - [x] An eraser to erase the strokes (deleting the strokes).
 - [x] Testing.
 
-## Phase 2
+#### Phase 2
 - [x] Refactor to try to adhere to SOLID principles and utilize useful design patterns
 - [x] A custom Qt layout for toolbar and properties bar
 - [x] Make canvas infinite and add ability to move the viewport
@@ -67,7 +43,7 @@ The following is a list of features I'll be planning to add to it:
     - [x] Colour of strokes
     - [x] Stroke width  
   
-## Phase 3
+#### Phase 3
 - [x] Buttons to zoom in/out
 - [x] Pressure senstivity for drawing tablets
 - [x] Selection tool to select items and do these actions:
