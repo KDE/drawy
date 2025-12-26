@@ -1,37 +1,17 @@
-<p align="center">
-  <img src="assets/logo-256.png" width=100/>
-  <h1 align="center">Drawy</h1>
-  <p align="center">Your handy, infinite, brainstorming tool!</center>
-</p>
+<img src="assets/logo-256.png" width=100/>
 
-<p align="center">
-<a href="https://github.com/prayag2/drawy/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/prayag2/drawy?style=for-the-badge&logo=github&labelColor=%23202025&color=%23205CC0"></a>
-<a href="https://github.com/prayag2/drawy/network"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/prayag2/drawy?style=for-the-badge&logo=github&labelColor=%23202025&color=%23205CC0"></a>
-<a href="https://github.com/prayag2/drawy/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/prayag2/drawy?include_prereleases&style=for-the-badge&labelColor=%23202025&color=%23205CC0"></a>
-</p>
+# Drawy
+Your handy, infinite, brainstorming tool!  
 
 <img src="./assets/screenshot.png" style="width: 100%"/>
 
+  
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
 
-# Community
-Join our Discord server to engage with our community and help shape the future of Drawy!  
-  
-<a href="https://discord.gg/TUPwH24j"><img alt="Static Badge" src="https://img.shields.io/badge/Discord%20-%20Server?style=for-the-badge&logo=Discord&color=%23eee"></a>  
-
-# Installation  
-<a href="https://github.com/Prayag2/drawy/releases/download/1.0.0-alpha/Drawy-47b7552-x86_64.AppImage">
-<img alt="Static Badge" src="https://img.shields.io/badge/Download-Linux-F7B601?style=for-the-badge&labelColor=%23202025">
-</a>
-
-<a href="https://github.com/Prayag2/drawy/releases/download/1.0.0-alpha/drawy-windows-x86_64.zip">
-<img alt="Static Badge" src="https://img.shields.io/badge/Download-Windows-007CF7?style=for-the-badge&labelColor=%23202025">
-</a>
-
 ## Compiling from Source
-- Install `cmake` and `g++`
+- Install `cmake`, `g++`, `zstd`
 - Install Qt 6.9 or above from [here](https://www.qt.io/download-qt-installer-oss) or using [aqtinstall](https://github.com/miurahr/aqtinstall)
-- Clone this repository: `git clone https://github.com/prayag2/drawy && cd drawy`
+- Clone this repository: `git clone https://invent.kde.org/prayag/drawy && cd drawy`
 - Setup cmake: `cmake -B build -S . -DCMAKE_BUILD_TYPE=Release`
 - Compile: `cmake --build build --config Release`
 - Run: `./build/drawy`
@@ -55,23 +35,16 @@ Future releases will allow you to change the keyboard shortcuts. For now they ar
 | <kbd>A</kbd>                                                                | Arrow Tool        |
 | <kbd>M</kbd>                                                                | Move Tool         |
 | <kbd>T</kbd>                                                                | Text Tool         |
-| <kbd>Ctrl+A</kbd>                                                           | Select All        |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd>                                                           | Select All        |
 | <kbd>Delete</kbd>                                                           | Delete selection  |
-| <kbd>Ctrl+S</kbd>                                                           | Save              |
-| <kbd>Ctrl+O</kbd>                                                           | Open File         |
+| <kbd>Ctrl</kbd>+<kbd>S</kbd>                                                           | Save              |
+| <kbd>Ctrl</kbd>+<kbd>O</kbd>                                                           | Open File         |
 
 # Contributing
 Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) before opening pull requests.
 
 # License
 This project uses the GNU General Public License V3.
-
-# Support Me ♥
-If you liked this project, then please consider supporting me!  
-  
-<a href="https://liberapay.com/Prayag/donate"><img alt="Donate using Liberapay" src="https://img.shields.io/badge/LIBERAPAY-%231A171B?style=for-the-badge&logo=liberapay"/></a>
-<a href="https://ko-fi.com/O5O1FJ70D"><img alt="Buy Me A Coffee" src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%234D798C?style=for-the-badge&logo=ko-fi"/></a>
-<a href="https://coindrop.to/prayagjain"><img alt="Done using PayPal" src="https://img.shields.io/badge/PayPal-%23F2BA37?style=for-the-badge&logo=paypal"/></a>
 
 # TODOs
 Started: `2025-01-02 04:40PM`  
@@ -115,5 +88,3 @@ The following is a list of features I'll be planning to add to it:
 - [ ] A "settings" page 
 - [ ] Better widgets
 - [ ] Online collaboration
-
-Feature requests are welcome!
