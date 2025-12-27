@@ -5,7 +5,6 @@
 #include "serializer.hpp"
 
 #include <QFileDialog>
-#include <QJsonArray>
 #include <QJsonDocument>
 #include <QStandardPaths>
 #include <format>

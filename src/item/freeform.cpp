@@ -5,7 +5,6 @@
 #include "freeform.hpp"
 
 #include <QDateTime>
-#include <memory>
 
 #include "../common/constants.hpp"
 #include "../common/utils/math.hpp"

@@ -6,7 +6,6 @@
 
 #include <QLabel>
 #include <QSpacerItem>
-#include <QVBoxLayout>
 #include <stdexcept>
 
 #include "../context/applicationcontext.hpp"
