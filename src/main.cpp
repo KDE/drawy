@@ -5,12 +5,20 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QCommandLineParser>
 
 #include "window/window.hpp"
 
 int main(int argc, char *argv[]) {
     QApplication a{argc, argv};
     QApplication::setStyle("Fusion");
+
+    QCommandLineParser parser;
+    parser.addHelpOption();
+    parser.addVersionOption();    
+    parser.setApplicationDescription(QObject::tr("Your handy, infinite, brainstorming tool!"));
+
+    parser.process(a);
 
     QTranslator translator{};
     const QStringList uiLanguages{QLocale::system().uiLanguages()};
