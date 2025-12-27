@@ -39,6 +39,16 @@ file(GLOB_RECURSE SRC_FILES
     "${SRC_DIR}/*.qss"
 )
 
+include(KDEClangFormat)
+file(
+    GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+    *.cpp
+    *.hpp
+)      
+include(KDEGitCommitHooks)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+
 # Combine translation files with the source files.
 set(PROJECT_SOURCES ${TS_FILES} ${SRC_FILES})
 

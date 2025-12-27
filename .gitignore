@@ -109,3 +109,6 @@ latex/
 compile_commands.json
 
 .qtcreator/
+
+# from kde
+.clang-format
