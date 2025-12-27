@@ -101,9 +101,11 @@ pyvenv.cfg
 /lib64
 
 # build
-build/
+build*/
 release/
 archive/
 html/
 latex/
 compile_commands.json
+
+.qtcreator/
