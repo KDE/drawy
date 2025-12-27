@@ -22,9 +22,9 @@
 
 bool SelectionToolMoveState::mousePressed(ApplicationContext *context) {
     auto &uiContext{context->uiContext()};
-    auto &renderingContext{context->renderingContext()};
 
     if (uiContext.event().button() == Qt::LeftButton) {
+        auto &renderingContext{context->renderingContext()};
         renderingContext.canvas().setCursor(Qt::ClosedHandCursor);
 
         m_lastPos = uiContext.event().pos();
