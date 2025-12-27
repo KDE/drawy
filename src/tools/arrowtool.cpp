@@ -11,7 +11,7 @@ ArrowTool::ArrowTool() {
 }
 
 QString ArrowTool::tooltip() const {
-    return "Arrow Tool";
+    return QObject::tr("Arrow Tool");
 }
 
 IconManager::Icon ArrowTool::icon() const {

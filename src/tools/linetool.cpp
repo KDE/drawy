@@ -11,7 +11,7 @@ LineTool::LineTool() {
 }
 
 QString LineTool::tooltip() const {
-    return "Line Tool";
+    return QObject::tr("Line Tool");
 }
 
 IconManager::Icon LineTool::icon() const {

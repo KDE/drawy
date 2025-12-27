@@ -68,7 +68,7 @@ Tool::Type MoveTool::type() const {
 }
 
 QString MoveTool::tooltip() const {
-    return "Move Tool";
+    return QObject::tr("Move Tool");
 }
 
 IconManager::Icon MoveTool::icon() const {

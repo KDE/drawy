@@ -155,7 +155,7 @@ Tool::Type EraserTool::type() const {
 }
 
 QString EraserTool::tooltip() const {
-    return "Eraser Tool";
+    return QObject::tr("Eraser Tool");
 }
 
 IconManager::Icon EraserTool::icon() const {

@@ -11,7 +11,7 @@ EllipseTool::EllipseTool() {
 }
 
 QString EllipseTool::tooltip() const {
-    return "Ellipse Tool";
+    return QObject::tr("Ellipse Tool");
 }
 
 IconManager::Icon EllipseTool::icon() const {

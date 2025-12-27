@@ -123,7 +123,7 @@ Tool::Type SelectionTool::type() const {
 };
 
 QString SelectionTool::tooltip() const {
-    return "Selection Tool";
+    return QObject::tr("Selection Tool");
 }
 
 IconManager::Icon SelectionTool::icon() const {

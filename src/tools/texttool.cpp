@@ -499,7 +499,7 @@ Tool::Type TextTool::type() const {
 }
 
 QString TextTool::tooltip() const {
-    return "Text Tool";
+    return QObject::tr("Text Tool");
 }
 
 IconManager::Icon TextTool::icon() const {
