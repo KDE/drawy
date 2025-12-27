@@ -10,7 +10,7 @@
 class PropertyWidget : public QObject {
     Q_OBJECT
 public:
-    PropertyWidget(QWidget *parent = nullptr);
+    explicit PropertyWidget(QWidget *parent = nullptr);
 
     virtual QString name() const = 0;
     virtual const Property value() const = 0;

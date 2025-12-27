@@ -9,7 +9,7 @@
 
 class ActionsWidget : public PropertyWidget {
 public:
-    ActionsWidget(QWidget *parent = nullptr);
+    explicit ActionsWidget(QWidget *parent = nullptr);
 
     QString name() const override;
     const Property value() const override;

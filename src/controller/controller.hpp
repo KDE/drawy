@@ -15,7 +15,7 @@ class Controller : public QObject {
     Q_OBJECT
 
 public:
-    Controller(QObject *parent = nullptr);
+    explicit Controller(QObject *parent = nullptr);
     ~Controller() override;
 
 public slots:

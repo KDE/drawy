@@ -18,7 +18,7 @@ class IconManager;
 
 class UIContext : public QObject {
 public:
-    UIContext(ApplicationContext *context);
+    explicit UIContext(ApplicationContext *context);
     ~UIContext() override;
 
     void setUIContext();

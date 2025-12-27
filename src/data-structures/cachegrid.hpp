@@ -15,7 +15,7 @@ public:
     static QSize cellSize();
     static int counter;
 
-    CacheCell(const QPoint &point);
+    explicit CacheCell(const QPoint &point);
     ~CacheCell();
 
     QRect rect() const;

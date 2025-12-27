@@ -8,7 +8,7 @@
 
 class EraserSizeWidget : public PropertyWidget {
 public:
-    EraserSizeWidget(QWidget *parent = nullptr);
+    explicit EraserSizeWidget(QWidget *parent = nullptr);
 
     QString name() const override;
     const Property value() const override;

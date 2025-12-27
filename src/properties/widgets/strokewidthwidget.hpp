@@ -8,7 +8,7 @@
 
 class StrokeWidthWidget : public PropertyWidget {
 public:
-    StrokeWidthWidget(QWidget *parent = nullptr);
+    explicit StrokeWidthWidget(QWidget *parent = nullptr);
 
     QString name() const override;
     const Property value() const override;
