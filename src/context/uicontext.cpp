@@ -69,13 +69,13 @@ void UIContext::setUIContext() {
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Move);
 
     // TODO: Define their functions somewhere else
-    m_actionBar->addButton("Save to File", IconManager::ACTION_SAVE, 6);
-    m_actionBar->addButton("Open File", IconManager::ACTION_OPEN_FILE, 7);
-    m_actionBar->addButton("Zoom Out", IconManager::ACTION_ZOOM_OUT, 1);
-    m_actionBar->addButton("Zoom In", IconManager::ACTION_ZOOM_IN, 2);
-    m_actionBar->addButton("Light Mode", IconManager::ACTION_LIGHT_MODE, 3);
-    m_actionBar->addButton("Undo", IconManager::ACTION_UNDO, 4);
-    m_actionBar->addButton("Redo", IconManager::ACTION_REDO, 5);
+    m_actionBar->addButton(tr("Save to File"), IconManager::ACTION_SAVE, 6);
+    m_actionBar->addButton(tr("Open File"), IconManager::ACTION_OPEN_FILE, 7);
+    m_actionBar->addButton(tr("Zoom Out"), IconManager::ACTION_ZOOM_OUT, 1);
+    m_actionBar->addButton(tr("Zoom In"), IconManager::ACTION_ZOOM_IN, 2);
+    m_actionBar->addButton(tr("Light Mode"), IconManager::ACTION_LIGHT_MODE, 3);
+    m_actionBar->addButton(tr("Undo"), IconManager::ACTION_UNDO, 4);
+    m_actionBar->addButton(tr("Redo"), IconManager::ACTION_REDO, 5);
 
     QObject::connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     QObject::connect(m_toolBar,
