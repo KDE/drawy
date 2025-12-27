@@ -7,9 +7,12 @@
 #include <QDebug>
 #include <utility>
 
-ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items) : m_items{std::move(items)} {
+ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items)
+    : m_items{std::move(items)}
+{
 }
 
-ItemCommand::~ItemCommand() {
+ItemCommand::~ItemCommand()
+{
     qDebug() << "Object deleted: ItemCommand";
 }

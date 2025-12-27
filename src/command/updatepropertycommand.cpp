@@ -13,13 +13,14 @@
 #include "../data-structures/cachegrid.hpp"
 #include "../item/item.hpp"
 
-UpdatePropertyCommand::UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items,
-                                             Property newProperty)
-    : ItemCommand{std::move(items)},
-      m_newProperty{std::move(newProperty)} {
+UpdatePropertyCommand::UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items, Property newProperty)
+    : ItemCommand{std::move(items)}
+    , m_newProperty{std::move(newProperty)}
+{
 }
 
-void UpdatePropertyCommand::execute(ApplicationContext *context) {
+void UpdatePropertyCommand::execute(ApplicationContext *context)
+{
     Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion{};
@@ -33,12 +34,12 @@ void UpdatePropertyCommand::execute(ApplicationContext *context) {
         }
     }
 
-    QRect gridDirtyRegion{
-        context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->spatialContext().cacheGrid().markDirty(gridDirtyRegion);
 };
 
-void UpdatePropertyCommand::undo(ApplicationContext *context) {
+void UpdatePropertyCommand::undo(ApplicationContext *context)
+{
     Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion{};
@@ -51,7 +52,6 @@ void UpdatePropertyCommand::undo(ApplicationContext *context) {
         }
     }
 
-    QRect gridDirtyRegion{
-        context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->spatialContext().cacheGrid().markDirty(gridDirtyRegion);
 };

@@ -4,5 +4,6 @@
 
 #include "itemfactory.hpp"
 
-ItemFactory::ItemFactory() {
+ItemFactory::ItemFactory()
+{
 }

@@ -9,7 +9,8 @@
 #include "drawingtool.hpp"
 class FreeformItem;
 
-class FreeformTool : public DrawingTool {
+class FreeformTool : public DrawingTool
+{
 public:
     FreeformTool();
     ~FreeformTool() override = default;

@@ -6,7 +6,8 @@
 
 class ApplicationContext;
 
-class Command {
+class Command
+{
 public:
     virtual ~Command() = default;
     virtual void execute(ApplicationContext *context) = 0;

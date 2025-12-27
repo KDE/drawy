@@ -11,7 +11,8 @@
 
 #include "../iconmanager/iconmanager.hpp"
 
-class ActionBar : public QFrame {
+class ActionBar : public QFrame
+{
     Q_OBJECT
 public:
     ActionBar(QWidget *parent = nullptr);

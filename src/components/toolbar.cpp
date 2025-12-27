@@ -9,9 +9,10 @@
 #include "../iconmanager/iconmanager.hpp"
 
 ToolBar::ToolBar(QWidget *parent)
-    : QFrame{parent},
-      m_group(new QButtonGroup(this)),
-      m_layout(new QHBoxLayout(this)) {
+    : QFrame{parent}
+    , m_group(new QButtonGroup(this))
+    , m_layout(new QHBoxLayout(this))
+{
     this->setLayout(m_layout);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     this->setFrameShape(QFrame::StyledPanel);
@@ -22,10 +23,12 @@ ToolBar::ToolBar(QWidget *parent)
     QObject::connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
 
-ToolBar::~ToolBar() {
+ToolBar::~ToolBar()
+{
 }
 
-Tool &ToolBar::curTool() const {
+Tool &ToolBar::curTool() const
+{
     int curID{m_group->checkedId()};
 
     if (m_tools.find(curID) == m_tools.end())
@@ -34,7 +37,8 @@ Tool &ToolBar::curTool() const {
     return *m_tools.at(curID);
 }
 
-QVector<std::shared_ptr<Tool>> ToolBar::tools() const {
+QVector<std::shared_ptr<Tool>> ToolBar::tools() const
+{
     QVector<std::shared_ptr<Tool>> result;
     for (auto &idToolPair : m_tools) {
         result.push_back(idToolPair.second);
@@ -43,7 +47,8 @@ QVector<std::shared_ptr<Tool>> ToolBar::tools() const {
     return result;
 }
 
-void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type) {
+void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
+{
     if (tool == nullptr)
         return;
 
@@ -66,19 +71,22 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type) {
     }
 };
 
-void ToolBar::changeTool(Tool::Type type) {
+void ToolBar::changeTool(Tool::Type type)
+{
     int id{static_cast<int>(type)};
 
     m_group->button(id)->setChecked(true);
     emit toolChanged(curTool());
 }
 
-Tool &ToolBar::tool(Tool::Type type) const {
+Tool &ToolBar::tool(Tool::Type type) const
+{
     return *m_tools.at(type);
 }
 
 // PRIVATE SLOTS
-void ToolBar::onToolChanged(int id) {
+void ToolBar::onToolChanged(int id)
+{
     emit toolChanged(curTool());
 }
 

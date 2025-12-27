@@ -6,9 +6,11 @@
 
 #include "../rectangle.hpp"
 
-RectangleFactory::RectangleFactory() {
+RectangleFactory::RectangleFactory()
+{
 }
 
-std::shared_ptr<Item> RectangleFactory::create() const {
+std::shared_ptr<Item> RectangleFactory::create() const
+{
     return std::make_shared<RectangleItem>();
 }

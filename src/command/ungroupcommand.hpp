@@ -9,7 +9,8 @@
 class ApplicationContext;
 class GroupItem;
 
-class UngroupCommand : public ItemCommand {
+class UngroupCommand : public ItemCommand
+{
 public:
     explicit UngroupCommand(const QVector<std::shared_ptr<Item>> &items);
 
@@ -20,4 +21,4 @@ private:
     QVector<std::shared_ptr<GroupItem>> m_groups;
 };
 
-#endif  // UNGROUPCOMMAND_H
+#endif // UNGROUPCOMMAND_H

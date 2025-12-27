@@ -11,7 +11,8 @@
 
 #include "../tools/tool.hpp"
 
-class ToolBar : public QFrame {
+class ToolBar : public QFrame
+{
     Q_OBJECT
 public:
     explicit ToolBar(QWidget *parent = nullptr);

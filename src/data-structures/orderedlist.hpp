@@ -10,7 +10,8 @@
 class Item;
 
 // Keeps track of the z-index of every item
-class OrderedList {
+class OrderedList
+{
 public:
     using ItemPtr = std::shared_ptr<Item>;
 

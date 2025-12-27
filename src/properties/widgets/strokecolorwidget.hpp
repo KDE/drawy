@@ -7,7 +7,8 @@
 #include "propertywidget.hpp"
 class QButtonGroup;
 
-class StrokeColorWidget : public PropertyWidget {
+class StrokeColorWidget : public PropertyWidget
+{
 public:
     explicit StrokeColorWidget(QWidget *parent = nullptr);
 

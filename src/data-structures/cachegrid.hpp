@@ -10,7 +10,8 @@
 class CacheGrid;
 
 // Based on LRU cache
-class CacheCell {
+class CacheCell
+{
 public:
     static QSize cellSize();
     static int counter;
@@ -37,7 +38,8 @@ private:
     friend CacheGrid;
 };
 
-class CacheGrid {
+class CacheGrid
+{
 public:
     CacheGrid(int maxSize);
     ~CacheGrid();

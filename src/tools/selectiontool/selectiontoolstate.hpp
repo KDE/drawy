@@ -6,7 +6,8 @@
 
 class ApplicationContext;
 
-class SelectionToolState {
+class SelectionToolState
+{
 public:
     virtual ~SelectionToolState() = default;
 

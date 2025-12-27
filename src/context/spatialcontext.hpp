@@ -11,7 +11,8 @@ class CoordinateTransformer;
 class ApplicationContext;
 class CommandHistory;
 
-class SpatialContext : public QObject {
+class SpatialContext : public QObject
+{
 public:
     explicit SpatialContext(ApplicationContext *context);
     ~SpatialContext() override;

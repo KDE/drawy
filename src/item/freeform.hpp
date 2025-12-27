@@ -9,7 +9,8 @@
 
 #include "item.hpp"
 
-class FreeformItem : public Item, public std::enable_shared_from_this<FreeformItem> {
+class FreeformItem : public Item, public std::enable_shared_from_this<FreeformItem>
+{
 public:
     FreeformItem();
     ~FreeformItem() override = default;

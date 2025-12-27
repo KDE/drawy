@@ -6,14 +6,17 @@
 
 #include "../item/factory/rectanglefactory.hpp"
 
-RectangleTool::RectangleTool() {
+RectangleTool::RectangleTool()
+{
     m_itemFactory = std::make_unique<RectangleFactory>();
 }
 
-QString RectangleTool::tooltip() const {
+QString RectangleTool::tooltip() const
+{
     return QObject::tr("Rectangle Tool");
 }
 
-IconManager::Icon RectangleTool::icon() const {
+IconManager::Icon RectangleTool::icon() const
+{
     return IconManager::TOOL_RECTANGLE;
 }

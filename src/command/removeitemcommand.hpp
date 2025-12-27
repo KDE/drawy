@@ -7,7 +7,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class RemoveItemCommand : public ItemCommand {
+class RemoveItemCommand : public ItemCommand
+{
 public:
     explicit RemoveItemCommand(QVector<std::shared_ptr<Item>> items);
 

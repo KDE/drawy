@@ -6,7 +6,8 @@
 
 #include "propertywidget.hpp"
 
-class FontSizeWidget : public PropertyWidget {
+class FontSizeWidget : public PropertyWidget
+{
 public:
     explicit FontSizeWidget(QWidget *parent = nullptr);
 

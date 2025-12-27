@@ -16,10 +16,12 @@
 #include "../item/item.hpp"
 
 RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items)
-    : ItemCommand{std::move(items)} {
+    : ItemCommand{std::move(items)}
+{
 }
 
-void RemoveItemCommand::execute(ApplicationContext *context) {
+void RemoveItemCommand::execute(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};
@@ -34,7 +36,8 @@ void RemoveItemCommand::execute(ApplicationContext *context) {
     }
 }
 
-void RemoveItemCommand::undo(ApplicationContext *context) {
+void RemoveItemCommand::undo(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};

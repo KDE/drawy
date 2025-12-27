@@ -24,7 +24,8 @@ class OrderedList;
  * NOTE: This is tightly coupled with the OrderedList data structure present in
  * the same directory and the Item class present in the `item` directory.
  */
-class QuadTree {
+class QuadTree
+{
 public:
     using ItemPtr = std::shared_ptr<Item>;
 
@@ -55,10 +56,10 @@ public:
     QVector<ItemPtr> getAllItems() const;
     void clear();
 
-    template <typename Shape, typename QueryCondition>
+    template<typename Shape, typename QueryCondition>
     QVector<ItemPtr> queryItems(const Shape &shape, QueryCondition condition) const;
 
-    template <typename Shape>
+    template<typename Shape>
     QVector<ItemPtr> queryItems(const Shape &shape) const;
 
     void draw(QPainter &painter, const QPointF &offset) const;
@@ -68,11 +69,8 @@ private:
     bool insert(const ItemPtr &item, bool updateOrder);
     void update(const ItemPtr &item, const QRectF &oldBoundingBox, bool inserted);
 
-    template <typename Shape, typename QueryCondition>
-    void query(const Shape &shape,
-               QueryCondition condition,
-               QVector<ItemPtr> &out,
-               std::unordered_map<ItemPtr, bool> &itemAlreadyPushed) const;
+    template<typename Shape, typename QueryCondition>
+    void query(const Shape &shape, QueryCondition condition, QVector<ItemPtr> &out, std::unordered_map<ItemPtr, bool> &itemAlreadyPushed) const;
 
     void subdivide();
     void expand(const QPointF &point);

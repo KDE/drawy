@@ -14,7 +14,8 @@ class RenderingContext;
  *  1. World (the one used by the QuadTree to store items)
  *  2. Grid (the one used by the CacheGrid to cache tiles)
  *  3. View (the viewport) */
-class CoordinateTransformer {
+class CoordinateTransformer
+{
 private:
     SpatialContext *m_spatialContext{};
     RenderingContext *m_renderingContext{};

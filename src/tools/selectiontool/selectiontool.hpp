@@ -7,7 +7,8 @@
 #include "../tool.hpp"
 class SelectionToolState;
 
-class SelectionTool : public Tool {
+class SelectionTool : public Tool
+{
 public:
     SelectionTool();
     ~SelectionTool() override = default;

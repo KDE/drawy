@@ -9,7 +9,8 @@
 
 #include "item.hpp"
 
-class TextItem : public Item {
+class TextItem : public Item
+{
 public:
     TextItem();
     ~TextItem() override;
@@ -23,7 +24,10 @@ public:
 
     void createTextBox(const QPointF position);
 
-    enum Mode { EDIT, NORMAL };
+    enum Mode {
+        EDIT,
+        NORMAL
+    };
 
     Mode mode() const;
     void setMode(Mode mode);

@@ -6,7 +6,8 @@
 
 #include "polygon.hpp"
 
-class EllipseItem : public PolygonItem {
+class EllipseItem : public PolygonItem
+{
 public:
     EllipseItem();
     ~EllipseItem() override = default;

@@ -8,7 +8,8 @@
 #include <QPoint>
 #include <QString>
 
-class Event {
+class Event
+{
 public:
     Event();
     const QPoint &pos() const;

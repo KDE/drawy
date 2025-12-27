@@ -7,7 +7,8 @@
 #include "drawingtool.hpp"
 class PolygonItem;
 
-class PolygonDrawingTool : public DrawingTool {
+class PolygonDrawingTool : public DrawingTool
+{
 protected:
     std::shared_ptr<PolygonItem> curItem{};
 

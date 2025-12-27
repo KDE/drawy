@@ -7,7 +7,8 @@
 #include <QPainter>
 #include <QWidget>
 
-class Canvas : public QWidget {
+class Canvas : public QWidget
+{
     Q_OBJECT
 
 public:
@@ -59,7 +60,7 @@ protected:
     void leaveEvent(QEvent *event) override;
 
 private:
-    qreal m_scale{1.0};  // default scale is 1
+    qreal m_scale{1.0}; // default scale is 1
     QPixmap *m_canvas{};
     QPixmap *m_overlay{};
     QPixmap *m_widget{};

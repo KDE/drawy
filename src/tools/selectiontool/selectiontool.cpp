@@ -23,26 +23,31 @@
 #include "selectiontoolselectstate.hpp"
 #include "selectiontoolstate.hpp"
 
-SelectionTool::SelectionTool() {
+SelectionTool::SelectionTool()
+{
     m_cursor = QCursor(Qt::ArrowCursor);
 
     m_moveState = std::make_shared<SelectionToolMoveState>();
     m_selectState = std::make_shared<SelectionToolSelectState>();
 }
 
-void SelectionTool::mousePressed(ApplicationContext *context) {
+void SelectionTool::mousePressed(ApplicationContext *context)
+{
     m_stateLocked = getCurrentState(context)->mousePressed(context);
 };
 
-void SelectionTool::mouseMoved(ApplicationContext *context) {
+void SelectionTool::mouseMoved(ApplicationContext *context)
+{
     getCurrentState(context)->mouseMoved(context);
 };
 
-void SelectionTool::mouseReleased(ApplicationContext *context) {
+void SelectionTool::mouseReleased(ApplicationContext *context)
+{
     m_stateLocked = getCurrentState(context)->mouseReleased(context);
 };
 
-std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationContext *context) {
+std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationContext *context)
+{
     if (m_stateLocked)
         return m_curState;
 
@@ -53,15 +58,15 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     QPointF worldCurPos{transformer.viewToWorld(uiContext.event().pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext.selectionBox().contains(worldCurPos) &&
-        !(uiContext.event().modifiers() & Qt::ShiftModifier)) {
+    if (selectionContext.selectionBox().contains(worldCurPos) && !(uiContext.event().modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
     }
 }
 
-void SelectionTool::keyPressed(ApplicationContext *context) {
+void SelectionTool::keyPressed(ApplicationContext *context)
+{
     auto &selectedItems{context->selectionContext().selectedItems()};
     if (selectedItems.empty())
         return;
@@ -76,20 +81,20 @@ void SelectionTool::keyPressed(ApplicationContext *context) {
 
     bool updated{true};
     switch (event.key()) {
-        case Qt::Key_Left:
-            commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
-            break;
-        case Qt::Key_Right:
-            commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
-            break;
-        case Qt::Key_Up:
-            commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
-            break;
-        case Qt::Key_Down:
-            commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
-            break;
-        default:
-            updated = false;
+    case Qt::Key_Left:
+        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
+        break;
+    case Qt::Key_Right:
+        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
+        break;
+    case Qt::Key_Up:
+        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
+        break;
+    case Qt::Key_Down:
+        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
+        break;
+    default:
+        updated = false;
     }
 
     if (updated) {
@@ -98,7 +103,8 @@ void SelectionTool::keyPressed(ApplicationContext *context) {
     }
 }
 
-const QVector<Property::Type> SelectionTool::properties() const {
+const QVector<Property::Type> SelectionTool::properties() const
+{
     ApplicationContext *context{ApplicationContext::instance()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
@@ -118,14 +124,17 @@ const QVector<Property::Type> SelectionTool::properties() const {
     return output;
 }
 
-Tool::Type SelectionTool::type() const {
+Tool::Type SelectionTool::type() const
+{
     return Tool::Selection;
 };
 
-QString SelectionTool::tooltip() const {
+QString SelectionTool::tooltip() const
+{
     return QObject::tr("Selection Tool");
 }
 
-IconManager::Icon SelectionTool::icon() const {
+IconManager::Icon SelectionTool::icon() const
+{
     return IconManager::TOOL_SELECTION;
 }

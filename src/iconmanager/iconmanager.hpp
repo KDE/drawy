@@ -7,7 +7,8 @@
 #include <QObject>
 #include <unordered_map>
 
-class IconManager : public QObject {
+class IconManager : public QObject
+{
 public:
     explicit IconManager(QObject *parent = nullptr);
 
@@ -41,5 +42,5 @@ public:
 private:
     std::unordered_map<Icon, QString> m_iconName;
 
-    QString m_curTheme{"fa-dark"};  // default
+    QString m_curTheme{"fa-dark"}; // default
 };

@@ -14,7 +14,9 @@
 #include "../../keybindings/actionmanager.hpp"
 #include "../property.hpp"
 
-ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
+ActionsWidget::ActionsWidget(QWidget *parent)
+    : PropertyWidget{parent}
+{
     m_widget = new QWidget{parent};
 
     QHBoxLayout *layout{new QHBoxLayout(m_widget)};
@@ -56,10 +58,12 @@ ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
     m_widget->hide();
 }
 
-QString ActionsWidget::name() const {
+QString ActionsWidget::name() const
+{
     return "Actions";
 };
 
-const Property ActionsWidget::value() const {
+const Property ActionsWidget::value() const
+{
     return Property{};
 }

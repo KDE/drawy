@@ -6,21 +6,26 @@
 
 #include "../common/utils/math.hpp"
 
-LineItem::LineItem() {
+LineItem::LineItem()
+{
 }
 
-void LineItem::m_draw(QPainter &painter, const QPointF &offset) const {
+void LineItem::m_draw(QPainter &painter, const QPointF &offset) const
+{
     painter.drawLine(start() - offset, end() - offset);
 }
 
-bool LineItem::intersects(const QRectF &rect) {
+bool LineItem::intersects(const QRectF &rect)
+{
     return Common::Utils::Math::intersects(rect, QLineF{start(), end()});
 };
 
-bool LineItem::intersects(const QLineF &line) {
+bool LineItem::intersects(const QLineF &line)
+{
     return Common::Utils::Math::intersects(QLineF{start(), end()}, line);
 }
 
-Item::Type LineItem::type() const {
+Item::Type LineItem::type() const
+{
     return Item::Line;
 }

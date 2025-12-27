@@ -6,7 +6,8 @@
 
 #include "polygon.hpp"
 
-class ArrowItem : public PolygonItem {
+class ArrowItem : public PolygonItem
+{
 public:
     ArrowItem();
     ~ArrowItem() override = default;
@@ -28,7 +29,7 @@ private:
     QPointF m_arrowP1;
     QPointF m_arrowP2;
 
-    int m_maxArrowSize{15};  // hardcoded for now
+    int m_maxArrowSize{15}; // hardcoded for now
 
     void calcArrowPoints();
 };

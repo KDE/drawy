@@ -11,7 +11,8 @@
 class ApplicationContext;
 
 // INTERFACE
-class Tool {
+class Tool
+{
 public:
     Tool();
     virtual ~Tool();

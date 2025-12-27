@@ -14,11 +14,13 @@ class SelectionContext;
  * @note: This class was made a Singleton recently, so in many places it is still accessed by
  * passing its pointer instead of using the `instance` method.
  */
-class ApplicationContext : public QObject {
+class ApplicationContext : public QObject
+{
 public:
     ~ApplicationContext() override;
 
-    static ApplicationContext *instance(QWidget *parent = nullptr) {
+    static ApplicationContext *instance(QWidget *parent = nullptr)
+    {
         if (!m_instance) {
             m_instance = new ApplicationContext(parent);
         }
@@ -35,7 +37,7 @@ public:
     UIContext &uiContext() const;
     SelectionContext &selectionContext() const;
 
-    void reset();  // resets the canvas to a blank state
+    void reset(); // resets the canvas to a blank state
 
 private:
     ApplicationContext(QWidget *parent = nullptr);

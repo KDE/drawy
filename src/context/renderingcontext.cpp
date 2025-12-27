@@ -13,16 +13,19 @@
 #include "spatialcontext.hpp"
 
 RenderingContext::RenderingContext(ApplicationContext *context)
-    : QObject{context},
-      m_applicationContext(context) {
+    : QObject{context}
+    , m_applicationContext(context)
+{
 }
 
-RenderingContext::~RenderingContext() {
+RenderingContext::~RenderingContext()
+{
     qDebug() << "Object deleted: RenderingContext";
     delete m_canvasPainter;
 }
 
-void RenderingContext::setRenderingContext() {
+void RenderingContext::setRenderingContext()
+{
     m_canvas = new Canvas(m_applicationContext->parentWidget());
 
     m_canvasPainter = new QPainter(m_canvas->canvas());
@@ -55,27 +58,32 @@ void RenderingContext::setRenderingContext() {
     m_frameTimer.start(1000 / fps());
 }
 
-Canvas &RenderingContext::canvas() const {
+Canvas &RenderingContext::canvas() const
+{
     return *m_canvas;
 }
 
-QPainter &RenderingContext::canvasPainter() const {
+QPainter &RenderingContext::canvasPainter() const
+{
     return *m_canvasPainter;
 }
 
-QPainter &RenderingContext::overlayPainter() const {
+QPainter &RenderingContext::overlayPainter() const
+{
     return *m_overlayPainter;
 }
 
 // PRIVATE SLOTS
-void RenderingContext::endPainters() {
+void RenderingContext::endPainters()
+{
     if (m_canvasPainter->isActive())
         m_canvasPainter->end();
     if (m_overlayPainter->isActive())
         m_overlayPainter->end();
 }
 
-void RenderingContext::beginPainters() {
+void RenderingContext::beginPainters()
+{
     QPainter::RenderHints renderHints{QPainter::Antialiasing | QPainter::SmoothPixmapTransform};
     if (!m_canvasPainter->isActive()) {
         m_canvasPainter->begin(m_canvas->canvas());
@@ -87,11 +95,13 @@ void RenderingContext::beginPainters() {
     }
 }
 
-qreal RenderingContext::zoomFactor() const {
+qreal RenderingContext::zoomFactor() const
+{
     return m_zoomFactor;
 }
 
-void RenderingContext::updateZoomFactor(qreal diff, QPoint center) {
+void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
+{
     // zoom out limit is 0.1
     if (diff < 0 && m_zoomFactor - 0.1 <= 1e-9)
         return;
@@ -125,11 +135,13 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center) {
     m_applicationContext->renderingContext().markForUpdate();
 }
 
-void RenderingContext::setZoomFactor(qreal newValue) {
+void RenderingContext::setZoomFactor(qreal newValue)
+{
     m_zoomFactor = newValue;
 }
 
-const int RenderingContext::fps() const {
+const int RenderingContext::fps() const
+{
     QScreen *screen{m_canvas->screen()};
     if (screen) {
         return static_cast<int>(screen->refreshRate());
@@ -138,7 +150,8 @@ const int RenderingContext::fps() const {
     return 60;
 }
 
-void RenderingContext::canvasResized() {
+void RenderingContext::canvasResized()
+{
     int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
     int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
     int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
@@ -147,20 +160,24 @@ void RenderingContext::canvasResized() {
     m_applicationContext->spatialContext().cacheGrid().setSize(9 * rows * cols);
 }
 
-void RenderingContext::markForRender() {
+void RenderingContext::markForRender()
+{
     m_needsReRender = true;
 }
 
-void RenderingContext::markForUpdate() {
+void RenderingContext::markForUpdate()
+{
     m_needsUpdate = true;
 }
 
-void RenderingContext::markForUpdate(const QRect &region) {
+void RenderingContext::markForUpdate(const QRect &region)
+{
     m_needsUpdate = true;
     m_updateRegion = region;
 }
 
-void RenderingContext::reset() {
+void RenderingContext::reset()
+{
     setZoomFactor(1.0);
 }
 

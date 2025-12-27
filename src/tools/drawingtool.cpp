@@ -4,5 +4,6 @@
 
 #include "drawingtool.hpp"
 
-DrawingTool::DrawingTool() {
+DrawingTool::DrawingTool()
+{
 }

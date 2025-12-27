@@ -8,7 +8,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class UpdatePropertyCommand : public ItemCommand {
+class UpdatePropertyCommand : public ItemCommand
+{
 public:
     UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items, Property newProperty);
 

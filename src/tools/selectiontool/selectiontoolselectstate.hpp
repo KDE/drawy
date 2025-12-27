@@ -8,7 +8,8 @@
 
 #include "selectiontoolstate.hpp"
 
-class SelectionToolSelectState : public SelectionToolState {
+class SelectionToolSelectState : public SelectionToolState
+{
 public:
     bool mousePressed(ApplicationContext *context) override;
     void mouseMoved(ApplicationContext *context) override;

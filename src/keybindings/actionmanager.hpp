@@ -7,7 +7,8 @@
 #include <QObject>
 class ApplicationContext;
 
-class ActionManager : public QObject {
+class ActionManager : public QObject
+{
     Q_OBJECT
 public:
     ActionManager(ApplicationContext *context);

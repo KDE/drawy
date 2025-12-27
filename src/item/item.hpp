@@ -9,7 +9,8 @@
 
 #include "../properties/property.hpp"
 
-class Item {
+class Item
+{
 public:
     Item();
     virtual ~Item();
@@ -31,7 +32,15 @@ public:
     virtual const QVector<Property> properties() const;
     virtual const QVector<Property::Type> propertyTypes() const;
 
-    enum Type { Freeform, Rectangle, Ellipse, Line, Arrow, Text, Group };
+    enum Type {
+        Freeform,
+        Rectangle,
+        Ellipse,
+        Line,
+        Arrow,
+        Text,
+        Group
+    };
 
     virtual Type type() const = 0;
 

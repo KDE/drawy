@@ -6,7 +6,8 @@
 
 #include "polygondrawingtool.hpp"
 
-class ArrowTool : public PolygonDrawingTool {
+class ArrowTool : public PolygonDrawingTool
+{
 public:
     ArrowTool();
     ~ArrowTool() override = default;

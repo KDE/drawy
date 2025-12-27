@@ -9,8 +9,9 @@
 #include <QSize>
 #include <array>
 
-namespace Common {
-inline constexpr QMargins cleanupMargin{10, 10, 10, 10};  // in pixels
+namespace Common
+{
+inline constexpr QMargins cleanupMargin{10, 10, 10, 10}; // in pixels
 inline constexpr int defaultEraserSize{30};
 
 inline constexpr QColor eraserBorderColor{255, 0, 0};
@@ -31,20 +32,19 @@ inline constexpr QColor darkForegroundColor{211, 211, 211};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int eraseItemOpacity{50};
 
-inline constexpr int boundingBoxPadding{10};  // in pixels
+inline constexpr int boundingBoxPadding{10}; // in pixels
 
-inline constexpr int translationDelta{1};        // in pixels
-inline constexpr int shiftTranslationDelta{10};  // in pixels, when holding shift
+inline constexpr int translationDelta{1}; // in pixels
+inline constexpr int shiftTranslationDelta{10}; // in pixels, when holding shift
 
-inline constexpr double defaultTextBoxWidth{5};  // in pixels
-inline constexpr std::array<QChar, 38> wordSeparators{
-    '\t', '\n', '\v', '\f', '\r', ' ',  // whitespace
-    '!',  '"',  '#',  '$',  '%',  '&', '\'', '(',  ')', '*', '+', ',', '-', '.', '/', ':',
-    ';',  '<',  '=',  '>',  '?',  '@', '[',  '\\', ']', '^', '_', '`', '{', '|', '}', '~'};
+inline constexpr double defaultTextBoxWidth{5}; // in pixels
+inline constexpr std::array<QChar, 38> wordSeparators{'\t', '\n', '\v', '\f', '\r', ' ', // whitespace
+                                                      '!',  '"',  '#',  '$',  '%',  '&', '\'', '(',  ')', '*', '+', ',', '-', '.', '/', ':',
+                                                      ';',  '<',  '=',  '>',  '?',  '@', '[',  '\\', ']', '^', '_', '`', '{', '|', '}', '~'};
 
-inline constexpr int doubleClickInterval{300};  // milliseconds
+inline constexpr int doubleClickInterval{300}; // milliseconds
 
 inline constexpr qreal tabStopDistance{4};
 
 inline constexpr std::string_view drawyFileExt{"drawy"};
-};  // namespace Common
+}; // namespace Common

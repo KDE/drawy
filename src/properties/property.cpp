@@ -4,13 +4,18 @@
 
 #include "property.hpp"
 
-Property::Property() : m_type{Property::Null}, m_value{0} {
+Property::Property()
+    : m_type{Property::Null}
+    , m_value{0}
+{
 }
 
-Property::Type Property::type() const {
+Property::Type Property::type() const
+{
     return m_type;
 }
 
-const QVariant Property::variant() const {
+const QVariant Property::variant() const
+{
     return m_value;
 }

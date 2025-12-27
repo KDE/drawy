@@ -11,7 +11,8 @@ class Item;
 class Property;
 class ApplicationContext;
 
-class Serializer {
+class Serializer
+{
 public:
     Serializer();
 
@@ -24,13 +25,15 @@ private:
     static QJsonObject toJson(const std::shared_ptr<Item> &item);
     static QJsonObject toJson(const Property &property);
 
-    template <typename T>
-    static QJsonValue toJson(const T &val) {
+    template<typename T>
+    static QJsonValue toJson(const T &val)
+    {
         return QJsonValue(val);
     };
 
-    template <typename T>
-    static QJsonArray toJson(const QVector<T> &vector) {
+    template<typename T>
+    static QJsonArray toJson(const QVector<T> &vector)
+    {
         QJsonArray result{};
 
         for (const T &el : vector) {

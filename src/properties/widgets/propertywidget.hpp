@@ -4,10 +4,11 @@
 
 #pragma once
 
-#include <QWidget>
 #include "../property.hpp"
+#include <QWidget>
 
-class PropertyWidget : public QObject {
+class PropertyWidget : public QObject
+{
     Q_OBJECT
 public:
     explicit PropertyWidget(QWidget *parent = nullptr);

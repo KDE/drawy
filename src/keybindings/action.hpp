@@ -7,7 +7,8 @@
 #include <QDebug>
 #include <QObject>
 
-class Action : public QObject {
+class Action : public QObject
+{
     Q_OBJECT
 private:
     QString m_name;
@@ -22,9 +23,13 @@ public:
     QString name() const;
 };
 
-namespace std {
-template <>
+namespace std
+{
+template<>
 struct hash<Action> {
-    size_t operator()(Action &action) const noexcept { return std::hash<QString>{}(action.name()); }
+    size_t operator()(Action &action) const noexcept
+    {
+        return std::hash<QString>{}(action.name());
+    }
 };
-};  // namespace std
+}; // namespace std

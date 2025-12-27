@@ -7,7 +7,8 @@
 
 #include "propertywidget.hpp"
 
-class ActionsWidget : public PropertyWidget {
+class ActionsWidget : public PropertyWidget
+{
 public:
     explicit ActionsWidget(QWidget *parent = nullptr);
 
@@ -15,4 +16,4 @@ public:
     const Property value() const override;
 };
 
-#endif  // TOOLACTIONS_H
+#endif // TOOLACTIONS_H

@@ -9,19 +9,23 @@
 #include "../common/constants.hpp"
 
 // PUBLIC
-Item::Item() {
+Item::Item()
+{
 }
 
-Item::~Item() {
+Item::~Item()
+{
     qDebug() << "Item deleted: " << m_boundingBox;
 }
 
-const QRectF Item::boundingBox() const {
+const QRectF Item::boundingBox() const
+{
     int mg{boundingBoxPadding()};
     return m_boundingBox.adjusted(-mg, -mg, mg, mg);
 }
 
-const Property Item::property(const Property::Type propertyType) const {
+const Property Item::property(const Property::Type propertyType) const
+{
     if (m_properties.find(propertyType) == m_properties.end()) {
         throw std::logic_error("Item does not support this property.");
     }
@@ -29,7 +33,8 @@ const Property Item::property(const Property::Type propertyType) const {
     return m_properties.at(propertyType);
 }
 
-const QVector<Property::Type> Item::propertyTypes() const {
+const QVector<Property::Type> Item::propertyTypes() const
+{
     QVector<Property::Type> result;
 
     for (auto &[type, _] : m_properties) {
@@ -39,7 +44,8 @@ const QVector<Property::Type> Item::propertyTypes() const {
     return result;
 }
 
-const QVector<Property> Item::properties() const {
+const QVector<Property> Item::properties() const
+{
     QVector<Property> result;
 
     for (auto &[_, property] : m_properties) {
@@ -49,7 +55,8 @@ const QVector<Property> Item::properties() const {
     return result;
 }
 
-void Item::setProperty(const Property::Type propertyType, Property newObj) {
+void Item::setProperty(const Property::Type propertyType, Property newObj)
+{
     if (m_properties.find(propertyType) != m_properties.end()) {
         m_properties[propertyType] = std::move(newObj);
     }
@@ -57,11 +64,14 @@ void Item::setProperty(const Property::Type propertyType, Property newObj) {
     updateAfterProperty();
 }
 
-void Item::updateAfterProperty() {
+void Item::updateAfterProperty()
+{
 }
-void Item::erase(QPainter &painter, const QPointF &offset) const {
+void Item::erase(QPainter &painter, const QPointF &offset) const
+{
 }
 
-int Item::boundingBoxPadding() const {
+int Item::boundingBoxPadding() const
+{
     return Common::boundingBoxPadding;
 }

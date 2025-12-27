@@ -6,16 +6,20 @@
 
 #include <QDebug>
 
-CommandHistory::CommandHistory(ApplicationContext *context) : m_context{context} {
+CommandHistory::CommandHistory(ApplicationContext *context)
+    : m_context{context}
+{
     m_undoStack = std::make_unique<std::deque<std::shared_ptr<Command>>>();
     m_redoStack = std::make_unique<std::deque<std::shared_ptr<Command>>>();
 }
 
-CommandHistory::~CommandHistory() {
+CommandHistory::~CommandHistory()
+{
     qDebug() << "Object deleted: CommandHistory";
 }
 
-void CommandHistory::undo() {
+void CommandHistory::undo()
+{
     if (m_undoStack->empty())
         return;
 
@@ -30,7 +34,8 @@ void CommandHistory::undo() {
     m_undoStack->pop_front();
 }
 
-void CommandHistory::redo() {
+void CommandHistory::redo()
+{
     if (m_redoStack->empty())
         return;
 
@@ -44,7 +49,8 @@ void CommandHistory::redo() {
     m_redoStack->pop_front();
 }
 
-void CommandHistory::insert(const std::shared_ptr<Command> &command) {
+void CommandHistory::insert(const std::shared_ptr<Command> &command)
+{
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }
@@ -56,7 +62,8 @@ void CommandHistory::insert(const std::shared_ptr<Command> &command) {
         m_undoStack->pop_back();
 }
 
-void CommandHistory::clear() {
+void CommandHistory::clear()
+{
     m_undoStack->clear();
     m_redoStack->clear();
 }

@@ -6,7 +6,8 @@
 
 #include "itemfactory.hpp"
 
-class EllipseFactory : public ItemFactory {
+class EllipseFactory : public ItemFactory
+{
 public:
     EllipseFactory();
     ~EllipseFactory() override = default;

@@ -6,14 +6,17 @@
 
 #include "../item/factory/arrowfactory.hpp"
 
-ArrowTool::ArrowTool() {
+ArrowTool::ArrowTool()
+{
     m_itemFactory = std::make_unique<ArrowFactory>();
 }
 
-QString ArrowTool::tooltip() const {
+QString ArrowTool::tooltip() const
+{
     return QObject::tr("Arrow Tool");
 }
 
-IconManager::Icon ArrowTool::icon() const {
+IconManager::Icon ArrowTool::icon() const
+{
     return IconManager::TOOL_ARROW;
 }

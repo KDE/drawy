@@ -6,9 +6,11 @@
 
 #include "../ellipse.hpp"
 
-EllipseFactory::EllipseFactory() {
+EllipseFactory::EllipseFactory()
+{
 }
 
-std::shared_ptr<Item> EllipseFactory::create() const {
+std::shared_ptr<Item> EllipseFactory::create() const
+{
     return std::make_shared<EllipseItem>();
 }

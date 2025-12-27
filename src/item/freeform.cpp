@@ -9,17 +9,20 @@
 #include "../common/constants.hpp"
 #include "../common/utils/math.hpp"
 
-FreeformItem::FreeformItem() {
+FreeformItem::FreeformItem()
+{
     m_properties[Property::StrokeWidth] = Property{1, Property::StrokeWidth};
     m_properties[Property::StrokeColor] = Property{QColor(Qt::black), Property::StrokeColor};
     m_properties[Property::Opacity] = Property{Common::maxItemOpacity, Property::Opacity};
 }
 
-int FreeformItem::minPointDistance() {
+int FreeformItem::minPointDistance()
+{
     return 0;
 }
 
-void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool optimize) {
+void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool optimize)
+{
     QPointF newPoint{point};
     if (optimize) {
         newPoint = optimizePoint(point);
@@ -28,8 +31,7 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool opt
 
     m_boundingBox = m_boundingBox.normalized();
     double topLeftX{m_boundingBox.topLeft().x()}, topLeftY{m_boundingBox.topLeft().y()};
-    double bottomRightX{m_boundingBox.bottomRight().x()},
-        bottomRightY{m_boundingBox.bottomRight().y()};
+    double bottomRightX{m_boundingBox.bottomRight().x()}, bottomRightY{m_boundingBox.bottomRight().y()};
     int mg{property(Property::StrokeWidth).value<int>()};
 
     if (m_points.size() <= 1) {
@@ -46,7 +48,8 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool opt
     m_pressures.push_back(pressure);
 }
 
-bool FreeformItem::intersects(const QRectF &rect) {
+bool FreeformItem::intersects(const QRectF &rect)
+{
     if (!boundingBox().intersects(rect))
         return false;
 
@@ -63,18 +66,17 @@ bool FreeformItem::intersects(const QRectF &rect) {
     for (qsizetype idx{0}; idx < pointsSize - 1; idx++) {
         QLine l{m_points[idx].toPoint(), m_points[idx + 1].toPoint()};
 
-        if (Common::Utils::Math::intersects(l, QLineF{p, q}) ||
-            Common::Utils::Math::intersects(l, QLineF{q, r}) ||
-            Common::Utils::Math::intersects(l, QLineF{r, s}) ||
-            Common::Utils::Math::intersects(l, QLineF{s, q}) ||
-            rect.contains(m_points[idx].toPoint()) || rect.contains(m_points[idx + 1].toPoint()))
+        if (Common::Utils::Math::intersects(l, QLineF{p, q}) || Common::Utils::Math::intersects(l, QLineF{q, r})
+            || Common::Utils::Math::intersects(l, QLineF{r, s}) || Common::Utils::Math::intersects(l, QLineF{s, q}) || rect.contains(m_points[idx].toPoint())
+            || rect.contains(m_points[idx + 1].toPoint()))
             return true;
     }
 
     return false;
 }
 
-bool FreeformItem::intersects(const QLineF &line) {
+bool FreeformItem::intersects(const QLineF &line)
+{
     qsizetype pointSize{m_points.size()};
     for (qsizetype index{1}; index < pointSize; index++) {
         if (Common::Utils::Math::intersects(QLineF{m_points[index - 1], m_points[index]}, line)) {
@@ -84,7 +86,8 @@ bool FreeformItem::intersects(const QLineF &line) {
     return false;
 }
 
-void FreeformItem::draw(QPainter &painter, const QPointF &offset) {
+void FreeformItem::draw(QPainter &painter, const QPointF &offset)
+{
     QPen pen{};
 
     QColor color{property(Property::StrokeColor).value<QColor>()};
@@ -102,7 +105,8 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset) {
     m_draw(painter, offset);
 }
 
-QPointF FreeformItem::optimizePoint(const QPointF &newPoint) {
+QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
+{
     m_currentWindow.push_back(newPoint);
     m_currentWindowSum += newPoint;
 
@@ -114,7 +118,8 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint) {
     return m_currentWindowSum / static_cast<qreal>(m_currentWindow.size());
 }
 
-void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const {
+void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const
+{
     QPen pen{};
 
     QColor color{property(Property::StrokeColor).value<QColor>()};
@@ -139,7 +144,8 @@ void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const {
     }
 }
 
-void FreeformItem::m_draw(QPainter &painter, const QPointF &offset) const {
+void FreeformItem::m_draw(QPainter &painter, const QPointF &offset) const
+{
     int strokeWidth{property(Property::StrokeWidth).value<int>()};
     int alpha{property(Property::Opacity).value<int>()};
     double currentWidth{strokeWidth * 1.0};
@@ -176,18 +182,21 @@ void FreeformItem::m_draw(QPainter &painter, const QPointF &offset) const {
     }
 }
 
-qsizetype FreeformItem::size() const {
+qsizetype FreeformItem::size() const
+{
     return m_points.size();
 }
 
-int FreeformItem::maxSize() const {
+int FreeformItem::maxSize() const
+{
     // Max number of points per freeform
     return 500;
 }
 
 // If the number of points exceeds the limit, this method can be called
 // to split this freeform into multiple smaller freeforms
-QVector<std::shared_ptr<Item>> FreeformItem::split() const {
+QVector<std::shared_ptr<Item>> FreeformItem::split() const
+{
     QVector<std::shared_ptr<Item>> items;
 
     qsizetype pointSize{m_points.size()};
@@ -195,8 +204,7 @@ QVector<std::shared_ptr<Item>> FreeformItem::split() const {
         if (index % maxSize() == 0) {
             // add this point to the previous freeform too
             if (!items.empty()) {
-                std::shared_ptr<FreeformItem> last{
-                    std::static_pointer_cast<FreeformItem>(items.back())};
+                std::shared_ptr<FreeformItem> last{std::static_pointer_cast<FreeformItem>(items.back())};
                 last->addPoint(m_points[index], m_pressures[index]);
             }
 
@@ -213,7 +221,8 @@ QVector<std::shared_ptr<Item>> FreeformItem::split() const {
     return items;
 }
 
-void FreeformItem::translate(const QPointF &amount) {
+void FreeformItem::translate(const QPointF &amount)
+{
     for (QPointF &point : m_points) {
         point += amount;
     }
@@ -221,14 +230,17 @@ void FreeformItem::translate(const QPointF &amount) {
     m_boundingBox.translate(amount);
 };
 
-Item::Type FreeformItem::type() const {
+Item::Type FreeformItem::type() const
+{
     return Item::Freeform;
 }
 
-const QVector<QPointF> &FreeformItem::points() const {
+const QVector<QPointF> &FreeformItem::points() const
+{
     return m_points;
 }
 
-const QVector<qreal> &FreeformItem::pressures() const {
+const QVector<qreal> &FreeformItem::pressures() const
+{
     return m_pressures;
 }

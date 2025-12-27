@@ -6,14 +6,17 @@
 
 #include "../item/factory/linefactory.hpp"
 
-LineTool::LineTool() {
+LineTool::LineTool()
+{
     m_itemFactory = std::make_unique<LineFactory>();
 }
 
-QString LineTool::tooltip() const {
+QString LineTool::tooltip() const
+{
     return QObject::tr("Line Tool");
 }
 
-IconManager::Icon LineTool::icon() const {
+IconManager::Icon LineTool::icon() const
+{
     return IconManager::TOOL_LINE;
 }

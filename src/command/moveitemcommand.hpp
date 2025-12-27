@@ -9,7 +9,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class MoveItemCommand : public ItemCommand {
+class MoveItemCommand : public ItemCommand
+{
 public:
     MoveItemCommand(QVector<std::shared_ptr<Item>> items, QPointF delta);
 

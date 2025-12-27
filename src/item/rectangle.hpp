@@ -6,7 +6,8 @@
 
 #include "polygon.hpp"
 
-class RectangleItem : public PolygonItem {
+class RectangleItem : public PolygonItem
+{
 public:
     RectangleItem();
     ~RectangleItem() override = default;

@@ -13,10 +13,13 @@
 #include "../data-structures/cachegrid.hpp"
 #include "../item/item.hpp"
 
-SelectCommand::SelectCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {
+SelectCommand::SelectCommand(QVector<std::shared_ptr<Item>> items)
+    : ItemCommand{std::move(items)}
+{
 }
 
-void SelectCommand::execute(ApplicationContext *context) {
+void SelectCommand::execute(ApplicationContext *context)
+{
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};
@@ -28,7 +31,8 @@ void SelectCommand::execute(ApplicationContext *context) {
     context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-void SelectCommand::undo(ApplicationContext *context) {
+void SelectCommand::undo(ApplicationContext *context)
+{
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};

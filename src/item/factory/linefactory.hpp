@@ -6,7 +6,8 @@
 
 #include "itemfactory.hpp"
 
-class LineFactory : public ItemFactory {
+class LineFactory : public ItemFactory
+{
 public:
     LineFactory();
     ~LineFactory() override = default;
