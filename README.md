@@ -1,4 +1,4 @@
-# <img src="./assets/logo-64.png" align="left" width="32">‎ Drawy
+# <img src="./assets/logo-48.png" align="left" width="32">‎ Drawy
 Your handy, infinite, brainstorming tool!  
   
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
