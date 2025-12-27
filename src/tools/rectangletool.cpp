@@ -11,7 +11,7 @@ RectangleTool::RectangleTool() {
 }
 
 QString RectangleTool::tooltip() const {
-    return "Rectangle Tool";
+    return QObject::tr("Rectangle Tool");
 }
 
 IconManager::Icon RectangleTool::icon() const {
