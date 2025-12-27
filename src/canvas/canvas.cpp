@@ -217,3 +217,5 @@ void Canvas::resize() {
 void Canvas::triggerUpdate() {
     this->update();
 }
+
+#include "moc_canvas.cpp"

@@ -33,3 +33,5 @@ const PropertyWidget &PropertyManager::widget(const Property::Type type) const {
 Property PropertyManager::value(const Property::Type type) const {
     return widget(type).value();
 }
+
+#include "moc_propertymanager.cpp"

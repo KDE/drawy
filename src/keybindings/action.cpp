@@ -20,3 +20,5 @@ QString Action::name() const {
 void Action::run() {
     m_callable();
 }
+
+#include "moc_action.cpp"

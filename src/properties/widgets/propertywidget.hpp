@@ -5,7 +5,7 @@
 #pragma once
 
 #include <QWidget>
-class Property;
+#include "../property.hpp"
 
 class PropertyWidget : public QObject {
     Q_OBJECT

@@ -80,3 +80,5 @@ void PropertyBar::updateProperties(Tool &tool) {
 
     update();
 }
+
+#include "moc_propertybar.cpp"

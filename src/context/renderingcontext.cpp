@@ -163,3 +163,5 @@ void RenderingContext::markForUpdate(const QRect &region) {
 void RenderingContext::reset() {
     setZoomFactor(1.0);
 }
+
+#include "moc_renderingcontext.cpp"

@@ -252,3 +252,5 @@ void ActionManager::loadFromFile() {
     Loader loader{};
     loader.loadFromFile(m_context);
 }
+
+#include "moc_actionmanager.cpp"

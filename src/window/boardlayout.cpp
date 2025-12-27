@@ -151,3 +151,5 @@ QSize BoardLayout::minimumSize() const {
 void BoardLayout::setMargins(int margins) {
     m_margins = margins;
 }
+
+#include "moc_boardlayout.cpp"

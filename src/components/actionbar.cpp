@@ -39,3 +39,5 @@ QPushButton &ActionBar::button(int id) {
 
     return *m_map[id];
 }
+
+#include "moc_actionbar.cpp"
