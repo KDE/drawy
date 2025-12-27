@@ -6,7 +6,6 @@
 
 #include "drawingtool.hpp"
 class PolygonItem;
-class PropertyManager;
 
 class PolygonDrawingTool : public DrawingTool {
 protected:

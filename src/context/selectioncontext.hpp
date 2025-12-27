@@ -7,7 +7,6 @@
 #include <QWidget>
 #include <unordered_set>
 class Property;
-class Tool;
 class Item;
 class ApplicationContext;
 

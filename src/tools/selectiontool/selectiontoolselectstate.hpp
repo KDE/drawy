@@ -5,7 +5,6 @@
 #pragma once
 
 #include <QPointF>
-class Item;
 
 #include "selectiontoolstate.hpp"
 

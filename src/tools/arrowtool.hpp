@@ -5,7 +5,6 @@
 #pragma once
 
 #include "polygondrawingtool.hpp"
-class PropertyManager;
 
 class ArrowTool : public PolygonDrawingTool {
 public:

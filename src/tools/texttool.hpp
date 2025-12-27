@@ -6,7 +6,6 @@
 
 #include "../item/text.hpp"
 #include "drawingtool.hpp"
-class PropertyManager;
 
 class TextTool : public DrawingTool {
 public:
