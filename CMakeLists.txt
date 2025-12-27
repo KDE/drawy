@@ -73,10 +73,11 @@ if (WIN32)
 endif()
 
 include(GNUInstallDirs)
-install(TARGETS ${PROJECT_NAME}
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+
+install(
+    TARGETS
+        ${PROJECT_NAME}
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
