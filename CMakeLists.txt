@@ -50,7 +50,7 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(ZSTD REQUIRED libzstd)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${ZSTD_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LINK_LIBRARIES})
 
 # Set bundle properties for macOS / iOS.
 if (APPLE)
