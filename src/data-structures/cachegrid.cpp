@@ -27,6 +27,7 @@ CacheCell::CacheCell(const QPoint &point)
 CacheCell::~CacheCell()
 {
     CacheCell::counter--;
+    qDebug() << "DELETED. LEFT = " << counter;
 }
 
 const QPoint &CacheCell::point() const
@@ -86,16 +87,43 @@ QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
 {
     QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
 
-    int cellMinX = floor(static_cast<double>(topLeft.x()) / CacheCell::cellSize().width());
-    int cellMinY = floor(static_cast<double>(topLeft.y()) / CacheCell::cellSize().height());
-    int cellMaxX = floor(static_cast<double>(bottomRight.x()) / CacheCell::cellSize().width());
-    int cellMaxY = floor(static_cast<double>(bottomRight.y()) / CacheCell::cellSize().height());
+    auto floorDivide = [](int first, int second) -> int {
+        int result{first / second};
+        int remainder{first % second};
+
+        if (remainder != 0 && (first < 0) != (second < 0)) {
+            result--;
+        }
+
+        return result;
+    };
+
+    int cellMinX{floorDivide(topLeft.x(), CacheCell::cellSize().width())};
+    int cellMinY{floorDivide(topLeft.y(), CacheCell::cellSize().height())};
+    int cellMaxX{floorDivide(bottomRight.x(), CacheCell::cellSize().width())};
+    int cellMaxY{floorDivide(bottomRight.y(), CacheCell::cellSize().height())};
+
+    int totalRows{cellMaxX - cellMinX + 1};
+    int totalCols{cellMaxY - cellMinY + 1};
+    long long totalCells{1LL * totalRows * totalCols};
+
+    int row = cellMinX;
+    int col = cellMinY;
+
+    if (totalCells > m_maxSize) {
+        row = cellMinX + totalRows - floorDivide(m_maxSize - 1, totalCols) - 1;
+        col = cellMinY + totalCols - (m_maxSize - 1) % totalCols - 1;
+    }
 
     QVector<std::shared_ptr<CacheCell>> out{};
-    for (int row = cellMinX; row <= cellMaxX; row++) {
-        for (int col = cellMinY; col <= cellMaxY; col++) {
+
+    while (row <= cellMaxX) {
+        while (col <= cellMaxY) {
             out.push_back(cell(QPoint{row, col}));
+            col++;
         }
+        row++;
+        col = cellMinY;
     }
 
     return out;
@@ -163,4 +191,12 @@ void CacheGrid::markAllDirty()
     for (const auto &cell : m_grid) {
         cell->setDirty(true);
     }
+}
+
+void CacheGrid::clear()
+{
+    m_headCell->nextCell = m_tailCell;
+    m_tailCell->prevCell = m_headCell;
+    m_grid.clear();
+    m_curSize = 0;
 }

@@ -50,6 +50,7 @@ public:
     void markAllDirty();
     void setSize(int newSize);
     int size() const;
+    void clear();
 
 private:
     QHash<QPoint, std::shared_ptr<CacheCell>> m_grid{};
