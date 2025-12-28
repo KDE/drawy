@@ -48,7 +48,7 @@ file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
     *.cpp
     *.hpp
-)      
+)
 include(KDEGitCommitHooks)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
@@ -97,9 +97,9 @@ install(
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
 
 if (UNIX AND NOT APPLE)
-  install(PROGRAMS deploy/linux/io.github.prayag2.Drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME io.github.prayag2.Drawy.desktop)
-  install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME io.github.prayag2.Drawy.svg)
-  install(FILES deploy/linux/io.github.prayag2.Drawy.metainfo.xml.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/metainfo/ RENAME io.github.prayag2.Drawy.metainfo.xml)
+  install(PROGRAMS deploy/linux/org.kde.drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME org.kde.drawy.desktop)
+  install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
+  install(FILES deploy/linux/org.kde.drawy.metainfo.xml.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/metainfo/ RENAME org.kde.drawy.metainfo.xml)
 endif()
 
 ecm_install_po_files_as_qm(poqm)
