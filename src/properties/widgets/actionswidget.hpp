@@ -9,6 +9,7 @@
 
 class ActionsWidget : public PropertyWidget
 {
+    Q_OBJECT
 public:
     explicit ActionsWidget(QWidget *parent = nullptr);
 
