@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(KF_MIN_VERSION "6.19.0")
+set(QT_REQUIRED_VERSION "6.9.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
@@ -21,7 +22,7 @@ include(ECMPoQmTools)
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
 # Find Qt6
-find_package(Qt6 REQUIRED
+find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
     COMPONENTS
         OpenGLWidgets
         LinguistTools
