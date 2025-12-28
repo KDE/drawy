@@ -47,6 +47,7 @@
                 pkg-config
                 reuse
                 kdePackages.extra-cmake-modules
+                libclang.python
               ]);
           };
       });
