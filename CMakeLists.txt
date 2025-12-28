@@ -40,6 +40,16 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
 )
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash)
+option(
+    USE_UNITY_CMAKE_SUPPORT
+    "Use UNITY cmake support (speedup compile time)"
+    OFF
+) 
+
+set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
+if(USE_UNITY_CMAKE_SUPPORT)
+    set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
+endif()
 
 file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
@@ -224,11 +234,16 @@ add_executable(${PROJECT_NAME})
 ecm_qt_declare_logging_category(${PROJECT_NAME} HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
 )
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD ON)
+endif()
+
 target_include_directories(${PROJECT_NAME} PRIVATE ${ZSTD_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LINK_LIBRARIES})
 target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 target_link_libraries(${PROJECT_NAME} PRIVATE KF6::Crash)
+
 
 # Set bundle properties for macOS / iOS.
 if (APPLE)
