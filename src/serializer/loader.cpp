@@ -27,7 +27,7 @@
 
 void Loader::loadFromFile(ApplicationContext *context) {
     // file filter
-    QString filter = QString::fromUtf8("Drawy (*.%1)").arg(Common::drawyFileExt);
+    QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
     // ask for file (handle cancel)
     QDir homeDir{QDir::home()};
