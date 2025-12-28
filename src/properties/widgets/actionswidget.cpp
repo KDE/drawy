@@ -29,9 +29,9 @@ ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
     groupButton->setIcon(iconManager.icon(IconManager::ACTION_GROUP));
     ungroupButton->setIcon(iconManager.icon(IconManager::ACTION_UNGROUP));
 
-    deleteButton->setToolTip("Delete selection");
-    groupButton->setToolTip("Group selection");
-    ungroupButton->setToolTip("Ungroup selection");
+    deleteButton->setToolTip(tr("Delete selection"));
+    groupButton->setToolTip(tr("Group selection"));
+    ungroupButton->setToolTip(tr("Ungroup selection"));
 
     deleteButton->setProperty("class", "drawyPropertyBarActionButton");
     groupButton->setProperty("class", "drawyPropertyBarActionButton");

@@ -122,11 +122,11 @@ void UIContext::setUIContext() {
 
         if (canvas.bg() == Common::lightBackgroundColor) {
             canvas.setBg(Common::darkBackgroundColor);
-            button.setToolTip("Light Mode");
+            button.setToolTip(tr("Light Mode"));
             button.setIcon(iconManager().icon(IconManager::ACTION_LIGHT_MODE));
         } else {
             canvas.setBg(Common::lightBackgroundColor);
-            button.setToolTip("Dark Mode");
+            button.setToolTip(tr("Dark Mode"));
             button.setIcon(iconManager().icon(IconManager::ACTION_DARK_MODE));
         }
 
