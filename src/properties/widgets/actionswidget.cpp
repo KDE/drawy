@@ -20,9 +20,9 @@ ActionsWidget::ActionsWidget(QWidget *parent) : PropertyWidget{parent} {
     QHBoxLayout *layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins(0, 0, 0, 0);
 
-    QPushButton *deleteButton{new QPushButton("", m_widget)};
-    QPushButton *groupButton{new QPushButton("", m_widget)};
-    QPushButton *ungroupButton{new QPushButton("", m_widget)};
+    QPushButton *deleteButton{new QPushButton(m_widget)};
+    QPushButton *groupButton{new QPushButton(m_widget)};
+    QPushButton *ungroupButton{new QPushButton(m_widget)};
 
     IconManager &iconManager{ApplicationContext::instance()->uiContext().iconManager()};
     deleteButton->setIcon(iconManager.icon(IconManager::ACTION_DELETE));

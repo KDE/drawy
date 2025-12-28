@@ -48,7 +48,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type) {
         return;
 
     ApplicationContext *context{ApplicationContext::instance()};
-    QPushButton *btn{new QPushButton("", this)};
+    QPushButton *btn{new QPushButton(this)};
     btn->setIcon(context->uiContext().iconManager().icon(tool->icon()));
 
     btn->setCheckable(true);
