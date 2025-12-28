@@ -4,7 +4,6 @@
 
 #include "controller.hpp"
 
-#include <QDateTime>
 #include <QWheelEvent>
 
 #include "../canvas/canvas.hpp"
@@ -16,7 +15,6 @@
 #include "../context/spatialcontext.hpp"
 #include "../context/uicontext.hpp"
 #include "../event/event.hpp"
-#include "../tools/tool.hpp"
 
 Controller::Controller(QObject *parent)
     : QObject{parent},

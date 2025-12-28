@@ -10,7 +10,6 @@
 #include "../canvas/canvas.hpp"
 #include "../command/commandhistory.hpp"
 #include "../command/removeitemcommand.hpp"
-#include "../common/constants.hpp"
 #include "../common/renderitems.hpp"
 #include "../context/applicationcontext.hpp"
 #include "../context/coordinatetransformer.hpp"

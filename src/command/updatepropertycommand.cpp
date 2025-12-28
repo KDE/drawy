@@ -12,7 +12,6 @@
 #include "../context/spatialcontext.hpp"
 #include "../data-structures/cachegrid.hpp"
 #include "../item/item.hpp"
-#include "../properties/property.hpp"
 
 UpdatePropertyCommand::UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items,
                                              Property newProperty)

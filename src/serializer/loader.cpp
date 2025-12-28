@@ -8,9 +8,7 @@
 #include <QFileDialog>
 #include <QJsonArray>
 #include <QJsonDocument>
-#include <QJsonObject>
 #include <QString>
-#include <memory>
 
 #include "../common/constants.hpp"
 #include "../common/utils/compression.hpp"
