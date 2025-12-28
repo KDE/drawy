@@ -7,7 +7,6 @@
 #include <QElapsedTimer>
 
 #include "tool.hpp"
-class Item;
 
 class MoveTool : public Tool {
 public:

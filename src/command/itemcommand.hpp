@@ -8,7 +8,6 @@
 #include <memory>
 
 #include "command.hpp"
-class ApplicationContext;
 class Item;
 
 class ItemCommand : public Command {

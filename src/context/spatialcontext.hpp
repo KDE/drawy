@@ -10,7 +10,6 @@ class CacheGrid;
 class CoordinateTransformer;
 class ApplicationContext;
 class CommandHistory;
-class Canvas;
 
 class SpatialContext : public QObject {
 public:

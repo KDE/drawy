@@ -8,7 +8,6 @@
 #include <QWidget>
 class Canvas;
 class ApplicationContext;
-class PropertyManager;
 
 class RenderingContext : public QObject {
     Q_OBJECT

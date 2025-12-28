@@ -8,7 +8,6 @@
 
 #include "drawingtool.hpp"
 class FreeformItem;
-class PropertyManager;
 
 class FreeformTool : public DrawingTool {
 public:

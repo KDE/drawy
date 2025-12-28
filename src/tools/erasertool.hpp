@@ -9,7 +9,6 @@
 #include "../common/constants.hpp"
 #include "tool.hpp"
 class Item;
-class PropertyManager;
 
 class EraserTool : public Tool {
 public:
