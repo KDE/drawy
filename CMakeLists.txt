@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
 cmake_minimum_required(VERSION 3.16)
 
 project(drawy VERSION 0.1 LANGUAGES CXX)

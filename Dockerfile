@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # This dockerimage can be used locally to deploy drawy to an AppImage
 # Although GitHub Actions is a better way, you may use this dockerfile to create an appimage
 

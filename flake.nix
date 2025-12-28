@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 {
   description = "x86_64 dev environment for Drawy, the whiteboard app.";
 
@@ -47,6 +51,7 @@
                 pkg-config
                 reuse
                 kdePackages.extra-cmake-modules
+                libclang.python
               ]);
           };
       });

@@ -10,16 +10,17 @@
 #include "../item/item.hpp"
 #include "orderedlist.hpp"
 
-template <typename Shape>
-QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape) const {
+template<typename Shape>
+QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape) const
+{
     return queryItems(shape, [](const std::shared_ptr<Item> &item, const Shape &shape) {
         return item->intersects(shape);
     });
 }
 
-template <typename Shape, typename QueryCondition>
-QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape,
-                                                    QueryCondition condition) const {
+template<typename Shape, typename QueryCondition>
+QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape, QueryCondition condition) const
+{
     QVector<std::shared_ptr<Item>> curItems{};
     std::unordered_map<std::shared_ptr<Item>, bool> itemAlreadyPushed{};
 
@@ -34,11 +35,12 @@ QVector<std::shared_ptr<Item>> QuadTree::queryItems(const Shape &shape,
     return curItems;
 };
 
-template <typename Shape, typename QueryCondition>
+template<typename Shape, typename QueryCondition>
 void QuadTree::query(const Shape &shape,
                      QueryCondition condition,
                      QVector<std::shared_ptr<Item>> &out,
-                     std::unordered_map<std::shared_ptr<Item>, bool> &itemAlreadyPushed) const {
+                     std::unordered_map<std::shared_ptr<Item>, bool> &itemAlreadyPushed) const
+{
     if (!Common::Utils::Math::intersects(m_boundingBox, shape)) {
         return;
     }

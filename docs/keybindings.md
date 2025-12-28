@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 None
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 ### Keyboard Shortcuts
 Future releases will allow you to change the keyboard shortcuts. For now they are hardcoded. Here's a list of all available keyboard shortcuts:
 | Key Combination                                                                        | Description       |

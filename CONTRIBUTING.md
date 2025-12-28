@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 None
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Contributing to Drawy
 Thank you for taking the time to contribute. All contributions are valued, and we welcome ideas, fixes, improvements, and discussions. This guide explains how to participate effectively and respectfully.
 
