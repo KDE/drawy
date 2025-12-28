@@ -8,7 +8,8 @@
 #include "../property.hpp"
 #include "propertywidget.hpp"
 
-class PropertyManager : public QObject {
+class PropertyManager : public QObject
+{
     Q_OBJECT
 public:
     explicit PropertyManager(QWidget *parent = nullptr);

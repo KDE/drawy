@@ -19,7 +19,9 @@
 #include "../controller/controller.hpp"
 #include "boardlayout.hpp"
 
-MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
+MainWindow::MainWindow(QWidget *parent)
+    : QWidget(parent)
+{
     this->m_applyCustomStyles();
 
     BoardLayout *layout{new BoardLayout(this)};
@@ -39,26 +41,11 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
     layout->setBottomWidget(&uiContext.actionBar());
     layout->setCentralWidget(&renderingContext.canvas());
 
-    QObject::connect(&renderingContext.canvas(),
-                     &Canvas::mousePressed,
-                     controller,
-                     &Controller::mousePressed);
-    QObject::connect(&renderingContext.canvas(),
-                     &Canvas::mouseMoved,
-                     controller,
-                     &Controller::mouseMoved);
-    QObject::connect(&renderingContext.canvas(),
-                     &Canvas::mouseReleased,
-                     controller,
-                     &Controller::mouseReleased);
-    QObject::connect(&renderingContext.canvas(),
-                     &Canvas::keyPressed,
-                     controller,
-                     &Controller::keyPressed);
-    QObject::connect(&renderingContext.canvas(),
-                     &Canvas::keyReleased,
-                     controller,
-                     &Controller::keyReleased);
+    QObject::connect(&renderingContext.canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
+    QObject::connect(&renderingContext.canvas(), &Canvas::mouseMoved, controller, &Controller::mouseMoved);
+    QObject::connect(&renderingContext.canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
+    QObject::connect(&renderingContext.canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
+    QObject::connect(&renderingContext.canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
 
     QObject::connect(&renderingContext.canvas(), &Canvas::tablet, controller, &Controller::tablet);
     QObject::connect(&renderingContext.canvas(), &Canvas::wheel, controller, &Controller::wheel);
@@ -67,10 +54,12 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
     m_applyCustomStyles();
 }
 
-MainWindow::~MainWindow() {
+MainWindow::~MainWindow()
+{
 }
 
-void MainWindow::m_applyCustomStyles() {
+void MainWindow::m_applyCustomStyles()
+{
     QFile file(":/styles/style.qss");
     if (file.open(QFile::ReadOnly | QFile::Text)) {
         QTextStream stream(&file);

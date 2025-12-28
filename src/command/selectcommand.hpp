@@ -8,7 +8,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class SelectCommand : public ItemCommand {
+class SelectCommand : public ItemCommand
+{
 public:
     explicit SelectCommand(QVector<std::shared_ptr<Item>> items);
 
@@ -16,4 +17,4 @@ public:
     void undo(ApplicationContext *context) override;
 };
 
-#endif  // SELECTCOMMAND_H
+#endif // SELECTCOMMAND_H

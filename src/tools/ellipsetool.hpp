@@ -6,7 +6,8 @@
 
 #include "polygondrawingtool.hpp"
 
-class EllipseTool : public PolygonDrawingTool {
+class EllipseTool : public PolygonDrawingTool
+{
 public:
     EllipseTool();
 

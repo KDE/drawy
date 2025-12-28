@@ -6,7 +6,8 @@
 
 #include "polygondrawingtool.hpp"
 
-class RectangleTool : public PolygonDrawingTool {
+class RectangleTool : public PolygonDrawingTool
+{
 public:
     RectangleTool();
     ~RectangleTool() override = default;

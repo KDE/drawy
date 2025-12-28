@@ -21,13 +21,15 @@
 #include "../item/polygon.hpp"
 #include "../properties/widgets/propertymanager.hpp"
 
-PolygonDrawingTool::PolygonDrawingTool() {
+PolygonDrawingTool::PolygonDrawingTool()
+{
     m_cursor = QCursor(Qt::CrossCursor);
 
     m_properties = {Property::StrokeWidth, Property::StrokeColor};
 }
 
-void PolygonDrawingTool::mousePressed(ApplicationContext *context) {
+void PolygonDrawingTool::mousePressed(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
 
     if (uiContext.event().button() == Qt::LeftButton) {
@@ -37,10 +39,8 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context) {
 
         curItem = std::dynamic_pointer_cast<PolygonItem>(m_itemFactory->create());
 
-        curItem->setProperty(Property::StrokeWidth,
-                             uiContext.propertyManager().value(Property::StrokeWidth));
-        curItem->setProperty(Property::StrokeColor,
-                             uiContext.propertyManager().value(Property::StrokeColor));
+        curItem->setProperty(Property::StrokeWidth, uiContext.propertyManager().value(Property::StrokeWidth));
+        curItem->setProperty(Property::StrokeColor, uiContext.propertyManager().value(Property::StrokeColor));
 
         curItem->setStart(transformer.viewToWorld(uiContext.event().pos()));
 
@@ -54,7 +54,8 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context) {
     }
 };
 
-void PolygonDrawingTool::mouseMoved(ApplicationContext *context) {
+void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
+{
     if (m_isDrawing) {
         SpatialContext &spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
@@ -72,7 +73,8 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context) {
     }
 };
 
-void PolygonDrawingTool::mouseReleased(ApplicationContext *context) {
+void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
 
     if (uiContext.event().button() == Qt::LeftButton && m_isDrawing) {
@@ -95,12 +97,14 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context) {
     }
 };
 
-void PolygonDrawingTool::cleanup() {
+void PolygonDrawingTool::cleanup()
+{
     ApplicationContext *context{ApplicationContext::instance()};
     context->uiContext().event().setButton(Qt::LeftButton);
     mouseReleased(context);
 }
 
-Tool::Type PolygonDrawingTool::type() const {
+Tool::Type PolygonDrawingTool::type() const
+{
     return Tool::PolygonDrawing;
 }

@@ -6,7 +6,8 @@
 
 #include "itemfactory.hpp"
 
-class FreeformFactory : public ItemFactory {
+class FreeformFactory : public ItemFactory
+{
 public:
     FreeformFactory();
     ~FreeformFactory() override = default;

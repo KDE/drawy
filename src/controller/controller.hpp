@@ -11,7 +11,8 @@
 #include "../tools/tool.hpp"
 class ApplicationContext;
 
-class Controller : public QObject {
+class Controller : public QObject
+{
     Q_OBJECT
 
 public:
@@ -35,7 +36,7 @@ private:
     ApplicationContext *m_context{};
     qint64 m_lastTime{};
     qint64 m_lastClickTime{};
-    int m_clickCount{};  // for double/triple clicks
+    int m_clickCount{}; // for double/triple clicks
 
     bool m_mouseMoved{false};
     bool m_movingWithMiddleClick{false};

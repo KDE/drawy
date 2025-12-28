@@ -6,7 +6,8 @@
 
 #include "polygondrawingtool.hpp"
 
-class LineTool : public PolygonDrawingTool {
+class LineTool : public PolygonDrawingTool
+{
 public:
     LineTool();
     ~LineTool() override = default;

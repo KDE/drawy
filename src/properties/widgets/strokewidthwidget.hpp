@@ -6,7 +6,8 @@
 
 #include "propertywidget.hpp"
 
-class StrokeWidthWidget : public PropertyWidget {
+class StrokeWidthWidget : public PropertyWidget
+{
 public:
     explicit StrokeWidthWidget(QWidget *parent = nullptr);
 

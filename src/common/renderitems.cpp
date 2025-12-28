@@ -20,7 +20,8 @@
 #include "constants.hpp"
 
 // TODO: Refactor this
-void Common::renderCanvas(ApplicationContext *context) {
+void Common::renderCanvas(ApplicationContext *context)
+{
     CoordinateTransformer &transformer{context->spatialContext().coordinateTransformer()};
     Canvas &canvas{context->renderingContext().canvas()};
     QPointF offsetPos{context->spatialContext().offsetPos()};
@@ -30,8 +31,7 @@ void Common::renderCanvas(ApplicationContext *context) {
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
 
-    QVector<std::shared_ptr<CacheCell>> visibleCells{
-        context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
+    QVector<std::shared_ptr<CacheCell>> visibleCells{context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
 
     QPainter &canvasPainter{context->renderingContext().canvasPainter()};
 
@@ -46,9 +46,9 @@ void Common::renderCanvas(ApplicationContext *context) {
             cell->setDirty(false);
 
             QVector<std::shared_ptr<Item>> intersectingItems{
-                context->spatialContext().quadtree().queryItems(
-                    transformer.gridToWorld(cell->rect()),
-                    [](const auto &a, auto b) { return true; })};
+                context->spatialContext().quadtree().queryItems(transformer.gridToWorld(cell->rect()), [](const auto &a, auto b) {
+                    return true;
+                })};
 
             if (intersectingItems.empty())
                 continue;
@@ -65,8 +65,7 @@ void Common::renderCanvas(ApplicationContext *context) {
             }
         }
 
-        canvasPainter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())),
-                                 cell->image());
+        canvasPainter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), cell->image());
     }
 
     QRectF selectionBox{};

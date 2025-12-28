@@ -4,14 +4,17 @@
 
 #include "ellipse.hpp"
 
-EllipseItem::EllipseItem() {
+EllipseItem::EllipseItem()
+{
 }
 
-void EllipseItem::m_draw(QPainter &painter, const QPointF &offset) const {
+void EllipseItem::m_draw(QPainter &painter, const QPointF &offset) const
+{
     painter.drawEllipse(QRectF(start() - offset, end() - offset));
 }
 
-bool EllipseItem::onEllipse(QLineF line) const {
+bool EllipseItem::onEllipse(QLineF line) const
+{
     int sw{boundingBoxPadding() + property(Property::StrokeWidth).value<int>()};
     double bX{m_boundingBox.x() + sw}, bY{m_boundingBox.y() + sw};
     double bW{m_boundingBox.width() - 2 * sw}, bH{m_boundingBox.height() - 2 * sw};
@@ -30,8 +33,7 @@ bool EllipseItem::onEllipse(QLineF line) const {
 
     double firstTerm{ps * bs + qs * as};
     double secondTerm{2 * (x1 * p * bs - p * h * bs + y1 * q * as - q * k * as)};
-    double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs + y1 * y1 * as + as * k * k -
-                     2 * y1 * k * as - as * bs};
+    double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs + y1 * y1 * as + as * k * k - 2 * y1 * k * as - as * bs};
 
     double discriminant{secondTerm * secondTerm - 4 * firstTerm * thirdTerm};
     if (discriminant < 0)
@@ -43,7 +45,8 @@ bool EllipseItem::onEllipse(QLineF line) const {
     return (t1 >= 0.0 && t1 <= 1.0) || (t2 >= 0.0 && t2 <= 1.0);
 }
 
-bool EllipseItem::intersects(const QRectF &rect) {
+bool EllipseItem::intersects(const QRectF &rect)
+{
     if (!boundingBox().intersects(rect))
         return false;
 
@@ -54,10 +57,12 @@ bool EllipseItem::intersects(const QRectF &rect) {
     return onEllipse({a, b}) || onEllipse({b, c}) || onEllipse({c, d}) || onEllipse({d, a});
 };
 
-bool EllipseItem::intersects(const QLineF &line) {
+bool EllipseItem::intersects(const QLineF &line)
+{
     return onEllipse(line);
 }
 
-Item::Type EllipseItem::type() const {
+Item::Type EllipseItem::type() const
+{
     return Item::Ellipse;
 }

@@ -14,10 +14,12 @@
 #include "../item/item.hpp"
 
 DeselectCommand::DeselectCommand(QVector<std::shared_ptr<Item>> items)
-    : ItemCommand{std::move(items)} {
+    : ItemCommand{std::move(items)}
+{
 }
 
-void DeselectCommand::execute(ApplicationContext *context) {
+void DeselectCommand::execute(ApplicationContext *context)
+{
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};
@@ -29,7 +31,8 @@ void DeselectCommand::execute(ApplicationContext *context) {
     context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-void DeselectCommand::undo(ApplicationContext *context) {
+void DeselectCommand::undo(ApplicationContext *context)
+{
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     QRectF dirtyRegion{};

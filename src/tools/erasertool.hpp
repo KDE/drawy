@@ -10,7 +10,8 @@
 #include "tool.hpp"
 class Item;
 
-class EraserTool : public Tool {
+class EraserTool : public Tool
+{
 public:
     EraserTool();
     ~EraserTool() override = default;

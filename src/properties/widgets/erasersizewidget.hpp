@@ -6,7 +6,8 @@
 
 #include "propertywidget.hpp"
 
-class EraserSizeWidget : public PropertyWidget {
+class EraserSizeWidget : public PropertyWidget
+{
 public:
     explicit EraserSizeWidget(QWidget *parent = nullptr);
 

@@ -14,11 +14,13 @@
 #include "../event/event.hpp"
 #include "../item/item.hpp"
 
-MoveTool::MoveTool() {
+MoveTool::MoveTool()
+{
     m_cursor = QCursor(Qt::OpenHandCursor);
 }
 
-void MoveTool::mousePressed(ApplicationContext *context) {
+void MoveTool::mousePressed(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
     auto button{uiContext.event().button()};
 
@@ -35,7 +37,8 @@ void MoveTool::mousePressed(ApplicationContext *context) {
     }
 };
 
-void MoveTool::mouseMoved(ApplicationContext *context) {
+void MoveTool::mouseMoved(ApplicationContext *context)
+{
     if (m_isActive) {
         SpatialContext &spatialContext{context->spatialContext()};
         RenderingContext &renderingContext{context->renderingContext()};
@@ -51,7 +54,8 @@ void MoveTool::mouseMoved(ApplicationContext *context) {
     }
 };
 
-void MoveTool::mouseReleased(ApplicationContext *context) {
+void MoveTool::mouseReleased(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
     auto button{uiContext.event().button()};
 
@@ -63,14 +67,17 @@ void MoveTool::mouseReleased(ApplicationContext *context) {
     }
 };
 
-Tool::Type MoveTool::type() const {
+Tool::Type MoveTool::type() const
+{
     return Tool::Move;
 }
 
-QString MoveTool::tooltip() const {
+QString MoveTool::tooltip() const
+{
     return QObject::tr("Move Tool");
 }
 
-IconManager::Icon MoveTool::icon() const {
+IconManager::Icon MoveTool::icon() const
+{
     return IconManager::TOOL_MOVE;
 }

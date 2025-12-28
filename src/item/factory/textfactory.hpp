@@ -6,7 +6,8 @@
 
 #include "itemfactory.hpp"
 
-class TextFactory : public ItemFactory {
+class TextFactory : public ItemFactory
+{
 public:
     TextFactory();
     ~TextFactory() override = default;

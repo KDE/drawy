@@ -6,6 +6,7 @@
 
 class ApplicationContext;
 
-namespace Common {
+namespace Common
+{
 void renderCanvas(ApplicationContext *context);
 };

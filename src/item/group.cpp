@@ -6,29 +6,34 @@
 
 #include <stdexcept>
 
-void GroupItem::draw(QPainter &painter, const QPointF &offset) {
+void GroupItem::draw(QPainter &painter, const QPointF &offset)
+{
     for (const auto &item : m_items) {
         item->draw(painter, offset);
     }
 }
 
-void GroupItem::erase(QPainter &painter, const QPointF &offset) const {
+void GroupItem::erase(QPainter &painter, const QPointF &offset) const
+{
     for (const auto &item : m_items) {
         item->erase(painter, offset);
     }
 }
 
-void GroupItem::translate(const QPointF &amount) {
+void GroupItem::translate(const QPointF &amount)
+{
     for (const auto &item : m_items) {
         item->translate(amount);
     }
 }
 
-void GroupItem::group(const QVector<std::shared_ptr<Item>> &items) {
+void GroupItem::group(const QVector<std::shared_ptr<Item>> &items)
+{
     m_items = items;
 }
 
-bool GroupItem::intersects(const QRectF &rect) {
+bool GroupItem::intersects(const QRectF &rect)
+{
     for (const auto &item : m_items) {
         if (item->intersects(rect)) {
             return true;
@@ -38,7 +43,8 @@ bool GroupItem::intersects(const QRectF &rect) {
     return false;
 };
 
-bool GroupItem::intersects(const QLineF &line) {
+bool GroupItem::intersects(const QLineF &line)
+{
     for (const auto &item : m_items) {
         if (item->intersects(line)) {
             return true;
@@ -48,11 +54,13 @@ bool GroupItem::intersects(const QLineF &line) {
     return false;
 };
 
-QVector<std::shared_ptr<Item>> GroupItem::unGroup() {
+QVector<std::shared_ptr<Item>> GroupItem::unGroup()
+{
     return m_items;
 }
 
-const QRectF GroupItem::boundingBox() const {
+const QRectF GroupItem::boundingBox() const
+{
     QRectF result{};
 
     for (const auto &item : m_items) {
@@ -62,17 +70,20 @@ const QRectF GroupItem::boundingBox() const {
     return result;
 };
 
-Item::Type GroupItem::type() const {
+Item::Type GroupItem::type() const
+{
     return Item::Group;
 }
 
-void GroupItem::setProperty(const Property::Type propertyType, Property newObj) {
+void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
+{
     for (const auto &item : m_items) {
         item->setProperty(propertyType, newObj);
     }
 };
 
-const Property GroupItem::property(const Property::Type propertyType) const {
+const Property GroupItem::property(const Property::Type propertyType) const
+{
     if (m_items.empty()) {
         throw new std::logic_error("Group does not contain any item with this property");
     }
@@ -95,7 +106,8 @@ const Property GroupItem::property(const Property::Type propertyType) const {
     return property;
 };
 
-const QVector<Property> GroupItem::properties() const {
+const QVector<Property> GroupItem::properties() const
+{
     QVector<Property> result{};
 
     for (const auto &item : m_items) {
@@ -105,7 +117,8 @@ const QVector<Property> GroupItem::properties() const {
     return result;
 };
 
-const QVector<Property::Type> GroupItem::propertyTypes() const {
+const QVector<Property::Type> GroupItem::propertyTypes() const
+{
     std::unordered_set<Property::Type> types;
     for (const auto &item : m_items) {
         auto &itemPropertyTypes{item->propertyTypes()};
@@ -115,4 +128,4 @@ const QVector<Property::Type> GroupItem::propertyTypes() const {
     return QVector<Property::Type>(types.begin(), types.end());
 };
 
-void GroupItem::m_draw(QPainter &painter, const QPointF &offset) const {};
+void GroupItem::m_draw(QPainter &painter, const QPointF &offset) const { };

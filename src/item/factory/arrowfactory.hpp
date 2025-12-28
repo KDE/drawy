@@ -6,7 +6,8 @@
 
 #include "itemfactory.hpp"
 
-class ArrowFactory : public ItemFactory {
+class ArrowFactory : public ItemFactory
+{
 public:
     ArrowFactory();
     ~ArrowFactory() override = default;

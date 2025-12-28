@@ -31,16 +31,19 @@
 #include "spatialcontext.hpp"
 
 UIContext::UIContext(ApplicationContext *context)
-    : QObject{context},
-      m_applicationContext{context} {
+    : QObject{context}
+    , m_applicationContext{context}
+{
 }
 
-UIContext::~UIContext() {
+UIContext::~UIContext()
+{
     delete m_event;
     qDebug() << "Object deleted: UIContext";
 }
 
-void UIContext::setUIContext() {
+void UIContext::setUIContext()
+{
     m_toolBar = new ToolBar(m_applicationContext->parentWidget());
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
@@ -78,10 +81,7 @@ void UIContext::setUIContext() {
     m_actionBar->addButton(tr("Redo"), IconManager::ACTION_REDO, 5);
 
     QObject::connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
-    QObject::connect(m_toolBar,
-                     &ToolBar::toolChanged,
-                     m_propertyBar,
-                     &PropertyBar::updateProperties);
+    QObject::connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
     QObject::connect(&m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext().updateZoomFactor(-1);
@@ -137,39 +137,48 @@ void UIContext::setUIContext() {
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
 
-ToolBar &UIContext::toolBar() const {
+ToolBar &UIContext::toolBar() const
+{
     return *m_toolBar;
 }
 
-PropertyBar &UIContext::propertyBar() const {
+PropertyBar &UIContext::propertyBar() const
+{
     return *m_propertyBar;
 }
 
-ActionBar &UIContext::actionBar() const {
+ActionBar &UIContext::actionBar() const
+{
     return *m_actionBar;
 }
 
-KeybindManager &UIContext::keybindManager() const {
+KeybindManager &UIContext::keybindManager() const
+{
     return *m_keybindManager;
 }
 
-ActionManager &UIContext::actionManager() const {
+ActionManager &UIContext::actionManager() const
+{
     return *m_actionManager;
 }
 
-PropertyManager &UIContext::propertyManager() const {
+PropertyManager &UIContext::propertyManager() const
+{
     return *m_propertyManager;
 }
 
-Event &UIContext::event() const {
+Event &UIContext::event() const
+{
     return *m_event;
 }
 
-IconManager &UIContext::iconManager() const {
+IconManager &UIContext::iconManager() const
+{
     return *m_iconManager;
 }
 
-void UIContext::toolChanged(Tool &tool) {
+void UIContext::toolChanged(Tool &tool)
+{
     if (tool.type() != Tool::Selection) {
         m_applicationContext->selectionContext().selectedItems().clear();
     }
@@ -187,7 +196,8 @@ void UIContext::toolChanged(Tool &tool) {
     m_applicationContext->renderingContext().markForUpdate();
 }
 
-void UIContext::reset() {
+void UIContext::reset()
+{
     m_lastTool = nullptr;
     toolBar().changeTool(Tool::Selection);
 }

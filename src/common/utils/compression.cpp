@@ -8,8 +8,10 @@
 
 #include <QDebug>
 
-namespace Common::Utils::Compression {
-QByteArray compressData(const QByteArray &data) {
+namespace Common::Utils::Compression
+{
+QByteArray compressData(const QByteArray &data)
+{
     size_t requiredOutputSize = ZSTD_compressBound(data.size());
 
     QByteArray output{static_cast<qsizetype>(requiredOutputSize), '\0'};
@@ -23,7 +25,8 @@ QByteArray compressData(const QByteArray &data) {
     return output;
 }
 
-QByteArray decompressData(const QByteArray &data) {
+QByteArray decompressData(const QByteArray &data)
+{
     unsigned long long originalSize = ZSTD_getFrameContentSize(data.data(), data.size());
 
     if (originalSize == ZSTD_CONTENTSIZE_ERROR)
@@ -41,4 +44,4 @@ QByteArray decompressData(const QByteArray &data) {
 
     return output;
 }
-}  // namespace Common::Utils::Compression
+} // namespace Common::Utils::Compression

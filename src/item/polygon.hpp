@@ -6,7 +6,8 @@
 
 #include "item.hpp"
 
-class PolygonItem : public Item {
+class PolygonItem : public Item
+{
 public:
     PolygonItem();
 

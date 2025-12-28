@@ -14,7 +14,9 @@
 #include "../data-structures/quadtree.hpp"
 #include "../item/group.hpp"
 
-UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items) : ItemCommand{items} {
+UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items)
+    : ItemCommand{items}
+{
     for (const auto &item : items) {
         if (item->type() == Item::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
@@ -22,7 +24,8 @@ UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items) : It
     }
 }
 
-void UngroupCommand::execute(ApplicationContext *context) {
+void UngroupCommand::execute(ApplicationContext *context)
+{
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
@@ -44,7 +47,8 @@ void UngroupCommand::execute(ApplicationContext *context) {
     context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-void UngroupCommand::undo(ApplicationContext *context) {
+void UngroupCommand::undo(ApplicationContext *context)
+{
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 

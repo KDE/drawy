@@ -7,7 +7,8 @@
 #include "../item/text.hpp"
 #include "drawingtool.hpp"
 
-class TextTool : public DrawingTool {
+class TextTool : public DrawingTool
+{
 public:
     TextTool();
     ~TextTool() override = default;

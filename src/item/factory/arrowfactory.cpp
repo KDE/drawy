@@ -6,9 +6,11 @@
 
 #include "../arrow.hpp"
 
-ArrowFactory::ArrowFactory() {
+ArrowFactory::ArrowFactory()
+{
 }
 
-std::shared_ptr<Item> ArrowFactory::create() const {
+std::shared_ptr<Item> ArrowFactory::create() const
+{
     return std::make_shared<ArrowItem>();
 }

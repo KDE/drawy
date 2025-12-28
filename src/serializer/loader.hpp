@@ -10,7 +10,8 @@ class ApplicationContext;
 class Item;
 class Property;
 
-class Loader {
+class Loader
+{
 public:
     void loadFromFile(ApplicationContext *context);
 

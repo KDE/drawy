@@ -10,13 +10,17 @@
 #include "../context/applicationcontext.hpp"
 #include "../context/uicontext.hpp"
 
-ActionBar::ActionBar(QWidget *parent) : QFrame{parent}, m_layout(new QHBoxLayout{this}) {
+ActionBar::ActionBar(QWidget *parent)
+    : QFrame{parent}
+    , m_layout(new QHBoxLayout{this})
+{
     m_layout->setSpacing(10);
     this->setLayout(m_layout);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 }
 
-void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id) {
+void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id)
+{
     if (m_map.contains(id)) {
         throw std::logic_error("Button with same id exists in the ActionBar.");
     }
@@ -32,7 +36,8 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id
     m_layout->addWidget(m_map[id]);
 }
 
-QPushButton &ActionBar::button(int id) {
+QPushButton &ActionBar::button(int id)
+{
     if (!m_map.contains(id)) {
         throw std::logic_error(std::format("Button with id {} was not found.", id));
     }

@@ -8,7 +8,8 @@
 
 #include "tool.hpp"
 
-class MoveTool : public Tool {
+class MoveTool : public Tool
+{
 public:
     MoveTool();
     ~MoveTool() override = default;

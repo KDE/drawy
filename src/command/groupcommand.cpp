@@ -17,14 +17,17 @@
 #include "deselectcommand.hpp"
 #include "selectcommand.hpp"
 
-GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items) : ItemCommand{std::move(items)} {
+GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items)
+    : ItemCommand{std::move(items)}
+{
     m_group = std::make_shared<GroupItem>();
 
     // sort according to z order
     ApplicationContext::instance()->spatialContext().quadtree().reorder(m_items);
 }
 
-void GroupCommand::execute(ApplicationContext *context) {
+void GroupCommand::execute(ApplicationContext *context)
+{
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
@@ -41,7 +44,8 @@ void GroupCommand::execute(ApplicationContext *context) {
     context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
 }
 
-void GroupCommand::undo(ApplicationContext *context) {
+void GroupCommand::undo(ApplicationContext *context)
+{
     auto &quadtree{context->spatialContext().quadtree()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 

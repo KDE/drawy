@@ -8,7 +8,8 @@
 
 class Item;
 
-class RectangleFactory : public ItemFactory {
+class RectangleFactory : public ItemFactory
+{
 public:
     RectangleFactory();
     ~RectangleFactory() override = default;

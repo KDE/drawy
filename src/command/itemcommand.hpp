@@ -10,7 +10,8 @@
 #include "command.hpp"
 class Item;
 
-class ItemCommand : public Command {
+class ItemCommand : public Command
+{
 public:
     explicit ItemCommand(QVector<std::shared_ptr<Item>> items);
     ~ItemCommand() override;

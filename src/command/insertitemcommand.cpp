@@ -14,10 +14,12 @@
 #include "../data-structures/quadtree.hpp"
 
 InsertItemCommand::InsertItemCommand(QVector<std::shared_ptr<Item>> items)
-    : ItemCommand{std::move(items)} {
+    : ItemCommand{std::move(items)}
+{
 }
 
-void InsertItemCommand::execute(ApplicationContext *context) {
+void InsertItemCommand::execute(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};
@@ -29,7 +31,8 @@ void InsertItemCommand::execute(ApplicationContext *context) {
     }
 }
 
-void InsertItemCommand::undo(ApplicationContext *context) {
+void InsertItemCommand::undo(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};

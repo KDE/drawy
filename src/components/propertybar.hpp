@@ -10,7 +10,8 @@
 class Tool;
 class PropertyManager;
 
-class PropertyBar : public QFrame {
+class PropertyBar : public QFrame
+{
     Q_OBJECT
 public:
     PropertyBar(QWidget *parent = nullptr);

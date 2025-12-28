@@ -9,7 +9,10 @@
 #include <QScreen>
 
 // PUBLIC
-Canvas::Canvas(QWidget *parent) : QWidget{parent}, m_maxSize(m_sizeHint) {
+Canvas::Canvas(QWidget *parent)
+    : QWidget{parent}
+    , m_maxSize(m_sizeHint)
+{
     m_sizeHint = screen()->size() * m_scale;
 
     m_canvas = new QPixmap(m_sizeHint);
@@ -24,34 +27,41 @@ Canvas::Canvas(QWidget *parent) : QWidget{parent}, m_maxSize(m_sizeHint) {
     setFocusPolicy(Qt::ClickFocus);
 }
 
-Canvas::~Canvas() {
+Canvas::~Canvas()
+{
     emit destroyed();
 
     delete m_canvas;
     delete m_overlay;
 }
 
-QSize Canvas::sizeHint() const {
+QSize Canvas::sizeHint() const
+{
     return m_sizeHint;
 }
 
-QPixmap *const Canvas::canvas() const {
+QPixmap *const Canvas::canvas() const
+{
     return m_canvas;
 }
 
-QPixmap *const Canvas::overlay() const {
+QPixmap *const Canvas::overlay() const
+{
     return m_overlay;
 }
 
-QPixmap *const Canvas::widget() const {
+QPixmap *const Canvas::widget() const
+{
     return m_widget;
 }
 
-QColor Canvas::bg() const {
+QColor Canvas::bg() const
+{
     return m_bg;
 };
 
-void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay) {
+void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay)
+{
     m_bg = color;
     if (canvas)
         canvas->fill(color);
@@ -64,11 +74,13 @@ void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay) {
         m_overlay->fill(Qt::transparent);
 }
 
-qreal Canvas::scale() const {
+qreal Canvas::scale() const
+{
     return m_scale;
 }
 
-void Canvas::setScale(const qreal scale) {
+void Canvas::setScale(const qreal scale)
+{
     if (scale == 0 || m_scale == 0)
         return;
 
@@ -80,12 +92,14 @@ void Canvas::setScale(const qreal scale) {
     resize();
 }
 
-QSize Canvas::dimensions() const {
+QSize Canvas::dimensions() const
+{
     return size() * m_scale;
 }
 
 // PROTECTED
-void Canvas::paintEvent(QPaintEvent *event) {
+void Canvas::paintEvent(QPaintEvent *event)
+{
     QPainter painter{this};
     painter.scale(1.0 / m_scale, 1.0 / m_scale);
 
@@ -98,11 +112,13 @@ void Canvas::paintEvent(QPaintEvent *event) {
 }
 
 // just a small overload
-bool operator<=(const QSize &a, const QSize &b) {
+bool operator<=(const QSize &a, const QSize &b)
+{
     return a.height() <= b.height() && a.width() <= b.width();
 }
 
-void Canvas::resizeEvent(QResizeEvent *event) {
+void Canvas::resizeEvent(QResizeEvent *event)
+{
     emit resizeEventCalled();
 
     setScale(devicePixelRatioF());
@@ -115,52 +131,62 @@ void Canvas::resizeEvent(QResizeEvent *event) {
     QWidget::resizeEvent(event);
 }
 
-void Canvas::mousePressEvent(QMouseEvent *event) {
+void Canvas::mousePressEvent(QMouseEvent *event)
+{
     emit mousePressed(event);
     QWidget::mousePressEvent(event);
 }
 
-void Canvas::mouseMoveEvent(QMouseEvent *event) {
+void Canvas::mouseMoveEvent(QMouseEvent *event)
+{
     emit mouseMoved(event);
     QWidget::mouseMoveEvent(event);
 };
 
-void Canvas::mouseReleaseEvent(QMouseEvent *event) {
+void Canvas::mouseReleaseEvent(QMouseEvent *event)
+{
     emit mouseReleased(event);
     QWidget::mouseReleaseEvent(event);
 };
 
-void Canvas::keyPressEvent(QKeyEvent *event) {
+void Canvas::keyPressEvent(QKeyEvent *event)
+{
     emit keyPressed(event);
     QWidget::keyPressEvent(event);
 }
 
-void Canvas::keyReleaseEvent(QKeyEvent *event) {
+void Canvas::keyReleaseEvent(QKeyEvent *event)
+{
     emit keyReleased(event);
     QWidget::keyReleaseEvent(event);
 }
 
-void Canvas::inputMethodEvent(QInputMethodEvent *event) {
+void Canvas::inputMethodEvent(QInputMethodEvent *event)
+{
     emit inputMethodInvoked(event);
     QWidget::inputMethodEvent(event);
 }
 
-void Canvas::tabletEvent(QTabletEvent *event) {
+void Canvas::tabletEvent(QTabletEvent *event)
+{
     emit tablet(event);
     QWidget::tabletEvent(event);
 }
 
-void Canvas::wheelEvent(QWheelEvent *event) {
+void Canvas::wheelEvent(QWheelEvent *event)
+{
     emit wheel(event);
     QWidget::wheelEvent(event);
 }
 
-void Canvas::leaveEvent(QEvent *event) {
+void Canvas::leaveEvent(QEvent *event)
+{
     emit leave(event);
     QWidget::leaveEvent(event);
 }
 
-bool Canvas::event(QEvent *event) {
+bool Canvas::event(QEvent *event)
+{
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *ev = dynamic_cast<QKeyEvent *>(event);
         if (ev && (ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab)) {
@@ -172,7 +198,8 @@ bool Canvas::event(QEvent *event) {
 }
 
 // PRIVATE
-QByteArray Canvas::imageData(QPixmap *const img) {
+QByteArray Canvas::imageData(QPixmap *const img)
+{
     QByteArray arr{};
     QBuffer buffer{&arr};
     buffer.open(QBuffer::WriteOnly);
@@ -180,11 +207,13 @@ QByteArray Canvas::imageData(QPixmap *const img) {
     return arr;
 }
 
-void Canvas::setImageData(QPixmap *const img, const QByteArray &arr) {
+void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
+{
     img->loadFromData(arr, "PNG");
 }
 
-void Canvas::resize() {
+void Canvas::resize()
+{
     emit resizeStart();
 
     if (m_canvas->paintingActive() || m_overlay->paintingActive()) {
@@ -215,7 +244,8 @@ void Canvas::resize() {
     emit resizeEnd();
 }
 
-void Canvas::triggerUpdate() {
+void Canvas::triggerUpdate()
+{
     this->update();
 }
 

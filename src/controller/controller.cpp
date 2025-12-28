@@ -17,16 +17,19 @@
 #include "../event/event.hpp"
 
 Controller::Controller(QObject *parent)
-    : QObject{parent},
-      m_context(ApplicationContext::instance(dynamic_cast<QWidget *>(parent))) {
+    : QObject{parent}
+    , m_context(ApplicationContext::instance(dynamic_cast<QWidget *>(parent)))
+{
     m_context->setContexts();
 }
 
-Controller::~Controller() {
+Controller::~Controller()
+{
     qDebug() << "Object deleted: Controller";
 }
 
-void Controller::mousePressed(QMouseEvent *event) {
+void Controller::mousePressed(QMouseEvent *event)
+{
     // No on really clicks in this corner (0, 0) and this solves a
     // bug on Hyprland where it would register a mouse press in this corner
     if (event->pos() == QPoint{0, 0})
@@ -70,7 +73,8 @@ void Controller::mousePressed(QMouseEvent *event) {
     }
 }
 
-void Controller::mouseDoubleClick(QMouseEvent *event) {
+void Controller::mouseDoubleClick(QMouseEvent *event)
+{
     Event &contextEvent{m_context->uiContext().event()};
     ToolBar &toolBar{m_context->uiContext().toolBar()};
     Canvas &canvas{m_context->renderingContext().canvas()};
@@ -82,7 +86,8 @@ void Controller::mouseDoubleClick(QMouseEvent *event) {
     toolBar.curTool().mouseDoubleClick(m_context);
 }
 
-void Controller::mouseTripleClick(QMouseEvent *event) {
+void Controller::mouseTripleClick(QMouseEvent *event)
+{
     Event &contextEvent{m_context->uiContext().event()};
     ToolBar &toolBar{m_context->uiContext().toolBar()};
     Canvas &canvas{m_context->renderingContext().canvas()};
@@ -94,7 +99,8 @@ void Controller::mouseTripleClick(QMouseEvent *event) {
     toolBar.curTool().mouseTripleClick(m_context);
 }
 
-void Controller::mouseMoved(QMouseEvent *event) {
+void Controller::mouseMoved(QMouseEvent *event)
+{
     m_mouseMoved = true;
 
     Event &contextEvent{m_context->uiContext().event()};
@@ -113,7 +119,8 @@ void Controller::mouseMoved(QMouseEvent *event) {
     toolBar.curTool().mouseMoved(m_context);
 }
 
-void Controller::mouseReleased(QMouseEvent *event) {
+void Controller::mouseReleased(QMouseEvent *event)
+{
     Event &contextEvent{m_context->uiContext().event()};
     ToolBar &toolBar{m_context->uiContext().toolBar()};
     Canvas &canvas{m_context->renderingContext().canvas()};
@@ -132,14 +139,16 @@ void Controller::mouseReleased(QMouseEvent *event) {
     toolBar.curTool().mouseReleased(m_context);
 }
 
-void Controller::tablet(QTabletEvent *event) {
+void Controller::tablet(QTabletEvent *event)
+{
     Event &ev{m_context->uiContext().event()};
 
     // TODO: Remove magic numbers
     ev.setPressure(event->pressure() / 1.60 + 0.375);
 }
 
-void Controller::keyPressed(QKeyEvent *event) {
+void Controller::keyPressed(QKeyEvent *event)
+{
     Event &contextEvent{m_context->uiContext().event()};
     ToolBar &toolBar{m_context->uiContext().toolBar()};
 
@@ -150,7 +159,8 @@ void Controller::keyPressed(QKeyEvent *event) {
     toolBar.curTool().keyPressed(m_context);
 }
 
-void Controller::keyReleased(QKeyEvent *event) {
+void Controller::keyReleased(QKeyEvent *event)
+{
     Event &contextEvent{m_context->uiContext().event()};
     ToolBar &toolBar{m_context->uiContext().toolBar()};
 
@@ -161,16 +171,19 @@ void Controller::keyReleased(QKeyEvent *event) {
     toolBar.curTool().keyReleased(m_context);
 }
 
-void Controller::inputMethodInvoked(QInputMethodEvent *event) {
+void Controller::inputMethodInvoked(QInputMethodEvent *event)
+{
 }
 
-void Controller::leave(QEvent *event) {
+void Controller::leave(QEvent *event)
+{
     ToolBar &toolBar{m_context->uiContext().toolBar()};
 
     toolBar.curTool().leave(m_context);
 }
 
-void Controller::wheel(QWheelEvent *event) {
+void Controller::wheel(QWheelEvent *event)
+{
     const QPointF &offsetPos{m_context->spatialContext().offsetPos()};
     const qreal zoomFactor{m_context->renderingContext().zoomFactor()};
     Canvas &canvas{m_context->renderingContext().canvas()};

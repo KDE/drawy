@@ -10,7 +10,8 @@
 
 #include "action.hpp"
 
-class KeybindManager : public QObject {
+class KeybindManager : public QObject
+{
 public:
     KeybindManager(QObject *parent);
 

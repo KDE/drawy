@@ -27,90 +27,144 @@
 #include "action.hpp"
 #include "keybindmanager.hpp"
 
-ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, QObject(context) {
+ActionManager::ActionManager(ApplicationContext *context)
+    : m_context{context}
+    , QObject(context)
+{
     KeybindManager &keybindManager{m_context->uiContext().keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    Action *undoAction{new Action{"Undo", "Undo last action", [&]() { this->undo(); }, context}};
+    Action *undoAction{new Action{"Undo",
+                                  "Undo last action",
+                                  [&]() {
+                                      this->undo();
+                                  },
+                                  context}};
 
-    Action *redoAction{
-        new Action{"Redo", "Redo last undone action", [&]() { this->redo(); }, context}};
+    Action *redoAction{new Action{"Redo",
+                                  "Redo last undone action",
+                                  [&]() {
+                                      this->redo();
+                                  },
+                                  context}};
 
-    Action *zoomInAction{new Action{"Zoom In", "Zoom in", [&]() { this->zoomIn(); }, context}};
+    Action *zoomInAction{new Action{"Zoom In",
+                                    "Zoom in",
+                                    [&]() {
+                                        this->zoomIn();
+                                    },
+                                    context}};
 
-    Action *zoomOutAction{new Action{"Zoom Out", "Zoom out", [&]() { this->zoomOut(); }, context}};
+    Action *zoomOutAction{new Action{"Zoom Out",
+                                     "Zoom out",
+                                     [&]() {
+                                         this->zoomOut();
+                                     },
+                                     context}};
 
     Action *freeformToolAction{new Action{"Freeform Tool",
                                           "Switch to freeform drawing tool",
-                                          [&]() { this->switchToFreeformTool(); },
+                                          [&]() {
+                                              this->switchToFreeformTool();
+                                          },
                                           context}};
 
     Action *eraserToolAction{new Action{"Eraser Tool",
                                         "Switch to eraser tool",
-                                        [&]() { this->switchToEraserTool(); },
+                                        [&]() {
+                                            this->switchToEraserTool();
+                                        },
                                         context}};
 
     Action *selectionToolAction{new Action{"Selection Tool",
                                            "Switch to selection tool",
-                                           [&]() { this->switchToSelectionTool(); },
+                                           [&]() {
+                                               this->switchToSelectionTool();
+                                           },
                                            context}};
 
     Action *rectangleToolAction{new Action{"Rectangle Tool",
                                            "Switch to rectangle drawing tool",
-                                           [&]() { this->switchToRectangleTool(); },
+                                           [&]() {
+                                               this->switchToRectangleTool();
+                                           },
                                            context}};
 
     Action *ellipseToolAction{new Action{"Ellipse Tool",
                                          "Switch to ellipse drawing tool",
-                                         [&]() { this->switchToEllipseTool(); },
+                                         [&]() {
+                                             this->switchToEllipseTool();
+                                         },
                                          context}};
 
     Action *lineToolAction{new Action{"Line Tool",
                                       "Switch to line drawing tool",
-                                      [&]() { this->switchToLineTool(); },
+                                      [&]() {
+                                          this->switchToLineTool();
+                                      },
                                       context}};
 
     Action *textToolAction{new Action{"Text Tool",
                                       "Switch to the text tool",
-                                      [&]() { this->switchToTextTool(); },
+                                      [&]() {
+                                          this->switchToTextTool();
+                                      },
                                       context}};
 
     Action *arrowToolAction{new Action{"Arrow Tool",
                                        "Switch to arrow drawing tool",
-                                       [&]() { this->switchToArrowTool(); },
+                                       [&]() {
+                                           this->switchToArrowTool();
+                                       },
                                        context}};
 
     Action *moveToolAction{new Action{"Move Tool",
                                       "Switch to move tool",
-                                      [&]() { this->switchToMoveTool(); },
+                                      [&]() {
+                                          this->switchToMoveTool();
+                                      },
                                       context}};
 
     Action *groupAction{new Action{"Group Elements",
                                    "Groups selected items",
-                                   [&]() { this->groupItems(); },
+                                   [&]() {
+                                       this->groupItems();
+                                   },
                                    context}};
 
     Action *unGroupAction{new Action{"Ungroup Elements",
                                      "Ungroups selected groups",
-                                     [&]() { this->ungroupItems(); },
+                                     [&]() {
+                                         this->ungroupItems();
+                                     },
                                      context}};
 
     Action *selectAllAction{new Action{"Select All",
                                        "Select all items",
-                                       [&, context]() { this->selectAll(); },
+                                       [&, context]() {
+                                           this->selectAll();
+                                       },
                                        context}};
 
     Action *deleteAction{new Action{"Delete",
                                     "Deletes selected items",
-                                    [&, context]() { this->deleteSelection(); },
+                                    [&, context]() {
+                                        this->deleteSelection();
+                                    },
                                     context}};
 
-    Action *saveAction{
-        new Action{"Save", "Save canvas", [&, context]() { this->saveToFile(); }, context}};
+    Action *saveAction{new Action{"Save",
+                                  "Save canvas",
+                                  [&, context]() {
+                                      this->saveToFile();
+                                  },
+                                  context}};
 
     Action *openFileAction{new Action{"Open File",
                                       "Open an existing file",
-                                      [&, context]() { this->loadFromFile(); },
+                                      [&, context]() {
+                                          this->loadFromFile();
+                                      },
                                       context}};
 
     keybindManager.addKeybinding(undoAction, "Ctrl+Z");
@@ -136,63 +190,77 @@ ActionManager::ActionManager(ApplicationContext *context) : m_context{context}, 
     keybindManager.addKeybinding(unGroupAction, "Ctrl+Shift+G");
 }
 
-void ActionManager::undo() {
+void ActionManager::undo()
+{
     m_context->spatialContext().commandHistory().undo();
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
 }
 
-void ActionManager::redo() {
+void ActionManager::redo()
+{
     m_context->spatialContext().commandHistory().redo();
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
 }
 
-void ActionManager::zoomIn() {
+void ActionManager::zoomIn()
+{
     m_context->renderingContext().updateZoomFactor(1);
 }
 
-void ActionManager::zoomOut() {
+void ActionManager::zoomOut()
+{
     m_context->renderingContext().updateZoomFactor(-1);
 }
 
-void ActionManager::switchToFreeformTool() {
+void ActionManager::switchToFreeformTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Freeform);
 }
 
-void ActionManager::switchToEraserTool() {
+void ActionManager::switchToEraserTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Eraser);
 }
 
-void ActionManager::switchToRectangleTool() {
+void ActionManager::switchToRectangleTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Rectangle);
 }
 
-void ActionManager::switchToEllipseTool() {
+void ActionManager::switchToEllipseTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Ellipse);
 }
 
-void ActionManager::switchToLineTool() {
+void ActionManager::switchToLineTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Line);
 }
 
-void ActionManager::switchToArrowTool() {
+void ActionManager::switchToArrowTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Arrow);
 }
 
-void ActionManager::switchToMoveTool() {
+void ActionManager::switchToMoveTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Move);
 }
 
-void ActionManager::switchToSelectionTool() {
+void ActionManager::switchToSelectionTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Selection);
 }
 
-void ActionManager::switchToTextTool() {
+void ActionManager::switchToTextTool()
+{
     m_context->uiContext().toolBar().changeTool(Tool::Text);
 }
 
-void ActionManager::groupItems() {
+void ActionManager::groupItems()
+{
     auto &selectedItems{m_context->selectionContext().selectedItems()};
     if (selectedItems.size() <= 1)
         return;
@@ -203,7 +271,8 @@ void ActionManager::groupItems() {
     m_context->renderingContext().markForUpdate();
 }
 
-void ActionManager::ungroupItems() {
+void ActionManager::ungroupItems()
+{
     auto &selectedItems{m_context->selectionContext().selectedItems()};
     if (selectedItems.empty())
         return;
@@ -214,7 +283,8 @@ void ActionManager::ungroupItems() {
     m_context->renderingContext().markForUpdate();
 }
 
-void ActionManager::deleteSelection() {
+void ActionManager::deleteSelection()
+{
     auto &selectedItems{m_context->selectionContext().selectedItems()};
     auto &transformer{m_context->spatialContext().coordinateTransformer()};
     auto &commandHistory{m_context->spatialContext().commandHistory()};
@@ -226,11 +296,11 @@ void ActionManager::deleteSelection() {
     m_context->renderingContext().markForUpdate();
 
     QVector<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(
-        std::make_shared<DeselectCommand>(selectedItemsVector));
+    m_context->spatialContext().commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
-void ActionManager::selectAll() {
+void ActionManager::selectAll()
+{
     this->switchToSelectionTool();
 
     auto allItems{m_context->spatialContext().quadtree().getAllItems()};
@@ -241,14 +311,16 @@ void ActionManager::selectAll() {
     m_context->renderingContext().markForUpdate();
 }
 
-void ActionManager::saveToFile() {
+void ActionManager::saveToFile()
+{
     Serializer serializer{};
 
     serializer.serialize(m_context);
     serializer.saveToFile();
 }
 
-void ActionManager::loadFromFile() {
+void ActionManager::loadFromFile()
+{
     Loader loader{};
     loader.loadFromFile(m_context);
 }

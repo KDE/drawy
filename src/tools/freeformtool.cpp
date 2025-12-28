@@ -19,7 +19,8 @@
 #include "../item/item.hpp"
 #include "../properties/widgets/propertymanager.hpp"
 
-FreeformTool::FreeformTool() {
+FreeformTool::FreeformTool()
+{
     m_itemFactory = std::make_unique<FreeformFactory>();
 
     int size{5}, borderWidth{1};
@@ -33,20 +34,19 @@ FreeformTool::FreeformTool() {
     QPainter cursorPainter{&cursorShape};
     cursorPainter.setPen(cursorPen);
 
-    cursorPainter.drawEllipse(borderWidth / 2,
-                              borderWidth / 2,
-                              size - borderWidth,
-                              size - borderWidth);
+    cursorPainter.drawEllipse(borderWidth / 2, borderWidth / 2, size - borderWidth, size - borderWidth);
     m_cursor = QCursor{cursorShape, size / 2, size / 2};
 
     m_properties = {Property::StrokeWidth, Property::StrokeColor};
 }
 
-QString FreeformTool::tooltip() const {
+QString FreeformTool::tooltip() const
+{
     return QObject::tr("Pen Tool");
 };
 
-void FreeformTool::mousePressed(ApplicationContext *context) {
+void FreeformTool::mousePressed(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
 
     if (uiContext.event().button() == Qt::LeftButton) {
@@ -56,10 +56,8 @@ void FreeformTool::mousePressed(ApplicationContext *context) {
 
         curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
 
-        curItem->setProperty(Property::StrokeWidth,
-                             uiContext.propertyManager().value(Property::StrokeWidth));
-        curItem->setProperty(Property::StrokeColor,
-                             uiContext.propertyManager().value(Property::StrokeColor));
+        curItem->setProperty(Property::StrokeWidth, uiContext.propertyManager().value(Property::StrokeWidth));
+        curItem->setProperty(Property::StrokeColor, uiContext.propertyManager().value(Property::StrokeColor));
 
         m_lastPoint = uiContext.event().pos();
 
@@ -75,7 +73,8 @@ void FreeformTool::mousePressed(ApplicationContext *context) {
     }
 }
 
-void FreeformTool::mouseMoved(ApplicationContext *context) {
+void FreeformTool::mouseMoved(ApplicationContext *context)
+{
     if (m_isDrawing) {
         SpatialContext &spatialContext{context->spatialContext()};
         RenderingContext &renderingContext{context->renderingContext()};
@@ -85,8 +84,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context) {
         QPointF curPoint{uiContext.event().pos()};
 
         // distance between the two points in the "view" coordinate system
-        double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) +
-                              std::pow(m_lastPoint.y() - curPoint.y(), 2))};
+        double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
 
         if (dist < FreeformItem::minPointDistance())
             return;
@@ -101,7 +99,8 @@ void FreeformTool::mouseMoved(ApplicationContext *context) {
     }
 }
 
-void FreeformTool::mouseReleased(ApplicationContext *context) {
+void FreeformTool::mouseReleased(ApplicationContext *context)
+{
     UIContext &uiContext{context->uiContext()};
 
     if (uiContext.event().button() == Qt::LeftButton && m_isDrawing) {
@@ -125,16 +124,19 @@ void FreeformTool::mouseReleased(ApplicationContext *context) {
     }
 }
 
-void FreeformTool::cleanup() {
+void FreeformTool::cleanup()
+{
     ApplicationContext *context{ApplicationContext::instance()};
     context->uiContext().event().setButton(Qt::LeftButton);
     mouseReleased(context);
 }
 
-Tool::Type FreeformTool::type() const {
+Tool::Type FreeformTool::type() const
+{
     return Tool::Freeform;
 }
 
-IconManager::Icon FreeformTool::icon() const {
+IconManager::Icon FreeformTool::icon() const
+{
     return IconManager::TOOL_FREEFORM;
 }

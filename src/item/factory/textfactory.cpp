@@ -6,9 +6,11 @@
 
 #include "../text.hpp"
 
-TextFactory::TextFactory() {
+TextFactory::TextFactory()
+{
 }
 
-std::shared_ptr<Item> TextFactory::create() const {
+std::shared_ptr<Item> TextFactory::create() const
+{
     return std::make_shared<TextItem>();
 }

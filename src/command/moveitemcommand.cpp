@@ -13,11 +13,13 @@
 #include "../item/item.hpp"
 
 MoveItemCommand::MoveItemCommand(QVector<std::shared_ptr<Item>> items, QPointF delta)
-    : ItemCommand{std::move(items)},
-      m_delta{delta} {
+    : ItemCommand{std::move(items)}
+    , m_delta{delta}
+{
 }
 
-void MoveItemCommand::execute(ApplicationContext *context) {
+void MoveItemCommand::execute(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};
@@ -29,7 +31,8 @@ void MoveItemCommand::execute(ApplicationContext *context) {
     }
 }
 
-void MoveItemCommand::undo(ApplicationContext *context) {
+void MoveItemCommand::undo(ApplicationContext *context)
+{
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->spatialContext().cacheGrid()};

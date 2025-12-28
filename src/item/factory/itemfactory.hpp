@@ -7,7 +7,8 @@
 
 class Item;
 
-class ItemFactory {
+class ItemFactory
+{
 public:
     ItemFactory();
     virtual ~ItemFactory() = default;

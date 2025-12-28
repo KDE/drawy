@@ -8,7 +8,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class DeselectCommand : public ItemCommand {
+class DeselectCommand : public ItemCommand
+{
 public:
     explicit DeselectCommand(QVector<std::shared_ptr<Item>> items);
 
@@ -16,4 +17,4 @@ public:
     void undo(ApplicationContext *context) override;
 };
 
-#endif  // DESELECTCOMMAND_H
+#endif // DESELECTCOMMAND_H

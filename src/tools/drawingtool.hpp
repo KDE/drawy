@@ -7,7 +7,8 @@
 #include "../item/factory/itemfactory.hpp"
 #include "tool.hpp"
 
-class DrawingTool : public Tool {
+class DrawingTool : public Tool
+{
 protected:
     std::unique_ptr<ItemFactory> m_itemFactory{};
 

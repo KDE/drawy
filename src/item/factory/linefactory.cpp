@@ -6,9 +6,11 @@
 
 #include "../line.hpp"
 
-LineFactory::LineFactory() {
+LineFactory::LineFactory()
+{
 }
 
-std::shared_ptr<Item> LineFactory::create() const {
+std::shared_ptr<Item> LineFactory::create() const
+{
     return std::make_shared<LineItem>();
 }

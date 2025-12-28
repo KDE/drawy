@@ -9,7 +9,10 @@
 
 int CacheCell::counter = 0;
 
-CacheCell::CacheCell(const QPoint &point) : m_point{point}, m_dirty(true) {
+CacheCell::CacheCell(const QPoint &point)
+    : m_point{point}
+    , m_dirty(true)
+{
     m_image = std::make_unique<QPixmap>(CacheCell::cellSize());
     m_image->fill(Qt::transparent);
 
@@ -21,41 +24,50 @@ CacheCell::CacheCell(const QPoint &point) : m_point{point}, m_dirty(true) {
     CacheCell::counter++;
 }
 
-CacheCell::~CacheCell() {
+CacheCell::~CacheCell()
+{
     CacheCell::counter--;
 }
 
-const QPoint &CacheCell::point() const {
+const QPoint &CacheCell::point() const
+{
     return m_point;
 }
 
-bool CacheCell::dirty() const {
+bool CacheCell::dirty() const
+{
     return m_dirty;
 }
 
-QPixmap &CacheCell::image() const {
+QPixmap &CacheCell::image() const
+{
     return *m_image;
 }
 
-QRect CacheCell::rect() const {
+QRect CacheCell::rect() const
+{
     int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
     QPoint cellPos{point().x() * cellW, point().y() * cellH};
     return {cellPos.x(), cellPos.y(), cellW, cellH};
 }
 
-void CacheCell::setDirty(bool dirty) {
+void CacheCell::setDirty(bool dirty)
+{
     m_dirty = dirty;
 }
 
-QPainter &CacheCell::painter() const {
+QPainter &CacheCell::painter() const
+{
     return *m_painter;
 }
 
-QSize CacheCell::cellSize() {
+QSize CacheCell::cellSize()
+{
     return {500, 500};
 }
 
-CacheGrid::CacheGrid(int maxSize) {
+CacheGrid::CacheGrid(int maxSize)
+{
     m_headCell->nextCell = m_tailCell;
     m_tailCell->prevCell = m_headCell;
 
@@ -65,11 +77,13 @@ CacheGrid::CacheGrid(int maxSize) {
     m_maxSize = maxSize;
 }
 
-CacheGrid::~CacheGrid() {
+CacheGrid::~CacheGrid()
+{
     qDebug() << "Object deleted: CacheGrid";
 }
 
-QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect) {
+QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
+{
     QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
 
     int cellMinX = floor(static_cast<double>(topLeft.x()) / CacheCell::cellSize().width());
@@ -87,14 +101,16 @@ QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect) {
     return out;
 }
 
-void CacheGrid::markDirty(const QRect &rect) {
+void CacheGrid::markDirty(const QRect &rect)
+{
     QVector<std::shared_ptr<CacheCell>> dirtyCells{queryCells(rect)};
     for (const std::shared_ptr<CacheCell> &cell : dirtyCells) {
         cell->setDirty(true);
     }
 }
 
-std::shared_ptr<CacheCell> CacheGrid::cell(const QPoint &point) {
+std::shared_ptr<CacheCell> CacheGrid::cell(const QPoint &point)
+{
     std::shared_ptr<CacheCell> cur{};
     if (!m_grid.contains(point) || !m_grid[point]) {
         if (m_curSize == m_maxSize) {
@@ -132,15 +148,18 @@ std::shared_ptr<CacheCell> CacheGrid::cell(const QPoint &point) {
     return cur;
 }
 
-int CacheGrid::size() const {
+int CacheGrid::size() const
+{
     return m_curSize;
 }
 
-void CacheGrid::setSize(int newSize) {
+void CacheGrid::setSize(int newSize)
+{
     m_maxSize = newSize;
 }
 
-void CacheGrid::markAllDirty() {
+void CacheGrid::markAllDirty()
+{
     for (const auto &cell : m_grid) {
         cell->setDirty(true);
     }

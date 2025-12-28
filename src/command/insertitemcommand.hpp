@@ -7,7 +7,8 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class InsertItemCommand : public ItemCommand {
+class InsertItemCommand : public ItemCommand
+{
 public:
     explicit InsertItemCommand(QVector<std::shared_ptr<Item>> items);
 

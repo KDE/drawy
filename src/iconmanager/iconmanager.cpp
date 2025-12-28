@@ -6,7 +6,9 @@
 
 #include <QIcon>
 
-IconManager::IconManager(QObject *parent) : QObject{parent} {
+IconManager::IconManager(QObject *parent)
+    : QObject{parent}
+{
     m_iconName = {{TOOL_SELECTION, "tool-selection"},
                   {TOOL_FREEFORM, "tool-freeform"},
                   {TOOL_RECTANGLE, "tool-rectangle"},
@@ -31,7 +33,8 @@ IconManager::IconManager(QObject *parent) : QObject{parent} {
                   {UI_ANGLE_UP, "ui-angle_down"}};
 }
 
-QIcon IconManager::icon(Icon icon) const {
+QIcon IconManager::icon(Icon icon) const
+{
     QString path{":/icons/" + m_curTheme + "/" + m_iconName.at(icon) + ".svg"};
     return QIcon(path);
 }

@@ -9,7 +9,8 @@
 class ApplicationContext;
 class GroupItem;
 
-class GroupCommand : public ItemCommand {
+class GroupCommand : public ItemCommand
+{
 public:
     explicit GroupCommand(QVector<std::shared_ptr<Item>> items);
 
@@ -20,4 +21,4 @@ private:
     std::shared_ptr<GroupItem> m_group;
 };
 
-#endif  // GROUPCOMMAND_H
+#endif // GROUPCOMMAND_H

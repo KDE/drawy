@@ -7,7 +7,8 @@
 
 #include "item.hpp"
 
-class GroupItem : public Item {
+class GroupItem : public Item
+{
 public:
     GroupItem() = default;
 
@@ -37,4 +38,4 @@ private:
     void m_draw(QPainter &painter, const QPointF &offset) const override;
 };
 
-#endif  // GROUP_H
+#endif // GROUP_H

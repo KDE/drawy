@@ -6,7 +6,8 @@
 
 #include "polygon.hpp"
 
-class LineItem : public PolygonItem {
+class LineItem : public PolygonItem
+{
 public:
     LineItem();
     ~LineItem() override = default;

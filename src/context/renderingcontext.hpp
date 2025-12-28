@@ -9,7 +9,8 @@
 class Canvas;
 class ApplicationContext;
 
-class RenderingContext : public QObject {
+class RenderingContext : public QObject
+{
     Q_OBJECT
 
 public:

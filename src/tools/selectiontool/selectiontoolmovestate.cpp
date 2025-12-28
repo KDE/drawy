@@ -20,7 +20,8 @@
 #include "../../event/event.hpp"
 #include "../../item/item.hpp"
 
-bool SelectionToolMoveState::mousePressed(ApplicationContext *context) {
+bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
+{
     auto &uiContext{context->uiContext()};
 
     if (uiContext.event().button() == Qt::LeftButton) {
@@ -35,7 +36,8 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context) {
     return true;
 }
 
-void SelectionToolMoveState::mouseMoved(ApplicationContext *context) {
+void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
+{
     auto &renderingContext{context->renderingContext()};
 
     if (!m_isActive) {
@@ -70,7 +72,8 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context) {
     renderingContext.markForUpdate();
 }
 
-bool SelectionToolMoveState::mouseReleased(ApplicationContext *context) {
+bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
+{
     auto &renderingContext{context->renderingContext()};
     auto &spatialContext{context->spatialContext()};
     auto &transformer{spatialContext.coordinateTransformer()};

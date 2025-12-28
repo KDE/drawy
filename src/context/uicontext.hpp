@@ -16,7 +16,8 @@ class KeybindManager;
 class ActionManager;
 class IconManager;
 
-class UIContext : public QObject {
+class UIContext : public QObject
+{
 public:
     explicit UIContext(ApplicationContext *context);
     ~UIContext() override;
@@ -47,7 +48,7 @@ private:
     Event *m_event{nullptr};
     IconManager *m_iconManager{};
 
-    Tool *m_lastTool{nullptr};  // Used to call the cleanup function of the last tool
+    Tool *m_lastTool{nullptr}; // Used to call the cleanup function of the last tool
 
     ApplicationContext *m_applicationContext;
 };

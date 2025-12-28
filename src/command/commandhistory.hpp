@@ -10,7 +10,8 @@
 #include "command.hpp"
 class ApplicationContext;
 
-class CommandHistory {
+class CommandHistory
+{
 public:
     explicit CommandHistory(ApplicationContext *context);
     ~CommandHistory();
@@ -19,7 +20,7 @@ public:
     void redo();
     void insert(const std::shared_ptr<Command> &command);
 
-    static constexpr int maxCommands{100};  // arbitrary
+    static constexpr int maxCommands{100}; // arbitrary
 
     void clear();
 

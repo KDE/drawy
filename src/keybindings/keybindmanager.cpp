@@ -4,10 +4,13 @@
 
 #include "keybindmanager.hpp"
 
-KeybindManager::KeybindManager(QObject *parent) : QObject{parent} {
+KeybindManager::KeybindManager(QObject *parent)
+    : QObject{parent}
+{
 }
 
-void KeybindManager::addKeybinding(Action *action, const QString &sequence) {
+void KeybindManager::addKeybinding(Action *action, const QString &sequence)
+{
     if (m_keyToAction.find(sequence) != m_keyToAction.end())
         return;
 
@@ -24,13 +27,15 @@ void KeybindManager::addKeybinding(Action *action, const QString &sequence) {
 // TODO: Implement this
 void removeKeybinding(QKeySequence sequence);
 
-void KeybindManager::disable() {
+void KeybindManager::disable()
+{
     for (auto &keyShortcutPair : m_keyToShortcut) {
         keyShortcutPair.second->setEnabled(false);
     }
 }
 
-void KeybindManager::enable() {
+void KeybindManager::enable()
+{
     for (auto &keyShortcutPair : m_keyToShortcut) {
         keyShortcutPair.second->setEnabled(true);
     }

@@ -6,14 +6,17 @@
 
 #include "../item/factory/ellipsefactory.hpp"
 
-EllipseTool::EllipseTool() {
+EllipseTool::EllipseTool()
+{
     m_itemFactory = std::make_unique<EllipseFactory>();
 }
 
-QString EllipseTool::tooltip() const {
+QString EllipseTool::tooltip() const
+{
     return QObject::tr("Ellipse Tool");
 }
 
-IconManager::Icon EllipseTool::icon() const {
+IconManager::Icon EllipseTool::icon() const
+{
     return IconManager::TOOL_ELLIPSE;
 }

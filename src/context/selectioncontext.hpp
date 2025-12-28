@@ -10,7 +10,8 @@ class Property;
 class Item;
 class ApplicationContext;
 
-class SelectionContext : public QObject {
+class SelectionContext : public QObject
+{
 public:
     explicit SelectionContext(ApplicationContext *context);
     ~SelectionContext() override;
