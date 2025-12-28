@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 None
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # <img src="./assets/logo-48.png" align="left" width="32">‎ Drawy
 Your handy, infinite, brainstorming tool!  
   
