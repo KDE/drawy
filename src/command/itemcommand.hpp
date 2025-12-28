@@ -12,7 +12,7 @@ class Item;
 
 class ItemCommand : public Command {
 public:
-    ItemCommand(QVector<std::shared_ptr<Item>> items);
+    explicit ItemCommand(QVector<std::shared_ptr<Item>> items);
     ~ItemCommand() override;
 
 protected:

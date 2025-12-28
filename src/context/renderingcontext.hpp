@@ -13,7 +13,7 @@ class RenderingContext : public QObject {
     Q_OBJECT
 
 public:
-    RenderingContext(ApplicationContext *context);
+    explicit RenderingContext(ApplicationContext *context);
     ~RenderingContext() override;
 
     void setRenderingContext();

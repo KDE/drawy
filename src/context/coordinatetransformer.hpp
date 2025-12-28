@@ -21,7 +21,7 @@ private:
     ApplicationContext *m_applicationContext;
 
 public:
-    CoordinateTransformer(ApplicationContext *context);
+    explicit CoordinateTransformer(ApplicationContext *context);
     ~CoordinateTransformer();
 
     void setCoordinateTransformer();

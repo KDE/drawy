@@ -9,7 +9,7 @@
 
 class IconManager : public QObject {
 public:
-    IconManager(QObject *parent = nullptr);
+    explicit IconManager(QObject *parent = nullptr);
 
     enum Icon {
         TOOL_SELECTION,

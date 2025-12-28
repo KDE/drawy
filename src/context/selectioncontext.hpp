@@ -12,7 +12,7 @@ class ApplicationContext;
 
 class SelectionContext : public QObject {
 public:
-    SelectionContext(ApplicationContext *context);
+    explicit SelectionContext(ApplicationContext *context);
     ~SelectionContext() override;
 
     std::unordered_set<std::shared_ptr<Item>> &selectedItems();

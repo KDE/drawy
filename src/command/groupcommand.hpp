@@ -11,7 +11,7 @@ class GroupItem;
 
 class GroupCommand : public ItemCommand {
 public:
-    GroupCommand(QVector<std::shared_ptr<Item>> items);
+    explicit GroupCommand(QVector<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

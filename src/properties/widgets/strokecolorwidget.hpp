@@ -9,7 +9,7 @@ class QButtonGroup;
 
 class StrokeColorWidget : public PropertyWidget {
 public:
-    StrokeColorWidget(QWidget *parent = nullptr);
+    explicit StrokeColorWidget(QWidget *parent = nullptr);
 
     QString name() const override;
     const Property value() const override;

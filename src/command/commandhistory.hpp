@@ -12,7 +12,7 @@ class ApplicationContext;
 
 class CommandHistory {
 public:
-    CommandHistory(ApplicationContext *context);
+    explicit CommandHistory(ApplicationContext *context);
     ~CommandHistory();
 
     void undo();

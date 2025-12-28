@@ -13,7 +13,7 @@ class CommandHistory;
 
 class SpatialContext : public QObject {
 public:
-    SpatialContext(ApplicationContext *context);
+    explicit SpatialContext(ApplicationContext *context);
     ~SpatialContext() override;
 
     void setSpatialContext();
