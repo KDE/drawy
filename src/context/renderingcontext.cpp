@@ -157,7 +157,8 @@ void RenderingContext::canvasResized()
     int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 
-    m_applicationContext->spatialContext().cacheGrid().setSize(9 * rows * cols);
+    m_applicationContext->spatialContext().cacheGrid().clear();
+    m_applicationContext->spatialContext().cacheGrid().setSize(rows * cols);
 }
 
 void RenderingContext::markForRender()
