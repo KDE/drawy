@@ -88,10 +88,11 @@ QSize Canvas::dimensions() const {
 void Canvas::paintEvent(QPaintEvent *event) {
     QPainter painter{this};
     painter.scale(1.0 / m_scale, 1.0 / m_scale);
-    painter.setClipRegion(m_canvas->rect());
 
-    if (m_canvas)
+    if (m_canvas) {
+        painter.setClipRegion(m_canvas->rect());
         painter.drawPixmap(0, 0, *m_canvas);
+    }
     if (m_overlay)
         painter.drawPixmap(0, 0, *m_overlay);
 }

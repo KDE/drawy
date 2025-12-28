@@ -28,8 +28,6 @@ void UngroupCommand::execute(ApplicationContext *context) {
 
     selectedItems.clear();
 
-    int count = 0;
-
     QRectF dirtyRegion{};
     for (const auto &group : m_groups) {
         quadtree.deleteItem(group);
