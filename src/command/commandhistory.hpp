@@ -28,5 +28,5 @@ private:
     std::unique_ptr<std::deque<std::shared_ptr<Command>>> m_undoStack;
     std::unique_ptr<std::deque<std::shared_ptr<Command>>> m_redoStack;
 
-    ApplicationContext *m_context;
+    ApplicationContext *const m_context;
 };
