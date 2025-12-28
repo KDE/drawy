@@ -4,7 +4,7 @@
 
 #include "tool.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 
 Tool::Tool()
 {
@@ -12,7 +12,7 @@ Tool::Tool()
 
 Tool::~Tool()
 {
-    qDebug() << "Object deleted: Tool";
+    qCDebug(DRAWY_LOG) << "Object deleted: Tool";
 }
 
 const QCursor &Tool::cursor() const

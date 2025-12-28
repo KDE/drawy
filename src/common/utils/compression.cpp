@@ -6,7 +6,7 @@
 
 #include <zstd.h>
 
-#include <QDebug>
+#include "drawy_debug.h"
 
 namespace Common::Utils::Compression
 {

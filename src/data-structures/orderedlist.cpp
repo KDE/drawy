@@ -4,12 +4,12 @@
 
 #include "orderedlist.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 #include <stdexcept>
 
 OrderedList::~OrderedList()
 {
-    qDebug() << "Object deleted: OrderedList";
+    qCDebug(DRAWY_LOG) << "Object deleted: OrderedList";
 }
 
 bool OrderedList::hasItem(const ItemPtr &item) const
@@ -35,7 +35,7 @@ void OrderedList::insert(const ItemPtr &item)
         zIndex = m_zIndex[m_itemList.back()] + 1;
     }
 
-    qDebug() << "Inserting item with index: " << zIndex;
+    qCDebug(DRAWY_LOG) << "Inserting item with index: " << zIndex;
     m_zIndex[item] = zIndex;
     m_itemList.push_back(item);
     m_itemIterMap[item] = std::prev(m_itemList.end());
@@ -48,7 +48,7 @@ void OrderedList::remove(const ItemPtr &item)
         return;
     }
 
-    qDebug() << "Erasing item from list";
+    qCDebug(DRAWY_LOG) << "Erasing item from list";
     m_itemList.erase(m_itemIterMap[item]);
     m_itemIterMap.erase(item);
     m_zIndex.erase(item);

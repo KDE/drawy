@@ -21,6 +21,7 @@
 #include "../item/item.hpp"
 #include "../item/polygon.hpp"
 #include "../item/text.hpp"
+#include "drawy_debug.h"
 
 Serializer::Serializer()
 {
@@ -112,7 +113,7 @@ void Serializer::saveToFile()
 {
     QJsonDocument doc{m_object};
 
-    qDebug() << "Saving...";
+    qCDebug(DRAWY_LOG) << "Saving...";
 
     QDir homeDir{QDir::home()};
 
@@ -138,5 +139,5 @@ void Serializer::saveToFile()
         qWarning() << "Warning: not all bytes were written";
     }
 
-    qDebug() << "Saved to file: " << fileName;
+    qCDebug(DRAWY_LOG) << "Saved to file: " << fileName;
 }

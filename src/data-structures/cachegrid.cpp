@@ -4,7 +4,7 @@
 
 #include "cachegrid.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 #include <QPainter>
 
 int CacheCell::counter = 0;
@@ -79,7 +79,7 @@ CacheGrid::CacheGrid(int maxSize)
 
 CacheGrid::~CacheGrid()
 {
-    qDebug() << "Object deleted: CacheGrid";
+    qCDebug(DRAWY_LOG) << "Object deleted: CacheGrid";
 }
 
 QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)

@@ -4,7 +4,7 @@
 
 #include "rectangle.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 
 #include "../common/utils/math.hpp"
 

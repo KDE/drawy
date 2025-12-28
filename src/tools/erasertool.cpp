@@ -4,7 +4,7 @@
 
 #include "erasertool.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 #include <QPainter>
 
 #include "../canvas/canvas.hpp"

@@ -7,7 +7,7 @@
 #include <utility>
 
 #include "../common/constants.hpp"
-
+#include "drawy_debug.h"
 // PUBLIC
 Item::Item()
 {
@@ -15,7 +15,7 @@ Item::Item()
 
 Item::~Item()
 {
-    qDebug() << "Item deleted: " << m_boundingBox;
+    qCDebug(DRAWY_LOG) << "Item deleted: " << m_boundingBox;
 }
 
 const QRectF Item::boundingBox() const

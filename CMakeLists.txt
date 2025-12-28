@@ -26,6 +26,8 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMPoQmTools)
 include(GNUInstallDirs)
+include(ECMQtDeclareLoggingCategory)
+include(ECMPoQmTools)
 include(KDEInstallDirs)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
@@ -210,8 +212,12 @@ set(PROJECT_SOURCES
     src/resources/style.qss
 )
 
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
 add_executable(${PROJECT_NAME})
+ecm_qt_declare_logging_category(${PROJECT_NAME} HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
+    CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
+)
 target_include_directories(${PROJECT_NAME} PRIVATE ${ZSTD_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LINK_LIBRARIES})
 target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCES})
@@ -245,5 +251,11 @@ if (UNIX AND NOT APPLE)
   install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
   install(FILES deploy/linux/org.kde.drawy.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
+
+ecm_qt_install_logging_categories(
+    EXPORT DRAWY
+    FILE drawy.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
 
 ecm_install_po_files_as_qm(poqm)

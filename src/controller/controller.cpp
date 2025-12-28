@@ -16,6 +16,7 @@
 #include "../context/spatialcontext.hpp"
 #include "../context/uicontext.hpp"
 #include "../event/event.hpp"
+#include "drawy_debug.h"
 
 Controller::Controller(QObject *parent)
     : QObject{parent}
@@ -26,7 +27,7 @@ Controller::Controller(QObject *parent)
 
 Controller::~Controller()
 {
-    qDebug() << "Object deleted: Controller";
+    qCDebug(DRAWY_LOG) << "Object deleted: Controller";
 }
 
 void Controller::mousePressed(QMouseEvent *event)

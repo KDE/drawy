@@ -4,7 +4,7 @@
 
 #include "quadtree.hpp"
 
-#include <QDebug>
+#include "drawy_debug.h"
 #include <cstdlib>
 #include <utility>
 
@@ -28,7 +28,7 @@ QuadTree::QuadTree(QRectF region, int capacity, std::shared_ptr<OrderedList> ord
 
 QuadTree::~QuadTree()
 {
-    qDebug() << "Object deleted: QuadTree";
+    qCDebug(DRAWY_LOG) << "Object deleted: QuadTree";
 }
 
 void QuadTree::subdivide()

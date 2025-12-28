@@ -12,6 +12,7 @@
 #include "../data-structures/quadtree.hpp"
 #include "applicationcontext.hpp"
 #include "coordinatetransformer.hpp"
+#include "drawy_debug.h"
 #include "renderingcontext.hpp"
 
 SpatialContext::SpatialContext(ApplicationContext *context)
@@ -22,7 +23,7 @@ SpatialContext::SpatialContext(ApplicationContext *context)
 
 SpatialContext::~SpatialContext()
 {
-    qDebug() << "Object deleted: SpatialContext";
+    qCDebug(DRAWY_LOG) << "Object deleted: SpatialContext";
 }
 
 void SpatialContext::setSpatialContext()

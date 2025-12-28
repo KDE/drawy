@@ -39,7 +39,7 @@ UIContext::UIContext(ApplicationContext *context)
 UIContext::~UIContext()
 {
     delete m_event;
-    qDebug() << "Object deleted: UIContext";
+    qCDebug(DRAWY_LOG) << "Object deleted: UIContext";
 }
 
 void UIContext::setUIContext()

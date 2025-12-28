@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <QDebug>
+#include "drawy_debug.h"
 #include <QObject>
 
 class Action : public QObject
