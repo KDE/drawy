@@ -87,7 +87,7 @@ if (WIN32)
 endif()
 
 include(GNUInstallDirs)
-
+include(KDEInstallDirs)
 install(
     TARGETS
         ${PROJECT_NAME}
@@ -97,9 +97,9 @@ install(
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
 
 if (UNIX AND NOT APPLE)
-  install(PROGRAMS deploy/linux/org.kde.drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME org.kde.drawy.desktop)
+  install(PROGRAMS deploy/linux/org.kde.drawy.desktop DESTINATION ${KDE_INSTALL_APPDIR})
   install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
-  install(FILES deploy/linux/org.kde.drawy.metainfo.xml.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/metainfo/ RENAME org.kde.drawy.metainfo.xml)
+  install(FILES deploy/linux/org.kde.drawy.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
 
 ecm_install_po_files_as_qm(poqm)
