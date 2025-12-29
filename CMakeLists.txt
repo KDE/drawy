@@ -28,7 +28,7 @@ ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 # Find Qt6
 find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
     COMPONENTS
-        OpenGLWidgets
+        Widgets
         LinguistTools
 )
 
@@ -94,7 +94,7 @@ install(
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 
 if (UNIX AND NOT APPLE)
   install(PROGRAMS deploy/linux/org.kde.drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME org.kde.drawy.desktop)
