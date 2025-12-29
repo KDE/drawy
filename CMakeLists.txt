@@ -22,7 +22,11 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 include(ECMDeprecationSettings)
 # TODO activate it when all code will be ported include(KDECompilerSettings NO_POLICY_SCOPE)
 # TODO activate it kde_enable_exceptions()
+include(KDEClangFormat)
+include(KDEGitCommitHooks)
 include(ECMPoQmTools)
+include(GNUInstallDirs)
+include(KDEInstallDirs)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
@@ -35,16 +39,18 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash)
 
-include(KDEClangFormat)
 file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
     *.cpp
     *.hpp
 )
 
-include(KDEGitCommitHooks)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+
+# ZSTD for compression
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(ZSTD REQUIRED libzstd)
 
 # Combine translation files with the source files.
 set(PROJECT_SOURCES
@@ -205,18 +211,12 @@ set(PROJECT_SOURCES
 )
 
 ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
-
-qt_add_executable(${PROJECT_NAME}
-    MANUAL_FINALIZATION
-    ${PROJECT_SOURCES}
-)
-
-# ZSTD for compression
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(ZSTD REQUIRED libzstd)
-
+add_executable(${PROJECT_NAME})
 target_include_directories(${PROJECT_NAME} PRIVATE ${ZSTD_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${ZSTD_LINK_LIBRARIES})
+target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCES})
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE KF6::Crash)
 
 # Set bundle properties for macOS / iOS.
 if (APPLE)
@@ -234,16 +234,12 @@ if (WIN32)
     )
 endif()
 
-include(GNUInstallDirs)
-include(KDEInstallDirs)
 install(
     TARGETS
         ${PROJECT_NAME}
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
-target_link_libraries(${PROJECT_NAME} PRIVATE KF6::Crash)
 if (UNIX AND NOT APPLE)
   install(PROGRAMS deploy/linux/org.kde.drawy.desktop DESTINATION ${KDE_INSTALL_APPDIR})
   install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
