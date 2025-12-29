@@ -32,6 +32,8 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
         LinguistTools
 )
 
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash)
+
 # Source directory.
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
@@ -243,7 +245,7 @@ install(
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
-
+target_link_libraries(${PROJECT_NAME} PRIVATE KF6::Crash)
 if (UNIX AND NOT APPLE)
   install(PROGRAMS deploy/linux/org.kde.drawy.desktop.in DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/applications RENAME org.kde.drawy.desktop)
   install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
