@@ -20,7 +20,7 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Actions] = new ActionsWidget(parent);
 
     for (const auto &[_, widget] : m_widgets) {
-        QObject::connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
+        connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
     }
 }
 
