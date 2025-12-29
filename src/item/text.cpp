@@ -59,7 +59,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     QRectF curBox{m_boundingBox.translated(-offset)};
     qsizetype cur{caret()};
 
-    if (mode() == EDIT) {
+    if (mode() == Mode::Edit) {
         // // Drawing the bounding box
         // QPen boundingBoxPen{Common::selectionBorderColor};
         // boundingBoxPen.setWidth(1);

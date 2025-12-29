@@ -71,7 +71,7 @@ void TextTool::mousePressed(ApplicationContext *context)
             }
         } else {
             if (m_curItem != nullptr) {
-                m_curItem->setMode(TextItem::NORMAL);
+                m_curItem->setMode(TextItem::Mode::Normal);
                 spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
             }
 
@@ -90,7 +90,7 @@ void TextTool::mousePressed(ApplicationContext *context)
         }
 
         context->selectionContext().selectedItems() = {m_curItem};
-        m_curItem->setMode(TextItem::EDIT);
+        m_curItem->setMode(TextItem::Mode::Edit);
         uiContext.keybindManager().disable();
 
         renderingContext.markForRender();
@@ -232,7 +232,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     Event &ev{context->uiContext().event()};
 
     if (ev.key() == Qt::Key_Escape) {
-        m_curItem->setMode(TextItem::NORMAL);
+        m_curItem->setMode(TextItem::Mode::Normal);
         context->uiContext().keybindManager().enable();
         m_curItem = nullptr;
 
@@ -241,7 +241,7 @@ void TextTool::keyPressed(ApplicationContext *context)
         context->renderingContext().markForUpdate();
     }
 
-    if (m_curItem != nullptr && m_curItem->mode() == TextItem::EDIT) {
+    if (m_curItem != nullptr && m_curItem->mode() == TextItem::Mode::Edit) {
         qsizetype caret{m_curItem->caret()};
         const QString &text{m_curItem->text()};
         qsizetype size{text.size()};
@@ -470,7 +470,7 @@ void TextTool::cleanup()
     auto &transformer{spatialContext.coordinateTransformer()};
     auto &quadTree{spatialContext.quadtree()};
 
-    m_curItem->setMode(TextItem::NORMAL);
+    m_curItem->setMode(TextItem::Mode::Normal);
     spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
     // enable keybindings again

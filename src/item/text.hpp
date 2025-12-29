@@ -24,9 +24,9 @@ public:
 
     void createTextBox(const QPointF position);
 
-    enum Mode {
-        EDIT,
-        NORMAL
+    enum class Mode {
+        Edit,
+        Normal
     };
 
     Mode mode() const;
@@ -84,5 +84,5 @@ private:
     qsizetype m_selectionStart{};
     qsizetype m_selectionEnd{};
     qsizetype m_caretPosInLine{};
-    Mode m_mode{NORMAL};
+    Mode m_mode{Mode::Normal};
 };
