@@ -50,8 +50,9 @@
                 zstd.dev
                 pkg-config
                 reuse
-                kdePackages.extra-cmake-modules
                 libclang.python
+                kdePackages.extra-cmake-modules
+                kdePackages.kcrash.dev
               ]);
           };
       });
