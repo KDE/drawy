@@ -27,5 +27,5 @@ public slots:
 private:
     std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};
 
-    ApplicationContext *m_applicationContext;
+    ApplicationContext *const m_applicationContext;
 };

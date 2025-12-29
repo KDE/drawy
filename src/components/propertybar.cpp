@@ -23,8 +23,6 @@ PropertyBar::PropertyBar(QWidget *parent)
     this->setAutoFillBackground(true);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     this->setProperty("class", "drawlyFrame drawyPropertyBar");
-
-    setLayout(m_layout);
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)

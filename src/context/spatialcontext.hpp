@@ -40,5 +40,5 @@ private:
     // to the world center. If viewport moves down/right, the coordinates increase
     QPointF m_offsetPos{};
 
-    ApplicationContext *m_applicationContext;
+    ApplicationContext *const m_applicationContext;
 };
