@@ -35,26 +35,174 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
 # Source directory.
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
-# Use globbing to recursively collect all source, header, and resource files from src/.
-file(GLOB_RECURSE SRC_FILES
-    "${SRC_DIR}/*.cpp"
-    "${SRC_DIR}/*.hpp"
-    "${SRC_DIR}/*.qrc"
-    "${SRC_DIR}/*.qss"
-)
-
 include(KDEClangFormat)
 file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
     *.cpp
     *.hpp
 )
+
 include(KDEGitCommitHooks)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 # Combine translation files with the source files.
-set(PROJECT_SOURCES ${TS_FILES} ${SRC_FILES})
+set(PROJECT_SOURCES
+    src/canvas/canvas.cpp
+    src/canvas/canvas.hpp
+    src/command/commandhistory.cpp
+    src/command/commandhistory.hpp
+    src/command/command.hpp
+    src/command/deselectcommand.cpp
+    src/command/deselectcommand.hpp
+    src/command/groupcommand.cpp
+    src/command/groupcommand.hpp
+    src/command/insertitemcommand.cpp
+    src/command/insertitemcommand.hpp
+    src/command/itemcommand.cpp
+    src/command/itemcommand.hpp
+    src/command/moveitemcommand.cpp
+    src/command/moveitemcommand.hpp
+    src/command/removeitemcommand.cpp
+    src/command/removeitemcommand.hpp
+    src/command/selectcommand.cpp
+    src/command/selectcommand.hpp
+    src/command/ungroupcommand.cpp
+    src/command/ungroupcommand.hpp
+    src/command/updatepropertycommand.cpp
+    src/command/updatepropertycommand.hpp
+    src/common/constants.hpp
+    src/common/renderitems.cpp
+    src/common/renderitems.hpp
+    src/common/utils/compression.cpp
+    src/common/utils/compression.hpp
+    src/common/utils/math.hpp
+    src/components/actionbar.cpp
+    src/components/actionbar.hpp
+    src/components/propertybar.cpp
+    src/components/propertybar.hpp
+    src/components/toolbar.cpp
+    src/components/toolbar.hpp
+    src/context/applicationcontext.cpp
+    src/context/applicationcontext.hpp
+    src/context/coordinatetransformer.cpp
+    src/context/coordinatetransformer.hpp
+    src/context/renderingcontext.cpp
+    src/context/renderingcontext.hpp
+    src/context/selectioncontext.cpp
+    src/context/selectioncontext.hpp
+    src/context/spatialcontext.cpp
+    src/context/spatialcontext.hpp
+    src/context/uicontext.cpp
+    src/context/uicontext.hpp
+    src/controller/controller.cpp
+    src/controller/controller.hpp
+    src/data-structures/cachegrid.cpp
+    src/data-structures/cachegrid.hpp
+    src/data-structures/orderedlist.cpp
+    src/data-structures/orderedlist.hpp
+    src/data-structures/quadtree.cpp
+    src/data-structures/quadtree.hpp
+    src/data-structures/quadtree.ipp
+    src/event/event.cpp
+    src/event/event.hpp
+    src/iconmanager/iconmanager.cpp
+    src/iconmanager/iconmanager.hpp
+    src/item/arrow.cpp
+    src/item/arrow.hpp
+    src/item/ellipse.cpp
+    src/item/ellipse.hpp
+    src/item/factory/arrowfactory.cpp
+    src/item/factory/arrowfactory.hpp
+    src/item/factory/ellipsefactory.cpp
+    src/item/factory/ellipsefactory.hpp
+    src/item/factory/freeformfactory.cpp
+    src/item/factory/freeformfactory.hpp
+    src/item/factory/itemfactory.cpp
+    src/item/factory/itemfactory.hpp
+    src/item/factory/linefactory.cpp
+    src/item/factory/linefactory.hpp
+    src/item/factory/rectanglefactory.cpp
+    src/item/factory/rectanglefactory.hpp
+    src/item/factory/textfactory.cpp
+    src/item/factory/textfactory.hpp
+    src/item/freeform.cpp
+    src/item/freeform.hpp
+    src/item/group.cpp
+    src/item/group.hpp
+    src/item/item.cpp
+    src/item/item.hpp
+    src/item/line.cpp
+    src/item/line.hpp
+    src/item/polygon.cpp
+    src/item/polygon.hpp
+    src/item/rectangle.cpp
+    src/item/rectangle.hpp
+    src/item/text.cpp
+    src/item/text.hpp
+    src/keybindings/action.cpp
+    src/keybindings/action.hpp
+    src/keybindings/actionmanager.cpp
+    src/keybindings/actionmanager.hpp
+    src/keybindings/keybindmanager.cpp
+    src/keybindings/keybindmanager.hpp
+    src/properties/property.cpp
+    src/properties/property.hpp
+    src/properties/widgets/actionswidget.cpp
+    src/properties/widgets/actionswidget.hpp
+    src/properties/widgets/erasersizewidget.cpp
+    src/properties/widgets/erasersizewidget.hpp
+    src/properties/widgets/fontsizewidget.cpp
+    src/properties/widgets/fontsizewidget.hpp
+    src/properties/widgets/propertymanager.cpp
+    src/properties/widgets/propertymanager.hpp
+    src/properties/widgets/propertywidget.cpp
+    src/properties/widgets/propertywidget.hpp
+    src/properties/widgets/strokecolorwidget.cpp
+    src/properties/widgets/strokecolorwidget.hpp
+    src/properties/widgets/strokewidthwidget.cpp
+    src/properties/widgets/strokewidthwidget.hpp
+    src/serializer/loader.cpp
+    src/serializer/loader.hpp
+    src/serializer/serializer.cpp
+    src/serializer/serializer.hpp
+    src/tools/arrowtool.cpp
+    src/tools/arrowtool.hpp
+    src/tools/drawingtool.cpp
+    src/tools/drawingtool.hpp
+    src/tools/ellipsetool.cpp
+    src/tools/ellipsetool.hpp
+    src/tools/erasertool.cpp
+    src/tools/erasertool.hpp
+    src/tools/freeformtool.cpp
+    src/tools/freeformtool.hpp
+    src/tools/linetool.cpp
+    src/tools/linetool.hpp
+    src/tools/movetool.cpp
+    src/tools/movetool.hpp
+    src/tools/polygondrawingtool.cpp
+    src/tools/polygondrawingtool.hpp
+    src/tools/rectangletool.cpp
+    src/tools/rectangletool.hpp
+    src/tools/selectiontool/selectiontool.cpp
+    src/tools/selectiontool/selectiontool.hpp
+    src/tools/selectiontool/selectiontoolmovestate.cpp
+    src/tools/selectiontool/selectiontoolmovestate.hpp
+    src/tools/selectiontool/selectiontoolselectstate.cpp
+    src/tools/selectiontool/selectiontoolselectstate.hpp
+    src/tools/selectiontool/selectiontoolstate.hpp
+    src/tools/texttool.cpp
+    src/tools/texttool.hpp
+    src/tools/tool.cpp
+    src/tools/tool.hpp
+    src/window/boardlayout.cpp
+    src/window/boardlayout.hpp
+    src/window/window.cpp
+    src/window/window.hpp
+    src/main.cpp
+    src/resources/res.qrc
+    src/resources/style.qss
+)
 
 ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
 
