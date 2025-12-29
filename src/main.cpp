@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include <KCrash>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QLocale>
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
 {
     QApplication a{argc, argv};
     QApplication::setStyle("Fusion");
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.addHelpOption();
