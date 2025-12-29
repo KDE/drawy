@@ -11,6 +11,7 @@
 #include "../common/renderitems.hpp"
 #include "../components/toolbar.hpp"
 #include "../context/applicationcontext.hpp"
+#include "../context/coordinatetransformer.hpp"
 #include "../context/renderingcontext.hpp"
 #include "../context/spatialcontext.hpp"
 #include "../context/uicontext.hpp"
@@ -184,13 +185,18 @@ void Controller::leave(QEvent *event)
 
 void Controller::wheel(QWheelEvent *event)
 {
+    auto &transformer{m_context->spatialContext().coordinateTransformer()};
     const QPointF &offsetPos{m_context->spatialContext().offsetPos()};
     const qreal zoomFactor{m_context->renderingContext().zoomFactor()};
     Canvas &canvas{m_context->renderingContext().canvas()};
+    Event &contextEvent{m_context->uiContext().event()};
+
+    contextEvent.setPos(event->position().toPoint(), canvas.scale());
+    contextEvent.setModifiers(event->modifiers());
 
     if (event->modifiers() & Qt::ControlModifier) {
         int delta{event->angleDelta().y() > 0 ? 1 : -1};
-        m_context->renderingContext().updateZoomFactor(delta);
+        m_context->renderingContext().updateZoomFactor(delta, transformer.viewToWorld(contextEvent.pos()));
         return;
     }
 
