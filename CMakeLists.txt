@@ -32,9 +32,6 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
         LinguistTools
 )
 
-# Source directory.
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
-
 include(KDEClangFormat)
 file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
