@@ -19,7 +19,7 @@ EraserSizeWidget::EraserSizeWidget(QWidget *parent)
     m_widget = box;
 
     QObject::connect(box, &QSpinBox::valueChanged, this, [this]() {
-        emit changed(value());
+        Q_EMIT changed(value());
     });
 }
 

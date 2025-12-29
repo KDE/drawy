@@ -15,7 +15,7 @@ private:
     QString m_description;
     std::function<void()> m_callable;
 
-public slots:
+public Q_SLOTS:
     void run();
 
 public:

@@ -35,7 +35,7 @@ public:
 
     void reset();
 
-private slots:
+private Q_SLOTS:
     void beginPainters();
     void endPainters();
     void canvasResized();

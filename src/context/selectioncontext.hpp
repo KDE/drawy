@@ -21,7 +21,7 @@ public:
 
     void reset();
 
-public slots:
+public Q_SLOTS:
     void updatePropertyOfSelectedItems(const Property &property);
 
 private:

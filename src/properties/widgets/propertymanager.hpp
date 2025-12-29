@@ -17,7 +17,7 @@ public:
     const PropertyWidget &widget(const Property::Type type) const;
     Property value(const Property::Type type) const;
 
-signals:
+Q_SIGNALS:
     void propertyUpdated(Property property);
 
 private:
