@@ -57,15 +57,16 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
     QPointF worldLastPos{transformer.viewToWorld(m_lastPos)};
     QPointF delta{worldCurPos - worldLastPos};
 
+    QRect dirtyRegion{};
     for (const auto &item : selectedItems) {
-        QRectF oldBoundingBox{item->boundingBox()};
-
-        spatialContext.cacheGrid().markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
         item->translate(delta);
-        spatialContext.cacheGrid().markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
 
-        spatialContext.quadtree().updateItem(item, oldBoundingBox);
+        spatialContext.quadtree().updateItem(item, item->boundingBox());
     }
+
+    spatialContext.cacheGrid().markDirty(dirtyRegion);
 
     m_lastPos = curPos;
     renderingContext.markForRender();

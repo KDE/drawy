@@ -27,7 +27,6 @@ CacheCell::CacheCell(const QPoint &point)
 CacheCell::~CacheCell()
 {
     CacheCell::counter--;
-    qDebug() << "DELETED. LEFT = " << counter;
 }
 
 const QPoint &CacheCell::point() const
