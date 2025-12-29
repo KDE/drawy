@@ -4,6 +4,7 @@
 
 #include "serializer.hpp"
 
+#include <QDebug>
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QStandardPaths>
@@ -125,7 +126,11 @@ void Serializer::saveToFile()
     auto compressedData{Common::Utils::Compression::compressData(data)};
 
     QFile file{fileName};
-    file.open(QIODevice::WriteOnly);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qWarning() << "Error: There was an error opening the save file.";
+        return;
+    }
+
     qint64 written = file.write(compressedData);
     file.close();
 
