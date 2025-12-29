@@ -41,7 +41,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     m_widget->hide();
 
     QObject::connect(m_group, &QButtonGroup::idClicked, this, [this]() {
-        emit changed(value());
+        Q_EMIT changed(value());
     });
 }
 

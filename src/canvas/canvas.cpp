@@ -29,7 +29,7 @@ Canvas::Canvas(QWidget *parent)
 
 Canvas::~Canvas()
 {
-    emit destroyed();
+    Q_EMIT destroyed();
 
     delete m_canvas;
     delete m_overlay;
@@ -119,7 +119,7 @@ bool operator<=(const QSize &a, const QSize &b)
 
 void Canvas::resizeEvent(QResizeEvent *event)
 {
-    emit resizeEventCalled();
+    Q_EMIT resizeEventCalled();
 
     setScale(devicePixelRatioF());
     if (size() * m_scale <= m_maxSize) {
@@ -133,55 +133,55 @@ void Canvas::resizeEvent(QResizeEvent *event)
 
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
-    emit mousePressed(event);
+    Q_EMIT mousePressed(event);
     QWidget::mousePressEvent(event);
 }
 
 void Canvas::mouseMoveEvent(QMouseEvent *event)
 {
-    emit mouseMoved(event);
+    Q_EMIT mouseMoved(event);
     QWidget::mouseMoveEvent(event);
 };
 
 void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
-    emit mouseReleased(event);
+    Q_EMIT mouseReleased(event);
     QWidget::mouseReleaseEvent(event);
 };
 
 void Canvas::keyPressEvent(QKeyEvent *event)
 {
-    emit keyPressed(event);
+    Q_EMIT keyPressed(event);
     QWidget::keyPressEvent(event);
 }
 
 void Canvas::keyReleaseEvent(QKeyEvent *event)
 {
-    emit keyReleased(event);
+    Q_EMIT keyReleased(event);
     QWidget::keyReleaseEvent(event);
 }
 
 void Canvas::inputMethodEvent(QInputMethodEvent *event)
 {
-    emit inputMethodInvoked(event);
+    Q_EMIT inputMethodInvoked(event);
     QWidget::inputMethodEvent(event);
 }
 
 void Canvas::tabletEvent(QTabletEvent *event)
 {
-    emit tablet(event);
+    Q_EMIT tablet(event);
     QWidget::tabletEvent(event);
 }
 
 void Canvas::wheelEvent(QWheelEvent *event)
 {
-    emit wheel(event);
+    Q_EMIT wheel(event);
     QWidget::wheelEvent(event);
 }
 
 void Canvas::leaveEvent(QEvent *event)
 {
-    emit leave(event);
+    Q_EMIT leave(event);
     QWidget::leaveEvent(event);
 }
 
@@ -190,7 +190,7 @@ bool Canvas::event(QEvent *event)
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *ev = dynamic_cast<QKeyEvent *>(event);
         if (ev && (ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab)) {
-            emit keyPressed(ev);
+            Q_EMIT keyPressed(ev);
             return true;
         }
     }
@@ -214,7 +214,7 @@ void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
 
 void Canvas::resize()
 {
-    emit resizeStart();
+    Q_EMIT resizeStart();
 
     if (m_canvas->paintingActive() || m_overlay->paintingActive()) {
         return;
@@ -241,7 +241,7 @@ void Canvas::resize()
 
     canvasPainter.end();
     overlayPainter.end();
-    emit resizeEnd();
+    Q_EMIT resizeEnd();
 }
 
 void Canvas::triggerUpdate()

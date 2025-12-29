@@ -18,7 +18,7 @@ public:
 
     QWidget *widget() const;
 
-signals:
+Q_SIGNALS:
     void changed(Property property);
 
 protected:

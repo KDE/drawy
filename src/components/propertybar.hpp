@@ -19,7 +19,7 @@ public:
     void setPropertyManager(PropertyManager *manager);
     void updateToolProperties();
 
-public slots:
+public Q_SLOTS:
     void updateProperties(Tool &);
 
 private:

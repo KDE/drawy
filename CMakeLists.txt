@@ -16,7 +16,8 @@ find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 include(ECMDeprecationSettings)
-
+# TODO activate it when all code will be ported include(KDECompilerSettings NO_POLICY_SCOPE)
+# TODO activate it kde_enable_exceptions()
 include(ECMPoQmTools)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)

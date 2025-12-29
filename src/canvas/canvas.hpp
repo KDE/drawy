@@ -27,7 +27,7 @@ public:
     qreal scale() const;
     void setScale(const qreal scale);
 
-signals:
+Q_SIGNALS:
     void mousePressed(QMouseEvent *event);
     void mouseMoved(QMouseEvent *event);
     void mouseReleased(QMouseEvent *event);
@@ -42,7 +42,7 @@ signals:
     void destroyed();
     void leave(QEvent *event);
 
-public slots:
+public Q_SLOTS:
     void triggerUpdate();
 
 protected:

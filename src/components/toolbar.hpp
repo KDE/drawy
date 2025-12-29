@@ -25,7 +25,7 @@ public:
     Tool &tool(Tool::Type type) const;
     void changeTool(Tool::Type type);
 
-signals:
+Q_SIGNALS:
     void toolChanged(Tool &);
 
 private:
@@ -34,6 +34,6 @@ private:
     std::unordered_map<int, std::shared_ptr<Tool>> m_tools{};
     void createButtons() const;
 
-private slots:
+private Q_SLOTS:
     void onToolChanged(int id);
 };

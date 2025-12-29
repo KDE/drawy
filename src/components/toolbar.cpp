@@ -67,7 +67,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
     m_layout->addWidget(btn);
     if (m_tools.size() == 1) {
         m_group->button(id)->setChecked(true);
-        emit toolChanged(*tool);
+        Q_EMIT toolChanged(*tool);
     }
 };
 
@@ -76,7 +76,7 @@ void ToolBar::changeTool(Tool::Type type)
     int id{static_cast<int>(type)};
 
     m_group->button(id)->setChecked(true);
-    emit toolChanged(curTool());
+    Q_EMIT toolChanged(curTool());
 }
 
 Tool &ToolBar::tool(Tool::Type type) const
@@ -87,7 +87,7 @@ Tool &ToolBar::tool(Tool::Type type) const
 // PRIVATE SLOTS
 void ToolBar::onToolChanged(int id)
 {
-    emit toolChanged(curTool());
+    Q_EMIT toolChanged(curTool());
 }
 
 #include "moc_toolbar.cpp"
