@@ -51,5 +51,5 @@ private:
 
     Tool *m_lastTool{nullptr}; // Used to call the cleanup function of the last tool
 
-    ApplicationContext *m_applicationContext;
+    ApplicationContext *const m_applicationContext;
 };

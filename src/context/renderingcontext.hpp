@@ -53,5 +53,5 @@ private:
 
     qreal m_zoomFactor{1};
 
-    ApplicationContext *m_applicationContext;
+    ApplicationContext *const m_applicationContext;
 };
