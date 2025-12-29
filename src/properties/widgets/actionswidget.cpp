@@ -60,7 +60,7 @@ ActionsWidget::ActionsWidget(QWidget *parent)
 
 QString ActionsWidget::name() const
 {
-    return "Actions";
+    return tr("Actions");
 };
 
 const Property ActionsWidget::value() const

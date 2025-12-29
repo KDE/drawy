@@ -26,7 +26,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
 
 QString FontSizeWidget::name() const
 {
-    return "Font Size";
+    return tr("Font Size");
 };
 
 const Property FontSizeWidget::value() const

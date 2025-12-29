@@ -32,7 +32,7 @@ void Loader::loadFromFile(ApplicationContext *context)
 
     // ask for file (handle cancel)
     QDir homeDir{QDir::home()};
-    QString fileName = QFileDialog::getOpenFileName(nullptr, "Open File", homeDir.path(), filter);
+    QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
     if (fileName.isEmpty())
         return;
 
