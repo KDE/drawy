@@ -5,11 +5,14 @@
 #include "renderingcontext.hpp"
 
 #include <QScreen>
+#include <qpoint.h>
 
 #include "../canvas/canvas.hpp"
+#include "../common/constants.hpp"
 #include "../common/renderitems.hpp"
 #include "../data-structures/cachegrid.hpp"
 #include "applicationcontext.hpp"
+#include "coordinatetransformer.hpp"
 #include "spatialcontext.hpp"
 
 RenderingContext::RenderingContext(ApplicationContext *context)
@@ -103,25 +106,34 @@ qreal RenderingContext::zoomFactor() const
 void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 {
     // zoom out limit is 0.1
-    if (diff < 0 && m_zoomFactor - 0.1 <= 1e-9)
+    if (diff < 0 && m_zoomFactor - Common::zoomOutLimit <= 1e-9)
+        return;
+
+    if (diff > 0 && Common::zoomInLimit - m_zoomFactor <= 1e-9)
         return;
 
     qreal oldZoomFactor = m_zoomFactor;
-    m_zoomFactor += diff * 0.1;
+    if (diff >= 0) {
+        m_zoomFactor = std::min(Common::zoomInLimit, m_zoomFactor * diff * 1.1);
+    } else {
+        m_zoomFactor = std::max(Common::zoomOutLimit, m_zoomFactor / (-1 * diff * 1.1));
+    }
 
     qDebug() << "Zoom: " << m_zoomFactor;
 
     QPointF offsetPos{m_applicationContext->spatialContext().offsetPos()};
 
-    QSize viewport{canvas().dimensions() / oldZoomFactor};
-    int width{viewport.width()};
-    int height{viewport.height()};
+    if (center == QPoint{-1, -1}) {
+        QSize viewport{canvas().dimensions() / oldZoomFactor};
+        int width{viewport.width()};
+        int height{viewport.height()};
 
-    qreal centerX{center.x() == -1 ? width / 2.0 : center.x()};
-    qreal centerY{center.y() == -1 ? height / 2.0 : center.y()};
+        center.setX(offsetPos.toPoint().x() + width / 2);
+        center.setY(offsetPos.toPoint().y() + height / 2);
+    }
 
-    offsetPos.setX(offsetPos.x() + centerX * (1 - oldZoomFactor / m_zoomFactor));
-    offsetPos.setY(offsetPos.y() + centerY * (1 - oldZoomFactor / m_zoomFactor));
+    offsetPos.setX(center.x() - (center.x() - offsetPos.x()) * oldZoomFactor / m_zoomFactor);
+    offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
 
     m_applicationContext->spatialContext().setOffsetPos(offsetPos);
 

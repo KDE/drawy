@@ -46,5 +46,8 @@ inline constexpr int doubleClickInterval{300}; // milliseconds
 
 inline constexpr qreal tabStopDistance{4};
 
+inline constexpr qreal zoomOutLimit{0.1}; // 10%
+inline constexpr qreal zoomInLimit{300}; // 3000%
+
 inline constexpr std::string_view drawyFileExt{"drawy"};
 }; // namespace Common
