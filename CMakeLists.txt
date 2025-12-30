@@ -55,6 +55,12 @@ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(ZSTD REQUIRED libzstd)
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas
+    # see e.g. https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56556 or https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79328
+    string(APPEND CMAKE_CXX_FLAGS " -Wshadow")
+endif()
+
 # Combine translation files with the source files.
 set(PROJECT_SOURCES
     src/canvas/canvas.cpp
