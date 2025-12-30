@@ -98,9 +98,6 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
             qsizetype selStart = qMin(selectionStart(), selectionEnd());
             qsizetype selEnd = qMax(selectionStart(), selectionEnd());
 
-            QFontMetrics metrics{getFont()};
-            const int lineHeight = metrics.height();
-
             painter.setBrush(Common::selectionBackgroundColor);
             painter.setPen(Qt::NoPen);
 
