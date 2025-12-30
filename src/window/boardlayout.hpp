@@ -10,7 +10,7 @@ class BoardLayout : public QLayout
 {
     Q_OBJECT
 public:
-    BoardLayout(QWidget *parent = nullptr);
+    explicit BoardLayout(QWidget *parent = nullptr);
     ~BoardLayout() override;
 
     void addItem(QLayoutItem *item) override;

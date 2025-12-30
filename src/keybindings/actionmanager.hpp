@@ -11,7 +11,7 @@ class ActionManager : public QObject
 {
     Q_OBJECT
 public:
-    ActionManager(ApplicationContext *context);
+    explicit ActionManager(ApplicationContext *context);
 
     void zoomIn();
     void zoomOut();
@@ -34,5 +34,5 @@ public:
     void loadFromFile();
 
 private:
-    ApplicationContext *m_context;
+    ApplicationContext *const m_context;
 };

@@ -13,7 +13,7 @@
 class KeybindManager : public QObject
 {
 public:
-    KeybindManager(QObject *parent);
+    explicit KeybindManager(QObject *parent);
 
     void addKeybinding(Action *action, const QString &sequence);
     void removeKeybinding(QKeySequence sequence);

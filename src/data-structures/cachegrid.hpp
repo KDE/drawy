@@ -41,7 +41,7 @@ private:
 class CacheGrid
 {
 public:
-    CacheGrid(int maxSize);
+    explicit CacheGrid(int maxSize);
     ~CacheGrid();
 
     QVector<std::shared_ptr<CacheCell>> queryCells(const QRect &rect);
