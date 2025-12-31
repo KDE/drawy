@@ -33,23 +33,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     renderingContext.canvas().setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    this->setLayout(layout);
-
     layout->setMargins(10);
     layout->setLeftWidget(&uiContext.propertyBar());
     layout->setTopWidget(&uiContext.toolBar());
     layout->setBottomWidget(&uiContext.actionBar());
     layout->setCentralWidget(&renderingContext.canvas());
 
-    QObject::connect(&renderingContext.canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
-    QObject::connect(&renderingContext.canvas(), &Canvas::mouseMoved, controller, &Controller::mouseMoved);
-    QObject::connect(&renderingContext.canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
-    QObject::connect(&renderingContext.canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
-    QObject::connect(&renderingContext.canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
+    connect(&renderingContext.canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
+    connect(&renderingContext.canvas(), &Canvas::mouseMoved, controller, &Controller::mouseMoved);
+    connect(&renderingContext.canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
+    connect(&renderingContext.canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
+    connect(&renderingContext.canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
 
-    QObject::connect(&renderingContext.canvas(), &Canvas::tablet, controller, &Controller::tablet);
-    QObject::connect(&renderingContext.canvas(), &Canvas::wheel, controller, &Controller::wheel);
-    QObject::connect(&renderingContext.canvas(), &Canvas::leave, controller, &Controller::leave);
+    connect(&renderingContext.canvas(), &Canvas::tablet, controller, &Controller::tablet);
+    connect(&renderingContext.canvas(), &Canvas::wheel, controller, &Controller::wheel);
+    connect(&renderingContext.canvas(), &Canvas::leave, controller, &Controller::leave);
 
     m_applyCustomStyles();
 }
