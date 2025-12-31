@@ -31,5 +31,5 @@ QString FontSizeWidget::name() const
 
 const Property FontSizeWidget::value() const
 {
-    return Property{dynamic_cast<QSpinBox *>(m_widget)->value(), Property::FontSize};
+    return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::FontSize};
 }

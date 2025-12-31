@@ -30,5 +30,5 @@ QString EraserSizeWidget::name() const
 
 const Property EraserSizeWidget::value() const
 {
-    return Property{dynamic_cast<QSpinBox *>(m_widget)->value(), Property::EraserSize};
+    return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::EraserSize};
 }
