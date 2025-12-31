@@ -45,12 +45,12 @@ private:
     ApplicationContext(const ApplicationContext &) = delete;
     ApplicationContext(ApplicationContext *) = delete;
 
-    QWidget *m_parentWidget;
+    QWidget *const m_parentWidget;
 
-    RenderingContext *m_renderingContext{nullptr};
-    SpatialContext *m_spatialContext{nullptr};
-    UIContext *m_uiContext{nullptr};
-    SelectionContext *m_selectionContext{nullptr};
+    RenderingContext *const m_renderingContext;
+    SpatialContext *const m_spatialContext;
+    UIContext *const m_uiContext;
+    SelectionContext *const m_selectionContext;
 
     static ApplicationContext *m_instance;
 };
