@@ -5,6 +5,7 @@
 #include "applicationcontext.hpp"
 
 #include "coordinatetransformer.hpp"
+#include "drawy_debug.h"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
 #include "spatialcontext.hpp"
@@ -24,7 +25,7 @@ ApplicationContext::ApplicationContext(QWidget *parent)
 
 ApplicationContext::~ApplicationContext()
 {
-    qDebug() << "Object deleted: ApplicationContext";
+    qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
 }
 
 void ApplicationContext::setContexts()

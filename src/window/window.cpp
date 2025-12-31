@@ -65,17 +65,17 @@ void MainWindow::applyCustomStyles()
         QString qss = stream.readAll();
         this->setStyleSheet(qss);
     } else {
-        qWarning() << "Failed to load stylesheet.";
+        qCWarning(DRAWY_LOG) << "Failed to load stylesheet.";
     }
 
     int fontID = QFontDatabase::addApplicationFont(":/fonts/FuzzyBubbles.ttf");
     if (fontID == -1) {
-        qWarning() << "Failed to load font: FuzzyBubbles";
+        qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles";
     }
 
     fontID = QFontDatabase::addApplicationFont(":/fonts/Inter.ttf");
     if (fontID == -1) {
-        qWarning() << "Failed to load font: Inter";
+        qCWarning(DRAWY_LOG) << "Failed to load font: Inter";
     }
 }
 

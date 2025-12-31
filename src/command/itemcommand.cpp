@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "itemcommand.hpp"
+#include "drawy_debug.h"
 
 #include <QDebug>
 #include <utility>
@@ -14,5 +15,5 @@ ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items)
 
 ItemCommand::~ItemCommand()
 {
-    qDebug() << "Object deleted: ItemCommand";
+    qCDebug(DRAWY_LOG) << "Object deleted: ItemCommand";
 }

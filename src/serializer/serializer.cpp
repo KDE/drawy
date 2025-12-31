@@ -128,7 +128,7 @@ void Serializer::saveToFile()
 
     QFile file{fileName};
     if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Error: There was an error opening the save file.";
+        qCWarning(DRAWY_LOG) << "Error: There was an error opening the save file.";
         return;
     }
 
@@ -136,7 +136,7 @@ void Serializer::saveToFile()
     file.close();
 
     if (written != compressedData.size()) {
-        qWarning() << "Warning: not all bytes were written";
+        qCWarning(DRAWY_LOG) << "Warning: not all bytes were written";
     }
 
     qCDebug(DRAWY_LOG) << "Saved to file: " << fileName;

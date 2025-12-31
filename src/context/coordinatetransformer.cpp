@@ -7,6 +7,7 @@
 #include <cmath>
 
 #include "applicationcontext.hpp"
+#include "drawy_debug.h"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
 
@@ -15,7 +16,7 @@ CoordinateTransformer::CoordinateTransformer(ApplicationContext *context)
 
 CoordinateTransformer::~CoordinateTransformer()
 {
-    qDebug() << "Object deleted: CoordinateTransformer";
+    qCDebug(DRAWY_LOG) << "Object deleted: CoordinateTransformer";
 }
 
 void CoordinateTransformer::setCoordinateTransformer()

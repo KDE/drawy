@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "commandhistory.hpp"
+#include "drawy_debug.h"
 
 #include <QDebug>
 
@@ -15,7 +16,7 @@ CommandHistory::CommandHistory(ApplicationContext *context)
 
 CommandHistory::~CommandHistory()
 {
-    qDebug() << "Object deleted: CommandHistory";
+    qCDebug(DRAWY_LOG) << "Object deleted: CommandHistory";
 }
 
 void CommandHistory::undo()

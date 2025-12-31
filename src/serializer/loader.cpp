@@ -4,6 +4,7 @@
 
 #include "loader.hpp"
 
+#include "drawy_debug.h"
 #include <QDir>
 #include <QFileDialog>
 #include <QJsonArray>
@@ -38,7 +39,7 @@ void Loader::loadFromFile(ApplicationContext *context)
 
     QFile file{fileName};
     if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open file:" << file.errorString();
+        qCWarning(DRAWY_LOG) << "Failed to open file:" << file.errorString();
         return;
     }
 
@@ -49,14 +50,14 @@ void Loader::loadFromFile(ApplicationContext *context)
     try {
         byteArray = Common::Utils::Compression::decompressData(compressedByteArray);
     } catch (const std::exception &ex) {
-        qWarning() << "Decompression failed:" << ex.what();
+        qCWarning(DRAWY_LOG) << "Decompression failed:" << ex.what();
 
         QByteArray decoded = QByteArray::fromBase64(compressedByteArray);
         if (!decoded.isEmpty() && decoded.size() < compressedByteArray.size()) {
             try {
                 byteArray = Common::Utils::Compression::decompressData(decoded);
             } catch (const std::exception &ex2) {
-                qWarning() << "Base64-decode fallback also failed:" << ex2.what();
+                qCWarning(DRAWY_LOG) << "Base64-decode fallback also failed:" << ex2.what();
                 return;
             }
         } else {
@@ -67,7 +68,7 @@ void Loader::loadFromFile(ApplicationContext *context)
     QJsonParseError parseError;
     QJsonDocument doc = QJsonDocument::fromJson(byteArray, &parseError);
     if (doc.isNull() || !doc.isObject()) {
-        qWarning() << "JSON parse failed:" << parseError.errorString() << "offset:" << parseError.offset;
+        qCWarning(DRAWY_LOG) << "JSON parse failed:" << parseError.errorString() << "offset:" << parseError.offset;
         return;
     }
 
@@ -179,7 +180,7 @@ Property Loader::createProperty(const QJsonObject &obj)
 QJsonValue Loader::value(const QJsonObject &obj, const QString &key)
 {
     if (!obj.contains(key)) {
-        qWarning() << "Object does not contain key: " << key;
+        qCWarning(DRAWY_LOG) << "Object does not contain key: " << key;
         return {};
     }
 
@@ -189,7 +190,7 @@ QJsonValue Loader::value(const QJsonObject &obj, const QString &key)
 QJsonObject Loader::object(const QJsonValue &value)
 {
     if (value.isUndefined() || !value.isObject()) {
-        qWarning() << "Value is not an object";
+        qCWarning(DRAWY_LOG) << "Value is not an object";
         return {};
     }
 
@@ -199,7 +200,7 @@ QJsonObject Loader::object(const QJsonValue &value)
 QJsonArray Loader::array(const QJsonValue &value)
 {
     if (value.isUndefined() || !value.isArray()) {
-        qWarning() << "Value is not an array";
+        qCWarning(DRAWY_LOG) << "Value is not an array";
         return {};
     }
 
@@ -213,10 +214,10 @@ QPointF Loader::toPointF(const QJsonValue &val)
     if (obj.contains("x") && obj.contains("y")) {
         return QPointF{obj["x"].toDouble(), obj["y"].toDouble()};
     } else {
-        qWarning() << "Given point does not contain x and y properties";
+        qCWarning(DRAWY_LOG) << "Given point does not contain x and y properties";
         return {};
     }
 
-    qWarning() << "Given point value is not an object";
+    qCWarning(DRAWY_LOG) << "Given point value is not an object";
     return {};
 }

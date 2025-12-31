@@ -11,6 +11,7 @@
 #include "../properties/property.hpp"
 #include "applicationcontext.hpp"
 #include "coordinatetransformer.hpp"
+#include "drawy_debug.h"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
 
@@ -22,7 +23,7 @@ SelectionContext::SelectionContext(ApplicationContext *context)
 
 SelectionContext::~SelectionContext()
 {
-    qDebug() << "Object deleted: SelectionContext";
+    qCDebug(DRAWY_LOG) << "Object deleted: SelectionContext";
 }
 
 std::unordered_set<std::shared_ptr<Item>> &SelectionContext::selectedItems()

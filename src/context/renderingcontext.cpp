@@ -13,6 +13,7 @@
 #include "../data-structures/cachegrid.hpp"
 #include "applicationcontext.hpp"
 #include "coordinatetransformer.hpp"
+#include "drawy_debug.h"
 #include "spatialcontext.hpp"
 
 RenderingContext::RenderingContext(ApplicationContext *context)
@@ -23,7 +24,7 @@ RenderingContext::RenderingContext(ApplicationContext *context)
 
 RenderingContext::~RenderingContext()
 {
-    qDebug() << "Object deleted: RenderingContext";
+    qCDebug(DRAWY_LOG) << "Object deleted: RenderingContext";
     delete m_canvasPainter;
 }
 
@@ -119,7 +120,7 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
         m_zoomFactor = std::max(Common::zoomOutLimit, m_zoomFactor / (-1 * diff * 1.1));
     }
 
-    qDebug() << "Zoom: " << m_zoomFactor;
+    qCDebug(DRAWY_LOG) << "Zoom: " << m_zoomFactor;
 
     QPointF offsetPos{m_applicationContext->spatialContext().offsetPos()};
 
