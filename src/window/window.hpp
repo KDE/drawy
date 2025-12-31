@@ -15,6 +15,6 @@ public:
     ~MainWindow() override;
 
 private:
+    void applyCustomStyles();
     bool m_config_useSystemStyles{true};
-    void m_applyCustomStyles();
 };

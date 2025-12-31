@@ -18,11 +18,12 @@
 #include "../context/uicontext.hpp"
 #include "../controller/controller.hpp"
 #include "boardlayout.hpp"
+#include "drawy_debug.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
-    this->m_applyCustomStyles();
+    this->applyCustomStyles();
 
     BoardLayout *layout{new BoardLayout(this)};
     Controller *controller{new Controller(this)};
@@ -49,14 +50,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&renderingContext.canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(&renderingContext.canvas(), &Canvas::leave, controller, &Controller::leave);
 
-    m_applyCustomStyles();
+    applyCustomStyles();
 }
 
 MainWindow::~MainWindow()
 {
 }
 
-void MainWindow::m_applyCustomStyles()
+void MainWindow::applyCustomStyles()
 {
     QFile file(":/styles/style.qss");
     if (file.open(QFile::ReadOnly | QFile::Text)) {
