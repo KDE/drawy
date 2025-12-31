@@ -1,0 +1,10 @@
+<!--
+    SPDX-FileCopyrightText: Laurent Montel <montel@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/drawy">
+        <file alias="drawy.svg">../icons/sc-apps-drawy.svg</file>
+    </qresource>
+</RCC>

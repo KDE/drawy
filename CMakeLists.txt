@@ -30,6 +30,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
 include(KDEInstallDirs)
 include(FeatureSummary)
+include(ECMInstallIcons)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
@@ -226,6 +227,7 @@ set(PROJECT_SOURCES
     src/main.cpp
     src/resources/res.qrc
     src/resources/style.qss
+    src/resources/drawy.qrc
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -267,9 +269,9 @@ install(
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
+add_subdirectory(src/icons)
 if (UNIX AND NOT APPLE)
   install(PROGRAMS deploy/linux/org.kde.drawy.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-  install(FILES assets/logo.svg DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/icons/hicolor/scalable/apps RENAME org.kde.drawy.svg)
   install(FILES deploy/linux/org.kde.drawy.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
 
