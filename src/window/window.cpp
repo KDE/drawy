@@ -79,4 +79,13 @@ void MainWindow::applyCustomStyles()
     }
 }
 
+void MainWindow::viewFullScreen(bool fullScreen)
+{
+    if (fullScreen) {
+        setWindowState(windowState() | Qt::WindowFullScreen);
+    } else {
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
+    }
+}
+
 #include "moc_window.cpp"

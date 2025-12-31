@@ -14,6 +14,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
 
+    void viewFullScreen(bool fullScreen);
+
 private:
     void applyCustomStyles();
     bool m_config_useSystemStyles{true};

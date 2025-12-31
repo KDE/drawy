@@ -73,6 +73,8 @@ endif()
 
 # Combine translation files with the source files.
 set(PROJECT_SOURCES
+    src/drawycommandlineparser.cpp
+    src/drawycommandlineparser.h
     src/canvas/canvas.cpp
     src/canvas/canvas.hpp
     src/command/commandhistory.cpp

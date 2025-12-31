@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 
+#include "drawycommandlineparser.h"
 #include "window/window.hpp"
 using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     KCrash::initialize();
 
     QCommandLineParser parser;
+    const DrawyCommandLineParser commandLineParser(&parser);
     parser.addHelpOption();
     parser.addVersionOption();
     parser.setApplicationDescription(QObject::tr("Your handy, infinite, brainstorming tool!"));
@@ -24,6 +26,9 @@ int main(int argc, char *argv[])
     parser.process(a);
 
     MainWindow w{};
+    if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
+        w.viewFullScreen(true);
+    }
     w.show();
     return a.exec();
 }
