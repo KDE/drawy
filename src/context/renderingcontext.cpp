@@ -35,12 +35,12 @@ void RenderingContext::setRenderingContext()
     m_canvasPainter = new QPainter(m_canvas->canvas());
     m_overlayPainter = new QPainter(m_canvas->overlay());
 
-    QObject::connect(m_canvas, &Canvas::destroyed, this, &RenderingContext::endPainters);
-    QObject::connect(m_canvas, &Canvas::resizeStart, this, &RenderingContext::endPainters);
-    QObject::connect(m_canvas, &Canvas::resizeEnd, this, &RenderingContext::beginPainters);
-    QObject::connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
+    connect(m_canvas, &Canvas::destroyed, this, &RenderingContext::endPainters);
+    connect(m_canvas, &Canvas::resizeStart, this, &RenderingContext::endPainters);
+    connect(m_canvas, &Canvas::resizeEnd, this, &RenderingContext::beginPainters);
+    connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
 
-    QObject::connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
+    connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
         if (m_needsReRender) {
             Common::renderCanvas(m_applicationContext);
             m_needsReRender = false;

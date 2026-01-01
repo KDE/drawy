@@ -54,10 +54,7 @@ void UIContext::setUIContext()
     m_propertyManager = new PropertyManager(m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
 
-    QObject::connect(m_propertyManager,
-                     &PropertyManager::propertyUpdated,
-                     m_applicationContext->selectionContext(),
-                     &SelectionContext::updatePropertyOfSelectedItems);
+    connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
 
     m_event = new Event();
 
@@ -80,43 +77,43 @@ void UIContext::setUIContext()
     m_actionBar->addButton(tr("Undo"), IconManager::ACTION_UNDO, 4);
     m_actionBar->addButton(tr("Redo"), IconManager::ACTION_REDO, 5);
 
-    QObject::connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
-    QObject::connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
+    connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
+    connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
-    QObject::connect(m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
-    QObject::connect(m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
-    QObject::connect(m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->undo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
 
-    QObject::connect(m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->redo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
 
-    QObject::connect(m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
         Serializer serializer{};
 
         serializer.serialize(m_applicationContext);
         serializer.saveToFile();
     });
 
-    QObject::connect(m_actionBar->button(7), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(7), &QPushButton::clicked, this, [this]() {
         Loader loader{};
 
         loader.loadFromFile(m_applicationContext);
     });
 
-    QObject::connect(m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
         Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
         QPushButton *button{actionBar()->button(3)};
 

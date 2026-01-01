@@ -40,7 +40,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     m_widget->setProperty("class", "drawlyStrokeColorWidget");
     m_widget->hide();
 
-    QObject::connect(m_group, &QButtonGroup::idClicked, this, [this]() {
+    connect(m_group, &QButtonGroup::idClicked, this, [this]() {
         Q_EMIT changed(value());
     });
 }

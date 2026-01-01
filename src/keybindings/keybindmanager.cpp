@@ -21,7 +21,7 @@ void KeybindManager::addKeybinding(Action *action, const QString &sequence)
     m_keyToAction[sequence] = action;
 
     QShortcut *shortcut{m_keyToShortcut[sequence]};
-    QObject::connect(shortcut, &QShortcut::activated, action, &Action::run);
+    connect(shortcut, &QShortcut::activated, action, &Action::run);
 }
 
 // TODO: Implement this

@@ -19,7 +19,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     box->hide();
     m_widget = box;
 
-    QObject::connect(box, &QSpinBox::valueChanged, this, [this]() {
+    connect(box, &QSpinBox::valueChanged, this, [this]() {
         Q_EMIT changed(value());
     });
 }

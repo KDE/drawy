@@ -20,7 +20,7 @@ ToolBar::ToolBar(QWidget *parent)
     this->setAutoFillBackground(true);
     this->setProperty("class", "drawlyFrame drawlyToolBar");
 
-    QObject::connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
+    connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
 
 ToolBar::~ToolBar()
