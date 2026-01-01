@@ -27,7 +27,7 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id
 
     ApplicationContext *context{ApplicationContext::instance()};
 
-    m_map[id] = new QPushButton{"", this};
+    m_map[id] = new QPushButton{this};
     m_map[id]->setIcon(context->uiContext().iconManager().icon(icon));
     m_map[id]->setToolTip(tooltip);
 
