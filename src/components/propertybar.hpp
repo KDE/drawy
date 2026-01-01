@@ -20,7 +20,7 @@ public:
     void updateToolProperties();
 
 public Q_SLOTS:
-    void updateProperties(Tool &);
+    void updateProperties(const Tool &);
 
 private:
     QVBoxLayout *const m_layout;

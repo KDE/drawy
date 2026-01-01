@@ -18,7 +18,7 @@ public:
     void undo(ApplicationContext *context) override;
 
 private:
-    std::shared_ptr<GroupItem> m_group;
+    const std::shared_ptr<GroupItem> m_group;
 };
 
 #endif // GROUPCOMMAND_H

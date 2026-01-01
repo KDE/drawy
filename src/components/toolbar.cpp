@@ -40,7 +40,7 @@ Tool &ToolBar::curTool() const
 QVector<std::shared_ptr<Tool>> ToolBar::tools() const
 {
     QVector<std::shared_ptr<Tool>> result;
-    for (auto &idToolPair : m_tools) {
+    for (const auto &idToolPair : m_tools) {
         result.push_back(idToolPair.second);
     }
 

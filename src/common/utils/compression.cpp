@@ -6,8 +6,6 @@
 
 #include <zstd.h>
 
-#include "drawy_debug.h"
-
 namespace Common::Utils::Compression
 {
 QByteArray compressData(const QByteArray &data)

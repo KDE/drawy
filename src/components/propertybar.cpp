@@ -37,7 +37,7 @@ void PropertyBar::updateToolProperties()
 }
 
 // PUBLIC SLOTS
-void PropertyBar::updateProperties(Tool &tool)
+void PropertyBar::updateProperties(const Tool &tool)
 {
     // remove existing widgets
     QLayoutItem *curItem = nullptr;

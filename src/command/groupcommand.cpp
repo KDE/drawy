@@ -19,9 +19,8 @@
 
 GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
+    , m_group(std::make_shared<GroupItem>())
 {
-    m_group = std::make_shared<GroupItem>();
-
     // sort according to z order
     ApplicationContext::instance()->spatialContext()->quadtree()->reorder(m_items);
 }

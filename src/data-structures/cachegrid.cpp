@@ -12,8 +12,8 @@ int CacheCell::counter = 0;
 CacheCell::CacheCell(const QPoint &point)
     : m_point{point}
     , m_dirty(true)
+    , m_image(std::make_unique<QPixmap>(CacheCell::cellSize()))
 {
-    m_image = std::make_unique<QPixmap>(CacheCell::cellSize());
     m_image->fill(Qt::transparent);
 
     m_painter = std::make_unique<QPainter>(m_image.get());

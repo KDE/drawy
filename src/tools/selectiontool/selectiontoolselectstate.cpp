@@ -123,9 +123,9 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
     if (m_isActive) {
         auto renderingContext{context->renderingContext()};
         auto selectedItems{context->selectionContext()->selectedItems()};
-        auto commandHistory{context->spatialContext()->commandHistory()};
 
         if (!selectedItems.empty()) {
+            auto commandHistory{context->spatialContext()->commandHistory()};
             QVector<std::shared_ptr<Item>> items{};
             for (const auto &item : selectedItems) {
                 items.push_back(item);

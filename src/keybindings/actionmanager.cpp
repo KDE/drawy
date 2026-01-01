@@ -286,7 +286,6 @@ void ActionManager::ungroupItems()
 void ActionManager::deleteSelection()
 {
     auto selectedItems{m_context->selectionContext()->selectedItems()};
-    auto transformer{m_context->spatialContext()->coordinateTransformer()};
     auto commandHistory{m_context->spatialContext()->commandHistory()};
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};

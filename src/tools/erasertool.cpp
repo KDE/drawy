@@ -103,7 +103,6 @@ void EraserTool::mouseReleased(ApplicationContext *context)
         CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
         RenderingContext *renderingContext{context->renderingContext()};
         SelectionContext *selectionContext{context->selectionContext()};
-        CommandHistory *commandHistory{spatialContext->commandHistory()};
 
         QVector<std::shared_ptr<Item>> erasedItems;
         for (const std::shared_ptr<Item> &item : m_toBeErased) {
@@ -117,6 +116,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
         }
 
         if (!erasedItems.empty()) {
+            CommandHistory *commandHistory{spatialContext->commandHistory()};
             commandHistory->insert(std::make_shared<RemoveItemCommand>(erasedItems));
         }
 

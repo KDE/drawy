@@ -48,7 +48,6 @@ void TextTool::mousePressed(ApplicationContext *context)
         CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
         RenderingContext *renderingContext{context->renderingContext()};
         QuadTree *quadTree{spatialContext->quadtree()};
-        CommandHistory &commandHistory{*spatialContext->commandHistory()};
 
         QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
         QVector<std::shared_ptr<Item>> intersectingItems{quadTree->queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
@@ -64,6 +63,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
                 m_curItem->createTextBox(transformer->viewToWorld(uiContext->event()->pos()));
 
+                CommandHistory &commandHistory{*spatialContext->commandHistory()};
                 commandHistory.insert(std::make_shared<InsertItemCommand>(QVector<std::shared_ptr<Item>>{m_curItem}));
             } else {
                 cleanup();
