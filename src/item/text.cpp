@@ -18,11 +18,11 @@
  *
  * TODO: This file needs some refactoring as well, feel free to open a PR
  */
-
+using namespace Qt::Literals::StringLiterals;
 TextItem::TextItem()
-    : m_selectionStart(INVALID)
+    : m_text(u""_s)
+    , m_selectionStart(INVALID)
     , m_selectionEnd(INVALID)
-    , m_text("")
 {
     m_properties[Property::StrokeColor] = Property{QColor(Qt::white), Property::StrokeColor};
     m_properties[Property::Opacity] = Property{255, Property::Opacity};
@@ -74,7 +74,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
         int lineCount{0};
         for (int pos{0}; pos < cur; pos++) {
-            if (m_text[pos] == "\n")
+            if (m_text[pos] == u'\n')
                 lineCount++;
         }
 
@@ -105,7 +105,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
             int lineIndex = 0;
 
             for (qsizetype pos{0}; pos <= m_text.length(); pos++) {
-                if (pos == m_text.length() || m_text[pos] == '\n') {
+                if (pos == m_text.length() || m_text[pos] == u'\n') {
                     qsizetype currentLineEndPos = pos;
 
                     qsizetype selectionRectStart = qMax(selStart, currentLineStartPos);
@@ -177,7 +177,7 @@ void TextItem::setCaret(qsizetype index, bool updatePosInLine)
 
     m_caretIndex = index;
     if (updatePosInLine) {
-        qsizetype firstCharOfCurLine{m_text.lastIndexOf("\n", m_caretIndex - 1)};
+        qsizetype firstCharOfCurLine{m_text.lastIndexOf(u'\n', m_caretIndex - 1)};
         m_caretPosInLine = m_caretIndex - firstCharOfCurLine;
     }
 }
@@ -270,7 +270,7 @@ void TextItem::setSelectionEnd(qsizetype index)
 const QString TextItem::selectedText() const
 {
     if (!hasSelection())
-        return "";
+        return {};
 
     qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
     return m_text.mid(std::min(selStart, selEnd), selEnd - selStart + 1);
@@ -344,7 +344,7 @@ QFont TextItem::getFont() const
 {
     QFont font{};
     font.setPointSize(property(Property::FontSize).value<int>());
-    font.setFamily("Fuzzy Bubbles");
+    font.setFamily(u"Fuzzy Bubbles"_s);
 
     return font;
 }
@@ -369,13 +369,13 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
         if (lineNumber == 1)
             break;
 
-        if (m_text[pos] == "\n") {
+        if (m_text[pos] == u'\n') {
             startIndex = pos + 1;
             lineNumber--;
         }
     }
 
-    qsizetype endIndex{m_text.indexOf("\n", startIndex)};
+    qsizetype endIndex{m_text.indexOf(u'\n', startIndex)};
     if (endIndex == -1)
         endIndex = len - 1;
 
@@ -384,11 +384,11 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
 
 std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
 {
-    qsizetype start{m_text.lastIndexOf("\n", position - 1)};
+    qsizetype start{m_text.lastIndexOf(u'\n', position - 1)};
     if (start == -1 || position == 0)
         start = 0;
 
-    qsizetype end{m_text.indexOf("\n", position)};
+    qsizetype end{m_text.indexOf(u'\n', position)};
     if (end == -1)
         end = m_text.size() - 1;
 

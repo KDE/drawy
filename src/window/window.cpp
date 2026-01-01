@@ -19,7 +19,7 @@
 #include "../controller/controller.hpp"
 #include "boardlayout.hpp"
 #include "drawy_debug.h"
-
+using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
@@ -59,7 +59,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::applyCustomStyles()
 {
-    QFile file(":/styles/style.qss");
+    QFile file(u":/styles/style.qss"_s);
     if (file.open(QFile::ReadOnly | QFile::Text)) {
         QTextStream stream(&file);
         QString qss = stream.readAll();
@@ -68,12 +68,12 @@ void MainWindow::applyCustomStyles()
         qCWarning(DRAWY_LOG) << "Failed to load stylesheet.";
     }
 
-    int fontID = QFontDatabase::addApplicationFont(":/fonts/FuzzyBubbles.ttf");
+    int fontID = QFontDatabase::addApplicationFont(u":/fonts/FuzzyBubbles.ttf"_s);
     if (fontID == -1) {
         qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles";
     }
 
-    fontID = QFontDatabase::addApplicationFont(":/fonts/Inter.ttf");
+    fontID = QFontDatabase::addApplicationFont(u":/fonts/Inter.ttf"_s);
     if (fontID == -1) {
         qCWarning(DRAWY_LOG) << "Failed to load font: Inter";
     }

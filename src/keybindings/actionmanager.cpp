@@ -26,7 +26,7 @@
 #include "../serializer/serializer.hpp"
 #include "action.hpp"
 #include "keybindmanager.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
     : m_context{context}
     , QObject(context)
@@ -34,160 +34,160 @@ ActionManager::ActionManager(ApplicationContext *context)
     KeybindManager *keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    Action *undoAction{new Action{"Undo",
-                                  "Undo last action",
+    Action *undoAction{new Action{tr("Undo"),
+                                  tr("Undo last action"),
                                   [&]() {
                                       this->undo();
                                   },
                                   context}};
 
-    Action *redoAction{new Action{"Redo",
-                                  "Redo last undone action",
+    Action *redoAction{new Action{tr("Redo"),
+                                  tr("Redo last undone action"),
                                   [&]() {
                                       this->redo();
                                   },
                                   context}};
 
-    Action *zoomInAction{new Action{"Zoom In",
-                                    "Zoom in",
+    Action *zoomInAction{new Action{tr("Zoom In"),
+                                    tr("Zoom in"),
                                     [&]() {
                                         this->zoomIn();
                                     },
                                     context}};
 
-    Action *zoomOutAction{new Action{"Zoom Out",
-                                     "Zoom out",
+    Action *zoomOutAction{new Action{tr("Zoom Out"),
+                                     tr("Zoom out"),
                                      [&]() {
                                          this->zoomOut();
                                      },
                                      context}};
 
-    Action *freeformToolAction{new Action{"Freeform Tool",
-                                          "Switch to freeform drawing tool",
+    Action *freeformToolAction{new Action{tr("Freeform Tool"),
+                                          tr("Switch to freeform drawing tool"),
                                           [&]() {
                                               this->switchToFreeformTool();
                                           },
                                           context}};
 
-    Action *eraserToolAction{new Action{"Eraser Tool",
-                                        "Switch to eraser tool",
+    Action *eraserToolAction{new Action{tr("Eraser Tool"),
+                                        tr("Switch to eraser tool"),
                                         [&]() {
                                             this->switchToEraserTool();
                                         },
                                         context}};
 
-    Action *selectionToolAction{new Action{"Selection Tool",
-                                           "Switch to selection tool",
+    Action *selectionToolAction{new Action{tr("Selection Tool"),
+                                           tr("Switch to selection tool"),
                                            [&]() {
                                                this->switchToSelectionTool();
                                            },
                                            context}};
 
-    Action *rectangleToolAction{new Action{"Rectangle Tool",
-                                           "Switch to rectangle drawing tool",
+    Action *rectangleToolAction{new Action{tr("Rectangle Tool"),
+                                           tr("Switch to rectangle drawing tool"),
                                            [&]() {
                                                this->switchToRectangleTool();
                                            },
                                            context}};
 
-    Action *ellipseToolAction{new Action{"Ellipse Tool",
-                                         "Switch to ellipse drawing tool",
+    Action *ellipseToolAction{new Action{tr("Ellipse Tool"),
+                                         tr("Switch to ellipse drawing tool"),
                                          [&]() {
                                              this->switchToEllipseTool();
                                          },
                                          context}};
 
-    Action *lineToolAction{new Action{"Line Tool",
-                                      "Switch to line drawing tool",
+    Action *lineToolAction{new Action{tr("Line Tool"),
+                                      tr("Switch to line drawing tool"),
                                       [&]() {
                                           this->switchToLineTool();
                                       },
                                       context}};
 
-    Action *textToolAction{new Action{"Text Tool",
-                                      "Switch to the text tool",
+    Action *textToolAction{new Action{tr("Text Tool"),
+                                      tr("Switch to the text tool"),
                                       [&]() {
                                           this->switchToTextTool();
                                       },
                                       context}};
 
-    Action *arrowToolAction{new Action{"Arrow Tool",
-                                       "Switch to arrow drawing tool",
+    Action *arrowToolAction{new Action{tr("Arrow Tool"),
+                                       tr("Switch to arrow drawing tool"),
                                        [&]() {
                                            this->switchToArrowTool();
                                        },
                                        context}};
 
-    Action *moveToolAction{new Action{"Move Tool",
-                                      "Switch to move tool",
+    Action *moveToolAction{new Action{tr("Move Tool"),
+                                      tr("Switch to move tool"),
                                       [&]() {
                                           this->switchToMoveTool();
                                       },
                                       context}};
 
-    Action *groupAction{new Action{"Group Elements",
-                                   "Groups selected items",
+    Action *groupAction{new Action{tr("Group Elements"),
+                                   tr("Groups selected items"),
                                    [&]() {
                                        this->groupItems();
                                    },
                                    context}};
 
-    Action *unGroupAction{new Action{"Ungroup Elements",
-                                     "Ungroups selected groups",
+    Action *unGroupAction{new Action{tr("Ungroup Elements"),
+                                     tr("Ungroups selected groups"),
                                      [&]() {
                                          this->ungroupItems();
                                      },
                                      context}};
 
-    Action *selectAllAction{new Action{"Select All",
-                                       "Select all items",
+    Action *selectAllAction{new Action{tr("Select All"),
+                                       tr("Select all items"),
                                        [&, context]() {
                                            this->selectAll();
                                        },
                                        context}};
 
-    Action *deleteAction{new Action{"Delete",
-                                    "Deletes selected items",
+    Action *deleteAction{new Action{tr("Delete"),
+                                    tr("Deletes selected items"),
                                     [&, context]() {
                                         this->deleteSelection();
                                     },
                                     context}};
 
-    Action *saveAction{new Action{"Save",
-                                  "Save canvas",
+    Action *saveAction{new Action{tr("Save"),
+                                  tr("Save canvas"),
                                   [&, context]() {
                                       this->saveToFile();
                                   },
                                   context}};
 
-    Action *openFileAction{new Action{"Open File",
-                                      "Open an existing file",
+    Action *openFileAction{new Action{tr("Open File"),
+                                      tr("Open an existing file"),
                                       [&, context]() {
                                           this->loadFromFile();
                                       },
                                       context}};
 
-    keybindManager->addKeybinding(undoAction, "Ctrl+Z");
-    keybindManager->addKeybinding(redoAction, "Ctrl+Y");
-    keybindManager->addKeybinding(redoAction, "Ctrl+Shift+Z");
-    keybindManager->addKeybinding(zoomInAction, "Ctrl++");
-    keybindManager->addKeybinding(zoomOutAction, "Ctrl+-");
-    keybindManager->addKeybinding(textToolAction, "T");
-    keybindManager->addKeybinding(freeformToolAction, "P");
-    keybindManager->addKeybinding(freeformToolAction, "B");
-    keybindManager->addKeybinding(eraserToolAction, "E");
-    keybindManager->addKeybinding(selectionToolAction, "S");
-    keybindManager->addKeybinding(rectangleToolAction, "R");
-    keybindManager->addKeybinding(ellipseToolAction, "O");
-    keybindManager->addKeybinding(lineToolAction, "L");
-    keybindManager->addKeybinding(arrowToolAction, "A");
-    keybindManager->addKeybinding(moveToolAction, "M");
-    keybindManager->addKeybinding(selectAllAction, "Ctrl+A");
-    keybindManager->addKeybinding(deleteAction, "Delete");
-    keybindManager->addKeybinding(saveAction, "Ctrl+S");
-    keybindManager->addKeybinding(openFileAction, "Ctrl+O");
-    keybindManager->addKeybinding(groupAction, "Ctrl+G");
-    keybindManager->addKeybinding(unGroupAction, "Ctrl+Shift+G");
+    keybindManager->addKeybinding(undoAction, tr("Ctrl+Z"));
+    keybindManager->addKeybinding(redoAction, tr("Ctrl+Y"));
+    keybindManager->addKeybinding(redoAction, tr("Ctrl+Shift+Z"));
+    keybindManager->addKeybinding(zoomInAction, tr("Ctrl++"));
+    keybindManager->addKeybinding(zoomOutAction, tr("Ctrl+-"));
+    keybindManager->addKeybinding(textToolAction, tr("T"));
+    keybindManager->addKeybinding(freeformToolAction, tr("P"));
+    keybindManager->addKeybinding(freeformToolAction, tr("B"));
+    keybindManager->addKeybinding(eraserToolAction, tr("E"));
+    keybindManager->addKeybinding(selectionToolAction, tr("S"));
+    keybindManager->addKeybinding(rectangleToolAction, tr("R"));
+    keybindManager->addKeybinding(ellipseToolAction, tr("O"));
+    keybindManager->addKeybinding(lineToolAction, tr("L"));
+    keybindManager->addKeybinding(arrowToolAction, tr("A"));
+    keybindManager->addKeybinding(moveToolAction, tr("M"));
+    keybindManager->addKeybinding(selectAllAction, tr("Ctrl+A"));
+    keybindManager->addKeybinding(deleteAction, tr("Delete"));
+    keybindManager->addKeybinding(saveAction, tr("Ctrl+S"));
+    keybindManager->addKeybinding(openFileAction, tr("Ctrl+O"));
+    keybindManager->addKeybinding(groupAction, tr("Ctrl+G"));
+    keybindManager->addKeybinding(unGroupAction, tr("Ctrl+Shift+G"));
 }
 
 void ActionManager::undo()

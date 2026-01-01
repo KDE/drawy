@@ -13,7 +13,7 @@
 #include "../../iconmanager/iconmanager.hpp"
 #include "../../keybindings/actionmanager.hpp"
 #include "../property.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 ActionsWidget::ActionsWidget(QWidget *parent)
     : PropertyWidget{parent}
 {
@@ -35,9 +35,9 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     groupButton->setToolTip(tr("Group selection"));
     ungroupButton->setToolTip(tr("Ungroup selection"));
 
-    deleteButton->setProperty("class", "drawyPropertyBarActionButton");
-    groupButton->setProperty("class", "drawyPropertyBarActionButton");
-    ungroupButton->setProperty("class", "drawyPropertyBarActionButton");
+    deleteButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
+    groupButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
+    ungroupButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
 
     layout->addWidget(deleteButton);
     layout->addWidget(groupButton);

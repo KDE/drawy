@@ -7,11 +7,11 @@
 #include <QCommandLineParser>
 
 #include "window/window.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
     QApplication a{argc, argv};
-    QApplication::setStyle("Fusion");
+    QApplication::setStyle(u"Fusion"_s);
     KCrash::initialize();
 
     QCommandLineParser parser;

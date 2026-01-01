@@ -36,29 +36,29 @@ void Serializer::serialize(ApplicationContext *context)
         array.push_back(toJson(item));
     }
 
-    m_object["items"] = array;
+    m_object[u"items"_s] = array;
 
     QPointF offsetPos{context->spatialContext()->offsetPos()};
-    m_object["offset_pos"] = toJson(offsetPos);
+    m_object[u"offset_pos"_s] = toJson(offsetPos);
 
     qreal zoomFactor{context->renderingContext()->zoomFactor()};
-    m_object["zoom_factor"] = zoomFactor;
+    m_object[u"zoom_factor"_s] = zoomFactor;
 }
 
 QJsonObject Serializer::toJson(const std::shared_ptr<Item> &item)
 {
     QJsonObject obj{};
 
-    obj["type"] = QJsonValue(static_cast<int>(item->type()));
-    obj["bounding_box"] = toJson(item->boundingBox());
-    obj["bounding_box_padding"] = QJsonValue(item->boundingBoxPadding());
-    obj["properties"] = toJson(item->properties());
+    obj[u"type"_s] = QJsonValue(static_cast<int>(item->type()));
+    obj[u"bounding_box"_s] = toJson(item->boundingBox());
+    obj[u"bounding_box_padding"_s] = QJsonValue(item->boundingBoxPadding());
+    obj[u"properties"_s] = toJson(item->properties());
 
     switch (item->type()) {
     case Item::Freeform: {
         std::shared_ptr<FreeformItem> freeform{std::dynamic_pointer_cast<FreeformItem>(item)};
-        obj["points"] = toJson(freeform->points());
-        obj["pressures"] = toJson(freeform->pressures());
+        obj[u"points"_s] = toJson(freeform->points());
+        obj[u"pressures"_s] = toJson(freeform->pressures());
         break;
     }
     case Item::Rectangle:
@@ -66,13 +66,13 @@ QJsonObject Serializer::toJson(const std::shared_ptr<Item> &item)
     case Item::Arrow:
     case Item::Line: {
         std::shared_ptr<PolygonItem> polygon{std::dynamic_pointer_cast<PolygonItem>(item)};
-        obj["start"] = toJson(polygon->start());
-        obj["end"] = toJson(polygon->end());
+        obj[u"start"_s] = toJson(polygon->start());
+        obj[u"end"_s] = toJson(polygon->end());
         break;
     }
     case Item::Text: {
         std::shared_ptr<TextItem> text{std::dynamic_pointer_cast<TextItem>(item)};
-        obj["text"] = QJsonValue(text->text());
+        obj[u"text"_s] = QJsonValue(text->text());
     }
     }
 
@@ -83,8 +83,8 @@ QJsonObject Serializer::toJson(const Property &property)
 {
     QJsonObject result{};
 
-    result["type"] = property.type();
-    result["value"] = QJsonValue::fromVariant(property.variant());
+    result[u"type"_s] = property.type();
+    result[u"value"_s] = QJsonValue::fromVariant(property.variant());
 
     return result;
 }
@@ -92,10 +92,10 @@ QJsonObject Serializer::toJson(const Property &property)
 QJsonObject Serializer::toJson(const QRectF &rect)
 {
     QJsonObject result{};
-    result["x"] = QJsonValue(rect.x());
-    result["y"] = QJsonValue(rect.y());
-    result["width"] = QJsonValue(rect.width());
-    result["height"] = QJsonValue(rect.height());
+    result[u"x"_s] = QJsonValue(rect.x());
+    result[u"y"_s] = QJsonValue(rect.y());
+    result[u"width"_s] = QJsonValue(rect.width());
+    result[u"height"_s] = QJsonValue(rect.height());
 
     return result;
 }
@@ -103,8 +103,8 @@ QJsonObject Serializer::toJson(const QRectF &rect)
 QJsonObject Serializer::toJson(const QPointF &point)
 {
     QJsonObject result{};
-    result["x"] = QJsonValue(point.x());
-    result["y"] = QJsonValue(point.y());
+    result[u"x"_s] = QJsonValue(point.x());
+    result[u"y"_s] = QJsonValue(point.y());
 
     return result;
 }
@@ -118,10 +118,10 @@ void Serializer::saveToFile()
     QDir homeDir{QDir::home()};
 
     auto text = std::format("Untitled.{}", Common::drawyFileExt);
-    QString defaultFilePath = homeDir.filePath(text.data());
+    QString defaultFilePath = homeDir.filePath(QString::fromStdString(text));
 
     text = std::format("Drawy (*.{})", Common::drawyFileExt);
-    QString fileName{QFileDialog::getSaveFileName(nullptr, "Save File", defaultFilePath, text.data())};
+    QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, QString::fromStdString(text))};
 
     auto data{doc.toJson(QJsonDocument::Compact)};
     auto compressedData{Common::Utils::Compression::compressData(data)};

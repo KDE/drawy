@@ -258,7 +258,7 @@ void TextTool::keyPressed(ApplicationContext *context)
         switch (ev->key()) {
         case Qt::Key_Return:
         case Qt::Key_Enter:
-            m_curItem->insertText("\n");
+            m_curItem->insertText(QStringLiteral("\n"));
             break;
         case Qt::Key_Left: {
             qsizetype newIndex{std::max(static_cast<qsizetype>(0), caret - 1)};
@@ -307,7 +307,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             if ((ev->modifiers() & Qt::ControlModifier) && (ev->modifiers() & Qt::ShiftModifier)) {
                 qsizetype prevLine{-1};
                 for (qsizetype pos{caret - 1}; pos >= 0; pos--) {
-                    if (text[pos] == '\n') {
+                    if (text[pos] == u'\n') {
                         prevLine = pos;
                         break;
                     }
@@ -342,7 +342,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             if ((ev->modifiers() & Qt::ControlModifier) && (ev->modifiers() & Qt::ShiftModifier)) {
                 qsizetype nextLine{size};
                 for (qsizetype pos{caret}; pos < size; pos++) {
-                    if (text[pos] == '\n') {
+                    if (text[pos] == u'\n') {
                         nextLine = pos;
                         break;
                     }
@@ -362,12 +362,12 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_Up: {
-            qsizetype prevLineEnd{text.lastIndexOf("\n", caret - 1)};
+            qsizetype prevLineEnd{text.lastIndexOf(u'\n', caret - 1)};
 
             if (prevLineEnd == -1)
                 break;
 
-            qsizetype prevLineStart{text.lastIndexOf("\n", prevLineEnd - 1) + 1};
+            qsizetype prevLineStart{text.lastIndexOf(u'\n', prevLineEnd - 1) + 1};
             qsizetype pos{m_curItem->caretPosInLine()};
 
             qsizetype length{prevLineEnd - prevLineStart + 1};
@@ -379,12 +379,12 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_Down: {
-            qsizetype nextLineStart{text.indexOf("\n", caret)};
+            qsizetype nextLineStart{text.indexOf(u'\n', caret)};
 
             if (nextLineStart == -1)
                 break;
 
-            qsizetype nextLineEnd{text.indexOf("\n", ++nextLineStart)};
+            qsizetype nextLineEnd{text.indexOf(u'\n', ++nextLineStart)};
             if (nextLineEnd == -1)
                 nextLineEnd = text.size();
 

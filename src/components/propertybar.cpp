@@ -14,7 +14,7 @@
 #include "../properties/widgets/propertywidget.hpp"
 #include "../tools/tool.hpp"
 #include "toolbar.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 PropertyBar::PropertyBar(QWidget *parent)
     : QFrame{parent}
     , m_layout(new QVBoxLayout{this})
@@ -22,7 +22,7 @@ PropertyBar::PropertyBar(QWidget *parent)
     this->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     this->setAutoFillBackground(true);
     this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    this->setProperty("class", "drawlyFrame drawyPropertyBar");
+    this->setProperty("class", u"drawlyFrame drawyPropertyBar"_s);
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)
@@ -71,7 +71,7 @@ void PropertyBar::updateProperties(const Tool &tool)
             m_layout->addWidget(widget.widget());
 
             if (count > 0) {
-                widgetLabel->setProperty("class", "drawlyPropertyLabelMargin");
+                widgetLabel->setProperty("class", u"drawlyPropertyLabelMargin"_s);
             }
 
             count++;

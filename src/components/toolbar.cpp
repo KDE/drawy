@@ -7,7 +7,7 @@
 #include "../context/applicationcontext.hpp"
 #include "../context/uicontext.hpp"
 #include "../iconmanager/iconmanager.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
     : QFrame{parent}
     , m_group(new QButtonGroup(this))
@@ -18,7 +18,7 @@ ToolBar::ToolBar(QWidget *parent)
     this->setFrameShape(QFrame::StyledPanel);
     this->setFrameShadow(QFrame::Raised);
     this->setAutoFillBackground(true);
-    this->setProperty("class", "drawlyFrame drawlyToolBar");
+    this->setProperty("class", u"drawlyFrame drawlyToolBar"_s);
 
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
@@ -57,7 +57,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
     btn->setIcon(context->uiContext()->iconManager()->icon(tool->icon()));
 
     btn->setCheckable(true);
-    btn->setProperty("class", "drawlyToolButton");
+    btn->setProperty("class", u"drawlyToolButton"_s);
     btn->setCursor(Qt::PointingHandCursor);
 
     int id{static_cast<int>(type)};

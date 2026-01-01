@@ -25,7 +25,7 @@
 #include "../item/line.hpp"
 #include "../item/rectangle.hpp"
 #include "../item/text.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 void Loader::loadFromFile(ApplicationContext *context)
 {
     // file filter
@@ -77,17 +77,17 @@ void Loader::loadFromFile(ApplicationContext *context)
     context->reset();
     QuadTree *quadtree{context->spatialContext()->quadtree()};
 
-    QJsonArray itemsArray = array(value(docObj, "items"));
+    QJsonArray itemsArray = array(value(docObj, u"items"_s));
     for (const QJsonValueRef &v : itemsArray) {
         QJsonObject itemObj = object(v);
         std::shared_ptr<Item> item = createItem(itemObj);
         quadtree->insertItem(item);
     }
 
-    qreal zoomFactor = value(docObj, "zoom_factor").toDouble();
+    qreal zoomFactor = value(docObj, u"zoom_factor"_s).toDouble();
     context->renderingContext()->setZoomFactor(zoomFactor);
 
-    QPointF offsetPos = toPointF(value(docObj, "offset_pos"));
+    QPointF offsetPos = toPointF(value(docObj, u"offset_pos"_s));
     context->spatialContext()->setOffsetPos(offsetPos);
 
     context->spatialContext()->cacheGrid()->markAllDirty();
@@ -97,14 +97,14 @@ void Loader::loadFromFile(ApplicationContext *context)
 
 std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 {
-    Item::Type type{static_cast<Item::Type>(value(obj, "type").toInt())};
+    Item::Type type{static_cast<Item::Type>(value(obj, u"type"_s).toInt())};
 
     std::shared_ptr<Item> item;
     switch (type) {
     case Item::Freeform: {
         std::shared_ptr<FreeformItem> cur{std::make_shared<FreeformItem>()};
-        QJsonArray points = array(value(obj, "points"));
-        QJsonArray pressures = array(value(obj, "pressures"));
+        QJsonArray points = array(value(obj, u"points"_s));
+        QJsonArray pressures = array(value(obj, u"pressures"_s));
 
         qsizetype len{points.size()};
         for (qsizetype pos{0}; pos < len; pos++) {
@@ -118,49 +118,49 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
     }
     case Item::Rectangle: {
         std::shared_ptr<RectangleItem> cur{std::make_shared<RectangleItem>()};
-        cur->setStart(toPointF(value(obj, "start")));
-        cur->setEnd(toPointF(value(obj, "end")));
+        cur->setStart(toPointF(value(obj, u"start"_s)));
+        cur->setEnd(toPointF(value(obj, u"end"_s)));
 
         item = cur;
         break;
     }
     case Item::Line: {
         std::shared_ptr<LineItem> cur{std::make_shared<LineItem>()};
-        cur->setStart(toPointF(value(obj, "start")));
-        cur->setEnd(toPointF(value(obj, "end")));
+        cur->setStart(toPointF(value(obj, u"start"_s)));
+        cur->setEnd(toPointF(value(obj, u"end"_s)));
 
         item = cur;
         break;
     }
     case Item::Arrow: {
         std::shared_ptr<ArrowItem> cur{std::make_shared<ArrowItem>()};
-        cur->setStart(toPointF(value(obj, "start")));
-        cur->setEnd(toPointF(value(obj, "end")));
+        cur->setStart(toPointF(value(obj, u"start"_s)));
+        cur->setEnd(toPointF(value(obj, u"end"_s)));
 
         item = cur;
         break;
     }
     case Item::Ellipse: {
         std::shared_ptr<EllipseItem> cur{std::make_shared<EllipseItem>()};
-        cur->setStart(toPointF(value(obj, "start")));
-        cur->setEnd(toPointF(value(obj, "end")));
+        cur->setStart(toPointF(value(obj, u"start"_s)));
+        cur->setEnd(toPointF(value(obj, u"end"_s)));
 
         item = cur;
         break;
     }
     case Item::Text: {
         std::shared_ptr<TextItem> cur{std::make_shared<TextItem>()};
-        QPointF topLeft = toPointF(value(obj, "bounding_box"));
+        QPointF topLeft = toPointF(value(obj, u"bounding_box"_s));
 
         cur->createTextBox(topLeft);
-        cur->insertText(value(obj, "text").toString());
+        cur->insertText(value(obj, u"text"_s).toString());
 
         item = cur;
         break;
     }
     }
 
-    QJsonArray properties = array(value(obj, "properties"));
+    QJsonArray properties = array(value(obj, u"properties"_s));
     for (const QJsonValueRef &propertyValue : properties) {
         Property prop{createProperty(object(propertyValue))};
         item->setProperty(prop.type(), prop);
@@ -171,8 +171,8 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 
 Property Loader::createProperty(const QJsonObject &obj)
 {
-    Property::Type type{static_cast<Property::Type>(value(obj, "type").toInt())};
-    QVariant val{value(obj, "value").toVariant()};
+    Property::Type type{static_cast<Property::Type>(value(obj, u"type"_s).toInt())};
+    QVariant val{value(obj, u"value"_s).toVariant()};
 
     return Property{val, type};
 }
@@ -211,8 +211,8 @@ QPointF Loader::toPointF(const QJsonValue &val)
 {
     QJsonObject obj = object(val);
 
-    if (obj.contains("x") && obj.contains("y")) {
-        return QPointF{obj["x"].toDouble(), obj["y"].toDouble()};
+    if (obj.contains(u"x"_s) && obj.contains(u"y"_s)) {
+        return QPointF{obj[u"x"].toDouble(), obj[u"y"].toDouble()};
     } else {
         qCWarning(DRAWY_LOG) << "Given point does not contain x and y properties";
         return {};

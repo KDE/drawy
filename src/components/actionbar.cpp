@@ -9,7 +9,7 @@
 
 #include "../context/applicationcontext.hpp"
 #include "../context/uicontext.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 ActionBar::ActionBar(QWidget *parent)
     : QFrame{parent}
     , m_layout(new QHBoxLayout{this})
@@ -31,7 +31,7 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id
     m_map[id]->setIcon(context->uiContext()->iconManager()->icon(icon));
     m_map[id]->setToolTip(tooltip);
 
-    m_map[id]->setProperty("class", "drawlyActionButton");
+    m_map[id]->setProperty("class", u"drawlyActionButton"_s);
     m_map[id]->setCursor(Qt::PointingHandCursor);
     m_layout->addWidget(m_map[id]);
 }

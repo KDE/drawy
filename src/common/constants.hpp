@@ -8,7 +8,7 @@
 #include <QMargins>
 #include <QSize>
 #include <array>
-
+using namespace Qt::Literals::StringLiterals;
 namespace Common
 {
 inline constexpr QMargins cleanupMargin{10, 10, 10, 10}; // in pixels
@@ -38,9 +38,9 @@ inline constexpr int translationDelta{1}; // in pixels
 inline constexpr int shiftTranslationDelta{10}; // in pixels, when holding shift
 
 inline constexpr double defaultTextBoxWidth{5}; // in pixels
-inline constexpr std::array<QChar, 38> wordSeparators{'\t', '\n', '\v', '\f', '\r', ' ', // whitespace
-                                                      '!',  '"',  '#',  '$',  '%',  '&', '\'', '(',  ')', '*', '+', ',', '-', '.', '/', ':',
-                                                      ';',  '<',  '=',  '>',  '?',  '@', '[',  '\\', ']', '^', '_', '`', '{', '|', '}', '~'};
+inline constexpr std::array<QChar, 38> wordSeparators{u'\t', u'\n', u'\v', u'\f', u'\r', u' ', // whitespace
+                                                      u'!',  u'"',  u'#',  u'$',  u'%',  u'&', u'\'', u'(',  u')', u'*', u'+', u',', u'-', u'.', u'/', u':',
+                                                      u';',  u'<',  u'=',  u'>',  u'?',  u'@', u'[',  u'\\', u']', u'^', u'_', u'`', u'{', u'|', u'}', u'~'};
 
 inline constexpr int doubleClickInterval{300}; // milliseconds
 

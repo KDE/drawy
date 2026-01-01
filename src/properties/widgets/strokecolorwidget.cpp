@@ -10,7 +10,7 @@
 #include <QPushButton>
 
 #include "../property.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 // TODO: Use a better widget
 StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     : PropertyWidget{parent}
@@ -28,7 +28,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     for (const QColor &color : colors) {
         QPushButton *btn{new QPushButton{m_widget}};
         btn->setCheckable(true);
-        btn->setStyleSheet("background-color: " + color.name());
+        btn->setStyleSheet(u"background-color: "_s + color.name());
         btn->setProperty("color-value", color);
 
         layout->addWidget(btn);
@@ -37,7 +37,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
 
     layout->setSpacing(0);
     m_group->buttons()[0]->setChecked(true);
-    m_widget->setProperty("class", "drawlyStrokeColorWidget");
+    m_widget->setProperty("class", u"drawlyStrokeColorWidget"_s);
     m_widget->hide();
 
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
@@ -47,10 +47,10 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
 
 QString StrokeColorWidget::name() const
 {
-    return "Color";
-};
+    return tr("Color");
+}
 
 const Property StrokeColorWidget::value() const
 {
     return Property{m_group->checkedButton()->property("color-value"), Property::StrokeColor};
-};
+}
