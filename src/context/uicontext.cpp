@@ -83,51 +83,51 @@ void UIContext::setUIContext()
     QObject::connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     QObject::connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
-    QObject::connect(&m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext().updateZoomFactor(-1);
     });
 
-    QObject::connect(&m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext().updateZoomFactor(1);
     });
 
-    QObject::connect(&m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext().commandHistory().undo();
         m_applicationContext->renderingContext().markForRender();
         m_applicationContext->renderingContext().markForUpdate();
     });
 
-    QObject::connect(&m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext().commandHistory().redo();
         m_applicationContext->renderingContext().markForRender();
         m_applicationContext->renderingContext().markForUpdate();
     });
 
-    QObject::connect(&m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
         Serializer serializer{};
 
         serializer.serialize(m_applicationContext);
         serializer.saveToFile();
     });
 
-    QObject::connect(&m_actionBar->button(7), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(7), &QPushButton::clicked, this, [this]() {
         Loader loader{};
 
         loader.loadFromFile(m_applicationContext);
     });
 
-    QObject::connect(&m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
+    QObject::connect(m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
         Canvas &canvas{m_applicationContext->renderingContext().canvas()};
-        QPushButton &button{actionBar().button(3)};
+        QPushButton *button{actionBar().button(3)};
 
         if (canvas.bg() == Common::lightBackgroundColor) {
             canvas.setBg(Common::darkBackgroundColor);
-            button.setToolTip(tr("Light Mode"));
-            button.setIcon(iconManager().icon(IconManager::ACTION_LIGHT_MODE));
+            button->setToolTip(tr("Light Mode"));
+            button->setIcon(iconManager().icon(IconManager::ACTION_LIGHT_MODE));
         } else {
             canvas.setBg(Common::lightBackgroundColor);
-            button.setToolTip(tr("Dark Mode"));
-            button.setIcon(iconManager().icon(IconManager::ACTION_DARK_MODE));
+            button->setToolTip(tr("Dark Mode"));
+            button->setIcon(iconManager().icon(IconManager::ACTION_DARK_MODE));
         }
 
         m_applicationContext->renderingContext().markForRender();

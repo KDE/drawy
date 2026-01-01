@@ -18,7 +18,7 @@ public:
     explicit ActionBar(QWidget *parent = nullptr);
 
     void addButton(const QString &tooltip, IconManager::Icon icon, int id);
-    QPushButton &button(int id);
+    QPushButton *button(int id);
 
 private:
     QHash<int, QPushButton *> m_map{};

@@ -36,13 +36,13 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id
     m_layout->addWidget(m_map[id]);
 }
 
-QPushButton &ActionBar::button(int id)
+QPushButton *ActionBar::button(int id)
 {
     if (!m_map.contains(id)) {
         throw std::logic_error(std::format("Button with id {} was not found.", id));
     }
 
-    return *m_map[id];
+    return m_map[id];
 }
 
 #include "moc_actionbar.cpp"
