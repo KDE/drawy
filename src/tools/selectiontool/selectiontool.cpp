@@ -51,14 +51,14 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     if (m_stateLocked)
         return m_curState;
 
-    auto &selectionContext{context->selectionContext()};
-    auto &uiContext{context->uiContext()};
-    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto selectionContext{context->selectionContext()};
+    auto uiContext{context->uiContext()};
+    auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    QPointF worldCurPos{transformer.viewToWorld(uiContext.event().pos())};
+    QPointF worldCurPos{transformer->viewToWorld(uiContext->event()->pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext.selectionBox().contains(worldCurPos) && !(uiContext.event().modifiers() & Qt::ShiftModifier)) {
+    if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->event()->modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
@@ -67,46 +67,46 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
 
 void SelectionTool::keyPressed(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
     if (selectedItems.empty())
         return;
 
-    auto &event{context->uiContext().event()};
-    auto &commandHistory{context->spatialContext().commandHistory()};
+    auto event{context->uiContext()->event()};
+    auto commandHistory{context->spatialContext()->commandHistory()};
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
-    if (event.modifiers() & Qt::ShiftModifier)
+    if (event->modifiers() & Qt::ShiftModifier)
         delta = Common::shiftTranslationDelta;
 
     bool updated{true};
-    switch (event.key()) {
+    switch (event->key()) {
     case Qt::Key_Left:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
         break;
     case Qt::Key_Right:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
         break;
     case Qt::Key_Up:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
         break;
     case Qt::Key_Down:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
         break;
     default:
         updated = false;
     }
 
     if (updated) {
-        context->renderingContext().markForRender();
-        context->renderingContext().markForUpdate();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 }
 
 const QVector<Property::Type> SelectionTool::properties() const
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     std::set<Property::Type> result{};
     for (const auto &item : selectedItems) {

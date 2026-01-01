@@ -28,32 +28,32 @@ SpatialContext::~SpatialContext()
 
 void SpatialContext::setSpatialContext()
 {
-    Canvas &canvas{m_applicationContext->renderingContext().canvas()};
+    Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
 
-    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas.sizeHint()}, 100);
+    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 100);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
     m_cacheGrid = std::make_unique<CacheGrid>(100);
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }
 
-QuadTree &SpatialContext::quadtree() const
+QuadTree *SpatialContext::quadtree() const
 {
-    return *m_quadtree;
+    return m_quadtree.get();
 }
 
-CacheGrid &SpatialContext::cacheGrid() const
+CacheGrid *SpatialContext::cacheGrid() const
 {
-    return *m_cacheGrid;
+    return m_cacheGrid.get();
 }
 
-CoordinateTransformer &SpatialContext::coordinateTransformer() const
+CoordinateTransformer *SpatialContext::coordinateTransformer() const
 {
-    return *m_coordinateTransformer;
+    return m_coordinateTransformer.get();
 }
 
-CommandHistory &SpatialContext::commandHistory() const
+CommandHistory *SpatialContext::commandHistory() const
 {
-    return *m_commandHistory;
+    return m_commandHistory.get();
 }
 
 const QPointF &SpatialContext::offsetPos() const
@@ -68,8 +68,8 @@ void SpatialContext::setOffsetPos(const QPointF &pos)
 
 void SpatialContext::reset()
 {
-    quadtree().clear();
-    cacheGrid().markAllDirty();
-    commandHistory().clear();
+    quadtree()->clear();
+    cacheGrid()->markAllDirty();
+    commandHistory()->clear();
     setOffsetPos(QPointF{0, 0});
 }

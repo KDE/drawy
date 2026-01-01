@@ -29,7 +29,7 @@ Serializer::Serializer()
 
 void Serializer::serialize(ApplicationContext *context)
 {
-    QVector<std::shared_ptr<Item>> items{context->spatialContext().quadtree().getAllItems()};
+    QVector<std::shared_ptr<Item>> items{context->spatialContext()->quadtree()->getAllItems()};
 
     QJsonArray array{};
     for (auto &item : items) {
@@ -38,10 +38,10 @@ void Serializer::serialize(ApplicationContext *context)
 
     m_object["items"] = array;
 
-    QPointF offsetPos{context->spatialContext().offsetPos()};
+    QPointF offsetPos{context->spatialContext()->offsetPos()};
     m_object["offset_pos"] = toJson(offsetPos);
 
-    qreal zoomFactor{context->renderingContext().zoomFactor()};
+    qreal zoomFactor{context->renderingContext()->zoomFactor()};
     m_object["zoom_factor"] = zoomFactor;
 }
 

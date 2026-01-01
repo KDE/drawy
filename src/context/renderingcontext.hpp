@@ -19,9 +19,9 @@ public:
 
     void setRenderingContext();
 
-    Canvas &canvas() const;
-    QPainter &canvasPainter() const;
-    QPainter &overlayPainter() const;
+    Canvas *canvas() const;
+    QPainter *canvasPainter() const;
+    QPainter *overlayPainter() const;
 
     void markForRender();
     void markForUpdate();

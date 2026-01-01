@@ -21,48 +21,48 @@ MoveTool::MoveTool()
 
 void MoveTool::mousePressed(ApplicationContext *context)
 {
-    UIContext &uiContext{context->uiContext()};
-    auto button{uiContext.event().button()};
+    UIContext *uiContext{context->uiContext()};
+    auto button{uiContext->event()->button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
+        SpatialContext *spatialContext{context->spatialContext()};
+        RenderingContext *renderingContext{context->renderingContext()};
 
         m_isActive = true;
 
-        m_initialOffsetPos = spatialContext.offsetPos();
-        m_initialPos = uiContext.event().pos();
+        m_initialOffsetPos = spatialContext->offsetPos();
+        m_initialPos = uiContext->event()->pos();
 
-        renderingContext.canvas().setCursor(Qt::ClosedHandCursor);
+        renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
     }
 };
 
 void MoveTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isActive) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        UIContext &uiContext{context->uiContext()};
+        SpatialContext *spatialContext{context->spatialContext()};
+        RenderingContext *renderingContext{context->renderingContext()};
+        UIContext *uiContext{context->uiContext()};
 
-        qreal zoom{renderingContext.zoomFactor()};
-        QPointF newPoint{m_initialOffsetPos * zoom - uiContext.event().pos() + m_initialPos};
+        qreal zoom{renderingContext->zoomFactor()};
+        QPointF newPoint{m_initialOffsetPos * zoom - uiContext->event()->pos() + m_initialPos};
 
-        spatialContext.setOffsetPos(newPoint / zoom);
+        spatialContext->setOffsetPos(newPoint / zoom);
 
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 };
 
 void MoveTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext &uiContext{context->uiContext()};
-    auto button{uiContext.event().button()};
+    UIContext *uiContext{context->uiContext()};
+    auto button{uiContext->event()->button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
-        RenderingContext &renderingContext{context->renderingContext()};
+        RenderingContext *renderingContext{context->renderingContext()};
 
-        renderingContext.canvas().setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
         m_isActive = false;
     }
 };

@@ -75,24 +75,24 @@ void Loader::loadFromFile(ApplicationContext *context)
     QJsonObject docObj = doc.object();
 
     context->reset();
-    QuadTree &quadtree{context->spatialContext().quadtree()};
+    QuadTree *quadtree{context->spatialContext()->quadtree()};
 
     QJsonArray itemsArray = array(value(docObj, "items"));
     for (const QJsonValueRef &v : itemsArray) {
         QJsonObject itemObj = object(v);
         std::shared_ptr<Item> item = createItem(itemObj);
-        quadtree.insertItem(item);
+        quadtree->insertItem(item);
     }
 
     qreal zoomFactor = value(docObj, "zoom_factor").toDouble();
-    context->renderingContext().setZoomFactor(zoomFactor);
+    context->renderingContext()->setZoomFactor(zoomFactor);
 
     QPointF offsetPos = toPointF(value(docObj, "offset_pos"));
-    context->spatialContext().setOffsetPos(offsetPos);
+    context->spatialContext()->setOffsetPos(offsetPos);
 
-    context->spatialContext().cacheGrid().markAllDirty();
-    context->renderingContext().markForRender();
-    context->renderingContext().markForUpdate();
+    context->spatialContext()->cacheGrid()->markAllDirty();
+    context->renderingContext()->markForRender();
+    context->renderingContext()->markForUpdate();
 }
 
 std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)

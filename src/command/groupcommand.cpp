@@ -23,39 +23,39 @@ GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items)
     m_group = std::make_shared<GroupItem>();
 
     // sort according to z order
-    ApplicationContext::instance()->spatialContext().quadtree().reorder(m_items);
+    ApplicationContext::instance()->spatialContext()->quadtree()->reorder(m_items);
 }
 
 void GroupCommand::execute(ApplicationContext *context)
 {
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto quadtree{context->spatialContext()->quadtree()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     for (const auto &item : m_items) {
-        quadtree.deleteItem(item, false);
+        quadtree->deleteItem(item, false);
     }
 
     m_group->group(m_items);
-    quadtree.insertItem(m_group);
+    quadtree->insertItem(m_group);
 
     selectedItems.clear();
     selectedItems.insert(m_group);
 
-    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
+    context->spatialContext()->cacheGrid()->markDirty(m_group->boundingBox().toRect());
 }
 
 void GroupCommand::undo(ApplicationContext *context)
 {
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto quadtree{context->spatialContext()->quadtree()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    quadtree.deleteItem(m_group);
+    quadtree->deleteItem(m_group);
     selectedItems.clear();
 
     for (const auto &item : m_items) {
         selectedItems.insert(item);
-        quadtree.insertItem(item, false);
+        quadtree->insertItem(item, false);
     }
 
-    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
+    context->spatialContext()->cacheGrid()->markDirty(m_group->boundingBox().toRect());
 }

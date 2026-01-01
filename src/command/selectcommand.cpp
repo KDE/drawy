@@ -20,7 +20,7 @@ SelectCommand::SelectCommand(QVector<std::shared_ptr<Item>> items)
 
 void SelectCommand::execute(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
     for (const auto &item : m_items) {
@@ -28,12 +28,12 @@ void SelectCommand::execute(ApplicationContext *context)
         selectedItems.insert(item);
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->spatialContext()->cacheGrid()->markDirty(dirtyRegion.toRect());
 }
 
 void SelectCommand::undo(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
     for (const auto &item : m_items) {
@@ -41,5 +41,5 @@ void SelectCommand::undo(ApplicationContext *context)
         selectedItems.erase(item);
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->spatialContext()->cacheGrid()->markDirty(dirtyRegion.toRect());
 }

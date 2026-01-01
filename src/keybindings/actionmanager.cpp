@@ -31,7 +31,7 @@ ActionManager::ActionManager(ApplicationContext *context)
     : m_context{context}
     , QObject(context)
 {
-    KeybindManager &keybindManager{m_context->uiContext().keybindManager()};
+    KeybindManager *keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
     Action *undoAction{new Action{"Undo",
@@ -167,148 +167,148 @@ ActionManager::ActionManager(ApplicationContext *context)
                                       },
                                       context}};
 
-    keybindManager.addKeybinding(undoAction, "Ctrl+Z");
-    keybindManager.addKeybinding(redoAction, "Ctrl+Y");
-    keybindManager.addKeybinding(redoAction, "Ctrl+Shift+Z");
-    keybindManager.addKeybinding(zoomInAction, "Ctrl++");
-    keybindManager.addKeybinding(zoomOutAction, "Ctrl+-");
-    keybindManager.addKeybinding(textToolAction, "T");
-    keybindManager.addKeybinding(freeformToolAction, "P");
-    keybindManager.addKeybinding(freeformToolAction, "B");
-    keybindManager.addKeybinding(eraserToolAction, "E");
-    keybindManager.addKeybinding(selectionToolAction, "S");
-    keybindManager.addKeybinding(rectangleToolAction, "R");
-    keybindManager.addKeybinding(ellipseToolAction, "O");
-    keybindManager.addKeybinding(lineToolAction, "L");
-    keybindManager.addKeybinding(arrowToolAction, "A");
-    keybindManager.addKeybinding(moveToolAction, "M");
-    keybindManager.addKeybinding(selectAllAction, "Ctrl+A");
-    keybindManager.addKeybinding(deleteAction, "Delete");
-    keybindManager.addKeybinding(saveAction, "Ctrl+S");
-    keybindManager.addKeybinding(openFileAction, "Ctrl+O");
-    keybindManager.addKeybinding(groupAction, "Ctrl+G");
-    keybindManager.addKeybinding(unGroupAction, "Ctrl+Shift+G");
+    keybindManager->addKeybinding(undoAction, "Ctrl+Z");
+    keybindManager->addKeybinding(redoAction, "Ctrl+Y");
+    keybindManager->addKeybinding(redoAction, "Ctrl+Shift+Z");
+    keybindManager->addKeybinding(zoomInAction, "Ctrl++");
+    keybindManager->addKeybinding(zoomOutAction, "Ctrl+-");
+    keybindManager->addKeybinding(textToolAction, "T");
+    keybindManager->addKeybinding(freeformToolAction, "P");
+    keybindManager->addKeybinding(freeformToolAction, "B");
+    keybindManager->addKeybinding(eraserToolAction, "E");
+    keybindManager->addKeybinding(selectionToolAction, "S");
+    keybindManager->addKeybinding(rectangleToolAction, "R");
+    keybindManager->addKeybinding(ellipseToolAction, "O");
+    keybindManager->addKeybinding(lineToolAction, "L");
+    keybindManager->addKeybinding(arrowToolAction, "A");
+    keybindManager->addKeybinding(moveToolAction, "M");
+    keybindManager->addKeybinding(selectAllAction, "Ctrl+A");
+    keybindManager->addKeybinding(deleteAction, "Delete");
+    keybindManager->addKeybinding(saveAction, "Ctrl+S");
+    keybindManager->addKeybinding(openFileAction, "Ctrl+O");
+    keybindManager->addKeybinding(groupAction, "Ctrl+G");
+    keybindManager->addKeybinding(unGroupAction, "Ctrl+Shift+G");
 }
 
 void ActionManager::undo()
 {
-    m_context->spatialContext().commandHistory().undo();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory()->undo();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::redo()
 {
-    m_context->spatialContext().commandHistory().redo();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory()->redo();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::zoomIn()
 {
-    m_context->renderingContext().updateZoomFactor(1);
+    m_context->renderingContext()->updateZoomFactor(1);
 }
 
 void ActionManager::zoomOut()
 {
-    m_context->renderingContext().updateZoomFactor(-1);
+    m_context->renderingContext()->updateZoomFactor(-1);
 }
 
 void ActionManager::switchToFreeformTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Freeform);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Freeform);
 }
 
 void ActionManager::switchToEraserTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Eraser);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Eraser);
 }
 
 void ActionManager::switchToRectangleTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Rectangle);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Rectangle);
 }
 
 void ActionManager::switchToEllipseTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Ellipse);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Ellipse);
 }
 
 void ActionManager::switchToLineTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Line);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Line);
 }
 
 void ActionManager::switchToArrowTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Arrow);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Arrow);
 }
 
 void ActionManager::switchToMoveTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Move);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Move);
 }
 
 void ActionManager::switchToSelectionTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Selection);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Selection);
 }
 
 void ActionManager::switchToTextTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Text);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Text);
 }
 
 void ActionManager::groupItems()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
     if (selectedItems.size() <= 1)
         return;
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<GroupCommand>(items));
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::ungroupItems()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
     if (selectedItems.empty())
         return;
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<UngroupCommand>(items));
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<UngroupCommand>(items));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::deleteSelection()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
-    auto &transformer{m_context->spatialContext().coordinateTransformer()};
-    auto &commandHistory{m_context->spatialContext().commandHistory()};
+    auto selectedItems{m_context->selectionContext()->selectedItems()};
+    auto transformer{m_context->spatialContext()->coordinateTransformer()};
+    auto commandHistory{m_context->spatialContext()->commandHistory()};
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
+    commandHistory->insert(std::make_shared<RemoveItemCommand>(items));
 
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 
     QVector<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
 void ActionManager::selectAll()
 {
     this->switchToSelectionTool();
 
-    auto allItems{m_context->spatialContext().quadtree().getAllItems()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<SelectCommand>(allItems));
+    auto allItems{m_context->spatialContext()->quadtree()->getAllItems()};
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
 
-    m_context->uiContext().propertyBar().updateToolProperties();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->uiContext()->propertyBar()->updateToolProperties();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::saveToFile()

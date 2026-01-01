@@ -47,7 +47,7 @@ void UIContext::setUIContext()
     m_toolBar = new ToolBar(m_applicationContext->parentWidget());
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
-    m_keybindManager = new KeybindManager(&m_applicationContext->renderingContext().canvas());
+    m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
     m_actionManager = new ActionManager(m_applicationContext);
     m_iconManager = new IconManager(m_applicationContext);
 
@@ -56,7 +56,7 @@ void UIContext::setUIContext()
 
     QObject::connect(m_propertyManager,
                      &PropertyManager::propertyUpdated,
-                     &m_applicationContext->selectionContext(),
+                     m_applicationContext->selectionContext(),
                      &SelectionContext::updatePropertyOfSelectedItems);
 
     m_event = new Event();
@@ -84,23 +84,23 @@ void UIContext::setUIContext()
     QObject::connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
     QObject::connect(m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext().updateZoomFactor(-1);
+        m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
     QObject::connect(m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext().updateZoomFactor(1);
+        m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
     QObject::connect(m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext().commandHistory().undo();
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->spatialContext()->commandHistory()->undo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     QObject::connect(m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext().commandHistory().redo();
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->spatialContext()->commandHistory()->redo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     QObject::connect(m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
@@ -117,87 +117,87 @@ void UIContext::setUIContext()
     });
 
     QObject::connect(m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
-        Canvas &canvas{m_applicationContext->renderingContext().canvas()};
-        QPushButton *button{actionBar().button(3)};
+        Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
+        QPushButton *button{actionBar()->button(3)};
 
-        if (canvas.bg() == Common::lightBackgroundColor) {
-            canvas.setBg(Common::darkBackgroundColor);
+        if (canvas->bg() == Common::lightBackgroundColor) {
+            canvas->setBg(Common::darkBackgroundColor);
             button->setToolTip(tr("Light Mode"));
-            button->setIcon(iconManager().icon(IconManager::ACTION_LIGHT_MODE));
+            button->setIcon(iconManager()->icon(IconManager::ACTION_LIGHT_MODE));
         } else {
-            canvas.setBg(Common::lightBackgroundColor);
+            canvas->setBg(Common::lightBackgroundColor);
             button->setToolTip(tr("Dark Mode"));
-            button->setIcon(iconManager().icon(IconManager::ACTION_DARK_MODE));
+            button->setIcon(iconManager()->icon(IconManager::ACTION_DARK_MODE));
         }
 
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
 
-ToolBar &UIContext::toolBar() const
+ToolBar *UIContext::toolBar() const
 {
-    return *m_toolBar;
+    return m_toolBar;
 }
 
-PropertyBar &UIContext::propertyBar() const
+PropertyBar *UIContext::propertyBar() const
 {
-    return *m_propertyBar;
+    return m_propertyBar;
 }
 
-ActionBar &UIContext::actionBar() const
+ActionBar *UIContext::actionBar() const
 {
-    return *m_actionBar;
+    return m_actionBar;
 }
 
-KeybindManager &UIContext::keybindManager() const
+KeybindManager *UIContext::keybindManager() const
 {
-    return *m_keybindManager;
+    return m_keybindManager;
 }
 
-ActionManager &UIContext::actionManager() const
+ActionManager *UIContext::actionManager() const
 {
-    return *m_actionManager;
+    return m_actionManager;
 }
 
-PropertyManager &UIContext::propertyManager() const
+PropertyManager *UIContext::propertyManager() const
 {
-    return *m_propertyManager;
+    return m_propertyManager;
 }
 
-Event &UIContext::event() const
+Event *UIContext::event() const
 {
-    return *m_event;
+    return m_event;
 }
 
-IconManager &UIContext::iconManager() const
+IconManager *UIContext::iconManager() const
 {
-    return *m_iconManager;
+    return m_iconManager;
 }
 
 void UIContext::toolChanged(Tool &tool)
 {
     if (tool.type() != Tool::Selection) {
-        m_applicationContext->selectionContext().selectedItems().clear();
+        m_applicationContext->selectionContext()->selectedItems().clear();
     }
 
     Common::renderCanvas(m_applicationContext);
 
-    Canvas &canvas{m_applicationContext->renderingContext().canvas()};
+    Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
 
     if (m_lastTool != nullptr)
         m_lastTool->cleanup();
 
     m_lastTool = &tool;
-    canvas.setCursor(tool.cursor());
+    canvas->setCursor(tool.cursor());
 
-    m_applicationContext->renderingContext().markForUpdate();
+    m_applicationContext->renderingContext()->markForUpdate();
 }
 
 void UIContext::reset()
 {
     m_lastTool = nullptr;
-    toolBar().changeTool(Tool::Selection);
+    toolBar()->changeTool(Tool::Selection);
 }

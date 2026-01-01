@@ -62,19 +62,19 @@ void RenderingContext::setRenderingContext()
     m_frameTimer.start(1000 / fps());
 }
 
-Canvas &RenderingContext::canvas() const
+Canvas *RenderingContext::canvas() const
 {
-    return *m_canvas;
+    return m_canvas;
 }
 
-QPainter &RenderingContext::canvasPainter() const
+QPainter *RenderingContext::canvasPainter() const
 {
-    return *m_canvasPainter;
+    return m_canvasPainter;
 }
 
-QPainter &RenderingContext::overlayPainter() const
+QPainter *RenderingContext::overlayPainter() const
 {
-    return *m_overlayPainter;
+    return m_overlayPainter;
 }
 
 // PRIVATE SLOTS
@@ -122,10 +122,10 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 
     qCDebug(DRAWY_LOG) << "Zoom: " << m_zoomFactor;
 
-    QPointF offsetPos{m_applicationContext->spatialContext().offsetPos()};
+    QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
     if (center == QPoint{-1, -1}) {
-        QSize viewport{canvas().dimensions() / oldZoomFactor};
+        QSize viewport{canvas()->dimensions() / oldZoomFactor};
         int width{viewport.width()};
         int height{viewport.height()};
 
@@ -136,16 +136,16 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     offsetPos.setX(center.x() - (center.x() - offsetPos.x()) * oldZoomFactor / m_zoomFactor);
     offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
 
-    m_applicationContext->spatialContext().setOffsetPos(offsetPos);
+    m_applicationContext->spatialContext()->setOffsetPos(offsetPos);
 
     // changes scale
     endPainters();
     beginPainters();
 
-    m_applicationContext->spatialContext().cacheGrid().markAllDirty();
+    m_applicationContext->spatialContext()->cacheGrid()->markAllDirty();
 
-    m_applicationContext->renderingContext().markForRender();
-    m_applicationContext->renderingContext().markForUpdate();
+    m_applicationContext->renderingContext()->markForRender();
+    m_applicationContext->renderingContext()->markForUpdate();
 }
 
 void RenderingContext::setZoomFactor(qreal newValue)
@@ -170,8 +170,8 @@ void RenderingContext::canvasResized()
     int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 
-    m_applicationContext->spatialContext().cacheGrid().clear();
-    m_applicationContext->spatialContext().cacheGrid().setSize(rows * cols);
+    m_applicationContext->spatialContext()->cacheGrid()->clear();
+    m_applicationContext->spatialContext()->cacheGrid()->setSize(rows * cols);
 }
 
 void RenderingContext::markForRender()

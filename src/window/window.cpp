@@ -29,26 +29,26 @@ MainWindow::MainWindow(QWidget *parent)
     Controller *controller{new Controller(this)};
     ApplicationContext *context{ApplicationContext::instance()};
 
-    RenderingContext &renderingContext{context->renderingContext()};
-    UIContext &uiContext{context->uiContext()};
+    RenderingContext *renderingContext{context->renderingContext()};
+    UIContext *uiContext{context->uiContext()};
 
-    renderingContext.canvas().setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    renderingContext->canvas()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     layout->setMargins(10);
-    layout->setLeftWidget(&uiContext.propertyBar());
-    layout->setTopWidget(&uiContext.toolBar());
-    layout->setBottomWidget(&uiContext.actionBar());
-    layout->setCentralWidget(&renderingContext.canvas());
+    layout->setLeftWidget(uiContext->propertyBar());
+    layout->setTopWidget(uiContext->toolBar());
+    layout->setBottomWidget(uiContext->actionBar());
+    layout->setCentralWidget(renderingContext->canvas());
 
-    connect(&renderingContext.canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
-    connect(&renderingContext.canvas(), &Canvas::mouseMoved, controller, &Controller::mouseMoved);
-    connect(&renderingContext.canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
-    connect(&renderingContext.canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
-    connect(&renderingContext.canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
+    connect(renderingContext->canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
+    connect(renderingContext->canvas(), &Canvas::mouseMoved, controller, &Controller::mouseMoved);
+    connect(renderingContext->canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
+    connect(renderingContext->canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
+    connect(renderingContext->canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
 
-    connect(&renderingContext.canvas(), &Canvas::tablet, controller, &Controller::tablet);
-    connect(&renderingContext.canvas(), &Canvas::wheel, controller, &Controller::wheel);
-    connect(&renderingContext.canvas(), &Canvas::leave, controller, &Controller::leave);
+    connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
+    connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
+    connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
 
     applyCustomStyles();
 }

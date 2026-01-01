@@ -22,48 +22,48 @@
 
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 {
-    auto &uiContext{context->uiContext()};
-    auto &event{uiContext.event()};
+    auto uiContext{context->uiContext()};
+    auto event{uiContext->event()};
 
-    if (event.button() == Qt::LeftButton) {
-        m_lastPos = uiContext.event().pos();
+    if (event->button() == Qt::LeftButton) {
+        m_lastPos = uiContext->event()->pos();
 
-        auto &spatialContext{context->spatialContext()};
-        auto &selectionContext{context->selectionContext()};
-        auto &renderingContext{context->renderingContext()};
-        auto &transformer{spatialContext.coordinateTransformer()};
+        auto spatialContext{context->spatialContext()};
+        auto selectionContext{context->selectionContext()};
+        auto renderingContext{context->renderingContext()};
+        auto transformer{spatialContext->coordinateTransformer()};
 
         QVector<std::shared_ptr<Item>> intersectingItems{
-            spatialContext.quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
+            spatialContext->quadtree()->queryItems(transformer->viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
                 return item->boundingBox().contains(pos);
             })};
 
         bool lockState = true;
-        auto &selectedItems{selectionContext.selectedItems()};
-        auto &commandHistory{spatialContext.commandHistory()};
+        auto selectedItems{selectionContext->selectedItems()};
+        auto commandHistory{spatialContext->commandHistory()};
 
-        if (!(event.modifiers() & Qt::ShiftModifier)) {
+        if (!(event->modifiers() & Qt::ShiftModifier)) {
             QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory.insert(std::make_shared<DeselectCommand>(items));
+            commandHistory->insert(std::make_shared<DeselectCommand>(items));
         }
 
         if (intersectingItems.empty()) {
             m_isActive = true;
         } else {
             auto &item{intersectingItems.back()};
-            if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+            if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
                 // deselect the item if selected
-                commandHistory.insert(std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory->insert(std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
             } else {
-                commandHistory.insert(std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory->insert(std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
             }
             m_isActive = false;
             lockState = false;
         }
 
-        context->uiContext().propertyBar().updateToolProperties();
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        context->uiContext()->propertyBar()->updateToolProperties();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
 
         return lockState;
     }
@@ -73,57 +73,57 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 
 void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 {
-    auto &renderingContext{context->renderingContext()};
-    auto &spatialContext{context->spatialContext()};
-    renderingContext.canvas().setCursor(Qt::ArrowCursor);
+    auto renderingContext{context->renderingContext()};
+    auto spatialContext{context->spatialContext()};
+    renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
-    auto &painter{renderingContext.overlayPainter()};
+    auto painter{renderingContext->overlayPainter()};
     if (!m_isActive) {
         return;
     }
 
-    auto &uiContext{context->uiContext()};
-    auto &transformer{spatialContext.coordinateTransformer()};
-    auto &selectionContext{context->selectionContext()};
-    auto &selectedItems{selectionContext.selectedItems()};
+    auto uiContext{context->uiContext()};
+    auto transformer{spatialContext->coordinateTransformer()};
+    auto selectionContext{context->selectionContext()};
+    auto selectedItems{selectionContext->selectedItems()};
 
-    renderingContext.canvas().overlay()->fill(Qt::transparent);
+    renderingContext->canvas()->overlay()->fill(Qt::transparent);
 
-    QPointF curPos{uiContext.event().pos()};
+    QPointF curPos{uiContext->event()->pos()};
 
     QRectF selectionBox{m_lastPos, curPos};
-    QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
+    QRectF worldSelectionBox{transformer->viewToWorld(selectionBox)};
 
     QVector<std::shared_ptr<Item>> intersectingItems{
-        spatialContext.quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
+        spatialContext->quadtree()->queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
             return rect.contains(item->boundingBox());
         })};
 
     selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
-    context->uiContext().propertyBar().updateToolProperties();
+    context->uiContext()->propertyBar()->updateToolProperties();
 
-    QPainter &overlayPainter{renderingContext.overlayPainter()};
-    overlayPainter.save();
+    QPainter *overlayPainter{renderingContext->overlayPainter()};
+    overlayPainter->save();
 
     // TODO: Remove magic numbers
     QPen pen{QColor{67, 135, 244, 200}};
-    overlayPainter.setPen(pen);
+    overlayPainter->setPen(pen);
 
-    overlayPainter.drawRect(selectionBox);
-    overlayPainter.fillRect(selectionBox, QColor{67, 135, 244, 50});
+    overlayPainter->drawRect(selectionBox);
+    overlayPainter->fillRect(selectionBox, QColor{67, 135, 244, 50});
 
-    overlayPainter.restore();
+    overlayPainter->restore();
 
-    renderingContext.markForRender();
-    renderingContext.markForUpdate();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
 }
 
 bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
 {
     if (m_isActive) {
-        auto &renderingContext{context->renderingContext()};
-        auto &selectedItems{context->selectionContext().selectedItems()};
-        auto &commandHistory{context->spatialContext().commandHistory()};
+        auto renderingContext{context->renderingContext()};
+        auto selectedItems{context->selectionContext()->selectedItems()};
+        auto commandHistory{context->spatialContext()->commandHistory()};
 
         if (!selectedItems.empty()) {
             QVector<std::shared_ptr<Item>> items{};
@@ -132,11 +132,11 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
             }
 
             selectedItems.clear();
-            commandHistory.insert(std::make_shared<SelectCommand>(items));
+            commandHistory->insert(std::make_shared<SelectCommand>(items));
         }
 
-        renderingContext.canvas().overlay()->fill(Qt::transparent);
-        renderingContext.markForUpdate();
+        renderingContext->canvas()->overlay()->fill(Qt::transparent);
+        renderingContext->markForUpdate();
 
         m_isActive = false;
     }
