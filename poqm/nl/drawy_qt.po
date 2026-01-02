@@ -1,0 +1,525 @@
+# SPDX-FileCopyrightText: 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2026-01-01 14:55+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Qt-Contexts: true\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.12.0\n"
+
+#: context/uicontext.cpp:72
+msgctxt "UIContext|"
+msgid "Save to File"
+msgstr "Naar bestand opslaan"
+
+#: context/uicontext.cpp:73
+msgctxt "UIContext|"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: context/uicontext.cpp:74
+msgctxt "UIContext|"
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: context/uicontext.cpp:75
+msgctxt "UIContext|"
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: context/uicontext.cpp:76 context/uicontext.cpp:122
+msgctxt "UIContext|"
+msgid "Light Mode"
+msgstr "Lichte modus"
+
+#: context/uicontext.cpp:77
+msgctxt "UIContext|"
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: context/uicontext.cpp:78
+msgctxt "UIContext|"
+msgid "Redo"
+msgstr "Opnieuw doen"
+
+#: context/uicontext.cpp:126
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "Donkere modus"
+
+#: keybindings/actionmanager.cpp:37
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Undo"
+msgctxt "ActionManager|"
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: keybindings/actionmanager.cpp:38
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Ungroup selection"
+msgctxt "ActionManager|"
+msgid "Undo last action"
+msgstr "Selectie van groep ongedaan maken"
+
+#: keybindings/actionmanager.cpp:44
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Redo"
+msgctxt "ActionManager|"
+msgid "Redo"
+msgstr "Opnieuw doen"
+
+#: keybindings/actionmanager.cpp:45
+msgctxt "ActionManager|"
+msgid "Redo last undone action"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:51
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Zoom In"
+msgctxt "ActionManager|"
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: keybindings/actionmanager.cpp:52
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Zoom In"
+msgctxt "ActionManager|"
+msgid "Zoom in"
+msgstr "Inzoomen"
+
+#: keybindings/actionmanager.cpp:58
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Zoom Out"
+msgctxt "ActionManager|"
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: keybindings/actionmanager.cpp:59
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Zoom Out"
+msgctxt "ActionManager|"
+msgid "Zoom out"
+msgstr "Uitzoomen"
+
+#: keybindings/actionmanager.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "Hulpmiddel voor gum"
+
+#: keybindings/actionmanager.cpp:66
+msgctxt "ActionManager|"
+msgid "Switch to freeform drawing tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:72
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "Hulpmiddel voor gum"
+
+#: keybindings/actionmanager.cpp:73
+msgctxt "ActionManager|"
+msgid "Switch to eraser tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:79
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "Selectiehulpmiddel"
+
+#: keybindings/actionmanager.cpp:80
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ActionManager|"
+msgid "Switch to selection tool"
+msgstr "Selectiehulpmiddel"
+
+#: keybindings/actionmanager.cpp:86
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "Gereedschap voor rechthoek"
+
+#: keybindings/actionmanager.cpp:87
+msgctxt "ActionManager|"
+msgid "Switch to rectangle drawing tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:93
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "Gereedschap voor ellips"
+
+#: keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Switch to ellipse drawing tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:100
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "Lijnhulpmiddel"
+
+#: keybindings/actionmanager.cpp:101
+msgctxt "ActionManager|"
+msgid "Switch to line drawing tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:107
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "Hulpmiddel voor tekst"
+
+#: keybindings/actionmanager.cpp:108
+msgctxt "ActionManager|"
+msgid "Switch to the text tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:114
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "Hulpmiddel voor pijl"
+
+#: keybindings/actionmanager.cpp:115
+msgctxt "ActionManager|"
+msgid "Switch to arrow drawing tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:121
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "Hulpmiddel voor verplaatsen"
+
+#: keybindings/actionmanager.cpp:122
+msgctxt "ActionManager|"
+msgid "Switch to move tool"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:128
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "ActionManager|"
+msgid "Group Elements"
+msgstr "Groepsselectie"
+
+#: keybindings/actionmanager.cpp:129
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "ActionManager|"
+msgid "Groups selected items"
+msgstr "Groepsselectie"
+
+#: keybindings/actionmanager.cpp:135
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Ungroup selection"
+msgctxt "ActionManager|"
+msgid "Ungroup Elements"
+msgstr "Selectie van groep ongedaan maken"
+
+#: keybindings/actionmanager.cpp:136
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Ungroup selection"
+msgctxt "ActionManager|"
+msgid "Ungroups selected groups"
+msgstr "Selectie van groep ongedaan maken"
+
+#: keybindings/actionmanager.cpp:142
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ActionManager|"
+msgid "Select All"
+msgstr "Selectiehulpmiddel"
+
+#: keybindings/actionmanager.cpp:143
+msgctxt "ActionManager|"
+msgid "Select all items"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:150
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Delete selection"
+msgctxt "ActionManager|"
+msgid "Deletes selected items"
+msgstr "Selectie verwijderen"
+
+#: keybindings/actionmanager.cpp:156
+msgctxt "ActionManager|"
+msgid "Save"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:157
+msgctxt "ActionManager|"
+msgid "Save canvas"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:163
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "ActionManager|"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: keybindings/actionmanager.cpp:164
+msgctxt "ActionManager|"
+msgid "Open an existing file"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:170
+msgctxt "ActionManager|"
+msgid "Ctrl+Z"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:171
+msgctxt "ActionManager|"
+msgid "Ctrl+Y"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:172
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:173
+msgctxt "ActionManager|"
+msgid "Ctrl++"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:174
+msgctxt "ActionManager|"
+msgid "Ctrl+-"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:175
+msgctxt "ActionManager|"
+msgid "T"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:176
+msgctxt "ActionManager|"
+msgid "P"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:177
+msgctxt "ActionManager|"
+msgid "B"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:178
+msgctxt "ActionManager|"
+msgid "E"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:179
+msgctxt "ActionManager|"
+msgid "S"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:180
+msgctxt "ActionManager|"
+msgid "R"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:181
+msgctxt "ActionManager|"
+msgid "O"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:182
+msgctxt "ActionManager|"
+msgid "L"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:183
+msgctxt "ActionManager|"
+msgid "A"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:184
+msgctxt "ActionManager|"
+msgid "M"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:185
+msgctxt "ActionManager|"
+msgid "Ctrl+A"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:187
+msgctxt "ActionManager|"
+msgid "Ctrl+S"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:188
+msgctxt "ActionManager|"
+msgid "Ctrl+O"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:189
+msgctxt "ActionManager|"
+msgid "Ctrl+G"
+msgstr ""
+
+#: keybindings/actionmanager.cpp:190
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+G"
+msgstr ""
+
+#: main.cpp:20
+msgctxt "QObject|"
+msgid "Your handy, infinite, brainstorming tool!"
+msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
+
+#: properties/widgets/actionswidget.cpp:34
+msgctxt "ActionsWidget|"
+msgid "Delete selection"
+msgstr "Selectie verwijderen"
+
+#: properties/widgets/actionswidget.cpp:35
+msgctxt "ActionsWidget|"
+msgid "Group selection"
+msgstr "Groepsselectie"
+
+#: properties/widgets/actionswidget.cpp:36
+msgctxt "ActionsWidget|"
+msgid "Ungroup selection"
+msgstr "Selectie van groep ongedaan maken"
+
+#: properties/widgets/actionswidget.cpp:63
+msgctxt "ActionsWidget|"
+msgid "Actions"
+msgstr "Acties"
+
+#: properties/widgets/erasersizewidget.cpp:28
+msgctxt "EraserSizeWidget|"
+msgid "Eraser Size"
+msgstr "Grootte van gum"
+
+#: properties/widgets/fontsizewidget.cpp:29
+msgctxt "FontSizeWidget|"
+msgid "Font Size"
+msgstr "Tekengrootte"
+
+#: properties/widgets/strokecolorwidget.cpp:50
+msgctxt "StrokeColorWidget|"
+msgid "Color"
+msgstr ""
+
+#: properties/widgets/strokewidthwidget.cpp:28
+msgctxt "StrokeWidthWidget|"
+msgid "Thickness"
+msgstr "Dikte"
+
+#: serializer/loader.cpp:32
+#, qt-format
+msgctxt "QObject|"
+msgid "Drawy (*.%1)"
+msgstr "Drawy (*.%1)"
+
+#: serializer/loader.cpp:36
+msgctxt "QObject|"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: serializer/serializer.cpp:124
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "QObject|"
+msgid "Save File"
+msgstr "Naar bestand opslaan"
+
+#: tools/arrowtool.cpp:16
+msgctxt "QObject|"
+msgid "Arrow Tool"
+msgstr "Hulpmiddel voor pijl"
+
+#: tools/ellipsetool.cpp:16
+msgctxt "QObject|"
+msgid "Ellipse Tool"
+msgstr "Gereedschap voor ellips"
+
+#: tools/erasertool.cpp:161
+msgctxt "QObject|"
+msgid "Eraser Tool"
+msgstr "Hulpmiddel voor gum"
+
+#: tools/freeformtool.cpp:45
+msgctxt "QObject|"
+msgid "Pen Tool"
+msgstr "Hulpmiddel voor pen"
+
+#: tools/linetool.cpp:16
+msgctxt "QObject|"
+msgid "Line Tool"
+msgstr "Lijnhulpmiddel"
+
+#: tools/movetool.cpp:77
+msgctxt "QObject|"
+msgid "Move Tool"
+msgstr "Hulpmiddel voor verplaatsen"
+
+#: tools/rectangletool.cpp:16
+msgctxt "QObject|"
+msgid "Rectangle Tool"
+msgstr "Gereedschap voor rechthoek"
+
+#: tools/selectiontool/selectiontool.cpp:134
+msgctxt "QObject|"
+msgid "Selection Tool"
+msgstr "Selectiehulpmiddel"
+
+#: tools/texttool.cpp:497
+msgctxt "QObject|"
+msgid "Text Tool"
+msgstr "Hulpmiddel voor tekst"
