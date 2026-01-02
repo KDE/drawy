@@ -57,11 +57,11 @@ void Common::renderCanvas(ApplicationContext *context)
 
             QPointF topLeftPoint{transformer->gridToWorld(cell->rect().topLeft().toPointF())};
 
-            cell->painter().resetTransform();
-            cell->painter().scale(zoomFactor, zoomFactor);
+            cell->painter()->resetTransform();
+            cell->painter()->scale(zoomFactor, zoomFactor);
 
             for (const auto &intersectingItem : intersectingItems) {
-                intersectingItem->draw(cell->painter(), topLeftPoint);
+                intersectingItem->draw(*cell->painter(), topLeftPoint);
             }
         }
 

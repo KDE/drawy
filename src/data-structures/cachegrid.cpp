@@ -56,9 +56,9 @@ void CacheCell::setDirty(bool dirty)
     m_dirty = dirty;
 }
 
-QPainter &CacheCell::painter() const
+QPainter *CacheCell::painter() const
 {
-    return *m_painter;
+    return m_painter.get();
 }
 
 QSize CacheCell::cellSize()

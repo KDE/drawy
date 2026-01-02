@@ -24,7 +24,7 @@ public:
     bool dirty() const;
     void setDirty(bool dirty);
     QPixmap &image() const;
-    QPainter &painter() const;
+    QPainter *painter() const;
 
 private:
     QPoint m_point{};
