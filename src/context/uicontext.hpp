@@ -36,7 +36,6 @@ public:
 
     void reset();
 
-public Q_SLOTS:
     void toolChanged(Tool &);
 
 private:

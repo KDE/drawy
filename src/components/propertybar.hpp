@@ -18,8 +18,6 @@ public:
 
     void setPropertyManager(PropertyManager *manager);
     void updateToolProperties();
-
-public Q_SLOTS:
     void updateProperties(const Tool &);
 
 private:

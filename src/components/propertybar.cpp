@@ -36,7 +36,6 @@ void PropertyBar::updateToolProperties()
     updateProperties(context->uiContext()->toolBar()->curTool());
 }
 
-// PUBLIC SLOTS
 void PropertyBar::updateProperties(const Tool &tool)
 {
     // remove existing widgets

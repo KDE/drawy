@@ -15,12 +15,10 @@ private:
     QString m_description;
     std::function<void()> m_callable;
 
-public Q_SLOTS:
-    void run();
-
 public:
     Action(QString name, QString description, std::function<void()> callable, QObject *parent);
     QString name() const;
+    void run();
 };
 
 namespace std
