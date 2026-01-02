@@ -31,7 +31,7 @@ public:
     void setZoomFactor(qreal newValue);
     void updateZoomFactor(qreal diff, QPoint center = {-1, -1});
 
-    const int fps() const;
+    int fps() const;
 
     void reset();
 
