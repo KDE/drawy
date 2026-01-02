@@ -5,9 +5,12 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
 # <img src="./assets/logo-48.png" align="left" width="32">‎ Drawy
-Your handy, infinite, brainstorming tool!  
-  
+Your handy, infinite, brainstorming tool!
+
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
+
+### Discuss
+If you wish to discuss anything regarding Drawy, you are welcome to join its Matrix room here: https://go.kde.org/matrix/#/#drawy:kde.org
 
 ### Compiling from Source
 - Install `cmake`, `g++`, `zstd`
@@ -29,10 +32,10 @@ Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md)
 This project uses the GNU General Public License V3.
 
 ### TODOs
-Started: `2025-01-02 04:40PM`  
-Development is divided into phases.  
-The project will eventually be open sourced. However, I will work on the first few phases myself, to maximize learning.  
-The following is a list of features I'll be planning to add to it:  
+Started: `2025-01-02 04:40PM`
+Development is divided into phases.
+The project will eventually be open sourced. However, I will work on the first few phases myself, to maximize learning.
+The following is a list of features I'll be planning to add to it:
 
 #### Phase 1 (Basic Features)
 - [x] A simple fixed size canvas to draw on using a black coloured stroke.
@@ -47,8 +50,8 @@ The following is a list of features I'll be planning to add to it:
 - [x] Use an LRU cache based uniform grid to optimize moving the canvas around (now 100% faster!!)
 - [x] A properties bar to change the following properties:
     - [x] Colour of strokes
-    - [x] Stroke width  
-  
+    - [x] Stroke width
+
 #### Phase 3
 - [x] Buttons to zoom in/out
 - [x] Pressure senstivity for drawing tablets
@@ -67,6 +70,6 @@ The following is a list of features I'll be planning to add to it:
 - [ ] Better freeform smoothing algorithms
 - [ ] Allow snapping
 - [ ] Ability to store preferences
-- [ ] A "settings" page 
+- [ ] A "settings" page
 - [ ] Better widgets
 - [ ] Online collaboration
