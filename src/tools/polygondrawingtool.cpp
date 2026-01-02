@@ -52,7 +52,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 
         m_isDrawing = true;
     }
-};
+}
 
 void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 {
@@ -71,7 +71,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 
         renderingContext->markForUpdate();
     }
-};
+}
 
 void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 {
@@ -94,7 +94,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
-};
+}
 
 void PolygonDrawingTool::cleanup()
 {

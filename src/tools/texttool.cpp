@@ -98,7 +98,7 @@ void TextTool::mousePressed(ApplicationContext *context)
     }
 
     m_isDrawing = true;
-};
+}
 
 void TextTool::mouseMoved(ApplicationContext *context)
 {
@@ -157,14 +157,14 @@ void TextTool::mouseMoved(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
-};
+}
 
 void TextTool::mouseReleased(ApplicationContext *context)
 {
     m_isSelecting = false;
     m_doubleClicked = false;
     m_tripleClicked = false;
-};
+}
 
 void TextTool::mouseDoubleClick(ApplicationContext *context)
 {
@@ -192,7 +192,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
-};
+}
 
 void TextTool::mouseTripleClick(ApplicationContext *context)
 {
@@ -221,7 +221,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
-};
+}
 
 // TODO: Refactor, refactor, refactor!
 void TextTool::keyPressed(ApplicationContext *context)

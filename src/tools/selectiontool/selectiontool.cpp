@@ -34,17 +34,17 @@ SelectionTool::SelectionTool()
 void SelectionTool::mousePressed(ApplicationContext *context)
 {
     m_stateLocked = getCurrentState(context)->mousePressed(context);
-};
+}
 
 void SelectionTool::mouseMoved(ApplicationContext *context)
 {
     getCurrentState(context)->mouseMoved(context);
-};
+}
 
 void SelectionTool::mouseReleased(ApplicationContext *context)
 {
     m_stateLocked = getCurrentState(context)->mouseReleased(context);
-};
+}
 
 std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationContext *context)
 {
@@ -127,7 +127,7 @@ const QVector<Property::Type> SelectionTool::properties() const
 Tool::Type SelectionTool::type() const
 {
     return Tool::Selection;
-};
+}
 
 QString SelectionTool::tooltip() const
 {

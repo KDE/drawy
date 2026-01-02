@@ -35,7 +35,7 @@ void MoveTool::mousePressed(ApplicationContext *context)
 
         renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
     }
-};
+}
 
 void MoveTool::mouseMoved(ApplicationContext *context)
 {
@@ -52,7 +52,7 @@ void MoveTool::mouseMoved(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
-};
+}
 
 void MoveTool::mouseReleased(ApplicationContext *context)
 {
@@ -65,7 +65,7 @@ void MoveTool::mouseReleased(ApplicationContext *context)
         renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
         m_isActive = false;
     }
-};
+}
 
 Tool::Type MoveTool::type() const
 {

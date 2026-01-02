@@ -43,7 +43,7 @@ FreeformTool::FreeformTool()
 QString FreeformTool::tooltip() const
 {
     return QObject::tr("Pen Tool");
-};
+}
 
 void FreeformTool::mousePressed(ApplicationContext *context)
 {
