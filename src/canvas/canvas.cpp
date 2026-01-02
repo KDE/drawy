@@ -189,7 +189,7 @@ bool Canvas::event(QEvent *event)
 {
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *ev = dynamic_cast<QKeyEvent *>(event);
-        if (ev && (ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab)) {
+        if (ev && ((ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab))) {
             Q_EMIT keyPressed(ev);
             return true;
         }
