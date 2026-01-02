@@ -67,7 +67,7 @@ void Item::setProperty(const Property::Type propertyType, Property newObj)
 void Item::updateAfterProperty()
 {
 }
-void Item::erase(QPainter &painter, const QPointF &offset) const
+void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }
 

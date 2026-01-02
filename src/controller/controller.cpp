@@ -173,11 +173,11 @@ void Controller::keyReleased(QKeyEvent *event)
     toolBar->curTool().keyReleased(m_context);
 }
 
-void Controller::inputMethodInvoked(QInputMethodEvent *event)
+void Controller::inputMethodInvoked([[maybe_unused]] QInputMethodEvent *event)
 {
 }
 
-void Controller::leave(QEvent *event)
+void Controller::leave([[maybe_unused]] QEvent *event)
 {
     ToolBar *toolBar{m_context->uiContext()->toolBar()};
 

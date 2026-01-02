@@ -36,6 +36,6 @@ IconManager::IconManager(QObject *parent)
 
 QIcon IconManager::icon(Icon icon) const
 {
-    QString path{u":/icons/"_s + m_curTheme + u'/' + m_iconName.at(icon) + u".svg"_s};
+    const QString path{u":/icons/"_s + m_curTheme + u'/' + m_iconName.at(icon) + u".svg"_s};
     return QIcon(path);
 }

@@ -79,7 +79,6 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 
     if (uiContext->event()->button() == Qt::LeftButton && m_isDrawing) {
         SpatialContext *spatialContext{context->spatialContext()};
-        CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
         RenderingContext *renderingContext{context->renderingContext()};
         CommandHistory *commandHistory{spatialContext->commandHistory()};
 

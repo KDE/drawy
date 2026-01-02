@@ -7,10 +7,10 @@
 #include <utility>
 
 Action::Action(QString name, QString description, std::function<void()> callable, QObject *parent)
-    : m_name{std::move(name)}
+    : QObject{parent}
+    , m_name{std::move(name)}
     , m_description{std::move(description)}
     , m_callable{std::move(callable)}
-    , QObject{parent}
 {
 }
 

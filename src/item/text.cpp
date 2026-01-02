@@ -143,7 +143,7 @@ void TextItem::translate(const QPointF &amount)
     m_boundingBox.translate(amount);
 }
 
-void TextItem::m_draw(QPainter &painter, const QPointF &offset) const
+void TextItem::m_draw([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }
 
@@ -398,7 +398,7 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
 qsizetype TextItem::getPrevBreak(qsizetype position) const
 {
     auto isBreak = [&](qsizetype pos) {
-        for (auto &sep : Common::wordSeparators) {
+        for (const auto &sep : Common::wordSeparators) {
             if (m_text[pos] == sep)
                 return true;
         }

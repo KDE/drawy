@@ -49,7 +49,7 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
     auto selectionContext{context->selectionContext()};
     auto transformer{spatialContext->coordinateTransformer()};
 
-    auto &selectedItems{selectionContext->selectedItems()};
+    const auto &selectedItems{selectionContext->selectedItems()};
 
     QPointF curPos{context->uiContext()->event()->pos()};
 

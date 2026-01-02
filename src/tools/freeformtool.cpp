@@ -106,7 +106,6 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
     if (uiContext->event()->button() == Qt::LeftButton && m_isDrawing) {
         SpatialContext *spatialContext{context->spatialContext()};
         RenderingContext *renderingContext{context->renderingContext()};
-        CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
         CommandHistory *commandHistory{spatialContext->commandHistory()};
 
         QPainter *overlayPainter{renderingContext->overlayPainter()};

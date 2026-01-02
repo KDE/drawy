@@ -129,7 +129,7 @@ void QuadTree::clear()
 
 void QuadTree::reorder(QVector<ItemPtr> &items) const
 {
-    std::sort(items.begin(), items.end(), [&](auto &firstItem, auto &secondItem) {
+    std::sort(items.begin(), items.end(), [&](const auto &firstItem, const auto &secondItem) {
         return m_orderedList->zIndex(firstItem) < m_orderedList->zIndex(secondItem);
     });
 }

@@ -28,8 +28,8 @@
 #include "keybindmanager.hpp"
 using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
-    : m_context{context}
-    , QObject(context)
+    : QObject(context)
+    , m_context{context}
 {
     KeybindManager *keybindManager{m_context->uiContext()->keybindManager()};
 
@@ -141,28 +141,28 @@ ActionManager::ActionManager(ApplicationContext *context)
 
     Action *selectAllAction{new Action{tr("Select All"),
                                        tr("Select all items"),
-                                       [&, context]() {
+                                       [&]() {
                                            this->selectAll();
                                        },
                                        context}};
 
     Action *deleteAction{new Action{tr("Delete"),
                                     tr("Deletes selected items"),
-                                    [&, context]() {
+                                    [&]() {
                                         this->deleteSelection();
                                     },
                                     context}};
 
     Action *saveAction{new Action{tr("Save"),
                                   tr("Save canvas"),
-                                  [&, context]() {
+                                  [&]() {
                                       this->saveToFile();
                                   },
                                   context}};
 
     Action *openFileAction{new Action{tr("Open File"),
                                       tr("Open an existing file"),
-                                      [&, context]() {
+                                      [&]() {
                                           this->loadFromFile();
                                       },
                                       context}};

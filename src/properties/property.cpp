@@ -5,8 +5,8 @@
 #include "property.hpp"
 
 Property::Property()
-    : m_type{Property::Null}
-    , m_value{0}
+    : m_value{0}
+    , m_type{Property::Null}
 {
 }
 

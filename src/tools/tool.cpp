@@ -25,28 +25,28 @@ const QVector<Property::Type> Tool::properties() const
     return m_properties;
 }
 
-void Tool::mousePressed(ApplicationContext *context)
+void Tool::mousePressed([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::mouseMoved(ApplicationContext *context)
+void Tool::mouseMoved([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::mouseReleased(ApplicationContext *context)
+void Tool::mouseReleased([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::keyPressed(ApplicationContext *context)
+void Tool::keyPressed([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::keyReleased(ApplicationContext *context)
+void Tool::keyReleased([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::mouseDoubleClick(ApplicationContext *context)
+void Tool::mouseDoubleClick([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::mouseTripleClick(ApplicationContext *context)
+void Tool::mouseTripleClick([[maybe_unused]] ApplicationContext *context)
 {
 }
-void Tool::leave(ApplicationContext *context)
+void Tool::leave([[maybe_unused]] ApplicationContext *context)
 {
 }
 void Tool::cleanup()

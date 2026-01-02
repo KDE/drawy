@@ -18,9 +18,7 @@ BoardLayout::BoardLayout(QWidget *parent)
 
 BoardLayout::~BoardLayout()
 {
-    if (m_centralWidget != nullptr) {
-        delete m_centralWidget;
-    }
+    delete m_centralWidget;
 }
 
 void BoardLayout::addItem(QLayoutItem *item)
