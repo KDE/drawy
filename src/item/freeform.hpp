@@ -38,7 +38,7 @@ public:
     const QVector<qreal> &pressures() const;
 
 protected:
-    void m_draw(QPainter &painter, const QPointF &offset) const override;
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
     QVector<QPointF> m_points{};
     QVector<qreal> m_pressures{};
 

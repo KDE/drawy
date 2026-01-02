@@ -102,7 +102,7 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     painter.setPen(pen);
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
-    m_draw(painter, offset);
+    drawItem(painter, offset);
 }
 
 QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
@@ -144,7 +144,7 @@ void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const
     }
 }
 
-void FreeformItem::m_draw(QPainter &painter, const QPointF &offset) const
+void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     int strokeWidth{property(Property::StrokeWidth).value<int>()};
     int alpha{property(Property::Opacity).value<int>()};

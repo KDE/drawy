@@ -66,7 +66,7 @@ public:
     void updateAfterProperty() override;
 
 protected:
-    void m_draw(QPainter &painter, const QPointF &offset) const override;
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
     QFont getFont() const;

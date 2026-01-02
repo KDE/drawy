@@ -10,7 +10,7 @@ LineItem::LineItem()
 {
 }
 
-void LineItem::m_draw(QPainter &painter, const QPointF &offset) const
+void LineItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);
 }

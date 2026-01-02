@@ -143,7 +143,7 @@ void TextItem::translate(const QPointF &amount)
     m_boundingBox.translate(amount);
 }
 
-void TextItem::m_draw([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
+void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }
 

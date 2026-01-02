@@ -37,7 +37,7 @@ void ArrowItem::calcArrowPoints()
     m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + (M_PI / 180) * 30), y2 - arrowSize * std::sin(angle + (M_PI / 180) * 30));
 }
 
-void ArrowItem::m_draw(QPainter &painter, const QPointF &offset) const
+void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);
     painter.drawLine(end() - offset, m_arrowP1 - offset);

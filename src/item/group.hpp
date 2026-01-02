@@ -35,7 +35,7 @@ public:
 private:
     QVector<std::shared_ptr<Item>> m_items;
 
-    void m_draw(QPainter &painter, const QPointF &offset) const override;
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
 };
 
 #endif // GROUP_H

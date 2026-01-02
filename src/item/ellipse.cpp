@@ -8,7 +8,7 @@ EllipseItem::EllipseItem()
 {
 }
 
-void EllipseItem::m_draw(QPainter &painter, const QPointF &offset) const
+void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawEllipse(QRectF(start() - offset, end() - offset));
 }

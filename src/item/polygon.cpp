@@ -60,7 +60,7 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 
     painter.setPen(pen);
 
-    m_draw(painter, offset);
+    drawItem(painter, offset);
 }
 
 void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
@@ -74,7 +74,7 @@ void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
     painter.setPen(pen);
     painter.setCompositionMode(QPainter::CompositionMode_Source);
 
-    m_draw(painter, offset);
+    drawItem(painter, offset);
 
     painter.restore();
 }

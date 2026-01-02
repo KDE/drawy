@@ -12,7 +12,7 @@ RectangleItem::RectangleItem()
 {
 }
 
-void RectangleItem::m_draw(QPainter &painter, const QPointF &offset) const
+void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawRect(QRectF(start() - offset, end() - offset));
 }

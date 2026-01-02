@@ -18,5 +18,5 @@ public:
     Item::Type type() const override;
 
 private:
-    void m_draw(QPainter &painter, const QPointF &offset) const override;
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
 };

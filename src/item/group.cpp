@@ -128,4 +128,4 @@ const QVector<Property::Type> GroupItem::propertyTypes() const
     return QVector<Property::Type>(types.begin(), types.end());
 };
 
-void GroupItem::m_draw([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const { };
+void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const { };

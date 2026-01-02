@@ -50,5 +50,5 @@ protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
 
-    virtual void m_draw(QPainter &painter, const QPointF &offset) const = 0;
+    virtual void drawItem(QPainter &painter, const QPointF &offset) const = 0;
 };
