@@ -24,9 +24,6 @@ void KeybindManager::addKeybinding(Action *action, const QString &sequence)
     connect(shortcut, &QShortcut::activated, action, &Action::run);
 }
 
-// TODO: Implement this
-void removeKeybinding(QKeySequence sequence);
-
 void KeybindManager::disable()
 {
     for (auto &keyShortcutPair : m_keyToShortcut) {
