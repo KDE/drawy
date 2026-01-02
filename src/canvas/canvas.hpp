@@ -15,9 +15,9 @@ public:
     explicit Canvas(QWidget *parent = nullptr);
     ~Canvas() override;
 
-    QPixmap *const canvas() const;
-    QPixmap *const overlay() const;
-    QPixmap *const widget() const;
+    QPixmap *canvas() const;
+    QPixmap *overlay() const;
+    QPixmap *widget() const;
     QSize sizeHint() const override;
     QSize dimensions() const;
 

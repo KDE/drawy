@@ -40,17 +40,17 @@ QSize Canvas::sizeHint() const
     return m_sizeHint;
 }
 
-QPixmap *const Canvas::canvas() const
+QPixmap *Canvas::canvas() const
 {
     return m_canvas;
 }
 
-QPixmap *const Canvas::overlay() const
+QPixmap *Canvas::overlay() const
 {
     return m_overlay;
 }
 
-QPixmap *const Canvas::widget() const
+QPixmap *Canvas::widget() const
 {
     return m_widget;
 }
