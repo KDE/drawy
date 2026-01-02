@@ -17,9 +17,9 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     : QObject{parent}
     , m_parentWidget{parent}
     , m_renderingContext(new RenderingContext(this))
-    , m_selectionContext(new SelectionContext(this))
     , m_spatialContext(new SpatialContext(this))
     , m_uiContext(new UIContext(this))
+    , m_selectionContext(new SelectionContext(this))
 {
 }
 
