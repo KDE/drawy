@@ -98,7 +98,7 @@ QSize Canvas::dimensions() const
 }
 
 // PROTECTED
-void Canvas::paintEvent(QPaintEvent *event)
+void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
 {
     QPainter painter{this};
     painter.scale(1.0 / m_scale, 1.0 / m_scale);
