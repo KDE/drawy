@@ -77,7 +77,6 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     auto spatialContext{context->spatialContext()};
     renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
-    auto painter{renderingContext->overlayPainter()};
     if (!m_isActive) {
         return;
     }
