@@ -29,11 +29,9 @@ Q_SIGNALS:
     void toolChanged(Tool &);
 
 private:
+    void createButtons() const;
+    void onToolChanged(int id);
     QButtonGroup *const m_group;
     QHBoxLayout *const m_layout;
     std::unordered_map<int, std::shared_ptr<Tool>> m_tools{};
-    void createButtons() const;
-
-private Q_SLOTS:
-    void onToolChanged(int id);
 };

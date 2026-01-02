@@ -35,12 +35,10 @@ public:
 
     void reset();
 
-private Q_SLOTS:
+private:
     void beginPainters();
     void endPainters();
     void canvasResized();
-
-private:
     Canvas *m_canvas{nullptr};
     QPainter *m_canvasPainter{};
     QPainter *m_overlayPainter{};
