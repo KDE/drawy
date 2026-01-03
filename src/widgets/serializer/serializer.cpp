@@ -22,9 +22,7 @@
 #include "item/polygon.hpp"
 #include "item/text.hpp"
 
-Serializer::Serializer()
-{
-}
+Serializer::Serializer() = default;
 
 void Serializer::serialize(ApplicationContext *context)
 {
