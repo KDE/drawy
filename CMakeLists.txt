@@ -77,7 +77,6 @@ endif()
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-
 add_subdirectory(src)
 
 ecm_qt_install_logging_categories(
