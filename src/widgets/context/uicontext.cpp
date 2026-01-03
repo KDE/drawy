@@ -11,6 +11,7 @@
 #include "components/actionbar.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
+#include "drawy_debug.h"
 #include "event/event.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
@@ -29,7 +30,6 @@
 #include "tools/rectangletool.hpp"
 #include "tools/selectiontool/selectiontool.hpp"
 #include "tools/texttool.hpp"
-
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext{context}
