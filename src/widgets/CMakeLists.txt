@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 set(DRAWY_LIB_SOVERSION "0")
-add_library(libdrawywidgets SHARED)
+add_library(libdrawywidgets)
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
