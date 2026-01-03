@@ -42,7 +42,7 @@ void Common::renderCanvas(ApplicationContext *context)
         // canvasPainter.restore();
 
         if (cell->dirty()) {
-            cell->image().fill(Qt::transparent);
+            cell->image()->fill(Qt::transparent);
             cell->setDirty(false);
 
             QVector<std::shared_ptr<Item>> intersectingItems{
@@ -65,7 +65,7 @@ void Common::renderCanvas(ApplicationContext *context)
             }
         }
 
-        canvasPainter->drawPixmap(transformer->round(transformer->gridToView(cell->rect())), cell->image());
+        canvasPainter->drawPixmap(transformer->round(transformer->gridToView(cell->rect())), *cell->image());
     }
 
     QRectF selectionBox{};

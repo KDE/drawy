@@ -39,9 +39,9 @@ bool CacheCell::dirty() const
     return m_dirty;
 }
 
-QPixmap &CacheCell::image() const
+QPixmap *CacheCell::image() const
 {
-    return *m_image;
+    return m_image.get();
 }
 
 QRect CacheCell::rect() const

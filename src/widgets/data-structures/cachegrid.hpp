@@ -23,7 +23,7 @@ public:
     const QPoint &point() const;
     bool dirty() const;
     void setDirty(bool dirty);
-    QPixmap &image() const;
+    QPixmap *image() const;
     QPainter *painter() const;
 
 private:
