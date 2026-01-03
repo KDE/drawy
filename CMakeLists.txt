@@ -274,11 +274,7 @@ install(
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
-add_subdirectory(src/icons)
-if (UNIX AND NOT APPLE)
-  install(PROGRAMS src/data/org.kde.drawy.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-  install(FILES src/data/org.kde.drawy.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-endif()
+add_subdirectory(src)
 
 ecm_qt_install_logging_categories(
     EXPORT DRAWY
