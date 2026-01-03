@@ -2,7 +2,12 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 # Combine translation files with the source files.
-set(PROJECT_SOURCES
+
+ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
+add_executable(${PROJECT_NAME})
+target_sources(
+    ${PROJECT_NAME}
+    PRIVATE
     drawycommandlineparser.cpp
     drawycommandlineparser.h
     canvas/canvas.cpp
@@ -162,8 +167,6 @@ set(PROJECT_SOURCES
     resources/drawy.qrc
 )
 
-ecm_create_qm_loader(${PROJECT_NAME} drawy_qt)
-add_executable(${PROJECT_NAME})
 ecm_qt_declare_logging_category(${PROJECT_NAME} HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
 )
