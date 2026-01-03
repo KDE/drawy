@@ -18,7 +18,7 @@ void LineItem::drawItem(QPainter &painter, const QPointF &offset) const
 bool LineItem::intersects(const QRectF &rect)
 {
     return Common::Utils::Math::intersects(rect, QLineF{start(), end()});
-};
+}
 
 bool LineItem::intersects(const QLineF &line)
 {

@@ -20,8 +20,7 @@
  */
 using namespace Qt::Literals::StringLiterals;
 TextItem::TextItem()
-    : m_text(u""_s)
-    , m_selectionStart(INVALID)
+    : m_selectionStart(INVALID)
     , m_selectionEnd(INVALID)
 {
     m_properties[Property::StrokeColor] = Property{QColor(Qt::white), Property::StrokeColor};

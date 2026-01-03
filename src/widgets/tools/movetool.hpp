@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <QElapsedTimer>
-
 #include "tool.hpp"
 
 class MoveTool : public Tool

@@ -23,7 +23,8 @@ FreeformTool::FreeformTool()
 {
     m_itemFactory = std::make_unique<FreeformFactory>();
 
-    int size{5}, borderWidth{1};
+    int size{5};
+    int borderWidth{1};
     QBitmap cursorShape{size, size};
     QPen cursorPen{};
     cursorShape.fill(Qt::transparent);
