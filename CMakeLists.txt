@@ -9,11 +9,6 @@ project(drawy VERSION ${DRAWY_VERSION})
 
 set(DRAWY_LIB_VERSION "${DRAWY_VERSION}")
 
-# Enable automatic handling of UI, MOC, and RCC files.
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
@@ -25,7 +20,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
-include(ECMPoQmTools)
 include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
 include(KDEInstallDirs)
