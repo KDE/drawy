@@ -6,8 +6,8 @@
 #include <QApplication>
 #include <QCommandLineParser>
 
-#include "../drawycommandlineparser.h"
-#include "../window/window.hpp"
+#include "drawycommandlineparser.h"
+#include "window/window.hpp"
 using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {

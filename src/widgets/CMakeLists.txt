@@ -1,0 +1,212 @@
+# SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
+set(DRAWY_LIB_SOVERSION "0")
+add_library(libdrawywidgets SHARED)
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+target_sources(
+    libdrawywidgets
+    PRIVATE
+    canvas/canvas.cpp
+    canvas/canvas.hpp
+    command/commandhistory.cpp
+    command/commandhistory.hpp
+    command/command.hpp
+    command/deselectcommand.cpp
+    command/deselectcommand.hpp
+    command/groupcommand.cpp
+    command/groupcommand.hpp
+    command/insertitemcommand.cpp
+    command/insertitemcommand.hpp
+    command/itemcommand.cpp
+    command/itemcommand.hpp
+    command/moveitemcommand.cpp
+    command/moveitemcommand.hpp
+    command/removeitemcommand.cpp
+    command/removeitemcommand.hpp
+    command/selectcommand.cpp
+    command/selectcommand.hpp
+    command/ungroupcommand.cpp
+    command/ungroupcommand.hpp
+    command/updatepropertycommand.cpp
+    command/updatepropertycommand.hpp
+    common/constants.hpp
+    common/renderitems.cpp
+    common/renderitems.hpp
+    common/utils/compression.cpp
+    common/utils/compression.hpp
+    common/utils/math.hpp
+    components/actionbar.cpp
+    components/actionbar.hpp
+    components/propertybar.cpp
+    components/propertybar.hpp
+    components/toolbar.cpp
+    components/toolbar.hpp
+    context/applicationcontext.cpp
+    context/applicationcontext.hpp
+    context/coordinatetransformer.cpp
+    context/coordinatetransformer.hpp
+    context/renderingcontext.cpp
+    context/renderingcontext.hpp
+    context/selectioncontext.cpp
+    context/selectioncontext.hpp
+    context/spatialcontext.cpp
+    context/spatialcontext.hpp
+    context/uicontext.cpp
+    context/uicontext.hpp
+    controller/controller.cpp
+    controller/controller.hpp
+    data-structures/cachegrid.cpp
+    data-structures/cachegrid.hpp
+    data-structures/orderedlist.cpp
+    data-structures/orderedlist.hpp
+    data-structures/quadtree.cpp
+    data-structures/quadtree.hpp
+    data-structures/quadtree.ipp
+    event/event.cpp
+    event/event.hpp
+    iconmanager/iconmanager.cpp
+    iconmanager/iconmanager.hpp
+    item/arrow.cpp
+    item/arrow.hpp
+    item/ellipse.cpp
+    item/ellipse.hpp
+    item/factory/arrowfactory.cpp
+    item/factory/arrowfactory.hpp
+    item/factory/ellipsefactory.cpp
+    item/factory/ellipsefactory.hpp
+    item/factory/freeformfactory.cpp
+    item/factory/freeformfactory.hpp
+    item/factory/itemfactory.cpp
+    item/factory/itemfactory.hpp
+    item/factory/linefactory.cpp
+    item/factory/linefactory.hpp
+    item/factory/rectanglefactory.cpp
+    item/factory/rectanglefactory.hpp
+    item/factory/textfactory.cpp
+    item/factory/textfactory.hpp
+    item/freeform.cpp
+    item/freeform.hpp
+    item/group.cpp
+    item/group.hpp
+    item/item.cpp
+    item/item.hpp
+    item/line.cpp
+    item/line.hpp
+    item/polygon.cpp
+    item/polygon.hpp
+    item/rectangle.cpp
+    item/rectangle.hpp
+    item/text.cpp
+    item/text.hpp
+    keybindings/action.cpp
+    keybindings/action.hpp
+    keybindings/actionmanager.cpp
+    keybindings/actionmanager.hpp
+    keybindings/keybindmanager.cpp
+    keybindings/keybindmanager.hpp
+    properties/property.cpp
+    properties/property.hpp
+    properties/widgets/actionswidget.cpp
+    properties/widgets/actionswidget.hpp
+    properties/widgets/erasersizewidget.cpp
+    properties/widgets/erasersizewidget.hpp
+    properties/widgets/fontsizewidget.cpp
+    properties/widgets/fontsizewidget.hpp
+    properties/widgets/propertymanager.cpp
+    properties/widgets/propertymanager.hpp
+    properties/widgets/propertywidget.cpp
+    properties/widgets/propertywidget.hpp
+    properties/widgets/strokecolorwidget.cpp
+    properties/widgets/strokecolorwidget.hpp
+    properties/widgets/strokewidthwidget.cpp
+    properties/widgets/strokewidthwidget.hpp
+    serializer/loader.cpp
+    serializer/loader.hpp
+    serializer/serializer.cpp
+    serializer/serializer.hpp
+    tools/arrowtool.cpp
+    tools/arrowtool.hpp
+    tools/drawingtool.cpp
+    tools/drawingtool.hpp
+    tools/ellipsetool.cpp
+    tools/ellipsetool.hpp
+    tools/erasertool.cpp
+    tools/erasertool.hpp
+    tools/freeformtool.cpp
+    tools/freeformtool.hpp
+    tools/linetool.cpp
+    tools/linetool.hpp
+    tools/movetool.cpp
+    tools/movetool.hpp
+    tools/polygondrawingtool.cpp
+    tools/polygondrawingtool.hpp
+    tools/rectangletool.cpp
+    tools/rectangletool.hpp
+    tools/selectiontool/selectiontool.cpp
+    tools/selectiontool/selectiontool.hpp
+    tools/selectiontool/selectiontoolmovestate.cpp
+    tools/selectiontool/selectiontoolmovestate.hpp
+    tools/selectiontool/selectiontoolselectstate.cpp
+    tools/selectiontool/selectiontoolselectstate.hpp
+    tools/selectiontool/selectiontoolstate.hpp
+    tools/texttool.cpp
+    tools/texttool.hpp
+    tools/tool.cpp
+    tools/tool.hpp
+    window/boardlayout.cpp
+    window/boardlayout.hpp
+    window/window.cpp
+    window/window.hpp
+    resources/res.qrc
+    resources/style.qss
+    drawycommandlineparser.h
+    drawycommandlineparser.cpp
+    libdrawywidgets_private_export.h
+)
+
+generate_export_header(libdrawywidgets BASE_NAME libdrawywidgets)
+
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD ON)
+endif()
+
+target_link_libraries(
+    libdrawywidgets
+    Qt6::Widgets
+    ${ZSTD_LINK_LIBRARIES}
+)
+
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
+    CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
+)
+
+MESSAGE(STATUS "************************** ${DRAWY_LIB_VERSION} ************************** ${DRAWY_LIB_SOVERSION}")
+
+set_target_properties(
+    libdrawywidgets
+    PROPERTIES
+        OUTPUT_NAME
+            drawywidgets
+        VERSION
+            ${DRAWY_LIB_VERSION}
+        SOVERSION
+            ${DRAWY_LIB_SOVERSION}
+)
+
+install(
+    TARGETS
+        libdrawywidgets
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY
+        NAMELINK_SKIP
+)
+
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()

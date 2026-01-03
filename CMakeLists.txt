@@ -2,9 +2,12 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-project(drawy VERSION 0.1 LANGUAGES CXX)
+set(DRAWY_VERSION "0.1")
+project(drawy VERSION ${DRAWY_VERSION})
+
+set(DRAWY_LIB_VERSION "${DRAWY_VERSION}")
 
 # Enable automatic handling of UI, MOC, and RCC files.
 set(CMAKE_AUTOUIC ON)
@@ -13,15 +16,13 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 set(KF_MIN_VERSION "6.19.0")
 set(QT_REQUIRED_VERSION "6.9.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
-set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
-include(ECMDeprecationSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
-kde_enable_exceptions()
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
+
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMPoQmTools)
@@ -30,7 +31,13 @@ include(ECMPoQmTools)
 include(KDEInstallDirs)
 include(FeatureSummary)
 include(ECMInstallIcons)
+include(GenerateExportHeader)
+include(ECMAddAppIcon)
+include(KDECMakeSettings)
 include(ECMAddTests)
+include(ECMDeprecationSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+kde_enable_exceptions()
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
@@ -77,7 +84,22 @@ endif()
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+if(BUILD_TESTING)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+    add_definitions(-DBUILD_TESTING)
+endif()
+
 add_subdirectory(src)
+
+# Set bundle properties for macOS / iOS.
+if (APPLE)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        MACOSX_BUNDLE_GUI_IDENTIFIER com.example.${PROJECT_NAME}
+        MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+        MACOSX_BUNDLE TRUE
+    )
+endif()
 
 ecm_qt_install_logging_categories(
     EXPORT DRAWY

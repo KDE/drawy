@@ -1,0 +1,166 @@
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+#include "erasertool.hpp"
+
+#include "drawy_debug.h"
+#include <QPainter>
+
+#include "canvas/canvas.hpp"
+#include "command/commandhistory.hpp"
+#include "command/removeitemcommand.hpp"
+#include "common/renderitems.hpp"
+#include "context/applicationcontext.hpp"
+#include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
+#include "context/selectioncontext.hpp"
+#include "context/spatialcontext.hpp"
+#include "context/uicontext.hpp"
+#include "data-structures/cachegrid.hpp"
+#include "data-structures/quadtree.hpp"
+#include "event/event.hpp"
+#include "item/item.hpp"
+#include "properties/widgets/propertymanager.hpp"
+
+EraserTool::EraserTool()
+{
+    m_cursor = QCursor(Qt::CrossCursor);
+
+    m_properties = {Property::EraserSize};
+}
+
+void EraserTool::mousePressed(ApplicationContext *context)
+{
+    Event *event{context->uiContext()->event()};
+
+    if (event->button() == Qt::LeftButton) {
+        m_isErasing = true;
+    }
+};
+
+// FIXME: messy code
+void EraserTool::mouseMoved(ApplicationContext *context)
+{
+    SpatialContext *spatialContext{context->spatialContext()};
+    RenderingContext *renderingContext{context->renderingContext()};
+    UIContext *uiContext{context->uiContext()};
+    CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
+
+    QPainter *overlayPainter{renderingContext->overlayPainter()};
+
+    // Erase previous box
+    overlayPainter->save();
+    overlayPainter->setCompositionMode(QPainter::CompositionMode_Source);
+    overlayPainter->fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
+
+    const int eraserSide{uiContext->propertyManager()->value(Property::EraserSize).value<int>()};
+    const QSize eraserSize{eraserSide, eraserSide};
+
+    // TODO: Adjustable eraser size
+    double eraserCenterOffset{eraserSide / 2.0 - 1};
+    QPointF eraserCenterOffsetPoint{eraserCenterOffset, eraserCenterOffset};
+
+    QRectF curRect{uiContext->event()->pos() - eraserCenterOffsetPoint, eraserSize};
+    QRectF worldEraserRect{transformer->viewToWorld(curRect)};
+
+    if (m_isErasing) {
+        QVector<std::shared_ptr<Item>> toBeErased{spatialContext->quadtree()->queryItems(worldEraserRect)};
+
+        for (const std::shared_ptr<Item> &item : toBeErased) {
+            if (m_toBeErased.count(item) > 0)
+                continue;
+
+            item->setProperty(Property::Opacity, Property{Common::eraseItemOpacity, Property::Opacity});
+
+            m_toBeErased.insert(item);
+            spatialContext->cacheGrid()->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
+            renderingContext->markForRender();
+        }
+
+        overlayPainter->fillRect(curRect, Common::eraserBackgroundColor);
+    }
+
+    renderingContext->markForUpdate();
+
+    // Draw eraser box
+    QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
+    overlayPainter->setPen(pen);
+    overlayPainter->drawRect(curRect);
+    overlayPainter->restore();
+
+    renderingContext->markForUpdate();
+
+    m_lastRect = curRect;
+}
+
+void EraserTool::mouseReleased(ApplicationContext *context)
+{
+    UIContext *uiContext{context->uiContext()};
+
+    if (uiContext->event()->button() == Qt::LeftButton) {
+        SpatialContext *spatialContext{context->spatialContext()};
+        RenderingContext *renderingContext{context->renderingContext()};
+        SelectionContext *selectionContext{context->selectionContext()};
+
+        QVector<std::shared_ptr<Item>> erasedItems;
+        for (const std::shared_ptr<Item> &item : m_toBeErased) {
+            if (selectionContext->selectedItems().count(item) > 0) {
+                selectionContext->selectedItems().erase(item);
+            }
+
+            // reset opacity
+            item->setProperty(Property::Opacity, Property{Common::maxItemOpacity, Property::Opacity});
+            erasedItems.push_back(item);
+        }
+
+        if (!erasedItems.empty()) {
+            CommandHistory *commandHistory{spatialContext->commandHistory()};
+            commandHistory->insert(std::make_shared<RemoveItemCommand>(erasedItems));
+        }
+
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
+
+        m_toBeErased.clear();
+        m_isErasing = false;
+    }
+}
+
+void EraserTool::leave([[maybe_unused]] ApplicationContext *context)
+{
+    cleanup();
+};
+
+void EraserTool::cleanup()
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+
+    context->uiContext()->event()->setButton(Qt::LeftButton);
+    mouseReleased(context);
+
+    auto overlayPainter{context->renderingContext()->overlayPainter()};
+    overlayPainter->save();
+
+    overlayPainter->setCompositionMode(QPainter::CompositionMode_Source);
+    overlayPainter->fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
+
+    context->renderingContext()->markForUpdate();
+
+    overlayPainter->restore();
+}
+
+Tool::Type EraserTool::type() const
+{
+    return Tool::Eraser;
+}
+
+QString EraserTool::tooltip() const
+{
+    return QObject::tr("Eraser Tool");
+}
+
+IconManager::Icon EraserTool::icon() const
+{
+    return IconManager::TOOL_ERASER;
+};
