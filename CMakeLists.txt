@@ -229,7 +229,7 @@ set(PROJECT_SOURCES
     src/window/boardlayout.hpp
     src/window/window.cpp
     src/window/window.hpp
-    src/main.cpp
+    src/apps/main.cpp
     src/resources/res.qrc
     src/resources/style.qss
     src/resources/drawy.qrc
