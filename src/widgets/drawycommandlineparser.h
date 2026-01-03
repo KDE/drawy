@@ -8,7 +8,6 @@
 #include "libdrawywidgets_export.h"
 #include <QString>
 class QCommandLineParser;
-// TODO add autotest
 class LIBDRAWYWIDGETS_EXPORT DrawyCommandLineParser
 {
 public:
