@@ -198,3 +198,5 @@ void UIContext::reset()
     m_lastTool = nullptr;
     toolBar()->changeTool(Tool::Selection);
 }
+
+#include "moc_uicontext.cpp"

@@ -67,3 +67,5 @@ const Property ActionsWidget::value() const
 {
     return Property{};
 }
+
+#include "moc_actionswidget.cpp"
