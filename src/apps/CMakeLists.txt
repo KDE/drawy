@@ -5,6 +5,7 @@
 add_executable(
     drawy
     main.cpp
+    drawy.qrc
 )
 ecm_create_qm_loader(drawy drawy_qt)
 
