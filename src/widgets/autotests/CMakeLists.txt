@@ -9,3 +9,4 @@ macro(add_drawy_core_unittest _source)
 endmacro()
 
 add_drawy_core_unittest(iconmanagertest.cpp)
+add_drawy_core_unittest(drawycommandlineparsertest.cpp)
