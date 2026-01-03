@@ -185,8 +185,6 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER 
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
 )
 
-MESSAGE(STATUS "************************** ${DRAWY_LIB_VERSION} ************************** ${DRAWY_LIB_SOVERSION}")
-
 set_target_properties(
     libdrawywidgets
     PROPERTIES
