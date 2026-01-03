@@ -3,11 +3,11 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2026.
+# SPDX-FileCopyrightText: 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-01 10:52+0100\n"
+"PO-Revision-Date: 2026-01-02 09:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -59,25 +59,16 @@ msgid "Dark Mode"
 msgstr "Mode fosc"
 
 #: keybindings/actionmanager.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Undo"
 msgctxt "ActionManager|"
 msgid "Undo"
 msgstr "Desfés"
 
 #: keybindings/actionmanager.cpp:38
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "Desagrupa la selecció"
+msgstr "Desfà l'última acció"
 
 #: keybindings/actionmanager.cpp:44
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Redo"
 msgctxt "ActionManager|"
 msgid "Redo"
 msgstr "Refés"
@@ -85,57 +76,39 @@ msgstr "Refés"
 #: keybindings/actionmanager.cpp:45
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr ""
+msgstr "Refà l'última acció desfeta"
 
 #: keybindings/actionmanager.cpp:51
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom In"
-msgstr "Apropa"
+msgstr "Amplia"
 
 #: keybindings/actionmanager.cpp:52
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom in"
-msgstr "Apropa"
+msgstr "Amplia"
 
 #: keybindings/actionmanager.cpp:58
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom Out"
-msgstr "Allunya"
+msgstr "Redueix"
 
 #: keybindings/actionmanager.cpp:59
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom out"
-msgstr "Allunya"
+msgstr "Redueix"
 
 #: keybindings/actionmanager.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "Eina esborrador"
+msgstr "Eina de forma lliure"
 
 #: keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr ""
+msgstr "Canvia a l'eina de dibuix de forma lliure"
 
 #: keybindings/actionmanager.cpp:72
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Eina esborrador"
@@ -143,28 +116,19 @@ msgstr "Eina esborrador"
 #: keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr ""
+msgstr "Canvia a l'eina esborrador"
 
 #: keybindings/actionmanager.cpp:79
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
 
 #: keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "Eina de selecció"
+msgstr "Canvia a l'eina de selecció"
 
 #: keybindings/actionmanager.cpp:86
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
@@ -172,12 +136,9 @@ msgstr "Eina de rectangles"
 #: keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr ""
+msgstr "Canvia a l'eina de dibuix de rectangles"
 
 #: keybindings/actionmanager.cpp:93
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
@@ -185,12 +146,9 @@ msgstr "Eina d'el·lipses"
 #: keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr ""
+msgstr "Canvia a l'eina de dibuix d'el·lipses"
 
 #: keybindings/actionmanager.cpp:100
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Eina de línies"
@@ -198,12 +156,9 @@ msgstr "Eina de línies"
 #: keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr ""
+msgstr "Canvia a l'eina de dibuix de línies"
 
 #: keybindings/actionmanager.cpp:107
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Eina de text"
@@ -211,12 +166,9 @@ msgstr "Eina de text"
 #: keybindings/actionmanager.cpp:108
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr ""
+msgstr "Canvia a l'eina de text"
 
 #: keybindings/actionmanager.cpp:114
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
@@ -224,12 +176,9 @@ msgstr "Eina de fletxes"
 #: keybindings/actionmanager.cpp:115
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr ""
+msgstr "Canvia a l'eina de dibuix de fletxes"
 
 #: keybindings/actionmanager.cpp:121
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Eina de moure"
@@ -237,80 +186,59 @@ msgstr "Eina de moure"
 #: keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr ""
+msgstr "Canvia a l'eina de moure"
 
 #: keybindings/actionmanager.cpp:128
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "Agrupa la selecció"
+msgstr "Agrupa elements"
 
 #: keybindings/actionmanager.cpp:129
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "Agrupa la selecció"
+msgstr "Agrupa els elements seleccionats"
 
 #: keybindings/actionmanager.cpp:135
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "Desagrupa la selecció"
+msgstr "Desagrupa elements"
 
 #: keybindings/actionmanager.cpp:136
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "Desagrupa la selecció"
+msgstr "Desagrupa els grups seleccionats"
 
 #: keybindings/actionmanager.cpp:142
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "Eina de selecció"
+msgstr "Selecciona-ho tot"
 
 #: keybindings/actionmanager.cpp:143
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr ""
+msgstr "Selecciona tots els elements"
 
 #: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr ""
+msgstr "Suprimeix"
 
 #: keybindings/actionmanager.cpp:150
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Delete selection"
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "Suprimeix la selecció"
+msgstr "Suprimeix els elements seleccionats"
 
 #: keybindings/actionmanager.cpp:156
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr ""
+msgstr "Desa"
 
 #: keybindings/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr ""
+msgstr "Desa el llenç"
 
 #: keybindings/actionmanager.cpp:163
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "ActionManager|"
 msgid "Open File"
 msgstr "Obre un fitxer"
@@ -318,109 +246,109 @@ msgstr "Obre un fitxer"
 #: keybindings/actionmanager.cpp:164
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr ""
+msgstr "Obre un fitxer existent"
 
 #: keybindings/actionmanager.cpp:170
 msgctxt "ActionManager|"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: keybindings/actionmanager.cpp:171
 msgctxt "ActionManager|"
 msgid "Ctrl+Y"
-msgstr ""
+msgstr "Ctrl+Y"
 
 #: keybindings/actionmanager.cpp:172
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+Z"
-msgstr ""
+msgstr "Ctrl+Maj+Z"
 
 #: keybindings/actionmanager.cpp:173
 msgctxt "ActionManager|"
 msgid "Ctrl++"
-msgstr ""
+msgstr "Ctrl++"
 
 #: keybindings/actionmanager.cpp:174
 msgctxt "ActionManager|"
 msgid "Ctrl+-"
-msgstr ""
+msgstr "Ctrl+-"
 
 #: keybindings/actionmanager.cpp:175
 msgctxt "ActionManager|"
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: keybindings/actionmanager.cpp:176
 msgctxt "ActionManager|"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: keybindings/actionmanager.cpp:177
 msgctxt "ActionManager|"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: keybindings/actionmanager.cpp:178
 msgctxt "ActionManager|"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: keybindings/actionmanager.cpp:179
 msgctxt "ActionManager|"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: keybindings/actionmanager.cpp:181
 msgctxt "ActionManager|"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: keybindings/actionmanager.cpp:182
 msgctxt "ActionManager|"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: keybindings/actionmanager.cpp:184
 msgctxt "ActionManager|"
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: keybindings/actionmanager.cpp:185
 msgctxt "ActionManager|"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
 #: keybindings/actionmanager.cpp:187
 msgctxt "ActionManager|"
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: keybindings/actionmanager.cpp:188
 msgctxt "ActionManager|"
 msgid "Ctrl+O"
-msgstr ""
+msgstr "Ctrl+O"
 
 #: keybindings/actionmanager.cpp:189
 msgctxt "ActionManager|"
 msgid "Ctrl+G"
-msgstr ""
+msgstr "Ctrl+G"
 
 #: keybindings/actionmanager.cpp:190
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+G"
-msgstr ""
+msgstr "Ctrl+Maj+G"
 
-#: main.cpp:20
+#: main.cpp:22
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
@@ -458,7 +386,7 @@ msgstr "Mida de la lletra"
 #: properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #: properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -477,12 +405,9 @@ msgid "Open File"
 msgstr "Obre un fitxer"
 
 #: serializer/serializer.cpp:124
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "Desa a un fitxer"
+msgstr "Desa el fitxer"
 
 #: tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -494,7 +419,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
 
-#: tools/erasertool.cpp:161
+#: tools/erasertool.cpp:160
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Eina esborrador"

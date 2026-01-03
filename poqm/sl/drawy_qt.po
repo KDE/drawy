@@ -1,525 +1,708 @@
-# SPDX-FileCopyrightText: 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2026 Matjaž Jeran <matjaz.jeran@amis.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-01 12:17+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-02 08:01+0200\n"
+"PO-Revision-Date: 2026-01-02 08:04+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Qt-Contexts: true\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 
 #: context/uicontext.cpp:72
+#, fuzzy
+#| msgid "Save to File"
 msgctxt "UIContext|"
 msgid "Save to File"
-msgstr "Dosyaya Kaydet"
+msgstr "Shrani v datoteko"
 
 #: context/uicontext.cpp:73
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:73"
+#| msgid "Open File"
 msgctxt "UIContext|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "Odpri datoteko"
 
 #: context/uicontext.cpp:74
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:74"
+#| msgid "Zoom Out"
 msgctxt "UIContext|"
 msgid "Zoom Out"
-msgstr "Uzaklaştır"
+msgstr "Pomanjšaj"
 
 #: context/uicontext.cpp:75
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:75"
+#| msgid "Zoom In"
 msgctxt "UIContext|"
 msgid "Zoom In"
-msgstr "Yakınlaştır"
+msgstr "Povečaj"
 
 #: context/uicontext.cpp:76 context/uicontext.cpp:122
+#, fuzzy
+#| msgid "Light Mode"
 msgctxt "UIContext|"
 msgid "Light Mode"
-msgstr "Açık Kip"
+msgstr "Svetli način"
 
 #: context/uicontext.cpp:77
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:77"
+#| msgid "Undo"
 msgctxt "UIContext|"
 msgid "Undo"
-msgstr "Koyu Kip"
+msgstr "Razveljavi"
 
 #: context/uicontext.cpp:78
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:78"
+#| msgid "Redo"
 msgctxt "UIContext|"
 msgid "Redo"
-msgstr "Yinele"
+msgstr "Uveljavi"
 
 #: context/uicontext.cpp:126
+#, fuzzy
+#| msgid "Dark Mode"
 msgctxt "UIContext|"
 msgid "Dark Mode"
-msgstr "Koyu Kip"
+msgstr "Temni način"
 
 #: keybindings/actionmanager.cpp:37
 #, fuzzy
-#| msgctxt "UIContext|"
+#| msgctxt "context/uicontext.cpp:77"
 #| msgid "Undo"
 msgctxt "ActionManager|"
 msgid "Undo"
-msgstr "Koyu Kip"
+msgstr "Razveljavi"
 
 #: keybindings/actionmanager.cpp:38
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
+#| msgid "Undo last action"
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "Seçimin grubunu kaldır"
+msgstr "Razveljavi zadnje dejanje"
 
 #: keybindings/actionmanager.cpp:44
 #, fuzzy
-#| msgctxt "UIContext|"
+#| msgctxt "context/uicontext.cpp:78"
 #| msgid "Redo"
 msgctxt "ActionManager|"
 msgid "Redo"
-msgstr "Yinele"
+msgstr "Uveljavi"
 
 #: keybindings/actionmanager.cpp:45
+#, fuzzy
+#| msgid "Redo last undone action"
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr ""
+msgstr "Uveljavi zadnje razveljavljeno dejanje"
 
 #: keybindings/actionmanager.cpp:51
 #, fuzzy
-#| msgctxt "UIContext|"
+#| msgctxt "context/uicontext.cpp:75"
 #| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom In"
-msgstr "Yakınlaştır"
+msgstr "Povečaj"
 
 #: keybindings/actionmanager.cpp:52
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
+#| msgid "Zoom in"
 msgctxt "ActionManager|"
 msgid "Zoom in"
-msgstr "Yakınlaştır"
+msgstr "Povečaj"
 
 #: keybindings/actionmanager.cpp:58
 #, fuzzy
-#| msgctxt "UIContext|"
+#| msgctxt "context/uicontext.cpp:74"
 #| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom Out"
-msgstr "Uzaklaştır"
+msgstr "Pomanjšaj"
 
 #: keybindings/actionmanager.cpp:59
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
+#| msgid "Zoom out"
 msgctxt "ActionManager|"
 msgid "Zoom out"
-msgstr "Uzaklaştır"
+msgstr "Pomanjšaj"
 
 #: keybindings/actionmanager.cpp:65
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
+#| msgid "Freeform Tool"
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "Silgi Aracı"
+msgstr "Orodje za prosto oblikovanje"
 
 #: keybindings/actionmanager.cpp:66
+#, fuzzy
+#| msgid "Switch to freeform drawing tool"
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr ""
+msgstr "Preklopi na orodje za prosto oblikovanje"
 
 #: keybindings/actionmanager.cpp:72
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:72"
 #| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
-msgstr "Silgi Aracı"
+msgstr "Orodje radirke"
 
 #: keybindings/actionmanager.cpp:73
+#, fuzzy
+#| msgid "Switch to eraser tool"
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr ""
+msgstr "Preklopi na radirko"
 
 #: keybindings/actionmanager.cpp:79
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:79"
 #| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Selection Tool"
-msgstr "Seçim Aracı"
+msgstr "Orodje za izbiro"
 
 #: keybindings/actionmanager.cpp:80
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
+#| msgid "Switch to selection tool"
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "Seçim Aracı"
+msgstr "Preklopi na orodje za izbiro"
 
 #: keybindings/actionmanager.cpp:86
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:86"
 #| msgid "Rectangle Tool"
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
-msgstr "Dörtgen Aracı"
+msgstr "Orodje za pravokotnik"
 
 #: keybindings/actionmanager.cpp:87
+#, fuzzy
+#| msgid "Switch to rectangle drawing tool"
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr ""
+msgstr "Preklopi na orodje za risanje pravokotnika"
 
 #: keybindings/actionmanager.cpp:93
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:93"
 #| msgid "Ellipse Tool"
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
-msgstr "Elips Aracı"
+msgstr "Orodje za elipso"
 
 #: keybindings/actionmanager.cpp:94
+#, fuzzy
+#| msgid "Switch to ellipse drawing tool"
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr ""
+msgstr "Preklopi na orodje za risanje elipse"
 
 #: keybindings/actionmanager.cpp:100
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:100"
 #| msgid "Line Tool"
 msgctxt "ActionManager|"
 msgid "Line Tool"
-msgstr "Çizgi Aracı"
+msgstr "Orodje za črte"
 
 #: keybindings/actionmanager.cpp:101
+#, fuzzy
+#| msgid "Switch to line drawing tool"
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr ""
+msgstr "Preklopi na orodje za risanje črt"
 
 #: keybindings/actionmanager.cpp:107
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:107"
 #| msgid "Text Tool"
 msgctxt "ActionManager|"
 msgid "Text Tool"
-msgstr "Metin Aracı"
+msgstr "Orodje za besedilo"
 
 #: keybindings/actionmanager.cpp:108
+#, fuzzy
+#| msgid "Switch to the text tool"
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr ""
+msgstr "Preklopi na orodje za besedilo"
 
 #: keybindings/actionmanager.cpp:114
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:114"
 #| msgid "Arrow Tool"
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
-msgstr "Ok Aracı"
+msgstr "Orodje za puščice"
 
 #: keybindings/actionmanager.cpp:115
+#, fuzzy
+#| msgid "Switch to arrow drawing tool"
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr ""
+msgstr "Preklopi na orodje za risanje puščic"
 
 #: keybindings/actionmanager.cpp:121
 #, fuzzy
-#| msgctxt "QObject|"
+#| msgctxt "keybindings/actionmanager.cpp:121"
 #| msgid "Move Tool"
 msgctxt "ActionManager|"
 msgid "Move Tool"
-msgstr "Taşıma Aracı"
+msgstr "Orodje za premikanje"
 
 #: keybindings/actionmanager.cpp:122
+#, fuzzy
+#| msgid "Switch to move tool"
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr ""
+msgstr "Preklopi na orodje za premikanje"
 
 #: keybindings/actionmanager.cpp:128
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
+#| msgid "Group Elements"
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "Seçimi grupla"
+msgstr "Združi elemente"
 
 #: keybindings/actionmanager.cpp:129
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
+#| msgid "Groups selected items"
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "Seçimi grupla"
+msgstr "Združi izbrane elemente"
 
 #: keybindings/actionmanager.cpp:135
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
+#| msgid "Ungroup Elements"
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "Seçimin grubunu kaldır"
+msgstr "Razdruži elemente"
 
 #: keybindings/actionmanager.cpp:136
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
+#| msgid "Ungroups selected groups"
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "Seçimin grubunu kaldır"
+msgstr "Razdruži izbrane skupine"
 
 #: keybindings/actionmanager.cpp:142
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
+#| msgid "Select All"
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "Seçim Aracı"
+msgstr "Izberi vse"
 
 #: keybindings/actionmanager.cpp:143
+#, fuzzy
+#| msgid "Select all items"
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr ""
+msgstr "Izberi vse elemente"
 
 #: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
+#, fuzzy
+#| msgid "Delete"
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: keybindings/actionmanager.cpp:150
 #, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Delete selection"
+#| msgid "Deletes selected items"
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "Seçimi sil"
+msgstr "Izbriše izbrane elemente"
 
 #: keybindings/actionmanager.cpp:156
+#, fuzzy
+#| msgid "Save"
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: keybindings/actionmanager.cpp:157
+#, fuzzy
+#| msgid "Save canvas"
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr ""
+msgstr "Shrani platno"
 
 #: keybindings/actionmanager.cpp:163
 #, fuzzy
-#| msgctxt "UIContext|"
+#| msgctxt "context/uicontext.cpp:73"
 #| msgid "Open File"
 msgctxt "ActionManager|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "Odpri datoteko"
 
 #: keybindings/actionmanager.cpp:164
+#, fuzzy
+#| msgid "Open an existing file"
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr ""
+msgstr "Odpri obstoječo datoteko"
 
 #: keybindings/actionmanager.cpp:170
+#, fuzzy
+#| msgid "Ctrl+Z"
 msgctxt "ActionManager|"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: keybindings/actionmanager.cpp:171
+#, fuzzy
+#| msgid "Ctrl+Y"
 msgctxt "ActionManager|"
 msgid "Ctrl+Y"
-msgstr ""
+msgstr "Ctrl+Y"
 
 #: keybindings/actionmanager.cpp:172
+#, fuzzy
+#| msgid "Ctrl+Shift+Z"
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+Z"
-msgstr ""
+msgstr "Ctrl+dvigalka+Z"
 
 #: keybindings/actionmanager.cpp:173
+#, fuzzy
+#| msgid "Ctrl++"
 msgctxt "ActionManager|"
 msgid "Ctrl++"
-msgstr ""
+msgstr "Ctrl++"
 
 #: keybindings/actionmanager.cpp:174
+#, fuzzy
+#| msgid "Ctrl+-"
 msgctxt "ActionManager|"
 msgid "Ctrl+-"
-msgstr ""
+msgstr "Ctrl+-"
 
 #: keybindings/actionmanager.cpp:175
+#, fuzzy
+#| msgid "T"
 msgctxt "ActionManager|"
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: keybindings/actionmanager.cpp:176
+#, fuzzy
+#| msgid "P"
 msgctxt "ActionManager|"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: keybindings/actionmanager.cpp:177
+#, fuzzy
+#| msgid "B"
 msgctxt "ActionManager|"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: keybindings/actionmanager.cpp:178
+#, fuzzy
+#| msgid "E"
 msgctxt "ActionManager|"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: keybindings/actionmanager.cpp:179
+#, fuzzy
+#| msgid "S"
 msgctxt "ActionManager|"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: keybindings/actionmanager.cpp:180
+#, fuzzy
+#| msgid "R"
 msgctxt "ActionManager|"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: keybindings/actionmanager.cpp:181
+#, fuzzy
+#| msgid "O"
 msgctxt "ActionManager|"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: keybindings/actionmanager.cpp:182
+#, fuzzy
+#| msgid "L"
 msgctxt "ActionManager|"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: keybindings/actionmanager.cpp:183
+#, fuzzy
+#| msgid "A"
 msgctxt "ActionManager|"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: keybindings/actionmanager.cpp:184
+#, fuzzy
+#| msgid "M"
 msgctxt "ActionManager|"
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: keybindings/actionmanager.cpp:185
+#, fuzzy
+#| msgid "Ctrl+A"
 msgctxt "ActionManager|"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
 #: keybindings/actionmanager.cpp:187
+#, fuzzy
+#| msgid "Ctrl+S"
 msgctxt "ActionManager|"
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: keybindings/actionmanager.cpp:188
+#, fuzzy
+#| msgid "Ctrl+O"
 msgctxt "ActionManager|"
 msgid "Ctrl+O"
-msgstr ""
+msgstr "Ctrl+O"
 
 #: keybindings/actionmanager.cpp:189
+#, fuzzy
+#| msgid "Ctrl+G"
 msgctxt "ActionManager|"
 msgid "Ctrl+G"
-msgstr ""
+msgstr "Ctrl+G"
 
 #: keybindings/actionmanager.cpp:190
+#, fuzzy
+#| msgid "Ctrl+Shift+G"
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+G"
-msgstr ""
+msgstr "Ctrl+dvigalka+G"
 
 #: main.cpp:22
+#, fuzzy
+#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
-msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
+msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
 #: properties/widgets/actionswidget.cpp:34
+#, fuzzy
+#| msgid "Delete selection"
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
-msgstr "Seçimi sil"
+msgstr "Izbriši izbor"
 
 #: properties/widgets/actionswidget.cpp:35
+#, fuzzy
+#| msgid "Group selection"
 msgctxt "ActionsWidget|"
 msgid "Group selection"
-msgstr "Seçimi grupla"
+msgstr "Združi izbor"
 
 #: properties/widgets/actionswidget.cpp:36
+#, fuzzy
+#| msgid "Ungroup selection"
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
-msgstr "Seçimin grubunu kaldır"
+msgstr "Razdruži izbor"
 
 #: properties/widgets/actionswidget.cpp:63
+#, fuzzy
+#| msgid "Actions"
 msgctxt "ActionsWidget|"
 msgid "Actions"
-msgstr "Eylemler"
+msgstr "Dejanja"
 
 #: properties/widgets/erasersizewidget.cpp:28
+#, fuzzy
+#| msgid "Eraser Size"
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
-msgstr "Silgi Boyutu"
+msgstr "Velikost radirke"
 
 #: properties/widgets/fontsizewidget.cpp:29
+#, fuzzy
+#| msgid "Font Size"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
-msgstr "Yazıtipi Puntosu"
+msgstr "Velikost pisave"
 
 #: properties/widgets/strokecolorwidget.cpp:50
+#, fuzzy
+#| msgid "Color"
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr ""
+msgstr "Barva"
 
 #: properties/widgets/strokewidthwidget.cpp:28
+#, fuzzy
+#| msgid "Thickness"
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
-msgstr "Kalınlık"
+msgstr "Debelina"
 
 #: serializer/loader.cpp:32
-#, qt-format
+#, fuzzy, qt-format
+#| msgid "Drawy (*.%1)"
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
 #: serializer/loader.cpp:36
+#, fuzzy
+#| msgctxt "context/uicontext.cpp:73"
+#| msgid "Open File"
 msgctxt "QObject|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "Odpri datoteko"
 
 #: serializer/serializer.cpp:124
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
+#| msgid "Save File"
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "Dosyaya Kaydet"
+msgstr "Shrani datoteko"
 
 #: tools/arrowtool.cpp:16
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:114"
+#| msgid "Arrow Tool"
 msgctxt "QObject|"
 msgid "Arrow Tool"
-msgstr "Ok Aracı"
+msgstr "Orodje za puščice"
 
 #: tools/ellipsetool.cpp:16
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:93"
+#| msgid "Ellipse Tool"
 msgctxt "QObject|"
 msgid "Ellipse Tool"
-msgstr "Elips Aracı"
+msgstr "Orodje za elipso"
 
 #: tools/erasertool.cpp:160
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:72"
+#| msgid "Eraser Tool"
 msgctxt "QObject|"
 msgid "Eraser Tool"
-msgstr "Silgi Aracı"
+msgstr "Orodje radirke"
 
 #: tools/freeformtool.cpp:45
+#, fuzzy
+#| msgid "Pen Tool"
 msgctxt "QObject|"
 msgid "Pen Tool"
-msgstr "Kalem Aracı"
+msgstr "Orodje pero"
 
 #: tools/linetool.cpp:16
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:100"
+#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Line Tool"
-msgstr "Çizgi Aracı"
+msgstr "Orodje za črte"
 
 #: tools/movetool.cpp:77
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:121"
+#| msgid "Move Tool"
 msgctxt "QObject|"
 msgid "Move Tool"
-msgstr "Taşıma Aracı"
+msgstr "Orodje za premikanje"
 
 #: tools/rectangletool.cpp:16
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:86"
+#| msgid "Rectangle Tool"
 msgctxt "QObject|"
 msgid "Rectangle Tool"
-msgstr "Dörtgen Aracı"
+msgstr "Orodje za pravokotnik"
 
 #: tools/selectiontool/selectiontool.cpp:134
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:79"
+#| msgid "Selection Tool"
 msgctxt "QObject|"
 msgid "Selection Tool"
-msgstr "Seçim Aracı"
+msgstr "Orodje za izbiro"
 
 #: tools/texttool.cpp:497
+#, fuzzy
+#| msgctxt "keybindings/actionmanager.cpp:107"
+#| msgid "Text Tool"
 msgctxt "QObject|"
 msgid "Text Tool"
-msgstr "Metin Aracı"
+msgstr "Orodje za besedilo"
+
+#~ msgctxt "keybindings/actionmanager.cpp:37"
+#~ msgid "Undo"
+#~ msgstr "Razveljavi"
+
+#~ msgctxt "keybindings/actionmanager.cpp:44"
+#~ msgid "Redo"
+#~ msgstr "Uveljavi"
+
+#~ msgctxt "keybindings/actionmanager.cpp:51"
+#~ msgid "Zoom In"
+#~ msgstr "Povečaj"
+
+#~ msgctxt "keybindings/actionmanager.cpp:58"
+#~ msgid "Zoom Out"
+#~ msgstr "Pomanjšaj"
+
+#~ msgctxt "keybindings/actionmanager.cpp:163"
+#~ msgid "Open File"
+#~ msgstr "Odpri datoteko"
+
+#~ msgctxt "serializer/loader.cpp:36"
+#~ msgid "Open File"
+#~ msgstr "Odpri datoteko"
+
+#~ msgctxt "tools/arrowtool.cpp:16"
+#~ msgid "Arrow Tool"
+#~ msgstr "Orodje puščica"
+
+#~ msgctxt "tools/ellipsetool.cpp:16"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Orodje elipsa"
+
+#~ msgctxt "tools/erasertool.cpp:161"
+#~ msgid "Eraser Tool"
+#~ msgstr "Orodje radirka"
+
+#~ msgctxt "tools/linetool.cpp:16"
+#~ msgid "Line Tool"
+#~ msgstr "Orodje črta"
+
+#~ msgctxt "tools/movetool.cpp:77"
+#~ msgid "Move Tool"
+#~ msgstr "Orodje premika"
+
+#~ msgctxt "tools/rectangletool.cpp:16"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Orodje pravokotnik"
+
+#~ msgctxt "tools/selectiontool/selectiontool.cpp:134"
+#~ msgid "Selection Tool"
+#~ msgstr "Orodje izbire"
+
+#~ msgctxt "tools/texttool.cpp:497"
+#~ msgid "Text Tool"
+#~ msgstr "Orodje besedila"

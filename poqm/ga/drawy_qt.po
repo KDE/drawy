@@ -341,7 +341,7 @@ msgctxt "ActionManager|"
 msgid "Ctrl+Shift+G"
 msgstr ""
 
-#: main.cpp:20
+#: main.cpp:22
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr ""
@@ -412,7 +412,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr ""
 
-#: tools/erasertool.cpp:161
+#: tools/erasertool.cpp:160
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr ""
