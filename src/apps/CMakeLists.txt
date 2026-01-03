@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
