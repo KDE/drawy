@@ -25,12 +25,12 @@ kde_enable_exceptions()
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMPoQmTools)
-include(GNUInstallDirs)
 include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
 include(KDEInstallDirs)
 include(FeatureSummary)
 include(ECMInstallIcons)
+include(ECMAddTests)
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
@@ -39,7 +39,10 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
     COMPONENTS
         Widgets
 )
-
+if(BUILD_TESTING)
+    find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Test)
+    add_definitions(-DBUILD_TESTING)
+endif()
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash)
 option(
     USE_UNITY_CMAKE_SUPPORT
