@@ -36,42 +36,42 @@ ActionManager::ActionManager(ApplicationContext *context)
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
     Action *undoAction{new Action{tr("Undo"),
                                   tr("Undo last action"),
-                                  [&]() {
+                                  [this]() {
                                       this->undo();
                                   },
                                   context}};
 
     Action *redoAction{new Action{tr("Redo"),
                                   tr("Redo last undone action"),
-                                  [&]() {
+                                  [this]() {
                                       this->redo();
                                   },
                                   context}};
 
     Action *zoomInAction{new Action{tr("Zoom In"),
                                     tr("Zoom in"),
-                                    [&]() {
+                                    [this]() {
                                         this->zoomIn();
                                     },
                                     context}};
 
     Action *zoomOutAction{new Action{tr("Zoom Out"),
                                      tr("Zoom out"),
-                                     [&]() {
+                                     [this]() {
                                          this->zoomOut();
                                      },
                                      context}};
 
     Action *freeformToolAction{new Action{tr("Freeform Tool"),
                                           tr("Switch to freeform drawing tool"),
-                                          [&]() {
+                                          [this]() {
                                               this->switchToFreeformTool();
                                           },
                                           context}};
 
     Action *eraserToolAction{new Action{tr("Eraser Tool"),
                                         tr("Switch to eraser tool"),
-                                        [&]() {
+                                        [this]() {
                                             this->switchToEraserTool();
                                         },
                                         context}};
@@ -85,14 +85,14 @@ ActionManager::ActionManager(ApplicationContext *context)
 
     Action *rectangleToolAction{new Action{tr("Rectangle Tool"),
                                            tr("Switch to rectangle drawing tool"),
-                                           [&]() {
+                                           [this]() {
                                                this->switchToRectangleTool();
                                            },
                                            context}};
 
     Action *ellipseToolAction{new Action{tr("Ellipse Tool"),
                                          tr("Switch to ellipse drawing tool"),
-                                         [&]() {
+                                         [this]() {
                                              this->switchToEllipseTool();
                                          },
                                          context}};
@@ -106,63 +106,63 @@ ActionManager::ActionManager(ApplicationContext *context)
 
     Action *textToolAction{new Action{tr("Text Tool"),
                                       tr("Switch to the text tool"),
-                                      [&]() {
+                                      [this]() {
                                           this->switchToTextTool();
                                       },
                                       context}};
 
     Action *arrowToolAction{new Action{tr("Arrow Tool"),
                                        tr("Switch to arrow drawing tool"),
-                                       [&]() {
+                                       [this]() {
                                            this->switchToArrowTool();
                                        },
                                        context}};
 
     Action *moveToolAction{new Action{tr("Move Tool"),
                                       tr("Switch to move tool"),
-                                      [&]() {
+                                      [this]() {
                                           this->switchToMoveTool();
                                       },
                                       context}};
 
     Action *groupAction{new Action{tr("Group Elements"),
                                    tr("Groups selected items"),
-                                   [&]() {
+                                   [this]() {
                                        this->groupItems();
                                    },
                                    context}};
 
     Action *unGroupAction{new Action{tr("Ungroup Elements"),
                                      tr("Ungroups selected groups"),
-                                     [&]() {
+                                     [this]() {
                                          this->ungroupItems();
                                      },
                                      context}};
 
     Action *selectAllAction{new Action{tr("Select All"),
                                        tr("Select all items"),
-                                       [&]() {
+                                       [this]() {
                                            this->selectAll();
                                        },
                                        context}};
 
     Action *deleteAction{new Action{tr("Delete"),
                                     tr("Deletes selected items"),
-                                    [&]() {
+                                    [this]() {
                                         this->deleteSelection();
                                     },
                                     context}};
 
     Action *saveAction{new Action{tr("Save"),
                                   tr("Save canvas"),
-                                  [&]() {
+                                  [this]() {
                                       this->saveToFile();
                                   },
                                   context}};
 
     Action *openFileAction{new Action{tr("Open File"),
                                       tr("Open an existing file"),
-                                      [&]() {
+                                      [this]() {
                                           this->loadFromFile();
                                       },
                                       context}};
