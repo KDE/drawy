@@ -22,16 +22,16 @@ bool RectangleItem::intersects(const QRectF &rect)
     if (!boundingBox().intersects(rect))
         return false;
 
-    QRectF box{start(), end()};
-    QPointF p{box.topLeft()};
-    QPointF q{box.topRight()};
-    QPointF r{box.bottomRight()};
-    QPointF s{box.bottomLeft()};
+    const QRectF box{start(), end()};
+    const QPointF p{box.topLeft()};
+    const QPointF q{box.topRight()};
+    const QPointF r{box.bottomRight()};
+    const QPointF s{box.bottomLeft()};
 
-    QPointF a{rect.topLeft()};
-    QPointF b{rect.topRight()};
-    QPointF c{rect.bottomRight()};
-    QPointF d{rect.bottomLeft()};
+    const QPointF a{rect.topLeft()};
+    const QPointF b{rect.topRight()};
+    const QPointF c{rect.bottomRight()};
+    const QPointF d{rect.bottomLeft()};
 
     return (Common::Utils::Math::intersects(QLineF{p, q}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{b, c})
             || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{d, a})
@@ -45,7 +45,7 @@ bool RectangleItem::intersects(const QRectF &rect)
 
 bool RectangleItem::intersects(const QLineF &line)
 {
-    QRectF box{start(), end()};
+    const QRectF box{start(), end()};
     return Common::Utils::Math::intersects(box, line);
 }
 

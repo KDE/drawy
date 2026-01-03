@@ -29,7 +29,7 @@ using namespace Qt::Literals::StringLiterals;
 void Loader::loadFromFile(ApplicationContext *context)
 {
     // file filter
-    QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+    const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
     // ask for file (handle cancel)
     QDir homeDir{QDir::home()};
@@ -43,7 +43,7 @@ void Loader::loadFromFile(ApplicationContext *context)
         return;
     }
 
-    QByteArray compressedByteArray = file.readAll();
+    const QByteArray compressedByteArray = file.readAll();
     file.close();
 
     QByteArray byteArray;
@@ -172,7 +172,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 Property Loader::createProperty(const QJsonObject &obj)
 {
     Property::Type type{static_cast<Property::Type>(value(obj, u"type"_s).toInt())};
-    QVariant val{value(obj, u"value"_s).toVariant()};
+    const QVariant val{value(obj, u"value"_s).toVariant()};
 
     return Property{val, type};
 }

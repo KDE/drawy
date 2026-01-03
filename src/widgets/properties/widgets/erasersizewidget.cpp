@@ -26,7 +26,7 @@ EraserSizeWidget::EraserSizeWidget(QWidget *parent)
 QString EraserSizeWidget::name() const
 {
     return tr("Eraser Size");
-};
+}
 
 const Property EraserSizeWidget::value() const
 {

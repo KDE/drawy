@@ -37,7 +37,7 @@ void TextItem::createTextBox(const QPointF position)
     m_boundingBox.setTopLeft(position);
     m_boundingBox.setWidth(Common::defaultTextBoxWidth);
 
-    QFontMetricsF metrics{getFont()};
+    const QFontMetricsF metrics{getFont()};
     m_boundingBox.setHeight(metrics.height());
 }
 
@@ -55,7 +55,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 {
     painter.save();
 
-    QRectF curBox{m_boundingBox.translated(-offset)};
+    const QRectF curBox{m_boundingBox.translated(-offset)};
     qsizetype cur{caret()};
 
     if (mode() == Mode::Edit) {
@@ -183,8 +183,8 @@ void TextItem::setCaret(qsizetype index, bool updatePosInLine)
 
 int TextItem::getLineFromY(double yPos) const
 {
-    QFontMetricsF metrics{getFont()};
-    double lineHeight{metrics.height()};
+    const QFontMetricsF metrics{getFont()};
+    const double lineHeight{metrics.height()};
 
     if (lineHeight <= 0)
         return 0;
@@ -195,7 +195,7 @@ int TextItem::getLineFromY(double yPos) const
 
 qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
 {
-    QFontMetricsF metrics{getFont()};
+    const QFontMetricsF metrics{getFont()};
 
     auto [start, end] = getLineRange(lineNumber);
     const QString line{m_text.mid(start, end - start + 1)};
@@ -280,8 +280,8 @@ void TextItem::insertText(const QString &text)
     if (text.isEmpty())
         return;
 
-    qsizetype textSize{text.size()};
-    qsizetype cur{caret()};
+    const qsizetype textSize{text.size()};
+    const qsizetype cur{caret()};
 
     m_text.insert(cur, text);
     setCaret(cur + textSize);
@@ -361,7 +361,7 @@ QPen TextItem::getPen() const
 
 std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
 {
-    qsizetype len{m_text.length()};
+    const qsizetype len{m_text.length()};
 
     qsizetype startIndex{0};
     for (qsizetype pos{0}; pos < len; pos++) {

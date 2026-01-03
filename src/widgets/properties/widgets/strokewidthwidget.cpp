@@ -26,7 +26,7 @@ StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
 QString StrokeWidthWidget::name() const
 {
     return tr("Thickness");
-};
+}
 
 const Property StrokeWidthWidget::value() const
 {
