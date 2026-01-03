@@ -25,5 +25,5 @@ Comment[tr]=Kullanışlı, sınırsız beyin fırtınası aracın
 Comment[uk]=Ваша зручна, нескінченна програма для мозкових штурмів
 Comment[zh_TW]=好用的無限畫布腦力激盪工具
 Exec=drawy
-Icon=io.github.prayag2.Drawy
+Icon=drawy
 Categories=Graphics
