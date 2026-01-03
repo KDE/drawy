@@ -49,5 +49,5 @@ inline constexpr qreal tabStopDistance{4};
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
 inline constexpr qreal zoomInLimit{300}; // 3000%
 
-inline constexpr std::string_view drawyFileExt{"drawy"};
+inline QString drawyFileExt{u"drawy"_s};
 }; // namespace Common

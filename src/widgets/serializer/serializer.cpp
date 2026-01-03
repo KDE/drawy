@@ -8,7 +8,6 @@
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QStandardPaths>
-#include <format>
 #include <memory>
 
 #include "common/constants.hpp"
@@ -117,11 +116,11 @@ void Serializer::saveToFile()
 
     QDir homeDir{QDir::home()};
 
-    auto text = std::format("Untitled.{}", Common::drawyFileExt);
-    QString defaultFilePath = homeDir.filePath(QString::fromStdString(text));
+    auto text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+    const QString defaultFilePath = homeDir.filePath(text);
 
-    text = std::format("Drawy (*.{})", Common::drawyFileExt);
-    QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, QString::fromStdString(text))};
+    text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+    QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
 
     auto data{doc.toJson(QJsonDocument::Compact)};
     auto compressedData{Common::Utils::Compression::compressData(data)};
