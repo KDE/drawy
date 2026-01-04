@@ -7,6 +7,7 @@
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
+#include "common/constants.hpp"
 #include "common/renderitems.hpp"
 #include "components/actionbar.hpp"
 #include "components/propertybar.hpp"

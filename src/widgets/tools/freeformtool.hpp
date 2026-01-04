@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <QElapsedTimer>
-
 #include "drawingtool.hpp"
 class FreeformItem;
 

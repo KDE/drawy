@@ -4,10 +4,9 @@
 
 #include "erasertool.hpp"
 
-#include "drawy_debug.h"
+#include "common/constants.hpp"
 #include <QPainter>
 
-#include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/removeitemcommand.hpp"
 #include "common/renderitems.hpp"

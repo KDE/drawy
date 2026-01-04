@@ -6,7 +6,6 @@
 
 #include <unordered_set>
 
-#include "common/constants.hpp"
 #include "tool.hpp"
 class Item;
 
