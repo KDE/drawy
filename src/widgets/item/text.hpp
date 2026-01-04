@@ -24,8 +24,8 @@ public:
 
     void createTextBox(const QPointF position);
 
-    enum class Mode {
-        Edit,
+    enum class Mode : int8_t {
+        Edit = 0,
         Normal
     };
 
