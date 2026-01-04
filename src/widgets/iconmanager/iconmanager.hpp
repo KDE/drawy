@@ -37,6 +37,7 @@ public:
         UI_ANGLE_UP,
         UI_ANGLE_DOWN,
     };
+    Q_ENUM(Icon)
 
     QIcon icon(IconManager::Icon icon) const;
 

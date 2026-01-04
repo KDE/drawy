@@ -18,27 +18,27 @@ ActionBar::ActionBar(QWidget *parent)
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 }
 
-void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id)
+void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon)
 {
-    if (m_map.contains(id)) {
+    if (m_map.contains(icon)) {
         throw std::logic_error("Button with same id exists in the ActionBar.");
     }
 
     ApplicationContext *context{ApplicationContext::instance()};
 
-    m_map[id] = new QPushButton{this};
-    m_map[id]->setIcon(context->uiContext()->iconManager()->icon(icon));
-    m_map[id]->setToolTip(tooltip);
+    m_map[icon] = new QPushButton{this};
+    m_map[icon]->setIcon(context->uiContext()->iconManager()->icon(icon));
+    m_map[icon]->setToolTip(tooltip);
 
-    m_map[id]->setProperty("class", u"drawlyActionButton"_s);
-    m_map[id]->setCursor(Qt::PointingHandCursor);
-    m_layout->addWidget(m_map[id]);
+    m_map[icon]->setProperty("class", u"drawlyActionButton"_s);
+    m_map[icon]->setCursor(Qt::PointingHandCursor);
+    m_layout->addWidget(m_map[icon]);
 }
 
-QPushButton *ActionBar::button(int id)
+QPushButton *ActionBar::button(IconManager::Icon id)
 {
     if (!m_map.contains(id)) {
-        throw std::logic_error(std::format("Button with id {} was not found.", id));
+        throw std::logic_error(std::format("Button with id {} was not found.", static_cast<int>(id)));
     }
 
     return m_map[id];

@@ -17,10 +17,10 @@ class ActionBar : public QFrame
 public:
     explicit ActionBar(QWidget *parent = nullptr);
 
-    void addButton(const QString &tooltip, IconManager::Icon icon, int id);
-    [[nodiscard]] QPushButton *button(int id);
+    void addButton(const QString &tooltip, IconManager::Icon icon);
+    [[nodiscard]] QPushButton *button(IconManager::Icon id);
 
 private:
-    QHash<int, QPushButton *> m_map{};
+    QHash<IconManager::Icon, QPushButton *> m_map{};
     QHBoxLayout *const m_layout;
 };

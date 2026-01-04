@@ -70,53 +70,53 @@ void UIContext::setUIContext()
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Move);
 
     // TODO: Define their functions somewhere else
-    m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE, 6);
-    m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE, 7);
-    m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT, 1);
-    m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN, 2);
-    m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE, 3);
-    m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO, 4);
-    m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO, 5);
+    m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
+    m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
+    m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
+    m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN);
+    m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
+    m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
+    m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
-    connect(m_actionBar->button(1), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_ZOOM_OUT), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
-    connect(m_actionBar->button(2), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_ZOOM_IN), &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
-    connect(m_actionBar->button(4), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_UNDO), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->undo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
 
-    connect(m_actionBar->button(5), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_REDO), &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->redo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
 
-    connect(m_actionBar->button(6), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_SAVE), &QPushButton::clicked, this, [this]() {
         Serializer serializer{};
 
         serializer.serialize(m_applicationContext);
         serializer.saveToFile();
     });
 
-    connect(m_actionBar->button(7), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_OPEN_FILE), &QPushButton::clicked, this, [this]() {
         Loader loader{};
 
         loader.loadFromFile(m_applicationContext);
     });
 
-    connect(m_actionBar->button(3), &QPushButton::clicked, this, [this]() {
+    connect(m_actionBar->button(IconManager::Icon::ACTION_LIGHT_MODE), &QPushButton::clicked, this, [this]() {
         Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
-        QPushButton *button{actionBar()->button(3)};
+        QPushButton *button{actionBar()->button(IconManager::Icon::ACTION_LIGHT_MODE)};
 
         if (canvas->bg() == Common::lightBackgroundColor) {
             canvas->setBg(Common::darkBackgroundColor);
