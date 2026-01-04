@@ -12,7 +12,7 @@ class Property
 public:
     Property();
 
-    enum Type {
+    enum Type : int8_t {
         StrokeWidth,
         StrokeColor,
         Opacity,

@@ -19,7 +19,6 @@ public:
     explicit Controller(QObject *parent = nullptr);
     ~Controller() override;
 
-public Q_SLOTS:
     void mousePressed(QMouseEvent *event);
     void mouseMoved(QMouseEvent *event);
     void mouseReleased(QMouseEvent *event);
