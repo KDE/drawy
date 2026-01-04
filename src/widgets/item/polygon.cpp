@@ -6,9 +6,9 @@
 
 PolygonItem::PolygonItem()
 {
-    m_properties[Property::StrokeWidth] = Property{1, Property::StrokeWidth};
-    m_properties[Property::StrokeColor] = Property{QColor(Qt::black), Property::StrokeColor};
-    m_properties[Property::Opacity] = Property{255, Property::Opacity};
+    m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
+    m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
+    m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
 }
 
 void PolygonItem::setStart(QPointF start)
@@ -40,7 +40,7 @@ void PolygonItem::m_updateBoundingBox()
     double maxX{std::max(m_start.x(), m_end.x())};
     double minY{std::min(m_start.y(), m_end.y())};
     double maxY{std::max(m_start.y(), m_end.y())};
-    int w{property(Property::StrokeWidth).value<int>()};
+    int w{property(Property::Type::StrokeWidth).value<int>()};
 
     m_boundingBox = QRectF{QPointF{minX, maxY}, QPointF{maxX, minY}}.normalized();
     m_boundingBox.adjust(-w, -w, w, w);
@@ -50,12 +50,12 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 {
     QPen pen{};
 
-    QColor color{property(Property::StrokeColor).value<QColor>()};
-    color.setAlpha(property(Property::Opacity).value<int>());
+    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
+    color.setAlpha(property(Property::Type::Opacity).value<int>());
 
     pen.setCapStyle(Qt::RoundCap);
     pen.setJoinStyle(Qt::RoundJoin);
-    pen.setWidth(property(Property::StrokeWidth).value<int>());
+    pen.setWidth(property(Property::Type::StrokeWidth).value<int>());
     pen.setColor(color);
 
     painter.setPen(pen);
@@ -67,7 +67,7 @@ void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
 {
     QPen pen{};
 
-    pen.setWidth(property(Property::StrokeWidth).value<int>() * 10);
+    pen.setWidth(property(Property::Type::StrokeWidth).value<int>() * 10);
     pen.setColor(Qt::transparent);
 
     painter.save();

@@ -6,7 +6,7 @@
 
 Property::Property()
     : m_value{0}
-    , m_type{Property::Null}
+    , m_type{Property::Type::Null}
 {
 }
 

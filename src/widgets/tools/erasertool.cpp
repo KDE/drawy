@@ -26,7 +26,7 @@ EraserTool::EraserTool()
 {
     m_cursor = QCursor(Qt::CrossCursor);
 
-    m_properties = {Property::EraserSize};
+    m_properties = {Property::Type::EraserSize};
 }
 
 void EraserTool::mousePressed(ApplicationContext *context)
@@ -53,7 +53,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
     overlayPainter->setCompositionMode(QPainter::CompositionMode_Source);
     overlayPainter->fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
 
-    const int eraserSide{uiContext->propertyManager()->value(Property::EraserSize).value<int>()};
+    const int eraserSide{uiContext->propertyManager()->value(Property::Type::EraserSize).value<int>()};
     const QSize eraserSize{eraserSide, eraserSide};
 
     // TODO: Adjustable eraser size
@@ -70,7 +70,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
             if (m_toBeErased.count(item) > 0)
                 continue;
 
-            item->setProperty(Property::Opacity, Property{Common::eraseItemOpacity, Property::Opacity});
+            item->setProperty(Property::Type::Opacity, Property{Common::eraseItemOpacity, Property::Type::Opacity});
 
             m_toBeErased.insert(item);
             spatialContext->cacheGrid()->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
@@ -109,7 +109,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
             }
 
             // reset opacity
-            item->setProperty(Property::Opacity, Property{Common::maxItemOpacity, Property::Opacity});
+            item->setProperty(Property::Type::Opacity, Property{Common::maxItemOpacity, Property::Type::Opacity});
             erasedItems.push_back(item);
         }
 

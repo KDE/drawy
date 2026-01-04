@@ -91,7 +91,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
     Property property{};
     for (const auto &item : m_items) {
         try {
-            if (property.type() != Property::Null) {
+            if (property.type() != Property::Type::Null) {
                 if (property.variant() != item->property(propertyType).variant()) {
                     return Property{};
                 }

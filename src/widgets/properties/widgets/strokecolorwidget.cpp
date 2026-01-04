@@ -52,7 +52,7 @@ QString StrokeColorWidget::name() const
 
 const Property StrokeColorWidget::value() const
 {
-    return Property{m_group->checkedButton()->property("color-value"), Property::StrokeColor};
+    return Property{m_group->checkedButton()->property("color-value"), Property::Type::StrokeColor};
 }
 
 #include "moc_strokecolorwidget.cpp"

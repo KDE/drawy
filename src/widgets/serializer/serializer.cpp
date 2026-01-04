@@ -80,7 +80,7 @@ QJsonObject Serializer::toJson(const Property &property)
 {
     QJsonObject result{};
 
-    result[u"type"_s] = property.type();
+    result[u"type"_s] = static_cast<int>(property.type());
     result[u"value"_s] = QJsonValue::fromVariant(property.variant());
 
     return result;

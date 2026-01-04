@@ -15,7 +15,7 @@ void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool EllipseItem::onEllipse(QLineF line) const
 {
-    int sw{boundingBoxPadding() + property(Property::StrokeWidth).value<int>()};
+    int sw{boundingBoxPadding() + property(Property::Type::StrokeWidth).value<int>()};
     double bX{m_boundingBox.x() + sw}, bY{m_boundingBox.y() + sw};
     double bW{m_boundingBox.width() - 2 * sw}, bH{m_boundingBox.height() - 2 * sw};
 

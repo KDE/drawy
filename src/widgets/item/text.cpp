@@ -23,9 +23,9 @@ TextItem::TextItem()
     : m_selectionStart(INVALID)
     , m_selectionEnd(INVALID)
 {
-    m_properties[Property::StrokeColor] = Property{QColor(Qt::white), Property::StrokeColor};
-    m_properties[Property::Opacity] = Property{255, Property::Opacity};
-    m_properties[Property::FontSize] = Property{18, Property::FontSize};
+    m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::white), Property::Type::StrokeColor};
+    m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
+    m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
 }
 
 TextItem::~TextItem()
@@ -342,7 +342,7 @@ bool TextItem::hasSelection() const
 QFont TextItem::getFont() const
 {
     QFont font{};
-    font.setPointSize(property(Property::FontSize).value<int>());
+    font.setPointSize(property(Property::Type::FontSize).value<int>());
     font.setFamily(u"Fuzzy Bubbles"_s);
 
     return font;
@@ -352,8 +352,8 @@ QPen TextItem::getPen() const
 {
     QPen pen{};
 
-    QColor color{property(Property::StrokeColor).value<QColor>()};
-    color.setAlpha(property(Property::Opacity).value<int>());
+    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
+    color.setAlpha(property(Property::Type::Opacity).value<int>());
     pen.setColor(color);
 
     return pen;
