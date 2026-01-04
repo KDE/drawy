@@ -15,8 +15,7 @@ ActionBar::ActionBar(QWidget *parent)
     , m_layout(new QHBoxLayout{this})
 {
     m_layout->setSpacing(10);
-    this->setLayout(m_layout);
-    this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 }
 
 void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon, int id)
