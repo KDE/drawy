@@ -24,7 +24,7 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
     Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion{};
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         try {
             m_properties[item] = item->property(type);
             item->setProperty(type, m_newProperty);
@@ -43,7 +43,7 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion{};
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         try {
             item->setProperty(type, m_properties[item]);
             dirtyRegion |= item->boundingBox();

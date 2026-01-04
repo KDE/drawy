@@ -23,7 +23,7 @@ void MoveItemCommand::execute(ApplicationContext *context)
     auto transformer{context->spatialContext()->coordinateTransformer()};
     auto cacheGrid{context->spatialContext()->cacheGrid()};
 
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
         item->translate(m_delta);
         cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
@@ -35,7 +35,7 @@ void MoveItemCommand::undo(ApplicationContext *context)
     auto transformer{context->spatialContext()->coordinateTransformer()};
     auto cacheGrid{context->spatialContext()->cacheGrid()};
 
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
         item->translate(-m_delta);
         cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());

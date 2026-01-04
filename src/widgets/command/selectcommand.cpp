@@ -23,7 +23,7 @@ void SelectCommand::execute(ApplicationContext *context)
     auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
-    for (const auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
         selectedItems.insert(item);
     }
@@ -36,7 +36,7 @@ void SelectCommand::undo(ApplicationContext *context)
     auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
-    for (const auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
         selectedItems.erase(item);
     }
