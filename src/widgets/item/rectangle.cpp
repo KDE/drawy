@@ -51,5 +51,5 @@ bool RectangleItem::intersects(const QLineF &line)
 
 Item::Type RectangleItem::type() const
 {
-    return Item::Rectangle;
+    return Item::Type::Rectangle;
 }

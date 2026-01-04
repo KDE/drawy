@@ -27,5 +27,5 @@ bool LineItem::intersects(const QLineF &line)
 
 Item::Type LineItem::type() const
 {
-    return Item::Line;
+    return Item::Type::Line;
 }

@@ -80,5 +80,5 @@ void ArrowItem::translate(const QPointF &amount)
 
 Item::Type ArrowItem::type() const
 {
-    return Item::Arrow;
+    return Item::Type::Arrow;
 }

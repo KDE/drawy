@@ -52,22 +52,22 @@ QJsonObject Serializer::toJson(const std::shared_ptr<Item> &item)
     obj[u"properties"_s] = toJson(item->properties());
 
     switch (item->type()) {
-    case Item::Freeform: {
+    case Item::Type::Freeform: {
         std::shared_ptr<FreeformItem> freeform{std::dynamic_pointer_cast<FreeformItem>(item)};
         obj[u"points"_s] = toJson(freeform->points());
         obj[u"pressures"_s] = toJson(freeform->pressures());
         break;
     }
-    case Item::Rectangle:
-    case Item::Ellipse:
-    case Item::Arrow:
-    case Item::Line: {
+    case Item::Type::Rectangle:
+    case Item::Type::Ellipse:
+    case Item::Type::Arrow:
+    case Item::Type::Line: {
         std::shared_ptr<PolygonItem> polygon{std::dynamic_pointer_cast<PolygonItem>(item)};
         obj[u"start"_s] = toJson(polygon->start());
         obj[u"end"_s] = toJson(polygon->end());
         break;
     }
-    case Item::Text: {
+    case Item::Type::Text: {
         std::shared_ptr<TextItem> text{std::dynamic_pointer_cast<TextItem>(item)};
         obj[u"text"_s] = QJsonValue(text->text());
     }

@@ -64,5 +64,5 @@ bool EllipseItem::intersects(const QLineF &line)
 
 Item::Type EllipseItem::type() const
 {
-    return Item::Ellipse;
+    return Item::Type::Ellipse;
 }

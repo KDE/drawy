@@ -232,7 +232,7 @@ void FreeformItem::translate(const QPointF &amount)
 
 Item::Type FreeformItem::type() const
 {
-    return Item::Freeform;
+    return Item::Type::Freeform;
 }
 
 const QVector<QPointF> &FreeformItem::points() const

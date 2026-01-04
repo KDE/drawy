@@ -18,7 +18,7 @@ UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items)
     : ItemCommand{items}
 {
     for (const auto &item : items) {
-        if (item->type() == Item::Group) {
+        if (item->type() == Item::Type::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
         }
     }

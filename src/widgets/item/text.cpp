@@ -451,7 +451,7 @@ const QString &TextItem::text() const
 
 Item::Type TextItem::type() const
 {
-    return Item::Text;
+    return Item::Type::Text;
 }
 
 void TextItem::updateAfterProperty()

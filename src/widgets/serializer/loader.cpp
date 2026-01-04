@@ -101,7 +101,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 
     std::shared_ptr<Item> item;
     switch (type) {
-    case Item::Freeform: {
+    case Item::Type::Freeform: {
         std::shared_ptr<FreeformItem> cur{std::make_shared<FreeformItem>()};
         QJsonArray points = array(value(obj, u"points"_s));
         QJsonArray pressures = array(value(obj, u"pressures"_s));
@@ -116,7 +116,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
         item = cur;
         break;
     }
-    case Item::Rectangle: {
+    case Item::Type::Rectangle: {
         std::shared_ptr<RectangleItem> cur{std::make_shared<RectangleItem>()};
         cur->setStart(toPointF(value(obj, u"start"_s)));
         cur->setEnd(toPointF(value(obj, u"end"_s)));
@@ -124,7 +124,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
         item = cur;
         break;
     }
-    case Item::Line: {
+    case Item::Type::Line: {
         std::shared_ptr<LineItem> cur{std::make_shared<LineItem>()};
         cur->setStart(toPointF(value(obj, u"start"_s)));
         cur->setEnd(toPointF(value(obj, u"end"_s)));
@@ -132,7 +132,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
         item = cur;
         break;
     }
-    case Item::Arrow: {
+    case Item::Type::Arrow: {
         std::shared_ptr<ArrowItem> cur{std::make_shared<ArrowItem>()};
         cur->setStart(toPointF(value(obj, u"start"_s)));
         cur->setEnd(toPointF(value(obj, u"end"_s)));
@@ -140,7 +140,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
         item = cur;
         break;
     }
-    case Item::Ellipse: {
+    case Item::Type::Ellipse: {
         std::shared_ptr<EllipseItem> cur{std::make_shared<EllipseItem>()};
         cur->setStart(toPointF(value(obj, u"start"_s)));
         cur->setEnd(toPointF(value(obj, u"end"_s)));
@@ -148,7 +148,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
         item = cur;
         break;
     }
-    case Item::Text: {
+    case Item::Type::Text: {
         std::shared_ptr<TextItem> cur{std::make_shared<TextItem>()};
         QPointF topLeft = toPointF(value(obj, u"bounding_box"_s));
 

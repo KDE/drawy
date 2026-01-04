@@ -72,7 +72,7 @@ const QRectF GroupItem::boundingBox() const
 
 Item::Type GroupItem::type() const
 {
-    return Item::Group;
+    return Item::Type::Group;
 }
 
 void GroupItem::setProperty(const Property::Type propertyType, Property newObj)

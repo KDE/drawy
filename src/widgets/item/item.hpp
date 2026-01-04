@@ -32,7 +32,7 @@ public:
     virtual const QVector<Property> properties() const;
     virtual const QVector<Property::Type> propertyTypes() const;
 
-    enum Type {
+    enum class Type : int8_t {
         Freeform,
         Rectangle,
         Ellipse,
