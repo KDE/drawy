@@ -27,14 +27,14 @@ ToolBar::~ToolBar()
 {
 }
 
-Tool &ToolBar::curTool() const
+Tool *ToolBar::curTool() const
 {
     int curID{m_group->checkedId()};
 
     if (m_tools.find(curID) == m_tools.end())
         throw std::logic_error("Trying to access non existent tool");
 
-    return *m_tools.at(curID);
+    return m_tools.at(curID).get();
 }
 
 QVector<std::shared_ptr<Tool>> ToolBar::tools() const
@@ -47,7 +47,7 @@ QVector<std::shared_ptr<Tool>> ToolBar::tools() const
     return result;
 }
 
-void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
+void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type)
 {
     if (tool == nullptr)
         return;
@@ -67,7 +67,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
     m_layout->addWidget(btn);
     if (m_tools.size() == 1) {
         m_group->button(id)->setChecked(true);
-        Q_EMIT toolChanged(*tool);
+        Q_EMIT toolChanged(tool.get());
     }
 }
 

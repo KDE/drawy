@@ -36,7 +36,7 @@ void PropertyBar::updateToolProperties()
     updateProperties(context->uiContext()->toolBar()->curTool());
 }
 
-void PropertyBar::updateProperties(const Tool &tool)
+void PropertyBar::updateProperties(Tool *tool)
 {
     // remove existing widgets
     QLayoutItem *curItem = nullptr;
@@ -54,7 +54,7 @@ void PropertyBar::updateProperties(const Tool &tool)
         delete curItem;
     }
 
-    QVector<Property::Type> properties{tool.properties()};
+    QVector<Property::Type> properties{tool->properties()};
     if (properties.empty()) {
         hide();
     } else {

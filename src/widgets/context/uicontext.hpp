@@ -36,7 +36,7 @@ public:
 
     void reset();
 
-    void toolChanged(Tool &);
+    void toolChanged(Tool *);
 
 private:
     ToolBar *m_toolBar{nullptr};

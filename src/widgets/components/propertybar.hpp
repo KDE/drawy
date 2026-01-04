@@ -18,7 +18,7 @@ public:
 
     void setPropertyManager(PropertyManager *manager);
     void updateToolProperties();
-    void updateProperties(const Tool &);
+    void updateProperties(Tool *);
 
 private:
     QVBoxLayout *const m_layout;

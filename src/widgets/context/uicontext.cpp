@@ -175,9 +175,9 @@ IconManager *UIContext::iconManager() const
     return m_iconManager;
 }
 
-void UIContext::toolChanged(Tool &tool)
+void UIContext::toolChanged(Tool *tool)
 {
-    if (tool.type() != Tool::Selection) {
+    if (tool->type() != Tool::Selection) {
         m_applicationContext->selectionContext()->selectedItems().clear();
     }
 
@@ -188,8 +188,8 @@ void UIContext::toolChanged(Tool &tool)
     if (m_lastTool != nullptr)
         m_lastTool->cleanup();
 
-    m_lastTool = &tool;
-    canvas->setCursor(tool.cursor());
+    m_lastTool = tool;
+    canvas->setCursor(tool->cursor());
 
     m_applicationContext->renderingContext()->markForUpdate();
 }
