@@ -9,6 +9,7 @@ class QButtonGroup;
 
 class StrokeColorWidget : public PropertyWidget
 {
+    Q_OBJECT
 public:
     explicit StrokeColorWidget(QWidget *parent = nullptr);
 

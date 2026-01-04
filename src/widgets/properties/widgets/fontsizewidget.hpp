@@ -8,6 +8,7 @@
 
 class FontSizeWidget : public PropertyWidget
 {
+    Q_OBJECT
 public:
     explicit FontSizeWidget(QWidget *parent = nullptr);
 

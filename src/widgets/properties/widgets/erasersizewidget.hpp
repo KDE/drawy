@@ -8,6 +8,7 @@
 
 class EraserSizeWidget : public PropertyWidget
 {
+    Q_OBJECT
 public:
     explicit EraserSizeWidget(QWidget *parent = nullptr);
 

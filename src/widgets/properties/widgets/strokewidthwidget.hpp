@@ -8,6 +8,7 @@
 
 class StrokeWidthWidget : public PropertyWidget
 {
+    Q_OBJECT
 public:
     explicit StrokeWidthWidget(QWidget *parent = nullptr);
 
