@@ -52,9 +52,7 @@ QLayoutItem *BoardLayout::takeAt(int index)
 
 void BoardLayout::setLeftWidget(QWidget *const item, bool pinned)
 {
-    if (m_leftWidget != nullptr) {
-        delete m_leftWidget;
-    }
+    delete m_leftWidget;
     m_leftWidget = new QWidgetItem(item);
     m_isLeftPinned = pinned;
     if (item)
@@ -63,9 +61,7 @@ void BoardLayout::setLeftWidget(QWidget *const item, bool pinned)
 
 void BoardLayout::setTopWidget(QWidget *const item, bool pinned)
 {
-    if (m_topWidget != nullptr) {
-        delete m_topWidget;
-    }
+    delete m_topWidget;
     m_topWidget = new QWidgetItem(item);
     m_isTopPinned = pinned;
     if (item)
@@ -74,9 +70,7 @@ void BoardLayout::setTopWidget(QWidget *const item, bool pinned)
 
 void BoardLayout::setRightWidget(QWidget *const item, bool pinned)
 {
-    if (m_rightWidget != nullptr) {
-        delete m_rightWidget;
-    }
+    delete m_rightWidget;
     m_rightWidget = new QWidgetItem(item);
     m_isRightPinned = pinned;
     if (item)
@@ -85,9 +79,7 @@ void BoardLayout::setRightWidget(QWidget *const item, bool pinned)
 
 void BoardLayout::setBottomWidget(QWidget *const item, bool pinned)
 {
-    if (m_bottomWidget != nullptr) {
-        delete m_bottomWidget;
-    }
+    delete m_bottomWidget;
     m_bottomWidget = new QWidgetItem(item);
     m_isBottomPinned = pinned;
     if (item)
@@ -96,9 +88,7 @@ void BoardLayout::setBottomWidget(QWidget *const item, bool pinned)
 
 void BoardLayout::setCentralWidget(QWidget *const item)
 {
-    if (m_centralWidget != nullptr) {
-        delete m_centralWidget;
-    }
+    delete m_centralWidget;
     m_centralWidget = new QWidgetItem(item);
 }
 
