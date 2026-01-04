@@ -67,7 +67,7 @@ void FreeformTool::mousePressed(ApplicationContext *context)
         auto *painter{renderingContext->overlayPainter()};
         painter->save();
 
-        qreal zoom{renderingContext->zoomFactor()};
+        const qreal zoom{renderingContext->zoomFactor()};
         painter->scale(zoom, zoom);
 
         m_isDrawing = true;

@@ -39,7 +39,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             })};
 
         bool lockState = true;
-        auto selectedItems{selectionContext->selectedItems()};
+        const auto selectedItems{selectionContext->selectedItems()};
         auto commandHistory{spatialContext->commandHistory()};
 
         if (!(event->modifiers() & Qt::ShiftModifier)) {
@@ -88,10 +88,10 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 
     renderingContext->canvas()->overlay()->fill(Qt::transparent);
 
-    QPointF curPos{uiContext->event()->pos()};
+    const QPointF curPos{uiContext->event()->pos()};
 
-    QRectF selectionBox{m_lastPos, curPos};
-    QRectF worldSelectionBox{transformer->viewToWorld(selectionBox)};
+    const QRectF selectionBox{m_lastPos, curPos};
+    const QRectF worldSelectionBox{transformer->viewToWorld(selectionBox)};
 
     QVector<std::shared_ptr<Item>> intersectingItems{
         spatialContext->quadtree()->queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
@@ -105,7 +105,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     overlayPainter->save();
 
     // TODO: Remove magic numbers
-    QPen pen{QColor{67, 135, 244, 200}};
+    const QPen pen{QColor{67, 135, 244, 200}};
     overlayPainter->setPen(pen);
 
     overlayPainter->drawRect(selectionBox);

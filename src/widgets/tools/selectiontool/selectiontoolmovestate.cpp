@@ -51,11 +51,11 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
 
     const auto &selectedItems{selectionContext->selectedItems()};
 
-    QPointF curPos{context->uiContext()->event()->pos()};
+    const QPointF curPos{context->uiContext()->event()->pos()};
 
-    QPointF worldCurPos{transformer->viewToWorld(curPos)};
-    QPointF worldLastPos{transformer->viewToWorld(m_lastPos)};
-    QPointF delta{worldCurPos - worldLastPos};
+    const QPointF worldCurPos{transformer->viewToWorld(curPos)};
+    const QPointF worldLastPos{transformer->viewToWorld(m_lastPos)};
+    const QPointF delta{worldCurPos - worldLastPos};
 
     QRect dirtyRegion{};
     for (const auto &item : selectedItems) {
@@ -82,10 +82,10 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
     CommandHistory *commandHistory{spatialContext->commandHistory()};
 
-    QPointF curPos{context->uiContext()->event()->pos()};
-    QPointF worldOriginalPos{transformer->viewToWorld(m_initialPos)};
-    QPointF worldFinalPos{transformer->viewToWorld(curPos)};
-    QPointF delta{worldFinalPos - worldOriginalPos};
+    const QPointF curPos{context->uiContext()->event()->pos()};
+    const QPointF worldOriginalPos{transformer->viewToWorld(m_initialPos)};
+    const QPointF worldFinalPos{transformer->viewToWorld(curPos)};
+    const QPointF delta{worldFinalPos - worldOriginalPos};
 
     if (!m_isActive)
         return false;

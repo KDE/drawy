@@ -58,11 +58,11 @@ void EraserTool::mouseMoved(ApplicationContext *context)
     const QSize eraserSize{eraserSide, eraserSide};
 
     // TODO: Adjustable eraser size
-    double eraserCenterOffset{eraserSide / 2.0 - 1};
-    QPointF eraserCenterOffsetPoint{eraserCenterOffset, eraserCenterOffset};
+    const double eraserCenterOffset{eraserSide / 2.0 - 1};
+    const QPointF eraserCenterOffsetPoint{eraserCenterOffset, eraserCenterOffset};
 
-    QRectF curRect{uiContext->event()->pos() - eraserCenterOffsetPoint, eraserSize};
-    QRectF worldEraserRect{transformer->viewToWorld(curRect)};
+    const QRectF curRect{uiContext->event()->pos() - eraserCenterOffsetPoint, eraserSize};
+    const QRectF worldEraserRect{transformer->viewToWorld(curRect)};
 
     if (m_isErasing) {
         QVector<std::shared_ptr<Item>> toBeErased{spatialContext->quadtree()->queryItems(worldEraserRect)};
@@ -84,7 +84,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
     renderingContext->markForUpdate();
 
     // Draw eraser box
-    QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
+    const QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
     overlayPainter->setPen(pen);
     overlayPainter->drawRect(curRect);
     overlayPainter->restore();

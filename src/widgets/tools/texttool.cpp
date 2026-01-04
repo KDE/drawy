@@ -109,7 +109,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     QuadTree *quadTree{spatialContext->quadtree()};
     m_mouseMoved = true;
 
-    QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
+    const QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
     QVector<std::shared_ptr<Item>> intersectingItems{quadTree->queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
         return item->type() == Item::Text && item->boundingBox().contains(point);
     })};
@@ -121,12 +121,12 @@ void TextTool::mouseMoved(ApplicationContext *context)
     }
 
     if (m_isSelecting) {
-        int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
-        bool isLeft{curIndex < m_curItem->selectionStart()};
+        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
+        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const bool isLeft{curIndex < m_curItem->selectionStart()};
 
-        qsizetype curStart{m_curItem->selectionStart()};
-        qsizetype curEnd{m_curItem->selectionEnd()};
+        const qsizetype curStart{m_curItem->selectionStart()};
+        const qsizetype curEnd{m_curItem->selectionEnd()};
 
         if (m_doubleClicked) {
             if (isLeft) {
@@ -159,7 +159,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     }
 }
 
-void TextTool::mouseReleased(ApplicationContext *context)
+void TextTool::mouseReleased([[maybe_unused]] ApplicationContext *context)
 {
     m_isSelecting = false;
     m_doubleClicked = false;
@@ -208,10 +208,10 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         RenderingContext *renderingContext{context->renderingContext()};
         UIContext *uiContext{context->uiContext()};
 
-        QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
+        const QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
 
-        int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
+        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
 
         auto [start, end] = m_curItem->getLineRange(curIndex);
         m_curItem->setSelectionStart(start);
@@ -454,7 +454,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     }
 }
 
-void TextTool::keyReleased(ApplicationContext *context)
+void TextTool::keyReleased([[maybe_unused]] ApplicationContext *context)
 {
 }
 
