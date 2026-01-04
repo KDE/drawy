@@ -4,649 +4,461 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-02 08:04+0100\n"
+"PO-Revision-Date: 2026-01-03 10:23+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.0\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-
-#: context/uicontext.cpp:72
-#, fuzzy
-#| msgid "Save to File"
-msgctxt "UIContext|"
-msgid "Save to File"
-msgstr "Shrani v datoteko"
-
-#: context/uicontext.cpp:73
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:73"
-#| msgid "Open File"
-msgctxt "UIContext|"
-msgid "Open File"
-msgstr "Odpri datoteko"
-
-#: context/uicontext.cpp:74
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:74"
-#| msgid "Zoom Out"
-msgctxt "UIContext|"
-msgid "Zoom Out"
-msgstr "Pomanjšaj"
-
-#: context/uicontext.cpp:75
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:75"
-#| msgid "Zoom In"
-msgctxt "UIContext|"
-msgid "Zoom In"
-msgstr "Povečaj"
-
-#: context/uicontext.cpp:76 context/uicontext.cpp:122
-#, fuzzy
-#| msgid "Light Mode"
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Svetli način"
-
-#: context/uicontext.cpp:77
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:77"
-#| msgid "Undo"
-msgctxt "UIContext|"
-msgid "Undo"
-msgstr "Razveljavi"
-
-#: context/uicontext.cpp:78
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:78"
-#| msgid "Redo"
-msgctxt "UIContext|"
-msgid "Redo"
-msgstr "Uveljavi"
-
-#: context/uicontext.cpp:126
-#, fuzzy
-#| msgid "Dark Mode"
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Temni način"
-
-#: keybindings/actionmanager.cpp:37
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:77"
-#| msgid "Undo"
-msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "Razveljavi"
-
-#: keybindings/actionmanager.cpp:38
-#, fuzzy
-#| msgid "Undo last action"
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "Razveljavi zadnje dejanje"
-
-#: keybindings/actionmanager.cpp:44
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:78"
-#| msgid "Redo"
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "Uveljavi"
-
-#: keybindings/actionmanager.cpp:45
-#, fuzzy
-#| msgid "Redo last undone action"
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "Uveljavi zadnje razveljavljeno dejanje"
-
-#: keybindings/actionmanager.cpp:51
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:75"
-#| msgid "Zoom In"
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "Povečaj"
-
-#: keybindings/actionmanager.cpp:52
-#, fuzzy
-#| msgid "Zoom in"
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "Povečaj"
-
-#: keybindings/actionmanager.cpp:58
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:74"
-#| msgid "Zoom Out"
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "Pomanjšaj"
-
-#: keybindings/actionmanager.cpp:59
-#, fuzzy
-#| msgid "Zoom out"
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "Pomanjšaj"
-
-#: keybindings/actionmanager.cpp:65
-#, fuzzy
-#| msgid "Freeform Tool"
-msgctxt "ActionManager|"
-msgid "Freeform Tool"
-msgstr "Orodje za prosto oblikovanje"
-
-#: keybindings/actionmanager.cpp:66
-#, fuzzy
-#| msgid "Switch to freeform drawing tool"
-msgctxt "ActionManager|"
-msgid "Switch to freeform drawing tool"
-msgstr "Preklopi na orodje za prosto oblikovanje"
-
-#: keybindings/actionmanager.cpp:72
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:72"
-#| msgid "Eraser Tool"
-msgctxt "ActionManager|"
-msgid "Eraser Tool"
-msgstr "Orodje radirke"
-
-#: keybindings/actionmanager.cpp:73
-#, fuzzy
-#| msgid "Switch to eraser tool"
-msgctxt "ActionManager|"
-msgid "Switch to eraser tool"
-msgstr "Preklopi na radirko"
-
-#: keybindings/actionmanager.cpp:79
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:79"
-#| msgid "Selection Tool"
-msgctxt "ActionManager|"
-msgid "Selection Tool"
-msgstr "Orodje za izbiro"
-
-#: keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgid "Switch to selection tool"
-msgctxt "ActionManager|"
-msgid "Switch to selection tool"
-msgstr "Preklopi na orodje za izbiro"
-
-#: keybindings/actionmanager.cpp:86
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:86"
-#| msgid "Rectangle Tool"
-msgctxt "ActionManager|"
-msgid "Rectangle Tool"
-msgstr "Orodje za pravokotnik"
-
-#: keybindings/actionmanager.cpp:87
-#, fuzzy
-#| msgid "Switch to rectangle drawing tool"
-msgctxt "ActionManager|"
-msgid "Switch to rectangle drawing tool"
-msgstr "Preklopi na orodje za risanje pravokotnika"
-
-#: keybindings/actionmanager.cpp:93
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:93"
-#| msgid "Ellipse Tool"
-msgctxt "ActionManager|"
-msgid "Ellipse Tool"
-msgstr "Orodje za elipso"
-
-#: keybindings/actionmanager.cpp:94
-#, fuzzy
-#| msgid "Switch to ellipse drawing tool"
-msgctxt "ActionManager|"
-msgid "Switch to ellipse drawing tool"
-msgstr "Preklopi na orodje za risanje elipse"
-
-#: keybindings/actionmanager.cpp:100
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:100"
-#| msgid "Line Tool"
-msgctxt "ActionManager|"
-msgid "Line Tool"
-msgstr "Orodje za črte"
-
-#: keybindings/actionmanager.cpp:101
-#, fuzzy
-#| msgid "Switch to line drawing tool"
-msgctxt "ActionManager|"
-msgid "Switch to line drawing tool"
-msgstr "Preklopi na orodje za risanje črt"
-
-#: keybindings/actionmanager.cpp:107
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:107"
-#| msgid "Text Tool"
-msgctxt "ActionManager|"
-msgid "Text Tool"
-msgstr "Orodje za besedilo"
-
-#: keybindings/actionmanager.cpp:108
-#, fuzzy
-#| msgid "Switch to the text tool"
-msgctxt "ActionManager|"
-msgid "Switch to the text tool"
-msgstr "Preklopi na orodje za besedilo"
-
-#: keybindings/actionmanager.cpp:114
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:114"
-#| msgid "Arrow Tool"
-msgctxt "ActionManager|"
-msgid "Arrow Tool"
-msgstr "Orodje za puščice"
-
-#: keybindings/actionmanager.cpp:115
-#, fuzzy
-#| msgid "Switch to arrow drawing tool"
-msgctxt "ActionManager|"
-msgid "Switch to arrow drawing tool"
-msgstr "Preklopi na orodje za risanje puščic"
-
-#: keybindings/actionmanager.cpp:121
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:121"
-#| msgid "Move Tool"
-msgctxt "ActionManager|"
-msgid "Move Tool"
-msgstr "Orodje za premikanje"
-
-#: keybindings/actionmanager.cpp:122
-#, fuzzy
-#| msgid "Switch to move tool"
-msgctxt "ActionManager|"
-msgid "Switch to move tool"
-msgstr "Preklopi na orodje za premikanje"
-
-#: keybindings/actionmanager.cpp:128
-#, fuzzy
-#| msgid "Group Elements"
-msgctxt "ActionManager|"
-msgid "Group Elements"
-msgstr "Združi elemente"
-
-#: keybindings/actionmanager.cpp:129
-#, fuzzy
-#| msgid "Groups selected items"
-msgctxt "ActionManager|"
-msgid "Groups selected items"
-msgstr "Združi izbrane elemente"
-
-#: keybindings/actionmanager.cpp:135
-#, fuzzy
-#| msgid "Ungroup Elements"
-msgctxt "ActionManager|"
-msgid "Ungroup Elements"
-msgstr "Razdruži elemente"
-
-#: keybindings/actionmanager.cpp:136
-#, fuzzy
-#| msgid "Ungroups selected groups"
-msgctxt "ActionManager|"
-msgid "Ungroups selected groups"
-msgstr "Razdruži izbrane skupine"
-
-#: keybindings/actionmanager.cpp:142
-#, fuzzy
-#| msgid "Select All"
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "Izberi vse"
-
-#: keybindings/actionmanager.cpp:143
-#, fuzzy
-#| msgid "Select all items"
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "Izberi vse elemente"
-
-#: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
-#, fuzzy
-#| msgid "Delete"
-msgctxt "ActionManager|"
-msgid "Delete"
-msgstr "Izbriši"
-
-#: keybindings/actionmanager.cpp:150
-#, fuzzy
-#| msgid "Deletes selected items"
-msgctxt "ActionManager|"
-msgid "Deletes selected items"
-msgstr "Izbriše izbrane elemente"
-
-#: keybindings/actionmanager.cpp:156
-#, fuzzy
-#| msgid "Save"
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "Shrani"
-
-#: keybindings/actionmanager.cpp:157
-#, fuzzy
-#| msgid "Save canvas"
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "Shrani platno"
-
-#: keybindings/actionmanager.cpp:163
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:73"
-#| msgid "Open File"
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "Odpri datoteko"
-
-#: keybindings/actionmanager.cpp:164
-#, fuzzy
-#| msgid "Open an existing file"
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "Odpri obstoječo datoteko"
-
-#: keybindings/actionmanager.cpp:170
-#, fuzzy
-#| msgid "Ctrl+Z"
-msgctxt "ActionManager|"
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: keybindings/actionmanager.cpp:171
-#, fuzzy
-#| msgid "Ctrl+Y"
-msgctxt "ActionManager|"
-msgid "Ctrl+Y"
-msgstr "Ctrl+Y"
-
-#: keybindings/actionmanager.cpp:172
-#, fuzzy
-#| msgid "Ctrl+Shift+Z"
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+Z"
-msgstr "Ctrl+dvigalka+Z"
-
-#: keybindings/actionmanager.cpp:173
-#, fuzzy
-#| msgid "Ctrl++"
-msgctxt "ActionManager|"
-msgid "Ctrl++"
-msgstr "Ctrl++"
-
-#: keybindings/actionmanager.cpp:174
-#, fuzzy
-#| msgid "Ctrl+-"
-msgctxt "ActionManager|"
-msgid "Ctrl+-"
-msgstr "Ctrl+-"
-
-#: keybindings/actionmanager.cpp:175
-#, fuzzy
-#| msgid "T"
-msgctxt "ActionManager|"
-msgid "T"
-msgstr "T"
-
-#: keybindings/actionmanager.cpp:176
-#, fuzzy
-#| msgid "P"
-msgctxt "ActionManager|"
-msgid "P"
-msgstr "P"
-
-#: keybindings/actionmanager.cpp:177
-#, fuzzy
-#| msgid "B"
-msgctxt "ActionManager|"
-msgid "B"
-msgstr "B"
-
-#: keybindings/actionmanager.cpp:178
-#, fuzzy
-#| msgid "E"
-msgctxt "ActionManager|"
-msgid "E"
-msgstr "E"
-
-#: keybindings/actionmanager.cpp:179
-#, fuzzy
-#| msgid "S"
-msgctxt "ActionManager|"
-msgid "S"
-msgstr "S"
-
-#: keybindings/actionmanager.cpp:180
-#, fuzzy
-#| msgid "R"
-msgctxt "ActionManager|"
-msgid "R"
-msgstr "R"
-
-#: keybindings/actionmanager.cpp:181
-#, fuzzy
-#| msgid "O"
-msgctxt "ActionManager|"
-msgid "O"
-msgstr "O"
-
-#: keybindings/actionmanager.cpp:182
-#, fuzzy
-#| msgid "L"
-msgctxt "ActionManager|"
-msgid "L"
-msgstr "L"
-
-#: keybindings/actionmanager.cpp:183
-#, fuzzy
-#| msgid "A"
-msgctxt "ActionManager|"
-msgid "A"
-msgstr "A"
-
-#: keybindings/actionmanager.cpp:184
-#, fuzzy
-#| msgid "M"
-msgctxt "ActionManager|"
-msgid "M"
-msgstr "M"
-
-#: keybindings/actionmanager.cpp:185
-#, fuzzy
-#| msgid "Ctrl+A"
-msgctxt "ActionManager|"
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: keybindings/actionmanager.cpp:187
-#, fuzzy
-#| msgid "Ctrl+S"
-msgctxt "ActionManager|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-#: keybindings/actionmanager.cpp:188
-#, fuzzy
-#| msgid "Ctrl+O"
-msgctxt "ActionManager|"
-msgid "Ctrl+O"
-msgstr "Ctrl+O"
-
-#: keybindings/actionmanager.cpp:189
-#, fuzzy
-#| msgid "Ctrl+G"
-msgctxt "ActionManager|"
-msgid "Ctrl+G"
-msgstr "Ctrl+G"
-
-#: keybindings/actionmanager.cpp:190
-#, fuzzy
-#| msgid "Ctrl+Shift+G"
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+G"
-msgstr "Ctrl+dvigalka+G"
-
-#: main.cpp:22
-#, fuzzy
-#| msgid "Your handy, infinite, brainstorming tool!"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.8\n"
+
+#: apps/main.cpp:24
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
-#: properties/widgets/actionswidget.cpp:34
-#, fuzzy
-#| msgid "Delete selection"
+#: widgets/context/uicontext.cpp:72
+msgctxt "UIContext|"
+msgid "Save to File"
+msgstr "Shrani v datoteko"
+
+#: widgets/context/uicontext.cpp:73
+msgctxt "UIContext|"
+msgid "Open File"
+msgstr "Odpri datoteko"
+
+#: widgets/context/uicontext.cpp:74
+msgctxt "UIContext|"
+msgid "Zoom Out"
+msgstr "Pomanjšaj"
+
+#: widgets/context/uicontext.cpp:75
+msgctxt "UIContext|"
+msgid "Zoom In"
+msgstr "Povečaj"
+
+#: widgets/context/uicontext.cpp:76 widgets/context/uicontext.cpp:122
+msgctxt "UIContext|"
+msgid "Light Mode"
+msgstr "Svetli način"
+
+#: widgets/context/uicontext.cpp:77
+msgctxt "UIContext|"
+msgid "Undo"
+msgstr "Razveljavi"
+
+#: widgets/context/uicontext.cpp:78
+msgctxt "UIContext|"
+msgid "Redo"
+msgstr "Uveljavi"
+
+#: widgets/context/uicontext.cpp:126
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "Temni način"
+
+#: widgets/drawycommandlineparser.cpp:20
+msgctxt "QObject|"
+msgid "Fullscreen"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:37
+msgctxt "ActionManager|"
+msgid "Undo"
+msgstr "Razveljavi"
+
+#: widgets/keybindings/actionmanager.cpp:38
+msgctxt "ActionManager|"
+msgid "Undo last action"
+msgstr "Razveljavi zadnje dejanje"
+
+#: widgets/keybindings/actionmanager.cpp:44
+msgctxt "ActionManager|"
+msgid "Redo"
+msgstr "Uveljavi"
+
+#: widgets/keybindings/actionmanager.cpp:45
+msgctxt "ActionManager|"
+msgid "Redo last undone action"
+msgstr "Uveljavi zadnje razveljavljeno dejanje"
+
+#: widgets/keybindings/actionmanager.cpp:51
+msgctxt "ActionManager|"
+msgid "Zoom In"
+msgstr "Povečaj"
+
+#: widgets/keybindings/actionmanager.cpp:52
+msgctxt "ActionManager|"
+msgid "Zoom in"
+msgstr "Povečaj"
+
+#: widgets/keybindings/actionmanager.cpp:58
+msgctxt "ActionManager|"
+msgid "Zoom Out"
+msgstr "Pomanjšaj"
+
+#: widgets/keybindings/actionmanager.cpp:59
+msgctxt "ActionManager|"
+msgid "Zoom out"
+msgstr "Pomanjšaj"
+
+#: widgets/keybindings/actionmanager.cpp:65
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "Orodje za prosto oblikovanje"
+
+#: widgets/keybindings/actionmanager.cpp:66
+msgctxt "ActionManager|"
+msgid "Switch to freeform drawing tool"
+msgstr "Preklopi na orodje za prosto oblikovanje"
+
+#: widgets/keybindings/actionmanager.cpp:72
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "Orodje radirke"
+
+#: widgets/keybindings/actionmanager.cpp:73
+msgctxt "ActionManager|"
+msgid "Switch to eraser tool"
+msgstr "Preklopi na radirko"
+
+#: widgets/keybindings/actionmanager.cpp:79
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "Orodje za izbiro"
+
+#: widgets/keybindings/actionmanager.cpp:80
+msgctxt "ActionManager|"
+msgid "Switch to selection tool"
+msgstr "Preklopi na orodje za izbiro"
+
+#: widgets/keybindings/actionmanager.cpp:86
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "Orodje za pravokotnik"
+
+#: widgets/keybindings/actionmanager.cpp:87
+msgctxt "ActionManager|"
+msgid "Switch to rectangle drawing tool"
+msgstr "Preklopi na orodje za risanje pravokotnika"
+
+#: widgets/keybindings/actionmanager.cpp:93
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "Orodje za elipso"
+
+#: widgets/keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Switch to ellipse drawing tool"
+msgstr "Preklopi na orodje za risanje elipse"
+
+#: widgets/keybindings/actionmanager.cpp:100
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "Orodje za črte"
+
+#: widgets/keybindings/actionmanager.cpp:101
+msgctxt "ActionManager|"
+msgid "Switch to line drawing tool"
+msgstr "Preklopi na orodje za risanje črt"
+
+#: widgets/keybindings/actionmanager.cpp:107
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "Orodje za besedilo"
+
+#: widgets/keybindings/actionmanager.cpp:108
+msgctxt "ActionManager|"
+msgid "Switch to the text tool"
+msgstr "Preklopi na orodje za besedilo"
+
+#: widgets/keybindings/actionmanager.cpp:114
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "Orodje za puščice"
+
+#: widgets/keybindings/actionmanager.cpp:115
+msgctxt "ActionManager|"
+msgid "Switch to arrow drawing tool"
+msgstr "Preklopi na orodje za risanje puščic"
+
+#: widgets/keybindings/actionmanager.cpp:121
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "Orodje za premikanje"
+
+#: widgets/keybindings/actionmanager.cpp:122
+msgctxt "ActionManager|"
+msgid "Switch to move tool"
+msgstr "Preklopi na orodje za premikanje"
+
+#: widgets/keybindings/actionmanager.cpp:128
+msgctxt "ActionManager|"
+msgid "Group Elements"
+msgstr "Združi elemente"
+
+#: widgets/keybindings/actionmanager.cpp:129
+msgctxt "ActionManager|"
+msgid "Groups selected items"
+msgstr "Združi izbrane elemente"
+
+#: widgets/keybindings/actionmanager.cpp:135
+msgctxt "ActionManager|"
+msgid "Ungroup Elements"
+msgstr "Razdruži elemente"
+
+#: widgets/keybindings/actionmanager.cpp:136
+msgctxt "ActionManager|"
+msgid "Ungroups selected groups"
+msgstr "Razdruži izbrane skupine"
+
+#: widgets/keybindings/actionmanager.cpp:142
+msgctxt "ActionManager|"
+msgid "Select All"
+msgstr "Izberi vse"
+
+#: widgets/keybindings/actionmanager.cpp:143
+msgctxt "ActionManager|"
+msgid "Select all items"
+msgstr "Izberi vse elemente"
+
+#: widgets/keybindings/actionmanager.cpp:149
+#: widgets/keybindings/actionmanager.cpp:186
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr "Izbriši"
+
+#: widgets/keybindings/actionmanager.cpp:150
+msgctxt "ActionManager|"
+msgid "Deletes selected items"
+msgstr "Izbriše izbrane elemente"
+
+#: widgets/keybindings/actionmanager.cpp:156
+msgctxt "ActionManager|"
+msgid "Save"
+msgstr "Shrani"
+
+#: widgets/keybindings/actionmanager.cpp:157
+msgctxt "ActionManager|"
+msgid "Save canvas"
+msgstr "Shrani platno"
+
+#: widgets/keybindings/actionmanager.cpp:163
+msgctxt "ActionManager|"
+msgid "Open File"
+msgstr "Odpri datoteko"
+
+#: widgets/keybindings/actionmanager.cpp:164
+msgctxt "ActionManager|"
+msgid "Open an existing file"
+msgstr "Odpri obstoječo datoteko"
+
+#: widgets/keybindings/actionmanager.cpp:170
+msgctxt "ActionManager|"
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: widgets/keybindings/actionmanager.cpp:171
+msgctxt "ActionManager|"
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: widgets/keybindings/actionmanager.cpp:172
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+Z"
+msgstr "Ctrl+dvigalka+Z"
+
+#: widgets/keybindings/actionmanager.cpp:173
+msgctxt "ActionManager|"
+msgid "Ctrl++"
+msgstr "Ctrl++"
+
+#: widgets/keybindings/actionmanager.cpp:174
+msgctxt "ActionManager|"
+msgid "Ctrl+-"
+msgstr "Ctrl+-"
+
+#: widgets/keybindings/actionmanager.cpp:175
+msgctxt "ActionManager|"
+msgid "T"
+msgstr "T"
+
+#: widgets/keybindings/actionmanager.cpp:176
+msgctxt "ActionManager|"
+msgid "P"
+msgstr "P"
+
+#: widgets/keybindings/actionmanager.cpp:177
+msgctxt "ActionManager|"
+msgid "B"
+msgstr "B"
+
+#: widgets/keybindings/actionmanager.cpp:178
+msgctxt "ActionManager|"
+msgid "E"
+msgstr "E"
+
+#: widgets/keybindings/actionmanager.cpp:179
+msgctxt "ActionManager|"
+msgid "S"
+msgstr "S"
+
+#: widgets/keybindings/actionmanager.cpp:180
+msgctxt "ActionManager|"
+msgid "R"
+msgstr "R"
+
+#: widgets/keybindings/actionmanager.cpp:181
+msgctxt "ActionManager|"
+msgid "O"
+msgstr "O"
+
+#: widgets/keybindings/actionmanager.cpp:182
+msgctxt "ActionManager|"
+msgid "L"
+msgstr "L"
+
+#: widgets/keybindings/actionmanager.cpp:183
+msgctxt "ActionManager|"
+msgid "A"
+msgstr "A"
+
+#: widgets/keybindings/actionmanager.cpp:184
+msgctxt "ActionManager|"
+msgid "M"
+msgstr "M"
+
+#: widgets/keybindings/actionmanager.cpp:185
+msgctxt "ActionManager|"
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: widgets/keybindings/actionmanager.cpp:187
+msgctxt "ActionManager|"
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: widgets/keybindings/actionmanager.cpp:188
+msgctxt "ActionManager|"
+msgid "Ctrl+O"
+msgstr "Ctrl+O"
+
+#: widgets/keybindings/actionmanager.cpp:189
+msgctxt "ActionManager|"
+msgid "Ctrl+G"
+msgstr "Ctrl+G"
+
+#: widgets/keybindings/actionmanager.cpp:190
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+G"
+msgstr "Ctrl+dvigalka+G"
+
+#: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Izbriši izbor"
 
-#: properties/widgets/actionswidget.cpp:35
-#, fuzzy
-#| msgid "Group selection"
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Združi izbor"
 
-#: properties/widgets/actionswidget.cpp:36
-#, fuzzy
-#| msgid "Ungroup selection"
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Razdruži izbor"
 
-#: properties/widgets/actionswidget.cpp:63
-#, fuzzy
-#| msgid "Actions"
+#: widgets/properties/widgets/actionswidget.cpp:63
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Dejanja"
 
-#: properties/widgets/erasersizewidget.cpp:28
-#, fuzzy
-#| msgid "Eraser Size"
+#: widgets/properties/widgets/erasersizewidget.cpp:28
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
 msgstr "Velikost radirke"
 
-#: properties/widgets/fontsizewidget.cpp:29
-#, fuzzy
-#| msgid "Font Size"
+#: widgets/properties/widgets/fontsizewidget.cpp:29
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Velikost pisave"
 
-#: properties/widgets/strokecolorwidget.cpp:50
-#, fuzzy
-#| msgid "Color"
+#: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
 msgstr "Barva"
 
-#: properties/widgets/strokewidthwidget.cpp:28
-#, fuzzy
-#| msgid "Thickness"
+#: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Debelina"
 
-#: serializer/loader.cpp:32
-#, fuzzy, qt-format
-#| msgid "Drawy (*.%1)"
+#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: serializer/loader.cpp:36
-#, fuzzy
-#| msgctxt "context/uicontext.cpp:73"
-#| msgid "Open File"
+#: widgets/serializer/loader.cpp:36
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: serializer/serializer.cpp:124
-#, fuzzy
-#| msgid "Save File"
+#: widgets/serializer/serializer.cpp:117
+#, qt-format
+msgctxt "QObject|"
+msgid "Untitled.%1"
+msgstr ""
+
+#: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: tools/arrowtool.cpp:16
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:114"
-#| msgid "Arrow Tool"
+#: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Orodje za puščice"
 
-#: tools/ellipsetool.cpp:16
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:93"
-#| msgid "Ellipse Tool"
+#: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Orodje za elipso"
 
-#: tools/erasertool.cpp:160
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:72"
-#| msgid "Eraser Tool"
+#: widgets/tools/erasertool.cpp:160
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Orodje radirke"
 
-#: tools/freeformtool.cpp:45
-#, fuzzy
-#| msgid "Pen Tool"
+#: widgets/tools/freeformtool.cpp:46
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Orodje pero"
 
-#: tools/linetool.cpp:16
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:100"
-#| msgid "Line Tool"
+#: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "Orodje za črte"
 
-#: tools/movetool.cpp:77
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:121"
-#| msgid "Move Tool"
+#: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Orodje za premikanje"
 
-#: tools/rectangletool.cpp:16
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:86"
-#| msgid "Rectangle Tool"
+#: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Orodje za pravokotnik"
 
-#: tools/selectiontool/selectiontool.cpp:134
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:79"
-#| msgid "Selection Tool"
+#: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Orodje za izbiro"
 
-#: tools/texttool.cpp:497
-#, fuzzy
-#| msgctxt "keybindings/actionmanager.cpp:107"
-#| msgid "Text Tool"
+#: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Orodje za besedilo"

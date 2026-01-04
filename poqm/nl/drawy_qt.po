@@ -13,438 +13,450 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.12.0\n"
 
-#: context/uicontext.cpp:72
-msgctxt "UIContext|"
-msgid "Save to File"
-msgstr "Naar bestand opslaan"
-
-#: context/uicontext.cpp:73
-msgctxt "UIContext|"
-msgid "Open File"
-msgstr "Bestand openen"
-
-#: context/uicontext.cpp:74
-msgctxt "UIContext|"
-msgid "Zoom Out"
-msgstr "Uitzoomen"
-
-#: context/uicontext.cpp:75
-msgctxt "UIContext|"
-msgid "Zoom In"
-msgstr "Inzoomen"
-
-#: context/uicontext.cpp:76 context/uicontext.cpp:122
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Lichte modus"
-
-#: context/uicontext.cpp:77
-msgctxt "UIContext|"
-msgid "Undo"
-msgstr "Ongedaan maken"
-
-#: context/uicontext.cpp:78
-msgctxt "UIContext|"
-msgid "Redo"
-msgstr "Opnieuw doen"
-
-#: context/uicontext.cpp:126
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Donkere modus"
-
-#: keybindings/actionmanager.cpp:37
-msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "Ongedaan maken"
-
-#: keybindings/actionmanager.cpp:38
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "Laatste actie ongedaan maken"
-
-#: keybindings/actionmanager.cpp:44
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "Opnieuw doen"
-
-#: keybindings/actionmanager.cpp:45
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "Laatste ongedaan gemaakte actie opnieuw uitvoeren"
-
-#: keybindings/actionmanager.cpp:51
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "Inzoomen"
-
-#: keybindings/actionmanager.cpp:52
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "Inzoomen"
-
-#: keybindings/actionmanager.cpp:58
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "Uitzoomen"
-
-#: keybindings/actionmanager.cpp:59
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "Uitzoomen"
-
-#: keybindings/actionmanager.cpp:65
-msgctxt "ActionManager|"
-msgid "Freeform Tool"
-msgstr "Hulpmiddel voor vrije vorm"
-
-#: keybindings/actionmanager.cpp:66
-msgctxt "ActionManager|"
-msgid "Switch to freeform drawing tool"
-msgstr "Schakel om naar tekenhulpmiddel voor vrij vorm"
-
-#: keybindings/actionmanager.cpp:72
-msgctxt "ActionManager|"
-msgid "Eraser Tool"
-msgstr "Hulpmiddel voor gum"
-
-#: keybindings/actionmanager.cpp:73
-msgctxt "ActionManager|"
-msgid "Switch to eraser tool"
-msgstr "Schakel om naar hulpmiddel voor gum"
-
-#: keybindings/actionmanager.cpp:79
-msgctxt "ActionManager|"
-msgid "Selection Tool"
-msgstr "Selectiehulpmiddel"
-
-#: keybindings/actionmanager.cpp:80
-msgctxt "ActionManager|"
-msgid "Switch to selection tool"
-msgstr "Schakel om naar selectiehulpmiddel"
-
-#: keybindings/actionmanager.cpp:86
-msgctxt "ActionManager|"
-msgid "Rectangle Tool"
-msgstr "Gereedschap voor rechthoek"
-
-#: keybindings/actionmanager.cpp:87
-msgctxt "ActionManager|"
-msgid "Switch to rectangle drawing tool"
-msgstr "Schakel om naar tekenhulpmiddel voor rechthoek"
-
-#: keybindings/actionmanager.cpp:93
-msgctxt "ActionManager|"
-msgid "Ellipse Tool"
-msgstr "Gereedschap voor ellips"
-
-#: keybindings/actionmanager.cpp:94
-msgctxt "ActionManager|"
-msgid "Switch to ellipse drawing tool"
-msgstr "Schakel om naar tekenhulpmiddel voor ellips"
-
-#: keybindings/actionmanager.cpp:100
-msgctxt "ActionManager|"
-msgid "Line Tool"
-msgstr "Lijnhulpmiddel"
-
-#: keybindings/actionmanager.cpp:101
-msgctxt "ActionManager|"
-msgid "Switch to line drawing tool"
-msgstr "Schakel om naar tekenhulpmiddel voor lijn"
-
-#: keybindings/actionmanager.cpp:107
-msgctxt "ActionManager|"
-msgid "Text Tool"
-msgstr "Hulpmiddel voor tekst"
-
-#: keybindings/actionmanager.cpp:108
-msgctxt "ActionManager|"
-msgid "Switch to the text tool"
-msgstr "Omschakelen naar teksthulpmiddel"
-
-#: keybindings/actionmanager.cpp:114
-msgctxt "ActionManager|"
-msgid "Arrow Tool"
-msgstr "Hulpmiddel voor pijl"
-
-#: keybindings/actionmanager.cpp:115
-msgctxt "ActionManager|"
-msgid "Switch to arrow drawing tool"
-msgstr "Schakel om naar tekenhulpmiddel voor pijl"
-
-#: keybindings/actionmanager.cpp:121
-msgctxt "ActionManager|"
-msgid "Move Tool"
-msgstr "Hulpmiddel voor verplaatsen"
-
-#: keybindings/actionmanager.cpp:122
-msgctxt "ActionManager|"
-msgid "Switch to move tool"
-msgstr "Scheel om naar hulpmiddel voor verplaatsen"
-
-#: keybindings/actionmanager.cpp:128
-msgctxt "ActionManager|"
-msgid "Group Elements"
-msgstr "Groepselementen"
-
-#: keybindings/actionmanager.cpp:129
-msgctxt "ActionManager|"
-msgid "Groups selected items"
-msgstr "Groepeert geselecteerde items"
-
-#: keybindings/actionmanager.cpp:135
-msgctxt "ActionManager|"
-msgid "Ungroup Elements"
-msgstr "Selectie van elementen in groep ongedaan maken"
-
-#: keybindings/actionmanager.cpp:136
-msgctxt "ActionManager|"
-msgid "Ungroups selected groups"
-msgstr "Maakt groepering in geselecteerde groepen ongedaan"
-
-#: keybindings/actionmanager.cpp:142
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "Alles selecteren"
-
-#: keybindings/actionmanager.cpp:143
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "Alle items selecteren"
-
-#: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
-msgctxt "ActionManager|"
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: keybindings/actionmanager.cpp:150
-msgctxt "ActionManager|"
-msgid "Deletes selected items"
-msgstr "Verwijdert geselecteerde items"
-
-#: keybindings/actionmanager.cpp:156
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "Opslaan"
-
-#: keybindings/actionmanager.cpp:157
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "Werkveld opslaan"
-
-#: keybindings/actionmanager.cpp:163
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "Bestand openen"
-
-#: keybindings/actionmanager.cpp:164
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "Een bestaand bestand openen"
-
-#: keybindings/actionmanager.cpp:170
-msgctxt "ActionManager|"
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: keybindings/actionmanager.cpp:171
-msgctxt "ActionManager|"
-msgid "Ctrl+Y"
-msgstr "Ctrl+Y"
-
-#: keybindings/actionmanager.cpp:172
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+Z"
-msgstr "Ctrl+Shift+Z"
-
-#: keybindings/actionmanager.cpp:173
-msgctxt "ActionManager|"
-msgid "Ctrl++"
-msgstr "Ctrl++"
-
-#: keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|"
-msgid "Ctrl+-"
-msgstr "Ctrl+-"
-
-#: keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|"
-msgid "T"
-msgstr "T"
-
-#: keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|"
-msgid "P"
-msgstr "P"
-
-#: keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|"
-msgid "B"
-msgstr "B"
-
-#: keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|"
-msgid "E"
-msgstr "E"
-
-#: keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|"
-msgid "S"
-msgstr "S"
-
-#: keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|"
-msgid "R"
-msgstr "R"
-
-#: keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|"
-msgid "O"
-msgstr "O"
-
-#: keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|"
-msgid "L"
-msgstr "L"
-
-#: keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|"
-msgid "A"
-msgstr "A"
-
-#: keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|"
-msgid "M"
-msgstr "M"
-
-#: keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|"
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-#: keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|"
-msgid "Ctrl+O"
-msgstr "Ctrl+O"
-
-#: keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|"
-msgid "Ctrl+G"
-msgstr "Ctrl+G"
-
-#: keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+G"
-msgstr "Ctrl+Shift+G"
-
-#: main.cpp:22
+#: apps/main.cpp:24
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
 
-#: properties/widgets/actionswidget.cpp:34
+#: widgets/context/uicontext.cpp:72
+msgctxt "UIContext|"
+msgid "Save to File"
+msgstr "Naar bestand opslaan"
+
+#: widgets/context/uicontext.cpp:73
+msgctxt "UIContext|"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: widgets/context/uicontext.cpp:74
+msgctxt "UIContext|"
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: widgets/context/uicontext.cpp:75
+msgctxt "UIContext|"
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: widgets/context/uicontext.cpp:76 widgets/context/uicontext.cpp:122
+msgctxt "UIContext|"
+msgid "Light Mode"
+msgstr "Lichte modus"
+
+#: widgets/context/uicontext.cpp:77
+msgctxt "UIContext|"
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: widgets/context/uicontext.cpp:78
+msgctxt "UIContext|"
+msgid "Redo"
+msgstr "Opnieuw doen"
+
+#: widgets/context/uicontext.cpp:126
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "Donkere modus"
+
+#: widgets/drawycommandlineparser.cpp:20
+msgctxt "QObject|"
+msgid "Fullscreen"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:37
+msgctxt "ActionManager|"
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: widgets/keybindings/actionmanager.cpp:38
+msgctxt "ActionManager|"
+msgid "Undo last action"
+msgstr "Laatste actie ongedaan maken"
+
+#: widgets/keybindings/actionmanager.cpp:44
+msgctxt "ActionManager|"
+msgid "Redo"
+msgstr "Opnieuw doen"
+
+#: widgets/keybindings/actionmanager.cpp:45
+msgctxt "ActionManager|"
+msgid "Redo last undone action"
+msgstr "Laatste ongedaan gemaakte actie opnieuw uitvoeren"
+
+#: widgets/keybindings/actionmanager.cpp:51
+msgctxt "ActionManager|"
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: widgets/keybindings/actionmanager.cpp:52
+msgctxt "ActionManager|"
+msgid "Zoom in"
+msgstr "Inzoomen"
+
+#: widgets/keybindings/actionmanager.cpp:58
+msgctxt "ActionManager|"
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: widgets/keybindings/actionmanager.cpp:59
+msgctxt "ActionManager|"
+msgid "Zoom out"
+msgstr "Uitzoomen"
+
+#: widgets/keybindings/actionmanager.cpp:65
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "Hulpmiddel voor vrije vorm"
+
+#: widgets/keybindings/actionmanager.cpp:66
+msgctxt "ActionManager|"
+msgid "Switch to freeform drawing tool"
+msgstr "Schakel om naar tekenhulpmiddel voor vrij vorm"
+
+#: widgets/keybindings/actionmanager.cpp:72
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "Hulpmiddel voor gum"
+
+#: widgets/keybindings/actionmanager.cpp:73
+msgctxt "ActionManager|"
+msgid "Switch to eraser tool"
+msgstr "Schakel om naar hulpmiddel voor gum"
+
+#: widgets/keybindings/actionmanager.cpp:79
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "Selectiehulpmiddel"
+
+#: widgets/keybindings/actionmanager.cpp:80
+msgctxt "ActionManager|"
+msgid "Switch to selection tool"
+msgstr "Schakel om naar selectiehulpmiddel"
+
+#: widgets/keybindings/actionmanager.cpp:86
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "Gereedschap voor rechthoek"
+
+#: widgets/keybindings/actionmanager.cpp:87
+msgctxt "ActionManager|"
+msgid "Switch to rectangle drawing tool"
+msgstr "Schakel om naar tekenhulpmiddel voor rechthoek"
+
+#: widgets/keybindings/actionmanager.cpp:93
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "Gereedschap voor ellips"
+
+#: widgets/keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Switch to ellipse drawing tool"
+msgstr "Schakel om naar tekenhulpmiddel voor ellips"
+
+#: widgets/keybindings/actionmanager.cpp:100
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "Lijnhulpmiddel"
+
+#: widgets/keybindings/actionmanager.cpp:101
+msgctxt "ActionManager|"
+msgid "Switch to line drawing tool"
+msgstr "Schakel om naar tekenhulpmiddel voor lijn"
+
+#: widgets/keybindings/actionmanager.cpp:107
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "Hulpmiddel voor tekst"
+
+#: widgets/keybindings/actionmanager.cpp:108
+msgctxt "ActionManager|"
+msgid "Switch to the text tool"
+msgstr "Omschakelen naar teksthulpmiddel"
+
+#: widgets/keybindings/actionmanager.cpp:114
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "Hulpmiddel voor pijl"
+
+#: widgets/keybindings/actionmanager.cpp:115
+msgctxt "ActionManager|"
+msgid "Switch to arrow drawing tool"
+msgstr "Schakel om naar tekenhulpmiddel voor pijl"
+
+#: widgets/keybindings/actionmanager.cpp:121
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "Hulpmiddel voor verplaatsen"
+
+#: widgets/keybindings/actionmanager.cpp:122
+msgctxt "ActionManager|"
+msgid "Switch to move tool"
+msgstr "Scheel om naar hulpmiddel voor verplaatsen"
+
+#: widgets/keybindings/actionmanager.cpp:128
+msgctxt "ActionManager|"
+msgid "Group Elements"
+msgstr "Groepselementen"
+
+#: widgets/keybindings/actionmanager.cpp:129
+msgctxt "ActionManager|"
+msgid "Groups selected items"
+msgstr "Groepeert geselecteerde items"
+
+#: widgets/keybindings/actionmanager.cpp:135
+msgctxt "ActionManager|"
+msgid "Ungroup Elements"
+msgstr "Selectie van elementen in groep ongedaan maken"
+
+#: widgets/keybindings/actionmanager.cpp:136
+msgctxt "ActionManager|"
+msgid "Ungroups selected groups"
+msgstr "Maakt groepering in geselecteerde groepen ongedaan"
+
+#: widgets/keybindings/actionmanager.cpp:142
+msgctxt "ActionManager|"
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: widgets/keybindings/actionmanager.cpp:143
+msgctxt "ActionManager|"
+msgid "Select all items"
+msgstr "Alle items selecteren"
+
+#: widgets/keybindings/actionmanager.cpp:149
+#: widgets/keybindings/actionmanager.cpp:186
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: widgets/keybindings/actionmanager.cpp:150
+msgctxt "ActionManager|"
+msgid "Deletes selected items"
+msgstr "Verwijdert geselecteerde items"
+
+#: widgets/keybindings/actionmanager.cpp:156
+msgctxt "ActionManager|"
+msgid "Save"
+msgstr "Opslaan"
+
+#: widgets/keybindings/actionmanager.cpp:157
+msgctxt "ActionManager|"
+msgid "Save canvas"
+msgstr "Werkveld opslaan"
+
+#: widgets/keybindings/actionmanager.cpp:163
+msgctxt "ActionManager|"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: widgets/keybindings/actionmanager.cpp:164
+msgctxt "ActionManager|"
+msgid "Open an existing file"
+msgstr "Een bestaand bestand openen"
+
+#: widgets/keybindings/actionmanager.cpp:170
+msgctxt "ActionManager|"
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: widgets/keybindings/actionmanager.cpp:171
+msgctxt "ActionManager|"
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: widgets/keybindings/actionmanager.cpp:172
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+Z"
+msgstr "Ctrl+Shift+Z"
+
+#: widgets/keybindings/actionmanager.cpp:173
+msgctxt "ActionManager|"
+msgid "Ctrl++"
+msgstr "Ctrl++"
+
+#: widgets/keybindings/actionmanager.cpp:174
+msgctxt "ActionManager|"
+msgid "Ctrl+-"
+msgstr "Ctrl+-"
+
+#: widgets/keybindings/actionmanager.cpp:175
+msgctxt "ActionManager|"
+msgid "T"
+msgstr "T"
+
+#: widgets/keybindings/actionmanager.cpp:176
+msgctxt "ActionManager|"
+msgid "P"
+msgstr "P"
+
+#: widgets/keybindings/actionmanager.cpp:177
+msgctxt "ActionManager|"
+msgid "B"
+msgstr "B"
+
+#: widgets/keybindings/actionmanager.cpp:178
+msgctxt "ActionManager|"
+msgid "E"
+msgstr "E"
+
+#: widgets/keybindings/actionmanager.cpp:179
+msgctxt "ActionManager|"
+msgid "S"
+msgstr "S"
+
+#: widgets/keybindings/actionmanager.cpp:180
+msgctxt "ActionManager|"
+msgid "R"
+msgstr "R"
+
+#: widgets/keybindings/actionmanager.cpp:181
+msgctxt "ActionManager|"
+msgid "O"
+msgstr "O"
+
+#: widgets/keybindings/actionmanager.cpp:182
+msgctxt "ActionManager|"
+msgid "L"
+msgstr "L"
+
+#: widgets/keybindings/actionmanager.cpp:183
+msgctxt "ActionManager|"
+msgid "A"
+msgstr "A"
+
+#: widgets/keybindings/actionmanager.cpp:184
+msgctxt "ActionManager|"
+msgid "M"
+msgstr "M"
+
+#: widgets/keybindings/actionmanager.cpp:185
+msgctxt "ActionManager|"
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: widgets/keybindings/actionmanager.cpp:187
+msgctxt "ActionManager|"
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: widgets/keybindings/actionmanager.cpp:188
+msgctxt "ActionManager|"
+msgid "Ctrl+O"
+msgstr "Ctrl+O"
+
+#: widgets/keybindings/actionmanager.cpp:189
+msgctxt "ActionManager|"
+msgid "Ctrl+G"
+msgstr "Ctrl+G"
+
+#: widgets/keybindings/actionmanager.cpp:190
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+G"
+msgstr "Ctrl+Shift+G"
+
+#: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Selectie verwijderen"
 
-#: properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Groepsselectie"
 
-#: properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Selectie van groep ongedaan maken"
 
-#: properties/widgets/actionswidget.cpp:63
+#: widgets/properties/widgets/actionswidget.cpp:63
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acties"
 
-#: properties/widgets/erasersizewidget.cpp:28
+#: widgets/properties/widgets/erasersizewidget.cpp:28
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
 msgstr "Grootte van gum"
 
-#: properties/widgets/fontsizewidget.cpp:29
+#: widgets/properties/widgets/fontsizewidget.cpp:29
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Tekengrootte"
 
-#: properties/widgets/strokecolorwidget.cpp:50
+#: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
 msgstr "Kleur"
 
-#: properties/widgets/strokewidthwidget.cpp:28
+#: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Dikte"
 
-#: serializer/loader.cpp:32
+#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:36
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: serializer/serializer.cpp:124
+#: widgets/serializer/serializer.cpp:117
+#, qt-format
+msgctxt "QObject|"
+msgid "Untitled.%1"
+msgstr ""
+
+#: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: tools/arrowtool.cpp:16
+#: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Hulpmiddel voor pijl"
 
-#: tools/ellipsetool.cpp:16
+#: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Gereedschap voor ellips"
 
-#: tools/erasertool.cpp:160
+#: widgets/tools/erasertool.cpp:160
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Hulpmiddel voor gum"
 
-#: tools/freeformtool.cpp:45
+#: widgets/tools/freeformtool.cpp:46
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Hulpmiddel voor pen"
 
-#: tools/linetool.cpp:16
+#: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "Lijnhulpmiddel"
 
-#: tools/movetool.cpp:77
+#: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Hulpmiddel voor verplaatsen"
 
-#: tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Gereedschap voor rechthoek"
 
-#: tools/selectiontool/selectiontool.cpp:134
+#: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Selectiehulpmiddel"
 
-#: tools/texttool.cpp:497
+#: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Hulpmiddel voor tekst"

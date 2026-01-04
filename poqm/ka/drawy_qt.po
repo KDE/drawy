@@ -11,439 +11,452 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "X-Generator: Poedit 3.8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: context/uicontext.cpp:72
-msgctxt "UIContext|"
-msgid "Save to File"
-msgstr "ფაილში შენახვა"
-
-#: context/uicontext.cpp:73
-msgctxt "UIContext|"
-msgid "Open File"
-msgstr "ფაილის გახსნა"
-
-#: context/uicontext.cpp:74
-msgctxt "UIContext|"
-msgid "Zoom Out"
-msgstr "დაპატარავება"
-
-#: context/uicontext.cpp:75
-msgctxt "UIContext|"
-msgid "Zoom In"
-msgstr "გადიდება"
-
-#: context/uicontext.cpp:76 context/uicontext.cpp:122
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "ღია რეჟიმი"
-
-#: context/uicontext.cpp:77
-msgctxt "UIContext|"
-msgid "Undo"
-msgstr "გაუქმება"
-
-#: context/uicontext.cpp:78
-msgctxt "UIContext|"
-msgid "Redo"
-msgstr "გამეორება"
-
-#: context/uicontext.cpp:126
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "მუქი რეჟიმი"
-
-#: keybindings/actionmanager.cpp:37
-msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "გაუქმება"
-
-#: keybindings/actionmanager.cpp:38
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "ბოლო ბრძანების გაუქმება"
-
-#: keybindings/actionmanager.cpp:44
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "გამეორება"
-
-#: keybindings/actionmanager.cpp:45
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "ბოლო დაბრუნებული ქმედების გამეორება"
-
-#: keybindings/actionmanager.cpp:51
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "გადიდება"
-
-#: keybindings/actionmanager.cpp:52
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "გადიდება"
-
-#: keybindings/actionmanager.cpp:58
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "დაპატარავება"
-
-#: keybindings/actionmanager.cpp:59
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "დაპატარავება"
-
-#: keybindings/actionmanager.cpp:65
-msgctxt "ActionManager|"
-msgid "Freeform Tool"
-msgstr "თავისუფალი ფორმის დახატვა"
-
-#: keybindings/actionmanager.cpp:66
-msgctxt "ActionManager|"
-msgid "Switch to freeform drawing tool"
-msgstr "გადართვა თავისუფალი ფორმის დახატვაზე"
-
-#: keybindings/actionmanager.cpp:72
-msgctxt "ActionManager|"
-msgid "Eraser Tool"
-msgstr "საშლელი ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:73
-msgctxt "ActionManager|"
-msgid "Switch to eraser tool"
-msgstr "გადართვა საშლელ ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:79
-msgctxt "ActionManager|"
-msgid "Selection Tool"
-msgstr "მონიშვნის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:80
-msgctxt "ActionManager|"
-msgid "Switch to selection tool"
-msgstr "გადართვა მონიშვნის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:86
-msgctxt "ActionManager|"
-msgid "Rectangle Tool"
-msgstr "მართკუთხედის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:87
-msgctxt "ActionManager|"
-msgid "Switch to rectangle drawing tool"
-msgstr "გადართვა მართკუთხედის დახატვის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:93
-msgctxt "ActionManager|"
-msgid "Ellipse Tool"
-msgstr "ოვალის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:94
-msgctxt "ActionManager|"
-msgid "Switch to ellipse drawing tool"
-msgstr "გადართვა ოვალის დახატვის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:100
-msgctxt "ActionManager|"
-msgid "Line Tool"
-msgstr "ხაზის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:101
-msgctxt "ActionManager|"
-msgid "Switch to line drawing tool"
-msgstr "გადართვა ხაზის დახატვის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:107
-msgctxt "ActionManager|"
-msgid "Text Tool"
-msgstr "ტექსტის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:108
-msgctxt "ActionManager|"
-msgid "Switch to the text tool"
-msgstr "გადართვა ტექსტის დახატვის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:114
-msgctxt "ActionManager|"
-msgid "Arrow Tool"
-msgstr "ისრის ხელსაწყო"
-
-#: keybindings/actionmanager.cpp:115
-msgctxt "ActionManager|"
-msgid "Switch to arrow drawing tool"
-msgstr "გადართვა ისრის დახატვის ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:121
-msgctxt "ActionManager|"
-msgid "Move Tool"
-msgstr "გადამაადგილებელი ინსტრუმენტი"
-
-#: keybindings/actionmanager.cpp:122
-msgctxt "ActionManager|"
-msgid "Switch to move tool"
-msgstr "გადართვა გადაადგილების ხელსაწყოზე"
-
-#: keybindings/actionmanager.cpp:128
-msgctxt "ActionManager|"
-msgid "Group Elements"
-msgstr "ელემენტების დაჯგუფება"
-
-#: keybindings/actionmanager.cpp:129
-msgctxt "ActionManager|"
-msgid "Groups selected items"
-msgstr "დააჯგუფებს მონიშნულ ელემენტებს"
-
-#: keybindings/actionmanager.cpp:135
-msgctxt "ActionManager|"
-msgid "Ungroup Elements"
-msgstr "ელემენტების განჯგუფება"
-
-#: keybindings/actionmanager.cpp:136
-msgctxt "ActionManager|"
-msgid "Ungroups selected groups"
-msgstr "მოახდენს მონიშნული ჯგუფების განჯგუფებას"
-
-#: keybindings/actionmanager.cpp:142
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "ყველას მონიშვნა"
-
-#: keybindings/actionmanager.cpp:143
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "ყველაფრის მონიშვნა"
-
-#: keybindings/actionmanager.cpp:149 keybindings/actionmanager.cpp:186
-msgctxt "ActionManager|"
-msgid "Delete"
-msgstr "წაშლა"
-
-#: keybindings/actionmanager.cpp:150
-msgctxt "ActionManager|"
-msgid "Deletes selected items"
-msgstr "წაშლის მონიშნულ ელემენტებს"
-
-#: keybindings/actionmanager.cpp:156
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "შენახვა"
-
-#: keybindings/actionmanager.cpp:157
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "ტილოს შენახვა"
-
-#: keybindings/actionmanager.cpp:163
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "ფაილის გახსნა"
-
-#: keybindings/actionmanager.cpp:164
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "არსებული ფაილის გახსნა"
-
-#: keybindings/actionmanager.cpp:170
-msgctxt "ActionManager|"
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: keybindings/actionmanager.cpp:171
-msgctxt "ActionManager|"
-msgid "Ctrl+Y"
-msgstr "Ctrl+Y"
-
-#: keybindings/actionmanager.cpp:172
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+Z"
-msgstr "Ctrl+Shift+Z"
-
-#: keybindings/actionmanager.cpp:173
-msgctxt "ActionManager|"
-msgid "Ctrl++"
-msgstr "Ctrl++"
-
-#: keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|"
-msgid "Ctrl+-"
-msgstr "Ctrl+-"
-
-#: keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|"
-msgid "T"
-msgstr "ხუთშ"
-
-#: keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|"
-msgid "P"
-msgstr "P"
-
-#: keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|"
-msgid "B"
-msgstr "B"
-
-#: keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|"
-msgid "E"
-msgstr "აღმ"
-
-#: keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|"
-msgid "S"
-msgstr "სამხ"
-
-#: keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|"
-msgid "R"
-msgstr "მარჯ"
-
-#: keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|"
-msgid "O"
-msgstr "O"
-
-#: keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|"
-msgid "L"
-msgstr "მარცხ"
-
-#: keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|"
-msgid "A"
-msgstr "A"
-
-#: keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|"
-msgid "M"
-msgstr "მ"
-
-#: keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|"
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-#: keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|"
-msgid "Ctrl+O"
-msgstr "Ctrl+O"
-
-#: keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|"
-msgid "Ctrl+G"
-msgstr "Ctrl+G"
-
-#: keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|"
-msgid "Ctrl+Shift+G"
-msgstr "Ctrl+Shift+G"
-
-#: main.cpp:22
+#: apps/main.cpp:24
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
-#: properties/widgets/actionswidget.cpp:34
+#: widgets/context/uicontext.cpp:72
+msgctxt "UIContext|"
+msgid "Save to File"
+msgstr "ფაილში შენახვა"
+
+#: widgets/context/uicontext.cpp:73
+msgctxt "UIContext|"
+msgid "Open File"
+msgstr "ფაილის გახსნა"
+
+#: widgets/context/uicontext.cpp:74
+msgctxt "UIContext|"
+msgid "Zoom Out"
+msgstr "დაპატარავება"
+
+#: widgets/context/uicontext.cpp:75
+msgctxt "UIContext|"
+msgid "Zoom In"
+msgstr "გადიდება"
+
+#: widgets/context/uicontext.cpp:76 widgets/context/uicontext.cpp:122
+msgctxt "UIContext|"
+msgid "Light Mode"
+msgstr "ღია რეჟიმი"
+
+#: widgets/context/uicontext.cpp:77
+msgctxt "UIContext|"
+msgid "Undo"
+msgstr "გაუქმება"
+
+#: widgets/context/uicontext.cpp:78
+msgctxt "UIContext|"
+msgid "Redo"
+msgstr "გამეორება"
+
+#: widgets/context/uicontext.cpp:126
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "მუქი რეჟიმი"
+
+#: widgets/drawycommandlineparser.cpp:20
+msgctxt "QObject|"
+msgid "Fullscreen"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:37
+msgctxt "ActionManager|"
+msgid "Undo"
+msgstr "გაუქმება"
+
+#: widgets/keybindings/actionmanager.cpp:38
+msgctxt "ActionManager|"
+msgid "Undo last action"
+msgstr "ბოლო ბრძანების გაუქმება"
+
+#: widgets/keybindings/actionmanager.cpp:44
+msgctxt "ActionManager|"
+msgid "Redo"
+msgstr "გამეორება"
+
+#: widgets/keybindings/actionmanager.cpp:45
+msgctxt "ActionManager|"
+msgid "Redo last undone action"
+msgstr "ბოლო დაბრუნებული ქმედების გამეორება"
+
+#: widgets/keybindings/actionmanager.cpp:51
+msgctxt "ActionManager|"
+msgid "Zoom In"
+msgstr "გადიდება"
+
+#: widgets/keybindings/actionmanager.cpp:52
+msgctxt "ActionManager|"
+msgid "Zoom in"
+msgstr "გადიდება"
+
+#: widgets/keybindings/actionmanager.cpp:58
+msgctxt "ActionManager|"
+msgid "Zoom Out"
+msgstr "დაპატარავება"
+
+#: widgets/keybindings/actionmanager.cpp:59
+msgctxt "ActionManager|"
+msgid "Zoom out"
+msgstr "დაპატარავება"
+
+#: widgets/keybindings/actionmanager.cpp:65
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "თავისუფალი ფორმის დახატვა"
+
+#: widgets/keybindings/actionmanager.cpp:66
+msgctxt "ActionManager|"
+msgid "Switch to freeform drawing tool"
+msgstr "გადართვა თავისუფალი ფორმის დახატვაზე"
+
+#: widgets/keybindings/actionmanager.cpp:72
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "საშლელი ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:73
+msgctxt "ActionManager|"
+msgid "Switch to eraser tool"
+msgstr "გადართვა საშლელ ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:79
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "მონიშვნის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:80
+msgctxt "ActionManager|"
+msgid "Switch to selection tool"
+msgstr "გადართვა მონიშვნის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:86
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "მართკუთხედის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:87
+msgctxt "ActionManager|"
+msgid "Switch to rectangle drawing tool"
+msgstr "გადართვა მართკუთხედის დახატვის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:93
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "ოვალის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Switch to ellipse drawing tool"
+msgstr "გადართვა ოვალის დახატვის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:100
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "ხაზის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:101
+msgctxt "ActionManager|"
+msgid "Switch to line drawing tool"
+msgstr "გადართვა ხაზის დახატვის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:107
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "ტექსტის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:108
+msgctxt "ActionManager|"
+msgid "Switch to the text tool"
+msgstr "გადართვა ტექსტის დახატვის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:114
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "ისრის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:115
+msgctxt "ActionManager|"
+msgid "Switch to arrow drawing tool"
+msgstr "გადართვა ისრის დახატვის ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:121
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "გადამაადგილებელი ინსტრუმენტი"
+
+#: widgets/keybindings/actionmanager.cpp:122
+msgctxt "ActionManager|"
+msgid "Switch to move tool"
+msgstr "გადართვა გადაადგილების ხელსაწყოზე"
+
+#: widgets/keybindings/actionmanager.cpp:128
+msgctxt "ActionManager|"
+msgid "Group Elements"
+msgstr "ელემენტების დაჯგუფება"
+
+#: widgets/keybindings/actionmanager.cpp:129
+msgctxt "ActionManager|"
+msgid "Groups selected items"
+msgstr "დააჯგუფებს მონიშნულ ელემენტებს"
+
+#: widgets/keybindings/actionmanager.cpp:135
+msgctxt "ActionManager|"
+msgid "Ungroup Elements"
+msgstr "ელემენტების განჯგუფება"
+
+#: widgets/keybindings/actionmanager.cpp:136
+msgctxt "ActionManager|"
+msgid "Ungroups selected groups"
+msgstr "მოახდენს მონიშნული ჯგუფების განჯგუფებას"
+
+#: widgets/keybindings/actionmanager.cpp:142
+msgctxt "ActionManager|"
+msgid "Select All"
+msgstr "ყველას მონიშვნა"
+
+#: widgets/keybindings/actionmanager.cpp:143
+msgctxt "ActionManager|"
+msgid "Select all items"
+msgstr "ყველაფრის მონიშვნა"
+
+#: widgets/keybindings/actionmanager.cpp:149
+#: widgets/keybindings/actionmanager.cpp:186
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr "წაშლა"
+
+#: widgets/keybindings/actionmanager.cpp:150
+msgctxt "ActionManager|"
+msgid "Deletes selected items"
+msgstr "წაშლის მონიშნულ ელემენტებს"
+
+#: widgets/keybindings/actionmanager.cpp:156
+msgctxt "ActionManager|"
+msgid "Save"
+msgstr "შენახვა"
+
+#: widgets/keybindings/actionmanager.cpp:157
+msgctxt "ActionManager|"
+msgid "Save canvas"
+msgstr "ტილოს შენახვა"
+
+#: widgets/keybindings/actionmanager.cpp:163
+msgctxt "ActionManager|"
+msgid "Open File"
+msgstr "ფაილის გახსნა"
+
+#: widgets/keybindings/actionmanager.cpp:164
+msgctxt "ActionManager|"
+msgid "Open an existing file"
+msgstr "არსებული ფაილის გახსნა"
+
+#: widgets/keybindings/actionmanager.cpp:170
+msgctxt "ActionManager|"
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: widgets/keybindings/actionmanager.cpp:171
+msgctxt "ActionManager|"
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: widgets/keybindings/actionmanager.cpp:172
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+Z"
+msgstr "Ctrl+Shift+Z"
+
+#: widgets/keybindings/actionmanager.cpp:173
+msgctxt "ActionManager|"
+msgid "Ctrl++"
+msgstr "Ctrl++"
+
+#: widgets/keybindings/actionmanager.cpp:174
+msgctxt "ActionManager|"
+msgid "Ctrl+-"
+msgstr "Ctrl+-"
+
+#: widgets/keybindings/actionmanager.cpp:175
+msgctxt "ActionManager|"
+msgid "T"
+msgstr "ხუთშ"
+
+#: widgets/keybindings/actionmanager.cpp:176
+msgctxt "ActionManager|"
+msgid "P"
+msgstr "P"
+
+#: widgets/keybindings/actionmanager.cpp:177
+msgctxt "ActionManager|"
+msgid "B"
+msgstr "B"
+
+#: widgets/keybindings/actionmanager.cpp:178
+msgctxt "ActionManager|"
+msgid "E"
+msgstr "აღმ"
+
+#: widgets/keybindings/actionmanager.cpp:179
+msgctxt "ActionManager|"
+msgid "S"
+msgstr "სამხ"
+
+#: widgets/keybindings/actionmanager.cpp:180
+msgctxt "ActionManager|"
+msgid "R"
+msgstr "მარჯ"
+
+#: widgets/keybindings/actionmanager.cpp:181
+msgctxt "ActionManager|"
+msgid "O"
+msgstr "O"
+
+#: widgets/keybindings/actionmanager.cpp:182
+msgctxt "ActionManager|"
+msgid "L"
+msgstr "მარცხ"
+
+#: widgets/keybindings/actionmanager.cpp:183
+msgctxt "ActionManager|"
+msgid "A"
+msgstr "A"
+
+#: widgets/keybindings/actionmanager.cpp:184
+msgctxt "ActionManager|"
+msgid "M"
+msgstr "მ"
+
+#: widgets/keybindings/actionmanager.cpp:185
+msgctxt "ActionManager|"
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: widgets/keybindings/actionmanager.cpp:187
+msgctxt "ActionManager|"
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: widgets/keybindings/actionmanager.cpp:188
+msgctxt "ActionManager|"
+msgid "Ctrl+O"
+msgstr "Ctrl+O"
+
+#: widgets/keybindings/actionmanager.cpp:189
+msgctxt "ActionManager|"
+msgid "Ctrl+G"
+msgstr "Ctrl+G"
+
+#: widgets/keybindings/actionmanager.cpp:190
+msgctxt "ActionManager|"
+msgid "Ctrl+Shift+G"
+msgstr "Ctrl+Shift+G"
+
+#: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "მონიშნულის წაშლა"
 
-#: properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "მონიშნულის დაჯგუფება"
 
-#: properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "მონიშნულის განჯგუფება"
 
-#: properties/widgets/actionswidget.cpp:63
+#: widgets/properties/widgets/actionswidget.cpp:63
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "ქმედებები"
 
-#: properties/widgets/erasersizewidget.cpp:28
+#: widgets/properties/widgets/erasersizewidget.cpp:28
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
 msgstr "საშლელის ზომა"
 
-#: properties/widgets/fontsizewidget.cpp:29
+#: widgets/properties/widgets/fontsizewidget.cpp:29
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "ფონტის ზომა"
 
-#: properties/widgets/strokecolorwidget.cpp:50
+#: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
 msgstr "ფერი"
 
-#: properties/widgets/strokewidthwidget.cpp:28
+#: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "სისქე"
 
-#: serializer/loader.cpp:32
+#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:36
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: serializer/serializer.cpp:124
+#: widgets/serializer/serializer.cpp:117
+#, qt-format
+msgctxt "QObject|"
+msgid "Untitled.%1"
+msgstr ""
+
+#: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: tools/arrowtool.cpp:16
+#: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
-#: tools/ellipsetool.cpp:16
+#: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: tools/erasertool.cpp:160
+#: widgets/tools/erasertool.cpp:160
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
 
-#: tools/freeformtool.cpp:45
+#: widgets/tools/freeformtool.cpp:46
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "კალამი ხელსაწყო"
 
-#: tools/linetool.cpp:16
+#: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "ხაზის ხელსაწყო"
 
-#: tools/movetool.cpp:77
+#: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "გადამაადგილებელი ინსტრუმენტი"
 
-#: tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: tools/selectiontool/selectiontool.cpp:134
+#: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: tools/texttool.cpp:497
+#: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
