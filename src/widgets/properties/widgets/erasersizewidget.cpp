@@ -32,3 +32,5 @@ const Property EraserSizeWidget::value() const
 {
     return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::EraserSize};
 }
+
+#include "moc_erasersizewidget.cpp"

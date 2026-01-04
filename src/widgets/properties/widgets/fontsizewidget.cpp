@@ -33,3 +33,5 @@ const Property FontSizeWidget::value() const
 {
     return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::FontSize};
 }
+
+#include "moc_fontsizewidget.cpp"

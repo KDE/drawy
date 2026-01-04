@@ -54,3 +54,5 @@ const Property StrokeColorWidget::value() const
 {
     return Property{m_group->checkedButton()->property("color-value"), Property::StrokeColor};
 }
+
+#include "moc_strokecolorwidget.cpp"

@@ -32,3 +32,5 @@ const Property StrokeWidthWidget::value() const
 {
     return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::StrokeWidth};
 }
+
+#include "moc_strokewidthwidget.cpp"
