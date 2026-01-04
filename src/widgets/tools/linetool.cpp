@@ -18,5 +18,5 @@ QString LineTool::tooltip() const
 
 IconManager::Icon LineTool::icon() const
 {
-    return IconManager::TOOL_LINE;
+    return IconManager::Icon::TOOL_LINE;
 }

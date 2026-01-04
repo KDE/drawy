@@ -162,5 +162,5 @@ QString EraserTool::tooltip() const
 
 IconManager::Icon EraserTool::icon() const
 {
-    return IconManager::TOOL_ERASER;
+    return IconManager::Icon::TOOL_ERASER;
 };

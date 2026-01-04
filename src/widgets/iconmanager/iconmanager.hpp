@@ -13,8 +13,8 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT IconManager : public QObject
 public:
     explicit IconManager(QObject *parent = nullptr);
 
-    enum Icon {
-        TOOL_SELECTION,
+    enum class Icon : int8_t {
+        TOOL_SELECTION = 0,
         TOOL_FREEFORM,
         TOOL_RECTANGLE,
         TOOL_ELLIPSE,
@@ -38,12 +38,12 @@ public:
         UI_ANGLE_DOWN,
     };
 
-    QIcon icon(Icon icon) const;
+    QIcon icon(IconManager::Icon icon) const;
 
-    [[nodiscard]] QString iconPath(Icon icon) const;
+    [[nodiscard]] QString iconPath(IconManager::Icon icon) const;
 
 private:
-    std::unordered_map<Icon, QString> m_iconName;
+    std::unordered_map<IconManager::Icon, QString> m_iconName;
 
     QString m_curTheme;
 };

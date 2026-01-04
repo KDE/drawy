@@ -18,5 +18,5 @@ QString ArrowTool::tooltip() const
 
 IconManager::Icon ArrowTool::icon() const
 {
-    return IconManager::TOOL_ARROW;
+    return IconManager::Icon::TOOL_ARROW;
 }

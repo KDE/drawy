@@ -136,5 +136,5 @@ QString SelectionTool::tooltip() const
 
 IconManager::Icon SelectionTool::icon() const
 {
-    return IconManager::TOOL_SELECTION;
+    return IconManager::Icon::TOOL_SELECTION;
 }

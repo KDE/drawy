@@ -18,5 +18,5 @@ QString EllipseTool::tooltip() const
 
 IconManager::Icon EllipseTool::icon() const
 {
-    return IconManager::TOOL_ELLIPSE;
+    return IconManager::Icon::TOOL_ELLIPSE;
 }

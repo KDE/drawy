@@ -79,5 +79,5 @@ QString MoveTool::tooltip() const
 
 IconManager::Icon MoveTool::icon() const
 {
-    return IconManager::TOOL_MOVE;
+    return IconManager::Icon::TOOL_MOVE;
 }

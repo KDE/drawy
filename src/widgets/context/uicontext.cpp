@@ -69,13 +69,13 @@ void UIContext::setUIContext()
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Move);
 
     // TODO: Define their functions somewhere else
-    m_actionBar->addButton(tr("Save to File"), IconManager::ACTION_SAVE, 6);
-    m_actionBar->addButton(tr("Open File"), IconManager::ACTION_OPEN_FILE, 7);
-    m_actionBar->addButton(tr("Zoom Out"), IconManager::ACTION_ZOOM_OUT, 1);
-    m_actionBar->addButton(tr("Zoom In"), IconManager::ACTION_ZOOM_IN, 2);
-    m_actionBar->addButton(tr("Light Mode"), IconManager::ACTION_LIGHT_MODE, 3);
-    m_actionBar->addButton(tr("Undo"), IconManager::ACTION_UNDO, 4);
-    m_actionBar->addButton(tr("Redo"), IconManager::ACTION_REDO, 5);
+    m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE, 6);
+    m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE, 7);
+    m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT, 1);
+    m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN, 2);
+    m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE, 3);
+    m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO, 4);
+    m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO, 5);
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
@@ -120,11 +120,11 @@ void UIContext::setUIContext()
         if (canvas->bg() == Common::lightBackgroundColor) {
             canvas->setBg(Common::darkBackgroundColor);
             button->setToolTip(tr("Light Mode"));
-            button->setIcon(iconManager()->icon(IconManager::ACTION_LIGHT_MODE));
+            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_LIGHT_MODE));
         } else {
             canvas->setBg(Common::lightBackgroundColor);
             button->setToolTip(tr("Dark Mode"));
-            button->setIcon(iconManager()->icon(IconManager::ACTION_DARK_MODE));
+            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_DARK_MODE));
         }
 
         m_applicationContext->renderingContext()->markForRender();

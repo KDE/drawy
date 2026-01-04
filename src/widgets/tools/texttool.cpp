@@ -499,5 +499,5 @@ QString TextTool::tooltip() const
 
 IconManager::Icon TextTool::icon() const
 {
-    return IconManager::TOOL_TEXT;
+    return IconManager::Icon::TOOL_TEXT;
 }

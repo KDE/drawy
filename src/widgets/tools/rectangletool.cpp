@@ -18,5 +18,5 @@ QString RectangleTool::tooltip() const
 
 IconManager::Icon RectangleTool::icon() const
 {
-    return IconManager::TOOL_RECTANGLE;
+    return IconManager::Icon::TOOL_RECTANGLE;
 }

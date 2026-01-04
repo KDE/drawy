@@ -138,5 +138,5 @@ Tool::Type FreeformTool::type() const
 
 IconManager::Icon FreeformTool::icon() const
 {
-    return IconManager::TOOL_FREEFORM;
+    return IconManager::Icon::TOOL_FREEFORM;
 }

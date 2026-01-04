@@ -27,9 +27,9 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     QPushButton *ungroupButton{new QPushButton(m_widget)};
 
     IconManager *iconManager{ApplicationContext::instance()->uiContext()->iconManager()};
-    deleteButton->setIcon(iconManager->icon(IconManager::ACTION_DELETE));
-    groupButton->setIcon(iconManager->icon(IconManager::ACTION_GROUP));
-    ungroupButton->setIcon(iconManager->icon(IconManager::ACTION_UNGROUP));
+    deleteButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_DELETE));
+    groupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_GROUP));
+    ungroupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_UNGROUP));
 
     deleteButton->setToolTip(tr("Delete selection"));
     groupButton->setToolTip(tr("Group selection"));

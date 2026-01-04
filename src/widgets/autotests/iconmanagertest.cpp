@@ -18,7 +18,7 @@ IconManagerTest::IconManagerTest(QObject *parent)
 void IconManagerTest::shouldHaveDefaultValues()
 {
     const IconManager manager;
-    QCOMPARE(manager.iconPath(IconManager::TOOL_FREEFORM), u":/icons/fa-dark/tool-freeform.svg"_s);
+    QCOMPARE(manager.iconPath(IconManager::Icon::TOOL_FREEFORM), u":/icons/fa-dark/tool-freeform.svg"_s);
 }
 
 #include "moc_iconmanagertest.cpp"
