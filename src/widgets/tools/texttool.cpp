@@ -489,7 +489,7 @@ void TextTool::cleanup()
 
 Tool::Type TextTool::type() const
 {
-    return Tool::Text;
+    return Tool::Type::Text;
 }
 
 QString TextTool::tooltip() const

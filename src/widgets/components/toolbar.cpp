@@ -29,7 +29,7 @@ ToolBar::~ToolBar()
 
 Tool *ToolBar::curTool() const
 {
-    int curID{m_group->checkedId()};
+    const Tool::Type curID{static_cast<Tool::Type>(m_group->checkedId())};
 
     if (m_tools.find(curID) == m_tools.end())
         throw std::logic_error("Trying to access non existent tool");
@@ -60,13 +60,11 @@ void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type)
     btn->setProperty("class", u"drawlyToolButton"_s);
     btn->setCursor(Qt::PointingHandCursor);
 
-    int id{static_cast<int>(type)};
-
-    m_tools[id] = tool;
-    m_group->addButton(btn, id);
+    m_tools[type] = tool;
+    m_group->addButton(btn, static_cast<int>(type));
     m_layout->addWidget(btn);
     if (m_tools.size() == 1) {
-        m_group->button(id)->setChecked(true);
+        m_group->button(static_cast<int>(type))->setChecked(true);
         Q_EMIT toolChanged(tool.get());
     }
 }

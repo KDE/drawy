@@ -69,7 +69,7 @@ void MoveTool::mouseReleased(ApplicationContext *context)
 
 Tool::Type MoveTool::type() const
 {
-    return Tool::Move;
+    return Tool::Type::Move;
 }
 
 QString MoveTool::tooltip() const

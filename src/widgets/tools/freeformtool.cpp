@@ -133,7 +133,7 @@ void FreeformTool::cleanup()
 
 Tool::Type FreeformTool::type() const
 {
-    return Tool::Freeform;
+    return Tool::Type::Freeform;
 }
 
 IconManager::Icon FreeformTool::icon() const

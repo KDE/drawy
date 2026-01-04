@@ -31,7 +31,7 @@ public:
 
     virtual void cleanup();
 
-    enum Type : int8_t {
+    enum class Type : int8_t {
         Selection = 0,
         Freeform,
         PolygonDrawing,

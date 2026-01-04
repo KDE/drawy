@@ -151,7 +151,7 @@ void EraserTool::cleanup()
 
 Tool::Type EraserTool::type() const
 {
-    return Tool::Eraser;
+    return Tool::Type::Eraser;
 }
 
 QString EraserTool::tooltip() const

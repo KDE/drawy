@@ -33,5 +33,5 @@ private:
     void onToolChanged(int id);
     QButtonGroup *const m_group;
     QHBoxLayout *const m_layout;
-    std::unordered_map<int, std::shared_ptr<Tool>> m_tools{};
+    std::unordered_map<Tool::Type, std::shared_ptr<Tool>> m_tools{};
 };

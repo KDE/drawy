@@ -126,7 +126,7 @@ const QVector<Property::Type> SelectionTool::properties() const
 
 Tool::Type SelectionTool::type() const
 {
-    return Tool::Selection;
+    return Tool::Type::Selection;
 }
 
 QString SelectionTool::tooltip() const

@@ -59,15 +59,15 @@ void UIContext::setUIContext()
 
     m_event = new Event();
 
-    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Selection);
-    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Freeform);
-    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Rectangle);
-    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Ellipse);
-    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Arrow);
-    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Line);
-    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Eraser);
-    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Text);
-    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Move);
+    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Type::Selection);
+    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Type::Freeform);
+    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Type::Rectangle);
+    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Type::Ellipse);
+    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Type::Arrow);
+    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Type::Line);
+    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Type::Eraser);
+    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text);
+    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move);
 
     // TODO: Define their functions somewhere else
     m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
@@ -177,7 +177,7 @@ IconManager *UIContext::iconManager() const
 
 void UIContext::toolChanged(Tool *tool)
 {
-    if (tool->type() != Tool::Selection) {
+    if (tool->type() != Tool::Type::Selection) {
         m_applicationContext->selectionContext()->selectedItems().clear();
     }
 
@@ -197,7 +197,7 @@ void UIContext::toolChanged(Tool *tool)
 void UIContext::reset()
 {
     m_lastTool = nullptr;
-    toolBar()->changeTool(Tool::Selection);
+    toolBar()->changeTool(Tool::Type::Selection);
 }
 
 #include "moc_uicontext.cpp"

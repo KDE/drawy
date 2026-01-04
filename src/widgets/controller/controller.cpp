@@ -64,7 +64,7 @@ void Controller::mousePressed(QMouseEvent *event)
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = true;
         toolBar->curTool()->cleanup();
-        toolBar->tool(Tool::Move)->mousePressed(m_context);
+        toolBar->tool(Tool::Type::Move)->mousePressed(m_context);
         return;
     }
 
@@ -114,7 +114,7 @@ void Controller::mouseMoved(QMouseEvent *event)
     contextEvent->setModifiers(event->modifiers());
 
     if (m_movingWithMiddleClick) {
-        toolBar->tool(Tool::Move)->mouseMoved(m_context);
+        toolBar->tool(Tool::Type::Move)->mouseMoved(m_context);
         return;
     }
 
@@ -133,7 +133,7 @@ void Controller::mouseReleased(QMouseEvent *event)
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = false;
-        toolBar->tool(Tool::Move)->mouseReleased(m_context);
+        toolBar->tool(Tool::Type::Move)->mouseReleased(m_context);
         canvas->setCursor(toolBar->curTool()->cursor());
         return;
     }

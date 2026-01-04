@@ -216,47 +216,47 @@ void ActionManager::zoomOut()
 
 void ActionManager::switchToFreeformTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Freeform);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Freeform);
 }
 
 void ActionManager::switchToEraserTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Eraser);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Eraser);
 }
 
 void ActionManager::switchToRectangleTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Rectangle);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Rectangle);
 }
 
 void ActionManager::switchToEllipseTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Ellipse);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Ellipse);
 }
 
 void ActionManager::switchToLineTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Line);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Line);
 }
 
 void ActionManager::switchToArrowTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Arrow);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Arrow);
 }
 
 void ActionManager::switchToMoveTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Move);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Move);
 }
 
 void ActionManager::switchToSelectionTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Selection);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
 }
 
 void ActionManager::switchToTextTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Text);
+    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Text);
 }
 
 void ActionManager::groupItems()

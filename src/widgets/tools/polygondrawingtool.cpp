@@ -105,5 +105,5 @@ void PolygonDrawingTool::cleanup()
 
 Tool::Type PolygonDrawingTool::type() const
 {
-    return Tool::PolygonDrawing;
+    return Tool::Type::PolygonDrawing;
 }
