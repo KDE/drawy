@@ -4,16 +4,26 @@
   <name>Drawy</name>
   <name xml:lang="ca">Drawy</name>
   <name xml:lang="ca-valencia">Drawy</name>
+  <name xml:lang="es">Drawy</name>
+  <name xml:lang="he">Drawy</name>
+  <name xml:lang="ka">Drawy</name>
   <name xml:lang="nl">Drawy</name>
   <name xml:lang="pt-BR">Drawy</name>
+  <name xml:lang="sl">Drawy</name>
   <name xml:lang="tr">Drawy</name>
+  <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
   <summary>Your handy, infinite, brainstorming tool</summary>
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
+  <summary xml:lang="es">Herramienta práctica e infinita para generar lluvia de ideas</summary>
+  <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
+  <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen!</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
+  <summary xml:lang="sl">Vaše priročno, neskončno orodje za viharjenje možgan</summary>
   <summary xml:lang="tr">Kullanışlı, sınırsız beyin fırtınası aracın</summary>
+  <summary xml:lang="uk">Ваша зручна, нескінченна програма для мозкових штурмів</summary>
   <summary xml:lang="zh-TW">好用的無限畫布腦力激盪工具</summary>
   <developer id="org.kde.drawy">
     <name>Prayag Jain</name>
@@ -24,9 +34,14 @@
     <p>Drawy is a work-in-progress infinite whiteboard tool, which aims to be a native desktop alternative to the amazing web-based Excalidraw.</p>
     <p xml:lang="ca">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
     <p xml:lang="ca-valencia">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
+    <p xml:lang="es">Drawy es una herramienta de pizarra infinita en desarrollo, que pretende ser una alternativa nativa de escritorio a la increíble herramienta web Excalidraw.</p>
+    <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>
+    <p xml:lang="ka">Drawy ჯერ კიდევ შემუშავების ქვეშ მყოფი უსასრულო დაფაა, რომელიც აპირებს, ვებზე დაფუძნებული Excalidraw-ის ალტერნატივას წარმოადგენდეს.</p>
     <p xml:lang="nl">Drawy is een oneindig whiteboardprogramma in ontwikkeling, dat een inheems bureaubladalternatief wil zijn voor het fantastische webgebaseerde Excalidraw.</p>
     <p xml:lang="pt-BR">Drawy é uma ferramenta de quadro branco infinito em desenvolvimento, que pretende ser uma alternativa nativa para desktop ao incrível Excalidraw, baseado na web.</p>
+    <p xml:lang="sl">Drawy je orodje v razvoju za neskončno tablo, ki naj bi postalo izvorna namizna alternativa neverjetnemu spletnemu programu Excalidraw.</p>
     <p xml:lang="tr">Drawy, harika web tabanlı Excalidraw’a yerel bir masaüstü alternatifi olmayı hedefleyen, geliştirme aşamasında bir sınırsız beyaz tahta aracıdır.</p>
+    <p xml:lang="uk">Drawy динамічна нескінченна дошка, яка має стати альтернативою чудової мережевої Excalidraw для робочих станцій.</p>
     <p xml:lang="zh-TW">Drawy 是一個開發中的無限白板工具，希望成為網路上好用的 Excalidraw 的原生桌面替代品。</p>
   </description>
   <url type="homepage">https://invent.kde.org/prayag/drawy</url>
