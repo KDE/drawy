@@ -15,16 +15,16 @@ public:
     explicit Canvas(QWidget *parent = nullptr);
     ~Canvas() override;
 
-    QPixmap *canvas() const;
-    QPixmap *overlay() const;
-    QPixmap *widget() const;
-    QSize sizeHint() const override;
-    QSize dimensions() const;
+    [[nodiscard]] QPixmap *canvas() const;
+    [[nodiscard]] QPixmap *overlay() const;
+    [[nodiscard]] QPixmap *widget() const;
+    [[nodiscard]] QSize sizeHint() const override;
+    [[nodiscard]] QSize dimensions() const;
 
-    QColor bg() const;
+    [[nodiscard]] QColor bg() const;
     void setBg(const QColor &color, QPixmap *canvas = nullptr, QPixmap *overlay = nullptr);
 
-    qreal scale() const;
+    [[nodiscard]] qreal scale() const;
     void setScale(const qreal scale);
 
 Q_SIGNALS:

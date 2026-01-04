@@ -13,12 +13,12 @@ ToolBar::ToolBar(QWidget *parent)
     , m_group(new QButtonGroup(this))
     , m_layout(new QHBoxLayout(this))
 {
-    this->setLayout(m_layout);
-    this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    this->setFrameShape(QFrame::StyledPanel);
-    this->setFrameShadow(QFrame::Raised);
-    this->setAutoFillBackground(true);
-    this->setProperty("class", u"drawlyFrame drawlyToolBar"_s);
+    setLayout(m_layout);
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    setFrameShape(QFrame::StyledPanel);
+    setFrameShadow(QFrame::Raised);
+    setAutoFillBackground(true);
+    setProperty("class", u"drawlyFrame drawlyToolBar"_s);
 
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
@@ -69,7 +69,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type)
         m_group->button(id)->setChecked(true);
         Q_EMIT toolChanged(*tool);
     }
-};
+}
 
 void ToolBar::changeTool(Tool::Type type)
 {
@@ -79,9 +79,9 @@ void ToolBar::changeTool(Tool::Type type)
     Q_EMIT toolChanged(curTool());
 }
 
-Tool &ToolBar::tool(Tool::Type type) const
+Tool *ToolBar::tool(Tool::Type type) const
 {
-    return *m_tools.at(type);
+    return m_tools.at(type).get();
 }
 
 // PRIVATE SLOTS
