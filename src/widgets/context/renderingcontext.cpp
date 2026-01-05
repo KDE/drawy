@@ -26,6 +26,7 @@ RenderingContext::~RenderingContext()
 {
     qCDebug(DRAWY_LOG) << "Object deleted: RenderingContext";
     delete m_canvasPainter;
+    delete m_overlayPainter;
 }
 
 void RenderingContext::setRenderingContext()
