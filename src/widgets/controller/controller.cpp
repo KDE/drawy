@@ -196,7 +196,7 @@ void Controller::wheel(QWheelEvent *event)
     contextEvent->setModifiers(event->modifiers());
 
     if (event->modifiers() & Qt::ControlModifier) {
-        int delta{event->angleDelta().y() > 0 ? 1 : -1};
+        const int delta{event->angleDelta().y() > 0 ? 1 : -1};
         m_context->renderingContext()->updateZoomFactor(delta, transformer->viewToWorld(contextEvent->pos()));
         return;
     }

@@ -212,10 +212,10 @@ QPoint CoordinateTransformer::round(QPointF point)
 
 QRect CoordinateTransformer::round(QRectF rect)
 {
-    int x1 = qRound(rect.left());
-    int y1 = qRound(rect.top());
-    int x2 = qRound(rect.right());
-    int y2 = qRound(rect.bottom());
+    const int x1 = qRound(rect.left());
+    const int y1 = qRound(rect.top());
+    const int x2 = qRound(rect.right());
+    const int y2 = qRound(rect.bottom());
 
     return QRect{x1, y1, x2 - x1, y2 - y1};
 }

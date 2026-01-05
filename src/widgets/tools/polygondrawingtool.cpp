@@ -44,7 +44,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 
         curItem->setStart(transformer->viewToWorld(uiContext->event()->pos()));
 
-        qreal zoom{renderingContext->zoomFactor()};
+        const qreal zoom{renderingContext->zoomFactor()};
 
         QPainter *painter{renderingContext->overlayPainter()};
         painter->save();

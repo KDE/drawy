@@ -71,7 +71,7 @@ void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type)
 
 void ToolBar::changeTool(Tool::Type type)
 {
-    int id{static_cast<int>(type)};
+    const int id{static_cast<int>(type)};
 
     m_group->button(id)->setChecked(true);
     Q_EMIT toolChanged(curTool());
@@ -82,7 +82,6 @@ Tool *ToolBar::tool(Tool::Type type) const
     return m_tools.at(type).get();
 }
 
-// PRIVATE SLOTS
 void ToolBar::onToolChanged(int id)
 {
     Q_EMIT toolChanged(curTool());

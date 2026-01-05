@@ -53,9 +53,9 @@ void Common::renderCanvas(ApplicationContext *context)
             if (intersectingItems.empty())
                 continue;
 
-            qreal zoomFactor{context->renderingContext()->zoomFactor()};
+            const qreal zoomFactor{context->renderingContext()->zoomFactor()};
 
-            QPointF topLeftPoint{transformer->gridToWorld(cell->rect().topLeft().toPointF())};
+            const QPointF topLeftPoint{transformer->gridToWorld(cell->rect().topLeft().toPointF())};
 
             cell->painter()->resetTransform();
             cell->painter()->scale(zoomFactor, zoomFactor);
@@ -68,12 +68,12 @@ void Common::renderCanvas(ApplicationContext *context)
         canvasPainter->drawPixmap(transformer->round(transformer->gridToView(cell->rect())), *cell->image());
     }
 
-    QRectF selectionBox{};
     auto selectedItems{context->selectionContext()->selectedItems()};
 
     if (selectedItems.empty())
         return;
 
+    QRectF selectionBox{};
     // render a box around selected items
     canvasPainter->save();
     QPen pen{Common::selectionBorderColor};
@@ -82,7 +82,7 @@ void Common::renderCanvas(ApplicationContext *context)
     canvasPainter->setPen(pen);
 
     for (const auto &item : selectedItems) {
-        QRectF curBox{transformer->worldToView(item->boundingBox()).normalized()};
+        const QRectF curBox{transformer->worldToView(item->boundingBox()).normalized()};
         canvasPainter->drawRect(curBox);
         selectionBox |= curBox;
     }

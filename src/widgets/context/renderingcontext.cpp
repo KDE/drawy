@@ -78,7 +78,6 @@ QPainter *RenderingContext::overlayPainter() const
     return m_overlayPainter;
 }
 
-// PRIVATE SLOTS
 void RenderingContext::endPainters()
 {
     if (m_canvasPainter->isActive())
@@ -126,9 +125,9 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
     if (center == QPoint{-1, -1}) {
-        QSize viewport{canvas()->dimensions() / oldZoomFactor};
-        int width{viewport.width()};
-        int height{viewport.height()};
+        const QSize viewport{canvas()->dimensions() / oldZoomFactor};
+        const int width{viewport.width()};
+        const int height{viewport.height()};
 
         center.setX(offsetPos.toPoint().x() + width / 2);
         center.setY(offsetPos.toPoint().y() + height / 2);
@@ -166,10 +165,10 @@ int RenderingContext::fps() const
 
 void RenderingContext::canvasResized()
 {
-    int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
-    int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
-    int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
-    int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
+    const int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
+    const int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
+    const int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
+    const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 
     m_applicationContext->spatialContext()->cacheGrid()->clear();
     m_applicationContext->spatialContext()->cacheGrid()->setSize(rows * cols);

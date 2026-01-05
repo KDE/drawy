@@ -33,15 +33,15 @@ QuadTree::~QuadTree()
 
 void QuadTree::subdivide()
 {
-    double x{m_boundingBox.x()};
-    double y{m_boundingBox.y()};
-    double halfWidth{m_boundingBox.width() / 2};
-    double halfHeight{m_boundingBox.height() / 2};
+    const double x{m_boundingBox.x()};
+    const double y{m_boundingBox.y()};
+    const double halfWidth{m_boundingBox.width() / 2};
+    const double halfHeight{m_boundingBox.height() / 2};
 
-    QRectF topLeftRect{x, y, halfWidth, halfHeight};
-    QRectF topRightRect{x + halfWidth, y, halfWidth, halfHeight};
-    QRectF bottomRightRect{x + halfWidth, y + halfHeight, halfWidth, halfHeight};
-    QRectF bottomLeftRect{x, y + halfHeight, halfWidth, halfHeight};
+    const QRectF topLeftRect{x, y, halfWidth, halfHeight};
+    const QRectF topRightRect{x + halfWidth, y, halfWidth, halfHeight};
+    const QRectF bottomRightRect{x + halfWidth, y + halfHeight, halfWidth, halfHeight};
+    const QRectF bottomLeftRect{x, y + halfHeight, halfWidth, halfHeight};
 
     m_topLeft = std::make_unique<QuadTree>(topLeftRect, m_capacity, m_orderedList);
     m_topRight = std::make_unique<QuadTree>(topRightRect, m_capacity, m_orderedList);

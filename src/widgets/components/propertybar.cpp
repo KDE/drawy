@@ -19,10 +19,10 @@ PropertyBar::PropertyBar(QWidget *parent)
     : QFrame{parent}
     , m_layout(new QVBoxLayout{this})
 {
-    this->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
-    this->setAutoFillBackground(true);
-    this->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    this->setProperty("class", u"drawlyFrame drawyPropertyBar"_s);
+    setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
+    setAutoFillBackground(true);
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    setProperty("class", u"drawlyFrame drawyPropertyBar"_s);
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)
@@ -54,7 +54,7 @@ void PropertyBar::updateProperties(Tool *tool)
         delete curItem;
     }
 
-    QVector<Property::Type> properties{tool->properties()};
+    const QVector<Property::Type> properties{tool->properties()};
     if (properties.empty()) {
         hide();
     } else {

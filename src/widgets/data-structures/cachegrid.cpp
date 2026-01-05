@@ -46,8 +46,8 @@ QPixmap *CacheCell::image() const
 
 QRect CacheCell::rect() const
 {
-    int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
-    QPoint cellPos{point().x() * cellW, point().y() * cellH};
+    const int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
+    const QPoint cellPos{point().x() * cellW, point().y() * cellH};
     return {cellPos.x(), cellPos.y(), cellW, cellH};
 }
 
@@ -84,7 +84,7 @@ CacheGrid::~CacheGrid()
 
 QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
 {
-    QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
+    const QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
 
     auto floorDivide = [](int first, int second) -> int {
         int result{first / second};
