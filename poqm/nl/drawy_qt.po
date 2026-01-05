@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-02 15:18+0100\n"
+"PO-Revision-Date: 2026-01-04 14:07+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -18,42 +18,42 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Naar bestand opslaan"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Uitzoomen"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:76
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Inzoomen"
 
-#: widgets/context/uicontext.cpp:76 widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Lichte modus"
 
-#: widgets/context/uicontext.cpp:77
+#: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:79
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Opnieuw doen"
 
-#: widgets/context/uicontext.cpp:126
+#: widgets/context/uicontext.cpp:127
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Donkere modus"
@@ -61,7 +61,7 @@ msgstr "Donkere modus"
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Volledig scherm"
 
 #: widgets/keybindings/actionmanager.cpp:37
 msgctxt "ActionManager|"
@@ -409,7 +409,7 @@ msgstr "Bestand openen"
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr ""
+msgstr "Naamloos.%1"
 
 #: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
@@ -426,7 +426,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Gereedschap voor ellips"
 
-#: widgets/tools/erasertool.cpp:160
+#: widgets/tools/erasertool.cpp:159
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Hulpmiddel voor gum"

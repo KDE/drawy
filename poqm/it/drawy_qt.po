@@ -1,259 +1,258 @@
-# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Vincenzo Reale <smart2128vr@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-03 16:10+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
-"Language: he\n"
+"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Qt-Contexts: true\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
+"X-Qt-Contexts: true\n"
 
 #: apps/main.cpp:24
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
-msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
+msgstr "Il tuo pratico e infinito strumento di brainstorming!"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
-msgstr "שמירה לקובץ"
+msgstr "Salva su file"
 
 #: widgets/context/uicontext.cpp:74
 msgctxt "UIContext|"
 msgid "Open File"
-msgstr "פתיחת קובץ"
+msgstr "Apri file"
 
 #: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Zoom Out"
-msgstr "התרחקות"
+msgstr "Rimpicciolisci"
 
 #: widgets/context/uicontext.cpp:76
 msgctxt "UIContext|"
 msgid "Zoom In"
-msgstr "התקרבות"
+msgstr "Ingrandisci"
 
 #: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
 msgctxt "UIContext|"
 msgid "Light Mode"
-msgstr "מצב בהיר"
+msgstr "Modalità chiara"
 
 #: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Undo"
-msgstr "הסגה"
+msgstr "Annulla"
 
 #: widgets/context/uicontext.cpp:79
 msgctxt "UIContext|"
 msgid "Redo"
-msgstr "ביצוע מחדש"
+msgstr "Rifai"
 
 #: widgets/context/uicontext.cpp:127
 msgctxt "UIContext|"
 msgid "Dark Mode"
-msgstr "מצב כהה"
+msgstr "Modalità scura"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Schermo intero"
 
 #: widgets/keybindings/actionmanager.cpp:37
 msgctxt "ActionManager|"
 msgid "Undo"
-msgstr "הסגה"
+msgstr "Annulla"
 
 #: widgets/keybindings/actionmanager.cpp:38
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "הסגת הפעולה האחרונה"
+msgstr "Annulla l'ultima azione"
 
 #: widgets/keybindings/actionmanager.cpp:44
 msgctxt "ActionManager|"
 msgid "Redo"
-msgstr "ביצוע מחדש"
+msgstr "Rifai"
 
 #: widgets/keybindings/actionmanager.cpp:45
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr "ביצוע הפעולה שהוסגה מחדש"
+msgstr "Rifai l'ultima azione annullata"
 
 #: widgets/keybindings/actionmanager.cpp:51
 msgctxt "ActionManager|"
 msgid "Zoom In"
-msgstr "התקרבות"
+msgstr "Ingrandisci"
 
 #: widgets/keybindings/actionmanager.cpp:52
 msgctxt "ActionManager|"
 msgid "Zoom in"
-msgstr "התקרבות"
+msgstr "Ingrandisci"
 
 #: widgets/keybindings/actionmanager.cpp:58
 msgctxt "ActionManager|"
 msgid "Zoom Out"
-msgstr "התרחקות"
+msgstr "Rimpicciolisci"
 
 #: widgets/keybindings/actionmanager.cpp:59
 msgctxt "ActionManager|"
 msgid "Zoom out"
-msgstr "התרחקות"
+msgstr "Rimpicciolisci"
 
 #: widgets/keybindings/actionmanager.cpp:65
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "כלי צורה חופשית"
+msgstr "Disegno a mano libera"
 
 #: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr "החלפה לכלי הציור החופשי"
+msgstr "Passa allo strumento per disegnare a mano libera"
 
 #: widgets/keybindings/actionmanager.cpp:72
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
-msgstr "כלי מוחק"
+msgstr "Gomma"
 
 #: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr "החלפה לכלי המוחק"
+msgstr "Passa allo strumento Gomma"
 
 #: widgets/keybindings/actionmanager.cpp:79
 msgctxt "ActionManager|"
 msgid "Selection Tool"
-msgstr "כלי בחירה"
+msgstr "Selezione"
 
 #: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "החלפה לכלי בחירה"
+msgstr "Passa allo strumento di selezione"
 
 #: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
-msgstr "כלי מרובעים"
+msgstr "Rettangolo"
 
 #: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr "החלפה לכלי ציור המרובעים"
+msgstr "Passa allo strumento per tracciare un rettangolo"
 
 #: widgets/keybindings/actionmanager.cpp:93
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
-msgstr "כלי אליפסות"
+msgstr "Ellisse"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr "החלפה לכלי ציור האליפסות"
+msgstr "Passa allo strumento per tracciare un'ellisse"
 
 #: widgets/keybindings/actionmanager.cpp:100
 msgctxt "ActionManager|"
 msgid "Line Tool"
-msgstr "כלי קו"
+msgstr "Linea"
 
 #: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr "החלפה לכלי ציור הקווים"
+msgstr "Passa allo strumento per tracciare una linea"
 
 #: widgets/keybindings/actionmanager.cpp:107
 msgctxt "ActionManager|"
 msgid "Text Tool"
-msgstr "כלי טקסט"
+msgstr "Testo"
 
 #: widgets/keybindings/actionmanager.cpp:108
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr "החלפה לכלי הטקסט"
+msgstr "Passa allo strumento Testo"
 
 #: widgets/keybindings/actionmanager.cpp:114
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
-msgstr "כלי חץ"
+msgstr "Freccia"
 
 #: widgets/keybindings/actionmanager.cpp:115
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr "החלפה לכלי ציור החיצים"
+msgstr "Passa allo strumento per tracciare una freccia"
 
 #: widgets/keybindings/actionmanager.cpp:121
 msgctxt "ActionManager|"
 msgid "Move Tool"
-msgstr "כלי הזזה"
+msgstr "Sposta"
 
 #: widgets/keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr "החלפה לכלי ההזזה"
+msgstr "Passa allo strumento Sposta"
 
 #: widgets/keybindings/actionmanager.cpp:128
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "קיבוץ רכיבים"
+msgstr "Raggruppa gli elementi"
 
 #: widgets/keybindings/actionmanager.cpp:129
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "קיבוץ הפריטים הנבחרים"
+msgstr "Raggruppa gli elementi selezionati"
 
 #: widgets/keybindings/actionmanager.cpp:135
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "פריטת הרכיבים"
+msgstr "Separa gli elementi"
 
 #: widgets/keybindings/actionmanager.cpp:136
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "פריטת הקבוצות הנבחרות"
+msgstr "Separa i gruppi selezionati"
 
 #: widgets/keybindings/actionmanager.cpp:142
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "בחירה בהכול"
+msgstr "Seleziona tutto"
 
 #: widgets/keybindings/actionmanager.cpp:143
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr "בחירת כל הפריטים"
+msgstr "Seleziona tutti gli elementi"
 
 #: widgets/keybindings/actionmanager.cpp:149
 #: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr "מחיקה"
+msgstr "Elimina"
 
 #: widgets/keybindings/actionmanager.cpp:150
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "מחיקת הפריטים הנבחרים"
+msgstr "Elimina gli elementi selezionati"
 
 #: widgets/keybindings/actionmanager.cpp:156
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr "שמירה"
+msgstr "Salva"
 
 #: widgets/keybindings/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr "שמירת משטח ציור"
+msgstr "Salva la tela"
 
 #: widgets/keybindings/actionmanager.cpp:163
 msgctxt "ActionManager|"
 msgid "Open File"
-msgstr "פתיחת קובץ"
+msgstr "Apri file"
 
 #: widgets/keybindings/actionmanager.cpp:164
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr "פתיחת קובץ קיים"
+msgstr "Apri un file esistente"
 
 #: widgets/keybindings/actionmanager.cpp:170
 msgctxt "ActionManager|"
@@ -268,7 +267,7 @@ msgstr "Ctrl+Y"
 #: widgets/keybindings/actionmanager.cpp:172
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+Z"
-msgstr "Ctrl+Shift+Z"
+msgstr "Ctrl+Maiusc+Z"
 
 #: widgets/keybindings/actionmanager.cpp:173
 msgctxt "ActionManager|"
@@ -283,52 +282,52 @@ msgstr "Ctrl+-"
 #: widgets/keybindings/actionmanager.cpp:175
 msgctxt "ActionManager|"
 msgid "T"
-msgstr "ט"
+msgstr "T"
 
 #: widgets/keybindings/actionmanager.cpp:176
 msgctxt "ActionManager|"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: widgets/keybindings/actionmanager.cpp:177
 msgctxt "ActionManager|"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: widgets/keybindings/actionmanager.cpp:178
 msgctxt "ActionManager|"
 msgid "E"
-msgstr "מ"
+msgstr "E"
 
 #: widgets/keybindings/actionmanager.cpp:179
 msgctxt "ActionManager|"
 msgid "S"
-msgstr "ב"
+msgstr "S"
 
 #: widgets/keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: widgets/keybindings/actionmanager.cpp:181
 msgctxt "ActionManager|"
 msgid "O"
-msgstr "פ"
+msgstr "O"
 
 #: widgets/keybindings/actionmanager.cpp:182
 msgctxt "ActionManager|"
 msgid "L"
-msgstr "ק"
+msgstr "L"
 
 #: widgets/keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: widgets/keybindings/actionmanager.cpp:184
 msgctxt "ActionManager|"
 msgid "M"
-msgstr "ז"
+msgstr "M"
 
 #: widgets/keybindings/actionmanager.cpp:185
 msgctxt "ActionManager|"
@@ -353,47 +352,47 @@ msgstr "Ctrl+G"
 #: widgets/keybindings/actionmanager.cpp:190
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+G"
-msgstr "Ctrl+Shift+G"
+msgstr "Ctrl+Maiusc+G"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
-msgstr "מחיקת בחירה"
+msgstr "Elimina la selezione"
 
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Group selection"
-msgstr "קיבוץ הבחירה"
+msgstr "Raggruppa la selezione"
 
 #: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
-msgstr "פריטת הבחירה"
+msgstr "Separa la selezione"
 
 #: widgets/properties/widgets/actionswidget.cpp:63
 msgctxt "ActionsWidget|"
 msgid "Actions"
-msgstr "פעולות"
+msgstr "Azioni"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:28
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
-msgstr "גודל מוחק"
+msgstr "Dimensione della gomma"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:29
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
-msgstr "גודל כתב"
+msgstr "Dimensione del carattere"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr "צבע"
+msgstr "Colore"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
-msgstr "עובי"
+msgstr "Spessore"
 
 #: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
 #, qt-format
@@ -404,60 +403,60 @@ msgstr "Drawy (*.%1)"
 #: widgets/serializer/loader.cpp:36
 msgctxt "QObject|"
 msgid "Open File"
-msgstr "פתיחת קובץ"
+msgstr "Apri file"
 
 #: widgets/serializer/serializer.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr ""
+msgstr "Senza titolo.%1"
 
 #: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "שמירת הקובץ"
+msgstr "Salva file"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
-msgstr "כלי חץ"
+msgstr "Freccia"
 
 #: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
-msgstr "כלי אליפסות"
+msgstr "Ellisse"
 
 #: widgets/tools/erasertool.cpp:159
 msgctxt "QObject|"
 msgid "Eraser Tool"
-msgstr "כלי מוחק"
+msgstr "Gomma"
 
 #: widgets/tools/freeformtool.cpp:46
 msgctxt "QObject|"
 msgid "Pen Tool"
-msgstr "כלי עט"
+msgstr "Penna"
 
 #: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
-msgstr "כלי קו"
+msgstr "Linea"
 
 #: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
-msgstr "כלי הזזה"
+msgstr "Sposta"
 
 #: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
-msgstr "כלי מרובעים"
+msgstr "Rettangolo"
 
 #: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
-msgstr "כלי בחירה"
+msgstr "Selezione"
 
 #: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
-msgstr "כלי טקסט"
+msgstr "Testo"

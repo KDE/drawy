@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-01 11:14+0200\n"
+"PO-Revision-Date: 2026-01-04 11:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -19,42 +19,42 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Зберегти до файла"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:76
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: widgets/context/uicontext.cpp:76 widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Світлий режим"
 
-#: widgets/context/uicontext.cpp:77
+#: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:79
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Повторити"
 
-#: widgets/context/uicontext.cpp:126
+#: widgets/context/uicontext.cpp:127
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Темний режим"
@@ -62,28 +62,19 @@ msgstr "Темний режим"
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Повноекранний режим"
 
 #: widgets/keybindings/actionmanager.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Undo"
 msgctxt "ActionManager|"
 msgid "Undo"
 msgstr "Скасувати"
 
 #: widgets/keybindings/actionmanager.cpp:38
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "Скасувати групування позначеного"
+msgstr "Скасувати останню дію"
 
 #: widgets/keybindings/actionmanager.cpp:44
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Redo"
 msgctxt "ActionManager|"
 msgid "Redo"
 msgstr "Повторити"
@@ -91,57 +82,39 @@ msgstr "Повторити"
 #: widgets/keybindings/actionmanager.cpp:45
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr ""
+msgstr "Повернути результат останньої скасованої дії"
 
 #: widgets/keybindings/actionmanager.cpp:51
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom In"
 msgstr "Збільшити"
 
 #: widgets/keybindings/actionmanager.cpp:52
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom in"
 msgstr "Збільшити"
 
 #: widgets/keybindings/actionmanager.cpp:58
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
 #: widgets/keybindings/actionmanager.cpp:59
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom out"
 msgstr "Зменшити"
 
 #: widgets/keybindings/actionmanager.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "Інструмент «Гумка»"
+msgstr "Інструмент «Довільний контур»"
 
 #: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент довільного малювання"
 
 #: widgets/keybindings/actionmanager.cpp:72
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
@@ -149,28 +122,19 @@ msgstr "Інструмент «Гумка»"
 #: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент гумки"
 
 #: widgets/keybindings/actionmanager.cpp:79
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Інструмент вибору"
 
 #: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "Інструмент вибору"
+msgstr "Перемкнутись на режим вибору"
 
 #: widgets/keybindings/actionmanager.cpp:86
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"
@@ -178,12 +142,9 @@ msgstr "Інструмент «Прямокутник»"
 #: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент малювання прямокутників"
 
 #: widgets/keybindings/actionmanager.cpp:93
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
@@ -191,12 +152,9 @@ msgstr "Інструмент «Еліпс»"
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент малювання еліпсів"
 
 #: widgets/keybindings/actionmanager.cpp:100
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Інструмент «Пряма»"
@@ -204,12 +162,9 @@ msgstr "Інструмент «Пряма»"
 #: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент малювання прямих"
 
 #: widgets/keybindings/actionmanager.cpp:107
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
@@ -217,12 +172,9 @@ msgstr "Інструмент «Текст»"
 #: widgets/keybindings/actionmanager.cpp:108
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент тексту"
 
 #: widgets/keybindings/actionmanager.cpp:114
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
@@ -230,12 +182,9 @@ msgstr "Інструмент «Стрілка»"
 #: widgets/keybindings/actionmanager.cpp:115
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr ""
+msgstr "Перемкнутися на інструмент малювання стрілок"
 
 #: widgets/keybindings/actionmanager.cpp:121
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Інструмент «Пересування»"
@@ -243,63 +192,45 @@ msgstr "Інструмент «Пересування»"
 #: widgets/keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr ""
+msgstr "Перемикнутися на інструмент переміщення"
 
 #: widgets/keybindings/actionmanager.cpp:128
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "Групувати позначене"
+msgstr "Групувати елементи"
 
 #: widgets/keybindings/actionmanager.cpp:129
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "Групувати позначене"
 
 #: widgets/keybindings/actionmanager.cpp:135
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "Скасувати групування позначеного"
+msgstr "Скасувати групування елементів"
 
 #: widgets/keybindings/actionmanager.cpp:136
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "Скасувати групування позначеного"
 
 #: widgets/keybindings/actionmanager.cpp:142
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "Інструмент вибору"
+msgstr "Позначити все"
 
 #: widgets/keybindings/actionmanager.cpp:143
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr ""
+msgstr "Позначити всі пункти"
 
 #: widgets/keybindings/actionmanager.cpp:149
 #: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr ""
+msgstr "Вилучити"
 
 #: widgets/keybindings/actionmanager.cpp:150
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Delete selection"
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "Вилучити позначене"
@@ -307,17 +238,14 @@ msgstr "Вилучити позначене"
 #: widgets/keybindings/actionmanager.cpp:156
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: widgets/keybindings/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr ""
+msgstr "Зберегти полотно"
 
 #: widgets/keybindings/actionmanager.cpp:163
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "ActionManager|"
 msgid "Open File"
 msgstr "Відкрити файл"
@@ -325,107 +253,107 @@ msgstr "Відкрити файл"
 #: widgets/keybindings/actionmanager.cpp:164
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr ""
+msgstr "Відкрити наявний файл"
 
 #: widgets/keybindings/actionmanager.cpp:170
 msgctxt "ActionManager|"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:171
 msgctxt "ActionManager|"
 msgid "Ctrl+Y"
-msgstr ""
+msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:172
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+Z"
-msgstr ""
+msgstr "Ctrl+Shift+Z"
 
 #: widgets/keybindings/actionmanager.cpp:173
 msgctxt "ActionManager|"
 msgid "Ctrl++"
-msgstr ""
+msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:174
 msgctxt "ActionManager|"
 msgid "Ctrl+-"
-msgstr ""
+msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:175
 msgctxt "ActionManager|"
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: widgets/keybindings/actionmanager.cpp:176
 msgctxt "ActionManager|"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: widgets/keybindings/actionmanager.cpp:177
 msgctxt "ActionManager|"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: widgets/keybindings/actionmanager.cpp:178
 msgctxt "ActionManager|"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: widgets/keybindings/actionmanager.cpp:179
 msgctxt "ActionManager|"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: widgets/keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: widgets/keybindings/actionmanager.cpp:181
 msgctxt "ActionManager|"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: widgets/keybindings/actionmanager.cpp:182
 msgctxt "ActionManager|"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: widgets/keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: widgets/keybindings/actionmanager.cpp:184
 msgctxt "ActionManager|"
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: widgets/keybindings/actionmanager.cpp:185
 msgctxt "ActionManager|"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
 #: widgets/keybindings/actionmanager.cpp:187
 msgctxt "ActionManager|"
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:188
 msgctxt "ActionManager|"
 msgid "Ctrl+O"
-msgstr ""
+msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:189
 msgctxt "ActionManager|"
 msgid "Ctrl+G"
-msgstr ""
+msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:190
 msgctxt "ActionManager|"
 msgid "Ctrl+Shift+G"
-msgstr ""
+msgstr "Ctrl+Shift+G"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
@@ -460,7 +388,7 @@ msgstr "Розмір шрифту"
 #: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr ""
+msgstr "Колір"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -482,15 +410,12 @@ msgstr "Відкрити файл"
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr ""
+msgstr "Без назви.%1"
 
 #: widgets/serializer/serializer.cpp:121
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "Зберегти до файла"
+msgstr "Зберегти файл"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -502,7 +427,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
 
-#: widgets/tools/erasertool.cpp:160
+#: widgets/tools/erasertool.cpp:159
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
