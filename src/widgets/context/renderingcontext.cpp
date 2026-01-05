@@ -4,8 +4,8 @@
 
 #include "renderingcontext.hpp"
 
+#include <QPoint>
 #include <QScreen>
-#include <qpoint.h>
 
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
