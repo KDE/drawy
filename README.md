@@ -54,7 +54,7 @@ The following is a list of features I'll be planning to add to it:
 
 #### Phase 3
 - [x] Buttons to zoom in/out
-- [x] Pressure senstivity for drawing tablets
+- [x] Pressure sensitivity for drawing tablets
 - [x] Selection tool to select items and do these actions:
     - [x] Move items
     - [x] Delete items

@@ -151,7 +151,7 @@ void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
     double currentWidth{strokeWidth * 1.0};
 
     // Intersection points are visible on translucent pressure sensitive strokes
-    // So I've disabled the use of pressure senstivity when opacity is not max,
+    // So I've disabled the use of pressure sensitivity when opacity is not max,
     // for now
     bool canUsePressureSenstivity{alpha == Common::maxItemOpacity};
     if (!canUsePressureSenstivity) {
