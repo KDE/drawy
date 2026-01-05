@@ -38,7 +38,7 @@ void ActionBar::addButton(const QString &tooltip, IconManager::Icon icon)
 QPushButton *ActionBar::button(IconManager::Icon id)
 {
     if (!m_map.contains(id)) {
-        throw std::logic_error(std::format("Button with id {} was not found.", static_cast<int>(id)));
+        throw std::logic_error(QString(u"Button with id %1 was not found."_s.arg(static_cast<int>(id))).toStdString());
     }
 
     return m_map[id];
