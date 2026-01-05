@@ -19,14 +19,7 @@ class ApplicationContext : public QObject
 public:
     ~ApplicationContext() override;
 
-    static ApplicationContext *instance(QWidget *parent = nullptr)
-    {
-        if (!m_instance) {
-            m_instance = new ApplicationContext(parent);
-        }
-
-        return m_instance;
-    }
+    static ApplicationContext *instance(QWidget *parent = nullptr);
 
     void setContexts();
 

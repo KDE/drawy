@@ -28,6 +28,15 @@ ApplicationContext::~ApplicationContext()
     qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
 }
 
+ApplicationContext *ApplicationContext::instance(QWidget *parent)
+{
+    if (!m_instance) {
+        m_instance = new ApplicationContext(parent);
+    }
+
+    return m_instance;
+}
+
 void ApplicationContext::setContexts()
 {
     m_renderingContext->setRenderingContext();
