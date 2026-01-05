@@ -8,7 +8,6 @@
 #include "command/commandhistory.hpp"
 #include "command/updatepropertycommand.hpp"
 #include "coordinatetransformer.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "drawy_debug.h"
 #include "item/item.hpp"
 #include "properties/property.hpp"
