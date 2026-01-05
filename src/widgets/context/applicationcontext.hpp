@@ -33,7 +33,7 @@ public:
     void reset(); // resets the canvas to a blank state
 
 private:
-    ApplicationContext(QWidget *parent = nullptr);
+    explicit ApplicationContext(QWidget *parent = nullptr);
 
     ApplicationContext(const ApplicationContext &) = delete;
     ApplicationContext(ApplicationContext *) = delete;
