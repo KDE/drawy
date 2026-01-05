@@ -172,7 +172,7 @@ target_sources(
 generate_export_header(libdrawywidgets BASE_NAME libdrawywidgets)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD ON)
+    set_target_properties(libdrawywidgets PROPERTIES UNITY_BUILD ON)
 endif()
 
 target_link_libraries(
