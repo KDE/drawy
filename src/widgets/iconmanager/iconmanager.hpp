@@ -39,7 +39,7 @@ public:
     };
     Q_ENUM(Icon)
 
-    QIcon icon(IconManager::Icon icon) const;
+    [[nodiscard]] QIcon icon(IconManager::Icon icon) const;
 
     [[nodiscard]] QString iconPath(IconManager::Icon icon) const;
 

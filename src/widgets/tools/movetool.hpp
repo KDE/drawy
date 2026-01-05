@@ -16,10 +16,10 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
 
-    Tool::Type type() const override;
+    [[nodiscard]] Tool::Type type() const override;
 
-    QString tooltip() const override;
-    IconManager::Icon icon() const override;
+    [[nodiscard]] QString tooltip() const override;
+    [[nodiscard]] IconManager::Icon icon() const override;
 
 private:
     bool m_isActive{false};

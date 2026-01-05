@@ -12,6 +12,6 @@ public:
     LineTool();
     ~LineTool() override = default;
 
-    QString tooltip() const override;
-    IconManager::Icon icon() const override;
+    [[nodiscard]] QString tooltip() const override;
+    [[nodiscard]] IconManager::Icon icon() const override;
 };

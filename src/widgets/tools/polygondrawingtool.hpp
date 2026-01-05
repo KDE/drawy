@@ -21,5 +21,5 @@ public:
     void mouseReleased(ApplicationContext *context) override;
     void cleanup() override;
 
-    Tool::Type type() const override;
+    [[nodiscard]] Tool::Type type() const override;
 };
