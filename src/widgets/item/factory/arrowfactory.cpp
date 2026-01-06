@@ -6,9 +6,7 @@
 
 #include "item/arrow.hpp"
 
-ArrowFactory::ArrowFactory()
-{
-}
+ArrowFactory::ArrowFactory() = default;
 
 std::shared_ptr<Item> ArrowFactory::create() const
 {

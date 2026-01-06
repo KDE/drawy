@@ -6,9 +6,7 @@
 
 #include "item/line.hpp"
 
-LineFactory::LineFactory()
-{
-}
+LineFactory::LineFactory() = default;
 
 std::shared_ptr<Item> LineFactory::create() const
 {

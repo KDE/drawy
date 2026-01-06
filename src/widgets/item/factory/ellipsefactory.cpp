@@ -6,9 +6,7 @@
 
 #include "item/ellipse.hpp"
 
-EllipseFactory::EllipseFactory()
-{
-}
+EllipseFactory::EllipseFactory() = default;
 
 std::shared_ptr<Item> EllipseFactory::create() const
 {

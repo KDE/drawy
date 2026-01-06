@@ -6,9 +6,7 @@
 
 #include "item/text.hpp"
 
-TextFactory::TextFactory()
-{
-}
+TextFactory::TextFactory() = default;
 
 std::shared_ptr<Item> TextFactory::create() const
 {

@@ -6,9 +6,7 @@
 
 #include "item/rectangle.hpp"
 
-RectangleFactory::RectangleFactory()
-{
-}
+RectangleFactory::RectangleFactory() = default;
 
 std::shared_ptr<Item> RectangleFactory::create() const
 {

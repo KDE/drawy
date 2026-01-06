@@ -6,9 +6,8 @@
 
 #include "item/freeform.hpp"
 
-FreeformFactory::FreeformFactory()
-{
-}
+FreeformFactory::FreeformFactory() = default;
+
 std::shared_ptr<Item> FreeformFactory::create() const
 {
     return std::make_shared<FreeformItem>();
