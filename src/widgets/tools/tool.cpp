@@ -6,9 +6,7 @@
 
 #include "drawy_debug.h"
 
-Tool::Tool()
-{
-}
+Tool::Tool() = default;
 
 Tool::~Tool()
 {

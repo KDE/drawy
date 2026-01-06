@@ -64,7 +64,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 
         QPainter *overlayPainter{renderingContext->overlayPainter()};
 
-        QPointF offsetPos{spatialContext->offsetPos()};
+        const QPointF offsetPos{spatialContext->offsetPos()};
         curItem->erase(*overlayPainter, offsetPos);
         curItem->setEnd(transformer->viewToWorld(uiContext->event()->pos()));
         curItem->draw(*overlayPainter, offsetPos);

@@ -23,7 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
-    this->applyCustomStyles();
+    applyCustomStyles();
 
     BoardLayout *layout{new BoardLayout(this)};
     Controller *controller{new Controller(this)};
@@ -53,9 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     applyCustomStyles();
 }
 
-MainWindow::~MainWindow()
-{
-}
+MainWindow::~MainWindow() = default;
 
 void MainWindow::applyCustomStyles()
 {
@@ -63,7 +61,7 @@ void MainWindow::applyCustomStyles()
     if (file.open(QFile::ReadOnly | QFile::Text)) {
         QTextStream stream(&file);
         QString qss = stream.readAll();
-        this->setStyleSheet(qss);
+        setStyleSheet(qss);
     } else {
         qCWarning(DRAWY_LOG) << "Failed to load stylesheet.";
     }

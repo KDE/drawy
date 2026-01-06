@@ -49,7 +49,7 @@ void TextTool::mousePressed(ApplicationContext *context)
         RenderingContext *renderingContext{context->renderingContext()};
         QuadTree *quadTree{spatialContext->quadtree()};
 
-        QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
+        const QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
         QVector<std::shared_ptr<Item>> intersectingItems{quadTree->queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->type() == Item::Type::Text && item->boundingBox().contains(point);
         })};
@@ -180,10 +180,10 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         RenderingContext *renderingContext{context->renderingContext()};
         UIContext *uiContext{context->uiContext()};
 
-        QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
+        const QPointF worldPos{transformer->viewToWorld(uiContext->event()->pos())};
 
-        int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
+        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
 
         m_curItem->setSelectionStart(m_curItem->getPrevBreak(curIndex - 1));
         m_curItem->setSelectionEnd(m_curItem->getNextBreak(curIndex));
@@ -213,7 +213,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
         const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
 
-        auto [start, end] = m_curItem->getLineRange(curIndex);
+        const auto [start, end] = m_curItem->getLineRange(curIndex);
         m_curItem->setSelectionStart(start);
         m_curItem->setSelectionEnd(end + 1);
 
@@ -263,16 +263,16 @@ void TextTool::keyPressed(ApplicationContext *context)
         case Qt::Key_Left: {
             qsizetype newIndex{std::max(static_cast<qsizetype>(0), caret - 1)};
             if (ev->modifiers() & Qt::ControlModifier) {
-                qsizetype curPos{m_curItem->caret()};
+                const qsizetype curPos{m_curItem->caret()};
 
                 if (ev->modifiers() & Qt::ShiftModifier) {
-                    qsizetype pos{m_curItem->selectionEnd()};
+                    const qsizetype pos{m_curItem->selectionEnd()};
                     m_curItem->setSelectionEnd(m_curItem->getPrevBreak(pos == TextItem::INVALID ? curPos - 1 : pos - 1));
                 } else {
                     m_curItem->setCaret(m_curItem->getPrevBreak(curPos - 1));
                 }
             } else if (ev->modifiers() & Qt::ShiftModifier) {
-                qsizetype selEnd{m_curItem->selectionEnd()};
+                const qsizetype selEnd{m_curItem->selectionEnd()};
                 m_curItem->setSelectionEnd(selEnd == -1 ? newIndex : selEnd - 1);
             } else {
                 m_curItem->setCaret(newIndex);
@@ -285,13 +285,13 @@ void TextTool::keyPressed(ApplicationContext *context)
                 qsizetype curPos{m_curItem->caret()};
 
                 if (ev->modifiers() & Qt::ShiftModifier) {
-                    qsizetype pos{m_curItem->selectionEnd()};
+                    const qsizetype pos{m_curItem->selectionEnd()};
                     m_curItem->setSelectionEnd(m_curItem->getNextBreak(pos == TextItem::INVALID ? curPos : pos));
                 } else {
                     m_curItem->setCaret(m_curItem->getNextBreak(curPos));
                 }
             } else if (ev->modifiers() & Qt::ShiftModifier) {
-                qsizetype selEnd{m_curItem->selectionEnd()};
+                const qsizetype selEnd{m_curItem->selectionEnd()};
                 m_curItem->setSelectionEnd(selEnd == -1 ? newIndex : selEnd + 1);
             } else {
                 m_curItem->setCaret(newIndex);
@@ -322,7 +322,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             }
 
             if (ev->modifiers() & Qt::ControlModifier) {
-                qsizetype prevBreak{m_curItem->getPrevBreak(caret - 1)};
+                const qsizetype prevBreak{m_curItem->getPrevBreak(caret - 1)};
                 m_curItem->deleteSubStr(prevBreak, caret - 1);
                 m_curItem->setCaret(prevBreak);
                 break;

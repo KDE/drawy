@@ -82,7 +82,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         UIContext *uiContext{context->uiContext()};
         CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
 
-        QPointF curPoint{uiContext->event()->pos()};
+        const QPointF curPoint{uiContext->event()->pos()};
 
         // distance between the two points in the "view" coordinate system
         double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};

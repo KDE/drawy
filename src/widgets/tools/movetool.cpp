@@ -57,7 +57,7 @@ void MoveTool::mouseMoved(ApplicationContext *context)
 void MoveTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
-    auto button{uiContext->event()->button()};
+    const auto button{uiContext->event()->button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
         RenderingContext *renderingContext{context->renderingContext()};
