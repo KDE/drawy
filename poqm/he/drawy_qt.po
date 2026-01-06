@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-03 16:10+0200\n"
+"PO-Revision-Date: 2026-01-04 08:35+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -62,7 +62,7 @@ msgstr "מצב כהה"
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr ""
+msgstr "מסך מלא"
 
 #: widgets/keybindings/actionmanager.cpp:37
 msgctxt "ActionManager|"
@@ -228,7 +228,7 @@ msgstr "בחירת כל הפריטים"
 #: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr "מחיקה"
+msgstr "Delete"
 
 #: widgets/keybindings/actionmanager.cpp:150
 msgctxt "ActionManager|"
@@ -288,12 +288,12 @@ msgstr "ט"
 #: widgets/keybindings/actionmanager.cpp:176
 msgctxt "ActionManager|"
 msgid "P"
-msgstr ""
+msgstr "י"
 
 #: widgets/keybindings/actionmanager.cpp:177
 msgctxt "ActionManager|"
 msgid "B"
-msgstr ""
+msgstr "צ"
 
 #: widgets/keybindings/actionmanager.cpp:178
 msgctxt "ActionManager|"
@@ -308,7 +308,7 @@ msgstr "ב"
 #: widgets/keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|"
 msgid "R"
-msgstr ""
+msgstr "ר"
 
 #: widgets/keybindings/actionmanager.cpp:181
 msgctxt "ActionManager|"
@@ -323,7 +323,7 @@ msgstr "ק"
 #: widgets/keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|"
 msgid "A"
-msgstr ""
+msgstr "ח"
 
 #: widgets/keybindings/actionmanager.cpp:184
 msgctxt "ActionManager|"
@@ -410,7 +410,7 @@ msgstr "פתיחת קובץ"
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr ""
+msgstr "ללא שם.%1"
 
 #: widgets/serializer/serializer.cpp:121
 msgctxt "QObject|"
