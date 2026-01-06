@@ -7,13 +7,13 @@
 #include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
 #include "iconmanager/iconmanager.hpp"
+
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
     : QFrame{parent}
     , m_group(new QButtonGroup(this))
     , m_layout(new QHBoxLayout(this))
 {
-    setLayout(m_layout);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     setFrameShape(QFrame::StyledPanel);
     setFrameShadow(QFrame::Raised);
