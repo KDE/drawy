@@ -6,9 +6,8 @@
 
 #include "common/utils/math.hpp"
 
-ArrowItem::ArrowItem()
-{
-}
+// TODO add end/start arrow type.
+ArrowItem::ArrowItem() = default;
 
 void ArrowItem::setStart(QPointF start)
 {
@@ -24,14 +23,14 @@ void ArrowItem::setEnd(QPointF end)
 
 void ArrowItem::calcArrowPoints()
 {
-    double x1{start().x()}, x2{end().x()};
-    double y1{start().y()}, y2{end().y()};
+    const double x1{start().x()}, x2{end().x()};
+    const double y1{start().y()}, y2{end().y()};
 
-    qreal angle{std::atan2(y2 - y1, x2 - x1)};
-    qreal arrowLength{std::sqrt(std::pow(y2 - y1, 2) + std::pow(x2 - x1, 2))};
+    const qreal angle{std::atan2(y2 - y1, x2 - x1)};
+    const qreal arrowLength{std::sqrt(std::pow(y2 - y1, 2) + std::pow(x2 - x1, 2))};
 
-    int maxArrowSize{static_cast<int>(m_maxArrowSize)};
-    int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
+    const int maxArrowSize{static_cast<int>(m_maxArrowSize)};
+    const int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
     m_arrowP1 = QPointF(x2 - arrowSize * std::cos(angle - (M_PI / 180) * 30), y2 - arrowSize * std::sin(angle - (M_PI / 180) * 30));
     m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + (M_PI / 180) * 30), y2 - arrowSize * std::sin(angle + (M_PI / 180) * 30));
@@ -50,11 +49,11 @@ bool ArrowItem::intersects(const QRectF &rect)
         return false;
 
     // TODO: Use better techniques to detect collision
-    QPointF p{start()}, q{end()}, r{m_arrowP1}, s{m_arrowP2};
-    QPointF a{rect.x(), rect.y()};
-    QPointF b{rect.x() + rect.width(), rect.y()};
-    QPointF c{rect.x() + rect.width(), rect.y() + rect.height()};
-    QPointF d{rect.x(), rect.y() + rect.height()};
+    const QPointF p{start()}, q{end()}, r{m_arrowP1}, s{m_arrowP2};
+    const QPointF a{rect.x(), rect.y()};
+    const QPointF b{rect.x() + rect.width(), rect.y()};
+    const QPointF c{rect.x() + rect.width(), rect.y() + rect.height()};
+    const QPointF d{rect.x(), rect.y() + rect.height()};
 
     return (Common::Utils::Math::intersects(QLineF{p, q}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{b, c})
             || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{d, a})
@@ -62,7 +61,7 @@ bool ArrowItem::intersects(const QRectF &rect)
             || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{d, a})
             || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{b, c})
             || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{d, a}));
-};
+}
 
 bool ArrowItem::intersects(const QLineF &line)
 {
@@ -76,7 +75,7 @@ void ArrowItem::translate(const QPointF &amount)
     m_arrowP2 += amount;
 
     PolygonItem::translate(amount);
-};
+}
 
 Item::Type ArrowItem::type() const
 {

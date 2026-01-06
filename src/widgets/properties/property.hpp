@@ -15,6 +15,7 @@ public:
     enum class Type : int8_t {
         StrokeWidth,
         StrokeColor,
+        // StrokeType, // We need to define several stroke
         Opacity,
         FontSize,
         EraserSize,
@@ -41,7 +42,7 @@ public:
         return m_value.value<T>();
     }
 
-    Type type() const;
+    [[nodiscard]] Type type() const;
     const QVariant variant() const;
 
 private:

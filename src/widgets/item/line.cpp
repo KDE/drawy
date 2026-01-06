@@ -6,9 +6,7 @@
 
 #include "common/utils/math.hpp"
 
-LineItem::LineItem()
-{
-}
+LineItem::LineItem() = default;
 
 void LineItem::drawItem(QPainter &painter, const QPointF &offset) const
 {

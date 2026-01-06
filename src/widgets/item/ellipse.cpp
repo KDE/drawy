@@ -4,9 +4,7 @@
 
 #include "ellipse.hpp"
 
-EllipseItem::EllipseItem()
-{
-}
+EllipseItem::EllipseItem() = default;
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 {

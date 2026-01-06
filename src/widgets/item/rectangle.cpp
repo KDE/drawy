@@ -8,9 +8,7 @@
 
 #include "common/utils/math.hpp"
 
-RectangleItem::RectangleItem()
-{
-}
+RectangleItem::RectangleItem() = default;
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
