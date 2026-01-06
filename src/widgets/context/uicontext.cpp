@@ -59,64 +59,44 @@ void UIContext::setUIContext()
 
     m_event = new Event();
 
-    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Type::Selection);
-    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Type::Freeform);
-    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Type::Rectangle);
-    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Type::Ellipse);
-    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Type::Arrow);
-    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Type::Line);
-    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Type::Eraser);
-    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text);
-    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move);
+    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Type::Selection, tr("Selection"));
+    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Type::Freeform, tr("Free Form"));
+    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Type::Rectangle, tr("Rectangle"));
+    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Type::Ellipse, tr("Ellipse"));
+    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Type::Arrow, tr("Arrow"));
+    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Type::Line, tr("Line"));
+    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Type::Eraser, tr("Eraser"));
+    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text, tr("Text"));
+    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
 
     // TODO: Define their functions somewhere else
-    m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
-    m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
-    m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
-    m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN);
-    m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
-    m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
-    m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
-
-    connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
-    connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
-
-    connect(m_actionBar->button(IconManager::Icon::ACTION_ZOOM_OUT), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext()->updateZoomFactor(-1);
-    });
-
-    connect(m_actionBar->button(IconManager::Icon::ACTION_ZOOM_IN), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext()->updateZoomFactor(1);
-    });
-
-    connect(m_actionBar->button(IconManager::Icon::ACTION_UNDO), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory()->undo();
-        m_applicationContext->renderingContext()->markForRender();
-        m_applicationContext->renderingContext()->markForUpdate();
-    });
-
-    connect(m_actionBar->button(IconManager::Icon::ACTION_REDO), &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory()->redo();
-        m_applicationContext->renderingContext()->markForRender();
-        m_applicationContext->renderingContext()->markForUpdate();
-    });
-
-    connect(m_actionBar->button(IconManager::Icon::ACTION_SAVE), &QPushButton::clicked, this, [this]() {
+    auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
+    connect(button, &QPushButton::clicked, this, [this]() {
         Serializer serializer{};
 
         serializer.serialize(m_applicationContext);
         serializer.saveToFile();
     });
 
-    connect(m_actionBar->button(IconManager::Icon::ACTION_OPEN_FILE), &QPushButton::clicked, this, [this]() {
+    button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
+    connect(button, &QPushButton::clicked, this, [this]() {
         Loader loader{};
 
         loader.loadFromFile(m_applicationContext);
     });
 
-    connect(m_actionBar->button(IconManager::Icon::ACTION_LIGHT_MODE), &QPushButton::clicked, this, [this]() {
+    button = m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
+    connect(button, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->renderingContext()->updateZoomFactor(-1);
+    });
+
+    button = m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN);
+    connect(button, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->renderingContext()->updateZoomFactor(1);
+    });
+    button = m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
+    connect(button, &QPushButton::clicked, this, [this, button]() {
         Canvas *canvas{m_applicationContext->renderingContext()->canvas()};
-        QPushButton *button{actionBar()->button(IconManager::Icon::ACTION_LIGHT_MODE)};
 
         if (canvas->bg() == Common::lightBackgroundColor) {
             canvas->setBg(Common::darkBackgroundColor);
@@ -131,6 +111,23 @@ void UIContext::setUIContext()
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
+
+    button = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
+    connect(button, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->spatialContext()->commandHistory()->undo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
+    });
+
+    button = m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
+    connect(button, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->spatialContext()->commandHistory()->redo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
+    });
+
+    connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
+    connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
 
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
