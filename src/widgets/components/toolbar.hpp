@@ -18,9 +18,8 @@ public:
     explicit ToolBar(QWidget *parent = nullptr);
     ~ToolBar() override;
 
-    Tool *curTool() const;
-    void addTool(std::shared_ptr<Tool> tool, Tool::Type type);
-    [[nodiscard]] QVector<std::shared_ptr<Tool>> tools() const;
+    [[nodiscard]] Tool *curTool() const;
+    void addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString &name);
 
     [[nodiscard]] Tool *tool(Tool::Type type) const;
     void changeTool(Tool::Type type);

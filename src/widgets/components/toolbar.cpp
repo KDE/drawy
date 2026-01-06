@@ -23,9 +23,7 @@ ToolBar::ToolBar(QWidget *parent)
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
 
-ToolBar::~ToolBar()
-{
-}
+ToolBar::~ToolBar() = default;
 
 Tool *ToolBar::curTool() const
 {
@@ -37,23 +35,15 @@ Tool *ToolBar::curTool() const
     return m_tools.at(curID).get();
 }
 
-QVector<std::shared_ptr<Tool>> ToolBar::tools() const
+void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString &name)
 {
-    QVector<std::shared_ptr<Tool>> result;
-    for (const auto &idToolPair : m_tools) {
-        result.push_back(idToolPair.second);
+    if (!tool) {
+        return;
     }
 
-    return result;
-}
-
-void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type)
-{
-    if (tool == nullptr)
-        return;
-
     ApplicationContext *context{ApplicationContext::instance()};
-    QPushButton *btn{new QPushButton(this)};
+    auto btn{new QPushButton(this)};
+    btn->setToolTip(name);
     btn->setIcon(context->uiContext()->iconManager()->icon(tool->icon()));
 
     btn->setCheckable(true);
@@ -79,6 +69,9 @@ void ToolBar::changeTool(Tool::Type type)
 
 Tool *ToolBar::tool(Tool::Type type) const
 {
+    if (m_tools.empty()) {
+        return nullptr;
+    }
     return m_tools.at(type).get();
 }
 
