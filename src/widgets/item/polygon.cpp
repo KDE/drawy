@@ -36,11 +36,11 @@ const QPointF &PolygonItem::end() const
 
 void PolygonItem::m_updateBoundingBox()
 {
-    double minX{std::min(m_start.x(), m_end.x())};
-    double maxX{std::max(m_start.x(), m_end.x())};
-    double minY{std::min(m_start.y(), m_end.y())};
-    double maxY{std::max(m_start.y(), m_end.y())};
-    int w{property(Property::Type::StrokeWidth).value<int>()};
+    const double minX{std::min(m_start.x(), m_end.x())};
+    const double maxX{std::max(m_start.x(), m_end.x())};
+    const double minY{std::min(m_start.y(), m_end.y())};
+    const double maxY{std::max(m_start.y(), m_end.y())};
+    const int w{property(Property::Type::StrokeWidth).value<int>()};
 
     m_boundingBox = QRectF{QPointF{minX, maxY}, QPointF{maxX, minY}}.normalized();
     m_boundingBox.adjust(-w, -w, w, w);
