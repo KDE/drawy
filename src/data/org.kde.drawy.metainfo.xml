@@ -61,7 +61,14 @@
   <recommends>
     <control>pointing</control>
   </recommends>
-  <content_rating type="oars-1.1"/>
+  <project_group>KDE</project_group>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">moderate</content_attribute>
+    <content_attribute id="social-audio">moderate</content_attribute>
+  </content_rating>
+  <provides>
+    <binary>drawy</binary>
+  </provides>
   <launchable type="desktop-id">org.kde.drawy.desktop</launchable>
   <branding>
     <color type="primary" scheme_preference="light">#27a9ff</color>
