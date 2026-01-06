@@ -4,7 +4,6 @@
 
 #include "actionbar.hpp"
 
-#include <format>
 #include <stdexcept>
 
 #include "context/applicationcontext.hpp"
