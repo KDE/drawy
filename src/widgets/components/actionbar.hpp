@@ -17,8 +17,7 @@ class ActionBar : public QFrame
 public:
     explicit ActionBar(QWidget *parent = nullptr);
 
-    void addButton(const QString &tooltip, IconManager::Icon icon);
-    [[nodiscard]] QPushButton *button(IconManager::Icon id);
+    [[nodiscard]] QPushButton *addButton(const QString &tooltip, IconManager::Icon icon);
 
 private:
     QHash<IconManager::Icon, QPushButton *> m_map{};
