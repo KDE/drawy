@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     const DrawyCommandLineParser commandLineParser(&parser);
+    parser.addPositionalArgument(QStringLiteral("file"), QObject::tr("An optional argument 'file' "), QStringLiteral("[file]"));
+
     parser.addHelpOption();
     parser.addVersionOption();
     parser.setApplicationDescription(QObject::tr("Your handy, infinite, brainstorming tool!"));
