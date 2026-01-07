@@ -46,7 +46,7 @@ QJsonObject Serializer::toJson(const std::shared_ptr<Item> &item)
 {
     QJsonObject obj{};
 
-    obj[u"type"_s] = QJsonValue(static_cast<int>(item->type()));
+    obj[u"type"_s] = Item::convertEnumToString(item->type());
     obj[u"bounding_box"_s] = toJson(item->boundingBox());
     obj[u"bounding_box_padding"_s] = QJsonValue(item->boundingBoxPadding());
     obj[u"properties"_s] = toJson(item->properties());

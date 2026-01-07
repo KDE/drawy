@@ -97,7 +97,7 @@ void Loader::loadFromFile(ApplicationContext *context)
 
 std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 {
-    Item::Type type{static_cast<Item::Type>(value(obj, u"type"_s).toInt())};
+    Item::Type type{Item::convertStringToEnum(value(obj, u"type"_s).toString())};
 
     std::shared_ptr<Item> item;
     switch (type) {

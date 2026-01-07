@@ -37,3 +37,5 @@ void ItemTest::shouldConvertEnumToString()
     QCOMPARE(Item::convertEnumToString(Item::Type::Group), u"GROUP"_s);
     QCOMPARE(Item::convertEnumToString(Item::Type::Invalid), QString());
 }
+
+#include "moc_itemtest.cpp"
