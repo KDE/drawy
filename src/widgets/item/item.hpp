@@ -50,6 +50,8 @@ public:
     [[nodiscard]] static Item::Type convertStringToEnum(const QString &str);
     [[nodiscard]] static QString convertEnumToString(Item::Type type);
 
+    // [[nodiscard]] virtual QJsonObject serialized() const = 0;
+
 protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};

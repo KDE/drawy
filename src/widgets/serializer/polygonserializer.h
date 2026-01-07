@@ -11,7 +11,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonSerializer : public ItemSerializer
 {
 public:
-    explicit PolygonSerializer(const std::shared_ptr<PolygonItem> &item);
+    explicit PolygonSerializer(PolygonItem *item);
     ~PolygonSerializer() override;
 
     [[nodiscard]] QJsonObject serialize() const override;

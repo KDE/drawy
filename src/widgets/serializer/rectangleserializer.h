@@ -11,6 +11,6 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleSerializer : public PolygonSerializer
 {
 public:
-    explicit RectangleSerializer(const std::shared_ptr<RectangleItem> &item);
+    explicit RectangleSerializer(RectangleItem *item);
     ~RectangleSerializer() override;
 };

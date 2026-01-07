@@ -13,7 +13,7 @@ class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ItemSerializer
 {
 public:
-    explicit ItemSerializer(const std::shared_ptr<Item> &item);
+    explicit ItemSerializer(Item *item);
     virtual ~ItemSerializer();
     [[nodiscard]] virtual QJsonObject serialize() const;
 
@@ -22,7 +22,7 @@ protected:
     [[nodiscard]] static QJsonObject toJson(const QRectF &rect);
     [[nodiscard]] static QJsonObject toJson(const QPointF &point);
 
-    std::shared_ptr<Item> mItem;
+    Item *mItem = nullptr;
 
     template<typename T>
     static QJsonValue toJson(const T &val)

@@ -11,6 +11,6 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseSerializer : public PolygonSerializer
 {
 public:
-    explicit EllipseSerializer(const std::shared_ptr<EllipseItem> &item);
+    explicit EllipseSerializer(EllipseItem *item);
     ~EllipseSerializer() override;
 };

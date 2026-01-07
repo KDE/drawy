@@ -6,7 +6,7 @@
 #include "lineserializer.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-LineSerializer::LineSerializer(const std::shared_ptr<LineItem> &item)
+LineSerializer::LineSerializer(LineItem *item)
     : PolygonSerializer(item)
 {
 }

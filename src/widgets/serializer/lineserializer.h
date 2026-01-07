@@ -11,6 +11,6 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineSerializer : public PolygonSerializer
 {
 public:
-    explicit LineSerializer(const std::shared_ptr<LineItem> &item);
+    explicit LineSerializer(LineItem *item);
     ~LineSerializer() override;
 };

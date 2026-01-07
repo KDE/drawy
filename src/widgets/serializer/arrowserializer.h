@@ -11,6 +11,6 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowSerializer : public PolygonSerializer
 {
 public:
-    explicit ArrowSerializer(const std::shared_ptr<ArrowItem> &item);
+    explicit ArrowSerializer(ArrowItem *item);
     ~ArrowSerializer() override;
 };

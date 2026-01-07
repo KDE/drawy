@@ -7,7 +7,7 @@
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 
-ItemSerializer::ItemSerializer(const std::shared_ptr<Item> &item)
+ItemSerializer::ItemSerializer(Item *item)
     : mItem(item)
 {
 }

@@ -6,7 +6,7 @@
 #include "ellipseserializer.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-EllipseSerializer::EllipseSerializer(const std::shared_ptr<EllipseItem> &item)
+EllipseSerializer::EllipseSerializer(EllipseItem *item)
     : PolygonSerializer(item)
 {
 }

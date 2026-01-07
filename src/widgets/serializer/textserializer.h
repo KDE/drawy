@@ -11,7 +11,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT TextSerializer : public ItemSerializer
 {
 public:
-    explicit TextSerializer(const std::shared_ptr<TextItem> &item);
+    explicit TextSerializer(TextItem *item);
     ~TextSerializer() override;
     [[nodiscard]] QJsonObject serialize() const override;
 };

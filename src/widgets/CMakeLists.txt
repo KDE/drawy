@@ -125,10 +125,6 @@ target_sources(
     properties/widgets/strokecolorwidget.hpp
     properties/widgets/strokewidthwidget.cpp
     properties/widgets/strokewidthwidget.hpp
-    serializer/loader.cpp
-    serializer/loader.hpp
-    serializer/serializer.cpp
-    serializer/serializer.hpp
     tools/arrowtool.cpp
     tools/arrowtool.hpp
     tools/drawingtool.cpp
@@ -167,6 +163,10 @@ target_sources(
     drawycommandlineparser.h
     drawycommandlineparser.cpp
 
+    serializer/loader.cpp
+    serializer/loader.hpp
+    serializer/serializer.cpp
+    serializer/serializer.hpp
     serializer/itemserializer.h
     serializer/itemserializer.cpp
     serializer/rectangleserializer.h

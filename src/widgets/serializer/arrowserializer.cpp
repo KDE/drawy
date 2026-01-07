@@ -6,7 +6,7 @@
 #include "arrowserializer.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-ArrowSerializer::ArrowSerializer(const std::shared_ptr<ArrowItem> &item)
+ArrowSerializer::ArrowSerializer(ArrowItem *item)
     : PolygonSerializer(item)
 {
 }

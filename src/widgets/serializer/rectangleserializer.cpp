@@ -6,7 +6,7 @@
 #include "rectangleserializer.h"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-RectangleSerializer::RectangleSerializer(const std::shared_ptr<RectangleItem> &item)
+RectangleSerializer::RectangleSerializer(RectangleItem *item)
     : PolygonSerializer(item)
 {
 }
