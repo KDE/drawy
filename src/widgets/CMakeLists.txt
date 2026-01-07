@@ -183,6 +183,12 @@ target_sources(
     serializer/textserializer.h
     serializer/freeformserializer.h
     serializer/freeformserializer.cpp
+
+    jobs/serializejob.h
+    jobs/serializejob.cpp
+    jobs/saveasjob.cpp
+    jobs/saveasjob.h
+
     libdrawywidgets_private_export.h
 )
 
