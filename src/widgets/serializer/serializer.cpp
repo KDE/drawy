@@ -23,7 +23,7 @@
 #include "item/text.hpp"
 
 Serializer::Serializer() = default;
-
+constexpr int version = 1;
 void Serializer::serialize(ApplicationContext *context)
 {
     QVector<std::shared_ptr<Item>> items{context->spatialContext()->quadtree()->getAllItems()};
@@ -33,6 +33,7 @@ void Serializer::serialize(ApplicationContext *context)
         array.push_back(toJson(item));
     }
 
+    m_object[u"version"_s] = version;
     m_object[u"items"_s] = array;
 
     QPointF offsetPos{context->spatialContext()->offsetPos()};
