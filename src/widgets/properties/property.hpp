@@ -45,8 +45,8 @@ public:
     [[nodiscard]] Type type() const;
     const QVariant variant() const;
 
-    [[nodiscard]] Property::Type convertStringToEnum(const QString &str) const;
-    [[nodiscard]] QString convertStringToEnum(Property::Type type) const;
+    [[nodiscard]] static Property::Type convertStringToEnum(const QString &str);
+    [[nodiscard]] static QString convertEnumToString(Property::Type type);
 
 private:
     QVariant m_value{};

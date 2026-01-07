@@ -21,7 +21,7 @@ const QVariant Property::variant() const
     return m_value;
 }
 
-Property::Type Property::convertStringToEnum(const QString &str) const
+Property::Type Property::convertStringToEnum(const QString &str)
 {
     if (str == u"StrokeWidth") {
         return Property::Type::StrokeWidth;
@@ -41,7 +41,7 @@ Property::Type Property::convertStringToEnum(const QString &str) const
     return Property::Type::Null;
 }
 
-QString Property::convertStringToEnum(Property::Type type) const
+QString Property::convertEnumToString(Property::Type type)
 {
     switch (type) {
     case Property::Type::StrokeWidth:
