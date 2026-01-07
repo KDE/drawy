@@ -16,10 +16,13 @@
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
+#include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
+#include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "serializer/loader.hpp"
+#include <KMessageBox>
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -55,6 +58,21 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow() = default;
+
+void MainWindow::closeEvent(QCloseEvent *e)
+{
+    if (!ApplicationContext::instance()->spatialContext()->quadtree()->getAllItems().isEmpty()) {
+        if (KMessageBox::ButtonCode::PrimaryAction
+            == KMessageBox::questionTwoActions(this, tr("Do you want to close?"), tr("Close"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())) {
+            e->accept();
+        } else {
+            e->ignore();
+        }
+        return;
+    } else {
+        e->accept();
+    }
+}
 
 void MainWindow::applyCustomStyles()
 {

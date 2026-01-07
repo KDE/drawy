@@ -19,6 +19,9 @@ public:
 
     void loadFile(const QString &fileName);
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 private:
     void applyCustomStyles();
     bool m_config_useSystemStyles{true};

@@ -72,7 +72,7 @@ void UIContext::setUIContext()
     // TODO: Define their functions somewhere else
     auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        Serializer serializer{};
+        Serializer serializer;
 
         serializer.serialize(m_applicationContext);
         serializer.saveToFile();

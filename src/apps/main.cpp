@@ -8,6 +8,14 @@
 
 #include "drawycommandlineparser.h"
 #include "window/window.hpp"
+
+// signal handler for SIGINT & SIGTERM
+#ifdef Q_OS_UNIX
+#include <KSignalHandler>
+#include <signal.h>
+#include <unistd.h>
+#endif
+
 using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
@@ -27,7 +35,7 @@ int main(int argc, char *argv[])
 
     parser.process(a);
 
-    MainWindow w{};
+    MainWindow w;
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
         w.viewFullScreen(true);
     }
@@ -36,6 +44,20 @@ int main(int argc, char *argv[])
     if (!args.isEmpty()) {
         w.loadFile(args.constFirst());
     }
+
+#ifdef Q_OS_UNIX
+    /**
+     * Set up signal handler for SIGINT and SIGTERM
+     */
+    KSignalHandler::self()->watchSignal(SIGINT);
+    KSignalHandler::self()->watchSignal(SIGTERM);
+    QObject::connect(KSignalHandler::self(), &KSignalHandler::signalReceived, &a, [&w](int signal) {
+        if (signal == SIGINT || signal == SIGTERM) {
+            printf("Shutting down...\n");
+            w.close();
+        }
+    });
+#endif
 
     w.show();
     return a.exec();

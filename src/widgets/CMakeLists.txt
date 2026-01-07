@@ -200,7 +200,8 @@ endif()
 
 target_link_libraries(
     libdrawywidgets
-    Qt6::Widgets
+    Qt::Widgets
+    KF6::WidgetsAddons
     ${ZSTD_LINK_LIBRARIES}
 )
 

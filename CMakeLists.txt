@@ -44,7 +44,7 @@ if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
 endif()
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Crash CoreAddons WidgetsAddons)
 option(
     USE_UNITY_CMAKE_SUPPORT
     "Use UNITY cmake support (speedup compile time)"

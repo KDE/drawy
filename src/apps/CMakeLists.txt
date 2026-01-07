@@ -12,6 +12,7 @@ ecm_create_qm_loader(drawy drawy_qt)
 target_link_libraries(
     drawy
     KF6::Crash
+    KF6::CoreAddons
     Qt::Widgets
     libdrawywidgets
     )
