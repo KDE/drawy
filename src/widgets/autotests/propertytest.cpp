@@ -36,3 +36,5 @@ void PropertyTest::shouldConvertEnumToString()
     QCOMPARE(Property::convertEnumToString(Property::Type::Actions), u"Actions"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Null), QString());
 }
+
+#include "moc_propertytest.cpp"
