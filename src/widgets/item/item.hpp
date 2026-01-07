@@ -3,13 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
+#include "libdrawywidgets_private_export.h"
 #include <QPainter>
 #include <QRect>
 
 #include "properties/property.hpp"
 
-class Item
+class LIBDRAWYWIDGETS_TESTS_EXPORT Item
 {
 public:
     Item();
@@ -39,12 +39,16 @@ public:
         Line,
         Arrow,
         Text,
-        Group
+        Group,
+        Invalid,
     };
 
     virtual Type type() const = 0;
 
     virtual void updateAfterProperty();
+
+    [[nodiscard]] static Item::Type convertStringToEnum(const QString &str);
+    [[nodiscard]] static QString convertEnumToString(Item::Type type);
 
 protected:
     QRectF m_boundingBox{};
