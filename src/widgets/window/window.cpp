@@ -61,7 +61,7 @@ void MainWindow::applyCustomStyles()
     QFile file(u":/styles/style.qss"_s);
     if (file.open(QFile::ReadOnly | QFile::Text)) {
         QTextStream stream(&file);
-        QString qss = stream.readAll();
+        const QString qss = stream.readAll();
         setStyleSheet(qss);
     } else {
         qCWarning(DRAWY_LOG) << "Failed to load stylesheet.";
