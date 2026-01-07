@@ -18,45 +18,117 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
 
+#: widgets/context/uicontext.cpp:62
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "UIContext|"
+msgid "Selection"
+msgstr "選取工具"
+
+#: widgets/context/uicontext.cpp:63
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "UIContext|"
+msgid "Free Form"
+msgstr "橡皮擦工具"
+
+#: widgets/context/uicontext.cpp:64
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "UIContext|"
+msgid "Rectangle"
+msgstr "矩形工具"
+
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "UIContext|"
+msgid "Ellipse"
+msgstr "橢圓工具"
+
+#: widgets/context/uicontext.cpp:66
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "UIContext|"
+msgid "Arrow"
+msgstr "箭頭工具"
+
+#: widgets/context/uicontext.cpp:67
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "UIContext|"
+msgid "Line"
+msgstr "直線工具"
+
+#: widgets/context/uicontext.cpp:68
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "UIContext|"
+msgid "Eraser"
+msgstr "橡皮擦工具"
+
+#: widgets/context/uicontext.cpp:69
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "UIContext|"
+msgid "Text"
+msgstr "文字工具"
+
+#: widgets/context/uicontext.cpp:70
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "UIContext|"
+msgid "Move"
+msgstr "移動工具"
+
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "儲存到檔案"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:81
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:88
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:93
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "放大"
 
-#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
+#: widgets/context/uicontext.cpp:97 widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "亮色模式"
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:107
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "暗色模式"
+
+#: widgets/context/uicontext.cpp:115
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "復原"
 
-#: widgets/context/uicontext.cpp:79
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "重做"
-
-#: widgets/context/uicontext.cpp:127
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "暗色模式"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"

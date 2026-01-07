@@ -20,45 +20,117 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
+#: widgets/context/uicontext.cpp:62
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Selection Tool"
+msgctxt "UIContext|"
+msgid "Selection"
+msgstr "Orodje za izbiro"
+
+#: widgets/context/uicontext.cpp:63
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Freeform Tool"
+msgctxt "UIContext|"
+msgid "Free Form"
+msgstr "Orodje za prosto oblikovanje"
+
+#: widgets/context/uicontext.cpp:64
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Rectangle Tool"
+msgctxt "UIContext|"
+msgid "Rectangle"
+msgstr "Orodje za pravokotnik"
+
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ellipse Tool"
+msgctxt "UIContext|"
+msgid "Ellipse"
+msgstr "Orodje za elipso"
+
+#: widgets/context/uicontext.cpp:66
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Arrow Tool"
+msgctxt "UIContext|"
+msgid "Arrow"
+msgstr "Orodje za puščice"
+
+#: widgets/context/uicontext.cpp:67
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Line Tool"
+msgctxt "UIContext|"
+msgid "Line"
+msgstr "Orodje za črte"
+
+#: widgets/context/uicontext.cpp:68
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Eraser Tool"
+msgctxt "UIContext|"
+msgid "Eraser"
+msgstr "Orodje radirke"
+
+#: widgets/context/uicontext.cpp:69
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Text Tool"
+msgctxt "UIContext|"
+msgid "Text"
+msgstr "Orodje za besedilo"
+
+#: widgets/context/uicontext.cpp:70
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "UIContext|"
+msgid "Move"
+msgstr "Orodje za premikanje"
+
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Shrani v datoteko"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:81
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:88
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Pomanjšaj"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:93
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Povečaj"
 
-#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
+#: widgets/context/uicontext.cpp:97 widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Svetli način"
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:107
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "Temni način"
+
+#: widgets/context/uicontext.cpp:115
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: widgets/context/uicontext.cpp:79
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Uveljavi"
-
-#: widgets/context/uicontext.cpp:127
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Temni način"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"

@@ -15,44 +15,89 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr ""
 
+#: widgets/context/uicontext.cpp:62
+msgctxt "UIContext|"
+msgid "Selection"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:63
+msgctxt "UIContext|"
+msgid "Free Form"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:64
+msgctxt "UIContext|"
+msgid "Rectangle"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:65
+msgctxt "UIContext|"
+msgid "Ellipse"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:66
+msgctxt "UIContext|"
+msgid "Arrow"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:67
+msgctxt "UIContext|"
+msgid "Line"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:68
+msgctxt "UIContext|"
+msgid "Eraser"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:69
+msgctxt "UIContext|"
+msgid "Text"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:70
+msgctxt "UIContext|"
+msgid "Move"
+msgstr ""
+
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:81
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:88
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:93
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
+#: widgets/context/uicontext.cpp:97 widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:107
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:115
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:79
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
-msgstr ""
-
-#: widgets/context/uicontext.cpp:127
-msgctxt "UIContext|"
-msgid "Dark Mode"
 msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:20

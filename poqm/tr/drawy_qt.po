@@ -18,45 +18,117 @@ msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
 
+#: widgets/context/uicontext.cpp:62
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "UIContext|"
+msgid "Selection"
+msgstr "Seçim Aracı"
+
+#: widgets/context/uicontext.cpp:63
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "UIContext|"
+msgid "Free Form"
+msgstr "Silgi Aracı"
+
+#: widgets/context/uicontext.cpp:64
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "UIContext|"
+msgid "Rectangle"
+msgstr "Dörtgen Aracı"
+
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "UIContext|"
+msgid "Ellipse"
+msgstr "Elips Aracı"
+
+#: widgets/context/uicontext.cpp:66
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "UIContext|"
+msgid "Arrow"
+msgstr "Ok Aracı"
+
+#: widgets/context/uicontext.cpp:67
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "UIContext|"
+msgid "Line"
+msgstr "Çizgi Aracı"
+
+#: widgets/context/uicontext.cpp:68
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "UIContext|"
+msgid "Eraser"
+msgstr "Silgi Aracı"
+
+#: widgets/context/uicontext.cpp:69
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "UIContext|"
+msgid "Text"
+msgstr "Metin Aracı"
+
+#: widgets/context/uicontext.cpp:70
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "UIContext|"
+msgid "Move"
+msgstr "Taşıma Aracı"
+
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Dosyaya Kaydet"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:81
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:88
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:93
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Yakınlaştır"
 
-#: widgets/context/uicontext.cpp:77 widgets/context/uicontext.cpp:123
+#: widgets/context/uicontext.cpp:97 widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Açık Kip"
 
-#: widgets/context/uicontext.cpp:78
+#: widgets/context/uicontext.cpp:107
+msgctxt "UIContext|"
+msgid "Dark Mode"
+msgstr "Koyu Kip"
+
+#: widgets/context/uicontext.cpp:115
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Koyu Kip"
 
-#: widgets/context/uicontext.cpp:79
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Yinele"
-
-#: widgets/context/uicontext.cpp:127
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Koyu Kip"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
