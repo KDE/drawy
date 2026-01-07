@@ -228,7 +228,7 @@ void FreeformItem::translate(const QPointF &amount)
     }
 
     m_boundingBox.translate(amount);
-};
+}
 
 Item::Type FreeformItem::type() const
 {

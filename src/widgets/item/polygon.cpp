@@ -85,4 +85,4 @@ void PolygonItem::translate(const QPointF &amount)
     m_end += amount;
 
     m_updateBoundingBox();
-};
+}

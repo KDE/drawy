@@ -58,7 +58,7 @@ QPixmap *Canvas::widget() const
 QColor Canvas::bg() const
 {
     return m_bg;
-};
+}
 
 void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay)
 {
@@ -141,13 +141,13 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
 {
     Q_EMIT mouseMoved(event);
     QWidget::mouseMoveEvent(event);
-};
+}
 
 void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_EMIT mouseReleased(event);
     QWidget::mouseReleaseEvent(event);
-};
+}
 
 void Canvas::keyPressEvent(QKeyEvent *event)
 {

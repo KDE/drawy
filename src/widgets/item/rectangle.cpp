@@ -39,7 +39,7 @@ bool RectangleItem::intersects(const QRectF &rect)
             || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{d, a})
             || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{b, c})
             || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{d, a}));
-};
+}
 
 bool RectangleItem::intersects(const QLineF &line)
 {

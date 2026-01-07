@@ -36,7 +36,7 @@ void EraserTool::mousePressed(ApplicationContext *context)
     if (event->button() == Qt::LeftButton) {
         m_isErasing = true;
     }
-};
+}
 
 // FIXME: messy code
 void EraserTool::mouseMoved(ApplicationContext *context)
@@ -129,7 +129,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
 void EraserTool::leave([[maybe_unused]] ApplicationContext *context)
 {
     cleanup();
-};
+}
 
 void EraserTool::cleanup()
 {
@@ -162,4 +162,4 @@ QString EraserTool::tooltip() const
 IconManager::Icon EraserTool::icon() const
 {
     return IconManager::Icon::TOOL_ERASER;
-};
+}

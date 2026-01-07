@@ -31,7 +31,7 @@ qreal Event::pressure() const
 const QPoint &Event::pos() const
 {
     return m_pos;
-};
+}
 
 Qt::MouseButton Event::button() const
 {

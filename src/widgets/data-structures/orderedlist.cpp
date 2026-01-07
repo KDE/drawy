@@ -96,7 +96,7 @@ void OrderedList::sendBackward(const ItemPtr &item)
     int val = m_zIndex[item];
     m_zIndex[item] = m_zIndex[*prevIterator];
     m_zIndex[*prevIterator] = val;
-};
+}
 
 void OrderedList::sendToBack(const ItemPtr &item)
 {

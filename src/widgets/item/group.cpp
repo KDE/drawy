@@ -41,7 +41,7 @@ bool GroupItem::intersects(const QRectF &rect)
     }
 
     return false;
-};
+}
 
 bool GroupItem::intersects(const QLineF &line)
 {
@@ -52,7 +52,7 @@ bool GroupItem::intersects(const QLineF &line)
     }
 
     return false;
-};
+}
 
 QVector<std::shared_ptr<Item>> GroupItem::unGroup()
 {
@@ -68,7 +68,7 @@ const QRectF GroupItem::boundingBox() const
     }
 
     return result;
-};
+}
 
 Item::Type GroupItem::type() const
 {
@@ -80,7 +80,7 @@ void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
     for (const auto &item : std::as_const(m_items)) {
         item->setProperty(propertyType, newObj);
     }
-};
+}
 
 const Property GroupItem::property(const Property::Type propertyType) const
 {
@@ -104,7 +104,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
     }
 
     return property;
-};
+}
 
 const QVector<Property> GroupItem::properties() const
 {
@@ -115,7 +115,7 @@ const QVector<Property> GroupItem::properties() const
     }
 
     return result;
-};
+}
 
 const QVector<Property::Type> GroupItem::propertyTypes() const
 {
@@ -126,6 +126,8 @@ const QVector<Property::Type> GroupItem::propertyTypes() const
     }
 
     return QVector<Property::Type>(types.begin(), types.end());
-};
+}
 
-void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const { };
+void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
+{
+}

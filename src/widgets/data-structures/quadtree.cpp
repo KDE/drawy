@@ -210,7 +210,7 @@ QVector<std::shared_ptr<Item>> QuadTree::getAllItems() const
 const QRectF &QuadTree::boundingBox() const
 {
     return m_boundingBox;
-};
+}
 
 int QuadTree::size() const
 {

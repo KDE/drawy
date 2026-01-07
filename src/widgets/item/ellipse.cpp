@@ -53,7 +53,7 @@ bool EllipseItem::intersects(const QRectF &rect)
     QPointF c{rect.bottomRight()};
     QPointF d{rect.bottomLeft()};
     return onEllipse({a, b}) || onEllipse({b, c}) || onEllipse({c, d}) || onEllipse({d, a});
-};
+}
 
 bool EllipseItem::intersects(const QLineF &line)
 {
