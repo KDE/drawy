@@ -171,7 +171,7 @@ std::shared_ptr<Item> Loader::createItem(const QJsonObject &obj)
 
 Property Loader::createProperty(const QJsonObject &obj)
 {
-    Property::Type type{static_cast<Property::Type>(value(obj, u"type"_s).toInt())};
+    const Property::Type type{Property::convertStringToEnum(value(obj, u"type"_s).toString())};
     const QVariant val{value(obj, u"value"_s).toVariant()};
 
     return Property{val, type};
