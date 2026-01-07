@@ -166,6 +166,23 @@ target_sources(
     resources/style.qss
     drawycommandlineparser.h
     drawycommandlineparser.cpp
+
+    serializer/itemserializer.h
+    serializer/itemserializer.cpp
+    serializer/rectangleserializer.h
+    serializer/rectangleserializer.cpp
+    serializer/polygonserializer.h
+    serializer/polygonserializer.cpp
+    serializer/arrowserializer.cpp
+    serializer/arrowserializer.h
+    serializer/ellipseserializer.cpp
+    serializer/ellipseserializer.h
+    serializer/lineserializer.cpp
+    serializer/lineserializer.h
+    serializer/textserializer.cpp
+    serializer/textserializer.h
+    serializer/freeformserializer.h
+    serializer/freeformserializer.cpp
     libdrawywidgets_private_export.h
 )
 

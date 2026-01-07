@@ -26,20 +26,20 @@ Serializer::Serializer() = default;
 constexpr int version = 1;
 void Serializer::serialize(ApplicationContext *context)
 {
-    QVector<std::shared_ptr<Item>> items{context->spatialContext()->quadtree()->getAllItems()};
+    const QVector<std::shared_ptr<Item>> items{context->spatialContext()->quadtree()->getAllItems()};
 
-    QJsonArray array{};
-    for (auto &item : items) {
+    QJsonArray array;
+    for (const auto &item : items) {
         array.push_back(toJson(item));
     }
 
     m_object[u"version"_s] = version;
     m_object[u"items"_s] = array;
 
-    QPointF offsetPos{context->spatialContext()->offsetPos()};
+    const QPointF offsetPos{context->spatialContext()->offsetPos()};
     m_object[u"offset_pos"_s] = toJson(offsetPos);
 
-    qreal zoomFactor{context->renderingContext()->zoomFactor()};
+    const qreal zoomFactor{context->renderingContext()->zoomFactor()};
     m_object[u"zoom_factor"_s] = zoomFactor;
 }
 

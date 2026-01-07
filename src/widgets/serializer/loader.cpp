@@ -35,7 +35,7 @@ void Loader::loadFromFile(ApplicationContext *context, const QString &openFileNa
         const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
         // ask for file (handle cancel)
-        QDir homeDir{QDir::home()};
+        const QDir homeDir{QDir::home()};
         fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
         if (fileName.isEmpty())
             return;
