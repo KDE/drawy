@@ -4,10 +4,10 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include <QVariant>
 #include <utility>
-
-class Property
+class LIBDRAWYWIDGETS_TESTS_EXPORT Property
 {
 public:
     Property();
@@ -44,6 +44,9 @@ public:
 
     [[nodiscard]] Type type() const;
     const QVariant variant() const;
+
+    [[nodiscard]] Property::Type convertStringToEnum(const QString &str) const;
+    [[nodiscard]] QString convertStringToEnum(Property::Type type) const;
 
 private:
     QVariant m_value{};
