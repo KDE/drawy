@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -15,6 +16,8 @@ public:
     ~MainWindow() override;
 
     void viewFullScreen(bool fullScreen);
+
+    void loadFile(const QString &fileName);
 
 private:
     void applyCustomStyles();

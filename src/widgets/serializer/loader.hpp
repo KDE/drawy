@@ -13,7 +13,7 @@ class Property;
 class Loader
 {
 public:
-    void loadFromFile(ApplicationContext *context);
+    void loadFromFile(ApplicationContext *context, const QString &fileName = {});
 
 private:
     static std::shared_ptr<Item> createItem(const QJsonObject &obj);

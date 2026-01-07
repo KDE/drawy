@@ -26,16 +26,22 @@
 #include "item/rectangle.hpp"
 #include "item/text.hpp"
 using namespace Qt::Literals::StringLiterals;
-void Loader::loadFromFile(ApplicationContext *context)
-{
-    // file filter
-    const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
-    // ask for file (handle cancel)
-    QDir homeDir{QDir::home()};
-    QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
-    if (fileName.isEmpty())
-        return;
+void Loader::loadFromFile(ApplicationContext *context, const QString &openFileName)
+{
+    QString fileName;
+    if (openFileName.isEmpty()) {
+        // file filter
+        const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+
+        // ask for file (handle cancel)
+        QDir homeDir{QDir::home()};
+        fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
+        if (fileName.isEmpty())
+            return;
+    } else {
+        fileName = openFileName;
+    }
 
     QFile file{fileName};
     if (!file.open(QIODevice::ReadOnly)) {

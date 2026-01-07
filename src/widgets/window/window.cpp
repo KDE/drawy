@@ -19,6 +19,7 @@
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
 #include "drawy_debug.h"
+#include "serializer/loader.hpp"
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -84,6 +85,13 @@ void MainWindow::viewFullScreen(bool fullScreen)
     } else {
         setWindowState(windowState() & ~Qt::WindowFullScreen);
     }
+}
+
+void MainWindow::loadFile(const QString &fileName)
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    Loader loader;
+    loader.loadFromFile(context, fileName);
 }
 
 #include "moc_window.cpp"
