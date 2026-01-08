@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     parser.addPositionalArgument(QStringLiteral("file"), QObject::tr("An optional argument 'file' "), QStringLiteral("[file]"));
 
     parser.addVersionOption();
-    parser.setApplicationDescription(QObject::tr("Your handy, infinite, brainstorming tool!"));
+    parser.setApplicationDescription(QObject::tr("Your handy, infinite brainstorming tool!"));
 
     parser.process(a);
     aboutData.processCommandLine(&parser);

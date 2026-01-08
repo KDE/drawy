@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
 # <img src="https://invent.kde.org/graphics/drawy/-/raw/master/assets/mime-32.png" align="left">‎ Drawy
-Your handy, infinite, brainstorming tool!
+Your handy, infinite brainstorming tool!
 
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
 
