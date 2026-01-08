@@ -34,8 +34,9 @@ void ArrowItem::calcArrowPoints()
     const int maxArrowSize{static_cast<int>(m_maxArrowSize)};
     const int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
-    m_arrowP1 = QPointF(x2 - arrowSize * std::cos(angle - (M_PI / 180) * 30), y2 - arrowSize * std::sin(angle - (M_PI / 180) * 30));
-    m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + (M_PI / 180) * 30), y2 - arrowSize * std::sin(angle + (M_PI / 180) * 30));
+    constexpr double angleArrow = (M_PI / 180) * 30;
+    m_arrowP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
+    m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
 }
 
 void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
