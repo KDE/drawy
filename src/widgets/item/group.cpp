@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "group.hpp"
+#include "serializer/groupserializer.hpp"
 
 #include <QJsonObject>
 #include <stdexcept>
@@ -135,5 +136,6 @@ void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] co
 
 QJsonObject GroupItem::serialize() const
 {
-    return {};
+    const GroupSerializer serializer(this);
+    return serializer.serialize();
 }

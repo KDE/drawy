@@ -182,6 +182,8 @@ target_sources(
         serializer/freeformserializer.cpp
         serializer/serializerutils.hpp
         serializer/serializerutils.cpp
+        serializer/groupserializer.cpp
+        serializer/groupserializer.hpp
         jobs/serializejob.hpp
         jobs/serializejob.cpp
         jobs/saveasjob.cpp
