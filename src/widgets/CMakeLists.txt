@@ -183,6 +183,8 @@ target_sources(
     serializer/textserializer.h
     serializer/freeformserializer.h
     serializer/freeformserializer.cpp
+    serializer/serializerutils.h
+    serializer/serializerutils.cpp
 
     jobs/serializejob.h
     jobs/serializejob.cpp
