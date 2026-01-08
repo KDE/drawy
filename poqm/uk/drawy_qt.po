@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-04 11:56+0200\n"
+"PO-Revision-Date: 2026-01-07 18:18+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -14,82 +14,60 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Інструмент вибору"
+msgstr "Позначення"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Інструмент «Довільний контур»"
+msgstr "Довільна форма"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Інструмент «Прямокутник»"
+msgstr "Прямокутник"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Інструмент «Еліпс»"
+msgstr "Еліпс"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Інструмент «Стрілка»"
+msgstr "Стрілка"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Інструмент «Пряма»"
+msgstr "Пряма"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Інструмент «Гумка»"
+msgstr "Гумка"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Інструмент «Текст»"
+msgstr "Текст"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Інструмент «Пересування»"
+msgstr "Пересування"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -467,24 +445,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Товщина"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-04 08:42+0100\n"
+"PO-Revision-Date: 2026-01-07 10:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -16,84 +16,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Eina de selecció"
+msgstr "Selecció"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Eina de forma lliure"
+msgstr "Forma lliure"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Eina de rectangles"
+msgstr "Rectangle"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Eina d'el·lipses"
+msgstr "El·lipse"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Eina de fletxes"
+msgstr "Fletxa"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Eina de línies"
+msgstr "Línia"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Eina esborrador"
+msgstr "Esborrador"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Eina de text"
+msgstr "Text"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Eina de moure"
+msgstr "Mou"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -471,24 +449,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Gruix"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Obre un fitxer"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sense_títol .%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Desa el fitxer"

@@ -13,82 +13,60 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "X-Generator: Poedit 3.8\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "მონიშვნის ხელსაწყო"
+msgstr "მონიშნული"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "თავისუფალი ფორმის დახატვა"
+msgstr "თავისუფალი მდებარეობა"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "მართკუთხედის ხელსაწყო"
+msgstr "მართკუთხედი"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "ოვალის ხელსაწყო"
+msgstr "ოვალი"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "ისრის ხელსაწყო"
+msgstr "ისარი"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "ხაზის ხელსაწყო"
+msgstr "ხაზი"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "საშლელი ხელსაწყო"
+msgstr "საშლელი"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "ტექსტის ხელსაწყო"
+msgstr "ტექსტი"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "გადამაადგილებელი ინსტრუმენტი"
+msgstr "გადატანა"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -258,12 +236,12 @@ msgstr "გადართვა ისრის დახატვის ხე
 #: widgets/keybindings/actionmanager.cpp:121
 msgctxt "ActionManager|"
 msgid "Move Tool"
-msgstr "გადამაადგილებელი ინსტრუმენტი"
+msgstr "გადატანის ხელსაწყო"
 
 #: widgets/keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr "გადართვა გადაადგილების ხელსაწყოზე"
+msgstr "გადართვა გადატანის ხელსაწყოზე"
 
 #: widgets/keybindings/actionmanager.cpp:128
 msgctxt "ActionManager|"
@@ -466,24 +444,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "სისქე"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
@@ -516,7 +494,7 @@ msgstr "ხაზის ხელსაწყო"
 #: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
-msgstr "გადამაადგილებელი ინსტრუმენტი"
+msgstr "გადატანის ხელსაწყო"
 
 #: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-04 07:36+0100\n"
+"PO-Revision-Date: 2026-01-07 09:22+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -15,82 +15,60 @@ msgstr ""
 "%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Orodje za izbiro"
+msgstr "Izbira"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Orodje za prosto oblikovanje"
+msgstr "Prosto oblikovanje"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Orodje za pravokotnik"
+msgstr "Pravokotnik"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Orodje za elipso"
+msgstr "Elipsa"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Orodje za puščice"
+msgstr "Puščica"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Orodje za črte"
+msgstr "Črta"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Orodje radirke"
+msgstr "Radirka"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Orodje za besedilo"
+msgstr "Besedilo"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Orodje za premikanje"
+msgstr "Premik"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -468,24 +446,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Debelina"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Brez_naslova.%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Shrani datoteko"

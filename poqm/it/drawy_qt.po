@@ -13,7 +13,12 @@ msgstr ""
 "X-Generator: Lokalize 25.12.0\n"
 "X-Qt-Contexts: true\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Il tuo pratico e infinito strumento di brainstorming!"
@@ -466,24 +471,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Spessore"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Apri file"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Senza titolo.%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salva file"

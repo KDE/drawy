@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-04 06:13-0300\n"
+"PO-Revision-Date: 2026-01-07 08:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -13,82 +13,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
 
-#: apps/main.cpp:24
+#: apps/main.cpp:22
+msgctxt "QObject|"
+msgid "An optional argument 'file' "
+msgstr ""
+
+#: apps/main.cpp:26
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Ferramenta de seleção"
+msgstr "Seleção"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Ferramenta de forma livre"
+msgstr "Forma livre"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Ferramenta de retângulo"
+msgstr "Retângulo"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Ferramenta de elipse"
+msgstr "Elipse"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Ferramenta de seta"
+msgstr "Seta"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Ferramenta de linha"
+msgstr "Linha"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Ferramenta de borracha"
+msgstr "Borracha"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Ferramenta de texto"
+msgstr "Texto"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Ferramenta de movimento"
+msgstr "Mover"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -466,24 +444,24 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Espessura"
 
-#: widgets/serializer/loader.cpp:32 widgets/serializer/serializer.cpp:120
+#: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/serializer/loader.cpp:36
+#: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/serializer/serializer.cpp:117
+#: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/serializer/serializer.cpp:121
+#: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salvar arquivo"
