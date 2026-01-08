@@ -5,7 +5,7 @@
 #include "text.hpp"
 
 #include <QFontMetricsF>
-#include <qjsonobject.h>
+#include <QJsonObject>
 #include <utility>
 
 #include "common/constants.hpp"

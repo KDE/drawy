@@ -6,7 +6,7 @@
 
 #include "common/utils/math.hpp"
 #include "serializer/arrowserializer.hpp"
-#include <qjsonobject.h>
+#include <QJsonObject>
 
 // TODO add end/start arrow type.
 ArrowItem::ArrowItem() = default;

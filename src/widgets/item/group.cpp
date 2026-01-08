@@ -4,7 +4,7 @@
 
 #include "group.hpp"
 
-#include <qjsonobject.h>
+#include <QJsonObject>
 #include <stdexcept>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset)

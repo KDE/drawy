@@ -4,7 +4,7 @@
 
 #include "ellipse.hpp"
 #include "serializer/ellipseserializer.hpp"
-#include <qjsonobject.h>
+#include <QJsonObject>
 
 EllipseItem::EllipseItem() = default;
 

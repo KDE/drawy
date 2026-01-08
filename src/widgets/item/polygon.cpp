@@ -4,7 +4,7 @@
 
 #include "polygon.hpp"
 #include "serializer/polygonserializer.hpp"
-#include <qjsonobject.h>
+#include <QJsonObject>
 
 PolygonItem::PolygonItem()
 {

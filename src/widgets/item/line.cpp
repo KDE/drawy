@@ -6,7 +6,7 @@
 
 #include "common/utils/math.hpp"
 #include "serializer/lineserializer.hpp"
-#include <qjsonobject.h>
+#include <QJsonObject>
 
 LineItem::LineItem() = default;
 

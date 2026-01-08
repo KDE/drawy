@@ -8,7 +8,7 @@
 
 #include "common/utils/math.hpp"
 #include "serializer/rectangleserializer.hpp"
-#include <qjsonobject.h>
+#include <QJsonObject>
 
 RectangleItem::RectangleItem() = default;
 
