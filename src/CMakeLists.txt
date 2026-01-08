@@ -4,7 +4,7 @@
 add_subdirectory(widgets)
 add_subdirectory(apps)
 add_subdirectory(icons)
-
+add_subdirectory(data)
 
 # Set bundle properties for macOS / iOS.
 if (APPLE)
