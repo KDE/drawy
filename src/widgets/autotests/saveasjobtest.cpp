@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "saveasjobtest.h"
+#include "saveasjobtest.hpp"
 #include "jobs/saveasjob.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(SaveAsJobTest)

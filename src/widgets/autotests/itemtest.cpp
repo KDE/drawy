@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
-#include "itemtest.h"
+#include "itemtest.hpp"
 #include "item/item.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(ItemTest)

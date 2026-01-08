@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#include "iconmanagertest.h"
+#include "iconmanagertest.hpp"
 #include "iconmanager/iconmanager.hpp"
 
 #include <QTest>

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#include "drawycommandlineparsertest.h"
+#include "drawycommandlineparsertest.hpp"
 #include "drawycommandlineparser.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DrawyCommandLineParserTest)

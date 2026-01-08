@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
-#include "propertytest.h"
+#include "propertytest.hpp"
 #include "properties/property.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(PropertyTest)
