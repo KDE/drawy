@@ -27,3 +27,7 @@ repos:
     # force using this project's configuration rather
     # than the one provided by CI
       args: ["--style=file:.clang-format-pre-commit"]
+ - repo: https://github.com/BlankSpruce/gersemi
+   rev: 0.22.3
+   hooks:
+    - id: gersemi
