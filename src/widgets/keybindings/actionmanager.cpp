@@ -167,27 +167,27 @@ ActionManager::ActionManager(ApplicationContext *context)
                                       },
                                       context}};
 
-    keybindManager->addKeybinding(undoAction, tr("Ctrl+Z"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Y"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Shift+Z"));
-    keybindManager->addKeybinding(zoomInAction, tr("Ctrl++"));
-    keybindManager->addKeybinding(zoomOutAction, tr("Ctrl+-"));
-    keybindManager->addKeybinding(textToolAction, tr("T"));
-    keybindManager->addKeybinding(freeformToolAction, tr("P"));
-    keybindManager->addKeybinding(freeformToolAction, tr("B"));
-    keybindManager->addKeybinding(eraserToolAction, tr("E"));
-    keybindManager->addKeybinding(selectionToolAction, tr("S"));
-    keybindManager->addKeybinding(rectangleToolAction, tr("R"));
-    keybindManager->addKeybinding(ellipseToolAction, tr("O"));
-    keybindManager->addKeybinding(lineToolAction, tr("L"));
-    keybindManager->addKeybinding(arrowToolAction, tr("A"));
-    keybindManager->addKeybinding(moveToolAction, tr("M"));
-    keybindManager->addKeybinding(selectAllAction, tr("Ctrl+A"));
-    keybindManager->addKeybinding(deleteAction, tr("Delete"));
-    keybindManager->addKeybinding(saveAction, tr("Ctrl+S"));
-    keybindManager->addKeybinding(openFileAction, tr("Ctrl+O"));
-    keybindManager->addKeybinding(groupAction, tr("Ctrl+G"));
-    keybindManager->addKeybinding(unGroupAction, tr("Ctrl+Shift+G"));
+    keybindManager->addKeybinding(undoAction, tr("Ctrl+Z", "keybinding for the undo action"));
+    keybindManager->addKeybinding(redoAction, tr("Ctrl+Y", "keybinding for the redo action"));
+    keybindManager->addKeybinding(redoAction, tr("Ctrl+Shift+Z", "keybinding for the redo action"));
+    keybindManager->addKeybinding(zoomInAction, tr("Ctrl++", "keybinding for the zoom in action"));
+    keybindManager->addKeybinding(zoomOutAction, tr("Ctrl+-", "keybinding for the zoom out action"));
+    keybindManager->addKeybinding(textToolAction, tr("T", "keybinding for the text tool"));
+    keybindManager->addKeybinding(freeformToolAction, tr("P", "keybinding for the freeform drawing tool"));
+    keybindManager->addKeybinding(freeformToolAction, tr("B", "keybinding for the freeform drawing tool"));
+    keybindManager->addKeybinding(eraserToolAction, tr("E", "keybinding for the eraser tool"));
+    keybindManager->addKeybinding(selectionToolAction, tr("S", "keybinding for the selection tool"));
+    keybindManager->addKeybinding(rectangleToolAction, tr("R", "keybinding for the rectangle drawing tool"));
+    keybindManager->addKeybinding(ellipseToolAction, tr("O", "keybinding for the ellipse drawing tool"));
+    keybindManager->addKeybinding(lineToolAction, tr("L", "keybinding for the line drawing tool"));
+    keybindManager->addKeybinding(arrowToolAction, tr("A", "keybinding for the arrow drawing tool"));
+    keybindManager->addKeybinding(moveToolAction, tr("M", "keybinding for the move tool"));
+    keybindManager->addKeybinding(selectAllAction, tr("Ctrl+A", "keybinding for the select all action"));
+    keybindManager->addKeybinding(deleteAction, tr("Del", "keybinding for the delete action"));
+    keybindManager->addKeybinding(saveAction, tr("Ctrl+S", "keybinding for the save action"));
+    keybindManager->addKeybinding(openFileAction, tr("Ctrl+O", "keybinding for the open file action"));
+    keybindManager->addKeybinding(groupAction, tr("Ctrl+G", "keybinding for the group action"));
+    keybindManager->addKeybinding(unGroupAction, tr("Ctrl+Shift+G", "keybinding for the ungroup action"));
 }
 
 void ActionManager::undo()
