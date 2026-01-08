@@ -4,10 +4,12 @@
 
 #pragma once
 
+#include <QOpenGLFunctions>
+#include <QOpenGLWidget>
 #include <QPainter>
 #include <QWidget>
 
-class Canvas : public QWidget
+class Canvas : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 
@@ -46,8 +48,12 @@ public Q_SLOTS:
     void triggerUpdate();
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
-    void resizeEvent(QResizeEvent *event) override;
+    // void paintEvent(QPaintEvent *event) override;
+    // void resizeEvent(QResizeEvent *event) override;
+    void paintGL() override;
+    void initializeGL() override;
+    void resizeGL(int w, int h) override;
+
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
@@ -70,7 +76,7 @@ private:
     QSize m_maxSize{};
     // const QPixmap::Format m_imageFormat{QPixmap::Format_ARGB32_Premultiplied};
 
-    static QByteArray imageData(QPixmap *const img);
-    static void setImageData(QPixmap *const img, const QByteArray &arr);
+    // static QByteArray imageData(QPixmap *const img);
+    // static void setImageData(QPixmap *const img, const QByteArray &arr);
     void resize();
 };

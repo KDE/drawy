@@ -10,7 +10,7 @@
 
 // PUBLIC
 Canvas::Canvas(QWidget *parent)
-    : QWidget{parent}
+    : QOpenGLWidget{parent}
     , m_maxSize(m_sizeHint)
 {
     m_sizeHint = screen()->size() * m_scale;
@@ -98,9 +98,51 @@ QSize Canvas::dimensions() const
 }
 
 // PROTECTED
-void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
+// void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
+// {
+//     QPainter painter{this};
+//     painter.scale(1.0 / m_scale, 1.0 / m_scale);
+//
+//     if (m_canvas) {
+//         painter.setClipRegion(m_canvas->rect());
+//         painter.drawPixmap(0, 0, *m_canvas);
+//     }
+//     if (m_overlay)
+//         painter.drawPixmap(0, 0, *m_overlay);
+// }
+
+// void Canvas::resizeEvent(QResizeEvent *event)
+// {
+//     Q_EMIT resizeEventCalled();
+//
+//     setScale(devicePixelRatioF());
+//     if (size() * m_scale <= m_maxSize) {
+//         return;
+//     }
+//
+//     resize();
+//
+//     QWidget::resizeEvent(event);
+// }
+
+void Canvas::initializeGL()
+{
+    initializeOpenGLFunctions();
+    glClearColor(m_bg.redF(), m_bg.greenF(), m_bg.blueF(), 1.0f);
+}
+
+void Canvas::resizeGL(int w, int h)
+{
+    glViewport(0, 0, w, h);
+}
+
+void Canvas::paintGL()
 {
     QPainter painter{this};
+
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
+    painter.setRenderHint(QPainter::Antialiasing);
+
     painter.scale(1.0 / m_scale, 1.0 / m_scale);
 
     if (m_canvas) {
@@ -115,20 +157,6 @@ void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
 bool operator<=(const QSize &a, const QSize &b)
 {
     return a.height() <= b.height() && a.width() <= b.width();
-}
-
-void Canvas::resizeEvent(QResizeEvent *event)
-{
-    Q_EMIT resizeEventCalled();
-
-    setScale(devicePixelRatioF());
-    if (size() * m_scale <= m_maxSize) {
-        return;
-    }
-
-    resize();
-
-    QWidget::resizeEvent(event);
 }
 
 void Canvas::mousePressEvent(QMouseEvent *event)
@@ -198,19 +226,19 @@ bool Canvas::event(QEvent *event)
 }
 
 // PRIVATE
-QByteArray Canvas::imageData(QPixmap *const img)
-{
-    QByteArray arr{};
-    QBuffer buffer{&arr};
-    buffer.open(QBuffer::WriteOnly);
-    img->save(&buffer, "PNG");
-    return arr;
-}
-
-void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
-{
-    img->loadFromData(arr, "PNG");
-}
+// QByteArray Canvas::imageData(QPixmap *const img)
+// {
+//     QByteArray arr{};
+//     QBuffer buffer{&arr};
+//     buffer.open(QBuffer::WriteOnly);
+//     img->save(&buffer, "PNG");
+//     return arr;
+// }
+//
+// void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
+// {
+//     img->loadFromData(arr, "PNG");
+// }
 
 void Canvas::resize()
 {

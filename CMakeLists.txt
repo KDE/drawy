@@ -37,7 +37,10 @@ kde_enable_exceptions()
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
 
 # Find Qt6
-find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Widgets)
+find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED
+    COMPONENTS
+    OpenGLWidgets
+)
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
