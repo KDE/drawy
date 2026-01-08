@@ -15,8 +15,7 @@ target_link_libraries(
     KF6::CoreAddons
     Qt::Widgets
     libdrawywidgets
-    )
-
+)
 
 install(
     TARGETS

@@ -75,9 +75,6 @@ CMakeLists.txt.user*
 # Python files
 pyvenv.cfg
 
-# Nix-managed files
-/.pre-commit-config.yaml
-
 # Nix store paths
 **/*.drv
 **/*.nar

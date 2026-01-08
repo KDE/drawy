@@ -83,7 +83,7 @@ Documentation improvements are welcome. Update or extend documentation when you 
 * Append your name and email to the comment's `Authors` section.
 
 ## Commit Messages
-Use the Conventional Commits standard.  
+Use the Conventional Commits standard.
 See [https://www.conventionalcommits.org](https://www.conventionalcommits.org)
 
 ## Join the Project Team

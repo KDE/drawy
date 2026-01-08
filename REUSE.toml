@@ -11,6 +11,6 @@ SPDX-FileCopyrightText = "None"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = ["src/data/org.kde.drawy.desktop", "src/data/org.kde.drawy.metainfo.xml"]
+path = ["src/data/org.kde.drawy.desktop", "src/data/org.kde.drawy.metainfo.xml", ".gersemirc"]
 SPDX-FileCopyrightText = "Prayag Jain <prayagjain2@gmail.com>"
 SPDX-License-Identifier = "GPL-3.0-or-later"
