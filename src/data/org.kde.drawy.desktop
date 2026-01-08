@@ -30,4 +30,5 @@ Comment[uk]=Ваша зручна, нескінченна програма дл�
 Comment[zh_TW]=好用的無限畫布腦力激盪工具
 Exec=drawy
 Icon=drawy
-Categories=Graphics
+Categories=Qt;KDE;Graphics
+MimeType=application/x-drawy

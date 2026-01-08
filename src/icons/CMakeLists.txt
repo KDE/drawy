@@ -4,6 +4,8 @@ set(icons
     16-apps-drawy.png
     32-apps-drawy.png
     48-apps-drawy.png
+    32-mimetypes-application-x-drawy.png
+    64-mimetypes-application-x-drawy.png
 )
 
 set(all_icons ${icons})
