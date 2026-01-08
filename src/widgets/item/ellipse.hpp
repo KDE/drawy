@@ -12,10 +12,10 @@ public:
     EllipseItem();
     ~EllipseItem() override = default;
 
-    bool intersects(const QRectF &rect) override;
-    bool intersects(const QLineF &rect) override;
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
+    [[nodiscard]] bool intersects(const QLineF &rect) override;
 
-    Item::Type type() const override;
+    [[nodiscard]] Item::Type type() const override;
 
     [[nodiscard]] QJsonObject serialize() const override;
 
@@ -23,5 +23,5 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
-    bool onEllipse(QLineF line) const;
+    [[nodiscard]] bool onEllipse(QLineF line) const;
 };

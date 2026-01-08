@@ -15,8 +15,8 @@ public:
     TextItem();
     ~TextItem() override;
 
-    bool intersects(const QRectF &rect) override;
-    bool intersects(const QLineF &rect) override;
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
+    [[nodiscard]] bool intersects(const QLineF &rect) override;
 
     void draw(QPainter &painter, const QPointF &offset) override;
 
@@ -29,37 +29,37 @@ public:
         Normal
     };
 
-    Mode mode() const;
+    [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);
 
-    int getLineFromY(double yPos) const;
-    qsizetype getIndexFromX(double xPos, int lineNumber) const;
+    [[nodiscard]] int getLineFromY(double yPos) const;
+    [[nodiscard]] qsizetype getIndexFromX(double xPos, int lineNumber) const;
 
-    qsizetype caret() const;
+    [[nodiscard]] qsizetype caret() const;
     void setCaret(qsizetype index, bool updatePosInLine = true);
     void setCaret(const QPointF &cursorPos);
-    qsizetype caretPosInLine() const;
+    [[nodiscard]] qsizetype caretPosInLine() const;
 
-    qsizetype selectionStart() const;
-    qsizetype selectionEnd() const;
+    [[nodiscard]] qsizetype selectionStart() const;
+    [[nodiscard]] qsizetype selectionEnd() const;
     void setSelectionStart(qsizetype index);
     void setSelectionEnd(qsizetype index);
-    const QString selectedText() const;
+    [[nodiscard]] const QString selectedText() const;
 
-    const QString &text() const;
+    [[nodiscard]] const QString &text() const;
     void insertText(const QString &text);
     void deleteSubStr(qsizetype start, qsizetype end);
     void deleteSelection();
 
-    bool hasSelection() const;
+    [[nodiscard]] bool hasSelection() const;
 
-    std::pair<qsizetype, qsizetype> getLineRange(int lineNumber) const;
-    std::pair<qsizetype, qsizetype> getLineRange(qsizetype position) const;
+    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRange(int lineNumber) const;
+    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRange(qsizetype position) const;
 
-    qsizetype getPrevBreak(qsizetype pos) const;
-    qsizetype getNextBreak(qsizetype pos) const;
+    [[nodiscard]] qsizetype getPrevBreak(qsizetype pos) const;
+    [[nodiscard]] qsizetype getNextBreak(qsizetype pos) const;
 
-    Item::Type type() const override;
+    [[nodiscard]] Item::Type type() const override;
 
     constexpr static int INVALID{-1};
 
@@ -71,17 +71,16 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
-    QFont getFont() const;
-    QPen getPen() const;
+    [[nodiscard]] QFont getFont() const;
+    [[nodiscard]] QPen getPen() const;
 
-    static QTextOption getTextOptions();
+    [[nodiscard]] static QTextOption getTextOptions();
     constexpr static int getTextFlags();
-
-    QString m_text;
 
     void renderBoundingBox(QPainter &painter) const;
     void updateBoundingBox();
 
+    QString m_text;
     qsizetype m_caretIndex{};
     qsizetype m_selectionStart{};
     qsizetype m_selectionEnd{};

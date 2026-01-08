@@ -16,23 +16,23 @@ public:
     ~FreeformItem() override = default;
     FreeformItem(const FreeformItem &freeform);
 
-    static int minPointDistance();
+    [[nodiscard]] static int minPointDistance();
 
     void draw(QPainter &painter, const QPointF &offset) override;
     void quickDraw(QPainter &painter, const QPointF &offset) const;
 
-    bool intersects(const QRectF &rect) override;
-    bool intersects(const QLineF &rect) override;
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
+    [[nodiscard]] bool intersects(const QLineF &rect) override;
 
     void translate(const QPointF &amount) override;
 
-    QVector<std::shared_ptr<Item>> split() const;
-    qsizetype size() const;
-    int maxSize() const;
+    [[nodiscard]] QVector<std::shared_ptr<Item>> split() const;
+    [[nodiscard]] qsizetype size() const;
+    [[nodiscard]] int maxSize() const;
 
     virtual void addPoint(const QPointF &point, const qreal pressure, bool optimize = true);
 
-    Item::Type type() const override;
+    [[nodiscard]] Item::Type type() const override;
 
     const QVector<QPointF> &points() const;
     const QVector<qreal> &pressures() const;
@@ -45,7 +45,7 @@ protected:
     QVector<qreal> m_pressures{};
 
 private:
-    QPointF optimizePoint(const QPointF &newPoint);
+    [[nodiscard]] QPointF optimizePoint(const QPointF &newPoint);
     std::deque<QPointF> m_currentWindow;
     QPointF m_currentWindowSum{0, 0};
     int m_bufferSize{7};

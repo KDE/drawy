@@ -25,7 +25,7 @@ public:
 
     virtual const QRectF boundingBox() const;
 
-    int boundingBoxPadding() const;
+    [[nodiscard]] int boundingBoxPadding() const;
 
     virtual void setProperty(const Property::Type propertyType, Property newObj);
     virtual const Property property(const Property::Type propertyType) const;

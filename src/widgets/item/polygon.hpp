@@ -19,8 +19,8 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    const QPointF &start() const;
-    const QPointF &end() const;
+    [[nodiscard]] const QPointF &start() const;
+    [[nodiscard]] const QPointF &end() const;
 
     [[nodiscard]] QJsonObject serialize() const override;
 
