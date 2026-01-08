@@ -3,10 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "libdrawywidgets_private_export.h"
 
 #include "item.hpp"
 
-class PolygonItem : public Item
+class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonItem : public Item
 {
 public:
     PolygonItem();

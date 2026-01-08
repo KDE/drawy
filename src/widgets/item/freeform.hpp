@@ -4,12 +4,13 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include <deque>
 #include <memory>
 
 #include "item.hpp"
 
-class FreeformItem : public Item, public std::enable_shared_from_this<FreeformItem>
+class LIBDRAWYWIDGETS_TESTS_EXPORT FreeformItem : public Item, public std::enable_shared_from_this<FreeformItem>
 {
 public:
     FreeformItem();

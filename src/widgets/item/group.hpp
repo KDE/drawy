@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#ifndef GROUP_H
-#define GROUP_H
+#pragma once
+#include "libdrawywidgets_private_export.h"
 
 #include "item.hpp"
 
-class GroupItem : public Item
+class LIBDRAWYWIDGETS_TESTS_EXPORT GroupItem : public Item
 {
 public:
     GroupItem() = default;
@@ -39,5 +39,3 @@ private:
 
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 };
-
-#endif // GROUP_H
