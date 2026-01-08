@@ -20,7 +20,7 @@ git clone https://invent.kde.org/prayag/drawy
 cd drawy
 cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
-./build/drawy
+./build/bin/drawy
 ```
 ### Keyboard Shortcuts
 Default keyboard shortcuts can be viewed here: [KEYBINDINGS.md](docs/keybindings.md)
