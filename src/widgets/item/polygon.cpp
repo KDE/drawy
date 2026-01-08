@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "polygon.hpp"
+#include "serializer/polygonserializer.hpp"
+#include <qjsonobject.h>
 
 PolygonItem::PolygonItem()
 {
@@ -32,6 +34,12 @@ const QPointF &PolygonItem::start() const
 const QPointF &PolygonItem::end() const
 {
     return m_end;
+}
+
+QJsonObject PolygonItem::serialize() const
+{
+    const PolygonSerializer serialize(this);
+    return serialize.serialize();
 }
 
 void PolygonItem::m_updateBoundingBox()

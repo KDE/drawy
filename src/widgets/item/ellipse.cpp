@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "ellipse.hpp"
+#include "serializer/ellipseserializer.hpp"
+#include <qjsonobject.h>
 
 EllipseItem::EllipseItem() = default;
 
@@ -63,4 +65,10 @@ bool EllipseItem::intersects(const QLineF &line)
 Item::Type EllipseItem::type() const
 {
     return Item::Type::Ellipse;
+}
+
+QJsonObject EllipseItem::serialize() const
+{
+    const EllipseSerializer serializer(this);
+    return serializer.serialize();
 }

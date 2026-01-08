@@ -7,10 +7,10 @@
 
 #include "item/rectangle.hpp"
 #include "libdrawywidgets_private_export.h"
-#include "polygonserializer.h"
+#include "polygonserializer.hpp"
 class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleSerializer : public PolygonSerializer
 {
 public:
-    explicit RectangleSerializer(RectangleItem *item);
+    explicit RectangleSerializer(const RectangleItem *item);
     ~RectangleSerializer() override;
 };

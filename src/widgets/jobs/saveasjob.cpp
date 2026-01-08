@@ -3,9 +3,9 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "saveasjob.h"
+#include "saveasjob.hpp"
 #include "drawy_debug.h"
-#include "serializejob.h"
+#include "serializejob.hpp"
 #include <QDebug>
 #include <QJsonObject>
 

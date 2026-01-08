@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "serializejobtest.h"
-#include "jobs/serializejob.h"
+#include "jobs/serializejob.hpp"
+#include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(SerializeJobTest)
 
@@ -21,6 +22,7 @@ void SerializeJobTest::shouldHaveDefaultValues()
     QVERIFY(info.items.isEmpty());
 
     const SerializeJob j;
+    QVERIFY(j.canStart());
 }
 
 #include "moc_serializejobtest.cpp"

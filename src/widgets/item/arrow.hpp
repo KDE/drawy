@@ -22,6 +22,8 @@ public:
 
     Item::Type type() const override;
 
+    [[nodiscard]] QJsonObject serialize() const override;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 

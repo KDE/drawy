@@ -37,6 +37,8 @@ public:
     const QVector<QPointF> &points() const;
     const QVector<qreal> &pressures() const;
 
+    [[nodiscard]] QJsonObject serialize() const override;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
     QVector<QPointF> m_points{};

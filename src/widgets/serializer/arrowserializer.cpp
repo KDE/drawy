@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "arrowserializer.h"
+#include "arrowserializer.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-ArrowSerializer::ArrowSerializer(ArrowItem *item)
+ArrowSerializer::ArrowSerializer(const ArrowItem *item)
     : PolygonSerializer(item)
 {
 }

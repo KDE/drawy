@@ -7,10 +7,10 @@
 
 #include "item/line.hpp"
 #include "libdrawywidgets_private_export.h"
-#include "polygonserializer.h"
+#include "polygonserializer.hpp"
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineSerializer : public PolygonSerializer
 {
 public:
-    explicit LineSerializer(LineItem *item);
+    explicit LineSerializer(const LineItem *item);
     ~LineSerializer() override;
 };

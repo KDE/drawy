@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "freeformserializer.h"
+#include "freeformserializer.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-FreeFormSerializer::FreeFormSerializer(FreeformItem *item)
+FreeFormSerializer::FreeFormSerializer(const FreeformItem *item)
     : ItemSerializer(item)
 {
 }
@@ -16,7 +16,7 @@ FreeFormSerializer::~FreeFormSerializer() = default;
 QJsonObject FreeFormSerializer::serialize() const
 {
     QJsonObject obj = ItemSerializer::serialize();
-    FreeformItem *freeform = static_cast<FreeformItem *>(mItem);
+    const FreeformItem *freeform = static_cast<const FreeformItem *>(mItem);
     obj[u"points"_s] = toJson(freeform->points());
     obj[u"pressures"_s] = toJson(freeform->pressures());
     return obj;

@@ -4,6 +4,7 @@
 
 #include "group.hpp"
 
+#include <qjsonobject.h>
 #include <stdexcept>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset)
@@ -130,4 +131,9 @@ const QVector<Property::Type> GroupItem::propertyTypes() const
 
 void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
+}
+
+QJsonObject GroupItem::serialize() const
+{
+    return {};
 }

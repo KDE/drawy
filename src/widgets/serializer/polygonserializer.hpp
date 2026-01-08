@@ -5,13 +5,14 @@
  */
 #pragma once
 
-#include "item/freeform.hpp"
-#include "itemserializer.h"
+#include "item/polygon.hpp"
+#include "itemserializer.hpp"
 #include "libdrawywidgets_private_export.h"
-class LIBDRAWYWIDGETS_TESTS_EXPORT FreeFormSerializer : public ItemSerializer
+class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonSerializer : public ItemSerializer
 {
 public:
-    explicit FreeFormSerializer(FreeformItem *item);
-    ~FreeFormSerializer() override;
+    explicit PolygonSerializer(const PolygonItem *item);
+    ~PolygonSerializer() override;
+
     [[nodiscard]] QJsonObject serialize() const override;
 };

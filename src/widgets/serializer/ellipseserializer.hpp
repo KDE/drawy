@@ -7,10 +7,10 @@
 
 #include "item/ellipse.hpp"
 #include "libdrawywidgets_private_export.h"
-#include "polygonserializer.h"
+#include "polygonserializer.hpp"
 class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseSerializer : public PolygonSerializer
 {
 public:
-    explicit EllipseSerializer(EllipseItem *item);
+    explicit EllipseSerializer(const EllipseItem *item);
     ~EllipseSerializer() override;
 };

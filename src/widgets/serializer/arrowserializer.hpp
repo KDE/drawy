@@ -7,10 +7,10 @@
 
 #include "item/arrow.hpp"
 #include "libdrawywidgets_private_export.h"
-#include "polygonserializer.h"
+#include "polygonserializer.hpp"
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowSerializer : public PolygonSerializer
 {
 public:
-    explicit ArrowSerializer(ArrowItem *item);
+    explicit ArrowSerializer(const ArrowItem *item);
     ~ArrowSerializer() override;
 };

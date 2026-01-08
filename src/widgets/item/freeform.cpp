@@ -5,9 +5,11 @@
 #include "freeform.hpp"
 
 #include <QDateTime>
+#include <qjsonobject.h>
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "serializer/freeformserializer.hpp"
 
 FreeformItem::FreeformItem()
 {
@@ -243,4 +245,10 @@ const QVector<QPointF> &FreeformItem::points() const
 const QVector<qreal> &FreeformItem::pressures() const
 {
     return m_pressures;
+}
+
+QJsonObject FreeformItem::serialize() const
+{
+    const FreeFormSerializer serialize(this);
+    return serialize.serialize();
 }

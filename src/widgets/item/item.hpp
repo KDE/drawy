@@ -8,7 +8,7 @@
 #include <QRect>
 
 #include "properties/property.hpp"
-
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Item
 {
 public:
@@ -50,7 +50,7 @@ public:
     [[nodiscard]] static Item::Type convertStringToEnum(const QString &str);
     [[nodiscard]] static QString convertEnumToString(Item::Type type);
 
-    // [[nodiscard]] virtual QJsonObject serialized() const = 0;
+    [[nodiscard]] virtual QJsonObject serialize() const = 0;
 
 protected:
     QRectF m_boundingBox{};

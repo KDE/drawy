@@ -167,29 +167,29 @@ target_sources(
     serializer/loader.hpp
     serializer/serializer.cpp
     serializer/serializer.hpp
-    serializer/itemserializer.h
+    serializer/itemserializer.hpp
     serializer/itemserializer.cpp
-    serializer/rectangleserializer.h
+    serializer/rectangleserializer.hpp
     serializer/rectangleserializer.cpp
-    serializer/polygonserializer.h
+    serializer/polygonserializer.hpp
     serializer/polygonserializer.cpp
     serializer/arrowserializer.cpp
-    serializer/arrowserializer.h
+    serializer/arrowserializer.hpp
     serializer/ellipseserializer.cpp
-    serializer/ellipseserializer.h
+    serializer/ellipseserializer.hpp
     serializer/lineserializer.cpp
-    serializer/lineserializer.h
+    serializer/lineserializer.hpp
     serializer/textserializer.cpp
-    serializer/textserializer.h
-    serializer/freeformserializer.h
+    serializer/textserializer.hpp
+    serializer/freeformserializer.hpp
     serializer/freeformserializer.cpp
-    serializer/serializerutils.h
+    serializer/serializerutils.hpp
     serializer/serializerutils.cpp
 
-    jobs/serializejob.h
+    jobs/serializejob.hpp
     jobs/serializejob.cpp
     jobs/saveasjob.cpp
-    jobs/saveasjob.h
+    jobs/saveasjob.hpp
 
     libdrawywidgets_private_export.h
 )

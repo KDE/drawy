@@ -6,12 +6,12 @@
 #pragma once
 
 #include "item/text.hpp"
-#include "itemserializer.h"
+#include "itemserializer.hpp"
 #include "libdrawywidgets_private_export.h"
 class LIBDRAWYWIDGETS_TESTS_EXPORT TextSerializer : public ItemSerializer
 {
 public:
-    explicit TextSerializer(TextItem *item);
+    explicit TextSerializer(const TextItem *item);
     ~TextSerializer() override;
     [[nodiscard]] QJsonObject serialize() const override;
 };

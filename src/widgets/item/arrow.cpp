@@ -5,6 +5,8 @@
 #include "arrow.hpp"
 
 #include "common/utils/math.hpp"
+#include "serializer/arrowserializer.hpp"
+#include <qjsonobject.h>
 
 // TODO add end/start arrow type.
 ArrowItem::ArrowItem() = default;
@@ -80,4 +82,10 @@ void ArrowItem::translate(const QPointF &amount)
 Item::Type ArrowItem::type() const
 {
     return Item::Type::Arrow;
+}
+
+QJsonObject ArrowItem::serialize() const
+{
+    const ArrowSerializer serializer(this);
+    return serializer.serialize();
 }

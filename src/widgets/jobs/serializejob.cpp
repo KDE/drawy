@@ -3,9 +3,9 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "serializejob.h"
+#include "serializejob.hpp"
 #include "drawy_debug.h"
-#include "serializer/serializerutils.h"
+#include "serializer/serializerutils.hpp"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -19,6 +19,8 @@ SerializeJob::~SerializeJob() = default;
 
 bool SerializeJob::canStart() const
 {
+    // If in the future we need to check it.
+    // For the moment return true
     return true;
 }
 
@@ -37,6 +39,14 @@ void SerializeJob::serializeItems()
 {
     QJsonObject obj;
     obj[u"version"_s] = SerializerUtils::version();
+    obj[u"offset_pos"_s] = SerializerUtils::toJson(mSerializeInfo.offsetPos);
+    obj[u"zoom_factor"_s] = mSerializeInfo.zoomFactor;
+
+    QJsonArray array;
+    for (const auto &item : std::as_const(mSerializeInfo.items)) {
+        array.push_back(item->serialize());
+    }
+    obj[u"items"_s] = array;
 
     Q_EMIT serializeDone(obj);
     deleteLater();

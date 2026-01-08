@@ -5,10 +5,12 @@
 #include "text.hpp"
 
 #include <QFontMetricsF>
+#include <qjsonobject.h>
 #include <utility>
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "serializer/textserializer.hpp"
 
 /*
  * TODO: The current implementation is not optimal. A single character insertion
@@ -457,4 +459,10 @@ Item::Type TextItem::type() const
 void TextItem::updateAfterProperty()
 {
     updateBoundingBox();
+}
+
+QJsonObject TextItem::serialize() const
+{
+    const TextSerializer serialize(this);
+    return serialize.serialize();
 }

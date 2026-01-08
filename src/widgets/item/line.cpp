@@ -5,6 +5,8 @@
 #include "line.hpp"
 
 #include "common/utils/math.hpp"
+#include "serializer/lineserializer.hpp"
+#include <qjsonobject.h>
 
 LineItem::LineItem() = default;
 
@@ -26,4 +28,10 @@ bool LineItem::intersects(const QLineF &line)
 Item::Type LineItem::type() const
 {
     return Item::Type::Line;
+}
+
+QJsonObject LineItem::serialize() const
+{
+    const LineSerializer serialize(this);
+    return serialize.serialize();
 }

@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "lineserializer.h"
+#include "lineserializer.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-LineSerializer::LineSerializer(LineItem *item)
+LineSerializer::LineSerializer(const LineItem *item)
     : PolygonSerializer(item)
 {
 }
