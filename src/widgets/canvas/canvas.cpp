@@ -7,6 +7,7 @@
 #include <QBuffer>
 #include <QResizeEvent>
 #include <QScreen>
+#include <qopenglpaintdevice.h>
 
 // PUBLIC
 Canvas::Canvas(QWidget *parent)
@@ -15,16 +16,18 @@ Canvas::Canvas(QWidget *parent)
 {
     m_sizeHint = screen()->size() * m_scale;
 
-    m_canvas = new QPixmap(m_sizeHint);
-    m_overlay = new QPixmap(m_sizeHint);
+    // m_canvas = new QPixmap(m_sizeHint);
+    // m_overlay = new QPixmap(m_sizeHint);
 
-    setBg(QColor{18, 18, 18});
+    // setCanvasBg(QColor{18, 18, 18});
+    // setOverlayBg(Qt::transparent);
 
     setTabletTracking(true);
     setMouseTracking(true);
     setAttribute(Qt::WA_InputMethodEnabled);
 
     setFocusPolicy(Qt::ClickFocus);
+    qDebug() << "CONSTRUCTOR";
 }
 
 Canvas::~Canvas()
@@ -40,38 +43,52 @@ QSize Canvas::sizeHint() const
     return m_sizeHint;
 }
 
-QPixmap *Canvas::canvas() const
+QOpenGLFramebufferObject *Canvas::canvas() const
 {
     return m_canvas;
 }
 
-QPixmap *Canvas::overlay() const
+QOpenGLFramebufferObject *Canvas::overlay() const
 {
     return m_overlay;
 }
 
-QPixmap *Canvas::widget() const
+QColor Canvas::canvasBg() const
 {
-    return m_widget;
+    return m_canvasBg;
+};
+
+QColor Canvas::overlayBg() const
+{
+    return m_overlayBg;
+};
+
+void Canvas::setCanvasBg(const QColor &color)
+{
+    m_canvasBg = color;
+
+    makeCurrent();
+
+    m_canvas->bind();
+    glClearColor(color.redF(), color.greenF(), color.blueF(), color.alphaF());
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    m_canvas->release();
+
+    update();
 }
 
-QColor Canvas::bg() const
+void Canvas::setOverlayBg(const QColor &color)
 {
-    return m_bg;
-}
+    m_overlayBg = color;
 
-void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay)
-{
-    m_bg = color;
-    if (canvas)
-        canvas->fill(color);
-    else
-        m_canvas->fill(color);
+    makeCurrent();
 
-    if (overlay)
-        overlay->fill(Qt::transparent);
-    else
-        m_overlay->fill(Qt::transparent);
+    m_overlay->bind();
+    glClearColor(color.redF(), color.greenF(), color.blueF(), color.alphaF());
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    m_overlay->release();
+
+    update();
 }
 
 qreal Canvas::scale() const
@@ -128,29 +145,32 @@ QSize Canvas::dimensions() const
 void Canvas::initializeGL()
 {
     initializeOpenGLFunctions();
-    glClearColor(m_bg.redF(), m_bg.greenF(), m_bg.blueF(), 1.0f);
+    glClearColor(canvasBg().redF(), canvasBg().greenF(), canvasBg().blueF(), 1.0f);
+
+    m_canvas = new QOpenGLFramebufferObject(width(), height(), QOpenGLFramebufferObject::CombinedDepthStencil);
+    m_overlay = new QOpenGLFramebufferObject(width(), height(), QOpenGLFramebufferObject::CombinedDepthStencil);
 }
 
 void Canvas::resizeGL(int w, int h)
 {
     glViewport(0, 0, w, h);
+    resize();
+    update();
 }
 
 void Canvas::paintGL()
 {
     QPainter painter{this};
-
-    painter.setRenderHint(QPainter::SmoothPixmapTransform);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     painter.scale(1.0 / m_scale, 1.0 / m_scale);
 
     if (m_canvas) {
-        painter.setClipRegion(m_canvas->rect());
-        painter.drawPixmap(0, 0, *m_canvas);
+        // painter.setClipRegion(m_canvas->rect());
+        painter.drawImage(0, 0, m_canvas->toImage());
     }
     if (m_overlay)
-        painter.drawPixmap(0, 0, *m_overlay);
+        painter.drawImage(0, 0, m_overlay->toImage());
 }
 
 // just a small overload
@@ -225,6 +245,38 @@ bool Canvas::event(QEvent *event)
     return QWidget::event(event);
 }
 
+void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
+{
+    makeCurrent();
+    {
+        m_canvas->bind();
+
+        QOpenGLPaintDevice paintDevice{size()};
+        QPainter painter{&paintDevice};
+        painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+
+        paintFunc(painter);
+
+        m_canvas->release();
+    }
+};
+
+void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
+{
+    makeCurrent();
+    {
+        m_overlay->bind();
+
+        QOpenGLPaintDevice paintDevice{size()};
+        QPainter painter{&paintDevice};
+        painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+
+        paintFunc(painter);
+
+        m_overlay->release();
+    }
+};
+
 // PRIVATE
 // QByteArray Canvas::imageData(QPixmap *const img)
 // {
@@ -244,22 +296,31 @@ void Canvas::resize()
 {
     Q_EMIT resizeStart();
 
-    if (m_canvas->paintingActive() || m_overlay->paintingActive()) {
-        return;
-    }
-
     QSize oldSize{m_canvas->size()};
     QSize newSize{size() * m_scale};
     m_maxSize.setWidth(std::max(oldSize.width(), newSize.width()));
     m_maxSize.setHeight(std::max(oldSize.height(), newSize.height()));
 
-    QPixmap *canvas{new QPixmap(m_maxSize)};
-    QPixmap *overlay{new QPixmap(m_maxSize)};
-    setBg(bg(), canvas, overlay);
+    QOpenGLFramebufferObject *canvas{new QOpenGLFramebufferObject(m_maxSize, QOpenGLFramebufferObject::CombinedDepthStencil)};
+    QOpenGLFramebufferObject *overlay{new QOpenGLFramebufferObject(m_maxSize, QOpenGLFramebufferObject::CombinedDepthStencil)};
 
-    QPainter canvasPainter{canvas}, overlayPainter{overlay};
-    canvasPainter.drawPixmap(0, 0, *m_canvas);
-    overlayPainter.drawPixmap(0, 0, *m_overlay);
+    setCanvasBg(canvasBg());
+    setOverlayBg(overlayBg());
+
+    makeCurrent();
+    canvas->bind();
+    QOpenGLPaintDevice canvasDevice{m_maxSize};
+    QPainter canvasPainter{&canvasDevice};
+    canvasPainter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+    canvasPainter.drawImage(0, 0, m_canvas->toImage());
+    canvas->release();
+
+    overlay->bind();
+    QOpenGLPaintDevice overlayDevice{m_maxSize};
+    QPainter overlayPainter{&overlayDevice};
+    overlayPainter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+    overlayPainter.drawImage(0, 0, m_overlay->toImage());
+    overlay->release();
 
     delete m_canvas;
     delete m_overlay;

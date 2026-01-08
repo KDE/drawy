@@ -25,20 +25,12 @@ RenderingContext::RenderingContext(ApplicationContext *context)
 RenderingContext::~RenderingContext()
 {
     qCDebug(DRAWY_LOG) << "Object deleted: RenderingContext";
-    delete m_canvasPainter;
-    delete m_overlayPainter;
 }
 
 void RenderingContext::setRenderingContext()
 {
     m_canvas = new Canvas(m_applicationContext->parentWidget());
 
-    m_canvasPainter = new QPainter(m_canvas->canvas());
-    m_overlayPainter = new QPainter(m_canvas->overlay());
-
-    connect(m_canvas, &Canvas::destroyed, this, &RenderingContext::endPainters);
-    connect(m_canvas, &Canvas::resizeStart, this, &RenderingContext::endPainters);
-    connect(m_canvas, &Canvas::resizeEnd, this, &RenderingContext::beginPainters);
     connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
 
     connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
@@ -66,37 +58,6 @@ void RenderingContext::setRenderingContext()
 Canvas &RenderingContext::canvas() const
 {
     return *m_canvas;
-}
-
-QPainter &RenderingContext::canvasPainter() const
-{
-    return *m_canvasPainter;
-}
-
-QPainter &RenderingContext::overlayPainter() const
-{
-    return *m_overlayPainter;
-}
-
-void RenderingContext::endPainters()
-{
-    if (m_canvasPainter->isActive())
-        m_canvasPainter->end();
-    if (m_overlayPainter->isActive())
-        m_overlayPainter->end();
-}
-
-void RenderingContext::beginPainters()
-{
-    QPainter::RenderHints renderHints{QPainter::Antialiasing | QPainter::SmoothPixmapTransform};
-    if (!m_canvasPainter->isActive()) {
-        m_canvasPainter->begin(m_canvas->canvas());
-        m_canvasPainter->setRenderHints(renderHints);
-    }
-    if (!m_overlayPainter->isActive()) {
-        m_overlayPainter->begin(m_canvas->overlay());
-        m_overlayPainter->setRenderHints(renderHints);
-    }
 }
 
 qreal RenderingContext::zoomFactor() const
@@ -137,11 +98,6 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
 
     m_applicationContext->spatialContext().setOffsetPos(offsetPos);
-
-    // changes scale
-    endPainters();
-    beginPainters();
-
     m_applicationContext->spatialContext().cacheGrid().markAllDirty();
 
     m_applicationContext->renderingContext().markForRender();

@@ -20,8 +20,6 @@ public:
     void setRenderingContext();
 
     Canvas &canvas() const;
-    QPainter &canvasPainter() const;
-    QPainter &overlayPainter() const;
 
     void markForRender();
     void markForUpdate();
@@ -40,8 +38,6 @@ private:
     void endPainters();
     void canvasResized();
     Canvas *m_canvas{nullptr};
-    QPainter *m_canvasPainter{};
-    QPainter *m_overlayPainter{};
 
     QTimer m_frameTimer;
 

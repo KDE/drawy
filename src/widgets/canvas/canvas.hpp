@@ -4,7 +4,9 @@
 
 #pragma once
 
+#include <QOpenGLFramebufferObject>
 #include <QOpenGLFunctions>
+#include <QOpenGLPaintDevice>
 #include <QOpenGLWidget>
 #include <QPainter>
 #include <QWidget>
@@ -17,14 +19,18 @@ public:
     explicit Canvas(QWidget *parent = nullptr);
     ~Canvas() override;
 
-    [[nodiscard]] QPixmap *canvas() const;
-    [[nodiscard]] QPixmap *overlay() const;
-    [[nodiscard]] QPixmap *widget() const;
+    [[nodiscard]] QOpenGLFramebufferObject *canvas() const;
+    [[nodiscard]] QOpenGLFramebufferObject *overlay() const;
     [[nodiscard]] QSize sizeHint() const override;
     [[nodiscard]] QSize dimensions() const;
 
-    [[nodiscard]] QColor bg() const;
-    void setBg(const QColor &color, QPixmap *canvas = nullptr, QPixmap *overlay = nullptr);
+    void paintCanvas(const std::function<void(QPainter &)> &paintFunc);
+    void paintOverlay(const std::function<void(QPainter &)> &paintFunc);
+
+    [[nodiscard]] QColor canvasBg() const;
+    [[nodiscard]] QColor overlayBg() const;
+    void setCanvasBg(const QColor &color);
+    void setOverlayBg(const QColor &color);
 
     [[nodiscard]] qreal scale() const;
     void setScale(const qreal scale);
@@ -67,16 +73,14 @@ protected:
 
 private:
     qreal m_scale{1.0}; // default scale is 1
-    QPixmap *m_canvas{};
-    QPixmap *m_overlay{};
-    QPixmap *m_widget{};
-    QColor m_bg{};
+    QOpenGLFramebufferObject *m_canvas{};
+    QOpenGLFramebufferObject *m_overlay{};
+
+    QColor m_canvasBg{};
+    QColor m_overlayBg{};
 
     QSize m_sizeHint{500, 500};
     QSize m_maxSize{};
-    // const QPixmap::Format m_imageFormat{QPixmap::Format_ARGB32_Premultiplied};
 
-    // static QByteArray imageData(QPixmap *const img);
-    // static void setImageData(QPixmap *const img, const QByteArray &arr);
     void resize();
 };

@@ -52,7 +52,6 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 
     if (uiContext.event().button() == Qt::LeftButton) {
         SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
         CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
 
         curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
@@ -63,12 +62,6 @@ void FreeformTool::mousePressed(ApplicationContext *context)
         m_lastPoint = uiContext.event().pos();
 
         curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext.event().pressure());
-
-        auto &painter{renderingContext.overlayPainter()};
-        painter.save();
-
-        const qreal zoom{renderingContext.zoomFactor()};
-        painter.scale(zoom, zoom);
 
         m_isDrawing = true;
     }
@@ -90,10 +83,13 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         if (dist < FreeformItem::minPointDistance())
             return;
 
-        QPainter &painter{renderingContext.overlayPainter()};
-
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext.event().pressure());
-        curItem->quickDraw(painter, spatialContext.offsetPos());
+
+        const qreal zoom{renderingContext.zoomFactor()};
+        renderingContext.canvas().paintOverlay([&](QPainter &painter) {
+            painter.scale(zoom, zoom);
+            curItem->quickDraw(painter, spatialContext.offsetPos());
+        });
 
         m_lastPoint = curPoint;
         renderingContext.markForUpdate();
@@ -109,9 +105,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         RenderingContext &renderingContext{context->renderingContext()};
         CommandHistory &commandHistory{spatialContext.commandHistory()};
 
-        QPainter &overlayPainter{renderingContext.overlayPainter()};
-        renderingContext.canvas().overlay()->fill(Qt::transparent);
-        overlayPainter.restore();
+        renderingContext.canvas().setOverlayBg(Qt::transparent);
 
         QVector<std::shared_ptr<Item>> itemsAfterSplitting{curItem->split()};
         commandHistory.insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));

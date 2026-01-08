@@ -5,22 +5,16 @@
 #include "cachegrid.hpp"
 
 #include "drawy_debug.h"
+#include <QOpenGLPaintDevice>
 #include <QPainter>
 
 int CacheCell::counter = 0;
 
 CacheCell::CacheCell(const QPoint &point)
     : m_point{point}
-    , m_image(std::make_unique<QPixmap>(CacheCell::cellSize()))
     , m_dirty(true)
 {
-    m_image->fill(Qt::transparent);
-
-    m_painter = std::make_unique<QPainter>(m_image.get());
-    m_painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    m_painter->setCompositionMode(QPainter::CompositionMode_SourceOver);
-    m_painter->setClipRegion(m_image->rect());
-
+    // m_image = std::make_unique<QOpenGLFramebufferObject>(CacheCell::cellSize(), QOpenGLFramebufferObject::CombinedDepthStencil);
     CacheCell::counter++;
 }
 
@@ -39,9 +33,20 @@ bool CacheCell::dirty() const
     return m_dirty;
 }
 
-QPixmap *CacheCell::image() const
+void CacheCell::paintImage(const std::function<void(QPainter &)> &paintFunc)
 {
-    return m_image.get();
+    m_image->bind();
+
+    glViewport(0, 0, m_image->width(), m_image->height());
+    glClearColor(0.f, 0.f, 0.f, 0.f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+    QOpenGLPaintDevice paintDevice{m_image->size()};
+    QPainter painter{&paintDevice};
+
+    paintFunc(painter);
+
+    m_image->release();
 }
 
 QRect CacheCell::rect() const
@@ -56,14 +61,14 @@ void CacheCell::setDirty(bool dirty)
     m_dirty = dirty;
 }
 
-QPainter *CacheCell::painter() const
-{
-    return m_painter.get();
-}
-
 QSize CacheCell::cellSize()
 {
     return {500, 500};
+}
+
+QOpenGLFramebufferObject *CacheCell::image() const
+{
+    return m_image.get();
 }
 
 CacheGrid::CacheGrid(int maxSize)

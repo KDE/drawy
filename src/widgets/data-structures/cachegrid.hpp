@@ -4,13 +4,15 @@
 
 #pragma once
 #include <QHash>
+#include <QOpenGLFramebufferObject>
+#include <QOpenGLFunctions>
 #include <QPixmap>
 #include <QPoint>
 
 class CacheGrid;
 
 // Based on LRU cache
-class CacheCell
+class CacheCell : protected QOpenGLFunctions
 {
 public:
     static QSize cellSize();
@@ -23,13 +25,13 @@ public:
     const QPoint &point() const;
     bool dirty() const;
     void setDirty(bool dirty);
-    QPixmap *image() const;
-    QPainter *painter() const;
+
+    QOpenGLFramebufferObject *image() const;
+    void paintImage(const std::function<void(QPainter &)> &paintFunc);
 
 private:
     QPoint m_point{};
-    std::unique_ptr<QPixmap> m_image{nullptr};
-    std::unique_ptr<QPainter> m_painter{};
+    std::unique_ptr<QOpenGLFramebufferObject> m_image{nullptr};
     std::weak_ptr<CacheCell> nextCell{};
     std::weak_ptr<CacheCell> prevCell{};
     bool m_dirty{};

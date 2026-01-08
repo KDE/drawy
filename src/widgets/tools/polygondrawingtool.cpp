@@ -5,6 +5,7 @@
 #include "polygondrawingtool.hpp"
 
 #include <memory>
+#include <qnamespace.h>
 
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
@@ -35,7 +36,6 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
     if (uiContext.event().button() == Qt::LeftButton) {
         SpatialContext &spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-        RenderingContext &renderingContext{context->renderingContext()};
 
         curItem = std::dynamic_pointer_cast<PolygonItem>(m_itemFactory->create());
 
@@ -43,12 +43,6 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
         curItem->setProperty(Property::Type::StrokeColor, uiContext.propertyManager().value(Property::Type::StrokeColor));
 
         curItem->setStart(transformer.viewToWorld(uiContext.event().pos()));
-
-        const qreal zoom{renderingContext.zoomFactor()};
-
-        QPainter &painter{renderingContext.overlayPainter()};
-        painter.save();
-        painter.scale(zoom, zoom);
 
         m_isDrawing = true;
     }
@@ -62,12 +56,20 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
         RenderingContext &renderingContext{context->renderingContext()};
         UIContext &uiContext{context->uiContext()};
 
-        QPainter &overlayPainter{renderingContext.overlayPainter()};
-
         const QPointF offsetPos{spatialContext.offsetPos()};
-        curItem->erase(overlayPainter, offsetPos);
+
+        const qreal zoom{renderingContext.zoomFactor()};
+        renderingContext.canvas().paintOverlay([&](QPainter &painter) {
+            painter.scale(zoom, zoom);
+            curItem->erase(painter, offsetPos);
+        });
+
         curItem->setEnd(transformer.viewToWorld(uiContext.event().pos()));
-        curItem->draw(overlayPainter, offsetPos);
+
+        renderingContext.canvas().paintOverlay([&](QPainter &painter) {
+            painter.scale(zoom, zoom);
+            curItem->draw(painter, offsetPos);
+        });
 
         renderingContext.markForUpdate();
     }
@@ -85,9 +87,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         QVector<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
 
-        QPainter &overlayPainter{renderingContext.overlayPainter()};
-        renderingContext.canvas().overlay()->fill(Qt::transparent);
-        overlayPainter.restore();
+        renderingContext.canvas().setOverlayBg(Qt::transparent);
 
         m_isDrawing = false;
 
