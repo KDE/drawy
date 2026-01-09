@@ -13,8 +13,8 @@ class ActionsWidget : public PropertyWidget
 public:
     explicit ActionsWidget(QWidget *parent = nullptr);
 
-    QString name() const override;
-    const Property value() const override;
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] const Property value() const override;
 };
 
 #endif // TOOLACTIONS_H

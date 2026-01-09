@@ -12,6 +12,6 @@ class FontSizeWidget : public PropertyWidget
 public:
     explicit FontSizeWidget(QWidget *parent = nullptr);
 
-    QString name() const override;
-    const Property value() const override;
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] const Property value() const override;
 };

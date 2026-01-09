@@ -14,8 +14,8 @@ class PropertyManager : public QObject
 public:
     explicit PropertyManager(QWidget *parent = nullptr);
 
-    const PropertyWidget &widget(const Property::Type type) const;
-    Property value(const Property::Type type) const;
+    [[nodiscard]] const PropertyWidget &widget(const Property::Type type) const;
+    [[nodiscard]] Property value(const Property::Type type) const;
 
 Q_SIGNALS:
     void propertyUpdated(Property property);
