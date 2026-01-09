@@ -191,6 +191,16 @@ target_sources(
         libdrawywidgets_private_export.h
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        libdrawywidgets
+        PRIVATE
+            <QObject>
+            <QDebug>
+    )
+endif()
+
 generate_export_header(libdrawywidgets BASE_NAME libdrawywidgets)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
