@@ -11,6 +11,7 @@
 class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Item
 {
+    Q_GADGET
 public:
     Item();
     virtual ~Item();
@@ -42,6 +43,7 @@ public:
         Group,
         Invalid,
     };
+    Q_ENUM(Type)
 
     virtual Type type() const = 0;
 

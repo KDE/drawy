@@ -61,3 +61,5 @@ QString Property::convertEnumToString(Property::Type type)
     }
     return {};
 }
+
+#include "moc_property.cpp"

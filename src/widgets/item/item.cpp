@@ -120,3 +120,5 @@ QString Item::convertEnumToString(Item::Type type)
     }
     return {};
 }
+
+#include "moc_item.cpp"

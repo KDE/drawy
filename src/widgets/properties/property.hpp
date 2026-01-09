@@ -9,6 +9,7 @@
 #include <utility>
 class LIBDRAWYWIDGETS_TESTS_EXPORT Property
 {
+    Q_GADGET
 public:
     Property();
 
@@ -22,6 +23,7 @@ public:
         Actions,
         Null
     };
+    Q_ENUM(Type)
 
     template<typename T>
     Property(T value, Type type)
