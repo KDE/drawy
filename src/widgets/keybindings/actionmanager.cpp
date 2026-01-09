@@ -24,10 +24,10 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
+#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "jobs/saveasjob.hpp"
 #include "keybindmanager.hpp"
-#include "serializer/loader.hpp"
 #include "serializer/serializerutils.hpp"
 using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
@@ -340,8 +340,37 @@ void ActionManager::saveToFile()
 
 void ActionManager::loadFromFile()
 {
-    Loader loader{};
-    loader.loadFromFile(m_context);
+    const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+
+    // ask for file (handle cancel)
+    const QDir homeDir{QDir::home()};
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
+    if (fileName.isEmpty())
+        return;
+    loadFile(fileName);
 }
 
+void ActionManager::loadFile(const QString &fileName)
+{
+    auto job = new LoadJob(this);
+    job->setFileName(fileName);
+    connect(job, &LoadJob::loadDone, this, &ActionManager::slotLoadDone);
+    job->start();
+}
+
+void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    context->reset();
+    QuadTree &quadtree{context->spatialContext().quadtree()};
+    for (const auto &item : info.items) {
+        quadtree.insertItem(item);
+    }
+    context->renderingContext().setZoomFactor(info.zoomFactor);
+
+    context->spatialContext().setOffsetPos(info.offsetPos);
+    context->spatialContext().cacheGrid().markAllDirty();
+    context->renderingContext().markForRender();
+    context->renderingContext().markForUpdate();
+}
 #include "moc_actionmanager.cpp"

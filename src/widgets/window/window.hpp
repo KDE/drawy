@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-#include "jobs/loadjob.hpp"
 #include "libdrawywidgets_export.h"
 #include <QWidget>
 
@@ -24,7 +23,6 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    LIBDRAWYWIDGETS_NO_EXPORT void slotLoadDone(const LoadJob::LoadInfo &info);
     LIBDRAWYWIDGETS_NO_EXPORT void applyCustomStyles();
     bool m_config_useSystemStyles{true};
 };

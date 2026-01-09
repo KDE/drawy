@@ -164,8 +164,6 @@ target_sources(
         resources/style.qss
         drawycommandlineparser.h
         drawycommandlineparser.cpp
-        serializer/loader.cpp
-        serializer/loader.hpp
         serializer/itemserializer.hpp
         serializer/itemserializer.cpp
         serializer/rectangleserializer.hpp

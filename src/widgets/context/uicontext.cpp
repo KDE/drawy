@@ -21,7 +21,6 @@
 #include "properties/widgets/propertymanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
-#include "serializer/loader.hpp"
 #include "serializer/serializerutils.hpp"
 #include "spatialcontext.hpp"
 #include "tools/arrowtool.hpp"
@@ -101,9 +100,8 @@ void UIContext::setUIContext()
 
     button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        Loader loader{};
-
-        loader.loadFromFile(m_applicationContext);
+        ActionManager &actionManager{m_applicationContext->uiContext().actionManager()};
+        actionManager.loadFromFile();
     });
 
     button = m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
