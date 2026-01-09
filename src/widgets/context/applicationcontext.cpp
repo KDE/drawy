@@ -42,7 +42,7 @@ void ApplicationContext::setContexts()
     m_renderingContext->setRenderingContext();
     m_uiContext->setUIContext();
     m_spatialContext->setSpatialContext();
-    m_spatialContext->coordinateTransformer()->setCoordinateTransformer();
+    m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 }
 
 QWidget *ApplicationContext::parentWidget() const
@@ -50,31 +50,31 @@ QWidget *ApplicationContext::parentWidget() const
     return m_parentWidget;
 }
 
-RenderingContext *ApplicationContext::renderingContext() const
+RenderingContext &ApplicationContext::renderingContext() const
 {
-    return m_renderingContext;
+    return *m_renderingContext;
 }
 
-SpatialContext *ApplicationContext::spatialContext() const
+SpatialContext &ApplicationContext::spatialContext() const
 {
-    return m_spatialContext;
+    return *m_spatialContext;
 }
 
-UIContext *ApplicationContext::uiContext() const
+UIContext &ApplicationContext::uiContext() const
 {
-    return m_uiContext;
+    return *m_uiContext;
 }
 
-SelectionContext *ApplicationContext::selectionContext() const
+SelectionContext &ApplicationContext::selectionContext() const
 {
-    return m_selectionContext;
+    return *m_selectionContext;
 }
 
 void ApplicationContext::reset()
 {
-    selectionContext()->reset();
-    uiContext()->reset();
-    selectionContext()->reset();
-    spatialContext()->reset();
-    renderingContext()->reset();
+    selectionContext().reset();
+    uiContext().reset();
+    selectionContext().reset();
+    spatialContext().reset();
+    renderingContext().reset();
 }

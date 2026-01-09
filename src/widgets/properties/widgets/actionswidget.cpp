@@ -26,10 +26,10 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     QPushButton *groupButton{new QPushButton(m_widget)};
     QPushButton *ungroupButton{new QPushButton(m_widget)};
 
-    IconManager *iconManager{ApplicationContext::instance()->uiContext()->iconManager()};
-    deleteButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_DELETE));
-    groupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_GROUP));
-    ungroupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_UNGROUP));
+    IconManager &iconManager{ApplicationContext::instance()->uiContext().iconManager()};
+    deleteButton->setIcon(iconManager.icon(IconManager::Icon::ACTION_DELETE));
+    groupButton->setIcon(iconManager.icon(IconManager::Icon::ACTION_GROUP));
+    ungroupButton->setIcon(iconManager.icon(IconManager::Icon::ACTION_UNGROUP));
 
     deleteButton->setToolTip(tr("Delete selection"));
     groupButton->setToolTip(tr("Group selection"));
@@ -43,16 +43,16 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     layout->addWidget(groupButton);
     layout->addWidget(ungroupButton);
 
-    ActionManager *actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
+    ActionManager &actionManager{ApplicationContext::instance()->uiContext().actionManager()};
 
-    connect(deleteButton, &QPushButton::clicked, this, [actionManager]() {
-        actionManager->deleteSelection();
+    connect(deleteButton, &QPushButton::clicked, this, [&]() {
+        actionManager.deleteSelection();
     });
-    connect(groupButton, &QPushButton::clicked, this, [actionManager]() {
-        actionManager->groupItems();
+    connect(groupButton, &QPushButton::clicked, this, [&]() {
+        actionManager.groupItems();
     });
-    connect(ungroupButton, &QPushButton::clicked, this, [actionManager]() {
-        actionManager->ungroupItems();
+    connect(ungroupButton, &QPushButton::clicked, this, [&]() {
+        actionManager.ungroupItems();
     });
 
     m_widget->hide();

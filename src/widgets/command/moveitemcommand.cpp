@@ -20,24 +20,24 @@ MoveItemCommand::MoveItemCommand(QVector<std::shared_ptr<Item>> items, QPointF d
 
 void MoveItemCommand::execute(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
+    for (auto &item : m_items) {
+        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         item->translate(m_delta);
-        cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
+        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
 
 void MoveItemCommand::undo(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
+    for (auto &item : m_items) {
+        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         item->translate(-m_delta);
-        cacheGrid->markDirty(transformer->worldToGrid(item->boundingBox()).toRect());
+        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }

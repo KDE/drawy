@@ -20,29 +20,29 @@ InsertItemCommand::InsertItemCommand(QVector<std::shared_ptr<Item>> items)
 
 void InsertItemCommand::execute(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto quadtree{context->spatialContext()->quadtree()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer->worldToGrid(item->boundingBox()).toRect()};
-        quadtree->insertItem(item);
-        cacheGrid->markDirty(dirtyRegion);
+    for (auto &item : m_items) {
+        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        quadtree.insertItem(item);
+        cacheGrid.markDirty(dirtyRegion);
     }
 }
 
 void InsertItemCommand::undo(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto quadtree{context->spatialContext()->quadtree()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &selectedItems{context->selectionContext().selectedItems()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer->worldToGrid(item->boundingBox()).toRect()};
+    for (auto &item : m_items) {
+        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
-        quadtree->deleteItem(item);
-        cacheGrid->markDirty(dirtyRegion);
+        quadtree.deleteItem(item);
+        cacheGrid.markDirty(dirtyRegion);
     }
 }

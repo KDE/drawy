@@ -15,6 +15,7 @@
 #include "toolbar.hpp"
 #include "tools/tool.hpp"
 using namespace Qt::Literals::StringLiterals;
+
 PropertyBar::PropertyBar(QWidget *parent)
     : QFrame{parent}
     , m_layout(new QVBoxLayout{this})
@@ -33,10 +34,10 @@ void PropertyBar::setPropertyManager(PropertyManager *manager)
 void PropertyBar::updateToolProperties()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    updateProperties(context->uiContext()->toolBar()->curTool());
+    updateProperties(context->uiContext().toolBar().curTool());
 }
 
-void PropertyBar::updateProperties(Tool *tool)
+void PropertyBar::updateProperties(Tool &tool)
 {
     // remove existing widgets
     QLayoutItem *curItem = nullptr;
@@ -54,7 +55,7 @@ void PropertyBar::updateProperties(Tool *tool)
         delete curItem;
     }
 
-    const QVector<Property::Type> properties{tool->properties()};
+    const QVector<Property::Type> properties{tool.properties()};
     if (properties.empty()) {
         hide();
     } else {

@@ -24,7 +24,6 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "jobs/saveasjob.hpp"
 #include "keybindmanager.hpp"
@@ -35,7 +34,7 @@ ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
     , m_context{context}
 {
-    KeybindManager *keybindManager{m_context->uiContext()->keybindManager()};
+    KeybindManager &keybindManager{m_context->uiContext().keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
     Action *undoAction{new Action{tr("Undo"),
@@ -171,147 +170,147 @@ ActionManager::ActionManager(ApplicationContext *context)
                                       },
                                       context}};
 
-    keybindManager->addKeybinding(undoAction, tr("Ctrl+Z", "keybinding for the undo action"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Y", "keybinding for the redo action"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Shift+Z", "keybinding for the redo action"));
-    keybindManager->addKeybinding(zoomInAction, tr("Ctrl++", "keybinding for the zoom in action"));
-    keybindManager->addKeybinding(zoomOutAction, tr("Ctrl+-", "keybinding for the zoom out action"));
-    keybindManager->addKeybinding(textToolAction, tr("T", "keybinding for the text tool"));
-    keybindManager->addKeybinding(freeformToolAction, tr("P", "keybinding for the freeform drawing tool"));
-    keybindManager->addKeybinding(freeformToolAction, tr("B", "keybinding for the freeform drawing tool"));
-    keybindManager->addKeybinding(eraserToolAction, tr("E", "keybinding for the eraser tool"));
-    keybindManager->addKeybinding(selectionToolAction, tr("S", "keybinding for the selection tool"));
-    keybindManager->addKeybinding(rectangleToolAction, tr("R", "keybinding for the rectangle drawing tool"));
-    keybindManager->addKeybinding(ellipseToolAction, tr("O", "keybinding for the ellipse drawing tool"));
-    keybindManager->addKeybinding(lineToolAction, tr("L", "keybinding for the line drawing tool"));
-    keybindManager->addKeybinding(arrowToolAction, tr("A", "keybinding for the arrow drawing tool"));
-    keybindManager->addKeybinding(moveToolAction, tr("M", "keybinding for the move tool"));
-    keybindManager->addKeybinding(selectAllAction, tr("Ctrl+A", "keybinding for the select all action"));
-    keybindManager->addKeybinding(deleteAction, tr("Del", "keybinding for the delete action"));
-    keybindManager->addKeybinding(saveAction, tr("Ctrl+S", "keybinding for the save action"));
-    keybindManager->addKeybinding(openFileAction, tr("Ctrl+O", "keybinding for the open file action"));
-    keybindManager->addKeybinding(groupAction, tr("Ctrl+G", "keybinding for the group action"));
-    keybindManager->addKeybinding(unGroupAction, tr("Ctrl+Shift+G", "keybinding for the ungroup action"));
+    keybindManager.addKeybinding(undoAction, tr("Ctrl+Z", "keybinding for the undo action"));
+    keybindManager.addKeybinding(redoAction, tr("Ctrl+Y", "keybinding for the redo action"));
+    keybindManager.addKeybinding(redoAction, tr("Ctrl+Shift+Z", "keybinding for the redo action"));
+    keybindManager.addKeybinding(zoomInAction, tr("Ctrl++", "keybinding for the zoom in action"));
+    keybindManager.addKeybinding(zoomOutAction, tr("Ctrl+-", "keybinding for the zoom out action"));
+    keybindManager.addKeybinding(textToolAction, tr("T", "keybinding for the text tool"));
+    keybindManager.addKeybinding(freeformToolAction, tr("P", "keybinding for the freeform drawing tool"));
+    keybindManager.addKeybinding(freeformToolAction, tr("B", "keybinding for the freeform drawing tool"));
+    keybindManager.addKeybinding(eraserToolAction, tr("E", "keybinding for the eraser tool"));
+    keybindManager.addKeybinding(selectionToolAction, tr("S", "keybinding for the selection tool"));
+    keybindManager.addKeybinding(rectangleToolAction, tr("R", "keybinding for the rectangle drawing tool"));
+    keybindManager.addKeybinding(ellipseToolAction, tr("O", "keybinding for the ellipse drawing tool"));
+    keybindManager.addKeybinding(lineToolAction, tr("L", "keybinding for the line drawing tool"));
+    keybindManager.addKeybinding(arrowToolAction, tr("A", "keybinding for the arrow drawing tool"));
+    keybindManager.addKeybinding(moveToolAction, tr("M", "keybinding for the move tool"));
+    keybindManager.addKeybinding(selectAllAction, tr("Ctrl+A", "keybinding for the select all action"));
+    keybindManager.addKeybinding(deleteAction, tr("Del", "keybinding for the delete action"));
+    keybindManager.addKeybinding(saveAction, tr("Ctrl+S", "keybinding for the save action"));
+    keybindManager.addKeybinding(openFileAction, tr("Ctrl+O", "keybinding for the open file action"));
+    keybindManager.addKeybinding(groupAction, tr("Ctrl+G", "keybinding for the group action"));
+    keybindManager.addKeybinding(unGroupAction, tr("Ctrl+Shift+G", "keybinding for the ungroup action"));
 }
 
 void ActionManager::undo()
 {
-    m_context->spatialContext()->commandHistory()->undo();
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->spatialContext().commandHistory().undo();
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 }
 
 void ActionManager::redo()
 {
-    m_context->spatialContext()->commandHistory()->redo();
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->spatialContext().commandHistory().redo();
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 }
 
 void ActionManager::zoomIn()
 {
-    m_context->renderingContext()->updateZoomFactor(1);
+    m_context->renderingContext().updateZoomFactor(1);
 }
 
 void ActionManager::zoomOut()
 {
-    m_context->renderingContext()->updateZoomFactor(-1);
+    m_context->renderingContext().updateZoomFactor(-1);
 }
 
 void ActionManager::switchToFreeformTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Freeform);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Freeform);
 }
 
 void ActionManager::switchToEraserTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Eraser);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Eraser);
 }
 
 void ActionManager::switchToRectangleTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Rectangle);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Rectangle);
 }
 
 void ActionManager::switchToEllipseTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Ellipse);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Ellipse);
 }
 
 void ActionManager::switchToLineTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Line);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Line);
 }
 
 void ActionManager::switchToArrowTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Arrow);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Arrow);
 }
 
 void ActionManager::switchToMoveTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Move);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Move);
 }
 
 void ActionManager::switchToSelectionTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Selection);
 }
 
 void ActionManager::switchToTextTool()
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Text);
+    m_context->uiContext().toolBar().changeTool(Tool::Type::Text);
 }
 
 void ActionManager::groupItems()
 {
-    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
     if (selectedItems.size() <= 1)
         return;
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->spatialContext().commandHistory().insert(std::make_shared<GroupCommand>(items));
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 }
 
 void ActionManager::ungroupItems()
 {
-    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
     if (selectedItems.empty())
         return;
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<UngroupCommand>(items));
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->spatialContext().commandHistory().insert(std::make_shared<UngroupCommand>(items));
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 }
 
 void ActionManager::deleteSelection()
 {
-    auto selectedItems{m_context->selectionContext()->selectedItems()};
-    auto commandHistory{m_context->spatialContext()->commandHistory()};
+    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &commandHistory{m_context->spatialContext().commandHistory()};
 
     QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    commandHistory->insert(std::make_shared<RemoveItemCommand>(items));
+    commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
 
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 
     QVector<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    m_context->spatialContext().commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
 void ActionManager::selectAll()
 {
     this->switchToSelectionTool();
 
-    auto allItems{m_context->spatialContext()->quadtree()->getAllItems()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
+    auto allItems{m_context->spatialContext().quadtree().getAllItems()};
+    m_context->spatialContext().commandHistory().insert(std::make_shared<SelectCommand>(allItems));
 
-    m_context->uiContext()->propertyBar()->updateToolProperties();
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    m_context->uiContext().propertyBar().updateToolProperties();
+    m_context->renderingContext().markForRender();
+    m_context->renderingContext().markForUpdate();
 }
 
 void ActionManager::saveToFile()
@@ -327,9 +326,9 @@ void ActionManager::saveToFile()
     auto job = new SaveAsJob(this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
-        .offsetPos = m_context->spatialContext()->offsetPos(),
-        .zoomFactor = m_context->renderingContext()->zoomFactor(),
-        .items = m_context->spatialContext()->quadtree()->getAllItems(),
+        .offsetPos = m_context->spatialContext().offsetPos(),
+        .zoomFactor = m_context->renderingContext().zoomFactor(),
+        .items = m_context->spatialContext().quadtree().getAllItems(),
     };
     job->setSaveAsInfo(info);
     connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {

@@ -26,45 +26,45 @@ UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items)
 
 void UngroupCommand::execute(ApplicationContext *context)
 {
-    auto quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &selectedItems{context->selectionContext().selectedItems()};
 
     selectedItems.clear();
 
     QRectF dirtyRegion{};
-    for (const auto &group : std::as_const(m_groups)) {
-        quadtree->deleteItem(group);
+    for (const auto &group : m_groups) {
+        quadtree.deleteItem(group);
 
         dirtyRegion |= group->boundingBox();
 
         auto subItems{group->unGroup()};
         for (const auto &subItem : subItems) {
-            quadtree->insertItem(subItem, false);
+            quadtree.insertItem(subItem, false);
             selectedItems.insert(subItem);
         }
     }
 
-    context->spatialContext()->cacheGrid()->markDirty(dirtyRegion.toRect());
+    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
 void UngroupCommand::undo(ApplicationContext *context)
 {
-    auto *quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &selectedItems{context->selectionContext().selectedItems()};
 
     selectedItems.clear();
 
     QRectF dirtyRegion{};
     for (const auto &group : std::as_const(m_groups)) {
-        quadtree->insertItem(group);
+        quadtree.insertItem(group);
         selectedItems.insert(group);
         dirtyRegion |= group->boundingBox();
 
         auto subItems{group->unGroup()};
         for (const auto &subItem : subItems) {
-            quadtree->deleteItem(subItem, false);
+            quadtree.deleteItem(subItem, false);
         }
     }
 
-    context->spatialContext()->cacheGrid()->markDirty(dirtyRegion.toRect());
+    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
