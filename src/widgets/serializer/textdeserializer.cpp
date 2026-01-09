@@ -15,4 +15,9 @@ TextDeserializer::~TextDeserializer() = default;
 
 void TextDeserializer::deserialize(const QJsonObject &obj)
 {
+    ItemDeserializer::deserialize(obj);
+    TextItem *textItem = static_cast<TextItem *>(mItem);
+    const QPointF topLeft = toPointF(value(obj, u"bounding_box"_s));
+    textItem->createTextBox(topLeft);
+    textItem->insertText(value(obj, u"text"_s).toString());
 }

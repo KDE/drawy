@@ -15,4 +15,5 @@ GroupDeserializer::~GroupDeserializer() = default;
 
 void GroupDeserializer::deserialize(const QJsonObject &obj)
 {
+    ItemDeserializer::deserialize(obj);
 }

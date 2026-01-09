@@ -15,6 +15,7 @@ PolygonDeserializer::~PolygonDeserializer() = default;
 
 void PolygonDeserializer::deserialize(const QJsonObject &obj)
 {
+    ItemDeserializer::deserialize(obj);
     PolygonItem *polyItem = static_cast<PolygonItem *>(mItem);
     polyItem->setStart(toPointF(value(obj, u"start"_s)));
     polyItem->setEnd(toPointF(value(obj, u"end"_s)));
