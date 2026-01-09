@@ -5,10 +5,12 @@
  */
 
 #include "groupitemtest.hpp"
+#include "drawy_autotest_helper.hpp"
 #include "item/group.hpp"
+#include <QJsonObject>
 #include <QTest>
 QTEST_MAIN(GroupItemTest)
-
+using namespace Qt::Literals::StringLiterals;
 GroupItemTest::GroupItemTest(QObject *parent)
     : QObject{parent}
 {
@@ -18,6 +20,15 @@ void GroupItemTest::shouldHaveDefaultValues()
 {
     const GroupItem i;
     QCOMPARE(i.type(), Item::Type::Group);
+}
+
+void GroupItemTest::shouldSerializeDefaultValue()
+{
+    const GroupItem f;
+    const QJsonObject obj = f.serialize();
+    const QJsonDocument doc(obj);
+    const QByteArray ba = doc.toJson();
+    AutoTestHelper::compareFile(u"/group/"_s, ba, u"defaultvalue"_s);
 }
 
 #include "moc_groupitemtest.cpp"

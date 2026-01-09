@@ -5,10 +5,11 @@
  */
 
 #include "polygonitemtest.hpp"
+#include "drawy_autotest_helper.hpp"
 #include "item/polygon.hpp"
 #include <QTest>
 QTEST_MAIN(PolygonItemTest)
-
+using namespace Qt::Literals::StringLiterals;
 PolygonItemTest::PolygonItemTest(QObject *parent)
     : QObject{parent}
 {

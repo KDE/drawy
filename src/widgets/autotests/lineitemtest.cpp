@@ -5,10 +5,12 @@
  */
 
 #include "lineitemtest.hpp"
+#include "drawy_autotest_helper.hpp"
 #include "item/line.hpp"
+#include <QJsonObject>
 #include <QTest>
 QTEST_MAIN(LineItemTest)
-
+using namespace Qt::Literals::StringLiterals;
 LineItemTest::LineItemTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,4 +22,12 @@ void LineItemTest::shouldHaveDefaultValues()
     QCOMPARE(i.type(), Item::Type::Line);
 }
 
+void LineItemTest::shouldSerializeDefaultValue()
+{
+    const LineItem f;
+    const QJsonObject obj = f.serialize();
+    const QJsonDocument doc(obj);
+    const QByteArray ba = doc.toJson();
+    AutoTestHelper::compareFile(u"/line/"_s, ba, u"defaultvalue"_s);
+}
 #include "moc_lineitemtest.cpp"

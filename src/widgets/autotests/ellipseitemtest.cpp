@@ -5,10 +5,12 @@
  */
 
 #include "ellipseitemtest.hpp"
+#include "drawy_autotest_helper.hpp"
 #include "item/ellipse.hpp"
+#include <QJsonObject>
 #include <QTest>
 QTEST_MAIN(EllipseItemTest)
-
+using namespace Qt::Literals::StringLiterals;
 EllipseItemTest::EllipseItemTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,4 +22,12 @@ void EllipseItemTest::shouldHaveDefaultValues()
     QCOMPARE(i.type(), Item::Type::Ellipse);
 }
 
+void EllipseItemTest::shouldSerializeDefaultValue()
+{
+    const EllipseItem f;
+    const QJsonObject obj = f.serialize();
+    const QJsonDocument doc(obj);
+    const QByteArray ba = doc.toJson();
+    AutoTestHelper::compareFile(u"/ellipse/"_s, ba, u"defaultvalue"_s);
+}
 #include "moc_ellipseitemtest.cpp"

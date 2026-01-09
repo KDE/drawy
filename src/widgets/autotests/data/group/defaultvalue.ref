@@ -1,0 +1,12 @@
+{
+    "bounding_box": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+    },
+    "bounding_box_padding": 10,
+    "properties": [
+    ],
+    "type": "GROUP"
+}

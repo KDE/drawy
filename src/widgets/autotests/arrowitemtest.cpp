@@ -5,10 +5,12 @@
  */
 
 #include "arrowitemtest.hpp"
+#include "drawy_autotest_helper.hpp"
 #include "item/arrow.hpp"
+#include <QJsonObject>
 #include <QTest>
 QTEST_MAIN(ArrowItemTest)
-
+using namespace Qt::Literals::StringLiterals;
 ArrowItemTest::ArrowItemTest(QObject *parent)
     : QObject{parent}
 {
@@ -20,4 +22,12 @@ void ArrowItemTest::shouldHaveDefaultValues()
     QCOMPARE(i.type(), Item::Type::Arrow);
 }
 
+void ArrowItemTest::shouldSerializeDefaultValue()
+{
+    const ArrowItem f;
+    const QJsonObject obj = f.serialize();
+    const QJsonDocument doc(obj);
+    const QByteArray ba = doc.toJson();
+    AutoTestHelper::compareFile(u"/arrow/"_s, ba, u"defaultvalue"_s);
+}
 #include "moc_arrowitemtest.cpp"
