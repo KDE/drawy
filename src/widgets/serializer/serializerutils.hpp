@@ -10,4 +10,6 @@ namespace SerializerUtils
 {
 [[nodiscard]] int version();
 [[nodiscard]] QJsonObject toJson(const QPointF &point);
+[[nodiscard]] QByteArray compressData(const QJsonObject &obj);
+void saveInFile(const QJsonObject &obj, const QString &filename);
 };

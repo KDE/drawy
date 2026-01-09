@@ -4,6 +4,8 @@
 
 #include "actionmanager.hpp"
 
+#include <QDir>
+#include <QFileDialog>
 #include <memory>
 
 #include "action.hpp"
@@ -13,6 +15,7 @@
 #include "command/removeitemcommand.hpp"
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
+#include "common/constants.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
@@ -23,9 +26,10 @@
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "jobs/saveasjob.hpp"
 #include "keybindmanager.hpp"
 #include "serializer/loader.hpp"
-#include "serializer/serializer.hpp"
+#include "serializer/serializerutils.hpp"
 using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
@@ -312,10 +316,27 @@ void ActionManager::selectAll()
 
 void ActionManager::saveToFile()
 {
-    Serializer serializer{};
-
-    serializer.serialize(m_context);
-    serializer.saveToFile();
+    const QDir homeDir{QDir::home()};
+    QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+    const QString defaultFilePath = homeDir.filePath(text);
+    text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+    if (fileName.isEmpty()) {
+        return;
+    }
+    auto job = new SaveAsJob(this);
+    const SaveAsJob::SaveAsInfo info{
+        .filePath = fileName,
+        .offsetPos = m_context->spatialContext()->offsetPos(),
+        .zoomFactor = m_context->renderingContext()->zoomFactor(),
+        .items = m_context->spatialContext()->quadtree()->getAllItems(),
+    };
+    job->setSaveAsInfo(info);
+    connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
+        SerializerUtils::saveInFile(obj, fileName);
+        qDebug() << " save done ";
+    });
+    job->start();
 }
 
 void ActionManager::loadFromFile()

@@ -162,8 +162,6 @@ target_sources(
         drawycommandlineparser.cpp
         serializer/loader.cpp
         serializer/loader.hpp
-        serializer/serializer.cpp
-        serializer/serializer.hpp
         serializer/itemserializer.hpp
         serializer/itemserializer.cpp
         serializer/rectangleserializer.hpp

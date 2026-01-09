@@ -12,15 +12,17 @@
 #include "components/actionbar.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
+#include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "event/event.hpp"
+#include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
 #include "serializer/loader.hpp"
-#include "serializer/serializer.hpp"
+#include "serializer/serializerutils.hpp"
 #include "spatialcontext.hpp"
 #include "tools/arrowtool.hpp"
 #include "tools/ellipsetool.hpp"
@@ -31,6 +33,8 @@
 #include "tools/rectangletool.hpp"
 #include "tools/selectiontool/selectiontool.hpp"
 #include "tools/texttool.hpp"
+#include <QDir>
+#include <QFileDialog>
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext{context}
@@ -69,13 +73,30 @@ void UIContext::setUIContext()
     m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text, tr("Text"));
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
 
-    // TODO: Define their functions somewhere else
     auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        Serializer serializer;
+        const QDir homeDir{QDir::home()};
+        QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+        const QString defaultFilePath = homeDir.filePath(text);
+        text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+        const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+        if (fileName.isEmpty()) {
+            return;
+        }
+        auto job = new SaveAsJob(this);
+        const SaveAsJob::SaveAsInfo info{
+            .filePath = fileName,
+            .offsetPos = m_applicationContext->spatialContext()->offsetPos(),
+            .zoomFactor = m_applicationContext->renderingContext()->zoomFactor(),
+            .items = m_applicationContext->spatialContext()->quadtree()->getAllItems(),
 
-        serializer.serialize(m_applicationContext);
-        serializer.saveToFile();
+        };
+        job->setSaveAsInfo(info);
+        connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
+            SerializerUtils::saveInFile(obj, fileName);
+            qDebug() << " save done ";
+        });
+        job->start();
     });
 
     button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
