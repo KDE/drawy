@@ -12,6 +12,11 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT LoadJob : public QObject
 {
     Q_OBJECT
 public:
+    struct LoadInfo {
+        QPointF offsetPos;
+        qreal zoomFactor = 0;
+        QVector<std::shared_ptr<Item>> items;
+    };
     explicit LoadJob(QObject *parent = nullptr);
     ~LoadJob() override;
 
@@ -23,7 +28,7 @@ public:
     void setFileName(const QString &newFileName);
 
 Q_SIGNALS:
-    void loadDone();
+    void loadDone(const LoadJob::LoadInfo &info);
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);

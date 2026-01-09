@@ -23,7 +23,6 @@ void LoadJob::start()
 {
     if (!canStart()) {
         qCWarning(DRAWY_LOG) << "File path is not defined";
-        Q_EMIT loadDone();
         deleteLater();
         return;
     }
@@ -56,6 +55,12 @@ void LoadJob::start()
 
 void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
 {
+    const LoadJob::LoadInfo loadInfo{
+        .offsetPos = info.offsetPos,
+        .zoomFactor = info.zoomOffset,
+        .items = info.items,
+    };
+    Q_EMIT loadDone(loadInfo);
     deleteLater();
 }
 

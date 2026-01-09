@@ -19,6 +19,7 @@
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
+#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "serializer/loader.hpp"
@@ -107,9 +108,26 @@ void MainWindow::viewFullScreen(bool fullScreen)
 
 void MainWindow::loadFile(const QString &fileName)
 {
+    auto job = new LoadJob(this);
+    job->setFileName(fileName);
+    connect(job, &LoadJob::loadDone, this, &MainWindow::slotLoadDone);
+    job->start();
+}
+
+void MainWindow::slotLoadDone(const LoadJob::LoadInfo &info)
+{
     ApplicationContext *context{ApplicationContext::instance()};
-    Loader loader;
-    loader.loadFromFile(context, fileName);
+    context->reset();
+    QuadTree &quadtree{context->spatialContext().quadtree()};
+    for (const auto &item : info.items) {
+        quadtree.insertItem(item);
+    }
+    context->renderingContext().setZoomFactor(info.zoomFactor);
+
+    context->spatialContext().setOffsetPos(info.offsetPos);
+    context->spatialContext().cacheGrid().markAllDirty();
+    context->renderingContext().markForRender();
+    context->renderingContext().markForUpdate();
 }
 
 #include "moc_window.cpp"
