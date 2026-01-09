@@ -184,6 +184,28 @@ target_sources(
         serializer/serializerutils.cpp
         serializer/groupserializer.cpp
         serializer/groupserializer.hpp
+        serializer/polygondeserializer.cpp
+        serializer/polygondeserializer.hpp
+        serializer/arrowdeserializer.cpp
+        serializer/arrowdeserializer.hpp
+        serializer/ellipsedeserializer.cpp
+        serializer/ellipsedeserializer.hpp
+        serializer/freeformdeserializer.cpp
+        serializer/freeformdeserializer.hpp
+        serializer/groupdeserializer.cpp
+        serializer/groupdeserializer.hpp
+        serializer/itemdeserializer.cpp
+        serializer/itemdeserializer.hpp
+        serializer/linedeserializer.cpp
+        serializer/linedeserializer.hpp
+        serializer/polygondeserializer.cpp
+        serializer/polygondeserializer.hpp
+        serializer/rectangledeserializer.cpp
+        serializer/rectangledeserializer.hpp
+        serializer/textdeserializer.cpp
+        serializer/textdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/itemdeserializer.cpp
         jobs/serializejob.hpp
         jobs/serializejob.cpp
         jobs/saveasjob.cpp
