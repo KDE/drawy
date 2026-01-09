@@ -208,6 +208,8 @@ target_sources(
         jobs/serializejob.cpp
         jobs/saveasjob.cpp
         jobs/saveasjob.hpp
+        jobs/deserializejob.hpp
+        jobs/deserializejob.cpp
         libdrawywidgets_private_export.h
 )
 
