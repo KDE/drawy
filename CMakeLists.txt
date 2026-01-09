@@ -127,6 +127,8 @@ if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
 
+configure_file(config-drawy.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-drawy.hpp)
+
 add_subdirectory(src)
 
 ecm_qt_install_logging_categories(
