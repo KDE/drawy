@@ -49,5 +49,7 @@ inline constexpr qreal tabStopDistance{4};
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
 inline constexpr qreal zoomInLimit{300}; // 3000%
 
+inline constexpr int samplesPerPixel{4}; // for multisampling (MSAA)
+
 inline const QString drawyFileExt{u"drawy"_s};
 }; // namespace Common

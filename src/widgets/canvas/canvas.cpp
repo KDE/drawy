@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "canvas.hpp"
+#include "common/constants.hpp"
 
 #include <QBuffer>
 #include <QResizeEvent>
@@ -277,21 +278,6 @@ void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
     }
 };
 
-// PRIVATE
-// QByteArray Canvas::imageData(QPixmap *const img)
-// {
-//     QByteArray arr{};
-//     QBuffer buffer{&arr};
-//     buffer.open(QBuffer::WriteOnly);
-//     img->save(&buffer, "PNG");
-//     return arr;
-// }
-//
-// void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
-// {
-//     img->loadFromData(arr, "PNG");
-// }
-
 void Canvas::resize()
 {
     Q_EMIT resizeStart();
@@ -301,8 +287,13 @@ void Canvas::resize()
     m_maxSize.setWidth(std::max(oldSize.width(), newSize.width()));
     m_maxSize.setHeight(std::max(oldSize.height(), newSize.height()));
 
-    QOpenGLFramebufferObject *canvas{new QOpenGLFramebufferObject(m_maxSize, QOpenGLFramebufferObject::CombinedDepthStencil)};
-    QOpenGLFramebufferObject *overlay{new QOpenGLFramebufferObject(m_maxSize, QOpenGLFramebufferObject::CombinedDepthStencil)};
+    QOpenGLFramebufferObjectFormat format{};
+    format.setSamples(Common::samplesPerPixel);
+    format.setAttachment(QOpenGLFramebufferObject::CombinedDepthStencil);
+    format.setInternalTextureFormat(GL_RGBA8);
+
+    QOpenGLFramebufferObject *canvas{new QOpenGLFramebufferObject(m_maxSize, format)};
+    QOpenGLFramebufferObject *overlay{new QOpenGLFramebufferObject(m_maxSize, format)};
 
     setCanvasBg(canvasBg());
     setOverlayBg(overlayBg());
