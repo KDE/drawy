@@ -4,8 +4,6 @@
 
 #include "rectangle.hpp"
 
-#include "drawy_debug.h"
-
 #include "common/utils/math.hpp"
 #include "serializer/rectangleserializer.hpp"
 #include <QJsonObject>
