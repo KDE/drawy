@@ -11,12 +11,12 @@ msgstr ""
 "3 : 4\n"
 "X-Qt-Contexts: true\n"
 
-#: apps/main.cpp:22
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:26
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr ""
@@ -272,7 +272,6 @@ msgid "Select all items"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:149
-#: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr ""
@@ -303,102 +302,107 @@ msgid "Open an existing file"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:170
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:171
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:172
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:173
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
 msgstr ""
 
+#: widgets/keybindings/actionmanager.cpp:186
+msgctxt "ActionManager|keybinding for the delete action"
+msgid "Del"
+msgstr ""
+
 #: widgets/keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|"
+msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr ""
 
@@ -507,4 +511,14 @@ msgstr ""
 #: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Do you want to close?"
+msgstr ""
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Close"
 msgstr ""

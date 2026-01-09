@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-02 07:46+0900\n"
+"PO-Revision-Date: 2026-01-09 00:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -11,89 +11,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
-#: apps/main.cpp:22
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr ""
+msgstr "選擇性參數 'file'"
 
-#: apps/main.cpp:26
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "選取工具"
+msgstr "選取"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "橡皮擦工具"
+msgstr "自由筆畫"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "矩形工具"
+msgstr "矩形"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "橢圓工具"
+msgstr "橢圓"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "箭頭工具"
+msgstr "箭頭"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "直線工具"
+msgstr "線條"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "橡皮擦工具"
+msgstr "橡皮擦"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "文字工具"
+msgstr "文字"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "移動工具"
+msgstr "移動"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
@@ -138,28 +111,19 @@ msgstr "重做"
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr ""
+msgstr "全螢幕"
 
 #: widgets/keybindings/actionmanager.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Undo"
 msgctxt "ActionManager|"
 msgid "Undo"
 msgstr "復原"
 
 #: widgets/keybindings/actionmanager.cpp:38
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "解除群組化所選"
+msgstr "復原上一次動作"
 
 #: widgets/keybindings/actionmanager.cpp:44
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Redo"
 msgctxt "ActionManager|"
 msgid "Redo"
 msgstr "重做"
@@ -167,57 +131,39 @@ msgstr "重做"
 #: widgets/keybindings/actionmanager.cpp:45
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr ""
+msgstr "重做上次復原的操作"
 
 #: widgets/keybindings/actionmanager.cpp:51
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom In"
 msgstr "放大"
 
 #: widgets/keybindings/actionmanager.cpp:52
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom In"
 msgctxt "ActionManager|"
 msgid "Zoom in"
 msgstr "放大"
 
 #: widgets/keybindings/actionmanager.cpp:58
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom Out"
 msgstr "縮小"
 
 #: widgets/keybindings/actionmanager.cpp:59
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Zoom Out"
 msgctxt "ActionManager|"
 msgid "Zoom out"
 msgstr "縮小"
 
 #: widgets/keybindings/actionmanager.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "橡皮擦工具"
+msgstr "自由筆畫工具"
 
 #: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr ""
+msgstr "切換到自由筆畫工具"
 
 #: widgets/keybindings/actionmanager.cpp:72
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "橡皮擦工具"
@@ -225,41 +171,31 @@ msgstr "橡皮擦工具"
 #: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr ""
+msgstr "切換到橡皮擦工具"
 
 #: widgets/keybindings/actionmanager.cpp:79
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "選取工具"
 
 #: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "選取工具"
+msgstr "切換到選取工具"
 
 #: widgets/keybindings/actionmanager.cpp:86
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
+# I don't think we need to specify "drawing" in the translated text here.
+# --Kisaragi
 #: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr ""
+msgstr "切換到矩形工具"
 
 #: widgets/keybindings/actionmanager.cpp:93
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "橢圓工具"
@@ -267,12 +203,9 @@ msgstr "橢圓工具"
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr ""
+msgstr "切換到橢圓工具"
 
 #: widgets/keybindings/actionmanager.cpp:100
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "直線工具"
@@ -280,12 +213,9 @@ msgstr "直線工具"
 #: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr ""
+msgstr "切換到直線工具"
 
 #: widgets/keybindings/actionmanager.cpp:107
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "文字工具"
@@ -293,12 +223,9 @@ msgstr "文字工具"
 #: widgets/keybindings/actionmanager.cpp:108
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr ""
+msgstr "切換到文字工具"
 
 #: widgets/keybindings/actionmanager.cpp:114
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "箭頭工具"
@@ -306,12 +233,9 @@ msgstr "箭頭工具"
 #: widgets/keybindings/actionmanager.cpp:115
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr ""
+msgstr "切換到箭頭工具"
 
 #: widgets/keybindings/actionmanager.cpp:121
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "移動工具"
@@ -319,81 +243,59 @@ msgstr "移動工具"
 #: widgets/keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr ""
+msgstr "切換到移動工具"
 
 #: widgets/keybindings/actionmanager.cpp:128
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "群組化所選"
+msgstr "群組化元素"
 
 #: widgets/keybindings/actionmanager.cpp:129
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "群組化所選"
+msgstr "群組化所選項目"
 
 #: widgets/keybindings/actionmanager.cpp:135
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "解除群組化所選"
+msgstr "解除群組化元素"
 
 #: widgets/keybindings/actionmanager.cpp:136
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "解除群組化所選"
+msgstr "解除群組化所選群組"
 
 #: widgets/keybindings/actionmanager.cpp:142
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "選取工具"
+msgstr "全部選取"
 
 #: widgets/keybindings/actionmanager.cpp:143
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr ""
+msgstr "選取所有項目"
 
 #: widgets/keybindings/actionmanager.cpp:149
-#: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: widgets/keybindings/actionmanager.cpp:150
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Delete selection"
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "刪除所選"
+msgstr "刪除所選項目"
 
 #: widgets/keybindings/actionmanager.cpp:156
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: widgets/keybindings/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr ""
+msgstr "儲存畫布"
 
 #: widgets/keybindings/actionmanager.cpp:163
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "ActionManager|"
 msgid "Open File"
 msgstr "開啟檔案"
@@ -401,107 +303,175 @@ msgstr "開啟檔案"
 #: widgets/keybindings/actionmanager.cpp:164
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr ""
+msgstr "開啟現有的檔案"
 
 #: widgets/keybindings/actionmanager.cpp:170
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Z"
+msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:171
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Y"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
-msgstr ""
+msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:172
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Shift+Z"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
-msgstr ""
+msgstr "Ctrl+Shift+Z"
 
 #: widgets/keybindings/actionmanager.cpp:173
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl++"
+msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
-msgstr ""
+msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+-"
+msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
-msgstr ""
+msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "T"
+msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: widgets/keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "P"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: widgets/keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "B"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: widgets/keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "E"
+msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: widgets/keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "S"
+msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: widgets/keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "R"
+msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #: widgets/keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "O"
+msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: widgets/keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "L"
+msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: widgets/keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "A"
+msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: widgets/keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "M"
+msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: widgets/keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+A"
+msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
+
+#: widgets/keybindings/actionmanager.cpp:186
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Delete"
+msgctxt "ActionManager|keybinding for the delete action"
+msgid "Del"
+msgstr "刪除"
 
 #: widgets/keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+S"
+msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+O"
+msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
-msgstr ""
+msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+G"
+msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
-msgstr ""
+msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Shift+G"
+msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
-msgstr ""
+msgstr "Ctrl+Shift+G"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
@@ -536,7 +506,7 @@ msgstr "字型大小"
 #: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr ""
+msgstr "顏色"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -558,15 +528,12 @@ msgstr "開啟檔案"
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr ""
+msgstr "未命名.%1"
 
 #: widgets/serializer/serializer.cpp:122
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "儲存到檔案"
+msgstr "儲存檔案"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -612,3 +579,13 @@ msgstr "選取工具"
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "文字工具"
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Do you want to close?"
+msgstr ""
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Close"
+msgstr ""

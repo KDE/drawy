@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-07 18:18+0200\n"
+"PO-Revision-Date: 2026-01-08 08:08+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -14,12 +14,12 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: apps/main.cpp:22
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr ""
+msgstr "Додатковий параметр «file» "
 
-#: apps/main.cpp:26
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
@@ -275,7 +275,6 @@ msgid "Select all items"
 msgstr "Позначити всі пункти"
 
 #: widgets/keybindings/actionmanager.cpp:149
-#: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Вилучити"
@@ -306,102 +305,170 @@ msgid "Open an existing file"
 msgstr "Відкрити наявний файл"
 
 #: widgets/keybindings/actionmanager.cpp:170
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Z"
+msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:171
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Y"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
 msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:172
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Shift+Z"
+msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Shift+Z"
 
 #: widgets/keybindings/actionmanager.cpp:173
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl++"
+msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
 msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+-"
+msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
 msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "T"
+msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
 msgstr "T"
 
 #: widgets/keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "P"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
 msgstr "P"
 
 #: widgets/keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "B"
+msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
 msgstr "B"
 
 #: widgets/keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "E"
+msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
 msgstr "E"
 
 #: widgets/keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "S"
+msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
 msgstr "S"
 
 #: widgets/keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "R"
+msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
 msgstr "R"
 
 #: widgets/keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "O"
+msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
 msgstr "O"
 
 #: widgets/keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "L"
+msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
 msgstr "L"
 
 #: widgets/keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "A"
+msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
 msgstr "A"
 
 #: widgets/keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "M"
+msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
 msgstr "M"
 
 #: widgets/keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+A"
+msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
+#: widgets/keybindings/actionmanager.cpp:186
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Delete"
+msgctxt "ActionManager|keybinding for the delete action"
+msgid "Del"
+msgstr "Вилучити"
+
 #: widgets/keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+S"
+msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+O"
+msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+G"
+msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
 msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|"
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ctrl+Shift+G"
+msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Shift+G"
 
@@ -511,3 +578,13 @@ msgstr "Інструмент вибору"
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Do you want to close?"
+msgstr ""
+
+#: widgets/window/window.cpp:66
+msgctxt "MainWindow|"
+msgid "Close"
+msgstr ""

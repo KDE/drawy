@@ -1,307 +1,308 @@
-# SPDX-FileCopyrightText: 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-08 17:01+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2026-01-08 13:42+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Qt-Contexts: true\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
 
 #: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr "İsteğe bağlı bir “dosya” argümanı "
+msgstr "مُعطى اختياري 'ملفّ' "
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
-msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
+msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
 
 #: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Seçim"
+msgstr "التحديد"
 
 #: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Serbest Çizim"
+msgstr "شكل حر"
 
 #: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Dörtgen"
+msgstr "مستطيل"
 
 #: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Elips"
+msgstr "بيضاوي"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Ok"
+msgstr "سهم"
 
 #: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Çizgi"
+msgstr "خط"
 
 #: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Silgi"
+msgstr "ممحاة"
 
 #: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Metin"
+msgstr "نص"
 
 #: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Taşıma"
+msgstr "انقل"
 
 #: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
-msgstr "Dosyaya Kaydet"
+msgstr "احفظ في ملفّ"
 
 #: widgets/context/uicontext.cpp:81
 msgctxt "UIContext|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "افتح ملفًّا"
 
 #: widgets/context/uicontext.cpp:88
 msgctxt "UIContext|"
 msgid "Zoom Out"
-msgstr "Uzaklaştır"
+msgstr "بعّد"
 
 #: widgets/context/uicontext.cpp:93
 msgctxt "UIContext|"
 msgid "Zoom In"
-msgstr "Yakınlaştır"
+msgstr "قرّب"
 
 #: widgets/context/uicontext.cpp:97 widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Light Mode"
-msgstr "Açık Kip"
+msgstr "الوضع الفاتح"
 
 #: widgets/context/uicontext.cpp:107
 msgctxt "UIContext|"
 msgid "Dark Mode"
-msgstr "Koyu Kip"
+msgstr "الوضع المظلم"
 
 #: widgets/context/uicontext.cpp:115
 msgctxt "UIContext|"
 msgid "Undo"
-msgstr "Koyu Kip"
+msgstr "تراجع"
 
 #: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
-msgstr "Yinele"
+msgstr "كرّر"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr "Tam Ekran"
+msgstr "ملء الشّاشة"
 
 #: widgets/keybindings/actionmanager.cpp:37
 msgctxt "ActionManager|"
 msgid "Undo"
-msgstr "Geri Al"
+msgstr "تراجع"
 
 #: widgets/keybindings/actionmanager.cpp:38
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "Son eylemi geri al"
+msgstr "تراجع عن آخر إجراء"
 
 #: widgets/keybindings/actionmanager.cpp:44
 msgctxt "ActionManager|"
 msgid "Redo"
-msgstr "Yinele"
+msgstr "كرّر"
 
 #: widgets/keybindings/actionmanager.cpp:45
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr "Son geri alınan eylemi yinele"
+msgstr "أعد آخر إجراء تراجعت عنه"
 
 #: widgets/keybindings/actionmanager.cpp:51
 msgctxt "ActionManager|"
 msgid "Zoom In"
-msgstr "Yakınlaştır"
+msgstr "قرّب"
 
 #: widgets/keybindings/actionmanager.cpp:52
 msgctxt "ActionManager|"
 msgid "Zoom in"
-msgstr "Yakınlaştır"
+msgstr "قرّب"
 
 #: widgets/keybindings/actionmanager.cpp:58
 msgctxt "ActionManager|"
 msgid "Zoom Out"
-msgstr "Uzaklaştır"
+msgstr "بعّد"
 
 #: widgets/keybindings/actionmanager.cpp:59
 msgctxt "ActionManager|"
 msgid "Zoom out"
-msgstr "Uzaklaştır"
+msgstr "بعّد"
 
 #: widgets/keybindings/actionmanager.cpp:65
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "Serbest Çizim Aracı"
+msgstr "أداة الرسم الحر"
 
 #: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr "Serbest çizim aracına geç"
+msgstr "بدّل إلى أداة الرسم الحر"
 
 #: widgets/keybindings/actionmanager.cpp:72
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
-msgstr "Silgi Aracı"
+msgstr "أداة الممحاة"
 
 #: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr "Silgi aracına geç"
+msgstr "بدّل إلى أداة الممحاة"
 
 #: widgets/keybindings/actionmanager.cpp:79
 msgctxt "ActionManager|"
 msgid "Selection Tool"
-msgstr "Seçim Aracı"
+msgstr "أداة التحديد"
 
 #: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "Seçim aracına geç"
+msgstr "بدّل إلى أداة التحديد"
 
 #: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
-msgstr "Dörtgen Aracı"
+msgstr "أداة المستطيل"
 
 #: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr "Dörtgen çizim aracına geç"
+msgstr "بدّل إلى أداة المستطيل"
 
 #: widgets/keybindings/actionmanager.cpp:93
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
-msgstr "Elips Aracı"
+msgstr "أداة الشكل البيضاوي"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr "Elips çizim aracına geç"
+msgstr "بدّل إلى أداة الشكل البيضاوي"
 
 #: widgets/keybindings/actionmanager.cpp:100
 msgctxt "ActionManager|"
 msgid "Line Tool"
-msgstr "Çizgi Aracı"
+msgstr "أداة رسم الخطوط"
 
 #: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr "Çizgi çizim aracına geç"
+msgstr "بدّل إلى أداة رسم الخطوط"
 
 #: widgets/keybindings/actionmanager.cpp:107
 msgctxt "ActionManager|"
 msgid "Text Tool"
-msgstr "Metin Aracı"
+msgstr "أداة النصوص"
 
 #: widgets/keybindings/actionmanager.cpp:108
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr "Metin aracına geç"
+msgstr "بدّل إلى أداة النص"
 
 #: widgets/keybindings/actionmanager.cpp:114
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
-msgstr "Ok Aracı"
+msgstr "أداة السهم"
 
 #: widgets/keybindings/actionmanager.cpp:115
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr "Ok çizim aracına geç"
+msgstr "بدّل إلى أداة رسم السهم"
 
 #: widgets/keybindings/actionmanager.cpp:121
 msgctxt "ActionManager|"
 msgid "Move Tool"
-msgstr "Taşıma Aracı"
+msgstr "أداة التحريك"
 
 #: widgets/keybindings/actionmanager.cpp:122
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr "Taşıma aracına geç"
+msgstr "بدّل إلى أداة التحريك"
 
 #: widgets/keybindings/actionmanager.cpp:128
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "Ögeleri Grupla"
+msgstr "جمّع العناصر"
 
 #: widgets/keybindings/actionmanager.cpp:129
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "Seçili ögeleri gruplar"
+msgstr "تجمع العناصر المحددة"
 
 #: widgets/keybindings/actionmanager.cpp:135
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "Ögeleri Gruptan Çıkar"
+msgstr "تفك تجميع العناصر"
 
 #: widgets/keybindings/actionmanager.cpp:136
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "Seçili grupları bozar"
+msgstr "تفك جمع التجميعات المحددة"
 
 #: widgets/keybindings/actionmanager.cpp:142
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "Tümünü Seç"
+msgstr "حدّد الكلّ"
 
 #: widgets/keybindings/actionmanager.cpp:143
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr "Tüm ögeleri seç"
+msgstr "حدّد كلّ العناصر"
 
 #: widgets/keybindings/actionmanager.cpp:149
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr "Sil"
+msgstr "احذف"
 
 #: widgets/keybindings/actionmanager.cpp:150
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "Seçili ögeleri siler"
+msgstr "تحذف العناصر المحددة"
 
 #: widgets/keybindings/actionmanager.cpp:156
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr "Kaydet"
+msgstr "احفظ"
 
 #: widgets/keybindings/actionmanager.cpp:157
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr "Tuvali kaydet"
+msgstr "احفظ الرقعة"
 
 #: widgets/keybindings/actionmanager.cpp:163
 msgctxt "ActionManager|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "افتح ملفًّا"
 
 #: widgets/keybindings/actionmanager.cpp:164
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr "Var olan bir dosyayı aç"
+msgstr "افتح ملفًا موجودًا"
 
 #: widgets/keybindings/actionmanager.cpp:170
 #, fuzzy
@@ -309,7 +310,7 @@ msgstr "Var olan bir dosyayı aç"
 #| msgid "Ctrl+Z"
 msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
-msgstr "Kontrol+Z"
+msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:171
 #, fuzzy
@@ -317,7 +318,7 @@ msgstr "Kontrol+Z"
 #| msgid "Ctrl+Y"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
-msgstr "Kontrol+Y"
+msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:172
 #, fuzzy
@@ -325,7 +326,7 @@ msgstr "Kontrol+Y"
 #| msgid "Ctrl+Shift+Z"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
-msgstr "Kontrol+Üst Karakter+Z"
+msgstr "Ctrl+Shift+Z"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, fuzzy
@@ -333,7 +334,7 @@ msgstr "Kontrol+Üst Karakter+Z"
 #| msgid "Ctrl++"
 msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
-msgstr "Kontrol++"
+msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:174
 #, fuzzy
@@ -341,7 +342,7 @@ msgstr "Kontrol++"
 #| msgid "Ctrl+-"
 msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
-msgstr "Kontrol+−"
+msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:175
 #, fuzzy
@@ -429,7 +430,7 @@ msgstr "M"
 #| msgid "Ctrl+A"
 msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
-msgstr "Kontrol+A"
+msgstr "Ctrl+A"
 
 #: widgets/keybindings/actionmanager.cpp:186
 #, fuzzy
@@ -437,7 +438,7 @@ msgstr "Kontrol+A"
 #| msgid "Delete"
 msgctxt "ActionManager|keybinding for the delete action"
 msgid "Del"
-msgstr "Sil"
+msgstr "احذف"
 
 #: widgets/keybindings/actionmanager.cpp:187
 #, fuzzy
@@ -445,7 +446,7 @@ msgstr "Sil"
 #| msgid "Ctrl+S"
 msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
-msgstr "Kontrol+S"
+msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:188
 #, fuzzy
@@ -453,7 +454,7 @@ msgstr "Kontrol+S"
 #| msgid "Ctrl+O"
 msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
-msgstr "Kontrol+O"
+msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:189
 #, fuzzy
@@ -461,7 +462,7 @@ msgstr "Kontrol+O"
 #| msgid "Ctrl+G"
 msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
-msgstr "Kontrol+G"
+msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:190
 #, fuzzy
@@ -469,114 +470,114 @@ msgstr "Kontrol+G"
 #| msgid "Ctrl+Shift+G"
 msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
-msgstr "Kontrol+Üst Karakter+G"
+msgstr "Ctrl+Shift+G"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
-msgstr "Seçimi sil"
+msgstr "امحُ المحدد"
 
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Group selection"
-msgstr "Seçimi grupla"
+msgstr "تجميع التحديد"
 
 #: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
-msgstr "Seçimin grubunu kaldır"
+msgstr "فك تجميع التحديد"
 
 #: widgets/properties/widgets/actionswidget.cpp:63
 msgctxt "ActionsWidget|"
 msgid "Actions"
-msgstr "Eylemler"
+msgstr "الإجراءات"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:28
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
-msgstr "Silgi Boyutu"
+msgstr "حجم الممحاة"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:29
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
-msgstr "Yazıtipi Puntosu"
+msgstr "حجم الخط"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:50
 msgctxt "StrokeColorWidget|"
 msgid "Color"
-msgstr "Renk"
+msgstr "اللون"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
-msgstr "Kalınlık"
+msgstr "السّمك"
 
 #: widgets/serializer/loader.cpp:35 widgets/serializer/serializer.cpp:121
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
-msgstr "Drawy (*.%1)"
+msgstr "السبورة (*.%1)"
 
 #: widgets/serializer/loader.cpp:39
 msgctxt "QObject|"
 msgid "Open File"
-msgstr "Dosya Aç"
+msgstr "افتح الملف"
 
 #: widgets/serializer/serializer.cpp:118
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr "Başlıksız.%1"
+msgstr "غير معنون.%1"
 
 #: widgets/serializer/serializer.cpp:122
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "Dosyayı Kaydet"
+msgstr "احفظ الملفّ"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
-msgstr "Ok Aracı"
+msgstr "أداة السهم"
 
 #: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
-msgstr "Elips Aracı"
+msgstr "أداة الشكل البيضاوي"
 
 #: widgets/tools/erasertool.cpp:159
 msgctxt "QObject|"
 msgid "Eraser Tool"
-msgstr "Silgi Aracı"
+msgstr "أداة الممحاة"
 
 #: widgets/tools/freeformtool.cpp:46
 msgctxt "QObject|"
 msgid "Pen Tool"
-msgstr "Kalem Aracı"
+msgstr "أداة الريشة"
 
 #: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
-msgstr "Çizgi Aracı"
+msgstr "أداة رسم الخطوط"
 
 #: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
-msgstr "Taşıma Aracı"
+msgstr "أداة التّحريك"
 
 #: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
-msgstr "Dörtgen Aracı"
+msgstr "أداة المستطيل"
 
 #: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
-msgstr "Seçim Aracı"
+msgstr "أداة التحديد"
 
 #: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
-msgstr "Metin Aracı"
+msgstr "أداة النصوص"
 
 #: widgets/window/window.cpp:66
 msgctxt "MainWindow|"
