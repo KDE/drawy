@@ -43,7 +43,9 @@ void RectangleItemTest::shouldSerialize_data()
     QTest::addColumn<QString>("name");
     QTest::addColumn<QPointF>("start");
     QTest::addColumn<QPointF>("end");
-    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5);
+    QTest::addColumn<int>("strokeWidth");
+    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5) << 1;
+    QTest::addRow("rectangle2") << u"rectangle2"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5;
 }
 
 void RectangleItemTest::shouldSerialize()
@@ -51,11 +53,13 @@ void RectangleItemTest::shouldSerialize()
     QFETCH(QString, name);
     QFETCH(QPointF, start);
     QFETCH(QPointF, end);
+    QFETCH(int, strokeWidth);
 
     RectangleItem f;
     // Becarefull order ! start before end !
     f.setStart(start);
     f.setEnd(end);
+    f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();

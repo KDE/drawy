@@ -20,6 +20,11 @@ void ArrowItemTest::shouldHaveDefaultValues()
 {
     const ArrowItem i;
     QCOMPARE(i.type(), Item::Type::Arrow);
+    const auto properties = QVector<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity;
+    QCOMPARE(i.propertyTypes().count(), 3);
+    for (const auto &prop : properties) {
+        QVERIFY(i.propertyTypes().contains(prop));
+    }
 }
 
 void ArrowItemTest::shouldSerializeDefaultValue()
