@@ -9,6 +9,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
 
 FreeformItem::FreeformItem()
@@ -251,4 +252,10 @@ QJsonObject FreeformItem::serialize() const
 {
     const FreeFormSerializer serialize(this);
     return serialize.serialize();
+}
+
+void FreeformItem::deserialize(const QJsonObject &obj)
+{
+    FreeformDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

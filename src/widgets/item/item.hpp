@@ -51,6 +51,7 @@ public:
     [[nodiscard]] static QString convertEnumToString(Item::Type type);
 
     [[nodiscard]] virtual QJsonObject serialize() const = 0;
+    virtual void deserialize(const QJsonObject &obj) = 0;
 
 protected:
     QRectF m_boundingBox{};

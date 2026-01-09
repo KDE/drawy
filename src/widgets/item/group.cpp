@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "group.hpp"
+#include "serializer/groupdeserializer.hpp"
 #include "serializer/groupserializer.hpp"
 
 #include <QJsonObject>
@@ -138,4 +139,10 @@ QJsonObject GroupItem::serialize() const
 {
     const GroupSerializer serializer(this);
     return serializer.serialize();
+}
+
+void GroupItem::deserialize(const QJsonObject &obj)
+{
+    GroupDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

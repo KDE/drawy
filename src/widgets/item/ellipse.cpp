@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "ellipse.hpp"
+#include "serializer/ellipsedeserializer.hpp"
 #include "serializer/ellipseserializer.hpp"
 #include <QJsonObject>
 
@@ -71,4 +72,10 @@ QJsonObject EllipseItem::serialize() const
 {
     const EllipseSerializer serializer(this);
     return serializer.serialize();
+}
+
+void EllipseItem::deserialize(const QJsonObject &obj)
+{
+    EllipseDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

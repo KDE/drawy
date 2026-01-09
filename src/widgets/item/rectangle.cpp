@@ -5,6 +5,7 @@
 #include "rectangle.hpp"
 
 #include "common/utils/math.hpp"
+#include "serializer/rectangledeserializer.hpp"
 #include "serializer/rectangleserializer.hpp"
 #include <QJsonObject>
 
@@ -56,4 +57,10 @@ QJsonObject RectangleItem::serialize() const
 {
     const RectangleSerializer serialize(this);
     return serialize.serialize();
+}
+
+void RectangleItem::deserialize(const QJsonObject &obj)
+{
+    RectangleDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

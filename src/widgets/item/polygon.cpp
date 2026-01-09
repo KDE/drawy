@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "polygon.hpp"
+#include "serializer/polygondeserializer.hpp"
 #include "serializer/polygonserializer.hpp"
 #include <QJsonObject>
 
@@ -93,4 +94,10 @@ void PolygonItem::translate(const QPointF &amount)
     m_end += amount;
 
     m_updateBoundingBox();
+}
+
+void PolygonItem::deserialize(const QJsonObject &obj)
+{
+    PolygonDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

@@ -24,6 +24,7 @@ public:
     [[nodiscard]] const QPointF &end() const;
 
     [[nodiscard]] QJsonObject serialize() const override;
+    void deserialize(const QJsonObject &obj) override;
 
 private:
     QPointF m_start{};

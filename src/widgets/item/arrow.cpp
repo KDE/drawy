@@ -5,6 +5,7 @@
 #include "arrow.hpp"
 
 #include "common/utils/math.hpp"
+#include "serializer/arrowdeserializer.hpp"
 #include "serializer/arrowserializer.hpp"
 #include <QJsonObject>
 
@@ -89,4 +90,10 @@ QJsonObject ArrowItem::serialize() const
 {
     const ArrowSerializer serializer(this);
     return serializer.serialize();
+}
+
+void ArrowItem::deserialize(const QJsonObject &obj)
+{
+    ArrowDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

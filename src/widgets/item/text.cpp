@@ -10,6 +10,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "serializer/textdeserializer.hpp"
 #include "serializer/textserializer.hpp"
 
 /*
@@ -465,4 +466,10 @@ QJsonObject TextItem::serialize() const
 {
     const TextSerializer serialize(this);
     return serialize.serialize();
+}
+
+void TextItem::deserialize(const QJsonObject &obj)
+{
+    TextDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }

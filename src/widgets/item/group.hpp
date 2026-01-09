@@ -33,6 +33,7 @@ public:
     [[nodiscard]] Item::Type type() const override;
 
     [[nodiscard]] QJsonObject serialize() const override;
+    void deserialize(const QJsonObject &obj) override;
 
 private:
     QVector<std::shared_ptr<Item>> m_items;

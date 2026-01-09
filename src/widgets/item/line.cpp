@@ -5,6 +5,7 @@
 #include "line.hpp"
 
 #include "common/utils/math.hpp"
+#include "serializer/linedeserializer.hpp"
 #include "serializer/lineserializer.hpp"
 #include <QJsonObject>
 
@@ -34,4 +35,10 @@ QJsonObject LineItem::serialize() const
 {
     const LineSerializer serialize(this);
     return serialize.serialize();
+}
+
+void LineItem::deserialize(const QJsonObject &obj)
+{
+    LineDeserializer deserializer(this);
+    deserializer.deserialize(obj);
 }
