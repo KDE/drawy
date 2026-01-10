@@ -23,13 +23,13 @@ public:
     const QPoint &point() const;
     bool dirty() const;
     void setDirty(bool dirty);
-    QPixmap *image() const;
-    QPainter *painter() const;
+
+    QPixmap &pixmap() const;
+    void paint(const std::function<void(QPainter &)> &paintFunc);
 
 private:
     QPoint m_point{};
-    std::unique_ptr<QPixmap> m_image{nullptr};
-    std::unique_ptr<QPainter> m_painter{};
+    std::unique_ptr<QPixmap> m_pixmap{nullptr};
     std::weak_ptr<CacheCell> nextCell{};
     std::weak_ptr<CacheCell> prevCell{};
     bool m_dirty{};

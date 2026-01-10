@@ -40,7 +40,7 @@ void Common::renderCanvas(ApplicationContext *context)
         // canvasPainter.restore();
 
         if (cell->dirty()) {
-            cell->image()->fill(Qt::transparent);
+            cell->pixmap().fill(Qt::transparent);
             cell->setDirty(false);
 
             QList<std::shared_ptr<Item>> intersectingItems{
@@ -52,19 +52,18 @@ void Common::renderCanvas(ApplicationContext *context)
                 continue;
 
             const qreal zoomFactor{context->renderingContext().zoomFactor()};
-
             const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
 
-            cell->painter()->resetTransform();
-            cell->painter()->scale(zoomFactor, zoomFactor);
-
-            for (const auto &intersectingItem : intersectingItems) {
-                intersectingItem->draw(*cell->painter(), topLeftPoint);
-            }
+            cell->paint([&](QPainter &painter) -> void {
+                painter.scale(zoomFactor, zoomFactor);
+                for (const auto &intersectingItem : intersectingItems) {
+                    intersectingItem->draw(painter, topLeftPoint);
+                }
+            });
         }
 
         context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
-            painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), *cell->image());
+            painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), cell->pixmap());
         });
     }
 
