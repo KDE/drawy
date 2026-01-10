@@ -21,6 +21,11 @@ void TextItemTest::shouldHaveDefaultValues()
 {
     const TextItem i;
     QCOMPARE(i.type(), Item::Type::Text);
+    const auto properties = QVector<Property::Type>() << Property::Type::FontSize << Property::Type::StrokeColor << Property::Type::Opacity;
+    QCOMPARE(i.propertyTypes().count(), 3);
+    for (const auto &prop : properties) {
+        QVERIFY(i.propertyTypes().contains(prop));
+    }
 }
 
 void TextItemTest::shouldSerializeDefaultValue()

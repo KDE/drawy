@@ -18,14 +18,14 @@ public:
     explicit ToolBar(QWidget *parent = nullptr);
     ~ToolBar() override;
 
-    [[nodiscard]] Tool *curTool() const;
-    void addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString &name);
+    [[nodiscard]] Tool &curTool() const;
+    void addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name);
 
-    [[nodiscard]] Tool *tool(Tool::Type type) const;
+    [[nodiscard]] Tool &tool(Tool::Type type) const;
     void changeTool(Tool::Type type);
 
 Q_SIGNALS:
-    void toolChanged(Tool *);
+    void toolChanged(Tool &);
 
 private:
     void createButtons() const;

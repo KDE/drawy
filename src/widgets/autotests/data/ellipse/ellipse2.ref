@@ -1,13 +1,13 @@
 {
     "bounding_box": {
         "height": 24.5,
-        "width": 32,
-        "x": -11,
+        "width": 29.3,
+        "x": -10.3,
         "y": -6
     },
     "bounding_box_padding": 10,
     "end": {
-        "x": 10,
+        "x": 8,
         "y": 7.5
     },
     "properties": [
@@ -17,16 +17,16 @@
         },
         {
             "type": "StrokeColor",
-            "value": "#ff0000"
+            "value": "#FF00FF"
         },
         {
             "type": "StrokeWidth",
-            "value": 1
+            "value": 5
         }
     ],
     "start": {
-        "x": 0,
+        "x": 0.7,
         "y": 5
     },
-    "type": "RECTANGLE"
+    "type": "ELLIPSE"
 }

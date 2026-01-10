@@ -21,6 +21,8 @@ public:
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
 
+    [[nodiscard]] bool operator==(const RectangleItem &other) const;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 };

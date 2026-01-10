@@ -23,6 +23,6 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    void applyCustomStyles();
+    LIBDRAWYWIDGETS_NO_EXPORT void applyCustomStyles();
     bool m_config_useSystemStyles{true};
 };

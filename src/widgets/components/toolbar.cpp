@@ -25,17 +25,17 @@ ToolBar::ToolBar(QWidget *parent)
 
 ToolBar::~ToolBar() = default;
 
-Tool *ToolBar::curTool() const
+Tool &ToolBar::curTool() const
 {
     const Tool::Type curID{static_cast<Tool::Type>(m_group->checkedId())};
 
     if (m_tools.find(curID) == m_tools.end())
-        throw std::logic_error("Trying to access non existent tool");
+        throw std::logic_error("Trying to access a non existent tool");
 
-    return m_tools.at(curID).get();
+    return *m_tools.at(curID);
 }
 
-void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString &name)
+void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name)
 {
     if (!tool) {
         return;
@@ -44,7 +44,7 @@ void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString
     ApplicationContext *context{ApplicationContext::instance()};
     auto btn{new QPushButton(this)};
     btn->setToolTip(name);
-    btn->setIcon(context->uiContext()->iconManager()->icon(tool->icon()));
+    btn->setIcon(context->uiContext().iconManager().icon(tool->icon()));
 
     btn->setCheckable(true);
     btn->setProperty("class", u"drawlyToolButton"_s);
@@ -55,7 +55,7 @@ void ToolBar::addTool(std::shared_ptr<Tool> tool, Tool::Type type, const QString
     m_layout->addWidget(btn);
     if (m_tools.size() == 1) {
         m_group->button(static_cast<int>(type))->setChecked(true);
-        Q_EMIT toolChanged(tool.get());
+        Q_EMIT toolChanged(*tool);
     }
 }
 
@@ -67,12 +67,9 @@ void ToolBar::changeTool(Tool::Type type)
     Q_EMIT toolChanged(curTool());
 }
 
-Tool *ToolBar::tool(Tool::Type type) const
+Tool &ToolBar::tool(Tool::Type type) const
 {
-    if (m_tools.empty()) {
-        return nullptr;
-    }
-    return m_tools.at(type).get();
+    return *m_tools.at(type);
 }
 
 void ToolBar::onToolChanged(int id)

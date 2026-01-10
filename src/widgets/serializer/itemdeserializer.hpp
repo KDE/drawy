@@ -15,7 +15,6 @@ public:
 
     virtual void deserialize(const QJsonObject &obj);
 
-protected:
     [[nodiscard]] static QJsonArray array(const QJsonValue &value);
     [[nodiscard]] static QJsonValue value(const QJsonObject &obj, const QString &key);
     [[nodiscard]] static QJsonObject object(const QJsonValue &value);

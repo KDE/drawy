@@ -2,8 +2,10 @@
 <component type="desktop-application">
   <id>org.kde.drawy</id>
   <name>Drawy</name>
+  <name xml:lang="ar">السبورة</name>
   <name xml:lang="ca">Drawy</name>
   <name xml:lang="ca-valencia">Drawy</name>
+  <name xml:lang="de">Drawy</name>
   <name xml:lang="es">Drawy</name>
   <name xml:lang="eu">Drawy</name>
   <name xml:lang="he">Drawy</name>
@@ -16,8 +18,10 @@
   <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
   <summary>Your handy, infinite brainstorming tool</summary>
+  <summary xml:lang="ar">أداة مفيدة غير محدودة لتبادل الأفكار</summary>
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
+  <summary xml:lang="de">Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung</summary>
   <summary xml:lang="es">Herramienta práctica e infinita para generar lluvia de ideas</summary>
   <summary xml:lang="eu">Zure ideia-jasa tresna erabilgarri eta infinitua</summary>
   <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
@@ -36,8 +40,10 @@
   <project_license>GPL-3.0-or-later</project_license>
   <description>
     <p>Drawy is a work-in-progress infinite whiteboard tool, which aims to be a native desktop alternative to the amazing web-based Excalidraw.</p>
+    <p xml:lang="ar">السبورة  هي أداة لوحة بيضاء لا نهائية لا تزال تحت التطوير، وتهدف إلى أن تكون بديلاً أصلياً لبرنامج Excalidraw الرائع القائم على الويب.</p>
     <p xml:lang="ca">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
     <p xml:lang="ca-valencia">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
+    <p xml:lang="de">Drawy ist ein in Entwicklung befindliches Whiteboard-Werkzeug mit unendlicher Zeichenfläche. Ziel ist, eine für den Desktop optimierte Alternative zum fantastischen webbasierten Excalidraw zu bieten.</p>
     <p xml:lang="es">Drawy es una herramienta de pizarra infinita en desarrollo, que pretende ser una alternativa nativa de escritorio a la increíble herramienta web Excalidraw.</p>
     <p xml:lang="eu">Drawy garapen fasean dagoen arbela mugagabeko tresna bat da, web oinarriko Excalidraw tresna bikainaren mahaigaineko alternatiba natiboa izatea helburu duena.</p>
     <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>

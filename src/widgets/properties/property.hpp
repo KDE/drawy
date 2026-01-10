@@ -7,8 +7,10 @@
 #include "libdrawywidgets_private_export.h"
 #include <QVariant>
 #include <utility>
+class QDebug;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Property
 {
+    Q_GADGET
 public:
     Property();
 
@@ -22,6 +24,7 @@ public:
         Actions,
         Null
     };
+    Q_ENUM(Type)
 
     template<typename T>
     Property(T value, Type type)
@@ -48,7 +51,10 @@ public:
     [[nodiscard]] static Property::Type convertStringToEnum(const QString &str);
     [[nodiscard]] static QString convertEnumToString(Property::Type type);
 
+    [[nodiscard]] bool operator==(const Property &other) const;
+
 private:
     QVariant m_value{};
     Type m_type{};
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const Property &t);

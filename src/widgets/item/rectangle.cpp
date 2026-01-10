@@ -64,3 +64,8 @@ void RectangleItem::deserialize(const QJsonObject &obj)
     RectangleDeserializer deserializer(this);
     deserializer.deserialize(obj);
 }
+
+bool RectangleItem::operator==(const RectangleItem &other) const
+{
+    return start() == other.start() && PolygonItem::operator==(other);
+}

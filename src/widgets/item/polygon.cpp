@@ -101,3 +101,16 @@ void PolygonItem::deserialize(const QJsonObject &obj)
     PolygonDeserializer deserializer(this);
     deserializer.deserialize(obj);
 }
+
+bool PolygonItem::operator==(const PolygonItem &other) const
+{
+    return m_start == other.start() && m_end == other.end() && Item::operator==(other);
+}
+
+QDebug operator<<(QDebug d, const PolygonItem &t)
+{
+    d.space() << "start:" << t.start();
+    d.space() << "end:" << t.end();
+    d.space() << "Item: " << static_cast<const Item &>(t);
+    return d;
+}

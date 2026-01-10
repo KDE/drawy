@@ -3,7 +3,11 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 set(DRAWY_LIB_SOVERSION "0")
-add_library(libdrawywidgets)
+add_library(
+    libdrawywidgets
+    jobs/loadjob.hpp
+    jobs/loadjob.cpp
+)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -160,8 +164,6 @@ target_sources(
         resources/style.qss
         drawycommandlineparser.h
         drawycommandlineparser.cpp
-        serializer/loader.cpp
-        serializer/loader.hpp
         serializer/itemserializer.hpp
         serializer/itemserializer.cpp
         serializer/rectangleserializer.hpp

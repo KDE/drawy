@@ -30,25 +30,25 @@ PolygonDrawingTool::PolygonDrawingTool()
 
 void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    UIContext &uiContext{context->uiContext()};
 
-    if (uiContext->event()->button() == Qt::LeftButton) {
-        SpatialContext *spatialContext{context->spatialContext()};
-        CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
-        RenderingContext *renderingContext{context->renderingContext()};
+    if (uiContext.event().button() == Qt::LeftButton) {
+        SpatialContext &spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
+        RenderingContext &renderingContext{context->renderingContext()};
 
         curItem = std::dynamic_pointer_cast<PolygonItem>(m_itemFactory->create());
 
-        curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
-        curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
+        curItem->setProperty(Property::Type::StrokeWidth, uiContext.propertyManager().value(Property::Type::StrokeWidth));
+        curItem->setProperty(Property::Type::StrokeColor, uiContext.propertyManager().value(Property::Type::StrokeColor));
 
-        curItem->setStart(transformer->viewToWorld(uiContext->event()->pos()));
+        curItem->setStart(transformer.viewToWorld(uiContext.event().pos()));
 
-        const qreal zoom{renderingContext->zoomFactor()};
+        const qreal zoom{renderingContext.zoomFactor()};
 
-        QPainter *painter{renderingContext->overlayPainter()};
-        painter->save();
-        painter->scale(zoom, zoom);
+        QPainter &painter{renderingContext.overlayPainter()};
+        painter.save();
+        painter.scale(zoom, zoom);
 
         m_isDrawing = true;
     }
@@ -57,49 +57,49 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isDrawing) {
-        SpatialContext *spatialContext{context->spatialContext()};
-        CoordinateTransformer *transformer{spatialContext->coordinateTransformer()};
-        RenderingContext *renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
+        SpatialContext &spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
+        RenderingContext &renderingContext{context->renderingContext()};
+        UIContext &uiContext{context->uiContext()};
 
-        QPainter *overlayPainter{renderingContext->overlayPainter()};
+        QPainter &overlayPainter{renderingContext.overlayPainter()};
 
-        const QPointF offsetPos{spatialContext->offsetPos()};
-        curItem->erase(*overlayPainter, offsetPos);
-        curItem->setEnd(transformer->viewToWorld(uiContext->event()->pos()));
-        curItem->draw(*overlayPainter, offsetPos);
+        const QPointF offsetPos{spatialContext.offsetPos()};
+        curItem->erase(overlayPainter, offsetPos);
+        curItem->setEnd(transformer.viewToWorld(uiContext.event().pos()));
+        curItem->draw(overlayPainter, offsetPos);
 
-        renderingContext->markForUpdate();
+        renderingContext.markForUpdate();
     }
 }
 
 void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    UIContext &uiContext{context->uiContext()};
 
-    if (uiContext->event()->button() == Qt::LeftButton && m_isDrawing) {
-        SpatialContext *spatialContext{context->spatialContext()};
-        RenderingContext *renderingContext{context->renderingContext()};
-        CommandHistory *commandHistory{spatialContext->commandHistory()};
+    if (uiContext.event().button() == Qt::LeftButton && m_isDrawing) {
+        SpatialContext &spatialContext{context->spatialContext()};
+        RenderingContext &renderingContext{context->renderingContext()};
+        CommandHistory &commandHistory{spatialContext.commandHistory()};
 
         QVector<std::shared_ptr<Item>> itemVector{curItem};
-        commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
+        commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
 
-        QPainter *overlayPainter{renderingContext->overlayPainter()};
-        renderingContext->canvas()->overlay()->fill(Qt::transparent);
-        overlayPainter->restore();
+        QPainter &overlayPainter{renderingContext.overlayPainter()};
+        renderingContext.canvas().overlay()->fill(Qt::transparent);
+        overlayPainter.restore();
 
         m_isDrawing = false;
 
-        renderingContext->markForRender();
-        renderingContext->markForUpdate();
+        renderingContext.markForRender();
+        renderingContext.markForUpdate();
     }
 }
 
 void PolygonDrawingTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    context->uiContext()->event()->setButton(Qt::LeftButton);
+    context->uiContext().event().setButton(Qt::LeftButton);
     mouseReleased(context);
 }
 

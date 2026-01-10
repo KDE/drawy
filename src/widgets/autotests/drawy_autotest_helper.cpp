@@ -47,7 +47,11 @@ void AutoTestHelper::compareFile(const QString &repo, const QByteArray &data, co
     QDir().mkpath(QLatin1StringView(DRAWY_BINARY_DATA_DIR) + repo + name);
     // Create generated file
     QFile f(generatedFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const bool openFile = f.open(QIODevice::WriteOnly | QIODevice::Truncate);
+    if (!openFile) {
+        qWarning() << "impossible to open: " << generatedFile;
+    }
+    QVERIFY(openFile);
     f.write(data);
     f.close();
 

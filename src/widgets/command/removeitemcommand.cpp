@@ -22,30 +22,30 @@ RemoveItemCommand::RemoveItemCommand(QVector<std::shared_ptr<Item>> items)
 
 void RemoveItemCommand::execute(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto quadtree{context->spatialContext()->quadtree()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &selectedItems{context->selectionContext().selectedItems()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer->worldToGrid(item->boundingBox()).toRect()};
+    for (auto &item : m_items) {
+        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
-        quadtree->deleteItem(item, false);
-        cacheGrid->markDirty(dirtyRegion);
+        quadtree.deleteItem(item, false);
+        cacheGrid.markDirty(dirtyRegion);
     }
 }
 
 void RemoveItemCommand::undo(ApplicationContext *context)
 {
-    auto transformer{context->spatialContext()->coordinateTransformer()};
-    auto quadtree{context->spatialContext()->quadtree()};
-    auto cacheGrid{context->spatialContext()->cacheGrid()};
+    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto &quadtree{context->spatialContext().quadtree()};
+    auto &cacheGrid{context->spatialContext().cacheGrid()};
 
-    for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer->worldToGrid(item->boundingBox()).toRect()};
+    for (auto &item : m_items) {
+        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
-        quadtree->insertItem(item, false);
-        cacheGrid->markDirty(dirtyRegion);
+        quadtree.insertItem(item, false);
+        cacheGrid.markDirty(dirtyRegion);
     }
 }

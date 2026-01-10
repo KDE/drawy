@@ -45,6 +45,7 @@
                 qtcreator
 
                 cmake
+                ninja
                 bear
                 entr
                 zstd.dev
@@ -53,6 +54,7 @@
                 libclang.python
                 kdePackages.extra-cmake-modules
                 kdePackages.kcrash.dev
+                kdePackages.kwidgetsaddons
               ]);
           };
       });

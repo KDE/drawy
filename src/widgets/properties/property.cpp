@@ -61,3 +61,16 @@ QString Property::convertEnumToString(Property::Type type)
     }
     return {};
 }
+
+bool Property::operator==(const Property &other) const
+{
+    return m_value == other.m_value && m_type == other.m_type;
+}
+
+QDebug operator<<(QDebug d, const Property &t)
+{
+    d.space() << "value:" << t.variant();
+    d.space() << "type:" << t.type();
+    return d;
+}
+#include "moc_property.cpp"

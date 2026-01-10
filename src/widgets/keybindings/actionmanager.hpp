@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include "jobs/loadjob.hpp"
 #include <QObject>
 class ApplicationContext;
-
 class ActionManager : public QObject
 {
     Q_OBJECT
@@ -33,6 +33,9 @@ public:
     void saveToFile();
     void loadFromFile();
 
+    void loadFile(const QString &fileName);
+
 private:
+    void slotLoadDone(const LoadJob::LoadInfo &info);
     ApplicationContext *const m_context;
 };
