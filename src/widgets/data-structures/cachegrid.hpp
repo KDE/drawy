@@ -13,11 +13,10 @@ class CacheGrid;
 class CacheCell
 {
 public:
-    static QSize cellSize();
-    static int counter;
-
-    explicit CacheCell(const QPoint &point);
+    explicit CacheCell(const QPoint &point, const QSize &size);
     ~CacheCell();
+
+    const QSize &cellSize() const;
 
     QRect rect() const;
     const QPoint &point() const;
@@ -34,6 +33,8 @@ private:
     std::weak_ptr<CacheCell> prevCell{};
     bool m_dirty{};
 
+    QSize m_size{};
+
     // CacheGrid can access private members
     friend CacheGrid;
 };
@@ -41,21 +42,25 @@ private:
 class CacheGrid
 {
 public:
-    explicit CacheGrid(int maxSize);
+    explicit CacheGrid(int maxSize, const QSize &cellSize);
     ~CacheGrid();
 
     QList<std::shared_ptr<CacheCell>> queryCells(const QRect &rect);
     std::shared_ptr<CacheCell> cell(const QPoint &point);
     void markDirty(const QRect &rect);
     void markAllDirty();
+
     void setSize(int newSize);
     int size() const;
+
+    const QSize &cellSize() const;
+
     void clear();
 
 private:
     QHash<QPoint, std::shared_ptr<CacheCell>> m_grid{};
-    std::shared_ptr<CacheCell> m_headCell{std::make_shared<CacheCell>(QPoint{0, 0})};
-    std::shared_ptr<CacheCell> m_tailCell{std::make_shared<CacheCell>(QPoint{0, 0})};
+    std::shared_ptr<CacheCell> m_headCell{std::make_shared<CacheCell>(QPoint{0, 0}, QSize{0, 0})};
+    std::shared_ptr<CacheCell> m_tailCell{std::make_shared<CacheCell>(QPoint{0, 0}, QSize{0, 0})};
 
     QSize m_cellSize{};
     int m_curSize{0};

@@ -79,13 +79,10 @@ void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
     pen.setWidth(property(Property::Type::StrokeWidth).value<int>() * 10);
     pen.setColor(Qt::transparent);
 
-    painter.save();
     painter.setPen(pen);
     painter.setCompositionMode(QPainter::CompositionMode_Source);
 
     drawItem(painter, offset);
-
-    painter.restore();
 }
 
 void PolygonItem::translate(const QPointF &amount)

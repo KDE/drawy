@@ -120,8 +120,9 @@ int RenderingContext::fps() const
 
 void RenderingContext::canvasResized()
 {
+    const QSize &cellSize{m_applicationContext->spatialContext().cacheGrid().cellSize()};
     const int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
-    const int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
+    const int cellW{cellSize.width()}, cellH{cellSize.height()};
     const int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 

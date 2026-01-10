@@ -23,8 +23,6 @@ public:
     virtual void draw(QPainter &painter, const QPointF &offset) = 0;
     virtual void erase(QPainter &painter, const QPointF &offset) const;
 
-    virtual void translate(const QPointF &amount) = 0;
-
     virtual const QRectF boundingBox() const;
 
     [[nodiscard]] int boundingBoxPadding() const;
@@ -58,9 +56,15 @@ public:
 
     [[nodiscard]] bool operator==(const Item &other) const;
 
+    const QTransform &transformObj() const;
+
+    virtual void translate(const QPointF &amount) = 0;
+
 protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
+
+    QTransform m_transform{};
 
     virtual void drawItem(QPainter &painter, const QPointF &offset) const = 0;
 };
