@@ -9,6 +9,7 @@
 class Canvas;
 class ApplicationContext;
 class CacheGrid;
+class ItemCache;
 
 class RenderingContext : public QObject
 {
@@ -22,6 +23,7 @@ public:
 
     Canvas &canvas() const;
     CacheGrid &cacheGrid() const;
+    ItemCache &itemCache() const;
 
     void markForRender();
     void markForUpdate();
@@ -48,5 +50,6 @@ private:
     qreal m_zoomFactor{1};
 
     std::unique_ptr<CacheGrid> m_cacheGrid{nullptr};
+    std::unique_ptr<ItemCache> m_itemCache{nullptr};
     ApplicationContext *const m_applicationContext;
 };

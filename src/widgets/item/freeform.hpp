@@ -41,6 +41,8 @@ public:
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
 
+    bool needsCaching() const override;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
     QList<QPointF> m_points{};
