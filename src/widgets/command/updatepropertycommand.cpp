@@ -9,6 +9,7 @@
 
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
@@ -35,7 +36,7 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
     }
 
     QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
-    context->spatialContext().cacheGrid().markDirty(gridDirtyRegion);
+    context->renderingContext().cacheGrid().markDirty(gridDirtyRegion);
 };
 
 void UpdatePropertyCommand::undo(ApplicationContext *context)
@@ -53,5 +54,5 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     }
 
     QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
-    context->spatialContext().cacheGrid().markDirty(gridDirtyRegion);
+    context->renderingContext().cacheGrid().markDirty(gridDirtyRegion);
 };

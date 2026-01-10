@@ -8,6 +8,7 @@
 
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
@@ -44,7 +45,7 @@ void UngroupCommand::execute(ApplicationContext *context)
         }
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
 void UngroupCommand::undo(ApplicationContext *context)
@@ -66,5 +67,5 @@ void UngroupCommand::undo(ApplicationContext *context)
         }
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }

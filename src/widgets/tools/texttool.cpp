@@ -72,13 +72,13 @@ void TextTool::mousePressed(ApplicationContext *context)
         } else {
             if (m_curItem != nullptr) {
                 m_curItem->setMode(TextItem::Mode::Normal);
-                spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+                renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
             }
 
             m_curItem = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
             m_curItem->setCaret(worldPos);
 
-            spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+            renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
             m_isSelecting = true;
             m_mouseMoved = false;
@@ -153,7 +153,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
             }
         }
 
-        spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
         renderingContext.markForRender();
         renderingContext.markForUpdate();
     }
@@ -188,7 +188,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         m_curItem->setSelectionStart(m_curItem->getPrevBreak(curIndex - 1));
         m_curItem->setSelectionEnd(m_curItem->getNextBreak(curIndex));
 
-        spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
         renderingContext.markForRender();
         renderingContext.markForUpdate();
     }
@@ -217,7 +217,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         m_curItem->setSelectionStart(start);
         m_curItem->setSelectionEnd(end + 1);
 
-        spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
         renderingContext.markForRender();
         renderingContext.markForUpdate();
     }
@@ -236,7 +236,7 @@ void TextTool::keyPressed(ApplicationContext *context)
         context->uiContext().keybindManager().enable();
         m_curItem = nullptr;
 
-        context->spatialContext().cacheGrid().markAllDirty();
+        context->renderingContext().cacheGrid().markAllDirty();
         context->renderingContext().markForRender();
         context->renderingContext().markForUpdate();
     }
@@ -448,7 +448,7 @@ void TextTool::keyPressed(ApplicationContext *context)
         context->spatialContext().quadtree().deleteItem(m_curItem);
         context->spatialContext().quadtree().insertItem(m_curItem);
 
-        context->spatialContext().cacheGrid().markAllDirty();
+        context->renderingContext().cacheGrid().markAllDirty();
         context->renderingContext().markForRender();
         context->renderingContext().markForUpdate();
     }
@@ -471,7 +471,7 @@ void TextTool::cleanup()
     auto &quadTree{spatialContext.quadtree()};
 
     m_curItem->setMode(TextItem::Mode::Normal);
-    spatialContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+    renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
     // enable keybindings again
     uiContext.keybindManager().enable();

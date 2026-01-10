@@ -50,7 +50,6 @@ void EraserTool::mouseMoved(ApplicationContext *context)
 
     // Erase previous box
     renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
-        painter.save();
         painter.setCompositionMode(QPainter::CompositionMode_Source);
         painter.fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
     });
@@ -75,7 +74,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
             item->setProperty(Property::Type::Opacity, Property{Common::eraseItemOpacity, Property::Type::Opacity});
 
             m_toBeErased.insert(item);
-            spatialContext.cacheGrid().markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+            renderingContext.cacheGrid().markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
             renderingContext.markForRender();
         }
 
@@ -91,7 +90,6 @@ void EraserTool::mouseMoved(ApplicationContext *context)
         QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
         painter.setPen(pen);
         painter.drawRect(curRect);
-        painter.restore();
     });
 
     renderingContext.markForUpdate();

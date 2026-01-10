@@ -8,8 +8,8 @@
 
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
-#include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
 
@@ -28,7 +28,7 @@ void DeselectCommand::execute(ApplicationContext *context)
         selectedItems.erase(item);
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
 void DeselectCommand::undo(ApplicationContext *context)
@@ -41,5 +41,5 @@ void DeselectCommand::undo(ApplicationContext *context)
         selectedItems.insert(item);
     }
 
-    context->spatialContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
 }

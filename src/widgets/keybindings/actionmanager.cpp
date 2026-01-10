@@ -369,7 +369,7 @@ void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
     context->renderingContext().setZoomFactor(info.zoomFactor);
 
     context->spatialContext().setOffsetPos(info.offsetPos);
-    context->spatialContext().cacheGrid().markAllDirty();
+    context->renderingContext().cacheGrid().markAllDirty();
     context->renderingContext().markForRender();
     context->renderingContext().markForUpdate();
 }

@@ -6,7 +6,6 @@
 
 #include <QWidget>
 class QuadTree;
-class CacheGrid;
 class CoordinateTransformer;
 class ApplicationContext;
 class CommandHistory;
@@ -21,7 +20,6 @@ public:
 
     // SpatialContext
     QuadTree &quadtree() const;
-    CacheGrid &cacheGrid() const;
     CoordinateTransformer &coordinateTransformer() const;
     CommandHistory &commandHistory() const;
 
@@ -32,7 +30,6 @@ public:
 
 private:
     std::unique_ptr<QuadTree> m_quadtree{nullptr};
-    std::unique_ptr<CacheGrid> m_cacheGrid{nullptr};
     std::unique_ptr<CoordinateTransformer> m_coordinateTransformer{nullptr};
     std::unique_ptr<CommandHistory> m_commandHistory{nullptr};
 
