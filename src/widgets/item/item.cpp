@@ -121,4 +121,15 @@ QString Item::convertEnumToString(Item::Type type)
     return {};
 }
 
+bool Item::operator==(const Item &other) const
+{
+    return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties;
+}
+
+QDebug operator<<(QDebug d, const Item &t)
+{
+    d.space() << "boundingBox:" << t.boundingBox();
+    d.space() << "properties:" << t.properties();
+    return d;
+}
 #include "moc_item.cpp"

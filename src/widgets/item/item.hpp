@@ -8,6 +8,7 @@
 #include <QRect>
 
 #include "properties/property.hpp"
+class QDebug;
 class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Item
 {
@@ -55,9 +56,12 @@ public:
     [[nodiscard]] virtual QJsonObject serialize() const = 0;
     virtual void deserialize(const QJsonObject &obj) = 0;
 
+    [[nodiscard]] bool operator==(const Item &other) const;
+
 protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
 
     virtual void drawItem(QPainter &painter, const QPointF &offset) const = 0;
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const Item &t);

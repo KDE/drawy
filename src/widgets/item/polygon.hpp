@@ -6,7 +6,7 @@
 #include "libdrawywidgets_private_export.h"
 
 #include "item.hpp"
-
+class QDebug;
 class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonItem : public Item
 {
 public:
@@ -26,9 +26,12 @@ public:
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
 
+    [[nodiscard]] bool operator==(const PolygonItem &other) const;
+
 private:
     QPointF m_start{};
     QPointF m_end{};
 
     void m_updateBoundingBox();
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const PolygonItem &t);
