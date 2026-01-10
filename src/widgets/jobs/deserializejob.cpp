@@ -49,7 +49,7 @@ void DeserializeJob::setJsonObject(const QJsonObject &newJsonObject)
 
 void DeserializeJob::deserializeItems()
 {
-    QVector<std::shared_ptr<Item>> items;
+    QList<std::shared_ptr<Item>> items;
     QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(mJsonObject, u"items"_s));
     for (const QJsonValueRef &v : itemsArray) {
         const QJsonObject itemObj = ItemDeserializer::object(v);

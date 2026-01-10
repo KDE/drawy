@@ -32,7 +32,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         auto &renderingContext{context->renderingContext()};
         auto &transformer{spatialContext.coordinateTransformer()};
 
-        QVector<std::shared_ptr<Item>> intersectingItems{
+        QList<std::shared_ptr<Item>> intersectingItems{
             spatialContext.quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
                 return item->boundingBox().contains(pos);
             })};
@@ -42,7 +42,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         auto &commandHistory{spatialContext.commandHistory()};
 
         if (!(event.modifiers() & Qt::ShiftModifier)) {
-            QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
             commandHistory.insert(std::make_shared<DeselectCommand>(items));
         }
 
@@ -52,9 +52,9 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             auto &item{intersectingItems.back()};
             if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
                 // deselect the item if selected
-                commandHistory.insert(std::make_shared<DeselectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory.insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
             } else {
-                commandHistory.insert(std::make_shared<SelectCommand>(QVector<std::shared_ptr<Item>>{item}));
+                commandHistory.insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
             }
             m_isActive = false;
             lockState = false;
@@ -92,7 +92,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     const QRectF selectionBox{m_lastPos, curPos};
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
 
-    QVector<std::shared_ptr<Item>> intersectingItems{
+    QList<std::shared_ptr<Item>> intersectingItems{
         spatialContext.quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
             return rect.contains(item->boundingBox());
         })};
@@ -124,7 +124,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
 
         if (!selectedItems.empty()) {
             auto &commandHistory{context->spatialContext().commandHistory()};
-            QVector<std::shared_ptr<Item>> items{};
+            QList<std::shared_ptr<Item>> items{};
             for (const auto &item : selectedItems) {
                 items.push_back(item);
             }

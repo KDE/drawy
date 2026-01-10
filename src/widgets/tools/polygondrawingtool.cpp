@@ -82,7 +82,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         RenderingContext &renderingContext{context->renderingContext()};
         CommandHistory &commandHistory{spatialContext.commandHistory()};
 
-        QVector<std::shared_ptr<Item>> itemVector{curItem};
+        QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
 
         QPainter &overlayPainter{renderingContext.overlayPainter()};

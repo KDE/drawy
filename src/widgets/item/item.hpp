@@ -31,8 +31,8 @@ public:
 
     virtual void setProperty(const Property::Type propertyType, Property newObj);
     virtual const Property property(const Property::Type propertyType) const;
-    virtual const QVector<Property> properties() const;
-    virtual const QVector<Property::Type> propertyTypes() const;
+    virtual const QList<Property> properties() const;
+    virtual const QList<Property::Type> propertyTypes() const;
 
     enum class Type : int8_t {
         Freeform,

@@ -198,9 +198,9 @@ int FreeformItem::maxSize() const
 
 // If the number of points exceeds the limit, this method can be called
 // to split this freeform into multiple smaller freeforms
-QVector<std::shared_ptr<Item>> FreeformItem::split() const
+QList<std::shared_ptr<Item>> FreeformItem::split() const
 {
-    QVector<std::shared_ptr<Item>> items;
+    QList<std::shared_ptr<Item>> items;
 
     qsizetype pointSize{m_points.size()};
     for (qsizetype index = 0; index < pointSize; index++) {
@@ -238,12 +238,12 @@ Item::Type FreeformItem::type() const
     return Item::Type::Freeform;
 }
 
-const QVector<QPointF> &FreeformItem::points() const
+const QList<QPointF> &FreeformItem::points() const
 {
     return m_points;
 }
 
-const QVector<qreal> &FreeformItem::pressures() const
+const QList<qreal> &FreeformItem::pressures() const
 {
     return m_pressures;
 }

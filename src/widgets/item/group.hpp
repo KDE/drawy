@@ -20,13 +20,13 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    void group(const QVector<std::shared_ptr<Item>> &items);
-    [[nodiscard]] QVector<std::shared_ptr<Item>> unGroup();
+    void group(const QList<std::shared_ptr<Item>> &items);
+    [[nodiscard]] QList<std::shared_ptr<Item>> unGroup();
 
     void setProperty(const Property::Type propertyType, Property newObj) override;
     [[nodiscard]] const Property property(const Property::Type propertyType) const override;
-    [[nodiscard]] const QVector<Property> properties() const override;
-    [[nodiscard]] const QVector<Property::Type> propertyTypes() const override;
+    [[nodiscard]] const QList<Property> properties() const override;
+    [[nodiscard]] const QList<Property::Type> propertyTypes() const override;
 
     [[nodiscard]] const QRectF boundingBox() const override;
 
@@ -36,7 +36,7 @@ public:
     void deserialize(const QJsonObject &obj) override;
 
 private:
-    QVector<std::shared_ptr<Item>> m_items;
+    QList<std::shared_ptr<Item>> m_items;
 
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 };

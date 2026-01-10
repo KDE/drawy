@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include <QList>
 #include <QPainter>
 #include <QRectF>
-#include <QVector>
 #include <memory>
 #include <unordered_map>
 
@@ -30,7 +30,7 @@ public:
     using ItemPtr = std::shared_ptr<Item>;
 
 private:
-    QVector<ItemPtr> m_items{};
+    QList<ItemPtr> m_items{};
     QRectF m_boundingBox{};
     int m_capacity{};
     std::unique_ptr<QuadTree> m_topLeft{nullptr};
@@ -51,16 +51,16 @@ public:
     void updateItem(const ItemPtr &item, const QRectF &oldBoundingBox);
     void deleteItems(const QRectF &boundingBox);
 
-    void reorder(QVector<ItemPtr> &items) const;
+    void reorder(QList<ItemPtr> &items) const;
 
-    QVector<ItemPtr> getAllItems() const;
+    QList<ItemPtr> getAllItems() const;
     void clear();
 
     template<typename Shape, typename QueryCondition>
-    QVector<ItemPtr> queryItems(const Shape &shape, QueryCondition condition) const;
+    QList<ItemPtr> queryItems(const Shape &shape, QueryCondition condition) const;
 
     template<typename Shape>
-    QVector<ItemPtr> queryItems(const Shape &shape) const;
+    QList<ItemPtr> queryItems(const Shape &shape) const;
 
     void draw(QPainter &painter, const QPointF &offset) const;
     const QRectF &boundingBox() const;
@@ -70,7 +70,7 @@ private:
     void update(const ItemPtr &item, const QRectF &oldBoundingBox, bool inserted);
 
     template<typename Shape, typename QueryCondition>
-    void query(const Shape &shape, QueryCondition condition, QVector<ItemPtr> &out, std::unordered_map<ItemPtr, bool> &itemAlreadyPushed) const;
+    void query(const Shape &shape, QueryCondition condition, QList<ItemPtr> &out, std::unordered_map<ItemPtr, bool> &itemAlreadyPushed) const;
 
     void subdivide();
     void expand(const QPointF &point);

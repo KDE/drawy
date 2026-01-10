@@ -11,7 +11,7 @@ class ApplicationContext;
 class UpdatePropertyCommand : public ItemCommand
 {
 public:
-    UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items, Property newProperty);
+    UpdatePropertyCommand(QList<std::shared_ptr<Item>> items, Property newProperty);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

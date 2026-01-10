@@ -127,7 +127,7 @@ void QuadTree::clear()
     }
 }
 
-void QuadTree::reorder(QVector<ItemPtr> &items) const
+void QuadTree::reorder(QList<ItemPtr> &items) const
 {
     std::sort(items.begin(), items.end(), [&](const auto &firstItem, const auto &secondItem) {
         return m_orderedList->zIndex(firstItem) < m_orderedList->zIndex(secondItem);
@@ -195,9 +195,9 @@ void QuadTree::deleteItems(const QRectF &boundingBox)
     }
 }
 
-QVector<std::shared_ptr<Item>> QuadTree::getAllItems() const
+QList<std::shared_ptr<Item>> QuadTree::getAllItems() const
 {
-    QVector<std::shared_ptr<Item>> curItems{m_items};
+    QList<std::shared_ptr<Item>> curItems{m_items};
     if (m_topLeft != nullptr) {
         curItems += m_topLeft->getAllItems();
         curItems += m_topRight->getAllItems();

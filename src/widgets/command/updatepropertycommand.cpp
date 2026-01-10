@@ -13,7 +13,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
 
-UpdatePropertyCommand::UpdatePropertyCommand(QVector<std::shared_ptr<Item>> items, Property newProperty)
+UpdatePropertyCommand::UpdatePropertyCommand(QList<std::shared_ptr<Item>> items, Property newProperty)
     : ItemCommand{std::move(items)}
     , m_newProperty{std::move(newProperty)}
 {

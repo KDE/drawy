@@ -47,9 +47,9 @@ public:
     virtual Type type() const = 0;
     virtual IconManager::Icon icon() const = 0;
 
-    virtual const QVector<Property::Type> properties() const;
+    virtual const QList<Property::Type> properties() const;
 
 protected:
     QCursor m_cursor{};
-    QVector<Property::Type> m_properties;
+    QList<Property::Type> m_properties;
 };

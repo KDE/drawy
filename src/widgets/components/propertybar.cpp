@@ -55,7 +55,7 @@ void PropertyBar::updateProperties(Tool &tool)
         delete curItem;
     }
 
-    const QVector<Property::Type> properties{tool.properties()};
+    const QList<Property::Type> properties{tool.properties()};
     if (properties.empty()) {
         hide();
     } else {

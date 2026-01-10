@@ -17,7 +17,7 @@
 #include "item/group.hpp"
 #include "selectcommand.hpp"
 
-GroupCommand::GroupCommand(QVector<std::shared_ptr<Item>> items)
+GroupCommand::GroupCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
     , m_group(std::make_shared<GroupItem>())
 {

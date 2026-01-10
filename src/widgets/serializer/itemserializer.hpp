@@ -8,7 +8,7 @@
 #include "libdrawywidgets_private_export.h"
 #include "properties/property.hpp"
 #include <QJsonArray>
-#include <QVector>
+#include <QList>
 class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ItemSerializer
 {
@@ -31,7 +31,7 @@ protected:
     }
 
     template<typename T>
-    static QJsonArray toJson(const QVector<T> &vector)
+    static QJsonArray toJson(const QList<T> &vector)
     {
         QJsonArray result;
 

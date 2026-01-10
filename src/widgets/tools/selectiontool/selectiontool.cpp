@@ -73,7 +73,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
 
     auto &event{context->uiContext().event()};
     auto &commandHistory{context->spatialContext().commandHistory()};
-    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
     if (event.modifiers() & Qt::ShiftModifier)
@@ -103,7 +103,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     }
 }
 
-const QVector<Property::Type> SelectionTool::properties() const
+const QList<Property::Type> SelectionTool::properties() const
 {
     ApplicationContext *context{ApplicationContext::instance()};
     auto &selectedItems{context->selectionContext().selectedItems()};
@@ -115,10 +115,10 @@ const QVector<Property::Type> SelectionTool::properties() const
         }
     }
 
-    QVector<Property::Type> output(result.begin(), result.end());
+    QList<Property::Type> output(result.begin(), result.end());
 
     if (!selectedItems.empty()) {
-        output += QVector<Property::Type>{Property::Type::Actions};
+        output += QList<Property::Type>{Property::Type::Actions};
     }
 
     return output;

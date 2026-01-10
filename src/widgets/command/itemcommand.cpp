@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <utility>
 
-ItemCommand::ItemCommand(QVector<std::shared_ptr<Item>> items)
+ItemCommand::ItemCommand(QList<std::shared_ptr<Item>> items)
     : m_items{std::move(items)}
 {
 }

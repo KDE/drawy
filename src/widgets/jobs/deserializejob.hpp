@@ -17,7 +17,7 @@ public:
     struct DeserializeInfo {
         QPointF offsetPos;
         qreal zoomOffset = 0.0;
-        QVector<std::shared_ptr<Item>> items;
+        QList<std::shared_ptr<Item>> items;
     };
     explicit DeserializeJob(QObject *parent = nullptr);
     ~DeserializeJob() override;

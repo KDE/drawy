@@ -10,7 +10,7 @@ class ApplicationContext;
 class RemoveItemCommand : public ItemCommand
 {
 public:
-    explicit RemoveItemCommand(QVector<std::shared_ptr<Item>> items);
+    explicit RemoveItemCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

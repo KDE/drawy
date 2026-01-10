@@ -17,7 +17,7 @@ public:
         QString filePath;
         QPointF offsetPos;
         qreal zoomFactor = 0;
-        QVector<std::shared_ptr<Item>> items;
+        QList<std::shared_ptr<Item>> items;
     };
 
     explicit SaveAsJob(QObject *parent = nullptr);

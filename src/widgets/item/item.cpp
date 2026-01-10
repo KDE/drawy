@@ -33,9 +33,9 @@ const Property Item::property(const Property::Type propertyType) const
     return m_properties.at(propertyType);
 }
 
-const QVector<Property::Type> Item::propertyTypes() const
+const QList<Property::Type> Item::propertyTypes() const
 {
-    QVector<Property::Type> result;
+    QList<Property::Type> result;
 
     for (auto &[type, _] : m_properties) {
         result.push_back(type);
@@ -44,9 +44,9 @@ const QVector<Property::Type> Item::propertyTypes() const
     return result;
 }
 
-const QVector<Property> Item::properties() const
+const QList<Property> Item::properties() const
 {
-    QVector<Property> result;
+    QList<Property> result;
 
     for (auto &[_, property] : m_properties) {
         result.push_back(property);

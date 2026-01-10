@@ -27,7 +27,7 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    [[nodiscard]] QVector<std::shared_ptr<Item>> split() const;
+    [[nodiscard]] QList<std::shared_ptr<Item>> split() const;
     [[nodiscard]] qsizetype size() const;
     [[nodiscard]] int maxSize() const;
 
@@ -35,16 +35,16 @@ public:
 
     [[nodiscard]] Item::Type type() const override;
 
-    const QVector<QPointF> &points() const;
-    const QVector<qreal> &pressures() const;
+    const QList<QPointF> &points() const;
+    const QList<qreal> &pressures() const;
 
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
-    QVector<QPointF> m_points{};
-    QVector<qreal> m_pressures{};
+    QList<QPointF> m_points{};
+    QList<qreal> m_pressures{};
 
 private:
     [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT QPointF optimizePoint(const QPointF &newPoint);

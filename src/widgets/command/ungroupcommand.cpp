@@ -14,7 +14,7 @@
 #include "data-structures/quadtree.hpp"
 #include "item/group.hpp"
 
-UngroupCommand::UngroupCommand(const QVector<std::shared_ptr<Item>> &items)
+UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
     : ItemCommand{items}
 {
     for (const auto &item : items) {

@@ -11,7 +11,7 @@ class ApplicationContext;
 class SelectCommand : public ItemCommand
 {
 public:
-    explicit SelectCommand(QVector<std::shared_ptr<Item>> items);
+    explicit SelectCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

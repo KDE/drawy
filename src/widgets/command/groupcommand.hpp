@@ -12,7 +12,7 @@ class GroupItem;
 class GroupCommand : public ItemCommand
 {
 public:
-    explicit GroupCommand(QVector<std::shared_ptr<Item>> items);
+    explicit GroupCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

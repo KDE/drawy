@@ -17,7 +17,7 @@ public:
     struct SerializeInfo {
         QPointF offsetPos;
         qreal zoomFactor = 0;
-        QVector<std::shared_ptr<Item>> items;
+        QList<std::shared_ptr<Item>> items;
     };
     explicit SerializeJob(QObject *parent = nullptr);
     ~SerializeJob() override;

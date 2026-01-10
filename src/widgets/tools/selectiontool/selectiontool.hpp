@@ -21,7 +21,7 @@ public:
     void mouseReleased(ApplicationContext *context) override;
     void keyPressed(ApplicationContext *context) override;
 
-    const QVector<Property::Type> properties() const override;
+    const QList<Property::Type> properties() const override;
 
     [[nodiscard]] Tool::Type type() const override;
 

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <QVector>
+#include <QList>
 #include <memory>
 
 #include "command.hpp"
@@ -13,9 +13,9 @@ class Item;
 class ItemCommand : public Command
 {
 public:
-    explicit ItemCommand(QVector<std::shared_ptr<Item>> items);
+    explicit ItemCommand(QList<std::shared_ptr<Item>> items);
     ~ItemCommand() override;
 
 protected:
-    QVector<std::shared_ptr<Item>> m_items;
+    QList<std::shared_ptr<Item>> m_items;
 };

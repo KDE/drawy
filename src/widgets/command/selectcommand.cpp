@@ -13,7 +13,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
 
-SelectCommand::SelectCommand(QVector<std::shared_ptr<Item>> items)
+SelectCommand::SelectCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
 }

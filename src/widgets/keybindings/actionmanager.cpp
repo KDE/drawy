@@ -268,7 +268,7 @@ void ActionManager::groupItems()
     if (selectedItems.size() <= 1)
         return;
 
-    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext().commandHistory().insert(std::make_shared<GroupCommand>(items));
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
@@ -280,7 +280,7 @@ void ActionManager::ungroupItems()
     if (selectedItems.empty())
         return;
 
-    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext().commandHistory().insert(std::make_shared<UngroupCommand>(items));
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
@@ -291,13 +291,13 @@ void ActionManager::deleteSelection()
     auto &selectedItems{m_context->selectionContext().selectedItems()};
     auto &commandHistory{m_context->spatialContext().commandHistory()};
 
-    QVector<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
 
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
 
-    QVector<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext().commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 

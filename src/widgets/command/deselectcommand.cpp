@@ -13,7 +13,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
 
-DeselectCommand::DeselectCommand(QVector<std::shared_ptr<Item>> items)
+DeselectCommand::DeselectCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
 }

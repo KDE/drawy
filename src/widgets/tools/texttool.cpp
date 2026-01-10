@@ -50,7 +50,7 @@ void TextTool::mousePressed(ApplicationContext *context)
         QuadTree &quadTree{spatialContext.quadtree()};
 
         QPointF worldPos{transformer.viewToWorld(uiContext.event().pos())};
-        QVector<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
+        QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->type() == Item::Type::Text && item->boundingBox().contains(point);
         })};
 
@@ -64,7 +64,7 @@ void TextTool::mousePressed(ApplicationContext *context)
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext.event().pos()));
 
                 CommandHistory &commandHistory{spatialContext.commandHistory()};
-                commandHistory.insert(std::make_shared<InsertItemCommand>(QVector<std::shared_ptr<Item>>{m_curItem}));
+                commandHistory.insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
             } else {
                 cleanup();
                 return;
@@ -110,7 +110,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     m_mouseMoved = true;
 
     QPointF worldPos{transformer.viewToWorld(uiContext.event().pos())};
-    QVector<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
+    QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
         return item->type() == Item::Type::Text && item->boundingBox().contains(point);
     })};
 

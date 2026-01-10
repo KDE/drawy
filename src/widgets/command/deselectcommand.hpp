@@ -11,7 +11,7 @@ class ApplicationContext;
 class DeselectCommand : public ItemCommand
 {
 public:
-    explicit DeselectCommand(QVector<std::shared_ptr<Item>> items);
+    explicit DeselectCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

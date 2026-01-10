@@ -82,7 +82,7 @@ CacheGrid::~CacheGrid()
     qCDebug(DRAWY_LOG) << "Object deleted: CacheGrid";
 }
 
-QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
+QList<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
 {
     const QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
 
@@ -114,7 +114,7 @@ QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
         col = cellMinY + totalCols - (m_maxSize - 1) % totalCols - 1;
     }
 
-    QVector<std::shared_ptr<CacheCell>> out{};
+    QList<std::shared_ptr<CacheCell>> out{};
 
     while (row <= cellMaxX) {
         while (col <= cellMaxY) {
@@ -130,7 +130,7 @@ QVector<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
 
 void CacheGrid::markDirty(const QRect &rect)
 {
-    QVector<std::shared_ptr<CacheCell>> dirtyCells{queryCells(rect)};
+    QList<std::shared_ptr<CacheCell>> dirtyCells{queryCells(rect)};
     for (const std::shared_ptr<CacheCell> &cell : dirtyCells) {
         cell->setDirty(true);
     }

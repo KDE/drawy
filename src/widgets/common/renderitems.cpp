@@ -31,7 +31,7 @@ void Common::renderCanvas(ApplicationContext *context)
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
 
-    QVector<std::shared_ptr<CacheCell>> visibleCells{context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
+    QList<std::shared_ptr<CacheCell>> visibleCells{context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
 
     QPainter &canvasPainter{context->renderingContext().canvasPainter()};
 
@@ -45,7 +45,7 @@ void Common::renderCanvas(ApplicationContext *context)
             cell->image()->fill(Qt::transparent);
             cell->setDirty(false);
 
-            QVector<std::shared_ptr<Item>> intersectingItems{
+            QList<std::shared_ptr<Item>> intersectingItems{
                 context->spatialContext().quadtree().queryItems(transformer.gridToWorld(cell->rect()), []([[maybe_unused]] auto &a, [[maybe_unused]] auto &b) {
                     return true;
                 })};

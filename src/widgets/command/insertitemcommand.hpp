@@ -10,7 +10,7 @@ class ApplicationContext;
 class InsertItemCommand : public ItemCommand
 {
 public:
-    explicit InsertItemCommand(QVector<std::shared_ptr<Item>> items);
+    explicit InsertItemCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;

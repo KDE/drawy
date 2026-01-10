@@ -30,7 +30,7 @@ void GroupItem::translate(const QPointF &amount)
     }
 }
 
-void GroupItem::group(const QVector<std::shared_ptr<Item>> &items)
+void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 {
     m_items = items;
 }
@@ -57,7 +57,7 @@ bool GroupItem::intersects(const QLineF &line)
     return false;
 }
 
-QVector<std::shared_ptr<Item>> GroupItem::unGroup()
+QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
     return m_items;
 }
@@ -109,9 +109,9 @@ const Property GroupItem::property(const Property::Type propertyType) const
     return property;
 }
 
-const QVector<Property> GroupItem::properties() const
+const QList<Property> GroupItem::properties() const
 {
-    QVector<Property> result{};
+    QList<Property> result{};
 
     for (const auto &item : m_items) {
         result += item->properties();
@@ -120,7 +120,7 @@ const QVector<Property> GroupItem::properties() const
     return result;
 }
 
-const QVector<Property::Type> GroupItem::propertyTypes() const
+const QList<Property::Type> GroupItem::propertyTypes() const
 {
     std::unordered_set<Property::Type> types;
     for (const auto &item : m_items) {
@@ -128,7 +128,7 @@ const QVector<Property::Type> GroupItem::propertyTypes() const
         types.insert(itemPropertyTypes.begin(), itemPropertyTypes.end());
     }
 
-    return QVector<Property::Type>(types.begin(), types.end());
+    return QList<Property::Type>(types.begin(), types.end());
 }
 
 void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const

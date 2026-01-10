@@ -12,7 +12,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
 
-MoveItemCommand::MoveItemCommand(QVector<std::shared_ptr<Item>> items, QPointF delta)
+MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, QPointF delta)
     : ItemCommand{std::move(items)}
     , m_delta{delta}
 {
