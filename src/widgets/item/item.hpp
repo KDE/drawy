@@ -60,6 +60,8 @@ public:
 
     virtual void translate(const QPointF &amount) = 0;
 
+    virtual bool needsCaching() const;
+
 protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};

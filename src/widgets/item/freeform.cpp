@@ -260,6 +260,11 @@ void FreeformItem::deserialize(const QJsonObject &obj)
     deserializer.deserialize(obj);
 }
 
+bool FreeformItem::needsCaching() const
+{
+    return true;
+}
+
 QDebug operator<<(QDebug d, const FreeformItem &t)
 {
     d.space() << "points:" << t.points();

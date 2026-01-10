@@ -18,6 +18,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "item/item.hpp"
+#include "item/itemcache/itemcache.hpp"
 
 // TODO: Refactor this
 void Common::renderCanvas(ApplicationContext *context)
@@ -34,10 +35,12 @@ void Common::renderCanvas(ApplicationContext *context)
     QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext().cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : visibleCells) {
-        // canvasPainter.save();
-        // QPen pen; pen.setColor(Qt::white); canvasPainter.setPen(pen);
-        // canvasPainter.drawRect(transformer.gridToView(cell.rect()));
-        // canvasPainter.restore();
+        context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+            QPen pen;
+            pen.setColor(Qt::white);
+            painter.setPen(pen);
+            painter.drawRect(transformer.gridToView(cell->rect()));
+        });
 
         if (cell->dirty()) {
             cell->pixmap().fill(Qt::transparent);
@@ -54,12 +57,18 @@ void Common::renderCanvas(ApplicationContext *context)
             const qreal zoomFactor{context->renderingContext().zoomFactor()};
             const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
 
-            cell->paint([&](QPainter &painter) -> void {
-                painter.scale(zoomFactor, zoomFactor);
                 for (const auto &intersectingItem : intersectingItems) {
-                    intersectingItem->draw(painter, topLeftPoint);
+                    if (intersectingItem->needsCaching()) {
+                        cell->paint([&](QPainter &painter) -> void {
+                            context->renderingContext().itemCache().drawCached(painter, intersectingItem, cell->rect().topLeft().toPointF());
+                        });
+                    } else {
+                        cell->paint([&](QPainter &painter) -> void {
+                            painter.scale(zoomFactor, zoomFactor);
+                            intersectingItem->draw(painter, topLeftPoint);
+                        });
+                    }
                 }
-            });
         }
 
         context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {

@@ -138,4 +138,10 @@ const QTransform &Item::transformObj() const
     return m_transform;
 }
 
+// reimplement this if your item can benefit from caching
+bool Item::needsCaching() const
+{
+    return false;
+}
+
 #include "moc_item.cpp"

@@ -7,6 +7,7 @@
 #include <QPoint>
 #include <QScreen>
 
+#include "../item/itemcache/itemcache.hpp"
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
@@ -31,6 +32,7 @@ void RenderingContext::setRenderingContext()
 {
     m_canvas = new Canvas(m_applicationContext->parentWidget());
     m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
+    m_itemCache = std::make_unique<ItemCache>();
 
     connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
     connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
@@ -63,6 +65,11 @@ Canvas &RenderingContext::canvas() const
 CacheGrid &RenderingContext::cacheGrid() const
 {
     return *m_cacheGrid;
+}
+
+ItemCache &RenderingContext::itemCache() const
+{
+    return *m_itemCache;
 }
 
 qreal RenderingContext::zoomFactor() const
@@ -103,6 +110,7 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
 
     cacheGrid().markAllDirty();
+    itemCache().clear();
     m_applicationContext->spatialContext().setOffsetPos(offsetPos);
     m_applicationContext->renderingContext().markForRender();
     m_applicationContext->renderingContext().markForUpdate();

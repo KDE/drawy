@@ -97,6 +97,8 @@ target_sources(
         item/group.hpp
         item/item.cpp
         item/item.hpp
+        item/itemcache/itemcache.cpp
+        item/itemcache/itemcache.hpp
         item/line.cpp
         item/line.hpp
         item/polygon.cpp
