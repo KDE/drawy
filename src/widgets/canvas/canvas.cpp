@@ -15,8 +15,8 @@ Canvas::Canvas(QWidget *parent)
 {
     m_sizeHint = screen()->size() * m_scale;
 
-    m_canvas = new QPixmap(m_sizeHint);
-    m_overlay = new QPixmap(m_sizeHint);
+    m_canvas = std::make_unique<QPixmap>(m_sizeHint);
+    m_overlay = std::make_unique<QPixmap>(m_sizeHint);
 
     setCanvasBg(QColor{18, 18, 18});
     setOverlayBg(Qt::transparent);
@@ -31,9 +31,6 @@ Canvas::Canvas(QWidget *parent)
 Canvas::~Canvas()
 {
     Q_EMIT destroyed();
-
-    delete m_canvas;
-    delete m_overlay;
 }
 
 QSize Canvas::sizeHint() const
@@ -65,7 +62,7 @@ void Canvas::setOverlayBg(const QColor &color)
 
 void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
 {
-    QPainter painter{m_canvas};
+    QPainter painter{m_canvas.get()};
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     paintFunc(painter);
@@ -73,7 +70,7 @@ void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
 
 void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
 {
-    QPainter painter{m_overlay};
+    QPainter painter{m_overlay.get()};
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     paintFunc(painter);
@@ -117,10 +114,13 @@ void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
 }
 
 // just a small overload
-bool operator<=(const QSize &a, const QSize &b)
+namespace
+{
+inline bool operator<=(const QSize &a, const QSize &b)
 {
     return a.height() <= b.height() && a.width() <= b.width();
 }
+};
 
 void Canvas::resizeEvent(QResizeEvent *event)
 {
@@ -215,21 +215,18 @@ void Canvas::resize()
     m_maxSize.setWidth(std::max(oldSize.width(), newSize.width()));
     m_maxSize.setHeight(std::max(oldSize.height(), newSize.height()));
 
-    QPixmap *canvas{new QPixmap(m_maxSize)};
-    QPixmap *overlay{new QPixmap(m_maxSize)};
+    std::unique_ptr<QPixmap> canvas{new QPixmap(m_maxSize)};
+    std::unique_ptr<QPixmap> overlay{new QPixmap(m_maxSize)};
 
     setCanvasBg(canvasBg());
     setOverlayBg(overlayBg());
 
-    QPainter canvasPainter{canvas}, overlayPainter{overlay};
+    QPainter canvasPainter{canvas.get()}, overlayPainter{overlay.get()};
     canvasPainter.drawPixmap(0, 0, *m_canvas);
     overlayPainter.drawPixmap(0, 0, *m_overlay);
 
-    delete m_canvas;
-    delete m_overlay;
-
-    m_canvas = canvas;
-    m_overlay = overlay;
+    m_canvas = std::move(canvas);
+    m_overlay = std::move(overlay);
 
     canvasPainter.end();
     overlayPainter.end();
