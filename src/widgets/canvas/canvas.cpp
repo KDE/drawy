@@ -18,7 +18,8 @@ Canvas::Canvas(QWidget *parent)
     m_canvas = new QPixmap(m_sizeHint);
     m_overlay = new QPixmap(m_sizeHint);
 
-    setBg(QColor{18, 18, 18});
+    setCanvasBg(QColor{18, 18, 18});
+    setOverlayBg(Qt::transparent);
 
     setTabletTracking(true);
     setMouseTracking(true);
@@ -40,39 +41,43 @@ QSize Canvas::sizeHint() const
     return m_sizeHint;
 }
 
-QPixmap *Canvas::canvas() const
+QColor Canvas::canvasBg() const
 {
-    return m_canvas;
+    return m_canvasBg;
 }
 
-QPixmap *Canvas::overlay() const
+QColor Canvas::overlayBg() const
 {
-    return m_overlay;
+    return m_overlayBg;
 }
 
-QPixmap *Canvas::widget() const
+void Canvas::setCanvasBg(const QColor &color)
 {
-    return m_widget;
+    m_canvasBg = color;
+    m_canvas->fill(color);
 }
 
-QColor Canvas::bg() const
+void Canvas::setOverlayBg(const QColor &color)
 {
-    return m_bg;
+    m_overlayBg = color;
+    m_overlay->fill(color);
 }
 
-void Canvas::setBg(const QColor &color, QPixmap *canvas, QPixmap *overlay)
+void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
 {
-    m_bg = color;
-    if (canvas)
-        canvas->fill(color);
-    else
-        m_canvas->fill(color);
+    QPainter painter{m_canvas};
+    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
-    if (overlay)
-        overlay->fill(Qt::transparent);
-    else
-        m_overlay->fill(Qt::transparent);
-}
+    paintFunc(painter);
+};
+
+void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
+{
+    QPainter painter{m_overlay};
+    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+
+    paintFunc(painter);
+};
 
 qreal Canvas::scale() const
 {
@@ -197,21 +202,6 @@ bool Canvas::event(QEvent *event)
     return QWidget::event(event);
 }
 
-// PRIVATE
-QByteArray Canvas::imageData(QPixmap *const img)
-{
-    QByteArray arr{};
-    QBuffer buffer{&arr};
-    buffer.open(QBuffer::WriteOnly);
-    img->save(&buffer, "PNG");
-    return arr;
-}
-
-void Canvas::setImageData(QPixmap *const img, const QByteArray &arr)
-{
-    img->loadFromData(arr, "PNG");
-}
-
 void Canvas::resize()
 {
     Q_EMIT resizeStart();
@@ -227,7 +217,9 @@ void Canvas::resize()
 
     QPixmap *canvas{new QPixmap(m_maxSize)};
     QPixmap *overlay{new QPixmap(m_maxSize)};
-    setBg(bg(), canvas, overlay);
+
+    setCanvasBg(canvasBg());
+    setOverlayBg(overlayBg());
 
     QPainter canvasPainter{canvas}, overlayPainter{overlay};
     canvasPainter.drawPixmap(0, 0, *m_canvas);

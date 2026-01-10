@@ -6,7 +6,9 @@
 
 #include "common/constants.hpp"
 #include <QPainter>
+#include <qnamespace.h>
 
+#include "../canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/removeitemcommand.hpp"
 #include "common/renderitems.hpp"
@@ -46,12 +48,12 @@ void EraserTool::mouseMoved(ApplicationContext *context)
     UIContext &uiContext{context->uiContext()};
     CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
 
-    QPainter &overlayPainter{renderingContext.overlayPainter()};
-
     // Erase previous box
-    overlayPainter.save();
-    overlayPainter.setCompositionMode(QPainter::CompositionMode_Source);
-    overlayPainter.fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
+    renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        painter.save();
+        painter.setCompositionMode(QPainter::CompositionMode_Source);
+        painter.fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
+    });
 
     const int eraserSide{uiContext.propertyManager().value(Property::Type::EraserSize).value<int>()};
     const QSize eraserSize{eraserSide, eraserSide};
@@ -77,16 +79,20 @@ void EraserTool::mouseMoved(ApplicationContext *context)
             renderingContext.markForRender();
         }
 
-        overlayPainter.fillRect(curRect, Common::eraserBackgroundColor);
+        renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+            painter.fillRect(curRect, Common::eraserBackgroundColor);
+        });
     }
 
     renderingContext.markForUpdate();
 
     // Draw eraser box
-    QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
-    overlayPainter.setPen(pen);
-    overlayPainter.drawRect(curRect);
-    overlayPainter.restore();
+    renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        QPen pen{Common::eraserBorderColor, Common::eraserBorderWidth};
+        painter.setPen(pen);
+        painter.drawRect(curRect);
+        painter.restore();
+    });
 
     renderingContext.markForUpdate();
 
@@ -138,15 +144,9 @@ void EraserTool::cleanup()
     context->uiContext().event().setButton(Qt::LeftButton);
     mouseReleased(context);
 
-    auto &overlayPainter{context->renderingContext().overlayPainter()};
-    overlayPainter.save();
-
-    overlayPainter.setCompositionMode(QPainter::CompositionMode_Source);
-    overlayPainter.fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
+    context->renderingContext().canvas().setOverlayBg(Qt::transparent);
 
     context->renderingContext().markForUpdate();
-
-    overlayPainter.restore();
 }
 
 Tool::Type EraserTool::type() const

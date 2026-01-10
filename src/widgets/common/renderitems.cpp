@@ -26,14 +26,12 @@ void Common::renderCanvas(ApplicationContext *context)
     Canvas &canvas{context->renderingContext().canvas()};
     QPointF offsetPos{context->spatialContext().offsetPos()};
 
-    canvas.canvas()->fill(canvas.bg());
+    canvas.setCanvasBg(canvas.canvasBg());
 
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
 
     QList<std::shared_ptr<CacheCell>> visibleCells{context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
-
-    QPainter &canvasPainter{context->renderingContext().canvasPainter()};
 
     for (const auto &cell : visibleCells) {
         // canvasPainter.save();
@@ -65,7 +63,9 @@ void Common::renderCanvas(ApplicationContext *context)
             }
         }
 
-        canvasPainter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), *cell->image());
+        context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+            painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), *cell->image());
+        });
     }
 
     auto selectedItems{context->selectionContext().selectedItems()};
@@ -73,21 +73,21 @@ void Common::renderCanvas(ApplicationContext *context)
     if (selectedItems.empty())
         return;
 
-    QRectF selectionBox{};
     // render a box around selected items
-    canvasPainter.save();
-    QPen pen{Common::selectionBorderColor};
-    pen.setWidth(2);
+    context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+        QPen pen{Common::selectionBorderColor};
+        pen.setWidth(2);
 
-    canvasPainter.setPen(pen);
+        painter.setPen(pen);
 
-    for (const auto &item : selectedItems) {
-        const QRectF curBox{transformer.worldToView(item->boundingBox()).normalized()};
-        canvasPainter.drawRect(curBox);
-        selectionBox |= curBox;
-    }
+        QRectF selectionBox{};
+        for (const auto &item : selectedItems) {
+            const QRectF curBox{transformer.worldToView(item->boundingBox()).normalized()};
+            painter.drawRect(curBox);
+            selectionBox |= curBox;
+        }
 
-    canvasPainter.setPen(pen);
-    canvasPainter.drawRect(selectionBox);
-    canvasPainter.restore();
+        painter.setPen(pen);
+        painter.drawRect(selectionBox);
+    });
 }
