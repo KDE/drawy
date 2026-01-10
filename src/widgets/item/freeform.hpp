@@ -47,8 +47,9 @@ protected:
     QVector<qreal> m_pressures{};
 
 private:
-    [[nodiscard]] QPointF optimizePoint(const QPointF &newPoint);
+    [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT QPointF optimizePoint(const QPointF &newPoint);
     std::deque<QPointF> m_currentWindow;
     QPointF m_currentWindowSum{0, 0};
     int m_bufferSize{7};
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const FreeformItem &t);

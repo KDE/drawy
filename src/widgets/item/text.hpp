@@ -89,3 +89,4 @@ private:
     qsizetype m_caretPosInLine{};
     Mode m_mode{Mode::Normal};
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const TextItem &t);

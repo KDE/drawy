@@ -473,3 +473,10 @@ void TextItem::deserialize(const QJsonObject &obj)
     TextDeserializer deserializer(this);
     deserializer.deserialize(obj);
 }
+
+QDebug operator<<(QDebug d, const TextItem &t)
+{
+    d.space() << "text:" << t.text();
+    d.space() << "Item:" << static_cast<const Item &>(t);
+    return d;
+}

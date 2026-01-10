@@ -259,3 +259,11 @@ void FreeformItem::deserialize(const QJsonObject &obj)
     FreeformDeserializer deserializer(this);
     deserializer.deserialize(obj);
 }
+
+QDebug operator<<(QDebug d, const FreeformItem &t)
+{
+    d.space() << "points:" << t.points();
+    d.space() << "pressures:" << t.pressures();
+    d.space() << "Item: " << static_cast<const Item &>(t);
+    return d;
+}
