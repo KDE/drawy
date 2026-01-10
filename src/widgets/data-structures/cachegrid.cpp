@@ -11,15 +11,10 @@ int CacheCell::counter = 0;
 
 CacheCell::CacheCell(const QPoint &point)
     : m_point{point}
-    , m_image(std::make_unique<QPixmap>(CacheCell::cellSize()))
+    , m_pixmap(std::make_unique<QPixmap>(CacheCell::cellSize()))
     , m_dirty(true)
 {
-    m_image->fill(Qt::transparent);
-
-    m_painter = std::make_unique<QPainter>(m_image.get());
-    m_painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    m_painter->setCompositionMode(QPainter::CompositionMode_SourceOver);
-    m_painter->setClipRegion(m_image->rect());
+    m_pixmap->fill(Qt::transparent);
 
     CacheCell::counter++;
 }
@@ -39,9 +34,19 @@ bool CacheCell::dirty() const
     return m_dirty;
 }
 
-QPixmap *CacheCell::image() const
+QPixmap &CacheCell::pixmap() const
 {
-    return m_image.get();
+    return *m_pixmap;
+}
+
+void CacheCell::paint(const std::function<void(QPainter &)> &paintFunc)
+{
+    QPainter painter{m_pixmap.get()};
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+    painter.setClipRegion(m_pixmap->rect());
+
+    paintFunc(painter);
 }
 
 QRect CacheCell::rect() const
@@ -54,11 +59,6 @@ QRect CacheCell::rect() const
 void CacheCell::setDirty(bool dirty)
 {
     m_dirty = dirty;
-}
-
-QPainter *CacheCell::painter() const
-{
-    return m_painter.get();
 }
 
 QSize CacheCell::cellSize()
