@@ -7,21 +7,17 @@
 #include "drawy_debug.h"
 #include <QPainter>
 
-int CacheCell::counter = 0;
-
-CacheCell::CacheCell(const QPoint &point)
+CacheCell::CacheCell(const QPoint &point, const QSize &size)
     : m_point{point}
-    , m_pixmap(std::make_unique<QPixmap>(CacheCell::cellSize()))
-    , m_dirty(true)
+    , m_pixmap{std::make_unique<QPixmap>(size)}
+    , m_dirty{true}
+    , m_size{size}
 {
     m_pixmap->fill(Qt::transparent);
-
-    CacheCell::counter++;
 }
 
 CacheCell::~CacheCell()
 {
-    CacheCell::counter--;
 }
 
 const QPoint &CacheCell::point() const
@@ -51,7 +47,7 @@ void CacheCell::paint(const std::function<void(QPainter &)> &paintFunc)
 
 QRect CacheCell::rect() const
 {
-    const int cellW{CacheCell::cellSize().width()}, cellH{CacheCell::cellSize().height()};
+    const int cellW{cellSize().width()}, cellH{cellSize().height()};
     const QPoint cellPos{point().x() * cellW, point().y() * cellH};
     return {cellPos.x(), cellPos.y(), cellW, cellH};
 }
@@ -61,12 +57,13 @@ void CacheCell::setDirty(bool dirty)
     m_dirty = dirty;
 }
 
-QSize CacheCell::cellSize()
+const QSize &CacheCell::cellSize() const
 {
-    return {500, 500};
+    return m_size;
 }
 
-CacheGrid::CacheGrid(int maxSize)
+CacheGrid::CacheGrid(int maxSize, const QSize &cellSize)
+    : m_cellSize{cellSize}
 {
     m_headCell->nextCell = m_tailCell;
     m_tailCell->prevCell = m_headCell;
@@ -97,10 +94,10 @@ QList<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
         return result;
     };
 
-    int cellMinX{floorDivide(topLeft.x(), CacheCell::cellSize().width())};
-    int cellMinY{floorDivide(topLeft.y(), CacheCell::cellSize().height())};
-    int cellMaxX{floorDivide(bottomRight.x(), CacheCell::cellSize().width())};
-    int cellMaxY{floorDivide(bottomRight.y(), CacheCell::cellSize().height())};
+    int cellMinX{floorDivide(topLeft.x(), m_cellSize.width())};
+    int cellMinY{floorDivide(topLeft.y(), m_cellSize.height())};
+    int cellMaxX{floorDivide(bottomRight.x(), m_cellSize.width())};
+    int cellMaxY{floorDivide(bottomRight.y(), m_cellSize.height())};
 
     int totalRows{cellMaxX - cellMinX + 1};
     int totalCols{cellMaxY - cellMinY + 1};
@@ -153,7 +150,7 @@ std::shared_ptr<CacheCell> CacheGrid::cell(const QPoint &point)
             m_curSize--;
         }
 
-        cur = std::make_shared<CacheCell>(point);
+        cur = std::make_shared<CacheCell>(point, m_cellSize);
         m_grid[point] = cur;
         m_curSize++;
     } else {
@@ -190,6 +187,11 @@ void CacheGrid::markAllDirty()
     for (const auto &cell : std::move(m_grid)) {
         cell->setDirty(true);
     }
+}
+
+const QSize &CacheGrid::cellSize() const
+{
+    return m_cellSize;
 }
 
 void CacheGrid::clear()

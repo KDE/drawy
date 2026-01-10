@@ -32,7 +32,7 @@ void SpatialContext::setSpatialContext()
 
     m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas.sizeHint()}, 100);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
-    m_cacheGrid = std::make_unique<CacheGrid>(100);
+    m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }
 

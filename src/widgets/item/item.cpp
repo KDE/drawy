@@ -132,4 +132,10 @@ QDebug operator<<(QDebug d, const Item &t)
     d.space() << "properties:" << t.properties();
     return d;
 }
+
+const QTransform &Item::transformObj() const
+{
+    return m_transform;
+}
+
 #include "moc_item.cpp"
