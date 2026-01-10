@@ -10,7 +10,6 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "coordinatetransformer.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "renderingcontext.hpp"
@@ -32,18 +31,12 @@ void SpatialContext::setSpatialContext()
 
     m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas.sizeHint()}, 100);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
-    m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }
 
 QuadTree &SpatialContext::quadtree() const
 {
     return *m_quadtree;
-}
-
-CacheGrid &SpatialContext::cacheGrid() const
-{
-    return *m_cacheGrid;
 }
 
 CoordinateTransformer &SpatialContext::coordinateTransformer() const
@@ -69,7 +62,6 @@ void SpatialContext::setOffsetPos(const QPointF &pos)
 void SpatialContext::reset()
 {
     quadtree().clear();
-    cacheGrid().markAllDirty();
     commandHistory().clear();
     setOffsetPos(QPointF{0, 0});
 }

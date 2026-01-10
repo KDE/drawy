@@ -9,6 +9,7 @@
 #include "commandhistory.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
@@ -40,7 +41,7 @@ void GroupCommand::execute(ApplicationContext *context)
     selectedItems.clear();
     selectedItems.insert(m_group);
 
-    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
+    context->renderingContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
 }
 
 void GroupCommand::undo(ApplicationContext *context)
@@ -56,5 +57,5 @@ void GroupCommand::undo(ApplicationContext *context)
         quadtree.insertItem(item, false);
     }
 
-    context->spatialContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
+    context->renderingContext().cacheGrid().markDirty(m_group->boundingBox().toRect());
 }

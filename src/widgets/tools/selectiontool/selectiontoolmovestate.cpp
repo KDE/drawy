@@ -66,7 +66,7 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
         spatialContext.quadtree().updateItem(item, item->boundingBox());
     }
 
-    spatialContext.cacheGrid().markDirty(dirtyRegion);
+    renderingContext.cacheGrid().markDirty(dirtyRegion);
 
     m_lastPos = curPos;
     renderingContext.markForRender();

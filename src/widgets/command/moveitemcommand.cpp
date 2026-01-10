@@ -8,6 +8,7 @@
 
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
@@ -21,7 +22,7 @@ MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, QPointF del
 void MoveItemCommand::execute(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &cacheGrid{context->renderingContext().cacheGrid()};
 
     for (auto &item : m_items) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
@@ -33,7 +34,7 @@ void MoveItemCommand::execute(ApplicationContext *context)
 void MoveItemCommand::undo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &cacheGrid{context->renderingContext().cacheGrid()};
 
     for (auto &item : m_items) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());

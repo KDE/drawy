@@ -31,7 +31,7 @@ void Common::renderCanvas(ApplicationContext *context)
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
 
-    QList<std::shared_ptr<CacheCell>> visibleCells{context->spatialContext().cacheGrid().queryCells(transformer.round(gridViewport))};
+    QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext().cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : visibleCells) {
         // canvasPainter.save();

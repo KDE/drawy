@@ -8,6 +8,7 @@
 
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
@@ -22,7 +23,7 @@ void InsertItemCommand::execute(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &cacheGrid{context->renderingContext().cacheGrid()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
@@ -35,7 +36,7 @@ void InsertItemCommand::undo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext().coordinateTransformer()};
     auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->spatialContext().cacheGrid()};
+    auto &cacheGrid{context->renderingContext().cacheGrid()};
     auto &selectedItems{context->selectionContext().selectedItems()};
 
     for (auto &item : m_items) {

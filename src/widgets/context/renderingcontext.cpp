@@ -30,6 +30,7 @@ RenderingContext::~RenderingContext()
 void RenderingContext::setRenderingContext()
 {
     m_canvas = new Canvas(m_applicationContext->parentWidget());
+    m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
 
     connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
     connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
@@ -57,6 +58,11 @@ void RenderingContext::setRenderingContext()
 Canvas &RenderingContext::canvas() const
 {
     return *m_canvas;
+}
+
+CacheGrid &RenderingContext::cacheGrid() const
+{
+    return *m_cacheGrid;
 }
 
 qreal RenderingContext::zoomFactor() const
@@ -96,9 +102,8 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     offsetPos.setX(center.x() - (center.x() - offsetPos.x()) * oldZoomFactor / m_zoomFactor);
     offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
 
+    cacheGrid().markAllDirty();
     m_applicationContext->spatialContext().setOffsetPos(offsetPos);
-    m_applicationContext->spatialContext().cacheGrid().markAllDirty();
-
     m_applicationContext->renderingContext().markForRender();
     m_applicationContext->renderingContext().markForUpdate();
 }
@@ -120,14 +125,14 @@ int RenderingContext::fps() const
 
 void RenderingContext::canvasResized()
 {
-    const QSize &cellSize{m_applicationContext->spatialContext().cacheGrid().cellSize()};
+    const QSize &cellSize{cacheGrid().cellSize()};
     const int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
     const int cellW{cellSize.width()}, cellH{cellSize.height()};
     const int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 
-    m_applicationContext->spatialContext().cacheGrid().clear();
-    m_applicationContext->spatialContext().cacheGrid().setSize(rows * cols);
+    cacheGrid().clear();
+    cacheGrid().setSize(rows * cols);
 }
 
 void RenderingContext::markForRender()
@@ -149,6 +154,7 @@ void RenderingContext::markForUpdate(const QRect &region)
 void RenderingContext::reset()
 {
     setZoomFactor(1.0);
+    cacheGrid().markAllDirty();
 }
 
 #include "moc_renderingcontext.cpp"
