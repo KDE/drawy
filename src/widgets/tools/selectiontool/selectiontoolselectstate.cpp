@@ -18,6 +18,7 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include "item/item.hpp"
+#include <qnamespace.h>
 
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 {
@@ -85,7 +86,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     auto &selectionContext{context->selectionContext()};
     auto &selectedItems{selectionContext.selectedItems()};
 
-    renderingContext.canvas().overlay()->fill(Qt::transparent);
+    renderingContext.canvas().setOverlayBg(Qt::transparent);
 
     const QPointF curPos{uiContext.event().pos()};
 
@@ -100,17 +101,14 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
     context->uiContext().propertyBar().updateToolProperties();
 
-    QPainter &overlayPainter{renderingContext.overlayPainter()};
-    overlayPainter.save();
-
     // TODO: Remove magic numbers
-    const QPen pen{QColor{67, 135, 244, 200}};
-    overlayPainter.setPen(pen);
+    renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        const QPen pen{QColor{67, 135, 244, 200}};
+        painter.setPen(pen);
 
-    overlayPainter.drawRect(selectionBox);
-    overlayPainter.fillRect(selectionBox, QColor{67, 135, 244, 50});
-
-    overlayPainter.restore();
+        painter.drawRect(selectionBox);
+        painter.fillRect(selectionBox, QColor{67, 135, 244, 50});
+    });
 
     renderingContext.markForRender();
     renderingContext.markForUpdate();
@@ -133,7 +131,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
             commandHistory.insert(std::make_shared<SelectCommand>(items));
         }
 
-        renderingContext.canvas().overlay()->fill(Qt::transparent);
+        renderingContext.canvas().setOverlayBg(Qt::transparent);
         renderingContext.markForUpdate();
 
         m_isActive = false;

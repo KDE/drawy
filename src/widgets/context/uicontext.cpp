@@ -94,12 +94,12 @@ void UIContext::setUIContext()
     connect(button, &QPushButton::clicked, this, [this, button]() {
         auto &canvas{m_applicationContext->renderingContext().canvas()};
 
-        if (canvas.bg() == Common::lightBackgroundColor) {
-            canvas.setBg(Common::darkBackgroundColor);
+        if (canvas.canvasBg() == Common::lightBackgroundColor) {
+            canvas.setCanvasBg(Common::darkBackgroundColor);
             button->setToolTip(tr("Light Mode"));
             button->setIcon(iconManager().icon(IconManager::Icon::ACTION_LIGHT_MODE));
         } else {
-            canvas.setBg(Common::lightBackgroundColor);
+            canvas.setCanvasBg(Common::lightBackgroundColor);
             button->setToolTip(tr("Dark Mode"));
             button->setIcon(iconManager().icon(IconManager::Icon::ACTION_DARK_MODE));
         }
