@@ -21,6 +21,11 @@ void FreeformItemTest::shouldHaveDefaultValues()
 {
     const FreeformItem i;
     QCOMPARE(i.type(), Item::Type::Freeform);
+    const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity;
+    QCOMPARE(i.propertyTypes().count(), 3);
+    for (const auto &prop : properties) {
+        QVERIFY(i.propertyTypes().contains(prop));
+    }
 }
 
 void FreeformItemTest::shouldSerializeDefaultValue()
