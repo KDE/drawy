@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2026-01-09 16:47+0100\n"
+"PO-Revision-Date: 2026-01-11 00:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -21,9 +21,9 @@ msgstr ""
 #: apps/main.cpp:29
 msgctxt "QObject|"
 msgid "drawy"
-msgstr ""
+msgstr "drawy"
 
-#: apps/main.cpp:31 apps/main.cpp:45
+#: apps/main.cpp:31
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Herramienta práctica e infinita para generar lluvia de ideas"
@@ -32,132 +32,140 @@ msgstr "Herramienta práctica e infinita para generar lluvia de ideas"
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr ""
+msgstr "© 2025-%1 Los autores de drawy"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "Prayag Jain"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr ""
+msgstr "Responsable"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr ""
+msgstr "Desarrollador"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Un argumento «archivo» opcional"
 
-#: widgets/context/uicontext.cpp:66
+#: apps/main.cpp:45
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgctxt "QObject|"
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "Herramienta práctica e infinita para generar lluvia de ideas"
+
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Selección"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Forma libre"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rectángulo"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Elipse"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Flecha"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Línea"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Borrador"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Texto"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Mover"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Guardar en archivo"
 
-#: widgets/context/uicontext.cpp:79 widgets/keybindings/actionmanager.cpp:319
+#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sin título.%1"
 
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:321
-#: widgets/serializer/loader.cpp:35
+#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/context/uicontext.cpp:82 widgets/keybindings/actionmanager.cpp:322
+#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guardar archivo"
 
-#: widgets/context/uicontext.cpp:102
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Abrir archivo"
 
-#: widgets/context/uicontext.cpp:109
+#: widgets/context/uicontext.cpp:107
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Alejar"
 
-#: widgets/context/uicontext.cpp:114
+#: widgets/context/uicontext.cpp:112
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Acercar"
 
-#: widgets/context/uicontext.cpp:118 widgets/context/uicontext.cpp:124
+#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Modo claro"
 
-#: widgets/context/uicontext.cpp:128
+#: widgets/context/uicontext.cpp:126
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Modo oscuro"
 
-#: widgets/context/uicontext.cpp:136
+#: widgets/context/uicontext.cpp:134
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Deshacer"
 
-#: widgets/context/uicontext.cpp:143
+#: widgets/context/uicontext.cpp:141
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Rehacer"
@@ -462,6 +470,11 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Mayúsculas+G"
 
+#: widgets/keybindings/actionmanager.cpp:347
+msgctxt "QObject|"
+msgid "Open File"
+msgstr "Abrir archivo"
+
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
@@ -501,11 +514,6 @@ msgstr "Color"
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Grosor"
-
-#: widgets/serializer/loader.cpp:39
-msgctxt "QObject|"
-msgid "Open File"
-msgstr "Abrir archivo"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

@@ -22,7 +22,7 @@ msgctxt "QObject|"
 msgid "drawy"
 msgstr ""
 
-#: apps/main.cpp:31 apps/main.cpp:45
+#: apps/main.cpp:31
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
@@ -58,7 +58,15 @@ msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: widgets/context/uicontext.cpp:66
+#: apps/main.cpp:45
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgctxt "QObject|"
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
+
+#: widgets/context/uicontext.cpp:65
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Selection Tool"
@@ -66,7 +74,7 @@ msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Hautapen tresna"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -74,7 +82,7 @@ msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Forma-askeko tresna"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Rectangle Tool"
@@ -82,7 +90,7 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Laukizuzen tresna"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Ellipse Tool"
@@ -90,7 +98,7 @@ msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Elipse tresna"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -98,7 +106,7 @@ msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -106,7 +114,7 @@ msgctxt "UIContext|"
 msgid "Line"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Eraser Tool"
@@ -114,7 +122,7 @@ msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Ezabatzeko tresna"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Text Tool"
@@ -122,7 +130,7 @@ msgctxt "UIContext|"
 msgid "Text"
 msgstr "Testu tresna"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -130,60 +138,60 @@ msgctxt "UIContext|"
 msgid "Move"
 msgstr "Mugitzeko tresna"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Gorde fitxategian"
 
-#: widgets/context/uicontext.cpp:79 widgets/keybindings/actionmanager.cpp:319
+#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Izengabea.%1"
 
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:321
-#: widgets/serializer/loader.cpp:35
+#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/context/uicontext.cpp:82 widgets/keybindings/actionmanager.cpp:322
+#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: widgets/context/uicontext.cpp:102
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/context/uicontext.cpp:109
+#: widgets/context/uicontext.cpp:107
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Zooma urrundu"
 
-#: widgets/context/uicontext.cpp:114
+#: widgets/context/uicontext.cpp:112
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Zooma gerturatu"
 
-#: widgets/context/uicontext.cpp:118 widgets/context/uicontext.cpp:124
+#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Modu argia"
 
-#: widgets/context/uicontext.cpp:128
+#: widgets/context/uicontext.cpp:126
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Modu iluna"
 
-#: widgets/context/uicontext.cpp:136
+#: widgets/context/uicontext.cpp:134
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desegin"
 
-#: widgets/context/uicontext.cpp:143
+#: widgets/context/uicontext.cpp:141
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Berregin"
@@ -551,6 +559,11 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ktrl+Maius+G"
 
+#: widgets/keybindings/actionmanager.cpp:347
+msgctxt "QObject|"
+msgid "Open File"
+msgstr "Ireki fitxategia"
+
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
@@ -590,11 +603,6 @@ msgstr "Kolorea"
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Loditasuna"
-
-#: widgets/serializer/loader.cpp:39
-msgctxt "QObject|"
-msgid "Open File"
-msgstr "Ireki fitxategia"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

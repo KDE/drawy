@@ -23,7 +23,7 @@ msgctxt "QObject|"
 msgid "drawy"
 msgstr ""
 
-#: apps/main.cpp:31 apps/main.cpp:45
+#: apps/main.cpp:31
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
@@ -59,105 +59,113 @@ msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Un argument «file» opcional "
 
-#: widgets/context/uicontext.cpp:66
+#: apps/main.cpp:45
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgctxt "QObject|"
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
+
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Selecció"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Forma lliure"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rectangle"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "El·lipse"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Fletxa"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Línia"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Esborrador"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Mou"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Guarda a un fitxer"
 
-#: widgets/context/uicontext.cpp:79 widgets/keybindings/actionmanager.cpp:319
+#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sense_títol .%1"
 
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:321
-#: widgets/serializer/loader.cpp:35
+#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/context/uicontext.cpp:82 widgets/keybindings/actionmanager.cpp:322
+#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guarda el fitxer"
 
-#: widgets/context/uicontext.cpp:102
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: widgets/context/uicontext.cpp:109
+#: widgets/context/uicontext.cpp:107
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Allunya"
 
-#: widgets/context/uicontext.cpp:114
+#: widgets/context/uicontext.cpp:112
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Acosta"
 
-#: widgets/context/uicontext.cpp:118 widgets/context/uicontext.cpp:124
+#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Mode clar"
 
-#: widgets/context/uicontext.cpp:128
+#: widgets/context/uicontext.cpp:126
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Mode fosc"
 
-#: widgets/context/uicontext.cpp:136
+#: widgets/context/uicontext.cpp:134
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfés"
 
-#: widgets/context/uicontext.cpp:143
+#: widgets/context/uicontext.cpp:141
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
@@ -462,6 +470,11 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Majús+G"
 
+#: widgets/keybindings/actionmanager.cpp:347
+msgctxt "QObject|"
+msgid "Open File"
+msgstr "Obri un fitxer"
+
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
@@ -501,11 +514,6 @@ msgstr "Color"
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Gruix"
-
-#: widgets/serializer/loader.cpp:39
-msgctxt "QObject|"
-msgid "Open File"
-msgstr "Obri un fitxer"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

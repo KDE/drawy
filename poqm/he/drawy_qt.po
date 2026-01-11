@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-07 11:22+0200\n"
+"PO-Revision-Date: 2026-01-10 13:17+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -12,14 +12,14 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: apps/main.cpp:29
 msgctxt "QObject|"
 msgid "drawy"
-msgstr ""
+msgstr "ארגומנט ‚file’ כרשות"
 
-#: apps/main.cpp:31 apps/main.cpp:45
+#: apps/main.cpp:31
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
@@ -28,132 +28,140 @@ msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr ""
+msgstr "‏(c) 2025‏-%1 יוצרי drawy"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "פריאג ג׳אין"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr ""
+msgstr "מתחזק"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "לורנט מונטל"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr ""
+msgstr "מפתח"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr ""
+msgstr "ארגומנט ‚file’ כרשות"
 
-#: widgets/context/uicontext.cpp:66
+#: apps/main.cpp:45
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgctxt "QObject|"
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
+
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "הזזה"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "שמירה לקובץ"
 
-#: widgets/context/uicontext.cpp:79 widgets/keybindings/actionmanager.cpp:319
+#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:321
-#: widgets/serializer/loader.cpp:35
+#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/context/uicontext.cpp:82 widgets/keybindings/actionmanager.cpp:322
+#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/context/uicontext.cpp:102
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/context/uicontext.cpp:109
+#: widgets/context/uicontext.cpp:107
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: widgets/context/uicontext.cpp:114
+#: widgets/context/uicontext.cpp:112
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: widgets/context/uicontext.cpp:118 widgets/context/uicontext.cpp:124
+#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "מצב בהיר"
 
-#: widgets/context/uicontext.cpp:128
+#: widgets/context/uicontext.cpp:126
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "מצב כהה"
 
-#: widgets/context/uicontext.cpp:136
+#: widgets/context/uicontext.cpp:134
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "הסגה"
 
-#: widgets/context/uicontext.cpp:143
+#: widgets/context/uicontext.cpp:141
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "ביצוע מחדש"
@@ -354,172 +362,114 @@ msgid "Open an existing file"
 msgstr "פתיחת קובץ קיים"
 
 #: widgets/keybindings/actionmanager.cpp:173
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Z"
 msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:174
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Y"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
 msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:175
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+Z"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Shift+Z"
 
 #: widgets/keybindings/actionmanager.cpp:176
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl++"
 msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
 msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:177
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+-"
 msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
 msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:178
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "T"
 msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
 msgstr "ט"
 
 #: widgets/keybindings/actionmanager.cpp:179
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "P"
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
 msgstr "י"
 
 #: widgets/keybindings/actionmanager.cpp:180
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "B"
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
 msgstr "צ"
 
 #: widgets/keybindings/actionmanager.cpp:181
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "E"
 msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
 msgstr "מ"
 
 #: widgets/keybindings/actionmanager.cpp:182
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "S"
 msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
 msgstr "ב"
 
 #: widgets/keybindings/actionmanager.cpp:183
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "R"
 msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
 msgstr "ר"
 
 #: widgets/keybindings/actionmanager.cpp:184
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "O"
 msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
-msgstr "פ"
+msgstr "א"
 
 #: widgets/keybindings/actionmanager.cpp:185
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "L"
 msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
 msgstr "ק"
 
 #: widgets/keybindings/actionmanager.cpp:186
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "A"
 msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
 msgstr "ח"
 
 #: widgets/keybindings/actionmanager.cpp:187
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "M"
 msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
 msgstr "ז"
 
 #: widgets/keybindings/actionmanager.cpp:188
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+A"
 msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
 #: widgets/keybindings/actionmanager.cpp:189
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
 msgctxt "ActionManager|keybinding for the delete action"
 msgid "Del"
-msgstr "Delete"
+msgstr "Del"
 
 #: widgets/keybindings/actionmanager.cpp:190
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+S"
 msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:191
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+O"
 msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:192
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+G"
 msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
 msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:193
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+G"
 msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Shift+G"
+
+#: widgets/keybindings/actionmanager.cpp:347
+msgctxt "QObject|"
+msgid "Open File"
+msgstr "פתיחת קובץ"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
@@ -560,11 +510,6 @@ msgstr "צבע"
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "עובי"
-
-#: widgets/serializer/loader.cpp:39
-msgctxt "QObject|"
-msgid "Open File"
-msgstr "פתיחת קובץ"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -614,9 +559,9 @@ msgstr "כלי טקסט"
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Do you want to close?"
-msgstr ""
+msgstr "לסגור?"
 
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Close"
-msgstr ""
+msgstr "סגירה"
