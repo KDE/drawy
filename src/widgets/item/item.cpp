@@ -61,12 +61,14 @@ void Item::setProperty(const Property::Type propertyType, Property newObj)
         m_properties[propertyType] = std::move(newObj);
     }
 
+    setDirty(true);
     updateAfterProperty();
 }
 
 void Item::updateAfterProperty()
 {
 }
+
 void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }
@@ -142,6 +144,16 @@ const QTransform &Item::transformObj() const
 bool Item::needsCaching() const
 {
     return false;
+}
+
+bool Item::isDirty() const
+{
+    return m_isDirty;
+};
+
+void Item::setDirty(bool value)
+{
+    m_isDirty = value;
 }
 
 #include "moc_item.cpp"

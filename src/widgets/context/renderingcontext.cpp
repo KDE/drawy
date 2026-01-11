@@ -33,6 +33,7 @@ void RenderingContext::setRenderingContext()
     m_canvas = new Canvas(m_applicationContext->parentWidget());
     m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
     m_itemCache = std::make_unique<ItemCache>();
+    canvasResized();
 
     connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
     connect(&m_frameTimer, &QTimer::timeout, m_canvas, [&]() {
@@ -140,7 +141,9 @@ void RenderingContext::canvasResized()
     const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 
     cacheGrid().clear();
-    cacheGrid().setSize(rows * cols);
+    cacheGrid().setSize(rows * cols * Common::viewportCacheMultiplier);
+
+    itemCache().clear();
 }
 
 void RenderingContext::markForRender()

@@ -15,6 +15,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "item/item.hpp"
+#include "item/itemcache/itemcache.hpp"
 
 RemoveItemCommand::RemoveItemCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
@@ -27,6 +28,7 @@ void RemoveItemCommand::execute(ApplicationContext *context)
     auto &quadtree{context->spatialContext().quadtree()};
     auto &cacheGrid{context->renderingContext().cacheGrid()};
     auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &itemCache{context->renderingContext().itemCache()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
@@ -34,6 +36,7 @@ void RemoveItemCommand::execute(ApplicationContext *context)
         selectedItems.erase(item);
         quadtree.deleteItem(item, false);
         cacheGrid.markDirty(dirtyRegion);
+        itemCache.clearItemCache(item);
     }
 }
 

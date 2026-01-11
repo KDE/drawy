@@ -59,6 +59,7 @@ bool GroupItem::intersects(const QLineF &line)
 
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
+    setDirty(true);
     return m_items;
 }
 
@@ -139,6 +140,11 @@ QJsonObject GroupItem::serialize() const
 {
     const GroupSerializer serializer(this);
     return serializer.serialize();
+}
+
+bool GroupItem::needsCaching() const
+{
+    return true;
 }
 
 void GroupItem::deserialize(const QJsonObject &obj)
