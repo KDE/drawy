@@ -44,6 +44,7 @@
                 qt6.qtbase
                 qtcreator
 
+                pre-commit
                 cmake
                 ninja
                 bear
