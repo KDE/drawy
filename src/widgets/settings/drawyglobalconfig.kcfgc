@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: GPL-3.0-or-later
+#SPDX-FileCopyrightText: Laurent Montel <montel@kde.org>
+File=drawyglobalconfig.kcfg
+ClassName=DrawyGlobalConfig
+Mutators=true
+Singleton=true
+ItemAccessors=true
+Visibility=LIBDRAWYWIDGETS_EXPORT
+IncludeFiles=libdrawywidgets_export.h

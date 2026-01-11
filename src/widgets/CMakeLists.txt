@@ -240,8 +240,11 @@ target_link_libraries(
     libdrawywidgets
     Qt::Widgets
     KF6::WidgetsAddons
+    KF6::ConfigGui
     ${ZSTD_LINK_LIBRARIES}
 )
+
+kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
