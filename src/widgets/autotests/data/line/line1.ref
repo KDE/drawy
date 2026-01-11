@@ -1,13 +1,13 @@
 {
     "bounding_box": {
         "height": 24.5,
-        "width": 29.3,
-        "x": -10.3,
+        "width": 37,
+        "x": -16,
         "y": -6
     },
     "bounding_box_padding": 10,
     "end": {
-        "x": 8,
+        "x": 10,
         "y": 7.5
     },
     "properties": [
@@ -17,16 +17,16 @@
         },
         {
             "type": "StrokeColor",
-            "value": "#0000ff"
+            "value": "#ff0000"
         },
         {
             "type": "StrokeWidth",
-            "value": 5
+            "value": 1
         }
     ],
     "start": {
-        "x": 0.7,
+        "x": -5,
         "y": 5
     },
-    "type": "ELLIPSE"
+    "type": "LINE"
 }

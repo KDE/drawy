@@ -18,4 +18,6 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSerializeDefaultValue();
+    void shouldSerialize_data();
+    void shouldSerialize();
 };

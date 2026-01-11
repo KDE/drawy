@@ -35,4 +35,35 @@ void LineItemTest::shouldSerializeDefaultValue()
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/line/"_s, ba, u"defaultvalue"_s);
 }
+
+void LineItemTest::shouldSerialize_data()
+{
+    QTest::addColumn<QString>("name");
+    QTest::addColumn<QPointF>("start");
+    QTest::addColumn<QPointF>("end");
+    QTest::addColumn<int>("strokeWidth");
+    QTest::addColumn<QColor>("strokeColor");
+    QTest::addRow("line1") << u"line1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red);
+    QTest::addRow("line2") << u"line2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue);
+}
+
+void LineItemTest::shouldSerialize()
+{
+    QFETCH(QString, name);
+    QFETCH(QPointF, start);
+    QFETCH(QPointF, end);
+    QFETCH(int, strokeWidth);
+    QFETCH(QColor, strokeColor);
+
+    LineItem f;
+    // Becarefull order ! start before end !
+    f.setStart(start);
+    f.setEnd(end);
+    f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
+    f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
+    const QJsonObject obj = f.serialize();
+    const QJsonDocument doc(obj);
+    const QByteArray ba = doc.toJson();
+    AutoTestHelper::compareFile(u"/line/"_s, ba, name);
+}
 #include "moc_lineitemtest.cpp"

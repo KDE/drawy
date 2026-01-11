@@ -42,9 +42,9 @@ void EllipseItemTest::shouldSerialize_data()
     QTest::addColumn<QPointF>("start");
     QTest::addColumn<QPointF>("end");
     QTest::addColumn<int>("strokeWidth");
-    QTest::addColumn<QString>("strokeColor");
-    QTest::addRow("ellipse1") << u"ellipse1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << u"#255641"_s;
-    QTest::addRow("ellipse2") << u"ellipse2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << u"#FF00FF"_s;
+    QTest::addColumn<QColor>("strokeColor");
+    QTest::addRow("ellipse1") << u"ellipse1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red);
+    QTest::addRow("ellipse2") << u"ellipse2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue);
 }
 
 void EllipseItemTest::shouldSerialize()
@@ -53,7 +53,7 @@ void EllipseItemTest::shouldSerialize()
     QFETCH(QPointF, start);
     QFETCH(QPointF, end);
     QFETCH(int, strokeWidth);
-    QFETCH(QString, strokeColor);
+    QFETCH(QColor, strokeColor);
 
     EllipseItem f;
     // Becarefull order ! start before end !

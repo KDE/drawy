@@ -1,0 +1,25 @@
+{
+    "bounding_box": {
+        "height": 46.359375,
+        "width": 20,
+        "x": -10,
+        "y": -10
+    },
+    "bounding_box_padding": 10,
+    "properties": [
+        {
+            "type": "FontSize",
+            "value": 15
+        },
+        {
+            "type": "Opacity",
+            "value": 255
+        },
+        {
+            "type": "StrokeColor",
+            "value": "#0000ff"
+        }
+    ],
+    "text": "",
+    "type": "TEXT"
+}
