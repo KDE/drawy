@@ -6,6 +6,7 @@
 #include <QHash>
 #include <QPixmap>
 #include <QPoint>
+#include <limits>
 
 class CacheGrid;
 
@@ -55,6 +56,8 @@ public:
 
     const QSize &cellSize() const;
 
+    void setBounds(const QRect &rect);
+
     void clear();
 
 private:
@@ -65,4 +68,9 @@ private:
     QSize m_cellSize{};
     int m_curSize{0};
     int m_maxSize{0};
+
+    int m_cellMinBoundX{std::numeric_limits<int>::min()};
+    int m_cellMaxBoundX{std::numeric_limits<int>::max()};
+    int m_cellMinBoundY{std::numeric_limits<int>::min()};
+    int m_cellMaxBoundY{std::numeric_limits<int>::max()};
 };

@@ -47,7 +47,7 @@ inline constexpr int doubleClickInterval{300}; // milliseconds
 inline constexpr qreal tabStopDistance{4};
 
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
-inline constexpr qreal zoomInLimit{300}; // 3000%
+inline constexpr qreal zoomInLimit{100}; // 100% * 10 = 1000% zoom, increasing it introduces unwanted artifacts :(
 
 inline constexpr QSize maxItemCacheCellSize{500, 500}; // in pixels
 

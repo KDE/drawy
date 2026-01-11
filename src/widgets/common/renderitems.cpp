@@ -35,6 +35,7 @@ void Common::renderCanvas(ApplicationContext *context)
     QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext().cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : visibleCells) {
+        // UNCOMMENT THIS TO SEE THE CELLS
         context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
             QPen pen;
             pen.setColor(Qt::white);
@@ -60,7 +61,10 @@ void Common::renderCanvas(ApplicationContext *context)
                 for (const auto &intersectingItem : intersectingItems) {
                     if (intersectingItem->needsCaching()) {
                         cell->paint([&](QPainter &painter) -> void {
-                            context->renderingContext().itemCache().drawCached(painter, intersectingItem, cell->rect().topLeft().toPointF());
+                            context->renderingContext().itemCache().drawCached(painter,
+                                                                               intersectingItem,
+                                                                               transformer.gridToWorld(cell->rect()),
+                                                                               cell->rect().topLeft().toPointF());
                         });
                     } else {
                         cell->paint([&](QPainter &painter) -> void {

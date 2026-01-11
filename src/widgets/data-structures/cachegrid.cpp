@@ -94,10 +94,10 @@ QList<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
         return result;
     };
 
-    int cellMinX{floorDivide(topLeft.x(), m_cellSize.width())};
-    int cellMinY{floorDivide(topLeft.y(), m_cellSize.height())};
-    int cellMaxX{floorDivide(bottomRight.x(), m_cellSize.width())};
-    int cellMaxY{floorDivide(bottomRight.y(), m_cellSize.height())};
+    int cellMinX{std::max(floorDivide(topLeft.x(), m_cellSize.width()), m_cellMinBoundX)};
+    int cellMinY{std::max(floorDivide(topLeft.y(), m_cellSize.height()), m_cellMinBoundY)};
+    int cellMaxX{std::min(floorDivide(bottomRight.x(), m_cellSize.width()), m_cellMaxBoundX)};
+    int cellMaxY{std::min(floorDivide(bottomRight.y(), m_cellSize.height()), m_cellMaxBoundY)};
 
     int totalRows{cellMaxX - cellMinX + 1};
     int totalCols{cellMaxY - cellMinY + 1};
@@ -123,6 +123,26 @@ QList<std::shared_ptr<CacheCell>> CacheGrid::queryCells(const QRect &rect)
     }
 
     return out;
+}
+
+void CacheGrid::setBounds(const QRect &rect)
+{
+    auto floorDivide = [](int first, int second) -> int {
+        int result{first / second};
+        int remainder{first % second};
+
+        if (remainder != 0 && (first < 0) != (second < 0)) {
+            result--;
+        }
+
+        return result;
+    };
+
+    const QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
+    m_cellMinBoundX = floorDivide(topLeft.x(), m_cellSize.width());
+    m_cellMinBoundY = floorDivide(topLeft.y(), m_cellSize.height());
+    m_cellMaxBoundX = floorDivide(bottomRight.x(), m_cellSize.width());
+    m_cellMaxBoundY = floorDivide(bottomRight.y(), m_cellSize.height());
 }
 
 void CacheGrid::markDirty(const QRect &rect)
