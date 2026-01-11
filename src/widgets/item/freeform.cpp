@@ -49,6 +49,7 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool opt
 
     m_points.push_back(newPoint);
     m_pressures.push_back(pressure);
+    setDirty(true);
 }
 
 bool FreeformItem::intersects(const QRectF &rect)

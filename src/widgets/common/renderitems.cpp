@@ -36,12 +36,12 @@ void Common::renderCanvas(ApplicationContext *context)
 
     for (const auto &cell : visibleCells) {
         // UNCOMMENT THIS TO SEE THE CELLS
-        context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
-            QPen pen;
-            pen.setColor(Qt::white);
-            painter.setPen(pen);
-            painter.drawRect(transformer.gridToView(cell->rect()));
-        });
+        // context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+        //     QPen pen;
+        //     pen.setColor(Qt::white);
+        //     painter.setPen(pen);
+        //     painter.drawRect(transformer.gridToView(cell->rect()));
+        // });
 
         if (cell->dirty()) {
             cell->pixmap().fill(Qt::transparent);
@@ -63,7 +63,7 @@ void Common::renderCanvas(ApplicationContext *context)
                         cell->paint([&](QPainter &painter) -> void {
                             context->renderingContext().itemCache().drawCached(painter,
                                                                                intersectingItem,
-                                                                               transformer.gridToWorld(cell->rect()),
+                                                                               transformer.gridToWorld(cell->rect().toRectF()),
                                                                                cell->rect().topLeft().toPointF());
                         });
                     } else {

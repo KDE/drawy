@@ -37,15 +37,15 @@ public:
     [[nodiscard]] qsizetype getIndexFromX(double xPos, int lineNumber) const;
 
     [[nodiscard]] qsizetype caret() const;
+    [[nodiscard]] qsizetype caretPosInLine() const;
     void setCaret(qsizetype index, bool updatePosInLine = true);
     void setCaret(const QPointF &cursorPos);
-    [[nodiscard]] qsizetype caretPosInLine() const;
 
     [[nodiscard]] qsizetype selectionStart() const;
     [[nodiscard]] qsizetype selectionEnd() const;
+    [[nodiscard]] const QString selectedText() const;
     void setSelectionStart(qsizetype index);
     void setSelectionEnd(qsizetype index);
-    [[nodiscard]] const QString selectedText() const;
 
     [[nodiscard]] const QString &text() const;
     void insertText(const QString &text);
@@ -68,6 +68,8 @@ public:
 
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
+
+    bool needsCaching() const override;
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;

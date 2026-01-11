@@ -15,7 +15,8 @@ public:
     ItemCache() = default;
     ~ItemCache() = default;
 
-    void drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRect &queryRegion, const QPointF &offset);
+    void drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRectF &queryRegion, const QPointF &offset);
+    void clearItemCache(const std::shared_ptr<Item> &item);
     void clear();
 
 private:

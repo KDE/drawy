@@ -61,12 +61,15 @@ public:
     virtual void translate(const QPointF &amount) = 0;
 
     virtual bool needsCaching() const;
+    bool isDirty() const;
+    void setDirty(bool value);
 
 protected:
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
 
     QTransform m_transform{};
+    bool m_isDirty{true};
 
     virtual void drawItem(QPainter &painter, const QPointF &offset) const = 0;
 };

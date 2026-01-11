@@ -42,6 +42,8 @@ void TextItem::createTextBox(const QPointF position)
 
     const QFontMetricsF metrics{getFont()};
     m_boundingBox.setHeight(metrics.height());
+
+    setDirty(true);
 }
 
 bool TextItem::intersects(const QRectF &rect)
@@ -62,12 +64,6 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     qsizetype cur{caret()};
 
     if (mode() == Mode::Edit) {
-        // // Drawing the bounding box
-        // QPen boundingBoxPen{Common::selectionBorderColor};
-        // boundingBoxPen.setWidth(1);
-        // painter.setPen(boundingBoxPen);
-        // painter.drawRect(boundingBox().translated(-offset));
-
         // Drawing the caret
         // PERF: There is no need to scan the entire text just to place the caret
         // This can be a lot more efficient, so feel free to open a PR
@@ -157,6 +153,7 @@ TextItem::Mode TextItem::mode() const
 void TextItem::setMode(Mode mode)
 {
     m_mode = mode;
+    setDirty(true);
 }
 
 qsizetype TextItem::caret() const
@@ -174,6 +171,7 @@ void TextItem::setCaret(qsizetype index, bool updatePosInLine)
     if (index < 0 || index > m_text.size())
         return;
 
+    setDirty(true);
     setSelectionStart(index);
     setSelectionEnd(INVALID);
 
@@ -261,11 +259,13 @@ qsizetype TextItem::selectionEnd() const
 
 void TextItem::setSelectionStart(qsizetype index)
 {
+    setDirty(true);
     m_selectionStart = index;
 }
 
 void TextItem::setSelectionEnd(qsizetype index)
 {
+    setDirty(true);
     m_selectionEnd = index;
 }
 
@@ -283,6 +283,7 @@ void TextItem::insertText(const QString &text)
     if (text.isEmpty())
         return;
 
+    setDirty(true);
     const qsizetype textSize{text.size()};
     const qsizetype cur{caret()};
 
@@ -299,6 +300,7 @@ void TextItem::updateBoundingBox()
 
     m_boundingBox.setWidth(size.width());
     m_boundingBox.setHeight(size.height());
+    setDirty(true);
 }
 
 void TextItem::deleteSubStr(qsizetype start, qsizetype end)
@@ -316,6 +318,7 @@ void TextItem::deleteSubStr(qsizetype start, qsizetype end)
 
     m_boundingBox.setWidth(std::max(size.width(), Common::defaultTextBoxWidth));
     m_boundingBox.setHeight(size.height());
+    setDirty(true);
 }
 
 void TextItem::deleteSelection()
@@ -332,6 +335,7 @@ void TextItem::deleteSelection()
 
     deleteSubStr(selStart, selEnd - 1);
     setCaret(selStart);
+    setDirty(true);
 }
 
 bool TextItem::hasSelection() const
@@ -472,6 +476,11 @@ void TextItem::deserialize(const QJsonObject &obj)
 {
     TextDeserializer deserializer(this);
     deserializer.deserialize(obj);
+}
+
+bool TextItem::needsCaching() const
+{
+    return true;
 }
 
 QDebug operator<<(QDebug d, const TextItem &t)

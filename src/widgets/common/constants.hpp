@@ -47,9 +47,11 @@ inline constexpr int doubleClickInterval{300}; // milliseconds
 inline constexpr qreal tabStopDistance{4};
 
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
-inline constexpr qreal zoomInLimit{100}; // 100% * 10 = 1000% zoom, increasing it introduces unwanted artifacts :(
+inline constexpr qreal zoomInLimit{100}; // 100% * 10 = 1000% zoom
 
 inline constexpr QSize maxItemCacheCellSize{500, 500}; // in pixels
+inline constexpr int itemCacheMultiplier{2}; // For per-item cache; increasing this value decreases thrashing but increases memory usage
+inline constexpr int viewportCacheMultiplier{2}; // For viewport cache; increasing this value decreases thrashing but increases memory usage
 
 inline const QString drawyFileExt{u"drawy"_s};
 }; // namespace Common
