@@ -15,13 +15,11 @@
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "event/event.hpp"
-#include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
-#include "serializer/serializerutils.hpp"
 #include "spatialcontext.hpp"
 #include "tools/arrowtool.hpp"
 #include "tools/ellipsetool.hpp"
@@ -32,8 +30,7 @@
 #include "tools/rectangletool.hpp"
 #include "tools/selectiontool/selectiontool.hpp"
 #include "tools/texttool.hpp"
-#include <QDir>
-#include <QFileDialog>
+
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext{context}
@@ -74,28 +71,8 @@ void UIContext::setUIContext()
 
     auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        const QDir homeDir{QDir::home()};
-        QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
-        const QString defaultFilePath = homeDir.filePath(text);
-        text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
-        const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
-        if (fileName.isEmpty()) {
-            return;
-        }
-        auto job = new SaveAsJob(this);
-        const SaveAsJob::SaveAsInfo info{
-            .filePath = fileName,
-            .offsetPos = m_applicationContext->spatialContext().offsetPos(),
-            .zoomFactor = m_applicationContext->renderingContext().zoomFactor(),
-            .items = m_applicationContext->spatialContext().quadtree().getAllItems(),
-
-        };
-        job->setSaveAsInfo(info);
-        connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
-            SerializerUtils::saveInFile(obj, fileName);
-            qDebug() << " save done ";
-        });
-        job->start();
+        ActionManager &actionManager{m_applicationContext->uiContext().actionManager()};
+        actionManager.saveToFile();
     });
 
     button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
