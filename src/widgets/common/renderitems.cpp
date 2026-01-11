@@ -58,21 +58,21 @@ void Common::renderCanvas(ApplicationContext *context)
             const qreal zoomFactor{context->renderingContext().zoomFactor()};
             const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
 
-                for (const auto &intersectingItem : intersectingItems) {
-                    if (intersectingItem->needsCaching()) {
-                        cell->paint([&](QPainter &painter) -> void {
-                            context->renderingContext().itemCache().drawCached(painter,
-                                                                               intersectingItem,
-                                                                               transformer.gridToWorld(cell->rect().toRectF()),
-                                                                               cell->rect().topLeft().toPointF());
-                        });
-                    } else {
-                        cell->paint([&](QPainter &painter) -> void {
-                            painter.scale(zoomFactor, zoomFactor);
-                            intersectingItem->draw(painter, topLeftPoint);
-                        });
-                    }
+            for (const auto &intersectingItem : intersectingItems) {
+                if (intersectingItem->needsCaching()) {
+                    cell->paint([&](QPainter &painter) -> void {
+                        context->renderingContext().itemCache().drawCached(painter,
+                                                                           intersectingItem,
+                                                                           transformer.gridToWorld(cell->rect().toRectF()),
+                                                                           cell->rect().topLeft().toPointF());
+                    });
+                } else {
+                    cell->paint([&](QPainter &painter) -> void {
+                        painter.scale(zoomFactor, zoomFactor);
+                        intersectingItem->draw(painter, topLeftPoint);
+                    });
                 }
+            }
         }
 
         context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
