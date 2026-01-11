@@ -18,21 +18,6 @@
   <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
   <summary>Your handy, infinite brainstorming tool</summary>
-  <summary xml:lang="ar">أداة مفيدة غير محدودة لتبادل الأفكار</summary>
-  <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
-  <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
-  <summary xml:lang="de">Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung</summary>
-  <summary xml:lang="es">Herramienta práctica e infinita para generar lluvia de ideas</summary>
-  <summary xml:lang="eu">Zure ideia-jasa tresna erabilgarri eta infinitua</summary>
-  <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
-  <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
-  <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
-  <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen!</summary>
-  <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
-  <summary xml:lang="sl">Vaše priročno, neskončno orodje za viharjenje možgan</summary>
-  <summary xml:lang="tr">Kullanışlı, sınırsız beyin fırtınası aracın</summary>
-  <summary xml:lang="uk">Ваша зручна, нескінченна програма для мозкових штурмів</summary>
-  <summary xml:lang="zh-TW">好用的無限畫布腦力激盪工具</summary>
   <developer id="org.kde.drawy">
     <name>Prayag Jain</name>
   </developer>
