@@ -34,7 +34,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     }
 
     layout->setSpacing(0);
-    m_group->buttons()[0]->setChecked(true);
+    m_group->buttons().at(0)->setChecked(true);
     m_widget->setProperty("class", u"drawlyStrokeColorWidget"_s);
     m_widget->hide();
 

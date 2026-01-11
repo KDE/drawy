@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "fontsizewidget.hpp"
+#include "drawyglobalconfig.h"
 
 #include <QSpinBox>
 
@@ -14,7 +15,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     // TODO: Remove magic numbers
     QSpinBox *box{new QSpinBox(parent)};
     box->setMinimum(1);
-    box->setValue(24);
+    box->setValue(DrawyGlobalConfig::self()->fontSize());
 
     box->hide();
     m_widget = box;

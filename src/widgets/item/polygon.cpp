@@ -3,14 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "polygon.hpp"
-#include "drawyglobalconfig.h"
 #include "serializer/polygondeserializer.hpp"
 #include "serializer/polygonserializer.hpp"
 #include <QJsonObject>
 
 PolygonItem::PolygonItem()
 {
-    m_properties[Property::Type::StrokeWidth] = Property{DrawyGlobalConfig::self()->strokeWidth(), Property::Type::StrokeWidth};
+    m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
 }

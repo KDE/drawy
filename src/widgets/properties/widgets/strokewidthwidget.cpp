@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "strokewidthwidget.hpp"
-
+#include "drawyglobalconfig.h"
 #include <QSpinBox>
 
 #include "properties/property.hpp"
@@ -13,7 +13,7 @@ StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
 {
     QSpinBox *box{new QSpinBox(parent)};
     box->setRange(1, 10);
-    box->setValue(6);
+    box->setValue(DrawyGlobalConfig::self()->strokeWidth());
 
     box->hide();
     m_widget = box;

@@ -10,7 +10,13 @@
 
   <group name="Properties">
     <entry name="StrokeWidth" type="Int">
-      <default>1</default>
+      <default>6</default>
+    </entry>
+    <entry name="FontSize" type="Int">
+      <default>24</default>
+    </entry>
+    <entry name="EraserSize" type="Int">
+      <default>30</default>
     </entry>
   </group>
 </kcfg>

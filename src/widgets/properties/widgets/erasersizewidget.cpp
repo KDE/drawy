@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "erasersizewidget.hpp"
+#include "drawyglobalconfig.h"
 
 #include <QSpinBox>
 
@@ -13,7 +14,7 @@ EraserSizeWidget::EraserSizeWidget(QWidget *parent)
 {
     QSpinBox *box{new QSpinBox(parent)};
     box->setRange(1, 100);
-    box->setValue(30);
+    box->setValue(DrawyGlobalConfig::self()->eraserSize());
 
     box->hide();
     m_widget = box;
