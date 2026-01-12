@@ -32,6 +32,6 @@ private:
     QPointF m_start{};
     QPointF m_end{};
 
-    void m_updateBoundingBox();
+    void updateBoundingBox();
 };
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const PolygonItem &t);

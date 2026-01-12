@@ -24,7 +24,7 @@ void PolygonItem::setStart(QPointF start)
 void PolygonItem::setEnd(QPointF end)
 {
     m_end = end;
-    m_updateBoundingBox();
+    updateBoundingBox();
 }
 
 const QPointF &PolygonItem::start() const
@@ -43,7 +43,7 @@ QJsonObject PolygonItem::serialize() const
     return serialize.serialize();
 }
 
-void PolygonItem::m_updateBoundingBox()
+void PolygonItem::updateBoundingBox()
 {
     const double minX{std::min(m_start.x(), m_end.x())};
     const double maxX{std::max(m_start.x(), m_end.x())};
@@ -90,7 +90,7 @@ void PolygonItem::translate(const QPointF &amount)
     m_start += amount;
     m_end += amount;
 
-    m_updateBoundingBox();
+    updateBoundingBox();
 }
 
 void PolygonItem::deserialize(const QJsonObject &obj)
