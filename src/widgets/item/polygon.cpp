@@ -63,6 +63,7 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     color.setAlpha(property(Property::Type::Opacity).value<int>());
+    pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
 
     pen.setCapStyle(Qt::RoundCap);
     pen.setJoinStyle(Qt::RoundJoin);

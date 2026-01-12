@@ -56,4 +56,13 @@ void ItemUtilsTest::shouldConvertStrokeTypeStringToEnum()
     QCOMPARE(ItemUtils::convertStrokeTypeStringToEnum(QString()), Item::StrokeType::Invalid);
 }
 
+void ItemUtilsTest::shouldConvertItemStrokeTypeStringToPenStyle()
+{
+    QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(u"Solid"_s), Qt::PenStyle::SolidLine);
+    QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(u"DashLine"_s), Qt::PenStyle::DashLine);
+    QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(u"DotLine"_s), Qt::PenStyle::DotLine);
+    QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(u"Solidsdfsdf"_s), Qt::PenStyle::SolidLine);
+    QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(QString()), Qt::PenStyle::SolidLine);
+}
+
 #include "moc_itemutilstest.cpp"

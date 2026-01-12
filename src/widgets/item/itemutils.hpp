@@ -14,4 +14,5 @@ namespace ItemUtils
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::Type type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemStrokeTypeEnumToString(Item::StrokeType type);
+[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::PenStyle convertItemStrokeTypeStringToPenStyle(const QString &penStyle);
 };

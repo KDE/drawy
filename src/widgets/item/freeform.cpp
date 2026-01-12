@@ -18,7 +18,8 @@ FreeformItem::FreeformItem()
     m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{Common::maxItemOpacity, Property::Type::Opacity};
-    m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
+    // Laurent not supported yet
+    // m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
 }
 
 int FreeformItem::minPointDistance()
@@ -100,6 +101,7 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
+    pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     pen.setJoinStyle(Qt::RoundJoin);
     pen.setCapStyle(Qt::RoundCap);
     pen.setWidth(property(Property::Type::StrokeWidth).value<int>());

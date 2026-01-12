@@ -20,4 +20,5 @@ private Q_SLOTS:
 
     void shouldConvertEnumStrokeTypeToString();
     void shouldConvertStrokeTypeStringToEnum();
+    void shouldConvertItemStrokeTypeStringToPenStyle();
 };

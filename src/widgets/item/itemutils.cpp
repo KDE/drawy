@@ -81,3 +81,17 @@ QString ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType type)
     }
     return {};
 }
+
+Qt::PenStyle ItemUtils::convertItemStrokeTypeStringToPenStyle(const QString &penStyle)
+{
+    if (penStyle == u"Solid") {
+        return Qt::PenStyle::SolidLine;
+    } else if (penStyle == u"DashLine") {
+        return Qt::PenStyle::DashLine;
+    } else if (penStyle == u"DotLine") {
+        return Qt::PenStyle::DotLine;
+    } else {
+        qCWarning(DRAWY_LOG) << "Item::StrokeType is not defined for: " << penStyle;
+    }
+    return Qt::PenStyle::SolidLine;
+}
