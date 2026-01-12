@@ -233,6 +233,12 @@ void Canvas::resize()
     Q_EMIT resizeEnd();
 }
 
+// returns a copy of the content on the canvas
+QPixmap Canvas::canvasPixmap() const
+{
+    return QPixmap{*m_canvas};
+}
+
 void Canvas::triggerUpdate()
 {
     this->update();

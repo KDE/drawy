@@ -31,11 +31,20 @@ public:
     void wheel(QWheelEvent *event);
     void leave(QEvent *event);
 
+public Q_SLOTS:
+    void renderZoom();
+
 private:
     ApplicationContext *m_context{};
     qint64 m_lastTime{};
     qint64 m_lastClickTime{};
     int m_clickCount{}; // for double/triple clicks
+
+    QTimer *m_zoomTimer{};
+    QPixmap m_zoomPixmap{};
+    QPointF m_zoomPixmapOffsetPos{};
+    QPointF m_zoomLastPos{};
+    int m_zoomDelta{0};
 
     bool m_mouseMoved{false};
     bool m_movingWithMiddleClick{false};

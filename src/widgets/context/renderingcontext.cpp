@@ -89,9 +89,9 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 
     qreal oldZoomFactor = m_zoomFactor;
     if (diff >= 0) {
-        m_zoomFactor = std::min(Common::zoomInLimit, m_zoomFactor * diff * 1.1);
+        m_zoomFactor = std::min(Common::zoomInLimit, m_zoomFactor * diff * Common::zoomMultiplier);
     } else {
-        m_zoomFactor = std::max(Common::zoomOutLimit, m_zoomFactor / (-1 * diff * 1.1));
+        m_zoomFactor = std::max(Common::zoomOutLimit, m_zoomFactor / (-1 * diff * Common::zoomMultiplier));
     }
 
     qCDebug(DRAWY_LOG) << "Zoom: " << m_zoomFactor;

@@ -48,6 +48,8 @@ inline constexpr qreal tabStopDistance{4};
 
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
 inline constexpr qreal zoomInLimit{100}; // 100% * 10 = 1000% zoom
+inline constexpr qreal zoomMultiplier{1.1}; // it's standard practice to multiply/divide by 1.1 when zooming
+inline constexpr int zoomRenderWaitTime{250}; // milliseconds
 
 inline constexpr QSize maxItemCacheCellSize{500, 500}; // in pixels
 inline constexpr int itemCacheMultiplier{2}; // For per-item cache; increasing this value decreases thrashing but increases memory usage
