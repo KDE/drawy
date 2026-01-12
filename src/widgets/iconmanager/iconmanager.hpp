@@ -34,8 +34,6 @@ public:
         ACTION_GROUP,
         ACTION_UNGROUP,
         ACTION_DELETE,
-        UI_ANGLE_UP,
-        UI_ANGLE_DOWN,
     };
     Q_ENUM(Icon)
 

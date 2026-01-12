@@ -27,9 +27,7 @@ IconManager::IconManager(QObject *parent)
                  {Icon::ACTION_LIGHT_MODE, u"action-light_mode"_s},
                  {Icon::ACTION_GROUP, u"action-group"_s},
                  {Icon::ACTION_UNGROUP, u"action-ungroup"_s},
-                 {Icon::ACTION_DELETE, u"action-delete"_s},
-                 {Icon::UI_ANGLE_DOWN, u"ui-angle_up"_s},
-                 {Icon::UI_ANGLE_UP, u"ui-angle_down"_s}}
+                 {Icon::ACTION_DELETE, u"action-delete"_s}}
     , m_curTheme(u"fa-dark"_s) // default
 {
 }
