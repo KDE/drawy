@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#ifndef ACTIONSWIDGET_H
-#define ACTIONSWIDGET_H
+#pragma once
 
 #include "propertywidget.hpp"
 
@@ -16,5 +15,3 @@ public:
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
 };
-
-#endif // TOOLACTIONS_H
