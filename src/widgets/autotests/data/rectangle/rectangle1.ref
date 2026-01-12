@@ -12,6 +12,10 @@
     },
     "properties": [
         {
+            "type": "BackgroundColor",
+            "value": "#00000000"
+        },
+        {
             "type": "StrokeStyle",
             "value": "Solid"
         },

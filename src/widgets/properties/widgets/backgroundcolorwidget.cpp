@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "strokecolorwidget.hpp"
+#include "backgroundcolorwidget.hpp"
 
 #include <QButtonGroup>
 #include <QColor>
@@ -11,26 +11,26 @@
 
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
-StrokeColorWidget::StrokeColorWidget(QWidget *parent)
+BackgroundColorWidget::BackgroundColorWidget(QWidget *parent)
     : ColorWidgetBase{parent}
 {
     initialize();
 }
 
-QString StrokeColorWidget::name() const
+QString BackgroundColorWidget::name() const
 {
-    return tr("Stroke Color");
+    return tr("Background Color");
 }
 
-const Property StrokeColorWidget::value() const
+const Property BackgroundColorWidget::value() const
 {
-    return Property{m_group->checkedButton()->property("color-value"), Property::Type::StrokeColor};
+    return Property{m_group->checkedButton()->property("color-value"), Property::Type::BackgroundColor};
 }
 
-QList<QColor> StrokeColorWidget::defaultColors() const
+QList<QColor> BackgroundColorWidget::defaultColors() const
 {
     const QList<QColor> colors{QColor{255, 255, 255}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
     return colors;
 }
 
-#include "moc_strokecolorwidget.cpp"
+#include "moc_backgroundcolorwidget.cpp"

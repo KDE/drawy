@@ -37,6 +37,10 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::Actions;
     } else if (str == u"StrokeStyle") {
         return Property::Type::StrokeStyle;
+    } else if (str == u"BackgroundColor") {
+        return Property::Type::BackgroundColor;
+    } else if (str == u"BackgroundStyle") {
+        return Property::Type::BackgroundStyle;
     } else {
         qCWarning(DRAWY_LOG) << "Property::Type is not defined for: " << str;
     }
@@ -60,6 +64,10 @@ QString Property::convertEnumToString(Property::Type type)
         return u"Actions"_s;
     case Property::Type::StrokeStyle:
         return u"StrokeStyle"_s;
+    case Property::Type::BackgroundColor:
+        return u"BackgroundColor"_s;
+    case Property::Type::BackgroundStyle:
+        return u"BackgroundStyle"_s;
     case Property::Type::Null:
         qCWarning(DRAWY_LOG) << "Don't save null property ";
     }

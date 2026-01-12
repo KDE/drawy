@@ -5,11 +5,11 @@
 #pragma once
 
 #include "colorwidgetbase.hpp"
-class StrokeColorWidget : public ColorWidgetBase
+class BackgroundColorWidget : public ColorWidgetBase
 {
     Q_OBJECT
 public:
-    explicit StrokeColorWidget(QWidget *parent = nullptr);
+    explicit BackgroundColorWidget(QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;

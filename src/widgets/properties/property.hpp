@@ -15,6 +15,8 @@ public:
     Property();
 
     enum class Type : int8_t {
+        BackgroundColor,
+        BackgroundStyle,
         StrokeWidth,
         StrokeColor,
         StrokeStyle,

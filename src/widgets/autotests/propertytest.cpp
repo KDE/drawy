@@ -16,6 +16,8 @@ PropertyTest::PropertyTest(QObject *parent)
 
 void PropertyTest::shouldConvertStringToEnum()
 {
+    QCOMPARE(Property::convertStringToEnum(u"BackgroundColor"_s), Property::Type::BackgroundColor);
+    QCOMPARE(Property::convertStringToEnum(u"BackgroundStyle"_s), Property::Type::BackgroundStyle);
     QCOMPARE(Property::convertStringToEnum(u"StrokeWidth"_s), Property::Type::StrokeWidth);
     QCOMPARE(Property::convertStringToEnum(u"StrokeColor"_s), Property::Type::StrokeColor);
     QCOMPARE(Property::convertStringToEnum(u"Opacity"_s), Property::Type::Opacity);
@@ -28,6 +30,8 @@ void PropertyTest::shouldConvertStringToEnum()
 
 void PropertyTest::shouldConvertEnumToString()
 {
+    QCOMPARE(Property::convertEnumToString(Property::Type::BackgroundColor), u"BackgroundColor"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::BackgroundStyle), u"BackgroundStyle"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::StrokeWidth), u"StrokeWidth"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::StrokeColor), u"StrokeColor"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Opacity), u"Opacity"_s);

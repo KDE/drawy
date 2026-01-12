@@ -9,7 +9,10 @@
 #include "serializer/rectangleserializer.hpp"
 #include <QJsonObject>
 
-RectangleItem::RectangleItem() = default;
+RectangleItem::RectangleItem()
+{
+    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+}
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {

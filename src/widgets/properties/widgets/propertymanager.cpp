@@ -5,6 +5,7 @@
 #include "propertymanager.hpp"
 
 #include "actionswidget.hpp"
+#include "backgroundcolorwidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
 #include "strokecolorwidget.hpp"
@@ -18,6 +19,7 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Type::EraserSize] = new EraserSizeWidget(parent);
     m_widgets[Property::Type::FontSize] = new FontSizeWidget(parent);
     m_widgets[Property::Type::Actions] = new ActionsWidget(parent);
+    m_widgets[Property::Type::BackgroundColor] = new BackgroundColorWidget(parent);
 
     for (const auto &[_, widget] : m_widgets) {
         connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

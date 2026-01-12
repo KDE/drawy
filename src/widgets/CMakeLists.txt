@@ -123,8 +123,12 @@ target_sources(
         properties/widgets/propertymanager.hpp
         properties/widgets/propertywidget.cpp
         properties/widgets/propertywidget.hpp
+        properties/widgets/backgroundcolorwidget.cpp
+        properties/widgets/backgroundcolorwidget.hpp
         properties/widgets/strokecolorwidget.cpp
         properties/widgets/strokecolorwidget.hpp
+        properties/widgets/colorwidgetbase.cpp
+        properties/widgets/colorwidgetbase.hpp
         properties/widgets/strokewidthwidget.cpp
         properties/widgets/strokewidthwidget.hpp
         tools/arrowtool.cpp
