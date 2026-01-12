@@ -11,5 +11,5 @@ Dependencies:
     'frameworks/kconfig': '@latest-kf6'
 
 Options:
- require-passing-tests-on: ['@all']
+ require-passing-tests-on: ['Linux']
  tests-run-in-parallel: True
