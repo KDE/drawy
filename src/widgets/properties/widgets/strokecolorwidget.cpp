@@ -21,7 +21,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     auto layout{new QHBoxLayout{m_widget}};
     layout->setContentsMargins(0, 0, 0, 0);
 
-    QList<QColor> colors{QColor{255, 255, 255}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
+    const QList<QColor> colors{QColor{255, 255, 255}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
 
     for (const QColor &color : colors) {
         QPushButton *btn{new QPushButton{m_widget}};
