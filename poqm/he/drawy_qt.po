@@ -63,105 +63,87 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "הזזה"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "שמירה לקובץ"
 
-#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
-#, qt-format
-msgctxt "QObject|"
-msgid "Untitled.%1"
-msgstr "ללא שם.%1"
-
-#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
-#: widgets/keybindings/actionmanager.cpp:343
-#, qt-format
-msgctxt "QObject|"
-msgid "Drawy (*.%1)"
-msgstr "Drawy (*.%1)"
-
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
-msgctxt "QObject|"
-msgid "Save File"
-msgstr "שמירת הקובץ"
-
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/context/uicontext.cpp:107
+#: widgets/context/uicontext.cpp:84
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: widgets/context/uicontext.cpp:112
+#: widgets/context/uicontext.cpp:89
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "מצב בהיר"
 
-#: widgets/context/uicontext.cpp:126
+#: widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "מצב כהה"
 
-#: widgets/context/uicontext.cpp:134
+#: widgets/context/uicontext.cpp:111
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "הסגה"
 
-#: widgets/context/uicontext.cpp:141
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "ביצוע מחדש"
@@ -466,6 +448,24 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Shift+G"
 
+#: widgets/keybindings/actionmanager.cpp:319
+#, qt-format
+msgctxt "QObject|"
+msgid "Untitled.%1"
+msgstr "ללא שם.%1"
+
+#: widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
+#, qt-format
+msgctxt "QObject|"
+msgid "Drawy (*.%1)"
+msgstr "Drawy (*.%1)"
+
+#: widgets/keybindings/actionmanager.cpp:322
+msgctxt "QObject|"
+msgid "Save File"
+msgstr "שמירת הקובץ"
+
 #: widgets/keybindings/actionmanager.cpp:347
 msgctxt "QObject|"
 msgid "Open File"
@@ -501,7 +501,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "גודל כתב"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:50
+#: widgets/properties/widgets/strokecolorwidget.cpp:48
 msgctxt "StrokeColorWidget|"
 msgid "Color"
 msgstr "צבע"
@@ -521,12 +521,12 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:157
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
-#: widgets/tools/freeformtool.cpp:46
+#: widgets/tools/freeformtool.cpp:47
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "כלי עט"

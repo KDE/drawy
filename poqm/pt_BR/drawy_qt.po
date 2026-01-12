@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-10 07:08-0300\n"
+"PO-Revision-Date: 2026-01-11 06:56-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -56,112 +56,91 @@ msgid "An optional argument 'file' "
 msgstr "Um argumento opcional 'arquivo' "
 
 #: apps/main.cpp:45
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Seleção"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Forma livre"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Retângulo"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Elipse"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Seta"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Linha"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Borracha"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Texto"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Mover"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Salvar para arquivo"
 
-#: widgets/context/uicontext.cpp:78 widgets/keybindings/actionmanager.cpp:319
-#, qt-format
-msgctxt "QObject|"
-msgid "Untitled.%1"
-msgstr "Sem título.%1"
-
-#: widgets/context/uicontext.cpp:80 widgets/keybindings/actionmanager.cpp:321
-#: widgets/keybindings/actionmanager.cpp:343
-#, qt-format
-msgctxt "QObject|"
-msgid "Drawy (*.%1)"
-msgstr "Drawy (*.%1)"
-
-#: widgets/context/uicontext.cpp:81 widgets/keybindings/actionmanager.cpp:322
-msgctxt "QObject|"
-msgid "Save File"
-msgstr "Salvar arquivo"
-
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/context/uicontext.cpp:107
+#: widgets/context/uicontext.cpp:84
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Reduzir"
 
-#: widgets/context/uicontext.cpp:112
+#: widgets/context/uicontext.cpp:89
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: widgets/context/uicontext.cpp:116 widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
 msgctxt "UIContext|"
 msgid "Light Mode"
 msgstr "Modo claro"
 
-#: widgets/context/uicontext.cpp:126
+#: widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Dark Mode"
 msgstr "Modo escuro"
 
-#: widgets/context/uicontext.cpp:134
+#: widgets/context/uicontext.cpp:111
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfazer"
 
-#: widgets/context/uicontext.cpp:141
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refazer"
@@ -466,6 +445,24 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Shift+G"
 
+#: widgets/keybindings/actionmanager.cpp:319
+#, qt-format
+msgctxt "QObject|"
+msgid "Untitled.%1"
+msgstr "Sem título.%1"
+
+#: widgets/keybindings/actionmanager.cpp:321
+#: widgets/keybindings/actionmanager.cpp:343
+#, qt-format
+msgctxt "QObject|"
+msgid "Drawy (*.%1)"
+msgstr "Drawy (*.%1)"
+
+#: widgets/keybindings/actionmanager.cpp:322
+msgctxt "QObject|"
+msgid "Save File"
+msgstr "Salvar arquivo"
+
 #: widgets/keybindings/actionmanager.cpp:347
 msgctxt "QObject|"
 msgid "Open File"
@@ -501,7 +498,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Tamanho da fonte"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:50
+#: widgets/properties/widgets/strokecolorwidget.cpp:48
 msgctxt "StrokeColorWidget|"
 msgid "Color"
 msgstr "Cor"
@@ -521,12 +518,12 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Ferramenta de elipse"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:157
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Ferramenta de borracha"
 
-#: widgets/tools/freeformtool.cpp:46
+#: widgets/tools/freeformtool.cpp:47
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Ferramenta de caneta"
