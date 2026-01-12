@@ -32,6 +32,9 @@ include(KDECMakeSettings)
 include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+set(SharedMimeInfo_MINIMUM_VERSION "1.3")
+find_package(SharedMimeInfo ${SharedMimeInfo_MINIMUM_VERSION} REQUIRED)
+
 kde_enable_exceptions()
 
 ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.21.0)
@@ -138,5 +141,6 @@ ecm_qt_install_logging_categories(
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
+update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 ecm_install_po_files_as_qm(poqm)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
