@@ -56,6 +56,7 @@
                 kdePackages.extra-cmake-modules
                 kdePackages.kcrash.dev
                 kdePackages.kwidgetsaddons
+                kdePackages.kconfig
               ]);
           };
       });
