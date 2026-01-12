@@ -9,6 +9,7 @@
 #include "item/ellipse.hpp"
 #include "item/freeform.hpp"
 #include "item/group.hpp"
+#include "item/itemutils.hpp"
 #include "item/line.hpp"
 #include "item/rectangle.hpp"
 #include "item/text.hpp"
@@ -53,7 +54,7 @@ void DeserializeJob::deserializeItems()
     QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(mJsonObject, u"items"_s));
     for (const QJsonValueRef &v : itemsArray) {
         const QJsonObject itemObj = ItemDeserializer::object(v);
-        const Item::Type type{Item::convertStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
+        const Item::Type type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
         std::shared_ptr<Item> item = createItem(type);
         item->deserialize(itemObj);
         items.append(item);

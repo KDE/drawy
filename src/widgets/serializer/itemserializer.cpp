@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "itemserializer.hpp"
+#include "item/itemutils.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 
@@ -18,7 +19,7 @@ QJsonObject ItemSerializer::serialize() const
 {
     QJsonObject obj;
 
-    obj[u"type"_s] = Item::convertEnumToString(mItem->type());
+    obj[u"type"_s] = ItemUtils::convertItemTypeEnumToString(mItem->type());
     obj[u"bounding_box"_s] = toJson(mItem->boundingBox());
     obj[u"bounding_box_padding"_s] = QJsonValue(mItem->boundingBoxPadding());
     obj[u"properties"_s] = toJson(mItem->properties());

@@ -17,7 +17,7 @@ public:
     enum class Type : int8_t {
         StrokeWidth,
         StrokeColor,
-        // StrokeType, // We need to define several stroke
+        StrokeStyle,
         Opacity,
         FontSize,
         EraserSize,

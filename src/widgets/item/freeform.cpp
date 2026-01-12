@@ -9,6 +9,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "item/itemutils.hpp"
 #include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
 
@@ -17,6 +18,7 @@ FreeformItem::FreeformItem()
     m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{Common::maxItemOpacity, Property::Type::Opacity};
+    m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
 }
 
 int FreeformItem::minPointDistance()

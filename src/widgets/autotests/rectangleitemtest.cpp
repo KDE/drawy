@@ -22,8 +22,9 @@ void RectangleItemTest::shouldHaveDefaultValues()
 {
     const RectangleItem i;
     QCOMPARE(i.type(), Item::Type::Rectangle);
-    const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity;
-    QCOMPARE(i.propertyTypes().count(), 3);
+    const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
+                                                    << Property::Type::StrokeStyle;
+    QCOMPARE(i.propertyTypes().count(), 4);
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }

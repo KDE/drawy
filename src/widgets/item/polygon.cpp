@@ -3,15 +3,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "polygon.hpp"
+#include "item/itemutils.hpp"
 #include "serializer/polygondeserializer.hpp"
 #include "serializer/polygonserializer.hpp"
 #include <QJsonObject>
-
+using namespace Qt::Literals::StringLiterals;
 PolygonItem::PolygonItem()
 {
     m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
+    m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
 }
 
 void PolygonItem::setStart(QPointF start)

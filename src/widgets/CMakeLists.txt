@@ -3,11 +3,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 set(DRAWY_LIB_SOVERSION "0")
-add_library(
-    libdrawywidgets
-    jobs/loadjob.hpp
-    jobs/loadjob.cpp
-)
+add_library(libdrawywidgets)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -107,6 +103,8 @@ target_sources(
         item/rectangle.hpp
         item/text.cpp
         item/text.hpp
+        item/itemutils.hpp
+        item/itemutils.cpp
         keybindings/action.cpp
         keybindings/action.hpp
         keybindings/actionmanager.cpp
@@ -214,6 +212,8 @@ target_sources(
         jobs/saveasjob.hpp
         jobs/deserializejob.hpp
         jobs/deserializejob.cpp
+        jobs/loadjob.hpp
+        jobs/loadjob.cpp
         libdrawywidgets_private_export.h
 )
 

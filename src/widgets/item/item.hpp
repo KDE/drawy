@@ -44,12 +44,17 @@ public:
     };
     Q_ENUM(Type)
 
-    virtual Type type() const = 0;
+    enum class StrokeType : int8_t {
+        Solid,
+        DashLine,
+        DotLine,
+        Invalid,
+    };
+    Q_ENUM(StrokeType)
+
+    [[nodiscard]] virtual Type type() const = 0;
 
     virtual void updateAfterProperty();
-
-    [[nodiscard]] static Item::Type convertStringToEnum(const QString &str);
-    [[nodiscard]] static QString convertEnumToString(Item::Type type);
 
     [[nodiscard]] virtual QJsonObject serialize() const = 0;
     virtual void deserialize(const QJsonObject &obj) = 0;
@@ -60,9 +65,11 @@ public:
 
     virtual void translate(const QPointF &amount) = 0;
 
-    virtual bool needsCaching() const;
-    bool isDirty() const;
+    [[nodiscard]] virtual bool needsCaching() const;
+    [[nodiscard]] bool isDirty() const;
     void setDirty(bool value);
+
+    [[nodiscard]] bool hasProperty(Property::Type propertyType) const;
 
 protected:
     QRectF m_boundingBox{};

@@ -12,6 +12,10 @@
     },
     "properties": [
         {
+            "type": "StrokeStyle",
+            "value": "Solid"
+        },
+        {
             "type": "Opacity",
             "value": 255
         },
