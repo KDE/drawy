@@ -467,40 +467,79 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Selectie verwijderen"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Groepsselectie"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Selectie van groep ongedaan maken"
 
-#: widgets/properties/widgets/actionswidget.cpp:63
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acties"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:28
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+msgctxt "BackgroundColorWidget|"
+msgid "Background Color"
+msgstr ""
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#, fuzzy
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Color"
+msgctxt "ColorWidgetBase|"
+msgid "Color"
+msgstr "Kleur"
+
+#: widgets/properties/widgets/erasersizewidget.cpp:29
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
 msgstr "Grootte van gum"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:29
+#: widgets/properties/widgets/fontsizewidget.cpp:30
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Tekengrootte"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:48
+#: widgets/properties/widgets/stokestylewidget.cpp:25
+msgctxt "StokeStyleWidget|"
+msgid "Solid"
+msgstr ""
+
+#: widgets/properties/widgets/stokestylewidget.cpp:31
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Line"
+msgctxt "StokeStyleWidget|"
+msgid "Dash Line"
+msgstr "Lijn"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Line"
+msgctxt "StokeStyleWidget|"
+msgid "Dot Line"
+msgstr "Lijn"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:54
+msgctxt "StokeStyleWidget|"
+msgid "Stroke Style"
+msgstr ""
+
+#: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
-msgid "Color"
-msgstr "Kleur"
+msgid "Stroke Color"
+msgstr ""
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
