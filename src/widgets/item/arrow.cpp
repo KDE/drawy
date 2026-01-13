@@ -40,6 +40,26 @@ void ArrowItem::calcArrowPoints()
     m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
 }
 
+ArrowItem::ArrowType ArrowItem::endArrow() const
+{
+    return m_endArrow;
+}
+
+void ArrowItem::setEndArrow(const ArrowType &newEndArrow)
+{
+    m_endArrow = newEndArrow;
+}
+
+ArrowItem::ArrowType ArrowItem::startArrow() const
+{
+    return m_startArrow;
+}
+
+void ArrowItem::setStartArrow(const ArrowType &newStartArrow)
+{
+    m_startArrow = newStartArrow;
+}
+
 void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);

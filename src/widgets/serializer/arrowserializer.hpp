@@ -13,4 +13,5 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowSerializer : public PolygonSerializer
 public:
     explicit ArrowSerializer(const ArrowItem *item);
     ~ArrowSerializer() override;
+    [[nodiscard]] QJsonObject serialize() const override;
 };

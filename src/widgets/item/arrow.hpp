@@ -12,6 +12,14 @@ public:
     ArrowItem();
     ~ArrowItem() override = default;
 
+    enum class ArrowType : int8_t {
+        None,
+        Arrow,
+        Triangle,
+        // TODO add more in the future
+    };
+    Q_ENUM(ArrowType)
+
     void setStart(QPointF start) override;
     void setEnd(QPointF end) override;
 
@@ -26,14 +34,21 @@ public:
 
     void deserialize(const QJsonObject &obj) override;
 
+    [[nodiscard]] ArrowType startArrow() const;
+    void setStartArrow(const ArrowType &newStartArrow);
+
+    [[nodiscard]] ArrowType endArrow() const;
+    void setEndArrow(const ArrowType &newEndArrow);
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
+    void calcArrowPoints();
     QPointF m_arrowP1;
     QPointF m_arrowP2;
+    ArrowType m_startArrow = ArrowType::None;
+    ArrowType m_endArrow = ArrowType::Arrow;
 
     int m_maxArrowSize{15}; // hardcoded for now
-
-    void calcArrowPoints();
 };

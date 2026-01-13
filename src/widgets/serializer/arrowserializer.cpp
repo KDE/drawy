@@ -12,3 +12,8 @@ ArrowSerializer::ArrowSerializer(const ArrowItem *item)
 }
 
 ArrowSerializer::~ArrowSerializer() = default;
+
+QJsonObject ArrowSerializer::serialize() const
+{
+    return PolygonSerializer::serialize();
+}
