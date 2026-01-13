@@ -88,7 +88,7 @@ void Common::renderCanvas(ApplicationContext *context)
     // render a box around selected items
     context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {
         QPen pen{Common::selectionBorderColor};
-        pen.setWidth(2);
+        pen.setWidth(1);
 
         painter.setPen(pen);
 
