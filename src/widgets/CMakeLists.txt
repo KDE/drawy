@@ -131,6 +131,10 @@ target_sources(
         properties/widgets/colorwidgetbase.hpp
         properties/widgets/strokewidthwidget.cpp
         properties/widgets/strokewidthwidget.hpp
+        properties/widgets/buttonactionswidget.hpp
+        properties/widgets/buttonactionswidget.cpp
+        properties/widgets/stokestylewidget.hpp
+        properties/widgets/stokestylewidget.cpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

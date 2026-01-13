@@ -26,7 +26,8 @@ PolygonDrawingTool::PolygonDrawingTool()
 {
     m_cursor = QCursor(Qt::CrossCursor);
 
-    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor};
+    // Disable StrokeStyle as we don't have icons yet
+    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor /*, Property::Type::StrokeStyle*/};
 }
 
 void PolygonDrawingTool::mousePressed(ApplicationContext *context)

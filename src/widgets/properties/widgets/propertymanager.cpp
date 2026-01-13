@@ -8,6 +8,7 @@
 #include "backgroundcolorwidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
+#include "properties/widgets/stokestylewidget.hpp"
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
@@ -16,6 +17,7 @@ PropertyManager::PropertyManager(QWidget *parent)
 {
     m_widgets[Property::Type::StrokeWidth] = new StrokeWidthWidget(parent);
     m_widgets[Property::Type::StrokeColor] = new StrokeColorWidget(parent);
+    m_widgets[Property::Type::StrokeStyle] = new StokeStyleWidget(parent);
     m_widgets[Property::Type::EraserSize] = new EraserSizeWidget(parent);
     m_widgets[Property::Type::FontSize] = new FontSizeWidget(parent);
     m_widgets[Property::Type::Actions] = new ActionsWidget(parent);

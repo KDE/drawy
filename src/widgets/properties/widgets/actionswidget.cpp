@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QWidget>
 
+#include "buttonactionswidget.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
 #include "iconmanager/iconmanager.hpp"
@@ -22,9 +23,9 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     QHBoxLayout *layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins(0, 0, 0, 0);
 
-    QPushButton *deleteButton{new QPushButton(m_widget)};
-    QPushButton *groupButton{new QPushButton(m_widget)};
-    QPushButton *ungroupButton{new QPushButton(m_widget)};
+    auto deleteButton{new ButtonActionsWidget(m_widget)};
+    auto groupButton{new ButtonActionsWidget(m_widget)};
+    auto ungroupButton{new ButtonActionsWidget(m_widget)};
 
     IconManager &iconManager{ApplicationContext::instance()->uiContext().iconManager()};
     deleteButton->setIcon(iconManager.icon(IconManager::Icon::ACTION_DELETE));
@@ -35,23 +36,19 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     groupButton->setToolTip(tr("Group selection"));
     ungroupButton->setToolTip(tr("Ungroup selection"));
 
-    deleteButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
-    groupButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
-    ungroupButton->setProperty("class", u"drawyPropertyBarActionButton"_s);
-
     layout->addWidget(deleteButton);
     layout->addWidget(groupButton);
     layout->addWidget(ungroupButton);
 
     ActionManager &actionManager{ApplicationContext::instance()->uiContext().actionManager()};
 
-    connect(deleteButton, &QPushButton::clicked, this, [&]() {
+    connect(deleteButton, &ButtonActionsWidget::clicked, this, [&]() {
         actionManager.deleteSelection();
     });
-    connect(groupButton, &QPushButton::clicked, this, [&]() {
+    connect(groupButton, &ButtonActionsWidget::clicked, this, [&]() {
         actionManager.groupItems();
     });
-    connect(ungroupButton, &QPushButton::clicked, this, [&]() {
+    connect(ungroupButton, &ButtonActionsWidget::clicked, this, [&]() {
         actionManager.ungroupItems();
     });
 
