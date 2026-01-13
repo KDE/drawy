@@ -13,7 +13,7 @@
     "properties": [
         {
             "type": "StrokeStyle",
-            "value": "Solid"
+            "value": "DashLine"
         },
         {
             "type": "Opacity",
