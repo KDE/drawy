@@ -101,7 +101,8 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
-    pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
+    // Laurent we can't support it at the moment:
+    // pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     pen.setJoinStyle(Qt::RoundJoin);
     pen.setCapStyle(Qt::RoundCap);
     pen.setWidth(property(Property::Type::StrokeWidth).value<int>());
