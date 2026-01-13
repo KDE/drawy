@@ -50,6 +50,11 @@ void ArrowItem::setEndArrow(const ArrowType &newEndArrow)
     m_endArrow = newEndArrow;
 }
 
+bool ArrowItem::operator==(const ArrowItem &other) const
+{
+    return m_startArrow == other.startArrow() && m_endArrow == other.endArrow() && PolygonItem::operator==(other);
+}
+
 ArrowItem::ArrowType ArrowItem::startArrow() const
 {
     return m_startArrow;
@@ -116,4 +121,12 @@ void ArrowItem::deserialize(const QJsonObject &obj)
 {
     ArrowDeserializer deserializer(this);
     deserializer.deserialize(obj);
+}
+
+QDebug operator<<(QDebug d, const ArrowItem &t)
+{
+    d.space() << "startArrow:" << t.startArrow();
+    d.space() << "endArrow:" << t.endArrow();
+    d.space() << "PolygonItem: " << static_cast<const PolygonItem &>(t);
+    return d;
 }

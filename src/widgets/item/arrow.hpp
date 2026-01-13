@@ -40,6 +40,8 @@ public:
     [[nodiscard]] ArrowType endArrow() const;
     void setEndArrow(const ArrowType &newEndArrow);
 
+    [[nodiscard]] bool operator==(const ArrowItem &other) const;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 

@@ -105,6 +105,8 @@ target_sources(
         item/text.hpp
         item/itemutils.hpp
         item/itemutils.cpp
+        item/arrowutils.hpp
+        item/arrowutils.cpp
         keybindings/action.cpp
         keybindings/action.hpp
         keybindings/actionmanager.cpp
