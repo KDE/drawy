@@ -7,6 +7,7 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
+#include "common/constants.hpp"
 #include "common/renderitems.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -18,6 +19,7 @@
 #include "item/freeform.hpp"
 #include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <iterator>
 #include <qnamespace.h>
 
 FreeformTool::FreeformTool()
@@ -87,11 +89,32 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
 
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
+          QList<std::shared_ptr<Item>> itemList{prevItem};
+          spatialContext.commandHistory().insert(
+              std::make_shared<InsertItemCommand>(itemList));
+          renderingContext.markForRender();
+
+          curItem =
+              std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
+          curItem->setProperty(
+              Property::Type::StrokeWidth,
+              uiContext->propertyManager().value(Property::Type::StrokeWidth));
+          curItem->setProperty(
+              Property::Type::StrokeColor,
+              uiContext->propertyManager().value(Property::Type::StrokeColor));
+
+          // add last point to ensure it looks continuous
+          curItem->addPoint(prevItem->points().back(),
+                            prevItem->pressures().back());
+        }
+
+        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->event().pressure());
         const qreal zoom{renderingContext->zoomFactor()};
 
         renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
-            curItem->quickDraw(painter, spatialContext->offsetPos());
+            curItem->erase(painter, spatialContext.offsetPos());
+            curItem->draw(painter, spatialContext.offsetPos());
         });
 
         m_lastPoint = curPoint;
@@ -110,8 +133,8 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
-        QList<std::shared_ptr<Item>> itemsAfterSplitting{curItem->split()};
-        commandHistory->insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));
+        QList<std::shared_ptr<Item>> itemList{curItem};
+        commandHistory.insert(std::make_shared<InsertItemCommand>(itemList));
 
         curItem.reset();
 

@@ -20,7 +20,7 @@ public:
     [[nodiscard]] static int minPointDistance();
 
     void draw(QPainter &painter, const QPointF &offset) override;
-    void quickDraw(QPainter &painter, const QPointF &offset) const;
+    void erase(QPainter &painter, const QPointF &offset) const override;
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
     [[nodiscard]] bool intersects(const QLineF &rect) override;
@@ -29,7 +29,6 @@ public:
 
     [[nodiscard]] QList<std::shared_ptr<Item>> split() const;
     [[nodiscard]] qsizetype size() const;
-    [[nodiscard]] int maxSize() const;
 
     virtual void addPoint(const QPointF &point, const qreal pressure, bool optimize = true);
 
@@ -50,8 +49,10 @@ protected:
 
 private:
     [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT QPointF optimizePoint(const QPointF &newPoint);
+
     std::deque<QPointF> m_currentWindow;
     QPointF m_currentWindowSum{0, 0};
-    quint64 m_bufferSize{7};
+    std::size_t m_bufferSize{7};
 };
+
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const FreeformItem &t);

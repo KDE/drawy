@@ -6,6 +6,7 @@
 
 #include <QDateTime>
 #include <QJsonObject>
+#include <qnamespace.h>
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
@@ -114,6 +115,11 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     drawItem(painter, offset);
 }
 
+void FreeformItem::erase(QPainter &painter, const QPointF &offset) const {
+  painter.setCompositionMode(QPainter::CompositionMode_Source);
+  painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
+}
+
 QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
 {
     m_currentWindow.push_back(newPoint);
@@ -125,32 +131,6 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
     }
 
     return m_currentWindowSum / static_cast<qreal>(m_currentWindow.size());
-}
-
-void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const
-{
-    QPen pen;
-
-    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
-    const int alpha{property(Property::Type::Opacity).value<int>()};
-    color.setAlpha(alpha);
-
-    qreal penWidth{property(Property::Type::StrokeWidth).value<qreal>()};
-    if (alpha == Common::maxItemOpacity) {
-        penWidth *= m_pressures.back();
-    }
-
-    pen.setJoinStyle(Qt::RoundJoin);
-    pen.setCapStyle(Qt::RoundCap);
-    pen.setColor(color);
-    pen.setWidthF(penWidth);
-    painter.setPen(pen);
-
-    if (m_points.size() > 1) {
-        painter.drawLine(m_points[m_points.size() - 2] - offset, m_points.back() - offset);
-    } else {
-        painter.drawPoint(m_points.back());
-    }
 }
 
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
@@ -196,12 +176,6 @@ qsizetype FreeformItem::size() const
     return m_points.size();
 }
 
-int FreeformItem::maxSize() const
-{
-    // Max number of points per freeform
-    return 500;
-}
-
 // If the number of points exceeds the limit, this method can be called
 // to split this freeform into multiple smaller freeforms
 QList<std::shared_ptr<Item>> FreeformItem::split() const
@@ -210,19 +184,20 @@ QList<std::shared_ptr<Item>> FreeformItem::split() const
 
     qsizetype pointSize{m_points.size()};
     for (qsizetype index = 0; index < pointSize; index++) {
-        if (index % maxSize() == 0) {
-            // add this point to the previous freeform too
-            if (!items.empty()) {
-                std::shared_ptr<FreeformItem> last{std::static_pointer_cast<FreeformItem>(items.back())};
-                last->addPoint(m_points[index], m_pressures[index]);
-            }
-
-            // create a copy
-            std::shared_ptr<FreeformItem> newItem{std::make_shared<FreeformItem>()};
-            newItem->m_properties = m_properties;
-
-            items.push_back(newItem);
+      if (index % Common::maxFreeformPointCount == 0) {
+        // add this point to the previous freeform too
+        if (!items.empty()) {
+          std::shared_ptr<FreeformItem> last{
+              std::static_pointer_cast<FreeformItem>(items.back())};
+          last->addPoint(m_points[index], m_pressures[index]);
         }
+
+        // create a copy
+        std::shared_ptr<FreeformItem> newItem{std::make_shared<FreeformItem>()};
+        newItem->m_properties = m_properties;
+
+        items.push_back(newItem);
+      }
         std::shared_ptr<FreeformItem> cur{std::static_pointer_cast<FreeformItem>(items.back())};
         cur->addPoint(m_points[index], m_pressures[index], false);
     }
