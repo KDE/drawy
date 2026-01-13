@@ -26,7 +26,7 @@ QPushButton *ActionBar::addButton(const QString &tooltip, IconManager::Icon icon
     ApplicationContext *context{ApplicationContext::instance()};
 
     auto button = new QPushButton{this};
-    button->setIcon(context->uiContext().iconManager().icon(icon));
+    button->setIcon(context->uiContext()->iconManager()->icon(icon));
     button->setToolTip(tooltip);
 
     button->setProperty("class", u"drawlyActionButton"_s);

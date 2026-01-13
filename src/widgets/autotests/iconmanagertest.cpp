@@ -19,6 +19,10 @@ void IconManagerTest::shouldHaveDefaultValues()
 {
     const IconManager manager;
     QCOMPARE(manager.iconPath(IconManager::Icon::TOOL_FREEFORM), u":/icons/fa-dark/tool-freeform.svg"_s);
+
+    QCOMPARE(manager.iconPath(IconManager::Icon::PROPERTY_LINE_DASHED), u":/icons/fa-dark/property-line_dashed.svg"_s);
+    QCOMPARE(manager.iconPath(IconManager::Icon::PROPERTY_LINE_DOTTED), u":/icons/fa-dark/property-line_dotted.svg"_s);
+    QCOMPARE(manager.iconPath(IconManager::Icon::PROPERTY_LINE_SOLID), u":/icons/fa-dark/property-line_solid.svg"_s);
 }
 
 #include "moc_iconmanagertest.cpp"

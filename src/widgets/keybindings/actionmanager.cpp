@@ -34,7 +34,7 @@ ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
     , m_context{context}
 {
-    KeybindManager &keybindManager{m_context->uiContext().keybindManager()};
+    KeybindManager &keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
     Action *undoAction{new Action{tr("Undo"),
@@ -219,47 +219,47 @@ void ActionManager::zoomOut()
 
 void ActionManager::switchToFreeformTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Freeform);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Freeform);
 }
 
 void ActionManager::switchToEraserTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Eraser);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Eraser);
 }
 
 void ActionManager::switchToRectangleTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Rectangle);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Rectangle);
 }
 
 void ActionManager::switchToEllipseTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Ellipse);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Ellipse);
 }
 
 void ActionManager::switchToLineTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Line);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Line);
 }
 
 void ActionManager::switchToArrowTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Arrow);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Arrow);
 }
 
 void ActionManager::switchToMoveTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Move);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Move);
 }
 
 void ActionManager::switchToSelectionTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Selection);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Selection);
 }
 
 void ActionManager::switchToTextTool()
 {
-    m_context->uiContext().toolBar().changeTool(Tool::Type::Text);
+    m_context->uiContext()->toolBar().changeTool(Tool::Type::Text);
 }
 
 void ActionManager::groupItems()
@@ -308,7 +308,7 @@ void ActionManager::selectAll()
     auto allItems{m_context->spatialContext().quadtree().getAllItems()};
     m_context->spatialContext().commandHistory().insert(std::make_shared<SelectCommand>(allItems));
 
-    m_context->uiContext().propertyBar().updateToolProperties();
+    m_context->uiContext()->propertyBar().updateToolProperties();
     m_context->renderingContext().markForRender();
     m_context->renderingContext().markForUpdate();
 }

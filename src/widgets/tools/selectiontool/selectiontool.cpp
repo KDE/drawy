@@ -52,13 +52,13 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
         return m_curState;
 
     auto &selectionContext{context->selectionContext()};
-    auto &uiContext{context->uiContext()};
+    auto uiContext{context->uiContext()};
     auto &transformer{context->spatialContext().coordinateTransformer()};
 
-    QPointF worldCurPos{transformer.viewToWorld(uiContext.event().pos())};
+    QPointF worldCurPos{transformer.viewToWorld(uiContext->event().pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext.selectionBox().contains(worldCurPos) && !(uiContext.event().modifiers() & Qt::ShiftModifier)) {
+    if (selectionContext.selectionBox().contains(worldCurPos) && !(uiContext->event().modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
@@ -71,7 +71,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     if (selectedItems.empty())
         return;
 
-    auto &event{context->uiContext().event()};
+    auto &event{context->uiContext()->event()};
     auto &commandHistory{context->spatialContext().commandHistory()};
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 

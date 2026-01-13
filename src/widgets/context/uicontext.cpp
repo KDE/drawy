@@ -71,13 +71,13 @@ void UIContext::setUIContext()
 
     auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        ActionManager &actionManager{m_applicationContext->uiContext().actionManager()};
+        ActionManager &actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager.saveToFile();
     });
 
     button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        ActionManager &actionManager{m_applicationContext->uiContext().actionManager()};
+        ActionManager &actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager.loadFromFile();
     });
 
@@ -97,11 +97,11 @@ void UIContext::setUIContext()
         if (canvas.canvasBg() == Common::lightBackgroundColor) {
             canvas.setCanvasBg(Common::darkBackgroundColor);
             button->setToolTip(tr("Light Mode"));
-            button->setIcon(iconManager().icon(IconManager::Icon::ACTION_LIGHT_MODE));
+            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_LIGHT_MODE));
         } else {
             canvas.setCanvasBg(Common::lightBackgroundColor);
             button->setToolTip(tr("Dark Mode"));
-            button->setIcon(iconManager().icon(IconManager::Icon::ACTION_DARK_MODE));
+            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_DARK_MODE));
         }
 
         m_applicationContext->renderingContext().markForRender();
@@ -163,9 +163,9 @@ Event &UIContext::event() const
     return *m_event;
 }
 
-IconManager &UIContext::iconManager() const
+IconManager *UIContext::iconManager() const
 {
-    return *m_iconManager;
+    return m_iconManager;
 }
 
 void UIContext::toolChanged(Tool &tool)

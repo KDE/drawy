@@ -34,6 +34,9 @@ public:
         ACTION_GROUP,
         ACTION_UNGROUP,
         ACTION_DELETE,
+        PROPERTY_LINE_SOLID,
+        PROPERTY_LINE_DASHED,
+        PROPERTY_LINE_DOTTED,
     };
     Q_ENUM(Icon)
 

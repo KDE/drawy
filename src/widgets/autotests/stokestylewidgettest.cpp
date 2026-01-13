@@ -31,16 +31,19 @@ void StokeStyleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(solidButton);
     QCOMPARE(solidButton->property("stroke-style"), u"Solid"_s);
     QVERIFY(!solidButton->toolTip().isEmpty());
+    QVERIFY(solidButton->isCheckable());
 
     auto dashLineButton = m_widget->findChild<ButtonActionsWidget *>(u"dashLineButton"_s);
     QVERIFY(dashLineButton);
     QCOMPARE(dashLineButton->property("stroke-style"), u"DashLine"_s);
     QVERIFY(!dashLineButton->toolTip().isEmpty());
+    QVERIFY(dashLineButton->isCheckable());
 
     auto dotLineButton = m_widget->findChild<ButtonActionsWidget *>(u"dotLineButton"_s);
     QVERIFY(dotLineButton);
     QCOMPARE(dotLineButton->property("stroke-style"), u"DotLine"_s);
     QVERIFY(!dotLineButton->toolTip().isEmpty());
+    QVERIFY(dotLineButton->isCheckable());
 }
 
 #include "moc_stokestylewidgettest.cpp"

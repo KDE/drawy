@@ -34,7 +34,7 @@ void PropertyBar::setPropertyManager(PropertyManager *manager)
 void PropertyBar::updateToolProperties()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    updateProperties(context->uiContext().toolBar().curTool());
+    updateProperties(context->uiContext()->toolBar().curTool());
 }
 
 void PropertyBar::updateProperties(Tool &tool)

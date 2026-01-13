@@ -22,11 +22,11 @@
 
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 {
-    auto &uiContext{context->uiContext()};
-    auto &event{uiContext.event()};
+    auto *uiContext{context->uiContext()};
+    auto &event{uiContext->event()};
 
     if (event.button() == Qt::LeftButton) {
-        m_lastPos = uiContext.event().pos();
+        m_lastPos = uiContext->event().pos();
 
         auto &spatialContext{context->spatialContext()};
         auto &selectionContext{context->selectionContext()};
@@ -61,7 +61,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             lockState = false;
         }
 
-        context->uiContext().propertyBar().updateToolProperties();
+        context->uiContext()->propertyBar().updateToolProperties();
         renderingContext.markForRender();
         renderingContext.markForUpdate();
 
@@ -81,14 +81,14 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
         return;
     }
 
-    auto &uiContext{context->uiContext()};
+    auto *uiContext{context->uiContext()};
     auto &transformer{spatialContext.coordinateTransformer()};
     auto &selectionContext{context->selectionContext()};
     auto &selectedItems{selectionContext.selectedItems()};
 
     renderingContext.canvas().setOverlayBg(Qt::transparent);
 
-    const QPointF curPos{uiContext.event().pos()};
+    const QPointF curPos{uiContext->event().pos()};
 
     const QRectF selectionBox{m_lastPos, curPos};
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
@@ -99,7 +99,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
         })};
 
     selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
-    context->uiContext().propertyBar().updateToolProperties();
+    context->uiContext()->propertyBar().updateToolProperties();
 
     // TODO: Remove magic numbers
     renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {

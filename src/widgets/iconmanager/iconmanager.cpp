@@ -27,7 +27,11 @@ IconManager::IconManager(QObject *parent)
                  {Icon::ACTION_LIGHT_MODE, u"action-light_mode"_s},
                  {Icon::ACTION_GROUP, u"action-group"_s},
                  {Icon::ACTION_UNGROUP, u"action-ungroup"_s},
-                 {Icon::ACTION_DELETE, u"action-delete"_s}}
+                 {Icon::ACTION_DELETE, u"action-delete"_s},
+                 {Icon::PROPERTY_LINE_DASHED, u"property-line_dashed"_s},
+                 {Icon::PROPERTY_LINE_SOLID, u"property-line_solid"_s},
+                 {Icon::PROPERTY_LINE_DOTTED, u"property-line_dotted"_s},
+                 }
     , m_curTheme(u"fa-dark"_s) // default
 {
 }

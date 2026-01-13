@@ -57,5 +57,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file>icons/fa-light/action-light_mode.svg</file>
         <file>icons/fa-light/ui-angle_up.svg</file>
         <file>icons/fa-light/ui-angle_down.svg</file>
+        <file>icons/fa-dark/property-line_dashed.svg</file>
+        <file>icons/fa-dark/property-line_dotted.svg</file>
+        <file>icons/fa-dark/property-line_solid.svg</file>
+        <file>icons/fa-light/property-line_dashed.svg</file>
+        <file>icons/fa-light/property-line_dotted.svg</file>
+        <file>icons/fa-light/property-line_solid.svg</file>
     </qresource>
 </RCC>

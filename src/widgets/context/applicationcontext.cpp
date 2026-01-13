@@ -60,9 +60,9 @@ SpatialContext &ApplicationContext::spatialContext() const
     return *m_spatialContext;
 }
 
-UIContext &ApplicationContext::uiContext() const
+UIContext *ApplicationContext::uiContext() const
 {
-    return *m_uiContext;
+    return m_uiContext;
 }
 
 SelectionContext &ApplicationContext::selectionContext() const
@@ -73,7 +73,7 @@ SelectionContext &ApplicationContext::selectionContext() const
 void ApplicationContext::reset()
 {
     selectionContext().reset();
-    uiContext().reset();
+    uiContext()->reset();
     selectionContext().reset();
     spatialContext().reset();
     renderingContext().reset();

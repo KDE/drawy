@@ -27,7 +27,7 @@ public:
 
     RenderingContext &renderingContext() const;
     SpatialContext &spatialContext() const;
-    UIContext &uiContext() const;
+    UIContext *uiContext() const;
     SelectionContext &selectionContext() const;
 
     void reset(); // resets the canvas to a blank state
