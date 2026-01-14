@@ -137,6 +137,8 @@ target_sources(
         properties/widgets/buttonactionswidget.cpp
         properties/widgets/stokestylewidget.hpp
         properties/widgets/stokestylewidget.cpp
+        properties/widgets/opacitywidget.hpp
+        properties/widgets/opacitywidget.cpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

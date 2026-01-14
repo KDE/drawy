@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
+#include "libdrawywidgets_private_export.h"
 #include "properties/property.hpp"
 #include <QWidget>
 
-class PropertyWidget : public QObject
+class LIBDRAWYWIDGETS_TESTS_EXPORT PropertyWidget : public QObject
 {
     Q_OBJECT
 public:

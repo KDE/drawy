@@ -28,3 +28,5 @@ void ArrowUtilsTest::shouldConvertArrowTypeEnumToString()
     QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowItem::ArrowType::None), u"None"_s);
     QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowItem::ArrowType::Triangle), u"Triangle"_s);
 }
+
+#include "moc_arrowutilstest.cpp"
