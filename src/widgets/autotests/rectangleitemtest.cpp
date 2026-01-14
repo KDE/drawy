@@ -28,11 +28,14 @@ void RectangleItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void RectangleItemTest::shouldSerializeDefaultValue()
 {
-    const RectangleItem f;
+    RectangleItem f;
+    // Need to have an known id
+    f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -59,6 +62,8 @@ void RectangleItemTest::shouldSerialize()
     QFETCH(QColor, strokeColor);
 
     RectangleItem f;
+    // Need to have an known id
+    f.setId("063856fce1c94095a8dc16a7c4842e5a"_ba);
     // Becarefull order ! start before end !
     f.setStart(start);
     f.setEnd(end);

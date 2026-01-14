@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "item.hpp"
+#include <QUuid>
 
 #include <utility>
 
@@ -10,6 +11,7 @@
 #include "drawy_debug.h"
 // PUBLIC
 Item::Item()
+    : m_id(QUuid::createUuid().toByteArray(QUuid::Id128))
 {
 }
 
@@ -60,6 +62,16 @@ bool Item::hasProperty(Property::Type propertyType) const
     return m_properties.find(propertyType) != m_properties.end();
 }
 
+QByteArray Item::id() const
+{
+    return m_id;
+}
+
+void Item::setId(const QByteArray &newId)
+{
+    m_id = newId;
+}
+
 void Item::setProperty(const Property::Type propertyType, Property newObj)
 {
     if (m_properties.find(propertyType) != m_properties.end()) {
@@ -85,13 +97,14 @@ int Item::boundingBoxPadding() const
 
 bool Item::operator==(const Item &other) const
 {
-    return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties;
+    return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties && m_id == other.m_id;
 }
 
 QDebug operator<<(QDebug d, const Item &t)
 {
     d.space() << "boundingBox:" << t.boundingBox();
     d.space() << "properties:" << t.properties();
+    d.space() << "id:" << t.id();
     return d;
 }
 

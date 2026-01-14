@@ -26,11 +26,14 @@ void TextItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void TextItemTest::shouldSerializeDefaultValue()
 {
-    const TextItem f;
+    TextItem f;
+    // Need to have an known id
+    f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();

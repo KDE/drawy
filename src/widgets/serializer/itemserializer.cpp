@@ -23,6 +23,7 @@ QJsonObject ItemSerializer::serialize() const
     obj[u"bounding_box"_s] = toJson(mItem->boundingBox());
     obj[u"bounding_box_padding"_s] = QJsonValue(mItem->boundingBoxPadding());
     obj[u"properties"_s] = toJson(mItem->properties());
+    obj[u"id"_s] = QString::fromLatin1(mItem->id());
     return obj;
 }
 

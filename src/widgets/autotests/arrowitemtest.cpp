@@ -28,11 +28,14 @@ void ArrowItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void ArrowItemTest::shouldSerializeDefaultValue()
 {
-    const ArrowItem f;
+    ArrowItem f;
+    // Need to have an known id
+    f.setId("b06576a8e6d648ba9b282c8a57fa8225"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -61,6 +64,8 @@ void ArrowItemTest::shouldSerialize()
     QFETCH(QString, strokeStyle);
 
     ArrowItem f;
+    // Need to have an known id
+    f.setId("4d8b0fe427a143a4b553399816007640"_ba);
     // Becarefull order ! start before end !
     f.setStart(start);
     f.setEnd(end);

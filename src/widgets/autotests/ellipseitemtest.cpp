@@ -26,11 +26,14 @@ void EllipseItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void EllipseItemTest::shouldSerializeDefaultValue()
 {
-    const EllipseItem f;
+    EllipseItem f;
+    // Need to have an known id
+    f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -59,6 +62,7 @@ void EllipseItemTest::shouldSerialize()
     EllipseItem f;
     // Becarefull order ! start before end !
     f.setStart(start);
+    f.setId("70a68950047e4a2797ee2f32b21cba61"_ba);
     f.setEnd(end);
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));

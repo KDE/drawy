@@ -71,7 +71,11 @@ public:
 
     [[nodiscard]] bool hasProperty(Property::Type propertyType) const;
 
+    [[nodiscard]] QByteArray id() const;
+    void setId(const QByteArray &newId);
+
 protected:
+    QByteArray m_id;
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
 

@@ -26,11 +26,14 @@ void FreeformItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void FreeformItemTest::shouldSerializeDefaultValue()
 {
-    const FreeformItem f;
+    FreeformItem f;
+    // Need to have an known id
+    f.setId("acff679ae3c14260b56ef00f1d354553"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();

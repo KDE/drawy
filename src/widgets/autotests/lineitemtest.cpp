@@ -26,11 +26,14 @@ void LineItemTest::shouldHaveDefaultValues()
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }
+    QVERIFY(!i.id().isEmpty());
 }
 
 void LineItemTest::shouldSerializeDefaultValue()
 {
-    const LineItem f;
+    LineItem f;
+    // Need to have an known id
+    f.setId("167ce602c9a34f2692304328e8dc03f0"_ba);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -57,6 +60,8 @@ void LineItemTest::shouldSerialize()
     QFETCH(QColor, strokeColor);
 
     LineItem f;
+    // Need to have an known id
+    f.setId("fb0ba748fee64b4a89de76d94787f73e"_ba);
     // Becarefull order ! start before end !
     f.setStart(start);
     f.setEnd(end);
