@@ -21,8 +21,8 @@ CoordinateTransformer::~CoordinateTransformer()
 
 void CoordinateTransformer::setCoordinateTransformer()
 {
-    m_spatialContext = &(m_applicationContext->spatialContext());
-    m_renderingContext = &(m_applicationContext->renderingContext());
+    m_spatialContext = m_applicationContext->spatialContext();
+    m_renderingContext = m_applicationContext->renderingContext();
 }
 
 QPointF CoordinateTransformer::worldToView(QPointF point)

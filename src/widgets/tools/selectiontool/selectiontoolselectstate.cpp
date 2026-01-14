@@ -28,19 +28,19 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
     if (event.button() == Qt::LeftButton) {
         m_lastPos = uiContext->event().pos();
 
-        auto &spatialContext{context->spatialContext()};
-        auto &selectionContext{context->selectionContext()};
-        auto &renderingContext{context->renderingContext()};
-        auto &transformer{spatialContext.coordinateTransformer()};
+        auto spatialContext{context->spatialContext()};
+        auto selectionContext{context->selectionContext()};
+        auto renderingContext{context->renderingContext()};
+        auto transformer{spatialContext->coordinateTransformer()};
 
         QList<std::shared_ptr<Item>> intersectingItems{
-            spatialContext.quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
+            spatialContext->quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
                 return item->boundingBox().contains(pos);
             })};
 
         bool lockState = true;
-        const auto &selectedItems{selectionContext.selectedItems()};
-        auto &commandHistory{spatialContext.commandHistory()};
+        const auto &selectedItems{selectionContext->selectedItems()};
+        auto &commandHistory{spatialContext->commandHistory()};
 
         if (!(event.modifiers() & Qt::ShiftModifier)) {
             QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
@@ -62,8 +62,8 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         }
 
         context->uiContext()->propertyBar().updateToolProperties();
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
 
         return lockState;
     }
@@ -73,20 +73,20 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 
 void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 {
-    auto &renderingContext{context->renderingContext()};
-    auto &spatialContext{context->spatialContext()};
-    renderingContext.canvas().setCursor(Qt::ArrowCursor);
+    auto renderingContext{context->renderingContext()};
+    auto spatialContext{context->spatialContext()};
+    renderingContext->canvas().setCursor(Qt::ArrowCursor);
 
     if (!m_isActive) {
         return;
     }
 
-    auto *uiContext{context->uiContext()};
-    auto &transformer{spatialContext.coordinateTransformer()};
-    auto &selectionContext{context->selectionContext()};
-    auto &selectedItems{selectionContext.selectedItems()};
+    auto uiContext{context->uiContext()};
+    auto &transformer{spatialContext->coordinateTransformer()};
+    auto selectionContext{context->selectionContext()};
+    auto &selectedItems{selectionContext->selectedItems()};
 
-    renderingContext.canvas().setOverlayBg(Qt::transparent);
+    renderingContext->canvas().setOverlayBg(Qt::transparent);
 
     const QPointF curPos{uiContext->event().pos()};
 
@@ -94,7 +94,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
 
     QList<std::shared_ptr<Item>> intersectingItems{
-        spatialContext.quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
+        spatialContext->quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
             return rect.contains(item->boundingBox());
         })};
 
@@ -102,7 +102,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     context->uiContext()->propertyBar().updateToolProperties();
 
     // TODO: Remove magic numbers
-    renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+    renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
         const QPen pen{QColor{67, 135, 244, 200}};
         painter.setPen(pen);
 
@@ -110,18 +110,18 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
         painter.fillRect(selectionBox, QColor{67, 135, 244, 50});
     });
 
-    renderingContext.markForRender();
-    renderingContext.markForUpdate();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
 }
 
 bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
 {
     if (m_isActive) {
-        auto &renderingContext{context->renderingContext()};
-        auto &selectedItems{context->selectionContext().selectedItems()};
+        auto renderingContext{context->renderingContext()};
+        auto &selectedItems{context->selectionContext()->selectedItems()};
 
         if (!selectedItems.empty()) {
-            auto &commandHistory{context->spatialContext().commandHistory()};
+            auto &commandHistory{context->spatialContext()->commandHistory()};
             QList<std::shared_ptr<Item>> items{};
             for (const auto &item : selectedItems) {
                 items.push_back(item);
@@ -131,8 +131,8 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
             commandHistory.insert(std::make_shared<SelectCommand>(items));
         }
 
-        renderingContext.canvas().setOverlayBg(Qt::transparent);
-        renderingContext.markForUpdate();
+        renderingContext->canvas().setOverlayBg(Qt::transparent);
+        renderingContext->markForUpdate();
 
         m_isActive = false;
     }

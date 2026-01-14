@@ -44,10 +44,10 @@ void TextTool::mousePressed(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        QuadTree &quadTree{spatialContext.quadtree()};
+        auto spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
+        auto renderingContext{context->renderingContext()};
+        QuadTree &quadTree{spatialContext->quadtree()};
 
         QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
@@ -63,7 +63,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->event().pos()));
 
-                CommandHistory &commandHistory{spatialContext.commandHistory()};
+                CommandHistory &commandHistory{spatialContext->commandHistory()};
                 commandHistory.insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
             } else {
                 cleanup();
@@ -72,13 +72,13 @@ void TextTool::mousePressed(ApplicationContext *context)
         } else {
             if (m_curItem != nullptr) {
                 m_curItem->setMode(TextItem::Mode::Normal);
-                renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+                renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
             }
 
             m_curItem = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
             m_curItem->setCaret(worldPos);
 
-            renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+            renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
             m_isSelecting = true;
             m_mouseMoved = false;
@@ -89,12 +89,12 @@ void TextTool::mousePressed(ApplicationContext *context)
             m_curItem->setSelectionEnd(TextItem::INVALID);
         }
 
-        context->selectionContext().selectedItems() = {m_curItem};
+        context->selectionContext()->selectedItems() = {m_curItem};
         m_curItem->setMode(TextItem::Mode::Edit);
         uiContext->keybindManager().disable();
 
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 
     m_isDrawing = true;
@@ -102,11 +102,11 @@ void TextTool::mousePressed(ApplicationContext *context)
 
 void TextTool::mouseMoved(ApplicationContext *context)
 {
-    SpatialContext &spatialContext{context->spatialContext()};
-    CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-    RenderingContext &renderingContext{context->renderingContext()};
+    auto spatialContext{context->spatialContext()};
+    CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
+    auto renderingContext{context->renderingContext()};
     UIContext *uiContext{context->uiContext()};
-    QuadTree &quadTree{spatialContext.quadtree()};
+    QuadTree &quadTree{spatialContext->quadtree()};
     m_mouseMoved = true;
 
     QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
@@ -115,9 +115,9 @@ void TextTool::mouseMoved(ApplicationContext *context)
     })};
 
     if (!intersectingItems.empty()) {
-        renderingContext.canvas().setCursor(Qt::IBeamCursor);
+        renderingContext->canvas().setCursor(Qt::IBeamCursor);
     } else {
-        renderingContext.canvas().setCursor(Qt::CrossCursor);
+        renderingContext->canvas().setCursor(Qt::CrossCursor);
     }
 
     if (m_isSelecting) {
@@ -153,9 +153,9 @@ void TextTool::mouseMoved(ApplicationContext *context)
             }
         }
 
-        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -175,10 +175,10 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
     if (!m_mouseMoved) {
         m_isSelecting = true;
 
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
+        auto spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
+        auto renderingContext{context->renderingContext()};
+        auto uiContext{context->uiContext()};
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
 
@@ -188,9 +188,9 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         m_curItem->setSelectionStart(m_curItem->getPrevBreak(curIndex - 1));
         m_curItem->setSelectionEnd(m_curItem->getNextBreak(curIndex));
 
-        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -203,10 +203,10 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
     if (!m_mouseMoved) {
         m_isSelecting = true;
 
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
+        auto spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
+        auto renderingContext{context->renderingContext()};
+        auto uiContext{context->uiContext()};
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
 
@@ -217,9 +217,9 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         m_curItem->setSelectionStart(start);
         m_curItem->setSelectionEnd(end + 1);
 
-        renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -236,9 +236,9 @@ void TextTool::keyPressed(ApplicationContext *context)
         context->uiContext()->keybindManager().enable();
         m_curItem = nullptr;
 
-        context->renderingContext().cacheGrid().markAllDirty();
-        context->renderingContext().markForRender();
-        context->renderingContext().markForUpdate();
+        context->renderingContext()->cacheGrid().markAllDirty();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 
     if (m_curItem != nullptr && m_curItem->mode() == TextItem::Mode::Edit) {
@@ -445,12 +445,12 @@ void TextTool::keyPressed(ApplicationContext *context)
         }
         }
 
-        context->spatialContext().quadtree().deleteItem(m_curItem);
-        context->spatialContext().quadtree().insertItem(m_curItem);
+        context->spatialContext()->quadtree().deleteItem(m_curItem);
+        context->spatialContext()->quadtree().insertItem(m_curItem);
 
-        context->renderingContext().cacheGrid().markAllDirty();
-        context->renderingContext().markForRender();
-        context->renderingContext().markForUpdate();
+        context->renderingContext()->cacheGrid().markAllDirty();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 }
 
@@ -463,15 +463,15 @@ void TextTool::cleanup()
     if (!m_curItem)
         return;
 
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto &spatialContext{context->spatialContext()};
-    auto &renderingContext{context->renderingContext()};
-    auto *uiContext{context->uiContext()};
-    auto &transformer{spatialContext.coordinateTransformer()};
-    auto &quadTree{spatialContext.quadtree()};
+    auto context{ApplicationContext::instance()};
+    auto spatialContext{context->spatialContext()};
+    auto renderingContext{context->renderingContext()};
+    auto uiContext{context->uiContext()};
+    auto &transformer{spatialContext->coordinateTransformer()};
+    auto &quadTree{spatialContext->quadtree()};
 
     m_curItem->setMode(TextItem::Mode::Normal);
-    renderingContext.cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+    renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
     // enable keybindings again
     uiContext->keybindManager().enable();
@@ -480,11 +480,11 @@ void TextTool::cleanup()
         quadTree.deleteItem(m_curItem);
     }
 
-    context->selectionContext().selectedItems().clear();
+    context->selectionContext()->selectedItems().clear();
 
     m_curItem = nullptr;
-    renderingContext.markForRender();
-    renderingContext.markForUpdate();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
 }
 
 Tool::Type TextTool::type() const

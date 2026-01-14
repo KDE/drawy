@@ -25,10 +25,10 @@ public:
 
     QWidget *parentWidget() const;
 
-    RenderingContext &renderingContext() const;
-    SpatialContext &spatialContext() const;
+    RenderingContext *renderingContext() const;
+    SpatialContext *spatialContext() const;
     UIContext *uiContext() const;
-    SelectionContext &selectionContext() const;
+    SelectionContext *selectionContext() const;
 
     void reset(); // resets the canvas to a blank state
 

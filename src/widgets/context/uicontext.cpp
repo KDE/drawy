@@ -48,14 +48,14 @@ void UIContext::setUIContext()
     m_toolBar = new ToolBar(m_applicationContext->parentWidget());
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
-    m_keybindManager = new KeybindManager(&m_applicationContext->renderingContext().canvas());
+    m_keybindManager = new KeybindManager(&m_applicationContext->renderingContext()->canvas());
     m_actionManager = new ActionManager(m_applicationContext);
     m_iconManager = new IconManager(m_applicationContext);
 
     m_propertyManager = new PropertyManager(m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
 
-    connect(m_propertyManager, &PropertyManager::propertyUpdated, &m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
+    connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
 
     m_event = new Event();
 
@@ -83,16 +83,16 @@ void UIContext::setUIContext()
 
     button = m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
     connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext().updateZoomFactor(-1);
+        m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
     button = m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN);
     connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext().updateZoomFactor(1);
+        m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
     button = m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
     connect(button, &QPushButton::clicked, this, [this, button]() {
-        auto &canvas{m_applicationContext->renderingContext().canvas()};
+        auto &canvas{m_applicationContext->renderingContext()->canvas()};
 
         if (canvas.canvasBg() == Common::lightBackgroundColor) {
             canvas.setCanvasBg(Common::darkBackgroundColor);
@@ -104,22 +104,22 @@ void UIContext::setUIContext()
             button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_DARK_MODE));
         }
 
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     button = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
     connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext().commandHistory().undo();
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->spatialContext()->commandHistory().undo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     button = m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
     connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext().commandHistory().redo();
-        m_applicationContext->renderingContext().markForRender();
-        m_applicationContext->renderingContext().markForUpdate();
+        m_applicationContext->spatialContext()->commandHistory().redo();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
     });
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
@@ -171,12 +171,12 @@ IconManager *UIContext::iconManager() const
 void UIContext::toolChanged(Tool &tool)
 {
     if (tool.type() != Tool::Type::Selection) {
-        m_applicationContext->selectionContext().selectedItems().clear();
+        m_applicationContext->selectionContext()->selectedItems().clear();
     }
 
     Common::renderCanvas(m_applicationContext);
 
-    auto &canvas{m_applicationContext->renderingContext().canvas()};
+    auto &canvas{m_applicationContext->renderingContext()->canvas()};
 
     if (m_lastTool != nullptr)
         m_lastTool->cleanup();
@@ -184,7 +184,7 @@ void UIContext::toolChanged(Tool &tool)
     m_lastTool = &tool;
     canvas.setCursor(tool.cursor());
 
-    m_applicationContext->renderingContext().markForUpdate();
+    m_applicationContext->renderingContext()->markForUpdate();
 }
 
 void UIContext::reset()

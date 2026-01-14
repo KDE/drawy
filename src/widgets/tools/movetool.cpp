@@ -25,32 +25,32 @@ void MoveTool::mousePressed(ApplicationContext *context)
     auto button{uiContext->event().button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
+        auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
 
         m_isActive = true;
 
-        m_initialOffsetPos = spatialContext.offsetPos();
+        m_initialOffsetPos = spatialContext->offsetPos();
         m_initialPos = uiContext->event().pos();
 
-        renderingContext.canvas().setCursor(Qt::ClosedHandCursor);
+        renderingContext->canvas().setCursor(Qt::ClosedHandCursor);
     }
 }
 
 void MoveTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isActive) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
+        auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
         UIContext *uiContext{context->uiContext()};
 
-        qreal zoom{renderingContext.zoomFactor()};
+        qreal zoom{renderingContext->zoomFactor()};
         QPointF newPoint{m_initialOffsetPos * zoom - uiContext->event().pos() + m_initialPos};
 
-        spatialContext.setOffsetPos(newPoint / zoom);
+        spatialContext->setOffsetPos(newPoint / zoom);
 
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -60,9 +60,9 @@ void MoveTool::mouseReleased(ApplicationContext *context)
     auto button{uiContext->event().button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
-        RenderingContext &renderingContext{context->renderingContext()};
+        auto renderingContext{context->renderingContext()};
 
-        renderingContext.canvas().setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas().setCursor(Qt::OpenHandCursor);
         m_isActive = false;
     }
 }

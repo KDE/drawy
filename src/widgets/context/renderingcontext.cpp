@@ -96,7 +96,7 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 
     qCDebug(DRAWY_LOG) << "Zoom: " << m_zoomFactor;
 
-    QPointF offsetPos{m_applicationContext->spatialContext().offsetPos()};
+    QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
     if (center == QPoint{-1, -1}) {
         QSize viewport{canvas().dimensions() / oldZoomFactor};
@@ -112,9 +112,9 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 
     cacheGrid().markAllDirty();
     itemCache().clear();
-    m_applicationContext->spatialContext().setOffsetPos(offsetPos);
-    m_applicationContext->renderingContext().markForRender();
-    m_applicationContext->renderingContext().markForUpdate();
+    m_applicationContext->spatialContext()->setOffsetPos(offsetPos);
+    m_applicationContext->renderingContext()->markForRender();
+    m_applicationContext->renderingContext()->markForUpdate();
 }
 
 void RenderingContext::setZoomFactor(qreal newValue)

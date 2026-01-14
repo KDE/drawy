@@ -195,26 +195,26 @@ ActionManager::ActionManager(ApplicationContext *context)
 
 void ActionManager::undo()
 {
-    m_context->spatialContext().commandHistory().undo();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory().undo();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::redo()
 {
-    m_context->spatialContext().commandHistory().redo();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory().redo();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::zoomIn()
 {
-    m_context->renderingContext().updateZoomFactor(1);
+    m_context->renderingContext()->updateZoomFactor(1);
 }
 
 void ActionManager::zoomOut()
 {
-    m_context->renderingContext().updateZoomFactor(-1);
+    m_context->renderingContext()->updateZoomFactor(-1);
 }
 
 void ActionManager::switchToFreeformTool()
@@ -264,53 +264,53 @@ void ActionManager::switchToTextTool()
 
 void ActionManager::groupItems()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
     if (selectedItems.size() <= 1)
         return;
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<GroupCommand>(items));
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory().insert(std::make_shared<GroupCommand>(items));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::ungroupItems()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
     if (selectedItems.empty())
         return;
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<UngroupCommand>(items));
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->spatialContext()->commandHistory().insert(std::make_shared<UngroupCommand>(items));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::deleteSelection()
 {
-    auto &selectedItems{m_context->selectionContext().selectedItems()};
-    auto &commandHistory{m_context->spatialContext().commandHistory()};
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    auto &commandHistory{m_context->spatialContext()->commandHistory()};
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
 
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 
     QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    m_context->spatialContext()->commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
 void ActionManager::selectAll()
 {
     this->switchToSelectionTool();
 
-    auto allItems{m_context->spatialContext().quadtree().getAllItems()};
-    m_context->spatialContext().commandHistory().insert(std::make_shared<SelectCommand>(allItems));
+    auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+    m_context->spatialContext()->commandHistory().insert(std::make_shared<SelectCommand>(allItems));
 
     m_context->uiContext()->propertyBar().updateToolProperties();
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::saveToFile()
@@ -326,9 +326,9 @@ void ActionManager::saveToFile()
     auto job = new SaveAsJob(this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
-        .offsetPos = m_context->spatialContext().offsetPos(),
-        .zoomFactor = m_context->renderingContext().zoomFactor(),
-        .items = m_context->spatialContext().quadtree().getAllItems(),
+        .offsetPos = m_context->spatialContext()->offsetPos(),
+        .zoomFactor = m_context->renderingContext()->zoomFactor(),
+        .items = m_context->spatialContext()->quadtree().getAllItems(),
     };
     job->setSaveAsInfo(info);
     connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
@@ -362,15 +362,15 @@ void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
 {
     ApplicationContext *context{ApplicationContext::instance()};
     context->reset();
-    QuadTree &quadtree{context->spatialContext().quadtree()};
+    QuadTree &quadtree{context->spatialContext()->quadtree()};
     for (const auto &item : info.items) {
         quadtree.insertItem(item);
     }
-    context->renderingContext().setZoomFactor(info.zoomFactor);
+    context->renderingContext()->setZoomFactor(info.zoomFactor);
 
-    context->spatialContext().setOffsetPos(info.offsetPos);
-    context->renderingContext().cacheGrid().markAllDirty();
-    context->renderingContext().markForRender();
-    context->renderingContext().markForUpdate();
+    context->spatialContext()->setOffsetPos(info.offsetPos);
+    context->renderingContext()->cacheGrid().markAllDirty();
+    context->renderingContext()->markForRender();
+    context->renderingContext()->markForUpdate();
 }
 #include "moc_actionmanager.cpp"

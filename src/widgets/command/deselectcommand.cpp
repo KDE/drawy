@@ -20,7 +20,7 @@ DeselectCommand::DeselectCommand(QList<std::shared_ptr<Item>> items)
 
 void DeselectCommand::execute(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
@@ -28,12 +28,12 @@ void DeselectCommand::execute(ApplicationContext *context)
         selectedItems.erase(item);
     }
 
-    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
 void DeselectCommand::undo(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
@@ -41,5 +41,5 @@ void DeselectCommand::undo(ApplicationContext *context)
         selectedItems.insert(item);
     }
 
-    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }

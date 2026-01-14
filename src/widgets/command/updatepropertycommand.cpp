@@ -35,8 +35,8 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
         }
     }
 
-    QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
-    context->renderingContext().cacheGrid().markDirty(gridDirtyRegion);
+    QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 };
 
 void UpdatePropertyCommand::undo(ApplicationContext *context)
@@ -53,6 +53,6 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
         }
     }
 
-    QRect gridDirtyRegion{context->spatialContext().coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
-    context->renderingContext().cacheGrid().markDirty(gridDirtyRegion);
+    QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 };

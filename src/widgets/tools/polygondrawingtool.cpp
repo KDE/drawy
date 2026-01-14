@@ -34,8 +34,8 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
+        auto spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
         curItem = std::dynamic_pointer_cast<PolygonItem>(m_itemFactory->create());
 
@@ -54,27 +54,27 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isDrawing) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
+        auto spatialContext{context->spatialContext()};
+        auto transformer{spatialContext->coordinateTransformer()};
+        auto renderingContext{context->renderingContext()};
+        auto uiContext{context->uiContext()};
 
-        const QPointF offsetPos{spatialContext.offsetPos()};
-        const qreal zoom{renderingContext.zoomFactor()};
+        const QPointF offsetPos{spatialContext->offsetPos()};
+        const qreal zoom{renderingContext->zoomFactor()};
 
-        renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
             curItem->erase(painter, offsetPos);
         });
 
         curItem->setEnd(transformer.viewToWorld(uiContext->event().pos()));
 
-        renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
             curItem->draw(painter, offsetPos);
         });
 
-        renderingContext.markForUpdate();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -83,19 +83,19 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton && m_isDrawing) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        CommandHistory &commandHistory{spatialContext.commandHistory()};
+        auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
+        CommandHistory &commandHistory{spatialContext->commandHistory()};
 
         QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
 
-        renderingContext.canvas().setOverlayBg(Qt::transparent);
+        renderingContext->canvas().setOverlayBg(Qt::transparent);
 
         m_isDrawing = false;
 
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 

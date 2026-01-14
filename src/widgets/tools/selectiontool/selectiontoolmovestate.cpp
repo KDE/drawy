@@ -25,8 +25,8 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
     auto uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton) {
-        auto &renderingContext{context->renderingContext()};
-        renderingContext.canvas().setCursor(Qt::ClosedHandCursor);
+        auto renderingContext{context->renderingContext()};
+        renderingContext->canvas().setCursor(Qt::ClosedHandCursor);
 
         m_lastPos = uiContext->event().pos();
         m_initialPos = m_lastPos;
@@ -38,18 +38,18 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
 
 void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
 {
-    auto &renderingContext{context->renderingContext()};
+    auto renderingContext{context->renderingContext()};
 
     if (!m_isActive) {
-        renderingContext.canvas().setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas().setCursor(Qt::OpenHandCursor);
         return;
     }
 
-    auto &spatialContext{context->spatialContext()};
-    auto &selectionContext{context->selectionContext()};
-    auto &transformer{spatialContext.coordinateTransformer()};
+    auto spatialContext{context->spatialContext()};
+    auto selectionContext{context->selectionContext()};
+    auto transformer{spatialContext->coordinateTransformer()};
 
-    const auto &selectedItems{selectionContext.selectedItems()};
+    const auto &selectedItems{selectionContext->selectedItems()};
 
     const QPointF curPos{context->uiContext()->event().pos()};
 
@@ -63,24 +63,24 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
         item->translate(delta);
         dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
 
-        spatialContext.quadtree().updateItem(item, item->boundingBox());
+        spatialContext->quadtree().updateItem(item, item->boundingBox());
     }
 
-    renderingContext.cacheGrid().markDirty(dirtyRegion);
+    renderingContext->cacheGrid().markDirty(dirtyRegion);
 
     m_lastPos = curPos;
-    renderingContext.markForRender();
-    renderingContext.markForUpdate();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
 }
 
 bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
 {
-    auto &renderingContext{context->renderingContext()};
-    auto &spatialContext{context->spatialContext()};
-    auto &transformer{spatialContext.coordinateTransformer()};
+    auto renderingContext{context->renderingContext()};
+    auto spatialContext{context->spatialContext()};
+    auto transformer{spatialContext->coordinateTransformer()};
 
-    renderingContext.canvas().setCursor(Qt::OpenHandCursor);
-    CommandHistory &commandHistory{spatialContext.commandHistory()};
+    renderingContext->canvas().setCursor(Qt::OpenHandCursor);
+    CommandHistory &commandHistory{spatialContext->commandHistory()};
 
     const QPointF curPos{context->uiContext()->event().pos()};
     const QPointF worldOriginalPos{transformer.viewToWorld(m_initialPos)};
@@ -93,7 +93,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     m_isActive = false;
 
     if (delta != QPointF{0, 0}) {
-        auto &selectedItems{context->selectionContext().selectedItems()};
+        auto &selectedItems{context->selectionContext()->selectedItems()};
         QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
         // TODO: Instead of un-doing the translation so that the command can execute it again,

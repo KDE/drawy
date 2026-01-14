@@ -27,8 +27,8 @@ UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
 
 void UngroupCommand::execute(ApplicationContext *context)
 {
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     selectedItems.clear();
 
@@ -45,13 +45,13 @@ void UngroupCommand::execute(ApplicationContext *context)
         }
     }
 
-    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
 void UngroupCommand::undo(ApplicationContext *context)
 {
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     selectedItems.clear();
 
@@ -67,5 +67,5 @@ void UngroupCommand::undo(ApplicationContext *context)
         }
     }
 
-    context->renderingContext().cacheGrid().markDirty(dirtyRegion.toRect());
+    context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }

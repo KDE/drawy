@@ -52,8 +52,8 @@ void FreeformTool::mousePressed(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
+        auto spatialContext{context->spatialContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
         curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
 
@@ -71,10 +71,10 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 void FreeformTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isDrawing) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
-        CoordinateTransformer &transformer{spatialContext.coordinateTransformer()};
+        auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
+        auto uiContext{context->uiContext()};
+        CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
         QPointF curPoint{uiContext->event().pos()};
 
@@ -86,15 +86,15 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
 
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->event().pressure());
 
-        const qreal zoom{renderingContext.zoomFactor()};
+        const qreal zoom{renderingContext->zoomFactor()};
 
-        renderingContext.canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
-            curItem->quickDraw(painter, spatialContext.offsetPos());
+            curItem->quickDraw(painter, spatialContext->offsetPos());
         });
 
         m_lastPoint = curPoint;
-        renderingContext.markForUpdate();
+        renderingContext->markForUpdate();
     }
 }
 
@@ -103,11 +103,11 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->event().button() == Qt::LeftButton && m_isDrawing) {
-        SpatialContext &spatialContext{context->spatialContext()};
-        RenderingContext &renderingContext{context->renderingContext()};
-        CommandHistory &commandHistory{spatialContext.commandHistory()};
+        auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
+        CommandHistory &commandHistory{spatialContext->commandHistory()};
 
-        renderingContext.canvas().setOverlayBg(Qt::transparent);
+        renderingContext->canvas().setOverlayBg(Qt::transparent);
 
         QList<std::shared_ptr<Item>> itemsAfterSplitting{curItem->split()};
         commandHistory.insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));
@@ -115,8 +115,8 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         curItem.reset();
 
         m_isDrawing = false;
-        renderingContext.markForRender();
-        renderingContext.markForUpdate();
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 }
 

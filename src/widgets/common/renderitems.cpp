@@ -23,20 +23,20 @@
 // TODO: Refactor this
 void Common::renderCanvas(ApplicationContext *context)
 {
-    CoordinateTransformer &transformer{context->spatialContext().coordinateTransformer()};
-    Canvas &canvas{context->renderingContext().canvas()};
-    QPointF offsetPos{context->spatialContext().offsetPos()};
+    CoordinateTransformer &transformer{context->spatialContext()->coordinateTransformer()};
+    Canvas &canvas{context->renderingContext()->canvas()};
+    QPointF offsetPos{context->spatialContext()->offsetPos()};
 
     canvas.setCanvasBg(canvas.canvasBg());
 
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
 
-    QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext().cacheGrid().queryCells(transformer.round(gridViewport))};
+    QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : visibleCells) {
         // UNCOMMENT THIS TO SEE THE CELLS
-        // context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+        // context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
         //     QPen pen;
         //     pen.setColor(Qt::white);
         //     painter.setPen(pen);
@@ -48,23 +48,23 @@ void Common::renderCanvas(ApplicationContext *context)
             cell->setDirty(false);
 
             QList<std::shared_ptr<Item>> intersectingItems{
-                context->spatialContext().quadtree().queryItems(transformer.gridToWorld(cell->rect()), []([[maybe_unused]] auto &a, [[maybe_unused]] auto &b) {
+                context->spatialContext()->quadtree().queryItems(transformer.gridToWorld(cell->rect()), []([[maybe_unused]] auto &a, [[maybe_unused]] auto &b) {
                     return true;
                 })};
 
             if (intersectingItems.empty())
                 continue;
 
-            const qreal zoomFactor{context->renderingContext().zoomFactor()};
+            const qreal zoomFactor{context->renderingContext()->zoomFactor()};
             const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
 
             for (const auto &intersectingItem : intersectingItems) {
                 if (intersectingItem->needsCaching()) {
                     cell->paint([&](QPainter &painter) -> void {
-                        context->renderingContext().itemCache().drawCached(painter,
-                                                                           intersectingItem,
-                                                                           transformer.gridToWorld(cell->rect().toRectF()),
-                                                                           cell->rect().topLeft().toPointF());
+                        context->renderingContext()->itemCache().drawCached(painter,
+                                                                            intersectingItem,
+                                                                            transformer.gridToWorld(cell->rect().toRectF()),
+                                                                            cell->rect().topLeft().toPointF());
                     });
                 } else {
                     cell->paint([&](QPainter &painter) -> void {
@@ -75,18 +75,18 @@ void Common::renderCanvas(ApplicationContext *context)
             }
         }
 
-        context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+        context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
             painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), cell->pixmap());
         });
     }
 
-    auto selectedItems{context->selectionContext().selectedItems()};
+    auto selectedItems{context->selectionContext()->selectedItems()};
 
     if (selectedItems.empty())
         return;
 
     // render a box around selected items
-    context->renderingContext().canvas().paintCanvas([&](QPainter &painter) -> void {
+    context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
         QPen pen{Common::selectionBorderColor};
         pen.setWidth(2);
 

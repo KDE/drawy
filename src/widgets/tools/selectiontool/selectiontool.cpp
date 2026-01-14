@@ -51,14 +51,14 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     if (m_stateLocked)
         return m_curState;
 
-    auto &selectionContext{context->selectionContext()};
+    auto selectionContext{context->selectionContext()};
     auto uiContext{context->uiContext()};
-    auto &transformer{context->spatialContext().coordinateTransformer()};
+    auto transformer{context->spatialContext()->coordinateTransformer()};
 
     QPointF worldCurPos{transformer.viewToWorld(uiContext->event().pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext.selectionBox().contains(worldCurPos) && !(uiContext->event().modifiers() & Qt::ShiftModifier)) {
+    if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->event().modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
@@ -67,12 +67,12 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
 
 void SelectionTool::keyPressed(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
     if (selectedItems.empty())
         return;
 
     auto &event{context->uiContext()->event()};
-    auto &commandHistory{context->spatialContext().commandHistory()};
+    auto &commandHistory{context->spatialContext()->commandHistory()};
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
@@ -98,15 +98,15 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     }
 
     if (updated) {
-        context->renderingContext().markForRender();
-        context->renderingContext().markForUpdate();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 }
 
 const QList<Property::Type> SelectionTool::properties() const
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     std::set<Property::Type> result{};
     for (const auto &item : selectedItems) {

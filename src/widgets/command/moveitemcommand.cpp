@@ -21,8 +21,8 @@ MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, QPointF del
 
 void MoveItemCommand::execute(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
@@ -33,8 +33,8 @@ void MoveItemCommand::execute(ApplicationContext *context)
 
 void MoveItemCommand::undo(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());

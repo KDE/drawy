@@ -59,7 +59,7 @@ void Controller::mousePressed(QMouseEvent *event)
 
     Event &contextEvent{m_context->uiContext()->event()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext().canvas()};
+    Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
@@ -83,7 +83,7 @@ void Controller::mouseDoubleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->event()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext().canvas()};
+    Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
@@ -96,7 +96,7 @@ void Controller::mouseTripleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->event()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext().canvas()};
+    Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
@@ -111,7 +111,7 @@ void Controller::mouseMoved(QMouseEvent *event)
 
     Event &contextEvent{m_context->uiContext()->event()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext().canvas()};
+    Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
@@ -129,7 +129,7 @@ void Controller::mouseReleased(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->event()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext().canvas()};
+    Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
@@ -193,20 +193,20 @@ void Controller::renderZoom()
     if (m_zoomDelta == 0)
         return;
 
-    auto &renderingContext{m_context->renderingContext()};
-    auto &spatialContext{m_context->spatialContext()};
+    auto renderingContext{m_context->renderingContext()};
+    auto spatialContext{m_context->spatialContext()};
 
-    const qreal oldZoomFactor{renderingContext.zoomFactor()};
+    const qreal oldZoomFactor{renderingContext->zoomFactor()};
     const qreal relFactor{std::pow(Common::zoomMultiplier, m_zoomDelta)};
     const qreal newZoomFactor{oldZoomFactor * relFactor};
 
-    renderingContext.setZoomFactor(newZoomFactor);
-    spatialContext.setOffsetPos(m_zoomPixmapOffsetPos / oldZoomFactor + spatialContext.offsetPos());
+    renderingContext->setZoomFactor(newZoomFactor);
+    spatialContext->setOffsetPos(m_zoomPixmapOffsetPos / oldZoomFactor + spatialContext->offsetPos());
 
-    renderingContext.cacheGrid().markAllDirty();
-    renderingContext.itemCache().clear();
-    renderingContext.markForRender();
-    renderingContext.markForUpdate();
+    renderingContext->cacheGrid().markAllDirty();
+    renderingContext->itemCache().clear();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
 
     m_zoomDelta = 0;
     m_zoomPixmap = QPixmap{};
@@ -215,10 +215,10 @@ void Controller::renderZoom()
 
 void Controller::wheel(QWheelEvent *event)
 {
-    const QPointF &offsetPos{m_context->spatialContext().offsetPos()};
-    auto &canvas{m_context->renderingContext().canvas()};
+    const QPointF &offsetPos{m_context->spatialContext()->offsetPos()};
+    auto &canvas{m_context->renderingContext()->canvas()};
     auto &contextEvent{m_context->uiContext()->event()};
-    const qreal zoomFactor{m_context->renderingContext().zoomFactor()};
+    const qreal zoomFactor{m_context->renderingContext()->zoomFactor()};
 
     contextEvent.setPos(event->position().toPoint(), canvas.scale());
     contextEvent.setModifiers(event->modifiers());
@@ -231,7 +231,7 @@ void Controller::wheel(QWheelEvent *event)
         const int curDelta{event->angleDelta().y() > 0 ? 1 : -1};
         const qreal oldZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta)};
         const qreal newZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta + curDelta)};
-        const qreal prevZoomFactor{m_context->renderingContext().zoomFactor() * oldZoomFactor};
+        const qreal prevZoomFactor{m_context->renderingContext()->zoomFactor() * oldZoomFactor};
 
         if (curDelta < 0 && prevZoomFactor - Common::zoomOutLimit <= 1e-9)
             return;
@@ -252,16 +252,16 @@ void Controller::wheel(QWheelEvent *event)
             painter.drawPixmap(-m_zoomPixmapOffsetPos, m_zoomPixmap);
         });
 
-        m_context->renderingContext().markForUpdate();
+        m_context->renderingContext()->markForUpdate();
 
         m_zoomTimer->start(Common::zoomRenderWaitTime);
         return;
     }
 
-    m_context->spatialContext().setOffsetPos(offsetPos - event->angleDelta() / zoomFactor);
+    m_context->spatialContext()->setOffsetPos(offsetPos - event->angleDelta() / zoomFactor);
 
-    m_context->renderingContext().markForRender();
-    m_context->renderingContext().markForUpdate();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 #include "moc_controller.cpp"

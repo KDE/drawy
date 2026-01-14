@@ -24,11 +24,11 @@ RemoveItemCommand::RemoveItemCommand(QList<std::shared_ptr<Item>> items)
 
 void RemoveItemCommand::execute(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
-    auto &itemCache{context->renderingContext().itemCache()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
+    auto &itemCache{context->renderingContext()->itemCache()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
@@ -42,9 +42,9 @@ void RemoveItemCommand::execute(ApplicationContext *context)
 
 void RemoveItemCommand::undo(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};

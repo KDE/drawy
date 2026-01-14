@@ -21,9 +21,9 @@ InsertItemCommand::InsertItemCommand(QList<std::shared_ptr<Item>> items)
 
 void InsertItemCommand::execute(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
@@ -34,10 +34,10 @@ void InsertItemCommand::execute(ApplicationContext *context)
 
 void InsertItemCommand::undo(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext().coordinateTransformer()};
-    auto &quadtree{context->spatialContext().quadtree()};
-    auto &cacheGrid{context->renderingContext().cacheGrid()};
-    auto &selectedItems{context->selectionContext().selectedItems()};
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+    auto &cacheGrid{context->renderingContext()->cacheGrid()};
+    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     for (auto &item : m_items) {
         QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
