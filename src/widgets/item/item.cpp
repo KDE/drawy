@@ -22,7 +22,7 @@ Item::~Item()
 
 const QRectF Item::boundingBox() const
 {
-    int mg{boundingBoxPadding()};
+    const int mg{boundingBoxPadding()};
     return m_boundingBox.adjusted(-mg, -mg, mg, mg);
 }
 

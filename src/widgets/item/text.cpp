@@ -357,7 +357,7 @@ QFont TextItem::getFont() const
 
 QPen TextItem::getPen() const
 {
-    QPen pen{};
+    QPen pen;
 
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     color.setAlpha(property(Property::Type::Opacity).value<int>());

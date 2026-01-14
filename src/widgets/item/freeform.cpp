@@ -33,12 +33,12 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool opt
     if (optimize) {
         newPoint = optimizePoint(point);
     }
-    double x = newPoint.x(), y = newPoint.y();
+    const double x = newPoint.x(), y = newPoint.y();
 
     m_boundingBox = m_boundingBox.normalized();
-    double topLeftX{m_boundingBox.topLeft().x()}, topLeftY{m_boundingBox.topLeft().y()};
-    double bottomRightX{m_boundingBox.bottomRight().x()}, bottomRightY{m_boundingBox.bottomRight().y()};
-    int mg{property(Property::Type::StrokeWidth).value<int>()};
+    const double topLeftX{m_boundingBox.topLeft().x()}, topLeftY{m_boundingBox.topLeft().y()};
+    const double bottomRightX{m_boundingBox.bottomRight().x()}, bottomRightY{m_boundingBox.bottomRight().y()};
+    const int mg{property(Property::Type::StrokeWidth).value<int>()};
 
     if (m_points.size() <= 1) {
         m_boundingBox.setTopLeft({x - mg, y - mg});
@@ -95,10 +95,10 @@ bool FreeformItem::intersects(const QLineF &line)
 
 void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 {
-    QPen pen{};
+    QPen pen;
 
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
-    int alpha{property(Property::Type::Opacity).value<int>()};
+    const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
     // Laurent we can't support it at the moment:
@@ -129,10 +129,10 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
 
 void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const
 {
-    QPen pen{};
+    QPen pen;
 
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
-    int alpha{property(Property::Type::Opacity).value<int>()};
+    const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
     qreal penWidth{property(Property::Type::StrokeWidth).value<qreal>()};
@@ -155,8 +155,8 @@ void FreeformItem::quickDraw(QPainter &painter, const QPointF &offset) const
 
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    int strokeWidth{property(Property::Type::StrokeWidth).value<int>()};
-    int alpha{property(Property::Type::Opacity).value<int>()};
+    const int strokeWidth{property(Property::Type::StrokeWidth).value<int>()};
+    const int alpha{property(Property::Type::Opacity).value<int>()};
     double currentWidth{strokeWidth * 1.0};
 
     // Intersection points are visible on translucent pressure sensitive strokes
