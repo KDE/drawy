@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-11 06:56-0300\n"
+"PO-Revision-Date: 2026-01-13 08:38-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -491,12 +491,9 @@ msgstr "Ações"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Cor de fundo"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Cor"
@@ -511,36 +508,30 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Tamanho da fonte"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Sólido"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:40
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Linha"
+msgstr "Linha tracejada"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:50
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Linha"
+msgstr "Linha pontilhada"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:54
+#: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Estilo de traço"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Cor do traço"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-11 08:50+0100\n"
+"PO-Revision-Date: 2026-01-13 12:00+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -492,12 +492,9 @@ msgstr "Dejanja"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Barva ozadja"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Barva"
@@ -512,36 +509,30 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Velikost pisave"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Nepretrgana"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:40
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Črta"
+msgstr "Pretrgana črta"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:50
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Črta"
+msgstr "Pikčasta črta"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:54
+#: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Slog poteze"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Barva poteze"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

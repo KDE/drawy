@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-11 09:37+0100\n"
+"PO-Revision-Date: 2026-01-13 12:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -495,12 +495,9 @@ msgstr "Accions"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Color de fons"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Color"
@@ -515,36 +512,30 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Mida de la lletra"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Sòlid"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:40
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Línia"
+msgstr "Línia de guions"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:50
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Línia"
+msgstr "Línia de punts"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:54
+#: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Estil del traç"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Color del traç"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

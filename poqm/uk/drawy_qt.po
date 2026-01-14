@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-12 03:06+0200\n"
+"PO-Revision-Date: 2026-01-14 01:53+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -491,12 +491,9 @@ msgstr "Дії"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Колір тла"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Колір"
@@ -511,36 +508,30 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Розмір шрифту"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Суцільна"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:40
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Пряма"
+msgstr "Штрихова лінія"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:50
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Пряма"
+msgstr "Пунктир"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:54
+#: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Стиль штриха"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Колір штриха"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

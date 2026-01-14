@@ -607,12 +607,12 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Letra-tipoaren neurria"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:31
+#: widgets/properties/widgets/stokestylewidget.cpp:40
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -620,7 +620,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
 msgstr "Lerro tresna"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:50
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -628,7 +628,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
 msgstr "Lerro tresna"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:54
+#: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
