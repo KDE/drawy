@@ -47,8 +47,10 @@ protected:
 
 private:
     void calcArrowPoints();
-    QPointF m_arrowP1;
-    QPointF m_arrowP2;
+    QPointF m_arrowEndP1;
+    QPointF m_arrowEndP2;
+    QPointF m_arrowStartP1;
+    QPointF m_arrowStartP2;
     ArrowType m_startArrow = ArrowType::None;
     ArrowType m_endArrow = ArrowType::Arrow;
 

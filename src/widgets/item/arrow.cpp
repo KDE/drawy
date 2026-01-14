@@ -26,8 +26,10 @@ void ArrowItem::setEnd(QPointF end)
 
 void ArrowItem::calcArrowPoints()
 {
-    const double x1{start().x()}, x2{end().x()};
-    const double y1{start().y()}, y2{end().y()};
+    const double x1{start().x()};
+    const double x2{end().x()};
+    const double y1{start().y()};
+    const double y2{end().y()};
 
     const qreal angle{std::atan2(y2 - y1, x2 - x1)};
     const qreal arrowLength{std::sqrt(std::pow(y2 - y1, 2) + std::pow(x2 - x1, 2))};
@@ -36,8 +38,10 @@ void ArrowItem::calcArrowPoints()
     const int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
     constexpr double angleArrow = (M_PI / 180) * 30;
-    m_arrowP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
-    m_arrowP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
+    if (m_endArrow != ArrowItem::ArrowType::None) {
+        m_arrowEndP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
+        m_arrowEndP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
+    }
 }
 
 ArrowItem::ArrowType ArrowItem::endArrow() const
@@ -68,8 +72,32 @@ void ArrowItem::setStartArrow(const ArrowType &newStartArrow)
 void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);
-    painter.drawLine(end() - offset, m_arrowP1 - offset);
-    painter.drawLine(end() - offset, m_arrowP2 - offset);
+    switch (m_endArrow) {
+    case ArrowType::Arrow:
+        painter.drawLine(end() - offset, m_arrowEndP1 - offset);
+        painter.drawLine(end() - offset, m_arrowEndP2 - offset);
+        break;
+    case ArrowType::Triangle:
+        painter.drawLine(end() - offset, m_arrowEndP1 - offset);
+        painter.drawLine(end() - offset, m_arrowEndP2 - offset);
+        painter.drawLine(m_arrowEndP2 - offset, m_arrowEndP1 - offset);
+        break;
+    case ArrowType::None:
+        break;
+    }
+    switch (m_startArrow) {
+    case ArrowType::Arrow:
+        painter.drawLine(end() - offset, m_arrowStartP1 - offset);
+        painter.drawLine(end() - offset, m_arrowStartP2 - offset);
+        break;
+    case ArrowType::Triangle:
+        painter.drawLine(end() - offset, m_arrowStartP1 - offset);
+        painter.drawLine(end() - offset, m_arrowStartP2 - offset);
+        painter.drawLine(m_arrowStartP2 - offset, m_arrowStartP1 - offset);
+        break;
+    case ArrowType::None:
+        break;
+    }
 }
 
 bool ArrowItem::intersects(const QRectF &rect)
@@ -78,7 +106,7 @@ bool ArrowItem::intersects(const QRectF &rect)
         return false;
 
     // TODO: Use better techniques to detect collision
-    const QPointF p{start()}, q{end()}, r{m_arrowP1}, s{m_arrowP2};
+    const QPointF p{start()}, q{end()}, r{m_arrowEndP1}, s{m_arrowEndP2};
     const QPointF a{rect.x(), rect.y()};
     const QPointF b{rect.x() + rect.width(), rect.y()};
     const QPointF c{rect.x() + rect.width(), rect.y() + rect.height()};
@@ -94,14 +122,14 @@ bool ArrowItem::intersects(const QRectF &rect)
 
 bool ArrowItem::intersects(const QLineF &line)
 {
-    return (Common::Utils::Math::intersects(QLineF{start(), end()}, line) || Common::Utils::Math::intersects(QLineF{end(), m_arrowP1}, line)
-            || Common::Utils::Math::intersects(QLineF{end(), m_arrowP2}, line));
+    return (Common::Utils::Math::intersects(QLineF{start(), end()}, line) || Common::Utils::Math::intersects(QLineF{end(), m_arrowEndP1}, line)
+            || Common::Utils::Math::intersects(QLineF{end(), m_arrowEndP2}, line));
 }
 
 void ArrowItem::translate(const QPointF &amount)
 {
-    m_arrowP1 += amount;
-    m_arrowP2 += amount;
+    m_arrowEndP1 += amount;
+    m_arrowEndP2 += amount;
 
     PolygonItem::translate(amount);
 }
