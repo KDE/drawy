@@ -8,6 +8,7 @@
   <name xml:lang="de">Drawy</name>
   <name xml:lang="es">Drawy</name>
   <name xml:lang="eu">Drawy</name>
+  <name xml:lang="fr">Drawy</name>
   <name xml:lang="he">Drawy</name>
   <name xml:lang="it">Drawy</name>
   <name xml:lang="ka">Drawy</name>
@@ -21,6 +22,7 @@
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="es">Herramienta práctica y sin límites para generar lluvia de ideas</summary>
+  <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
@@ -41,6 +43,7 @@
     <p xml:lang="de">Drawy ist ein in Entwicklung befindliches Whiteboard-Werkzeug mit unendlicher Zeichenfläche. Ziel ist, eine für den Desktop optimierte Alternative zum fantastischen webbasierten Excalidraw zu bieten.</p>
     <p xml:lang="es">Drawy es una herramienta de pizarra ilimitada en desarrollo, que pretende ser una alternativa nativa de escritorio a la increíble herramienta web Excalidraw.</p>
     <p xml:lang="eu">Drawy garapen fasean dagoen arbela mugagabeko tresna bat da, web oinarriko Excalidraw tresna bikainaren mahaigaineko alternatiba natiboa izatea helburu duena.</p>
+    <p xml:lang="fr">Drawy est une application de bureau de tableau blanc sans limites. Cette application est en cours de développement, se voulant une alternative Excalidraw, un excellent outil sur navigateur Internet.</p>
     <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>
     <p xml:lang="it">Drawy è una lavagna infinita in fase di sviluppo, che si propone di essere un'alternativa desktop nativa allo straordinario Excalidraw basato sul web.</p>
     <p xml:lang="ka">Drawy ჯერ კიდევ შემუშავების ქვეშ მყოფი უსასრულო დაფაა, რომელიც აპირებს, ვებზე დაფუძნებული Excalidraw-ის ალტერნატივას წარმოადგენდეს.</p>
