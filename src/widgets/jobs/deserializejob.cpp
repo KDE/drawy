@@ -6,6 +6,7 @@
 #include "deserializejob.hpp"
 #include "drawy_debug.h"
 #include "item/arrow.hpp"
+#include "item/diamond.hpp"
 #include "item/ellipse.hpp"
 #include "item/freeform.hpp"
 #include "item/group.hpp"
@@ -101,6 +102,10 @@ std::shared_ptr<Item> DeserializeJob::createItem(Item::Type type)
     }
     case Item::Type::Group: {
         item = std::make_shared<GroupItem>();
+        break;
+    }
+    case Item::Type::Diamond: {
+        item = std::make_shared<DiamondItem>();
         break;
     }
     case Item::Type::Invalid:

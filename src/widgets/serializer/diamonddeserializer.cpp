@@ -3,17 +3,17 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "rectangledeserializer.hpp"
+#include "diamonddeserializer.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-RectangleDeserializer::RectangleDeserializer(RectangleItem *item)
+DiamondDeserializer::DiamondDeserializer(DiamondItem *item)
     : PolygonDeserializer(item)
 {
 }
 
-RectangleDeserializer::~RectangleDeserializer() = default;
+DiamondDeserializer::~DiamondDeserializer() = default;
 
-void RectangleDeserializer::deserialize(const QJsonObject &obj)
+void DiamondDeserializer::deserialize(const QJsonObject &obj)
 {
     PolygonDeserializer::deserialize(obj);
 }

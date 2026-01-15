@@ -1,14 +1,16 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
-//
-// SPDX-License-Identifier: GPL-3.0-or-later
+/*
+ * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
 
-#include "rectanglefactory.hpp"
+#include "diamondfactory.hpp"
 
-#include "item/rectangle.hpp"
+#include "item/diamond.hpp"
 
-RectangleFactory::RectangleFactory() = default;
+DiamondFactory::DiamondFactory() = default;
 
-std::shared_ptr<Item> RectangleFactory::create() const
+std::shared_ptr<Item> DiamondFactory::create() const
 {
-    return std::make_shared<RectangleItem>();
+    return std::make_shared<DiamondItem>();
 }

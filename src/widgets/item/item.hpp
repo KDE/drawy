@@ -40,6 +40,7 @@ public:
         Arrow,
         Text,
         Group,
+        Diamond,
         Invalid,
     };
     Q_ENUM(Type)

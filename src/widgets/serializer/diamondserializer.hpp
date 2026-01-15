@@ -5,12 +5,12 @@
  */
 #pragma once
 
-#include "item/rectangle.hpp"
+#include "item/diamond.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
-class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleSerializer : public PolygonSerializer
+class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondSerializer : public PolygonSerializer
 {
 public:
-    explicit RectangleSerializer(const RectangleItem *item);
-    ~RectangleSerializer() override;
+    explicit DiamondSerializer(const DiamondItem *item);
+    ~DiamondSerializer() override;
 };

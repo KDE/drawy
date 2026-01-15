@@ -3,12 +3,12 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "rectangleserializer.hpp"
+#include "diamondserializer.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-RectangleSerializer::RectangleSerializer(const RectangleItem *item)
+DiamondSerializer::DiamondSerializer(const DiamondItem *item)
     : PolygonSerializer(item)
 {
 }
 
-RectangleSerializer::~RectangleSerializer() = default;
+DiamondSerializer::~DiamondSerializer() = default;

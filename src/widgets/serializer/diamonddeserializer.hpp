@@ -5,14 +5,14 @@
  */
 #pragma once
 
-#include "item/rectangle.hpp"
+#include "item/diamond.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygondeserializer.hpp"
-class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleDeserializer : public PolygonDeserializer
+class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondDeserializer : public PolygonDeserializer
 {
 public:
-    explicit RectangleDeserializer(RectangleItem *item);
-    ~RectangleDeserializer() override;
+    explicit DiamondDeserializer(DiamondItem *item);
+    ~DiamondDeserializer() override;
 
     void deserialize(const QJsonObject &obj) override;
 };

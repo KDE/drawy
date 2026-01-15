@@ -23,6 +23,8 @@ Item::Type ItemUtils::convertItemTypeStringToEnum(const QString &str)
         return Item::Type::Text;
     } else if (str == u"GROUP") {
         return Item::Type::Group;
+    } else if (str == u"DIAMOND") {
+        return Item::Type::Diamond;
     } else {
         qCWarning(DRAWY_LOG) << "Item::Type is not defined for: " << str;
     }
@@ -46,6 +48,8 @@ QString ItemUtils::convertItemTypeEnumToString(Item::Type type)
         return u"TEXT"_s;
     case Item::Type::Group:
         return u"GROUP"_s;
+    case Item::Type::Diamond:
+        return u"DIAMOND"_s;
     case Item::Type::Invalid:
         qCWarning(DRAWY_LOG) << "Don't invalid type";
     }

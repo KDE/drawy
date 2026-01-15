@@ -87,6 +87,8 @@ target_sources(
         item/factory/rectanglefactory.hpp
         item/factory/textfactory.cpp
         item/factory/textfactory.hpp
+        item/factory/diamondfactory.hpp
+        item/factory/diamondfactory.hpp
         item/freeform.cpp
         item/freeform.hpp
         item/group.cpp
@@ -107,6 +109,8 @@ target_sources(
         item/itemutils.cpp
         item/arrowutils.hpp
         item/arrowutils.cpp
+        item/diamond.cpp
+        item/diamond.hpp
         keybindings/action.cpp
         keybindings/action.hpp
         keybindings/actionmanager.cpp
@@ -218,6 +222,10 @@ target_sources(
         serializer/textdeserializer.hpp
         serializer/itemdeserializer.hpp
         serializer/itemdeserializer.cpp
+        serializer/diamonddeserializer.cpp
+        serializer/diamonddeserializer.hpp
+        serializer/diamondserializer.cpp
+        serializer/diamondserializer.hpp
         jobs/serializejob.hpp
         jobs/serializejob.cpp
         jobs/saveasjob.cpp

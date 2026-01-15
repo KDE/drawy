@@ -1,6 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
-//
-// SPDX-License-Identifier: GPL-3.0-or-later
+/*
+ * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
 
 #pragma once
 
@@ -8,10 +10,10 @@
 
 class Item;
 
-class RectangleFactory : public ItemFactory
+class DiamondFactory : public ItemFactory
 {
 public:
-    RectangleFactory();
-    ~RectangleFactory() override = default;
+    DiamondFactory();
+    ~DiamondFactory() override = default;
     std::shared_ptr<Item> create() const override;
 };
