@@ -39,7 +39,7 @@ FreeformTool::FreeformTool()
     cursorPainter.drawEllipse(borderWidth / 2, borderWidth / 2, size - borderWidth, size - borderWidth);
     m_cursor = QCursor{cursorShape, size / 2, size / 2};
 
-    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor};
+    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::Opacity};
 }
 
 QString FreeformTool::tooltip() const
@@ -59,6 +59,7 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 
         curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager().value(Property::Type::StrokeWidth));
         curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager().value(Property::Type::StrokeColor));
+        curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager().value(Property::Type::Opacity));
 
         m_lastPoint = uiContext->event().pos();
 
