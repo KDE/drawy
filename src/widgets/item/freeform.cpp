@@ -10,6 +10,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "common/utils/freehand.hpp"
 #include "item/itemutils.hpp"
 #include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
@@ -31,9 +32,9 @@ int FreeformItem::minPointDistance()
 void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool optimize)
 {
     QPointF newPoint{point};
-    if (optimize) {
-        newPoint = optimizePoint(point);
-    }
+    // if (optimize) {
+    //     newPoint = optimizePoint(point);
+    // }
     const double x = newPoint.x(), y = newPoint.y();
 
     m_boundingBox = m_boundingBox.normalized();
@@ -135,74 +136,17 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
 
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    const int strokeWidth{property(Property::Type::StrokeWidth).value<int>()};
-    const int alpha{property(Property::Type::Opacity).value<int>()};
-    double currentWidth{strokeWidth * 1.0};
+    const QList<QPointF> points = Common::Utils::Freehand::getStrokePoints(m_points);
 
-    // Intersection points are visible on translucent pressure sensitive strokes
-    // So I've disabled the use of pressure sensitivity when opacity is not max,
-    // for now
-    bool canUsePressureSenstivity{alpha == Common::maxItemOpacity};
-    if (!canUsePressureSenstivity) {
-        painter.save();
-        painter.translate(-offset);
-        painter.drawPolyline(m_points);
-        painter.restore();
-        return;
-    }
-
-    qsizetype pointSize{m_points.size()};
-    for (qsizetype index = 0; index < pointSize; index++) {
-        double newWidth{strokeWidth * m_pressures[index]};
-
-        if (abs(newWidth - currentWidth) >= 1e-3) {
-            QPen pen{painter.pen()};
-            pen.setWidthF(newWidth);
-            painter.setPen(pen);
-
-            currentWidth = newWidth;
-        }
-
-        if (index == 0) {
-            painter.drawPoint(m_points.front() - offset);
-        } else {
-            painter.drawLine(m_points[index - 1] - offset, m_points[index] - offset);
-        }
-    }
+    painter.save();
+    painter.translate(-offset);
+    painter.drawPolyline(points);
+    painter.restore();
 }
 
 qsizetype FreeformItem::size() const
 {
     return m_points.size();
-}
-
-// If the number of points exceeds the limit, this method can be called
-// to split this freeform into multiple smaller freeforms
-QList<std::shared_ptr<Item>> FreeformItem::split() const
-{
-    QList<std::shared_ptr<Item>> items;
-
-    qsizetype pointSize{m_points.size()};
-    for (qsizetype index = 0; index < pointSize; index++) {
-      if (index % Common::maxFreeformPointCount == 0) {
-        // add this point to the previous freeform too
-        if (!items.empty()) {
-          std::shared_ptr<FreeformItem> last{
-              std::static_pointer_cast<FreeformItem>(items.back())};
-          last->addPoint(m_points[index], m_pressures[index]);
-        }
-
-        // create a copy
-        std::shared_ptr<FreeformItem> newItem{std::make_shared<FreeformItem>()};
-        newItem->m_properties = m_properties;
-
-        items.push_back(newItem);
-      }
-        std::shared_ptr<FreeformItem> cur{std::static_pointer_cast<FreeformItem>(items.back())};
-        cur->addPoint(m_points[index], m_pressures[index], false);
-    }
-
-    return items;
 }
 
 void FreeformItem::translate(const QPointF &amount)

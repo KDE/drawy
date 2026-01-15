@@ -39,6 +39,8 @@ target_sources(
         common/renderitems.hpp
         common/utils/compression.cpp
         common/utils/compression.hpp
+        common/utils/freehand.cpp
+        common/utils/freehand.hpp
         common/utils/math.hpp
         components/actionbar.cpp
         components/actionbar.hpp

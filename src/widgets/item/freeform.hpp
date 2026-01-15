@@ -27,7 +27,6 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    [[nodiscard]] QList<std::shared_ptr<Item>> split() const;
     [[nodiscard]] qsizetype size() const;
 
     virtual void addPoint(const QPointF &point, const qreal pressure, bool optimize = true);
