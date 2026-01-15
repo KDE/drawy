@@ -65,17 +65,17 @@ void PropertyBar::updateProperties(Tool &tool)
     qsizetype count{0};
     for (Property::Type property : properties) {
         try {
-            const PropertyWidget &widget{m_propertyManager->widget(property)};
-            auto *widgetLabel{new QLabel{widget.name(), this}};
+            const PropertyWidget *widget{m_propertyManager->widget(property)};
+            auto *widgetLabel{new QLabel{widget->name(), this}};
             m_layout->addWidget(widgetLabel);
-            m_layout->addWidget(widget.widget());
+            m_layout->addWidget(widget->widget());
 
             if (count > 0) {
                 widgetLabel->setProperty("class", u"drawlyPropertyLabelMargin"_s);
             }
 
             count++;
-            widget.widget()->show();
+            widget->widget()->show();
         } catch (const std::logic_error &e) {
             // ignore this property
         }

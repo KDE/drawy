@@ -8,6 +8,7 @@
 #include "backgroundcolorwidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
+#include "opacitywidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
@@ -22,24 +23,25 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Type::FontSize] = new FontSizeWidget(parent);
     m_widgets[Property::Type::Actions] = new ActionsWidget(parent);
     m_widgets[Property::Type::BackgroundColor] = new BackgroundColorWidget(parent);
+    m_widgets[Property::Type::Opacity] = new OpacityWidget(parent);
 
     for (const auto &[_, widget] : m_widgets) {
         connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
     }
 }
 
-const PropertyWidget &PropertyManager::widget(const Property::Type type) const
+PropertyWidget *PropertyManager::widget(const Property::Type type) const
 {
     if (m_widgets.find(type) == m_widgets.end()) {
         throw std::logic_error("A valid widget for the given Property::Type does not exist.");
     }
 
-    return *m_widgets.at(type);
+    return m_widgets.at(type);
 }
 
 Property PropertyManager::value(const Property::Type type) const
 {
-    return widget(type).value();
+    return widget(type)->value();
 }
 
 #include "moc_propertymanager.cpp"

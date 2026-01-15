@@ -21,6 +21,13 @@ void OpacityWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!w.name().isEmpty());
     QVERIFY(w.widget());
     QCOMPARE(w.widget()->objectName(), u"slider"_s);
+
+    auto slider = dynamic_cast<QSlider *>(w.widget());
+    QVERIFY(slider);
+    QCOMPARE(slider->objectName(), u"slider"_s);
+    QCOMPARE(slider->minimum(), 1);
+    QCOMPARE(slider->maximum(), 255);
+    QCOMPARE(slider->value(), 255);
 }
 
 #include "moc_opacitywidgettest.cpp"
