@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"PO-Revision-Date: 2026-01-13 15:26+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -10,13 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 "X-Qt-Contexts: true\n"
 
 #: apps/main.cpp:29
 msgctxt "QObject|"
 msgid "drawy"
-msgstr ""
+msgstr "drawy"
 
 #: apps/main.cpp:31
 msgctxt "QObject|"
@@ -27,109 +27,79 @@ msgstr "Il tuo pratico e infinito strumento di brainstorming!"
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr ""
+msgstr "(c) 2025-%1 Gli autori di drawy"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "Prayag Jain"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr ""
+msgstr "Responsabile"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr ""
+msgstr "Sviluppatore"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr ""
+msgstr "Un argomento facoltativo 'file'"
 
 #: apps/main.cpp:45
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Il tuo pratico e infinito strumento di brainstorming!"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Selezione"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Disegno a mano libera"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rettangolo"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Ellisse"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Freccia"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Linea"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Gomma"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Testo"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Sposta"
@@ -370,169 +340,106 @@ msgid "Open an existing file"
 msgstr "Apri un file esistente"
 
 #: widgets/keybindings/actionmanager.cpp:173
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Z"
 msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
 #: widgets/keybindings/actionmanager.cpp:174
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Y"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
 msgstr "Ctrl+Y"
 
 #: widgets/keybindings/actionmanager.cpp:175
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+Z"
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Maiusc+Z"
 
 #: widgets/keybindings/actionmanager.cpp:176
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl++"
 msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
 msgstr "Ctrl++"
 
 #: widgets/keybindings/actionmanager.cpp:177
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+-"
 msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
 msgstr "Ctrl+-"
 
 #: widgets/keybindings/actionmanager.cpp:178
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "T"
 msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
 msgstr "T"
 
 #: widgets/keybindings/actionmanager.cpp:179
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "P"
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
 msgstr "P"
 
 #: widgets/keybindings/actionmanager.cpp:180
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "B"
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
 msgstr "B"
 
 #: widgets/keybindings/actionmanager.cpp:181
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "E"
 msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
 msgstr "E"
 
 #: widgets/keybindings/actionmanager.cpp:182
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "S"
 msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
 msgstr "S"
 
 #: widgets/keybindings/actionmanager.cpp:183
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "R"
 msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
 msgstr "R"
 
 #: widgets/keybindings/actionmanager.cpp:184
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "O"
 msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
 msgstr "O"
 
 #: widgets/keybindings/actionmanager.cpp:185
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "L"
 msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
 msgstr "L"
 
 #: widgets/keybindings/actionmanager.cpp:186
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "A"
 msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
 msgstr "A"
 
 #: widgets/keybindings/actionmanager.cpp:187
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "M"
 msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
 msgstr "M"
 
 #: widgets/keybindings/actionmanager.cpp:188
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+A"
 msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
 #: widgets/keybindings/actionmanager.cpp:189
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
 msgctxt "ActionManager|keybinding for the delete action"
 msgid "Del"
-msgstr "Elimina"
+msgstr "Canc"
 
 #: widgets/keybindings/actionmanager.cpp:190
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+S"
 msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: widgets/keybindings/actionmanager.cpp:191
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+O"
 msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
 #: widgets/keybindings/actionmanager.cpp:192
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+G"
 msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
 msgstr "Ctrl+G"
 
 #: widgets/keybindings/actionmanager.cpp:193
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+G"
 msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Maiusc+G"
@@ -583,12 +490,9 @@ msgstr "Azioni"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Colore di sfondo"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Colore"
@@ -606,33 +510,27 @@ msgstr "Dimensione del carattere"
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Solido"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Linea"
+msgstr "Tratteggiato"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Linea"
+msgstr "A punti"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Stile del tratto"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Colore tratto"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -687,9 +585,9 @@ msgstr "Testo"
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Do you want to close?"
-msgstr ""
+msgstr "Vuoi chiudere?"
 
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"

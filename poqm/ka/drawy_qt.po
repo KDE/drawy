@@ -490,12 +490,9 @@ msgstr "ქმედებები"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "ფონის ფერი"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "ფერი"
@@ -513,33 +510,27 @@ msgstr "ფონტის ზომა"
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "მყარი"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "ხაზი"
+msgstr "პუნქტირიანი ხაზი"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "ხაზი"
+msgstr "წერტილებიანი ხაზი"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "შემოსაზღვრის სტილი"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "გამოძრავების ფერი"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

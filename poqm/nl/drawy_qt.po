@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-11 14:21+0100\n"
+"PO-Revision-Date: 2026-01-14 16:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: apps/main.cpp:29
 msgctxt "QObject|"
@@ -490,12 +490,9 @@ msgstr "Acties"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Achtergrondkleur"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Kleur"
@@ -513,33 +510,27 @@ msgstr "Tekengrootte"
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Egaal"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Lijn"
+msgstr "Streepjeslijn"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Lijn"
+msgstr "Stippellijn"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Streekstijl"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Kleur van streek"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

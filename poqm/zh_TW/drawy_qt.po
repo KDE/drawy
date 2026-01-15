@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-13 01:44+0900\n"
+"PO-Revision-Date: 2026-01-15 01:07+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -492,15 +492,12 @@ msgstr "動作"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "背景色"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
-msgstr "顏色"
+msgstr "色彩"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:29
 msgctxt "EraserSizeWidget|"
@@ -515,33 +512,27 @@ msgstr "字型大小"
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "實心"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "線條"
+msgstr "虛線"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "線條"
+msgstr "點線"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "筆畫樣式"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "筆畫色彩"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"

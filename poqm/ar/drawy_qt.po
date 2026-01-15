@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-10 10:20+0400\n"
+"PO-Revision-Date: 2026-01-14 07:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: apps/main.cpp:29
 msgctxt "QObject|"
 msgid "drawy"
-msgstr ""
+msgstr "السبورة"
 
 #: apps/main.cpp:31
 msgctxt "QObject|"
@@ -28,27 +28,27 @@ msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr ""
+msgstr "(ج) 2025-%1 مؤلفو السبورة"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "براياغ جاين"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr ""
+msgstr "الصائن"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "لوران مونتال"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr ""
+msgstr "مطوّر"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
@@ -56,9 +56,6 @@ msgid "An optional argument 'file' "
 msgstr "مُعطى اختياري 'ملفّ' "
 
 #: apps/main.cpp:45
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
@@ -494,12 +491,9 @@ msgstr "الإجراءات"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "لون الخلفيّة"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "اللون"
@@ -517,33 +511,27 @@ msgstr "حجم الخط"
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "خالص"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "خط"
+msgstr "خطّ متقطّع"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "خط"
+msgstr "خطّ مُنقَّط"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "نمط الحد"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "لون الحدّ"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
