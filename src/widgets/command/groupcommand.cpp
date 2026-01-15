@@ -31,7 +31,7 @@ void GroupCommand::execute(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    for (const auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         quadtree.deleteItem(item, false);
     }
 
