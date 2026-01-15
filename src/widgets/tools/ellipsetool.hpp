@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
+#include "libdrawywidgets_private_export.h"
 #include "polygondrawingtool.hpp"
 
-class EllipseTool : public PolygonDrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseTool : public PolygonDrawingTool
 {
 public:
     EllipseTool();

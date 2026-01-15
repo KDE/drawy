@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
 #include "drawingtool.hpp"
+#include "libdrawywidgets_private_export.h"
 class FreeformItem;
 
-class FreeformTool : public DrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT FreeformTool : public DrawingTool
 {
 public:
     FreeformTool();
