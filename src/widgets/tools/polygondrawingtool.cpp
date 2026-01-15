@@ -26,7 +26,7 @@ PolygonDrawingTool::PolygonDrawingTool()
 {
     m_cursor = QCursor(Qt::CrossCursor);
 
-    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::StrokeStyle};
+    m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::StrokeStyle, Property::Type::Opacity};
 }
 
 void PolygonDrawingTool::mousePressed(ApplicationContext *context)
@@ -41,6 +41,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 
         curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager().value(Property::Type::StrokeWidth));
         curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager().value(Property::Type::StrokeColor));
+        curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager().value(Property::Type::Opacity));
         if (curItem->hasProperty(Property::Type::StrokeStyle)) {
             curItem->setProperty(Property::Type::StrokeStyle, uiContext->propertyManager().value(Property::Type::StrokeStyle));
         }

@@ -5,9 +5,10 @@
 #pragma once
 
 #include "drawingtool.hpp"
+#include "libdrawywidgets_private_export.h"
 class PolygonItem;
 
-class PolygonDrawingTool : public DrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonDrawingTool : public DrawingTool
 {
 protected:
     std::shared_ptr<PolygonItem> curItem{};

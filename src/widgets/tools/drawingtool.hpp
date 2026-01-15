@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
 #include "item/factory/itemfactory.hpp"
+#include "libdrawywidgets_private_export.h"
 #include "tool.hpp"
 
-class DrawingTool : public Tool
+class LIBDRAWYWIDGETS_TESTS_EXPORT DrawingTool : public Tool
 {
 protected:
     std::unique_ptr<ItemFactory> m_itemFactory{};

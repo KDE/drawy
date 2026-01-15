@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include "polygondrawingtool.hpp"
-
-class RectangleTool : public PolygonDrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleTool : public PolygonDrawingTool
 {
 public:
     RectangleTool();
