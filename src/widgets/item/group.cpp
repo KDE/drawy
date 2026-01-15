@@ -147,6 +147,16 @@ bool GroupItem::needsCaching() const
     return true;
 }
 
+QList<std::shared_ptr<Item>> GroupItem::items() const
+{
+    return m_items;
+}
+
+void GroupItem::setItems(const QList<std::shared_ptr<Item>> &newItems)
+{
+    m_items = newItems;
+}
+
 void GroupItem::deserialize(const QJsonObject &obj)
 {
     GroupDeserializer deserializer(this);

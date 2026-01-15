@@ -37,6 +37,10 @@ public:
 
     bool needsCaching() const override;
 
+    [[nodiscard]] QList<std::shared_ptr<Item>> items() const;
+
+    void setItems(const QList<std::shared_ptr<Item>> &newItems);
+
 private:
     QList<std::shared_ptr<Item>> m_items;
 
