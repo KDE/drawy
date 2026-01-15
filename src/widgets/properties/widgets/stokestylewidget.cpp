@@ -57,8 +57,8 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     m_group->buttons().at(0)->setChecked(true);
 
     layout->addWidget(solidButton);
-    layout->addWidget(dotLineButton);
     layout->addWidget(dashLineButton);
+    layout->addWidget(dotLineButton);
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
         Q_EMIT changed(value());
     });
