@@ -21,8 +21,8 @@ void EllipseItemTest::shouldHaveDefaultValues()
     const EllipseItem i;
     QCOMPARE(i.type(), Item::Type::Ellipse);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
-                                                    << Property::Type::StrokeStyle;
-    QCOMPARE(i.propertyTypes().count(), 4);
+                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor;
+    QCOMPARE(i.propertyTypes().count(), 5);
     for (const auto &prop : properties) {
         QVERIFY(i.propertyTypes().contains(prop));
     }

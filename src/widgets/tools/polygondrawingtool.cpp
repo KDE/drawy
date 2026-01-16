@@ -45,6 +45,9 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
         if (curItem->hasProperty(Property::Type::StrokeStyle)) {
             curItem->setProperty(Property::Type::StrokeStyle, uiContext->propertyManager().value(Property::Type::StrokeStyle));
         }
+        if (curItem->hasProperty(Property::Type::BackgroundColor)) {
+            curItem->setProperty(Property::Type::BackgroundColor, uiContext->propertyManager().value(Property::Type::BackgroundColor));
+        }
 
         curItem->setStart(transformer.viewToWorld(uiContext->event().pos()));
 

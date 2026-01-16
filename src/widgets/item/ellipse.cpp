@@ -7,10 +7,24 @@
 #include "serializer/ellipseserializer.hpp"
 #include <QJsonObject>
 
-EllipseItem::EllipseItem() = default;
+EllipseItem::EllipseItem()
+{
+    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+}
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
+#if 0 // Painting is broken for background
+    QPen pen = painter.pen();
+    if (hasProperty(Property::Type::BackgroundColor)) {
+        QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+        if (backgroundColor != Qt::transparent) {
+            backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+            pen.setBrush(QBrush(backgroundColor));
+            painter.setPen(pen);
+        }
+    }
+#endif
     painter.drawEllipse(QRectF(start() - offset, end() - offset));
 }
 

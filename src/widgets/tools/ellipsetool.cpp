@@ -9,6 +9,7 @@
 EllipseTool::EllipseTool()
 {
     m_itemFactory = std::make_unique<EllipseFactory>();
+    m_properties += Property::Type::BackgroundColor;
 }
 
 QString EllipseTool::tooltip() const

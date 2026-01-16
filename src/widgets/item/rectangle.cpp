@@ -16,6 +16,13 @@ RectangleItem::RectangleItem()
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
+    if (hasProperty(Property::Type::BackgroundColor)) {
+        QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+        if (backgroundColor != Qt::transparent) {
+            backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+            painter.fillRect(QRectF(start() - offset, end() - offset), QBrush(backgroundColor));
+        }
+    }
     painter.drawRect(QRectF(start() - offset, end() - offset));
 }
 

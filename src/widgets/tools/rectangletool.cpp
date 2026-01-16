@@ -9,6 +9,7 @@
 RectangleTool::RectangleTool()
 {
     m_itemFactory = std::make_unique<RectangleFactory>();
+    m_properties += Property::Type::BackgroundColor;
 }
 
 QString RectangleTool::tooltip() const

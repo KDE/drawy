@@ -20,8 +20,8 @@ void EllipseToolTest::shouldHaveDefaultValues()
     QCOMPARE(t.icon(), IconManager::Icon::TOOL_ELLIPSE);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
-                                                    << Property::Type::StrokeStyle;
-    QCOMPARE(t.properties().count(), 4);
+                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor;
+    QCOMPARE(t.properties().count(), 5);
     for (const auto &prop : properties) {
         QVERIFY(t.properties().contains(prop));
     }

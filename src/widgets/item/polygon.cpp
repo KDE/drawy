@@ -64,13 +64,14 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     color.setAlpha(property(Property::Type::Opacity).value<int>());
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
+    /*
     if (hasProperty(Property::Type::BackgroundColor)) {
         const QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
         if (backgroundColor != Qt::transparent) {
             pen.setBrush(QBrush(backgroundColor));
         }
     }
-
+    */
     pen.setCapStyle(Qt::RoundCap);
     pen.setJoinStyle(Qt::RoundJoin);
     pen.setWidth(property(Property::Type::StrokeWidth).value<int>());
