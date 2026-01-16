@@ -469,22 +469,22 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Izbriši izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Združi izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Razdruži izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Dejanja"
@@ -508,6 +508,11 @@ msgstr "Velikost radirke"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Velikost pisave"
+
+#: widgets/properties/widgets/opacitywidget.cpp:29
+msgctxt "OpacityWidget|"
+msgid "Opacity"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"

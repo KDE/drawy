@@ -564,22 +564,22 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Ezabatu hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Taldekatu hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Bereizi hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ekintzak"
@@ -606,6 +606,11 @@ msgstr "Ezabatzailearen neurria"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Letra-tipoaren neurria"
+
+#: widgets/properties/widgets/opacitywidget.cpp:29
+msgctxt "OpacityWidget|"
+msgid "Opacity"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"

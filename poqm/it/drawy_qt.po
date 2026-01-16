@@ -467,22 +467,22 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Apri file"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Elimina la selezione"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Raggruppa la selezione"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Separa la selezione"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Azioni"
@@ -506,6 +506,11 @@ msgstr "Dimensione della gomma"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Dimensione del carattere"
+
+#: widgets/properties/widgets/opacitywidget.cpp:29
+msgctxt "OpacityWidget|"
+msgid "Opacity"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"

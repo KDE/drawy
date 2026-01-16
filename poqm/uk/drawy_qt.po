@@ -468,22 +468,22 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Вилучити позначене"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Групувати позначене"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Скасувати групування позначеного"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Дії"
@@ -507,6 +507,11 @@ msgstr "Розмір гумки"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Розмір шрифту"
+
+#: widgets/properties/widgets/opacitywidget.cpp:29
+msgctxt "OpacityWidget|"
+msgid "Opacity"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"

@@ -1,4 +1,3 @@
-#
 # SPDX-FileCopyrightText: 2026 Alexandre Bento <alexandre.bento@nightrain.fr>
 # SPDX-FileCopyrightText: 2026 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
@@ -469,22 +468,22 @@ msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Supprimer la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Grouper la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Dissocier la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Actions"
@@ -511,6 +510,11 @@ msgstr "Taille de gomme"
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Taille de police"
+
+#: widgets/properties/widgets/opacitywidget.cpp:29
+msgctxt "OpacityWidget|"
+msgid "Opacity"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"

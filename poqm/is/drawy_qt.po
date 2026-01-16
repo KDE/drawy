@@ -1,18 +1,17 @@
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
-# SPDX-FileCopyrightText: 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2026 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-13 08:38-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
-"Language: pt_BR\n"
+"PO-Revision-Date: 2026-01-15 16:21+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: apps/main.cpp:29
 msgctxt "QObject|"
@@ -22,13 +21,13 @@ msgstr "drawy"
 #: apps/main.cpp:31
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
-msgstr "Sua ferramenta prática e infinita para brainstorming!"
+msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
 
 #: apps/main.cpp:33
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr "(c) 2025-%1 Autores do drawy"
+msgstr "(c) 2025-%1 höfundar Drawy"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
@@ -38,7 +37,7 @@ msgstr "Prayag Jain"
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr "Mantenedor"
+msgstr "Umsjónarmaður"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
@@ -48,297 +47,297 @@ msgstr "Laurent Montel"
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr "Desenvolvedor"
+msgstr "Forritari"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
-msgstr "Um argumento opcional 'arquivo' "
+msgstr "Valfrjáls viðfanga'skrá' "
 
 #: apps/main.cpp:45
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
-msgstr "Sua ferramenta prática e infinita para brainstorming!"
+msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
 
 #: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
-msgstr "Seleção"
+msgstr "Valið"
 
 #: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
-msgstr "Forma livre"
+msgstr "Fríhendis"
 
 #: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
-msgstr "Retângulo"
+msgstr "Rétthyrningur"
 
 #: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Ellipse"
-msgstr "Elipse"
+msgstr "Sporbaugur"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Arrow"
-msgstr "Seta"
+msgstr "Ör"
 
 #: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Line"
-msgstr "Linha"
+msgstr "Lína"
 
 #: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Eraser"
-msgstr "Borracha"
+msgstr "Strokleður"
 
 #: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Text"
-msgstr "Texto"
+msgstr "Texti"
 
 #: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Move"
-msgstr "Mover"
+msgstr "Færa"
 
 #: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Save to File"
-msgstr "Salvar para arquivo"
+msgstr "Vista í skrá"
 
 #: widgets/context/uicontext.cpp:78
 msgctxt "UIContext|"
 msgid "Open File"
-msgstr "Abrir arquivo"
+msgstr "Opna skrá"
 
 #: widgets/context/uicontext.cpp:84
 msgctxt "UIContext|"
 msgid "Zoom Out"
-msgstr "Reduzir"
+msgstr "Renna frá"
 
 #: widgets/context/uicontext.cpp:89
 msgctxt "UIContext|"
 msgid "Zoom In"
-msgstr "Ampliar"
+msgstr "Renna að"
 
 #: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
 msgctxt "UIContext|"
 msgid "Light Mode"
-msgstr "Modo claro"
+msgstr "Ljós hamur"
 
 #: widgets/context/uicontext.cpp:103
 msgctxt "UIContext|"
 msgid "Dark Mode"
-msgstr "Modo escuro"
+msgstr "Dökkur hamur"
 
 #: widgets/context/uicontext.cpp:111
 msgctxt "UIContext|"
 msgid "Undo"
-msgstr "Desfazer"
+msgstr "Afturkalla"
 
 #: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
-msgstr "Refazer"
+msgstr "Endurtaka"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
-msgstr "Tela cheia"
+msgstr "Fylla skjá"
 
 #: widgets/keybindings/actionmanager.cpp:40
 msgctxt "ActionManager|"
 msgid "Undo"
-msgstr "Desfazer"
+msgstr "Afturkalla"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
 msgid "Undo last action"
-msgstr "Desfazer última ação"
+msgstr "Afturkalla síðustu aðgerð"
 
 #: widgets/keybindings/actionmanager.cpp:47
 msgctxt "ActionManager|"
 msgid "Redo"
-msgstr "Refazer"
+msgstr "Endurtaka"
 
 #: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
-msgstr "Refazer última ação desfeita"
+msgstr "Endurtaka síðustu afturkölluðu aðgerð"
 
 #: widgets/keybindings/actionmanager.cpp:54
 msgctxt "ActionManager|"
 msgid "Zoom In"
-msgstr "Ampliar"
+msgstr "Renna að"
 
 #: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Zoom in"
-msgstr "Amplia o zoom"
+msgstr "Renna að"
 
 #: widgets/keybindings/actionmanager.cpp:61
 msgctxt "ActionManager|"
 msgid "Zoom Out"
-msgstr "Reduzir"
+msgstr "Renna frá"
 
 #: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Zoom out"
-msgstr "Reduz o zoom"
+msgstr "Renna frá"
 
 #: widgets/keybindings/actionmanager.cpp:68
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
-msgstr "Ferramenta de forma livre"
+msgstr "Fríhendisverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
-msgstr "Alterna para a ferramenta de desenho de forma livre"
+msgstr "Skipta yfir í fríhendisverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:75
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
-msgstr "Ferramenta de borracha"
+msgstr "Útþurrkunarverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
-msgstr "Alterna para a ferramenta de borracha"
+msgstr "Skipta yfir í útþurrkunarverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:82
 msgctxt "ActionManager|"
 msgid "Selection Tool"
-msgstr "Ferramenta de seleção"
+msgstr "Valverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
-msgstr "Alterna para a ferramenta de seleção"
+msgstr "Skipta yfir í valverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
-msgstr "Ferramenta de retângulo"
+msgstr "Rétthyrningaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
-msgstr "Alterna para a ferramenta de retângulo"
+msgstr "Skipta yfir í rétthyrningaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:96
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
-msgstr "Ferramenta de elipse"
+msgstr "Sporbaugaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
-msgstr "Alterna para a ferramenta de elipse"
+msgstr "Skipta yfir í sporbaugateikniverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:103
 msgctxt "ActionManager|"
 msgid "Line Tool"
-msgstr "Ferramenta de linha"
+msgstr "Línuverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
-msgstr "Alterna para a ferramenta de linha"
+msgstr "Skipta yfir í línuteikniverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:110
 msgctxt "ActionManager|"
 msgid "Text Tool"
-msgstr "Ferramenta de texto"
+msgstr "Textaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
-msgstr "Alterna para a ferramenta de texto"
+msgstr "Skipta yfir í textaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:117
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
-msgstr "Ferramenta de seta"
+msgstr "Örvaverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
-msgstr "Alterna para a ferramenta de seta"
+msgstr "Skipta yfir í örvateikniverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:124
 msgctxt "ActionManager|"
 msgid "Move Tool"
-msgstr "Ferramenta de movimento"
+msgstr "Færsluverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:125
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
-msgstr "Alterna para a ferramenta de movimento"
+msgstr "Skipta yfir í færsluverkfæri"
 
 #: widgets/keybindings/actionmanager.cpp:131
 msgctxt "ActionManager|"
 msgid "Group Elements"
-msgstr "Agrupar elementos"
+msgstr "Hópa einindi"
 
 #: widgets/keybindings/actionmanager.cpp:132
 msgctxt "ActionManager|"
 msgid "Groups selected items"
-msgstr "Agrupa os itens selecionados"
+msgstr "Hópar saman valin atriði"
 
 #: widgets/keybindings/actionmanager.cpp:138
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
-msgstr "Desagrupar elementos"
+msgstr "Skipta upp hópi eininda"
 
 #: widgets/keybindings/actionmanager.cpp:139
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
-msgstr "Desagrupa os grupos selecionados"
+msgstr "Skipta upp völdum hópum"
 
 #: widgets/keybindings/actionmanager.cpp:145
 msgctxt "ActionManager|"
 msgid "Select All"
-msgstr "Selecionar tudo"
+msgstr "Velja allt"
 
 #: widgets/keybindings/actionmanager.cpp:146
 msgctxt "ActionManager|"
 msgid "Select all items"
-msgstr "Seleciona todos os itens"
+msgstr "Velja öll atriði"
 
 #: widgets/keybindings/actionmanager.cpp:152
 msgctxt "ActionManager|"
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eyða"
 
 #: widgets/keybindings/actionmanager.cpp:153
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
-msgstr "Exclui os itens selecionados"
+msgstr "Eyðir völdum atriðum"
 
 #: widgets/keybindings/actionmanager.cpp:159
 msgctxt "ActionManager|"
 msgid "Save"
-msgstr "Salvar"
+msgstr "Vista"
 
 #: widgets/keybindings/actionmanager.cpp:160
 msgctxt "ActionManager|"
 msgid "Save canvas"
-msgstr "Salva a tela"
+msgstr "Vista myndflöt"
 
 #: widgets/keybindings/actionmanager.cpp:166
 msgctxt "ActionManager|"
 msgid "Open File"
-msgstr "Abrir arquivo"
+msgstr "Opna skrá"
 
 #: widgets/keybindings/actionmanager.cpp:167
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr "Abre um arquivo existente"
+msgstr "Opna fyrirliggjandi skrá"
 
 #: widgets/keybindings/actionmanager.cpp:173
 msgctxt "ActionManager|keybinding for the undo action"
@@ -373,7 +372,7 @@ msgstr "T"
 #: widgets/keybindings/actionmanager.cpp:179
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
-msgstr "P"
+msgstr "F"
 
 #: widgets/keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
@@ -388,7 +387,7 @@ msgstr "E"
 #: widgets/keybindings/actionmanager.cpp:182
 msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
-msgstr "S"
+msgstr "V"
 
 #: widgets/keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|keybinding for the rectangle drawing tool"
@@ -449,7 +448,7 @@ msgstr "Ctrl+Shift+G"
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
-msgstr "Sem título.%1"
+msgstr "Ónefnt.%1"
 
 #: widgets/keybindings/actionmanager.cpp:321
 #: widgets/keybindings/actionmanager.cpp:343
@@ -461,52 +460,52 @@ msgstr "Drawy (*.%1)"
 #: widgets/keybindings/actionmanager.cpp:322
 msgctxt "QObject|"
 msgid "Save File"
-msgstr "Salvar arquivo"
+msgstr "Vista skrá"
 
 #: widgets/keybindings/actionmanager.cpp:347
 msgctxt "QObject|"
 msgid "Open File"
-msgstr "Abrir arquivo"
+msgstr "Opna skrá"
 
 #: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
-msgstr "Exclui seleção"
+msgstr "Eyða vali"
 
 #: widgets/properties/widgets/actionswidget.cpp:38
 msgctxt "ActionsWidget|"
 msgid "Group selection"
-msgstr "Agrupar seleção"
+msgstr "Val hóps"
 
 #: widgets/properties/widgets/actionswidget.cpp:39
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
-msgstr "Desagrupar seleção"
+msgstr "Taka valið úr hópi"
 
 #: widgets/properties/widgets/actionswidget.cpp:62
 msgctxt "ActionsWidget|"
 msgid "Actions"
-msgstr "Ações"
+msgstr "Aðgerðir"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr "Cor de fundo"
+msgstr "Bakgrunnslitur"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
-msgstr "Cor"
+msgstr "Litur"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:29
 msgctxt "EraserSizeWidget|"
 msgid "Eraser Size"
-msgstr "Tamanho da borracha"
+msgstr "Stærð útþurrkunar"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:30
 msgctxt "FontSizeWidget|"
 msgid "Font Size"
-msgstr "Tamanho da fonte"
+msgstr "Leturstærð"
 
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
@@ -516,84 +515,84 @@ msgstr ""
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr "Sólido"
+msgstr "Gegnheilt"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Linha tracejada"
+msgstr "Bandstrikalína"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Linha pontilhada"
+msgstr "Punktalína"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr "Estilo de traço"
+msgstr "Stíll útlínu"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr "Cor do traço"
+msgstr "Litur útlínu"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
-msgstr "Espessura"
+msgstr "Þykkt"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
-msgstr "Ferramenta de seta"
+msgstr "Örvaverkfæri"
 
 #: widgets/tools/ellipsetool.cpp:16
 msgctxt "QObject|"
 msgid "Ellipse Tool"
-msgstr "Ferramenta de elipse"
+msgstr "Sporbaugaverkfæri"
 
 #: widgets/tools/erasertool.cpp:157
 msgctxt "QObject|"
 msgid "Eraser Tool"
-msgstr "Ferramenta de borracha"
+msgstr "Útþurrkunarverkfæri"
 
 #: widgets/tools/freeformtool.cpp:47
 msgctxt "QObject|"
 msgid "Pen Tool"
-msgstr "Ferramenta de caneta"
+msgstr "Pennaverkfæri"
 
 #: widgets/tools/linetool.cpp:16
 msgctxt "QObject|"
 msgid "Line Tool"
-msgstr "Ferramenta de linha"
+msgstr "Línuverkfæri"
 
 #: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
-msgstr "Ferramenta de movimento"
+msgstr "Færsluverkfæri"
 
 #: widgets/tools/rectangletool.cpp:16
 msgctxt "QObject|"
 msgid "Rectangle Tool"
-msgstr "Ferramenta de retângulo"
+msgstr "Rétthyrningaverkfæri"
 
 #: widgets/tools/selectiontool/selectiontool.cpp:134
 msgctxt "QObject|"
 msgid "Selection Tool"
-msgstr "Ferramenta de seleção"
+msgstr "Valverkfæri"
 
 #: widgets/tools/texttool.cpp:497
 msgctxt "QObject|"
 msgid "Text Tool"
-msgstr "Ferramenta de texto"
+msgstr "Textaverkfæri"
 
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Do you want to close?"
-msgstr "Deseja fechar?"
+msgstr "Viltu örugglega loka?"
 
 #: widgets/window/window.cpp:67
 msgctxt "MainWindow|"
 msgid "Close"
-msgstr "Fechar"
+msgstr "Loka"
