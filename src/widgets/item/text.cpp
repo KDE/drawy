@@ -85,8 +85,6 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
         QPointF caretBottom{caretTop.x(), caretTop.y() + lineHeight};
 
-        QLineF line{caretTop, caretBottom};
-
         painter.setPen(getPen());
         painter.drawLine(caretTop, caretBottom);
 

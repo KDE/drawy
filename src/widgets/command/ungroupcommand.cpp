@@ -32,8 +32,8 @@ void UngroupCommand::execute(ApplicationContext *context)
 
     selectedItems.clear();
 
-    QRectF dirtyRegion{};
-    for (const auto &group : m_groups) {
+    QRectF dirtyRegion;
+    for (const auto &group : std::as_const(m_groups)) {
         quadtree.deleteItem(group);
 
         dirtyRegion |= group->boundingBox();
