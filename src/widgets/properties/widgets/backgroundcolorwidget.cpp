@@ -29,7 +29,7 @@ const Property BackgroundColorWidget::value() const
 
 QList<QColor> BackgroundColorWidget::defaultColors() const
 {
-    const QList<QColor> colors{QColor{255, 255, 255}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
+    const QList<QColor> colors{QColor{Qt::transparent}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
     return colors;
 }
 
