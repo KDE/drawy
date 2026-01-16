@@ -87,7 +87,7 @@ target_sources(
         item/factory/rectanglefactory.hpp
         item/factory/textfactory.cpp
         item/factory/textfactory.hpp
-        item/factory/diamondfactory.hpp
+        item/factory/diamondfactory.cpp
         item/factory/diamondfactory.hpp
         item/freeform.cpp
         item/freeform.hpp
@@ -161,6 +161,8 @@ target_sources(
         tools/polygondrawingtool.hpp
         tools/rectangletool.cpp
         tools/rectangletool.hpp
+        tools/diamondtool.cpp
+        tools/diamondtool.hpp
         tools/selectiontool/selectiontool.cpp
         tools/selectiontool/selectiontool.hpp
         tools/selectiontool/selectiontoolmovestate.cpp

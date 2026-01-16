@@ -23,6 +23,7 @@ public:
         TOOL_ERASER,
         TOOL_TEXT,
         TOOL_MOVE,
+        TOOL_DIAMOND,
         ACTION_SAVE,
         ACTION_OPEN_FILE,
         ACTION_ZOOM_IN,
