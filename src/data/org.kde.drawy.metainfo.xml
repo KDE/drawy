@@ -10,6 +10,7 @@
   <name xml:lang="eu">Drawy</name>
   <name xml:lang="fr">Drawy</name>
   <name xml:lang="he">Drawy</name>
+  <name xml:lang="ia">Drawy</name>
   <name xml:lang="it">Drawy</name>
   <name xml:lang="ka">Drawy</name>
   <name xml:lang="nl">Drawy</name>
@@ -19,10 +20,12 @@
   <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
   <summary>Your handy, infinite brainstorming tool</summary>
+  <summary xml:lang="ar">أداة مفيدة غير محدودة لتبادل الأفكار</summary>
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="es">Herramienta práctica y sin límites para generar lluvia de ideas</summary>
   <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
+  <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
