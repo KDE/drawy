@@ -11,6 +11,7 @@
   <name xml:lang="fr">Drawy</name>
   <name xml:lang="he">Drawy</name>
   <name xml:lang="ia">Drawy</name>
+  <name xml:lang="is">Drawy</name>
   <name xml:lang="it">Drawy</name>
   <name xml:lang="ka">Drawy</name>
   <name xml:lang="nl">Drawy</name>
@@ -25,6 +26,7 @@
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="es">Herramienta práctica y sin límites para generar lluvia de ideas</summary>
   <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
+  <summary xml:lang="is">Handhæga, óendanlega hugmyndaflæðitólið.</summary>
   <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
@@ -48,6 +50,7 @@
     <p xml:lang="eu">Drawy garapen fasean dagoen arbela mugagabeko tresna bat da, web oinarriko Excalidraw tresna bikainaren mahaigaineko alternatiba natiboa izatea helburu duena.</p>
     <p xml:lang="fr">Drawy est une application de bureau de tableau blanc sans limites. Cette application est en cours de développement, se voulant une alternative Excalidraw, un excellent outil sur navigateur Internet.</p>
     <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>
+    <p xml:lang="is">Drawy er verkfæri til að teikna upp hugmyndir, það er enn á hönnunarstigi en því er ætlað að verða sambærilegt verkfæri fyrir borðtölvur í líkingu við hið veflæga Excalidraw.</p>
     <p xml:lang="it">Drawy è una lavagna infinita in fase di sviluppo, che si propone di essere un'alternativa desktop nativa allo straordinario Excalidraw basato sul web.</p>
     <p xml:lang="ka">Drawy ჯერ კიდევ შემუშავების ქვეშ მყოფი უსასრულო დაფაა, რომელიც აპირებს, ვებზე დაფუძნებული Excalidraw-ის ალტერნატივას წარმოადგენდეს.</p>
     <p xml:lang="nl">Drawy is een oneindig whiteboardprogramma in ontwikkeling, dat een inheems bureaubladalternatief wil zijn voor het fantastische webgebaseerde Excalidraw.</p>
