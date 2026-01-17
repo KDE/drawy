@@ -13,11 +13,11 @@ class Event
 public:
     Event();
     const QPoint &pos() const;
-    Qt::MouseButton button() const;
-    qreal pressure() const;
-    QString text() const;
-    int key() const;
-    Qt::KeyboardModifiers modifiers() const;
+    [[nodiscard]] Qt::MouseButton button() const;
+    [[nodiscard]] qreal pressure() const;
+    [[nodiscard]] QString text() const;
+    [[nodiscard]] int key() const;
+    [[nodiscard]] Qt::KeyboardModifiers modifiers() const;
 
     void setPos(const QPoint &point, qreal const scale = 1.0);
     void setButton(Qt::MouseButton btn);

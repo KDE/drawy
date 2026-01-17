@@ -35,8 +35,8 @@ public:
 
     [[nodiscard]] Item::Type type() const override;
 
-    const QList<QPointF> &points() const;
-    const QList<qreal> &pressures() const;
+    [[nodiscard]] const QList<QPointF> &points() const;
+    [[nodiscard]] const QList<qreal> &pressures() const;
 
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;

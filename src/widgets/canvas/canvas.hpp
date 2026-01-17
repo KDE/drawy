@@ -29,7 +29,7 @@ public:
     void paintCanvas(const std::function<void(QPainter &)> &paintFunc);
     void paintOverlay(const std::function<void(QPainter &)> &paintFunc);
 
-    QPixmap canvasPixmap() const;
+    [[nodiscard]] QPixmap canvasPixmap() const;
 
 Q_SIGNALS:
     void mousePressed(QMouseEvent *event);

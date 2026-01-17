@@ -11,5 +11,5 @@ class LineFactory : public ItemFactory
 public:
     LineFactory();
     ~LineFactory() override = default;
-    std::shared_ptr<Item> create() const override;
+    [[nodiscard]] std::shared_ptr<Item> create() const override;
 };

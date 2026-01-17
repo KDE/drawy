@@ -32,7 +32,7 @@ public:
     KeybindManager &keybindManager() const;
     ActionManager &actionManager() const;
     PropertyManager &propertyManager() const;
-    IconManager *iconManager() const;
+    [[nodiscard]] IconManager *iconManager() const;
 
     void reset();
 

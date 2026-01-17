@@ -45,7 +45,7 @@ public:
 
     ~QuadTree();
 
-    int size() const;
+    [[nodiscard]] int size() const;
     void insertItem(const ItemPtr &item, bool updateOrder = true);
     void deleteItem(const ItemPtr &item, bool updateOrder = true);
     void updateItem(const ItemPtr &item, const QRectF &oldBoundingBox);

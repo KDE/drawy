@@ -23,12 +23,12 @@ public:
 
     void setContexts();
 
-    QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
 
-    RenderingContext *renderingContext() const;
-    SpatialContext *spatialContext() const;
-    UIContext *uiContext() const;
-    SelectionContext *selectionContext() const;
+    [[nodiscard]] RenderingContext *renderingContext() const;
+    [[nodiscard]] SpatialContext *spatialContext() const;
+    [[nodiscard]] UIContext *uiContext() const;
+    [[nodiscard]] SelectionContext *selectionContext() const;
 
     void reset(); // resets the canvas to a blank state
 

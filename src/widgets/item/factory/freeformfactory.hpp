@@ -11,5 +11,5 @@ class FreeformFactory : public ItemFactory
 public:
     FreeformFactory();
     ~FreeformFactory() override = default;
-    std::shared_ptr<Item> create() const override;
+    [[nodiscard]] std::shared_ptr<Item> create() const override;
 };

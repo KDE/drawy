@@ -15,5 +15,5 @@ class DiamondFactory : public ItemFactory
 public:
     DiamondFactory();
     ~DiamondFactory() override = default;
-    std::shared_ptr<Item> create() const override;
+    [[nodiscard]] std::shared_ptr<Item> create() const override;
 };
