@@ -55,13 +55,13 @@ void UngroupCommand::undo(ApplicationContext *context)
 
     selectedItems.clear();
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &group : std::as_const(m_groups)) {
         quadtree.insertItem(group);
         selectedItems.insert(group);
         dirtyRegion |= group->boundingBox();
 
-        auto subItems{group->unGroup()};
+        const auto subItems{group->unGroup()};
         for (const auto &subItem : subItems) {
             quadtree.deleteItem(subItem, false);
         }

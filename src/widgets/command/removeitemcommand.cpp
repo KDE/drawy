@@ -31,7 +31,7 @@ void RemoveItemCommand::execute(ApplicationContext *context)
     auto &itemCache{context->renderingContext()->itemCache()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
         quadtree.deleteItem(item, false);
@@ -47,7 +47,7 @@ void RemoveItemCommand::undo(ApplicationContext *context)
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         quadtree.insertItem(item, false);
         cacheGrid.markDirty(dirtyRegion);

@@ -22,9 +22,9 @@ UpdatePropertyCommand::UpdatePropertyCommand(QList<std::shared_ptr<Item>> items,
 
 void UpdatePropertyCommand::execute(ApplicationContext *context)
 {
-    Property::Type type{m_newProperty.type()};
+    const Property::Type type{m_newProperty.type()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         try {
             m_properties[item] = item->property(type);
@@ -35,13 +35,13 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
         }
     }
 
-    QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 };
 
 void UpdatePropertyCommand::undo(ApplicationContext *context)
 {
-    Property::Type type{m_newProperty.type()};
+    const Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
@@ -53,6 +53,6 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
         }
     }
 
-    QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 };

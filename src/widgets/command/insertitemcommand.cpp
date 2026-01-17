@@ -26,7 +26,7 @@ void InsertItemCommand::execute(ApplicationContext *context)
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
         quadtree.insertItem(item);
         cacheGrid.markDirty(dirtyRegion);
     }
@@ -40,7 +40,7 @@ void InsertItemCommand::undo(ApplicationContext *context)
     auto &selectedItems{context->selectionContext()->selectedItems()};
 
     for (auto &item : m_items) {
-        QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
         quadtree.deleteItem(item);
