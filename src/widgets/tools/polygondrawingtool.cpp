@@ -33,7 +33,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->event().button() == Qt::LeftButton) {
+    if (uiContext->appEvent().button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
@@ -49,7 +49,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
             curItem->setProperty(Property::Type::BackgroundColor, uiContext->propertyManager().value(Property::Type::BackgroundColor));
         }
 
-        curItem->setStart(transformer.viewToWorld(uiContext->event().pos()));
+        curItem->setStart(transformer.viewToWorld(uiContext->appEvent().pos()));
 
         m_isDrawing = true;
     }
@@ -71,7 +71,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
             curItem->erase(painter, offsetPos);
         });
 
-        curItem->setEnd(transformer.viewToWorld(uiContext->event().pos()));
+        curItem->setEnd(transformer.viewToWorld(uiContext->appEvent().pos()));
 
         renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
@@ -86,7 +86,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->event().button() == Qt::LeftButton && m_isDrawing) {
+    if (uiContext->appEvent().button() == Qt::LeftButton && m_isDrawing) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
         CommandHistory &commandHistory{spatialContext->commandHistory()};
@@ -106,7 +106,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 void PolygonDrawingTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    context->uiContext()->event().setButton(Qt::LeftButton);
+    context->uiContext()->appEvent().setButton(Qt::LeftButton);
     mouseReleased(context);
 }
 

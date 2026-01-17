@@ -28,7 +28,7 @@ public:
     ToolBar &toolBar() const;
     PropertyBar &propertyBar() const;
     ActionBar &actionBar() const;
-    Event &event() const;
+    Event &appEvent() const;
     KeybindManager &keybindManager() const;
     ActionManager &actionManager() const;
     PropertyManager &propertyManager() const;

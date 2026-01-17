@@ -23,10 +23,10 @@
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 {
     auto *uiContext{context->uiContext()};
-    auto &event{uiContext->event()};
+    auto &event{uiContext->appEvent()};
 
     if (event.button() == Qt::LeftButton) {
-        m_lastPos = uiContext->event().pos();
+        m_lastPos = uiContext->appEvent().pos();
 
         auto spatialContext{context->spatialContext()};
         auto selectionContext{context->selectionContext()};
@@ -88,7 +88,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 
     renderingContext->canvas().setOverlayBg(Qt::transparent);
 
-    const QPointF curPos{uiContext->event().pos()};
+    const QPointF curPos{uiContext->appEvent().pos()};
 
     const QRectF selectionBox{m_lastPos, curPos};
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};

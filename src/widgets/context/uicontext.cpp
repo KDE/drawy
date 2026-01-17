@@ -158,7 +158,7 @@ PropertyManager &UIContext::propertyManager() const
     return *m_propertyManager;
 }
 
-Event &UIContext::event() const
+Event &UIContext::appEvent() const
 {
     return *m_event;
 }

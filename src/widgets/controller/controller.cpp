@@ -57,7 +57,7 @@ void Controller::mousePressed(QMouseEvent *event)
         m_mouseMoved = false;
     }
 
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
@@ -81,7 +81,7 @@ void Controller::mousePressed(QMouseEvent *event)
 
 void Controller::mouseDoubleClick(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
@@ -94,7 +94,7 @@ void Controller::mouseDoubleClick(QMouseEvent *event)
 
 void Controller::mouseTripleClick(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
@@ -109,7 +109,7 @@ void Controller::mouseMoved(QMouseEvent *event)
 {
     m_mouseMoved = true;
 
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
@@ -127,7 +127,7 @@ void Controller::mouseMoved(QMouseEvent *event)
 
 void Controller::mouseReleased(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
@@ -147,7 +147,7 @@ void Controller::mouseReleased(QMouseEvent *event)
 
 void Controller::tablet(QTabletEvent *event)
 {
-    Event &ev{m_context->uiContext()->event()};
+    Event &ev{m_context->uiContext()->appEvent()};
 
     // TODO: Remove magic numbers
     ev.setPressure(event->pressure() / 1.60 + 0.375);
@@ -155,7 +155,7 @@ void Controller::tablet(QTabletEvent *event)
 
 void Controller::keyPressed(QKeyEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
 
     contextEvent.setKey(event->key());
@@ -167,7 +167,7 @@ void Controller::keyPressed(QKeyEvent *event)
 
 void Controller::keyReleased(QKeyEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->event()};
+    Event &contextEvent{m_context->uiContext()->appEvent()};
     ToolBar &toolBar{m_context->uiContext()->toolBar()};
 
     contextEvent.setKey(event->key());
@@ -217,7 +217,7 @@ void Controller::wheel(QWheelEvent *event)
 {
     const QPointF &offsetPos{m_context->spatialContext()->offsetPos()};
     auto &canvas{m_context->renderingContext()->canvas()};
-    auto &contextEvent{m_context->uiContext()->event()};
+    auto &contextEvent{m_context->uiContext()->appEvent()};
     const qreal zoomFactor{m_context->renderingContext()->zoomFactor()};
 
     contextEvent.setPos(event->position().toPoint(), canvas.scale());

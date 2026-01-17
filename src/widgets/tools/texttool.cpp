@@ -43,13 +43,13 @@ void TextTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->event().button() == Qt::LeftButton) {
+    if (uiContext->appEvent().button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
         auto renderingContext{context->renderingContext()};
         QuadTree &quadTree{spatialContext->quadtree()};
 
-        QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
+        QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->type() == Item::Type::Text && item->boundingBox().contains(point);
         })};
@@ -61,7 +61,7 @@ void TextTool::mousePressed(ApplicationContext *context)
                 m_curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager().value(Property::Type::StrokeColor));
                 m_curItem->setProperty(Property::Type::FontSize, uiContext->propertyManager().value(Property::Type::FontSize));
 
-                m_curItem->createTextBox(transformer.viewToWorld(uiContext->event().pos()));
+                m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent().pos()));
 
                 CommandHistory &commandHistory{spatialContext->commandHistory()};
                 commandHistory.insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
@@ -109,7 +109,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     QuadTree &quadTree{spatialContext->quadtree()};
     m_mouseMoved = true;
 
-    QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
+    QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
     QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
         return item->type() == Item::Type::Text && item->boundingBox().contains(point);
     })};
@@ -180,7 +180,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto uiContext{context->uiContext()};
 
-        const QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
+        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
 
         const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
         const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
@@ -208,7 +208,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto uiContext{context->uiContext()};
 
-        const QPointF worldPos{transformer.viewToWorld(uiContext->event().pos())};
+        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
 
         const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
         const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
@@ -229,7 +229,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     if (!m_curItem)
         return;
 
-    Event &ev{context->uiContext()->event()};
+    Event &ev{context->uiContext()->appEvent()};
 
     if (ev.key() == Qt::Key_Escape) {
         m_curItem->setMode(TextItem::Mode::Normal);

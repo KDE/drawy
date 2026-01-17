@@ -13,3 +13,4 @@ Dependencies:
 Options:
  require-passing-tests-on: ['Linux']
  tests-run-in-parallel: True
+ cmake-options: '-DWARNINGS_AS_ERRORS=ON'

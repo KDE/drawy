@@ -76,7 +76,7 @@ void PropertyBar::updateProperties(Tool &tool)
 
             count++;
             widget->widget()->show();
-        } catch (const std::logic_error &e) {
+        } catch (const std::logic_error &) {
             // ignore this property
         }
     }

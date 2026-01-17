@@ -22,7 +22,7 @@ MoveTool::MoveTool()
 void MoveTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
-    auto button{uiContext->event().button()};
+    auto button{uiContext->appEvent().button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
         auto spatialContext{context->spatialContext()};
@@ -31,7 +31,7 @@ void MoveTool::mousePressed(ApplicationContext *context)
         m_isActive = true;
 
         m_initialOffsetPos = spatialContext->offsetPos();
-        m_initialPos = uiContext->event().pos();
+        m_initialPos = uiContext->appEvent().pos();
 
         renderingContext->canvas().setCursor(Qt::ClosedHandCursor);
     }
@@ -45,7 +45,7 @@ void MoveTool::mouseMoved(ApplicationContext *context)
         UIContext *uiContext{context->uiContext()};
 
         qreal zoom{renderingContext->zoomFactor()};
-        QPointF newPoint{m_initialOffsetPos * zoom - uiContext->event().pos() + m_initialPos};
+        QPointF newPoint{m_initialOffsetPos * zoom - uiContext->appEvent().pos() + m_initialPos};
 
         spatialContext->setOffsetPos(newPoint / zoom);
 
@@ -57,7 +57,7 @@ void MoveTool::mouseMoved(ApplicationContext *context)
 void MoveTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
-    auto button{uiContext->event().button()};
+    auto button{uiContext->appEvent().button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
         auto renderingContext{context->renderingContext()};

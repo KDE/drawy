@@ -34,7 +34,7 @@ QLayoutItem *BoardLayout::itemAt(int index) const
 {
     try {
         return *m_widgets.at(index);
-    } catch (std::out_of_range) {
+    } catch (const std::out_of_range &) {
         return nullptr;
     }
 }
@@ -45,7 +45,7 @@ QLayoutItem *BoardLayout::takeAt(int index)
         QLayoutItem *item{*m_widgets.at(index)};
         *(m_widgets.at(index)) = nullptr;
         return item;
-    } catch (std::out_of_range) {
+    } catch (const std::out_of_range &) {
         return nullptr;
     }
 }

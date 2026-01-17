@@ -102,7 +102,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
             } else {
                 property = item->property(propertyType);
             }
-        } catch (const std::logic_error &e) {
+        } catch (const std::logic_error &) {
             // ignore
         }
     }
