@@ -72,7 +72,7 @@ Tool &ToolBar::tool(Tool::Type type) const
     return *m_tools.at(type);
 }
 
-void ToolBar::onToolChanged(int id)
+void ToolBar::onToolChanged([[maybe_unused]] int id)
 {
     Q_EMIT toolChanged(curTool());
 }
