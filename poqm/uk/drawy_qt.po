@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-14 01:53+0200\n"
+"PO-Revision-Date: 2026-01-16 05:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -511,7 +511,7 @@ msgstr "Розмір шрифту"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "Непрозорість"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
@@ -548,7 +548,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "Інструмент «Пряма»"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
@@ -573,7 +581,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Інструмент «Пересування»"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"

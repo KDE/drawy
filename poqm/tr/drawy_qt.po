@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-13 17:43+0300\n"
+"PO-Revision-Date: 2026-01-16 22:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -510,7 +510,7 @@ msgstr "Yazıtipi Puntosu"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "Matlık"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
@@ -547,7 +547,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "Çizgi Aracı"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
@@ -572,7 +580,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"

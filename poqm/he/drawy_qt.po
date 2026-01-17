@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-11 20:50+0200\n"
+"PO-Revision-Date: 2026-01-16 10:46+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -491,12 +491,9 @@ msgstr "פעולות"
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "צבע רקע"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "צבע"
@@ -514,38 +511,32 @@ msgstr "גודל כתב"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "אטימות"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "אחיד"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "קו"
+msgstr "קו מקווקוו"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "קו"
+msgstr "קו נקודות"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "סגנון קו המתאר"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "צבע קו מתאר"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -557,7 +548,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "כלי חץ"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "כלי קו"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
@@ -582,7 +581,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"

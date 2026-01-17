@@ -510,7 +510,7 @@ msgstr "ფონტის ზომა"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "გაუმჭვირვალობა"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
@@ -547,7 +547,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "ხაზის ხელსაწყო"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
@@ -572,7 +580,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "გადატანის ხელსაწყო"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"

@@ -557,7 +557,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Outil de flèche"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "Outil de ligne"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
@@ -582,7 +590,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Outil de déplacement"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"

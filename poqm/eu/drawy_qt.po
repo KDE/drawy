@@ -653,7 +653,15 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Gezi-tresna"
 
-#: widgets/tools/ellipsetool.cpp:16
+#: widgets/tools/diamondtool.cpp:17
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "QObject|"
+msgid "Diamond Tool"
+msgstr "Lerro tresna"
+
+#: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elipse tresna"
@@ -678,7 +686,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Mugitzeko tresna"
 
-#: widgets/tools/rectangletool.cpp:16
+#: widgets/tools/rectangletool.cpp:17
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"
