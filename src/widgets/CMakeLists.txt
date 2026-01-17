@@ -143,6 +143,8 @@ target_sources(
         properties/widgets/stokestylewidget.cpp
         properties/widgets/opacitywidget.hpp
         properties/widgets/opacitywidget.cpp
+        properties/widgets/alignmentwidget.hpp
+        properties/widgets/alignmentwidget.cpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp
