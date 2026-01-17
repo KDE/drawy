@@ -17,14 +17,14 @@ public:
     explicit CacheCell(const QPoint &point, const QSize &size);
     ~CacheCell();
 
-    const QSize &cellSize() const;
+    [[nodiscard]] const QSize &cellSize() const;
 
-    QRect rect() const;
-    const QPoint &point() const;
-    bool dirty() const;
+    [[nodiscard]] QRect rect() const;
+    [[nodiscard]] const QPoint &point() const;
+    [[nodiscard]] bool dirty() const;
     void setDirty(bool dirty);
 
-    QPixmap &pixmap() const;
+    [[nodiscard]] QPixmap &pixmap() const;
     void paint(const std::function<void(QPainter &)> &paintFunc);
 
 private:

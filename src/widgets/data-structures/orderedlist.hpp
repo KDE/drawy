@@ -32,5 +32,5 @@ public:
     void bringToFront(const ItemPtr &item);
     bool hasItem(const ItemPtr &item) const;
 
-    int zIndex(const ItemPtr &item) const;
+    [[nodiscard]] int zIndex(const ItemPtr &item) const;
 };

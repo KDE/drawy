@@ -16,8 +16,8 @@ public:
     explicit SelectionContext(ApplicationContext *context);
     ~SelectionContext() override;
 
-    std::unordered_set<std::shared_ptr<Item>> &selectedItems();
-    QRectF selectionBox() const;
+    [[nodiscard]] std::unordered_set<std::shared_ptr<Item>> &selectedItems();
+    [[nodiscard]] QRectF selectionBox() const;
 
     void reset();
 

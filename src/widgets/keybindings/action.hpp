@@ -16,7 +16,7 @@ private:
 
 public:
     Action(QString name, QString description, std::function<void()> callable, QObject *parent);
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void run();
 };
 

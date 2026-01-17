@@ -35,7 +35,7 @@ public:
     [[nodiscard]] QJsonObject serialize() const override;
     void deserialize(const QJsonObject &obj) override;
 
-    bool needsCaching() const override;
+    [[nodiscard]] bool needsCaching() const override;
 
     [[nodiscard]] QList<std::shared_ptr<Item>> items() const;
 

@@ -29,11 +29,11 @@ public:
     void markForUpdate();
     void markForUpdate(const QRect &region);
 
-    qreal zoomFactor() const;
+    [[nodiscard]] qreal zoomFactor() const;
     void setZoomFactor(qreal newValue);
     void updateZoomFactor(qreal diff, QPoint center = {-1, -1});
 
-    int fps() const;
+    [[nodiscard]] int fps() const;
 
     void reset();
 

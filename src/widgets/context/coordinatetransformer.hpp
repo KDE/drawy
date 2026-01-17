@@ -27,49 +27,49 @@ public:
 
     void setCoordinateTransformer();
 
-    QPointF worldToView(QPointF point);
-    QSizeF worldToView(QSizeF size);
-    QRectF worldToView(QRectF rect);
-    QPointF viewToWorld(QPointF point);
-    QSizeF viewToWorld(QSizeF size);
-    QRectF viewToWorld(QRectF rect);
+    [[nodiscard]] QPointF worldToView(QPointF point);
+    [[nodiscard]] QSizeF worldToView(QSizeF size);
+    [[nodiscard]] QRectF worldToView(QRectF rect);
+    [[nodiscard]] QPointF viewToWorld(QPointF point);
+    [[nodiscard]] QSizeF viewToWorld(QSizeF size);
+    [[nodiscard]] QRectF viewToWorld(QRectF rect);
 
-    QPoint worldToView(QPoint point);
-    QSize worldToView(QSize size);
-    QRect worldToView(QRect rect);
-    QPoint viewToWorld(QPoint point);
-    QSize viewToWorld(QSize size);
-    QRect viewToWorld(QRect rect);
+    [[nodiscard]] QPoint worldToView(QPoint point);
+    [[nodiscard]] QSize worldToView(QSize size);
+    [[nodiscard]] QRect worldToView(QRect rect);
+    [[nodiscard]] QPoint viewToWorld(QPoint point);
+    [[nodiscard]] QSize viewToWorld(QSize size);
+    [[nodiscard]] QRect viewToWorld(QRect rect);
 
-    QPointF worldToGrid(QPointF point);
-    QSizeF worldToGrid(QSizeF size);
-    QRectF worldToGrid(QRectF rect);
-    QPointF gridToWorld(QPointF point);
-    QSizeF gridToWorld(QSizeF size);
-    QRectF gridToWorld(QRectF rect);
+    [[nodiscard]] QPointF worldToGrid(QPointF point);
+    [[nodiscard]] QSizeF worldToGrid(QSizeF size);
+    [[nodiscard]] QRectF worldToGrid(QRectF rect);
+    [[nodiscard]] QPointF gridToWorld(QPointF point);
+    [[nodiscard]] QSizeF gridToWorld(QSizeF size);
+    [[nodiscard]] QRectF gridToWorld(QRectF rect);
 
-    QPoint worldToGrid(QPoint point);
-    QSize worldToGrid(QSize size);
-    QRect worldToGrid(QRect rect);
-    QPoint gridToWorld(QPoint point);
-    QSize gridToWorld(QSize size);
-    QRect gridToWorld(QRect rect);
+    [[nodiscard]] QPoint worldToGrid(QPoint point);
+    [[nodiscard]] QSize worldToGrid(QSize size);
+    [[nodiscard]] QRect worldToGrid(QRect rect);
+    [[nodiscard]] QPoint gridToWorld(QPoint point);
+    [[nodiscard]] QSize gridToWorld(QSize size);
+    [[nodiscard]] QRect gridToWorld(QRect rect);
 
-    QPointF viewToGrid(QPointF point);
-    QSizeF viewToGrid(QSizeF size);
-    QRectF viewToGrid(QRectF rect);
-    QPointF gridToView(QPointF point);
-    QSizeF gridToView(QSizeF size);
-    QRectF gridToView(QRectF rect);
+    [[nodiscard]] QPointF viewToGrid(QPointF point);
+    [[nodiscard]] QSizeF viewToGrid(QSizeF size);
+    [[nodiscard]] QRectF viewToGrid(QRectF rect);
+    [[nodiscard]] QPointF gridToView(QPointF point);
+    [[nodiscard]] QSizeF gridToView(QSizeF size);
+    [[nodiscard]] QRectF gridToView(QRectF rect);
 
-    QPoint viewToGrid(QPoint point);
-    QSize viewToGrid(QSize size);
-    QRect viewToGrid(QRect rect);
-    QPoint gridToView(QPoint point);
-    QSize gridToView(QSize size);
-    QRect gridToView(QRect rect);
+    [[nodiscard]] QPoint viewToGrid(QPoint point);
+    [[nodiscard]] QSize viewToGrid(QSize size);
+    [[nodiscard]] QRect viewToGrid(QRect rect);
+    [[nodiscard]] QPoint gridToView(QPoint point);
+    [[nodiscard]] QSize gridToView(QSize size);
+    [[nodiscard]] QRect gridToView(QRect rect);
 
-    QPoint round(QPointF point);
-    QRect round(QRectF rect);
-    QSize round(QSizeF size);
+    [[nodiscard]] QPoint round(QPointF point);
+    [[nodiscard]] QRect round(QRectF rect);
+    [[nodiscard]] QSize round(QSizeF size);
 };

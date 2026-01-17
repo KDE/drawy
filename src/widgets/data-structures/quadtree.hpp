@@ -53,7 +53,7 @@ public:
 
     void reorder(QList<ItemPtr> &items) const;
 
-    QList<ItemPtr> getAllItems() const;
+    [[nodiscard]] QList<ItemPtr> getAllItems() const;
     void clear();
 
     template<typename Shape, typename QueryCondition>
@@ -63,7 +63,7 @@ public:
     QList<ItemPtr> queryItems(const Shape &shape) const;
 
     void draw(QPainter &painter, const QPointF &offset) const;
-    const QRectF &boundingBox() const;
+    [[nodiscard]] const QRectF &boundingBox() const;
 
 private:
     bool insert(const ItemPtr &item, bool updateOrder);
