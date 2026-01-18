@@ -89,7 +89,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
 
         const qreal zoom{renderingContext->zoomFactor()};
 
-        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
             curItem->quickDraw(painter, spatialContext->offsetPos());
         });
@@ -108,7 +108,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        renderingContext->canvas().setOverlayBg(Qt::transparent);
+        renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
         QList<std::shared_ptr<Item>> itemsAfterSplitting{curItem->split()};
         commandHistory->insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));

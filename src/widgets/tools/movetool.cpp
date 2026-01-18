@@ -33,7 +33,7 @@ void MoveTool::mousePressed(ApplicationContext *context)
         m_initialOffsetPos = spatialContext->offsetPos();
         m_initialPos = uiContext->appEvent().pos();
 
-        renderingContext->canvas().setCursor(Qt::ClosedHandCursor);
+        renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
     }
 }
 
@@ -62,7 +62,7 @@ void MoveTool::mouseReleased(ApplicationContext *context)
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
         auto renderingContext{context->renderingContext()};
 
-        renderingContext->canvas().setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
         m_isActive = false;
     }
 }

@@ -19,7 +19,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
 
     auto *context{ApplicationContext::instance()};
     auto &transformer{context->spatialContext()->coordinateTransformer()};
-    auto &canvas{context->renderingContext()->canvas()};
+    auto canvas{context->renderingContext()->canvas()};
 
     const QRectF boundingBox{item->boundingBox()};
     QTransform transform{item->transformObj()};
@@ -33,7 +33,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
         QSizeF maxCellSize{Common::maxItemCacheCellSize.toSizeF()};
 
         const QPointF worldOffset{context->spatialContext()->offsetPos()};
-        const QRectF worldViewport(worldOffset, transformer.viewToWorld(canvas.dimensions()));
+        const QRectF worldViewport(worldOffset, transformer.viewToWorld(canvas->dimensions()));
         const QRectF gridViewport{transformer.worldToGrid(worldViewport)};
         const int rows{static_cast<int>(std::ceil(gridViewport.width() / maxCellSize.width())) + 1};
         const int cols{static_cast<int>(std::ceil(gridViewport.height() / maxCellSize.height())) + 1};

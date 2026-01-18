@@ -26,7 +26,7 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
 
     if (uiContext->appEvent().button() == Qt::LeftButton) {
         auto renderingContext{context->renderingContext()};
-        renderingContext->canvas().setCursor(Qt::ClosedHandCursor);
+        renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
 
         m_lastPos = uiContext->appEvent().pos();
         m_initialPos = m_lastPos;
@@ -41,7 +41,7 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
     auto renderingContext{context->renderingContext()};
 
     if (!m_isActive) {
-        renderingContext->canvas().setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
         return;
     }
 
@@ -79,7 +79,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     auto spatialContext{context->spatialContext()};
     auto transformer{spatialContext->coordinateTransformer()};
 
-    renderingContext->canvas().setCursor(Qt::OpenHandCursor);
+    renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
     auto commandHistory{spatialContext->commandHistory()};
 
     const QPointF curPos{context->uiContext()->appEvent().pos()};

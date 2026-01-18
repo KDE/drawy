@@ -27,9 +27,9 @@ SpatialContext::~SpatialContext()
 
 void SpatialContext::setSpatialContext()
 {
-    Canvas &canvas{m_applicationContext->renderingContext()->canvas()};
+    auto canvas{m_applicationContext->renderingContext()->canvas()};
 
-    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas.sizeHint()}, 100);
+    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 100);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }

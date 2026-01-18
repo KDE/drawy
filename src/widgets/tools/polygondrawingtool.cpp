@@ -66,14 +66,14 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
         const QPointF offsetPos{spatialContext->offsetPos()};
         const qreal zoom{renderingContext->zoomFactor()};
 
-        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
             curItem->erase(painter, offsetPos);
         });
 
         curItem->setEnd(transformer.viewToWorld(uiContext->appEvent().pos()));
 
-        renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
+        renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
             curItem->draw(painter, offsetPos);
         });
@@ -94,7 +94,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
 
-        renderingContext->canvas().setOverlayBg(Qt::transparent);
+        renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
         m_isDrawing = false;
 

@@ -75,7 +75,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 {
     auto renderingContext{context->renderingContext()};
     auto spatialContext{context->spatialContext()};
-    renderingContext->canvas().setCursor(Qt::ArrowCursor);
+    renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
     if (!m_isActive) {
         return;
@@ -86,7 +86,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     auto selectionContext{context->selectionContext()};
     auto &selectedItems{selectionContext->selectedItems()};
 
-    renderingContext->canvas().setOverlayBg(Qt::transparent);
+    renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
     const QPointF curPos{uiContext->appEvent().pos()};
 
@@ -102,7 +102,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     context->uiContext()->propertyBar()->updateToolProperties();
 
     // TODO: Remove magic numbers
-    renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {
+    renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
         const QPen pen{QColor{67, 135, 244, 200}};
         painter.setPen(pen);
 
@@ -131,7 +131,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
             commandHistory->insert(std::make_shared<SelectCommand>(items));
         }
 
-        renderingContext->canvas().setOverlayBg(Qt::transparent);
+        renderingContext->canvas()->setOverlayBg(Qt::transparent);
         renderingContext->markForUpdate();
 
         m_isActive = false;

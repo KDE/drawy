@@ -58,9 +58,9 @@ void RenderingContext::setRenderingContext()
     m_frameTimer.start(1000 / fps());
 }
 
-Canvas &RenderingContext::canvas() const
+Canvas *RenderingContext::canvas() const
 {
-    return *m_canvas;
+    return m_canvas;
 }
 
 CacheGrid &RenderingContext::cacheGrid() const
@@ -99,7 +99,7 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
     if (center == QPoint{-1, -1}) {
-        QSize viewport{canvas().dimensions() / oldZoomFactor};
+        QSize viewport{canvas()->dimensions() / oldZoomFactor};
         int width{viewport.width()};
         int height{viewport.height()};
 

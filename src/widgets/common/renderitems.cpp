@@ -24,13 +24,13 @@
 void Common::renderCanvas(ApplicationContext *context)
 {
     CoordinateTransformer &transformer{context->spatialContext()->coordinateTransformer()};
-    Canvas &canvas{context->renderingContext()->canvas()};
+    auto canvas{context->renderingContext()->canvas()};
     QPointF offsetPos{context->spatialContext()->offsetPos()};
 
-    canvas.setCanvasBg(canvas.canvasBg());
+    canvas->setCanvasBg(canvas->canvasBg());
 
     QPointF gridOffset{transformer.worldToGrid(offsetPos)};
-    QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas.dimensions()));
+    QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas->dimensions()));
 
     QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
 
@@ -75,7 +75,7 @@ void Common::renderCanvas(ApplicationContext *context)
             }
         }
 
-        context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
+        context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {
             painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), cell->pixmap());
         });
     }
@@ -86,7 +86,7 @@ void Common::renderCanvas(ApplicationContext *context)
         return;
 
     // render a box around selected items
-    context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
+    context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {
         QPen pen{Common::selectionBorderColor};
         pen.setWidth(2);
 

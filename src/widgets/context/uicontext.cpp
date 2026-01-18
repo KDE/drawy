@@ -48,7 +48,7 @@ void UIContext::setUIContext()
     m_toolBar = new ToolBar(m_applicationContext->parentWidget());
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
-    m_keybindManager = new KeybindManager(&m_applicationContext->renderingContext()->canvas());
+    m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
     m_actionManager = new ActionManager(m_applicationContext);
     m_iconManager = new IconManager(m_applicationContext);
 
@@ -92,14 +92,14 @@ void UIContext::setUIContext()
     });
     button = m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
     connect(button, &QPushButton::clicked, this, [this, button]() {
-        auto &canvas{m_applicationContext->renderingContext()->canvas()};
+        auto canvas{m_applicationContext->renderingContext()->canvas()};
 
-        if (canvas.canvasBg() == Common::lightBackgroundColor) {
-            canvas.setCanvasBg(Common::darkBackgroundColor);
+        if (canvas->canvasBg() == Common::lightBackgroundColor) {
+            canvas->setCanvasBg(Common::darkBackgroundColor);
             button->setToolTip(tr("Light Mode"));
             button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_LIGHT_MODE));
         } else {
-            canvas.setCanvasBg(Common::lightBackgroundColor);
+            canvas->setCanvasBg(Common::lightBackgroundColor);
             button->setToolTip(tr("Dark Mode"));
             button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_DARK_MODE));
         }
@@ -184,13 +184,13 @@ void UIContext::toolChanged(Tool &tool)
 
     Common::renderCanvas(m_applicationContext);
 
-    auto &canvas{m_applicationContext->renderingContext()->canvas()};
+    auto canvas{m_applicationContext->renderingContext()->canvas()};
 
     if (m_lastTool != nullptr)
         m_lastTool->cleanup();
 
     m_lastTool = &tool;
-    canvas.setCursor(tool.cursor());
+    canvas->setCursor(tool.cursor());
 
     m_applicationContext->renderingContext()->markForUpdate();
 }

@@ -115,9 +115,9 @@ void TextTool::mouseMoved(ApplicationContext *context)
     })};
 
     if (!intersectingItems.empty()) {
-        renderingContext->canvas().setCursor(Qt::IBeamCursor);
+        renderingContext->canvas()->setCursor(Qt::IBeamCursor);
     } else {
-        renderingContext->canvas().setCursor(Qt::CrossCursor);
+        renderingContext->canvas()->setCursor(Qt::CrossCursor);
     }
 
     if (m_isSelecting) {

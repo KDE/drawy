@@ -21,7 +21,7 @@ public:
 
     void setRenderingContext();
 
-    Canvas &canvas() const;
+    [[nodiscard]] Canvas *canvas() const;
     CacheGrid &cacheGrid() const;
     ItemCache &itemCache() const;
 

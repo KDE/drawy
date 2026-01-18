@@ -59,9 +59,9 @@ void Controller::mousePressed(QMouseEvent *event)
 
     Event &contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas.scale());
+    contextEvent.setPos(event->pos(), canvas->scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
@@ -83,9 +83,9 @@ void Controller::mouseDoubleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas.scale());
+    contextEvent.setPos(event->pos(), canvas->scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
@@ -96,9 +96,9 @@ void Controller::mouseTripleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas.scale());
+    contextEvent.setPos(event->pos(), canvas->scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
@@ -111,9 +111,9 @@ void Controller::mouseMoved(QMouseEvent *event)
 
     Event &contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas.scale());
+    contextEvent.setPos(event->pos(), canvas->scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
@@ -129,16 +129,16 @@ void Controller::mouseReleased(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
-    Canvas &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas.scale());
+    contextEvent.setPos(event->pos(), canvas->scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = false;
         toolBar->tool(Tool::Type::Move).mouseReleased(m_context);
-        canvas.setCursor(toolBar->curTool().cursor());
+        canvas->setCursor(toolBar->curTool().cursor());
         return;
     }
 
@@ -216,16 +216,16 @@ void Controller::renderZoom()
 void Controller::wheel(QWheelEvent *event)
 {
     const QPointF &offsetPos{m_context->spatialContext()->offsetPos()};
-    auto &canvas{m_context->renderingContext()->canvas()};
+    auto canvas{m_context->renderingContext()->canvas()};
     auto &contextEvent{m_context->uiContext()->appEvent()};
     const qreal zoomFactor{m_context->renderingContext()->zoomFactor()};
 
-    contextEvent.setPos(event->position().toPoint(), canvas.scale());
+    contextEvent.setPos(event->position().toPoint(), canvas->scale());
     contextEvent.setModifiers(event->modifiers());
 
     if (event->modifiers() & Qt::ControlModifier) {
         if (m_zoomPixmap.isNull()) {
-            m_zoomPixmap = canvas.canvasPixmap();
+            m_zoomPixmap = canvas->canvasPixmap();
         }
 
         const int curDelta{event->angleDelta().y() > 0 ? 1 : -1};
@@ -246,8 +246,8 @@ void Controller::wheel(QWheelEvent *event)
         m_zoomPixmapOffsetPos.setX(cursor.x() - (cursor.x() - m_zoomPixmapOffsetPos.x()) * oldZoomFactor / newZoomFactor);
         m_zoomPixmapOffsetPos.setY(cursor.y() - (cursor.y() - m_zoomPixmapOffsetPos.y()) * oldZoomFactor / newZoomFactor);
 
-        canvas.setCanvasBg(canvas.canvasBg());
-        canvas.paintCanvas([&](QPainter &painter) -> void {
+        canvas->setCanvasBg(canvas->canvasBg());
+        canvas->paintCanvas([&](QPainter &painter) -> void {
             painter.scale(newZoomFactor, newZoomFactor);
             painter.drawPixmap(-m_zoomPixmapOffsetPos, m_zoomPixmap);
         });
