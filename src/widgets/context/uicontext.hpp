@@ -25,13 +25,13 @@ public:
 
     void setUIContext();
 
-    ToolBar *toolBar() const;
-    PropertyBar *propertyBar() const;
-    ActionBar *actionBar() const;
-    Event &appEvent() const;
-    KeybindManager *keybindManager() const;
-    ActionManager *actionManager() const;
-    PropertyManager *propertyManager() const;
+    [[nodiscard]] ToolBar *toolBar() const;
+    [[nodiscard]] PropertyBar *propertyBar() const;
+    [[nodiscard]] ActionBar *actionBar() const;
+    [[nodiscard]] Event &appEvent() const;
+    [[nodiscard]] KeybindManager *keybindManager() const;
+    [[nodiscard]] ActionManager *actionManager() const;
+    [[nodiscard]] PropertyManager *propertyManager() const;
     [[nodiscard]] IconManager *iconManager() const;
 
     void reset();
