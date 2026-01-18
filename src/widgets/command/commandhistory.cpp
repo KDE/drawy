@@ -7,8 +7,9 @@
 
 #include <QDebug>
 
-CommandHistory::CommandHistory(ApplicationContext *context)
-    : m_undoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
+CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
+    : QObject(parent)
+    , m_undoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
     , m_redoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
     , m_context{context}
 {
@@ -33,6 +34,7 @@ void CommandHistory::undo()
         m_redoStack->pop_back();
 
     m_undoStack->pop_front();
+    Q_EMIT undoRedoChanged();
 }
 
 void CommandHistory::redo()
@@ -48,6 +50,7 @@ void CommandHistory::redo()
         m_undoStack->pop_back();
 
     m_redoStack->pop_front();
+    Q_EMIT undoRedoChanged();
 }
 
 void CommandHistory::insert(const std::shared_ptr<Command> &command)
@@ -59,12 +62,25 @@ void CommandHistory::insert(const std::shared_ptr<Command> &command)
     command->execute(m_context);
 
     m_undoStack->push_front(command);
-    if (m_undoStack->size() == maxCommands)
+    if (m_undoStack->size() == maxCommands) {
         m_undoStack->pop_back();
+    }
+    Q_EMIT undoRedoChanged();
 }
 
 void CommandHistory::clear()
 {
     m_undoStack->clear();
     m_redoStack->clear();
+    Q_EMIT undoRedoChanged();
+}
+
+bool CommandHistory::hasUndo() const
+{
+    return !m_undoStack->empty();
+}
+
+bool CommandHistory::hasRedo() const
+{
+    return !m_redoStack->empty();
 }

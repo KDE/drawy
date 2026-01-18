@@ -4,17 +4,21 @@
 
 #pragma once
 
+#include <QObject>
 #include <deque>
 #include <memory>
 
 #include "command.hpp"
-class ApplicationContext;
 
-class CommandHistory
+#include "libdrawywidgets_private_export.h"
+
+class ApplicationContext;
+class LIBDRAWYWIDGETS_TESTS_EXPORT CommandHistory : public QObject
 {
+    Q_OBJECT
 public:
-    explicit CommandHistory(ApplicationContext *context);
-    ~CommandHistory();
+    explicit CommandHistory(ApplicationContext *context, QObject *parent = nullptr);
+    ~CommandHistory() override;
 
     void undo();
     void redo();
@@ -23,6 +27,12 @@ public:
     static constexpr int maxCommands{100}; // arbitrary
 
     void clear();
+
+    [[nodiscard]] bool hasUndo() const;
+    [[nodiscard]] bool hasRedo() const;
+
+Q_SIGNALS:
+    void undoRedoChanged();
 
 private:
     std::unique_ptr<std::deque<std::shared_ptr<Command>>> m_undoStack;

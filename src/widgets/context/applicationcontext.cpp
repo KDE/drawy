@@ -40,8 +40,8 @@ ApplicationContext *ApplicationContext::instance(QWidget *parent)
 void ApplicationContext::setContexts()
 {
     m_renderingContext->setRenderingContext();
-    m_uiContext->setUIContext();
     m_spatialContext->setSpatialContext();
+    m_uiContext->setUIContext();
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 }
 

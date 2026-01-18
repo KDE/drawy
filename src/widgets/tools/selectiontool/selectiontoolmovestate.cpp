@@ -80,7 +80,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     auto transformer{spatialContext->coordinateTransformer()};
 
     renderingContext->canvas().setCursor(Qt::OpenHandCursor);
-    CommandHistory &commandHistory{spatialContext->commandHistory()};
+    auto commandHistory{spatialContext->commandHistory()};
 
     const QPointF curPos{context->uiContext()->appEvent().pos()};
     const QPointF worldOriginalPos{transformer.viewToWorld(m_initialPos)};
@@ -101,7 +101,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
         for (auto &item : items)
             item->translate(-delta);
 
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, delta));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, delta));
     }
 
     return false;

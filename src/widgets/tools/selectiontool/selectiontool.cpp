@@ -72,7 +72,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
         return;
 
     auto &event{context->uiContext()->appEvent()};
-    auto &commandHistory{context->spatialContext()->commandHistory()};
+    auto commandHistory{context->spatialContext()->commandHistory()};
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
@@ -82,16 +82,16 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     bool updated{true};
     switch (event.key()) {
     case Qt::Key_Left:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
         break;
     case Qt::Key_Right:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{delta, 0}));
         break;
     case Qt::Key_Up:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{0, -delta}));
         break;
     case Qt::Key_Down:
-        commandHistory.insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{0, delta}));
         break;
     default:
         updated = false;

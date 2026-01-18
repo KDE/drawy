@@ -89,10 +89,10 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
     if (uiContext->appEvent().button() == Qt::LeftButton && m_isDrawing) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
-        CommandHistory &commandHistory{spatialContext->commandHistory()};
+        auto commandHistory{spatialContext->commandHistory()};
 
         QList<std::shared_ptr<Item>> itemVector{curItem};
-        commandHistory.insert(std::make_shared<InsertItemCommand>(itemVector));
+        commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
 
         renderingContext->canvas().setOverlayBg(Qt::transparent);
 

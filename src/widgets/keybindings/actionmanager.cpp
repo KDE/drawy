@@ -195,14 +195,14 @@ ActionManager::ActionManager(ApplicationContext *context)
 
 void ActionManager::undo()
 {
-    m_context->spatialContext()->commandHistory().undo();
+    m_context->spatialContext()->commandHistory()->undo();
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::redo()
 {
-    m_context->spatialContext()->commandHistory().redo();
+    m_context->spatialContext()->commandHistory()->redo();
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -269,7 +269,7 @@ void ActionManager::groupItems()
         return;
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory().insert(std::make_shared<GroupCommand>(items));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -281,7 +281,7 @@ void ActionManager::ungroupItems()
         return;
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory().insert(std::make_shared<UngroupCommand>(items));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<UngroupCommand>(items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -289,16 +289,16 @@ void ActionManager::ungroupItems()
 void ActionManager::deleteSelection()
 {
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
-    auto &commandHistory{m_context->spatialContext()->commandHistory()};
+    auto commandHistory{m_context->spatialContext()->commandHistory()};
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    commandHistory.insert(std::make_shared<RemoveItemCommand>(items));
+    commandHistory->insert(std::make_shared<RemoveItemCommand>(items));
 
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 
     QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory().insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
 void ActionManager::selectAll()
@@ -306,7 +306,7 @@ void ActionManager::selectAll()
     this->switchToSelectionTool();
 
     auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
-    m_context->spatialContext()->commandHistory().insert(std::make_shared<SelectCommand>(allItems));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
 
     m_context->uiContext()->propertyBar().updateToolProperties();
     m_context->renderingContext()->markForRender();

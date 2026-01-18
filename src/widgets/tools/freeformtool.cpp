@@ -106,12 +106,12 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
     if (uiContext->appEvent().button() == Qt::LeftButton && m_isDrawing) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
-        CommandHistory &commandHistory{spatialContext->commandHistory()};
+        auto commandHistory{spatialContext->commandHistory()};
 
         renderingContext->canvas().setOverlayBg(Qt::transparent);
 
         QList<std::shared_ptr<Item>> itemsAfterSplitting{curItem->split()};
-        commandHistory.insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));
+        commandHistory->insert(std::make_shared<InsertItemCommand>(itemsAfterSplitting));
 
         curItem.reset();
 

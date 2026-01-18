@@ -40,11 +40,11 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 
         bool lockState = true;
         const auto &selectedItems{selectionContext->selectedItems()};
-        auto &commandHistory{spatialContext->commandHistory()};
+        auto commandHistory{spatialContext->commandHistory()};
 
         if (!(event.modifiers() & Qt::ShiftModifier)) {
             QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory.insert(std::make_shared<DeselectCommand>(items));
+            commandHistory->insert(std::make_shared<DeselectCommand>(items));
         }
 
         if (intersectingItems.empty()) {
@@ -53,9 +53,9 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             auto &item{intersectingItems.back()};
             if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
                 // deselect the item if selected
-                commandHistory.insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
+                commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
             } else {
-                commandHistory.insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
+                commandHistory->insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
             }
             m_isActive = false;
             lockState = false;
@@ -121,14 +121,14 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
         auto &selectedItems{context->selectionContext()->selectedItems()};
 
         if (!selectedItems.empty()) {
-            auto &commandHistory{context->spatialContext()->commandHistory()};
+            auto commandHistory{context->spatialContext()->commandHistory()};
             QList<std::shared_ptr<Item>> items{};
             for (const auto &item : selectedItems) {
                 items.push_back(item);
             }
 
             selectedItems.clear();
-            commandHistory.insert(std::make_shared<SelectCommand>(items));
+            commandHistory->insert(std::make_shared<SelectCommand>(items));
         }
 
         renderingContext->canvas().setOverlayBg(Qt::transparent);

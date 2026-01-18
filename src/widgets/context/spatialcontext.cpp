@@ -44,9 +44,9 @@ CoordinateTransformer &SpatialContext::coordinateTransformer() const
     return *m_coordinateTransformer;
 }
 
-CommandHistory &SpatialContext::commandHistory() const
+CommandHistory *SpatialContext::commandHistory() const
 {
-    return *m_commandHistory;
+    return m_commandHistory.get();
 }
 
 const QPointF &SpatialContext::offsetPos() const
@@ -62,6 +62,6 @@ void SpatialContext::setOffsetPos(const QPointF &pos)
 void SpatialContext::reset()
 {
     quadtree().clear();
-    commandHistory().clear();
+    commandHistory()->clear();
     setOffsetPos(QPointF{0, 0});
 }

@@ -108,18 +108,26 @@ void UIContext::setUIContext()
         m_applicationContext->renderingContext()->markForUpdate();
     });
 
-    button = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
-    connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory().undo();
+    auto undoButton = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
+    connect(undoButton, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->spatialContext()->commandHistory()->undo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
+    undoButton->setEnabled(false);
+    connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [undoButton, this]() {
+        undoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasUndo());
+    });
 
-    button = m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
-    connect(button, &QPushButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory().redo();
+    auto redoButton = m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
+    connect(redoButton, &QPushButton::clicked, this, [this]() {
+        m_applicationContext->spatialContext()->commandHistory()->redo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
+    });
+    redoButton->setEnabled(false);
+    connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [redoButton, this]() {
+        redoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasRedo());
     });
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
