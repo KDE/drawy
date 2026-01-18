@@ -12,7 +12,7 @@
 EraserSizeWidget::EraserSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
 {
-    QSpinBox *box{new QSpinBox(parent)};
+    auto box{new QSpinBox(parent)};
     box->setRange(1, 100);
     box->setValue(DrawyGlobalConfig::self()->eraserSize());
 

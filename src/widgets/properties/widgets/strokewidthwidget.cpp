@@ -11,7 +11,7 @@
 StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
     : PropertyWidget{parent}
 {
-    QSpinBox *box{new QSpinBox(parent)};
+    auto box{new QSpinBox(parent)};
     box->setRange(1, 10);
     box->setValue(DrawyGlobalConfig::self()->strokeWidth());
 

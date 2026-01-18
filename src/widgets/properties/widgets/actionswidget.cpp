@@ -20,7 +20,7 @@ ActionsWidget::ActionsWidget(QWidget *parent)
 {
     m_widget = new QWidget{parent};
 
-    QHBoxLayout *layout{new QHBoxLayout(m_widget)};
+    auto layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins(0, 0, 0, 0);
 
     auto deleteButton{new ButtonActionsWidget(m_widget)};

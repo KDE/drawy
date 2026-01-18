@@ -13,7 +13,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
 {
     // TODO: Remove magic numbers
-    QSpinBox *box{new QSpinBox(parent)};
+    auto box{new QSpinBox(parent)};
     box->setMinimum(1);
     box->setValue(DrawyGlobalConfig::self()->fontSize());
 
