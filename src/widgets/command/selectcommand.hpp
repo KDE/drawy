@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#ifndef SELECTCOMMAND_H
-#define SELECTCOMMAND_H
+#pragma once
 
 #include "itemcommand.hpp"
 class ApplicationContext;
@@ -16,5 +15,3 @@ public:
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 };
-
-#endif // SELECTCOMMAND_H

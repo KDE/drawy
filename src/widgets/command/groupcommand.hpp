@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#ifndef GROUPCOMMAND_H
-#define GROUPCOMMAND_H
+#pragma once
 
 #include "itemcommand.hpp"
 class ApplicationContext;
@@ -20,5 +19,3 @@ public:
 private:
     const std::shared_ptr<GroupItem> m_group;
 };
-
-#endif // GROUPCOMMAND_H
