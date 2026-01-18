@@ -40,7 +40,7 @@ private:
     qint64 m_lastClickTime{};
     int m_clickCount{}; // for double/triple clicks
 
-    QTimer *m_zoomTimer{};
+    QTimer *const m_zoomTimer;
     QPixmap m_zoomPixmap{};
     QPointF m_zoomPixmapOffsetPos{};
     QPointF m_zoomLastPos{};
