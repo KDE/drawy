@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-14 16:51+0100\n"
+"PO-Revision-Date: 2026-01-17 10:42+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -487,6 +487,11 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acties"
 
+#: widgets/properties/widgets/alignmentwidget.cpp:16
+msgctxt "AlignmentWidget|"
+msgid "Alignment"
+msgstr ""
+
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
@@ -510,7 +515,7 @@ msgstr "Tekengrootte"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "Dekking"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
@@ -548,12 +553,9 @@ msgid "Arrow Tool"
 msgstr "Hulpmiddel voor pijl"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "Lijnhulpmiddel"
+msgstr "Hulpmiddel voor ruit"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-16 05:13+0200\n"
+"PO-Revision-Date: 2026-01-17 04:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -488,6 +488,11 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Дії"
 
+#: widgets/properties/widgets/alignmentwidget.cpp:16
+msgctxt "AlignmentWidget|"
+msgid "Alignment"
+msgstr ""
+
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
@@ -549,12 +554,9 @@ msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "Інструмент «Пряма»"
+msgstr "Інструмент «Ромб»"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"

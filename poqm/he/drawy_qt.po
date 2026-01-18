@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-16 10:46+0200\n"
+"PO-Revision-Date: 2026-01-17 21:19+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -488,6 +488,11 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "פעולות"
 
+#: widgets/properties/widgets/alignmentwidget.cpp:16
+msgctxt "AlignmentWidget|"
+msgid "Alignment"
+msgstr ""
+
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
@@ -549,12 +554,9 @@ msgid "Arrow Tool"
 msgstr "כלי חץ"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "כלי קו"
+msgstr "כלי יהלומים"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"

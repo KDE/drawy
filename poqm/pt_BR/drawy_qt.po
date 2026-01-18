@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-16 07:30-0300\n"
+"PO-Revision-Date: 2026-01-17 07:36-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -488,6 +488,11 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ações"
 
+#: widgets/properties/widgets/alignmentwidget.cpp:16
+msgctxt "AlignmentWidget|"
+msgid "Alignment"
+msgstr ""
+
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
@@ -549,12 +554,9 @@ msgid "Arrow Tool"
 msgstr "Ferramenta de seta"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "Ferramenta de linha"
+msgstr "Ferramenta de diamante"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"

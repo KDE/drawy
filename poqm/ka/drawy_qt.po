@@ -487,6 +487,11 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "ქმედებები"
 
+#: widgets/properties/widgets/alignmentwidget.cpp:16
+msgctxt "AlignmentWidget|"
+msgid "Alignment"
+msgstr ""
+
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
@@ -548,12 +553,9 @@ msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "ხაზის ხელსაწყო"
+msgstr "ბრილიანტის ხელსაწყო"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
