@@ -57,9 +57,9 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 
         curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
 
-        curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager().value(Property::Type::StrokeWidth));
-        curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager().value(Property::Type::StrokeColor));
-        curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager().value(Property::Type::Opacity));
+        curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
+        curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
+        curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
 
         m_lastPoint = uiContext->appEvent().pos();
 

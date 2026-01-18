@@ -58,7 +58,7 @@ void Controller::mousePressed(QMouseEvent *event)
     }
 
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
@@ -67,12 +67,12 @@ void Controller::mousePressed(QMouseEvent *event)
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = true;
-        toolBar.curTool().cleanup();
-        toolBar.tool(Tool::Type::Move).mousePressed(m_context);
+        toolBar->curTool().cleanup();
+        toolBar->tool(Tool::Type::Move).mousePressed(m_context);
         return;
     }
 
-    toolBar.curTool().mousePressed(m_context);
+    toolBar->curTool().mousePressed(m_context);
 
     if (event->type() != QEvent::TabletPress) {
         contextEvent.setPressure(1.0);
@@ -82,27 +82,27 @@ void Controller::mousePressed(QMouseEvent *event)
 void Controller::mouseDoubleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
-    toolBar.curTool().mouseDoubleClick(m_context);
+    toolBar->curTool().mouseDoubleClick(m_context);
 }
 
 void Controller::mouseTripleClick(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
     contextEvent.setButton(event->button());
     contextEvent.setModifiers(event->modifiers());
 
-    toolBar.curTool().mouseTripleClick(m_context);
+    toolBar->curTool().mouseTripleClick(m_context);
 }
 
 void Controller::mouseMoved(QMouseEvent *event)
@@ -110,7 +110,7 @@ void Controller::mouseMoved(QMouseEvent *event)
     m_mouseMoved = true;
 
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
@@ -118,17 +118,17 @@ void Controller::mouseMoved(QMouseEvent *event)
     contextEvent.setModifiers(event->modifiers());
 
     if (m_movingWithMiddleClick) {
-        toolBar.tool(Tool::Type::Move).mouseMoved(m_context);
+        toolBar->tool(Tool::Type::Move).mouseMoved(m_context);
         return;
     }
 
-    toolBar.curTool().mouseMoved(m_context);
+    toolBar->curTool().mouseMoved(m_context);
 }
 
 void Controller::mouseReleased(QMouseEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
     Canvas &canvas{m_context->renderingContext()->canvas()};
 
     contextEvent.setPos(event->pos(), canvas.scale());
@@ -137,12 +137,12 @@ void Controller::mouseReleased(QMouseEvent *event)
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = false;
-        toolBar.tool(Tool::Type::Move).mouseReleased(m_context);
-        canvas.setCursor(toolBar.curTool().cursor());
+        toolBar->tool(Tool::Type::Move).mouseReleased(m_context);
+        canvas.setCursor(toolBar->curTool().cursor());
         return;
     }
 
-    toolBar.curTool().mouseReleased(m_context);
+    toolBar->curTool().mouseReleased(m_context);
 }
 
 void Controller::tablet(QTabletEvent *event)
@@ -156,25 +156,25 @@ void Controller::tablet(QTabletEvent *event)
 void Controller::keyPressed(QKeyEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
 
     contextEvent.setKey(event->key());
     contextEvent.setModifiers(event->modifiers());
     contextEvent.setText(event->text());
 
-    toolBar.curTool().keyPressed(m_context);
+    toolBar->curTool().keyPressed(m_context);
 }
 
 void Controller::keyReleased(QKeyEvent *event)
 {
     Event &contextEvent{m_context->uiContext()->appEvent()};
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
 
     contextEvent.setKey(event->key());
     contextEvent.setModifiers(event->modifiers());
     contextEvent.setText(event->text());
 
-    toolBar.curTool().keyReleased(m_context);
+    toolBar->curTool().keyReleased(m_context);
 }
 
 void Controller::inputMethodInvoked([[maybe_unused]] QInputMethodEvent *event)
@@ -183,9 +183,9 @@ void Controller::inputMethodInvoked([[maybe_unused]] QInputMethodEvent *event)
 
 void Controller::leave([[maybe_unused]] QEvent *event)
 {
-    ToolBar &toolBar{m_context->uiContext()->toolBar()};
+    auto toolBar{m_context->uiContext()->toolBar()};
 
-    toolBar.curTool().leave(m_context);
+    toolBar->curTool().leave(m_context);
 }
 
 void Controller::renderZoom()

@@ -61,7 +61,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             lockState = false;
         }
 
-        context->uiContext()->propertyBar().updateToolProperties();
+        context->uiContext()->propertyBar()->updateToolProperties();
         renderingContext->markForRender();
         renderingContext->markForUpdate();
 
@@ -99,7 +99,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
         })};
 
     selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
-    context->uiContext()->propertyBar().updateToolProperties();
+    context->uiContext()->propertyBar()->updateToolProperties();
 
     // TODO: Remove magic numbers
     renderingContext->canvas().paintOverlay([&](QPainter &painter) -> void {

@@ -54,7 +54,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
         painter.fillRect(m_lastRect + Common::cleanupMargin, Qt::transparent);
     });
 
-    const int eraserSide{uiContext->propertyManager().value(Property::Type::EraserSize).value<int>()};
+    const int eraserSide{uiContext->propertyManager()->value(Property::Type::EraserSize).value<int>()};
     const QSize eraserSize{eraserSide, eraserSide};
 
     // TODO: Adjustable eraser size

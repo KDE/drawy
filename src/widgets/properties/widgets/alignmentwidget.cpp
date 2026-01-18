@@ -5,10 +5,14 @@
  */
 
 #include "alignmentwidget.hpp"
-
+#include <QHBoxLayout>
 AlignmentWidget::AlignmentWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
+    m_widget = new QWidget{parent};
+
+    auto layout{new QHBoxLayout(m_widget)};
+    layout->setContentsMargins({});
 }
 
 QString AlignmentWidget::name() const

@@ -58,8 +58,8 @@ void TextTool::mousePressed(ApplicationContext *context)
             if (m_curItem == nullptr) {
                 m_curItem = std::dynamic_pointer_cast<TextItem>(m_itemFactory->create());
 
-                m_curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager().value(Property::Type::StrokeColor));
-                m_curItem->setProperty(Property::Type::FontSize, uiContext->propertyManager().value(Property::Type::FontSize));
+                m_curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
+                m_curItem->setProperty(Property::Type::FontSize, uiContext->propertyManager()->value(Property::Type::FontSize));
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent().pos()));
 
@@ -91,7 +91,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
         context->selectionContext()->selectedItems() = {m_curItem};
         m_curItem->setMode(TextItem::Mode::Edit);
-        uiContext->keybindManager().disable();
+        uiContext->keybindManager()->disable();
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();
@@ -233,7 +233,7 @@ void TextTool::keyPressed(ApplicationContext *context)
 
     if (ev.key() == Qt::Key_Escape) {
         m_curItem->setMode(TextItem::Mode::Normal);
-        context->uiContext()->keybindManager().enable();
+        context->uiContext()->keybindManager()->enable();
         m_curItem = nullptr;
 
         context->renderingContext()->cacheGrid().markAllDirty();
@@ -474,7 +474,7 @@ void TextTool::cleanup()
     renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
     // enable keybindings again
-    uiContext->keybindManager().enable();
+    uiContext->keybindManager()->enable();
 
     if (m_curItem->text().isEmpty()) {
         quadTree.deleteItem(m_curItem);

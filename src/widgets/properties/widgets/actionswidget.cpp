@@ -42,16 +42,16 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     layout->addWidget(groupButton);
     layout->addWidget(ungroupButton);
 
-    ActionManager &actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
+    auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
 
     connect(deleteButton, &ButtonActionsWidget::clicked, this, [&]() {
-        actionManager.deleteSelection();
+        actionManager->deleteSelection();
     });
     connect(groupButton, &ButtonActionsWidget::clicked, this, [&]() {
-        actionManager.groupItems();
+        actionManager->groupItems();
     });
     connect(ungroupButton, &ButtonActionsWidget::clicked, this, [&]() {
-        actionManager.ungroupItems();
+        actionManager->ungroupItems();
     });
 
     m_widget->hide();

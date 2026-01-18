@@ -71,14 +71,14 @@ void UIContext::setUIContext()
 
     auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        ActionManager &actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager.saveToFile();
+        auto actionManager{m_applicationContext->uiContext()->actionManager()};
+        actionManager->saveToFile();
     });
 
     button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
     connect(button, &QPushButton::clicked, this, [this]() {
-        ActionManager &actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager.loadFromFile();
+        auto actionManager{m_applicationContext->uiContext()->actionManager()};
+        actionManager->loadFromFile();
     });
 
     button = m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
@@ -136,34 +136,34 @@ void UIContext::setUIContext()
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
 
-ToolBar &UIContext::toolBar() const
+ToolBar *UIContext::toolBar() const
 {
-    return *m_toolBar;
+    return m_toolBar;
 }
 
-PropertyBar &UIContext::propertyBar() const
+PropertyBar *UIContext::propertyBar() const
 {
-    return *m_propertyBar;
+    return m_propertyBar;
 }
 
-ActionBar &UIContext::actionBar() const
+ActionBar *UIContext::actionBar() const
 {
-    return *m_actionBar;
+    return m_actionBar;
 }
 
-KeybindManager &UIContext::keybindManager() const
+KeybindManager *UIContext::keybindManager() const
 {
-    return *m_keybindManager;
+    return m_keybindManager;
 }
 
-ActionManager &UIContext::actionManager() const
+ActionManager *UIContext::actionManager() const
 {
-    return *m_actionManager;
+    return m_actionManager;
 }
 
-PropertyManager &UIContext::propertyManager() const
+PropertyManager *UIContext::propertyManager() const
 {
-    return *m_propertyManager;
+    return m_propertyManager;
 }
 
 Event &UIContext::appEvent() const
@@ -198,7 +198,7 @@ void UIContext::toolChanged(Tool &tool)
 void UIContext::reset()
 {
     m_lastTool = nullptr;
-    toolBar().changeTool(Tool::Type::Selection);
+    toolBar()->changeTool(Tool::Type::Selection);
 }
 
 #include "moc_uicontext.cpp"

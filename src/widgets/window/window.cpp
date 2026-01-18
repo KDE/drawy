@@ -40,9 +40,9 @@ MainWindow::MainWindow(QWidget *parent)
     renderingContext->canvas().setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     layout->setMargins(10);
-    layout->setLeftWidget(&uiContext->propertyBar());
-    layout->setTopWidget(&uiContext->toolBar());
-    layout->setBottomWidget(&uiContext->actionBar());
+    layout->setLeftWidget(uiContext->propertyBar());
+    layout->setTopWidget(uiContext->toolBar());
+    layout->setBottomWidget(uiContext->actionBar());
     layout->setCentralWidget(&renderingContext->canvas());
 
     connect(&renderingContext->canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
@@ -108,8 +108,8 @@ void MainWindow::viewFullScreen(bool fullScreen)
 
 void MainWindow::loadFile(const QString &fileName)
 {
-    ActionManager &actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
-    actionManager.loadFile(fileName);
+    auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
+    actionManager->loadFile(fileName);
 }
 
 #include "moc_window.cpp"
