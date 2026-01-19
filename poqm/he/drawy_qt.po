@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-17 21:19+0200\n"
+"PO-Revision-Date: 2026-01-18 20:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -140,7 +140,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "הסגה"
 
-#: widgets/context/uicontext.cpp:118
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "ביצוע מחדש"
@@ -488,10 +488,10 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "פעולות"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:16
+#: widgets/properties/widgets/alignmentwidget.cpp:20
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
-msgstr ""
+msgstr "יישור"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"

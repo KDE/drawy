@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-17 10:42+0100\n"
+"PO-Revision-Date: 2026-01-18 14:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -139,7 +139,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: widgets/context/uicontext.cpp:118
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Opnieuw doen"
@@ -487,10 +487,10 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acties"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:16
+#: widgets/properties/widgets/alignmentwidget.cpp:20
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
-msgstr ""
+msgstr "Uitlijning"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"

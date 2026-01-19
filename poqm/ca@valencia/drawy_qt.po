@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-16 12:14+0100\n"
+"PO-Revision-Date: 2026-01-18 11:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -144,7 +144,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfés"
 
-#: widgets/context/uicontext.cpp:118
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
@@ -492,10 +492,10 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Accions"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:16
+#: widgets/properties/widgets/alignmentwidget.cpp:20
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
-msgstr ""
+msgstr "Alineació"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
@@ -558,12 +558,9 @@ msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "Eina de línies"
+msgstr "Eina de diamant"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"

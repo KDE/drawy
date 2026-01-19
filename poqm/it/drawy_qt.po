@@ -139,7 +139,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Annulla"
 
-#: widgets/context/uicontext.cpp:118
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Rifai"
@@ -487,7 +487,7 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Azioni"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:16
+#: widgets/properties/widgets/alignmentwidget.cpp:20
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr ""

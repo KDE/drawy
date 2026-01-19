@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-14 07:47+0400\n"
+"PO-Revision-Date: 2026-01-18 19:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -140,7 +140,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "تراجع"
 
-#: widgets/context/uicontext.cpp:118
+#: widgets/context/uicontext.cpp:122
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "كرّر"
@@ -488,10 +488,10 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "الإجراءات"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:16
+#: widgets/properties/widgets/alignmentwidget.cpp:20
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
-msgstr ""
+msgstr "المحاذاة"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
@@ -516,7 +516,7 @@ msgstr "حجم الخط"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "العتمة"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
@@ -554,12 +554,9 @@ msgid "Arrow Tool"
 msgstr "أداة السهم"
 
 #: widgets/tools/diamondtool.cpp:17
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "أداة رسم الخطوط"
+msgstr "أداة المعين"
 
 #: widgets/tools/ellipsetool.cpp:17
 msgctxt "QObject|"
