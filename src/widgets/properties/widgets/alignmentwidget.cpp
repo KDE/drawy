@@ -24,3 +24,5 @@ const Property AlignmentWidget::value() const
 {
     return {};
 }
+
+#include "moc_alignmentwidget.cpp"

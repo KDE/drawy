@@ -84,3 +84,5 @@ bool CommandHistory::hasRedo() const
 {
     return !m_redoStack->empty();
 }
+
+#include "moc_commandhistory.cpp"

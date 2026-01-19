@@ -19,3 +19,5 @@ void AlignmentWidgetTest::shouldHaveDefaultValues()
     const AlignmentWidget w(parent);
     QVERIFY(!w.name().isEmpty());
 }
+
+#include "moc_alignmentwidgettest.cpp"
