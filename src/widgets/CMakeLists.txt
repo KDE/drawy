@@ -3,11 +3,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 set(DRAWY_LIB_SOVERSION "0")
-add_library(
-    libdrawywidgets
-    jobs/restoreautosavejob.hpp
-    jobs/restoreautosavejob.cpp
-)
+add_library(libdrawywidgets)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -246,6 +242,10 @@ target_sources(
         jobs/autosavejob.cpp
         jobs/autosavejobutil.hpp
         jobs/autosavejobutil.cpp
+        jobs/restoreautosavejob.hpp
+        jobs/restoreautosavejob.cpp
+        jobs/loadjobutil.hpp
+        jobs/loadjobutil.cpp
         libdrawywidgets_private_export.h
 )
 

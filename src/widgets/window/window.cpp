@@ -19,9 +19,10 @@
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
+#include "jobs/autosavejob.hpp"
+#include "jobs/restoreautosavejob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include <KMessageBox>
 using namespace Qt::Literals::StringLiterals;
@@ -56,6 +57,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
 
     applyCustomStyles();
+    auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
+    restoreAutoSaveJob->setParentWidget(this);
+    connect(restoreAutoSaveJob, &RestoreAutoSaveJob::restoreDone, this, [this, context]() {
+        // Autosave
+        auto autoSaveJob = new AutoSaveJob(context, this);
+        autoSaveJob->start();
+    });
+    restoreAutoSaveJob->start();
 }
 
 MainWindow::~MainWindow() = default;
@@ -63,11 +72,19 @@ MainWindow::~MainWindow() = default;
 void MainWindow::closeEvent(QCloseEvent *e)
 {
     if (!ApplicationContext::instance()->spatialContext()->quadtree().getAllItems().isEmpty()) {
-        if (KMessageBox::ButtonCode::PrimaryAction
-            == KMessageBox::questionTwoActions(this, tr("Do you want to close?"), tr("Close"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())) {
-            e->accept();
-        } else {
+        const int choice = KMessageBox::questionTwoActionsCancel(this,
+                                                                 tr("Do you want to save file?"),
+                                                                 tr("Close"),
+                                                                 KGuiItem(tr("Save And Close")),
+                                                                 KGuiItem(tr("Ignore")),
+                                                                 KStandardGuiItem::cancel());
+        if (choice == KMessageBox::Cancel) {
             e->ignore();
+        } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
+            // TODO save
+
+        } else {
+            e->accept();
         }
         return;
     } else {

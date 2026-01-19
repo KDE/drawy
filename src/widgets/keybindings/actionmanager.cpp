@@ -26,6 +26,7 @@
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "keybindmanager.hpp"
 #include "serializer/serializerutils.hpp"
@@ -360,17 +361,6 @@ void ActionManager::loadFile(const QString &fileName)
 
 void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    context->reset();
-    QuadTree &quadtree{context->spatialContext()->quadtree()};
-    for (const auto &item : info.items) {
-        quadtree.insertItem(item);
-    }
-    context->renderingContext()->setZoomFactor(info.zoomFactor);
-
-    context->spatialContext()->setOffsetPos(info.offsetPos);
-    context->renderingContext()->cacheGrid().markAllDirty();
-    context->renderingContext()->markForRender();
-    context->renderingContext()->markForUpdate();
+    LoadJobUtil::loadFile(info);
 }
 #include "moc_actionmanager.cpp"

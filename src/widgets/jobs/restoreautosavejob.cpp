@@ -5,13 +5,16 @@
  */
 #include "restoreautosavejob.hpp"
 #include "autosavejobutil.hpp"
+#include "context/applicationcontext.hpp"
 #include "drawy_autosave_debug.h"
 #include "jobs/loadjob.hpp"
+#include "jobs/loadjobutil.hpp"
 #include <KMessageBox>
 #include <QFile>
 
-RestoreAutoSaveJob::RestoreAutoSaveJob(QObject *parent)
+RestoreAutoSaveJob::RestoreAutoSaveJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
+    , m_context{context}
 {
 }
 
@@ -23,6 +26,7 @@ void RestoreAutoSaveJob::start()
         qCDebug(DRAWY_AUTOSAVE_LOG) << "Existing auto save file found";
         restoreFile();
     } else {
+        Q_EMIT restoreDone();
         deleteLater();
     }
 }
@@ -47,7 +51,8 @@ void RestoreAutoSaveJob::restoreFile()
                                            KStandardGuiItem::cancel())) {
         auto job = new LoadJob(this);
         job->setFileName(AutoSaveJobUtil::temporaryFileName());
-        connect(job, &LoadJob::loadDone, this, [this]() {
+        connect(job, &LoadJob::loadDone, this, [this](const LoadJob::LoadInfo &info) {
+            LoadJobUtil::loadFile(info);
             removeAutoSaveFile();
         });
         job->start();
@@ -62,6 +67,7 @@ void RestoreAutoSaveJob::removeAutoSaveFile()
     if (!file.remove()) {
         qCWarning(DRAWY_AUTOSAVE_LOG) << "Impossible to remove autosave file" << AutoSaveJobUtil::temporaryFileName();
     }
+    Q_EMIT restoreDone();
     deleteLater();
 }
 

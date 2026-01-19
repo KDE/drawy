@@ -15,6 +15,8 @@
 #include "serializer/serializerutils.hpp"
 #include <QTimer>
 
+// #define TEST_TIMER
+
 AutoSaveJob::AutoSaveJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
     , m_context{context}
@@ -25,8 +27,12 @@ AutoSaveJob::~AutoSaveJob() = default;
 
 void AutoSaveJob::start()
 {
+#ifdef TEST_TIMER
+    constexpr int mseconds = 10 * 1000;
+#else
     constexpr int mseconds = 60 * 1000;
-    QTimer::singleShot(DrawyGlobalConfig::self()->delay() * mseconds, &AutoSaveJob::saveFile);
+#endif
+    QTimer::singleShot(DrawyGlobalConfig::self()->delay() * mseconds, this, &AutoSaveJob::saveFile);
 }
 
 void AutoSaveJob::saveFile()
@@ -46,5 +52,6 @@ void AutoSaveJob::saveFile()
         // Restart timer
         start();
     });
+    saveAsJob->start();
 }
 #include "moc_autosavejob.cpp"

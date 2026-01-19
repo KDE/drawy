@@ -15,7 +15,7 @@ RestoreAutoSaveJobTest::RestoreAutoSaveJobTest(QObject *parent)
 
 void RestoreAutoSaveJobTest::shouldHaveDefaultValues()
 {
-    const RestoreAutoSaveJob j;
+    const RestoreAutoSaveJob j(nullptr);
     QVERIFY(!j.parentWidget());
 }
 
