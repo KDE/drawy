@@ -7,7 +7,6 @@
 #include <QPoint>
 #include <QScreen>
 
-#include "../item/itemcache/itemcache.hpp"
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
@@ -15,6 +14,7 @@
 #include "coordinatetransformer.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "drawy_debug.h"
+#include "item/itemcache/itemcache.hpp"
 #include "spatialcontext.hpp"
 
 RenderingContext::RenderingContext(ApplicationContext *context)

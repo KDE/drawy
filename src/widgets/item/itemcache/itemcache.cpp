@@ -3,14 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "itemcache.hpp"
-#include "../../canvas/canvas.hpp"
-#include "../../common/constants.hpp"
-#include "../../context/applicationcontext.hpp"
-#include "../../context/coordinatetransformer.hpp"
-#include "../../context/renderingcontext.hpp"
-#include "../../context/spatialcontext.hpp"
-#include "../../data-structures/cachegrid.hpp"
-#include "../item.hpp"
+#include "canvas/canvas.hpp"
+#include "common/constants.hpp"
+#include "context/applicationcontext.hpp"
+#include "context/coordinatetransformer.hpp"
+#include "context/renderingcontext.hpp"
+#include "context/spatialcontext.hpp"
+#include "data-structures/cachegrid.hpp"
+#include "item/item.hpp"
 #include <qlogging.h>
 
 void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRectF &queryRegion, const QPointF &offset)
