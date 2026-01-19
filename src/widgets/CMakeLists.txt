@@ -238,6 +238,10 @@ target_sources(
         jobs/deserializejob.cpp
         jobs/loadjob.hpp
         jobs/loadjob.cpp
+        jobs/autosavejob.hpp
+        jobs/autosavejob.cpp
+        jobs/autosavejobutil.hpp
+        jobs/autosavejobutil.cpp
         libdrawywidgets_private_export.h
 )
 
@@ -274,6 +278,10 @@ kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
+)
+
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_autosave_debug.h IDENTIFIER DRAWY_AUTOSAVE_LOG
+    CATEGORY_NAME org.kde.drawy_autosave DESCRIPTION "drawy (autosave job)" EXPORT DRAWY
 )
 
 set_target_properties(

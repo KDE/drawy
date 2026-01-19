@@ -19,4 +19,9 @@
       <default>30</default>
     </entry>
   </group>
+  <group name="AutoSave">
+    <entry name="Delay" type="Int">
+     <default>1</default>
+    </entry>
+  </group>
 </kcfg>
