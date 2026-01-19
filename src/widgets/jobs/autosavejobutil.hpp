@@ -11,4 +11,5 @@
 namespace AutoSaveJobUtil
 {
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString temporaryFileName();
+[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT bool checkExistingAutoSaveFile();
 };

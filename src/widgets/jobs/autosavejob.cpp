@@ -43,7 +43,7 @@ void AutoSaveJob::saveFile()
     connect(saveAsJob, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
         SerializerUtils::saveInFile(obj, fileName);
         qCDebug(DRAWY_AUTOSAVE_LOG) << "Autosave file done: " << fileName;
-        // Restart autotest
+        // Restart timer
         start();
     });
 }

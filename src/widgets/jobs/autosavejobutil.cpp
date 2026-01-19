@@ -5,9 +5,15 @@
  */
 
 #include "autosavejobutil.hpp"
+#include <QFile>
 #include <QStandardPaths>
 using namespace Qt::Literals::StringLiterals;
 QString AutoSaveJobUtil::temporaryFileName()
 {
     return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + u"/drawy.autosave"_s;
+}
+
+bool AutoSaveJobUtil::checkExistingAutoSaveFile()
+{
+    return QFile::exists(temporaryFileName());
 }
