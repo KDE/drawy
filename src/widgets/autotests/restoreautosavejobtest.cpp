@@ -18,3 +18,5 @@ void RestoreAutoSaveJobTest::shouldHaveDefaultValues()
     const RestoreAutoSaveJob j;
     QVERIFY(!j.parentWidget());
 }
+
+#include "moc_restoreautosavejobtest.cpp"

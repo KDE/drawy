@@ -21,5 +21,7 @@ public:
     void setParentWidget(QWidget *newParentWidget);
 
 private:
+    LIBDRAWYWIDGETS_NO_EXPORT void removeAutoSaveFile();
+    LIBDRAWYWIDGETS_NO_EXPORT void restoreFile();
     QWidget *mParentWidget = nullptr;
 };
