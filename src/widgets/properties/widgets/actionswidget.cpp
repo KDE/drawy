@@ -44,13 +44,13 @@ ActionsWidget::ActionsWidget(QWidget *parent)
 
     auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
 
-    connect(deleteButton, &ButtonActionsWidget::clicked, this, [&]() {
+    connect(deleteButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
         actionManager->deleteSelection();
     });
-    connect(groupButton, &ButtonActionsWidget::clicked, this, [&]() {
+    connect(groupButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
         actionManager->groupItems();
     });
-    connect(ungroupButton, &ButtonActionsWidget::clicked, this, [&]() {
+    connect(ungroupButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
         actionManager->ungroupItems();
     });
 
