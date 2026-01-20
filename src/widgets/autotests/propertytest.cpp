@@ -24,6 +24,7 @@ void PropertyTest::shouldConvertStringToEnum()
     QCOMPARE(Property::convertStringToEnum(u"FontSize"_s), Property::Type::FontSize);
     QCOMPARE(Property::convertStringToEnum(u"EraserSize"_s), Property::Type::EraserSize);
     QCOMPARE(Property::convertStringToEnum(u"Actions"_s), Property::Type::Actions);
+    QCOMPARE(Property::convertStringToEnum(u"ZOrder"_s), Property::Type::ZOrder);
     QCOMPARE(Property::convertStringToEnum({}), Property::Type::Null);
     QCOMPARE(Property::convertStringToEnum(u"foo"_s), Property::Type::Null);
 }
@@ -38,6 +39,8 @@ void PropertyTest::shouldConvertEnumToString()
     QCOMPARE(Property::convertEnumToString(Property::Type::FontSize), u"FontSize"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::EraserSize), u"EraserSize"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Actions), u"Actions"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::ZOrder), u"ZOrder"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::Alignment), QString());
     QCOMPARE(Property::convertEnumToString(Property::Type::Null), QString());
 }
 

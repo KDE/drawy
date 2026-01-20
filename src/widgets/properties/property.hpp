@@ -24,6 +24,8 @@ public:
         FontSize,
         EraserSize,
         Actions,
+        Alignment,
+        ZOrder,
         Null
     };
     Q_ENUM(Type)

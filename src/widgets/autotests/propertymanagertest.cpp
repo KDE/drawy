@@ -24,6 +24,8 @@ void PropertyManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.widget(Property::Type::Actions));
     QVERIFY(w.widget(Property::Type::BackgroundColor));
     QVERIFY(w.widget(Property::Type::Opacity));
+    QVERIFY(w.widget(Property::Type::ZOrder));
+    QVERIFY(w.widget(Property::Type::Alignment));
 }
 
 #include "moc_propertymanagertest.cpp"

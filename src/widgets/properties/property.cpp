@@ -41,6 +41,8 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::BackgroundColor;
     } else if (str == u"BackgroundStyle") {
         return Property::Type::BackgroundStyle;
+    } else if (str == u"ZOrder") {
+        return Property::Type::ZOrder;
     } else {
         qCWarning(DRAWY_LOG) << "Property::Type is not defined for: " << str;
     }
@@ -68,6 +70,11 @@ QString Property::convertEnumToString(Property::Type type)
         return u"BackgroundColor"_s;
     case Property::Type::BackgroundStyle:
         return u"BackgroundStyle"_s;
+    case Property::Type::Alignment:
+        // We don't store Alignment in XML
+        return {};
+    case Property::Type::ZOrder:
+        return u"ZOrder"_s;
     case Property::Type::Null:
         qCWarning(DRAWY_LOG) << "Don't save null property ";
     }

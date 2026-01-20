@@ -9,7 +9,9 @@
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
 #include "opacitywidget.hpp"
+#include "properties/widgets/alignmentwidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
+#include "properties/widgets/zorderwidget.hpp"
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
@@ -24,6 +26,8 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Type::Actions] = new ActionsWidget(parent);
     m_widgets[Property::Type::BackgroundColor] = new BackgroundColorWidget(parent);
     m_widgets[Property::Type::Opacity] = new OpacityWidget(parent);
+    m_widgets[Property::Type::ZOrder] = new ZOrderWidget(parent);
+    m_widgets[Property::Type::Alignment] = new AlignmentWidget(parent);
 
     for (const auto &[_, widget] : m_widgets) {
         connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
