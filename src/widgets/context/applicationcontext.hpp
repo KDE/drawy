@@ -21,7 +21,7 @@ public:
 
     static ApplicationContext *instance(QWidget *parent = nullptr);
 
-    void setContexts();
+    void initializeContexts();
 
     [[nodiscard]] QWidget *parentWidget() const;
 

@@ -37,7 +37,7 @@ ApplicationContext *ApplicationContext::instance(QWidget *parent)
     return m_instance;
 }
 
-void ApplicationContext::setContexts()
+void ApplicationContext::initializeContexts()
 {
     m_renderingContext->setRenderingContext();
     m_spatialContext->setSpatialContext();

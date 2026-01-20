@@ -25,7 +25,7 @@ Controller::Controller(QObject *parent)
     , m_context{ApplicationContext::instance(dynamic_cast<QWidget *>(parent))}
     , m_zoomTimer{new QTimer(this)}
 {
-    m_context->setContexts();
+    m_context->initializeContexts();
     connect(m_zoomTimer, &QTimer::timeout, this, &Controller::renderZoom);
 }
 
