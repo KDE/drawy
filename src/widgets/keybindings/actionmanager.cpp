@@ -355,6 +355,7 @@ void ActionManager::loadFile(const QString &fileName)
 {
     auto job = new LoadJob(this);
     job->setFileName(fileName);
+    m_context->setCurrentFileName(fileName);
     connect(job, &LoadJob::loadDone, this, &ActionManager::slotLoadDone);
     job->start();
 }

@@ -32,11 +32,16 @@ public:
 
     void reset(); // resets the canvas to a blank state
 
+    [[nodiscard]] QString currentFileName() const;
+    void setCurrentFileName(const QString &newCurrentFileName);
+
 private:
     explicit ApplicationContext(QWidget *parent = nullptr);
 
     ApplicationContext(const ApplicationContext &) = delete;
     ApplicationContext(ApplicationContext *) = delete;
+
+    QString m_currentFileName;
 
     QWidget *const m_parentWidget;
 

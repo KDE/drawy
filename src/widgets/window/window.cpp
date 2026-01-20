@@ -89,18 +89,21 @@ void MainWindow::closeEvent(QCloseEvent *e)
             if (choice == KMessageBox::Cancel) {
                 e->ignore();
             } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
-                const QDir homeDir{QDir::home()};
-                QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
-                const QString defaultFilePath = homeDir.filePath(text);
-                text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
-                const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+                ApplicationContext *context{ApplicationContext::instance()};
+                QString fileName = context->currentFileName();
                 if (fileName.isEmpty()) {
-                    e->ignore();
-                    return;
+                    const QDir homeDir{QDir::home()};
+                    QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+                    const QString defaultFilePath = homeDir.filePath(text);
+                    text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+                    fileName = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text);
+                    if (fileName.isEmpty()) {
+                        e->ignore();
+                        return;
+                    }
                 }
                 m_forceClose = true;
                 auto job = new SaveAsJob(this);
-                ApplicationContext *context{ApplicationContext::instance()};
                 const SaveAsJob::SaveAsInfo info{
                     .filePath = fileName,
                     .offsetPos = context->spatialContext()->offsetPos(),
@@ -160,7 +163,8 @@ void MainWindow::viewFullScreen(bool fullScreen)
 
 void MainWindow::loadFile(const QString &fileName)
 {
-    auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
     actionManager->loadFile(fileName);
 }
 

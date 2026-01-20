@@ -23,6 +23,16 @@ ApplicationContext::ApplicationContext(QWidget *parent)
 {
 }
 
+QString ApplicationContext::currentFileName() const
+{
+    return m_currentFileName;
+}
+
+void ApplicationContext::setCurrentFileName(const QString &newCurrentFileName)
+{
+    m_currentFileName = newCurrentFileName;
+}
+
 ApplicationContext::~ApplicationContext()
 {
     qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
