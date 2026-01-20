@@ -121,7 +121,7 @@ inline bool operator<=(const QSize &a, const QSize &b)
 {
     return a.height() <= b.height() && a.width() <= b.width();
 }
-};
+}; // namespace
 
 void Canvas::resizeEvent(QResizeEvent *event)
 {
@@ -240,7 +240,10 @@ QPixmap Canvas::canvasPixmap() const
     return QPixmap{*m_canvas};
 }
 
-QPixmap Canvas::overlayPixmap() const { return QPixmap{*m_canvas}; }
+QPixmap Canvas::overlayPixmap() const
+{
+    return QPixmap{*m_canvas};
+}
 
 void Canvas::triggerUpdate()
 {

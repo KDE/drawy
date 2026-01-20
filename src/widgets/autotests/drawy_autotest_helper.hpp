@@ -17,4 +17,4 @@ void compareFile(const QString &repo, const QByteArray &data, const QString &nam
 QJsonDocument loadJsonDocument(const QString &originalJsonFile);
 QJsonObject loadJsonObject(const QString &originalJsonFile);
 QJsonArray loadJsonArrayObject(const QString &originalJsonFile);
-}
+} // namespace AutoTestHelper

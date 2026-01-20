@@ -11,8 +11,8 @@ class UIContext;
 class SelectionContext;
 
 /**
- * @note: This class was made a Singleton recently, so in many places it is still accessed by
- * passing its pointer instead of using the `instance` method.
+ * @note: This class was made a Singleton recently, so in many places it is
+ * still accessed by passing its pointer instead of using the `instance` method.
  */
 class ApplicationContext : public QObject
 {

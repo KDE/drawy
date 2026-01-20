@@ -23,8 +23,9 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
 
     const QRectF boundingBox{item->boundingBox()};
     QTransform transform{item->transformObj()};
-    transform.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y()); // account for the initial translation
-                                                                               //
+    transform.translate(boundingBox.topLeft().x(),
+                        boundingBox.topLeft().y()); // account for the initial translation
+                                                    //
     const QRectF transformedQueryRegion{transformer.worldToGrid(transform.inverted().mapRect(queryRegion))};
 
     // Check if item is not already cached
@@ -71,9 +72,12 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
         // QPen pen{};
         // pen.setColor(Qt::red);
         // painter.setPen(pen);
-        // painter.drawRect(cell->rect().toRectF().translated(transformer.worldToGrid(boundingBox.topLeft()) - offset));
-        // painter.drawText(transformer.worldToGrid(boundingBox.topLeft()) + cell->rect().topLeft() - offset,
-        //                  QString::asprintf("(%d, %d)", cell->point().x(), cell->point().y()));
+        // painter.drawRect(cell->rect().toRectF().translated(transformer.worldToGrid(boundingBox.topLeft())
+        // - offset));
+        // painter.drawText(transformer.worldToGrid(boundingBox.topLeft()) +
+        // cell->rect().topLeft() - offset,
+        //                  QString::asprintf("(%d, %d)", cell->point().x(),
+        //                  cell->point().y()));
         // painter.restore();
     }
 }

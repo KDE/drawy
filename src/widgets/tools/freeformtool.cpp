@@ -87,29 +87,25 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
             return;
 
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
+        // Split the stroke if there are too many points which makes it
+        // expensive to render
+        if (curItem->points().size() >= Common::maxFreeformPointCount) {
+            std::shared_ptr<FreeformItem> prevItem{curItem};
 
-          QList<std::shared_ptr<Item>> itemList{prevItem};
-          spatialContext->commandHistory()->insert(
-              std::make_shared<InsertItemCommand>(itemList));
+            QList<std::shared_ptr<Item>> itemList{prevItem};
+            spatialContext->commandHistory()->insert(std::make_shared<InsertItemCommand>(itemList));
 
-          renderingContext->markForRender();
+            renderingContext->markForRender();
 
-          curItem =
-              std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
-          curItem->setProperty(
-              Property::Type::StrokeWidth,
-              uiContext->propertyManager()->value(Property::Type::StrokeWidth));
-          curItem->setProperty(
-              Property::Type::StrokeColor,
-              uiContext->propertyManager()->value(Property::Type::StrokeColor));
+            curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
+            curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
+            curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
 
-          // add last point to ensure it looks continuous
-          curItem->addPoint(prevItem->points().back(),
-                            prevItem->pressures().back());
+            // add last point to ensure it looks continuous
+            curItem->addPoint(prevItem->points().back(), prevItem->pressures().back());
         }
 
-        curItem->addPoint(transformer.viewToWorld(curPoint),
-                          uiContext->appEvent().pressure());
+        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent().pressure());
         const qreal zoom{renderingContext->zoomFactor()};
 
         renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {

@@ -25,10 +25,10 @@
 #include "properties/widgets/propertymanager.hpp"
 
 /*
- * FIXME: This file needs some SERIOUS refactoring which, unfortunately, time is not allowing me to
- * do. Feel free to open pull requests though. I have made sure to implement all necessary
- * functionalities. AI slop will be rejected :D Put your heart and soul into the work you do and see
- * yourself succeed.
+ * FIXME: This file needs some SERIOUS refactoring which, unfortunately, time is
+ * not allowing me to do. Feel free to open pull requests though. I have made
+ * sure to implement all necessary functionalities. AI slop will be rejected :D
+ * Put your heart and soul into the work you do and see yourself succeed.
  */
 
 TextTool::TextTool()

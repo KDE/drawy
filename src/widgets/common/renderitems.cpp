@@ -36,7 +36,8 @@ void Common::renderCanvas(ApplicationContext *context)
 
     for (const auto &cell : visibleCells) {
         // UNCOMMENT THIS TO SEE THE CELLS
-        // context->renderingContext()->canvas().paintCanvas([&](QPainter &painter) -> void {
+        // context->renderingContext()->canvas().paintCanvas([&](QPainter &painter)
+        // -> void {
         //     QPen pen;
         //     pen.setColor(Qt::white);
         //     painter.setPen(pen);

@@ -32,7 +32,7 @@ public:
     [[nodiscard]] QPixmap canvasPixmap() const;
     [[nodiscard]] QPixmap overlayPixmap() const;
 
-  Q_SIGNALS:
+Q_SIGNALS:
     void mousePressed(QMouseEvent *event);
     void mouseMoved(QMouseEvent *event);
     void mouseReleased(QMouseEvent *event);

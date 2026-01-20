@@ -5,26 +5,28 @@
 #include <QPolygonF>
 #include <QtMath>
 
-namespace Common::Utils::Freehand {
+namespace Common::Utils::Freehand
+{
 struct StrokePoint {
-  QPointF point{};
-  qreal pressure{1.0};
+    QPointF point{};
+    qreal pressure{1.0};
 };
 
 /**
- * @brief: smoothness factor, the lower it is, the smoother the lines are but they look more unnatural
+ * @brief: smoothness factor, the lower it is, the smoother the lines are but
+ * they look more unnatural
  */
-inline constexpr qreal t = 0.3;
+inline constexpr qreal t = 0.575;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
 
 /**
  * @brief smoothens a stroke formed from a list of points
  * @param points a QList of QPointF
- * @returns a QList of QPointF with the same number of points but with less noise and smoother
+ * @returns a QList of QPointF with the same number of points but with less
+ * noise and smoother
  */
-QList<StrokePoint> getStrokePoints(const QList<QPointF> &points,
-                                   const QList<qreal> &pressures);
+QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures);
 
 /**
  * @brief returns a polygon formed from a vector of stroke points
@@ -78,4 +80,13 @@ qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB);
  * @returns +1 if clockwise, -1 if anti-clockwise
  */
 int crossProduct(const QPointF &vectorA, const QPointF &vectorB);
-};
+
+/**
+ * @brief interpolate a point linearly between two points
+ * @param pointA first point
+ * @param pointB second point
+ * @param dist distance to interpolate, also known as 't'
+ * @returns QPointF, interpolated point
+ */
+QPointF lerp(const QPointF &pointA, const QPointF &pointB, const qreal dist);
+}; // namespace Common::Utils::Freehand

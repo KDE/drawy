@@ -11,4 +11,4 @@ namespace ArrowUtils
 {
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertArrowTypeEnumToString(ArrowItem::ArrowType type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT ArrowItem::ArrowType convertArrowTypeStringToArrowEnum(const QString &penStyle);
-};
+}; // namespace ArrowUtils

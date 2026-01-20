@@ -66,9 +66,9 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     /*
     if (hasProperty(Property::Type::BackgroundColor)) {
-        const QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-        if (backgroundColor != Qt::transparent) {
-            pen.setBrush(QBrush(backgroundColor));
+        const QColor
+    backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()}; if
+    (backgroundColor != Qt::transparent) { pen.setBrush(QBrush(backgroundColor));
         }
     }
     */

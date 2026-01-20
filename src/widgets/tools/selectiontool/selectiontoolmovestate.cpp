@@ -98,7 +98,8 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
         auto &selectedItems{context->selectionContext()->selectedItems()};
         QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
-        // TODO: Instead of un-doing the translation so that the command can execute it again,
+        // TODO: Instead of un-doing the translation so that the command can execute
+        // it again,
         //       just make it not translate manually at all in the mouseMoved method
         for (auto &item : items) {
             if (!item->locked()) {
