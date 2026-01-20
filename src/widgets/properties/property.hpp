@@ -26,6 +26,7 @@ public:
         Actions,
         Alignment,
         ZOrder,
+        ArrowStyle,
         Null
     };
     Q_ENUM(Type)

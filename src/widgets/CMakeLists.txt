@@ -147,6 +147,8 @@ target_sources(
         properties/widgets/alignmentwidget.cpp
         properties/widgets/zorderwidget.hpp
         properties/widgets/zorderwidget.cpp
+        properties/widgets/arrowstylewidget.cpp
+        properties/widgets/arrowstylewidget.hpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

@@ -70,6 +70,9 @@ QString Property::convertEnumToString(Property::Type type)
         return u"BackgroundColor"_s;
     case Property::Type::BackgroundStyle:
         return u"BackgroundStyle"_s;
+    case Property::Type::ArrowStyle:
+        // We don't store Arrow in XML
+        return {};
     case Property::Type::Alignment:
         // We don't store Alignment in XML
         return {};
