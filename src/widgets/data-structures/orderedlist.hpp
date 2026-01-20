@@ -30,7 +30,7 @@ public:
     void sendBackward(const ItemPtr &item);
     void sendToBack(const ItemPtr &item);
     void bringToFront(const ItemPtr &item);
-    bool hasItem(const ItemPtr &item) const;
+    [[nodiscard]] bool hasItem(const ItemPtr &item) const;
 
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
 };

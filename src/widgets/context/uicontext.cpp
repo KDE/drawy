@@ -43,7 +43,7 @@ UIContext::~UIContext()
     qCDebug(DRAWY_LOG) << "Object deleted: UIContext";
 }
 
-void UIContext::setUIContext()
+void UIContext::initializeUIContext()
 {
     m_toolBar = new ToolBar(m_applicationContext->parentWidget());
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());

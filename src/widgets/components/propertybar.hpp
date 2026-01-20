@@ -22,5 +22,5 @@ public:
 
 private:
     QVBoxLayout *const m_layout;
-    PropertyManager *m_propertyManager{};
+    PropertyManager *m_propertyManager = nullptr;
 };

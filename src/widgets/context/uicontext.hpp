@@ -23,7 +23,7 @@ public:
     explicit UIContext(ApplicationContext *context);
     ~UIContext() override;
 
-    void setUIContext();
+    void initializeUIContext();
 
     [[nodiscard]] ToolBar *toolBar() const;
     [[nodiscard]] PropertyBar *propertyBar() const;
@@ -39,16 +39,16 @@ public:
     void toolChanged(Tool &);
 
 private:
-    ToolBar *m_toolBar{nullptr};
-    PropertyBar *m_propertyBar{};
-    ActionBar *m_actionBar{};
-    PropertyManager *m_propertyManager{};
-    KeybindManager *m_keybindManager{};
-    ActionManager *m_actionManager{};
-    Event *m_event{nullptr};
-    IconManager *m_iconManager{};
+    ToolBar *m_toolBar = nullptr;
+    PropertyBar *m_propertyBar = nullptr;
+    ActionBar *m_actionBar = nullptr;
+    PropertyManager *m_propertyManager = nullptr;
+    KeybindManager *m_keybindManager = nullptr;
+    ActionManager *m_actionManager = nullptr;
+    Event *m_event = nullptr;
+    IconManager *m_iconManager = nullptr;
 
-    Tool *m_lastTool{nullptr}; // Used to call the cleanup function of the last tool
+    Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
 
     ApplicationContext *const m_applicationContext;
 };

@@ -46,15 +46,15 @@ public:
     explicit CacheGrid(int maxSize, const QSize &cellSize);
     ~CacheGrid();
 
-    QList<std::shared_ptr<CacheCell>> queryCells(const QRect &rect);
-    std::shared_ptr<CacheCell> cell(const QPoint &point);
+    [[nodiscard]] QList<std::shared_ptr<CacheCell>> queryCells(const QRect &rect);
+    [[nodiscard]] std::shared_ptr<CacheCell> cell(const QPoint &point);
     void markDirty(const QRect &rect);
     void markAllDirty();
 
     void setSize(int newSize);
-    int size() const;
+    [[nodiscard]] int size() const;
 
-    const QSize &cellSize() const;
+    [[nodiscard]] const QSize &cellSize() const;
 
     void setBounds(const QRect &rect);
 

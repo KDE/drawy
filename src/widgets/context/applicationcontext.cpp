@@ -51,7 +51,7 @@ void ApplicationContext::initializeContexts()
 {
     m_renderingContext->setRenderingContext();
     m_spatialContext->setSpatialContext();
-    m_uiContext->setUIContext();
+    m_uiContext->initializeUIContext();
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 }
 
