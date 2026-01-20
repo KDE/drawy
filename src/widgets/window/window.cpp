@@ -6,11 +6,13 @@
 
 #include <QButtonGroup>
 #include <QFile>
+#include <QFileDialog>
 #include <QFontDatabase>
 #include <QShortcut>
 
 #include "boardlayout.hpp"
 #include "canvas/canvas.hpp"
+#include "common/constants.hpp"
 #include "components/actionbar.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
@@ -22,9 +24,13 @@
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "jobs/autosavejob.hpp"
+#include "jobs/autosavejobutil.hpp"
 #include "jobs/restoreautosavejob.hpp"
+#include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
+#include "serializer/serializerutils.hpp"
 #include <KMessageBox>
+#include <qdir.h>
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -60,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
     restoreAutoSaveJob->setParentWidget(this);
     connect(restoreAutoSaveJob, &RestoreAutoSaveJob::restoreDone, this, [this, context]() {
+        AutoSaveJobUtil::createAutoSaveStandardPath();
         // Autosave
         auto autoSaveJob = new AutoSaveJob(context, this);
         autoSaveJob->start();
@@ -71,22 +78,50 @@ MainWindow::~MainWindow() = default;
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    if (!ApplicationContext::instance()->spatialContext()->quadtree().getAllItems().isEmpty()) {
-        const int choice = KMessageBox::questionTwoActionsCancel(this,
-                                                                 tr("Do you want to save file?"),
-                                                                 tr("Close"),
-                                                                 KGuiItem(tr("Save And Close")),
-                                                                 KGuiItem(tr("Ignore")),
-                                                                 KStandardGuiItem::cancel());
-        if (choice == KMessageBox::Cancel) {
-            e->ignore();
-        } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
-            // TODO save
-
+    if (!m_forceClose) {
+        if (!ApplicationContext::instance()->spatialContext()->quadtree().getAllItems().isEmpty()) {
+            const int choice = KMessageBox::questionTwoActionsCancel(this,
+                                                                     tr("Do you want to save file?"),
+                                                                     tr("Close"),
+                                                                     KGuiItem(tr("Save And Close")),
+                                                                     KGuiItem(tr("Ignore")),
+                                                                     KStandardGuiItem::cancel());
+            if (choice == KMessageBox::Cancel) {
+                e->ignore();
+            } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
+                const QDir homeDir{QDir::home()};
+                QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+                const QString defaultFilePath = homeDir.filePath(text);
+                text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+                const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+                if (fileName.isEmpty()) {
+                    e->ignore();
+                    return;
+                }
+                m_forceClose = true;
+                auto job = new SaveAsJob(this);
+                ApplicationContext *context{ApplicationContext::instance()};
+                const SaveAsJob::SaveAsInfo info{
+                    .filePath = fileName,
+                    .offsetPos = context->spatialContext()->offsetPos(),
+                    .zoomFactor = context->renderingContext()->zoomFactor(),
+                    .items = context->spatialContext()->quadtree().getAllItems(),
+                };
+                job->setSaveAsInfo(info);
+                connect(job, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
+                    SerializerUtils::saveInFile(obj, fileName);
+                    qDebug() << " save done ";
+                    AutoSaveJobUtil::removeAutoSaveFile();
+                    close();
+                });
+                job->start();
+            } else {
+                e->accept();
+            }
+            return;
         } else {
             e->accept();
         }
-        return;
     } else {
         e->accept();
     }

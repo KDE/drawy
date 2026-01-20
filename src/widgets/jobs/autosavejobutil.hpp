@@ -10,6 +10,8 @@
 
 namespace AutoSaveJobUtil
 {
+LIBDRAWYWIDGETS_TESTS_EXPORT void createAutoSaveStandardPath();
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString temporaryFileName();
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT bool checkExistingAutoSaveFile();
+LIBDRAWYWIDGETS_TESTS_EXPORT void removeAutoSaveFile();
 };

@@ -25,4 +25,5 @@ protected:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void applyCustomStyles();
     bool m_config_useSystemStyles{true};
+    bool m_forceClose = false;
 };
