@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
-"PO-Revision-Date: 2026-01-12 18:42+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2026-01-17 21:30+0100\n"
+"Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: apps/main.cpp:29
 msgctxt "QObject|"
 msgid "drawy"
-msgstr ""
+msgstr "drawy"
 
 #: apps/main.cpp:31
 msgctxt "QObject|"
@@ -28,27 +28,27 @@ msgstr "Votre outil de brainstorming pratique et sans limites !"
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
-msgstr ""
+msgstr "(c) 2025-%1 auteurs de drawy"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "Prayag Jain"
 
 #: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Maintainer"
-msgstr ""
+msgstr "Mainteneur"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: apps/main.cpp:35
 msgctxt "QObject|"
 msgid "Developer"
-msgstr ""
+msgstr "Développeur"
 
 #: apps/main.cpp:42
 msgctxt "QObject|"
@@ -58,7 +58,7 @@ msgstr "Un argument optionnel « file »"
 #: apps/main.cpp:45
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
-msgstr ""
+msgstr "Votre outil de brainstorming pratique et sans limites !"
 
 #: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
@@ -150,320 +150,333 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: widgets/keybindings/actionmanager.cpp:40
+#: widgets/jobs/restoreautosavejob.cpp:48
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to close?"
+msgctxt "RestoreAutoSaveJob|"
+msgid "Do you want to restore autosave file?"
+msgstr "Voulez-vous vraiment fermer la fenêtre ?"
+
+#: widgets/jobs/restoreautosavejob.cpp:49
+msgctxt "RestoreAutoSaveJob|"
+msgid "Restore"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
 msgid "Undo"
 msgstr "Annuler"
 
-#: widgets/keybindings/actionmanager.cpp:41
+#: widgets/keybindings/actionmanager.cpp:42
 msgctxt "ActionManager|"
 msgid "Undo last action"
 msgstr "Annuler la dernière action"
 
-#: widgets/keybindings/actionmanager.cpp:47
+#: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Redo"
 msgstr "Rétablir"
 
-#: widgets/keybindings/actionmanager.cpp:48
+#: widgets/keybindings/actionmanager.cpp:49
 msgctxt "ActionManager|"
 msgid "Redo last undone action"
 msgstr "Refaire la dernière action annulée"
 
-#: widgets/keybindings/actionmanager.cpp:54
+#: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Zoom In"
 msgstr "Zoom avant"
 
-#: widgets/keybindings/actionmanager.cpp:55
+#: widgets/keybindings/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: widgets/keybindings/actionmanager.cpp:61
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Zoom Out"
 msgstr "Zoom arrière"
 
-#: widgets/keybindings/actionmanager.cpp:62
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: widgets/keybindings/actionmanager.cpp:68
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Outil de forme libre"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
 msgstr "Basculer vers l'outil de forme libre"
 
-#: widgets/keybindings/actionmanager.cpp:75
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Outil de gomme"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
 msgstr "Basculer vers l'outil de gomme"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Outil de sélection"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
 msgstr "Basculer vers l'outil de sélection"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
 msgstr "Basculer vers l'outil de rectangle"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
 msgstr "Basculer à l'outil d'ellipse"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Outil de ligne"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
 msgstr "Basculer vers l'outil de ligne"
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Outil de texte"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
 msgstr "Basculer vers l'outil de texte"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Outil de flèche"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:119
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
 msgstr "Basculer à l'outil de flèche"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Outil de déplacement"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:126
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
 msgstr "Basculer vers l'outil de déplacement"
 
-#: widgets/keybindings/actionmanager.cpp:131
+#: widgets/keybindings/actionmanager.cpp:132
 msgctxt "ActionManager|"
 msgid "Group Elements"
 msgstr "Regrouper les objets"
 
-#: widgets/keybindings/actionmanager.cpp:132
+#: widgets/keybindings/actionmanager.cpp:133
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "Regrouper les objets sélectionnés"
 
-#: widgets/keybindings/actionmanager.cpp:138
+#: widgets/keybindings/actionmanager.cpp:139
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
 msgstr "Dégrouper les objets"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:140
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "Supprime le regroupement des groupes sélectionnés"
 
-#: widgets/keybindings/actionmanager.cpp:145
+#: widgets/keybindings/actionmanager.cpp:146
 msgctxt "ActionManager|"
 msgid "Select All"
 msgstr "Tout sélectionner"
 
-#: widgets/keybindings/actionmanager.cpp:146
+#: widgets/keybindings/actionmanager.cpp:147
 msgctxt "ActionManager|"
 msgid "Select all items"
 msgstr "Sélectionner tous les objets"
 
-#: widgets/keybindings/actionmanager.cpp:152
+#: widgets/keybindings/actionmanager.cpp:153
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: widgets/keybindings/actionmanager.cpp:153
+#: widgets/keybindings/actionmanager.cpp:154
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "Supprimer les objets sélectionnés"
 
-#: widgets/keybindings/actionmanager.cpp:159
+#: widgets/keybindings/actionmanager.cpp:160
 msgctxt "ActionManager|"
 msgid "Save"
 msgstr "Enregistrer"
 
-#: widgets/keybindings/actionmanager.cpp:160
+#: widgets/keybindings/actionmanager.cpp:161
 msgctxt "ActionManager|"
 msgid "Save canvas"
 msgstr "Enregistrer le canevas"
 
-#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:167
 msgctxt "ActionManager|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:167
+#: widgets/keybindings/actionmanager.cpp:168
 msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Ouvrir un fichier existant"
 
-#: widgets/keybindings/actionmanager.cpp:173
+#: widgets/keybindings/actionmanager.cpp:174
 msgctxt "ActionManager|keybinding for the undo action"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: widgets/keybindings/actionmanager.cpp:174
+#: widgets/keybindings/actionmanager.cpp:175
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Y"
 msgstr "Ctrl+Y"
 
-#: widgets/keybindings/actionmanager.cpp:175
+#: widgets/keybindings/actionmanager.cpp:176
 msgctxt "ActionManager|keybinding for the redo action"
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Maj+Z"
 
-#: widgets/keybindings/actionmanager.cpp:176
+#: widgets/keybindings/actionmanager.cpp:177
 msgctxt "ActionManager|keybinding for the zoom in action"
 msgid "Ctrl++"
 msgstr "Ctrl++"
 
-#: widgets/keybindings/actionmanager.cpp:177
+#: widgets/keybindings/actionmanager.cpp:178
 msgctxt "ActionManager|keybinding for the zoom out action"
 msgid "Ctrl+-"
 msgstr "Ctrl+-"
 
-#: widgets/keybindings/actionmanager.cpp:178
+#: widgets/keybindings/actionmanager.cpp:179
 msgctxt "ActionManager|keybinding for the text tool"
 msgid "T"
 msgstr "T"
 
-#: widgets/keybindings/actionmanager.cpp:179
+#: widgets/keybindings/actionmanager.cpp:180
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "P"
 msgstr "P"
 
-#: widgets/keybindings/actionmanager.cpp:180
+#: widgets/keybindings/actionmanager.cpp:181
 msgctxt "ActionManager|keybinding for the freeform drawing tool"
 msgid "B"
 msgstr "B"
 
-#: widgets/keybindings/actionmanager.cpp:181
+#: widgets/keybindings/actionmanager.cpp:182
 msgctxt "ActionManager|keybinding for the eraser tool"
 msgid "E"
 msgstr "E"
 
-#: widgets/keybindings/actionmanager.cpp:182
+#: widgets/keybindings/actionmanager.cpp:183
 msgctxt "ActionManager|keybinding for the selection tool"
 msgid "S"
 msgstr "S"
 
-#: widgets/keybindings/actionmanager.cpp:183
+#: widgets/keybindings/actionmanager.cpp:184
 msgctxt "ActionManager|keybinding for the rectangle drawing tool"
 msgid "R"
 msgstr "R"
 
-#: widgets/keybindings/actionmanager.cpp:184
+#: widgets/keybindings/actionmanager.cpp:185
 msgctxt "ActionManager|keybinding for the ellipse drawing tool"
 msgid "O"
 msgstr "O"
 
-#: widgets/keybindings/actionmanager.cpp:185
+#: widgets/keybindings/actionmanager.cpp:186
 msgctxt "ActionManager|keybinding for the line drawing tool"
 msgid "L"
 msgstr "L"
 
-#: widgets/keybindings/actionmanager.cpp:186
+#: widgets/keybindings/actionmanager.cpp:187
 msgctxt "ActionManager|keybinding for the arrow drawing tool"
 msgid "A"
 msgstr "A"
 
-#: widgets/keybindings/actionmanager.cpp:187
+#: widgets/keybindings/actionmanager.cpp:188
 msgctxt "ActionManager|keybinding for the move tool"
 msgid "M"
 msgstr "M"
 
-#: widgets/keybindings/actionmanager.cpp:188
+#: widgets/keybindings/actionmanager.cpp:189
 msgctxt "ActionManager|keybinding for the select all action"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: widgets/keybindings/actionmanager.cpp:189
+#: widgets/keybindings/actionmanager.cpp:190
 msgctxt "ActionManager|keybinding for the delete action"
 msgid "Del"
 msgstr "Suppr"
 
-#: widgets/keybindings/actionmanager.cpp:190
+#: widgets/keybindings/actionmanager.cpp:191
 msgctxt "ActionManager|keybinding for the save action"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: widgets/keybindings/actionmanager.cpp:191
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "ActionManager|keybinding for the open file action"
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "ActionManager|keybinding for the group action"
 msgid "Ctrl+G"
 msgstr "Ctrl+G"
 
-#: widgets/keybindings/actionmanager.cpp:193
+#: widgets/keybindings/actionmanager.cpp:194
 msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Maj+G"
 
-#: widgets/keybindings/actionmanager.cpp:319
+#: widgets/keybindings/actionmanager.cpp:320
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sans titre. %1"
 
-#: widgets/keybindings/actionmanager.cpp:321
-#: widgets/keybindings/actionmanager.cpp:343
+#: widgets/keybindings/actionmanager.cpp:322
+#: widgets/keybindings/actionmanager.cpp:344
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:322
+#: widgets/keybindings/actionmanager.cpp:323
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:347
+#: widgets/keybindings/actionmanager.cpp:348
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
@@ -496,12 +509,9 @@ msgstr ""
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
-msgstr ""
+msgstr "Couleur d'arrière-plan"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Color"
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Couleur"
@@ -519,38 +529,32 @@ msgstr "Taille de police"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "Opacité"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:30
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
-msgstr ""
+msgstr "Solide"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:40
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dash Line"
-msgstr "Ligne"
+msgstr "Ligne en tirets"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:50
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dot Line"
-msgstr "Ligne"
+msgstr "Ligne pointillée"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:72
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
-msgstr ""
+msgstr "Style du trait"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:22
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Couleur du trait"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:28
 msgctxt "StrokeWidthWidget|"
@@ -610,12 +614,28 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Outil de texte"
 
-#: widgets/window/window.cpp:67
+#: widgets/window/window.cpp:76
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to close?"
 msgctxt "MainWindow|"
-msgid "Do you want to close?"
+msgid "Do you want to save file?"
 msgstr "Voulez-vous vraiment fermer la fenêtre ?"
 
-#: widgets/window/window.cpp:67
+#: widgets/window/window.cpp:77
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Fermer"
+
+#: widgets/window/window.cpp:78
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "MainWindow|"
+msgid "Save And Close"
+msgstr "Enregistrer dans un fichier"
+
+#: widgets/window/window.cpp:79
+msgctxt "MainWindow|"
+msgid "Ignore"
+msgstr ""
