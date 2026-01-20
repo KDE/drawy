@@ -240,6 +240,8 @@ QPixmap Canvas::canvasPixmap() const
     return QPixmap{*m_canvas};
 }
 
+QPixmap Canvas::overlayPixmap() const { return QPixmap{*m_canvas}; }
+
 void Canvas::triggerUpdate()
 {
     this->update();

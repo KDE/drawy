@@ -95,25 +95,25 @@ bool FreeformItem::intersects(const QLineF &line)
     return false;
 }
 
-void FreeformItem::draw(QPainter &painter, const QPointF &offset)
-{
-    QPen pen;
+void FreeformItem::draw(QPainter &painter, const QPointF &offset) {
+  QColor color{property(Property::Type::StrokeColor).value<QColor>()};
+  const int alpha{property(Property::Type::Opacity).value<int>()};
+  color.setAlpha(alpha);
 
-    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
-    const int alpha{property(Property::Type::Opacity).value<int>()};
-    color.setAlpha(alpha);
+  // Laurent we can't support it at the moment:
+  // pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
 
-    // Laurent we can't support it at the moment:
-    // pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
-    pen.setJoinStyle(Qt::RoundJoin);
-    pen.setCapStyle(Qt::RoundCap);
-    pen.setWidth(property(Property::Type::StrokeWidth).value<int>());
-    pen.setColor(color);
+  // We'll be drawing a polygon. We don't want it to have an outline.
+  QPen pen{};
+  pen.setWidth(0);
+  pen.setColor(Qt::transparent);
 
-    painter.setPen(pen);
-    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+  painter.setBrush(color);
+  painter.setPen(pen);
+  painter.setRenderHints(QPainter::SmoothPixmapTransform |
+                         QPainter::Antialiasing);
 
-    drawItem(painter, offset);
+  drawItem(painter, offset);
 }
 
 void FreeformItem::erase(QPainter &painter, const QPointF &offset) const {
@@ -136,11 +136,31 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
 
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    const QList<QPointF> points = Common::Utils::Freehand::getStrokePoints(m_points);
+  const auto points =
+      Common::Utils::Freehand::getStrokePoints(m_points, m_pressures);
+  const auto polygon = Common::Utils::Freehand::getStrokePolygon(points);
 
-    painter.save();
-    painter.translate(-offset);
-    painter.drawPolyline(points);
+  painter.save();
+  painter.translate(-offset);
+  painter.drawPolygon(polygon, Qt::WindingFill);
+
+  // UNCOMMENT TO SEE THE POLYGON'S STRUCTURE
+  painter.setPen(Qt::red);
+  QFont ft{};
+  ft.setPixelSize(1);
+  painter.setFont(ft);
+
+  int i = 0;
+  for (auto &pt : polygon) {
+    painter.drawText(pt, QString::asprintf("%d", i++));
+  }
+
+  i = 0;
+  painter.setPen(Qt::blue);
+  for (auto &pt : points) {
+    painter.drawText(pt.point, QString::asprintf("%d", i++));
+  }
+
     painter.restore();
 }
 
