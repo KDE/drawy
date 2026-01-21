@@ -148,9 +148,11 @@ void Controller::mouseReleased(QMouseEvent *event)
 void Controller::tablet(QTabletEvent *event)
 {
     auto ev{m_context->uiContext()->appEvent()};
+    auto toolBar{m_context->uiContext()->toolBar()};
 
     // TODO: Remove magic numbers
     ev->setPressure(event->pressure() / 1.60 + 0.375);
+    toolBar->curTool().tablet(m_context);
 }
 
 void Controller::keyPressed(QKeyEvent *event)

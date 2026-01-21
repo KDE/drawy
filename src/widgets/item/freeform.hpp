@@ -5,6 +5,7 @@
 #pragma once
 
 #include "libdrawywidgets_private_export.h"
+#include <QPainterPath>
 #include <deque>
 #include <memory>
 
@@ -29,7 +30,7 @@ public:
 
     [[nodiscard]] qsizetype size() const;
 
-    virtual void addPoint(const QPointF &point, const qreal pressure, bool optimize = true);
+    virtual void addPoint(const QPointF &point, const qreal pressure);
 
     [[nodiscard]] Item::Type type() const override;
 
@@ -40,6 +41,9 @@ public:
     void deserialize(const QJsonObject &obj) override;
 
     bool needsCaching() const override;
+
+    bool isPressureSimulated() const;
+    void setSimulatePressure(bool value);
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
@@ -52,6 +56,9 @@ private:
     std::deque<QPointF> m_currentWindow;
     QPointF m_currentWindowSum{0, 0};
     std::size_t m_bufferSize{7};
+
+    bool m_simulatePressure{true};
+    QPainterPath m_path{};
 };
 
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const FreeformItem &t);

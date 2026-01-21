@@ -31,31 +31,16 @@ int FreeformItem::minPointDistance()
     return 0;
 }
 
-void FreeformItem::addPoint(const QPointF &point, const qreal pressure, bool optimize)
+void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 {
     QPointF newPoint{point};
-    // if (optimize) {
-    //     newPoint = optimizePoint(point);
-    // }
-    const double x = newPoint.x(), y = newPoint.y();
-
-    m_boundingBox = m_boundingBox.normalized();
-    const double topLeftX{m_boundingBox.topLeft().x()}, topLeftY{m_boundingBox.topLeft().y()};
-    const double bottomRightX{m_boundingBox.bottomRight().x()}, bottomRightY{m_boundingBox.bottomRight().y()};
-    const int mg{property(Property::Type::StrokeWidth).value<int>()};
-
-    if (m_points.size() <= 1) {
-        m_boundingBox.setTopLeft({x - mg, y - mg});
-        m_boundingBox.setBottomRight({x + mg, y + mg});
-    } else {
-        m_boundingBox.setLeft(std::min(topLeftX, x - mg));
-        m_boundingBox.setTop(std::min(topLeftY, y - mg));
-        m_boundingBox.setRight(std::max(bottomRightX, x + mg));
-        m_boundingBox.setBottom(std::max(bottomRightY, y + mg));
-    }
-
     m_points.push_back(newPoint);
     m_pressures.push_back(pressure);
+
+    using namespace Common::Utils::Freehand;
+    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure)));
+    m_boundingBox = m_path.boundingRect().normalized();
+
     setDirty(true);
 }
 
@@ -64,37 +49,16 @@ bool FreeformItem::intersects(const QRectF &rect)
     if (!boundingBox().intersects(rect))
         return false;
 
-    qsizetype pointsSize{m_points.size()};
-    if (pointsSize == 1) {
-        return rect.contains(m_points[0]);
-    }
-
-    QPointF p{rect.topLeft()};
-    QPointF q{rect.topRight()};
-    QPointF r{rect.bottomRight()};
-    QPointF s{rect.bottomLeft()};
-
-    for (qsizetype idx{0}; idx < pointsSize - 1; idx++) {
-        QLine l{m_points[idx].toPoint(), m_points[idx + 1].toPoint()};
-
-        if (Common::Utils::Math::intersects(l, QLineF{p, q}) || Common::Utils::Math::intersects(l, QLineF{q, r})
-            || Common::Utils::Math::intersects(l, QLineF{r, s}) || Common::Utils::Math::intersects(l, QLineF{s, q}) || rect.contains(m_points[idx].toPoint())
-            || rect.contains(m_points[idx + 1].toPoint()))
-            return true;
-    }
-
-    return false;
+    return m_path.intersects(rect);
 }
 
 bool FreeformItem::intersects(const QLineF &line)
 {
-    qsizetype pointSize{m_points.size()};
-    for (qsizetype index{1}; index < pointSize; index++) {
-        if (Common::Utils::Math::intersects(QLineF{m_points[index - 1], m_points[index]}, line)) {
-            return true;
-        }
-    }
-    return false;
+    QPainterPath linePath{};
+    linePath.moveTo(line.p1());
+    linePath.lineTo(line.p2());
+
+    return m_path.intersects(linePath);
 }
 
 void FreeformItem::draw(QPainter &painter, const QPointF &offset)
@@ -120,8 +84,10 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 
 void FreeformItem::erase(QPainter &painter, const QPointF &offset) const
 {
+    painter.save();
     painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
+    painter.restore();
 }
 
 QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
@@ -139,22 +105,19 @@ QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
 
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    const auto points = Common::Utils::Freehand::getStrokePoints(m_points, m_pressures);
-    const auto polygon = Common::Utils::Freehand::getStrokePolygon(points);
-
     painter.save();
     painter.translate(-offset);
-    painter.drawPolygon(polygon, Qt::WindingFill);
+    painter.drawPath(m_path);
 
     // UNCOMMENT TO SEE THE POLYGON'S STRUCTURE
-    // painter.setPen(Qt::red);
     // QFont ft{};
     // ft.setPixelSize(1);
     // painter.setFont(ft);
 
-    // int i = 0;
+    // QPen pen; pen.setWidthF(0.25); pen.setCapStyle(Qt::RoundCap); pen.setColor(Qt::red);
+    // painter.setPen(pen);
     // for (auto &pt : polygon) {
-    //     painter.drawText(pt, QString::asprintf("%d", i++));
+    //     painter.drawPoint(pt);
     // }
 
     // i = 0;
@@ -176,6 +139,9 @@ void FreeformItem::translate(const QPointF &amount)
     for (QPointF &point : m_points) {
         point += amount;
     }
+
+    using namespace Common::Utils::Freehand;
+    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure)));
 
     m_boundingBox.translate(amount);
 }
@@ -210,6 +176,16 @@ void FreeformItem::deserialize(const QJsonObject &obj)
 bool FreeformItem::needsCaching() const
 {
     return true;
+}
+
+bool FreeformItem::isPressureSimulated() const
+{
+    return m_simulatePressure;
+}
+
+void FreeformItem::setSimulatePressure(bool value)
+{
+    m_simulatePressure = value;
 }
 
 QDebug operator<<(QDebug d, const FreeformItem &t)

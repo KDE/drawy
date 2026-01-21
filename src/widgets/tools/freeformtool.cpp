@@ -100,6 +100,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
             curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
             curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
             curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
+            curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
 
             // add last point to ensure it looks continuous
             curItem->addPoint(prevItem->points().back(), prevItem->pressures().back());
@@ -138,6 +139,13 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         m_isDrawing = false;
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+    }
+}
+
+void FreeformTool::tablet([[maybe_unused]] ApplicationContext *context)
+{
+    if (curItem && curItem->isPressureSimulated()) {
+        curItem->setSimulatePressure(false);
     }
 }
 

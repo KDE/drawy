@@ -1,6 +1,11 @@
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #pragma once
 
 #include <QList>
+#include <QPainterPath>
 #include <QPoint>
 #include <QPolygonF>
 #include <QtMath>
@@ -16,7 +21,7 @@ struct StrokePoint {
  * @brief: smoothness factor, the lower it is, the smoother the lines are but
  * they look more unnatural
  */
-inline constexpr qreal t = 0.575;
+inline constexpr qreal t = 0.375;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
 
@@ -26,28 +31,35 @@ inline constexpr qreal PI = 3.14592654;
  * @returns a QList of QPointF with the same number of points but with less
  * noise and smoother
  */
-QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures);
+[[nodiscard]] QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, bool simulatePressure);
 
 /**
  * @brief returns a polygon formed from a vector of stroke points
  * @param points a QList of StrokePoints
  * @returns a QList of QPointF
  */
-QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points);
+[[nodiscard]] QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points);
+
+/**
+ * @brief converts a stroke polygon to a smooth QPainterPath
+ * @param points a QList of QPointF
+ * @returns a QPainterPath
+ */
+[[nodiscard]] QPainterPath getStrokePath(const QList<QPointF> &points);
 
 /**
  * @brief get length of a vector represented as a QPointF
  * @param vector the vector as a QPointF
  * @returns qreal length of the vector
  */
-qreal length(const QPointF &vector);
+[[nodiscard]] qreal length(const QPointF &vector);
 
 /**
  * @brief normalizes a vector
  * @param vector the vector you want to normalize as a QPointF
  * @returns the normalized vector as a QPointF
  */
-QPointF unitVector(const QPointF &vector);
+[[nodiscard]] QPointF unitVector(const QPointF &vector);
 
 /**
  * @brief rotates a vector by an angle theta (radians)
@@ -55,7 +67,7 @@ QPointF unitVector(const QPointF &vector);
  * @param angle the angle by which you want to rotate it (radians)
  * @returns the rotated vector
  */
-QPointF rotateVector(const QPointF &vector, const qreal angle);
+[[nodiscard]] QPointF rotateVector(const QPointF &vector, const qreal angle);
 
 /**
  * @brief get angle between two vectors in radians
@@ -63,7 +75,7 @@ QPointF rotateVector(const QPointF &vector, const qreal angle);
  * @param vectorB second vector
  * @returns the angle between the vectors in radians
  */
-qreal angle(const QPointF &vectorA, const QPointF &vectorB);
+[[nodiscard]] qreal angle(const QPointF &vectorA, const QPointF &vectorB);
 
 /**
  * @brief get dot product of two vectors
@@ -71,7 +83,7 @@ qreal angle(const QPointF &vectorA, const QPointF &vectorB);
  * @param vectorB second vector
  * @returns dot product of the two vectors
  */
-qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB);
+[[nodiscard]] qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB);
 
 /**
  * @brief rotation direction of two vectors (cross product)
@@ -79,7 +91,7 @@ qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB);
  * @param vectorB second vector
  * @returns +1 if clockwise, -1 if anti-clockwise
  */
-int crossProduct(const QPointF &vectorA, const QPointF &vectorB);
+[[nodiscard]] int crossProduct(const QPointF &vectorA, const QPointF &vectorB);
 
 /**
  * @brief interpolate a point linearly between two points
@@ -88,5 +100,5 @@ int crossProduct(const QPointF &vectorA, const QPointF &vectorB);
  * @param dist distance to interpolate, also known as 't'
  * @returns QPointF, interpolated point
  */
-QPointF lerp(const QPointF &pointA, const QPointF &pointB, const qreal dist);
+[[nodiscard]] QPointF lerp(const QPointF &pointA, const QPointF &pointB, const qreal dist);
 }; // namespace Common::Utils::Freehand

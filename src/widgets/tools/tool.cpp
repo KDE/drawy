@@ -47,6 +47,9 @@ void Tool::mouseTripleClick([[maybe_unused]] ApplicationContext *context)
 void Tool::leave([[maybe_unused]] ApplicationContext *context)
 {
 }
+void Tool::tablet([[maybe_unused]] ApplicationContext *context)
+{
+}
 void Tool::cleanup()
 {
 }

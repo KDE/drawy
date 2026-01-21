@@ -28,6 +28,7 @@ public:
     virtual void mouseDoubleClick(ApplicationContext *context);
     virtual void mouseTripleClick(ApplicationContext *context);
     virtual void leave(ApplicationContext *context);
+    virtual void tablet(ApplicationContext *context);
 
     virtual void cleanup();
 

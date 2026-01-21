@@ -1,5 +1,10 @@
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #include "freehand.hpp"
 #include <algorithm>
+#include <iterator>
 #include <kstandardguiitem.h>
 #include <qbrush.h>
 #include <qbytearrayview.h>
@@ -8,7 +13,7 @@
 
 namespace Common::Utils::Freehand
 {
-QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures)
+QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, bool simulatePressure)
 {
     if (points.size() != pressures.size()) {
         throw new std::logic_error("Pressures and points list have different sizes");
@@ -36,7 +41,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
         if (dist < minDist)
             continue;
 
-        if (pressures[pos] == 1.0) {
+        if (simulatePressure) {
             result.push_back(StrokePoint{interpolated, std::max(minPressure, std::min(1.0, 1.0 - dist / distLim))});
         } else {
             result.push_back(StrokePoint{interpolated, pressures[pos]});
@@ -44,6 +49,26 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     }
 
     result.push_back(StrokePoint{points.back(), pressures.back()});
+
+    // smoothing out the pressures for a better result
+    qsizetype windowSize{5};
+    qreal pressureSum{};
+    for (qsizetype pos = 0; pos < windowSize; pos++) {
+        if (pos >= result.size())
+            break;
+
+        pressureSum += result[pos].pressure;
+    }
+
+    for (qsizetype pos = 0; pos < result.size(); pos++) {
+        if (pos >= windowSize) {
+            pressureSum += result[pos].pressure - result[pos - windowSize].pressure;
+            result[pos].pressure = pressureSum / static_cast<qreal>(windowSize);
+        } else {
+            result[pos].pressure = pressureSum / static_cast<qreal>(std::min(result.size(), windowSize));
+        }
+    }
+
     return result;
 }
 
@@ -75,10 +100,10 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
         const QPointF prevVector{cur.point - prev.point};
         const qreal curAngle{angle(vector, prevVector)};
         if (curAngle > PI / 2 && !polygon.empty()) {
-            QPointF radiusVector{rotateVector(unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness, -PI / 12)};
+            QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
 
             for (qreal delta = 0, step = 1.0 / 13; delta <= 1; delta += step) {
-                const QPointF point{QPointF{rotateVector(radiusVector, 5 * PI * delta / 6) + cur.point}};
+                const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + cur.point}};
                 polygon.push_back(point);
             }
 
@@ -89,31 +114,29 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
     };
 
     const auto insertRegularPoint =
-        [dist](const StrokePoint &cur, const StrokePoint &next, QList<QPointF> &polygon, const bool flip = false, const bool lrp = false) -> void {
-        const QPointF vector{next.point - cur.point};
+        [dist](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next, QList<QPointF> &polygon, const bool flip = false) -> void {
         const qreal thickness{dist * cur.pressure};
+        const QPointF vector{unitVector(next.point - cur.point)};
+        const QPointF prevVector{unitVector(cur.point - prev.point)};
 
-        QPointF perp{unitVector(QPointF{vector.y(), -vector.x()})};
+        QPointF lerped{lerp(vector, prevVector, dotProduct(vector, prevVector))};
+        QPointF perp{QPointF{lerped.y(), -lerped.x()}};
         if (flip) {
             perp *= -1;
         }
 
         const QPointF perpPoint{cur.point + perp * thickness};
-        if (lrp && !polygon.empty()) {
-            polygon.push_back(lerp(polygon.back(), perpPoint, 0.5));
-        } else {
-            polygon.push_back(perpPoint);
-        }
+        polygon.push_back(perpPoint);
     };
 
     // moving forwards
-    insertRegularPoint(points[0], points[1], polygonPoints, false);
+    insertRegularPoint(points[0], points[0], points[1], polygonPoints, false);
     for (qsizetype pos = 1; pos < points.size() - 1; pos++) {
         if (!insertCap(points[pos - 1], points[pos], points[pos + 1], polygonPoints)) {
-            insertRegularPoint(points[pos], points[pos + 1], polygonPoints, false, true);
+            insertRegularPoint(points[pos - 1], points[pos], points[pos + 1], polygonPoints, false);
         }
     }
-    insertRegularPoint(points.back(), *std::prev(points.end(), 2), polygonPoints, true);
+    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2), polygonPoints, true);
 
     // drawing the end cap
     {
@@ -125,13 +148,13 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
     }
 
     // moving backwards
-    insertRegularPoint(points.back(), *std::prev(points.end(), 2), polygonPoints, false);
+    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2), polygonPoints, false);
     for (qsizetype pos = points.size() - 2; pos >= 1; pos--) {
         if (!insertCap(points[pos + 1], points[pos], points[pos - 1], polygonPoints)) {
-            insertRegularPoint(points[pos], points[pos - 1], polygonPoints, false, true);
+            insertRegularPoint(points[pos + 1], points[pos], points[pos - 1], polygonPoints, false);
         }
     }
-    insertRegularPoint(points[0], points[1], polygonPoints, true);
+    insertRegularPoint(points[0], points[0], points[1], polygonPoints, true);
 
     // drawing the start cap
     {
@@ -143,6 +166,25 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
     }
 
     return polygonPoints;
+}
+
+QPainterPath getStrokePath(const QList<QPointF> &points)
+{
+    QPainterPath path{};
+    path.moveTo(points[0]);
+
+    for (qsizetype pos = 0; pos < points.size(); pos++) {
+        QPointF curPoint{points[pos]};
+        QPointF nextPoint{points[(pos + 1) % points.size()]};
+        QPointF midPoint{(curPoint + nextPoint) / 2.0};
+
+        path.quadTo(curPoint, midPoint);
+    }
+
+    path.closeSubpath();
+    path.setFillRule(Qt::WindingFill);
+
+    return path;
 }
 
 qreal length(const QPointF &point)
