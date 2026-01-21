@@ -17,6 +17,12 @@ ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
 
     auto layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins({});
+
+    auto startArrowButton{new ButtonActionsWidget(m_widget)};
+    auto endArrowButton{new ButtonActionsWidget(m_widget)};
+
+    layout->addWidget(startArrowButton);
+    layout->addWidget(endArrowButton);
     m_widget->hide();
 }
 
