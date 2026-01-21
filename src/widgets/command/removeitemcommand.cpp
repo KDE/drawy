@@ -6,7 +6,6 @@
 
 #include <utility>
 
-#include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -30,7 +29,7 @@ void RemoveItemCommand::execute(ApplicationContext *context)
     auto &selectedItems{context->selectionContext()->selectedItems()};
     auto &itemCache{context->renderingContext()->itemCache()};
 
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         selectedItems.erase(item);
@@ -46,7 +45,7 @@ void RemoveItemCommand::undo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
-    for (auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
         quadtree.insertItem(item, false);
