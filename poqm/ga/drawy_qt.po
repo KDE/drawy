@@ -452,20 +452,20 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:320
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:323
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
 msgctxt "QObject|"
 msgid "Save File"
 msgstr ""
@@ -495,9 +495,14 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:20
+#: widgets/properties/widgets/alignmentwidget.cpp:25
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
+msgstr ""
+
+#: widgets/properties/widgets/arrowstylewidget.cpp:25
+msgctxt "ArrowStyleWidget|"
+msgid "Arrow"
 msgstr ""
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
@@ -555,6 +560,31 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr ""
 
+#: widgets/properties/widgets/zorderwidget.cpp:35
+msgctxt "ZOrderWidget|"
+msgid "Move on Top"
+msgstr ""
+
+#: widgets/properties/widgets/zorderwidget.cpp:36
+msgctxt "ZOrderWidget|"
+msgid "Move Up"
+msgstr ""
+
+#: widgets/properties/widgets/zorderwidget.cpp:37
+msgctxt "ZOrderWidget|"
+msgid "Move Down"
+msgstr ""
+
+#: widgets/properties/widgets/zorderwidget.cpp:38
+msgctxt "ZOrderWidget|"
+msgid "Move on Bottom"
+msgstr ""
+
+#: widgets/properties/widgets/zorderwidget.cpp:66
+msgctxt "ZOrderWidget|"
+msgid "Z-order"
+msgstr ""
+
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
@@ -605,22 +635,22 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr ""
 
-#: widgets/window/window.cpp:76
+#: widgets/window/window.cpp:84
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr ""
 
-#: widgets/window/window.cpp:77
+#: widgets/window/window.cpp:85
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr ""
 
-#: widgets/window/window.cpp:78
+#: widgets/window/window.cpp:86
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr ""
 
-#: widgets/window/window.cpp:79
+#: widgets/window/window.cpp:87
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2026-01-18 12:38+0100\n"
+"PO-Revision-Date: 2026-01-21 00:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -155,17 +155,14 @@ msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #: widgets/jobs/restoreautosavejob.cpp:48
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "RestoreAutoSaveJob|"
 msgid "Do you want to restore autosave file?"
-msgstr "¿Quiere cerrar?"
+msgstr "¿Quiere restaurar el archivo guardado automáticamente?"
 
 #: widgets/jobs/restoreautosavejob.cpp:49
 msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
-msgstr ""
+msgstr "Restaurar"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
@@ -462,20 +459,20 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Mayúsculas+G"
 
-#: widgets/keybindings/actionmanager.cpp:320
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sin título.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guardar archivo"
@@ -505,10 +502,18 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acciones"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:20
+#: widgets/properties/widgets/alignmentwidget.cpp:25
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Alineación"
+
+#: widgets/properties/widgets/arrowstylewidget.cpp:25
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Arrow"
+msgctxt "ArrowStyleWidget|"
+msgid "Arrow"
+msgstr "Flecha"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
@@ -565,6 +570,43 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Grosor"
 
+#: widgets/properties/widgets/zorderwidget.cpp:35
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move on Top"
+msgstr "Herramienta de mover"
+
+#: widgets/properties/widgets/zorderwidget.cpp:36
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Move"
+msgctxt "ZOrderWidget|"
+msgid "Move Up"
+msgstr "Mover"
+
+#: widgets/properties/widgets/zorderwidget.cpp:37
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move Down"
+msgstr "Herramienta de mover"
+
+#: widgets/properties/widgets/zorderwidget.cpp:38
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move on Bottom"
+msgstr "Herramienta de mover"
+
+#: widgets/properties/widgets/zorderwidget.cpp:66
+msgctxt "ZOrderWidget|"
+msgid "Z-order"
+msgstr ""
+
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
@@ -615,28 +657,22 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Herramienta de texto"
 
-#: widgets/window/window.cpp:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
+#: widgets/window/window.cpp:84
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
-msgstr "¿Quiere cerrar?"
+msgstr "¿Quiere guardar el archivo?"
 
-#: widgets/window/window.cpp:77
+#: widgets/window/window.cpp:85
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Cerrar"
 
-#: widgets/window/window.cpp:78
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
+#: widgets/window/window.cpp:86
 msgctxt "MainWindow|"
 msgid "Save And Close"
-msgstr "Guardar en archivo"
+msgstr "Guardar y cerrar"
 
-#: widgets/window/window.cpp:79
+#: widgets/window/window.cpp:87
 msgctxt "MainWindow|"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"

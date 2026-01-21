@@ -150,17 +150,14 @@ msgid "Fullscreen"
 msgstr "სრულ ეკრანზე"
 
 #: widgets/jobs/restoreautosavejob.cpp:48
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "RestoreAutoSaveJob|"
 msgid "Do you want to restore autosave file?"
-msgstr "გნებავთ დახურვა?"
+msgstr "გნებავთ ფაილის ავტოშენახვის აღდგენა?"
 
 #: widgets/jobs/restoreautosavejob.cpp:49
 msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
-msgstr ""
+msgstr "აღდგენა"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
@@ -457,20 +454,20 @@ msgctxt "ActionManager|keybinding for the ungroup action"
 msgid "Ctrl+Shift+G"
 msgstr "Ctrl+Shift+G"
 
-#: widgets/keybindings/actionmanager.cpp:320
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
@@ -500,10 +497,18 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "ქმედებები"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:20
+#: widgets/properties/widgets/alignmentwidget.cpp:25
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "სწორება"
+
+#: widgets/properties/widgets/arrowstylewidget.cpp:25
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Arrow"
+msgctxt "ArrowStyleWidget|"
+msgid "Arrow"
+msgstr "ისარი"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 msgctxt "BackgroundColorWidget|"
@@ -560,6 +565,43 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "სისქე"
 
+#: widgets/properties/widgets/zorderwidget.cpp:35
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move on Top"
+msgstr "გადატანის ხელსაწყო"
+
+#: widgets/properties/widgets/zorderwidget.cpp:36
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Move"
+msgctxt "ZOrderWidget|"
+msgid "Move Up"
+msgstr "გადატანა"
+
+#: widgets/properties/widgets/zorderwidget.cpp:37
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move Down"
+msgstr "გადატანის ხელსაწყო"
+
+#: widgets/properties/widgets/zorderwidget.cpp:38
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "ZOrderWidget|"
+msgid "Move on Bottom"
+msgstr "გადატანის ხელსაწყო"
+
+#: widgets/properties/widgets/zorderwidget.cpp:66
+msgctxt "ZOrderWidget|"
+msgid "Z-order"
+msgstr ""
+
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
 msgid "Arrow Tool"
@@ -610,28 +652,22 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/window/window.cpp:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
+#: widgets/window/window.cpp:84
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
-msgstr "გნებავთ დახურვა?"
+msgstr "გსურთ ფაილის შენახვა?"
 
-#: widgets/window/window.cpp:77
+#: widgets/window/window.cpp:85
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "დახურვა"
 
-#: widgets/window/window.cpp:78
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
+#: widgets/window/window.cpp:86
 msgctxt "MainWindow|"
 msgid "Save And Close"
-msgstr "ფაილში შენახვა"
+msgstr "შენახვა და დახურვა"
 
-#: widgets/window/window.cpp:79
+#: widgets/window/window.cpp:87
 msgctxt "MainWindow|"
 msgid "Ignore"
-msgstr ""
+msgstr "იგნორი"
