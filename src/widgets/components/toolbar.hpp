@@ -28,7 +28,6 @@ Q_SIGNALS:
     void toolChanged(Tool &);
 
 private:
-    void createButtons() const;
     void onToolChanged(int id);
     QButtonGroup *const m_group;
     QHBoxLayout *const m_layout;

@@ -81,7 +81,6 @@ private:
     [[nodiscard]] static QTextOption getTextOptions();
     constexpr static int getTextFlags();
 
-    void renderBoundingBox(QPainter &painter) const;
     void updateBoundingBox();
 
     QString m_text;
