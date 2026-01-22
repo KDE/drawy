@@ -252,6 +252,10 @@ target_sources(
         jobs/restoreautosavejob.cpp
         jobs/loadjobutil.hpp
         jobs/loadjobutil.cpp
+        dialog/configuresettingsdialog.cpp
+        dialog/configuresettingsdialog.hpp
+        dialog/configuregeneralwidget.hpp
+        dialog/configuregeneralwidget.cpp
         libdrawywidgets_private_export.h
 )
 
