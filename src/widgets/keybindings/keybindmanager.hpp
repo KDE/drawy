@@ -5,8 +5,8 @@
 #pragma once
 
 #include <QKeySequence>
+#include <QMap>
 #include <QShortcut>
-#include <unordered_map>
 
 #include "action.hpp"
 
@@ -15,10 +15,10 @@ class KeybindManager : public QObject
 public:
     explicit KeybindManager(QObject *parent);
 
-    void addKeybinding(Action *action, const QString &sequence);
+    void addKeybinding(Action *action, const QKeySequence &sequence);
     void setEnabled(bool enabled);
 
 private:
-    std::unordered_map<QString, QShortcut *> m_keyToShortcut;
-    std::unordered_map<QString, Action *> m_keyToAction;
+    QMap<QKeySequence, QShortcut *> m_keyToShortcut;
+    QMap<QKeySequence, Action *> m_keyToAction;
 };

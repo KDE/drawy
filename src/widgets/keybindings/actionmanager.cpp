@@ -171,27 +171,27 @@ ActionManager::ActionManager(ApplicationContext *context)
                                       },
                                       context}};
 
-    keybindManager->addKeybinding(undoAction, tr("Ctrl+Z", "keybinding for the undo action"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Y", "keybinding for the redo action"));
-    keybindManager->addKeybinding(redoAction, tr("Ctrl+Shift+Z", "keybinding for the redo action"));
-    keybindManager->addKeybinding(zoomInAction, tr("Ctrl++", "keybinding for the zoom in action"));
-    keybindManager->addKeybinding(zoomOutAction, tr("Ctrl+-", "keybinding for the zoom out action"));
-    keybindManager->addKeybinding(textToolAction, tr("T", "keybinding for the text tool"));
-    keybindManager->addKeybinding(freeformToolAction, tr("P", "keybinding for the freeform drawing tool"));
-    keybindManager->addKeybinding(freeformToolAction, tr("B", "keybinding for the freeform drawing tool"));
-    keybindManager->addKeybinding(eraserToolAction, tr("E", "keybinding for the eraser tool"));
-    keybindManager->addKeybinding(selectionToolAction, tr("S", "keybinding for the selection tool"));
-    keybindManager->addKeybinding(rectangleToolAction, tr("R", "keybinding for the rectangle drawing tool"));
-    keybindManager->addKeybinding(ellipseToolAction, tr("O", "keybinding for the ellipse drawing tool"));
-    keybindManager->addKeybinding(lineToolAction, tr("L", "keybinding for the line drawing tool"));
-    keybindManager->addKeybinding(arrowToolAction, tr("A", "keybinding for the arrow drawing tool"));
-    keybindManager->addKeybinding(moveToolAction, tr("M", "keybinding for the move tool"));
-    keybindManager->addKeybinding(selectAllAction, tr("Ctrl+A", "keybinding for the select all action"));
-    keybindManager->addKeybinding(deleteAction, tr("Del", "keybinding for the delete action"));
-    keybindManager->addKeybinding(saveAction, tr("Ctrl+S", "keybinding for the save action"));
-    keybindManager->addKeybinding(openFileAction, tr("Ctrl+O", "keybinding for the open file action"));
-    keybindManager->addKeybinding(groupAction, tr("Ctrl+G", "keybinding for the group action"));
-    keybindManager->addKeybinding(unGroupAction, tr("Ctrl+Shift+G", "keybinding for the ungroup action"));
+    keybindManager->addKeybinding(undoAction, QKeySequence(QKeySequence::Undo));
+    keybindManager->addKeybinding(redoAction, QKeySequence(QKeySequence::Undo));
+    keybindManager->addKeybinding(redoAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_Z)));
+    keybindManager->addKeybinding(zoomInAction, QKeySequence(QKeySequence::ZoomIn));
+    keybindManager->addKeybinding(zoomOutAction, QKeySequence(QKeySequence::ZoomOut));
+    keybindManager->addKeybinding(textToolAction, QKeySequence(QKeyCombination(Qt::Key_T)));
+    keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_P)));
+    keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_B)));
+    keybindManager->addKeybinding(eraserToolAction, QKeySequence(QKeyCombination(Qt::Key_E)));
+    keybindManager->addKeybinding(selectionToolAction, QKeySequence(QKeyCombination(Qt::Key_S)));
+    keybindManager->addKeybinding(rectangleToolAction, QKeySequence(QKeyCombination(Qt::Key_R)));
+    keybindManager->addKeybinding(ellipseToolAction, QKeySequence(QKeyCombination(Qt::Key_O)));
+    keybindManager->addKeybinding(lineToolAction, QKeySequence(QKeyCombination(Qt::Key_L)));
+    keybindManager->addKeybinding(arrowToolAction, QKeySequence(QKeyCombination(Qt::Key_A)));
+    keybindManager->addKeybinding(moveToolAction, QKeySequence(QKeyCombination(Qt::Key_M)));
+    keybindManager->addKeybinding(selectAllAction, QKeySequence(QKeySequence::SelectAll));
+    keybindManager->addKeybinding(deleteAction, QKeySequence(QKeySequence::Delete));
+    keybindManager->addKeybinding(saveAction, QKeySequence(QKeySequence::Save));
+    keybindManager->addKeybinding(openFileAction, QKeySequence(QKeySequence::Open));
+    keybindManager->addKeybinding(groupAction, QKeySequence(QKeyCombination(Qt::Key_G)));
+    keybindManager->addKeybinding(unGroupAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G)));
 }
 
 void ActionManager::undo()
