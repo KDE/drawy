@@ -13,7 +13,7 @@
 
 namespace Common::Utils::Freehand
 {
-QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, bool simulatePressure)
+QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure)
 {
     if (points.size() != pressures.size()) {
         throw new std::logic_error("Pressures and points list have different sizes");
@@ -72,14 +72,14 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     return result;
 }
 
-QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
+QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal thickness)
 {
     if (points.empty()) {
         return {};
     }
 
     QList<QPointF> polygonPoints{};
-    const qreal dist{5};
+    const qreal dist{thickness};
 
     // if there is only one point, draw a circle
     if (points.size() == 1) {
@@ -90,6 +90,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points)
         }
         return polygonPoints;
     }
+
+    QList<QPointF> leftPoints{}, rightPoints{};
 
     // we do this twice so it's better to turn this into a lambda
     const auto insertCap = [dist](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next, QList<QPointF> &polygon) -> bool {

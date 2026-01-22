@@ -19,6 +19,7 @@
 #include "item/freeform.hpp"
 #include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <iterator>
 #include <qnamespace.h>
 
 FreeformTool::FreeformTool()
@@ -54,6 +55,7 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
+        auto renderingContext{context->renderingContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
         curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
@@ -63,8 +65,11 @@ void FreeformTool::mousePressed(ApplicationContext *context)
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
 
         m_lastPoint = uiContext->appEvent()->pos();
+        m_itemList.clear();
 
         curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext->appEvent()->pressure());
+        m_currentCache = QPixmap{renderingContext->canvas()->dimensions()};
+        m_currentCache.fill(Qt::transparent);
 
         m_isDrawing = true;
     }
@@ -86,16 +91,30 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         if (dist < FreeformItem::minPointDistance())
             return;
 
-        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
-        // Split the stroke if there are too many points which makes it
-        // expensive to render
-        if (curItem->points().size() >= Common::maxFreeformPointCount) {
+        const qreal zoom{renderingContext->zoomFactor()};
+
+        // PERF: We are re-drawing the current stroke on every point insertion. This means
+        // if the number of points in the stroke are a lot, rendering would be very slow it would start to lag.
+        // To workaround this, we are making sure that the total number of points each stroke has will never exceed
+        // a certain number. The more you zoom in, the less number of points your stroke can have. This is because
+        // when zoomed in, you need to draw more pixels, which means more computation, which is slower.
+        // This means if you have opacity set to something lower than 100%, you will see intersection points
+        // after each split occurs. The only real fix that I can think of is introducing hardware acceleration and
+        // offloading the rendering part to the GPU but Qt does not have good support for that so we might be stuck :<
+        // See: https://invent.kde.org/graphics/drawy/-/merge_requests/171
+        const qsizetype maxPointsPerStroke{
+            std::min(Common::maxFreeformPointCount, std::max(static_cast<int>(Common::maxFreeformPointCount / zoom), Common::minFreeformPointCount))};
+        if (curItem->points().size() >= maxPointsPerStroke) {
             std::shared_ptr<FreeformItem> prevItem{curItem};
+            m_itemList.push_back(prevItem);
 
-            QList<std::shared_ptr<Item>> itemList{prevItem};
-            spatialContext->commandHistory()->insert(std::make_shared<InsertItemCommand>(itemList));
+            // draw temporarily on canvas
+            renderingContext->canvas()->paintCanvas([&](QPainter &painter) -> void {
+                painter.scale(zoom, zoom);
+                prevItem->draw(painter, spatialContext->offsetPos());
+            });
 
-            renderingContext->markForRender();
+            renderingContext->markForUpdate();
 
             curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
             curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
@@ -106,12 +125,12 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
             curItem->addPoint(prevItem->points().back(), prevItem->pressures().back());
         }
 
-        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent().pressure());
-        const qreal zoom{renderingContext->zoomFactor()};
+        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
+        // clear the overlay and draw again
+        renderingContext->canvas()->setOverlayBg(renderingContext->canvas()->overlayBg());
         renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);
-            curItem->erase(painter, spatialContext->offsetPos());
             curItem->draw(painter, spatialContext->offsetPos());
         });
 
@@ -131,10 +150,11 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
-        QList<std::shared_ptr<Item>> itemList{curItem};
-        commandHistory->insert(std::make_shared<InsertItemCommand>(itemList));
+        m_itemList.push_back(curItem);
+        commandHistory->insert(std::make_shared<InsertItemCommand>(m_itemList));
 
         curItem.reset();
+        m_currentCache = QPixmap{};
 
         m_isDrawing = false;
         renderingContext->markForRender();
@@ -152,7 +172,12 @@ void FreeformTool::tablet([[maybe_unused]] ApplicationContext *context)
 void FreeformTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
+<<<<<<< HEAD
     context->uiContext()->appEvent()->setButton(Qt::LeftButton);
+=======
+    context->uiContext()->appEvent().setButton(Qt::LeftButton);
+    m_itemList.clear();
+>>>>>>> 540e8e6 (perf: workaround performance issues when drawing large strokes)
     mouseReleased(context);
 }
 

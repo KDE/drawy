@@ -26,5 +26,8 @@ public:
 
 private:
     std::shared_ptr<FreeformItem> curItem{};
+    QList<std::shared_ptr<Item>> m_itemList{};
+
+    QPixmap m_currentCache{};
     QPointF m_lastPoint{};
 };

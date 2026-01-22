@@ -51,12 +51,6 @@ protected:
     QList<qreal> m_pressures{};
 
 private:
-    [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT QPointF optimizePoint(const QPointF &newPoint);
-
-    std::deque<QPointF> m_currentWindow;
-    QPointF m_currentWindowSum{0, 0};
-    std::size_t m_bufferSize{7};
-
     bool m_simulatePressure{true};
     QPainterPath m_path{};
 };

@@ -31,14 +31,14 @@ inline constexpr qreal PI = 3.14592654;
  * @returns a QList of QPointF with the same number of points but with less
  * noise and smoother
  */
-[[nodiscard]] QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, bool simulatePressure);
+[[nodiscard]] QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure);
 
 /**
  * @brief returns a polygon formed from a vector of stroke points
  * @param points a QList of StrokePoints
  * @returns a QList of QPointF
  */
-[[nodiscard]] QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points);
+[[nodiscard]] QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal thickness);
 
 /**
  * @brief converts a stroke polygon to a smooth QPainterPath

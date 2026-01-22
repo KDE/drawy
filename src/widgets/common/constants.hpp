@@ -32,7 +32,8 @@ inline constexpr QColor darkForegroundColor{211, 211, 211};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int eraseItemOpacity{50};
 
-inline constexpr int maxFreeformPointCount{500}; // max number of points per freeform
+inline constexpr int maxFreeformPointCount{250}; // max number of points per freeform
+inline constexpr int minFreeformPointCount{50}; // min number of points per freeform
 
 inline constexpr int boundingBoxPadding{10}; // in pixels
 
@@ -49,7 +50,7 @@ inline constexpr int doubleClickInterval{300}; // milliseconds
 inline constexpr qreal tabStopDistance{4};
 
 inline constexpr qreal zoomOutLimit{0.1}; // 10%
-inline constexpr qreal zoomInLimit{100}; // 100% * 10 = 1000% zoom
+inline constexpr qreal zoomInLimit{30}; // 100% * 30 = 3000% zoom
 inline constexpr qreal zoomMultiplier{1.1}; // it's standard practice to multiply/divide by 1.1 when zooming
 inline constexpr int zoomRenderWaitTime{250}; // milliseconds
 

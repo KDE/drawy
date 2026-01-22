@@ -33,12 +33,15 @@ int FreeformItem::minPointDistance()
 
 void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 {
-    QPointF newPoint{point};
-    m_points.push_back(newPoint);
+    m_points.push_back(point);
     m_pressures.push_back(pressure);
 
     using namespace Common::Utils::Freehand;
-    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure)));
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+
+    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure), thickness));
+    m_path.setCachingEnabled(true);
+
     m_boundingBox = m_path.boundingRect().normalized();
 
     setDirty(true);
@@ -77,7 +80,6 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 
     painter.setBrush(color);
     painter.setPen(pen);
-    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     drawItem(painter, offset);
 }
@@ -90,19 +92,6 @@ void FreeformItem::erase(QPainter &painter, const QPointF &offset) const
     painter.restore();
 }
 
-QPointF FreeformItem::optimizePoint(const QPointF &newPoint)
-{
-    m_currentWindow.push_back(newPoint);
-    m_currentWindowSum += newPoint;
-
-    if (m_currentWindow.size() > m_bufferSize) {
-        m_currentWindowSum -= m_currentWindow.front();
-        m_currentWindow.pop_front();
-    }
-
-    return m_currentWindowSum / static_cast<qreal>(m_currentWindow.size());
-}
-
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.save();
@@ -113,6 +102,10 @@ void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
     // QFont ft{};
     // ft.setPixelSize(1);
     // painter.setFont(ft);
+
+    // using namespace Common::Utils::Freehand;
+    // const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+    // const auto polygon = getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure), thickness);
 
     // QPen pen; pen.setWidthF(0.25); pen.setCapStyle(Qt::RoundCap); pen.setColor(Qt::red);
     // painter.setPen(pen);
@@ -141,7 +134,8 @@ void FreeformItem::translate(const QPointF &amount)
     }
 
     using namespace Common::Utils::Freehand;
-    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure)));
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure), thickness));
 
     m_boundingBox.translate(amount);
 }
