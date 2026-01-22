@@ -7,7 +7,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 ButtonActionsWidget::ButtonActionsWidget(QWidget *parent)
-    : QPushButton(parent)
+    : QToolButton(parent)
 {
     setProperty("class", u"drawyPropertyBarActionButton"_s);
 }

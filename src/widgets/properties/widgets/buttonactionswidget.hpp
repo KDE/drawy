@@ -6,9 +6,9 @@
 #pragma once
 
 #include "libdrawywidgets_private_export.h"
-#include <QPushButton>
+#include <QToolButton>
 
-class LIBDRAWYWIDGETS_TESTS_EXPORT ButtonActionsWidget : public QPushButton
+class LIBDRAWYWIDGETS_TESTS_EXPORT ButtonActionsWidget : public QToolButton
 {
     Q_OBJECT
 public:
