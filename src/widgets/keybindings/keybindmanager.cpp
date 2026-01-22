@@ -26,7 +26,7 @@ void KeybindManager::addKeybinding(Action *action, const QString &sequence)
 
 void KeybindManager::setEnabled(bool enabled)
 {
-    for (auto &keyShortcutPair : m_keyToShortcut) {
+    for (const auto &keyShortcutPair : std::as_const(m_keyToShortcut)) {
         keyShortcutPair.second->setEnabled(enabled);
     }
 }
