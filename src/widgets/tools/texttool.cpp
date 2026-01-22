@@ -91,7 +91,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
         context->selectionContext()->selectedItems() = {m_curItem};
         m_curItem->setMode(TextItem::Mode::Edit);
-        uiContext->keybindManager()->disable();
+        uiContext->keybindManager()->setEnabled(false);
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();
@@ -233,7 +233,7 @@ void TextTool::keyPressed(ApplicationContext *context)
 
     if (ev.key() == Qt::Key_Escape) {
         m_curItem->setMode(TextItem::Mode::Normal);
-        context->uiContext()->keybindManager()->enable();
+        context->uiContext()->keybindManager()->setEnabled(true);
         m_curItem = nullptr;
 
         context->renderingContext()->cacheGrid().markAllDirty();
@@ -474,7 +474,7 @@ void TextTool::cleanup()
     renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
 
     // enable keybindings again
-    uiContext->keybindManager()->enable();
+    uiContext->keybindManager()->setEnabled(true);
 
     if (m_curItem->text().isEmpty()) {
         quadTree.deleteItem(m_curItem);

@@ -24,16 +24,9 @@ void KeybindManager::addKeybinding(Action *action, const QString &sequence)
     connect(shortcut, &QShortcut::activated, action, &Action::run);
 }
 
-void KeybindManager::disable()
+void KeybindManager::setEnabled(bool enabled)
 {
     for (auto &keyShortcutPair : m_keyToShortcut) {
-        keyShortcutPair.second->setEnabled(false);
-    }
-}
-
-void KeybindManager::enable()
-{
-    for (auto &keyShortcutPair : m_keyToShortcut) {
-        keyShortcutPair.second->setEnabled(true);
+        keyShortcutPair.second->setEnabled(enabled);
     }
 }

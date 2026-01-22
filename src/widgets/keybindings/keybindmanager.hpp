@@ -16,9 +16,7 @@ public:
     explicit KeybindManager(QObject *parent);
 
     void addKeybinding(Action *action, const QString &sequence);
-    void removeKeybinding(QKeySequence sequence);
-    void disable();
-    void enable();
+    void setEnabled(bool enabled);
 
 private:
     std::unordered_map<QString, QShortcut *> m_keyToShortcut;
