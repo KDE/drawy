@@ -10,8 +10,8 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_debug.h"
 #include "item/item.hpp"
-#include <qlogging.h>
 
 void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRectF &queryRegion, const QPointF &offset)
 {
@@ -81,7 +81,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
 void ItemCache::clearItemCache(const std::shared_ptr<Item> &item)
 {
     m_cacheGrids.erase(item);
-    qDebug() << "DELETING CACHE";
+    qCDebug(DRAWY_LOG) << "DELETING CACHE";
 }
 
 void ItemCache::clear()
