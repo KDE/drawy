@@ -8,7 +8,7 @@
 #include <QCommandLineParser>
 
 #include "config-drawy.hpp"
-#include "drawycommandlineparser.h"
+#include "drawycommandlineparser.hpp"
 #include "window/window.hpp"
 
 // signal handler for SIGINT & SIGTERM

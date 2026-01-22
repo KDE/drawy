@@ -5,7 +5,7 @@
  */
 
 #include "drawycommandlineparsertest.hpp"
-#include "drawycommandlineparser.h"
+#include "drawycommandlineparser.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(DrawyCommandLineParserTest)
 using namespace Qt::Literals::StringLiterals;

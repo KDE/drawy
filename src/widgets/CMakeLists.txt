@@ -188,7 +188,7 @@ target_sources(
         window/window.hpp
         resources/res.qrc
         resources/style.qss
-        drawycommandlineparser.h
+        drawycommandlineparser.hpp
         drawycommandlineparser.cpp
         serializer/itemserializer.hpp
         serializer/itemserializer.cpp
