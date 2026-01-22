@@ -51,7 +51,7 @@ void FreeformTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->appEvent().button() == Qt::LeftButton) {
+    if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
@@ -61,9 +61,9 @@ void FreeformTool::mousePressed(ApplicationContext *context)
         curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
 
-        m_lastPoint = uiContext->appEvent().pos();
+        m_lastPoint = uiContext->appEvent()->pos();
 
-        curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext->appEvent().pressure());
+        curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext->appEvent()->pressure());
 
         m_isDrawing = true;
     }
@@ -77,7 +77,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         auto uiContext{context->uiContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
-        QPointF curPoint{uiContext->appEvent().pos()};
+        QPointF curPoint{uiContext->appEvent()->pos()};
 
         // distance between the two points in the "view" coordinate system
         double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
@@ -85,7 +85,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         if (dist < FreeformItem::minPointDistance())
             return;
 
-        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent().pressure());
+        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
         const qreal zoom{renderingContext->zoomFactor()};
 
@@ -103,7 +103,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->appEvent().button() == Qt::LeftButton && m_isDrawing) {
+    if (uiContext->appEvent()->button() == Qt::LeftButton && m_isDrawing) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
@@ -124,7 +124,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 void FreeformTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    context->uiContext()->appEvent().setButton(Qt::LeftButton);
+    context->uiContext()->appEvent()->setButton(Qt::LeftButton);
     mouseReleased(context);
 }
 

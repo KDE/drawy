@@ -166,9 +166,9 @@ PropertyManager *UIContext::propertyManager() const
     return m_propertyManager;
 }
 
-Event &UIContext::appEvent() const
+Event *UIContext::appEvent() const
 {
-    return *m_event;
+    return m_event;
 }
 
 IconManager *UIContext::iconManager() const

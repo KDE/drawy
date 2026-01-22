@@ -22,11 +22,11 @@
 
 bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 {
-    auto *uiContext{context->uiContext()};
-    auto &event{uiContext->appEvent()};
+    auto uiContext{context->uiContext()};
+    auto event{uiContext->appEvent()};
 
-    if (event.button() == Qt::LeftButton) {
-        m_lastPos = uiContext->appEvent().pos();
+    if (event->button() == Qt::LeftButton) {
+        m_lastPos = uiContext->appEvent()->pos();
 
         auto spatialContext{context->spatialContext()};
         auto selectionContext{context->selectionContext()};
@@ -42,7 +42,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         const auto &selectedItems{selectionContext->selectedItems()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        if (!(event.modifiers() & Qt::ShiftModifier)) {
+        if (!(event->modifiers() & Qt::ShiftModifier)) {
             QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
             commandHistory->insert(std::make_shared<DeselectCommand>(items));
         }
@@ -51,7 +51,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             m_isActive = true;
         } else {
             auto &item{intersectingItems.back()};
-            if ((event.modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+            if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
                 // deselect the item if selected
                 commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
             } else {
@@ -88,7 +88,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 
     renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
-    const QPointF curPos{uiContext->appEvent().pos()};
+    const QPointF curPos{uiContext->appEvent()->pos()};
 
     const QRectF selectionBox{m_lastPos, curPos};
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};

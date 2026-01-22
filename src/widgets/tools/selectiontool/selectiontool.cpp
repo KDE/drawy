@@ -55,10 +55,10 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     auto uiContext{context->uiContext()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent().pos())};
+    QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
     // TODO: Implement resizing and rotation as well
-    if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->appEvent().modifiers() & Qt::ShiftModifier)) {
+    if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     } else {
         return m_curState = m_selectState;
@@ -71,16 +71,16 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     if (selectedItems.empty())
         return;
 
-    auto &event{context->uiContext()->appEvent()};
+    auto event{context->uiContext()->appEvent()};
     auto commandHistory{context->spatialContext()->commandHistory()};
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
-    if (event.modifiers() & Qt::ShiftModifier)
+    if (event->modifiers() & Qt::ShiftModifier)
         delta = Common::shiftTranslationDelta;
 
     bool updated{true};
-    switch (event.key()) {
+    switch (event->key()) {
     case Qt::Key_Left:
         commandHistory->insert(std::make_shared<MoveItemCommand>(items, QPoint{-delta, 0}));
         break;

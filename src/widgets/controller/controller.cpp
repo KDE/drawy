@@ -57,13 +57,13 @@ void Controller::mousePressed(QMouseEvent *event)
         m_mouseMoved = false;
     }
 
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas->scale());
-    contextEvent.setButton(event->button());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->pos(), canvas->scale());
+    contextEvent->setButton(event->button());
+    contextEvent->setModifiers(event->modifiers());
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = true;
@@ -75,32 +75,32 @@ void Controller::mousePressed(QMouseEvent *event)
     toolBar->curTool().mousePressed(m_context);
 
     if (event->type() != QEvent::TabletPress) {
-        contextEvent.setPressure(1.0);
+        contextEvent->setPressure(1.0);
     }
 }
 
 void Controller::mouseDoubleClick(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas->scale());
-    contextEvent.setButton(event->button());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->pos(), canvas->scale());
+    contextEvent->setButton(event->button());
+    contextEvent->setModifiers(event->modifiers());
 
     toolBar->curTool().mouseDoubleClick(m_context);
 }
 
 void Controller::mouseTripleClick(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas->scale());
-    contextEvent.setButton(event->button());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->pos(), canvas->scale());
+    contextEvent->setButton(event->button());
+    contextEvent->setModifiers(event->modifiers());
 
     toolBar->curTool().mouseTripleClick(m_context);
 }
@@ -109,13 +109,13 @@ void Controller::mouseMoved(QMouseEvent *event)
 {
     m_mouseMoved = true;
 
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas->scale());
-    contextEvent.setButton(event->button());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->pos(), canvas->scale());
+    contextEvent->setButton(event->button());
+    contextEvent->setModifiers(event->modifiers());
 
     if (m_movingWithMiddleClick) {
         toolBar->tool(Tool::Type::Move).mouseMoved(m_context);
@@ -127,13 +127,13 @@ void Controller::mouseMoved(QMouseEvent *event)
 
 void Controller::mouseReleased(QMouseEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
 
-    contextEvent.setPos(event->pos(), canvas->scale());
-    contextEvent.setButton(event->button());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->pos(), canvas->scale());
+    contextEvent->setButton(event->button());
+    contextEvent->setModifiers(event->modifiers());
 
     if (event->button() == Qt::MiddleButton) {
         m_movingWithMiddleClick = false;
@@ -147,32 +147,32 @@ void Controller::mouseReleased(QMouseEvent *event)
 
 void Controller::tablet(QTabletEvent *event)
 {
-    Event &ev{m_context->uiContext()->appEvent()};
+    auto ev{m_context->uiContext()->appEvent()};
 
     // TODO: Remove magic numbers
-    ev.setPressure(event->pressure() / 1.60 + 0.375);
+    ev->setPressure(event->pressure() / 1.60 + 0.375);
 }
 
 void Controller::keyPressed(QKeyEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
 
-    contextEvent.setKey(event->key());
-    contextEvent.setModifiers(event->modifiers());
-    contextEvent.setText(event->text());
+    contextEvent->setKey(event->key());
+    contextEvent->setModifiers(event->modifiers());
+    contextEvent->setText(event->text());
 
     toolBar->curTool().keyPressed(m_context);
 }
 
 void Controller::keyReleased(QKeyEvent *event)
 {
-    Event &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
 
-    contextEvent.setKey(event->key());
-    contextEvent.setModifiers(event->modifiers());
-    contextEvent.setText(event->text());
+    contextEvent->setKey(event->key());
+    contextEvent->setModifiers(event->modifiers());
+    contextEvent->setText(event->text());
 
     toolBar->curTool().keyReleased(m_context);
 }
@@ -217,11 +217,11 @@ void Controller::wheel(QWheelEvent *event)
 {
     const QPointF &offsetPos{m_context->spatialContext()->offsetPos()};
     auto canvas{m_context->renderingContext()->canvas()};
-    auto &contextEvent{m_context->uiContext()->appEvent()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
     const qreal zoomFactor{m_context->renderingContext()->zoomFactor()};
 
-    contextEvent.setPos(event->position().toPoint(), canvas->scale());
-    contextEvent.setModifiers(event->modifiers());
+    contextEvent->setPos(event->position().toPoint(), canvas->scale());
+    contextEvent->setModifiers(event->modifiers());
 
     if (event->modifiers() & Qt::ControlModifier) {
         if (m_zoomPixmap.isNull()) {
@@ -240,7 +240,7 @@ void Controller::wheel(QWheelEvent *event)
             return;
 
         m_zoomDelta += curDelta;
-        const QPointF &cursor{contextEvent.pos() / oldZoomFactor + m_zoomPixmapOffsetPos}; // converting to pixmap coordinates
+        const QPointF &cursor{contextEvent->pos() / oldZoomFactor + m_zoomPixmapOffsetPos}; // converting to pixmap coordinates
 
         // calculate new offset position based on cursor position
         m_zoomPixmapOffsetPos.setX(cursor.x() - (cursor.x() - m_zoomPixmapOffsetPos.x()) * oldZoomFactor / newZoomFactor);

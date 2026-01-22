@@ -43,13 +43,13 @@ void TextTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->appEvent().button() == Qt::LeftButton) {
+    if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
         auto renderingContext{context->renderingContext()};
         QuadTree &quadTree{spatialContext->quadtree()};
 
-        QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
+        QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->type() == Item::Type::Text && item->boundingBox().contains(point);
         })};
@@ -61,7 +61,7 @@ void TextTool::mousePressed(ApplicationContext *context)
                 m_curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
                 m_curItem->setProperty(Property::Type::FontSize, uiContext->propertyManager()->value(Property::Type::FontSize));
 
-                m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent().pos()));
+                m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
                 auto commandHistory{spatialContext->commandHistory()};
                 commandHistory->insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
@@ -109,7 +109,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     QuadTree &quadTree{spatialContext->quadtree()};
     m_mouseMoved = true;
 
-    QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
+    QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
     QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
         return item->type() == Item::Type::Text && item->boundingBox().contains(point);
     })};
@@ -180,7 +180,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto uiContext{context->uiContext()};
 
-        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
+        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
         const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
         const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
@@ -208,7 +208,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto uiContext{context->uiContext()};
 
-        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent().pos())};
+        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
         const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
         const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
@@ -229,9 +229,9 @@ void TextTool::keyPressed(ApplicationContext *context)
     if (!m_curItem)
         return;
 
-    Event &ev{context->uiContext()->appEvent()};
+    auto ev{context->uiContext()->appEvent()};
 
-    if (ev.key() == Qt::Key_Escape) {
+    if (ev->key() == Qt::Key_Escape) {
         m_curItem->setMode(TextItem::Mode::Normal);
         context->uiContext()->keybindManager()->setEnabled(true);
         m_curItem = nullptr;
@@ -247,31 +247,31 @@ void TextTool::keyPressed(ApplicationContext *context)
         qsizetype size{text.size()};
 
         auto handleDefaultCase = [&]() {
-            if (ev.text().isEmpty())
+            if (ev->text().isEmpty())
                 return;
 
             m_curItem->deleteSelection();
-            m_curItem->insertText(ev.text());
+            m_curItem->insertText(ev->text());
         };
 
         // FIXME: What the fuck
-        switch (ev.key()) {
+        switch (ev->key()) {
         case Qt::Key_Return:
         case Qt::Key_Enter:
             m_curItem->insertText(QStringLiteral("\n"));
             break;
         case Qt::Key_Left: {
             qsizetype newIndex{std::max(static_cast<qsizetype>(0), caret - 1)};
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 const qsizetype curPos{m_curItem->caret()};
 
-                if (ev.modifiers() & Qt::ShiftModifier) {
+                if (ev->modifiers() & Qt::ShiftModifier) {
                     qsizetype pos{m_curItem->selectionEnd()};
                     m_curItem->setSelectionEnd(m_curItem->getPrevBreak(pos == TextItem::INVALID ? curPos - 1 : pos - 1));
                 } else {
                     m_curItem->setCaret(m_curItem->getPrevBreak(curPos - 1));
                 }
-            } else if (ev.modifiers() & Qt::ShiftModifier) {
+            } else if (ev->modifiers() & Qt::ShiftModifier) {
                 const qsizetype selEnd{m_curItem->selectionEnd()};
                 m_curItem->setSelectionEnd(selEnd == -1 ? newIndex : selEnd - 1);
             } else {
@@ -281,16 +281,16 @@ void TextTool::keyPressed(ApplicationContext *context)
         }
         case Qt::Key_Right: {
             qsizetype newIndex{std::min(size, caret + 1)};
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 qsizetype curPos{m_curItem->caret()};
 
-                if (ev.modifiers() & Qt::ShiftModifier) {
+                if (ev->modifiers() & Qt::ShiftModifier) {
                     const qsizetype pos{m_curItem->selectionEnd()};
                     m_curItem->setSelectionEnd(m_curItem->getNextBreak(pos == TextItem::INVALID ? curPos : pos));
                 } else {
                     m_curItem->setCaret(m_curItem->getNextBreak(curPos));
                 }
-            } else if (ev.modifiers() & Qt::ShiftModifier) {
+            } else if (ev->modifiers() & Qt::ShiftModifier) {
                 const qsizetype selEnd{m_curItem->selectionEnd()};
                 m_curItem->setSelectionEnd(selEnd == -1 ? newIndex : selEnd + 1);
             } else {
@@ -304,7 +304,7 @@ void TextTool::keyPressed(ApplicationContext *context)
                 break;
             }
 
-            if ((ev.modifiers() & Qt::ControlModifier) && (ev.modifiers() & Qt::ShiftModifier)) {
+            if ((ev->modifiers() & Qt::ControlModifier) && (ev->modifiers() & Qt::ShiftModifier)) {
                 qsizetype prevLine{-1};
                 for (qsizetype pos{caret - 1}; pos >= 0; pos--) {
                     if (text[pos] == u'\n') {
@@ -321,7 +321,7 @@ void TextTool::keyPressed(ApplicationContext *context)
                 break;
             }
 
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 const qsizetype prevBreak{m_curItem->getPrevBreak(caret - 1)};
                 m_curItem->deleteSubStr(prevBreak, caret - 1);
                 m_curItem->setCaret(prevBreak);
@@ -339,7 +339,7 @@ void TextTool::keyPressed(ApplicationContext *context)
                 break;
             }
 
-            if ((ev.modifiers() & Qt::ControlModifier) && (ev.modifiers() & Qt::ShiftModifier)) {
+            if ((ev->modifiers() & Qt::ControlModifier) && (ev->modifiers() & Qt::ShiftModifier)) {
                 qsizetype nextLine{size};
                 for (qsizetype pos{caret}; pos < size; pos++) {
                     if (text[pos] == u'\n') {
@@ -352,7 +352,7 @@ void TextTool::keyPressed(ApplicationContext *context)
                 break;
             }
 
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 qsizetype nextBreak{m_curItem->getNextBreak(caret)};
                 m_curItem->deleteSubStr(caret, nextBreak - 1);
                 break;
@@ -399,7 +399,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_A: {
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 m_curItem->setSelectionStart(0);
                 m_curItem->setSelectionEnd(text.size());
             } else {
@@ -408,7 +408,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_C: {
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 if (m_curItem->hasSelection()) {
                     QGuiApplication::clipboard()->setText(m_curItem->selectedText());
                 }
@@ -418,15 +418,15 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_V: {
-            if (ev.modifiers() & Qt::ControlModifier) {
-                ev.setText(QGuiApplication::clipboard()->text());
+            if (ev->modifiers() & Qt::ControlModifier) {
+                ev->setText(QGuiApplication::clipboard()->text());
             }
 
             handleDefaultCase();
             break;
         }
         case Qt::Key_X: {
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 if (m_curItem->hasSelection()) {
                     QGuiApplication::clipboard()->setText(m_curItem->selectedText());
                     m_curItem->deleteSelection();
@@ -437,7 +437,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         default: {
-            if (ev.modifiers() & Qt::ControlModifier) {
+            if (ev->modifiers() & Qt::ControlModifier) {
                 break;
             }
 

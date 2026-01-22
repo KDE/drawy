@@ -28,7 +28,7 @@ public:
     [[nodiscard]] ToolBar *toolBar() const;
     [[nodiscard]] PropertyBar *propertyBar() const;
     [[nodiscard]] ActionBar *actionBar() const;
-    [[nodiscard]] Event &appEvent() const;
+    [[nodiscard]] Event *appEvent() const;
     [[nodiscard]] KeybindManager *keybindManager() const;
     [[nodiscard]] ActionManager *actionManager() const;
     [[nodiscard]] PropertyManager *propertyManager() const;

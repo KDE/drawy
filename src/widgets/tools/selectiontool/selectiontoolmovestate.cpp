@@ -24,11 +24,11 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
 {
     auto uiContext{context->uiContext()};
 
-    if (uiContext->appEvent().button() == Qt::LeftButton) {
+    if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto renderingContext{context->renderingContext()};
         renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
 
-        m_lastPos = uiContext->appEvent().pos();
+        m_lastPos = uiContext->appEvent()->pos();
         m_initialPos = m_lastPos;
         m_isActive = true;
     }
@@ -51,7 +51,7 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
 
     const auto &selectedItems{selectionContext->selectedItems()};
 
-    const QPointF curPos{context->uiContext()->appEvent().pos()};
+    const QPointF curPos{context->uiContext()->appEvent()->pos()};
 
     const QPointF worldCurPos{transformer.viewToWorld(curPos)};
     const QPointF worldLastPos{transformer.viewToWorld(m_lastPos)};
@@ -82,7 +82,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
     auto commandHistory{spatialContext->commandHistory()};
 
-    const QPointF curPos{context->uiContext()->appEvent().pos()};
+    const QPointF curPos{context->uiContext()->appEvent()->pos()};
     const QPointF worldOriginalPos{transformer.viewToWorld(m_initialPos)};
     const QPointF worldFinalPos{transformer.viewToWorld(curPos)};
     const QPointF delta{worldFinalPos - worldOriginalPos};

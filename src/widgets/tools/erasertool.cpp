@@ -33,9 +33,9 @@ EraserTool::EraserTool()
 
 void EraserTool::mousePressed(ApplicationContext *context)
 {
-    Event &event{context->uiContext()->appEvent()};
+    auto event{context->uiContext()->appEvent()};
 
-    if (event.button() == Qt::LeftButton) {
+    if (event->button() == Qt::LeftButton) {
         m_isErasing = true;
     }
 }
@@ -61,7 +61,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
     const double eraserCenterOffset{eraserSide / 2.0 - 1};
     const QPointF eraserCenterOffsetPoint{eraserCenterOffset, eraserCenterOffset};
 
-    QRectF curRect{uiContext->appEvent().pos() - eraserCenterOffsetPoint, eraserSize};
+    QRectF curRect{uiContext->appEvent()->pos() - eraserCenterOffsetPoint, eraserSize};
     QRectF worldEraserRect{transformer.viewToWorld(curRect)};
 
     if (m_isErasing) {
@@ -101,7 +101,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
-    if (uiContext->appEvent().button() == Qt::LeftButton) {
+    if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
         auto selectionContext{context->selectionContext()};
@@ -139,7 +139,7 @@ void EraserTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
 
-    context->uiContext()->appEvent().setButton(Qt::LeftButton);
+    context->uiContext()->appEvent()->setButton(Qt::LeftButton);
     mouseReleased(context);
 
     context->renderingContext()->canvas()->setOverlayBg(Qt::transparent);
