@@ -594,12 +594,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr ""
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"

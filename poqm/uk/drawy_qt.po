@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-20 06:16+0200\n"
+"PO-Revision-Date: 2026-01-21 22:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -498,15 +498,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Дії"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Вирівнювання"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Стрілка"
@@ -567,41 +564,29 @@ msgid "Thickness"
 msgstr "Товщина"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "Інструмент «Пересування»"
+msgstr "Пересунути нагору"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "Пересування"
+msgstr "Пересунути вище"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "Інструмент «Пересування»"
+msgstr "Пересунути нижче"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "Інструмент «Пересування»"
+msgstr "Пересунути униз"
 
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Порядок за віссю Z"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

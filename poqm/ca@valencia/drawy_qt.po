@@ -505,12 +505,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Accions"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Alineació"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Arrow"

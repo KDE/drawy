@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2026-01-21 00:35+0100\n"
+"PO-Revision-Date: 2026-01-22 01:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -502,15 +502,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acciones"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Alineación"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Flecha"
@@ -571,41 +568,29 @@ msgid "Thickness"
 msgstr "Grosor"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "Herramienta de mover"
+msgstr "Mover arriba del todo"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "Mover"
+msgstr "Mover hacia arriba"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "Herramienta de mover"
+msgstr "Mover hacia abajo"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "Herramienta de mover"
+msgstr "Mover abajo del todo"
 
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Orden Z"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-20 07:12+0100\n"
+"PO-Revision-Date: 2026-01-21 06:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -499,15 +499,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Dejanja"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Poravnava"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Puščica"
@@ -568,41 +565,29 @@ msgid "Thickness"
 msgstr "Debelina"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "Orodje za premikanje"
+msgstr "Premakni na vrh"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "Premik"
+msgstr "Premakni gor"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "Orodje za premikanje"
+msgstr "Premakni dol"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "Orodje za premikanje"
+msgstr "Premakni na dno"
 
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Z-vrstni red"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

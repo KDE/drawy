@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-20 07:52+0200\n"
+"PO-Revision-Date: 2026-01-21 08:55+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -498,15 +498,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "פעולות"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "יישור"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "חץ"
@@ -567,41 +564,29 @@ msgid "Thickness"
 msgstr "עובי"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "כלי הזזה"
+msgstr "קידום לחזית"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "הזזה"
+msgstr "הגבהה"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "כלי הזזה"
+msgstr "הנמכה"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "כלי הזזה"
+msgstr "דחיקה לרקע"
 
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "סדר Z (עומק)"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"

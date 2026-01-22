@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-20 14:05+0100\n"
+"PO-Revision-Date: 2026-01-21 11:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -497,15 +497,12 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Acties"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:25
+#: widgets/properties/widgets/alignmentwidget.cpp:65
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Uitlijning"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowstylewidget.cpp:31
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Pijl"
@@ -566,41 +563,29 @@ msgid "Thickness"
 msgstr "Dikte"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "Hulpmiddel voor verplaatsen"
+msgstr "Naar de top verplaatsen"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "Verplaatsen"
+msgstr "Omhoog verplaatsen"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "Hulpmiddel voor verplaatsen"
+msgstr "Omlaag verplaatsen"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "Hulpmiddel voor verplaatsen"
+msgstr "Naar onderaan verplaatsen"
 
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Z-volgorde"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
