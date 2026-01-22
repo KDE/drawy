@@ -41,135 +41,135 @@ ActionManager::ActionManager(ApplicationContext *context)
     auto undoAction{new Action{tr("Undo"),
                                tr("Undo last action"),
                                [this]() {
-                                   this->undo();
+                                   undo();
                                },
-                               context}};
+                               this}};
 
     auto redoAction{new Action{tr("Redo"),
                                tr("Redo last undone action"),
                                [this]() {
-                                   this->redo();
+                                   redo();
                                },
-                               context}};
+                               this}};
 
     auto zoomInAction{new Action{tr("Zoom In"),
                                  tr("Zoom in"),
                                  [this]() {
-                                     this->zoomIn();
+                                     zoomIn();
                                  },
-                                 context}};
+                                 this}};
 
     auto zoomOutAction{new Action{tr("Zoom Out"),
                                   tr("Zoom out"),
                                   [this]() {
-                                      this->zoomOut();
+                                      zoomOut();
                                   },
-                                  context}};
+                                  this}};
 
     auto freeformToolAction{new Action{tr("Freeform Tool"),
                                        tr("Switch to freeform drawing tool"),
                                        [this]() {
-                                           this->switchToFreeformTool();
+                                           switchToFreeformTool();
                                        },
-                                       context}};
+                                       this}};
 
     auto eraserToolAction{new Action{tr("Eraser Tool"),
                                      tr("Switch to eraser tool"),
                                      [this]() {
-                                         this->switchToEraserTool();
+                                         switchToEraserTool();
                                      },
-                                     context}};
+                                     this}};
 
     auto selectionToolAction{new Action{tr("Selection Tool"),
                                         tr("Switch to selection tool"),
                                         [&]() {
-                                            this->switchToSelectionTool();
+                                            switchToSelectionTool();
                                         },
-                                        context}};
+                                        this}};
 
     auto rectangleToolAction{new Action{tr("Rectangle Tool"),
                                         tr("Switch to rectangle drawing tool"),
                                         [this]() {
-                                            this->switchToRectangleTool();
+                                            switchToRectangleTool();
                                         },
-                                        context}};
+                                        this}};
 
     auto ellipseToolAction{new Action{tr("Ellipse Tool"),
                                       tr("Switch to ellipse drawing tool"),
                                       [this]() {
-                                          this->switchToEllipseTool();
+                                          switchToEllipseTool();
                                       },
-                                      context}};
+                                      this}};
 
     auto lineToolAction{new Action{tr("Line Tool"),
                                    tr("Switch to line drawing tool"),
                                    [&]() {
-                                       this->switchToLineTool();
+                                       switchToLineTool();
                                    },
-                                   context}};
+                                   this}};
 
     auto textToolAction{new Action{tr("Text Tool"),
                                    tr("Switch to the text tool"),
                                    [this]() {
-                                       this->switchToTextTool();
+                                       switchToTextTool();
                                    },
-                                   context}};
+                                   this}};
 
     auto arrowToolAction{new Action{tr("Arrow Tool"),
                                     tr("Switch to arrow drawing tool"),
                                     [this]() {
-                                        this->switchToArrowTool();
+                                        switchToArrowTool();
                                     },
-                                    context}};
+                                    this}};
 
     auto moveToolAction{new Action{tr("Move Tool"),
                                    tr("Switch to move tool"),
                                    [this]() {
-                                       this->switchToMoveTool();
+                                       switchToMoveTool();
                                    },
-                                   context}};
+                                   this}};
 
     auto groupAction{new Action{tr("Group Elements"),
                                 tr("Groups selected items"),
                                 [this]() {
-                                    this->groupItems();
+                                    groupItems();
                                 },
-                                context}};
+                                this}};
 
     auto unGroupAction{new Action{tr("Ungroup Elements"),
                                   tr("Ungroups selected groups"),
                                   [this]() {
-                                      this->ungroupItems();
+                                      ungroupItems();
                                   },
-                                  context}};
+                                  this}};
 
     auto selectAllAction{new Action{tr("Select All"),
                                     tr("Select all items"),
                                     [this]() {
-                                        this->selectAll();
+                                        selectAll();
                                     },
-                                    context}};
+                                    this}};
 
     auto deleteAction{new Action{tr("Delete"),
                                  tr("Deletes selected items"),
                                  [this]() {
-                                     this->deleteSelection();
+                                     deleteSelection();
                                  },
-                                 context}};
+                                 this}};
 
     auto saveAction{new Action{tr("Save"),
                                tr("Save canvas"),
                                [this]() {
-                                   this->saveToFile();
+                                   saveToFile();
                                },
-                               context}};
+                               this}};
 
     auto openFileAction{new Action{tr("Open File"),
                                    tr("Open an existing file"),
                                    [this]() {
-                                       this->loadFromFile();
+                                       loadFromFile();
                                    },
-                                   context}};
+                                   this}};
 
     keybindManager->addKeybinding(undoAction, QKeySequence(QKeySequence::Undo));
     keybindManager->addKeybinding(redoAction, QKeySequence(QKeySequence::Undo));
@@ -304,7 +304,7 @@ void ActionManager::deleteSelection()
 
 void ActionManager::selectAll()
 {
-    this->switchToSelectionTool();
+    switchToSelectionTool();
 
     auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
