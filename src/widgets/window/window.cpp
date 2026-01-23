@@ -30,7 +30,8 @@
 #include "keybindings/actionmanager.hpp"
 #include "serializer/serializerutils.hpp"
 #include <KMessageBox>
-#include <qdir.h>
+#include <QDir>
+#include <QMenu>
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -61,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
+    connect(renderingContext->canvas(), &Canvas::customContextMenuRequested, this, &MainWindow::contextMenuRequested);
 
     applyCustomStyles();
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
@@ -166,6 +168,17 @@ void MainWindow::loadFile(const QString &fileName)
     ApplicationContext *context{ApplicationContext::instance()};
     auto actionManager{context->uiContext()->actionManager()};
     actionManager->loadFile(fileName);
+}
+
+void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
+{
+    auto menu = new QMenu(this);
+    auto actQuit = menu->addAction(tr("Quit"));
+    auto act = menu->exec(QCursor::pos());
+    if (act == actQuit) {
+        close();
+    }
+    delete menu;
 }
 
 #include "moc_window.cpp"

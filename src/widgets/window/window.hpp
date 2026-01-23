@@ -23,6 +23,7 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
+    LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
     LIBDRAWYWIDGETS_NO_EXPORT void applyCustomStyles();
     bool m_config_useSystemStyles{true};
     bool m_forceClose = false;

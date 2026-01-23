@@ -26,6 +26,7 @@ Canvas::Canvas(QWidget *parent)
     setAttribute(Qt::WA_InputMethodEnabled);
 
     setFocusPolicy(Qt::ClickFocus);
+    setContextMenuPolicy(Qt::CustomContextMenu);
 }
 
 Canvas::~Canvas()
@@ -66,7 +67,7 @@ void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     paintFunc(painter);
-};
+}
 
 void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
 {
@@ -74,7 +75,7 @@ void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     paintFunc(painter);
-};
+}
 
 qreal Canvas::scale() const
 {
