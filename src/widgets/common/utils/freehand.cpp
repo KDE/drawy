@@ -3,13 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "freehand.hpp"
-#include <algorithm>
-#include <iterator>
-#include <kstandardguiitem.h>
-#include <qbrush.h>
-#include <qbytearrayview.h>
-#include <qdebug.h>
-#include <qmath.h>
 
 namespace Common::Utils::Freehand
 {

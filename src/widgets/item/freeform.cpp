@@ -6,7 +6,6 @@
 
 #include <QDateTime>
 #include <QJsonObject>
-#include <qnamespace.h>
 
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"

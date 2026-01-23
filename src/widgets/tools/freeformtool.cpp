@@ -7,7 +7,6 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
-#include "common/constants.hpp"
 #include "common/renderitems.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -17,10 +16,7 @@
 #include "event/event.hpp"
 #include "item/factory/freeformfactory.hpp"
 #include "item/freeform.hpp"
-#include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
-#include <iterator>
-#include <qnamespace.h>
 
 FreeformTool::FreeformTool()
 {
