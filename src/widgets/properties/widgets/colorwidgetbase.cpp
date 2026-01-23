@@ -37,7 +37,6 @@ void ColorWidgetBase::initialize()
 
     layout->setSpacing(0);
     m_group->buttons().at(0)->setChecked(true);
-    m_widget->setProperty("class", u"drawlyColorWidgetBase"_s);
     m_widget->hide();
 
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {

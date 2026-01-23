@@ -29,7 +29,6 @@ QPushButton *ActionBar::addButton(const QString &tooltip, IconManager::Icon icon
     button->setIcon(context->uiContext()->iconManager()->icon(icon));
     button->setToolTip(tooltip);
 
-    button->setProperty("class", u"drawlyActionButton"_s);
     button->setCursor(Qt::PointingHandCursor);
     m_layout->addWidget(button);
     m_map[icon] = button;

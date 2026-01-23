@@ -18,7 +18,6 @@ ToolBar::ToolBar(QWidget *parent)
     setFrameShape(QFrame::StyledPanel);
     setFrameShadow(QFrame::Raised);
     setAutoFillBackground(true);
-    setProperty("class", u"drawlyFrame drawlyToolBar"_s);
 
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
@@ -47,7 +46,6 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
     btn->setIcon(context->uiContext()->iconManager()->icon(tool->icon()));
 
     btn->setCheckable(true);
-    btn->setProperty("class", u"drawlyToolButton"_s);
     btn->setCursor(Qt::PointingHandCursor);
 
     m_tools[type] = tool;
