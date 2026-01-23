@@ -51,7 +51,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     result.push_back(StrokePoint{points.back(), pressures.back()});
 
     // smoothing out the pressures for a better result
-    qsizetype windowSize{5};
+    const qsizetype windowSize{10};
     qreal pressureSum{};
     for (qsizetype pos = 0; pos < windowSize; pos++) {
         if (pos >= result.size())
@@ -93,20 +93,31 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
 
     QList<QPointF> leftPoints{}, rightPoints{};
 
-    // we do this twice so it's better to turn this into a lambda
-    const auto insertCap = [dist](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next, QList<QPointF> &polygon) -> bool {
+    const auto insertCap = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> bool {
         const QPointF vector{next.point - cur.point};
         const qreal thickness{dist * cur.pressure};
 
         // if it's a sharp angle, we draw a semi circular cap (looks good)
         const QPointF prevVector{cur.point - prev.point};
         const qreal curAngle{angle(vector, prevVector)};
-        if (curAngle > PI / 2 && !polygon.empty()) {
+        if (curAngle > PI / 2) {
             QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
+            const qreal arcAngle{5.0 * PI / 6.0};
 
             for (qreal delta = 0, step = 1.0 / 13; delta <= 1; delta += step) {
-                const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + cur.point}};
-                polygon.push_back(point);
+                const QPointF point{QPointF{rotateVector(radiusVector, arcAngle * delta) + cur.point}};
+                leftPoints.push_back(point);
+            }
+
+            if (dotProduct(prevVector, vector) == -1) {
+                radiusVector = rotateVector(radiusVector, -(PI - arcAngle - PI / 18));
+            } else {
+                radiusVector = rotateVector(radiusVector, PI - arcAngle - PI / 18);
+            }
+
+            for (qreal delta = 0, step = 1.0 / 13; delta <= 1; delta += step) {
+                const QPointF point{QPointF{rotateVector(-radiusVector, -arcAngle * delta) + cur.point}};
+                rightPoints.push_back(point);
             }
 
             return true;
@@ -115,59 +126,49 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
         return false;
     };
 
-    const auto insertRegularPoint =
-        [dist](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next, QList<QPointF> &polygon, const bool flip = false) -> void {
+    const auto insertRegularPoint = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> void {
         const qreal thickness{dist * cur.pressure};
         const QPointF vector{unitVector(next.point - cur.point)};
         const QPointF prevVector{unitVector(cur.point - prev.point)};
 
         QPointF lerped{lerp(vector, prevVector, dotProduct(vector, prevVector))};
-        QPointF perp{QPointF{lerped.y(), -lerped.x()}};
-        if (flip) {
-            perp *= -1;
-        }
+        QPointF perp{QPointF{lerped.y(), -lerped.x()} * thickness};
 
-        const QPointF perpPoint{cur.point + perp * thickness};
-        polygon.push_back(perpPoint);
+        leftPoints.push_back(cur.point + perp);
+        rightPoints.push_back(cur.point - perp);
     };
 
-    // moving forwards
-    insertRegularPoint(points[0], points[0], points[1], polygonPoints, false);
+    // inserting points
+    insertRegularPoint(points[0], points[0], points[1]);
     for (qsizetype pos = 1; pos < points.size() - 1; pos++) {
-        if (!insertCap(points[pos - 1], points[pos], points[pos + 1], polygonPoints)) {
-            insertRegularPoint(points[pos - 1], points[pos], points[pos + 1], polygonPoints, false);
+        if (!insertCap(points[pos - 1], points[pos], points[pos + 1])) {
+            insertRegularPoint(points[pos - 1], points[pos], points[pos + 1]);
         }
     }
-    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2), polygonPoints, true);
+    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2));
+    std::swap(leftPoints.back(), rightPoints.back());
 
     // drawing the end cap
     {
-        const QPointF radiusVector{polygonPoints.back() - points.back().point};
+        const QPointF radiusVector{leftPoints.back() - points.back().point};
         for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.back().point}};
-            polygonPoints.push_back(point);
+            leftPoints.push_back(point);
         }
     }
 
-    // moving backwards
-    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2), polygonPoints, false);
-    for (qsizetype pos = points.size() - 2; pos >= 1; pos--) {
-        if (!insertCap(points[pos + 1], points[pos], points[pos - 1], polygonPoints)) {
-            insertRegularPoint(points[pos + 1], points[pos], points[pos - 1], polygonPoints, false);
-        }
-    }
-    insertRegularPoint(points[0], points[0], points[1], polygonPoints, true);
+    std::reverse(rightPoints.begin(), rightPoints.end());
 
     // drawing the start cap
     {
-        const QPointF radiusVector{polygonPoints.back() - points.front().point};
+        const QPointF radiusVector{rightPoints.back() - points.front().point};
         for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.front().point}};
-            polygonPoints.push_back(point);
+            rightPoints.push_back(point);
         }
     }
 
-    return polygonPoints;
+    return leftPoints + rightPoints;
 }
 
 QPainterPath getStrokePath(const QList<QPointF> &points)
