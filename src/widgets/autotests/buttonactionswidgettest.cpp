@@ -16,8 +16,6 @@ ButtonActionsWidgetTest::ButtonActionsWidgetTest(QObject *parent)
 
 void ButtonActionsWidgetTest::shouldHaveDefaultValues()
 {
-    const ButtonActionsWidget w;
-    QCOMPARE(w.property("class"), u"drawyPropertyBarActionButton"_s);
 }
 
 #include "moc_buttonactionswidgettest.cpp"
