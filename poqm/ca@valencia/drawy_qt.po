@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-18 11:43+0100\n"
+"PO-Revision-Date: 2026-01-21 09:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -149,23 +149,30 @@ msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
 
+#: widgets/dialog/configuresettingsdialog.cpp:24
+msgctxt "ConfigureSettingsDialog|"
+msgid "Configure Drawy"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:27
+msgctxt "ConfigureSettingsDialog|"
+msgid "General"
+msgstr ""
+
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
 #: widgets/jobs/restoreautosavejob.cpp:48
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "RestoreAutoSaveJob|"
 msgid "Do you want to restore autosave file?"
-msgstr "Voleu tancar?"
+msgstr "Voleu restaurar el fitxer de guardada automàtica?"
 
 #: widgets/jobs/restoreautosavejob.cpp:49
 msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
-msgstr ""
+msgstr "Restaura"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
@@ -357,111 +364,6 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Obri un fitxer existent"
 
-#: widgets/keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|keybinding for the undo action"
-msgid "Ctrl+Z"
-msgstr "Ctrl+Z"
-
-#: widgets/keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Y"
-msgstr "Ctrl+Y"
-
-#: widgets/keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Shift+Z"
-msgstr "Ctrl+Majús+Z"
-
-#: widgets/keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|keybinding for the zoom in action"
-msgid "Ctrl++"
-msgstr "Ctrl++"
-
-#: widgets/keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|keybinding for the zoom out action"
-msgid "Ctrl+-"
-msgstr "Ctrl+-"
-
-#: widgets/keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|keybinding for the text tool"
-msgid "T"
-msgstr "T"
-
-#: widgets/keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "P"
-msgstr "P"
-
-#: widgets/keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "B"
-msgstr "B"
-
-#: widgets/keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|keybinding for the eraser tool"
-msgid "E"
-msgstr "E"
-
-#: widgets/keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|keybinding for the selection tool"
-msgid "S"
-msgstr "S"
-
-#: widgets/keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-msgid "R"
-msgstr "R"
-
-#: widgets/keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-msgid "O"
-msgstr "O"
-
-#: widgets/keybindings/actionmanager.cpp:186
-msgctxt "ActionManager|keybinding for the line drawing tool"
-msgid "L"
-msgstr "L"
-
-#: widgets/keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|keybinding for the arrow drawing tool"
-msgid "A"
-msgstr "A"
-
-#: widgets/keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|keybinding for the move tool"
-msgid "M"
-msgstr "M"
-
-#: widgets/keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|keybinding for the select all action"
-msgid "Ctrl+A"
-msgstr "Ctrl+A"
-
-#: widgets/keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|keybinding for the delete action"
-msgid "Del"
-msgstr "Supr"
-
-#: widgets/keybindings/actionmanager.cpp:191
-msgctxt "ActionManager|keybinding for the save action"
-msgid "Ctrl+S"
-msgstr "Ctrl+S"
-
-#: widgets/keybindings/actionmanager.cpp:192
-msgctxt "ActionManager|keybinding for the open file action"
-msgid "Ctrl+O"
-msgstr "Ctrl+O"
-
-#: widgets/keybindings/actionmanager.cpp:193
-msgctxt "ActionManager|keybinding for the group action"
-msgid "Ctrl+G"
-msgstr "Ctrl+G"
-
-#: widgets/keybindings/actionmanager.cpp:194
-msgctxt "ActionManager|keybinding for the ungroup action"
-msgid "Ctrl+Shift+G"
-msgstr "Ctrl+Majús+G"
-
 #: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
 #, qt-format
 msgctxt "QObject|"
@@ -511,9 +413,6 @@ msgid "Alignment"
 msgstr "Alineació"
 
 #: widgets/properties/widgets/arrowstylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Fletxa"
@@ -574,41 +473,30 @@ msgid "Thickness"
 msgstr "Gruix"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "Eina de moure"
+msgstr "Mou fins a dalt de tot"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "Mou"
+msgstr "Mou cap amunt"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "Eina de moure"
+msgstr "Mou cap avall"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "Eina de moure"
+msgstr "Mou cap a baix de tot"
 
+# NdT: Ordre d'elements segons l'eix Z
 #: widgets/properties/widgets/zorderwidget.cpp:66
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Ordre de Z"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -661,12 +549,9 @@ msgid "Text Tool"
 msgstr "Eina de text"
 
 #: widgets/window/window.cpp:84
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
-msgstr "Voleu tancar?"
+msgstr "Voleu guardar el fitxer?"
 
 #: widgets/window/window.cpp:85
 msgctxt "MainWindow|"
@@ -674,14 +559,95 @@ msgid "Close"
 msgstr "Tanca"
 
 #: widgets/window/window.cpp:86
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "MainWindow|"
 msgid "Save And Close"
-msgstr "Guarda a un fitxer"
+msgstr "Guarda i tanca"
 
 #: widgets/window/window.cpp:87
 msgctxt "MainWindow|"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignora"
+
+#~ msgctxt "ActionManager|keybinding for the undo action"
+#~ msgid "Ctrl+Z"
+#~ msgstr "Ctrl+Z"
+
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Y"
+#~ msgstr "Ctrl+Y"
+
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Shift+Z"
+#~ msgstr "Ctrl+Majús+Z"
+
+#~ msgctxt "ActionManager|keybinding for the zoom in action"
+#~ msgid "Ctrl++"
+#~ msgstr "Ctrl++"
+
+#~ msgctxt "ActionManager|keybinding for the zoom out action"
+#~ msgid "Ctrl+-"
+#~ msgstr "Ctrl+-"
+
+#~ msgctxt "ActionManager|keybinding for the text tool"
+#~ msgid "T"
+#~ msgstr "T"
+
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "P"
+#~ msgstr "P"
+
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "B"
+#~ msgstr "B"
+
+#~ msgctxt "ActionManager|keybinding for the eraser tool"
+#~ msgid "E"
+#~ msgstr "E"
+
+#~ msgctxt "ActionManager|keybinding for the selection tool"
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
+#~ msgid "R"
+#~ msgstr "R"
+
+#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
+#~ msgid "O"
+#~ msgstr "O"
+
+#~ msgctxt "ActionManager|keybinding for the line drawing tool"
+#~ msgid "L"
+#~ msgstr "L"
+
+#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgctxt "ActionManager|keybinding for the move tool"
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgctxt "ActionManager|keybinding for the select all action"
+#~ msgid "Ctrl+A"
+#~ msgstr "Ctrl+A"
+
+#~ msgctxt "ActionManager|keybinding for the delete action"
+#~ msgid "Del"
+#~ msgstr "Supr"
+
+#~ msgctxt "ActionManager|keybinding for the save action"
+#~ msgid "Ctrl+S"
+#~ msgstr "Ctrl+S"
+
+#~ msgctxt "ActionManager|keybinding for the open file action"
+#~ msgid "Ctrl+O"
+#~ msgstr "Ctrl+O"
+
+#~ msgctxt "ActionManager|keybinding for the group action"
+#~ msgid "Ctrl+G"
+#~ msgstr "Ctrl+G"
+
+#~ msgctxt "ActionManager|keybinding for the ungroup action"
+#~ msgid "Ctrl+Shift+G"
+#~ msgstr "Ctrl+Majús+G"

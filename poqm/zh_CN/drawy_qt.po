@@ -146,6 +146,16 @@ msgctxt "UIContext|"
 msgid "Redo"
 msgstr ""
 
+#: widgets/dialog/configuresettingsdialog.cpp:24
+msgctxt "ConfigureSettingsDialog|"
+msgid "Configure Drawy"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:27
+msgctxt "ConfigureSettingsDialog|"
+msgid "General"
+msgstr ""
+
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
@@ -349,111 +359,6 @@ msgstr ""
 #: widgets/keybindings/actionmanager.cpp:168
 msgctxt "ActionManager|"
 msgid "Open an existing file"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:174
-msgctxt "ActionManager|keybinding for the undo action"
-msgid "Ctrl+Z"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:175
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Y"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:176
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Shift+Z"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:177
-msgctxt "ActionManager|keybinding for the zoom in action"
-msgid "Ctrl++"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:178
-msgctxt "ActionManager|keybinding for the zoom out action"
-msgid "Ctrl+-"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:179
-msgctxt "ActionManager|keybinding for the text tool"
-msgid "T"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:180
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "P"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:181
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "B"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:182
-msgctxt "ActionManager|keybinding for the eraser tool"
-msgid "E"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:183
-msgctxt "ActionManager|keybinding for the selection tool"
-msgid "S"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:184
-msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-msgid "R"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:185
-msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-msgid "O"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:186
-msgctxt "ActionManager|keybinding for the line drawing tool"
-msgid "L"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:187
-msgctxt "ActionManager|keybinding for the arrow drawing tool"
-msgid "A"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:188
-msgctxt "ActionManager|keybinding for the move tool"
-msgid "M"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:189
-msgctxt "ActionManager|keybinding for the select all action"
-msgid "Ctrl+A"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:190
-msgctxt "ActionManager|keybinding for the delete action"
-msgid "Del"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:191
-msgctxt "ActionManager|keybinding for the save action"
-msgid "Ctrl+S"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:192
-msgctxt "ActionManager|keybinding for the open file action"
-msgid "Ctrl+O"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:193
-msgctxt "ActionManager|keybinding for the group action"
-msgid "Ctrl+G"
-msgstr ""
-
-#: widgets/keybindings/actionmanager.cpp:194
-msgctxt "ActionManager|keybinding for the ungroup action"
-msgid "Ctrl+Shift+G"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96

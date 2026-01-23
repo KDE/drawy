@@ -178,6 +178,16 @@ msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Berregin"
 
+#: widgets/dialog/configuresettingsdialog.cpp:24
+msgctxt "ConfigureSettingsDialog|"
+msgid "Configure Drawy"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:27
+msgctxt "ConfigureSettingsDialog|"
+msgid "General"
+msgstr ""
+
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
 msgid "Fullscreen"
@@ -382,174 +392,6 @@ msgstr "Ireki fitxategia"
 msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Ireki dagoen fitxategi bat"
-
-#: widgets/keybindings/actionmanager.cpp:174
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Z"
-msgctxt "ActionManager|keybinding for the undo action"
-msgid "Ctrl+Z"
-msgstr "Ktrl+Z"
-
-#: widgets/keybindings/actionmanager.cpp:175
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Y"
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Y"
-msgstr "Ktrl+Y"
-
-#: widgets/keybindings/actionmanager.cpp:176
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+Z"
-msgctxt "ActionManager|keybinding for the redo action"
-msgid "Ctrl+Shift+Z"
-msgstr "Ktrl+Maius+Z"
-
-#: widgets/keybindings/actionmanager.cpp:177
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl++"
-msgctxt "ActionManager|keybinding for the zoom in action"
-msgid "Ctrl++"
-msgstr "Ktrl++"
-
-#: widgets/keybindings/actionmanager.cpp:178
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+-"
-msgctxt "ActionManager|keybinding for the zoom out action"
-msgid "Ctrl+-"
-msgstr "Ktrl+-"
-
-#: widgets/keybindings/actionmanager.cpp:179
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "T"
-msgctxt "ActionManager|keybinding for the text tool"
-msgid "T"
-msgstr "T"
-
-#: widgets/keybindings/actionmanager.cpp:180
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "P"
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "P"
-msgstr "P"
-
-#: widgets/keybindings/actionmanager.cpp:181
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "B"
-msgctxt "ActionManager|keybinding for the freeform drawing tool"
-msgid "B"
-msgstr "B"
-
-#: widgets/keybindings/actionmanager.cpp:182
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "E"
-msgctxt "ActionManager|keybinding for the eraser tool"
-msgid "E"
-msgstr "E"
-
-#: widgets/keybindings/actionmanager.cpp:183
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "S"
-msgctxt "ActionManager|keybinding for the selection tool"
-msgid "S"
-msgstr "S"
-
-#: widgets/keybindings/actionmanager.cpp:184
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "R"
-msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-msgid "R"
-msgstr "R"
-
-#: widgets/keybindings/actionmanager.cpp:185
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "O"
-msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-msgid "O"
-msgstr "O"
-
-#: widgets/keybindings/actionmanager.cpp:186
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "L"
-msgctxt "ActionManager|keybinding for the line drawing tool"
-msgid "L"
-msgstr "L"
-
-#: widgets/keybindings/actionmanager.cpp:187
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "A"
-msgctxt "ActionManager|keybinding for the arrow drawing tool"
-msgid "A"
-msgstr "A"
-
-#: widgets/keybindings/actionmanager.cpp:188
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "M"
-msgctxt "ActionManager|keybinding for the move tool"
-msgid "M"
-msgstr "M"
-
-#: widgets/keybindings/actionmanager.cpp:189
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+A"
-msgctxt "ActionManager|keybinding for the select all action"
-msgid "Ctrl+A"
-msgstr "Ktrl+A"
-
-#: widgets/keybindings/actionmanager.cpp:190
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
-msgctxt "ActionManager|keybinding for the delete action"
-msgid "Del"
-msgstr "Ezabatu"
-
-#: widgets/keybindings/actionmanager.cpp:191
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+S"
-msgctxt "ActionManager|keybinding for the save action"
-msgid "Ctrl+S"
-msgstr "Ktrl+S"
-
-#: widgets/keybindings/actionmanager.cpp:192
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+O"
-msgctxt "ActionManager|keybinding for the open file action"
-msgid "Ctrl+O"
-msgstr "Ktrl+O"
-
-#: widgets/keybindings/actionmanager.cpp:193
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+G"
-msgctxt "ActionManager|keybinding for the group action"
-msgid "Ctrl+G"
-msgstr "Ktrl+G"
-
-#: widgets/keybindings/actionmanager.cpp:194
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ctrl+Shift+G"
-msgctxt "ActionManager|keybinding for the ungroup action"
-msgid "Ctrl+Shift+G"
-msgstr "Ktrl+Maius+G"
 
 #: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
 #, qt-format
@@ -783,3 +625,150 @@ msgstr "Gorde fitxategian"
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+Z"
+#~ msgctxt "ActionManager|keybinding for the undo action"
+#~ msgid "Ctrl+Z"
+#~ msgstr "Ktrl+Z"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+Y"
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Y"
+#~ msgstr "Ktrl+Y"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+Shift+Z"
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Shift+Z"
+#~ msgstr "Ktrl+Maius+Z"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl++"
+#~ msgctxt "ActionManager|keybinding for the zoom in action"
+#~ msgid "Ctrl++"
+#~ msgstr "Ktrl++"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+-"
+#~ msgctxt "ActionManager|keybinding for the zoom out action"
+#~ msgid "Ctrl+-"
+#~ msgstr "Ktrl+-"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "T"
+#~ msgctxt "ActionManager|keybinding for the text tool"
+#~ msgid "T"
+#~ msgstr "T"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "P"
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "P"
+#~ msgstr "P"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "B"
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "B"
+#~ msgstr "B"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "E"
+#~ msgctxt "ActionManager|keybinding for the eraser tool"
+#~ msgid "E"
+#~ msgstr "E"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "S"
+#~ msgctxt "ActionManager|keybinding for the selection tool"
+#~ msgid "S"
+#~ msgstr "S"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "R"
+#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
+#~ msgid "R"
+#~ msgstr "R"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "O"
+#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
+#~ msgid "O"
+#~ msgstr "O"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "L"
+#~ msgctxt "ActionManager|keybinding for the line drawing tool"
+#~ msgid "L"
+#~ msgstr "L"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "A"
+#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
+#~ msgid "A"
+#~ msgstr "A"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "M"
+#~ msgctxt "ActionManager|keybinding for the move tool"
+#~ msgid "M"
+#~ msgstr "M"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+A"
+#~ msgctxt "ActionManager|keybinding for the select all action"
+#~ msgid "Ctrl+A"
+#~ msgstr "Ktrl+A"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Delete"
+#~ msgctxt "ActionManager|keybinding for the delete action"
+#~ msgid "Del"
+#~ msgstr "Ezabatu"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+S"
+#~ msgctxt "ActionManager|keybinding for the save action"
+#~ msgid "Ctrl+S"
+#~ msgstr "Ktrl+S"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+O"
+#~ msgctxt "ActionManager|keybinding for the open file action"
+#~ msgid "Ctrl+O"
+#~ msgstr "Ktrl+O"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+G"
+#~ msgctxt "ActionManager|keybinding for the group action"
+#~ msgid "Ctrl+G"
+#~ msgstr "Ktrl+G"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ctrl+Shift+G"
+#~ msgctxt "ActionManager|keybinding for the ungroup action"
+#~ msgid "Ctrl+Shift+G"
+#~ msgstr "Ktrl+Maius+G"
