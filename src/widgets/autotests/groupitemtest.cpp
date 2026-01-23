@@ -21,6 +21,7 @@ void GroupItemTest::shouldHaveDefaultValues()
     const GroupItem i;
     QCOMPARE(i.type(), Item::Type::Group);
     QVERIFY(!i.id().isEmpty());
+    QVERIFY(!i.locked());
 }
 
 void GroupItemTest::shouldSerializeDefaultValue()

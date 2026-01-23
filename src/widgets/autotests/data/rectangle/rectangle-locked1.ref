@@ -1,0 +1,42 @@
+{
+    "bounding_box": {
+        "height": 24.5,
+        "width": 29.8,
+        "x": -10.8,
+        "y": -6
+    },
+    "bounding_box_padding": 10,
+    "end": {
+        "x": 8,
+        "y": 7.5
+    },
+    "id": "063856fce1c94095a8dc16a7c4842e5a",
+    "locked": true,
+    "properties": [
+        {
+            "type": "BackgroundColor",
+            "value": "#00000000"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
+        },
+        {
+            "type": "Opacity",
+            "value": 255
+        },
+        {
+            "type": "StrokeColor",
+            "value": "#0000ff"
+        },
+        {
+            "type": "StrokeWidth",
+            "value": 5
+        }
+    ],
+    "start": {
+        "x": 0.2,
+        "y": 5
+    },
+    "type": "RECTANGLE"
+}

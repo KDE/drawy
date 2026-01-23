@@ -24,6 +24,9 @@ QJsonObject ItemSerializer::serialize() const
     obj[u"bounding_box_padding"_s] = QJsonValue(mItem->boundingBoxPadding());
     obj[u"properties"_s] = toJson(mItem->properties());
     obj[u"id"_s] = QString::fromLatin1(mItem->id());
+    if (mItem->locked()) {
+        obj[u"locked"_s] = true;
+    }
     return obj;
 }
 

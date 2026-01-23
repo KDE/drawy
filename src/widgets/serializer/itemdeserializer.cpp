@@ -19,6 +19,7 @@ ItemDeserializer::~ItemDeserializer() = default;
 void ItemDeserializer::deserialize(const QJsonObject &obj)
 {
     mItem->setId(obj[u"id"_s].toString().toLatin1());
+    mItem->setLocked(obj[u"id"_s].toBool(false));
     QJsonArray properties = array(value(obj, u"properties"_s));
     for (const auto &propertyValue : std::as_const(properties)) {
         Property prop{createProperty(object(propertyValue))};

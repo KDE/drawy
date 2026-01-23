@@ -21,6 +21,7 @@ void DiamondItemTest::shouldHaveDefaultValues()
     const DiamondItem i;
     QCOMPARE(i.type(), Item::Type::Diamond);
     QVERIFY(!i.id().isEmpty());
+    QVERIFY(!i.locked());
 }
 
 void DiamondItemTest::shouldSerializeDefaultValue()

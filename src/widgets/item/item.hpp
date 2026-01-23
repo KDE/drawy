@@ -75,6 +75,9 @@ public:
     [[nodiscard]] QByteArray id() const;
     void setId(const QByteArray &newId);
 
+    [[nodiscard]] bool locked() const;
+    void setLocked(bool newLocked);
+
 protected:
     QByteArray m_id;
     QRectF m_boundingBox{};
@@ -82,6 +85,7 @@ protected:
 
     QTransform m_transform{};
     bool m_isDirty{true};
+    bool m_locked = false;
 
     virtual void drawItem(QPainter &painter, const QPointF &offset) const = 0;
 };

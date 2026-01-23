@@ -27,6 +27,7 @@ void EllipseItemTest::shouldHaveDefaultValues()
         QVERIFY(i.propertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
+    QVERIFY(!i.locked());
 }
 
 void EllipseItemTest::shouldSerializeDefaultValue()

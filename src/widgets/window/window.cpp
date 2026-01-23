@@ -37,12 +37,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     applyCustomStyles();
 
-    BoardLayout *layout{new BoardLayout(this)};
-    Controller *controller{new Controller(this)};
+    auto layout{new BoardLayout(this)};
+    auto controller{new Controller(this)};
     ApplicationContext *context{ApplicationContext::instance()};
 
     auto renderingContext{context->renderingContext()};
-    UIContext *uiContext{context->uiContext()};
+    auto uiContext{context->uiContext()};
 
     renderingContext->canvas()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 

@@ -29,6 +29,7 @@ void RectangleItemTest::shouldHaveDefaultValues()
         QVERIFY(i.propertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
+    QVERIFY(!i.locked());
 }
 
 void RectangleItemTest::shouldSerializeDefaultValue()
@@ -49,8 +50,10 @@ void RectangleItemTest::shouldSerialize_data()
     QTest::addColumn<QPointF>("end");
     QTest::addColumn<int>("strokeWidth");
     QTest::addColumn<QColor>("strokeColor");
-    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red);
-    QTest::addRow("rectangle2") << u"rectangle2"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue);
+    QTest::addColumn<bool>("locked");
+    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << false;
+    QTest::addRow("rectangle2") << u"rectangle2"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << false;
+    QTest::addRow("rectangle-locked1") << u"rectangle-locked1"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << true;
 }
 
 void RectangleItemTest::shouldSerialize()
@@ -60,6 +63,7 @@ void RectangleItemTest::shouldSerialize()
     QFETCH(QPointF, end);
     QFETCH(int, strokeWidth);
     QFETCH(QColor, strokeColor);
+    QFETCH(bool, locked);
 
     RectangleItem f;
     // Need to have an known id
@@ -69,6 +73,7 @@ void RectangleItemTest::shouldSerialize()
     f.setEnd(end);
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
+    f.setLocked(locked);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
@@ -79,7 +84,9 @@ void RectangleItemTest::shouldDeserialize_data()
 {
     QTest::addColumn<QString>("name");
     QTest::addRow("rectangle1") << u"rectangle1"_s;
+    QTest::addRow("rectangle-locked1") << u"rectangle-locked1"_s;
 }
+
 void RectangleItemTest::shouldDeserialize()
 {
     QFETCH(QString, name);

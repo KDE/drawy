@@ -27,6 +27,7 @@ void TextItemTest::shouldHaveDefaultValues()
         QVERIFY(i.propertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
+    QVERIFY(!i.locked());
 }
 
 void TextItemTest::shouldSerializeDefaultValue()

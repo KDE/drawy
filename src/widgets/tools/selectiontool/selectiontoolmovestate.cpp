@@ -59,11 +59,13 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
 
     QRect dirtyRegion{};
     for (const auto &item : selectedItems) {
-        dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
-        item->translate(delta);
-        dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
+        if (!item->locked()) {
+            dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
+            item->translate(delta);
+            dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
 
-        spatialContext->quadtree().updateItem(item, item->boundingBox());
+            spatialContext->quadtree().updateItem(item, item->boundingBox());
+        }
     }
 
     renderingContext->cacheGrid().markDirty(dirtyRegion);
@@ -98,8 +100,11 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
 
         // TODO: Instead of un-doing the translation so that the command can execute it again,
         //       just make it not translate manually at all in the mouseMoved method
-        for (auto &item : items)
-            item->translate(-delta);
+        for (auto &item : items) {
+            if (!item->locked()) {
+                item->translate(-delta);
+            }
+        }
 
         commandHistory->insert(std::make_shared<MoveItemCommand>(items, delta));
     }

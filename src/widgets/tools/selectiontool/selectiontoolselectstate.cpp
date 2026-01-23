@@ -51,11 +51,13 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             m_isActive = true;
         } else {
             auto &item{intersectingItems.back()};
-            if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
-                // deselect the item if selected
-                commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
-            } else {
-                commandHistory->insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
+            if (!item->locked()) {
+                if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+                    // deselect the item if selected
+                    commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
+                } else {
+                    commandHistory->insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
+                }
             }
             m_isActive = false;
             lockState = false;
@@ -74,13 +76,13 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
 {
     auto renderingContext{context->renderingContext()};
-    auto spatialContext{context->spatialContext()};
     renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
     if (!m_isActive) {
         return;
     }
 
+    auto spatialContext{context->spatialContext()};
     auto uiContext{context->uiContext()};
     auto &transformer{spatialContext->coordinateTransformer()};
     auto selectionContext{context->selectionContext()};
@@ -122,9 +124,11 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
 
         if (!selectedItems.empty()) {
             auto commandHistory{context->spatialContext()->commandHistory()};
-            QList<std::shared_ptr<Item>> items{};
+            QList<std::shared_ptr<Item>> items;
             for (const auto &item : selectedItems) {
-                items.push_back(item);
+                if (!item->locked()) {
+                    items.push_back(item);
+                }
             }
 
             selectedItems.clear();
