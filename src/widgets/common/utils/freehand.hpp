@@ -29,7 +29,8 @@ inline constexpr qreal PI = 3.14592654;
  * @brief converts a list of points into a polygon of strokes
  * @param points a QList of QPointF
  * @param pressures a QList of pressure values from 0.0 to 1.0
- * @param simulatePressure whether to simulate pressure based on distance or use values from `pressures`
+ * @param simulatePressure whether to simulate pressure based on distance or use
+ * values from `pressures`
  * @param thickness thickness of the polygon in pixels
  * @returns QPainterPath the final polygon
  */
@@ -39,7 +40,8 @@ inline constexpr qreal PI = 3.14592654;
  * @brief smoothens a stroke formed from a list of points
  * @param points a QList of QPointF
  * @param pressures a QList of pressure values from 0.0 to 1.0
- * @param simulatePressure whether to simulate pressure based on distance or use values from `pressures`
+ * @param simulatePressure whether to simulate pressure based on distance or use
+ * values from `pressures`
  * @returns a QList of QPointF with the same number of points but with less
  * noise and smoother
  */

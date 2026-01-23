@@ -134,12 +134,13 @@ void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 
     // UNCOMMENT TO SEE THE POLYGON'S STRUCTURE
     // using namespace Common::Utils::Freehand;
-    // const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
-    // const auto polygon = getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure), thickness);
+    // const qreal
+    // thickness{property(Property::Type::StrokeWidth).value<qreal>()}; const auto
+    // polygon = getStrokePolygon(getStrokePoints(m_points, m_pressures,
+    // m_simulatePressure), thickness);
 
-    // QPen pen; pen.setWidthF(0.25); pen.setCapStyle(Qt::RoundCap); pen.setColor(Qt::red);
-    // painter.setPen(pen);
-    // for (auto &pt : polygon) {
+    // QPen pen; pen.setWidthF(0.25); pen.setCapStyle(Qt::RoundCap);
+    // pen.setColor(Qt::red); painter.setPen(pen); for (auto &pt : polygon) {
     //     painter.drawPoint(pt);
     // }
 

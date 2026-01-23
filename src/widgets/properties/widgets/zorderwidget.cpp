@@ -42,7 +42,8 @@ ZOrderWidget::ZOrderWidget(QWidget *parent)
     layout->addWidget(moveDownButton);
     layout->addWidget(moveOnBottomButton);
 
-    // auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
+    // auto
+    // actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
 
     connect(moveOnTopButton, &ButtonActionsWidget::clicked, this, []() {
         // TODO add enum for defining action.

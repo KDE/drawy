@@ -144,6 +144,9 @@ void RenderingContext::canvasResized()
     cacheGrid().setSize(rows * cols * Common::viewportCacheMultiplier);
 
     itemCache().clear();
+
+    markForRender();
+    markForUpdate();
 }
 
 void RenderingContext::markForRender()
