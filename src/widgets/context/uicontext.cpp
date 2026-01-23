@@ -90,23 +90,6 @@ void UIContext::initializeUIContext()
     connect(button, &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
-    button = m_actionBar->addButton(tr("Light Mode"), IconManager::Icon::ACTION_LIGHT_MODE);
-    connect(button, &QPushButton::clicked, this, [this, button]() {
-        auto canvas{m_applicationContext->renderingContext()->canvas()};
-
-        if (canvas->canvasBg() == Common::lightBackgroundColor) {
-            canvas->setCanvasBg(Common::darkBackgroundColor);
-            button->setToolTip(tr("Light Mode"));
-            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_LIGHT_MODE));
-        } else {
-            canvas->setCanvasBg(Common::lightBackgroundColor);
-            button->setToolTip(tr("Dark Mode"));
-            button->setIcon(iconManager()->icon(IconManager::Icon::ACTION_DARK_MODE));
-        }
-
-        m_applicationContext->renderingContext()->markForRender();
-        m_applicationContext->renderingContext()->markForUpdate();
-    });
 
     auto undoButton = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
     connect(undoButton, &QPushButton::clicked, this, [this]() {

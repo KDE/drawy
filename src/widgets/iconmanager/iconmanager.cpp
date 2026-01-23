@@ -8,42 +8,40 @@
 using namespace Qt::Literals::StringLiterals;
 IconManager::IconManager(QObject *parent)
     : QObject{parent}
-    , m_iconName{{Icon::TOOL_SELECTION, u"tool-selection"_s},
-                 {Icon::TOOL_FREEFORM, u"tool-freeform"_s},
-                 {Icon::TOOL_RECTANGLE, u"tool-rectangle"_s},
-                 {Icon::TOOL_ELLIPSE, u"tool-ellipse"_s},
-                 {Icon::TOOL_ARROW, u"tool-arrow"_s},
-                 {Icon::TOOL_LINE, u"tool-line"_s},
-                 {Icon::TOOL_ERASER, u"tool-eraser"_s},
-                 {Icon::TOOL_TEXT, u"tool-text"_s},
-                 {Icon::TOOL_MOVE, u"tool-move"_s},
-                 {Icon::TOOL_DIAMOND, {}},
-                 {Icon::ACTION_SAVE, u"action-save"_s},
-                 {Icon::ACTION_OPEN_FILE, u"action-open_file"_s},
-                 {Icon::ACTION_ZOOM_IN, u"action-zoom_in"_s},
-                 {Icon::ACTION_ZOOM_OUT, u"action-zoom_out"_s},
-                 {Icon::ACTION_UNDO, u"action-undo"_s},
-                 {Icon::ACTION_REDO, u"action-redo"_s},
-                 {Icon::ACTION_DARK_MODE, u"action-dark_mode"_s},
-                 {Icon::ACTION_LIGHT_MODE, u"action-light_mode"_s},
-                 {Icon::ACTION_GROUP, u"action-group"_s},
-                 {Icon::ACTION_UNGROUP, u"action-ungroup"_s},
-                 {Icon::ACTION_DELETE, u"action-delete"_s},
-                 {Icon::PROPERTY_LINE_DASHED, u"property-line_dashed"_s},
-                 {Icon::PROPERTY_LINE_SOLID, u"property-line_solid"_s},
-                 {Icon::PROPERTY_LINE_DOTTED, u"property-line_dotted"_s},
-                 }
-    , m_curTheme(u"fa-dark"_s) // default
+    , m_iconName{
+          {Icon::TOOL_SELECTION, u"tool_rect_selection"_s},
+          {Icon::TOOL_FREEFORM, u"draw-freehand"_s},
+          {Icon::TOOL_RECTANGLE, u"tool_rectangle"_s},
+          {Icon::TOOL_ELLIPSE, u"tool_ellipse"_s},
+          {Icon::TOOL_ARROW, u"draw-arrow"_s},
+          {Icon::TOOL_LINE, u"tool_line"_s},
+          {Icon::TOOL_ERASER, u"tool_eraser"_s},
+          {Icon::TOOL_TEXT, u"tool_text"_s},
+          {Icon::TOOL_MOVE, u"edit-move"_s},
+          {Icon::TOOL_DIAMOND, {}},
+          {Icon::ACTION_SAVE, u"document-save"_s},
+          {Icon::ACTION_OPEN_FILE, u"document-open"_s},
+          {Icon::ACTION_ZOOM_IN, u"zoom-in"_s},
+          {Icon::ACTION_ZOOM_OUT, u"zoom-out"_s},
+          {Icon::ACTION_UNDO, u"edit-undo"_s},
+          {Icon::ACTION_REDO, u"edit-redo"_s},
+          {Icon::ACTION_GROUP, u"object-group"_s},
+          {Icon::ACTION_UNGROUP, u"object-ungroup"_s},
+          {Icon::ACTION_DELETE, u"edit-delete"_s},
+          {Icon::PROPERTY_LINE_DASHED, u"property-line_dashed"_s},
+          {Icon::PROPERTY_LINE_SOLID, u"property-line_solid"_s},
+          {Icon::PROPERTY_LINE_DOTTED, u"property-line_dotted"_s},
+      }
 {
 }
 
 QString IconManager::iconPath(Icon icon) const
 {
-    const QString path{u":/icons/"_s + m_curTheme + u'/' + m_iconName.at(icon) + u".svg"_s};
+    const QString path{m_iconName.at(icon)};
     return path;
 }
 
 QIcon IconManager::icon(Icon icon) const
 {
-    return QIcon(iconPath(icon));
+    return QIcon::fromTheme(iconPath(icon));
 }

@@ -36,8 +36,7 @@ using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
-    applyCustomStyles();
-
+    loadCustomFonts();
     auto layout{new BoardLayout(this)};
     auto controller{new Controller(this)};
     ApplicationContext *context{ApplicationContext::instance()};
@@ -64,7 +63,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
     connect(renderingContext->canvas(), &Canvas::customContextMenuRequested, this, &MainWindow::contextMenuRequested);
 
-    applyCustomStyles();
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
     restoreAutoSaveJob->setParentWidget(this);
     connect(restoreAutoSaveJob, &RestoreAutoSaveJob::restoreDone, this, [this, context]() {
@@ -77,6 +75,19 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow() = default;
+
+void MainWindow::loadCustomFonts()
+{
+    int fontID = QFontDatabase::addApplicationFont(u":/fonts/FuzzyBubbles.ttf"_s);
+    if (fontID == -1) {
+        qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles";
+    }
+
+    fontID = QFontDatabase::addApplicationFont(u":/fonts/Inter.ttf"_s);
+    if (fontID == -1) {
+        qCWarning(DRAWY_LOG) << "Failed to load font: Inter";
+    }
+}
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
@@ -129,28 +140,6 @@ void MainWindow::closeEvent(QCloseEvent *e)
         }
     } else {
         e->accept();
-    }
-}
-
-void MainWindow::applyCustomStyles()
-{
-    QFile file(u":/styles/style.qss"_s);
-    if (file.open(QFile::ReadOnly | QFile::Text)) {
-        QTextStream stream(&file);
-        const QString qss = stream.readAll();
-        setStyleSheet(qss);
-    } else {
-        qCWarning(DRAWY_LOG) << "Failed to load stylesheet.";
-    }
-
-    int fontID = QFontDatabase::addApplicationFont(u":/fonts/FuzzyBubbles.ttf"_s);
-    if (fontID == -1) {
-        qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles";
-    }
-
-    fontID = QFontDatabase::addApplicationFont(u":/fonts/Inter.ttf"_s);
-    if (fontID == -1) {
-        qCWarning(DRAWY_LOG) << "Failed to load font: Inter";
     }
 }
 

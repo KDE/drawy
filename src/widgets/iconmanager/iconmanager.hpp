@@ -30,8 +30,6 @@ public:
         ACTION_ZOOM_OUT,
         ACTION_UNDO,
         ACTION_REDO,
-        ACTION_DARK_MODE,
-        ACTION_LIGHT_MODE,
         ACTION_GROUP,
         ACTION_UNGROUP,
         ACTION_DELETE,
@@ -47,6 +45,4 @@ public:
 
 private:
     std::unordered_map<IconManager::Icon, QString> m_iconName;
-
-    QString m_curTheme;
 };

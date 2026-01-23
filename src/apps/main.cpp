@@ -22,7 +22,6 @@ using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
     QApplication a{argc, argv};
-    QApplication::setStyle(u"Fusion"_s);
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
 
     KAboutData aboutData(u"drawy"_s,

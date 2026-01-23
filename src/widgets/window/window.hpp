@@ -24,7 +24,6 @@ protected:
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
-    LIBDRAWYWIDGETS_NO_EXPORT void applyCustomStyles();
-    bool m_config_useSystemStyles{true};
+    LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     bool m_forceClose = false;
 };
