@@ -93,15 +93,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
 
         const qreal zoom{renderingContext->zoomFactor()};
 
-        // PERF: We are re-drawing the current stroke on every point insertion. This means
-        // if the number of points in the stroke are a lot, rendering would be very slow it would start to lag.
-        // To workaround this, we are making sure that the total number of points each stroke has will never exceed
-        // a certain number. The more you zoom in, the less number of points your stroke can have. This is because
-        // when zoomed in, you need to draw more pixels, which means more computation, which is slower.
-        // This means if you have opacity set to something lower than 100%, you will see intersection points
-        // after each split occurs. The only real fix that I can think of is introducing hardware acceleration and
-        // offloading the rendering part to the GPU but Qt does not have good support for that so we might be stuck :<
-        // See: https://invent.kde.org/graphics/drawy/-/merge_requests/171
+#if 0
         const qsizetype maxPointsPerStroke{
             std::min(Common::maxFreeformPointCount, std::max(static_cast<int>(Common::maxFreeformPointCount / zoom), Common::minFreeformPointCount))};
         if (curItem->points().size() >= maxPointsPerStroke) {
@@ -124,15 +116,24 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
             // add last point to ensure it looks continuous
             curItem->addPoint(prevItem->points().back(), prevItem->pressures().back());
         }
+#endif
 
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
-        // clear the overlay and draw again
-        renderingContext->canvas()->setOverlayBg(renderingContext->canvas()->overlayBg());
-        renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
-            painter.scale(zoom, zoom);
-            curItem->draw(painter, spatialContext->offsetPos());
-        });
+        if (curItem->isBufferFull()) {
+            QPainter cachePainter{&m_currentCache};
+            cachePainter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
+            cachePainter.scale(zoom, zoom);
+            curItem->drawBuffer(cachePainter, spatialContext->offsetPos());
+        } else {
+            // clear the overlay and draw the cached pixmap and the latest buffer
+            renderingContext->canvas()->setOverlayBg(renderingContext->canvas()->overlayBg());
+            renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
+                painter.drawPixmap(QPointF{0, 0}, m_currentCache);
+                painter.scale(zoom, zoom);
+                curItem->drawBuffer(painter, spatialContext->offsetPos());
+            });
+        }
 
         m_lastPoint = curPoint;
         renderingContext->markForUpdate();

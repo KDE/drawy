@@ -32,7 +32,7 @@ inline constexpr QColor darkForegroundColor{211, 211, 211};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int eraseItemOpacity{50};
 
-inline constexpr int maxFreeformPointCount{250}; // max number of points per freeform
+inline constexpr int maxFreeformPointCount{500}; // max number of points per freeform
 inline constexpr int minFreeformPointCount{50}; // min number of points per freeform
 
 inline constexpr int boundingBoxPadding{10}; // in pixels

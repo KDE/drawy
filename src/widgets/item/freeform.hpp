@@ -22,6 +22,8 @@ public:
 
     void draw(QPainter &painter, const QPointF &offset) override;
     void erase(QPainter &painter, const QPointF &offset) const override;
+    void drawBuffer(QPainter &painter, const QPointF &offset) const;
+    bool isBufferFull() const;
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
     [[nodiscard]] bool intersects(const QLineF &rect) override;
@@ -49,6 +51,10 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
     QList<QPointF> m_points{};
     QList<qreal> m_pressures{};
+
+    static constexpr qsizetype m_maxBufferSize{50};
+    QList<QPointF> m_pointBuffer{};
+    QList<qreal> m_pressureBuffer{};
 
 private:
     bool m_simulatePressure{true};
