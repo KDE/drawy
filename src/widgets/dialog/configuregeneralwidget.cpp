@@ -20,6 +20,7 @@ ConfigureGeneralWidget::ConfigureGeneralWidget(QWidget *parent)
 
     mAutoSave->setObjectName(u"mAutoSave"_s);
     mainLayout->addWidget(mAutoSave);
+    mainLayout->addStretch(0);
 }
 
 ConfigureGeneralWidget::~ConfigureGeneralWidget() = default;

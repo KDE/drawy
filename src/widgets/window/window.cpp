@@ -22,6 +22,7 @@
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
 #include "data-structures/quadtree.hpp"
+#include "dialog/configuresettingsdialog.hpp"
 #include "drawy_debug.h"
 #include "jobs/autosavejob.hpp"
 #include "jobs/autosavejobutil.hpp"
@@ -162,12 +163,23 @@ void MainWindow::loadFile(const QString &fileName)
 void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 {
     auto menu = new QMenu(this);
+    auto actSettings = menu->addAction(tr("Configure..."));
+    menu->addSeparator();
+    // TODO add icons
     auto actQuit = menu->addAction(tr("Quit"));
     auto act = menu->exec(QCursor::pos());
     if (act == actQuit) {
         close();
+    } else if (act == actSettings) {
+        configureSettings();
     }
     delete menu;
+}
+
+void MainWindow::configureSettings()
+{
+    ConfigureSettingsDialog dlg(this);
+    dlg.exec();
 }
 
 #include "moc_window.cpp"

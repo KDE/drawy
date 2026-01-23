@@ -25,5 +25,6 @@ protected:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
+    LIBDRAWYWIDGETS_NO_EXPORT void configureSettings();
     bool m_forceClose = false;
 };
