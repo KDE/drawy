@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -13,6 +13,11 @@
 
 namespace Common::Utils::Freehand
 {
+QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
+{
+    return getStrokePath(getStrokePolygon(getStrokePoints(points, pressures, simulatePressure), thickness));
+}
+
 QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure)
 {
     if (points.size() != pressures.size()) {
@@ -20,13 +25,13 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     }
 
     if (points.empty()) {
-        return {};
+        return QList<StrokePoint>();
     }
 
     QList<StrokePoint> result{};
     result.push_back(StrokePoint{points[0], pressures[0]});
 
-    if (points.size() <= 1) {
+    if (points.size() == 1) {
         return result;
     }
 
@@ -38,6 +43,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
         QPointF interpolated{lerp(prev, points[pos], t)};
 
         const qreal dist{length(interpolated - prev)};
+
         if (dist < minDist)
             continue;
 
@@ -75,14 +81,14 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
 QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal thickness)
 {
     if (points.empty()) {
-        return {};
+        return QList<QPointF>();
     }
 
-    QList<QPointF> polygonPoints{};
     const qreal dist{thickness};
 
     // if there is only one point, draw a circle
     if (points.size() == 1) {
+        QList<QPointF> polygonPoints{};
         const QPointF radiusVector{dist, 0};
         for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
             const QPointF point{QPointF{rotateVector(radiusVector, 2 * PI * delta) + points.back().point}};
@@ -104,7 +110,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
             QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
             const qreal arcAngle{5.0 * PI / 6.0};
 
-            for (qreal delta = 0, step = 1.0 / 13; delta <= 1; delta += step) {
+            constexpr qreal step{1.0 / 13.0};
+            for (qreal delta = 0; delta <= 1; delta += step) {
                 const QPointF point{QPointF{rotateVector(radiusVector, arcAngle * delta) + cur.point}};
                 leftPoints.push_back(point);
             }
@@ -115,7 +122,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
                 radiusVector = rotateVector(radiusVector, PI - arcAngle - PI / 18);
             }
 
-            for (qreal delta = 0, step = 1.0 / 13; delta <= 1; delta += step) {
+            for (qreal delta = 0; delta <= 1; delta += step) {
                 const QPointF point{QPointF{rotateVector(-radiusVector, -arcAngle * delta) + cur.point}};
                 rightPoints.push_back(point);
             }
@@ -148,10 +155,12 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2));
     std::swap(leftPoints.back(), rightPoints.back());
 
+    constexpr qreal step{1.0 / 26};
+
     // drawing the end cap
     {
         const QPointF radiusVector{leftPoints.back() - points.back().point};
-        for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
+        for (qreal delta = 0; delta <= 1; delta += step) {
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.back().point}};
             leftPoints.push_back(point);
         }
@@ -162,7 +171,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     // drawing the start cap
     {
         const QPointF radiusVector{rightPoints.back() - points.front().point};
-        for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
+        for (qreal delta = 0; delta <= 1; delta += step) {
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.front().point}};
             rightPoints.push_back(point);
         }
@@ -209,8 +218,8 @@ QPointF unitVector(const QPointF &point)
 
 QPointF rotateVector(const QPointF &vector, const qreal angle)
 {
-    qreal cosTheta{qCos(angle)};
-    qreal sinTheta{qSin(angle)};
+    const qreal cosTheta{qCos(angle)};
+    const qreal sinTheta{qSin(angle)};
 
     return QPointF{vector.x() * cosTheta - vector.y() * sinTheta, vector.x() * sinTheta + vector.y() * cosTheta};
 }

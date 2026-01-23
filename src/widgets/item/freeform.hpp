@@ -23,7 +23,9 @@ public:
     void draw(QPainter &painter, const QPointF &offset) override;
     void erase(QPainter &painter, const QPointF &offset) const override;
     void drawBuffer(QPainter &painter, const QPointF &offset) const;
-    bool isBufferFull() const;
+    [[nodiscard]] bool isBufferFull() const;
+
+    void finalizeStroke();
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
     [[nodiscard]] bool intersects(const QLineF &rect) override;
@@ -44,7 +46,7 @@ public:
 
     bool needsCaching() const override;
 
-    bool isPressureSimulated() const;
+    [[nodiscard]] bool isPressureSimulated() const;
     void setSimulatePressure(bool value);
 
 protected:

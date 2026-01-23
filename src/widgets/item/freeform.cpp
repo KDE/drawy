@@ -32,11 +32,7 @@ int FreeformItem::minPointDistance()
 void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 {
     if (m_pointBuffer.size() >= m_maxBufferSize) {
-        m_points.append(m_pointBuffer.mid(1));
-        m_pressures.append(m_pressureBuffer.mid(1));
-
-        m_pointBuffer.clear();
-        m_pressureBuffer.clear();
+        finalizeStroke();
 
         m_pointBuffer.push_back(m_points.back());
         m_pressureBuffer.push_back(m_pressures.back());
@@ -45,15 +41,28 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
     m_pointBuffer.push_back(point);
     m_pressureBuffer.push_back(pressure);
 
-    using namespace Common::Utils::Freehand;
+    setDirty(true);
+}
+
+void FreeformItem::finalizeStroke()
+{
+    if (m_points.empty()) {
+        m_points = m_pointBuffer;
+        m_pressures = m_pressureBuffer;
+    } else {
+        m_points.append(m_pointBuffer.mid(1));
+        m_pressures.append(m_pressureBuffer.mid(1));
+    }
+
+    m_pointBuffer.clear();
+    m_pressureBuffer.clear();
+
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
-    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points + m_pointBuffer, m_pressures + m_pressureBuffer, m_simulatePressure), thickness));
+    m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
     m_path.setCachingEnabled(true);
 
     m_boundingBox = m_path.boundingRect().normalized();
-
-    setDirty(true);
 }
 
 bool FreeformItem::intersects(const QRectF &rect)
@@ -83,12 +92,8 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     // pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
 
     // We'll be drawing a polygon. We don't want it to have an outline.
-    QPen pen{};
-    pen.setWidth(0);
-    pen.setColor(Qt::transparent);
-
+    painter.setPen(Qt::NoPen);
     painter.setBrush(color);
-    painter.setPen(pen);
 
     drawItem(painter, offset);
 }
@@ -100,21 +105,16 @@ bool FreeformItem::isBufferFull() const
 
 void FreeformItem::drawBuffer(QPainter &painter, const QPointF &offset) const
 {
-    using namespace Common::Utils::Freehand;
-
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
-    QPainterPath path{getStrokePath(getStrokePolygon(getStrokePoints(m_pointBuffer, m_pressureBuffer, m_simulatePressure), thickness))};
+    QPainterPath path{Common::Utils::Freehand::getStroke(m_pointBuffer, m_pressureBuffer, m_simulatePressure, thickness)};
 
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
-    QPen pen{};
-    pen.setWidth(0);
-    pen.setColor(color);
 
     painter.setCompositionMode(QPainter::CompositionMode_Source);
+    painter.setPen(Qt::NoPen);
     painter.setBrush(color);
-    painter.setPen(pen);
     painter.translate(-offset);
     painter.drawPath(path);
 }
@@ -158,10 +158,7 @@ void FreeformItem::translate(const QPointF &amount)
         point += amount;
     }
 
-    using namespace Common::Utils::Freehand;
-    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
-    m_path = getStrokePath(getStrokePolygon(getStrokePoints(m_points, m_pressures, m_simulatePressure), thickness));
-
+    m_path.translate(amount);
     m_boundingBox.translate(amount);
 }
 

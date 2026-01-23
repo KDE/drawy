@@ -92,32 +92,6 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
             return;
 
         const qreal zoom{renderingContext->zoomFactor()};
-
-#if 0
-        const qsizetype maxPointsPerStroke{
-            std::min(Common::maxFreeformPointCount, std::max(static_cast<int>(Common::maxFreeformPointCount / zoom), Common::minFreeformPointCount))};
-        if (curItem->points().size() >= maxPointsPerStroke) {
-            std::shared_ptr<FreeformItem> prevItem{curItem};
-            m_itemList.push_back(prevItem);
-
-            // draw temporarily on canvas
-            renderingContext->canvas()->paintCanvas([&](QPainter &painter) -> void {
-                painter.scale(zoom, zoom);
-                prevItem->draw(painter, spatialContext->offsetPos());
-            });
-
-            renderingContext->markForUpdate();
-
-            curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
-            curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
-            curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
-            curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
-
-            // add last point to ensure it looks continuous
-            curItem->addPoint(prevItem->points().back(), prevItem->pressures().back());
-        }
-#endif
-
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
         if (curItem->isBufferFull()) {
@@ -151,6 +125,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
+        curItem->finalizeStroke();
         m_itemList.push_back(curItem);
         commandHistory->insert(std::make_shared<InsertItemCommand>(m_itemList));
 
@@ -173,12 +148,8 @@ void FreeformTool::tablet([[maybe_unused]] ApplicationContext *context)
 void FreeformTool::cleanup()
 {
     ApplicationContext *context{ApplicationContext::instance()};
-<<<<<<< HEAD
     context->uiContext()->appEvent()->setButton(Qt::LeftButton);
-=======
-    context->uiContext()->appEvent().setButton(Qt::LeftButton);
     m_itemList.clear();
->>>>>>> 540e8e6 (perf: workaround performance issues when drawing large strokes)
     mouseReleased(context);
 }
 
