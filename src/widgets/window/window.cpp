@@ -10,6 +10,9 @@
 #include <QFontDatabase>
 #include <QShortcut>
 
+#include <KStandardAction>
+#include <KStandardActions>
+
 #include "boardlayout.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
@@ -146,11 +149,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
 
 void MainWindow::viewFullScreen(bool fullScreen)
 {
-    if (fullScreen) {
-        setWindowState(windowState() | Qt::WindowFullScreen);
-    } else {
-        setWindowState(windowState() & ~Qt::WindowFullScreen);
-    }
+    KToggleFullScreenAction::setFullScreen(this, fullScreen);
 }
 
 void MainWindow::loadFile(const QString &fileName)
@@ -163,16 +162,16 @@ void MainWindow::loadFile(const QString &fileName)
 void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 {
     auto menu = new QMenu(this);
-    auto actSettings = menu->addAction(tr("Configure..."));
+
+    auto fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, this);
+    fullScreenAction->setChecked(isFullScreen());
+    connect(fullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
+    menu->addAction(fullScreenAction);
     menu->addSeparator();
-    // TODO add icons
-    auto actQuit = menu->addAction(tr("Quit"));
-    auto act = menu->exec(QCursor::pos());
-    if (act == actQuit) {
-        close();
-    } else if (act == actSettings) {
-        configureSettings();
-    }
+    menu->addAction(KStandardActions::preferences(this, &MainWindow::configureSettings, this));
+    menu->addSeparator();
+    menu->addAction(KStandardActions::quit(this, &MainWindow::close, this));
+    menu->exec(QCursor::pos());
     delete menu;
 }
 

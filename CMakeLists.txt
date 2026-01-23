@@ -54,6 +54,7 @@ find_package(
         CoreAddons
         WidgetsAddons
         Config
+        ConfigWidgets
 )
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

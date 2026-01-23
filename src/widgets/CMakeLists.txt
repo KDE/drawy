@@ -285,7 +285,7 @@ target_link_libraries(
     libdrawywidgets
     Qt::Widgets
     KF6::WidgetsAddons
-    KF6::ConfigGui
+    KF6::ConfigWidgets
     ${ZSTD_LINK_LIBRARIES}
 )
 
