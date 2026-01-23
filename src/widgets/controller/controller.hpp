@@ -35,7 +35,7 @@ public Q_SLOTS:
     void renderZoom();
 
 private:
-    ApplicationContext *m_context = nullptr;
+    ApplicationContext *const m_context;
     qint64 m_lastTime{};
     qint64 m_lastClickTime{};
     int m_clickCount{}; // for double/triple clicks
