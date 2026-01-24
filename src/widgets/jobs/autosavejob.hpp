@@ -6,6 +6,7 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include <QObject>
+
 class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT AutoSaveJob : public QObject
 {

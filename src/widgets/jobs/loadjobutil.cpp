@@ -14,10 +14,12 @@ void LoadJobUtil::loadFile(const LoadJob::LoadInfo &info)
 {
     ApplicationContext *context{ApplicationContext::instance()};
     context->reset();
+
     QuadTree &quadtree{context->spatialContext()->quadtree()};
     for (const auto &item : info.items) {
         quadtree.insertItem(item);
     }
+
     context->renderingContext()->setZoomFactor(info.zoomFactor);
 
     context->spatialContext()->setOffsetPos(info.offsetPos);

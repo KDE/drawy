@@ -45,13 +45,16 @@ void AutoSaveJob::saveFile()
         .zoomFactor = m_context->renderingContext()->zoomFactor(),
         .items = m_context->spatialContext()->quadtree().getAllItems(),
     };
+
     saveAsJob->setSaveAsInfo(info);
     connect(saveAsJob, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
         SerializerUtils::saveInFile(obj, fileName);
         qCDebug(DRAWY_AUTOSAVE_LOG) << "Autosave file done: " << fileName;
+
         // Restart timer
         start();
     });
+
     saveAsJob->start();
 }
 #include "moc_autosavejob.cpp"

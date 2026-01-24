@@ -66,7 +66,7 @@ void DeserializeJob::deserializeItems()
     const QPointF offsetPos = ItemDeserializer::toPointF(ItemDeserializer::value(mJsonObject, u"offset_pos"_s));
     const DeserializeInfo info{
         .offsetPos = offsetPos,
-        .zoomOffset = zoomFactor,
+        .zoomFactor = zoomFactor,
         .items = items,
     };
     Q_EMIT deserializeDone(info);

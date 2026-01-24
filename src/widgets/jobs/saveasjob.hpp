@@ -15,8 +15,8 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT SaveAsJob : public QObject
 public:
     struct SaveAsInfo {
         QString filePath;
-        QPointF offsetPos;
-        qreal zoomFactor = 0;
+        QPointF offsetPos{0, 0};
+        qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
     };
 

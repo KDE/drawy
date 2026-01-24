@@ -169,6 +169,7 @@ void RenderingContext::reset()
 {
     setZoomFactor(1.0);
     cacheGrid().markAllDirty();
+    itemCache().clear();
 }
 
 #include "moc_renderingcontext.cpp"

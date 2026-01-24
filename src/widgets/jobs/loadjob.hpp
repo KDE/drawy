@@ -13,10 +13,11 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT LoadJob : public QObject
     Q_OBJECT
 public:
     struct LoadInfo {
-        QPointF offsetPos;
-        qreal zoomFactor = 0;
+        QPointF offsetPos{0, 0};
+        qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
     };
+
     explicit LoadJob(QObject *parent = nullptr);
     ~LoadJob() override;
 

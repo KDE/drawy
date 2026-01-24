@@ -25,7 +25,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     QTransform transform{item->transformObj()};
     transform.translate(boundingBox.topLeft().x(),
                         boundingBox.topLeft().y()); // account for the initial translation
-                                                    //
+
     const QRectF transformedQueryRegion{transformer.worldToGrid(transform.inverted().mapRect(queryRegion))};
 
     // Check if item is not already cached

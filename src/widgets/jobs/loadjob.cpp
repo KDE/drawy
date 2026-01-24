@@ -57,7 +57,7 @@ void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
 {
     const LoadJob::LoadInfo loadInfo{
         .offsetPos = info.offsetPos,
-        .zoomFactor = info.zoomOffset,
+        .zoomFactor = info.zoomFactor,
         .items = info.items,
     };
     Q_EMIT loadDone(loadInfo);

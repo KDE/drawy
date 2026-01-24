@@ -57,6 +57,8 @@
                 kdePackages.kcrash.dev
                 kdePackages.kwidgetsaddons
                 kdePackages.kconfig
+                kdePackages.kconfigwidgets
+                kdePackages.kxmlgui
               ]);
           };
       });

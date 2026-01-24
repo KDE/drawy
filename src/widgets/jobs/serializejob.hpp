@@ -15,10 +15,11 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT SerializeJob : public QObject
     Q_OBJECT
 public:
     struct SerializeInfo {
-        QPointF offsetPos;
-        qreal zoomFactor = 0;
+        QPointF offsetPos{0, 0};
+        qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
     };
+
     explicit SerializeJob(QObject *parent = nullptr);
     ~SerializeJob() override;
 

@@ -45,6 +45,9 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 
 void FreeformItem::finalizeStroke()
 {
+    if (m_pointBuffer.empty())
+        return;
+
     if (m_points.empty()) {
         m_points = m_pointBuffer;
         m_pressures = m_pressureBuffer;
@@ -83,6 +86,8 @@ bool FreeformItem::intersects(const QLineF &line)
 
 void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 {
+    finalizeStroke();
+
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);

@@ -29,6 +29,7 @@ void SaveAsJob::start()
         deleteLater();
         return;
     }
+
     auto job = new SerializeJob(this);
     const SerializeJob::SerializeInfo info{.offsetPos = mSaveAsInfo.offsetPos, .zoomFactor = mSaveAsInfo.zoomFactor, .items = mSaveAsInfo.items};
     job->setSerializeInfo(info);

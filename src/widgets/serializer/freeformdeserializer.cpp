@@ -27,4 +27,5 @@ void FreeformDeserializer::deserialize(const QJsonObject &obj)
 
         freeFormItem->addPoint(point, pressures[pos].toDouble());
     }
+    freeFormItem->finalizeStroke();
 }

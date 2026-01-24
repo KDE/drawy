@@ -15,10 +15,11 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT DeserializeJob : public QObject
     Q_OBJECT
 public:
     struct DeserializeInfo {
-        QPointF offsetPos;
-        qreal zoomOffset = 0.0;
+        QPointF offsetPos{0, 0};
+        qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
     };
+
     explicit DeserializeJob(QObject *parent = nullptr);
     ~DeserializeJob() override;
 
