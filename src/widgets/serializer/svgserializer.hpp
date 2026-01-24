@@ -15,6 +15,6 @@
 namespace SvgSerializer
 {
 
-void writeSvg(QXmlStreamWriter &writer, QList<std::shared_ptr<Item>> items);
+LIBDRAWYWIDGETS_TESTS_EXPORT void writeSvg(QXmlStreamWriter &writer, QList<std::shared_ptr<Item>> items);
 
 }; // namespace SvgSerializer

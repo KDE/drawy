@@ -40,14 +40,13 @@ void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Ite
 
     // Draw background.
     painter.fillRect(boundingBox, Common::darkBackgroundColor);
+    painter.end();
 
     for (const auto &item : std::as_const(items)) {
-        painter.save();
+        painter.begin(&device);
         item->draw(painter, QPointF{0, 0});
-        painter.restore();
+        painter.end();
     }
-
-    painter.end();
 
     stream.writeEndElement();
 
