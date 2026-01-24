@@ -38,20 +38,6 @@ ActionManager::ActionManager(ApplicationContext *context)
     auto keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    auto zoomInAction{new Action{tr("Zoom In"),
-                                 tr("Zoom in"),
-                                 [this]() {
-                                     zoomIn();
-                                 },
-                                 this}};
-
-    auto zoomOutAction{new Action{tr("Zoom Out"),
-                                  tr("Zoom out"),
-                                  [this]() {
-                                      zoomOut();
-                                  },
-                                  this}};
-
     auto freeformToolAction{new Action{tr("Freeform Tool"),
                                        tr("Switch to freeform drawing tool"),
                                        [this]() {
@@ -129,13 +115,6 @@ ActionManager::ActionManager(ApplicationContext *context)
                                   },
                                   this}};
 
-    auto selectAllAction{new Action{tr("Select All"),
-                                    tr("Select all items"),
-                                    [this]() {
-                                        selectAll();
-                                    },
-                                    this}};
-
     auto deleteAction{new Action{tr("Delete"),
                                  tr("Deletes selected items"),
                                  [this]() {
@@ -143,15 +122,6 @@ ActionManager::ActionManager(ApplicationContext *context)
                                  },
                                  this}};
 
-    auto openFileAction{new Action{tr("Open File"),
-                                   tr("Open an existing file"),
-                                   [this]() {
-                                       loadFromFile();
-                                   },
-                                   this}};
-
-    keybindManager->addKeybinding(zoomInAction, QKeySequence(QKeySequence::ZoomIn));
-    keybindManager->addKeybinding(zoomOutAction, QKeySequence(QKeySequence::ZoomOut));
     keybindManager->addKeybinding(textToolAction, QKeySequence(QKeyCombination(Qt::Key_T)));
     keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_P)));
     keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_B)));
@@ -162,9 +132,7 @@ ActionManager::ActionManager(ApplicationContext *context)
     keybindManager->addKeybinding(lineToolAction, QKeySequence(QKeyCombination(Qt::Key_L)));
     keybindManager->addKeybinding(arrowToolAction, QKeySequence(QKeyCombination(Qt::Key_A)));
     keybindManager->addKeybinding(moveToolAction, QKeySequence(QKeyCombination(Qt::Key_M)));
-    keybindManager->addKeybinding(selectAllAction, QKeySequence(QKeySequence::SelectAll));
     keybindManager->addKeybinding(deleteAction, QKeySequence(QKeySequence::Delete));
-    keybindManager->addKeybinding(openFileAction, QKeySequence(QKeySequence::Open));
     keybindManager->addKeybinding(groupAction, QKeySequence(QKeyCombination(Qt::Key_G)));
     keybindManager->addKeybinding(unGroupAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G)));
 }

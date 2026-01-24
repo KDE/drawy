@@ -42,7 +42,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
     loadCustomFonts();
-    setupAction();
     auto layout{new BoardLayout(this)};
     auto controller{new Controller(this)};
     ApplicationContext *context{ApplicationContext::instance()};
@@ -78,6 +77,7 @@ MainWindow::MainWindow(QWidget *parent)
         autoSaveJob->start();
     });
     restoreAutoSaveJob->start();
+    setupAction();
 }
 
 MainWindow::~MainWindow() = default;
@@ -182,6 +182,9 @@ void MainWindow::configureSettings()
 
 void MainWindow::setupAction()
 {
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
+
     mActionCollection = new KActionCollection(this);
 
     mFullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, mActionCollection);
@@ -190,34 +193,18 @@ void MainWindow::setupAction()
     mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, mActionCollection);
     mQuitAction = KStandardActions::quit(this, &MainWindow::close, mActionCollection);
 
-    mSaveAction = KStandardAction::save(this, &MainWindow::save, mActionCollection);
+    mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, mActionCollection);
 
-    mUndoAction = KStandardAction::undo(this, &MainWindow::undo, mActionCollection);
-    mRedoAction = KStandardAction::redo(this, &MainWindow::redo, mActionCollection);
+    mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, mActionCollection);
+    mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, mActionCollection);
 
+    mZoomInAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomIn, mActionCollection);
+    mZoomOutAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomOut, mActionCollection);
+
+    mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, mActionCollection);
+    mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, mActionCollection);
     mActionCollection->associateWidget(this);
     mActionCollection->readSettings();
-}
-
-void MainWindow::save()
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-    actionManager->saveToFile();
-}
-
-void MainWindow::undo()
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-    actionManager->undo();
-}
-
-void MainWindow::redo()
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-    actionManager->redo();
 }
 
 #include "moc_window.cpp"
