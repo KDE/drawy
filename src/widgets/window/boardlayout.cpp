@@ -19,6 +19,10 @@ BoardLayout::BoardLayout(QWidget *parent)
 BoardLayout::~BoardLayout()
 {
     delete m_centralWidget;
+    delete m_leftWidget;
+    delete m_topWidget;
+    delete m_rightWidget;
+    delete m_bottomWidget;
 }
 
 void BoardLayout::addItem(QLayoutItem *item)
