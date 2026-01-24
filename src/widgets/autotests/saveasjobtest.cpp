@@ -17,7 +17,7 @@ void SaveAsJobTest::shouldHaveDefaultValues()
     const SaveAsJob::SaveAsInfo info;
     QVERIFY(info.filePath.isEmpty());
     QCOMPARE(info.offsetPos, {});
-    QCOMPARE(info.zoomFactor, 0);
+    QCOMPARE(info.zoomFactor, 1.0);
     QVERIFY(info.items.isEmpty());
 
     const SaveAsJob j;

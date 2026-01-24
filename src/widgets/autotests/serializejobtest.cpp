@@ -18,7 +18,7 @@ void SerializeJobTest::shouldHaveDefaultValues()
 {
     const SerializeJob::SerializeInfo info;
     QCOMPARE(info.offsetPos, {});
-    QCOMPARE(info.zoomFactor, 0);
+    QCOMPARE(info.zoomFactor, 1.0);
     QVERIFY(info.items.isEmpty());
 
     const SerializeJob j;
