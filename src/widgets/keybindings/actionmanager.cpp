@@ -30,6 +30,7 @@
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "serializer/serializerutils.hpp"
+#include "serializer/svgserializer.hpp"
 using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
@@ -192,6 +193,31 @@ void ActionManager::loadFromFile()
     if (fileName.isEmpty())
         return;
     loadFile(fileName);
+}
+
+void ActionManager::exportToFile()
+{
+    const QDir homeDir{QDir::home()};
+    QString text = QObject::tr("Untitled.svg");
+    const QString defaultFilePath = homeDir.filePath(text);
+    text = QObject::tr("SVG (*.svg)");
+
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+
+    if (fileName.isEmpty()) {
+        return;
+    }
+
+    QFile file{fileName};
+    if (!file.open(QIODevice::WriteOnly)) {
+        qCWarning(DRAWY_LOG) << "Error: There was an error opening the export file.";
+        return;
+    }
+
+    QXmlStreamWriter stream(&file);
+    stream.setAutoFormatting(true);
+
+    SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems());
 }
 
 void ActionManager::loadFile(const QString &fileName)
