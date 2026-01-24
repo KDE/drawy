@@ -17,7 +17,7 @@ IconManager::IconManager(QObject *parent)
           {Icon::TOOL_LINE, u"tool_line"_s},
           {Icon::TOOL_ERASER, u"tool_eraser"_s},
           {Icon::TOOL_TEXT, u"tool_text"_s},
-          {Icon::TOOL_MOVE, u"edit-move"_s},
+          {Icon::TOOL_MOVE, u"hand"_s},
           {Icon::TOOL_DIAMOND, {}},
           {Icon::ACTION_SAVE, u"document-save"_s},
           {Icon::ACTION_OPEN_FILE, u"document-open"_s},
