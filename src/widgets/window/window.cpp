@@ -190,8 +190,34 @@ void MainWindow::setupAction()
     mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, mActionCollection);
     mQuitAction = KStandardActions::quit(this, &MainWindow::close, mActionCollection);
 
+    mSaveAction = KStandardAction::save(this, &MainWindow::save, mActionCollection);
+
+    mUndoAction = KStandardAction::undo(this, &MainWindow::undo, mActionCollection);
+    mRedoAction = KStandardAction::redo(this, &MainWindow::redo, mActionCollection);
+
     mActionCollection->associateWidget(this);
     mActionCollection->readSettings();
+}
+
+void MainWindow::save()
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
+    actionManager->saveToFile();
+}
+
+void MainWindow::undo()
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
+    actionManager->undo();
+}
+
+void MainWindow::redo()
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
+    actionManager->redo();
 }
 
 #include "moc_window.cpp"

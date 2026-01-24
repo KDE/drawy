@@ -38,20 +38,6 @@ ActionManager::ActionManager(ApplicationContext *context)
     auto keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    auto undoAction{new Action{tr("Undo"),
-                               tr("Undo last action"),
-                               [this]() {
-                                   undo();
-                               },
-                               this}};
-
-    auto redoAction{new Action{tr("Redo"),
-                               tr("Redo last undone action"),
-                               [this]() {
-                                   redo();
-                               },
-                               this}};
-
     auto zoomInAction{new Action{tr("Zoom In"),
                                  tr("Zoom in"),
                                  [this]() {
@@ -157,13 +143,6 @@ ActionManager::ActionManager(ApplicationContext *context)
                                  },
                                  this}};
 
-    auto saveAction{new Action{tr("Save"),
-                               tr("Save canvas"),
-                               [this]() {
-                                   saveToFile();
-                               },
-                               this}};
-
     auto openFileAction{new Action{tr("Open File"),
                                    tr("Open an existing file"),
                                    [this]() {
@@ -171,9 +150,6 @@ ActionManager::ActionManager(ApplicationContext *context)
                                    },
                                    this}};
 
-    keybindManager->addKeybinding(undoAction, QKeySequence(QKeySequence::Undo));
-    keybindManager->addKeybinding(redoAction, QKeySequence(QKeySequence::Undo));
-    keybindManager->addKeybinding(redoAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_Z)));
     keybindManager->addKeybinding(zoomInAction, QKeySequence(QKeySequence::ZoomIn));
     keybindManager->addKeybinding(zoomOutAction, QKeySequence(QKeySequence::ZoomOut));
     keybindManager->addKeybinding(textToolAction, QKeySequence(QKeyCombination(Qt::Key_T)));
@@ -188,7 +164,6 @@ ActionManager::ActionManager(ApplicationContext *context)
     keybindManager->addKeybinding(moveToolAction, QKeySequence(QKeyCombination(Qt::Key_M)));
     keybindManager->addKeybinding(selectAllAction, QKeySequence(QKeySequence::SelectAll));
     keybindManager->addKeybinding(deleteAction, QKeySequence(QKeySequence::Delete));
-    keybindManager->addKeybinding(saveAction, QKeySequence(QKeySequence::Save));
     keybindManager->addKeybinding(openFileAction, QKeySequence(QKeySequence::Open));
     keybindManager->addKeybinding(groupAction, QKeySequence(QKeyCombination(Qt::Key_G)));
     keybindManager->addKeybinding(unGroupAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G)));

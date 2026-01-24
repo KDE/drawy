@@ -27,9 +27,15 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     LIBDRAWYWIDGETS_NO_EXPORT void configureSettings();
     LIBDRAWYWIDGETS_NO_EXPORT void setupAction();
+    LIBDRAWYWIDGETS_NO_EXPORT void save();
+    LIBDRAWYWIDGETS_NO_EXPORT void redo();
+    LIBDRAWYWIDGETS_NO_EXPORT void undo();
     bool m_forceClose = false;
     QAction *mFullScreenAction = nullptr;
     QAction *mConfigureSettingsAction = nullptr;
     QAction *mQuitAction = nullptr;
+    QAction *mSaveAction = nullptr;
+    QAction *mUndoAction = nullptr;
+    QAction *mRedoAction = nullptr;
     KActionCollection *mActionCollection = nullptr;
 };
