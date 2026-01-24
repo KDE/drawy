@@ -18,48 +18,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "(c) 2025-%1 Autoria de Drawy"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Un argument «file» opcional "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
@@ -129,22 +129,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Acosta"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Mode clar"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Mode fosc"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfés"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
@@ -364,20 +354,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Obri un fitxer existent"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sense_títol .%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guarda el fitxer"
@@ -422,7 +412,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Color"
@@ -493,7 +483,7 @@ msgid "Move on Bottom"
 msgstr "Mou cap a baix de tot"
 
 # NdT: Ordre d'elements segons l'eix Z
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Ordre de Z"
@@ -518,7 +508,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Eina esborrador"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Eina llapis"
@@ -548,25 +538,33 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Voleu guardar el fitxer?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Tanca"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Guarda i tanca"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ignora"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Mode clar"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Mode fosc"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

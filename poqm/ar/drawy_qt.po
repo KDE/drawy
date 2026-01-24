@@ -14,48 +14,48 @@ msgstr ""
 "X-Generator: Lokalize 23.08.5\n"
 "X-Qt-Contexts: true\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "السبورة"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "(ج) 2025-%1 مؤلفو السبورة"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "براياغ جاين"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "الصائن"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "لوران مونتال"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "مطوّر"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "مُعطى اختياري 'ملفّ' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
@@ -125,22 +125,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "قرّب"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "الوضع الفاتح"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "الوضع المظلم"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "تراجع"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "كرّر"
@@ -363,20 +353,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "افتح ملفًا موجودًا"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "غير معنون.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "السبورة (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "احفظ الملفّ"
@@ -424,7 +414,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "لون الخلفيّة"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "اللون"
@@ -506,7 +496,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "أداة التحريك"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr ""
@@ -531,7 +521,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "أداة الممحاة"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "أداة الريشة"
@@ -561,7 +551,7 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to close?"
@@ -569,12 +559,12 @@ msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "هل تريد أن تغلق التطبيق؟"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "أغلق"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -582,10 +572,18 @@ msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "احفظ في ملفّ"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "الوضع الفاتح"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "الوضع المظلم"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

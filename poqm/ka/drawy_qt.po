@@ -13,48 +13,48 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "X-Generator: Poedit 3.8\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "(c) 2025-%1 drawy-ის ავტორები"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "ლორან მონტელი"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "არასავალდებული არგუმენტი 'ფაილი' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
@@ -124,22 +124,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "გადიდება"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "ღია რეჟიმი"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "მუქი რეჟიმი"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "გაუქმება"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "გამეორება"
@@ -147,12 +137,12 @@ msgstr "გამეორება"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Drawy-ის მორგება"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -359,20 +349,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "არსებული ფაილის გახსნა"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
@@ -417,7 +407,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "ფონის ფერი"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "ფერი"
@@ -487,7 +477,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "ბოლოში ჩამოტანა"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Z-მიმდევრობა"
@@ -512,7 +502,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "კალამი ხელსაწყო"
@@ -542,25 +532,33 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "გსურთ ფაილის შენახვა?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "დახურვა"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "შენახვა და დახურვა"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "იგნორი"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "ღია რეჟიმი"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "მუქი რეჟიმი"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

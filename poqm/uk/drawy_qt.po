@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-21 22:27+0200\n"
+"PO-Revision-Date: 2026-01-23 19:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -14,48 +14,48 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "© Автори drawy, 2025-%1"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Праяг Джайн"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "Розробник"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Додатковий параметр «file» "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
@@ -125,22 +125,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Світлий режим"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Темний режим"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Повторити"
@@ -148,12 +138,12 @@ msgstr "Повторити"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Налаштовування Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "Загальне"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -360,20 +350,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Відкрити наявний файл"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
@@ -418,7 +408,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Колір тла"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Колір"
@@ -488,7 +478,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Пересунути униз"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Порядок за віссю Z"
@@ -513,7 +503,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Інструмент «Перо»"
@@ -543,25 +533,33 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Хочете зберегти файл?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Закрити"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Зберегти і закрити"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ігнорувати"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Світлий режим"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Темний режим"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

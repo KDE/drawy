@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-21 06:52-0300\n"
+"PO-Revision-Date: 2026-01-23 05:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -14,48 +14,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.12.1\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "(c) 2025-%1 Autores do drawy"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "Mantenedor"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Um argumento opcional 'arquivo' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
@@ -125,22 +125,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Modo claro"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Modo escuro"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfazer"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refazer"
@@ -148,12 +138,12 @@ msgstr "Refazer"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Configurar Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -360,20 +350,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Abre um arquivo existente"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salvar arquivo"
@@ -418,7 +408,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Cor de fundo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Cor"
@@ -488,7 +478,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Mover para a base"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Ordem-Z"
@@ -513,7 +503,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Ferramenta de borracha"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Ferramenta de caneta"
@@ -543,25 +533,33 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Ferramenta de texto"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Deseja salvar o arquivo?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Fechar"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Salvar e fechar"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ignorar"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Modo claro"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Modo escuro"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

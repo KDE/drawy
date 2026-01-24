@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2026-01-22 01:26+0100\n"
+"PO-Revision-Date: 2026-01-23 20:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,48 +18,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.12.1\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Herramienta práctica y sin límites para generar lluvia de ideas"
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "© 2025-%1 Los autores de drawy"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "Responsable"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "Desarrollador"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Un argumento «archivo» opcional"
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Herramienta práctica y sin límites para generar lluvia de ideas"
@@ -129,22 +129,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Acercar"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Modo claro"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Modo oscuro"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Deshacer"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Rehacer"
@@ -152,12 +142,12 @@ msgstr "Rehacer"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Configurar Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -364,20 +354,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Abrir un archivo existente"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sin título.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guardar archivo"
@@ -422,7 +412,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fondo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Color"
@@ -492,7 +482,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Mover abajo del todo"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Orden Z"
@@ -517,7 +507,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Herramienta de borrador"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Herramienta de lápiz"
@@ -547,106 +537,30 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Herramienta de texto"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "¿Quiere guardar el archivo?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Cerrar"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Guardar y cerrar"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ignorar"
 
-#~ msgctxt "ActionManager|keybinding for the undo action"
-#~ msgid "Ctrl+Z"
-#~ msgstr "Ctrl+Z"
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Modo claro"
 
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Y"
-#~ msgstr "Ctrl+Y"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Shift+Z"
-#~ msgstr "Ctrl+Mayúsculas+Z"
-
-#~ msgctxt "ActionManager|keybinding for the zoom in action"
-#~ msgid "Ctrl++"
-#~ msgstr "Ctrl++"
-
-#~ msgctxt "ActionManager|keybinding for the zoom out action"
-#~ msgid "Ctrl+-"
-#~ msgstr "Ctrl+-"
-
-#~ msgctxt "ActionManager|keybinding for the text tool"
-#~ msgid "T"
-#~ msgstr "T"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "P"
-#~ msgstr "P"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgctxt "ActionManager|keybinding for the eraser tool"
-#~ msgid "E"
-#~ msgstr "E"
-
-#~ msgctxt "ActionManager|keybinding for the selection tool"
-#~ msgid "S"
-#~ msgstr "S"
-
-#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-#~ msgid "R"
-#~ msgstr "R"
-
-#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-#~ msgid "O"
-#~ msgstr "O"
-
-#~ msgctxt "ActionManager|keybinding for the line drawing tool"
-#~ msgid "L"
-#~ msgstr "L"
-
-#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgctxt "ActionManager|keybinding for the move tool"
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgctxt "ActionManager|keybinding for the select all action"
-#~ msgid "Ctrl+A"
-#~ msgstr "Ctrl+A"
-
-#~ msgctxt "ActionManager|keybinding for the delete action"
-#~ msgid "Del"
-#~ msgstr "Supr"
-
-#~ msgctxt "ActionManager|keybinding for the save action"
-#~ msgid "Ctrl+S"
-#~ msgstr "Ctrl+S"
-
-#~ msgctxt "ActionManager|keybinding for the open file action"
-#~ msgid "Ctrl+O"
-#~ msgstr "Ctrl+O"
-
-#~ msgctxt "ActionManager|keybinding for the group action"
-#~ msgid "Ctrl+G"
-#~ msgstr "Ctrl+G"
-
-#~ msgctxt "ActionManager|keybinding for the ungroup action"
-#~ msgid "Ctrl+Shift+G"
-#~ msgstr "Ctrl+Mayúsculas+G"
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Modo oscuro"

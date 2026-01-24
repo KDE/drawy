@@ -13,48 +13,48 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: apps/main.cpp:29
+#: apps/main.cpp:28
 msgctxt "QObject|"
 msgid "drawy"
 msgstr "drawy"
 
-#: apps/main.cpp:31
+#: apps/main.cpp:30
 msgctxt "QObject|"
 msgid "Your handy, infinite, brainstorming tool!"
 msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
 
-#: apps/main.cpp:33
+#: apps/main.cpp:32
 #, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 drawy authors"
 msgstr "(c) 2025-%1 höfundar Drawy"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:34
+#: apps/main.cpp:33
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr "Umsjónarmaður"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:35
+#: apps/main.cpp:34
 msgctxt "QObject|"
 msgid "Developer"
 msgstr "Forritari"
 
-#: apps/main.cpp:42
+#: apps/main.cpp:41
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Valfrjáls viðfanga'skrá' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:44
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
@@ -124,22 +124,12 @@ msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Renna að"
 
-#: widgets/context/uicontext.cpp:93 widgets/context/uicontext.cpp:99
-msgctxt "UIContext|"
-msgid "Light Mode"
-msgstr "Ljós hamur"
-
-#: widgets/context/uicontext.cpp:103
-msgctxt "UIContext|"
-msgid "Dark Mode"
-msgstr "Dökkur hamur"
-
-#: widgets/context/uicontext.cpp:111
+#: widgets/context/uicontext.cpp:94
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Afturkalla"
 
-#: widgets/context/uicontext.cpp:122
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Endurtaka"
@@ -362,20 +352,20 @@ msgctxt "ActionManager|"
 msgid "Open an existing file"
 msgstr "Opna fyrirliggjandi skrá"
 
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:96
+#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Ónefnt.%1"
 
 #: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:98
+#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:99
+#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Vista skrá"
@@ -423,7 +413,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Bakgrunnslitur"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:49
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Litur"
@@ -505,7 +495,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Færsluverkfæri"
 
-#: widgets/properties/widgets/zorderwidget.cpp:66
+#: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr ""
@@ -533,7 +523,7 @@ msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Útþurrkunarverkfæri"
 
-#: widgets/tools/freeformtool.cpp:47
+#: widgets/tools/freeformtool.cpp:45
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Pennaverkfæri"
@@ -563,7 +553,7 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Textaverkfæri"
 
-#: widgets/window/window.cpp:84
+#: widgets/window/window.cpp:101
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to close?"
@@ -571,12 +561,12 @@ msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Viltu örugglega loka?"
 
-#: widgets/window/window.cpp:85
+#: widgets/window/window.cpp:102
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Loka"
 
-#: widgets/window/window.cpp:86
+#: widgets/window/window.cpp:103
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -584,10 +574,18 @@ msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Vista í skrá"
 
-#: widgets/window/window.cpp:87
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Ljós hamur"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Dökkur hamur"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"
