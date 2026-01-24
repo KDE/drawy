@@ -13,6 +13,7 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT PropertyManager : public QObject
     Q_OBJECT
 public:
     explicit PropertyManager(QWidget *parent = nullptr);
+    ~PropertyManager() override;
 
     [[nodiscard]] PropertyWidget *widget(const Property::Type type) const;
     [[nodiscard]] Property value(const Property::Type type) const;
@@ -21,5 +22,5 @@ Q_SIGNALS:
     void propertyUpdated(Property property);
 
 private:
-    std::unordered_map<Property::Type, PropertyWidget *> m_widgets{};
+    QMap<Property::Type, PropertyWidget *> m_widgets{};
 };

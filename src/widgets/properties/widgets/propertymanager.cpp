@@ -31,9 +31,14 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Type::Alignment] = new AlignmentWidget(parent);
     m_widgets[Property::Type::ArrowStyle] = new ArrowStyleWidget(parent);
 
-    for (const auto &[_, widget] : m_widgets) {
-        connect(widget, &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
+    for (auto i = m_widgets.cbegin(), end = m_widgets.cend(); i != end; ++i) {
+        connect(i.value(), &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);
     }
+}
+
+PropertyManager::~PropertyManager()
+{
+    qDeleteAll(m_widgets);
 }
 
 PropertyWidget *PropertyManager::widget(const Property::Type type) const
@@ -42,7 +47,7 @@ PropertyWidget *PropertyManager::widget(const Property::Type type) const
         throw std::logic_error("A valid widget for the given Property::Type does not exist.");
     }
 
-    return m_widgets.at(type);
+    return m_widgets.value(type);
 }
 
 Property PropertyManager::value(const Property::Type type) const
