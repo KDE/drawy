@@ -286,6 +286,7 @@ target_link_libraries(
     Qt::Widgets
     KF6::WidgetsAddons
     KF6::ConfigWidgets
+    KF6::XmlGui
     ${ZSTD_LINK_LIBRARIES}
 )
 

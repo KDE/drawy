@@ -10,6 +10,7 @@
 #include <QFontDatabase>
 #include <QShortcut>
 
+#include <KActionCollection>
 #include <KStandardAction>
 #include <KStandardActions>
 
@@ -41,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
     loadCustomFonts();
+    setupAction();
     auto layout{new BoardLayout(this)};
     auto controller{new Controller(this)};
     ApplicationContext *context{ApplicationContext::instance()};
@@ -163,14 +165,11 @@ void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 {
     auto menu = new QMenu(this);
 
-    auto fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, this);
-    fullScreenAction->setChecked(isFullScreen());
-    connect(fullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
-    menu->addAction(fullScreenAction);
+    menu->addAction(mFullScreenAction);
     menu->addSeparator();
-    menu->addAction(KStandardActions::preferences(this, &MainWindow::configureSettings, this));
+    menu->addAction(mConfigureSettingsAction);
     menu->addSeparator();
-    menu->addAction(KStandardActions::quit(this, &MainWindow::close, this));
+    menu->addAction(mQuitAction);
     menu->exec(QCursor::pos());
     delete menu;
 }
@@ -179,6 +178,20 @@ void MainWindow::configureSettings()
 {
     ConfigureSettingsDialog dlg(this);
     dlg.exec();
+}
+
+void MainWindow::setupAction()
+{
+    mActionCollection = new KActionCollection(this);
+
+    mFullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, mActionCollection);
+    mFullScreenAction->setChecked(isFullScreen());
+    connect(mFullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
+    mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, mActionCollection);
+    mQuitAction = KStandardActions::quit(this, &MainWindow::close, mActionCollection);
+
+    mActionCollection->associateWidget(this);
+    mActionCollection->readSettings();
 }
 
 #include "moc_window.cpp"

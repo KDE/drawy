@@ -6,7 +6,7 @@
 #pragma once
 #include "libdrawywidgets_export.h"
 #include <QWidget>
-
+class KActionCollection;
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
@@ -26,5 +26,10 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     LIBDRAWYWIDGETS_NO_EXPORT void configureSettings();
+    LIBDRAWYWIDGETS_NO_EXPORT void setupAction();
     bool m_forceClose = false;
+    QAction *mFullScreenAction = nullptr;
+    QAction *mConfigureSettingsAction = nullptr;
+    QAction *mQuitAction = nullptr;
+    KActionCollection *mActionCollection = nullptr;
 };
