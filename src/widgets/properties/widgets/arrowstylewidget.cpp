@@ -8,7 +8,7 @@
 #include "buttonactionswidget.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
-#include "iconmanager/iconmanager.hpp"
+
 #include <QHBoxLayout>
 ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
     : PropertyWidget(parent)

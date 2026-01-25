@@ -5,6 +5,7 @@
 #include "ellipsetool.hpp"
 
 #include "item/factory/ellipsefactory.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 EllipseTool::EllipseTool()
 {
@@ -17,7 +18,7 @@ QString EllipseTool::tooltip() const
     return QObject::tr("Ellipse Tool");
 }
 
-IconManager::Icon EllipseTool::icon() const
+QString EllipseTool::icon() const
 {
-    return IconManager::Icon::TOOL_ELLIPSE;
+    return u"tool_ellipse"_s;
 }

@@ -71,8 +71,6 @@ target_sources(
         data-structures/quadtree.ipp
         event/event.cpp
         event/event.hpp
-        iconmanager/iconmanager.cpp
-        iconmanager/iconmanager.hpp
         item/arrow.cpp
         item/arrow.hpp
         item/ellipse.cpp

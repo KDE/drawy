@@ -14,7 +14,6 @@ class Tool;
 class ApplicationContext;
 class KeybindManager;
 class ActionManager;
-class IconManager;
 
 class UIContext : public QObject
 {
@@ -32,8 +31,6 @@ public:
     [[nodiscard]] KeybindManager *keybindManager() const;
     [[nodiscard]] ActionManager *actionManager() const;
     [[nodiscard]] PropertyManager *propertyManager() const;
-    [[nodiscard]] IconManager *iconManager() const;
-
     void reset();
 
     void toolChanged(Tool &);
@@ -46,8 +43,6 @@ private:
     KeybindManager *m_keybindManager = nullptr;
     ActionManager *m_actionManager = nullptr;
     Event *m_event = nullptr;
-    IconManager *m_iconManager = nullptr;
-
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
 
     ApplicationContext *const m_applicationContext;

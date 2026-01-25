@@ -5,6 +5,7 @@
 #include "arrowtool.hpp"
 
 #include "item/factory/arrowfactory.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 ArrowTool::ArrowTool()
 {
@@ -16,7 +17,7 @@ QString ArrowTool::tooltip() const
     return QObject::tr("Arrow Tool");
 }
 
-IconManager::Icon ArrowTool::icon() const
+QString ArrowTool::icon() const
 {
-    return IconManager::Icon::TOOL_ARROW;
+    return u"draw-arrow"_s;
 }

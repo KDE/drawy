@@ -5,6 +5,7 @@
 #include "linetool.hpp"
 
 #include "item/factory/linefactory.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 LineTool::LineTool()
 {
@@ -16,7 +17,7 @@ QString LineTool::tooltip() const
     return QObject::tr("Line Tool");
 }
 
-IconManager::Icon LineTool::icon() const
+QString LineTool::icon() const
 {
-    return IconManager::Icon::TOOL_LINE;
+    return u"tool_line"_s;
 }

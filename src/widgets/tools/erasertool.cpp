@@ -23,6 +23,7 @@
 #include "event/event.hpp"
 #include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 EraserTool::EraserTool()
 {
@@ -157,7 +158,7 @@ QString EraserTool::tooltip() const
     return QObject::tr("Eraser Tool");
 }
 
-IconManager::Icon EraserTool::icon() const
+QString EraserTool::icon() const
 {
-    return IconManager::Icon::TOOL_ERASER;
+    return u"tool_eraser"_s;
 }

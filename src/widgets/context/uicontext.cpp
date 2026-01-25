@@ -50,7 +50,6 @@ void UIContext::initializeUIContext()
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
     m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
     m_actionManager = new ActionManager(m_applicationContext);
-    m_iconManager = new IconManager(m_applicationContext);
 
     m_propertyManager = new PropertyManager(m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
@@ -69,29 +68,29 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text, tr("Text"));
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
 
-    auto button = m_actionBar->addButton(tr("Save to File"), IconManager::Icon::ACTION_SAVE);
+    auto button = m_actionBar->addButton(tr("Save to File"), u"document-save"_s);
     connect(button, &QPushButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager->saveToFile();
     });
 
-    button = m_actionBar->addButton(tr("Open File"), IconManager::Icon::ACTION_OPEN_FILE);
+    button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);
     connect(button, &QPushButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager->loadFromFile();
     });
 
-    button = m_actionBar->addButton(tr("Zoom Out"), IconManager::Icon::ACTION_ZOOM_OUT);
+    button = m_actionBar->addButton(tr("Zoom Out"), u"zoom-out"_s);
     connect(button, &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
-    button = m_actionBar->addButton(tr("Zoom In"), IconManager::Icon::ACTION_ZOOM_IN);
+    button = m_actionBar->addButton(tr("Zoom In"), u"zoom-in"_s);
     connect(button, &QPushButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
-    auto undoButton = m_actionBar->addButton(tr("Undo"), IconManager::Icon::ACTION_UNDO);
+    auto undoButton = m_actionBar->addButton(tr("Undo"), u"edit-undo"_s);
     connect(undoButton, &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->undo();
         m_applicationContext->renderingContext()->markForRender();
@@ -102,7 +101,7 @@ void UIContext::initializeUIContext()
         undoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasUndo());
     });
 
-    auto redoButton = m_actionBar->addButton(tr("Redo"), IconManager::Icon::ACTION_REDO);
+    auto redoButton = m_actionBar->addButton(tr("Redo"), u"edit-redo"_s);
     connect(redoButton, &QPushButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->redo();
         m_applicationContext->renderingContext()->markForRender();
@@ -152,11 +151,6 @@ PropertyManager *UIContext::propertyManager() const
 Event *UIContext::appEvent() const
 {
     return m_event;
-}
-
-IconManager *UIContext::iconManager() const
-{
-    return m_iconManager;
 }
 
 void UIContext::toolChanged(Tool &tool)

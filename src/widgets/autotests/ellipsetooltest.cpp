@@ -7,6 +7,7 @@
 #include "tools/ellipsetool.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(EllipseToolTest)
+using namespace Qt::Literals::StringLiterals;
 
 EllipseToolTest::EllipseToolTest(QObject *parent)
     : QObject{parent}
@@ -17,7 +18,7 @@ void EllipseToolTest::shouldHaveDefaultValues()
 {
     const EllipseTool t;
     QVERIFY(!t.tooltip().isEmpty());
-    QCOMPARE(t.icon(), IconManager::Icon::TOOL_ELLIPSE);
+    QCOMPARE(t.icon(), u"tool_ellipse"_s);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor;

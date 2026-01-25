@@ -30,6 +30,7 @@
  * sure to implement all necessary functionalities. AI slop will be rejected :D
  * Put your heart and soul into the work you do and see yourself succeed.
  */
+using namespace Qt::Literals::StringLiterals;
 
 TextTool::TextTool()
 {
@@ -497,7 +498,7 @@ QString TextTool::tooltip() const
     return QObject::tr("Text Tool");
 }
 
-IconManager::Icon TextTool::icon() const
+QString TextTool::icon() const
 {
-    return IconManager::Icon::TOOL_TEXT;
+    return u"tool_text"_s;
 }

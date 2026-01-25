@@ -6,9 +6,6 @@
 
 #include "zorderwidget.hpp"
 #include "buttonactionswidget.hpp"
-#include "context/applicationcontext.hpp"
-#include "context/uicontext.hpp"
-#include "iconmanager/iconmanager.hpp"
 #include <QHBoxLayout>
 ZOrderWidget::ZOrderWidget(QWidget *parent)
     : PropertyWidget(parent)
@@ -23,15 +20,7 @@ ZOrderWidget::ZOrderWidget(QWidget *parent)
     auto moveUpButton{new ButtonActionsWidget(m_widget)};
     auto moveDownButton{new ButtonActionsWidget(m_widget)};
 
-    auto iconManager{ApplicationContext::instance()->uiContext()->iconManager()};
-    if (iconManager) {
-        // TODO fix icons
-        moveOnTopButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_DELETE));
-        moveOnBottomButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_GROUP));
-        moveUpButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_UNGROUP));
-        moveDownButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_UNGROUP));
-    }
-
+    // TODO add icons
     moveOnTopButton->setToolTip(tr("Move on Top"));
     moveUpButton->setToolTip(tr("Move Up"));
     moveDownButton->setToolTip(tr("Move Down"));

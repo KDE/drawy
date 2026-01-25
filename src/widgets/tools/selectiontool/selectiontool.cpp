@@ -22,7 +22,7 @@
 #include "selectiontoolmovestate.hpp"
 #include "selectiontoolselectstate.hpp"
 #include "selectiontoolstate.hpp"
-
+using namespace Qt::Literals::StringLiterals;
 SelectionTool::SelectionTool()
 {
     m_cursor = QCursor(Qt::ArrowCursor);
@@ -134,7 +134,7 @@ QString SelectionTool::tooltip() const
     return QObject::tr("Selection Tool");
 }
 
-IconManager::Icon SelectionTool::icon() const
+QString SelectionTool::icon() const
 {
-    return IconManager::Icon::TOOL_SELECTION;
+    return u"tool_rect_selection"_s;
 }

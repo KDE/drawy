@@ -17,6 +17,7 @@
 #include "item/factory/freeformfactory.hpp"
 #include "item/freeform.hpp"
 #include "properties/widgets/propertymanager.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 FreeformTool::FreeformTool()
 {
@@ -154,7 +155,7 @@ Tool::Type FreeformTool::type() const
     return Tool::Type::Freeform;
 }
 
-IconManager::Icon FreeformTool::icon() const
+QString FreeformTool::icon() const
 {
-    return IconManager::Icon::TOOL_FREEFORM;
+    return u"draw-freehand"_s;
 }

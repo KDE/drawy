@@ -14,7 +14,7 @@ public:
     ~FreeformTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;
-    [[nodiscard]] IconManager::Icon icon() const override;
+    [[nodiscard]] QString icon() const override;
 
     void mousePressed(ApplicationContext *context) override;
     void mouseMoved(ApplicationContext *context) override;

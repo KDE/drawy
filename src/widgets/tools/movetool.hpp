@@ -19,7 +19,7 @@ public:
     [[nodiscard]] Tool::Type type() const override;
 
     [[nodiscard]] QString tooltip() const override;
-    [[nodiscard]] IconManager::Icon icon() const override;
+    [[nodiscard]] QString icon() const override;
 
 private:
     bool m_isActive{false};

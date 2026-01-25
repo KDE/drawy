@@ -11,7 +11,7 @@
 #include "buttonactionswidget.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
-#include "iconmanager/iconmanager.hpp"
+
 #include "keybindings/actionmanager.hpp"
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -27,12 +27,9 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     auto groupButton{new ButtonActionsWidget(m_widget)};
     auto ungroupButton{new ButtonActionsWidget(m_widget)};
 
-    IconManager *iconManager{ApplicationContext::instance()->uiContext()->iconManager()};
-    if (iconManager) {
-        deleteButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_DELETE));
-        groupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_GROUP));
-        ungroupButton->setIcon(iconManager->icon(IconManager::Icon::ACTION_UNGROUP));
-    }
+    deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
+    groupButton->setIcon(QIcon::fromTheme(u"object-group"_s));
+    ungroupButton->setIcon(QIcon::fromTheme(u"object-ungroup"_s));
 
     deleteButton->setToolTip(tr("Delete selection"));
     groupButton->setToolTip(tr("Group selection"));

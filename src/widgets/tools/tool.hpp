@@ -6,7 +6,6 @@
 #include "libdrawywidgets_private_export.h"
 #include <QCursor>
 
-#include "iconmanager/iconmanager.hpp"
 #include "properties/property.hpp"
 class ApplicationContext;
 
@@ -46,7 +45,7 @@ public:
     };
 
     virtual Type type() const = 0;
-    virtual IconManager::Icon icon() const = 0;
+    virtual QString icon() const = 0;
 
     virtual const QList<Property::Type> properties() const;
 

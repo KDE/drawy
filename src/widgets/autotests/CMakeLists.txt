@@ -47,7 +47,6 @@ macro(add_drawy_unittest _source)
     )
 endmacro()
 
-add_drawy_unittest(iconmanagertest.cpp)
 add_drawy_unittest(drawycommandlineparsertest.cpp)
 add_drawy_unittest(propertytest.cpp)
 add_drawy_unittest(itemutilstest.cpp)

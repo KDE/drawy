@@ -13,6 +13,7 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include "item/item.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 MoveTool::MoveTool()
 {
@@ -77,7 +78,7 @@ QString MoveTool::tooltip() const
     return QObject::tr("Move Tool");
 }
 
-IconManager::Icon MoveTool::icon() const
+QString MoveTool::icon() const
 {
-    return IconManager::Icon::TOOL_MOVE;
+    return u"hand"_s;
 }

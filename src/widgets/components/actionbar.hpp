@@ -9,17 +9,14 @@
 #include <QHash>
 #include <QPushButton>
 
-#include "iconmanager/iconmanager.hpp"
-
 class ActionBar : public QFrame
 {
     Q_OBJECT
 public:
     explicit ActionBar(QWidget *parent = nullptr);
 
-    [[nodiscard]] QPushButton *addButton(const QString &tooltip, IconManager::Icon icon);
+    [[nodiscard]] QPushButton *addButton(const QString &tooltip, const QString &icon);
 
 private:
-    QHash<IconManager::Icon, QPushButton *> m_map{};
     QHBoxLayout *const m_layout;
 };

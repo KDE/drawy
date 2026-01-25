@@ -14,5 +14,5 @@ public:
     ~EllipseTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;
-    [[nodiscard]] IconManager::Icon icon() const override;
+    [[nodiscard]] QString icon() const override;
 };

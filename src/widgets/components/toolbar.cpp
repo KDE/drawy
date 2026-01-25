@@ -4,10 +4,6 @@
 
 #include "toolbar.hpp"
 
-#include "context/applicationcontext.hpp"
-#include "context/uicontext.hpp"
-#include "iconmanager/iconmanager.hpp"
-
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
     : QFrame{parent}
@@ -40,10 +36,9 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
         return;
     }
 
-    ApplicationContext *context{ApplicationContext::instance()};
     auto btn{new QPushButton(this)};
     btn->setToolTip(name);
-    btn->setIcon(context->uiContext()->iconManager()->icon(tool->icon()));
+    btn->setIcon(QIcon::fromTheme(tool->icon()));
 
     btn->setCheckable(true);
     btn->setCursor(Qt::PointingHandCursor);

@@ -5,6 +5,7 @@
 #include "diamondtool.hpp"
 
 #include "item/factory/diamondfactory.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 DiamondTool::DiamondTool()
 {
@@ -17,7 +18,7 @@ QString DiamondTool::tooltip() const
     return QObject::tr("Diamond Tool");
 }
 
-IconManager::Icon DiamondTool::icon() const
+QString DiamondTool::icon() const
 {
-    return IconManager::Icon::TOOL_DIAMOND;
+    return QString();
 }

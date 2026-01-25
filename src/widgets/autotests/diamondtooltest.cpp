@@ -17,7 +17,7 @@ void DiamondToolTest::shouldHaveDefaultValues()
 {
     const DiamondTool t;
     QVERIFY(!t.tooltip().isEmpty());
-    QCOMPARE(t.icon(), IconManager::Icon::TOOL_DIAMOND);
+    QCOMPARE(t.icon(), QString());
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor;

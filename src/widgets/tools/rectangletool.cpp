@@ -5,6 +5,7 @@
 #include "rectangletool.hpp"
 
 #include "item/factory/rectanglefactory.hpp"
+using namespace Qt::Literals::StringLiterals;
 
 RectangleTool::RectangleTool()
 {
@@ -17,7 +18,7 @@ QString RectangleTool::tooltip() const
     return QObject::tr("Rectangle Tool");
 }
 
-IconManager::Icon RectangleTool::icon() const
+QString RectangleTool::icon() const
 {
-    return IconManager::Icon::TOOL_RECTANGLE;
+    return u"tool_rectangle"_s;
 }
