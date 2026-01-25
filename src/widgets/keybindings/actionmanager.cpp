@@ -35,41 +35,6 @@ ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
     , m_context{context}
 {
-    auto keybindManager{m_context->uiContext()->keybindManager()};
-
-    // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    auto moveToolAction{new Action{tr("Move Tool"),
-                                   tr("Switch to move tool"),
-                                   [this]() {
-                                       switchToMoveTool();
-                                   },
-                                   this}};
-
-    auto groupAction{new Action{tr("Group Elements"),
-                                tr("Groups selected items"),
-                                [this]() {
-                                    groupItems();
-                                },
-                                this}};
-
-    auto unGroupAction{new Action{tr("Ungroup Elements"),
-                                  tr("Ungroups selected groups"),
-                                  [this]() {
-                                      ungroupItems();
-                                  },
-                                  this}};
-
-    auto deleteAction{new Action{tr("Delete"),
-                                 tr("Deletes selected items"),
-                                 [this]() {
-                                     deleteSelection();
-                                 },
-                                 this}};
-
-    keybindManager->addKeybinding(moveToolAction, QKeySequence(QKeyCombination(Qt::Key_M)));
-    keybindManager->addKeybinding(deleteAction, QKeySequence(QKeySequence::Delete));
-    keybindManager->addKeybinding(groupAction, QKeySequence(QKeyCombination(Qt::Key_G)));
-    keybindManager->addKeybinding(unGroupAction, QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G)));
 }
 
 void ActionManager::undo()

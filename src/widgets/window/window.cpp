@@ -215,8 +215,34 @@ void MainWindow::setupAction()
     createToolAction(u"line_tool"_s, tr("Line Tool"), Tool::Type::Line, {QKeySequence(QKeyCombination(Qt::Key_L))});
     createToolAction(u"text_tool"_s, tr("Text Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_T))});
     createToolAction(u"arrow_tool"_s, tr("Arrow Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_A))});
+
+    QAction *act = createAction(u"move_tool"_s, tr("Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))});
+    connect(act, &QAction::triggered, actionManager, [actionManager]() {
+        actionManager->switchToMoveTool();
+    });
+    act = createAction(u"group_element"_s, tr("Group Elements"), {QKeySequence(QKeyCombination(Qt::Key_G))});
+    connect(act, &QAction::triggered, actionManager, [actionManager]() {
+        actionManager->groupItems();
+    });
+    act = createAction(u"ungroup_element"_s, tr("Ungroup Elements"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G))});
+    connect(act, &QAction::triggered, actionManager, [actionManager]() {
+        actionManager->ungroupItems();
+    });
+    act = createAction(u"delete_selected_items"_s, tr("Delete"), {QKeySequence::Delete});
+    connect(act, &QAction::triggered, actionManager, [actionManager]() {
+        actionManager->deleteSelection();
+    });
     mActionCollection->associateWidget(this);
     mActionCollection->readSettings();
+}
+
+QAction *MainWindow::createAction(const QString &actionName, const QString &title, const QList<QKeySequence> &keys)
+{
+    auto act = new QAction(title, mActionCollection);
+    mActionCollection->addAction(actionName, act);
+    mActionCollection->setDefaultShortcuts(act, keys);
+    act->setShortcuts(keys);
+    return act;
 }
 
 void MainWindow::createToolAction(const QString &actionName, const QString &title, Tool::Type type, const QList<QKeySequence> &keys)

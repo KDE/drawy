@@ -30,6 +30,7 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void configureSettings();
     LIBDRAWYWIDGETS_NO_EXPORT void setupAction();
     LIBDRAWYWIDGETS_NO_EXPORT void createToolAction(const QString &actionName, const QString &name, Tool::Type type, const QList<QKeySequence> &key);
+    LIBDRAWYWIDGETS_NO_EXPORT QAction *createAction(const QString &actionName, const QString &title, const QList<QKeySequence> &keys);
     bool m_forceClose = false;
     QAction *mFullScreenAction = nullptr;
     QAction *mConfigureSettingsAction = nullptr;
