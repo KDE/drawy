@@ -162,213 +162,143 @@ msgstr "Відновити"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "Скасувати"
-
-#: widgets/keybindings/actionmanager.cpp:42
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "Скасувати останню дію"
-
-#: widgets/keybindings/actionmanager.cpp:48
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "Повторити"
-
-#: widgets/keybindings/actionmanager.cpp:49
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "Повернути результат останньої скасованої дії"
-
-#: widgets/keybindings/actionmanager.cpp:55
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "Збільшити"
-
-#: widgets/keybindings/actionmanager.cpp:56
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "Збільшити"
-
-#: widgets/keybindings/actionmanager.cpp:62
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "Зменшити"
-
-#: widgets/keybindings/actionmanager.cpp:63
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "Зменшити"
-
-#: widgets/keybindings/actionmanager.cpp:69
-msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Інструмент «Довільний контур»"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:42
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
 msgstr "Перемкнутися на інструмент довільного малювання"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:49
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
 msgstr "Перемкнутися на інструмент гумки"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Інструмент вибору"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
 msgstr "Перемкнутись на режим вибору"
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
 msgstr "Перемкнутися на інструмент малювання прямокутників"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
 msgstr "Перемкнутися на інструмент малювання еліпсів"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Інструмент «Пряма»"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
 msgstr "Перемкнутися на інструмент малювання прямих"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
 msgstr "Перемкнутися на інструмент тексту"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
 
-#: widgets/keybindings/actionmanager.cpp:119
+#: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
 msgstr "Перемкнутися на інструмент малювання стрілок"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Інструмент «Пересування»"
 
-#: widgets/keybindings/actionmanager.cpp:126
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
 msgstr "Перемикнутися на інструмент переміщення"
 
-#: widgets/keybindings/actionmanager.cpp:132
+#: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Group Elements"
 msgstr "Групувати елементи"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:105
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "Групувати позначене"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
 msgstr "Скасувати групування елементів"
 
-#: widgets/keybindings/actionmanager.cpp:140
+#: widgets/keybindings/actionmanager.cpp:112
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "Скасувати групування позначеного"
 
-#: widgets/keybindings/actionmanager.cpp:146
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "Позначити все"
-
-#: widgets/keybindings/actionmanager.cpp:147
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "Позначити всі пункти"
-
-#: widgets/keybindings/actionmanager.cpp:153
+#: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:119
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "Вилучити позначене"
 
-#: widgets/keybindings/actionmanager.cpp:160
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "Зберегти"
-
-#: widgets/keybindings/actionmanager.cpp:161
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "Зберегти полотно"
-
-#: widgets/keybindings/actionmanager.cpp:167
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "Відкрити файл"
-
-#: widgets/keybindings/actionmanager.cpp:168
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "Відкрити наявний файл"
-
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
+#: widgets/keybindings/actionmanager.cpp:263 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
+#: widgets/keybindings/actionmanager.cpp:265
+#: widgets/keybindings/actionmanager.cpp:287 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
+#: widgets/keybindings/actionmanager.cpp:266 widgets/window/window.cpp:118
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
 
-#: widgets/keybindings/actionmanager.cpp:348
+#: widgets/keybindings/actionmanager.cpp:291
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
@@ -533,25 +463,81 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
 
-#: widgets/window/window.cpp:101
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Хочете зберегти файл?"
 
-#: widgets/window/window.cpp:102
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Закрити"
 
-#: widgets/window/window.cpp:103
+#: widgets/window/window.cpp:105
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Зберегти і закрити"
 
-#: widgets/window/window.cpp:104
+#: widgets/window/window.cpp:106
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ігнорувати"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo"
+#~ msgstr "Скасувати"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo last action"
+#~ msgstr "Скасувати останню дію"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo"
+#~ msgstr "Повторити"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo last undone action"
+#~ msgstr "Повернути результат останньої скасованої дії"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom In"
+#~ msgstr "Збільшити"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom in"
+#~ msgstr "Збільшити"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom Out"
+#~ msgstr "Зменшити"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom out"
+#~ msgstr "Зменшити"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select All"
+#~ msgstr "Позначити все"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select all items"
+#~ msgstr "Позначити всі пункти"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save"
+#~ msgstr "Зберегти"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save canvas"
+#~ msgstr "Зберегти полотно"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open File"
+#~ msgstr "Відкрити файл"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open an existing file"
+#~ msgstr "Відкрити наявний файл"
 
 #~ msgctxt "UIContext|"
 #~ msgid "Light Mode"

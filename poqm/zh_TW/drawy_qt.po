@@ -164,215 +164,145 @@ msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "復原"
-
-#: widgets/keybindings/actionmanager.cpp:42
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "復原上一次動作"
-
-#: widgets/keybindings/actionmanager.cpp:48
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "重做"
-
-#: widgets/keybindings/actionmanager.cpp:49
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "重做上次復原的操作"
-
-#: widgets/keybindings/actionmanager.cpp:55
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "放大"
-
-#: widgets/keybindings/actionmanager.cpp:56
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "放大"
-
-#: widgets/keybindings/actionmanager.cpp:62
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "縮小"
-
-#: widgets/keybindings/actionmanager.cpp:63
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "縮小"
-
-#: widgets/keybindings/actionmanager.cpp:69
-msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "自由筆畫工具"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:42
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
 msgstr "切換到自由筆畫工具"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "橡皮擦工具"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:49
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
 msgstr "切換到橡皮擦工具"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "選取工具"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
 msgstr "切換到選取工具"
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
 # I don't think we need to specify "drawing" in the translated text here.
 # --Kisaragi
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
 msgstr "切換到矩形工具"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "橢圓工具"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
 msgstr "切換到橢圓工具"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "直線工具"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
 msgstr "切換到直線工具"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "文字工具"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
 msgstr "切換到文字工具"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "箭頭工具"
 
-#: widgets/keybindings/actionmanager.cpp:119
+#: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
 msgstr "切換到箭頭工具"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "移動工具"
 
-#: widgets/keybindings/actionmanager.cpp:126
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
 msgstr "切換到移動工具"
 
-#: widgets/keybindings/actionmanager.cpp:132
+#: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Group Elements"
 msgstr "群組化元素"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:105
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "群組化所選項目"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
 msgstr "解除群組化元素"
 
-#: widgets/keybindings/actionmanager.cpp:140
+#: widgets/keybindings/actionmanager.cpp:112
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "解除群組化所選群組"
 
-#: widgets/keybindings/actionmanager.cpp:146
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "全部選取"
-
-#: widgets/keybindings/actionmanager.cpp:147
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "選取所有項目"
-
-#: widgets/keybindings/actionmanager.cpp:153
+#: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "刪除"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:119
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "刪除所選項目"
 
-#: widgets/keybindings/actionmanager.cpp:160
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "儲存"
-
-#: widgets/keybindings/actionmanager.cpp:161
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "儲存畫布"
-
-#: widgets/keybindings/actionmanager.cpp:167
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "開啟檔案"
-
-#: widgets/keybindings/actionmanager.cpp:168
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "開啟現有的檔案"
-
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
+#: widgets/keybindings/actionmanager.cpp:263 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
+#: widgets/keybindings/actionmanager.cpp:265
+#: widgets/keybindings/actionmanager.cpp:287 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
+#: widgets/keybindings/actionmanager.cpp:266 widgets/window/window.cpp:118
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:348
+#: widgets/keybindings/actionmanager.cpp:291
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "開啟檔案"
@@ -555,7 +485,7 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "文字工具"
 
-#: widgets/window/window.cpp:101
+#: widgets/window/window.cpp:103
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to close?"
@@ -563,12 +493,12 @@ msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "您確定要關閉嗎？"
 
-#: widgets/window/window.cpp:102
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "關閉"
 
-#: widgets/window/window.cpp:103
+#: widgets/window/window.cpp:105
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -576,10 +506,66 @@ msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "儲存到檔案"
 
-#: widgets/window/window.cpp:104
+#: widgets/window/window.cpp:106
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo"
+#~ msgstr "復原"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo last action"
+#~ msgstr "復原上一次動作"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo"
+#~ msgstr "重做"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo last undone action"
+#~ msgstr "重做上次復原的操作"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom In"
+#~ msgstr "放大"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom in"
+#~ msgstr "放大"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom Out"
+#~ msgstr "縮小"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom out"
+#~ msgstr "縮小"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select All"
+#~ msgstr "全部選取"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select all items"
+#~ msgstr "選取所有項目"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save"
+#~ msgstr "儲存"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save canvas"
+#~ msgstr "儲存畫布"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open File"
+#~ msgstr "開啟檔案"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open an existing file"
+#~ msgstr "開啟現有的檔案"
 
 #~ msgctxt "UIContext|"
 #~ msgid "Light Mode"

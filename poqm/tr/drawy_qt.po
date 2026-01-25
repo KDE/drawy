@@ -162,213 +162,143 @@ msgstr "Geri Yükle"
 
 #: widgets/keybindings/actionmanager.cpp:41
 msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "Geri Al"
-
-#: widgets/keybindings/actionmanager.cpp:42
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "Son eylemi geri al"
-
-#: widgets/keybindings/actionmanager.cpp:48
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "Yinele"
-
-#: widgets/keybindings/actionmanager.cpp:49
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "Son geri alınan eylemi yinele"
-
-#: widgets/keybindings/actionmanager.cpp:55
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "Yakınlaştır"
-
-#: widgets/keybindings/actionmanager.cpp:56
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "Yakınlaştır"
-
-#: widgets/keybindings/actionmanager.cpp:62
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "Uzaklaştır"
-
-#: widgets/keybindings/actionmanager.cpp:63
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "Uzaklaştır"
-
-#: widgets/keybindings/actionmanager.cpp:69
-msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:42
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
 msgstr "Serbest çizim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:49
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
 msgstr "Silgi aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
 msgstr "Seçim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
 msgstr "Dörtgen çizim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
 msgstr "Elips çizim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
 msgstr "Çizgi çizim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
 msgstr "Metin aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:119
+#: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
 msgstr "Ok çizim aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:126
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
 msgstr "Taşıma aracına geç"
 
-#: widgets/keybindings/actionmanager.cpp:132
+#: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Group Elements"
 msgstr "Ögeleri Grupla"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:105
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "Seçili ögeleri gruplar"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/keybindings/actionmanager.cpp:140
+#: widgets/keybindings/actionmanager.cpp:112
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "Seçili grupları bozar"
 
-#: widgets/keybindings/actionmanager.cpp:146
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "Tümünü Seç"
-
-#: widgets/keybindings/actionmanager.cpp:147
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "Tüm ögeleri seç"
-
-#: widgets/keybindings/actionmanager.cpp:153
+#: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Sil"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:119
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "Seçili ögeleri siler"
 
-#: widgets/keybindings/actionmanager.cpp:160
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "Kaydet"
-
-#: widgets/keybindings/actionmanager.cpp:161
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "Tuvali kaydet"
-
-#: widgets/keybindings/actionmanager.cpp:167
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "Dosya Aç"
-
-#: widgets/keybindings/actionmanager.cpp:168
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "Var olan bir dosyayı aç"
-
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
+#: widgets/keybindings/actionmanager.cpp:263 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
+#: widgets/keybindings/actionmanager.cpp:265
+#: widgets/keybindings/actionmanager.cpp:287 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
+#: widgets/keybindings/actionmanager.cpp:266 widgets/window/window.cpp:118
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:348
+#: widgets/keybindings/actionmanager.cpp:291
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Dosya Aç"
@@ -533,25 +463,81 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/window/window.cpp:101
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
 msgstr "Dosyayı kaydetmek istiyor musunuz?"
 
-#: widgets/window/window.cpp:102
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "Kapat"
 
-#: widgets/window/window.cpp:103
+#: widgets/window/window.cpp:105
 msgctxt "MainWindow|"
 msgid "Save And Close"
 msgstr "Kaydet ve Kapat"
 
-#: widgets/window/window.cpp:104
+#: widgets/window/window.cpp:106
 msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Yok Say"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo"
+#~ msgstr "Geri Al"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo last action"
+#~ msgstr "Son eylemi geri al"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo"
+#~ msgstr "Yinele"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo last undone action"
+#~ msgstr "Son geri alınan eylemi yinele"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom In"
+#~ msgstr "Yakınlaştır"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom in"
+#~ msgstr "Yakınlaştır"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom Out"
+#~ msgstr "Uzaklaştır"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom out"
+#~ msgstr "Uzaklaştır"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select All"
+#~ msgstr "Tümünü Seç"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select all items"
+#~ msgstr "Tüm ögeleri seç"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save"
+#~ msgstr "Kaydet"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save canvas"
+#~ msgstr "Tuvali kaydet"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open File"
+#~ msgstr "Dosya Aç"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open an existing file"
+#~ msgstr "Var olan bir dosyayı aç"
 
 #~ msgctxt "UIContext|"
 #~ msgid "Light Mode"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-18 19:01+0400\n"
+"PO-Revision-Date: 2026-01-24 12:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -138,12 +138,12 @@ msgstr "كرّر"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "اضبط السبورة"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "عامّ"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -151,227 +151,154 @@ msgid "Fullscreen"
 msgstr "ملء الشّاشة"
 
 #: widgets/jobs/restoreautosavejob.cpp:48
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "RestoreAutoSaveJob|"
 msgid "Do you want to restore autosave file?"
-msgstr "هل تريد أن تغلق التطبيق؟"
+msgstr "هل تريد استعادة ملف الحفظ الآلي؟"
 
 #: widgets/jobs/restoreautosavejob.cpp:49
 msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
-msgstr ""
+msgstr "استعد"
 
 #: widgets/keybindings/actionmanager.cpp:41
-msgctxt "ActionManager|"
-msgid "Undo"
-msgstr "تراجع"
-
-#: widgets/keybindings/actionmanager.cpp:42
-msgctxt "ActionManager|"
-msgid "Undo last action"
-msgstr "تراجع عن آخر إجراء"
-
-#: widgets/keybindings/actionmanager.cpp:48
-msgctxt "ActionManager|"
-msgid "Redo"
-msgstr "كرّر"
-
-#: widgets/keybindings/actionmanager.cpp:49
-msgctxt "ActionManager|"
-msgid "Redo last undone action"
-msgstr "أعد آخر إجراء تراجعت عنه"
-
-#: widgets/keybindings/actionmanager.cpp:55
-msgctxt "ActionManager|"
-msgid "Zoom In"
-msgstr "قرّب"
-
-#: widgets/keybindings/actionmanager.cpp:56
-msgctxt "ActionManager|"
-msgid "Zoom in"
-msgstr "قرّب"
-
-#: widgets/keybindings/actionmanager.cpp:62
-msgctxt "ActionManager|"
-msgid "Zoom Out"
-msgstr "بعّد"
-
-#: widgets/keybindings/actionmanager.cpp:63
-msgctxt "ActionManager|"
-msgid "Zoom out"
-msgstr "بعّد"
-
-#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "أداة الرسم الحر"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:42
 msgctxt "ActionManager|"
 msgid "Switch to freeform drawing tool"
 msgstr "بدّل إلى أداة الرسم الحر"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:48
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "أداة الممحاة"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:49
 msgctxt "ActionManager|"
 msgid "Switch to eraser tool"
 msgstr "بدّل إلى أداة الممحاة"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:55
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "أداة التحديد"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:56
 msgctxt "ActionManager|"
 msgid "Switch to selection tool"
 msgstr "بدّل إلى أداة التحديد"
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Switch to rectangle drawing tool"
 msgstr "بدّل إلى أداة المستطيل"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "أداة الشكل البيضاوي"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Switch to ellipse drawing tool"
 msgstr "بدّل إلى أداة الشكل البيضاوي"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "أداة رسم الخطوط"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Switch to line drawing tool"
 msgstr "بدّل إلى أداة رسم الخطوط"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Switch to the text tool"
 msgstr "بدّل إلى أداة النص"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "أداة السهم"
 
-#: widgets/keybindings/actionmanager.cpp:119
+#: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Switch to arrow drawing tool"
 msgstr "بدّل إلى أداة رسم السهم"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:97
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "أداة التحريك"
 
-#: widgets/keybindings/actionmanager.cpp:126
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Switch to move tool"
 msgstr "بدّل إلى أداة التحريك"
 
-#: widgets/keybindings/actionmanager.cpp:132
+#: widgets/keybindings/actionmanager.cpp:104
 msgctxt "ActionManager|"
 msgid "Group Elements"
 msgstr "جمّع العناصر"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:105
 msgctxt "ActionManager|"
 msgid "Groups selected items"
 msgstr "تجمع العناصر المحددة"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:111
 msgctxt "ActionManager|"
 msgid "Ungroup Elements"
 msgstr "تفك تجميع العناصر"
 
-#: widgets/keybindings/actionmanager.cpp:140
+#: widgets/keybindings/actionmanager.cpp:112
 msgctxt "ActionManager|"
 msgid "Ungroups selected groups"
 msgstr "تفك جمع التجميعات المحددة"
 
-#: widgets/keybindings/actionmanager.cpp:146
-msgctxt "ActionManager|"
-msgid "Select All"
-msgstr "حدّد الكلّ"
-
-#: widgets/keybindings/actionmanager.cpp:147
-msgctxt "ActionManager|"
-msgid "Select all items"
-msgstr "حدّد كلّ العناصر"
-
-#: widgets/keybindings/actionmanager.cpp:153
+#: widgets/keybindings/actionmanager.cpp:118
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "احذف"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:119
 msgctxt "ActionManager|"
 msgid "Deletes selected items"
 msgstr "تحذف العناصر المحددة"
 
-#: widgets/keybindings/actionmanager.cpp:160
-msgctxt "ActionManager|"
-msgid "Save"
-msgstr "احفظ"
-
-#: widgets/keybindings/actionmanager.cpp:161
-msgctxt "ActionManager|"
-msgid "Save canvas"
-msgstr "احفظ الرقعة"
-
-#: widgets/keybindings/actionmanager.cpp:167
-msgctxt "ActionManager|"
-msgid "Open File"
-msgstr "افتح ملفًّا"
-
-#: widgets/keybindings/actionmanager.cpp:168
-msgctxt "ActionManager|"
-msgid "Open an existing file"
-msgstr "افتح ملفًا موجودًا"
-
-#: widgets/keybindings/actionmanager.cpp:320 widgets/window/window.cpp:113
+#: widgets/keybindings/actionmanager.cpp:263 widgets/window/window.cpp:115
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "غير معنون.%1"
 
-#: widgets/keybindings/actionmanager.cpp:322
-#: widgets/keybindings/actionmanager.cpp:344 widgets/window/window.cpp:115
+#: widgets/keybindings/actionmanager.cpp:265
+#: widgets/keybindings/actionmanager.cpp:287 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "السبورة (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:323 widgets/window/window.cpp:116
+#: widgets/keybindings/actionmanager.cpp:266 widgets/window/window.cpp:118
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "احفظ الملفّ"
 
-#: widgets/keybindings/actionmanager.cpp:348
+#: widgets/keybindings/actionmanager.cpp:291
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "افتح الملف"
@@ -402,9 +329,6 @@ msgid "Alignment"
 msgstr "المحاذاة"
 
 #: widgets/properties/widgets/arrowstylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "سهم"
@@ -465,41 +389,29 @@ msgid "Thickness"
 msgstr "السّمك"
 
 #: widgets/properties/widgets/zorderwidget.cpp:35
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "أداة التحريك"
+msgstr "انقل إلى الأعلى"
 
 #: widgets/properties/widgets/zorderwidget.cpp:36
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "انقل"
+msgstr "انقل لأعلى"
 
 #: widgets/properties/widgets/zorderwidget.cpp:37
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "أداة التحريك"
+msgstr "انقل لأسفل"
 
 #: widgets/properties/widgets/zorderwidget.cpp:38
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "أداة التحريك"
+msgstr "انقل إلى الأسفل"
 
 #: widgets/properties/widgets/zorderwidget.cpp:67
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "الترتيب المنظوري"
 
 #: widgets/tools/arrowtool.cpp:16
 msgctxt "QObject|"
@@ -551,31 +463,81 @@ msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
-#: widgets/window/window.cpp:101
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
+#: widgets/window/window.cpp:103
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
-msgstr "هل تريد أن تغلق التطبيق؟"
+msgstr "هل تريد حفظ الملف؟"
 
-#: widgets/window/window.cpp:102
+#: widgets/window/window.cpp:104
 msgctxt "MainWindow|"
 msgid "Close"
 msgstr "أغلق"
 
-#: widgets/window/window.cpp:103
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
+#: widgets/window/window.cpp:105
 msgctxt "MainWindow|"
 msgid "Save And Close"
-msgstr "احفظ في ملفّ"
+msgstr "اِحفظ وأَغلِق"
 
-#: widgets/window/window.cpp:104
+#: widgets/window/window.cpp:106
 msgctxt "MainWindow|"
 msgid "Ignore"
-msgstr ""
+msgstr "تجاهل"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo"
+#~ msgstr "تراجع"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo last action"
+#~ msgstr "تراجع عن آخر إجراء"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo"
+#~ msgstr "كرّر"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo last undone action"
+#~ msgstr "أعد آخر إجراء تراجعت عنه"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom In"
+#~ msgstr "قرّب"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom in"
+#~ msgstr "قرّب"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom Out"
+#~ msgstr "بعّد"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom out"
+#~ msgstr "بعّد"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select All"
+#~ msgstr "حدّد الكلّ"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select all items"
+#~ msgstr "حدّد كلّ العناصر"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save"
+#~ msgstr "احفظ"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save canvas"
+#~ msgstr "احفظ الرقعة"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open File"
+#~ msgstr "افتح ملفًّا"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open an existing file"
+#~ msgstr "افتح ملفًا موجودًا"
 
 #~ msgctxt "UIContext|"
 #~ msgid "Light Mode"
