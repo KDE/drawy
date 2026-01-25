@@ -132,7 +132,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
                 job->setSaveAsInfo(info);
                 connect(job, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
                     SerializerUtils::saveInFile(obj, fileName);
-                    qDebug() << " save done ";
+                    // qDebug() << " save done ";
                     AutoSaveJobUtil::removeAutoSaveFile();
                     close();
                 });
