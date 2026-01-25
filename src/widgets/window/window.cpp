@@ -22,6 +22,7 @@
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
+#include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
@@ -164,12 +165,16 @@ void MainWindow::loadFile(const QString &fileName)
 
 void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 {
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto allItems{context->spatialContext()->quadtree().getAllItems()};
     auto menu = new QMenu(this);
 
     menu->addAction(mFullScreenAction);
     menu->addSeparator();
-    menu->addAction(mSelectAllAction);
-    menu->addSeparator();
+    if (!allItems.empty()) {
+        menu->addAction(mSelectAllAction);
+        menu->addSeparator();
+    }
     menu->addAction(mConfigureSettingsAction);
     menu->addSeparator();
     menu->addAction(mQuitAction);
