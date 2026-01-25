@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "keybindmanager.hpp"
-#include <kactioncollection.h>
+#include <KActionCollection>
 
 KeybindManager::KeybindManager(QObject *parent)
     : QObject{parent}
