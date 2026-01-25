@@ -5,6 +5,7 @@
 #pragma once
 
 #include "jobs/loadjob.hpp"
+#include "tools/tool.hpp"
 #include <QObject>
 class ApplicationContext;
 class ActionManager : public QObject
@@ -17,15 +18,7 @@ public:
     void zoomOut();
     void undo();
     void redo();
-    void switchToFreeformTool();
-    void switchToEraserTool();
-    void switchToSelectionTool();
-    void switchToRectangleTool();
-    void switchToEllipseTool();
-    void switchToLineTool();
-    void switchToArrowTool();
     void switchToMoveTool();
-    void switchToTextTool();
     void selectAll();
     void deleteSelection();
     void groupItems();
@@ -34,6 +27,8 @@ public:
     void loadFromFile();
 
     void loadFile(const QString &fileName);
+
+    void switchToTool(Tool::Type type);
 
 private:
     void slotLoadDone(const LoadJob::LoadInfo &info);

@@ -5,6 +5,8 @@
 
 #pragma once
 #include "libdrawywidgets_export.h"
+#include "tools/tool.hpp"
+
 #include <QWidget>
 class KActionCollection;
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
@@ -27,6 +29,7 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     LIBDRAWYWIDGETS_NO_EXPORT void configureSettings();
     LIBDRAWYWIDGETS_NO_EXPORT void setupAction();
+    LIBDRAWYWIDGETS_NO_EXPORT void createToolAction(const QString &actionName, const QString &name, Tool::Type type, const QList<QKeySequence> &key);
     bool m_forceClose = false;
     QAction *mFullScreenAction = nullptr;
     QAction *mConfigureSettingsAction = nullptr;

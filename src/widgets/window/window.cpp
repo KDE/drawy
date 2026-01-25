@@ -203,8 +203,34 @@ void MainWindow::setupAction()
 
     mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, mActionCollection);
     mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, mActionCollection);
+
+    createToolAction(u"freeform_tool"_s,
+                     tr("Freeform Tool"),
+                     Tool::Type::Freeform,
+                     {QKeySequence(QKeyCombination(Qt::Key_P)), QKeySequence(QKeyCombination(Qt::Key_B))});
+    createToolAction(u"eraser_tool"_s, tr("Eraser Tool"), Tool::Type::Eraser, {QKeySequence(QKeyCombination(Qt::Key_E))});
+    createToolAction(u"selection_tool"_s, tr("Selection Tool"), Tool::Type::Selection, {QKeySequence(QKeyCombination(Qt::Key_S))});
+    createToolAction(u"rectangle_tool"_s, tr("Rectangle Tool"), Tool::Type::Rectangle, {QKeySequence(QKeyCombination(Qt::Key_R))});
+    createToolAction(u"ellipse_tool"_s, tr("Ellipse Tool"), Tool::Type::Ellipse, {QKeySequence(QKeyCombination(Qt::Key_O))});
+    createToolAction(u"line_tool"_s, tr("Line Tool"), Tool::Type::Line, {QKeySequence(QKeyCombination(Qt::Key_L))});
+    createToolAction(u"text_tool"_s, tr("Text Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_T))});
+    createToolAction(u"arrow_tool"_s, tr("Arrow Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_A))});
     mActionCollection->associateWidget(this);
     mActionCollection->readSettings();
+}
+
+void MainWindow::createToolAction(const QString &actionName, const QString &title, Tool::Type type, const QList<QKeySequence> &keys)
+{
+    ApplicationContext *context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
+
+    auto act = new QAction(title, mActionCollection);
+    mActionCollection->addAction(actionName, act);
+    mActionCollection->setDefaultShortcuts(act, keys);
+    act->setShortcuts(keys);
+    connect(act, &QAction::triggered, actionManager, [type, actionManager]() {
+        actionManager->switchToTool(type);
+    });
 }
 
 #include "moc_window.cpp"

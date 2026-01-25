@@ -38,62 +38,6 @@ ActionManager::ActionManager(ApplicationContext *context)
     auto keybindManager{m_context->uiContext()->keybindManager()};
 
     // NOLINT(clang-analyzer-cplusplus.NewDeleteLeaks)
-    auto freeformToolAction{new Action{tr("Freeform Tool"),
-                                       tr("Switch to freeform drawing tool"),
-                                       [this]() {
-                                           switchToFreeformTool();
-                                       },
-                                       this}};
-
-    auto eraserToolAction{new Action{tr("Eraser Tool"),
-                                     tr("Switch to eraser tool"),
-                                     [this]() {
-                                         switchToEraserTool();
-                                     },
-                                     this}};
-
-    auto selectionToolAction{new Action{tr("Selection Tool"),
-                                        tr("Switch to selection tool"),
-                                        [&]() {
-                                            switchToSelectionTool();
-                                        },
-                                        this}};
-
-    auto rectangleToolAction{new Action{tr("Rectangle Tool"),
-                                        tr("Switch to rectangle drawing tool"),
-                                        [this]() {
-                                            switchToRectangleTool();
-                                        },
-                                        this}};
-
-    auto ellipseToolAction{new Action{tr("Ellipse Tool"),
-                                      tr("Switch to ellipse drawing tool"),
-                                      [this]() {
-                                          switchToEllipseTool();
-                                      },
-                                      this}};
-
-    auto lineToolAction{new Action{tr("Line Tool"),
-                                   tr("Switch to line drawing tool"),
-                                   [&]() {
-                                       switchToLineTool();
-                                   },
-                                   this}};
-
-    auto textToolAction{new Action{tr("Text Tool"),
-                                   tr("Switch to the text tool"),
-                                   [this]() {
-                                       switchToTextTool();
-                                   },
-                                   this}};
-
-    auto arrowToolAction{new Action{tr("Arrow Tool"),
-                                    tr("Switch to arrow drawing tool"),
-                                    [this]() {
-                                        switchToArrowTool();
-                                    },
-                                    this}};
-
     auto moveToolAction{new Action{tr("Move Tool"),
                                    tr("Switch to move tool"),
                                    [this]() {
@@ -122,15 +66,6 @@ ActionManager::ActionManager(ApplicationContext *context)
                                  },
                                  this}};
 
-    keybindManager->addKeybinding(textToolAction, QKeySequence(QKeyCombination(Qt::Key_T)));
-    keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_P)));
-    keybindManager->addKeybinding(freeformToolAction, QKeySequence(QKeyCombination(Qt::Key_B)));
-    keybindManager->addKeybinding(eraserToolAction, QKeySequence(QKeyCombination(Qt::Key_E)));
-    keybindManager->addKeybinding(selectionToolAction, QKeySequence(QKeyCombination(Qt::Key_S)));
-    keybindManager->addKeybinding(rectangleToolAction, QKeySequence(QKeyCombination(Qt::Key_R)));
-    keybindManager->addKeybinding(ellipseToolAction, QKeySequence(QKeyCombination(Qt::Key_O)));
-    keybindManager->addKeybinding(lineToolAction, QKeySequence(QKeyCombination(Qt::Key_L)));
-    keybindManager->addKeybinding(arrowToolAction, QKeySequence(QKeyCombination(Qt::Key_A)));
     keybindManager->addKeybinding(moveToolAction, QKeySequence(QKeyCombination(Qt::Key_M)));
     keybindManager->addKeybinding(deleteAction, QKeySequence(QKeySequence::Delete));
     keybindManager->addKeybinding(groupAction, QKeySequence(QKeyCombination(Qt::Key_G)));
@@ -161,49 +96,14 @@ void ActionManager::zoomOut()
     m_context->renderingContext()->updateZoomFactor(-1);
 }
 
-void ActionManager::switchToFreeformTool()
+void ActionManager::switchToTool(Tool::Type type)
 {
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Freeform);
-}
-
-void ActionManager::switchToEraserTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Eraser);
-}
-
-void ActionManager::switchToRectangleTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Rectangle);
-}
-
-void ActionManager::switchToEllipseTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Ellipse);
-}
-
-void ActionManager::switchToLineTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Line);
-}
-
-void ActionManager::switchToArrowTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Arrow);
+    m_context->uiContext()->toolBar()->changeTool(type);
 }
 
 void ActionManager::switchToMoveTool()
 {
     m_context->uiContext()->toolBar()->changeTool(Tool::Type::Move);
-}
-
-void ActionManager::switchToSelectionTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
-}
-
-void ActionManager::switchToTextTool()
-{
-    m_context->uiContext()->toolBar()->changeTool(Tool::Type::Text);
 }
 
 void ActionManager::groupItems()
@@ -247,7 +147,7 @@ void ActionManager::deleteSelection()
 
 void ActionManager::selectAll()
 {
-    switchToSelectionTool();
+    switchToTool(Tool::Type::Selection);
 
     auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
