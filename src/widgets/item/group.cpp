@@ -65,7 +65,7 @@ QList<std::shared_ptr<Item>> GroupItem::unGroup()
 
 const QRectF GroupItem::boundingBox() const
 {
-    QRectF result{};
+    QRectF result;
 
     for (const auto &item : m_items) {
         result |= item->boundingBox();
@@ -92,7 +92,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
         throw new std::logic_error("Group does not contain any item with this property");
     }
 
-    Property property{};
+    Property property;
     for (const auto &item : m_items) {
         try {
             if (property.type() != Property::Type::Null) {
@@ -112,7 +112,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
 
 const QList<Property> GroupItem::properties() const
 {
-    QList<Property> result{};
+    QList<Property> result;
 
     for (const auto &item : m_items) {
         result += item->properties();

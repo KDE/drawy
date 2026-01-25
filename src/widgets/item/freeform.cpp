@@ -77,7 +77,7 @@ bool FreeformItem::intersects(const QRectF &rect)
 
 bool FreeformItem::intersects(const QLineF &line)
 {
-    QPainterPath linePath{};
+    QPainterPath linePath;
     linePath.moveTo(line.p1());
     linePath.lineTo(line.p2());
 
