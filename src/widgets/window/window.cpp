@@ -167,6 +167,8 @@ void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 
     menu->addAction(mFullScreenAction);
     menu->addSeparator();
+    menu->addAction(mSelectAllAction);
+    menu->addSeparator();
     menu->addAction(mConfigureSettingsAction);
     menu->addSeparator();
     menu->addAction(mQuitAction);
