@@ -8,7 +8,6 @@
 #include "tools/tool.hpp"
 
 #include <QWidget>
-class KActionCollection;
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
