@@ -54,7 +54,7 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     dotLineButton->setCheckable(true);
     m_group->addButton(dotLineButton);
 
-    m_group->buttons().at(0)->setChecked(true);
+    m_group->button(m_group->id(solidButton))->setChecked(true);
 
     layout->addWidget(solidButton);
     layout->addWidget(dashLineButton);
