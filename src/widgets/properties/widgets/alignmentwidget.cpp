@@ -6,10 +6,8 @@
 
 #include "alignmentwidget.hpp"
 #include "buttonactionswidget.hpp"
-#include "context/applicationcontext.hpp"
-#include "context/uicontext.hpp"
-#include "iconmanager/iconmanager.hpp"
 #include <QGridLayout>
+using namespace Qt::Literals::StringLiterals;
 AlignmentWidget::AlignmentWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
@@ -19,17 +17,18 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     layout->setContentsMargins({});
 
     auto alignLeftButton{new ButtonActionsWidget(m_widget)};
+    alignLeftButton->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
     auto centralHorizontalButton{new ButtonActionsWidget(m_widget)};
+    centralHorizontalButton->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
     auto alignRightButton{new ButtonActionsWidget(m_widget)};
+    alignRightButton->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
 
     auto alignTopButton{new ButtonActionsWidget(m_widget)};
+    alignTopButton->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
     auto centralVerticalButton{new ButtonActionsWidget(m_widget)};
+    centralVerticalButton->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
     auto alignBottomButton{new ButtonActionsWidget(m_widget)};
-
-    auto iconManager{ApplicationContext::instance()->uiContext()->iconManager()};
-    if (iconManager) {
-        // TODO fix icons
-    }
+    alignBottomButton->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
 
     layout->addWidget(alignLeftButton, 0, 0);
     layout->addWidget(centralHorizontalButton, 0, 1);
