@@ -3,30 +3,23 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "keybindmanager.hpp"
+#include <kactioncollection.h>
 
 KeybindManager::KeybindManager(QObject *parent)
     : QObject{parent}
+    , mActionCollection(new KActionCollection(this))
 {
-}
-
-void KeybindManager::addKeybinding(Action *action, const QKeySequence &sequence)
-{
-    if (m_keyToAction.find(sequence) != m_keyToAction.end())
-        return;
-
-    if (m_keyToShortcut.find(sequence) == m_keyToShortcut.end()) {
-        m_keyToShortcut[sequence] = new QShortcut(sequence, this->parent());
-    }
-
-    m_keyToAction[sequence] = action;
-
-    QShortcut *shortcut{m_keyToShortcut[sequence]};
-    connect(shortcut, &QShortcut::activated, action, &Action::run);
 }
 
 void KeybindManager::setEnabled(bool enabled)
 {
-    for (const auto &keyShortcutPair : std::as_const(m_keyToShortcut)) {
-        keyShortcutPair->setEnabled(enabled);
+    QList<QAction *> acts = mActionCollection->actions();
+    for (const auto &act : acts) {
+        act->setEnabled(enabled);
     }
+}
+
+KActionCollection *KeybindManager::actionCollection() const
+{
+    return mActionCollection;
 }

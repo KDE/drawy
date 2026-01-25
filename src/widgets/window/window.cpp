@@ -33,6 +33,7 @@
 #include "jobs/restoreautosavejob.hpp"
 #include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
+#include "keybindings/keybindmanager.hpp"
 #include "serializer/serializerutils.hpp"
 #include <KMessageBox>
 #include <QDir>
@@ -186,25 +187,24 @@ void MainWindow::setupAction()
 {
     ApplicationContext *context{ApplicationContext::instance()};
     auto actionManager{context->uiContext()->actionManager()};
+    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
 
-    mActionCollection = new KActionCollection(this);
-
-    mFullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, mActionCollection);
+    mFullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection);
     mFullScreenAction->setChecked(isFullScreen());
     connect(mFullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
-    mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, mActionCollection);
-    mQuitAction = KStandardActions::quit(this, &MainWindow::close, mActionCollection);
+    mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, actionCollection);
+    mQuitAction = KStandardActions::quit(this, &MainWindow::close, actionCollection);
 
-    mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, mActionCollection);
+    mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, actionCollection);
 
-    mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, mActionCollection);
-    mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, mActionCollection);
+    mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, actionCollection);
+    mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, actionCollection);
 
-    mZoomInAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomIn, mActionCollection);
-    mZoomOutAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomOut, mActionCollection);
+    mZoomInAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomIn, actionCollection);
+    mZoomOutAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomOut, actionCollection);
 
-    mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, mActionCollection);
-    mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, mActionCollection);
+    mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, actionCollection);
+    mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, actionCollection);
 
     createToolAction(u"freeform_tool"_s,
                      tr("Freeform Tool"),
@@ -234,15 +234,17 @@ void MainWindow::setupAction()
     connect(act, &QAction::triggered, actionManager, [actionManager]() {
         actionManager->deleteSelection();
     });
-    mActionCollection->associateWidget(this);
-    mActionCollection->readSettings();
+    actionCollection->associateWidget(this);
+    actionCollection->readSettings();
 }
 
 QAction *MainWindow::createAction(const QString &actionName, const QString &title, const QList<QKeySequence> &keys)
 {
-    auto act = new QAction(title, mActionCollection);
-    mActionCollection->addAction(actionName, act);
-    mActionCollection->setDefaultShortcuts(act, keys);
+    ApplicationContext *context{ApplicationContext::instance()};
+    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
+    auto act = new QAction(title, actionCollection);
+    actionCollection->addAction(actionName, act);
+    actionCollection->setDefaultShortcuts(act, keys);
     act->setShortcuts(keys);
     return act;
 }
@@ -251,10 +253,11 @@ void MainWindow::createToolAction(const QString &actionName, const QString &titl
 {
     ApplicationContext *context{ApplicationContext::instance()};
     auto actionManager{context->uiContext()->actionManager()};
+    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
 
-    auto act = new QAction(title, mActionCollection);
-    mActionCollection->addAction(actionName, act);
-    mActionCollection->setDefaultShortcuts(act, keys);
+    auto act = new QAction(title, actionCollection);
+    actionCollection->addAction(actionName, act);
+    actionCollection->setDefaultShortcuts(act, keys);
     act->setShortcuts(keys);
     connect(act, &QAction::triggered, actionManager, [type, actionManager]() {
         actionManager->switchToTool(type);

@@ -115,8 +115,6 @@ target_sources(
         item/arrowutils.cpp
         item/diamond.cpp
         item/diamond.hpp
-        keybindings/action.cpp
-        keybindings/action.hpp
         keybindings/actionmanager.cpp
         keybindings/actionmanager.hpp
         keybindings/keybindmanager.cpp

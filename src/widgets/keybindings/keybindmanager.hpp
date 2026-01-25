@@ -4,21 +4,17 @@
 
 #pragma once
 
-#include <QKeySequence>
-#include <QMap>
-#include <QShortcut>
-
-#include "action.hpp"
-
+#include <QObject>
+class KActionCollection;
 class KeybindManager : public QObject
 {
 public:
     explicit KeybindManager(QObject *parent);
 
-    void addKeybinding(Action *action, const QKeySequence &sequence);
     void setEnabled(bool enabled);
 
+    KActionCollection *actionCollection() const;
+
 private:
-    QMap<QKeySequence, QShortcut *> m_keyToShortcut;
-    QMap<QKeySequence, Action *> m_keyToAction;
+    KActionCollection *const mActionCollection;
 };

@@ -42,5 +42,4 @@ private:
     QAction *mZoomOutAction = nullptr;
     QAction *mLoadAction = nullptr;
     QAction *mSelectAllAction = nullptr;
-    KActionCollection *mActionCollection = nullptr;
 };

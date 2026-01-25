@@ -8,7 +8,6 @@
 #include <QFileDialog>
 #include <memory>
 
-#include "action.hpp"
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/groupcommand.hpp"
@@ -28,7 +27,6 @@
 #include "data-structures/quadtree.hpp"
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
-#include "keybindmanager.hpp"
 #include "serializer/serializerutils.hpp"
 using namespace Qt::Literals::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
