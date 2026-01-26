@@ -13,4 +13,7 @@ class ConfigureGeneralWidgetTest : public QObject
 public:
     explicit ConfigureGeneralWidgetTest(QObject *parent = nullptr);
     ~ConfigureGeneralWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
