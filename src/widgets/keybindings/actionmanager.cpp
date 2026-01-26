@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <memory>
 
+#include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/groupcommand.hpp"
@@ -15,6 +16,7 @@
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
 #include "common/constants.hpp"
+
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
@@ -67,23 +69,36 @@ void ActionManager::switchToTool(Tool::Type type)
 
 void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
 {
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+    AlignItemCommand::Alignment commandType = AlignItemCommand::Alignment::Unknow;
     switch (type) {
     case AlignType::AlignBottom:
+        commandType = AlignItemCommand::Alignment::AlignToBottom;
         break;
     case AlignType::AlignLeft:
+        commandType = AlignItemCommand::Alignment::AlignToLeft;
         break;
     case AlignType::AlignRight:
+        commandType = AlignItemCommand::Alignment::AlignToRight;
         break;
     case AlignType::AlignTop:
+        commandType = AlignItemCommand::Alignment::AlignToTop;
         break;
     case AlignType::CentralHorizontal:
+        commandType = AlignItemCommand::Alignment::AlignHorizontalCenter;
         break;
     case AlignType::CentralVertical:
+        commandType = AlignItemCommand::Alignment::AlignVerticalCenter;
         break;
     case AlignType::Unknown:
         qCWarning(DRAWY_LOG) << "Alignment is unknown. It's a bug for sure";
-        break;
+        return;
     }
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, commandType));
 }
 
 void ActionManager::switchToMoveTool()
@@ -94,8 +109,9 @@ void ActionManager::switchToMoveTool()
 void ActionManager::groupItems()
 {
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
-    if (selectedItems.size() <= 1)
+    if (selectedItems.empty()) {
         return;
+    }
 
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
