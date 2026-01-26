@@ -12,23 +12,35 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
+    m_widget->setObjectName(u"m_widget"_s);
 
     auto layout{new QGridLayout(m_widget)};
+    layout->setObjectName(u"layout"_s);
     layout->setContentsMargins({});
 
     auto alignLeftButton{new ButtonActionsWidget(m_widget)};
     alignLeftButton->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
+    alignLeftButton->setObjectName(u"alignLeftButton"_s);
+
     auto centralHorizontalButton{new ButtonActionsWidget(m_widget)};
     centralHorizontalButton->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
+    centralHorizontalButton->setObjectName(u"centralHorizontalButton"_s);
+
     auto alignRightButton{new ButtonActionsWidget(m_widget)};
     alignRightButton->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
+    alignRightButton->setObjectName(u"alignRightButton"_s);
 
     auto alignTopButton{new ButtonActionsWidget(m_widget)};
     alignTopButton->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
+    alignTopButton->setObjectName(u"alignTopButton"_s);
+
     auto centralVerticalButton{new ButtonActionsWidget(m_widget)};
     centralVerticalButton->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
+    centralVerticalButton->setObjectName(u"centralVerticalButton"_s);
+
     auto alignBottomButton{new ButtonActionsWidget(m_widget)};
     alignBottomButton->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
+    alignBottomButton->setObjectName(u"alignBottomButton"_s);
 
     layout->addWidget(alignLeftButton, 0, 0);
     layout->addWidget(centralHorizontalButton, 0, 1);
