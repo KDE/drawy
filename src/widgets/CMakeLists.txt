@@ -32,7 +32,7 @@ target_sources(
         command/ungroupcommand.hpp
         command/updatepropertycommand.cpp
         command/updatepropertycommand.hpp
-        command/alignitemcommand.h
+        command/alignitemcommand.hpp
         command/alignitemcommand.cpp
         common/constants.hpp
         common/renderitems.cpp

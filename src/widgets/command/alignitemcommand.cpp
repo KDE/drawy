@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include "alignitemcommand.h"
+#include "alignitemcommand.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
