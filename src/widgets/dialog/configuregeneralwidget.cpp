@@ -28,6 +28,7 @@ ConfigureGeneralWidget::~ConfigureGeneralWidget() = default;
 void ConfigureGeneralWidget::save()
 {
     DrawyGlobalConfig::self()->setDelay(mAutoSave->value());
+    DrawyGlobalConfig::self()->save();
 }
 
 void ConfigureGeneralWidget::load()
