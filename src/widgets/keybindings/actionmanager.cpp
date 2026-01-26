@@ -25,6 +25,7 @@
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawy_debug.h"
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "serializer/serializerutils.hpp"
@@ -66,6 +67,23 @@ void ActionManager::switchToTool(Tool::Type type)
 
 void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
 {
+    switch (type) {
+    case AlignType::AlignBottom:
+        break;
+    case AlignType::AlignLeft:
+        break;
+    case AlignType::AlignRight:
+        break;
+    case AlignType::AlignTop:
+        break;
+    case AlignType::CentralHorizontal:
+        break;
+    case AlignType::CentralVertical:
+        break;
+    case AlignType::Unknown:
+        qCWarning(DRAWY_LOG) << "Alignment is unknown. It's a bug for sure";
+        break;
+    }
 }
 
 void ActionManager::switchToMoveTool()
