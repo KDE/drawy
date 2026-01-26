@@ -64,6 +64,10 @@ void ActionManager::switchToTool(Tool::Type type)
     m_context->uiContext()->toolBar()->changeTool(type);
 }
 
+void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
+{
+}
+
 void ActionManager::switchToMoveTool()
 {
     m_context->uiContext()->toolBar()->changeTool(Tool::Type::Move);

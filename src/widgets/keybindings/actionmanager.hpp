@@ -12,6 +12,17 @@ class ActionManager : public QObject
 {
     Q_OBJECT
 public:
+    enum class AlignType : uint8_t {
+        Unknown = 0,
+        AlignLeft,
+        CentralHorizontal,
+        AlignRight,
+        AlignTop,
+        CentralVertical,
+        AlignBottom,
+    };
+    Q_ENUM(AlignType)
+
     explicit ActionManager(ApplicationContext *context);
 
     void zoomIn();
@@ -29,6 +40,7 @@ public:
     void loadFile(const QString &fileName);
 
     void switchToTool(Tool::Type type);
+    void alignItems(ActionManager::AlignType type);
 
 private:
     void slotLoadDone(const LoadJob::LoadInfo &info);
