@@ -16,6 +16,7 @@ public:
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
+    [[nodiscard]] QString commandTitle() const override;
 
 private:
     QPointF m_delta;

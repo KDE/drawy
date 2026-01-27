@@ -44,3 +44,8 @@ void SelectCommand::undo(ApplicationContext *context)
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
+
+QString SelectCommand::commandTitle() const
+{
+    return QObject::tr("Select Object");
+}

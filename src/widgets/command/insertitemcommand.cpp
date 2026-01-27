@@ -47,3 +47,8 @@ void InsertItemCommand::undo(ApplicationContext *context)
         cacheGrid.markDirty(dirtyRegion);
     }
 }
+
+QString InsertItemCommand::commandTitle() const
+{
+    return QObject::tr("Insert Object");
+}

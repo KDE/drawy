@@ -26,6 +26,8 @@ public:
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 
+    [[nodiscard]] QString commandTitle() const override;
+
 private:
     const AlignItemCommand::Alignment m_alignment = AlignItemCommand::Alignment::Unknow;
     QList<QPointF> m_moveToPoint;

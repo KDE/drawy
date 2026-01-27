@@ -42,3 +42,8 @@ void MoveItemCommand::undo(ApplicationContext *context)
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
+
+QString MoveItemCommand::commandTitle() const
+{
+    return QObject::tr("Move Object");
+}

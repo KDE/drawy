@@ -55,4 +55,10 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
 
     const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
-};
+}
+
+QString UpdatePropertyCommand::commandTitle() const
+{
+    // TODO update title from specific property ?
+    return QObject::tr("Update Property");
+}

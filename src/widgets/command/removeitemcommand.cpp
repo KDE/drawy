@@ -52,3 +52,8 @@ void RemoveItemCommand::undo(ApplicationContext *context)
         cacheGrid.markDirty(dirtyRegion);
     }
 }
+
+QString RemoveItemCommand::commandTitle() const
+{
+    return QObject::tr("Remove Object");
+}

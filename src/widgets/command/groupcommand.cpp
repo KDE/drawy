@@ -59,3 +59,8 @@ void GroupCommand::undo(ApplicationContext *context)
 
     context->renderingContext()->cacheGrid().markDirty(m_group->boundingBox().toRect());
 }
+
+QString GroupCommand::commandTitle() const
+{
+    return QObject::tr("Group Object");
+}

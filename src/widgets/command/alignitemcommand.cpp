@@ -43,3 +43,8 @@ void AlignItemCommand::undo(ApplicationContext *context)
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
+
+QString AlignItemCommand::commandTitle() const
+{
+    return QObject::tr("Align Items");
+}

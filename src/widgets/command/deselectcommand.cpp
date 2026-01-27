@@ -43,3 +43,8 @@ void DeselectCommand::undo(ApplicationContext *context)
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
+
+QString DeselectCommand::commandTitle() const
+{
+    return QObject::tr("Deselect Object");
+}

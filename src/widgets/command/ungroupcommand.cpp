@@ -69,3 +69,8 @@ void UngroupCommand::undo(ApplicationContext *context)
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
+
+QString UngroupCommand::commandTitle() const
+{
+    return QObject::tr("Ungroup Objects");
+}
