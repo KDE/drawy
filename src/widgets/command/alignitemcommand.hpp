@@ -29,6 +29,7 @@ public:
     [[nodiscard]] QString commandTitle() const override;
 
 private:
+    void calculateMoveItems();
     const AlignItemCommand::Alignment m_alignment = AlignItemCommand::Alignment::Unknow;
     QList<QPointF> m_moveToPoint;
 };

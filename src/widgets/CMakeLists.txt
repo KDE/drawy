@@ -292,6 +292,10 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER 
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
 )
 
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_command_debug.h IDENTIFIER DRAWY_COMMAND_LOG
+    CATEGORY_NAME org.kde.drawy_command DESCRIPTION "drawy (command)" EXPORT DRAWY
+)
+
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_autosave_debug.h IDENTIFIER DRAWY_AUTOSAVE_LOG
     CATEGORY_NAME org.kde.drawy_autosave DESCRIPTION "drawy (autosave job)" EXPORT DRAWY
 )
