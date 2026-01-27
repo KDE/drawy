@@ -84,6 +84,41 @@ QString Property::convertEnumToString(Property::Type type)
     return {};
 }
 
+QString Property::information(Type type)
+{
+    switch (type) {
+    case Property::Type::StrokeWidth:
+        return QObject::tr("Change Stroke Width");
+    case Property::Type::StrokeColor:
+        return QObject::tr("Change Stroke Color");
+    case Property::Type::Opacity:
+        return QObject::tr("Change Opacity");
+    case Property::Type::FontSize:
+        return QObject::tr("Change Font Size");
+    case Property::Type::EraserSize:
+        return QObject::tr("Change Eraser Size");
+    case Property::Type::Actions:
+        return QObject::tr("Actions");
+    case Property::Type::StrokeStyle:
+        return QObject::tr("Change Stroke Style");
+    case Property::Type::BackgroundColor:
+        return QObject::tr("Change Background Color");
+    case Property::Type::BackgroundStyle:
+        return QObject::tr("Change Background Style");
+    case Property::Type::ArrowStyle:
+        // We don't store Arrow in XML
+        return {};
+    case Property::Type::Alignment:
+        // We don't store Alignment in XML
+        return {};
+    case Property::Type::ZOrder:
+        return QObject::tr("Change ZOrder");
+    case Property::Type::Null:
+        qCWarning(DRAWY_LOG) << "Don't save null property ";
+    }
+    return {};
+}
+
 bool Property::operator==(const Property &other) const
 {
     return m_value == other.m_value && m_type == other.m_type;

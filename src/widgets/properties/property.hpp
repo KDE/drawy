@@ -55,6 +55,7 @@ public:
 
     [[nodiscard]] static Property::Type convertStringToEnum(const QString &str);
     [[nodiscard]] static QString convertEnumToString(Property::Type type);
+    [[nodiscard]] static QString information(Property::Type type);
 
     [[nodiscard]] bool operator==(const Property &other) const;
 
