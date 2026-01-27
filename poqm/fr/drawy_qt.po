@@ -160,25 +160,25 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurer"
 
-#: widgets/keybindings/actionmanager.cpp:126 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sans titre. %1"
 
-#: widgets/keybindings/actionmanager.cpp:128
-#: widgets/keybindings/actionmanager.cpp:150 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:129 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
@@ -203,7 +203,43 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Actions"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:64
+#: widgets/properties/widgets/alignmentwidget.cpp:29
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Alignment"
+msgctxt "AlignmentWidget|"
+msgid "Align to Left"
+msgstr "Alignement"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:34
+msgctxt "AlignmentWidget|"
+msgid "Align Horizontal Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:39
+msgctxt "AlignmentWidget|"
+msgid "Align to Right"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:44
+msgctxt "AlignmentWidget|"
+msgid "Align to Top"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:49
+msgctxt "AlignmentWidget|"
+msgid "Align Vertical Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:54
+#, fuzzy
+#| msgctxt "ZOrderWidget|"
+#| msgid "Move on Bottom"
+msgctxt "AlignmentWidget|"
+msgid "Align to Bottom"
+msgstr "Mettre à l'arrière-plan"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Alignement"
@@ -333,7 +369,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:134
+#: widgets/tools/selectiontool/selectiontool.cpp:135
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Outil de sélection"

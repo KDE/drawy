@@ -193,25 +193,25 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:126 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:128
-#: widgets/keybindings/actionmanager.cpp:150 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:129 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ireki fitxategia"
@@ -236,7 +236,40 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:64
+#: widgets/properties/widgets/alignmentwidget.cpp:29
+msgctxt "AlignmentWidget|"
+msgid "Align to Left"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:34
+msgctxt "AlignmentWidget|"
+msgid "Align Horizontal Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:39
+msgctxt "AlignmentWidget|"
+msgid "Align to Right"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:44
+msgctxt "AlignmentWidget|"
+msgid "Align to Top"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:49
+msgctxt "AlignmentWidget|"
+msgid "Align Vertical Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:54
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "AlignmentWidget|"
+msgid "Align to Bottom"
+msgstr "Mugitzeko tresna"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr ""
@@ -393,7 +426,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:134
+#: widgets/tools/selectiontool/selectiontool.cpp:135
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Hautapen tresna"

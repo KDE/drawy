@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-23 05:33-0300\n"
+"PO-Revision-Date: 2026-01-26 14:39-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -160,25 +160,25 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: widgets/keybindings/actionmanager.cpp:126 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:128
-#: widgets/keybindings/actionmanager.cpp:150 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:129 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Abrir arquivo"
@@ -203,7 +203,43 @@ msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ações"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:64
+#: widgets/properties/widgets/alignmentwidget.cpp:29
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Alignment"
+msgctxt "AlignmentWidget|"
+msgid "Align to Left"
+msgstr "Alinhamento"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:34
+msgctxt "AlignmentWidget|"
+msgid "Align Horizontal Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:39
+msgctxt "AlignmentWidget|"
+msgid "Align to Right"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:44
+msgctxt "AlignmentWidget|"
+msgid "Align to Top"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:49
+msgctxt "AlignmentWidget|"
+msgid "Align Vertical Center"
+msgstr ""
+
+#: widgets/properties/widgets/alignmentwidget.cpp:54
+#, fuzzy
+#| msgctxt "ZOrderWidget|"
+#| msgid "Move on Bottom"
+msgctxt "AlignmentWidget|"
+msgid "Align to Bottom"
+msgstr "Mover para a base"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Alinhamento"
@@ -333,7 +369,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Ferramenta de retângulo"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:134
+#: widgets/tools/selectiontool/selectiontool.cpp:135
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Ferramenta de seleção"
@@ -364,97 +400,61 @@ msgid "Ignore"
 msgstr "Ignorar"
 
 #: widgets/window/window.cpp:215
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Ferramenta de forma livre"
 
 #: widgets/window/window.cpp:218
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Ferramenta de borracha"
 
 #: widgets/window/window.cpp:219
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Ferramenta de seleção"
 
 #: widgets/window/window.cpp:220
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Ferramenta de retângulo"
 
 #: widgets/window/window.cpp:221
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Ferramenta de elipse"
 
 #: widgets/window/window.cpp:222
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Ferramenta de linha"
 
 #: widgets/window/window.cpp:223
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Ferramenta de texto"
 
 #: widgets/window/window.cpp:224
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Ferramenta de seta"
 
 #: widgets/window/window.cpp:226
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Ferramenta de movimento"
 
 #: widgets/window/window.cpp:230
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Group Elements"
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Agrupar elementos"
 
 #: widgets/window/window.cpp:234
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Desagrupar elementos"
 
 #: widgets/window/window.cpp:238
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Excluir"
