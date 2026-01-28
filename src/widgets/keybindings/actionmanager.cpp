@@ -99,6 +99,8 @@ void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
     }
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, commandType));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::switchToMoveTool()
