@@ -48,7 +48,6 @@ public:
     [[nodiscard]] int size() const;
     void insertItem(const ItemPtr &item, bool updateOrder = true);
     void deleteItem(const ItemPtr &item, bool updateOrder = true);
-    void updateItem(const ItemPtr &item, const QRectF &oldBoundingBox);
     void deleteItems(const QRectF &boundingBox);
 
     void reorder(QList<ItemPtr> &items) const;
@@ -74,6 +73,8 @@ private:
 
     void subdivide();
     void expand(const QPointF &point);
+
+    [[nodiscard]] QSet<ItemPtr> getAllUniqueItems() const;
 };
 
 #include "quadtree.ipp"

@@ -90,7 +90,7 @@ bool QuadTree::insert(const std::shared_ptr<Item> &item, bool updateOrder)
     return inserted;
 }
 
-void QuadTree::deleteItem(std::shared_ptr<Item> const &item, bool updateOrder)
+void QuadTree::deleteItem(const std::shared_ptr<Item> &item, bool updateOrder)
 {
     if (!m_boundingBox.intersects(item->boundingBox())) {
         return;
@@ -134,45 +134,6 @@ void QuadTree::reorder(QList<ItemPtr> &items) const
     });
 }
 
-void QuadTree::updateItem(const std::shared_ptr<Item> &item, const QRectF &oldBoundingBox)
-{
-    expand(item->boundingBox().topLeft());
-    expand(item->boundingBox().topRight());
-    expand(item->boundingBox().bottomRight());
-    expand(item->boundingBox().bottomLeft());
-
-    update(item, oldBoundingBox, false);
-}
-
-void QuadTree::update(const std::shared_ptr<Item> &item, const QRectF &oldBoundingBox, bool inserted)
-{
-    if (!m_boundingBox.intersects(oldBoundingBox) && !m_boundingBox.intersects(item->boundingBox())) {
-        return;
-    }
-
-    if (m_boundingBox.intersects(oldBoundingBox)) {
-        auto it = std::find(m_items.begin(), m_items.end(), item);
-        if (it != m_items.end()) {
-            m_items.erase(it);
-        }
-    }
-
-    if (!inserted && m_boundingBox.intersects(item->boundingBox())) {
-        if (m_items.size() < m_capacity) {
-            m_items.push_back(item);
-            inserted = true;
-        } else if (m_topLeft == nullptr)
-            subdivide();
-    }
-
-    if (m_topLeft != nullptr) {
-        m_topLeft->update(item, oldBoundingBox, inserted);
-        m_topRight->update(item, oldBoundingBox, inserted);
-        m_bottomLeft->update(item, oldBoundingBox, inserted);
-        m_bottomRight->update(item, oldBoundingBox, inserted);
-    }
-}
-
 void QuadTree::deleteItems(const QRectF &boundingBox)
 {
     if (!m_boundingBox.intersects(boundingBox))
@@ -197,12 +158,18 @@ void QuadTree::deleteItems(const QRectF &boundingBox)
 
 QList<std::shared_ptr<Item>> QuadTree::getAllItems() const
 {
-    QList<std::shared_ptr<Item>> curItems{m_items};
+    auto uniqueItems{getAllUniqueItems()};
+    return QList<std::shared_ptr<Item>>{uniqueItems.begin(), uniqueItems.end()};
+}
+
+QSet<std::shared_ptr<Item>> QuadTree::getAllUniqueItems() const
+{
+    QSet<std::shared_ptr<Item>> curItems{m_items.begin(), m_items.end()};
     if (m_topLeft != nullptr) {
-        curItems += m_topLeft->getAllItems();
-        curItems += m_topRight->getAllItems();
-        curItems += m_bottomRight->getAllItems();
-        curItems += m_bottomLeft->getAllItems();
+        curItems += m_topLeft->getAllUniqueItems();
+        curItems += m_topRight->getAllUniqueItems();
+        curItems += m_bottomRight->getAllUniqueItems();
+        curItems += m_bottomLeft->getAllUniqueItems();
     }
     return curItems;
 }

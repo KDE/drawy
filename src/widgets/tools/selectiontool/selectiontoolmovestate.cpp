@@ -60,11 +60,13 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
     QRect dirtyRegion{};
     for (const auto &item : selectedItems) {
         if (!item->locked()) {
-            dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
-            item->translate(delta);
+            spatialContext->quadtree().deleteItem(item, false);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
 
-            spatialContext->quadtree().updateItem(item, item->boundingBox());
+            item->translate(delta);
+
+            spatialContext->quadtree().insertItem(item, false);
+            dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
         }
     }
 
