@@ -22,3 +22,8 @@ QString EllipseTool::icon() const
 {
     return u"tool_ellipse"_s;
 }
+
+Tool::Type EllipseTool::type() const
+{
+    return Tool::Type::Ellipse;
+}

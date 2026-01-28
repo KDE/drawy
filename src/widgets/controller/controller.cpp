@@ -4,6 +4,7 @@
 
 #include "controller.hpp"
 
+#include <QPointingDevice>
 #include <QWheelEvent>
 
 #include "canvas/canvas.hpp"
@@ -149,6 +150,24 @@ void Controller::tablet(QTabletEvent *event)
 {
     auto ev{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
+
+    if (!m_usingStylusEraser && event->pointerType() == QPointingDevice::PointerType::Eraser) {
+        m_usingStylusEraser = true;
+        toolBar->curTool().cleanup();
+
+        Tool::Type oldTool = toolBar->curTool().type();
+        toolBar->changeTool(m_stashedTool);
+        m_stashedTool = oldTool;
+    }
+
+    if (m_usingStylusEraser && event->pointerType() != QPointingDevice::PointerType::Eraser) {
+        m_usingStylusEraser = false;
+        toolBar->curTool().cleanup();
+
+        Tool::Type oldTool = toolBar->curTool().type();
+        toolBar->changeTool(m_stashedTool);
+        m_stashedTool = oldTool;
+    }
 
     // TODO: Remove magic numbers
     ev->setPressure(event->pressure() / 1.60 + 0.375);

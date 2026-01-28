@@ -48,4 +48,7 @@ private:
 
     bool m_mouseMoved{false};
     bool m_movingWithMiddleClick{false};
+
+    bool m_usingStylusEraser{false};
+    Tool::Type m_stashedTool{Tool::Type::Eraser};
 };

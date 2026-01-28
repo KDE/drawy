@@ -21,3 +21,8 @@ QString LineTool::icon() const
 {
     return u"tool_line"_s;
 }
+
+Tool::Type LineTool::type() const
+{
+    return Tool::Type::Line;
+}

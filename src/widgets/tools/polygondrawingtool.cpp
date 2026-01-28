@@ -109,8 +109,3 @@ void PolygonDrawingTool::cleanup()
     context->uiContext()->appEvent()->setButton(Qt::LeftButton);
     mouseReleased(context);
 }
-
-Tool::Type PolygonDrawingTool::type() const
-{
-    return Tool::Type::PolygonDrawing;
-}

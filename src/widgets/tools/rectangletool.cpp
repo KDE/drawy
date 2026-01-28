@@ -22,3 +22,8 @@ QString RectangleTool::icon() const
 {
     return u"tool_rectangle"_s;
 }
+
+Tool::Type RectangleTool::type() const
+{
+    return Tool::Type::Rectangle;
+}

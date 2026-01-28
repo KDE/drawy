@@ -21,3 +21,8 @@ QString ArrowTool::icon() const
 {
     return u"draw-arrow"_s;
 }
+
+Tool::Type ArrowTool::type() const
+{
+    return Tool::Type::Arrow;
+}
