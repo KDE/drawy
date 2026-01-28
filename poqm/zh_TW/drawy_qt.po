@@ -59,6 +59,63 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
 
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "移動工具"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "群組化所選"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "全部選取"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "解除群組化元素"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
+
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
 msgid "Selection"
@@ -599,10 +656,6 @@ msgstr "刪除"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "縮小"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "全部選取"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

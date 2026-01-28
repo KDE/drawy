@@ -66,6 +66,63 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
 
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Mugitzeko tresna"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Taldekatu hautapena"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Hautatu dena"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Bereizi elementuak"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
+
 #: widgets/context/uicontext.cpp:61
 #, fuzzy
 #| msgctxt "ActionManager|"
@@ -634,10 +691,6 @@ msgstr "Ezabatu"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Zooma urrundu"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Hautatu dena"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

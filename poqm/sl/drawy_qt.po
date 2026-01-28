@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-26 06:43+0100\n"
+"PO-Revision-Date: 2026-01-27 06:46+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -60,6 +60,63 @@ msgstr "Neobvezni argument 'datoteka' "
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
+
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Poravnaj na levo"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Združi izbor"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Izberi vse"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Razdruži elemente"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -205,40 +262,34 @@ msgid "Actions"
 msgstr "Dejanja"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr "Poravnava"
+msgstr "Poravnaj na levo"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 msgctxt "AlignmentWidget|"
 msgid "Align Horizontal Center"
-msgstr ""
+msgstr "Poravnaj vodoravno na sredino"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "Poravnaj na desno"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "Poravnaj na vrh"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 msgctxt "AlignmentWidget|"
 msgid "Align Vertical Center"
-msgstr ""
+msgstr "Poravnaj navpično na sredino"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move on Bottom"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "Premakni na dno"
+msgstr "Poravnaj na dno"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
@@ -539,10 +590,6 @@ msgstr "Izbriši"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Pomanjšaj"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Izberi vse"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

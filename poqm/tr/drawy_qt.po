@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-26 17:11+0300\n"
+"PO-Revision-Date: 2026-01-27 12:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -58,6 +58,63 @@ msgstr "İsteğe bağlı bir “dosya” argümanı "
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
+
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Sola Hizala"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Seçimi grupla"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Tümünü Seç"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Ögeleri Gruptan Çıkar"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -204,40 +261,34 @@ msgid "Actions"
 msgstr "Eylemler"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr "Hizalama"
+msgstr "Sola Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 msgctxt "AlignmentWidget|"
 msgid "Align Horizontal Center"
-msgstr ""
+msgstr "Yatay Merkeze Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "Sağa Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "Üste Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 msgctxt "AlignmentWidget|"
 msgid "Align Vertical Center"
-msgstr ""
+msgstr "Dikey Merkeze Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move on Bottom"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "Alta Taşı"
+msgstr "Alta Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
@@ -538,10 +589,6 @@ msgstr "Sil"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Uzaklaştır"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Tümünü Seç"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

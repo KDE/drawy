@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
-"PO-Revision-Date: 2026-01-22 21:32+0100\n"
-"Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2026-01-26 12:25+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,6 +59,63 @@ msgstr "Un argument optionnel « file »"
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Votre outil de brainstorming pratique et sans limites !"
+
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Alignment"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Alignement"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Grouper la sélection"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Tout sélectionner"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Dégrouper les objets"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -138,12 +195,12 @@ msgstr "Rétablir"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Configurer Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -574,10 +631,6 @@ msgstr "Supprimer"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Zoom arrière"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Tout sélectionner"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

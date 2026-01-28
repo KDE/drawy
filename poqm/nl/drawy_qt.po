@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-26 15:28+0100\n"
+"PO-Revision-Date: 2026-01-27 18:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -58,6 +58,63 @@ msgstr "Een optioneel argument 'bestand' "
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
+
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Links uitlijnen"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Groepsselectie"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Alles selecteren"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Selectie van elementen in groep ongedaan maken"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -203,40 +260,34 @@ msgid "Actions"
 msgstr "Acties"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr "Uitlijning"
+msgstr "Links uitlijnen"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 msgctxt "AlignmentWidget|"
 msgid "Align Horizontal Center"
-msgstr ""
+msgstr "Horizontaal centreren"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "Rechts uitlijnen"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "Boven uitlijnen"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 msgctxt "AlignmentWidget|"
 msgid "Align Vertical Center"
-msgstr ""
+msgstr "Vertical centreren"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move on Bottom"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "Naar onderaan verplaatsen"
+msgstr "Onderaan uitlijnen"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
@@ -537,10 +588,6 @@ msgstr "Verwijderen"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Uitzoomen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Alles selecteren"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"

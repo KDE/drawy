@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-26 14:19+0100\n"
+"PO-Revision-Date: 2026-01-27 12:12+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -58,6 +58,63 @@ msgstr "Un argumento optional 'file' "
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Tu instrumento de brainstorming infinite, commode !"
+
+#: widgets/command/alignitemcommand.cpp:105
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
+msgctxt "QObject|"
+msgid "Align Items"
+msgstr "Alinea a sinistra"
+
+#: widgets/command/deselectcommand.cpp:49
+msgctxt "QObject|"
+msgid "Deselect Object"
+msgstr ""
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "QObject|"
+msgid "Group Object"
+msgstr "Selection de gruppo"
+
+#: widgets/command/insertitemcommand.cpp:53
+msgctxt "QObject|"
+msgid "Insert Object"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:48
+msgctxt "QObject|"
+msgid "Move Object"
+msgstr ""
+
+#: widgets/command/removeitemcommand.cpp:58
+msgctxt "QObject|"
+msgid "Remove Object"
+msgstr ""
+
+#: widgets/command/selectcommand.cpp:50
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgctxt "QObject|"
+msgid "Select Object"
+msgstr "Selige toto"
+
+#: widgets/command/ungroupcommand.cpp:75
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Ungroup Elements"
+msgctxt "QObject|"
+msgid "Ungroup Objects"
+msgstr "Separa Elementos"
+
+#: widgets/command/updatepropertycommand.cpp:63
+msgctxt "QObject|"
+msgid "Update Property"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -203,40 +260,34 @@ msgid "Actions"
 msgstr "Actiones"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr "Alineamento"
+msgstr "Alinea a sinistra"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 msgctxt "AlignmentWidget|"
 msgid "Align Horizontal Center"
-msgstr ""
+msgstr "Alinea al centro horizontal"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "Alinea a dextera"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "Alinea al culmine"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 msgctxt "AlignmentWidget|"
 msgid "Align Vertical Center"
-msgstr ""
+msgstr "Alinea al centro vertical"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move on Bottom"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "Move a fundo"
+msgstr "Alinea in basso"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
@@ -537,10 +588,6 @@ msgstr "Dele"
 #~ msgctxt "ActionManager|"
 #~ msgid "Zoom out"
 #~ msgstr "Zoom out (diminue)"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select All"
-#~ msgstr "Selige toto"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Select all items"
