@@ -216,9 +216,12 @@ void QuadTree::expand(const QPointF &point)
     if (m_boundingBox.contains(point))
         return;
 
-    double treeW{m_boundingBox.width()}, treeH{m_boundingBox.height()};
-    double x{point.x()}, y{point.y()};
-    QPointF topLeftPoint{m_boundingBox.topLeft()}, bottomRightPoint{m_boundingBox.bottomRight()};
+    const double treeW{m_boundingBox.width()};
+    const double treeH{m_boundingBox.height()};
+    const double x{point.x()};
+    const double y{point.y()};
+    const QPointF topLeftPoint{m_boundingBox.topLeft()};
+    const QPointF bottomRightPoint{m_boundingBox.bottomRight()};
 
     std::unique_ptr<QuadTree> topLeft{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
     std::unique_ptr<QuadTree> topRight{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
