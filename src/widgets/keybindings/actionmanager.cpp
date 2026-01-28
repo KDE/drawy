@@ -180,7 +180,6 @@ void ActionManager::saveToFile()
     job->setSaveAsInfo(info);
     connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
         SerializerUtils::saveInFile(obj, fileName);
-        qDebug() << " save done ";
     });
     job->start();
 }
