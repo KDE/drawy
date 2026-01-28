@@ -14,7 +14,7 @@ QuadTree::QuadTree(QRectF region, int capacity)
     : m_boundingBox{region}
     , m_capacity{capacity}
 {
-    if (m_orderedList == nullptr) {
+    if (!m_orderedList) {
         m_orderedList = std::make_shared<OrderedList>();
     }
 }
@@ -107,7 +107,7 @@ void QuadTree::deleteItem(const std::shared_ptr<Item> &item, bool updateOrder)
     }
 
     // If the node is subdivided, attempt to delete the item from children
-    if (m_topLeft != nullptr) {
+    if (m_topLeft) {
         m_topLeft->deleteItem(item, updateOrder);
         m_topRight->deleteItem(item, updateOrder);
         m_bottomLeft->deleteItem(item, updateOrder);
@@ -148,7 +148,7 @@ void QuadTree::deleteItems(const QRectF &boundingBox)
         }
     }
 
-    if (m_topLeft != nullptr) {
+    if (m_topLeft) {
         m_topLeft->deleteItems(boundingBox);
         m_topRight->deleteItems(boundingBox);
         m_bottomRight->deleteItems(boundingBox);
@@ -183,7 +183,7 @@ int QuadTree::size() const
 {
     int totalNodes{static_cast<int>(m_items.size())};
 
-    if (m_topLeft != nullptr) {
+    if (m_topLeft) {
         totalNodes += m_topLeft->size();
         totalNodes += m_topRight->size();
         totalNodes += m_bottomRight->size();
@@ -201,7 +201,7 @@ void QuadTree::draw(QPainter &painter, const QPointF &offset) const
     painter.drawRect(m_boundingBox.translated(-offset));
     painter.restore();
 
-    if (m_topLeft != nullptr) {
+    if (m_topLeft) {
         m_topLeft->draw(painter, offset);
         m_topRight->draw(painter, offset);
         m_bottomRight->draw(painter, offset);
