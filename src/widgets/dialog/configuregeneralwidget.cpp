@@ -7,8 +7,8 @@
 #include "configuregeneralwidget.hpp"
 #include "drawyglobalconfig.h"
 #include <QLabel>
+#include <QSpinBox>
 #include <QVBoxLayout>
-#include <qspinbox.h>
 
 using namespace Qt::Literals::StringLiterals;
 ConfigureGeneralWidget::ConfigureGeneralWidget(QWidget *parent)
