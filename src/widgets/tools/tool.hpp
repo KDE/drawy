@@ -41,7 +41,8 @@ public:
         Ellipse,
         Line,
         Arrow,
-        Text
+        Text,
+        Diamond,
     };
 
     virtual Type type() const = 0;

@@ -25,5 +25,5 @@ QString DiamondTool::icon() const
 
 Tool::Type DiamondTool::type() const
 {
-    return Tool::Type::PolygonDrawing; // TODO: make this the correct type.
+    return Tool::Type::Diamond;
 }
