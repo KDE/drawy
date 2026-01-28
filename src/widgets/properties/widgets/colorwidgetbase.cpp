@@ -8,7 +8,7 @@
 #include <QButtonGroup>
 #include <QColor>
 #include <QHBoxLayout>
-#include <QPushButton>
+#include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 // TODO: Use a better widget
 ColorWidgetBase::ColorWidgetBase(QWidget *parent)
@@ -26,7 +26,7 @@ void ColorWidgetBase::initialize()
     const QList<QColor> colors = defaultColors();
 
     for (const QColor &color : colors) {
-        QPushButton *btn{new QPushButton{m_widget}};
+        auto *btn{new QToolButton{m_widget}};
         btn->setCheckable(true);
         btn->setStyleSheet(u"background-color: "_s + color.name());
         btn->setProperty("color-value", color);
