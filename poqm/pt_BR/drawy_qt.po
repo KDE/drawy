@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-27 07:36-0300\n"
+"PO-Revision-Date: 2026-01-28 08:12-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -61,61 +61,49 @@ msgid "Your handy, infinite brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
 #: widgets/command/alignitemcommand.cpp:105
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
 msgctxt "QObject|"
 msgid "Align Items"
-msgstr "Alinhar à esquerda"
+msgstr "Alinhar itens"
 
 #: widgets/command/deselectcommand.cpp:49
 msgctxt "QObject|"
 msgid "Deselect Object"
-msgstr ""
+msgstr "Desmarcar objeto"
 
 #: widgets/command/groupcommand.cpp:65
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "QObject|"
 msgid "Group Object"
-msgstr "Agrupar seleção"
+msgstr "Agrupar objeto"
 
 #: widgets/command/insertitemcommand.cpp:53
 msgctxt "QObject|"
 msgid "Insert Object"
-msgstr ""
+msgstr "Inserir objeto"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
-msgstr ""
+msgstr "Mover objeto"
 
 #: widgets/command/removeitemcommand.cpp:58
 msgctxt "QObject|"
 msgid "Remove Object"
-msgstr ""
+msgstr "Remover objeto"
 
 #: widgets/command/selectcommand.cpp:50
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
 msgctxt "QObject|"
 msgid "Select Object"
-msgstr "Selecionar tudo"
+msgstr "Selecionar objeto"
 
 #: widgets/command/ungroupcommand.cpp:75
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Ungroup Elements"
 msgctxt "QObject|"
 msgid "Ungroup Objects"
-msgstr "Desagrupar elementos"
+msgstr "Desagrupar objetos"
 
 #: widgets/command/updatepropertycommand.cpp:63
 msgctxt "QObject|"
 msgid "Update Property"
-msgstr ""
+msgstr "Atualizar propriedade"
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -217,28 +205,102 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Abrir arquivo"
+
+#: widgets/properties/property.cpp:91
+msgctxt "QObject|"
+msgid "Change Stroke Width"
+msgstr ""
+
+#: widgets/properties/property.cpp:93
+#, fuzzy
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Stroke Color"
+msgctxt "QObject|"
+msgid "Change Stroke Color"
+msgstr "Cor do traço"
+
+#: widgets/properties/property.cpp:95
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Opacity"
+msgstr "Opacidade"
+
+#: widgets/properties/property.cpp:97
+#, fuzzy
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgctxt "QObject|"
+msgid "Change Font Size"
+msgstr "Tamanho da fonte"
+
+#: widgets/properties/property.cpp:99
+#, fuzzy
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgctxt "QObject|"
+msgid "Change Eraser Size"
+msgstr "Tamanho da borracha"
+
+#: widgets/properties/property.cpp:101
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgctxt "QObject|"
+msgid "Actions"
+msgstr "Ações"
+
+#: widgets/properties/property.cpp:103
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgctxt "QObject|"
+msgid "Change Stroke Style"
+msgstr "Estilo de traço"
+
+#: widgets/properties/property.cpp:105
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Color"
+msgstr "Cor de fundo"
+
+#: widgets/properties/property.cpp:107
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Style"
+msgstr "Cor de fundo"
+
+#: widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"

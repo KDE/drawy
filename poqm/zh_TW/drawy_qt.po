@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-15 01:07+0900\n"
+"PO-Revision-Date: 2026-01-28 20:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -60,61 +60,49 @@ msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
 
 #: widgets/command/alignitemcommand.cpp:105
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "QObject|"
 msgid "Align Items"
-msgstr "移動工具"
+msgstr "對齊項目"
 
 #: widgets/command/deselectcommand.cpp:49
 msgctxt "QObject|"
 msgid "Deselect Object"
-msgstr ""
+msgstr "取消選取物件"
 
 #: widgets/command/groupcommand.cpp:65
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "QObject|"
 msgid "Group Object"
-msgstr "群組化所選"
+msgstr "群組化物件"
 
 #: widgets/command/insertitemcommand.cpp:53
 msgctxt "QObject|"
 msgid "Insert Object"
-msgstr ""
+msgstr "插入物件"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
-msgstr ""
+msgstr "移動物件"
 
 #: widgets/command/removeitemcommand.cpp:58
 msgctxt "QObject|"
 msgid "Remove Object"
-msgstr ""
+msgstr "移除物件"
 
 #: widgets/command/selectcommand.cpp:50
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
 msgctxt "QObject|"
 msgid "Select Object"
-msgstr "全部選取"
+msgstr "選取物件"
 
 #: widgets/command/ungroupcommand.cpp:75
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
 msgctxt "QObject|"
 msgid "Ungroup Objects"
-msgstr "解除群組化元素"
+msgstr "解除群組化物件"
 
 #: widgets/command/updatepropertycommand.cpp:63
 msgctxt "QObject|"
 msgid "Update Property"
-msgstr ""
+msgstr "更新屬性"
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -194,12 +182,12 @@ msgstr "重做"
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "設定 Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:27
 msgctxt "ConfigureSettingsDialog|"
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: widgets/drawycommandlineparser.cpp:20
 msgctxt "QObject|"
@@ -207,40 +195,111 @@ msgid "Fullscreen"
 msgstr "全螢幕"
 
 #: widgets/jobs/restoreautosavejob.cpp:48
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "RestoreAutoSaveJob|"
 msgid "Do you want to restore autosave file?"
-msgstr "您確定要關閉嗎？"
+msgstr "您確定要回復自動儲存檔案嗎？"
 
 #: widgets/jobs/restoreautosavejob.cpp:49
 msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
-msgstr ""
+msgstr "回復"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "開啟檔案"
+
+#: widgets/properties/property.cpp:91
+msgctxt "QObject|"
+msgid "Change Stroke Width"
+msgstr ""
+
+#: widgets/properties/property.cpp:93
+#, fuzzy
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Stroke Color"
+msgctxt "QObject|"
+msgid "Change Stroke Color"
+msgstr "筆畫色彩"
+
+#: widgets/properties/property.cpp:95
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Opacity"
+msgstr "不透明度"
+
+#: widgets/properties/property.cpp:97
+#, fuzzy
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgctxt "QObject|"
+msgid "Change Font Size"
+msgstr "字型大小"
+
+#: widgets/properties/property.cpp:99
+#, fuzzy
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgctxt "QObject|"
+msgid "Change Eraser Size"
+msgstr "橡皮擦大小"
+
+#: widgets/properties/property.cpp:101
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgctxt "QObject|"
+msgid "Actions"
+msgstr "動作"
+
+#: widgets/properties/property.cpp:103
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgctxt "QObject|"
+msgid "Change Stroke Style"
+msgstr "筆畫樣式"
+
+#: widgets/properties/property.cpp:105
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Color"
+msgstr "背景色"
+
+#: widgets/properties/property.cpp:107
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Style"
+msgstr "背景色"
+
+#: widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
@@ -265,45 +324,39 @@ msgstr "動作"
 #: widgets/properties/widgets/alignmentwidget.cpp:29
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr ""
+msgstr "向左對齊"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 msgctxt "AlignmentWidget|"
 msgid "Align Horizontal Center"
-msgstr ""
+msgstr "水平置中"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "向右對齊"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "對齊頂部"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 msgctxt "AlignmentWidget|"
 msgid "Align Vertical Center"
-msgstr ""
+msgstr "垂直置中"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "移動工具"
+msgstr "對齊底部"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
-msgstr ""
+msgstr "對齊"
 
 #: widgets/properties/widgets/arrowstylewidget.cpp:31
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "箭頭"
@@ -331,7 +384,7 @@ msgstr "字型大小"
 #: widgets/properties/widgets/opacitywidget.cpp:29
 msgctxt "OpacityWidget|"
 msgid "Opacity"
-msgstr ""
+msgstr "不透明度"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:25
 msgctxt "StokeStyleWidget|"
@@ -364,41 +417,29 @@ msgid "Thickness"
 msgstr "粗細"
 
 #: widgets/properties/widgets/zorderwidget.cpp:24
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Top"
-msgstr "移動工具"
+msgstr "移到最上層"
 
 #: widgets/properties/widgets/zorderwidget.cpp:25
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Move"
 msgctxt "ZOrderWidget|"
 msgid "Move Up"
-msgstr "移動"
+msgstr "向上移動"
 
 #: widgets/properties/widgets/zorderwidget.cpp:26
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move Down"
-msgstr "移動工具"
+msgstr "向下移動"
 
 #: widgets/properties/widgets/zorderwidget.cpp:27
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
-msgstr "移動工具"
+msgstr "移到最下層"
 
 #: widgets/properties/widgets/zorderwidget.cpp:56
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
-msgstr ""
+msgstr "Z 軸排序"
 
 #: widgets/tools/arrowtool.cpp:17
 msgctxt "QObject|"
@@ -406,12 +447,9 @@ msgid "Arrow Tool"
 msgstr "箭頭工具"
 
 #: widgets/tools/diamondtool.cpp:18
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "QObject|"
 msgid "Diamond Tool"
-msgstr "直線工具"
+msgstr "鑽石工具"
 
 #: widgets/tools/ellipsetool.cpp:18
 msgctxt "QObject|"
@@ -454,12 +492,9 @@ msgid "Text Tool"
 msgstr "文字工具"
 
 #: widgets/window/window.cpp:105
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
 msgctxt "MainWindow|"
 msgid "Do you want to save file?"
-msgstr "您確定要關閉嗎？"
+msgstr "您要儲存檔案嗎？"
 
 #: widgets/window/window.cpp:106
 msgctxt "MainWindow|"
@@ -467,110 +502,71 @@ msgid "Close"
 msgstr "關閉"
 
 #: widgets/window/window.cpp:107
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "MainWindow|"
 msgid "Save And Close"
-msgstr "儲存到檔案"
+msgstr "儲存並關閉"
 
 #: widgets/window/window.cpp:108
 msgctxt "MainWindow|"
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: widgets/window/window.cpp:215
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "自由筆畫工具"
 
 #: widgets/window/window.cpp:218
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "橡皮擦工具"
 
 #: widgets/window/window.cpp:219
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "選取工具"
 
 #: widgets/window/window.cpp:220
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
 #: widgets/window/window.cpp:221
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "橢圓工具"
 
 #: widgets/window/window.cpp:222
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "直線工具"
 
 #: widgets/window/window.cpp:223
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "文字工具"
 
 #: widgets/window/window.cpp:224
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "箭頭工具"
 
 #: widgets/window/window.cpp:226
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "移動工具"
 
 #: widgets/window/window.cpp:230
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Group Elements"
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "群組化元素"
 
 #: widgets/window/window.cpp:234
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "解除群組化元素"
 
 #: widgets/window/window.cpp:238
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "刪除"

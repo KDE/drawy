@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-27 08:07+0200\n"
+"PO-Revision-Date: 2026-01-28 03:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -61,61 +61,49 @@ msgid "Your handy, infinite brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
 
 #: widgets/command/alignitemcommand.cpp:105
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
 msgctxt "QObject|"
 msgid "Align Items"
-msgstr "Вирівняти ліворуч"
+msgstr "Вирівняти елементи"
 
 #: widgets/command/deselectcommand.cpp:49
 msgctxt "QObject|"
 msgid "Deselect Object"
-msgstr ""
+msgstr "Зняти позначення з об'єкта"
 
 #: widgets/command/groupcommand.cpp:65
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "QObject|"
 msgid "Group Object"
-msgstr "Групувати позначене"
+msgstr "Згрупувати об'єкт"
 
 #: widgets/command/insertitemcommand.cpp:53
 msgctxt "QObject|"
 msgid "Insert Object"
-msgstr ""
+msgstr "Вставити об’єкт"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
-msgstr ""
+msgstr "Пересунути об'єкт"
 
 #: widgets/command/removeitemcommand.cpp:58
 msgctxt "QObject|"
 msgid "Remove Object"
-msgstr ""
+msgstr "Вилучити об’єкт"
 
 #: widgets/command/selectcommand.cpp:50
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
 msgctxt "QObject|"
 msgid "Select Object"
-msgstr "Позначити все"
+msgstr "Позначити об’єкт"
 
 #: widgets/command/ungroupcommand.cpp:75
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Ungroup Elements"
 msgctxt "QObject|"
 msgid "Ungroup Objects"
-msgstr "Скасувати групування елементів"
+msgstr "Розгрупувати об'єкти"
 
 #: widgets/command/updatepropertycommand.cpp:63
 msgctxt "QObject|"
 msgid "Update Property"
-msgstr ""
+msgstr "Оновити властивість"
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -217,28 +205,102 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
+
+#: widgets/properties/property.cpp:91
+msgctxt "QObject|"
+msgid "Change Stroke Width"
+msgstr ""
+
+#: widgets/properties/property.cpp:93
+#, fuzzy
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Stroke Color"
+msgctxt "QObject|"
+msgid "Change Stroke Color"
+msgstr "Колір штриха"
+
+#: widgets/properties/property.cpp:95
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Opacity"
+msgstr "Непрозорість"
+
+#: widgets/properties/property.cpp:97
+#, fuzzy
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgctxt "QObject|"
+msgid "Change Font Size"
+msgstr "Розмір шрифту"
+
+#: widgets/properties/property.cpp:99
+#, fuzzy
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgctxt "QObject|"
+msgid "Change Eraser Size"
+msgstr "Розмір гумки"
+
+#: widgets/properties/property.cpp:101
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgctxt "QObject|"
+msgid "Actions"
+msgstr "Дії"
+
+#: widgets/properties/property.cpp:103
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgctxt "QObject|"
+msgid "Change Stroke Style"
+msgstr "Стиль штриха"
+
+#: widgets/properties/property.cpp:105
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Color"
+msgstr "Колір тла"
+
+#: widgets/properties/property.cpp:107
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Style"
+msgstr "Колір тла"
+
+#: widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"

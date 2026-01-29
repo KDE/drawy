@@ -217,28 +217,102 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurer"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sans titre. %1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
+
+#: widgets/properties/property.cpp:91
+msgctxt "QObject|"
+msgid "Change Stroke Width"
+msgstr ""
+
+#: widgets/properties/property.cpp:93
+#, fuzzy
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Stroke Color"
+msgctxt "QObject|"
+msgid "Change Stroke Color"
+msgstr "Couleur du trait"
+
+#: widgets/properties/property.cpp:95
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Opacity"
+msgstr "Opacité"
+
+#: widgets/properties/property.cpp:97
+#, fuzzy
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgctxt "QObject|"
+msgid "Change Font Size"
+msgstr "Taille de police"
+
+#: widgets/properties/property.cpp:99
+#, fuzzy
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgctxt "QObject|"
+msgid "Change Eraser Size"
+msgstr "Taille de gomme"
+
+#: widgets/properties/property.cpp:101
+#, fuzzy
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgctxt "QObject|"
+msgid "Actions"
+msgstr "Actions"
+
+#: widgets/properties/property.cpp:103
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgctxt "QObject|"
+msgid "Change Stroke Style"
+msgstr "Style du trait"
+
+#: widgets/properties/property.cpp:105
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Color"
+msgstr "Couleur d'arrière-plan"
+
+#: widgets/properties/property.cpp:107
+#, fuzzy
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgctxt "QObject|"
+msgid "Change Background Style"
+msgstr "Couleur d'arrière-plan"
+
+#: widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:34
 msgctxt "ActionsWidget|"
