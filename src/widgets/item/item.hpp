@@ -78,7 +78,11 @@ public:
     [[nodiscard]] bool locked() const;
     void setLocked(bool newLocked);
 
+    [[nodiscard]] int angle() const;
+    void setAngle(int newAngle);
+
 protected:
+    int m_angle = 0;
     QByteArray m_id;
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};

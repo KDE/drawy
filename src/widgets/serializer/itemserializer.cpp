@@ -27,6 +27,9 @@ QJsonObject ItemSerializer::serialize() const
     if (mItem->locked()) {
         obj[u"locked"_s] = true;
     }
+    if (mItem->angle() != 0) {
+        obj[u"angle"_s] = mItem->angle();
+    }
     return obj;
 }
 

@@ -82,6 +82,16 @@ void Item::setLocked(bool newLocked)
     m_locked = newLocked;
 }
 
+int Item::angle() const
+{
+    return m_angle;
+}
+
+void Item::setAngle(int newAngle)
+{
+    m_angle = newAngle;
+}
+
 void Item::setProperty(const Property::Type propertyType, Property newObj)
 {
     if (m_properties.find(propertyType) != m_properties.end()) {
@@ -107,7 +117,8 @@ int Item::boundingBoxPadding() const
 
 bool Item::operator==(const Item &other) const
 {
-    return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties && m_id == other.m_id && m_locked == other.m_locked;
+    return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties && m_id == other.m_id && m_locked == other.m_locked
+        && m_angle == other.m_angle;
 }
 
 QDebug operator<<(QDebug d, const Item &t)
@@ -116,6 +127,7 @@ QDebug operator<<(QDebug d, const Item &t)
     d.space() << "properties:" << t.properties();
     d.space() << "id:" << t.id();
     d.space() << "locked:" << t.locked();
+    d.space() << "angle:" << t.angle();
     return d;
 }
 
