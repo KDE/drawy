@@ -133,7 +133,7 @@ bool Item::needsCaching() const
 bool Item::isDirty() const
 {
     return m_isDirty;
-};
+}
 
 void Item::setDirty(bool value)
 {
