@@ -4,8 +4,10 @@ SPDX-FileCopyrightText: 2025 None
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# <img src="https://invent.kde.org/graphics/drawy/-/raw/master/assets/mime-32.png" align="left">‎ Drawy
+# Drawy
 Your handy, infinite brainstorming tool!
+
+<img src="./assets/screenshot.png" style="width: 100%" />
 
 Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
 
@@ -64,12 +66,12 @@ The following is a list of features I'll be planning to add to it:
 - [x] Basic keybinding support
 - [x] Saving the drawings
 - [x] Text support
+- [x] Better freeform smoothing algorithms
+- [x] Better widgets
 - [ ] Exporting drawings to PNGs
 - [ ] Image support
 - [ ] Text formatting like bold, underline, italics, etc.
-- [ ] Better freeform smoothing algorithms
 - [ ] Allow snapping
 - [ ] Ability to store preferences
 - [ ] A "settings" page
-- [ ] Better widgets
-- [ ] Online collaboration
+- [ ] Online collaboration?
