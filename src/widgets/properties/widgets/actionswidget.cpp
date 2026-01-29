@@ -22,6 +22,7 @@ ActionsWidget::ActionsWidget(QWidget *parent)
 
     auto layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->setAlignment(Qt::AlignLeft);
 
     auto deleteButton{new ButtonActionsWidget(m_widget)};
     auto groupButton{new ButtonActionsWidget(m_widget)};

@@ -21,7 +21,7 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     auto layout{new QGridLayout(m_widget)};
     layout->setObjectName(u"layout"_s);
     layout->setContentsMargins({});
-    layout->setSpacing(0);
+    layout->setAlignment(Qt::AlignLeft);
 
     auto alignLeftButton{new ButtonActionsWidget(m_widget)};
     alignLeftButton->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
@@ -31,7 +31,7 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     auto centralHorizontalButton{new ButtonActionsWidget(m_widget)};
     centralHorizontalButton->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
     centralHorizontalButton->setObjectName(u"centralHorizontalButton"_s);
-    centralHorizontalButton->setToolTip(tr("Align Horizontal Center"));
+    centralHorizontalButton->setToolTip(tr("Align to Center"));
 
     auto alignRightButton{new ButtonActionsWidget(m_widget)};
     alignRightButton->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
@@ -46,7 +46,7 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     auto centralVerticalButton{new ButtonActionsWidget(m_widget)};
     centralVerticalButton->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
     centralVerticalButton->setObjectName(u"centralVerticalButton"_s);
-    centralVerticalButton->setToolTip(tr("Align Vertical Center"));
+    centralVerticalButton->setToolTip(tr("Align to Middle"));
 
     auto alignBottomButton{new ButtonActionsWidget(m_widget)};
     alignBottomButton->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));

@@ -4,8 +4,10 @@
 
 #include "propertybar.hpp"
 
+#include <QApplication>
 #include <QLabel>
 #include <QSpacerItem>
+#include <QStyle>
 #include <stdexcept>
 
 #include "context/applicationcontext.hpp"
@@ -23,6 +25,25 @@ PropertyBar::PropertyBar(QWidget *parent)
     setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     setAutoFillBackground(true);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+    QPalette pal{QApplication::palette()};
+    QColor borderColor{pal.color(QPalette::Text)};
+    borderColor.setAlpha(51); // 0.2%
+
+    QString frameStyleSheet = QString(
+                                  u"PropertyBar {"_s
+                                  u"  border: %1px solid %2;"_s
+                                  u"  border-radius: %3px;"_s
+                                  u"  background: %4;"_s
+                                  u"  padding: %5px;"_s
+                                  u"}"_s)
+                                  .arg(1)
+                                  .arg(borderColor.name(QColor::HexArgb))
+                                  .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin))
+                                  .arg(pal.color(QPalette::Window).name())
+                                  .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin));
+
+    setStyleSheet(frameStyleSheet);
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)

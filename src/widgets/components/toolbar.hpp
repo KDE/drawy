@@ -7,7 +7,7 @@
 #include <QButtonGroup>
 #include <QFrame>
 #include <QHBoxLayout>
-#include <QPushButton>
+#include <QToolButton>
 
 #include "tools/tool.hpp"
 

@@ -69,29 +69,29 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
 
     auto button = m_actionBar->addButton(tr("Save to File"), u"document-save"_s);
-    connect(button, &QPushButton::clicked, this, [this]() {
+    connect(button, &QToolButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager->saveToFile();
     });
 
     button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);
-    connect(button, &QPushButton::clicked, this, [this]() {
+    connect(button, &QToolButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager->loadFromFile();
     });
 
     button = m_actionBar->addButton(tr("Zoom Out"), u"zoom-out"_s);
-    connect(button, &QPushButton::clicked, this, [this]() {
+    connect(button, &QToolButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(-1);
     });
 
     button = m_actionBar->addButton(tr("Zoom In"), u"zoom-in"_s);
-    connect(button, &QPushButton::clicked, this, [this]() {
+    connect(button, &QToolButton::clicked, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
     auto undoButton = m_actionBar->addButton(tr("Undo"), u"edit-undo"_s);
-    connect(undoButton, &QPushButton::clicked, this, [this]() {
+    connect(undoButton, &QToolButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->undo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
@@ -102,7 +102,7 @@ void UIContext::initializeUIContext()
     });
 
     auto redoButton = m_actionBar->addButton(tr("Redo"), u"edit-redo"_s);
-    connect(redoButton, &QPushButton::clicked, this, [this]() {
+    connect(redoButton, &QToolButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->redo();
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();

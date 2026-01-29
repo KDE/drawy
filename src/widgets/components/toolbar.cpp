@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "toolbar.hpp"
+#include <QApplication>
+#include <QStyle>
+#include <qlogging.h>
 
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
@@ -15,6 +18,24 @@ ToolBar::ToolBar(QWidget *parent)
     setFrameShadow(QFrame::Raised);
     setAutoFillBackground(true);
 
+    QPalette pal{QApplication::palette()};
+    QColor borderColor{pal.color(QPalette::Text)};
+    borderColor.setAlpha(51); // 0.2%
+
+    QString frameStyleSheet = QString(
+                                  u"ToolBar {"_s
+                                  u"  border: %1px solid %2;"_s
+                                  u"  border-radius: %3px;"_s
+                                  u"  background: %4;"_s
+                                  u"}"_s)
+                                  .arg(1)
+                                  .arg(borderColor.name(QColor::HexArgb))
+                                  .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin))
+                                  .arg(pal.color(QPalette::Window).name());
+
+    setStyleSheet(frameStyleSheet);
+
+    m_layout->setSpacing(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
 
@@ -36,9 +57,13 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
         return;
     }
 
-    auto btn{new QPushButton(this)};
+    auto btn{new QToolButton(this)};
     btn->setToolTip(name);
     btn->setIcon(QIcon::fromTheme(tool->icon()));
+    btn->setAutoRaise(true);
+
+    int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+    btn->setIconSize(QSize{iconSize, iconSize});
 
     btn->setCheckable(true);
     btn->setCursor(Qt::PointingHandCursor);

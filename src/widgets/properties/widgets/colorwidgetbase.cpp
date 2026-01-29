@@ -8,14 +8,16 @@
 #include <QButtonGroup>
 #include <QColor>
 #include <QHBoxLayout>
+#include <QStyle>
 #include <QToolButton>
+
 using namespace Qt::Literals::StringLiterals;
 // TODO: Use a better widget
 ColorWidgetBase::ColorWidgetBase(QWidget *parent)
     : PropertyWidget{parent}
+    , m_group{new QButtonGroup{m_widget}}
 {
     m_widget = new QWidget{parent};
-    m_group = new QButtonGroup{m_widget};
 }
 
 void ColorWidgetBase::initialize()
@@ -35,7 +37,6 @@ void ColorWidgetBase::initialize()
         m_group->addButton(btn);
     }
 
-    layout->setSpacing(0);
     m_group->buttons().at(0)->setChecked(true);
     m_widget->hide();
 

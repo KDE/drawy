@@ -7,6 +7,8 @@
 #include "buttonactionswidget.hpp"
 #include <QButtonGroup>
 #include <QHBoxLayout>
+#include <qlayoutitem.h>
+
 using namespace Qt::Literals::StringLiterals;
 StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     : PropertyWidget{parent}
@@ -18,6 +20,7 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     auto layout{new QHBoxLayout(m_widget)};
     layout->setObjectName(u"layout"_s);
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->setAlignment(Qt::AlignLeft);
 
     auto solidButton{new ButtonActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
@@ -31,7 +34,7 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     auto dashLineButton{new ButtonActionsWidget(m_widget)};
     dashLineButton->setObjectName(u"dashLineButton"_s);
     dashLineButton->setProperty("stroke-style", u"DashLine"_s);
-    dashLineButton->setToolTip(tr("Dash Line"));
+    dashLineButton->setToolTip(tr("Dashed"));
     // Laurent: wait for icons (from kde team)
     dashLineButton->setIcon(QIcon::fromTheme(u"line_dashed"_s));
     dashLineButton->setCheckable(true);
@@ -40,7 +43,7 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     auto dotLineButton{new ButtonActionsWidget(m_widget)};
     dotLineButton->setObjectName(u"dotLineButton"_s);
     dotLineButton->setProperty("stroke-style", u"DotLine"_s);
-    dotLineButton->setToolTip(tr("Dot Line"));
+    dotLineButton->setToolTip(tr("Dotted"));
     // Laurent: wait for icons (from kde team)
     dotLineButton->setIcon(QIcon::fromTheme(u"line_dotter"_s));
     dotLineButton->setCheckable(true);
@@ -51,9 +54,11 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     layout->addWidget(solidButton);
     layout->addWidget(dashLineButton);
     layout->addWidget(dotLineButton);
+
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
         Q_EMIT changed(value());
     });
+
     m_widget->hide();
 }
 

@@ -7,7 +7,7 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QHash>
-#include <QPushButton>
+#include <QToolButton>
 
 class ActionBar : public QFrame
 {
@@ -15,7 +15,7 @@ class ActionBar : public QFrame
 public:
     explicit ActionBar(QWidget *parent = nullptr);
 
-    [[nodiscard]] QPushButton *addButton(const QString &tooltip, const QString &icon);
+    [[nodiscard]] QToolButton *addButton(const QString &tooltip, const QString &icon);
 
 private:
     QHBoxLayout *const m_layout;
