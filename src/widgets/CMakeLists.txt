@@ -34,6 +34,8 @@ target_sources(
         command/updatepropertycommand.hpp
         command/alignitemcommand.hpp
         command/alignitemcommand.cpp
+        command/lockcommand.hpp
+        command/lockcommand.cpp
         common/constants.hpp
         common/renderitems.cpp
         common/renderitems.hpp
