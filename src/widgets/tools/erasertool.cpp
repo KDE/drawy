@@ -27,7 +27,7 @@ using namespace Qt::Literals::StringLiterals;
 
 EraserTool::EraserTool()
 {
-    m_cursor = QCursor(Qt::CrossCursor);
+    m_cursor = QCursor(Qt::BlankCursor);
 
     m_properties = {Property::Type::EraserSize};
 }

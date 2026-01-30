@@ -23,21 +23,7 @@ FreeformTool::FreeformTool()
 {
     m_itemFactory = std::make_unique<FreeformFactory>();
 
-    const int size{5};
-    const int borderWidth{1};
-    QBitmap cursorShape{size, size};
-    QPen cursorPen{};
-    cursorShape.fill(Qt::transparent);
-    cursorPen.setWidth(borderWidth);
-    cursorPen.setColor(Qt::black);
-    cursorPen.setJoinStyle(Qt::MiterJoin);
-
-    QPainter cursorPainter{&cursorShape};
-    cursorPainter.setPen(cursorPen);
-
-    cursorPainter.drawEllipse(borderWidth / 2, borderWidth / 2, size - borderWidth, size - borderWidth);
-    m_cursor = QCursor{cursorShape, size / 2, size / 2};
-
+    m_cursor = QCursor{Qt::CrossCursor};
     m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::Opacity};
 }
 
