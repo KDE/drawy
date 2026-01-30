@@ -83,7 +83,7 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     color.setAlpha(alpha);
 
     // if the stroke style is not solid, we draw a polyline
-    if (isSolid()) {
+    if (!isSolid()) {
         drawNonSolidStroke(painter, offset);
         return;
     }
@@ -97,7 +97,7 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 
 bool FreeformItem::isSolid() const
 {
-    return property(Property::Type::StrokeStyle).value<QString>() != ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid);
+    return property(Property::Type::StrokeStyle).value<QString>() == ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid);
 }
 
 void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, bool drawBuffer) const
@@ -109,6 +109,7 @@ void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, 
     QPen pen{};
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     pen.setColor(color);
+    pen.setCapStyle(Qt::RoundCap);
     pen.setWidthF(property(Property::Type::StrokeWidth).value<qreal>());
 
     painter.save();
@@ -134,7 +135,7 @@ bool FreeformItem::isBufferFull() const
 void FreeformItem::drawBuffer(QPainter &painter, const QPointF &offset) const
 {
     // if the stroke style is not solid, we draw a polyline
-    if (isSolid()) {
+    if (!isSolid()) {
         drawNonSolidStroke(painter, offset, true);
         return;
     }
