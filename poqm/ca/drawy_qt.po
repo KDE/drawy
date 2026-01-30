@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-28 09:23+0100\n"
+"PO-Revision-Date: 2026-01-29 11:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -235,93 +235,69 @@ msgstr "Obre un fitxer"
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Canvia l'amplada del traç"
 
 #: widgets/properties/property.cpp:93
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
 msgctxt "QObject|"
 msgid "Change Stroke Color"
-msgstr "Color del traç"
+msgstr "Canvia el color del traç"
 
 #: widgets/properties/property.cpp:95
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Opacity"
-msgstr "Opacitat"
+msgstr "Canvia l'opacitat"
 
 #: widgets/properties/property.cpp:97
-#, fuzzy
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
 msgctxt "QObject|"
 msgid "Change Font Size"
-msgstr "Mida de la lletra"
+msgstr "Canvia la mida de la lletra"
 
 #: widgets/properties/property.cpp:99
-#, fuzzy
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
 msgctxt "QObject|"
 msgid "Change Eraser Size"
-msgstr "Mida de l'esborrador"
+msgstr "Canvia la mida de l'esborrador"
 
 #: widgets/properties/property.cpp:101
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
 msgctxt "QObject|"
 msgid "Actions"
 msgstr "Accions"
 
 #: widgets/properties/property.cpp:103
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
 msgctxt "QObject|"
 msgid "Change Stroke Style"
-msgstr "Estil del traç"
+msgstr "Canvia l'estil del traç"
 
 #: widgets/properties/property.cpp:105
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Color"
-msgstr "Color de fons"
+msgstr "Canvia el color de fons"
 
 #: widgets/properties/property.cpp:107
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Style"
-msgstr "Color de fons"
+msgstr "Canvia l'estil del fons"
 
 #: widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Canvia l'ordre de Z"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Suprimeix la selecció"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Agrupa la selecció"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Desagrupa la selecció"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Accions"
@@ -332,9 +308,12 @@ msgid "Align to Left"
 msgstr "Alinea a l'esquerra"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr "Alinea al centre horitzontal"
+msgid "Align to Center"
+msgstr "Alinea a l'esquerra"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -347,9 +326,12 @@ msgid "Align to Top"
 msgstr "Alinea a dalt"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr "Alinea al centre vertical"
+msgid "Align to Middle"
+msgstr "Alinea a l'esquerra"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -371,7 +353,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Color"
@@ -391,22 +373,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Opacitat"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "Sòlid"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Línia de guions"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Línia de punts"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Estil del traç"
@@ -487,7 +472,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
@@ -576,6 +561,18 @@ msgstr "Desagrupa elements"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Suprimeix"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Horizontal Center"
+#~ msgstr "Alinea al centre horitzontal"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Vertical Center"
+#~ msgstr "Alinea al centre vertical"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Línia de punts"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

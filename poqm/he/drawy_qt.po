@@ -314,22 +314,22 @@ msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "מחיקת בחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "קיבוץ הבחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "פריטת הבחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "פעולות"
@@ -340,9 +340,12 @@ msgid "Align to Left"
 msgstr "יישור לשמאל"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr "יישור למרכז האופקי"
+msgid "Align to Center"
+msgstr "יישור לשמאל"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -355,9 +358,12 @@ msgid "Align to Top"
 msgstr "יישור למעלה"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr "יישור למרכז האנכי"
+msgid "Align to Middle"
+msgstr "יישור לשמאל"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -379,7 +385,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "צבע רקע"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "צבע"
@@ -399,22 +405,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "אטימות"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "אחיד"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "קו מקווקוו"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "קו נקודות"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "סגנון קו המתאר"
@@ -494,7 +503,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
@@ -583,6 +592,18 @@ msgstr "פריטת הרכיבים"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Delete"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Horizontal Center"
+#~ msgstr "יישור למרכז האופקי"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Vertical Center"
+#~ msgstr "יישור למרכז האנכי"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "קו נקודות"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-28 11:04+0100\n"
+"PO-Revision-Date: 2026-01-29 07:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -232,93 +232,69 @@ msgstr "Odpri datoteko"
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Spremeni širino poteze"
 
 #: widgets/properties/property.cpp:93
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
 msgctxt "QObject|"
 msgid "Change Stroke Color"
-msgstr "Barva poteze"
+msgstr "Spremeni barvo poteze"
 
 #: widgets/properties/property.cpp:95
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Opacity"
-msgstr "Neprosojnost"
+msgstr "Spremeni neprosojnost"
 
 #: widgets/properties/property.cpp:97
-#, fuzzy
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
 msgctxt "QObject|"
 msgid "Change Font Size"
-msgstr "Velikost pisave"
+msgstr "Spremeni velikost pisave"
 
 #: widgets/properties/property.cpp:99
-#, fuzzy
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
 msgctxt "QObject|"
 msgid "Change Eraser Size"
-msgstr "Velikost radirke"
+msgstr "Spremeni velikost radirke"
 
 #: widgets/properties/property.cpp:101
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
 msgctxt "QObject|"
 msgid "Actions"
 msgstr "Dejanja"
 
 #: widgets/properties/property.cpp:103
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
 msgctxt "QObject|"
 msgid "Change Stroke Style"
-msgstr "Slog poteze"
+msgstr "Spremeni slog poteze"
 
 #: widgets/properties/property.cpp:105
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Color"
-msgstr "Barva ozadja"
+msgstr "Spremeni barvo ozadja"
 
 #: widgets/properties/property.cpp:107
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Style"
-msgstr "Barva ozadja"
+msgstr "Spremeni barvo ozadja"
 
 #: widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Spremeni Z-vrstni red"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Izbriši izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Združi izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Razdruži izbor"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Dejanja"
@@ -329,9 +305,12 @@ msgid "Align to Left"
 msgstr "Poravnaj na levo"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr "Poravnaj vodoravno na sredino"
+msgid "Align to Center"
+msgstr "Poravnaj na levo"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -344,9 +323,12 @@ msgid "Align to Top"
 msgstr "Poravnaj na vrh"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr "Poravnaj navpično na sredino"
+msgid "Align to Middle"
+msgstr "Poravnaj na levo"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -368,7 +350,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Barva ozadja"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Barva"
@@ -388,22 +370,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Neprosojnost"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "Nepretrgana"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Pretrgana črta"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Pikčasta črta"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Slog poteze"
@@ -483,7 +468,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Orodje za pravokotnik"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Orodje za izbiro"
@@ -572,6 +557,18 @@ msgstr "Razdruži elemente"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Izbriši"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Horizontal Center"
+#~ msgstr "Poravnaj vodoravno na sredino"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Vertical Center"
+#~ msgstr "Poravnaj navpično na sredino"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Pikčasta črta"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

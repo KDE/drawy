@@ -301,22 +301,22 @@ msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "刪除所選"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "群組化所選"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "解除群組化所選"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "動作"
@@ -327,9 +327,12 @@ msgid "Align to Left"
 msgstr "向左對齊"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr "水平置中"
+msgid "Align to Center"
+msgstr "向左對齊"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -342,9 +345,12 @@ msgid "Align to Top"
 msgstr "對齊頂部"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr "垂直置中"
+msgid "Align to Middle"
+msgstr "向左對齊"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -366,7 +372,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "背景色"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "色彩"
@@ -386,22 +392,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "不透明度"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "實心"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "虛線"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "點線"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "筆畫樣式"
@@ -481,7 +490,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "選取工具"
@@ -570,6 +579,18 @@ msgstr "解除群組化元素"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "刪除"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Horizontal Center"
+#~ msgstr "水平置中"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Vertical Center"
+#~ msgstr "垂直置中"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "點線"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

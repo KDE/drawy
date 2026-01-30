@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-27 12:17+0300\n"
+"PO-Revision-Date: 2026-01-29 16:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,61 +60,49 @@ msgid "Your handy, infinite brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
 
 #: widgets/command/alignitemcommand.cpp:105
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
 msgctxt "QObject|"
 msgid "Align Items"
-msgstr "Sola Hizala"
+msgstr "Ögeleri Hizala"
 
 #: widgets/command/deselectcommand.cpp:49
 msgctxt "QObject|"
 msgid "Deselect Object"
-msgstr ""
+msgstr "Nesnenin Seçimini Kaldır"
 
 #: widgets/command/groupcommand.cpp:65
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
 msgctxt "QObject|"
 msgid "Group Object"
-msgstr "Seçimi grupla"
+msgstr "Nesneyi Grupla"
 
 #: widgets/command/insertitemcommand.cpp:53
 msgctxt "QObject|"
 msgid "Insert Object"
-msgstr ""
+msgstr "Nesne Ekle"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
-msgstr ""
+msgstr "Nesneyi Taşı"
 
 #: widgets/command/removeitemcommand.cpp:58
 msgctxt "QObject|"
 msgid "Remove Object"
-msgstr ""
+msgstr "Nesneyi Kaldır"
 
 #: widgets/command/selectcommand.cpp:50
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
 msgctxt "QObject|"
 msgid "Select Object"
-msgstr "Tümünü Seç"
+msgstr "Nesneyi Seç"
 
 #: widgets/command/ungroupcommand.cpp:75
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Ungroup Elements"
 msgctxt "QObject|"
 msgid "Ungroup Objects"
-msgstr "Ögeleri Gruptan Çıkar"
+msgstr "Nesneleri Gruptan Çıkar"
 
 #: widgets/command/updatepropertycommand.cpp:63
 msgctxt "QObject|"
 msgid "Update Property"
-msgstr ""
+msgstr "Özelliği Güncelle"
 
 #: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
@@ -243,93 +231,69 @@ msgstr "Dosya Aç"
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Vuruş Genişliğini Değiştir"
 
 #: widgets/properties/property.cpp:93
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
 msgctxt "QObject|"
 msgid "Change Stroke Color"
-msgstr "Vuruş Rengi"
+msgstr "Vuruş Rengini Değiştir"
 
 #: widgets/properties/property.cpp:95
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Opacity"
-msgstr "Matlık"
+msgstr "Matlığı Değiştir"
 
 #: widgets/properties/property.cpp:97
-#, fuzzy
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
 msgctxt "QObject|"
 msgid "Change Font Size"
-msgstr "Yazıtipi Puntosu"
+msgstr "Yazıtipi Puntosunu Değiştir"
 
 #: widgets/properties/property.cpp:99
-#, fuzzy
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
 msgctxt "QObject|"
 msgid "Change Eraser Size"
-msgstr "Silgi Boyutu"
+msgstr "Silgi Boyutunu Değiştir"
 
 #: widgets/properties/property.cpp:101
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
 msgctxt "QObject|"
 msgid "Actions"
 msgstr "Eylemler"
 
 #: widgets/properties/property.cpp:103
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
 msgctxt "QObject|"
 msgid "Change Stroke Style"
-msgstr "Vuruş Biçemi"
+msgstr "Vuruş Biçemini Değiştir"
 
 #: widgets/properties/property.cpp:105
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Color"
-msgstr "Arka Plan Rengi"
+msgstr "Arka Plan Rengini Değiştir"
 
 #: widgets/properties/property.cpp:107
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Style"
-msgstr "Arka Plan Rengi"
+msgstr "Arka Plan Biçemini Değiştir"
 
 #: widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Z Sırasını Değiştir"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Seçimi sil"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Seçimi grupla"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Seçimin grubunu kaldır"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Eylemler"
@@ -340,9 +304,12 @@ msgid "Align to Left"
 msgstr "Sola Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr "Yatay Merkeze Hizala"
+msgid "Align to Center"
+msgstr "Sola Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -355,9 +322,12 @@ msgid "Align to Top"
 msgstr "Üste Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr "Dikey Merkeze Hizala"
+msgid "Align to Middle"
+msgstr "Sola Hizala"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -379,7 +349,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Arka Plan Rengi"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Renk"
@@ -399,22 +369,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Matlık"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "Katı"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Tireli Çizgi"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Noktalı Çizgi"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Vuruş Biçemi"
@@ -494,7 +467,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
@@ -583,6 +556,18 @@ msgstr "Ögeleri Gruptan Çıkar"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Sil"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Horizontal Center"
+#~ msgstr "Yatay Merkeze Hizala"
+
+#~ msgctxt "AlignmentWidget|"
+#~ msgid "Align Vertical Center"
+#~ msgstr "Dikey Merkeze Hizala"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Noktalı Çizgi"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

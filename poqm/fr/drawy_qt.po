@@ -314,22 +314,22 @@ msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Supprimer la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Grouper la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Dissocier la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Actions"
@@ -343,9 +343,12 @@ msgid "Align to Left"
 msgstr "Alignement"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr ""
+msgid "Align to Center"
+msgstr "Alignement"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -358,9 +361,12 @@ msgid "Align to Top"
 msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "AlignmentWidget|"
+#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr ""
+msgid "Align to Middle"
+msgstr "Alignement"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 #, fuzzy
@@ -385,7 +391,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Couleur d'arrière-plan"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Couleur"
@@ -405,22 +411,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Opacité"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr "Solide"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Ligne en tirets"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Ligne pointillée"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Style du trait"
@@ -500,7 +509,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Outil de sélection"
@@ -625,6 +634,10 @@ msgstr "Dégrouper les objets"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Supprimer"
+
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Ligne pointillée"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

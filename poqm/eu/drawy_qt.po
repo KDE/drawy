@@ -332,22 +332,22 @@ msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Ezabatu hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Taldekatu hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Bereizi hautapena"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Ekintzak"
@@ -358,9 +358,12 @@ msgid "Align to Left"
 msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr ""
+msgid "Align to Center"
+msgstr "Mugitzeko tresna"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -373,9 +376,12 @@ msgid "Align to Top"
 msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr ""
+msgid "Align to Middle"
+msgstr "Mugitzeko tresna"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 #, fuzzy
@@ -403,7 +409,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 #, fuzzy
 #| msgctxt "StrokeColorWidget|"
 #| msgid "Color"
@@ -426,28 +432,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Lerro tresna"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Lerro tresna"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
@@ -542,7 +545,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Hautapen tresna"
@@ -670,6 +673,13 @@ msgstr "Bereizi elementuak"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Ezabatu"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Line Tool"
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Lerro tresna"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"

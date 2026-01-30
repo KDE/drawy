@@ -305,22 +305,22 @@ msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Auswahl löschen"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:36
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Auswahl gruppieren"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:37
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Gruppierung aufheben"
 
-#: widgets/properties/widgets/actionswidget.cpp:59
+#: widgets/properties/widgets/actionswidget.cpp:60
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Aktionen"
@@ -331,9 +331,12 @@ msgid "Align to Left"
 msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
 msgctxt "AlignmentWidget|"
-msgid "Align Horizontal Center"
-msgstr ""
+msgid "Align to Center"
+msgstr "Verschieben"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -346,9 +349,12 @@ msgid "Align to Top"
 msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
 msgctxt "AlignmentWidget|"
-msgid "Align Vertical Center"
-msgstr ""
+msgid "Align to Middle"
+msgstr "Verschieben"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 #, fuzzy
@@ -376,7 +382,7 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:49
+#: widgets/properties/widgets/colorwidgetbase.cpp:50
 #, fuzzy
 #| msgctxt "StrokeColorWidget|"
 #| msgid "Color"
@@ -399,28 +405,25 @@ msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:25
+#: widgets/properties/widgets/stokestylewidget.cpp:28
 msgctxt "StokeStyleWidget|"
 msgid "Solid"
 msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:34
+#: widgets/properties/widgets/stokestylewidget.cpp:37
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Line"
 msgctxt "StokeStyleWidget|"
-msgid "Dash Line"
+msgid "Dashed"
 msgstr "Linie"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:43
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
-msgid "Dot Line"
-msgstr "Linie"
+msgid "Dotted"
+msgstr ""
 
-#: widgets/properties/widgets/stokestylewidget.cpp:64
+#: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
@@ -515,7 +518,7 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Rechtecke"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Auswahlwerkzeug"
@@ -646,6 +649,13 @@ msgstr "Gruppierung aufheben"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Löschen"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Line"
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Linie"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Switch to freeform drawing tool"
