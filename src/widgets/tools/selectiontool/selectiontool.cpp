@@ -118,11 +118,8 @@ const QList<Property::Type> SelectionTool::properties() const
     QList<Property::Type> output(result.begin(), result.end());
 
     if (!selectedItems.empty()) {
-        output += QList<Property::Type>{Property::Type::Actions};
-    }
-
-    if (selectedItems.size() > 1) {
         output += QList<Property::Type>{Property::Type::Alignment};
+        output += QList<Property::Type>{Property::Type::Actions};
     }
 
     return output;
