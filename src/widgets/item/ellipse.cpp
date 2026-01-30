@@ -6,6 +6,7 @@
 #include "serializer/ellipsedeserializer.hpp"
 #include "serializer/ellipseserializer.hpp"
 #include <QJsonObject>
+#include <QPainterPath>
 
 EllipseItem::EllipseItem()
 {
@@ -14,50 +15,13 @@ EllipseItem::EllipseItem()
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-#if 0 // Painting is broken for background
-    QPen pen = painter.pen();
-    if (hasProperty(Property::Type::BackgroundColor)) {
-        QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-        if (backgroundColor != Qt::transparent) {
-            backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
-            pen.setBrush(QBrush(backgroundColor));
-            painter.setPen(pen);
-        }
+    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+    if (backgroundColor != Qt::transparent) {
+        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+        painter.setBrush(QBrush(backgroundColor));
     }
-#endif
+
     painter.drawEllipse(QRectF(start() - offset, end() - offset));
-}
-
-bool EllipseItem::onEllipse(QLineF line) const
-{
-    const int sw{boundingBoxPadding() + property(Property::Type::StrokeWidth).value<int>()};
-    const double bX{m_boundingBox.x() + sw}, bY{m_boundingBox.y() + sw};
-    const double bW{m_boundingBox.width() - 2 * sw}, bH{m_boundingBox.height() - 2 * sw};
-
-    const double h{bX + bW / 2}, k{bY + bH / 2};
-    const double a{bW / 2}, b{bH / 2};
-    const double x1{line.x1()}, y1{line.y1()};
-    const double x2{line.x2()}, y2{line.y2()};
-
-    const double p{x2 - x1}, q{y2 - y1};
-
-    const double as{a * a};
-    const double bs{b * b};
-    const double ps{p * p};
-    const double qs{q * q};
-
-    const double firstTerm{ps * bs + qs * as};
-    const double secondTerm{2 * (x1 * p * bs - p * h * bs + y1 * q * as - q * k * as)};
-    const double thirdTerm{x1 * x1 * bs + bs * h * h - 2 * x1 * h * bs + y1 * y1 * as + as * k * k - 2 * y1 * k * as - as * bs};
-
-    const double discriminant{secondTerm * secondTerm - 4 * firstTerm * thirdTerm};
-    if (discriminant < 0)
-        return false;
-
-    const double t1{(-secondTerm + sqrt(discriminant)) / (2.0 * firstTerm)};
-    const double t2{(-secondTerm - sqrt(discriminant)) / (2.0 * firstTerm)};
-
-    return (t1 >= 0.0 && t1 <= 1.0) || (t2 >= 0.0 && t2 <= 1.0);
 }
 
 bool EllipseItem::intersects(const QRectF &rect)
@@ -65,16 +29,15 @@ bool EllipseItem::intersects(const QRectF &rect)
     if (!boundingBox().intersects(rect))
         return false;
 
-    const QPointF a{rect.topLeft()};
-    const QPointF b{rect.topRight()};
-    const QPointF c{rect.bottomRight()};
-    const QPointF d{rect.bottomLeft()};
-    return onEllipse({a, b}) || onEllipse({b, c}) || onEllipse({c, d}) || onEllipse({d, a});
-}
+    QPainterPath path{};
+    path.addEllipse(QRectF{start(), end()});
 
-bool EllipseItem::intersects(const QLineF &line)
-{
-    return onEllipse(line);
+    bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    if (isFilled) {
+        return path.intersects(rect);
+    }
+
+    return path.intersects(rect) && !path.contains(rect);
 }
 
 Item::Type EllipseItem::type() const

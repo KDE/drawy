@@ -18,7 +18,6 @@ public:
     virtual ~Item();
 
     virtual bool intersects(const QRectF &rect) = 0;
-    virtual bool intersects(const QLineF &rect) = 0;
 
     virtual void draw(QPainter &painter, const QPointF &offset) = 0;
     virtual void erase(QPainter &painter, const QPointF &offset) const;

@@ -7,6 +7,7 @@
 #include "serializer/polygondeserializer.hpp"
 #include "serializer/polygonserializer.hpp"
 #include <QJsonObject>
+#include <qnamespace.h>
 using namespace Qt::Literals::StringLiterals;
 PolygonItem::PolygonItem()
 {
@@ -84,15 +85,10 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 
 void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
 {
-    QPen pen{};
-
-    pen.setWidth(property(Property::Type::StrokeWidth).value<int>() * 10);
-    pen.setColor(Qt::transparent);
-
-    painter.setPen(pen);
+    painter.save();
     painter.setCompositionMode(QPainter::CompositionMode_Source);
-
-    drawItem(painter, offset);
+    painter.fillRect(m_boundingBox.translated(-offset), Qt::transparent);
+    painter.restore();
 }
 
 void PolygonItem::translate(const QPointF &amount)

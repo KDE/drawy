@@ -45,12 +45,6 @@ bool DiamondItem::intersects(const QRectF &rect)
             || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{d, a}));
 }
 
-bool DiamondItem::intersects(const QLineF &line)
-{
-    const QRectF box{start(), end()};
-    return Common::Utils::Math::intersects(box, line);
-}
-
 Item::Type DiamondItem::type() const
 {
     return Item::Type::Diamond;

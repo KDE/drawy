@@ -46,17 +46,6 @@ bool GroupItem::intersects(const QRectF &rect)
     return false;
 }
 
-bool GroupItem::intersects(const QLineF &line)
-{
-    for (const auto &item : std::as_const(m_items)) {
-        if (item->intersects(line)) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
     setDirty(true);

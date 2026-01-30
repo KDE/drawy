@@ -51,11 +51,6 @@ bool TextItem::intersects(const QRectF &rect)
     return m_boundingBox.intersects(rect);
 }
 
-bool TextItem::intersects(const QLineF &line)
-{
-    return Common::Utils::Math::intersects(m_boundingBox, line);
-}
-
 void TextItem::draw(QPainter &painter, const QPointF &offset)
 {
     painter.save();

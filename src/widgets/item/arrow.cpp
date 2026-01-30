@@ -120,12 +120,6 @@ bool ArrowItem::intersects(const QRectF &rect)
             || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{d, a}));
 }
 
-bool ArrowItem::intersects(const QLineF &line)
-{
-    return (Common::Utils::Math::intersects(QLineF{start(), end()}, line) || Common::Utils::Math::intersects(QLineF{end(), m_arrowEndP1}, line)
-            || Common::Utils::Math::intersects(QLineF{end(), m_arrowEndP2}, line));
-}
-
 void ArrowItem::translate(const QPointF &amount)
 {
     m_arrowEndP1 += amount;

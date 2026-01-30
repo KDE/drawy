@@ -21,11 +21,6 @@ bool LineItem::intersects(const QRectF &rect)
     return Common::Utils::Math::intersects(rect, QLineF{start(), end()});
 }
 
-bool LineItem::intersects(const QLineF &line)
-{
-    return Common::Utils::Math::intersects(QLineF{start(), end()}, line);
-}
-
 Item::Type LineItem::type() const
 {
     return Item::Type::Line;

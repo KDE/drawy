@@ -17,7 +17,6 @@ public:
     ~TextItem() override;
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
-    [[nodiscard]] bool intersects(const QLineF &rect) override;
 
     void draw(QPainter &painter, const QPointF &offset) override;
 

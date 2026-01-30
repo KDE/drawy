@@ -4,10 +4,10 @@
 
 #include "rectangle.hpp"
 
-#include "common/utils/math.hpp"
 #include "serializer/rectangledeserializer.hpp"
 #include "serializer/rectangleserializer.hpp"
 #include <QJsonObject>
+#include <QPainterPath>
 
 RectangleItem::RectangleItem()
 {
@@ -16,12 +16,10 @@ RectangleItem::RectangleItem()
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    if (hasProperty(Property::Type::BackgroundColor)) {
-        QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-        if (backgroundColor != Qt::transparent) {
-            backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
-            painter.fillRect(QRectF(start() - offset, end() - offset), QBrush(backgroundColor));
-        }
+    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+    if (backgroundColor != Qt::transparent) {
+        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+        painter.setBrush(backgroundColor);
     }
     painter.drawRect(QRectF(start() - offset, end() - offset));
 }
@@ -31,31 +29,15 @@ bool RectangleItem::intersects(const QRectF &rect)
     if (!boundingBox().intersects(rect))
         return false;
 
-    const QRectF box{start(), end()};
-    const QPointF p{box.topLeft()};
-    const QPointF q{box.topRight()};
-    const QPointF r{box.bottomRight()};
-    const QPointF s{box.bottomLeft()};
+    QPainterPath path{};
+    path.addRect(QRectF{start(), end()});
 
-    const QPointF a{rect.topLeft()};
-    const QPointF b{rect.topRight()};
-    const QPointF c{rect.bottomRight()};
-    const QPointF d{rect.bottomLeft()};
+    bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    if (isFilled) {
+        return path.intersects(rect);
+    }
 
-    return (Common::Utils::Math::intersects(QLineF{p, q}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{d, a}));
-}
-
-bool RectangleItem::intersects(const QLineF &line)
-{
-    const QRectF box{start(), end()};
-    return Common::Utils::Math::intersects(box, line);
+    return path.intersects(rect) && !path.contains(rect);
 }
 
 Item::Type RectangleItem::type() const

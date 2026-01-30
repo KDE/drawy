@@ -75,15 +75,6 @@ bool FreeformItem::intersects(const QRectF &rect)
     return m_path.intersects(rect);
 }
 
-bool FreeformItem::intersects(const QLineF &line)
-{
-    QPainterPath linePath;
-    linePath.moveTo(line.p1());
-    linePath.lineTo(line.p2());
-
-    return m_path.intersects(linePath);
-}
-
 void FreeformItem::draw(QPainter &painter, const QPointF &offset)
 {
     finalizeStroke();

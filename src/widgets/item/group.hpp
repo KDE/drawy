@@ -16,7 +16,6 @@ public:
     void erase(QPainter &painter, const QPointF &offset) const override;
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
-    [[nodiscard]] bool intersects(const QLineF &rect) override;
 
     void translate(const QPointF &amount) override;
 
