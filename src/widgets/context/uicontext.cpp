@@ -96,6 +96,7 @@ void UIContext::initializeUIContext()
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
+
     undoButton->setEnabled(false);
     connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [undoButton, this]() {
         undoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasUndo());
@@ -107,6 +108,7 @@ void UIContext::initializeUIContext()
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     });
+
     redoButton->setEnabled(false);
     connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [redoButton, this]() {
         redoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasRedo());
@@ -114,6 +116,8 @@ void UIContext::initializeUIContext()
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
+
+    connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
 
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
@@ -156,7 +160,7 @@ Event *UIContext::appEvent() const
 void UIContext::toolChanged(Tool &tool)
 {
     if (tool.type() != Tool::Type::Selection) {
-        m_applicationContext->selectionContext()->selectedItems().clear();
+        m_applicationContext->selectionContext()->reset();
     }
 
     Common::renderCanvas(m_applicationContext);

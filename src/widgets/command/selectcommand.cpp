@@ -21,12 +21,10 @@ SelectCommand::SelectCommand(QList<std::shared_ptr<Item>> items)
 
 void SelectCommand::execute(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext()->selectedItems()};
-
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
-        selectedItems.insert(item);
+        context->selectionContext()->addToSelection(item);
     }
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
@@ -34,12 +32,10 @@ void SelectCommand::execute(ApplicationContext *context)
 
 void SelectCommand::undo(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext()->selectedItems()};
-
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
-        selectedItems.erase(item);
+        context->selectionContext()->removeFromSelection(item);
     }
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());

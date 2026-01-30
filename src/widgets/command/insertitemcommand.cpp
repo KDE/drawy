@@ -37,12 +37,11 @@ void InsertItemCommand::undo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     for (const auto &item : std::as_const(m_items)) {
         const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
 
-        selectedItems.erase(item);
+        context->selectionContext()->removeFromSelection(item);
         quadtree.deleteItem(item);
         cacheGrid.markDirty(dirtyRegion);
     }

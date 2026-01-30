@@ -25,9 +25,27 @@ SelectionContext::~SelectionContext()
     qCDebug(DRAWY_LOG) << "Object deleted: SelectionContext";
 }
 
-std::unordered_set<std::shared_ptr<Item>> &SelectionContext::selectedItems()
+const std::unordered_set<std::shared_ptr<Item>> &SelectionContext::selectedItems() const
 {
     return m_selectedItems;
+}
+
+void SelectionContext::addToSelection(const std::shared_ptr<Item> &item)
+{
+    if (m_selectedItems.find(item) != m_selectedItems.end())
+        return;
+
+    m_selectedItems.insert(item);
+    Q_EMIT selectionUpdated();
+}
+
+void SelectionContext::removeFromSelection(const std::shared_ptr<Item> &item)
+{
+    if (m_selectedItems.find(item) == m_selectedItems.end())
+        return;
+
+    m_selectedItems.erase(item);
+    Q_EMIT selectionUpdated();
 }
 
 QRectF SelectionContext::selectionBox() const
@@ -53,5 +71,9 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
 void SelectionContext::reset()
 {
-    selectedItems().clear();
+    if (m_selectedItems.empty())
+        return;
+
+    m_selectedItems.clear();
+    Q_EMIT selectionUpdated();
 }

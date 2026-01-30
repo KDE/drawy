@@ -67,7 +67,7 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
 
 void SelectionTool::keyPressed(ApplicationContext *context)
 {
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
     if (selectedItems.empty())
         return;
 
@@ -106,7 +106,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
 const QList<Property::Type> SelectionTool::properties() const
 {
     ApplicationContext *context{ApplicationContext::instance()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
 
     std::set<Property::Type> result{};
     for (const auto &item : selectedItems) {

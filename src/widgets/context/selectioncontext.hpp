@@ -12,16 +12,35 @@ class ApplicationContext;
 
 class SelectionContext : public QObject
 {
+    Q_OBJECT
 public:
     explicit SelectionContext(ApplicationContext *context);
     ~SelectionContext() override;
 
-    [[nodiscard]] std::unordered_set<std::shared_ptr<Item>> &selectedItems();
+    [[nodiscard]] const std::unordered_set<std::shared_ptr<Item>> &selectedItems() const;
+    void addToSelection(const std::shared_ptr<Item> &item);
+    void removeFromSelection(const std::shared_ptr<Item> &item);
+
     [[nodiscard]] QRectF selectionBox() const;
 
     void reset();
 
     void updatePropertyOfSelectedItems(const Property &property);
+
+    template<typename Iterator>
+    void setSelectedItems(Iterator begin, Iterator end)
+    {
+        std::unordered_set<std::shared_ptr<Item>> newItems{begin, end};
+
+        if (newItems == m_selectedItems)
+            return;
+
+        m_selectedItems = newItems;
+        Q_EMIT selectionUpdated();
+    }
+
+Q_SIGNALS:
+    void selectionUpdated();
 
 private:
     std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};

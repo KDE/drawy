@@ -90,7 +90,9 @@ void TextTool::mousePressed(ApplicationContext *context)
             m_curItem->setSelectionEnd(TextItem::INVALID);
         }
 
-        context->selectionContext()->selectedItems() = {m_curItem};
+        context->selectionContext()->reset();
+        context->selectionContext()->addToSelection(m_curItem);
+
         m_curItem->setMode(TextItem::Mode::Edit);
         uiContext->keybindManager()->setEnabled(false);
 
@@ -481,7 +483,7 @@ void TextTool::cleanup()
         quadTree.deleteItem(m_curItem);
     }
 
-    context->selectionContext()->selectedItems().clear();
+    context->selectionContext()->reset();
 
     m_curItem = nullptr;
     renderingContext->markForRender();

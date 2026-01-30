@@ -8,7 +8,6 @@
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/selectcommand.hpp"
-#include "components/propertybar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -63,7 +62,6 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
             lockState = false;
         }
 
-        context->uiContext()->propertyBar()->updateToolProperties();
         renderingContext->markForRender();
         renderingContext->markForUpdate();
 
@@ -86,7 +84,6 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
     auto uiContext{context->uiContext()};
     auto &transformer{spatialContext->coordinateTransformer()};
     auto selectionContext{context->selectionContext()};
-    auto &selectedItems{selectionContext->selectedItems()};
 
     renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
@@ -100,8 +97,7 @@ void SelectionToolSelectState::mouseMoved(ApplicationContext *context)
             return rect.contains(item->boundingBox());
         })};
 
-    selectedItems = std::unordered_set(intersectingItems.begin(), intersectingItems.end());
-    context->uiContext()->propertyBar()->updateToolProperties();
+    selectionContext->setSelectedItems(intersectingItems.begin(), intersectingItems.end());
 
     // TODO: Remove magic numbers
     renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
@@ -131,7 +127,7 @@ bool SelectionToolSelectState::mouseReleased(ApplicationContext *context)
                 }
             }
 
-            selectedItems.clear();
+            context->selectionContext()->reset();
             commandHistory->insert(std::make_shared<SelectCommand>(items));
         }
 

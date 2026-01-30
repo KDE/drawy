@@ -25,7 +25,6 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "jobs/loadjobutil.hpp"
@@ -155,7 +154,6 @@ void ActionManager::selectAll()
     auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
 
-    m_context->uiContext()->propertyBar()->updateToolProperties();
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }

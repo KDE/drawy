@@ -110,9 +110,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
 
         QList<std::shared_ptr<Item>> erasedItems;
         for (const std::shared_ptr<Item> &item : m_toBeErased) {
-            if (selectionContext->selectedItems().count(item) > 0) {
-                selectionContext->selectedItems().erase(item);
-            }
+            selectionContext->removeFromSelection(item);
 
             // reset opacity
             item->setProperty(Property::Type::Opacity, Property{Common::maxItemOpacity, Property::Type::Opacity});

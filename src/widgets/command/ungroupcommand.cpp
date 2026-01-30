@@ -28,9 +28,8 @@ UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
 void UngroupCommand::execute(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    selectedItems.clear();
+    context->selectionContext()->reset();
 
     QRectF dirtyRegion;
     for (const auto &group : std::as_const(m_groups)) {
@@ -41,7 +40,7 @@ void UngroupCommand::execute(ApplicationContext *context)
         auto subItems{group->unGroup()};
         for (const auto &subItem : subItems) {
             quadtree.insertItem(subItem, false);
-            selectedItems.insert(subItem);
+            context->selectionContext()->addToSelection(subItem);
         }
     }
 
@@ -51,14 +50,13 @@ void UngroupCommand::execute(ApplicationContext *context)
 void UngroupCommand::undo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    selectedItems.clear();
+    context->selectionContext()->reset();
 
     QRectF dirtyRegion;
     for (const auto &group : std::as_const(m_groups)) {
         quadtree.insertItem(group);
-        selectedItems.insert(group);
+        context->selectionContext()->addToSelection(group);
         dirtyRegion |= group->boundingBox();
 
         const auto subItems{group->unGroup()};

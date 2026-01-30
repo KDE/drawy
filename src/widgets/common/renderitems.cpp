@@ -81,7 +81,7 @@ void Common::renderCanvas(ApplicationContext *context)
         });
     }
 
-    auto selectedItems{context->selectionContext()->selectedItems()};
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
 
     if (selectedItems.empty())
         return;

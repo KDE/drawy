@@ -29,7 +29,6 @@ GroupCommand::GroupCommand(QList<std::shared_ptr<Item>> items)
 void GroupCommand::execute(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     for (const auto &item : std::as_const(m_items)) {
         quadtree.deleteItem(item, false);
@@ -38,8 +37,8 @@ void GroupCommand::execute(ApplicationContext *context)
     m_group->group(m_items);
     quadtree.insertItem(m_group);
 
-    selectedItems.clear();
-    selectedItems.insert(m_group);
+    context->selectionContext()->reset();
+    context->selectionContext()->addToSelection(m_group);
 
     context->renderingContext()->cacheGrid().markDirty(m_group->boundingBox().toRect());
 }
@@ -47,13 +46,12 @@ void GroupCommand::execute(ApplicationContext *context)
 void GroupCommand::undo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
-    auto &selectedItems{context->selectionContext()->selectedItems()};
 
     quadtree.deleteItem(m_group);
-    selectedItems.clear();
+    context->selectionContext()->reset();
 
     for (const auto &item : std::as_const(m_items)) {
-        selectedItems.insert(item);
+        context->selectionContext()->addToSelection(item);
         quadtree.insertItem(item, false);
     }
 

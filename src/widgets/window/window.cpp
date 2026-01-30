@@ -206,7 +206,7 @@ void MainWindow::setupAction()
     mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, actionCollection);
 
     mZoomInAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomIn, actionCollection);
-    mZoomOutAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomOut, actionCollection);
+    mZoomOutAction = KStandardAction::zoomOut(actionManager, &ActionManager::zoomOut, actionCollection);
 
     mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, actionCollection);
     mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, actionCollection);
@@ -227,7 +227,7 @@ void MainWindow::setupAction()
     connect(act, &QAction::triggered, actionManager, [actionManager]() {
         actionManager->switchToMoveTool();
     });
-    act = createAction(u"group_element"_s, tr("Group Elements"), {QKeySequence(QKeyCombination(Qt::Key_G))});
+    act = createAction(u"group_element"_s, tr("Group Elements"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))});
     connect(act, &QAction::triggered, actionManager, [actionManager]() {
         actionManager->groupItems();
     });
