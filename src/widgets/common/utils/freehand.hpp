@@ -63,6 +63,13 @@ inline constexpr qreal PI = 3.14592654;
 [[nodiscard]] QPainterPath getStrokePath(const QList<QPointF> &points);
 
 /**
+ * @brief converts stroke points to a QPainterPath having a single stroke, no outline
+ * @param points stroke points
+ * @returns a QPainterPath
+ */
+[[nodiscard]] QPainterPath getStrokeOutline(const QList<StrokePoint> &points);
+
+/**
  * @brief get length of a vector represented as a QPointF
  * @param vector the vector as a QPointF
  * @returns qreal length of the vector

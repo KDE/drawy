@@ -85,6 +85,7 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
     case ArrowType::None:
         break;
     }
+
     switch (m_startArrow) {
     case ArrowType::Arrow:
         painter.drawLine(end() - offset, m_arrowStartP1 - offset);

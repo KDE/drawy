@@ -50,6 +50,10 @@ public:
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
+
+    bool isSolid() const;
+    void drawNonSolidStroke(QPainter &painter, const QPointF &offset, bool drawBuffer = false) const;
+
     QList<QPointF> m_points{};
     QList<qreal> m_pressures{};
 

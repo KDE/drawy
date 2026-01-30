@@ -9,6 +9,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"
+#include "itemutils.hpp"
 #include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
 
@@ -17,10 +18,8 @@ FreeformItem::FreeformItem()
     m_properties[Property::Type::StrokeWidth] = Property{1, Property::Type::StrokeWidth};
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{Common::maxItemOpacity, Property::Type::Opacity};
-    // Laurent not supported yet
-    // m_properties[Property::Type::StrokeStyle] =
-    // Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid),
-    // Property::Type::StrokeStyle};
+
+    m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
 }
 
 int FreeformItem::minPointDistance()
@@ -83,14 +82,48 @@ void FreeformItem::draw(QPainter &painter, const QPointF &offset)
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
-    // Laurent we can't support it at the moment:
-    // pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
+    // if the stroke style is not solid, we draw a polyline
+    if (isSolid()) {
+        drawNonSolidStroke(painter, offset);
+        return;
+    }
 
     // We'll be drawing a polygon. We don't want it to have an outline.
     painter.setPen(Qt::NoPen);
     painter.setBrush(color);
 
     drawItem(painter, offset);
+}
+
+bool FreeformItem::isSolid() const
+{
+    return property(Property::Type::StrokeStyle).value<QString>() != ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid);
+}
+
+void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, bool drawBuffer) const
+{
+    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
+    const int alpha{property(Property::Type::Opacity).value<int>()};
+    color.setAlpha(alpha);
+
+    QPen pen{};
+    pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
+    pen.setColor(color);
+    pen.setWidthF(property(Property::Type::StrokeWidth).value<qreal>());
+
+    painter.save();
+    painter.setPen(pen);
+
+    using namespace Common::Utils::Freehand;
+
+    painter.translate(-offset);
+    if (drawBuffer) {
+        painter.drawPath(getStrokeOutline(getStrokePoints(m_pointBuffer, m_pressureBuffer, false)));
+    } else {
+        painter.drawPath(getStrokeOutline(getStrokePoints(m_points, m_pressures, false)));
+    }
+
+    painter.restore();
 }
 
 bool FreeformItem::isBufferFull() const
@@ -100,12 +133,18 @@ bool FreeformItem::isBufferFull() const
 
 void FreeformItem::drawBuffer(QPainter &painter, const QPointF &offset) const
 {
-    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
-    QPainterPath path{Common::Utils::Freehand::getStroke(m_pointBuffer, m_pressureBuffer, m_simulatePressure, thickness)};
+    // if the stroke style is not solid, we draw a polyline
+    if (isSolid()) {
+        drawNonSolidStroke(painter, offset, true);
+        return;
+    }
 
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
+
+    QPainterPath path{Common::Utils::Freehand::getStroke(m_pointBuffer, m_pressureBuffer, m_simulatePressure, thickness)};
 
     painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.setPen(Qt::NoPen);
