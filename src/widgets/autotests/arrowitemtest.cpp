@@ -51,8 +51,9 @@ void ArrowItemTest::shouldSerialize_data()
     QTest::addColumn<int>("strokeWidth");
     QTest::addColumn<QColor>("strokeColor");
     QTest::addColumn<QString>("strokeStyle");
-    QTest::addRow("arrow1") << u"arrow1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << u"Solid"_s;
-    QTest::addRow("arrow2") << u"arrow2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << u"DashLine"_s;
+    QTest::addColumn<bool>("locked");
+    QTest::addRow("arrow1") << u"arrow1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << u"Solid"_s << false;
+    QTest::addRow("arrow2") << u"arrow2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << u"DashLine"_s << true;
 }
 
 void ArrowItemTest::shouldSerialize()
@@ -63,6 +64,7 @@ void ArrowItemTest::shouldSerialize()
     QFETCH(int, strokeWidth);
     QFETCH(QColor, strokeColor);
     QFETCH(QString, strokeStyle);
+    QFETCH(bool, locked);
 
     ArrowItem f;
     // Need to have an known id
@@ -73,6 +75,7 @@ void ArrowItemTest::shouldSerialize()
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setProperty(Property::Type::StrokeStyle, Property(strokeStyle, Property::Type::StrokeStyle));
+    f.setLocked(locked);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();

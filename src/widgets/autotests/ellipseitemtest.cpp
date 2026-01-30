@@ -48,8 +48,9 @@ void EllipseItemTest::shouldSerialize_data()
     QTest::addColumn<QPointF>("end");
     QTest::addColumn<int>("strokeWidth");
     QTest::addColumn<QColor>("strokeColor");
-    QTest::addRow("ellipse1") << u"ellipse1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red);
-    QTest::addRow("ellipse2") << u"ellipse2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue);
+    QTest::addColumn<bool>("locked");
+    QTest::addRow("ellipse1") << u"ellipse1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << true;
+    QTest::addRow("ellipse2") << u"ellipse2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << false;
 }
 
 void EllipseItemTest::shouldSerialize()
@@ -59,6 +60,7 @@ void EllipseItemTest::shouldSerialize()
     QFETCH(QPointF, end);
     QFETCH(int, strokeWidth);
     QFETCH(QColor, strokeColor);
+    QFETCH(bool, locked);
 
     EllipseItem f;
     // Becarefull order ! start before end !
@@ -67,6 +69,7 @@ void EllipseItemTest::shouldSerialize()
     f.setEnd(end);
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
+    f.setLocked(locked);
     const QJsonObject obj = f.serialize();
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();

@@ -12,6 +12,7 @@
     },
     "endArrow": "Arrow",
     "id": "4d8b0fe427a143a4b553399816007640",
+    "locked": true,
     "properties": [
         {
             "type": "StrokeStyle",

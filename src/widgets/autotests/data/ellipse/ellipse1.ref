@@ -11,6 +11,7 @@
         "y": 7.5
     },
     "id": "70a68950047e4a2797ee2f32b21cba61",
+    "locked": true,
     "properties": [
         {
             "type": "BackgroundColor",
