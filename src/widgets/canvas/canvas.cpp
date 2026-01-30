@@ -128,10 +128,6 @@ void Canvas::resizeEvent(QResizeEvent *event)
     Q_EMIT resizeEventCalled();
 
     setScale(devicePixelRatioF());
-    if (size() * m_scale <= m_maxSize) {
-        return;
-    }
-
     resize();
 
     QWidget::resizeEvent(event);
