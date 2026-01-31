@@ -114,15 +114,6 @@ void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
         painter.drawPixmap(0, 0, *m_overlay);
 }
 
-// just a small overload
-namespace
-{
-inline bool operator<=(const QSize &a, const QSize &b)
-{
-    return a.height() <= b.height() && a.width() <= b.width();
-}
-}; // namespace
-
 void Canvas::resizeEvent(QResizeEvent *event)
 {
     Q_EMIT resizeEventCalled();
