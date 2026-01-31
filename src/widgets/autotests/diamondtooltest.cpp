@@ -6,6 +6,7 @@
 #include "diamondtooltest.hpp"
 #include "tools/diamondtool.hpp"
 #include <QTest>
+
 QTEST_GUILESS_MAIN(DiamondToolTest)
 
 DiamondToolTest::DiamondToolTest(QObject *parent)
@@ -13,11 +14,12 @@ DiamondToolTest::DiamondToolTest(QObject *parent)
 {
 }
 
+using namespace Qt::Literals::StringLiterals;
 void DiamondToolTest::shouldHaveDefaultValues()
 {
     const DiamondTool t;
     QVERIFY(!t.tooltip().isEmpty());
-    QCOMPARE(t.icon(), QString());
+    QCOMPARE(t.icon(), u"choice-rhomb"_s);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor;
