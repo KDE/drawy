@@ -65,37 +65,45 @@ msgctxt "QObject|"
 msgid "Align Items"
 msgstr "Вирівняти елементи"
 
-#: widgets/command/deselectcommand.cpp:49
+#: widgets/command/deselectcommand.cpp:45
 msgctxt "QObject|"
 msgid "Deselect Object"
 msgstr "Зняти позначення з об'єкта"
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:63
 msgctxt "QObject|"
 msgid "Group Object"
 msgstr "Згрупувати об'єкт"
 
-#: widgets/command/insertitemcommand.cpp:53
+#: widgets/command/insertitemcommand.cpp:52
 msgctxt "QObject|"
 msgid "Insert Object"
 msgstr "Вставити об’єкт"
+
+#: widgets/command/lockcommand.cpp:33
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Lock"
+msgstr "Непрозорість"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
 msgstr "Пересунути об'єкт"
 
-#: widgets/command/removeitemcommand.cpp:58
+#: widgets/command/removeitemcommand.cpp:57
 msgctxt "QObject|"
 msgid "Remove Object"
 msgstr "Вилучити об’єкт"
 
-#: widgets/command/selectcommand.cpp:50
+#: widgets/command/selectcommand.cpp:46
 msgctxt "QObject|"
 msgid "Select Object"
 msgstr "Позначити об’єкт"
 
-#: widgets/command/ungroupcommand.cpp:75
+#: widgets/command/ungroupcommand.cpp:73
 msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Розгрупувати об'єкти"
@@ -175,7 +183,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: widgets/context/uicontext.cpp:104
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Повторити"
@@ -205,25 +213,25 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:187 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
 
-#: widgets/keybindings/actionmanager.cpp:193
+#: widgets/keybindings/actionmanager.cpp:191
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
@@ -466,12 +474,12 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
 
-#: widgets/tools/erasertool.cpp:158
+#: widgets/tools/erasertool.cpp:156
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
 
-#: widgets/tools/freeformtool.cpp:46
+#: widgets/tools/freeformtool.cpp:32
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Інструмент «Перо»"
@@ -491,12 +499,12 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:138
+#: widgets/tools/selectiontool/selectiontool.cpp:135
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Інструмент вибору"
 
-#: widgets/tools/texttool.cpp:498
+#: widgets/tools/texttool.cpp:500
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"

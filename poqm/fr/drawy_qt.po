@@ -68,12 +68,12 @@ msgctxt "QObject|"
 msgid "Align Items"
 msgstr "Alignement"
 
-#: widgets/command/deselectcommand.cpp:49
+#: widgets/command/deselectcommand.cpp:45
 msgctxt "QObject|"
 msgid "Deselect Object"
 msgstr ""
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:63
 #, fuzzy
 #| msgctxt "ActionsWidget|"
 #| msgid "Group selection"
@@ -81,22 +81,30 @@ msgctxt "QObject|"
 msgid "Group Object"
 msgstr "Grouper la sélection"
 
-#: widgets/command/insertitemcommand.cpp:53
+#: widgets/command/insertitemcommand.cpp:52
 msgctxt "QObject|"
 msgid "Insert Object"
 msgstr ""
+
+#: widgets/command/lockcommand.cpp:33
+#, fuzzy
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgctxt "QObject|"
+msgid "Change Lock"
+msgstr "Opacité"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
 msgstr ""
 
-#: widgets/command/removeitemcommand.cpp:58
+#: widgets/command/removeitemcommand.cpp:57
 msgctxt "QObject|"
 msgid "Remove Object"
 msgstr ""
 
-#: widgets/command/selectcommand.cpp:50
+#: widgets/command/selectcommand.cpp:46
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Select All"
@@ -104,7 +112,7 @@ msgctxt "QObject|"
 msgid "Select Object"
 msgstr "Tout sélectionner"
 
-#: widgets/command/ungroupcommand.cpp:75
+#: widgets/command/ungroupcommand.cpp:73
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Ungroup Elements"
@@ -187,7 +195,7 @@ msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Annuler"
 
-#: widgets/context/uicontext.cpp:104
+#: widgets/context/uicontext.cpp:105
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Rétablir"
@@ -217,25 +225,25 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurer"
 
-#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sans titre. %1"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:166
+#: widgets/keybindings/actionmanager.cpp:187 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:193
+#: widgets/keybindings/actionmanager.cpp:191
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
@@ -484,12 +492,12 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
 
-#: widgets/tools/erasertool.cpp:158
+#: widgets/tools/erasertool.cpp:156
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Outil de gomme"
 
-#: widgets/tools/freeformtool.cpp:46
+#: widgets/tools/freeformtool.cpp:32
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "Outil de crayon"
@@ -509,12 +517,12 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:138
+#: widgets/tools/selectiontool/selectiontool.cpp:135
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Outil de sélection"
 
-#: widgets/tools/texttool.cpp:498
+#: widgets/tools/texttool.cpp:500
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Outil de texte"
