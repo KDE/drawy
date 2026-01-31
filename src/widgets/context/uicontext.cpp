@@ -22,6 +22,7 @@
 #include "selectioncontext.hpp"
 #include "spatialcontext.hpp"
 #include "tools/arrowtool.hpp"
+#include "tools/diamondtool.hpp"
 #include "tools/ellipsetool.hpp"
 #include "tools/erasertool.hpp"
 #include "tools/freeformtool.hpp"
@@ -61,6 +62,7 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Type::Selection, tr("Selection"));
     m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Type::Freeform, tr("Free Form"));
     m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Type::Rectangle, tr("Rectangle"));
+    // m_toolBar->addTool(std::make_shared<DiamondTool>(), Tool::Type::Diamond, tr("Diamond"));
     m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Type::Ellipse, tr("Ellipse"));
     m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Type::Arrow, tr("Arrow"));
     m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Type::Line, tr("Line"));

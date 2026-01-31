@@ -20,7 +20,7 @@ QString DiamondTool::tooltip() const
 
 QString DiamondTool::icon() const
 {
-    return QString();
+    return QString(u"choice-rhomb"_s);
 }
 
 Tool::Type DiamondTool::type() const

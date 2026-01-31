@@ -36,6 +36,7 @@
             inherit (self.checks.${system}.pre-commit-check) shellHook enabledPackages;
           in
           pkgs.mkShell {
+            inherit shellHook;
             buildInputs =
               enabledPackages
               ++ (with pkgs; [
@@ -63,51 +64,50 @@
           };
       });
 
-      checks = forEachSystem (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          pre-commit-check = inputs.git-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              nixfmt-rfc-style.enable = true;
-              clang-format = {
-                enable = true;
-                package = pkgs.clang-tools;
-                types_or = pkgs.lib.mkForce [
-                  "c"
-                  "c++"
-                ];
-              };
+
+      checks = forEachSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        pre-commit-check = inputs.git-hooks.lib.${system}.run {
+          src = ./.;
+
+          excludes = [
+            "^po/"
+            "\\.desktop"
+            "Messages.sh"
+          ];
+
+          hooks = {
+            trim-trailing-whitespace.enable = true;
+            end-of-file-fixer.enable = true;
+
+            check-added-large-files.enable = true;
+            check-case-conflicts.enable = true;
+            check-symlinks.enable = true;
+            check-executables-have-shebangs.enable = true;
+
+            check-xml.enable = true;
+
+            check-yaml = {
+              enable = true;
+              args = [ "--allow-multiple-documents" ];
+              excludes = [ "^\\.clang-tidy" ];
+            };
+
+            check-json.enable = true;
+
+            clang-format = {
+              enable = true;
+              package = pkgs.clang-tools;
+              types_or = pkgs.lib.mkForce [
+                "c"
+                "c++"
+              ];
             };
           };
-        }
-      );
-
-      formatter = forEachSystem (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-          config = self.checks.${system}.pre-commit-check.config;
-          inherit (config) package configFile;
-          script = ''
-            ${pkgs.lib.getExe package} run --all-files --config ${configFile}
-          '';
-        in
-        pkgs.writeShellScriptBin "pre-commit-run" script
-      );
-
-      packages = forEachSystem (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.qt6Packages.callPackage ./package.nix {
-          };
-        }
-      );
+        };
+      });
     };
 }
