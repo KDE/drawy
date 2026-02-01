@@ -205,7 +205,7 @@ void MainWindow::setupAction()
     mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, actionCollection);
     mExportAsSvgAction = createAction(u"export_svg"_s, tr("Export to Svg"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))});
     connect(mExportAsSvgAction, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->exportToFile();
+        actionManager->exportToSvg();
     });
 
     mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, actionCollection);

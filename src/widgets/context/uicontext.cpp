@@ -76,10 +76,10 @@ void UIContext::initializeUIContext()
         actionManager->saveToFile();
     });
 
-    button = m_actionBar->addButton(tr("Export to File"), u"document-export"_s);
+    button = m_actionBar->addButton(tr("Export to Svg"), u"document-export"_s);
     connect(button, &QToolButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager->exportToFile();
+        actionManager->exportToSvg();
     });
 
     button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);

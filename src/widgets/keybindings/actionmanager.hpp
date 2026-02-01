@@ -36,7 +36,7 @@ public:
     void ungroupItems();
     void saveToFile();
     void loadFromFile();
-    void exportToFile();
+    void exportToSvg();
 
     void loadFile(const QString &fileName);
 

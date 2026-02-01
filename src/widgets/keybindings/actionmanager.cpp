@@ -195,14 +195,14 @@ void ActionManager::loadFromFile()
     loadFile(fileName);
 }
 
-void ActionManager::exportToFile()
+void ActionManager::exportToSvg()
 {
     const QDir homeDir{QDir::home()};
     QString text = QObject::tr("Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
     text = QObject::tr("SVG (*.svg)");
 
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Export to Svg"), defaultFilePath, text)};
 
     if (fileName.isEmpty()) {
         return;
