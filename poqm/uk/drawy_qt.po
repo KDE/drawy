@@ -113,77 +113,85 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Оновити властивість"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Позначення"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Довільна форма"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Прямокутник"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Еліпс"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Стрілка"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Пряма"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Гумка"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Текст"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Пересування"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Зберегти до файла"
 
-#: widgets/context/uicontext.cpp:77
+#: widgets/context/uicontext.cpp:79
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "UIContext|"
+msgid "Export to File"
+msgstr "Зберегти до файла"
+
+#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/context/uicontext.cpp:83
+#: widgets/context/uicontext.cpp:91
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: widgets/context/uicontext.cpp:88
+#: widgets/context/uicontext.cpp:96
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: widgets/context/uicontext.cpp:93
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: widgets/context/uicontext.cpp:105
+#: widgets/context/uicontext.cpp:113
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Повторити"
@@ -213,28 +221,42 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:187 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:167
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
 
-#: widgets/keybindings/actionmanager.cpp:191
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
+
+#: widgets/keybindings/actionmanager.cpp:201
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgctxt "QObject|"
+msgid "Untitled.svg"
+msgstr "Без назви.%1"
+
+#: widgets/keybindings/actionmanager.cpp:203
+msgctxt "QObject|"
+msgid "SVG (*.svg)"
+msgstr ""
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"

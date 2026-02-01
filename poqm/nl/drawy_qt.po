@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-30 12:58+0100\n"
+"PO-Revision-Date: 2026-01-31 12:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -80,12 +80,9 @@ msgid "Insert Object"
 msgstr "Object invoegen"
 
 #: widgets/command/lockcommand.cpp:33
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Opacity"
 msgctxt "QObject|"
 msgid "Change Lock"
-msgstr "Dekking wijzigen"
+msgstr "Vergrendeling wijzigen"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
@@ -112,77 +109,85 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Eigenschap bijwerken"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Selectie"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Vrije vorm"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rechthoek"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Ellips"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Pijl"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Lijn"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Gum"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Tekst"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Verplaatsen"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Naar bestand opslaan"
 
-#: widgets/context/uicontext.cpp:77
+#: widgets/context/uicontext.cpp:79
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "UIContext|"
+msgid "Export to File"
+msgstr "Naar bestand opslaan"
+
+#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: widgets/context/uicontext.cpp:83
+#: widgets/context/uicontext.cpp:91
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Uitzoomen"
 
-#: widgets/context/uicontext.cpp:88
+#: widgets/context/uicontext.cpp:96
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Inzoomen"
 
-#: widgets/context/uicontext.cpp:93
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: widgets/context/uicontext.cpp:105
+#: widgets/context/uicontext.cpp:113
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Opnieuw doen"
@@ -212,28 +217,42 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Herstellen"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Naamloos.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:187 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:167
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: widgets/keybindings/actionmanager.cpp:191
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Bestand openen"
+
+#: widgets/keybindings/actionmanager.cpp:201
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgctxt "QObject|"
+msgid "Untitled.svg"
+msgstr "Naamloos.%1"
+
+#: widgets/keybindings/actionmanager.cpp:203
+msgctxt "QObject|"
+msgid "SVG (*.svg)"
+msgstr ""
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"

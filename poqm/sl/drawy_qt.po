@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-30 07:10+0100\n"
+"PO-Revision-Date: 2026-01-31 08:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -82,12 +82,9 @@ msgid "Insert Object"
 msgstr "Vstavi predmet"
 
 #: widgets/command/lockcommand.cpp:33
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Opacity"
 msgctxt "QObject|"
 msgid "Change Lock"
-msgstr "Spremeni neprosojnost"
+msgstr "Spremeni zaklep"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
@@ -114,77 +111,85 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Posodobi lastnost"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Izbira"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Prosto oblikovanje"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Pravokotnik"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Elipsa"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Puščica"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Črta"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Radirka"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:70
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Besedilo"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Premik"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Save to File"
 msgstr "Shrani v datoteko"
 
-#: widgets/context/uicontext.cpp:77
+#: widgets/context/uicontext.cpp:79
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "UIContext|"
+msgid "Export to File"
+msgstr "Shrani v datoteko"
+
+#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/context/uicontext.cpp:83
+#: widgets/context/uicontext.cpp:91
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Pomanjšaj"
 
-#: widgets/context/uicontext.cpp:88
+#: widgets/context/uicontext.cpp:96
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Povečaj"
 
-#: widgets/context/uicontext.cpp:93
+#: widgets/context/uicontext.cpp:101
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: widgets/context/uicontext.cpp:105
+#: widgets/context/uicontext.cpp:113
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Uveljavi"
@@ -214,28 +219,42 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Obnovi"
 
-#: widgets/keybindings/actionmanager.cpp:164 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Brez_naslova.%1"
 
-#: widgets/keybindings/actionmanager.cpp:166
-#: widgets/keybindings/actionmanager.cpp:187 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:167
+#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:167 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: widgets/keybindings/actionmanager.cpp:191
+#: widgets/keybindings/actionmanager.cpp:192
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Odpri datoteko"
+
+#: widgets/keybindings/actionmanager.cpp:201
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgctxt "QObject|"
+msgid "Untitled.svg"
+msgstr "Brez_naslova.%1"
+
+#: widgets/keybindings/actionmanager.cpp:203
+msgctxt "QObject|"
+msgid "SVG (*.svg)"
+msgstr ""
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
