@@ -32,6 +32,8 @@ target_sources(
         item/freeform.hpp
         item/group.cpp
         item/group.hpp
+        item/image.cpp
+        item/image.hpp
         item/item.cpp
         item/item.hpp
         item/line.cpp
@@ -99,6 +101,10 @@ target_sources(
         serializer/diamonddeserializer.hpp
         serializer/diamondserializer.cpp
         serializer/diamondserializer.hpp
+        serializer/imagedeserializer.cpp
+        serializer/imagedeserializer.hpp
+        serializer/imageserializer.cpp
+        serializer/imageserializer.hpp
         serializer/deserializeutils.hpp
         serializer/deserializeutils.cpp
         transformhandlerutils.hpp

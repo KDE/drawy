@@ -42,6 +42,7 @@ public:
         Text,
         Group,
         Diamond,
+        Image,
         Custom,
         Invalid,
     };

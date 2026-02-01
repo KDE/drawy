@@ -24,6 +24,7 @@ void ItemUtilsTest::shouldConvertItemTypeStringToEnum()
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"TEXT"_s), Item::FormType::Text);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"GROUP"_s), Item::FormType::Group);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"DIAMOND"_s), Item::FormType::Diamond);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"IMAGE"_s), Item::FormType::Image);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"CUSTOM"_s), Item::FormType::Custom);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum({}), Item::FormType::Invalid);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"foo"_s), Item::FormType::Invalid);
@@ -40,6 +41,7 @@ void ItemUtilsTest::shouldConvertEnumItemTypeToString()
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Text), u"TEXT"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Group), u"GROUP"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Diamond), u"DIAMOND"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Image), u"IMAGE"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Invalid), QString());
 }
 

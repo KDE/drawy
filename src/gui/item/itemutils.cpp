@@ -10,6 +10,7 @@
 #include "item/ellipse.hpp"
 #include "item/freeform.hpp"
 #include "item/group.hpp"
+#include "item/image.hpp"
 #include "item/line.hpp"
 #include "item/rectangle.hpp"
 #include "item/text.hpp"
@@ -33,6 +34,8 @@ Item::FormType ItemUtils::convertItemTypeStringToEnum(const QString &str)
         return Item::FormType::Group;
     } else if (str == u"DIAMOND") {
         return Item::FormType::Diamond;
+    } else if (str == u"IMAGE") {
+        return Item::FormType::Image;
     } else if (str == u"CUSTOM") {
         return Item::FormType::Custom;
     } else {
@@ -60,6 +63,8 @@ QString ItemUtils::convertItemTypeEnumToString(Item::FormType type)
         return u"GROUP"_s;
     case Item::FormType::Diamond:
         return u"DIAMOND"_s;
+    case Item::FormType::Image:
+        return u"IMAGE"_s;
     case Item::FormType::Custom:
         return u"CUSTOM"_s;
     case Item::FormType::Invalid:
@@ -190,6 +195,10 @@ std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
     }
     case Item::FormType::Diamond: {
         item = std::make_shared<DiamondItem>();
+        break;
+    }
+    case Item::FormType::Image: {
+        item = std::make_shared<ImageItem>();
         break;
     }
     case Item::FormType::Custom: {
