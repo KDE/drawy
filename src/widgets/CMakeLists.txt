@@ -229,6 +229,7 @@ target_sources(
         serializer/rectangledeserializer.hpp
         serializer/svgpaintdevice.cpp
         serializer/svgserializer.cpp
+        serializer/svgserializer.hpp
         serializer/textdeserializer.cpp
         serializer/textdeserializer.hpp
         serializer/itemdeserializer.hpp
