@@ -175,6 +175,8 @@ void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
         menu->addAction(mSelectAllAction);
         menu->addSeparator();
     }
+    menu->addAction(mExportAsSvgAction);
+    menu->addSeparator();
     menu->addAction(mConfigureSettingsAction);
     menu->addSeparator();
     menu->addAction(mQuitAction);
@@ -201,6 +203,10 @@ void MainWindow::setupAction()
     mQuitAction = KStandardActions::quit(this, &MainWindow::close, actionCollection);
 
     mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, actionCollection);
+    mExportAsSvgAction = createAction(u"export_svg"_s, tr("Export to Svg"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))});
+    connect(mExportAsSvgAction, &QAction::triggered, actionManager, [actionManager]() {
+        actionManager->exportToFile();
+    });
 
     mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, actionCollection);
     mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, actionCollection);
