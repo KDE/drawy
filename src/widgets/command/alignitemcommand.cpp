@@ -36,8 +36,11 @@ void AlignItemCommand::calculateMoveItems()
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignHorizontalCenter:
+        case Alignment::AlignHorizontalCenter: {
+            const QPointF move{0, (fullRegion.center().y() - item->boundingBox().center().y())};
+            m_moveToPoint.append(move);
             break;
+        }
         case Alignment::AlignToTop: {
             const QPointF move{0, (fullRegion.top() - item->boundingBox().top())};
             m_moveToPoint.append(move);
