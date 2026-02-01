@@ -10,9 +10,7 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
-#include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
-#include "item/item.hpp"
 using namespace Qt::Literals::StringLiterals;
 
 MoveTool::MoveTool()
