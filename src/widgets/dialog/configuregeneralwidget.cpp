@@ -19,6 +19,11 @@ ConfigureGeneralWidget::ConfigureGeneralWidget(QWidget *parent)
     mainLayout->setObjectName(u"mainLayout"_s);
 
     mAutoSave->setObjectName(u"mAutoSave"_s);
+    mAutoSave->setSuffix(tr("minute")); // TODO add plurial
+    auto label = new QLabel(tr("Auto-save"), this);
+    label->setObjectName(u"label_autosave"_s);
+
+    mainLayout->addWidget(label);
     mainLayout->addWidget(mAutoSave);
     mainLayout->addStretch(0);
 }
