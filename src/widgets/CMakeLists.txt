@@ -151,6 +151,8 @@ target_sources(
         properties/widgets/zorderwidget.cpp
         properties/widgets/arrowstylewidget.cpp
         properties/widgets/arrowstylewidget.hpp
+        properties/widgets/backgroundstylewidget.cpp
+        properties/widgets/backgroundstylewidget.hpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp
