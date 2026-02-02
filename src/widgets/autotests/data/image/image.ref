@@ -1,0 +1,28 @@
+{
+    "bounding_box": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+    },
+    "id": "acff679ae3c14260b56ef00f1d354883",
+    "image_data": "iVBORw0KGgoAAAANSUhEUgAAABEAAAAHCAIAAABhgDErAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAPklEQVQYlZ2Q0QoAIAgDm/T/v3w9FCIMwtqDHLqhKGC8qmaaHNnKAeBca/hmSZKcU/Ny7YZWZpsAdx/Dx98WXNA17kLk3CwAAAAASUVORK5CYII=",
+    "properties": [
+        {
+            "type": "Opacity",
+            "value": 255
+        }
+    ],
+    "transform": {
+        "m11": 1,
+        "m12": 0,
+        "m13": 0,
+        "m21": 0,
+        "m22": 1,
+        "m23": 0,
+        "m31": 0,
+        "m32": 0,
+        "m33": 1
+    },
+    "type": "IMAGE"
+}
