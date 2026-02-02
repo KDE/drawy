@@ -19,6 +19,7 @@ void ArrowToolTest::shouldHaveDefaultValues()
     const ArrowTool t;
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"draw-arrow"_s);
+    QCOMPARE(t.type(), Tool::Type::Arrow);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle;

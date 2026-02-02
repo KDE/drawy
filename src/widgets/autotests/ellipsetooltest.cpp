@@ -19,6 +19,7 @@ void EllipseToolTest::shouldHaveDefaultValues()
     const EllipseTool t;
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_ellipse"_s);
+    QCOMPARE(t.type(), Tool::Type::Ellipse);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor;

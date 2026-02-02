@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-
+#include "libdrawywidgets_private_export.h"
 #include "tools/tool.hpp"
 class SelectionToolState;
 
-class SelectionTool : public Tool
+class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionTool : public Tool
 {
 public:
     SelectionTool();
@@ -21,7 +21,7 @@ public:
     void mouseReleased(ApplicationContext *context) override;
     void keyPressed(ApplicationContext *context) override;
 
-    const QList<Property::Type> properties() const override;
+    [[nodiscard]] const QList<Property::Type> properties() const override;
 
     [[nodiscard]] Tool::Type type() const override;
 

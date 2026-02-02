@@ -9,17 +9,18 @@
 
 QTEST_GUILESS_MAIN(DiamondToolTest)
 
+using namespace Qt::Literals::StringLiterals;
 DiamondToolTest::DiamondToolTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-using namespace Qt::Literals::StringLiterals;
 void DiamondToolTest::shouldHaveDefaultValues()
 {
     const DiamondTool t;
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"choice-rhomb"_s);
+    QCOMPARE(t.type(), Tool::Type::Diamond);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor;

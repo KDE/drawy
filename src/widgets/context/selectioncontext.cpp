@@ -77,3 +77,5 @@ void SelectionContext::reset()
     m_selectedItems.clear();
     Q_EMIT selectionUpdated();
 }
+
+#include "moc_selectioncontext.cpp"

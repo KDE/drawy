@@ -19,6 +19,7 @@ void LineToolTest::shouldHaveDefaultValues()
     const LineTool t;
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_line"_s);
+    QCOMPARE(t.type(), Tool::Type::Line);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle;
