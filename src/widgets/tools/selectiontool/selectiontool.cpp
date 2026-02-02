@@ -120,7 +120,7 @@ const QList<Property::Type> SelectionTool::properties() const
         output += QList<Property::Type>{Property::Type::Alignment};
     }
     if (!selectedItems.empty()) {
-        output += QList<Property::Type>{Property::Type::Actions};
+        output += QList<Property::Type>{Property::Type::ZOrder, Property::Type::Actions};
     }
     return output;
 }
