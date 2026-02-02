@@ -204,6 +204,7 @@ void MainWindow::setupAction()
 
     mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, actionCollection);
     mExportAsSvgAction = createAction(u"export_svg"_s, tr("Export to Svg"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))});
+    mExportAsSvgAction->setIcon(QIcon::fromTheme(u"document-export"_s));
     connect(mExportAsSvgAction, &QAction::triggered, actionManager, [actionManager]() {
         actionManager->exportToSvg();
     });
