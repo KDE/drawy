@@ -18,8 +18,8 @@
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
 #include "components/actionbar.hpp"
+#include "components/header.hpp"
 #include "components/propertybar.hpp"
-#include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
@@ -39,6 +39,7 @@
 #include <KMessageBox>
 #include <QDir>
 #include <QMenu>
+
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -55,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     layout->setMargins(10);
     layout->setLeftWidget(uiContext->propertyBar());
-    layout->setTopWidget(uiContext->toolBar());
+    layout->setTopWidget(uiContext->header());
     layout->setBottomWidget(uiContext->actionBar());
     layout->setCentralWidget(renderingContext->canvas());
 

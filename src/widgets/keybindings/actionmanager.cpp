@@ -57,12 +57,12 @@ void ActionManager::redo()
 
 void ActionManager::zoomIn()
 {
-    m_context->renderingContext()->updateZoomFactor(1);
+    m_context->renderingContext()->zoomIn();
 }
 
 void ActionManager::zoomOut()
 {
-    m_context->renderingContext()->updateZoomFactor(-1);
+    m_context->renderingContext()->zoomOut();
 }
 
 void ActionManager::switchToTool(Tool::Type type)

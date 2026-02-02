@@ -6,6 +6,7 @@
 
 #include <QTimer>
 #include <QWidget>
+#include <qtmetamacros.h>
 class Canvas;
 class ApplicationContext;
 class CacheGrid;
@@ -31,11 +32,16 @@ public:
 
     [[nodiscard]] qreal zoomFactor() const;
     void setZoomFactor(qreal newValue);
-    void updateZoomFactor(qreal diff, QPoint center = {-1, -1});
+    void updateZoomFactor(qreal newValue, QPoint center = {-1, -1});
+    void zoomIn();
+    void zoomOut();
 
     [[nodiscard]] int fps() const;
 
     void reset();
+
+Q_SIGNALS:
+    void zoomFactorChanged(qreal newZoomFactor);
 
 private:
     void canvasResized();

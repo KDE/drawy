@@ -19,31 +19,11 @@
 using namespace Qt::Literals::StringLiterals;
 
 PropertyBar::PropertyBar(QWidget *parent)
-    : QFrame{parent}
+    : Frame{parent}
     , m_layout(new QVBoxLayout{this})
 {
-    setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
-    setAutoFillBackground(true);
-    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-    const QPalette pal{QApplication::palette()};
-    QColor borderColor{pal.color(QPalette::Text)};
-    borderColor.setAlpha(51); // 0.2%
-
-    const QString frameStyleSheet = QString(
-                                        u"PropertyBar {"_s
-                                        u"  border: %1px solid %2;"_s
-                                        u"  border-radius: %3px;"_s
-                                        u"  background: %4;"_s
-                                        u"  padding: %5px;"_s
-                                        u"}"_s)
-                                        .arg(1)
-                                        .arg(borderColor.name(QColor::HexArgb))
-                                        .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin))
-                                        .arg(pal.color(QPalette::Window).name())
-                                        .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin));
-
-    setStyleSheet(frameStyleSheet);
+    const int margins{style()->pixelMetric(QStyle::PM_ToolBarItemMargin) * 2};
+    m_layout->setContentsMargins(margins, margins, margins, margins);
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)

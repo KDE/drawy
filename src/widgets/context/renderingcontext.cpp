@@ -6,6 +6,7 @@
 
 #include <QPoint>
 #include <QScreen>
+#include <qminmax.h>
 
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
@@ -78,25 +79,20 @@ qreal RenderingContext::zoomFactor() const
     return m_zoomFactor;
 }
 
-void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
+void RenderingContext::zoomIn()
 {
-    // zoom out limit is 0.1
-    if (diff < 0 && m_zoomFactor - Common::zoomOutLimit <= 1e-9) {
-        return;
-    }
+    updateZoomFactor(qMin(Common::zoomInLimit, m_zoomFactor * Common::zoomMultiplier));
+}
 
-    if (diff > 0 && Common::zoomInLimit - m_zoomFactor <= 1e-9) {
-        return;
-    }
+void RenderingContext::zoomOut()
+{
+    updateZoomFactor(qMax(Common::zoomOutLimit, m_zoomFactor / Common::zoomMultiplier));
+}
 
-    const qreal oldZoomFactor = m_zoomFactor;
-    if (diff >= 0) {
-        m_zoomFactor = std::min(Common::zoomInLimit, m_zoomFactor * diff * Common::zoomMultiplier);
-    } else {
-        m_zoomFactor = std::max(Common::zoomOutLimit, m_zoomFactor / (-1 * diff * Common::zoomMultiplier));
-    }
-
-    qCDebug(DRAWY_LOG) << "Zoom: " << m_zoomFactor;
+void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
+{
+    qreal oldZoomFactor = m_zoomFactor;
+    m_zoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
 
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
@@ -117,11 +113,14 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     m_applicationContext->spatialContext()->setOffsetPos(offsetPos);
     m_applicationContext->renderingContext()->markForRender();
     m_applicationContext->renderingContext()->markForUpdate();
+
+    Q_EMIT zoomFactorChanged(m_zoomFactor);
 }
 
 void RenderingContext::setZoomFactor(qreal newValue)
 {
-    m_zoomFactor = newValue;
+    m_zoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
+    Q_EMIT zoomFactorChanged(m_zoomFactor);
 }
 
 int RenderingContext::fps() const

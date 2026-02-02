@@ -42,5 +42,7 @@ private:
     bool m_isRightPinned{false};
     bool m_isBottomPinned{false};
 
+    QSize effectiveSize(QLayoutItem *item, const QSize &available);
+
     int m_margins{0};
 };

@@ -5,6 +5,7 @@
 #include "boardlayout.hpp"
 
 #include <QWidget>
+#include <qnamespace.h>
 
 BoardLayout::BoardLayout(QWidget *parent)
     : QLayout(parent)
@@ -111,24 +112,21 @@ void BoardLayout::setGeometry(const QRect &rect)
     }
 
     if (m_leftWidget != nullptr) {
-        m_leftWidget->setGeometry(
-            QRect(m_margins, (rect.height() - m_leftWidget->sizeHint().height()) / 2, m_leftWidget->sizeHint().width(), m_leftWidget->sizeHint().height()));
+        QSize size{effectiveSize(m_leftWidget, rect.size())};
+        m_leftWidget->setGeometry(QRect(m_margins, (rect.height() - size.height()) / 2, size.width(), size.height()));
     }
     if (m_rightWidget != nullptr) {
-        m_rightWidget->setGeometry(QRect(rect.width() - m_rightWidget->sizeHint().width() - m_margins,
-                                         (rect.height() - m_rightWidget->sizeHint().height()) / 2,
-                                         m_rightWidget->sizeHint().width(),
-                                         m_rightWidget->sizeHint().height()));
+        QSize size{effectiveSize(m_rightWidget, rect.size())};
+        m_rightWidget->setGeometry(QRect(rect.width() - size.width() - m_margins, (rect.height() - size.height()) / 2, size.width(), size.height()));
     }
     if (m_topWidget != nullptr) {
-        m_topWidget->setGeometry(
-            QRect((rect.width() - m_topWidget->sizeHint().width()) / 2, m_margins, m_topWidget->sizeHint().width(), m_topWidget->sizeHint().height()));
+        QSize size{effectiveSize(m_topWidget, rect.size())};
+        m_topWidget->setGeometry(QRect((rect.width() - size.width()) / 2 + m_margins, m_margins, size.width() - 2 * m_margins, size.height()));
     }
     if (m_bottomWidget != nullptr) {
-        m_bottomWidget->setGeometry(QRect((rect.width() - m_bottomWidget->sizeHint().width()) / 2,
-                                          rect.height() - m_bottomWidget->sizeHint().height() - m_margins,
-                                          m_bottomWidget->sizeHint().width(),
-                                          m_bottomWidget->sizeHint().height()));
+        QSize size{effectiveSize(m_bottomWidget, rect.size())};
+        m_bottomWidget->setGeometry(
+            QRect((rect.width() - size.width()) / 2 + m_margins, rect.height() - size.height() - m_margins, size.width() - 2 * m_margins, size.height()));
     }
 }
 
@@ -157,6 +155,22 @@ QSize BoardLayout::minimumSize() const
 void BoardLayout::setMargins(int margins)
 {
     m_margins = margins;
+}
+
+QSize BoardLayout::effectiveSize(QLayoutItem *item, const QSize &available)
+{
+    QSize s = item->sizeHint();
+    QSize min = item->minimumSize();
+    QSize max = item->maximumSize();
+
+    if (item->expandingDirections() & Qt::Horizontal)
+        s.setWidth(available.width());
+    if (item->expandingDirections() & Qt::Vertical)
+        s.setHeight(available.height());
+
+    s.setWidth(qBound(min.width(), s.width(), max.width()));
+    s.setHeight(qBound(min.height(), s.height(), max.height()));
+    return s;
 }
 
 #include "moc_boardlayout.cpp"

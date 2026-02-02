@@ -15,6 +15,7 @@ OpacityWidget::OpacityWidget(QWidget *parent)
     slider->setMaximum(255);
     slider->setValue(255);
     slider->setOrientation(Qt::Horizontal);
+    slider->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
     slider->hide();
     m_widget = slider;

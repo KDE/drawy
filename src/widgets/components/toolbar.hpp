@@ -4,14 +4,15 @@
 
 #pragma once
 
+#include "frame.hpp"
 #include <QButtonGroup>
-#include <QFrame>
 #include <QHBoxLayout>
+#include <QShowEvent>
 #include <QToolButton>
 
 #include "tools/tool.hpp"
 
-class ToolBar : public QFrame
+class ToolBar : public Frame
 {
     Q_OBJECT
 public:
@@ -24,8 +25,11 @@ public:
     [[nodiscard]] Tool &tool(Tool::Type type) const;
     void changeTool(Tool::Type type);
 
+    void showEvent(QShowEvent *event) override;
+
 Q_SIGNALS:
     void toolChanged(Tool &);
+    void toolbarShown();
 
 private:
     void onToolChanged(int id);

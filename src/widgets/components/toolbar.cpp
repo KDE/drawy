@@ -9,32 +9,11 @@
 
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
-    : QFrame{parent}
+    : Frame{parent}
     , m_group(new QButtonGroup(this))
     , m_layout(new QHBoxLayout(this))
 {
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    setFrameShape(QFrame::StyledPanel);
-    setFrameShadow(QFrame::Raised);
-    setAutoFillBackground(true);
-
-    const QPalette pal{QApplication::palette()};
-    QColor borderColor{pal.color(QPalette::Text)};
-    borderColor.setAlpha(51); // 0.2%
-
-    const QString frameStyleSheet = QString(
-                                        u"ToolBar {"_s
-                                        u"  border: %1px solid %2;"_s
-                                        u"  border-radius: %3px;"_s
-                                        u"  background: %4;"_s
-                                        u"}"_s)
-                                        .arg(1)
-                                        .arg(borderColor.name(QColor::HexArgb))
-                                        .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin))
-                                        .arg(pal.color(QPalette::Window).name());
-
-    setStyleSheet(frameStyleSheet);
-
     m_layout->setSpacing(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
     connect(m_group, &QButtonGroup::idClicked, this, &ToolBar::onToolChanged);
 }
@@ -94,6 +73,11 @@ Tool &ToolBar::tool(Tool::Type type) const
 void ToolBar::onToolChanged([[maybe_unused]] int id)
 {
     Q_EMIT toolChanged(curTool());
+}
+
+void ToolBar::showEvent([[maybe_unused]] QShowEvent *event)
+{
+    Q_EMIT toolbarShown();
 }
 
 #include "moc_toolbar.cpp"

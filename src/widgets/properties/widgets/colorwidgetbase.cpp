@@ -25,6 +25,7 @@ void ColorWidgetBase::initialize()
 {
     auto layout{new QHBoxLayout{m_widget}};
     layout->setContentsMargins({});
+    layout->setAlignment(Qt::AlignLeft);
 
     const QList<QColor> colors = defaultColors();
 

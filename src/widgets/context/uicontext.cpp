@@ -10,6 +10,7 @@
 #include "common/constants.hpp"
 #include "common/renderitems.hpp"
 #include "components/actionbar.hpp"
+#include "components/header.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "data-structures/quadtree.hpp"
@@ -46,7 +47,8 @@ UIContext::~UIContext()
 
 void UIContext::initializeUIContext()
 {
-    m_toolBar = new ToolBar(m_applicationContext->parentWidget());
+    m_header = new Header(m_applicationContext->parentWidget());
+    m_toolBar = new ToolBar(m_header);
     m_actionBar = new ActionBar(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
     m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
@@ -70,65 +72,13 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text, tr("Text"));
     m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
 
-    auto button = m_actionBar->addButton(tr("Save to File"), u"document-save"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        auto actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager->saveToFile();
-    });
-
-    button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        auto actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager->loadFromFile();
-    });
-
-    m_actionBar->addSeparator();
-
-    button = m_actionBar->addButton(tr("Export to Svg"), u"document-export"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        auto actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager->exportToSvg();
-    });
-
-    m_actionBar->addSeparator();
-
-    button = m_actionBar->addButton(tr("Zoom Out"), u"zoom-out"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext()->updateZoomFactor(-1);
-    });
-
-    button = m_actionBar->addButton(tr("Zoom In"), u"zoom-in"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        m_applicationContext->renderingContext()->updateZoomFactor(1);
-    });
-
-    m_actionBar->addSeparator();
-    auto undoButton = m_actionBar->addButton(tr("Undo"), u"edit-undo"_s);
-    connect(undoButton, &QToolButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory()->undo();
-        m_applicationContext->renderingContext()->markForRender();
-        m_applicationContext->renderingContext()->markForUpdate();
-    });
-
-    undoButton->setEnabled(false);
-    connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [undoButton, this]() {
-        undoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasUndo());
-    });
-
-    auto redoButton = m_actionBar->addButton(tr("Redo"), u"edit-redo"_s);
-    connect(redoButton, &QToolButton::clicked, this, [this]() {
-        m_applicationContext->spatialContext()->commandHistory()->redo();
-        m_applicationContext->renderingContext()->markForRender();
-        m_applicationContext->renderingContext()->markForUpdate();
-    });
-
-    redoButton->setEnabled(false);
-    connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [redoButton, this]() {
-        redoButton->setEnabled(m_applicationContext->spatialContext()->commandHistory()->hasRedo());
-    });
-
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
+    connect(m_toolBar, &ToolBar::toolbarShown, this, [this]() {
+        if (!m_header->isInitialized()) {
+            m_header->initialize();
+        }
+    });
 
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
 
@@ -138,6 +88,11 @@ void UIContext::initializeUIContext()
 ToolBar *UIContext::toolBar() const
 {
     return m_toolBar;
+}
+
+Header *UIContext::header() const
+{
+    return m_header;
 }
 
 PropertyBar *UIContext::propertyBar() const

@@ -4,20 +4,14 @@
 
 #pragma once
 
-#include <QFrame>
 #include <QHBoxLayout>
-#include <QHash>
-#include <QToolButton>
+#include <QWidget>
 
-class ActionBar : public QFrame
+class ActionBar : public QWidget
 {
     Q_OBJECT
 public:
     explicit ActionBar(QWidget *parent = nullptr);
-
-    [[nodiscard]] QToolButton *addButton(const QString &tooltip, const QString &icon);
-
-    void addSeparator();
 
 private:
     QHBoxLayout *const m_layout;

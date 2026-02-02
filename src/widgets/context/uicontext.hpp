@@ -14,6 +14,7 @@ class Tool;
 class ApplicationContext;
 class KeybindManager;
 class ActionManager;
+class Header;
 
 class UIContext : public QObject
 {
@@ -25,6 +26,7 @@ public:
     void initializeUIContext();
 
     [[nodiscard]] ToolBar *toolBar() const;
+    [[nodiscard]] Header *header() const;
     [[nodiscard]] PropertyBar *propertyBar() const;
     [[nodiscard]] ActionBar *actionBar() const;
     [[nodiscard]] Event *appEvent() const;
@@ -42,6 +44,7 @@ private:
     PropertyManager *m_propertyManager = nullptr;
     KeybindManager *m_keybindManager = nullptr;
     ActionManager *m_actionManager = nullptr;
+    Header *m_header = nullptr;
     Event *m_event = nullptr;
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
 

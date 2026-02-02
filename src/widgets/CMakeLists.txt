@@ -50,6 +50,12 @@ target_sources(
         components/propertybar.hpp
         components/toolbar.cpp
         components/toolbar.hpp
+        components/frame.cpp
+        components/frame.hpp
+        components/clickablelabel.cpp
+        components/clickablelabel.hpp
+        components/header.cpp
+        components/header.hpp
         context/applicationcontext.cpp
         context/applicationcontext.hpp
         context/coordinatetransformer.cpp

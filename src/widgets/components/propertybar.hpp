@@ -4,13 +4,14 @@
 
 #pragma once
 
-#include <QFrame>
+#include "frame.hpp"
 #include <QStackedWidget>
 #include <QVBoxLayout>
+
 class Tool;
 class PropertyManager;
 
-class PropertyBar : public QFrame
+class PropertyBar : public Frame
 {
     Q_OBJECT
 public:
