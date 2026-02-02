@@ -76,17 +76,21 @@ void UIContext::initializeUIContext()
         actionManager->saveToFile();
     });
 
+    button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);
+    connect(button, &QToolButton::clicked, this, [this]() {
+        auto actionManager{m_applicationContext->uiContext()->actionManager()};
+        actionManager->loadFromFile();
+    });
+
+    m_actionBar->addSeparator();
+
     button = m_actionBar->addButton(tr("Export to Svg"), u"document-export"_s);
     connect(button, &QToolButton::clicked, this, [this]() {
         auto actionManager{m_applicationContext->uiContext()->actionManager()};
         actionManager->exportToSvg();
     });
 
-    button = m_actionBar->addButton(tr("Open File"), u"document-open"_s);
-    connect(button, &QToolButton::clicked, this, [this]() {
-        auto actionManager{m_applicationContext->uiContext()->actionManager()};
-        actionManager->loadFromFile();
-    });
+    m_actionBar->addSeparator();
 
     button = m_actionBar->addButton(tr("Zoom Out"), u"zoom-out"_s);
     connect(button, &QToolButton::clicked, this, [this]() {
@@ -98,6 +102,7 @@ void UIContext::initializeUIContext()
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
 
+    m_actionBar->addSeparator();
     auto undoButton = m_actionBar->addButton(tr("Undo"), u"edit-undo"_s);
     connect(undoButton, &QToolButton::clicked, this, [this]() {
         m_applicationContext->spatialContext()->commandHistory()->undo();

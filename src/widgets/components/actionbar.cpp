@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "actionbar.hpp"
+#include <KSeparator>
 #include <QStyle>
 
 using namespace Qt::Literals::StringLiterals;
@@ -13,6 +14,11 @@ ActionBar::ActionBar(QWidget *parent)
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 }
 
+void ActionBar::addSeparator()
+{
+    m_layout->addWidget(new KSeparator(Qt::Vertical, this));
+}
+
 QToolButton *ActionBar::addButton(const QString &tooltip, const QString &icon)
 {
     auto button = new QToolButton{this};
@@ -21,6 +27,7 @@ QToolButton *ActionBar::addButton(const QString &tooltip, const QString &icon)
 
     button->setCursor(Qt::PointingHandCursor);
     m_layout->addWidget(button);
+
     return button;
 }
 

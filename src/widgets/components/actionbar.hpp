@@ -17,6 +17,8 @@ public:
 
     [[nodiscard]] QToolButton *addButton(const QString &tooltip, const QString &icon);
 
+    void addSeparator();
+
 private:
     QHBoxLayout *const m_layout;
 };
