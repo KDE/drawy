@@ -16,7 +16,23 @@ DiamondItem::DiamondItem()
 
 void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    painter.drawRect(QRectF(start() - offset, end() - offset));
+    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+    if (backgroundColor != Qt::transparent) {
+        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+        painter.setBrush(backgroundColor);
+    }
+    const QPointF startPt = start() - offset;
+    const QPointF endPt = end() - offset;
+    const QPointF center = (startPt + endPt) / 2.0;
+
+    const QPointF topPoint = QPointF(center.x(), startPt.y());
+    const QPointF rightPoint = QPointF(endPt.x(), center.y());
+    const QPointF bottomPoint = QPointF(center.x(), endPt.y());
+    const QPointF leftPoint = QPointF(startPt.x(), center.y());
+
+    const QPolygonF diamond({topPoint, rightPoint, bottomPoint, leftPoint});
+
+    painter.drawPolygon(diamond);
 }
 
 bool DiamondItem::intersects(const QRectF &rect)
