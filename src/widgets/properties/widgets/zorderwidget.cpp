@@ -31,6 +31,7 @@ ZOrderWidget::ZOrderWidget(QWidget *parent)
     layout->addWidget(moveDownButton);
     layout->addWidget(moveOnBottomButton);
 
+    layout->addStretch(1);
     // auto
     // actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
 
