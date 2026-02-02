@@ -57,7 +57,7 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
 
-#: widgets/command/alignitemcommand.cpp:105
+#: widgets/command/alignitemcommand.cpp:108
 msgctxt "QObject|"
 msgid "Align Items"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr ""
 
 #: widgets/context/uicontext.cpp:79
 msgctxt "UIContext|"
-msgid "Export to File"
+msgid "Export to Svg"
 msgstr ""
 
 #: widgets/context/uicontext.cpp:85
@@ -185,6 +185,16 @@ msgstr ""
 #: widgets/context/uicontext.cpp:113
 msgctxt "UIContext|"
 msgid "Redo"
+msgstr ""
+
+#: widgets/dialog/configuregeneralwidget.cpp:22
+msgctxt "ConfigureGeneralWidget|"
+msgid "minute"
+msgstr ""
+
+#: widgets/dialog/configuregeneralwidget.cpp:23
+msgctxt "ConfigureGeneralWidget|"
+msgid "Auto-save"
 msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
@@ -225,8 +235,7 @@ msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr ""
@@ -244,6 +253,11 @@ msgstr ""
 #: widgets/keybindings/actionmanager.cpp:203
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:205
+msgctxt "QObject|"
+msgid "Export to Svg"
 msgstr ""
 
 #: widgets/properties/property.cpp:91
@@ -466,7 +480,7 @@ msgctxt "QObject|"
 msgid "Line Tool"
 msgstr ""
 
-#: widgets/tools/movetool.cpp:78
+#: widgets/tools/movetool.cpp:76
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr ""
@@ -506,62 +520,67 @@ msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr ""
 
-#: widgets/window/window.cpp:215
+#: widgets/window/window.cpp:206
 msgctxt "MainWindow|"
-msgid "Freeform Tool"
-msgstr ""
-
-#: widgets/window/window.cpp:218
-msgctxt "MainWindow|"
-msgid "Eraser Tool"
-msgstr ""
-
-#: widgets/window/window.cpp:219
-msgctxt "MainWindow|"
-msgid "Selection Tool"
-msgstr ""
-
-#: widgets/window/window.cpp:220
-msgctxt "MainWindow|"
-msgid "Rectangle Tool"
+msgid "Export to Svg"
 msgstr ""
 
 #: widgets/window/window.cpp:221
 msgctxt "MainWindow|"
-msgid "Ellipse Tool"
-msgstr ""
-
-#: widgets/window/window.cpp:222
-msgctxt "MainWindow|"
-msgid "Line Tool"
-msgstr ""
-
-#: widgets/window/window.cpp:223
-msgctxt "MainWindow|"
-msgid "Text Tool"
+msgid "Freeform Tool"
 msgstr ""
 
 #: widgets/window/window.cpp:224
 msgctxt "MainWindow|"
-msgid "Arrow Tool"
+msgid "Eraser Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:225
+msgctxt "MainWindow|"
+msgid "Selection Tool"
 msgstr ""
 
 #: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
-msgid "Move Tool"
+msgid "Rectangle Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:227
+msgctxt "MainWindow|"
+msgid "Ellipse Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:228
+msgctxt "MainWindow|"
+msgid "Line Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:229
+msgctxt "MainWindow|"
+msgid "Text Tool"
 msgstr ""
 
 #: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
+msgid "Arrow Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:232
+msgctxt "MainWindow|"
+msgid "Move Tool"
+msgstr ""
+
+#: widgets/window/window.cpp:236
+msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr ""
 
-#: widgets/window/window.cpp:234
+#: widgets/window/window.cpp:240
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr ""
 
-#: widgets/window/window.cpp:238
+#: widgets/window/window.cpp:244
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr ""

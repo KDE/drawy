@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-01-31 08:34+0100\n"
+"PO-Revision-Date: 2026-02-01 07:11+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -61,7 +61,7 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
-#: widgets/command/alignitemcommand.cpp:105
+#: widgets/command/alignitemcommand.cpp:108
 msgctxt "QObject|"
 msgid "Align Items"
 msgstr "Poravnaj elemente"
@@ -164,10 +164,10 @@ msgstr "Shrani v datoteko"
 #: widgets/context/uicontext.cpp:79
 #, fuzzy
 #| msgctxt "UIContext|"
-#| msgid "Save to File"
+#| msgid "Export to File"
 msgctxt "UIContext|"
-msgid "Export to File"
-msgstr "Shrani v datoteko"
+msgid "Export to Svg"
+msgstr "Izvozi v datoteko"
 
 #: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
@@ -193,6 +193,16 @@ msgstr "Razveljavi"
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Uveljavi"
+
+#: widgets/dialog/configuregeneralwidget.cpp:22
+msgctxt "ConfigureGeneralWidget|"
+msgid "minute"
+msgstr ""
+
+#: widgets/dialog/configuregeneralwidget.cpp:23
+msgctxt "ConfigureGeneralWidget|"
+msgid "Auto-save"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -232,8 +242,7 @@ msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Shrani datoteko"
@@ -244,17 +253,22 @@ msgid "Open File"
 msgstr "Odpri datoteko"
 
 #: widgets/keybindings/actionmanager.cpp:201
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
 msgctxt "QObject|"
 msgid "Untitled.svg"
-msgstr "Brez_naslova.%1"
+msgstr "Untitled.svg"
 
 #: widgets/keybindings/actionmanager.cpp:203
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
-msgstr ""
+msgstr "SVG (*.svg)"
+
+#: widgets/keybindings/actionmanager.cpp:205
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Export to File"
+msgctxt "QObject|"
+msgid "Export to Svg"
+msgstr "Izvozi v datoteko"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -476,7 +490,7 @@ msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "Orodje za črte"
 
-#: widgets/tools/movetool.cpp:78
+#: widgets/tools/movetool.cpp:76
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Orodje za premikanje"
@@ -516,62 +530,70 @@ msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Prezri"
 
-#: widgets/window/window.cpp:215
+#: widgets/window/window.cpp:206
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Export to File"
+msgctxt "MainWindow|"
+msgid "Export to Svg"
+msgstr "Izvozi v datoteko"
+
+#: widgets/window/window.cpp:221
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Orodje za prosto obliko"
 
-#: widgets/window/window.cpp:218
+#: widgets/window/window.cpp:224
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Orodje radirke"
 
-#: widgets/window/window.cpp:219
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Orodje izbire"
 
-#: widgets/window/window.cpp:220
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Orodje pravokotnika"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Orodje elipse"
 
-#: widgets/window/window.cpp:222
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Orodje črte"
 
-#: widgets/window/window.cpp:223
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Orodje besedila"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Orodje puščice"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:232
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Orodje premikanja"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:236
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Združi elemente"
 
-#: widgets/window/window.cpp:234
+#: widgets/window/window.cpp:240
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Razdruži elemente"
 
-#: widgets/window/window.cpp:238
+#: widgets/window/window.cpp:244
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Izbriši"

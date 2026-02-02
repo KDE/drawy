@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-01-31 13:48+0100\n"
+"PO-Revision-Date: 2026-02-01 11:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -64,7 +64,7 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
-#: widgets/command/alignitemcommand.cpp:105
+#: widgets/command/alignitemcommand.cpp:108
 msgctxt "QObject|"
 msgid "Align Items"
 msgstr "Alinea elements"
@@ -167,10 +167,10 @@ msgstr "Desa a un fitxer"
 #: widgets/context/uicontext.cpp:79
 #, fuzzy
 #| msgctxt "UIContext|"
-#| msgid "Save to File"
+#| msgid "Export to File"
 msgctxt "UIContext|"
-msgid "Export to File"
-msgstr "Desa a un fitxer"
+msgid "Export to Svg"
+msgstr "Exporta a un fitxer"
 
 #: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
@@ -196,6 +196,16 @@ msgstr "Desfés"
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
+
+#: widgets/dialog/configuregeneralwidget.cpp:22
+msgctxt "ConfigureGeneralWidget|"
+msgid "minute"
+msgstr ""
+
+#: widgets/dialog/configuregeneralwidget.cpp:23
+msgctxt "ConfigureGeneralWidget|"
+msgid "Auto-save"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -235,8 +245,7 @@ msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:205 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Desa el fitxer"
@@ -247,17 +256,22 @@ msgid "Open File"
 msgstr "Obre un fitxer"
 
 #: widgets/keybindings/actionmanager.cpp:201
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
 msgctxt "QObject|"
 msgid "Untitled.svg"
-msgstr "Sense_títol .%1"
+msgstr "Sense_títol .svg"
 
 #: widgets/keybindings/actionmanager.cpp:203
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
-msgstr ""
+msgstr "SVG (*.svg)"
+
+#: widgets/keybindings/actionmanager.cpp:205
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Export to File"
+msgctxt "QObject|"
+msgid "Export to Svg"
+msgstr "Exporta a un fitxer"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -480,7 +494,7 @@ msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "Eina de línies"
 
-#: widgets/tools/movetool.cpp:78
+#: widgets/tools/movetool.cpp:76
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Eina de moure"
@@ -520,62 +534,70 @@ msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Ignora"
 
-#: widgets/window/window.cpp:215
+#: widgets/window/window.cpp:206
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Export to File"
+msgctxt "MainWindow|"
+msgid "Export to Svg"
+msgstr "Exporta a un fitxer"
+
+#: widgets/window/window.cpp:221
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Eina de forma lliure"
 
-#: widgets/window/window.cpp:218
+#: widgets/window/window.cpp:224
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Eina esborrador"
 
-#: widgets/window/window.cpp:219
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
 
-#: widgets/window/window.cpp:220
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
 
-#: widgets/window/window.cpp:222
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Eina de línies"
 
-#: widgets/window/window.cpp:223
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:232
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Eina de moure"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:236
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Agrupa elements"
 
-#: widgets/window/window.cpp:234
+#: widgets/window/window.cpp:240
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Desagrupa elements"
 
-#: widgets/window/window.cpp:238
+#: widgets/window/window.cpp:244
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Suprimeix"
