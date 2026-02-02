@@ -6,12 +6,8 @@
 
 #pragma once
 
-#include <QByteArray>
-#include <QString>
-#include <QXmlStreamWriter>
-
 #include "item/item.hpp"
-
+class QXmlStreamWriter;
 namespace SvgSerializer
 {
 

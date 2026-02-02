@@ -6,6 +6,7 @@
 
 #include <QDir>
 #include <QFileDialog>
+#include <QXmlStreamWriter>
 #include <memory>
 
 #include "command/alignitemcommand.hpp"
