@@ -99,3 +99,47 @@ Qt::PenStyle ItemUtils::convertItemStrokeTypeStringToPenStyle(const QString &pen
     }
     return Qt::PenStyle::SolidLine;
 }
+
+Item::BackgroundType ItemUtils::convertBackgroundTypeStringToEnum(const QString &str)
+{
+    if (str == u"Solid") {
+        return Item::BackgroundType::Solid;
+    } else if (str == u"Diagonal") {
+        return Item::BackgroundType::Diagonal;
+    } else if (str == u"CrossDiagonal") {
+        return Item::BackgroundType::CrossDiagonal;
+    } else {
+        qCWarning(DRAWY_LOG) << "Item::BackgroundType is not defined for: " << str;
+    }
+    return Item::BackgroundType::Invalid;
+}
+
+QString ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType type)
+{
+    switch (type) {
+    case Item::BackgroundType::Solid:
+        return u"Solid"_s;
+    case Item::BackgroundType::Diagonal:
+        return u"Diagonal"_s;
+    case Item::BackgroundType::CrossDiagonal:
+        return u"CrossDiagonal"_s;
+    case Item::BackgroundType::Invalid:
+        qCWarning(DRAWY_LOG) << "Don't invalid BackgroundType";
+        break;
+    }
+    return {};
+}
+
+Qt::BrushStyle ItemUtils::convertItemBackgroundTypeStringToBrushStyle(const QString &brushStyle)
+{
+    if (brushStyle == u"Solid") {
+        return Qt::BrushStyle::SolidPattern;
+    } else if (brushStyle == u"Diagonal") {
+        return Qt::BrushStyle::BDiagPattern;
+    } else if (brushStyle == u"CrossDiagonal") {
+        return Qt::BrushStyle::DiagCrossPattern;
+    } else {
+        qCWarning(DRAWY_LOG) << "Item::BackgroundType is not defined for: " << brushStyle;
+    }
+    return Qt::BrushStyle::SolidPattern;
+}

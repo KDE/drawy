@@ -11,6 +11,7 @@ DiamondTool::DiamondTool()
 {
     m_itemFactory = std::make_unique<DiamondFactory>();
     m_properties += Property::Type::BackgroundColor;
+    m_properties += Property::Type::BackgroundStyle;
 }
 
 QString DiamondTool::tooltip() const

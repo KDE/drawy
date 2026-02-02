@@ -22,8 +22,8 @@ void RectangleToolTest::shouldHaveDefaultValues()
     QCOMPARE(t.type(), Tool::Type::Rectangle);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
-                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor;
-    QCOMPARE(t.properties().count(), 5);
+                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle;
+    QCOMPARE(t.properties().count(), 6);
     for (const auto &prop : properties) {
         QVERIFY(t.properties().contains(prop));
     }

@@ -4,6 +4,7 @@
 
 #include "rectangle.hpp"
 
+#include "item/itemutils.hpp"
 #include "serializer/rectangledeserializer.hpp"
 #include "serializer/rectangleserializer.hpp"
 #include <QJsonObject>
@@ -12,6 +13,8 @@
 RectangleItem::RectangleItem()
 {
     m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+    m_properties[Property::Type::BackgroundStyle] =
+        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const

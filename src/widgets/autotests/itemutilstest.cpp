@@ -67,4 +67,30 @@ void ItemUtilsTest::shouldConvertItemStrokeTypeStringToPenStyle()
     QCOMPARE(ItemUtils::convertItemStrokeTypeStringToPenStyle(QString()), Qt::PenStyle::SolidLine);
 }
 
+void ItemUtilsTest::shouldConvertEnumBackgroundTypeToString()
+{
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), u"Solid"_s);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Diagonal), u"Diagonal"_s);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::CrossDiagonal), u"CrossDiagonal"_s);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Invalid), QString{});
+}
+
+void ItemUtilsTest::shouldConvertBackgroundTypeStringToEnum()
+{
+    QCOMPARE(ItemUtils::convertBackgroundTypeStringToEnum(u"Solid"_s), Item::BackgroundType::Solid);
+    QCOMPARE(ItemUtils::convertBackgroundTypeStringToEnum(u"Diagonal"_s), Item::BackgroundType::Diagonal);
+    QCOMPARE(ItemUtils::convertBackgroundTypeStringToEnum(u"CrossDiagonal"_s), Item::BackgroundType::CrossDiagonal);
+    QCOMPARE(ItemUtils::convertBackgroundTypeStringToEnum(u"Solidsdfsdf"_s), Item::BackgroundType::Invalid);
+    QCOMPARE(ItemUtils::convertBackgroundTypeStringToEnum(QString()), Item::BackgroundType::Invalid);
+}
+
+void ItemUtilsTest::shouldConvertItemBackgroundTypeStringToBrushStyle()
+{
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(u"Solid"_s), Qt::BrushStyle::SolidPattern);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(u"Diagonal"_s), Qt::BrushStyle::BDiagPattern);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(u"CrossDiagonal"_s), Qt::BrushStyle::DiagCrossPattern);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(u"Solidsdfsdf"_s), Qt::BrushStyle::SolidPattern);
+    QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(QString()), Qt::BrushStyle::SolidPattern);
+}
+
 #include "moc_itemutilstest.cpp"

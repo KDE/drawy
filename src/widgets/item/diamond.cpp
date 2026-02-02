@@ -5,6 +5,7 @@
 #include "diamond.hpp"
 
 #include "common/utils/math.hpp"
+#include "item/itemutils.hpp"
 #include "serializer/diamonddeserializer.hpp"
 #include "serializer/diamondserializer.hpp"
 #include <QJsonObject>
@@ -12,6 +13,8 @@
 DiamondItem::DiamondItem()
 {
     m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+    m_properties[Property::Type::BackgroundStyle] =
+        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const

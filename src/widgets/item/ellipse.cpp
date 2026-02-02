@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "ellipse.hpp"
+#include "item/itemutils.hpp"
 #include "serializer/ellipsedeserializer.hpp"
 #include "serializer/ellipseserializer.hpp"
 #include <QJsonObject>
@@ -11,6 +12,8 @@
 EllipseItem::EllipseItem()
 {
     m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+    m_properties[Property::Type::BackgroundStyle] =
+        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const

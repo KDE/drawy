@@ -52,6 +52,14 @@ public:
     };
     Q_ENUM(StrokeType)
 
+    enum class BackgroundType : int8_t {
+        Solid,
+        CrossDiagonal,
+        Diagonal,
+        Invalid,
+    };
+    Q_ENUM(BackgroundType)
+
     [[nodiscard]] virtual Type type() const = 0;
 
     virtual void updateAfterProperty();
