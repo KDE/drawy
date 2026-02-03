@@ -14,33 +14,41 @@
 #include <QXmlStreamWriter>
 
 using namespace Qt::Literals::StringLiterals;
+QTEST_MAIN(SvgExportTest)
 
 SvgExportTest::SvgExportTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void SvgExportTest::shouldNotChangeOutput()
+void SvgExportTest::initTestCase()
 {
     QFontDatabase::addApplicationFont(u":/fonts/FuzzyBubbles.ttf"_s);
+}
 
+void SvgExportTest::shouldNotChangeOutput_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("output");
+    QTest::newRow("export-test.drawy") << u"export-test.drawy"_s << u"export-test.svg"_s;
+}
+
+void SvgExportTest::shouldNotChangeOutput()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
     LoadJob loadJob;
-
-    loadJob.setFileName(QLatin1StringView(DRAWY_DATA_DIR) + u"/svg/export-test.drawy"_s);
-
-    connect(&loadJob, &LoadJob::loadDone, [](const LoadJob::LoadInfo &info) {
+    loadJob.setFileName(QLatin1StringView(DRAWY_DATA_DIR) + u"/svg/"_s + input);
+    connect(&loadJob, &LoadJob::loadDone, [output](const LoadJob::LoadInfo &info) {
         QByteArray data;
         QXmlStreamWriter writer(&data);
         writer.setAutoFormatting(true);
 
         SvgSerializer::writeSvg(writer, info.items);
 
-        AutoTestHelper::compareFile(u"/svg/"_s, data, u"export-test.svg"_s);
+        AutoTestHelper::compareFile(u"/svg/"_s, data, output);
     });
-
     loadJob.start();
 }
-
-QTEST_MAIN(SvgExportTest)
 
 #include "moc_svgexporttest.cpp"
