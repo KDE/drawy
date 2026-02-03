@@ -7,8 +7,7 @@ add_definitions(-DDRAWY_BINARY_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data")
 if(ENABLE_PCH)
     file(GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/empty_pch.cpp CONTENT "/*empty file*/")
     file(
-        GENERATE OUTPUT
-        ${CMAKE_CURRENT_BINARY_DIR}/libdrawywidgets_pch.h
+        GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/libdrawywidgets_pch.h
         CONTENT
             "#pragma once\n
         #include <QObject>\n

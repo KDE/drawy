@@ -21,13 +21,13 @@ repos:
     - id: destroyed-symlinks
     - id: check-executables-have-shebangs
  - repo: https://github.com/pre-commit/mirrors-clang-format
-   rev: v21.1.2
+   rev: v21.1.8
    hooks:
     - id: clang-format
     # force using this project's configuration rather
     # than the one provided by CI
       args: ["--style=file:.clang-format-pre-commit"]
  - repo: https://github.com/BlankSpruce/gersemi
-   rev: 0.22.3
+   rev: 0.25.4
    hooks:
     - id: gersemi
