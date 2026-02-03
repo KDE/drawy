@@ -74,7 +74,13 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
             curItem->erase(painter, offsetPos);
         });
 
-        curItem->setEnd(transformer.viewToWorld(uiContext->appEvent()->pos()));
+        const QPointF newEnd{transformer.viewToWorld(uiContext->appEvent()->pos())};
+
+        if (context->uiContext()->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
+            curItem->setEndWithShift(newEnd);
+        } else {
+            curItem->setEnd(newEnd);
+        }
 
         renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
             painter.scale(zoom, zoom);

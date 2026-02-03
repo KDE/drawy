@@ -15,6 +15,8 @@ public:
     virtual void setStart(QPointF start);
     virtual void setEnd(QPointF end);
 
+    virtual void setEndWithShift(QPointF end);
+
     void draw(QPainter &painter, const QPointF &offset) override;
     void erase(QPainter &painter, const QPointF &offset) const override;
 

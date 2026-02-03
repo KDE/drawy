@@ -30,6 +30,15 @@ void PolygonItem::setEnd(QPointF end)
     updateBoundingBox();
 }
 
+void PolygonItem::setEndWithShift(QPointF end)
+{
+    const QPointF size{end - m_start};
+    const qreal maxDimension{std::max(std::abs(size.x()), std::abs(size.y()))};
+
+    m_end = m_start + QPointF{std::copysign(maxDimension, size.x()), std::copysign(maxDimension, size.y())};
+    updateBoundingBox();
+}
+
 const QPointF &PolygonItem::start() const
 {
     return m_start;

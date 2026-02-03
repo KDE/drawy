@@ -4,10 +4,10 @@
 
 #pragma once
 #include "item/arrowutils.hpp"
+#include "item/line.hpp"
 #include "libdrawywidgets_private_export.h"
-#include "polygon.hpp"
 
-class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowItem : public PolygonItem
+class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowItem : public LineItem
 {
 public:
     ArrowItem();
