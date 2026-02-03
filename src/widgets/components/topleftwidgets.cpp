@@ -19,6 +19,7 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     m_layout->setContentsMargins(0, 0, 0, 0);
 
     auto context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
 
     // menu button
     auto menuFrame{new Frame{this}};
@@ -40,26 +41,14 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
 
     // save controls
     auto saveButton{new QToolButton{menuFrame}};
-    saveButton->setIcon(QIcon::fromTheme(u"document-save"_s));
     saveButton->setAutoRaise(true);
     saveButton->setIconSize(iconSize);
-    saveButton->setToolTip(tr("Save"));
-
-    connect(saveButton, &QToolButton::clicked, this, [context]() {
-        auto actionManager{context->uiContext()->actionManager()};
-        actionManager->saveToFile();
-    });
+    saveButton->setDefaultAction(actionManager->action(KStandardActions::Save));
 
     auto loadButton{new QToolButton{menuFrame}};
-    loadButton->setIcon(QIcon::fromTheme(u"document-open"_s));
     loadButton->setAutoRaise(true);
     loadButton->setIconSize(iconSize);
-    loadButton->setToolTip(tr("Load"));
-
-    connect(loadButton, &QToolButton::clicked, this, [context]() {
-        auto actionManager{context->uiContext()->actionManager()};
-        actionManager->loadFromFile();
-    });
+    loadButton->setDefaultAction(actionManager->action(KStandardActions::Open));
 
     menuFrameLayout->addWidget(menuButton);
     menuFrameLayout->addWidget(vLine);

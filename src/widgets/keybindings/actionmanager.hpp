@@ -7,13 +7,52 @@
 #include "item/itemutils.hpp"
 #include "jobs/loadjob.hpp"
 #include "tools/tool.hpp"
+#include <KStandardActions>
+#include <QAction>
 #include <QObject>
+#include <functional>
+
 class ApplicationContext;
 class ActionManager : public QObject
 {
     Q_OBJECT
 public:
+    enum class AlignType : uint8_t {
+        Unknown = 0,
+        AlignLeft,
+        CentralHorizontal,
+        AlignRight,
+        AlignTop,
+        CentralVertical,
+        AlignBottom,
+    };
+    Q_ENUM(AlignType);
+
+    // All non standard actions (not available in KStandardAction)
+    enum class Action {
+        GroupItems,
+        UngroupItems,
+        DeleteSelection,
+        ExportAsSVG,
+        SwitchToSelectionTool,
+        SwitchToFreeformTool,
+        SwitchToRectangleTool,
+        SwitchToEllipseTool,
+        SwitchToLineTool,
+        SwitchToArrowTool,
+        SwitchToTextTool,
+        SwitchToEraserTool,
+        SwitchToMoveTool
+    };
+
+    Q_ENUM(Action);
+
     explicit ActionManager(ApplicationContext *context);
+
+    [[nodiscard]] QAction *action(Action type) const;
+    [[nodiscard]] QString actionName(Action type) const;
+    [[nodiscard]] QAction *action(KStandardActions::StandardAction standardAction) const;
+    [[nodiscard]] QString actionName(KStandardActions::StandardAction standardAction) const;
 
     void zoomIn();
     void zoomOut();
@@ -25,10 +64,10 @@ public:
     void groupItems();
     void ungroupItems();
     void saveToFile();
-    void loadFromFile();
-    void exportToSvg();
-
+    void openFile();
     void loadFile(const QString &fileName);
+    void exportToSvg();
+    void configureSettings();
 
     void switchToTool(Tool::Type type);
     void alignItems(ItemUtils::AlignType alignType);
@@ -37,5 +76,26 @@ public:
 
 private:
     void slotLoadDone(const LoadJob::LoadInfo &info);
+    QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys);
+    QAction *createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType);
+
+    // This will allow us to create actions and connect them to slots directly :)
+    template<typename Receiver, typename Func>
+    QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Receiver *recvr, Func &&slot)
+    {
+        auto result{createAction(actionType, title, keys)};
+        connect(result, &QAction::triggered, this, [recvr, f = std::forward<Func>(slot)](bool) mutable {
+            if constexpr (std::is_invocable_v<Func, Receiver *>) {
+                std::invoke(f, recvr);
+            } else {
+                // it means it's not a member function
+                std::invoke(f);
+            }
+        });
+        ;
+
+        return result;
+    }
+
     ApplicationContext *const m_context;
 };

@@ -6,7 +6,9 @@
 #include "clickablelabel.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
+#include "context/uicontext.hpp"
 #include "frame.hpp"
+#include "keybindings/actionmanager.hpp"
 #include <QLabel>
 #include <QStyle>
 #include <QToolButton>
@@ -18,6 +20,7 @@ BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
     , m_layout(new QHBoxLayout{this})
 {
     auto context{ApplicationContext::instance()};
+    auto actionManager{context->uiContext()->actionManager()};
 
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     m_layout->setContentsMargins(0, 0, 0, 0);
@@ -36,13 +39,8 @@ BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
 
     auto zoomOutButton{new QToolButton{zoomControlFrame}};
     zoomOutButton->setAutoRaise(true);
-    zoomOutButton->setIcon(QIcon::fromTheme(u"value-decrease"_s));
     zoomOutButton->setIconSize(iconSize);
-    zoomOutButton->setToolTip(tr("Zoom Out"));
-
-    connect(zoomOutButton, &QToolButton::clicked, this, [context]() {
-        context->renderingContext()->zoomOut();
-    });
+    zoomOutButton->setDefaultAction(actionManager->action(KStandardActions::ZoomOut));
 
     auto zoomLabel{new ClickableLabel{zoomControlFrame}};
     zoomLabel->setText(u"100%"_s);
@@ -54,29 +52,12 @@ BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
 
     auto zoomInButton{new QToolButton{zoomControlFrame}};
     zoomInButton->setAutoRaise(true);
-    zoomInButton->setIcon(QIcon::fromTheme(u"value-increase"_s));
     zoomInButton->setIconSize(iconSize);
-    zoomInButton->setToolTip(tr("Zoom In"));
+    zoomInButton->setDefaultAction(actionManager->action(KStandardActions::ZoomIn));
 
-    connect(zoomInButton, &QToolButton::clicked, this, [context]() {
-        context->renderingContext()->zoomIn();
-    });
-
-    connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [zoomLabel, context, zoomInButton, zoomOutButton](qreal newZoomFactor) {
+    connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [zoomLabel](qreal newZoomFactor) {
         const int zoomValue{qRound(newZoomFactor * 100)};
         zoomLabel->setText(QString(u"%1%"_s).arg(zoomValue));
-
-        if (context->renderingContext()->canZoomIn()) {
-            zoomInButton->setEnabled(true);
-        } else {
-            zoomInButton->setEnabled(false);
-        }
-
-        if (context->renderingContext()->canZoomOut()) {
-            zoomOutButton->setEnabled(true);
-        } else {
-            zoomOutButton->setEnabled(false);
-        }
     });
 
     zoomControlLayout->setSpacing(style()->pixelMetric(QStyle::PM_ToolBarItemMargin));

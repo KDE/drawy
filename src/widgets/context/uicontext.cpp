@@ -33,6 +33,7 @@
 #include "tools/rectangletool.hpp"
 #include "tools/selectiontool/selectiontool.hpp"
 #include "tools/texttool.hpp"
+#include <QMenu>
 
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
@@ -48,13 +49,13 @@ UIContext::~UIContext()
 
 void UIContext::initializeUIContext()
 {
+    m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
+    m_actionManager = new ActionManager(m_applicationContext);
     m_topWidgets = new TopWidgets(m_applicationContext->parentWidget());
     m_toolBar = new ToolBar(m_topWidgets);
     m_bottomLeftWidgets = new BottomLeftWidgets(m_applicationContext->parentWidget());
     m_topLeftWidgets = new TopLeftWidgets(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
-    m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
-    m_actionManager = new ActionManager(m_applicationContext);
 
     m_propertyManager = new PropertyManager(m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
@@ -83,6 +84,8 @@ void UIContext::initializeUIContext()
     });
 
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
+
+    connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
@@ -156,6 +159,27 @@ void UIContext::reset()
 {
     m_lastTool = nullptr;
     toolBar()->changeTool(Tool::Type::Selection);
+}
+
+void UIContext::showContextMenu() const
+{
+    auto context{ApplicationContext::instance()};
+    auto allItems{context->spatialContext()->quadtree().getAllItems()};
+
+    auto menu = new QMenu(context->parentWidget());
+    menu->addAction(actionManager()->action(KStandardActions::FullScreen));
+    menu->addSeparator();
+    if (!allItems.empty()) {
+        menu->addAction(actionManager()->action(KStandardActions::SelectAll));
+        menu->addSeparator();
+    }
+    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
+    menu->addSeparator();
+    menu->addAction(actionManager()->action(KStandardActions::Preferences));
+    menu->addSeparator();
+    menu->addAction(actionManager()->action(KStandardActions::Quit));
+    menu->exec(QCursor::pos());
+    delete menu;
 }
 
 #include "moc_uicontext.cpp"

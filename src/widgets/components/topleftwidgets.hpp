@@ -10,7 +10,7 @@
 class TopLeftWidgets : public QWidget
 {
 public:
-    TopLeftWidgets(QWidget *parent = nullptr);
+    explicit TopLeftWidgets(QWidget *parent = nullptr);
 
 private:
     QHBoxLayout *m_layout{nullptr};

@@ -35,6 +35,8 @@ public:
     [[nodiscard]] KeybindManager *keybindManager() const;
     [[nodiscard]] ActionManager *actionManager() const;
     [[nodiscard]] PropertyManager *propertyManager() const;
+
+    void showContextMenu() const;
     void reset();
 
     void toolChanged(Tool &);

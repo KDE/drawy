@@ -28,7 +28,6 @@
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
 #include "data-structures/quadtree.hpp"
-#include "dialog/configuresettingsdialog.hpp"
 #include "drawy_debug.h"
 #include "jobs/autosavejob.hpp"
 #include "jobs/autosavejobutil.hpp"
@@ -67,11 +66,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
     connect(renderingContext->canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
     connect(renderingContext->canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
-
     connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
-    connect(renderingContext->canvas(), &Canvas::customContextMenuRequested, this, &MainWindow::contextMenuRequested);
 
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
     restoreAutoSaveJob->setParentWidget(this);
@@ -82,7 +79,13 @@ MainWindow::MainWindow(QWidget *parent)
         autoSaveJob->start();
     });
     restoreAutoSaveJob->start();
-    setupAction();
+
+    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
+    QAction *fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection);
+    fullScreenAction->setChecked(isFullScreen());
+    connect(fullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
+
+    KStandardActions::quit(this, &MainWindow::close, actionCollection);
 }
 
 MainWindow::~MainWindow() = default;
@@ -164,122 +167,6 @@ void MainWindow::loadFile(const QString &fileName)
     ApplicationContext *context{ApplicationContext::instance()};
     auto actionManager{context->uiContext()->actionManager()};
     actionManager->loadFile(fileName);
-}
-
-void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
-{
-    auto context{ApplicationContext::instance()};
-    auto allItems{context->spatialContext()->quadtree().getAllItems()};
-
-    auto menu = new QMenu(this);
-    menu->addAction(mFullScreenAction);
-    menu->addSeparator();
-    if (!allItems.empty()) {
-        menu->addAction(mSelectAllAction);
-        menu->addSeparator();
-        menu->addAction(mClearAction);
-        menu->addSeparator();
-    }
-    menu->addAction(mExportAsSvgAction);
-    menu->addSeparator();
-    menu->addAction(mConfigureSettingsAction);
-    menu->addSeparator();
-    menu->addAction(mQuitAction);
-    menu->exec(QCursor::pos());
-    delete menu;
-}
-
-void MainWindow::configureSettings()
-{
-    ConfigureSettingsDialog dlg(this);
-    dlg.exec();
-}
-
-void MainWindow::setupAction()
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
-
-    mFullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection);
-    mFullScreenAction->setChecked(isFullScreen());
-    connect(mFullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
-    mConfigureSettingsAction = KStandardActions::preferences(this, &MainWindow::configureSettings, actionCollection);
-    mQuitAction = KStandardActions::quit(this, &MainWindow::close, actionCollection);
-
-    mSaveAction = KStandardAction::save(actionManager, &ActionManager::saveToFile, actionCollection);
-    mExportAsSvgAction = createAction(u"export_svg"_s, tr("Export to Svg"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))});
-    mExportAsSvgAction->setIcon(QIcon::fromTheme(u"document-export"_s));
-    connect(mExportAsSvgAction, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->exportToSvg();
-    });
-
-    mUndoAction = KStandardAction::undo(actionManager, &ActionManager::undo, actionCollection);
-    mRedoAction = KStandardAction::redo(actionManager, &ActionManager::redo, actionCollection);
-
-    mZoomInAction = KStandardAction::zoomIn(actionManager, &ActionManager::zoomIn, actionCollection);
-    mZoomOutAction = KStandardAction::zoomOut(actionManager, &ActionManager::zoomOut, actionCollection);
-
-    mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, actionCollection);
-    mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, actionCollection);
-    mClearAction = KStandardAction::clear(actionManager, &ActionManager::clear, actionCollection);
-
-    createToolAction(u"freeform_tool"_s,
-                     tr("Freeform Tool"),
-                     Tool::Type::Freeform,
-                     {QKeySequence(QKeyCombination(Qt::Key_P)), QKeySequence(QKeyCombination(Qt::Key_B))});
-    createToolAction(u"eraser_tool"_s, tr("Eraser Tool"), Tool::Type::Eraser, {QKeySequence(QKeyCombination(Qt::Key_E))});
-    createToolAction(u"selection_tool"_s, tr("Selection Tool"), Tool::Type::Selection, {QKeySequence(QKeyCombination(Qt::Key_S))});
-    createToolAction(u"rectangle_tool"_s, tr("Rectangle Tool"), Tool::Type::Rectangle, {QKeySequence(QKeyCombination(Qt::Key_R))});
-    createToolAction(u"ellipse_tool"_s, tr("Ellipse Tool"), Tool::Type::Ellipse, {QKeySequence(QKeyCombination(Qt::Key_O))});
-    createToolAction(u"line_tool"_s, tr("Line Tool"), Tool::Type::Line, {QKeySequence(QKeyCombination(Qt::Key_L))});
-    createToolAction(u"text_tool"_s, tr("Text Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_T))});
-    createToolAction(u"arrow_tool"_s, tr("Arrow Tool"), Tool::Type::Text, {QKeySequence(QKeyCombination(Qt::Key_A))});
-
-    QAction *act = createAction(u"move_tool"_s, tr("Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))});
-    connect(act, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->switchToMoveTool();
-    });
-    act = createAction(u"group_element"_s, tr("Group Elements"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))});
-    connect(act, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->groupItems();
-    });
-    act = createAction(u"ungroup_element"_s, tr("Ungroup Elements"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G))});
-    connect(act, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->ungroupItems();
-    });
-    act = createAction(u"delete_selected_items"_s, tr("Delete"), {QKeySequence::Delete});
-    connect(act, &QAction::triggered, actionManager, [actionManager]() {
-        actionManager->deleteSelection();
-    });
-    actionCollection->associateWidget(this);
-    actionCollection->readSettings();
-}
-
-QAction *MainWindow::createAction(const QString &actionName, const QString &title, const QList<QKeySequence> &keys)
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
-    auto act = new QAction(title, actionCollection);
-    actionCollection->addAction(actionName, act);
-    actionCollection->setDefaultShortcuts(act, keys);
-    act->setShortcuts(keys);
-    return act;
-}
-
-void MainWindow::createToolAction(const QString &actionName, const QString &title, Tool::Type type, const QList<QKeySequence> &keys)
-{
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-    KActionCollection *actionCollection = context->uiContext()->keybindManager()->actionCollection();
-
-    auto act = new QAction(title, actionCollection);
-    actionCollection->addAction(actionName, act);
-    actionCollection->setDefaultShortcuts(act, keys);
-    act->setShortcuts(keys);
-    connect(act, &QAction::triggered, actionManager, [type, actionManager]() {
-        actionManager->switchToTool(type);
-    });
 }
 
 #include "moc_window.cpp"

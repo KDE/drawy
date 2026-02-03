@@ -4,11 +4,14 @@
 
 #include "actionmanager.hpp"
 
-#include <KMessageBox>
+#include <KActionCollection>
 #include <QDir>
 #include <QFileDialog>
 #include <QXmlStreamWriter>
+#include <kstandardaction.h>
+#include <kstandardactions.h>
 #include <memory>
+#include <qassert.h>
 
 #include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
@@ -18,6 +21,8 @@
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
 #include "common/constants.hpp"
+#include "dialog/configuresettingsdialog.hpp"
+#include "keybindmanager.hpp"
 
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
@@ -34,11 +39,129 @@
 #include "jobs/saveasjob.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
-using namespace Qt::Literals::StringLiterals;
+#include "window/window.hpp"
+
+using namespace Qt::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
     : QObject(context)
     , m_context{context}
 {
+    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
+    auto mainWindow{context->parentWidget()};
+
+    KStandardActions::preferences(this, &ActionManager::configureSettings, actionCollection);
+    KStandardActions::save(this, &ActionManager::saveToFile, actionCollection);
+    KStandardActions::open(this, &ActionManager::openFile, actionCollection);
+    KStandardActions::undo(this, &ActionManager::undo, actionCollection);
+    KStandardActions::redo(this, &ActionManager::redo, actionCollection);
+    KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection);
+    KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection);
+    KStandardActions::selectAll(this, &ActionManager::selectAll, actionCollection);
+
+    createAction(Action::ExportAsSVG, tr("Export as SVG"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))}, this, &ActionManager::exportToSvg)
+        ->setIcon(QIcon::fromTheme(u"document-export"_s));
+    createAction(Action::GroupItems, tr("Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems);
+    createAction(Action::UngroupItems,
+                 tr("Ungroup Items"),
+                 {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G))},
+                 this,
+                 &ActionManager::ungroupItems);
+    createAction(Action::DeleteSelection, tr("Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection);
+    createToolAction(Action::SwitchToFreeformTool,
+                     tr("Freeform Tool"),
+                     {QKeySequence(QKeyCombination(Qt::Key_P)), QKeySequence(QKeyCombination(Qt::Key_B))},
+                     Tool::Type::Freeform);
+    createToolAction(Action::SwitchToEraserTool, tr("Eraser Tool"), {QKeySequence(QKeyCombination(Qt::Key_E))}, Tool::Type::Eraser);
+    createToolAction(Action::SwitchToSelectionTool, tr("Selection Tool"), {QKeySequence(QKeyCombination(Qt::Key_S))}, Tool::Type::Selection);
+    createToolAction(Action::SwitchToRectangleTool, tr("Rectangle Tool"), {QKeySequence(QKeyCombination(Qt::Key_R))}, Tool::Type::Rectangle);
+    createToolAction(Action::SwitchToEllipseTool, tr("Ellipse Tool"), {QKeySequence(QKeyCombination(Qt::Key_O))}, Tool::Type::Ellipse);
+    createToolAction(Action::SwitchToLineTool, tr("Line Tool"), {QKeySequence(QKeyCombination(Qt::Key_L))}, Tool::Type::Line);
+    createToolAction(Action::SwitchToTextTool, tr("Text Tool"), {QKeySequence(QKeyCombination(Qt::Key_T))}, Tool::Type::Text);
+    createToolAction(Action::SwitchToArrowTool, tr("Arrow Tool"), {QKeySequence(QKeyCombination(Qt::Key_A))}, Tool::Type::Arrow);
+    createToolAction(Action::SwitchToMoveTool, tr("Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))}, Tool::Type::Move);
+
+    actionCollection->associateWidget(mainWindow);
+    actionCollection->readSettings();
+
+    // managing actions
+    connect(context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [context, this]() -> void {
+        if (context->spatialContext()->commandHistory()->hasUndo()) {
+            action(KStandardActions::Undo)->setEnabled(true);
+        } else {
+            action(KStandardActions::Undo)->setEnabled(false);
+        }
+
+        if (context->spatialContext()->commandHistory()->hasRedo()) {
+            action(KStandardActions::Redo)->setEnabled(true);
+        } else {
+            action(KStandardActions::Redo)->setEnabled(false);
+        }
+    });
+
+    connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [context, this]([[maybe_unused]] qreal newZoomFactor) {
+        if (context->renderingContext()->canZoomIn()) {
+            action(KStandardActions::ZoomIn)->setEnabled(true);
+        } else {
+            action(KStandardActions::ZoomIn)->setEnabled(false);
+        }
+
+        if (context->renderingContext()->canZoomOut()) {
+            action(KStandardActions::ZoomOut)->setEnabled(true);
+        } else {
+            action(KStandardActions::ZoomOut)->setEnabled(false);
+        }
+    });
+}
+
+QAction *ActionManager::action(Action type) const
+{
+    auto actionManager{m_context->uiContext()->keybindManager()->actionCollection()};
+    return actionManager->action(actionName(type));
+}
+
+QString ActionManager::actionName(Action type) const
+{
+    switch (type) {
+    case Action::GroupItems:
+        return u"group_items"_s;
+    case Action::UngroupItems:
+        return u"ungroup_items"_s;
+    case Action::DeleteSelection:
+        return u"delete_selection"_s;
+    case Action::ExportAsSVG:
+        return u"export_as_svg"_s;
+    case Action::SwitchToSelectionTool:
+        return u"switch_to_selection_tool"_s;
+    case Action::SwitchToFreeformTool:
+        return u"switch_to_freeform_tool"_s;
+    case Action::SwitchToRectangleTool:
+        return u"switch_to_rectangle_tool"_s;
+    case Action::SwitchToEllipseTool:
+        return u"switch_to_ellipse_tool"_s;
+    case Action::SwitchToLineTool:
+        return u"switch_to_line_tool"_s;
+    case Action::SwitchToArrowTool:
+        return u"switch_to_arrow_tool"_s;
+    case Action::SwitchToTextTool:
+        return u"switch_to_text_tool"_s;
+    case Action::SwitchToEraserTool:
+        return u"switch_to_eraser_tool"_s;
+    case Action::SwitchToMoveTool:
+        return u"switch_to_move_tool"_s;
+    }
+
+    return u""_s;
+}
+
+QAction *ActionManager::action(KStandardActions::StandardAction standardAction) const
+{
+    auto actionManager{m_context->uiContext()->keybindManager()->actionCollection()};
+    return actionManager->action(actionName(standardAction));
+}
+
+QString ActionManager::actionName(KStandardActions::StandardAction standardAction) const
+{
+    return KStandardActions::name(standardAction);
 }
 
 void ActionManager::undo()
@@ -175,7 +298,7 @@ void ActionManager::clear()
     }
 }
 
-void ActionManager::loadFromFile()
+void ActionManager::openFile()
 {
     const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
@@ -226,4 +349,31 @@ void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
 {
     LoadJobUtil::loadFile(info);
 }
+
+QAction *ActionManager::createAction(const Action &type, const QString &title, const QList<QKeySequence> &keys)
+{
+    auto context{ApplicationContext::instance()};
+    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
+    auto result{new QAction(title, actionCollection)};
+    result->setShortcuts(keys);
+
+    actionCollection->addAction(actionName(type), result);
+    actionCollection->setDefaultShortcuts(result, keys);
+
+    return result;
+}
+
+QAction *ActionManager::createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType)
+{
+    return createAction(actionType, title, keys, this, [this, toolType]() -> void {
+        switchToTool(toolType);
+    });
+}
+
+void ActionManager::configureSettings()
+{
+    ConfigureSettingsDialog dlg(m_context->parentWidget());
+    dlg.exec();
+}
+
 #include "moc_actionmanager.cpp"

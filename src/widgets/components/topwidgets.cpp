@@ -28,6 +28,7 @@ void TopWidgets::initialize()
     // Toolbar
     auto context{ApplicationContext::instance()};
     auto toolBar{context->uiContext()->toolBar()};
+    auto actionManager{context->uiContext()->actionManager()};
 
     const int iconWidth{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
     const QSize iconSize{iconWidth, iconWidth};
@@ -37,35 +38,14 @@ void TopWidgets::initialize()
     auto undoRedoFrameLayout{new QHBoxLayout{undoRedoFrame}};
 
     auto undoButton{new QToolButton{undoRedoFrame}};
-    undoButton->setIcon(QIcon::fromTheme(u"edit-undo"_s));
     undoButton->setAutoRaise(true);
     undoButton->setIconSize(iconSize);
-    undoButton->setToolTip(tr("Undo"));
-    undoButton->setDisabled(true);
-
-    connect(undoButton, &QToolButton::clicked, this, [context] {
-        context->spatialContext()->commandHistory()->undo();
-        context->renderingContext()->markForRender();
-        context->renderingContext()->markForUpdate();
-    });
+    undoButton->setDefaultAction(actionManager->action(KStandardActions::Undo));
 
     auto redoButton{new QToolButton{undoRedoFrame}};
-    redoButton->setIcon(QIcon::fromTheme(u"edit-redo"_s));
     redoButton->setAutoRaise(true);
     redoButton->setIconSize(iconSize);
-    redoButton->setToolTip(tr("Redo"));
-    redoButton->setDisabled(true);
-
-    connect(redoButton, &QToolButton::clicked, this, [context] {
-        context->spatialContext()->commandHistory()->redo();
-        context->renderingContext()->markForRender();
-        context->renderingContext()->markForUpdate();
-    });
-
-    connect(context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [undoButton, redoButton, context]() {
-        undoButton->setEnabled(context->spatialContext()->commandHistory()->hasUndo());
-        redoButton->setEnabled(context->spatialContext()->commandHistory()->hasRedo());
-    });
+    redoButton->setDefaultAction(actionManager->action(KStandardActions::Redo));
 
     undoRedoFrameLayout->addWidget(undoButton);
     undoRedoFrameLayout->addWidget(redoButton);
