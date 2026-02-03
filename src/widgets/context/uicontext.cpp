@@ -9,10 +9,11 @@
 #include "command/commandhistory.hpp"
 #include "common/constants.hpp"
 #include "common/renderitems.hpp"
-#include "components/actionbar.hpp"
-#include "components/header.hpp"
+#include "components/bottomleftwidgets.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
+#include "components/topleftwidgets.hpp"
+#include "components/topwidgets.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "event/event.hpp"
@@ -47,9 +48,10 @@ UIContext::~UIContext()
 
 void UIContext::initializeUIContext()
 {
-    m_header = new Header(m_applicationContext->parentWidget());
-    m_toolBar = new ToolBar(m_header);
-    m_actionBar = new ActionBar(m_applicationContext->parentWidget());
+    m_topWidgets = new TopWidgets(m_applicationContext->parentWidget());
+    m_toolBar = new ToolBar(m_topWidgets);
+    m_bottomLeftWidgets = new BottomLeftWidgets(m_applicationContext->parentWidget());
+    m_topLeftWidgets = new TopLeftWidgets(m_applicationContext->parentWidget());
     m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
     m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
     m_actionManager = new ActionManager(m_applicationContext);
@@ -75,8 +77,8 @@ void UIContext::initializeUIContext()
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
     connect(m_toolBar, &ToolBar::toolbarShown, this, [this]() {
-        if (!m_header->isInitialized()) {
-            m_header->initialize();
+        if (!m_topWidgets->isInitialized()) {
+            m_topWidgets->initialize();
         }
     });
 
@@ -90,9 +92,9 @@ ToolBar *UIContext::toolBar() const
     return m_toolBar;
 }
 
-Header *UIContext::header() const
+TopWidgets *UIContext::topWidgets() const
 {
-    return m_header;
+    return m_topWidgets;
 }
 
 PropertyBar *UIContext::propertyBar() const
@@ -100,9 +102,14 @@ PropertyBar *UIContext::propertyBar() const
     return m_propertyBar;
 }
 
-ActionBar *UIContext::actionBar() const
+BottomLeftWidgets *UIContext::bottomLeftWidgets() const
 {
-    return m_actionBar;
+    return m_bottomLeftWidgets;
+}
+
+TopLeftWidgets *UIContext::topLeftWidgets() const
+{
+    return m_topLeftWidgets;
 }
 
 KeybindManager *UIContext::keybindManager() const

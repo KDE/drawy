@@ -25,6 +25,10 @@ public:
     void setTopWidget(QWidget *const item, bool pinned = false);
     void setRightWidget(QWidget *const item, bool pinned = false);
     void setBottomWidget(QWidget *const item, bool pinned = false);
+    void setTopLeftWidget(QWidget *const item, bool pinned = false);
+    void setTopRightWidget(QWidget *const item, bool pinned = false);
+    void setBottomLeftWidget(QWidget *const item, bool pinned = false);
+    void setBottomRightWidget(QWidget *const item, bool pinned = false);
     void setCentralWidget(QWidget *const item);
     void setMargins(int margins);
 
@@ -34,6 +38,10 @@ private:
     QLayoutItem *m_topWidget{nullptr};
     QLayoutItem *m_rightWidget{nullptr};
     QLayoutItem *m_bottomWidget{nullptr};
+    QLayoutItem *m_topLeftWidget{nullptr};
+    QLayoutItem *m_topRightWidget{nullptr};
+    QLayoutItem *m_bottomLeftWidget{nullptr};
+    QLayoutItem *m_bottomRightWidget{nullptr};
 
     std::array<QLayoutItem **, 5> m_widgets{};
 
@@ -41,8 +49,12 @@ private:
     bool m_isTopPinned{false};
     bool m_isRightPinned{false};
     bool m_isBottomPinned{false};
+    bool m_isTopLeftPinned{false};
+    bool m_isTopRightPinned{false};
+    bool m_isBottomLeftPinned{false};
+    bool m_isBottomRightPinned{false};
 
-    QSize effectiveSize(QLayoutItem *item, const QSize &available);
+    [[nodiscard]] QSize effectiveSize(QLayoutItem *item);
 
     int m_margins{0};
 };

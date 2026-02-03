@@ -9,5 +9,5 @@
 class Frame : public QFrame
 {
 public:
-    Frame(QWidget *parent = nullptr);
+    explicit Frame(QWidget *parent = nullptr);
 };

@@ -62,6 +62,10 @@ QRectF SelectionContext::selectionBox() const
 // PUBLIC SLOTS
 void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 {
+    if (m_selectedItems.empty()) {
+        return;
+    }
+
     const QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
     const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};

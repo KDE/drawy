@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -7,11 +7,11 @@
 #include <QHBoxLayout>
 #include <QWidget>
 
-class ActionBar : public QWidget
+class BottomLeftWidgets : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ActionBar(QWidget *parent = nullptr);
+    explicit BottomLeftWidgets(QWidget *parent = nullptr);
 
 private:
     QHBoxLayout *const m_layout;

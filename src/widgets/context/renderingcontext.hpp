@@ -35,6 +35,8 @@ public:
     void updateZoomFactor(qreal newValue, QPoint center = {-1, -1});
     void zoomIn();
     void zoomOut();
+    [[nodiscard]] bool canZoomIn() const;
+    [[nodiscard]] bool canZoomOut() const;
 
     [[nodiscard]] int fps() const;
 

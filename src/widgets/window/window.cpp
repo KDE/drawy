@@ -17,9 +17,10 @@
 #include "boardlayout.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
-#include "components/actionbar.hpp"
-#include "components/header.hpp"
+#include "components/bottomleftwidgets.hpp"
 #include "components/propertybar.hpp"
+#include "components/topleftwidgets.hpp"
+#include "components/topwidgets.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
@@ -56,8 +57,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     layout->setMargins(10);
     layout->setLeftWidget(uiContext->propertyBar());
-    layout->setTopWidget(uiContext->header());
-    layout->setBottomWidget(uiContext->actionBar());
+    layout->setTopWidget(uiContext->topWidgets());
+    layout->setTopLeftWidget(uiContext->topLeftWidgets());
+    layout->setBottomLeftWidget(uiContext->bottomLeftWidgets());
     layout->setCentralWidget(renderingContext->canvas());
 
     connect(renderingContext->canvas(), &Canvas::mousePressed, controller, &Controller::mousePressed);
@@ -166,10 +168,10 @@ void MainWindow::loadFile(const QString &fileName)
 
 void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
 {
-    ApplicationContext *context{ApplicationContext::instance()};
+    auto context{ApplicationContext::instance()};
     auto allItems{context->spatialContext()->quadtree().getAllItems()};
-    auto menu = new QMenu(this);
 
+    auto menu = new QMenu(this);
     menu->addAction(mFullScreenAction);
     menu->addSeparator();
     if (!allItems.empty()) {

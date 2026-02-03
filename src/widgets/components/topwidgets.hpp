@@ -7,20 +7,16 @@
 #include <QHBoxLayout>
 #include <QWidget>
 
-class Header : public QWidget
+class TopWidgets : public QWidget
 {
 public:
-    Header(QWidget *parent = nullptr);
+    explicit TopWidgets(QWidget *parent = nullptr);
 
     void initialize();
-    bool isInitialized() const;
-
-    void resizeEvent(QResizeEvent *event) override;
+    [[nodiscard]] bool isInitialized() const;
 
 private:
     QHBoxLayout *m_layout{nullptr};
-    QWidget *m_centerWidget{nullptr};
-    QWidget *m_rightSpaceBalancingWidget{nullptr};
 
     bool m_isInitialized{false};
 };

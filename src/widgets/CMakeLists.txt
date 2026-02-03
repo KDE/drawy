@@ -44,8 +44,8 @@ target_sources(
         common/utils/freehand.cpp
         common/utils/freehand.hpp
         common/utils/math.hpp
-        components/actionbar.cpp
-        components/actionbar.hpp
+        components/bottomleftwidgets.cpp
+        components/bottomleftwidgets.hpp
         components/propertybar.cpp
         components/propertybar.hpp
         components/toolbar.cpp
@@ -54,8 +54,10 @@ target_sources(
         components/frame.hpp
         components/clickablelabel.cpp
         components/clickablelabel.hpp
-        components/header.cpp
-        components/header.hpp
+        components/topwidgets.cpp
+        components/topwidgets.hpp
+        components/topleftwidgets.cpp
+        components/topleftwidgets.hpp
         context/applicationcontext.cpp
         context/applicationcontext.hpp
         context/coordinatetransformer.cpp

@@ -84,9 +84,19 @@ void RenderingContext::zoomIn()
     updateZoomFactor(qMin(Common::zoomInLimit, m_zoomFactor * Common::zoomMultiplier));
 }
 
+bool RenderingContext::canZoomIn() const
+{
+    return m_zoomFactor < Common::zoomInLimit;
+}
+
 void RenderingContext::zoomOut()
 {
     updateZoomFactor(qMax(Common::zoomOutLimit, m_zoomFactor / Common::zoomMultiplier));
+}
+
+bool RenderingContext::canZoomOut() const
+{
+    return m_zoomFactor > Common::zoomOutLimit;
 }
 
 void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
