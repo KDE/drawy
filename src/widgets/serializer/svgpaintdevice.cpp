@@ -218,9 +218,10 @@ void SvgPaintEngine::writeStrokeFill()
         m_writer.writeAttribute("stroke-width", QString::number(state->pen().widthF()));
         m_writer.writeAttribute("stroke-linecap", qtCapStyleToSvg(state->pen().capStyle()));
         m_writer.writeAttribute("stroke-linejoin", qtJoinStyleToSvg(state->pen().joinStyle()));
+        m_writer.writeAttribute("stroke-opacity", QString::number((state->pen().color().alpha() * 100.0) / 255.0) + u'%');
 
         if (state->pen().style() != Qt::SolidLine) {
-            QList<qreal> pattern{state->pen().dashPattern()};
+            const QList<qreal> pattern{state->pen().dashPattern()};
 
             QString dashArray;
             for (int i = 0; i < pattern.size(); i++) {
@@ -239,6 +240,7 @@ void SvgPaintEngine::writeStrokeFill()
         m_writer.writeAttribute("fill", "none");
     } else {
         m_writer.writeAttribute("fill", state->brush().color().name());
+        m_writer.writeAttribute("fill-opacity", QString::number((state->brush().color().alpha() * 100.0) / 255.0) + u'%');
     }
 }
 
