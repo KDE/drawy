@@ -19,7 +19,7 @@
         },
         {
             "type": "BackgroundColor",
-            "value": "#00000000"
+            "value": "#0000ff"
         },
         {
             "type": "StrokeStyle",

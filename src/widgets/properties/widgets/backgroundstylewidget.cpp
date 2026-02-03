@@ -6,6 +6,7 @@
 
 #include "backgroundstylewidget.hpp"
 #include "buttonactionswidget.hpp"
+#include "item/itemutils.hpp"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 
@@ -24,7 +25,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
 
     auto solidButton{new ButtonActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
-    solidButton->setProperty("background-style", u"Solid"_s);
+    solidButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid));
     solidButton->setToolTip(tr("Solid"));
     solidButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
@@ -33,7 +34,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
 
     auto diagonalCrossButton{new ButtonActionsWidget(m_widget)};
     diagonalCrossButton->setObjectName(u"diagonalCrossButton"_s);
-    diagonalCrossButton->setProperty("background-style", u"DiagonalCross"_s);
+    diagonalCrossButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::CrossDiagonal));
     diagonalCrossButton->setToolTip(tr("Diagonal Cross"));
     diagonalCrossButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
@@ -42,7 +43,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
 
     auto diagonalButton{new ButtonActionsWidget(m_widget)};
     diagonalButton->setObjectName(u"diagonalButton"_s);
-    diagonalButton->setProperty("background-style", u"Diagonal"_s);
+    diagonalButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Diagonal));
     diagonalButton->setToolTip(tr("Diagonal"));
     diagonalButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
@@ -53,6 +54,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     layout->addWidget(diagonalCrossButton);
     layout->addWidget(diagonalButton);
 
+    m_group->button(m_group->id(solidButton))->setChecked(true);
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
         Q_EMIT changed(value());
     });

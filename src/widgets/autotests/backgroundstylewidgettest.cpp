@@ -36,7 +36,7 @@ void BackgroundStyleWidgetTest::shouldHaveDefaultValues()
 
     auto diagonalCrossButton = m_widget->findChild<ButtonActionsWidget *>(u"diagonalCrossButton"_s);
     QVERIFY(diagonalCrossButton);
-    QCOMPARE(diagonalCrossButton->property("background-style"), u"DiagonalCross"_s);
+    QCOMPARE(diagonalCrossButton->property("background-style"), u"CrossDiagonal"_s);
     QVERIFY(!diagonalCrossButton->toolTip().isEmpty());
     QVERIFY(diagonalCrossButton->isCheckable());
 

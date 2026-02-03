@@ -29,8 +29,8 @@ public:
     [[nodiscard]] bool operator==(const PolygonItem &other) const;
 
 private:
-    QPointF m_start{};
-    QPointF m_end{};
+    QPointF m_start;
+    QPointF m_end;
 
     void updateBoundingBox();
 };
