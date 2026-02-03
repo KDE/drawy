@@ -124,6 +124,14 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "მართკუთხედი"
 
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Diamond Tool"
+msgctxt "UIContext|"
+msgid "Diamond"
+msgstr "ბრილიანტის ხელსაწყო"
+
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
@@ -160,34 +168,31 @@ msgid "Save to File"
 msgstr "ფაილში შენახვა"
 
 #: widgets/context/uicontext.cpp:79
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "ფაილში გატანა"
-
-#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/context/uicontext.cpp:91
+#: widgets/context/uicontext.cpp:87
+msgctxt "UIContext|"
+msgid "Export to Svg"
+msgstr "SVG ფაილად გატანა"
+
+#: widgets/context/uicontext.cpp:95
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "დაპატარავება"
 
-#: widgets/context/uicontext.cpp:96
+#: widgets/context/uicontext.cpp:100
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "გადიდება"
 
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:106
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "გაუქმება"
 
-#: widgets/context/uicontext.cpp:113
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "გამეორება"
@@ -195,12 +200,12 @@ msgstr "გამეორება"
 #: widgets/dialog/configuregeneralwidget.cpp:22
 msgctxt "ConfigureGeneralWidget|"
 msgid "minute"
-msgstr ""
+msgstr "წუთი"
 
 #: widgets/dialog/configuregeneralwidget.cpp:23
 msgctxt "ConfigureGeneralWidget|"
 msgid "Auto-save"
-msgstr ""
+msgstr "ავტომატური შენახვა"
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -227,46 +232,43 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
-#: widgets/keybindings/actionmanager.cpp:167
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/keybindings/actionmanager.cpp:201
+#: widgets/keybindings/actionmanager.cpp:202
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:203
+#: widgets/keybindings/actionmanager.cpp:204
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:205
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
+#: widgets/keybindings/actionmanager.cpp:206
 msgctxt "QObject|"
 msgid "Export to Svg"
-msgstr "ფაილში გატანა"
+msgstr "SVG ფაილად გატანა"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -383,6 +385,14 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "ფონის ფერი"
 
+#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Change Background Style"
+msgctxt "BackgroundStyleWidget|"
+msgid "Background Style"
+msgstr "ფონის სტილის შეცვლა"
+
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
@@ -453,7 +463,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "ბოლოში ჩამოტანა"
 
-#: widgets/properties/widgets/zorderwidget.cpp:56
+#: widgets/properties/widgets/zorderwidget.cpp:57
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Z-მიმდევრობა"
@@ -529,69 +539,66 @@ msgid "Ignore"
 msgstr "იგნორი"
 
 #: widgets/window/window.cpp:206
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
 msgctxt "MainWindow|"
 msgid "Export to Svg"
-msgstr "ფაილში გატანა"
+msgstr "SVG ფაილად გატანა"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:222
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "თავისუფალი ფორმის დახატვა"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "ხაზის ხელსაწყო"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
-#: widgets/window/window.cpp:232
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "გადატანის ხელსაწყო"
 
-#: widgets/window/window.cpp:236
+#: widgets/window/window.cpp:237
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "ელემენტების დაჯგუფება"
 
-#: widgets/window/window.cpp:240
+#: widgets/window/window.cpp:241
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "ელემენტების განჯგუფება"
 
-#: widgets/window/window.cpp:244
+#: widgets/window/window.cpp:245
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "წაშლა"

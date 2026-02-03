@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-02-01 11:55+0100\n"
+"PO-Revision-Date: 2026-02-02 10:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -129,6 +129,14 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rectangle"
 
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Diamond Tool"
+msgctxt "UIContext|"
+msgid "Diamond"
+msgstr "Eina de diamant"
+
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
@@ -165,34 +173,31 @@ msgid "Save to File"
 msgstr "Guarda a un fitxer"
 
 #: widgets/context/uicontext.cpp:79
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "Exporta cap a un fitxer"
-
-#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: widgets/context/uicontext.cpp:91
+#: widgets/context/uicontext.cpp:87
+msgctxt "UIContext|"
+msgid "Export to Svg"
+msgstr "Exporta cap a SVG"
+
+#: widgets/context/uicontext.cpp:95
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Allunya"
 
-#: widgets/context/uicontext.cpp:96
+#: widgets/context/uicontext.cpp:100
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Acosta"
 
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:106
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfés"
 
-#: widgets/context/uicontext.cpp:113
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refés"
@@ -200,12 +205,12 @@ msgstr "Refés"
 #: widgets/dialog/configuregeneralwidget.cpp:22
 msgctxt "ConfigureGeneralWidget|"
 msgid "minute"
-msgstr ""
+msgstr "minuts"
 
 #: widgets/dialog/configuregeneralwidget.cpp:23
 msgctxt "ConfigureGeneralWidget|"
 msgid "Auto-save"
-msgstr ""
+msgstr "Guardada automàtica"
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -232,46 +237,43 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sense_títol .%1"
 
-#: widgets/keybindings/actionmanager.cpp:167
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Guarda el fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:201
+#: widgets/keybindings/actionmanager.cpp:202
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Sense_títol .svg"
 
-#: widgets/keybindings/actionmanager.cpp:203
+#: widgets/keybindings/actionmanager.cpp:204
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:205
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
+#: widgets/keybindings/actionmanager.cpp:206
 msgctxt "QObject|"
 msgid "Export to Svg"
-msgstr "Exporta cap a un fitxer"
+msgstr "Exporta cap a SVG"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -388,6 +390,14 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
 
+#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Change Background Style"
+msgctxt "BackgroundStyleWidget|"
+msgid "Background Style"
+msgstr "Canvia l'estil del fons"
+
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
@@ -459,7 +469,7 @@ msgid "Move on Bottom"
 msgstr "Mou cap a baix de tot"
 
 # NdT: Ordre d'elements segons l'eix Z
-#: widgets/properties/widgets/zorderwidget.cpp:56
+#: widgets/properties/widgets/zorderwidget.cpp:57
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Ordre de Z"
@@ -535,69 +545,66 @@ msgid "Ignore"
 msgstr "Ignora"
 
 #: widgets/window/window.cpp:206
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
 msgctxt "MainWindow|"
 msgid "Export to Svg"
-msgstr "Exporta cap a un fitxer"
+msgstr "Exporta cap a SVG"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:222
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Eina de forma lliure"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Eina esborrador"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Eina de línies"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
-#: widgets/window/window.cpp:232
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Eina de moure"
 
-#: widgets/window/window.cpp:236
+#: widgets/window/window.cpp:237
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Agrupa elements"
 
-#: widgets/window/window.cpp:240
+#: widgets/window/window.cpp:241
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Desagrupa elements"
 
-#: widgets/window/window.cpp:244
+#: widgets/window/window.cpp:245
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Suprimix"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-28 03:44+0200\n"
+"PO-Revision-Date: 2026-02-02 17:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -81,12 +81,9 @@ msgid "Insert Object"
 msgstr "Вставити об’єкт"
 
 #: widgets/command/lockcommand.cpp:33
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Lock"
-msgstr "Непрозорість"
+msgstr "Змінити блокування"
 
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
@@ -128,6 +125,14 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Прямокутник"
 
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Diamond Tool"
+msgctxt "UIContext|"
+msgid "Diamond"
+msgstr "Інструмент «Ромб»"
+
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
@@ -164,34 +169,31 @@ msgid "Save to File"
 msgstr "Зберегти до файла"
 
 #: widgets/context/uicontext.cpp:79
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "Зберегти до файла"
-
-#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/context/uicontext.cpp:91
+#: widgets/context/uicontext.cpp:87
+msgctxt "UIContext|"
+msgid "Export to Svg"
+msgstr "Експортування до SVG"
+
+#: widgets/context/uicontext.cpp:95
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: widgets/context/uicontext.cpp:96
+#: widgets/context/uicontext.cpp:100
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:106
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: widgets/context/uicontext.cpp:113
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Повторити"
@@ -199,12 +201,12 @@ msgstr "Повторити"
 #: widgets/dialog/configuregeneralwidget.cpp:22
 msgctxt "ConfigureGeneralWidget|"
 msgid "minute"
-msgstr ""
+msgstr "хвилина"
 
 #: widgets/dialog/configuregeneralwidget.cpp:23
 msgctxt "ConfigureGeneralWidget|"
 msgid "Auto-save"
-msgstr ""
+msgstr "Автозбереження"
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -231,123 +233,93 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:167
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Зберегти файл"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Відкрити файл"
 
-#: widgets/keybindings/actionmanager.cpp:201
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
+#: widgets/keybindings/actionmanager.cpp:202
 msgctxt "QObject|"
 msgid "Untitled.svg"
-msgstr "Без назви.%1"
+msgstr "Без назви.svg"
 
-#: widgets/keybindings/actionmanager.cpp:203
+#: widgets/keybindings/actionmanager.cpp:204
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
-msgstr ""
+msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:205
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
+#: widgets/keybindings/actionmanager.cpp:206
 msgctxt "QObject|"
 msgid "Export to Svg"
-msgstr "Зберегти до файла"
+msgstr "Експортування до SVG"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Змінити товщину штриха"
 
 #: widgets/properties/property.cpp:93
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
 msgctxt "QObject|"
 msgid "Change Stroke Color"
-msgstr "Колір штриха"
+msgstr "Змінити колір штриха"
 
 #: widgets/properties/property.cpp:95
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Opacity"
-msgstr "Непрозорість"
+msgstr "Змінити непрозорість"
 
 #: widgets/properties/property.cpp:97
-#, fuzzy
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
 msgctxt "QObject|"
 msgid "Change Font Size"
-msgstr "Розмір шрифту"
+msgstr "Змінити розмір шрифту"
 
 #: widgets/properties/property.cpp:99
-#, fuzzy
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
 msgctxt "QObject|"
 msgid "Change Eraser Size"
-msgstr "Розмір гумки"
+msgstr "Змінити розмір гумки"
 
 #: widgets/properties/property.cpp:101
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
 msgctxt "QObject|"
 msgid "Actions"
 msgstr "Дії"
 
 #: widgets/properties/property.cpp:103
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
 msgctxt "QObject|"
 msgid "Change Stroke Style"
-msgstr "Стиль штриха"
+msgstr "Змінити стиль штриха"
 
 #: widgets/properties/property.cpp:105
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Color"
-msgstr "Колір тла"
+msgstr "Змінити колір тла"
 
 #: widgets/properties/property.cpp:107
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Style"
-msgstr "Колір тла"
+msgstr "Змінити стиль тла"
 
 #: widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Змінити просторовий порядок"
 
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
@@ -375,12 +347,9 @@ msgid "Align to Left"
 msgstr "Вирівняти ліворуч"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
 msgid "Align to Center"
-msgstr "Вирівняти ліворуч"
+msgstr "Вирівняти за центром"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
@@ -393,12 +362,9 @@ msgid "Align to Top"
 msgstr "Вирівняти вгору"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
 msgctxt "AlignmentWidget|"
 msgid "Align to Middle"
-msgstr "Вирівняти ліворуч"
+msgstr "Вирівняти посередині"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 msgctxt "AlignmentWidget|"
@@ -419,6 +385,14 @@ msgstr "Стрілка"
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Колір тла"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Change Background Style"
+msgctxt "BackgroundStyleWidget|"
+msgid "Background Style"
+msgstr "Змінити стиль тла"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
@@ -446,17 +420,14 @@ msgid "Solid"
 msgstr "Суцільна"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dashed"
-msgstr "Штрихова лінія"
+msgstr "Штрихова"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
 msgid "Dotted"
-msgstr ""
+msgstr "Пунктирна"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
@@ -493,7 +464,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Пересунути униз"
 
-#: widgets/properties/widgets/zorderwidget.cpp:56
+#: widgets/properties/widgets/zorderwidget.cpp:57
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Порядок за віссю Z"
@@ -569,69 +540,66 @@ msgid "Ignore"
 msgstr "Ігнорувати"
 
 #: widgets/window/window.cpp:206
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "MainWindow|"
 msgid "Export to Svg"
-msgstr "Зберегти до файла"
+msgstr "Експортування до SVG"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:222
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Інструмент «Довільний контур»"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Інструмент вибору"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Інструмент «Пряма»"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
 
-#: widgets/window/window.cpp:232
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Інструмент «Пересування»"
 
-#: widgets/window/window.cpp:236
+#: widgets/window/window.cpp:237
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Групувати елементи"
 
-#: widgets/window/window.cpp:240
+#: widgets/window/window.cpp:241
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Скасувати групування елементів"
 
-#: widgets/window/window.cpp:244
+#: widgets/window/window.cpp:245
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Вилучити"

@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-01 05:01-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-02-01 23:11-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -126,6 +126,14 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Retângulo"
 
+#: widgets/context/uicontext.cpp:65
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Diamond Tool"
+msgctxt "UIContext|"
+msgid "Diamond"
+msgstr "Ferramenta de diamante"
+
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Ellipse"
@@ -162,34 +170,31 @@ msgid "Save to File"
 msgstr "Salvar para arquivo"
 
 #: widgets/context/uicontext.cpp:79
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "Exportar para arquivo"
-
-#: widgets/context/uicontext.cpp:85
 msgctxt "UIContext|"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/context/uicontext.cpp:91
+#: widgets/context/uicontext.cpp:87
+msgctxt "UIContext|"
+msgid "Export to Svg"
+msgstr "Exportar para Svg"
+
+#: widgets/context/uicontext.cpp:95
 msgctxt "UIContext|"
 msgid "Zoom Out"
 msgstr "Reduzir"
 
-#: widgets/context/uicontext.cpp:96
+#: widgets/context/uicontext.cpp:100
 msgctxt "UIContext|"
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: widgets/context/uicontext.cpp:101
+#: widgets/context/uicontext.cpp:106
 msgctxt "UIContext|"
 msgid "Undo"
 msgstr "Desfazer"
 
-#: widgets/context/uicontext.cpp:113
+#: widgets/context/uicontext.cpp:118
 msgctxt "UIContext|"
 msgid "Redo"
 msgstr "Refazer"
@@ -197,12 +202,12 @@ msgstr "Refazer"
 #: widgets/dialog/configuregeneralwidget.cpp:22
 msgctxt "ConfigureGeneralWidget|"
 msgid "minute"
-msgstr ""
+msgstr "minuto"
 
 #: widgets/dialog/configuregeneralwidget.cpp:23
 msgctxt "ConfigureGeneralWidget|"
 msgid "Auto-save"
-msgstr ""
+msgstr "Salvar automaticamente"
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -229,46 +234,43 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: widgets/keybindings/actionmanager.cpp:165 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:167
-#: widgets/keybindings/actionmanager.cpp:188 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:168
+#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:168 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:192
+#: widgets/keybindings/actionmanager.cpp:193
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:201
+#: widgets/keybindings/actionmanager.cpp:202
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Sem título.svg"
 
-#: widgets/keybindings/actionmanager.cpp:203
+#: widgets/keybindings/actionmanager.cpp:204
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:205
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
+#: widgets/keybindings/actionmanager.cpp:206
 msgctxt "QObject|"
 msgid "Export to Svg"
-msgstr "Exportar para arquivo"
+msgstr "Exportar para Svg"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -385,6 +387,14 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Cor de fundo"
 
+#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Change Background Style"
+msgctxt "BackgroundStyleWidget|"
+msgid "Background Style"
+msgstr "Alterar estilo do fundo"
+
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
 msgid "Color"
@@ -455,7 +465,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Mover para a base"
 
-#: widgets/properties/widgets/zorderwidget.cpp:56
+#: widgets/properties/widgets/zorderwidget.cpp:57
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Ordem-Z"
@@ -531,69 +541,66 @@ msgid "Ignore"
 msgstr "Ignorar"
 
 #: widgets/window/window.cpp:206
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to File"
 msgctxt "MainWindow|"
 msgid "Export to Svg"
-msgstr "Exportar para arquivo"
+msgstr "Exportar para Svg"
 
-#: widgets/window/window.cpp:221
+#: widgets/window/window.cpp:222
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Ferramenta de forma livre"
 
-#: widgets/window/window.cpp:224
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Ferramenta de borracha"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:226
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Ferramenta de seleção"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:227
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Ferramenta de retângulo"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Ferramenta de elipse"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Ferramenta de linha"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Ferramenta de texto"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Ferramenta de seta"
 
-#: widgets/window/window.cpp:232
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Ferramenta de movimento"
 
-#: widgets/window/window.cpp:236
+#: widgets/window/window.cpp:237
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Agrupar elementos"
 
-#: widgets/window/window.cpp:240
+#: widgets/window/window.cpp:241
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Desagrupar elementos"
 
-#: widgets/window/window.cpp:244
+#: widgets/window/window.cpp:245
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Excluir"
