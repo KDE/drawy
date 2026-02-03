@@ -68,6 +68,7 @@ public:
     void loadFile(const QString &fileName);
     void exportToSvg();
     void configureSettings();
+    void showHamburgerMenu();
 
     void switchToTool(Tool::Type type);
     void alignItems(ItemUtils::AlignType alignType);

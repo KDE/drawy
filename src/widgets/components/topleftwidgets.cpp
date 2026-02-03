@@ -8,6 +8,7 @@
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
 #include <QHBoxLayout>
+#include <QMenu>
 #include <QStyle>
 #include <QToolButton>
 
@@ -32,7 +33,22 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     menuButton->setIcon(QIcon::fromTheme(u"application-menu"_s));
     menuButton->setAutoRaise(true);
     menuButton->setIconSize(iconSize);
-    menuButton->setToolTip(tr("Menu"));
+    menuButton->setToolTip(tr("Open Menu"));
+    menuButton->setPopupMode(QToolButton::InstantPopup);
+
+    auto menu{new QMenu{this}};
+    menuButton->setMenu(menu);
+
+    // Add more actions as required
+    connect(menu, &QMenu::aboutToShow, this, [menu, actionManager]() -> void {
+        menu->addAction(actionManager->action(KStandardActions::Save));
+        menu->addAction(actionManager->action(KStandardActions::Open));
+        menu->addSeparator();
+        menu->addAction(actionManager->action(ActionManager::Action::ExportAsSVG));
+        menu->addSeparator();
+        menu->addAction(actionManager->action(KStandardActions::Preferences));
+        menu->addAction(actionManager->action(KStandardActions::Quit));
+    });
 
     // separator
     auto vLine{new QFrame{menuFrame}};

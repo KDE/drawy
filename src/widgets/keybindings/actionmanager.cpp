@@ -7,11 +7,13 @@
 #include <KActionCollection>
 #include <QDir>
 #include <QFileDialog>
+#include <QMenu>
 #include <QXmlStreamWriter>
 #include <kstandardaction.h>
 #include <kstandardactions.h>
 #include <memory>
 #include <qassert.h>
+#include <sys/types.h>
 
 #include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
@@ -374,6 +376,10 @@ void ActionManager::configureSettings()
 {
     ConfigureSettingsDialog dlg(m_context->parentWidget());
     dlg.exec();
+}
+
+void ActionManager::showHamburgerMenu()
+{
 }
 
 #include "moc_actionmanager.cpp"

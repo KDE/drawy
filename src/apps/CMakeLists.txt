@@ -3,14 +3,14 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_executable(
-    drawy
+    Drawy
     main.cpp
     drawy.qrc
 )
-ecm_create_qm_loader(drawy drawy_qt)
+ecm_create_qm_loader(Drawy drawy_qt)
 
 target_link_libraries(
-    drawy
+    Drawy
     KF6::Crash
     KF6::CoreAddons
     KF6::IconThemes
@@ -20,6 +20,6 @@ target_link_libraries(
 
 install(
     TARGETS
-        drawy
+        Drawy
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
