@@ -34,7 +34,7 @@ public:
 
     [[nodiscard]] QString currentFileName() const;
     void setCurrentFileName(const QString &newCurrentFileName);
-    bool fileNeedsName() const;
+    [[nodiscard]] bool fileNeedsName() const;
 
     [[nodiscard]] bool currentFileModified() const;
     void setCurrentFileModified(bool value);

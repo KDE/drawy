@@ -52,8 +52,8 @@ ActionManager::ActionManager(ApplicationContext *context)
     KStandardActions::save(this, &ActionManager::saveCurrentFile, actionCollection);
     KStandardActions::saveAs(this, &ActionManager::saveAsNewFile, actionCollection);
     KStandardActions::open(this, &ActionManager::openFile, actionCollection);
-    KStandardActions::undo(this, &ActionManager::undo, actionCollection);
-    KStandardActions::redo(this, &ActionManager::redo, actionCollection);
+    KStandardActions::undo(this, &ActionManager::undo, actionCollection)->setEnabled(false); // disabled initially
+    KStandardActions::redo(this, &ActionManager::redo, actionCollection)->setEnabled(false); // disabled initially
     KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection)->setIcon(QIcon::fromTheme(u"value-increase"_s));
     KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection)->setIcon(QIcon::fromTheme(u"value-decrease"_s));
     KStandardActions::selectAll(this, &ActionManager::selectAll, actionCollection);

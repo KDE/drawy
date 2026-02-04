@@ -45,7 +45,7 @@ void RestoreAutoSaveJob::setParentWidget(QWidget *newParentWidget)
 
 void RestoreAutoSaveJob::restoreFile()
 {
-    KConfig config{Common::configName};
+    KConfig config{};
     KConfigGroup sessionGroup{&config, Common::configSession};
 
     const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile, u""_s)};
@@ -60,6 +60,9 @@ void RestoreAutoSaveJob::restoreFile()
         if (!lastSavedFile.isEmpty()) {
             m_context->setCurrentFileName(lastSavedFile);
             m_context->setCurrentFileModified(lastSavedFileModified);
+        } else {
+            // the last file was not saved which means we should mark it as modified
+            m_context->setCurrentFileModified(true);
         }
     });
 

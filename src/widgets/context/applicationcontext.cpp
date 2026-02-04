@@ -15,7 +15,6 @@
 
 ApplicationContext *ApplicationContext::m_instance = nullptr;
 
-using namespace Qt::StringLiterals;
 ApplicationContext::ApplicationContext(QWidget *parent)
     : QObject{parent}
     , m_currentFileName{Common::unsavedFileName}
@@ -115,4 +114,5 @@ void ApplicationContext::reset()
     using namespace Qt::StringLiterals;
     m_currentFileName = Common::unsavedFileName;
     m_currentFileModified = false;
+    m_fileHasName = false;
 }
