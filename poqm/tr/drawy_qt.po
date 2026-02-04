@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-02 21:24+0300\n"
+"PO-Revision-Date: 2026-02-03 19:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -125,12 +125,9 @@ msgid "Rectangle"
 msgstr "Dörtgen"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
 msgctxt "UIContext|"
 msgid "Diamond"
-msgstr "Elmas Aracı"
+msgstr "Elmas"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
@@ -386,13 +383,28 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Arka Plan Rengi"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Background Style"
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "Katı"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
-msgstr "Arka Plan Biçemini Değiştir"
+msgstr "Arka Plan Biçemi"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
@@ -474,12 +486,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Elmas Aracı"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
@@ -504,7 +516,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"

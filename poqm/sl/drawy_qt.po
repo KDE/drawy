@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-02-02 06:35+0100\n"
+"PO-Revision-Date: 2026-02-03 07:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -127,12 +127,9 @@ msgid "Rectangle"
 msgstr "Pravokotnik"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
 msgctxt "UIContext|"
 msgid "Diamond"
-msgstr "Orodje za diamant"
+msgstr "Diamant"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
@@ -387,13 +384,28 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Barva ozadja"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Background Style"
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "Nepretrgana"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
-msgstr "Spremeni barvo ozadja"
+msgstr "Slog ozadja"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
@@ -475,12 +487,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Orodje za puščice"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Orodje za diamant"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Orodje za elipso"
@@ -505,7 +517,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Orodje za premikanje"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Orodje za pravokotnik"

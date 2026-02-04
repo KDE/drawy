@@ -395,7 +395,25 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "لون الخلفيّة"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "خالص"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Change Background Style"
@@ -483,12 +501,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "أداة السهم"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "أداة المعين"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "أداة الشكل البيضاوي"
@@ -513,7 +531,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "أداة التّحريك"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"

@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
-"PO-Revision-Date: 2026-01-26 12:25+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2026-02-01 20:28+0100\n"
+"Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,12 +61,9 @@ msgid "Your handy, infinite brainstorming tool!"
 msgstr "Votre outil de brainstorming pratique et sans limites !"
 
 #: widgets/command/alignitemcommand.cpp:108
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "QObject|"
 msgid "Align Items"
-msgstr "Alignement"
+msgstr "Aligner les objets"
 
 #: widgets/command/deselectcommand.cpp:45
 msgctxt "QObject|"
@@ -97,33 +94,27 @@ msgstr "Opacité"
 #: widgets/command/moveitemcommand.cpp:48
 msgctxt "QObject|"
 msgid "Move Object"
-msgstr ""
+msgstr "Déplacer l'objet"
 
 #: widgets/command/removeitemcommand.cpp:57
 msgctxt "QObject|"
 msgid "Remove Object"
-msgstr ""
+msgstr "Supprimer l'objet"
 
 #: widgets/command/selectcommand.cpp:46
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
 msgctxt "QObject|"
 msgid "Select Object"
-msgstr "Tout sélectionner"
+msgstr "Sélectionner l'objet"
 
 #: widgets/command/ungroupcommand.cpp:73
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
 msgctxt "QObject|"
 msgid "Ungroup Objects"
-msgstr "Dégrouper les objets"
+msgstr "Dissocier les objets"
 
 #: widgets/command/updatepropertycommand.cpp:63
 msgctxt "QObject|"
 msgid "Update Property"
-msgstr ""
+msgstr "Mettre à jour la propriété"
 
 #: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
@@ -298,76 +289,52 @@ msgstr "Enregistrer dans un fichier"
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Changer la largeur du trait"
 
 #: widgets/properties/property.cpp:93
-#, fuzzy
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
 msgctxt "QObject|"
 msgid "Change Stroke Color"
-msgstr "Couleur du trait"
+msgstr "Changer la couleur du trait"
 
 #: widgets/properties/property.cpp:95
-#, fuzzy
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
 msgctxt "QObject|"
 msgid "Change Opacity"
-msgstr "Opacité"
+msgstr "Changer l'opacité"
 
 #: widgets/properties/property.cpp:97
-#, fuzzy
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
 msgctxt "QObject|"
 msgid "Change Font Size"
-msgstr "Taille de police"
+msgstr "Changer la taille de police"
 
 #: widgets/properties/property.cpp:99
-#, fuzzy
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
 msgctxt "QObject|"
 msgid "Change Eraser Size"
-msgstr "Taille de gomme"
+msgstr "Changer la taille de gomme"
 
 #: widgets/properties/property.cpp:101
-#, fuzzy
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
 msgctxt "QObject|"
 msgid "Actions"
 msgstr "Actions"
 
 #: widgets/properties/property.cpp:103
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
 msgctxt "QObject|"
 msgid "Change Stroke Style"
-msgstr "Style du trait"
+msgstr "Changer le style du trait"
 
 #: widgets/properties/property.cpp:105
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Color"
-msgstr "Couleur d'arrière-plan"
+msgstr "Changer la couleur d'arrière-plan"
 
 #: widgets/properties/property.cpp:107
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "QObject|"
 msgid "Change Background Style"
-msgstr "Couleur d'arrière-plan"
+msgstr "Changer le style d'arrière-plan"
 
 #: widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Changer l'ordre d'empilement"
 
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
@@ -390,46 +357,34 @@ msgid "Actions"
 msgstr "Actions"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
-msgstr "Alignement"
+msgstr "Aligner à gauche"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Center"
-msgstr "Alignement"
+msgstr "Aligner au centre"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
-msgstr ""
+msgstr "Aligner à droite"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
-msgstr ""
+msgstr "Aligner en haut"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
-#, fuzzy
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
 msgctxt "AlignmentWidget|"
 msgid "Align to Middle"
-msgstr "Alignement"
+msgstr "Aligner au milieu"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move on Bottom"
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
-msgstr "Mettre à l'arrière-plan"
+msgstr "Aligner en bas"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:88
 msgctxt "AlignmentWidget|"
@@ -446,7 +401,25 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Couleur d'arrière-plan"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
+#, fuzzy
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "Solide"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 #, fuzzy
 #| msgctxt "BackgroundColorWidget|"
 #| msgid "Background Color"
@@ -480,17 +453,14 @@ msgid "Solid"
 msgstr "Solide"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Dash Line"
 msgctxt "StokeStyleWidget|"
 msgid "Dashed"
-msgstr "Ligne en tirets"
+msgstr "Tirets"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:46
 msgctxt "StokeStyleWidget|"
 msgid "Dotted"
-msgstr ""
+msgstr "Pointillé"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:69
 msgctxt "StokeStyleWidget|"
@@ -537,12 +507,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Outil de flèche"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Outil de losange"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
@@ -567,7 +537,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Outil de déplacement"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
@@ -611,97 +581,61 @@ msgid "Export to Svg"
 msgstr "Enregistrer dans un fichier"
 
 #: widgets/window/window.cpp:222
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Outil de forme libre"
 
 #: widgets/window/window.cpp:225
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Outil de gomme"
 
 #: widgets/window/window.cpp:226
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Outil de sélection"
 
 #: widgets/window/window.cpp:227
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
 #: widgets/window/window.cpp:228
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
 
 #: widgets/window/window.cpp:229
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Outil de ligne"
 
 #: widgets/window/window.cpp:230
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Outil de texte"
 
 #: widgets/window/window.cpp:231
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Outil de flèche"
 
 #: widgets/window/window.cpp:233
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Outil de déplacement"
 
 #: widgets/window/window.cpp:237
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Group Elements"
 msgctxt "MainWindow|"
 msgid "Group Elements"
-msgstr "Regrouper les objets"
+msgstr "Grouper les objets"
 
 #: widgets/window/window.cpp:241
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
-msgstr "Dégrouper les objets"
+msgstr "Dissocier les objets"
 
 #: widgets/window/window.cpp:245
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Supprimer"

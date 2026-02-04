@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-02-02 10:49+0100\n"
+"PO-Revision-Date: 2026-02-03 10:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -130,12 +130,9 @@ msgid "Rectangle"
 msgstr "Rectangle"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
 msgctxt "UIContext|"
 msgid "Diamond"
-msgstr "Eina de diamant"
+msgstr "Diamant"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
@@ -390,13 +387,28 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Background Style"
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "Sòlid"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
-msgstr "Canvia l'estil del fons"
+msgstr "Estil del fons"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
@@ -479,12 +491,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Eina de diamant"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
@@ -509,7 +521,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Eina de moure"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"

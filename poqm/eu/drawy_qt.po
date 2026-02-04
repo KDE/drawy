@@ -461,7 +461,22 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr ""
@@ -564,7 +579,7 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Gezi-tresna"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -572,7 +587,7 @@ msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Lerro tresna"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elipse tresna"
@@ -597,7 +612,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Mugitzeko tresna"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"

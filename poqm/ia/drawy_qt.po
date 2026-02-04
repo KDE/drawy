@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-02 12:11+0100\n"
+"PO-Revision-Date: 2026-02-03 16:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -126,12 +126,9 @@ msgid "Rectangle"
 msgstr "Rectangulo"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
 msgctxt "UIContext|"
 msgid "Diamond"
-msgstr "Instrumento de Diamante (Quadro)"
+msgstr "Diamante (Quadro)"
 
 #: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
@@ -386,13 +383,28 @@ msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fundo"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:22
+#: widgets/properties/widgets/backgroundstylewidget.cpp:29
 #, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Change Background Style"
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Solid"
+msgctxt "BackgroundStyleWidget|"
+msgid "Solid"
+msgstr "Solido"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:38
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:47
+msgctxt "BackgroundStyleWidget|"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
-msgstr "Cambia Color de fundo"
+msgstr "Stilo de fundo"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:50
 msgctxt "ColorWidgetBase|"
@@ -474,12 +486,12 @@ msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Instrumento de flecha"
 
-#: widgets/tools/diamondtool.cpp:18
+#: widgets/tools/diamondtool.cpp:19
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "Instrumento de Diamante (Quadro)"
 
-#: widgets/tools/ellipsetool.cpp:18
+#: widgets/tools/ellipsetool.cpp:19
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Instrumento de ellipse"
@@ -504,7 +516,7 @@ msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "Instrumento de Mover"
 
-#: widgets/tools/rectangletool.cpp:18
+#: widgets/tools/rectangletool.cpp:19
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Instrumento de Rectangulo"
