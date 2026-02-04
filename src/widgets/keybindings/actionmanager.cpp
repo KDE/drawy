@@ -4,6 +4,7 @@
 
 #include "actionmanager.hpp"
 
+#include <KMessageBox>
 #include <QDir>
 #include <QFileDialog>
 #include <QXmlStreamWriter>
@@ -26,6 +27,7 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
+#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "jobs/loadjobutil.hpp"
@@ -183,6 +185,18 @@ void ActionManager::saveToFile()
         SerializerUtils::saveInFile(obj, fileName);
     });
     job->start();
+}
+
+void ActionManager::clear()
+{
+    if (KMessageBox::ButtonCode::PrimaryAction
+        == KMessageBox::questionTwoActions(nullptr, tr("Do you want to clear canvas?"), tr("Clear"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())) {
+        ApplicationContext *context{ApplicationContext::instance()};
+        context->reset();
+        context->renderingContext()->cacheGrid().markAllDirty();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
+    }
 }
 
 void ActionManager::loadFromFile()

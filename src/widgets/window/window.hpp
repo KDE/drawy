@@ -42,4 +42,5 @@ private:
     QAction *mLoadAction = nullptr;
     QAction *mSelectAllAction = nullptr;
     QAction *mExportAsSvgAction = nullptr;
+    QAction *mClearAction = nullptr;
 };

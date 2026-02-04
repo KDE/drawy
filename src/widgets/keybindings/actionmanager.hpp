@@ -43,6 +43,8 @@ public:
     void switchToTool(Tool::Type type);
     void alignItems(ActionManager::AlignType type);
 
+    void clear();
+
 private:
     void slotLoadDone(const LoadJob::LoadInfo &info);
     ApplicationContext *const m_context;

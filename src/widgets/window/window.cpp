@@ -174,6 +174,8 @@ void MainWindow::contextMenuRequested([[maybe_unused]] const QPoint &pos)
     if (!allItems.empty()) {
         menu->addAction(mSelectAllAction);
         menu->addSeparator();
+        menu->addAction(mClearAction);
+        menu->addSeparator();
     }
     menu->addAction(mExportAsSvgAction);
     menu->addSeparator();
@@ -217,6 +219,7 @@ void MainWindow::setupAction()
 
     mLoadAction = KStandardAction::open(actionManager, &ActionManager::loadFromFile, actionCollection);
     mSelectAllAction = KStandardAction::selectAll(actionManager, &ActionManager::selectAll, actionCollection);
+    mClearAction = KStandardAction::clear(actionManager, &ActionManager::clear, actionCollection);
 
     createToolAction(u"freeform_tool"_s,
                      tr("Freeform Tool"),
