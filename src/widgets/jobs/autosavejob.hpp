@@ -12,12 +12,9 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT AutoSaveJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit AutoSaveJob(ApplicationContext *context, QObject *parent = nullptr);
+    explicit AutoSaveJob(QObject *parent = nullptr);
     ~AutoSaveJob() override;
 
     void start();
-
-private:
-    LIBDRAWYWIDGETS_NO_EXPORT void saveFile();
-    ApplicationContext *const m_context;
+    void saveFile();
 };

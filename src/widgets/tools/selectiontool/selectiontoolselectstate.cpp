@@ -43,7 +43,9 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 
         if (!(event->modifiers() & Qt::ShiftModifier)) {
             const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory->insert(std::make_shared<DeselectCommand>(items));
+            if (!items.empty()) {
+                commandHistory->insert(std::make_shared<DeselectCommand>(items));
+            }
         }
 
         if (intersectingItems.empty()) {

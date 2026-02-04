@@ -27,15 +27,14 @@
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "controller/controller.hpp"
-#include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
+#include "drawyglobalconfig.h"
 #include "jobs/autosavejob.hpp"
 #include "jobs/autosavejobutil.hpp"
 #include "jobs/restoreautosavejob.hpp"
 #include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
-#include "serializer/serializerutils.hpp"
 #include <KMessageBox>
 #include <QDir>
 #include <QMenu>
@@ -43,6 +42,7 @@
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
+    , m_autoSaveJob{new AutoSaveJob{this}}
 {
     loadCustomFonts();
     auto layout{new BoardLayout(this)};
@@ -72,13 +72,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
     restoreAutoSaveJob->setParentWidget(this);
-    connect(restoreAutoSaveJob, &RestoreAutoSaveJob::restoreDone, this, [this, context]() {
-        AutoSaveJobUtil::createAutoSaveStandardPath();
-        // Autosave
-        auto autoSaveJob = new AutoSaveJob(context, this);
-        autoSaveJob->start();
-    });
     restoreAutoSaveJob->start();
+
+    AutoSaveJobUtil::createAutoSaveStandardPath();
+    m_autoSaveJob->start();
 
     auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
     QAction *fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection);
@@ -105,53 +102,20 @@ void MainWindow::loadCustomFonts()
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    if (!m_forceClose) {
-        if (!ApplicationContext::instance()->spatialContext()->quadtree().getAllItems().isEmpty()) {
-            const int choice = KMessageBox::questionTwoActionsCancel(this,
-                                                                     tr("Do you want to save file?"),
-                                                                     tr("Close"),
-                                                                     KGuiItem(tr("Save And Close")),
-                                                                     KGuiItem(tr("Ignore")),
-                                                                     KStandardGuiItem::cancel());
-            if (choice == KMessageBox::Cancel) {
-                e->ignore();
-            } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
-                ApplicationContext *context{ApplicationContext::instance()};
-                QString fileName = context->currentFileName();
-                if (fileName.isEmpty()) {
-                    const QDir homeDir{QDir::home()};
-                    QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
-                    const QString defaultFilePath = homeDir.filePath(text);
-                    text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
-                    fileName = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text);
-                    if (fileName.isEmpty()) {
-                        e->ignore();
-                        return;
-                    }
-                }
-                m_forceClose = true;
-                auto job = new SaveAsJob(this);
-                const SaveAsJob::SaveAsInfo info{
-                    .filePath = fileName,
-                    .offsetPos = context->spatialContext()->offsetPos(),
-                    .zoomFactor = context->renderingContext()->zoomFactor(),
-                    .items = context->spatialContext()->quadtree().getAllItems(),
-                };
-                job->setSaveAsInfo(info);
-                connect(job, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
-                    SerializerUtils::saveInFile(obj, fileName);
-                    // qDebug() << " save done ";
-                    AutoSaveJobUtil::removeAutoSaveFile();
-                    close();
-                });
-                job->start();
-            } else {
-                e->accept();
-            }
-            return;
-        } else {
+    auto context{ApplicationContext::instance()};
+    if (context->currentFileModified()) {
+        if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
+            m_autoSaveJob->saveFile();
             e->accept();
+            return;
         }
+
+        if (context->uiContext()->actionManager()->confirmSaveAfterModification()) {
+            e->accept();
+        } else {
+            e->ignore();
+        }
+        return;
     } else {
         e->accept();
     }

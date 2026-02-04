@@ -6,18 +6,20 @@
 
 #include "autosavejobutil.hpp"
 #include "drawy_autosave_debug.h"
+#include "drawyglobalconfig.h"
 #include <QDir>
 #include <QFile>
 #include <QStandardPaths>
+
 using namespace Qt::Literals::StringLiterals;
 void AutoSaveJobUtil::createAutoSaveStandardPath()
 {
-    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
+    QDir().mkpath(QFileInfo(DrawyGlobalConfig::self()->path()).absolutePath());
 }
 
 QString AutoSaveJobUtil::temporaryFileName()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + u"/drawy.autosave"_s;
+    return DrawyGlobalConfig::self()->path();
 }
 
 bool AutoSaveJobUtil::checkExistingAutoSaveFile()

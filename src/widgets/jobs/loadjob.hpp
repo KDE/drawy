@@ -16,6 +16,7 @@ public:
         QPointF offsetPos{0, 0};
         qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
+        bool isAutoSave{false};
     };
 
     explicit LoadJob(QObject *parent = nullptr);
@@ -27,6 +28,7 @@ public:
 
     [[nodiscard]] QString fileName() const;
     void setFileName(const QString &newFileName);
+    void setIsAutoSave(bool value);
 
 Q_SIGNALS:
     void loadDone(const LoadJob::LoadInfo &info);
@@ -34,4 +36,5 @@ Q_SIGNALS:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);
     QString mFileName;
+    bool mIsAutoSave;
 };

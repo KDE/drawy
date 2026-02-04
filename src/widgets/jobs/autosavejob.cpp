@@ -17,9 +17,8 @@
 
 // #define TEST_TIMER
 
-AutoSaveJob::AutoSaveJob(ApplicationContext *context, QObject *parent)
+AutoSaveJob::AutoSaveJob(QObject *parent)
     : QObject{parent}
-    , m_context{context}
 {
 }
 
@@ -27,24 +26,21 @@ AutoSaveJob::~AutoSaveJob() = default;
 
 void AutoSaveJob::start()
 {
-#ifdef TEST_TIMER
-    constexpr int mseconds = 10 * 1000;
-#else
     constexpr int mseconds = 60 * 1000;
-#endif
     QTimer::singleShot(DrawyGlobalConfig::self()->delay() * mseconds, this, &AutoSaveJob::saveFile);
 }
 
 void AutoSaveJob::saveFile()
 {
-    const QString fileName = AutoSaveJobUtil::temporaryFileName();
+    const QString fileName = DrawyGlobalConfig::self()->path();
     auto saveAsJob = new SaveAsJob(this);
-    const SaveAsJob::SaveAsInfo info{
-        .filePath = fileName,
-        .offsetPos = m_context->spatialContext()->offsetPos(),
-        .zoomFactor = m_context->renderingContext()->zoomFactor(),
-        .items = m_context->spatialContext()->quadtree().getAllItems(),
-    };
+    auto context{ApplicationContext::instance()};
+
+    const SaveAsJob::SaveAsInfo info{.filePath = fileName,
+                                     .offsetPos = context->spatialContext()->offsetPos(),
+                                     .zoomFactor = context->renderingContext()->zoomFactor(),
+                                     .items = context->spatialContext()->quadtree().getAllItems(),
+                                     .isAutoSave = true};
 
     saveAsJob->setSaveAsInfo(info);
     connect(saveAsJob, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {
@@ -57,4 +53,5 @@ void AutoSaveJob::saveFile()
 
     saveAsJob->start();
 }
+
 #include "moc_autosavejob.cpp"

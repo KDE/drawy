@@ -5,15 +5,12 @@
 #include "actionmanager.hpp"
 
 #include <KActionCollection>
+#include <KGuiItem>
+#include <KMessageBox>
 #include <QDir>
 #include <QFileDialog>
 #include <QMenu>
 #include <QXmlStreamWriter>
-#include <kstandardaction.h>
-#include <kstandardactions.h>
-#include <memory>
-#include <qassert.h>
-#include <sys/types.h>
 
 #include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
@@ -41,7 +38,6 @@
 #include "jobs/saveasjob.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
-#include "window/window.hpp"
 
 using namespace Qt::StringLiterals;
 ActionManager::ActionManager(ApplicationContext *context)
@@ -52,12 +48,14 @@ ActionManager::ActionManager(ApplicationContext *context)
     auto mainWindow{context->parentWidget()};
 
     KStandardActions::preferences(this, &ActionManager::configureSettings, actionCollection);
-    KStandardActions::save(this, &ActionManager::saveToFile, actionCollection);
+    KStandardActions::openNew(this, &ActionManager::newFile, actionCollection);
+    KStandardActions::save(this, &ActionManager::saveCurrentFile, actionCollection);
+    KStandardActions::saveAs(this, &ActionManager::saveAsNewFile, actionCollection);
     KStandardActions::open(this, &ActionManager::openFile, actionCollection);
     KStandardActions::undo(this, &ActionManager::undo, actionCollection);
     KStandardActions::redo(this, &ActionManager::redo, actionCollection);
-    KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection);
-    KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection);
+    KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection)->setIcon(QIcon::fromTheme(u"value-increase"_s));
+    KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection)->setIcon(QIcon::fromTheme(u"value-decrease"_s));
     KStandardActions::selectAll(this, &ActionManager::selectAll, actionCollection);
 
     createAction(Action::ExportAsSVG, tr("Export as SVG"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))}, this, &ActionManager::exportToSvg)
@@ -264,10 +262,22 @@ void ActionManager::selectAll()
     m_context->renderingContext()->markForUpdate();
 }
 
-void ActionManager::saveToFile()
+void ActionManager::newFile()
+{
+    if (!confirmSaveAfterModification()) {
+        return;
+    }
+
+    m_context->reset();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
+    m_context->setCurrentFileModified(false);
+}
+
+void ActionManager::saveAsNewFile()
 {
     const QDir homeDir{QDir::home()};
-    QString text = QObject::tr("Untitled.%1").arg(Common::drawyFileExt);
+    QString text{tr("Untitled.%1").arg(Common::drawyFileExt)};
     const QString defaultFilePath = homeDir.filePath(text);
     text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
     const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
@@ -300,16 +310,44 @@ void ActionManager::clear()
     }
 }
 
+void ActionManager::saveCurrentFile()
+{
+    auto fileName{m_context->currentFileName()};
+    if (m_context->fileNeedsName()) {
+        saveAsNewFile();
+        return;
+    }
+
+    auto job = new SaveAsJob(this);
+    const SaveAsJob::SaveAsInfo info{
+        .filePath = fileName,
+        .offsetPos = m_context->spatialContext()->offsetPos(),
+        .zoomFactor = m_context->renderingContext()->zoomFactor(),
+        .items = m_context->spatialContext()->quadtree().getAllItems(),
+    };
+
+    job->setSaveAsInfo(info);
+    connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
+        SerializerUtils::saveInFile(obj, fileName);
+    });
+
+    job->start();
+}
+
 void ActionManager::openFile()
 {
+    if (!confirmSaveAfterModification()) {
+        return;
+    }
+
     const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
 
-    // ask for file (handle cancel)
     const QDir homeDir{QDir::home()};
     const QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
     if (fileName.isEmpty()) {
         return;
     }
+
     loadFile(fileName);
 }
 
@@ -342,9 +380,37 @@ void ActionManager::loadFile(const QString &fileName)
 {
     auto job = new LoadJob(this);
     job->setFileName(fileName);
-    m_context->setCurrentFileName(fileName);
     connect(job, &LoadJob::loadDone, this, &ActionManager::slotLoadDone);
     job->start();
+}
+
+// The return value indicates whether you can proceed or not (if cancelled)
+bool ActionManager::confirmSaveAfterModification()
+{
+    if (!m_context->currentFileModified()) {
+        // continue with the action
+        return true;
+    }
+
+    const auto fileName{m_context->currentFileName()};
+    const auto message{tr("The document \"%1\" has been modified. Do you want to save your changes or discard them?").arg(fileName)};
+
+    const int choice = KMessageBox::questionTwoActionsCancel(m_context->parentWidget(),
+                                                             message,
+                                                             tr("Action Required"),
+                                                             KStandardGuiItem::save(),
+                                                             KStandardGuiItem::discard(),
+                                                             KStandardGuiItem::cancel());
+
+    if (choice == KMessageBox::Cancel) {
+        return false;
+    }
+
+    if (choice == KMessageBox::PrimaryAction) {
+        saveCurrentFile();
+    }
+
+    return true;
 }
 
 void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)

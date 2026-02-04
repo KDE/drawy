@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "saveasjob.hpp"
+#include "context/applicationcontext.hpp"
 #include "drawy_debug.h"
 #include "serializejob.hpp"
 #include <QDebug>
@@ -40,6 +41,14 @@ void SaveAsJob::start()
 void SaveAsJob::slotSerializeDone(const QJsonObject &obj)
 {
     Q_EMIT saveFileDone(obj);
+
+    // only update modified status if it's not the autosaved file
+    // the autosave file is just a backup file
+    if (!mSaveAsInfo.isAutoSave) {
+        ApplicationContext::instance()->setCurrentFileModified(false);
+        ApplicationContext::instance()->setCurrentFileName(mSaveAsInfo.filePath);
+    }
+
     deleteLater();
 }
 

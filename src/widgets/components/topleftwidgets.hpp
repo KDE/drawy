@@ -9,9 +9,10 @@
 
 class TopLeftWidgets : public QWidget
 {
+    Q_OBJECT
 public:
     explicit TopLeftWidgets(QWidget *parent = nullptr);
 
 private:
-    QHBoxLayout *m_layout{nullptr};
+    QHBoxLayout *const m_layout{nullptr};
 };

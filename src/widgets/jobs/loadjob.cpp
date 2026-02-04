@@ -5,6 +5,7 @@
  */
 #include "loadjob.hpp"
 #include "common/utils/compression.hpp"
+#include "context/applicationcontext.hpp"
 #include "drawy_debug.h"
 #include <QFile>
 LoadJob::LoadJob(QObject *parent)
@@ -50,6 +51,12 @@ void LoadJob::start()
     auto job = new DeserializeJob(this);
     job->setJsonObject(docObj);
     connect(job, &DeserializeJob::deserializeDone, this, &LoadJob::slotDeserializeDone);
+
+    if (!mIsAutoSave) {
+        ApplicationContext::instance()->setCurrentFileModified(false);
+        ApplicationContext::instance()->setCurrentFileName(mFileName);
+    }
+
     job->start();
 }
 
@@ -60,7 +67,9 @@ void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
         .zoomFactor = info.zoomFactor,
         .items = info.items,
     };
+
     Q_EMIT loadDone(loadInfo);
+
     deleteLater();
 }
 
@@ -72,6 +81,11 @@ QString LoadJob::fileName() const
 void LoadJob::setFileName(const QString &newFileName)
 {
     mFileName = newFileName;
+}
+
+void LoadJob::setIsAutoSave(bool value)
+{
+    mIsAutoSave = value;
 }
 
 #include "moc_loadjob.cpp"

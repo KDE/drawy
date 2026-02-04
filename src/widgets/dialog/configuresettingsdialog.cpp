@@ -5,7 +5,7 @@
  */
 
 #include "configuresettingsdialog.hpp"
-#include "configuregeneralwidget.hpp"
+#include "general/configuregeneralwidget.hpp"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KWindowConfig>
@@ -26,7 +26,7 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
 
     const QString generalPageName = tr("General");
     mConfigureGeneralWidgetPage = new KPageWidgetItem(mConfigureGeneralWidget, generalPageName);
-    mConfigureGeneralWidgetPage->setIcon(QIcon(u":/drawy.svg"_s));
+    mConfigureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     addPage(mConfigureGeneralWidgetPage);
 
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);

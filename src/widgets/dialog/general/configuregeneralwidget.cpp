@@ -5,26 +5,22 @@
  */
 
 #include "configuregeneralwidget.hpp"
+#include "autosavewidget.hpp"
 #include "drawyglobalconfig.h"
 #include <QLabel>
 #include <QSpinBox>
+#include <QToolButton>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
 ConfigureGeneralWidget::ConfigureGeneralWidget(QWidget *parent)
     : QWidget{parent}
-    , mAutoSave(new QSpinBox(this))
+    , m_autoSaveWidget{new AutoSaveWidget{this}}
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
 
-    mAutoSave->setObjectName(u"mAutoSave"_s);
-    mAutoSave->setSuffix(tr("minute")); // TODO add plurial
-    auto label = new QLabel(tr("Auto-save"), this);
-    label->setObjectName(u"label_autosave"_s);
-
-    mainLayout->addWidget(label);
-    mainLayout->addWidget(mAutoSave);
+    mainLayout->addWidget(m_autoSaveWidget);
     mainLayout->addStretch(0);
 }
 
@@ -32,19 +28,19 @@ ConfigureGeneralWidget::~ConfigureGeneralWidget() = default;
 
 void ConfigureGeneralWidget::save()
 {
-    DrawyGlobalConfig::self()->setDelay(mAutoSave->value());
+    m_autoSaveWidget->save();
     DrawyGlobalConfig::self()->save();
 }
 
 void ConfigureGeneralWidget::load()
 {
-    mAutoSave->setValue(DrawyGlobalConfig::self()->delay());
+    m_autoSaveWidget->load();
 }
 
 void ConfigureGeneralWidget::restoreToDefaults()
 {
     const bool bUseDefaults = DrawyGlobalConfig::self()->useDefaults(true);
-    mAutoSave->setValue(DrawyGlobalConfig::self()->delay());
+    m_autoSaveWidget->load();
     DrawyGlobalConfig::self()->useDefaults(bUseDefaults);
 }
 

@@ -84,7 +84,6 @@ void UIContext::initializeUIContext()
     });
 
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
-
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
     m_propertyBar->updateProperties(m_toolBar->curTool());

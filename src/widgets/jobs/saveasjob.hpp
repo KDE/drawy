@@ -18,6 +18,7 @@ public:
         QPointF offsetPos{0, 0};
         qreal zoomFactor{1.0};
         QList<std::shared_ptr<Item>> items;
+        bool isAutoSave{false};
     };
 
     explicit SaveAsJob(QObject *parent = nullptr);

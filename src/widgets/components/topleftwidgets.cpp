@@ -41,8 +41,10 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
 
     // Add more actions as required
     connect(menu, &QMenu::aboutToShow, this, [menu, actionManager]() -> void {
-        menu->addAction(actionManager->action(KStandardActions::Save));
+        menu->addAction(actionManager->action(KStandardActions::New));
         menu->addAction(actionManager->action(KStandardActions::Open));
+        menu->addAction(actionManager->action(KStandardActions::Save));
+        menu->addAction(actionManager->action(KStandardActions::SaveAs));
         menu->addSeparator();
         menu->addAction(actionManager->action(ActionManager::Action::ExportAsSVG));
         menu->addSeparator();
@@ -73,3 +75,5 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
 
     m_layout->addWidget(menuFrame);
 }
+
+#include "moc_topleftwidgets.cpp"

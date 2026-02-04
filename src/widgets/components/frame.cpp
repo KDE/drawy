@@ -34,3 +34,5 @@ Frame::Frame(QWidget *parent)
 
     setStyleSheet(frameStyleSheet);
 }
+
+#include "moc_frame.cpp"

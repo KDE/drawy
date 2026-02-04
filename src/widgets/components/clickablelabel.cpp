@@ -14,3 +14,5 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event)
 {
     Q_EMIT clicked(event);
 }
+
+#include "moc_clickablelabel.cpp"

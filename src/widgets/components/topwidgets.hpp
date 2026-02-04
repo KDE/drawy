@@ -9,6 +9,7 @@
 
 class TopWidgets : public QWidget
 {
+    Q_OBJECT
 public:
     explicit TopWidgets(QWidget *parent = nullptr);
 
@@ -16,7 +17,7 @@ public:
     [[nodiscard]] bool isInitialized() const;
 
 private:
-    QHBoxLayout *m_layout{nullptr};
+    QHBoxLayout *const m_layout{nullptr};
 
     bool m_isInitialized{false};
 };

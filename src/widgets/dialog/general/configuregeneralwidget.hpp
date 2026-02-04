@@ -7,6 +7,8 @@
 #include "libdrawywidgets_private_export.h"
 #include <QWidget>
 class QSpinBox;
+class AutoSaveWidget;
+
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureGeneralWidget : public QWidget
 {
     Q_OBJECT
@@ -19,5 +21,5 @@ public:
     void restoreToDefaults();
 
 private:
-    QSpinBox *const mAutoSave;
+    AutoSaveWidget *const m_autoSaveWidget{};
 };

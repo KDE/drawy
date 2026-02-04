@@ -23,5 +23,11 @@
     <entry name="Delay" type="Int">
      <default>1</default>
     </entry>
+    <entry name="Path" type="Path">
+     <default>$HOME/.cache/drawy.autosave</default>
+    </entry>
+    <entry name="AutoSaveEnabled" type="Bool">
+     <default>true</default>
+    </entry>
   </group>
 </kcfg>

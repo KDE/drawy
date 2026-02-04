@@ -148,32 +148,32 @@ void BoardLayout::setGeometry(const QRect &rect)
     }
 
     if (m_topLeftWidget != nullptr) {
-        QSize size{effectiveSize(m_topLeftWidget)};
+        const QSize size{effectiveSize(m_topLeftWidget)};
         m_topLeftWidget->setGeometry(QRect(m_margins, m_margins, size.width(), size.height()));
     }
     if (m_topRightWidget != nullptr) {
-        QSize size{effectiveSize(m_topRightWidget)};
+        const QSize size{effectiveSize(m_topRightWidget)};
         m_topRightWidget->setGeometry(QRect(rect.width() - size.width() - m_margins, m_margins, size.width(), size.height()));
     }
     if (m_bottomLeftWidget != nullptr) {
-        QSize size{effectiveSize(m_bottomLeftWidget)};
+        const QSize size{effectiveSize(m_bottomLeftWidget)};
         m_bottomLeftWidget->setGeometry(QRect(m_margins, rect.height() - size.height() - m_margins, size.width(), size.height()));
     }
     if (m_bottomRightWidget != nullptr) {
-        QSize size{effectiveSize(m_bottomRightWidget)};
+        const QSize size{effectiveSize(m_bottomRightWidget)};
         m_bottomRightWidget->setGeometry(
             QRect(rect.width() - size.width() - m_margins, rect.height() - size.height() - m_margins, size.width(), size.height()));
     }
     if (m_leftWidget != nullptr) {
-        QSize size{effectiveSize(m_leftWidget)};
+        const QSize size{effectiveSize(m_leftWidget)};
         m_leftWidget->setGeometry(QRect(m_margins, (rect.height() - size.height()) / 2, size.width(), size.height()));
     }
     if (m_rightWidget != nullptr) {
-        QSize size{effectiveSize(m_rightWidget)};
+        const QSize size{effectiveSize(m_rightWidget)};
         m_rightWidget->setGeometry(QRect(rect.width() - size.width() - m_margins, (rect.height() - size.height()) / 2, size.width(), size.height()));
     }
     if (m_topWidget != nullptr) {
-        QSize size{effectiveSize(m_topWidget)};
+        const QSize size{effectiveSize(m_topWidget)};
 
         int leftPosition{(rect.width() - size.width()) / 2};
         if (m_topLeftWidget != nullptr) {
@@ -184,7 +184,7 @@ void BoardLayout::setGeometry(const QRect &rect)
     }
     if (m_bottomWidget != nullptr) {
         // TODO: prevent overlaps
-        QSize size{effectiveSize(m_bottomWidget)};
+        const QSize size{effectiveSize(m_bottomWidget)};
         m_bottomWidget->setGeometry(QRect((rect.width() - size.width()) / 2, rect.height() - size.height() - m_margins, size.width(), size.height()));
     }
 }
@@ -219,8 +219,8 @@ void BoardLayout::setMargins(int margins)
 QSize BoardLayout::effectiveSize(QLayoutItem *item)
 {
     QSize s = item->sizeHint();
-    QSize min = item->minimumSize();
-    QSize max = item->maximumSize();
+    const QSize min = item->minimumSize();
+    const QSize max = item->maximumSize();
 
     s.setWidth(qBound(min.width(), s.width(), max.width()));
     s.setHeight(qBound(min.height(), s.height(), max.height()));

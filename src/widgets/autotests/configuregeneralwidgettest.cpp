@@ -5,7 +5,7 @@
  */
 
 #include "configuregeneralwidgettest.hpp"
-#include "dialog/configuregeneralwidget.hpp"
+#include "dialog/general/configuregeneralwidget.hpp"
 #include <QSpinBox>
 #include <QStandardPaths>
 #include <QTest>

@@ -7,10 +7,12 @@
 #include "zorderwidget.hpp"
 #include "buttonactionswidget.hpp"
 #include <QHBoxLayout>
+
 ZOrderWidget::ZOrderWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
+    m_widget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
     auto layout{new QHBoxLayout(m_widget)};
     layout->setContentsMargins({});

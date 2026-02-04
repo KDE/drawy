@@ -266,8 +266,12 @@ target_sources(
         jobs/loadjobutil.cpp
         dialog/configuresettingsdialog.cpp
         dialog/configuresettingsdialog.hpp
-        dialog/configuregeneralwidget.hpp
-        dialog/configuregeneralwidget.cpp
+        dialog/configgroupinterface.cpp
+        dialog/configgroupinterface.hpp
+        dialog/general/configuregeneralwidget.hpp
+        dialog/general/configuregeneralwidget.cpp
+        dialog/general/autosavewidget.hpp
+        dialog/general/autosavewidget.cpp
         libdrawywidgets_private_export.h
 )
 

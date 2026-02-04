@@ -34,6 +34,10 @@ public:
 
     [[nodiscard]] QString currentFileName() const;
     void setCurrentFileName(const QString &newCurrentFileName);
+    bool fileNeedsName() const;
+
+    [[nodiscard]] bool currentFileModified() const;
+    void setCurrentFileModified(bool value);
 
 private:
     explicit ApplicationContext(QWidget *parent = nullptr);
@@ -42,6 +46,8 @@ private:
     ApplicationContext(ApplicationContext *) = delete;
 
     QString m_currentFileName;
+    bool m_currentFileModified{false};
+    bool m_fileHasName{false};
 
     QWidget *const m_parentWidget;
 

@@ -7,6 +7,7 @@
 #include "autosavejobutil.hpp"
 #include "context/applicationcontext.hpp"
 #include "drawy_autosave_debug.h"
+#include "drawyglobalconfig.h"
 #include "jobs/loadjob.hpp"
 #include "jobs/loadjobutil.hpp"
 #include <KMessageBox>
@@ -43,17 +44,12 @@ void RestoreAutoSaveJob::setParentWidget(QWidget *newParentWidget)
 
 void RestoreAutoSaveJob::restoreFile()
 {
-    if (KMessageBox::ButtonCode::PrimaryAction
-        == KMessageBox::questionTwoActions(mParentWidget,
-                                           tr("Do you want to restore autosave file?"),
-                                           tr("Restore"),
-                                           KStandardGuiItem::ok(),
-                                           KStandardGuiItem::cancel())) {
+    if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
         auto job = new LoadJob(this);
         job->setFileName(AutoSaveJobUtil::temporaryFileName());
-        connect(job, &LoadJob::loadDone, this, [this](const LoadJob::LoadInfo &info) {
+        job->setIsAutoSave(true);
+        connect(job, &LoadJob::loadDone, this, [](const LoadJob::LoadInfo &info) {
             LoadJobUtil::loadFile(info);
-            removeAutoSaveFile();
         });
         job->start();
     } else {

@@ -60,3 +60,5 @@ bool TopWidgets::isInitialized() const
 {
     return m_isInitialized;
 }
+
+#include "moc_topwidgets.cpp"

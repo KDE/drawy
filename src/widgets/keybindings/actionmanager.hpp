@@ -26,7 +26,8 @@ public:
         CentralVertical,
         AlignBottom,
     };
-    Q_ENUM(AlignType);
+
+    Q_ENUM(AlignType)
 
     // All non standard actions (not available in KStandardAction)
     enum class Action {
@@ -45,7 +46,15 @@ public:
         SwitchToMoveTool
     };
 
-    Q_ENUM(Action);
+    Q_ENUM(Action)
+
+    enum class Choice {
+        Save,
+        Discard,
+        Cancel
+    };
+
+    Q_ENUM(Choice)
 
     explicit ActionManager(ApplicationContext *context);
 
@@ -63,9 +72,12 @@ public:
     void deleteSelection();
     void groupItems();
     void ungroupItems();
-    void saveToFile();
+    void newFile();
+    void saveAsNewFile();
+    void saveCurrentFile();
     void openFile();
     void loadFile(const QString &fileName);
+    bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
     void exportToSvg();
     void configureSettings();
     void showHamburgerMenu();

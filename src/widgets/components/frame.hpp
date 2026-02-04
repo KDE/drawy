@@ -8,6 +8,7 @@
 
 class Frame : public QFrame
 {
+    Q_OBJECT
 public:
     explicit Frame(QWidget *parent = nullptr);
 };

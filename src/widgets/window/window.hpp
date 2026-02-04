@@ -5,12 +5,12 @@
 
 #pragma once
 #include "libdrawywidgets_export.h"
-
 #include <QWidget>
+class AutoSaveJob;
+
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
@@ -25,4 +25,5 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     bool m_forceClose = false;
+    AutoSaveJob *m_autoSaveJob{nullptr};
 };
