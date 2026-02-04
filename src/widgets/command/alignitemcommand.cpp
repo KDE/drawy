@@ -37,7 +37,7 @@ void AlignItemCommand::calculateMoveItems()
             break;
         }
         case Alignment::AlignHorizontalCenter: {
-            const QPointF move{0, (fullRegion.center().y() - item->boundingBox().center().y())};
+            const QPointF move{(fullRegion.center().x() - item->boundingBox().center().x()), 0};
             m_moveToPoint.append(move);
             break;
         }
@@ -56,8 +56,11 @@ void AlignItemCommand::calculateMoveItems()
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignVerticalCenter:
+        case Alignment::AlignVerticalCenter: {
+            const QPointF move{0, (fullRegion.center().y() - item->boundingBox().center().y())};
+            m_moveToPoint.append(move);
             break;
+        }
         case Alignment::Unknow:
             qCWarning(DRAWY_COMMAND_LOG) << "Invalid alignment";
             break;
