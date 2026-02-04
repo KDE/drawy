@@ -114,5 +114,6 @@ compile_commands.json
 # from kde
 .clang-format
 .kdev4
+drawy-kde.kdev4
 
 /Testing/
