@@ -113,5 +113,6 @@ compile_commands.json
 
 # from kde
 .clang-format
+.kdev4
 
 /Testing/
