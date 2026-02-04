@@ -428,8 +428,9 @@ qsizetype TextItem::getPrevBreak(qsizetype position) const
     }
 
     for (qsizetype pos{position - 1}; pos >= 0; pos--) {
-        if (isBreak(pos))
+        if (isBreak(pos)) {
             return pos + 1;
+        }
     }
 
     return 0;
@@ -437,7 +438,7 @@ qsizetype TextItem::getPrevBreak(qsizetype position) const
 
 qsizetype TextItem::getNextBreak(qsizetype position) const
 {
-    qsizetype len{m_text.length()};
+    const qsizetype len{m_text.length()};
     for (qsizetype pos{position + 1}; pos < len; pos++) {
         for (auto &sep : Common::wordSeparators) {
             if (m_text[pos] == sep) {

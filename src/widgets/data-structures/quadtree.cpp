@@ -80,14 +80,18 @@ bool QuadTree::insert(const std::shared_ptr<Item> &item, bool updateOrder)
     }
 
     bool inserted = false;
-    if (m_topLeft->insert(item, updateOrder))
+    if (m_topLeft->insert(item, updateOrder)) {
         inserted = true;
-    if (m_topRight->insert(item, updateOrder))
+    }
+    if (m_topRight->insert(item, updateOrder)) {
         inserted = true;
-    if (m_bottomRight->insert(item, updateOrder))
+    }
+    if (m_bottomRight->insert(item, updateOrder)) {
         inserted = true;
-    if (m_bottomLeft->insert(item, updateOrder))
+    }
+    if (m_bottomLeft->insert(item, updateOrder)) {
         inserted = true;
+    }
 
     return inserted;
 }
@@ -200,7 +204,7 @@ void QuadTree::draw(QPainter &painter, const QPointF &offset) const
 {
     painter.save();
 
-    QPen pen{Qt::green};
+    const QPen pen{Qt::green};
     painter.setPen(pen);
     painter.drawRect(m_boundingBox.translated(-offset));
     painter.restore();

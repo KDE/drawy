@@ -165,7 +165,7 @@ void Controller::tablet(QTabletEvent *event)
         m_usingStylusEraser = false;
         toolBar->curTool().cleanup();
 
-        Tool::Type oldTool = toolBar->curTool().type();
+        const Tool::Type oldTool = toolBar->curTool().type();
         toolBar->changeTool(m_stashedTool);
         m_stashedTool = oldTool;
     }

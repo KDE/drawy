@@ -71,7 +71,7 @@ void OrderedList::bringForward(const ItemPtr &item)
     auto nextIterator = std::next(iterator);
     m_itemList.splice(iterator, m_itemList, nextIterator);
 
-    int val = m_zIndex[item];
+    const int val = m_zIndex[item];
     m_zIndex[item] = m_zIndex[*nextIterator];
     m_zIndex[*nextIterator] = val;
 }

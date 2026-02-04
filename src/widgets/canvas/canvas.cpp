@@ -201,7 +201,7 @@ void Canvas::resize()
         return;
     }
 
-    QSize oldSize{m_canvas->size()};
+    const QSize oldSize{m_canvas->size()};
     const QSize newSize{size() * m_scale};
     m_maxSize.setWidth(std::max(oldSize.width(), newSize.width()));
     m_maxSize.setHeight(std::max(oldSize.height(), newSize.height()));

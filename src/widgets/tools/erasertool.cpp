@@ -69,7 +69,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
         const QList<std::shared_ptr<Item>> toBeErased{spatialContext->quadtree().queryItems(worldEraserRect)};
 
         for (const std::shared_ptr<Item> &item : toBeErased) {
-            if (m_toBeErased.count(item) > 0) {
+            if (m_toBeErased.contains(item)) {
                 continue;
             }
 

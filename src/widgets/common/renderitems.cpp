@@ -29,7 +29,7 @@ void Common::renderCanvas(ApplicationContext *context)
 
     canvas->setCanvasBg(canvas->canvasBg());
 
-    QPointF gridOffset{transformer.worldToGrid(offsetPos)};
+    const QPointF gridOffset{transformer.worldToGrid(offsetPos)};
     QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas->dimensions()));
 
     QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
@@ -48,7 +48,7 @@ void Common::renderCanvas(ApplicationContext *context)
             cell->pixmap().fill(Qt::transparent);
             cell->setDirty(false);
 
-            QList<std::shared_ptr<Item>> intersectingItems{
+            const QList<std::shared_ptr<Item>> intersectingItems{
                 context->spatialContext()->quadtree().queryItems(transformer.gridToWorld(cell->rect()), []([[maybe_unused]] auto &a, [[maybe_unused]] auto &b) {
                     return true;
                 })};
@@ -84,8 +84,9 @@ void Common::renderCanvas(ApplicationContext *context)
 
     const auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    if (selectedItems.empty())
+    if (selectedItems.empty()) {
         return;
+    }
 
     // render a box around selected items
     context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {

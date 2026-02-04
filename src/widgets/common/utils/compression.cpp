@@ -38,7 +38,7 @@ QByteArray decompressData(const QByteArray &data)
 
     QByteArray output(originalSize, '\0');
 
-    size_t result = ZSTD_decompress(output.data(), originalSize, data.data(), data.size());
+    const size_t result = ZSTD_decompress(output.data(), originalSize, data.data(), data.size());
 
     if (ZSTD_isError(result)) {
         throw std::runtime_error(ZSTD_getErrorName(result));

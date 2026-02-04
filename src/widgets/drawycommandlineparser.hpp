@@ -15,7 +15,7 @@ public:
         FullScreen = 0,
     };
     explicit DrawyCommandLineParser(QCommandLineParser *parser);
-    ~DrawyCommandLineParser();
+    ~DrawyCommandLineParser() = default;
 
     [[nodiscard]] static QString optionParserFromEnum(OptionParser e);
 

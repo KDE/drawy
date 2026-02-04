@@ -75,7 +75,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
 
     auto event{context->uiContext()->appEvent()};
     auto commandHistory{context->spatialContext()->commandHistory()};
-    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
     if (event->modifiers() & Qt::ShiftModifier) {

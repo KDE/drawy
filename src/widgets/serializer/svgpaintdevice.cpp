@@ -83,7 +83,7 @@ void SvgPaintEngine::drawPath(const QPainterPath &path)
             svgPath += QChar::fromLatin1(' ');
         }
 
-        QPainterPath::Element element = path.elementAt(i);
+        const QPainterPath::Element element = path.elementAt(i);
 
         switch (element.type) {
         case QPainterPath::MoveToElement:

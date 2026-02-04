@@ -131,7 +131,7 @@ void CacheGrid::setBounds(const QRect &rect)
 {
     auto floorDivide = [](int first, int second) -> int {
         int result{first / second};
-        int remainder{first % second};
+        const int remainder{first % second};
 
         if (remainder != 0 && (first < 0) != (second < 0)) {
             result--;

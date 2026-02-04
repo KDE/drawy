@@ -139,7 +139,8 @@ void RenderingContext::canvasResized()
     const QSize &cellSize{cacheGrid().cellSize()};
     const int width{m_canvas->dimensions().width()};
     const int height{m_canvas->dimensions().height()};
-    const int cellW{cellSize.width()}, cellH{cellSize.height()};
+    const int cellW{cellSize.width()};
+    const int cellH{cellSize.height()};
     const int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};
 

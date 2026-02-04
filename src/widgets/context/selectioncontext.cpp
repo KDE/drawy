@@ -64,7 +64,7 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 {
     QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
-    auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
+    const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
     commandHistory->insert(std::make_shared<UpdatePropertyCommand>(items, property));
 
     m_applicationContext->renderingContext()->markForRender();

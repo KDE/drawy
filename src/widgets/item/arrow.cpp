@@ -108,7 +108,10 @@ bool ArrowItem::intersects(const QRectF &rect)
     }
 
     // TODO: Use better techniques to detect collision
-    const QPointF p{start()}, q{end()}, r{m_arrowEndP1}, s{m_arrowEndP2};
+    const QPointF p{start()};
+    const QPointF q{end()};
+    const QPointF r{m_arrowEndP1};
+    const QPointF s{m_arrowEndP2};
     const QPointF a{rect.x(), rect.y()};
     const QPointF b{rect.x() + rect.width(), rect.y()};
     const QPointF c{rect.x() + rect.width(), rect.y() + rect.height()};

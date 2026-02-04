@@ -13,8 +13,6 @@ DrawyCommandLineParser::DrawyCommandLineParser(QCommandLineParser *parser)
     initializeCommandLine(parser);
 }
 
-DrawyCommandLineParser::~DrawyCommandLineParser() = default;
-
 void DrawyCommandLineParser::initializeCommandLine(QCommandLineParser *parser)
 {
     parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::FullScreen), QObject::tr("Fullscreen")));

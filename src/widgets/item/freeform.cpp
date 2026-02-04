@@ -71,8 +71,9 @@ void FreeformItem::finalizeStroke()
 
 bool FreeformItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect))
+    if (!boundingBox().intersects(rect)) {
         return false;
+    }
 
     return m_path.intersects(rect);
 }
