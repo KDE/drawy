@@ -15,18 +15,18 @@ ArrowUtilsTest::ArrowUtilsTest(QObject *parent)
 
 void ArrowUtilsTest::shouldConvertArrowTypeStringToArrowEnum()
 {
-    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"Arrow"_s), ArrowItem::ArrowType::Arrow);
-    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"None"_s), ArrowItem::ArrowType::None);
-    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"Triangle"_s), ArrowItem::ArrowType::Triangle);
-    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"bla"_s), ArrowItem::ArrowType::None);
-    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum({}), ArrowItem::ArrowType::None);
+    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"Arrow"_s), ArrowUtils::ArrowType::Arrow);
+    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"None"_s), ArrowUtils::ArrowType::None);
+    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"Triangle"_s), ArrowUtils::ArrowType::Triangle);
+    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum(u"bla"_s), ArrowUtils::ArrowType::None);
+    QCOMPARE(ArrowUtils::convertArrowTypeStringToArrowEnum({}), ArrowUtils::ArrowType::None);
 }
 
 void ArrowUtilsTest::shouldConvertArrowTypeEnumToString()
 {
-    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowItem::ArrowType::Arrow), u"Arrow"_s);
-    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowItem::ArrowType::None), u"None"_s);
-    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowItem::ArrowType::Triangle), u"Triangle"_s);
+    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType::Arrow), u"Arrow"_s);
+    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType::None), u"None"_s);
+    QCOMPARE(ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType::Triangle), u"Triangle"_s);
 }
 
 #include "moc_arrowutilstest.cpp"

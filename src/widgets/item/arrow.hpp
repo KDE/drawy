@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "item/arrowutils.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygon.hpp"
 
@@ -11,14 +12,6 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowItem : public PolygonItem
 public:
     ArrowItem();
     ~ArrowItem() override = default;
-
-    enum class ArrowType : int8_t {
-        None,
-        Arrow,
-        Triangle,
-        // TODO add more in the future
-    };
-    Q_ENUM(ArrowType)
 
     void setStart(QPointF start) override;
     void setEnd(QPointF end) override;
@@ -33,11 +26,11 @@ public:
 
     void deserialize(const QJsonObject &obj) override;
 
-    [[nodiscard]] ArrowType startArrow() const;
-    void setStartArrow(const ArrowType &newStartArrow);
+    [[nodiscard]] ArrowUtils::ArrowType startArrow() const;
+    void setStartArrow(const ArrowUtils::ArrowType &newStartArrow);
 
-    [[nodiscard]] ArrowType endArrow() const;
-    void setEndArrow(const ArrowType &newEndArrow);
+    [[nodiscard]] ArrowUtils::ArrowType endArrow() const;
+    void setEndArrow(const ArrowUtils::ArrowType &newEndArrow);
 
     [[nodiscard]] bool operator==(const ArrowItem &other) const;
 
@@ -50,8 +43,8 @@ private:
     QPointF m_arrowEndP2;
     QPointF m_arrowStartP1;
     QPointF m_arrowStartP2;
-    ArrowType m_startArrow = ArrowType::None;
-    ArrowType m_endArrow = ArrowType::Arrow;
+    ArrowUtils::ArrowType m_startArrow = ArrowUtils::ArrowType::None;
+    ArrowUtils::ArrowType m_endArrow = ArrowUtils::ArrowType::Arrow;
 
     int m_maxArrowSize{15}; // hardcoded for now
 };

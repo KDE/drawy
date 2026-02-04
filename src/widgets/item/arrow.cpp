@@ -38,18 +38,18 @@ void ArrowItem::calcArrowPoints()
     const int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
     constexpr double angleArrow = (M_PI / 180) * 30;
-    if (m_endArrow != ArrowItem::ArrowType::None) {
+    if (m_endArrow != ArrowUtils::ArrowType::None) {
         m_arrowEndP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
         m_arrowEndP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
     }
 }
 
-ArrowItem::ArrowType ArrowItem::endArrow() const
+ArrowUtils::ArrowType ArrowItem::endArrow() const
 {
     return m_endArrow;
 }
 
-void ArrowItem::setEndArrow(const ArrowType &newEndArrow)
+void ArrowItem::setEndArrow(const ArrowUtils::ArrowType &newEndArrow)
 {
     m_endArrow = newEndArrow;
 }
@@ -59,12 +59,12 @@ bool ArrowItem::operator==(const ArrowItem &other) const
     return m_startArrow == other.startArrow() && m_endArrow == other.endArrow() && PolygonItem::operator==(other);
 }
 
-ArrowItem::ArrowType ArrowItem::startArrow() const
+ArrowUtils::ArrowType ArrowItem::startArrow() const
 {
     return m_startArrow;
 }
 
-void ArrowItem::setStartArrow(const ArrowType &newStartArrow)
+void ArrowItem::setStartArrow(const ArrowUtils::ArrowType &newStartArrow)
 {
     m_startArrow = newStartArrow;
 }
@@ -73,30 +73,30 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);
     switch (m_endArrow) {
-    case ArrowType::Arrow:
+    case ArrowUtils::ArrowType::Arrow:
         painter.drawLine(end() - offset, m_arrowEndP1 - offset);
         painter.drawLine(end() - offset, m_arrowEndP2 - offset);
         break;
-    case ArrowType::Triangle:
+    case ArrowUtils::ArrowType::Triangle:
         painter.drawLine(end() - offset, m_arrowEndP1 - offset);
         painter.drawLine(end() - offset, m_arrowEndP2 - offset);
         painter.drawLine(m_arrowEndP2 - offset, m_arrowEndP1 - offset);
         break;
-    case ArrowType::None:
+    case ArrowUtils::ArrowType::None:
         break;
     }
 
     switch (m_startArrow) {
-    case ArrowType::Arrow:
+    case ArrowUtils::ArrowType::Arrow:
         painter.drawLine(end() - offset, m_arrowStartP1 - offset);
         painter.drawLine(end() - offset, m_arrowStartP2 - offset);
         break;
-    case ArrowType::Triangle:
+    case ArrowUtils::ArrowType::Triangle:
         painter.drawLine(end() - offset, m_arrowStartP1 - offset);
         painter.drawLine(end() - offset, m_arrowStartP2 - offset);
         painter.drawLine(m_arrowStartP2 - offset, m_arrowStartP1 - offset);
         break;
-    case ArrowType::None:
+    case ArrowUtils::ArrowType::None:
         break;
     }
 }
@@ -152,8 +152,8 @@ void ArrowItem::deserialize(const QJsonObject &obj)
 
 QDebug operator<<(QDebug d, const ArrowItem &t)
 {
-    d.space() << "startArrow:" << t.startArrow();
-    d.space() << "endArrow:" << t.endArrow();
+    d.space() << "startArrow:" << static_cast<int>(t.startArrow());
+    d.space() << "endArrow:" << static_cast<int>(t.endArrow());
     d.space() << "PolygonItem: " << static_cast<const PolygonItem &>(t);
     return d;
 }
