@@ -13,7 +13,7 @@
 #include "drawy_command_debug.h"
 #include "item/item.hpp"
 
-AlignItemCommand::AlignItemCommand(QList<std::shared_ptr<Item>> items, AlignItemCommand::Alignment alignment)
+AlignItemCommand::AlignItemCommand(QList<std::shared_ptr<Item>> items, ItemUtils::AlignType alignment)
     : ItemCommand{std::move(items)}
     , m_alignment(alignment)
 {
@@ -22,7 +22,7 @@ AlignItemCommand::AlignItemCommand(QList<std::shared_ptr<Item>> items, AlignItem
 
 void AlignItemCommand::calculateMoveItems()
 {
-    if (m_alignment == Alignment::Unknow) {
+    if (m_alignment == ItemUtils::AlignType::Unknown) {
         return;
     }
     QRectF fullRegion;
@@ -31,37 +31,37 @@ void AlignItemCommand::calculateMoveItems()
     }
     for (const auto &item : std::as_const(m_items)) {
         switch (m_alignment) {
-        case Alignment::AlignToBottom: {
+        case ItemUtils::AlignType::AlignBottom: {
             const QPointF move{0, (fullRegion.bottom() - item->boundingBox().bottom())};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignHorizontalCenter: {
+        case ItemUtils::AlignType::AlignHorizontalCenter: {
             const QPointF move{(fullRegion.center().x() - item->boundingBox().center().x()), 0};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignToTop: {
+        case ItemUtils::AlignType::AlignTop: {
             const QPointF move{0, (fullRegion.top() - item->boundingBox().top())};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignToLeft: {
+        case ItemUtils::AlignType::AlignLeft: {
             const QPointF move{(fullRegion.left() - item->boundingBox().left()), 0};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignToRight: {
+        case ItemUtils::AlignType::AlignRight: {
             const QPointF move{(fullRegion.right() - item->boundingBox().right()), 0};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::AlignVerticalCenter: {
+        case ItemUtils::AlignType::AlignVerticalCenter: {
             const QPointF move{0, (fullRegion.center().y() - item->boundingBox().center().y())};
             m_moveToPoint.append(move);
             break;
         }
-        case Alignment::Unknow:
+        case ItemUtils::AlignType::Unknown:
             qCWarning(DRAWY_COMMAND_LOG) << "Invalid alignment";
             break;
         }

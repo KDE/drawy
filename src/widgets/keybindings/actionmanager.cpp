@@ -70,38 +70,14 @@ void ActionManager::switchToTool(Tool::Type type)
     m_context->uiContext()->toolBar()->changeTool(type);
 }
 
-void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
+void ActionManager::alignItems(ItemUtils::AlignType alignType)
 {
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
     if (selectedItems.empty()) {
         return;
     }
-    AlignItemCommand::Alignment commandType = AlignItemCommand::Alignment::Unknow;
-    switch (type) {
-    case AlignType::AlignBottom:
-        commandType = AlignItemCommand::Alignment::AlignToBottom;
-        break;
-    case AlignType::AlignLeft:
-        commandType = AlignItemCommand::Alignment::AlignToLeft;
-        break;
-    case AlignType::AlignRight:
-        commandType = AlignItemCommand::Alignment::AlignToRight;
-        break;
-    case AlignType::AlignTop:
-        commandType = AlignItemCommand::Alignment::AlignToTop;
-        break;
-    case AlignType::CentralHorizontal:
-        commandType = AlignItemCommand::Alignment::AlignHorizontalCenter;
-        break;
-    case AlignType::CentralVertical:
-        commandType = AlignItemCommand::Alignment::AlignVerticalCenter;
-        break;
-    case AlignType::Unknown:
-        qCWarning(DRAWY_LOG) << "Alignment is unknown. It's a bug for sure";
-        return;
-    }
     const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, commandType));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, alignType));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }

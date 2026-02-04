@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #pragma once
+#include "item/itemutils.hpp"
 #include "itemcommand.hpp"
 #include <QList>
 #include <QPointF>
@@ -11,17 +12,7 @@ class ApplicationContext;
 class AlignItemCommand : public ItemCommand
 {
 public:
-    enum class Alignment : uint8_t {
-        Unknow = 0,
-        AlignToTop,
-        AlignToBottom,
-        AlignToRight,
-        AlignToLeft,
-        AlignHorizontalCenter,
-        AlignVerticalCenter,
-    };
-
-    explicit AlignItemCommand(QList<std::shared_ptr<Item>> items, AlignItemCommand::Alignment alignment);
+    explicit AlignItemCommand(QList<std::shared_ptr<Item>> items, ItemUtils::AlignType alignment);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
@@ -30,6 +21,6 @@ public:
 
 private:
     void calculateMoveItems();
-    const AlignItemCommand::Alignment m_alignment = AlignItemCommand::Alignment::Unknow;
+    const ItemUtils::AlignType m_alignment = ItemUtils::AlignType::Unknown;
     QList<QPointF> m_moveToPoint;
 };

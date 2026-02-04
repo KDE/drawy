@@ -62,22 +62,22 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
 
     auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
     connect(alignLeftButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::AlignLeft);
+        actionManager->alignItems(ItemUtils::AlignType::AlignLeft);
     });
     connect(centralHorizontalButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::CentralHorizontal);
+        actionManager->alignItems(ItemUtils::AlignType::AlignHorizontalCenter);
     });
     connect(alignRightButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::AlignRight);
+        actionManager->alignItems(ItemUtils::AlignType::AlignRight);
     });
     connect(alignTopButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::AlignTop);
+        actionManager->alignItems(ItemUtils::AlignType::AlignTop);
     });
     connect(centralVerticalButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::CentralVertical);
+        actionManager->alignItems(ItemUtils::AlignType::AlignVerticalCenter);
     });
     connect(alignBottomButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ActionManager::AlignType::AlignBottom);
+        actionManager->alignItems(ItemUtils::AlignType::AlignBottom);
     });
 
     m_widget->hide();

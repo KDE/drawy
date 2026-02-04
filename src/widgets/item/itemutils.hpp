@@ -10,6 +10,16 @@
 #include "libdrawywidgets_private_export.h"
 namespace ItemUtils
 {
+enum class AlignType : uint8_t {
+    Unknown = 0,
+    AlignLeft,
+    AlignHorizontalCenter,
+    AlignRight,
+    AlignTop,
+    AlignVerticalCenter,
+    AlignBottom,
+};
+
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::Type convertItemTypeStringToEnum(const QString &str);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::Type type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);
