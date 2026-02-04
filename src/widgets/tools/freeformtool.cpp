@@ -67,13 +67,14 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         auto uiContext{context->uiContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
-        QPointF curPoint{uiContext->appEvent()->pos()};
+        const QPointF curPoint{uiContext->appEvent()->pos()};
 
         // distance between the two points in the "view" coordinate system
-        double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
+        const double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
 
-        if (dist < FreeformItem::minPointDistance())
+        if (dist < FreeformItem::minPointDistance()) {
             return;
+        }
 
         const qreal zoom{renderingContext->zoomFactor()};
         curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());

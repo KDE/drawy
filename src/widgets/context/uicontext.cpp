@@ -180,8 +180,9 @@ void UIContext::toolChanged(Tool &tool)
 
     auto canvas{m_applicationContext->renderingContext()->canvas()};
 
-    if (m_lastTool != nullptr)
+    if (m_lastTool != nullptr) {
         m_lastTool->cleanup();
+    }
 
     m_lastTool = &tool;
     canvas->setCursor(tool.cursor());

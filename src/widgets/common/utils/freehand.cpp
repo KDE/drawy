@@ -33,12 +33,13 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     const qreal distLim{16};
     for (qsizetype pos = 1; pos < points.size(); pos++) {
         const QPointF prev{result.back().point};
-        QPointF interpolated{lerp(prev, points[pos], t)};
+        const QPointF interpolated{lerp(prev, points[pos], t)};
 
         const qreal dist{length(interpolated - prev)};
 
-        if (dist < minDist)
+        if (dist < minDist) {
             continue;
+        }
 
         if (simulatePressure) {
             result.push_back(StrokePoint{interpolated, std::max(minPressure, std::min(1.0, 1.0 - dist / distLim))});
@@ -53,8 +54,9 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
     const qsizetype windowSize{10};
     qreal pressureSum{};
     for (qsizetype pos = 0; pos < windowSize; pos++) {
-        if (pos >= result.size())
+        if (pos >= result.size()) {
             break;
+        }
 
         pressureSum += result[pos].pressure;
     }
@@ -179,9 +181,9 @@ QPainterPath getStrokePath(const QList<QPointF> &points)
     path.moveTo(points[0]);
 
     for (qsizetype pos = 0; pos < points.size(); pos++) {
-        QPointF curPoint{points[pos]};
-        QPointF nextPoint{points[(pos + 1) % points.size()]};
-        QPointF midPoint{(curPoint + nextPoint) / 2.0};
+        const QPointF curPoint{points[pos]};
+        const QPointF nextPoint{points[(pos + 1) % points.size()]};
+        const QPointF midPoint{(curPoint + nextPoint) / 2.0};
 
         path.quadTo(curPoint, midPoint);
     }

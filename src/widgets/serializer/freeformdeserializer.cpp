@@ -20,10 +20,10 @@ void FreeformDeserializer::deserialize(const QJsonObject &obj)
     QJsonArray points = array(value(obj, u"points"_s));
     QJsonArray pressures = array(value(obj, u"pressures"_s));
 
-    qsizetype len{points.size()};
+    const qsizetype len{points.size()};
     FreeformItem *freeFormItem = static_cast<FreeformItem *>(mItem);
     for (qsizetype pos{0}; pos < len; pos++) {
-        QPointF point{toPointF(points[pos])};
+        const QPointF point{toPointF(points[pos])};
 
         freeFormItem->addPoint(point, pressures[pos].toDouble());
     }

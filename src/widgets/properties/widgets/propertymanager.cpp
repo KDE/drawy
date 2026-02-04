@@ -45,7 +45,7 @@ PropertyManager::~PropertyManager()
 
 PropertyWidget *PropertyManager::widget(const Property::Type type) const
 {
-    if (m_widgets.find(type) == m_widgets.end()) {
+    if (!m_widgets.contains(type)) {
         throw std::logic_error("A valid widget for the given Property::Type does not exist.");
     }
 

@@ -14,10 +14,10 @@ OrderedList::~OrderedList()
 
 bool OrderedList::hasItem(const ItemPtr &item) const
 {
-    if (m_itemIterMap.find(item) == m_itemIterMap.end()) {
+    if (!m_itemIterMap.contains(item)) {
         return false;
     }
-    if (m_zIndex.find(item) == m_zIndex.end()) {
+    if (!m_zIndex.contains(item)) {
         return false;
     }
     return true;
@@ -93,7 +93,7 @@ void OrderedList::sendBackward(const ItemPtr &item)
     auto prevIterator = std::prev(iterator);
     m_itemList.splice(prevIterator, m_itemList, iterator);
 
-    int val = m_zIndex[item];
+    const int val = m_zIndex[item];
     m_zIndex[item] = m_zIndex[*prevIterator];
     m_zIndex[*prevIterator] = val;
 }

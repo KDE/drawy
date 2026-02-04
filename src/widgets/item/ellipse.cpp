@@ -30,13 +30,14 @@ void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool EllipseItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect))
+    if (!boundingBox().intersects(rect)) {
         return false;
+    }
 
     QPainterPath path{};
     path.addEllipse(QRectF{start(), end()});
 
-    bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
     if (isFilled) {
         return path.intersects(rect);
     }

@@ -48,14 +48,15 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
 
 std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationContext *context)
 {
-    if (m_stateLocked)
+    if (m_stateLocked) {
         return m_curState;
+    }
 
     auto selectionContext{context->selectionContext()};
     auto uiContext{context->uiContext()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
+    const QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
     // TODO: Implement resizing and rotation as well
     if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
@@ -68,16 +69,18 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
 void SelectionTool::keyPressed(ApplicationContext *context)
 {
     const auto &selectedItems{context->selectionContext()->selectedItems()};
-    if (selectedItems.empty())
+    if (selectedItems.empty()) {
         return;
+    }
 
     auto event{context->uiContext()->appEvent()};
     auto commandHistory{context->spatialContext()->commandHistory()};
     QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
-    if (event->modifiers() & Qt::ShiftModifier)
+    if (event->modifiers() & Qt::ShiftModifier) {
         delta = Common::shiftTranslationDelta;
+    }
 
     bool updated{true};
     switch (event->key()) {
@@ -108,7 +111,7 @@ const QList<Property::Type> SelectionTool::properties() const
     ApplicationContext *context{ApplicationContext::instance()};
     const auto &selectedItems{context->selectionContext()->selectedItems()};
 
-    std::set<Property::Type> result{};
+    std::set<Property::Type> result;
     for (const auto &item : selectedItems) {
         for (const auto &property : item->propertyTypes()) {
             result.insert(property);

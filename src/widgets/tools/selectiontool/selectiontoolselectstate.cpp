@@ -42,7 +42,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         auto commandHistory{spatialContext->commandHistory()};
 
         if (!(event->modifiers() & Qt::ShiftModifier)) {
-            QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
             commandHistory->insert(std::make_shared<DeselectCommand>(items));
         }
 
@@ -51,7 +51,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         } else {
             auto &item{intersectingItems.back()};
             if (!item->locked()) {
-                if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.find(item) != selectedItems.end()) {
+                if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.contains(item)) {
                     // deselect the item if selected
                     commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
                 } else {

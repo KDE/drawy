@@ -81,13 +81,15 @@ qreal RenderingContext::zoomFactor() const
 void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
 {
     // zoom out limit is 0.1
-    if (diff < 0 && m_zoomFactor - Common::zoomOutLimit <= 1e-9)
+    if (diff < 0 && m_zoomFactor - Common::zoomOutLimit <= 1e-9) {
         return;
+    }
 
-    if (diff > 0 && Common::zoomInLimit - m_zoomFactor <= 1e-9)
+    if (diff > 0 && Common::zoomInLimit - m_zoomFactor <= 1e-9) {
         return;
+    }
 
-    qreal oldZoomFactor = m_zoomFactor;
+    const qreal oldZoomFactor = m_zoomFactor;
     if (diff >= 0) {
         m_zoomFactor = std::min(Common::zoomInLimit, m_zoomFactor * diff * Common::zoomMultiplier);
     } else {
@@ -99,9 +101,9 @@ void RenderingContext::updateZoomFactor(qreal diff, QPoint center)
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
     if (center == QPoint{-1, -1}) {
-        QSize viewport{canvas()->dimensions() / oldZoomFactor};
-        int width{viewport.width()};
-        int height{viewport.height()};
+        const QSize viewport{canvas()->dimensions() / oldZoomFactor};
+        const int width{viewport.width()};
+        const int height{viewport.height()};
 
         center.setX(offsetPos.toPoint().x() + width / 2);
         center.setY(offsetPos.toPoint().y() + height / 2);
@@ -135,7 +137,8 @@ int RenderingContext::fps() const
 void RenderingContext::canvasResized()
 {
     const QSize &cellSize{cacheGrid().cellSize()};
-    const int width{m_canvas->dimensions().width()}, height{m_canvas->dimensions().height()};
+    const int width{m_canvas->dimensions().width()};
+    const int height{m_canvas->dimensions().height()};
     const int cellW{cellSize.width()}, cellH{cellSize.height()};
     const int rows{static_cast<int>(std::ceil(height / static_cast<double>(cellH)) + 1)};
     const int cols{static_cast<int>(std::ceil(width / static_cast<double>(cellW)) + 1)};

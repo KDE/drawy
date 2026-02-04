@@ -91,14 +91,15 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     const QPointF worldFinalPos{transformer.viewToWorld(curPos)};
     const QPointF delta{worldFinalPos - worldOriginalPos};
 
-    if (!m_isActive)
+    if (!m_isActive) {
         return false;
+    }
 
     m_isActive = false;
 
     if (delta != QPointF{0, 0}) {
         auto &selectedItems{context->selectionContext()->selectedItems()};
-        QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
         // TODO: Instead of un-doing the translation so that the command can execute
         // it again,

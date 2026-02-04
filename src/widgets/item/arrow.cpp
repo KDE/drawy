@@ -103,8 +103,9 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool ArrowItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect))
+    if (!boundingBox().intersects(rect)) {
         return false;
+    }
 
     // TODO: Use better techniques to detect collision
     const QPointF p{start()}, q{end()}, r{m_arrowEndP1}, s{m_arrowEndP2};

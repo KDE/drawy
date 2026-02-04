@@ -22,16 +22,18 @@ CommandHistory::~CommandHistory()
 
 void CommandHistory::undo()
 {
-    if (m_undoStack->empty())
+    if (m_undoStack->empty()) {
         return;
+    }
 
-    std::shared_ptr<Command> lastCommand{m_undoStack->front()};
+    const std::shared_ptr<Command> lastCommand{m_undoStack->front()};
     lastCommand->undo(m_context);
 
     m_redoStack->push_front(lastCommand);
 
-    if (m_redoStack->size() == maxCommands)
+    if (m_redoStack->size() == maxCommands) {
         m_redoStack->pop_back();
+    }
 
     m_undoStack->pop_front();
     Q_EMIT undoRedoChanged();
@@ -39,15 +41,17 @@ void CommandHistory::undo()
 
 void CommandHistory::redo()
 {
-    if (m_redoStack->empty())
+    if (m_redoStack->empty()) {
         return;
+    }
 
-    std::shared_ptr<Command> nextCommand{m_redoStack->front()};
+    const std::shared_ptr<Command> nextCommand{m_redoStack->front()};
     nextCommand->execute(m_context);
 
     m_undoStack->push_front(nextCommand);
-    if (m_undoStack->size() == maxCommands)
+    if (m_undoStack->size() == maxCommands) {
         m_undoStack->pop_back();
+    }
 
     m_redoStack->pop_front();
     Q_EMIT undoRedoChanged();

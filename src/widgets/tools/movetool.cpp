@@ -43,8 +43,8 @@ void MoveTool::mouseMoved(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         UIContext *uiContext{context->uiContext()};
 
-        qreal zoom{renderingContext->zoomFactor()};
-        QPointF newPoint{m_initialOffsetPos * zoom - uiContext->appEvent()->pos() + m_initialPos};
+        const qreal zoom{renderingContext->zoomFactor()};
+        const QPointF newPoint{m_initialOffsetPos * zoom - uiContext->appEvent()->pos() + m_initialPos};
 
         spatialContext->setOffsetPos(newPoint / zoom);
 

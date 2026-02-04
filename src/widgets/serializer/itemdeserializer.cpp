@@ -22,7 +22,7 @@ void ItemDeserializer::deserialize(const QJsonObject &obj)
     mItem->setLocked(obj[u"id"_s].toBool(false));
     QJsonArray properties = array(value(obj, u"properties"_s));
     for (const auto &propertyValue : std::as_const(properties)) {
-        Property prop{createProperty(object(propertyValue))};
+        const Property prop{createProperty(object(propertyValue))};
         mItem->setProperty(prop.type(), prop);
     }
 }

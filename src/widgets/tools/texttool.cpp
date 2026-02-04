@@ -50,7 +50,7 @@ void TextTool::mousePressed(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         QuadTree &quadTree{spatialContext->quadtree()};
 
-        QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
+        const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->type() == Item::Type::Text && item->boundingBox().contains(point);
         })};
@@ -84,8 +84,8 @@ void TextTool::mousePressed(ApplicationContext *context)
             m_isSelecting = true;
             m_mouseMoved = false;
 
-            int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-            qsizetype index{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+            const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
+            const qsizetype index{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
             m_curItem->setSelectionStart(index);
             m_curItem->setSelectionEnd(TextItem::INVALID);
         }
@@ -199,8 +199,9 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
 
 void TextTool::mouseTripleClick(ApplicationContext *context)
 {
-    if (!m_curItem)
+    if (!m_curItem) {
         return;
+    }
 
     m_tripleClicked = true;
     if (!m_mouseMoved) {
@@ -229,8 +230,9 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
 // TODO: Refactor, refactor, refactor!
 void TextTool::keyPressed(ApplicationContext *context)
 {
-    if (!m_curItem)
+    if (!m_curItem) {
         return;
+    }
 
     auto ev{context->uiContext()->appEvent()};
 
@@ -250,8 +252,9 @@ void TextTool::keyPressed(ApplicationContext *context)
         qsizetype size{text.size()};
 
         auto handleDefaultCase = [&]() {
-            if (ev->text().isEmpty())
+            if (ev->text().isEmpty()) {
                 return;
+            }
 
             m_curItem->deleteSelection();
             m_curItem->insertText(ev->text());
@@ -316,8 +319,9 @@ void TextTool::keyPressed(ApplicationContext *context)
                     }
                 }
 
-                if (prevLine == caret - 1)
+                if (prevLine == caret - 1) {
                     prevLine--;
+                }
 
                 m_curItem->deleteSubStr(prevLine + 1, caret - 1);
                 m_curItem->setCaret(prevLine + 1);
@@ -367,13 +371,14 @@ void TextTool::keyPressed(ApplicationContext *context)
         case Qt::Key_Up: {
             qsizetype prevLineEnd{text.lastIndexOf(u'\n', caret - 1)};
 
-            if (prevLineEnd == -1)
+            if (prevLineEnd == -1) {
                 break;
+            }
 
-            qsizetype prevLineStart{text.lastIndexOf(u'\n', prevLineEnd - 1) + 1};
-            qsizetype pos{m_curItem->caretPosInLine()};
+            const qsizetype prevLineStart{text.lastIndexOf(u'\n', prevLineEnd - 1) + 1};
+            const qsizetype pos{m_curItem->caretPosInLine()};
 
-            qsizetype length{prevLineEnd - prevLineStart + 1};
+            const qsizetype length{prevLineEnd - prevLineStart + 1};
             if (length >= pos) {
                 m_curItem->setCaret(prevLineStart + pos - 1, false);
             } else {
@@ -384,16 +389,18 @@ void TextTool::keyPressed(ApplicationContext *context)
         case Qt::Key_Down: {
             qsizetype nextLineStart{text.indexOf(u'\n', caret)};
 
-            if (nextLineStart == -1)
+            if (nextLineStart == -1) {
                 break;
+            }
 
             qsizetype nextLineEnd{text.indexOf(u'\n', ++nextLineStart)};
-            if (nextLineEnd == -1)
+            if (nextLineEnd == -1) {
                 nextLineEnd = text.size();
+            }
 
-            qsizetype pos{m_curItem->caretPosInLine()};
+            const qsizetype pos{m_curItem->caretPosInLine()};
 
-            qsizetype length{nextLineEnd - nextLineStart + 1};
+            const qsizetype length{nextLineEnd - nextLineStart + 1};
             if (length >= pos) {
                 m_curItem->setCaret(nextLineStart + pos - 1, false);
             } else {
@@ -463,8 +470,9 @@ void TextTool::keyReleased([[maybe_unused]] ApplicationContext *context)
 
 void TextTool::cleanup()
 {
-    if (!m_curItem)
+    if (!m_curItem) {
         return;
+    }
 
     auto context{ApplicationContext::instance()};
     auto spatialContext{context->spatialContext()};

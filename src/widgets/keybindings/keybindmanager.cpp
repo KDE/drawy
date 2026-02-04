@@ -13,7 +13,7 @@ KeybindManager::KeybindManager(QObject *parent)
 
 void KeybindManager::setEnabled(bool enabled)
 {
-    QList<QAction *> acts = mActionCollection->actions();
+    const QList<QAction *> acts = mActionCollection->actions();
     for (const auto &act : acts) {
         act->setEnabled(enabled);
     }

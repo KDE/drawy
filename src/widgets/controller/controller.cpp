@@ -39,10 +39,11 @@ void Controller::mousePressed(QMouseEvent *event)
 {
     // No on really clicks in this corner (0, 0) and this solves a
     // bug on Hyprland where it would register a mouse press in this corner
-    if (event->pos() == QPoint{0, 0})
+    if (event->pos() == QPoint{0, 0}) {
         return;
+    }
 
-    qint64 lastTime{m_lastClickTime};
+    const qint64 lastTime{m_lastClickTime};
     m_lastClickTime = QDateTime::currentMSecsSinceEpoch();
     if (m_lastClickTime - lastTime <= Common::doubleClickInterval && !m_mouseMoved) {
         m_clickCount++;
@@ -155,7 +156,7 @@ void Controller::tablet(QTabletEvent *event)
         m_usingStylusEraser = true;
         toolBar->curTool().cleanup();
 
-        Tool::Type oldTool = toolBar->curTool().type();
+        const Tool::Type oldTool = toolBar->curTool().type();
         toolBar->changeTool(m_stashedTool);
         m_stashedTool = oldTool;
     }
@@ -211,8 +212,9 @@ void Controller::leave([[maybe_unused]] QEvent *event)
 
 void Controller::renderZoom()
 {
-    if (m_zoomDelta == 0)
+    if (m_zoomDelta == 0) {
         return;
+    }
 
     auto renderingContext{m_context->renderingContext()};
     auto spatialContext{m_context->spatialContext()};
@@ -254,11 +256,13 @@ void Controller::wheel(QWheelEvent *event)
         const qreal newZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta + curDelta)};
         const qreal prevZoomFactor{m_context->renderingContext()->zoomFactor() * oldZoomFactor};
 
-        if (curDelta < 0 && prevZoomFactor - Common::zoomOutLimit <= 1e-9)
+        if (curDelta < 0 && prevZoomFactor - Common::zoomOutLimit <= 1e-9) {
             return;
+        }
 
-        if (curDelta > 0 && Common::zoomInLimit - prevZoomFactor <= 1e-9)
+        if (curDelta > 0 && Common::zoomInLimit - prevZoomFactor <= 1e-9) {
             return;
+        }
 
         m_zoomDelta += curDelta;
         const QPointF &cursor{contextEvent->pos() / oldZoomFactor + m_zoomPixmapOffsetPos}; // converting to pixmap coordinates

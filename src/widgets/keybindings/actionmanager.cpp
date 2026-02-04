@@ -98,7 +98,7 @@ void ActionManager::alignItems([[maybe_unused]] ActionManager::AlignType type)
         qCWarning(DRAWY_LOG) << "Alignment is unknown. It's a bug for sure";
         return;
     }
-    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, commandType));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
@@ -116,7 +116,7 @@ void ActionManager::groupItems()
         return;
     }
 
-    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
@@ -125,10 +125,11 @@ void ActionManager::groupItems()
 void ActionManager::ungroupItems()
 {
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
-    if (selectedItems.empty())
+    if (selectedItems.empty()) {
         return;
+    }
 
-    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<UngroupCommand>(items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
@@ -139,13 +140,13 @@ void ActionManager::deleteSelection()
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
     auto commandHistory{m_context->spatialContext()->commandHistory()};
 
-    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     commandHistory->insert(std::make_shared<RemoveItemCommand>(items));
 
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 
-    QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
 }
 
@@ -191,8 +192,9 @@ void ActionManager::loadFromFile()
     // ask for file (handle cancel)
     const QDir homeDir{QDir::home()};
     const QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
-    if (fileName.isEmpty())
+    if (fileName.isEmpty()) {
         return;
+    }
     loadFile(fileName);
 }
 

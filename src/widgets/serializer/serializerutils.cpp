@@ -27,7 +27,7 @@ QJsonObject SerializerUtils::toJson(const QPointF &point)
 
 QByteArray SerializerUtils::compressData(const QJsonObject &obj)
 {
-    QJsonDocument doc{obj};
+    const QJsonDocument doc{obj};
     const auto data{doc.toJson(QJsonDocument::Compact)};
     const auto compressedData{Common::Utils::Compression::compressData(data)};
     return compressedData;

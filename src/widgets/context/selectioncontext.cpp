@@ -32,8 +32,9 @@ const std::unordered_set<std::shared_ptr<Item>> &SelectionContext::selectedItems
 
 void SelectionContext::addToSelection(const std::shared_ptr<Item> &item)
 {
-    if (m_selectedItems.find(item) != m_selectedItems.end())
+    if (m_selectedItems.contains(item)) {
         return;
+    }
 
     m_selectedItems.insert(item);
     Q_EMIT selectionUpdated();
@@ -41,8 +42,9 @@ void SelectionContext::addToSelection(const std::shared_ptr<Item> &item)
 
 void SelectionContext::removeFromSelection(const std::shared_ptr<Item> &item)
 {
-    if (m_selectedItems.find(item) == m_selectedItems.end())
+    if (!m_selectedItems.contains(item)) {
         return;
+    }
 
     m_selectedItems.erase(item);
     Q_EMIT selectionUpdated();
@@ -71,8 +73,9 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
 void SelectionContext::reset()
 {
-    if (m_selectedItems.empty())
+    if (m_selectedItems.empty()) {
         return;
+    }
 
     m_selectedItems.clear();
     Q_EMIT selectionUpdated();

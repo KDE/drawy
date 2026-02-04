@@ -25,7 +25,7 @@ void Common::renderCanvas(ApplicationContext *context)
 {
     CoordinateTransformer &transformer{context->spatialContext()->coordinateTransformer()};
     auto canvas{context->renderingContext()->canvas()};
-    QPointF offsetPos{context->spatialContext()->offsetPos()};
+    const QPointF offsetPos{context->spatialContext()->offsetPos()};
 
     canvas->setCanvasBg(canvas->canvasBg());
 
@@ -53,8 +53,9 @@ void Common::renderCanvas(ApplicationContext *context)
                     return true;
                 })};
 
-            if (intersectingItems.empty())
+            if (intersectingItems.empty()) {
                 continue;
+            }
 
             const qreal zoomFactor{context->renderingContext()->zoomFactor()};
             const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};

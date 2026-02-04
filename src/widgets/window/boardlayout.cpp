@@ -59,8 +59,9 @@ void BoardLayout::setLeftWidget(QWidget *const item, bool pinned)
     delete m_leftWidget;
     m_leftWidget = new QWidgetItem(item);
     m_isLeftPinned = pinned;
-    if (item)
+    if (item) {
         item->raise();
+    }
 }
 
 void BoardLayout::setTopWidget(QWidget *const item, bool pinned)
@@ -68,8 +69,9 @@ void BoardLayout::setTopWidget(QWidget *const item, bool pinned)
     delete m_topWidget;
     m_topWidget = new QWidgetItem(item);
     m_isTopPinned = pinned;
-    if (item)
+    if (item) {
         item->raise();
+    }
 }
 
 void BoardLayout::setRightWidget(QWidget *const item, bool pinned)
@@ -77,8 +79,9 @@ void BoardLayout::setRightWidget(QWidget *const item, bool pinned)
     delete m_rightWidget;
     m_rightWidget = new QWidgetItem(item);
     m_isRightPinned = pinned;
-    if (item)
+    if (item) {
         item->raise();
+    }
 }
 
 void BoardLayout::setBottomWidget(QWidget *const item, bool pinned)
@@ -86,8 +89,9 @@ void BoardLayout::setBottomWidget(QWidget *const item, bool pinned)
     delete m_bottomWidget;
     m_bottomWidget = new QWidgetItem(item);
     m_isBottomPinned = pinned;
-    if (item)
+    if (item) {
         item->raise();
+    }
 }
 
 void BoardLayout::setCentralWidget(QWidget *const item)
@@ -133,8 +137,9 @@ int BoardLayout::count() const
     // there are only 5 widgets so its o(1)
     int count{0};
     for (const auto item : m_widgets) {
-        if (*item != nullptr)
+        if (*item != nullptr) {
             count++;
+        }
     }
     return count;
 }

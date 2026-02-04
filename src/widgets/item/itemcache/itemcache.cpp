@@ -29,9 +29,9 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     const QRectF transformedQueryRegion{transformer.worldToGrid(transform.inverted().mapRect(queryRegion))};
 
     // Check if item is not already cached
-    if (item->isDirty() || m_cacheGrids.find(item) == m_cacheGrids.end()) {
-        QSizeF itemSize{transformer.worldToGrid(boundingBox.size())};
-        QSizeF maxCellSize{Common::maxItemCacheCellSize.toSizeF()};
+    if (item->isDirty() || !m_cacheGrids.contains(item)) {
+        const QSizeF itemSize{transformer.worldToGrid(boundingBox.size())};
+        const QSizeF maxCellSize{Common::maxItemCacheCellSize.toSizeF()};
 
         const QPointF worldOffset{context->spatialContext()->offsetPos()};
         const QRectF worldViewport(worldOffset, transformer.viewToWorld(canvas->dimensions()));

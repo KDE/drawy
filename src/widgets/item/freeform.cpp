@@ -44,8 +44,9 @@ void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 
 void FreeformItem::finalizeStroke()
 {
-    if (m_pointBuffer.empty())
+    if (m_pointBuffer.empty()) {
         return;
+    }
 
     if (m_points.empty()) {
         m_points = m_pointBuffer;
@@ -147,7 +148,7 @@ void FreeformItem::drawBuffer(QPainter &painter, const QPointF &offset) const
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
-    QPainterPath path{Common::Utils::Freehand::getStroke(m_pointBuffer, m_pressureBuffer, m_simulatePressure, thickness)};
+    const QPainterPath path{Common::Utils::Freehand::getStroke(m_pointBuffer, m_pressureBuffer, m_simulatePressure, thickness)};
 
     painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.setPen(Qt::NoPen);

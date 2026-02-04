@@ -67,15 +67,17 @@ bool QuadTree::insert(const std::shared_ptr<Item> &item, bool updateOrder)
     if (m_items.size() < m_capacity) {
         m_items.push_back(item);
 
-        if (updateOrder)
+        if (updateOrder) {
             m_orderedList->insert(item);
+        }
 
         return true;
     }
 
     // subdivide if not already subdivided
-    if (m_topLeft == nullptr)
+    if (m_topLeft == nullptr) {
         subdivide();
+    }
 
     bool inserted = false;
     if (m_topLeft->insert(item, updateOrder))
@@ -100,8 +102,9 @@ void QuadTree::deleteItem(const std::shared_ptr<Item> &item, bool updateOrder)
     if (it != m_items.end()) {
         m_items.erase(it);
 
-        if (updateOrder)
+        if (updateOrder) {
             m_orderedList->remove(item);
+        }
 
         return;
     }
@@ -136,8 +139,9 @@ void QuadTree::reorder(QList<ItemPtr> &items) const
 
 void QuadTree::deleteItems(const QRectF &boundingBox)
 {
-    if (!m_boundingBox.intersects(boundingBox))
+    if (!m_boundingBox.intersects(boundingBox)) {
         return;
+    }
 
     for (int i = 0; i < m_items.size();) {
         if (boundingBox.intersects(m_items[i]->boundingBox())) {
@@ -213,8 +217,9 @@ void QuadTree::expand(const QPointF &point)
 {
     // This function grows the quadtree in size recursively if the
     // point lies outside of it, making it almost infinite!
-    if (m_boundingBox.contains(point))
+    if (m_boundingBox.contains(point)) {
         return;
+    }
 
     const double treeW{m_boundingBox.width()};
     const double treeH{m_boundingBox.height()};
@@ -255,10 +260,11 @@ void QuadTree::expand(const QPointF &point)
     }
     cur->m_items = std::move(m_items);
 
-    if (topLeft == nullptr)
+    if (topLeft == nullptr) {
         topLeft = std::move(cur);
-    else if (bottomRight == nullptr)
+    } else if (bottomRight == nullptr) {
         bottomRight = std::move(cur);
+    }
 
     m_topLeft = std::move(topLeft);
     m_topRight = std::move(topRight);

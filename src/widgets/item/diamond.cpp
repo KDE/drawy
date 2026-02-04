@@ -41,8 +41,9 @@ void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool DiamondItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect))
+    if (!boundingBox().intersects(rect)) {
         return false;
+    }
 
     const QRectF box{start(), end()};
     const QPointF p{box.topLeft()};

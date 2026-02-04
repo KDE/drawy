@@ -84,13 +84,15 @@ qreal Canvas::scale() const
 
 void Canvas::setScale(const qreal scale)
 {
-    if (scale == 0 || m_scale == 0)
+    if (scale == 0 || m_scale == 0) {
         return;
+    }
 
     m_sizeHint = (m_sizeHint * scale) / m_scale;
 
-    if (scale > m_scale)
+    if (scale > m_scale) {
         m_maxSize = m_sizeHint;
+    }
     m_scale = scale;
     resize();
 }
@@ -110,8 +112,9 @@ void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
         painter.setClipRegion(m_canvas->rect());
         painter.drawPixmap(0, 0, *m_canvas);
     }
-    if (m_overlay)
+    if (m_overlay) {
         painter.drawPixmap(0, 0, *m_overlay);
+    }
 }
 
 void Canvas::resizeEvent(QResizeEvent *event)
@@ -199,7 +202,7 @@ void Canvas::resize()
     }
 
     QSize oldSize{m_canvas->size()};
-    QSize newSize{size() * m_scale};
+    const QSize newSize{size() * m_scale};
     m_maxSize.setWidth(std::max(oldSize.width(), newSize.width()));
     m_maxSize.setHeight(std::max(oldSize.height(), newSize.height()));
 
@@ -209,7 +212,8 @@ void Canvas::resize()
     setCanvasBg(canvasBg());
     setOverlayBg(overlayBg());
 
-    QPainter canvasPainter{canvas.get()}, overlayPainter{overlay.get()};
+    QPainter canvasPainter{canvas.get()};
+    QPainter overlayPainter{overlay.get()};
     canvasPainter.drawPixmap(0, 0, *m_canvas);
     overlayPainter.drawPixmap(0, 0, *m_overlay);
 

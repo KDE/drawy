@@ -26,7 +26,7 @@ PropertyBar::PropertyBar(QWidget *parent)
     setAutoFillBackground(true);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-    QPalette pal{QApplication::palette()};
+    const QPalette pal{QApplication::palette()};
     QColor borderColor{pal.color(QPalette::Text)};
     borderColor.setAlpha(51); // 0.2%
 
@@ -82,7 +82,7 @@ void PropertyBar::updateProperties(Tool &tool)
         show();
     }
 
-    for (Property::Type property : properties) {
+    for (const Property::Type &property : properties) {
         try {
             const PropertyWidget *widget{m_propertyManager->widget(property)};
             auto *widgetLabel{new QLabel{widget->name(), this}};

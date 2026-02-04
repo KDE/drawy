@@ -56,7 +56,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     painter.save();
 
     const QRectF curBox{m_boundingBox.translated(-offset)};
-    qsizetype cur{caret()};
+    const qsizetype cur{caret()};
 
     if (mode() == Mode::Edit) {
         // Drawing the caret
@@ -67,18 +67,19 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
         int lineCount{0};
         for (int pos{0}; pos < cur; pos++) {
-            if (m_text[pos] == u'\n')
+            if (m_text[pos] == u'\n') {
                 lineCount++;
+            }
         }
 
-        QFontMetrics metrics{getFont()};
+        const QFontMetrics metrics{getFont()};
 
-        int width{metrics.size(getTextFlags(), curLine).width()};
-        int lineHeight{metrics.height()};
+        const int width{metrics.size(getTextFlags(), curLine).width()};
+        const int lineHeight{metrics.height()};
 
-        QPointF caretTop{curBox.topLeft().x() + width, curBox.topLeft().y() + lineHeight * lineCount};
+        const QPointF caretTop{curBox.topLeft().x() + width, curBox.topLeft().y() + lineHeight * lineCount};
 
-        QPointF caretBottom{caretTop.x(), caretTop.y() + lineHeight};
+        const QPointF caretBottom{caretTop.x(), caretTop.y() + lineHeight};
 
         painter.setPen(getPen());
         painter.drawLine(caretTop, caretBottom);
@@ -86,8 +87,8 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         // Drawing selection
         // PERF: Can be optimized but.. me lazy
         if (hasSelection()) {
-            qsizetype selStart = qMin(selectionStart(), selectionEnd());
-            qsizetype selEnd = qMax(selectionStart(), selectionEnd());
+            const qsizetype selStart = qMin(selectionStart(), selectionEnd());
+            const qsizetype selEnd = qMax(selectionStart(), selectionEnd());
 
             painter.setBrush(Common::selectionBackgroundColor);
             painter.setPen(Qt::NoPen);
@@ -161,8 +162,9 @@ qsizetype TextItem::caretPosInLine() const
 
 void TextItem::setCaret(qsizetype index, bool updatePosInLine)
 {
-    if (index < 0 || index > m_text.size())
+    if (index < 0 || index > m_text.size()) {
         return;
+    }
 
     setDirty(true);
     setSelectionStart(index);
@@ -180,8 +182,9 @@ int TextItem::getLineFromY(double yPos) const
     const QFontMetricsF metrics{getFont()};
     const double lineHeight{metrics.height()};
 
-    if (lineHeight <= 0)
+    if (lineHeight <= 0) {
         return 0;
+    }
 
     const double distFromTop{std::max(yPos - m_boundingBox.y(), 0.0)};
     return static_cast<int>(std::ceil(distFromTop / lineHeight));
@@ -198,8 +201,9 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
     const double lineWidth{metrics.boundingRect(m_boundingBox, getTextFlags(), line).width()};
 
     if (distanceFromLeft > lineWidth) {
-        if (end == m_text.size() - 1)
+        if (end == m_text.size() - 1) {
             return m_text.size();
+        }
         return end;
     }
 
@@ -222,8 +226,9 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
         const double widthAfter{metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(index + 1)).width()};
 
         const double midPoint{(widthBefore + widthAfter) / 2.0};
-        if (distanceFromLeft > midPoint)
+        if (distanceFromLeft > midPoint) {
             index++;
+        }
     }
 
     return start + index;
@@ -231,8 +236,9 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
 
 void TextItem::setCaret(const QPointF &cursorPos)
 {
-    if (!m_boundingBox.contains(cursorPos))
+    if (!m_boundingBox.contains(cursorPos)) {
         return;
+    }
 
     const int lineNumber{getLineFromY(cursorPos.y())};
     const qsizetype index{getIndexFromX(cursorPos.x(), lineNumber)};
@@ -264,17 +270,19 @@ void TextItem::setSelectionEnd(qsizetype index)
 
 const QString TextItem::selectedText() const
 {
-    if (!hasSelection())
+    if (!hasSelection()) {
         return {};
+    }
 
-    qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
+    const qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
     return m_text.mid(std::min(selStart, selEnd), selEnd - selStart + 1);
 }
 
 void TextItem::insertText(const QString &text)
 {
-    if (text.isEmpty())
+    if (text.isEmpty()) {
         return;
+    }
 
     setDirty(true);
     const qsizetype textSize{text.size()};
@@ -298,11 +306,13 @@ void TextItem::updateBoundingBox()
 
 void TextItem::deleteSubStr(qsizetype start, qsizetype end)
 {
-    if (start < 0 || start >= m_text.size() || end < 0 || end >= m_text.size())
+    if (start < 0 || start >= m_text.size() || end < 0 || end >= m_text.size()) {
         return;
+    }
 
-    if (end < start)
+    if (end < start) {
         std::swap(start, end);
+    }
 
     m_text.erase(m_text.begin() + start, m_text.begin() + end + 1);
 
@@ -316,12 +326,14 @@ void TextItem::deleteSubStr(qsizetype start, qsizetype end)
 
 void TextItem::deleteSelection()
 {
-    if (!hasSelection())
+    if (!hasSelection()) {
         return;
+    }
 
     qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
-    if (selStart > selEnd)
+    if (selStart > selEnd) {
         std::swap(selStart, selEnd);
+    }
 
     setSelectionStart(TextItem::INVALID);
     setSelectionEnd(TextItem::INVALID);
@@ -333,15 +345,16 @@ void TextItem::deleteSelection()
 
 bool TextItem::hasSelection() const
 {
-    if (selectionStart() == selectionEnd())
+    if (selectionStart() == selectionEnd()) {
         return false;
+    }
 
     return selectionStart() != INVALID && selectionEnd() != INVALID;
 }
 
 QFont TextItem::getFont() const
 {
-    QFont font{};
+    QFont font;
     font.setPointSize(property(Property::Type::FontSize).value<int>());
     font.setFamily(u"Fuzzy Bubbles"_s);
 
@@ -365,8 +378,9 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
 
     qsizetype startIndex{0};
     for (qsizetype pos{0}; pos < len; pos++) {
-        if (lineNumber == 1)
+        if (lineNumber == 1) {
             break;
+        }
 
         if (m_text[pos] == u'\n') {
             startIndex = pos + 1;
@@ -375,8 +389,9 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
     }
 
     qsizetype endIndex{m_text.indexOf(u'\n', startIndex)};
-    if (endIndex == -1)
+    if (endIndex == -1) {
         endIndex = len - 1;
+    }
 
     return std::make_pair(startIndex, endIndex);
 }
@@ -384,12 +399,14 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
 std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
 {
     qsizetype start{m_text.lastIndexOf(u'\n', position - 1)};
-    if (start == -1 || position == 0)
+    if (start == -1 || position == 0) {
         start = 0;
+    }
 
     qsizetype end{m_text.indexOf(u'\n', position)};
-    if (end == -1)
+    if (end == -1) {
         end = m_text.size() - 1;
+    }
 
     return std::make_pair(start, end);
 }
@@ -398,8 +415,9 @@ qsizetype TextItem::getPrevBreak(qsizetype position) const
 {
     auto isBreak = [&](qsizetype pos) {
         for (const auto &sep : Common::wordSeparators) {
-            if (m_text[pos] == sep)
+            if (m_text[pos] == sep) {
                 return true;
+            }
         }
 
         return false;

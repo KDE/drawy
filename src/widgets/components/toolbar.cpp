@@ -18,7 +18,7 @@ ToolBar::ToolBar(QWidget *parent)
     setFrameShadow(QFrame::Raised);
     setAutoFillBackground(true);
 
-    QPalette pal{QApplication::palette()};
+    const QPalette pal{QApplication::palette()};
     QColor borderColor{pal.color(QPalette::Text)};
     borderColor.setAlpha(51); // 0.2%
 
@@ -45,8 +45,9 @@ Tool &ToolBar::curTool() const
 {
     const Tool::Type curID{static_cast<Tool::Type>(m_group->checkedId())};
 
-    if (m_tools.find(curID) == m_tools.end())
+    if (!m_tools.contains(curID)) {
         throw std::logic_error("Trying to access a non existent tool");
+    }
 
     return *m_tools.at(curID);
 }
@@ -62,7 +63,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
     btn->setIcon(QIcon::fromTheme(tool->icon()));
     btn->setAutoRaise(true);
 
-    int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+    const int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
     btn->setIconSize(QSize{iconSize, iconSize});
 
     btn->setCheckable(true);

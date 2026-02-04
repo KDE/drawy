@@ -28,7 +28,7 @@ const QRectF Item::boundingBox() const
 
 const Property Item::property(const Property::Type propertyType) const
 {
-    if (m_properties.find(propertyType) == m_properties.end()) {
+    if (!m_properties.contains(propertyType)) {
         throw std::logic_error("Item does not support this property.");
     }
 
@@ -59,7 +59,7 @@ const QList<Property> Item::properties() const
 
 bool Item::hasProperty(Property::Type propertyType) const
 {
-    return m_properties.find(propertyType) != m_properties.end();
+    return m_properties.contains(propertyType);
 }
 
 QByteArray Item::id() const
@@ -84,7 +84,7 @@ void Item::setLocked(bool newLocked)
 
 void Item::setProperty(const Property::Type propertyType, Property newObj)
 {
-    if (m_properties.find(propertyType) != m_properties.end()) {
+    if (m_properties.contains(propertyType)) {
         m_properties[propertyType] = std::move(newObj);
     }
 
