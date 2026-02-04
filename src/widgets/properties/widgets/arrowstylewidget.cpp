@@ -10,13 +10,16 @@
 #include "context/uicontext.hpp"
 
 #include <QHBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
 
     auto layout{new QHBoxLayout(m_widget)};
+    layout->setObjectName(u"layout"_s);
     layout->setContentsMargins({});
+    layout->setAlignment(Qt::AlignLeft);
 
     auto startArrowButton{new ButtonActionsWidget(m_widget)};
     auto endArrowButton{new ButtonActionsWidget(m_widget)};

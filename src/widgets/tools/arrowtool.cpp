@@ -10,6 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 ArrowTool::ArrowTool()
 {
     m_itemFactory = std::make_unique<ArrowFactory>();
+    m_properties += Property::Type::ArrowStyle;
 }
 
 QString ArrowTool::tooltip() const
