@@ -36,5 +36,5 @@ Q_SIGNALS:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);
     QString mFileName;
-    bool mIsAutoSave;
+    bool mIsAutoSave{false};
 };

@@ -7,6 +7,7 @@
 #include "libdrawywidgets_private_export.h"
 #include <KPageDialog>
 class ConfigureGeneralWidget;
+
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureSettingsDialog : public KPageDialog
 {
     Q_OBJECT

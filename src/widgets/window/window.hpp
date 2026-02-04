@@ -10,7 +10,7 @@ class AutoSaveJob;
 
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;

@@ -32,9 +32,10 @@ void AutoSaveJob::start()
 
 void AutoSaveJob::saveFile()
 {
+    auto context{ApplicationContext::instance()};
+
     const QString fileName = DrawyGlobalConfig::self()->path();
     auto saveAsJob = new SaveAsJob(this);
-    auto context{ApplicationContext::instance()};
 
     const SaveAsJob::SaveAsInfo info{.filePath = fileName,
                                      .offsetPos = context->spatialContext()->offsetPos(),

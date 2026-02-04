@@ -103,13 +103,13 @@ void MainWindow::loadCustomFonts()
 void MainWindow::closeEvent(QCloseEvent *e)
 {
     auto context{ApplicationContext::instance()};
-    if (context->currentFileModified()) {
-        if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
-            m_autoSaveJob->saveFile();
-            e->accept();
-            return;
-        }
+    if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
+        m_autoSaveJob->saveFile();
+        e->accept();
+        return;
+    }
 
+    if (context->currentFileModified()) {
         if (context->uiContext()->actionManager()->confirmSaveAfterModification()) {
             e->accept();
         } else {

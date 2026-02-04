@@ -52,11 +52,6 @@ void LoadJob::start()
     job->setJsonObject(docObj);
     connect(job, &DeserializeJob::deserializeDone, this, &LoadJob::slotDeserializeDone);
 
-    if (!mIsAutoSave) {
-        ApplicationContext::instance()->setCurrentFileModified(false);
-        ApplicationContext::instance()->setCurrentFileName(mFileName);
-    }
-
     job->start();
 }
 
@@ -69,6 +64,11 @@ void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
     };
 
     Q_EMIT loadDone(loadInfo);
+
+    if (!mIsAutoSave) {
+        ApplicationContext::instance()->setCurrentFileModified(false);
+        ApplicationContext::instance()->setCurrentFileName(mFileName);
+    }
 
     deleteLater();
 }

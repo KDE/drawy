@@ -5,11 +5,14 @@
  */
 #include "restoreautosavejob.hpp"
 #include "autosavejobutil.hpp"
+#include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "drawy_autosave_debug.h"
 #include "drawyglobalconfig.h"
 #include "jobs/loadjob.hpp"
 #include "jobs/loadjobutil.hpp"
+#include <KConfig>
+#include <KConfigGroup>
 #include <KMessageBox>
 #include <QFile>
 
@@ -23,12 +26,10 @@ RestoreAutoSaveJob::~RestoreAutoSaveJob() = default;
 
 void RestoreAutoSaveJob::start()
 {
-    if (AutoSaveJobUtil::checkExistingAutoSaveFile()) {
-        qCDebug(DRAWY_AUTOSAVE_LOG) << "Existing auto save file found";
+    if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
         restoreFile();
     } else {
-        Q_EMIT restoreDone();
-        deleteLater();
+        removeAutoSaveFile();
     }
 }
 
@@ -44,17 +45,25 @@ void RestoreAutoSaveJob::setParentWidget(QWidget *newParentWidget)
 
 void RestoreAutoSaveJob::restoreFile()
 {
-    if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
-        auto job = new LoadJob(this);
-        job->setFileName(AutoSaveJobUtil::temporaryFileName());
-        job->setIsAutoSave(true);
-        connect(job, &LoadJob::loadDone, this, [](const LoadJob::LoadInfo &info) {
-            LoadJobUtil::loadFile(info);
-        });
-        job->start();
-    } else {
-        removeAutoSaveFile();
-    }
+    KConfig config{Common::configName};
+    KConfigGroup sessionGroup{&config, Common::configSession};
+
+    const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile, u""_s)};
+    const bool lastSavedFileModified{sessionGroup.readEntry(Common::configSessionLastSavedFileModified, false)};
+
+    auto job = new LoadJob(this);
+    job->setFileName(AutoSaveJobUtil::temporaryFileName());
+    job->setIsAutoSave(true);
+
+    connect(job, &LoadJob::loadDone, this, [this, lastSavedFile, lastSavedFileModified](const LoadJob::LoadInfo &info) {
+        LoadJobUtil::loadFile(info);
+        if (!lastSavedFile.isEmpty()) {
+            m_context->setCurrentFileName(lastSavedFile);
+            m_context->setCurrentFileModified(lastSavedFileModified);
+        }
+    });
+
+    job->start();
 }
 
 void RestoreAutoSaveJob::removeAutoSaveFile()

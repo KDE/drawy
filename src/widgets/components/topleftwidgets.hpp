@@ -14,5 +14,5 @@ public:
     explicit TopLeftWidgets(QWidget *parent = nullptr);
 
 private:
-    QHBoxLayout *const m_layout{nullptr};
+    QHBoxLayout *const m_layout;
 };

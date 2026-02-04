@@ -17,7 +17,7 @@ public:
     [[nodiscard]] bool isInitialized() const;
 
 private:
-    QHBoxLayout *const m_layout{nullptr};
+    QHBoxLayout *const m_layout;
 
     bool m_isInitialized{false};
 };

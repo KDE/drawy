@@ -1,16 +1,19 @@
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #pragma once
 
 #include "dialog/configgroupinterface.hpp"
-#include <QCheckBox>
-#include <QGroupBox>
-#include <QLineEdit>
-#include <QSpinBox>
-#include <QWidget>
+class QSpinBox;
+class QWidget;
+class QLineEdit;
+class QCheckBox;
 
 class AutoSaveWidget : public ConfigGroupInterface
 {
 public:
-    AutoSaveWidget(QWidget *parent);
+    explicit AutoSaveWidget(QWidget *parent);
 
     void save() override;
     void load() override;

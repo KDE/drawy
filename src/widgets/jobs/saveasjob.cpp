@@ -4,12 +4,16 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "saveasjob.hpp"
+#include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "drawy_debug.h"
 #include "serializejob.hpp"
+#include <KConfig>
+#include <KConfigGroup>
 #include <QDebug>
 #include <QJsonObject>
 
+using namespace Qt::StringLiterals;
 SaveAsJob::SaveAsJob(QObject *parent)
     : QObject{parent}
 {
@@ -42,11 +46,32 @@ void SaveAsJob::slotSerializeDone(const QJsonObject &obj)
 {
     Q_EMIT saveFileDone(obj);
 
+    auto context{ApplicationContext::instance()};
+
+    KConfig config{Common::configName};
+    KConfigGroup sessionGroup{&config, Common::configSession};
+
     // only update modified status if it's not the autosaved file
     // the autosave file is just a backup file
     if (!mSaveAsInfo.isAutoSave) {
-        ApplicationContext::instance()->setCurrentFileModified(false);
-        ApplicationContext::instance()->setCurrentFileName(mSaveAsInfo.filePath);
+        context->setCurrentFileModified(false);
+        context->setCurrentFileName(mSaveAsInfo.filePath);
+    }
+
+    if (!context->fileNeedsName()) {
+        sessionGroup.writeEntry(Common::configSessionLastSavedFile, context->currentFileName());
+        if (context->currentFileModified()) {
+            sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, true);
+            if (mSaveAsInfo.isAutoSave) {
+                sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, true);
+            } else {
+                sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, false);
+            }
+        } else {
+            sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, false);
+        }
+    } else {
+        sessionGroup.writeEntry(Common::configSessionLastSavedFile, u""_s);
     }
 
     deleteLater();

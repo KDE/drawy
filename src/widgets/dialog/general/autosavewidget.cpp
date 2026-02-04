@@ -1,12 +1,18 @@
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #include "autosavewidget.hpp"
 #include "dialog/general/configuregeneralwidget.hpp"
-#include "properties/property.hpp"
 
 #include "drawyglobalconfig.h"
+#include <QCheckBox>
 #include <QFileDialog>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QLineEdit>
+#include <QSpinBox>
 #include <QStandardPaths>
 #include <QToolButton>
 
@@ -36,12 +42,12 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
     pathLayout->setContentsMargins(0, 0, 0, 0);
 
     connect(pathBrowseButton, &QToolButton::clicked, this, [this]() -> void {
-        auto home{QStandardPaths::writableLocation(QStandardPaths::HomeLocation)};
-        auto directory{QFileDialog::getExistingDirectory(this, tr("Open Directory"), home, QFileDialog::ShowDirsOnly)};
+        const auto home{QStandardPaths::writableLocation(QStandardPaths::HomeLocation)};
+        const auto directory{QFileDialog::getExistingDirectory(this, tr("Open Directory"), home, QFileDialog::ShowDirsOnly)};
         if (directory.isEmpty())
             return;
 
-        auto finalPath{QDir::cleanPath(directory + QDir::separator() + u"drawy.autosave"_s)};
+        const auto finalPath{QDir::cleanPath(directory + QDir::separator() + u"drawy.autosave"_s)};
         m_path->setText(finalPath);
     });
 
