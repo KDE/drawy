@@ -276,7 +276,8 @@ QString TextItem::selectedText() const
         return {};
     }
 
-    const qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
+    const qsizetype selStart{selectionStart()};
+    const qsizetype selEnd{selectionEnd()};
     return m_text.mid(std::min(selStart, selEnd), selEnd - selStart + 1);
 }
 

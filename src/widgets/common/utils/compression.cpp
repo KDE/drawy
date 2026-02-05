@@ -14,7 +14,7 @@ QByteArray compressData(const QByteArray &data)
 
     QByteArray output{static_cast<qsizetype>(requiredOutputSize), '\0'};
 
-    size_t result = ZSTD_compress(output.data(), requiredOutputSize, data.data(), data.size(), 4);
+    const size_t result = ZSTD_compress(output.data(), requiredOutputSize, data.data(), data.size(), 4);
 
     if (ZSTD_isError(result)) {
         throw std::runtime_error(ZSTD_getErrorName(result));
