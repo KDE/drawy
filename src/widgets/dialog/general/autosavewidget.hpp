@@ -5,12 +5,13 @@
 #pragma once
 
 #include "dialog/configgroupinterface.hpp"
+#include "libdrawywidgets_private_export.h"
 class QSpinBox;
 class QWidget;
 class QLineEdit;
 class QCheckBox;
 
-class AutoSaveWidget : public ConfigGroupInterface
+class LIBDRAWYWIDGETS_TESTS_EXPORT AutoSaveWidget : public ConfigGroupInterface
 {
     Q_OBJECT
 public:

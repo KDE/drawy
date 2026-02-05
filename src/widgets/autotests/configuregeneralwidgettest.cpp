@@ -5,11 +5,13 @@
  */
 
 #include "configuregeneralwidgettest.hpp"
+#include "dialog/general/autosavewidget.hpp"
 #include "dialog/general/configuregeneralwidget.hpp"
 #include <QSpinBox>
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
 QTEST_MAIN(ConfigureGeneralWidgetTest)
 using namespace Qt::Literals::StringLiterals;
 ConfigureGeneralWidgetTest::ConfigureGeneralWidgetTest(QObject *parent)
@@ -25,9 +27,8 @@ void ConfigureGeneralWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mAutoSave = w.findChild<QSpinBox *>(u"mAutoSave"_s);
-    QVERIFY(mAutoSave);
-    QCOMPARE(mAutoSave->value(), 0);
+    auto m_autoSaveWidget = w.findChild<AutoSaveWidget *>(u"m_autoSaveWidget"_s);
+    QVERIFY(m_autoSaveWidget);
 }
 
 #include "moc_configuregeneralwidgettest.cpp"

@@ -60,6 +60,11 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
 
     m_layout->addWidget(pathLabel);
     m_layout->addWidget(m_pathWidget);
+
+    // for tests
+    m_delay->setObjectName(u"m_delay"_s);
+    m_path->setObjectName(u"m_path"_s);
+    m_enabled->setObjectName(u"m_enabled"_s);
 }
 
 void AutoSaveWidget::save()
