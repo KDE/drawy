@@ -98,15 +98,16 @@ private:
     QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Receiver *recvr, Func &&slot)
     {
         auto result{createAction(actionType, title, keys)};
-        connect(result, &QAction::triggered, this, [recvr, f = std::forward<Func>(slot)](bool) mutable {
-            if constexpr (std::is_invocable_v<Func, Receiver *>) {
+        if constexpr (std::is_invocable_v<Func, Receiver *>) {
+            connect(result, &QAction::triggered, this, [recvr, f = std::forward<Func>(slot)](bool) mutable {
                 std::invoke(f, recvr);
-            } else {
-                // it means it's not a member function
+            });
+        } else {
+            // it means it's not a member function
+            connect(result, &QAction::triggered, this, [f = std::forward<Func>(slot)](bool) mutable {
                 std::invoke(f);
-            }
-        });
-        ;
+            });
+        }
 
         return result;
     }
