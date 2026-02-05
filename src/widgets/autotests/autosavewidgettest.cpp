@@ -35,3 +35,5 @@ void AutoSaveWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(m_enabled->isChecked(), false);
     QVERIFY(m_enabled);
 }
+
+#include "moc_autosavewidgettest.cpp"

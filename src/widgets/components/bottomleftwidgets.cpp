@@ -57,7 +57,7 @@ BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
 
     connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [zoomLabel](qreal newZoomFactor) {
         const int zoomValue{qRound(newZoomFactor * 100)};
-        zoomLabel->setText(QString(u"%1%"_s).arg(zoomValue));
+        zoomLabel->setText(u"%1%"_s.arg(zoomValue));
     });
 
     zoomControlLayout->setSpacing(style()->pixelMetric(QStyle::PM_ToolBarItemMargin));

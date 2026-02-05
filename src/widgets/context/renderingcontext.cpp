@@ -101,7 +101,7 @@ bool RenderingContext::canZoomOut() const
 
 void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
 {
-    qreal oldZoomFactor = m_zoomFactor;
+    const qreal oldZoomFactor = m_zoomFactor;
     m_zoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
 
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
