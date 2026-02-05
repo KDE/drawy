@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-03 19:28+0300\n"
+"PO-Revision-Date: 2026-02-04 20:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -59,7 +59,7 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
 
-#: widgets/command/alignitemcommand.cpp:108
+#: widgets/command/alignitemcommand.cpp:111
 msgctxt "QObject|"
 msgid "Align Items"
 msgstr "Ögeleri Hizala"
@@ -214,7 +214,7 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr "Genel"
 
-#: widgets/drawycommandlineparser.cpp:20
+#: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Tam Ekran"
@@ -230,40 +230,53 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:145 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:147
+#: widgets/keybindings/actionmanager.cpp:180 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:148 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:193
+#: widgets/keybindings/actionmanager.cpp:169
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to save file?"
+msgctxt "ActionManager|"
+msgid "Do you want to clear canvas?"
+msgstr "Dosyayı kaydetmek istiyor musunuz?"
+
+#: widgets/keybindings/actionmanager.cpp:169
+msgctxt "ActionManager|"
+msgid "Clear"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:184
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/keybindings/actionmanager.cpp:202
+#: widgets/keybindings/actionmanager.cpp:194
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Başlıksız.svg"
 
-#: widgets/keybindings/actionmanager.cpp:204
+#: widgets/keybindings/actionmanager.cpp:196
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:206
+#: widgets/keybindings/actionmanager.cpp:198
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
@@ -373,7 +386,7 @@ msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "Hizalama"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:31
+#: widgets/properties/widgets/arrowstylewidget.cpp:34
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Ok"
@@ -384,9 +397,6 @@ msgid "Background Color"
 msgstr "Arka Plan Rengi"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:29
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Solid"
 msgctxt "BackgroundStyleWidget|"
 msgid "Solid"
 msgstr "Katı"
@@ -394,12 +404,12 @@ msgstr "Katı"
 #: widgets/properties/widgets/backgroundstylewidget.cpp:38
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal Cross"
-msgstr ""
+msgstr "Köşegenel Artı"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:47
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal"
-msgstr ""
+msgstr "Köşegenel"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
@@ -481,7 +491,7 @@ msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Z Sırası"
 
-#: widgets/tools/arrowtool.cpp:17
+#: widgets/tools/arrowtool.cpp:18
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
@@ -496,7 +506,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:157
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
@@ -521,12 +531,12 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/tools/texttool.cpp:500
+#: widgets/tools/texttool.cpp:508
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
@@ -551,67 +561,67 @@ msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "Yok Say"
 
-#: widgets/window/window.cpp:206
+#: widgets/window/window.cpp:208
 msgctxt "MainWindow|"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/window/window.cpp:222
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:232
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/window/window.cpp:231
+#: widgets/window/window.cpp:234
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/window/window.cpp:233
+#: widgets/window/window.cpp:236
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/window/window.cpp:237
+#: widgets/window/window.cpp:240
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "Ögeleri Grupla"
 
-#: widgets/window/window.cpp:241
+#: widgets/window/window.cpp:244
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/window/window.cpp:245
+#: widgets/window/window.cpp:248
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "Sil"

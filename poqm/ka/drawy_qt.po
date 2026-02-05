@@ -59,7 +59,7 @@ msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
-#: widgets/command/alignitemcommand.cpp:108
+#: widgets/command/alignitemcommand.cpp:111
 msgctxt "QObject|"
 msgid "Align Items"
 msgstr "ელემენტების გასწორება"
@@ -214,7 +214,7 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr "ზოგადი"
 
-#: widgets/drawycommandlineparser.cpp:20
+#: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "სრულ ეკრანზე"
@@ -229,40 +229,53 @@ msgctxt "RestoreAutoSaveJob|"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/keybindings/actionmanager.cpp:166 widgets/window/window.cpp:117
+#: widgets/keybindings/actionmanager.cpp:145 widgets/window/window.cpp:117
 #, qt-format
 msgctxt "QObject|"
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
-#: widgets/keybindings/actionmanager.cpp:168
-#: widgets/keybindings/actionmanager.cpp:189 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:147
+#: widgets/keybindings/actionmanager.cpp:180 widgets/window/window.cpp:119
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:169 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:148 widgets/window/window.cpp:120
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: widgets/keybindings/actionmanager.cpp:193
+#: widgets/keybindings/actionmanager.cpp:169
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to save file?"
+msgctxt "ActionManager|"
+msgid "Do you want to clear canvas?"
+msgstr "გსურთ ფაილის შენახვა?"
+
+#: widgets/keybindings/actionmanager.cpp:169
+msgctxt "ActionManager|"
+msgid "Clear"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:184
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/keybindings/actionmanager.cpp:202
+#: widgets/keybindings/actionmanager.cpp:194
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:204
+#: widgets/keybindings/actionmanager.cpp:196
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:206
+#: widgets/keybindings/actionmanager.cpp:198
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "SVG ფაილად გატანა"
@@ -372,7 +385,7 @@ msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "სწორება"
 
-#: widgets/properties/widgets/arrowstylewidget.cpp:31
+#: widgets/properties/widgets/arrowstylewidget.cpp:34
 msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "ისარი"
@@ -383,9 +396,6 @@ msgid "Background Color"
 msgstr "ფონის ფერი"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:29
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Solid"
 msgctxt "BackgroundStyleWidget|"
 msgid "Solid"
 msgstr "მყარი"
@@ -393,12 +403,12 @@ msgstr "მყარი"
 #: widgets/properties/widgets/backgroundstylewidget.cpp:38
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal Cross"
-msgstr ""
+msgstr "დიაგონალური ჯვარი"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:47
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal"
-msgstr ""
+msgstr "დიაგონალური"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:67
 msgctxt "BackgroundStyleWidget|"
@@ -480,7 +490,7 @@ msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "Z-მიმდევრობა"
 
-#: widgets/tools/arrowtool.cpp:17
+#: widgets/tools/arrowtool.cpp:18
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
@@ -495,7 +505,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:157
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
@@ -520,12 +530,12 @@ msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:135
+#: widgets/tools/selectiontool/selectiontool.cpp:138
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: widgets/tools/texttool.cpp:500
+#: widgets/tools/texttool.cpp:508
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
@@ -550,67 +560,67 @@ msgctxt "MainWindow|"
 msgid "Ignore"
 msgstr "იგნორი"
 
-#: widgets/window/window.cpp:206
+#: widgets/window/window.cpp:208
 msgctxt "MainWindow|"
 msgid "Export to Svg"
 msgstr "SVG ფაილად გატანა"
 
-#: widgets/window/window.cpp:222
+#: widgets/window/window.cpp:225
 msgctxt "MainWindow|"
 msgid "Freeform Tool"
 msgstr "თავისუფალი ფორმის დახატვა"
 
-#: widgets/window/window.cpp:225
+#: widgets/window/window.cpp:228
 msgctxt "MainWindow|"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
 
-#: widgets/window/window.cpp:226
+#: widgets/window/window.cpp:229
 msgctxt "MainWindow|"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: widgets/window/window.cpp:227
+#: widgets/window/window.cpp:230
 msgctxt "MainWindow|"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/window/window.cpp:228
+#: widgets/window/window.cpp:231
 msgctxt "MainWindow|"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: widgets/window/window.cpp:229
+#: widgets/window/window.cpp:232
 msgctxt "MainWindow|"
 msgid "Line Tool"
 msgstr "ხაზის ხელსაწყო"
 
-#: widgets/window/window.cpp:230
+#: widgets/window/window.cpp:233
 msgctxt "MainWindow|"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/window/window.cpp:231
+#: widgets/window/window.cpp:234
 msgctxt "MainWindow|"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
-#: widgets/window/window.cpp:233
+#: widgets/window/window.cpp:236
 msgctxt "MainWindow|"
 msgid "Move Tool"
 msgstr "გადატანის ხელსაწყო"
 
-#: widgets/window/window.cpp:237
+#: widgets/window/window.cpp:240
 msgctxt "MainWindow|"
 msgid "Group Elements"
 msgstr "ელემენტების დაჯგუფება"
 
-#: widgets/window/window.cpp:241
+#: widgets/window/window.cpp:244
 msgctxt "MainWindow|"
 msgid "Ungroup Elements"
 msgstr "ელემენტების განჯგუფება"
 
-#: widgets/window/window.cpp:245
+#: widgets/window/window.cpp:248
 msgctxt "MainWindow|"
 msgid "Delete"
 msgstr "წაშლა"
