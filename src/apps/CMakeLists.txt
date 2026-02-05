@@ -13,6 +13,7 @@ target_link_libraries(
     drawy
     KF6::Crash
     KF6::CoreAddons
+    KF6::IconThemes
     Qt::Widgets
     libdrawywidgets
 )

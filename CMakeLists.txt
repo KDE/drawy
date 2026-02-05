@@ -56,6 +56,7 @@ find_package(
         Config
         ConfigWidgets
         XmlGui
+        IconThemes
 )
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

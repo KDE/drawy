@@ -7,6 +7,9 @@
 #include <QApplication>
 #include <QCommandLineParser>
 
+#include <KIconTheme>
+#include <KStyleManager>
+
 #include "config-drawy.hpp"
 #include "drawycommandlineparser.hpp"
 #include "window/window.hpp"
@@ -21,8 +24,11 @@
 using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
+    KIconTheme::initTheme();
     QApplication a{argc, argv};
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
+
+    KStyleManager::initStyle();
 
     KAboutData aboutData(u"drawy"_s,
                          QObject::tr("drawy"),
