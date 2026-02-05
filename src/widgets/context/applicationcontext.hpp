@@ -39,6 +39,9 @@ public:
     [[nodiscard]] bool currentFileModified() const;
     void setCurrentFileModified(bool value);
 
+Q_SIGNALS:
+    void currentFileStateChanged();
+
 private:
     QString m_currentFileName;
     bool m_currentFileModified{false};

@@ -27,7 +27,7 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
     connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
-        m_currentFileModified = true;
+        setCurrentFileModified(true);
     });
     m_uiContext->initializeUIContext();
 }
@@ -51,6 +51,8 @@ void ApplicationContext::setCurrentFileName(const QString &newCurrentFileName)
 {
     m_currentFileName = newCurrentFileName;
     m_fileHasName = true;
+
+    Q_EMIT currentFileStateChanged();
 }
 
 bool ApplicationContext::currentFileModified() const
@@ -60,7 +62,13 @@ bool ApplicationContext::currentFileModified() const
 
 void ApplicationContext::setCurrentFileModified(bool value)
 {
+    bool old = m_currentFileModified;
+
     m_currentFileModified = value;
+
+    if (old != value) {
+        Q_EMIT currentFileStateChanged();
+    }
 }
 
 QWidget *ApplicationContext::parentWidget() const
@@ -104,6 +112,7 @@ void ApplicationContext::reset()
     m_currentFileName = Common::unsavedFileName;
     m_currentFileModified = false;
     m_fileHasName = false;
+    Q_EMIT currentFileStateChanged();
 }
 
 #include "moc_applicationcontext.cpp"

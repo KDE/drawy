@@ -5,10 +5,12 @@
 #include "window.hpp"
 
 #include <QFile>
+#include <QFileInfo>
 #include <QFontDatabase>
 #include <QShortcut>
 
 #include <KActionCollection>
+#include <KLocalizedString>
 #include <KStandardAction>
 #include <KStandardActions>
 
@@ -81,6 +83,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(fullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
 
     KStandardActions::quit(this, &MainWindow::close, actionCollection);
+
+    updateWindowTitle();
+    connect(mApplicationContext, &ApplicationContext::currentFileStateChanged, this, &MainWindow::updateWindowTitle);
 }
 
 MainWindow::~MainWindow() = default;
@@ -127,6 +132,18 @@ void MainWindow::loadFile(const QString &fileName)
 {
     auto actionManager{mApplicationContext->uiContext()->actionManager()};
     actionManager->loadFile(fileName);
+}
+
+void MainWindow::updateWindowTitle()
+{
+    const QFileInfo currentFileInfo(mApplicationContext->currentFileName());
+    QString fileName{currentFileInfo.fileName()};
+
+    if (mApplicationContext->currentFileModified()) {
+        fileName.append(u" *"_s);
+    }
+
+    setWindowTitle(i18nc("@title:window %1 is a filename", "%1 — Drawy", fileName));
 }
 
 #include "moc_window.cpp"
