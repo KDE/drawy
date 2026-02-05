@@ -14,18 +14,17 @@
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;
-// TODO: Use a better widget
 ColorWidgetBase::ColorWidgetBase(QWidget *parent)
     : PropertyWidget{parent}
-    , m_group{new QButtonGroup{m_widget}}
 {
     m_widget = new QWidget{parent};
+    m_group = new QButtonGroup{m_widget};
 }
 
 void ColorWidgetBase::initialize()
 {
     auto layout{new QHBoxLayout{m_widget}};
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins({});
 
     const QList<QColor> colors = defaultColors();
 
@@ -48,7 +47,9 @@ void ColorWidgetBase::initialize()
     m_currentColorButton->setToolTip(tr("Select Custom Color"));
     connect(m_currentColorButton, &QToolButton::clicked, [this]() {
         const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
-        assignCurrentColor(col);
+        if (col.isValid()) {
+            assignCurrentColor(col);
+        }
     });
     layout->addWidget(m_currentColorButton);
 
@@ -71,11 +72,6 @@ void ColorWidgetBase::assignCurrentColor(const QColor &col)
 QString ColorWidgetBase::name() const
 {
     return tr("Color");
-}
-
-const Property ColorWidgetBase::value() const
-{
-    return Property{m_currentColorButton->property("color-value"), Property::Type::StrokeColor};
 }
 
 #include "moc_colorwidgetbase.cpp"
