@@ -8,6 +8,7 @@
 #include <QColor>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <qtoolbutton.h>
 
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -24,7 +25,7 @@ QString StrokeColorWidget::name() const
 
 const Property StrokeColorWidget::value() const
 {
-    return Property{m_group->checkedButton()->property("color-value"), Property::Type::StrokeColor};
+    return Property{m_currentColorButton->property("color-value"), Property::Type::StrokeColor};
 }
 
 QList<QColor> StrokeColorWidget::defaultColors() const

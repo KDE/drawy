@@ -8,6 +8,7 @@
 #include <QColor>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <qtoolbutton.h>
 
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -24,7 +25,7 @@ QString BackgroundColorWidget::name() const
 
 const Property BackgroundColorWidget::value() const
 {
-    return Property{m_group->checkedButton()->property("color-value"), Property::Type::BackgroundColor};
+    return Property{m_currentColorButton->property("color-value"), Property::Type::BackgroundColor};
 }
 
 QList<QColor> BackgroundColorWidget::defaultColors() const

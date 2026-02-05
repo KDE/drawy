@@ -5,8 +5,10 @@
 #include "colorwidgetbase.hpp"
 
 #include "properties/property.hpp"
+#include <KSeparator>
 #include <QButtonGroup>
 #include <QColor>
+#include <QColorDialog>
 #include <QHBoxLayout>
 #include <QStyle>
 #include <QToolButton>
@@ -28,21 +30,42 @@ void ColorWidgetBase::initialize()
     const QList<QColor> colors = defaultColors();
 
     for (const QColor &color : colors) {
-        auto *btn{new QToolButton{m_widget}};
+        auto btn{new QToolButton{m_widget}};
         btn->setCheckable(true);
         btn->setStyleSheet(u"background-color: "_s + color.name());
         btn->setProperty("color-value", color);
-
         layout->addWidget(btn);
         m_group->addButton(btn);
     }
 
-    m_group->buttons().at(0)->setChecked(true);
-    m_widget->hide();
+    auto separator = new KSeparator(Qt::Vertical, m_widget);
+    separator->setObjectName(u"separator"_s);
+    layout->addWidget(separator);
+
+    m_currentColorButton = new QToolButton{m_widget};
+    m_currentColorButton->setObjectName(u"m_currentColorButton"_s);
+    m_currentColorButton->setCheckable(false);
+    m_currentColorButton->setToolTip(tr("Select Custom Color"));
+    connect(m_currentColorButton, &QToolButton::clicked, [this]() {
+        const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
+        assignCurrentColor(col);
+    });
+    layout->addWidget(m_currentColorButton);
 
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
+        const QColor selectedColor = m_group->checkedButton()->property("color-value").value<QColor>();
+        assignCurrentColor(selectedColor);
         Q_EMIT changed(value());
     });
+    m_group->buttons().at(0)->setChecked(true);
+    assignCurrentColor(m_group->buttons().at(0)->property("color-value").value<QColor>());
+    m_widget->hide();
+}
+
+void ColorWidgetBase::assignCurrentColor(const QColor &col)
+{
+    m_currentColorButton->setProperty("color-value", col);
+    m_currentColorButton->setStyleSheet(u"background-color: "_s + col.name());
 }
 
 QString ColorWidgetBase::name() const
@@ -52,7 +75,7 @@ QString ColorWidgetBase::name() const
 
 const Property ColorWidgetBase::value() const
 {
-    return Property{m_group->checkedButton()->property("color-value"), Property::Type::StrokeColor};
+    return Property{m_currentColorButton->property("color-value"), Property::Type::StrokeColor};
 }
 
 #include "moc_colorwidgetbase.cpp"

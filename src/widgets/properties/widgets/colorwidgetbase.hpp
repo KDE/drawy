@@ -6,6 +6,7 @@
 
 #include "propertywidget.hpp"
 class QButtonGroup;
+class QToolButton;
 
 class ColorWidgetBase : public PropertyWidget
 {
@@ -20,4 +21,8 @@ protected:
     [[nodiscard]] virtual QList<QColor> defaultColors() const = 0;
     void initialize();
     QButtonGroup *m_group = nullptr;
+    QToolButton *m_currentColorButton = nullptr;
+
+private:
+    void assignCurrentColor(const QColor &col);
 };
