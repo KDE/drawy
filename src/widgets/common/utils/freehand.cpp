@@ -196,13 +196,13 @@ QPainterPath getStrokePath(const QList<QPointF> &points)
 
 QPainterPath getStrokeOutline(const QList<StrokePoint> &points)
 {
-    QPainterPath path{};
+    QPainterPath path;
     path.moveTo(points[0].point);
 
     for (qsizetype pos = 0; pos < points.size() - 1; pos++) {
-        QPointF curPoint{points[pos].point};
-        QPointF nextPoint{points[(pos + 1) % points.size()].point};
-        QPointF midPoint{(curPoint + nextPoint) / 2.0};
+        const QPointF curPoint{points[pos].point};
+        const QPointF nextPoint{points[(pos + 1) % points.size()].point};
+        const QPointF midPoint{(curPoint + nextPoint) / 2.0};
 
         path.quadTo(curPoint, midPoint);
     }

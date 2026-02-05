@@ -207,7 +207,9 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
         return end;
     }
 
-    qsizetype low{0}, high{m_text.size()}, index{0};
+    qsizetype low{0};
+    qsizetype high{m_text.size()};
+    qsizetype index{0};
     while (low <= high) {
         const qsizetype mid{low + (high - low) / 2};
 
@@ -268,7 +270,7 @@ void TextItem::setSelectionEnd(qsizetype index)
     m_selectionEnd = index;
 }
 
-const QString TextItem::selectedText() const
+QString TextItem::selectedText() const
 {
     if (!hasSelection()) {
         return {};
@@ -296,8 +298,8 @@ void TextItem::insertText(const QString &text)
 
 void TextItem::updateBoundingBox()
 {
-    QFontMetricsF metrics{getFont()};
-    QSizeF size{metrics.size(getTextFlags(), m_text)};
+    const QFontMetricsF metrics{getFont()};
+    const QSizeF size{metrics.size(getTextFlags(), m_text)};
 
     m_boundingBox.setWidth(size.width());
     m_boundingBox.setHeight(size.height());

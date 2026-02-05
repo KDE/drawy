@@ -48,3 +48,4 @@ private:
 
     int m_maxArrowSize{15}; // hardcoded for now
 };
+LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const ArrowItem &t);

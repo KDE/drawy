@@ -48,7 +48,7 @@ public:
     virtual Type type() const = 0;
     virtual QString icon() const = 0;
 
-    virtual const QList<Property::Type> properties() const;
+    virtual QList<Property::Type> properties() const;
 
 protected:
     QCursor m_cursor{};

@@ -140,7 +140,8 @@ void CacheGrid::setBounds(const QRect &rect)
         return result;
     };
 
-    const QPoint topLeft{rect.topLeft()}, bottomRight{rect.bottomRight()};
+    const QPoint topLeft{rect.topLeft()};
+    const QPoint bottomRight{rect.bottomRight()};
     m_cellMinBoundX = floorDivide(topLeft.x(), m_cellSize.width());
     m_cellMinBoundY = floorDivide(topLeft.y(), m_cellSize.height());
     m_cellMaxBoundX = floorDivide(bottomRight.x(), m_cellSize.width());

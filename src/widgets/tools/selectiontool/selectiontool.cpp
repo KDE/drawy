@@ -106,7 +106,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     }
 }
 
-const QList<Property::Type> SelectionTool::properties() const
+QList<Property::Type> SelectionTool::properties() const
 {
     ApplicationContext *context{ApplicationContext::instance()};
     const auto &selectedItems{context->selectionContext()->selectedItems()};

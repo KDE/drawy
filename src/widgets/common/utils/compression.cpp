@@ -26,7 +26,7 @@ QByteArray compressData(const QByteArray &data)
 
 QByteArray decompressData(const QByteArray &data)
 {
-    unsigned long long originalSize = ZSTD_getFrameContentSize(data.data(), data.size());
+    const unsigned long long originalSize = ZSTD_getFrameContentSize(data.data(), data.size());
 
     if (originalSize == ZSTD_CONTENTSIZE_ERROR) {
         throw std::runtime_error("Invalid ZSTD frame");

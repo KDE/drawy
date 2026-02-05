@@ -113,7 +113,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     m_mouseMoved = true;
 
     QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
-    QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
+    const QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
         return item->type() == Item::Type::Text && item->boundingBox().contains(point);
     })};
 
@@ -250,7 +250,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     if (m_curItem != nullptr && m_curItem->mode() == TextItem::Mode::Edit) {
         qsizetype caret{m_curItem->caret()};
         const QString &text{m_curItem->text()};
-        qsizetype size{text.size()};
+        const qsizetype size{text.size()};
 
         auto handleDefaultCase = [&]() {
             if (ev->text().isEmpty()) {
@@ -273,7 +273,7 @@ void TextTool::keyPressed(ApplicationContext *context)
                 const qsizetype curPos{m_curItem->caret()};
 
                 if (ev->modifiers() & Qt::ShiftModifier) {
-                    qsizetype pos{m_curItem->selectionEnd()};
+                    const qsizetype pos{m_curItem->selectionEnd()};
                     m_curItem->setSelectionEnd(m_curItem->getPrevBreak(pos == TextItem::INVALID ? curPos - 1 : pos - 1));
                 } else {
                     m_curItem->setCaret(m_curItem->getPrevBreak(curPos - 1));
@@ -289,7 +289,7 @@ void TextTool::keyPressed(ApplicationContext *context)
         case Qt::Key_Right: {
             const qsizetype newIndex{std::min(size, caret + 1)};
             if (ev->modifiers() & Qt::ControlModifier) {
-                qsizetype curPos{m_curItem->caret()};
+                const qsizetype curPos{m_curItem->caret()};
 
                 if (ev->modifiers() & Qt::ShiftModifier) {
                     const qsizetype pos{m_curItem->selectionEnd()};

@@ -30,9 +30,9 @@ void Common::renderCanvas(ApplicationContext *context)
     canvas->setCanvasBg(canvas->canvasBg());
 
     const QPointF gridOffset{transformer.worldToGrid(offsetPos)};
-    QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas->dimensions()));
+    const QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas->dimensions()));
 
-    QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
+    const QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : visibleCells) {
         // UNCOMMENT THIS TO SEE THE CELLS

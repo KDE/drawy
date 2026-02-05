@@ -42,7 +42,7 @@ public:
 
     [[nodiscard]] qsizetype selectionStart() const;
     [[nodiscard]] qsizetype selectionEnd() const;
-    [[nodiscard]] const QString selectedText() const;
+    [[nodiscard]] QString selectedText() const;
     void setSelectionStart(qsizetype index);
     void setSelectionEnd(qsizetype index);
 
