@@ -11,6 +11,7 @@
 #include <QFileDialog>
 #include <QMenu>
 #include <QXmlStreamWriter>
+#include <memory>
 
 #include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
@@ -67,6 +68,8 @@ ActionManager::ActionManager(ApplicationContext *context)
                  this,
                  &ActionManager::ungroupItems);
     createAction(Action::DeleteSelection, tr("Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection);
+    createAction(Action::Clear, tr("Clear Canvas"), {}, this, &ActionManager::clear)->setIcon(QIcon::fromTheme(u"edit-delete"_s));
+
     createToolAction(Action::SwitchToFreeformTool,
                      tr("Freeform Tool"),
                      {QKeySequence(QKeyCombination(Qt::Key_P)), QKeySequence(QKeyCombination(Qt::Key_B))},
@@ -148,6 +151,8 @@ QString ActionManager::actionName(Action type) const
         return u"switch_to_eraser_tool"_s;
     case Action::SwitchToMoveTool:
         return u"switch_to_move_tool"_s;
+    case Action::Clear:
+        return u"clear"_s;
     }
 
     return u""_s;
@@ -301,10 +306,14 @@ void ActionManager::saveAsNewFile()
 void ActionManager::clear()
 {
     if (KMessageBox::ButtonCode::PrimaryAction
-        == KMessageBox::questionTwoActions(nullptr, tr("Do you want to clear canvas?"), tr("Clear"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())) {
+        == KMessageBox::questionTwoActions(nullptr,
+                                           tr("Do you really want to clear the canvas?"),
+                                           tr("Clear"),
+                                           KStandardGuiItem::ok(),
+                                           KStandardGuiItem::cancel())) {
         ApplicationContext *context{ApplicationContext::instance()};
-        context->reset();
-        context->renderingContext()->cacheGrid().markAllDirty();
+        const auto allItems{context->spatialContext()->quadtree().getAllItems()};
+        context->spatialContext()->commandHistory()->insert(std::make_shared<RemoveItemCommand>(allItems));
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
     }

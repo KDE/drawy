@@ -43,7 +43,8 @@ public:
         SwitchToArrowTool,
         SwitchToTextTool,
         SwitchToEraserTool,
-        SwitchToMoveTool
+        SwitchToMoveTool,
+        Clear
     };
 
     Q_ENUM(Action)

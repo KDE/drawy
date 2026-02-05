@@ -8,6 +8,7 @@
 
 class ConfigGroupInterface : public QGroupBox
 {
+    Q_OBJECT
 public:
     virtual void save() = 0;
     virtual void load() = 0;

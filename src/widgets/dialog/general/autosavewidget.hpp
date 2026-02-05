@@ -12,6 +12,7 @@ class QCheckBox;
 
 class AutoSaveWidget : public ConfigGroupInterface
 {
+    Q_OBJECT
 public:
     explicit AutoSaveWidget(QWidget *parent);
 

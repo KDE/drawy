@@ -46,9 +46,11 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
         menu->addAction(actionManager->action(KStandardActions::Save));
         menu->addAction(actionManager->action(KStandardActions::SaveAs));
         menu->addSeparator();
+        menu->addAction(actionManager->action(ActionManager::Action::Clear));
         menu->addAction(actionManager->action(ActionManager::Action::ExportAsSVG));
         menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Preferences));
+        menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Quit));
     });
 

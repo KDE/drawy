@@ -51,7 +51,7 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
         m_path->setText(finalPath);
     });
 
-    m_enabled->setText(tr("Restore previous sesion on start"));
+    m_enabled->setText(tr("Restore previous session on start"));
     connect(m_enabled, &QCheckBox::checkStateChanged, this, &AutoSaveWidget::slotEnableChanged);
 
     m_layout->addWidget(m_enabled);
