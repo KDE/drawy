@@ -171,8 +171,9 @@ void TextTool::mouseReleased([[maybe_unused]] ApplicationContext *context)
 
 void TextTool::mouseDoubleClick(ApplicationContext *context)
 {
-    if (!m_curItem)
+    if (!m_curItem) {
         return;
+    }
 
     m_doubleClicked = true;
     if (!m_mouseMoved) {
@@ -267,7 +268,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             m_curItem->insertText(QStringLiteral("\n"));
             break;
         case Qt::Key_Left: {
-            qsizetype newIndex{std::max(static_cast<qsizetype>(0), caret - 1)};
+            const qsizetype newIndex{std::max(static_cast<qsizetype>(0), caret - 1)};
             if (ev->modifiers() & Qt::ControlModifier) {
                 const qsizetype curPos{m_curItem->caret()};
 
@@ -286,7 +287,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_Right: {
-            qsizetype newIndex{std::min(size, caret + 1)};
+            const qsizetype newIndex{std::min(size, caret + 1)};
             if (ev->modifiers() & Qt::ControlModifier) {
                 qsizetype curPos{m_curItem->caret()};
 
@@ -360,7 +361,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             }
 
             if (ev->modifiers() & Qt::ControlModifier) {
-                qsizetype nextBreak{m_curItem->getNextBreak(caret)};
+                const qsizetype nextBreak{m_curItem->getNextBreak(caret)};
                 m_curItem->deleteSubStr(caret, nextBreak - 1);
                 break;
             }
@@ -369,7 +370,7 @@ void TextTool::keyPressed(ApplicationContext *context)
             break;
         }
         case Qt::Key_Up: {
-            qsizetype prevLineEnd{text.lastIndexOf(u'\n', caret - 1)};
+            const qsizetype prevLineEnd{text.lastIndexOf(u'\n', caret - 1)};
 
             if (prevLineEnd == -1) {
                 break;

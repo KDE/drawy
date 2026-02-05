@@ -23,11 +23,11 @@ public:
     [[nodiscard]] QList<std::shared_ptr<Item>> unGroup();
 
     void setProperty(const Property::Type propertyType, Property newObj) override;
-    [[nodiscard]] const Property property(const Property::Type propertyType) const override;
-    [[nodiscard]] const QList<Property> properties() const override;
-    [[nodiscard]] const QList<Property::Type> propertyTypes() const override;
+    [[nodiscard]] Property property(const Property::Type propertyType) const override;
+    [[nodiscard]] QList<Property> properties() const override;
+    [[nodiscard]] QList<Property::Type> propertyTypes() const override;
 
-    [[nodiscard]] const QRectF boundingBox() const override;
+    [[nodiscard]] QRectF boundingBox() const override;
 
     [[nodiscard]] Item::Type type() const override;
 

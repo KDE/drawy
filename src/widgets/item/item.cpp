@@ -20,13 +20,13 @@ Item::~Item()
     qCDebug(DRAWY_LOG) << "Item deleted: " << m_boundingBox;
 }
 
-const QRectF Item::boundingBox() const
+QRectF Item::boundingBox() const
 {
     const int mg{boundingBoxPadding()};
     return m_boundingBox.adjusted(-mg, -mg, mg, mg);
 }
 
-const Property Item::property(const Property::Type propertyType) const
+Property Item::property(const Property::Type propertyType) const
 {
     if (!m_properties.contains(propertyType)) {
         throw std::logic_error("Item does not support this property.");
@@ -35,7 +35,7 @@ const Property Item::property(const Property::Type propertyType) const
     return m_properties.at(propertyType);
 }
 
-const QList<Property::Type> Item::propertyTypes() const
+QList<Property::Type> Item::propertyTypes() const
 {
     QList<Property::Type> result;
 
@@ -46,7 +46,7 @@ const QList<Property::Type> Item::propertyTypes() const
     return result;
 }
 
-const QList<Property> Item::properties() const
+QList<Property> Item::properties() const
 {
     QList<Property> result;
 

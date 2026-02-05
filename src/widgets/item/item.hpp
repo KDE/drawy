@@ -22,14 +22,14 @@ public:
     virtual void draw(QPainter &painter, const QPointF &offset) = 0;
     virtual void erase(QPainter &painter, const QPointF &offset) const;
 
-    virtual const QRectF boundingBox() const;
+    virtual QRectF boundingBox() const;
 
     [[nodiscard]] int boundingBoxPadding() const;
 
     virtual void setProperty(const Property::Type propertyType, Property newObj);
-    virtual const Property property(const Property::Type propertyType) const;
-    virtual const QList<Property> properties() const;
-    virtual const QList<Property::Type> propertyTypes() const;
+    virtual Property property(const Property::Type propertyType) const;
+    virtual QList<Property> properties() const;
+    virtual QList<Property::Type> propertyTypes() const;
 
     enum class Type : int8_t {
         Freeform,

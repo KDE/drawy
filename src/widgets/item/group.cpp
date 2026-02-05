@@ -52,7 +52,7 @@ QList<std::shared_ptr<Item>> GroupItem::unGroup()
     return m_items;
 }
 
-const QRectF GroupItem::boundingBox() const
+QRectF GroupItem::boundingBox() const
 {
     QRectF result;
 
@@ -75,7 +75,7 @@ void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
     }
 }
 
-const Property GroupItem::property(const Property::Type propertyType) const
+Property GroupItem::property(const Property::Type propertyType) const
 {
     if (m_items.empty()) {
         throw new std::logic_error("Group does not contain any item with this property");
@@ -99,7 +99,7 @@ const Property GroupItem::property(const Property::Type propertyType) const
     return property;
 }
 
-const QList<Property> GroupItem::properties() const
+QList<Property> GroupItem::properties() const
 {
     QList<Property> result;
 
@@ -110,11 +110,11 @@ const QList<Property> GroupItem::properties() const
     return result;
 }
 
-const QList<Property::Type> GroupItem::propertyTypes() const
+QList<Property::Type> GroupItem::propertyTypes() const
 {
     std::unordered_set<Property::Type> types;
     for (const auto &item : m_items) {
-        auto &itemPropertyTypes{item->propertyTypes()};
+        const auto itemPropertyTypes{item->propertyTypes()};
         types.insert(itemPropertyTypes.begin(), itemPropertyTypes.end());
     }
 

@@ -98,10 +98,10 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
             for (qsizetype pos{0}; pos <= m_text.length(); pos++) {
                 if (pos == m_text.length() || m_text[pos] == u'\n') {
-                    qsizetype currentLineEndPos = pos;
+                    const qsizetype currentLineEndPos = pos;
 
-                    qsizetype selectionRectStart = qMax(selStart, currentLineStartPos);
-                    qsizetype selectionRectEnd = qMin(selEnd, currentLineEndPos);
+                    const qsizetype selectionRectStart = qMax(selStart, currentLineStartPos);
+                    const qsizetype selectionRectEnd = qMin(selEnd, currentLineEndPos);
 
                     if (selectionRectStart < selectionRectEnd) {
                         const QString linePrefix = m_text.mid(currentLineStartPos, selectionRectStart - currentLineStartPos);
@@ -113,7 +113,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
                         const qreal x{curBox.left() + prefixWidth};
                         const qreal y{curBox.top() + (lineIndex * lineHeight)};
 
-                        QRectF selectionRect(x, y, selectionWidth, lineHeight);
+                        const QRectF selectionRect(x, y, selectionWidth, lineHeight);
                         painter.drawRect(selectionRect);
                     }
 
@@ -172,7 +172,7 @@ void TextItem::setCaret(qsizetype index, bool updatePosInLine)
 
     m_caretIndex = index;
     if (updatePosInLine) {
-        qsizetype firstCharOfCurLine{m_text.lastIndexOf(u'\n', m_caretIndex - 1)};
+        const qsizetype firstCharOfCurLine{m_text.lastIndexOf(u'\n', m_caretIndex - 1)};
         m_caretPosInLine = m_caretIndex - firstCharOfCurLine;
     }
 }
@@ -209,7 +209,7 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
 
     qsizetype low{0}, high{m_text.size()}, index{0};
     while (low <= high) {
-        qsizetype mid{low + (high - low) / 2};
+        const qsizetype mid{low + (high - low) / 2};
 
         const double prefixWidth{metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(mid)).width()};
 
@@ -316,8 +316,8 @@ void TextItem::deleteSubStr(qsizetype start, qsizetype end)
 
     m_text.erase(m_text.begin() + start, m_text.begin() + end + 1);
 
-    QFontMetricsF metrics{getFont()};
-    QSizeF size{metrics.size(getTextFlags(), m_text)};
+    const QFontMetricsF metrics{getFont()};
+    const QSizeF size{metrics.size(getTextFlags(), m_text)};
 
     m_boundingBox.setWidth(std::max(size.width(), Common::defaultTextBoxWidth));
     m_boundingBox.setHeight(size.height());
