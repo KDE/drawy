@@ -21,7 +21,6 @@ public:
     [[nodiscard]] static int minPointDistance();
 
     void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter, const QPointF &offset) const override;
     void drawBuffer(QPainter &painter, const QPointF &offset) const;
     [[nodiscard]] bool isBufferFull() const;
 

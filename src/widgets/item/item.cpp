@@ -98,6 +98,10 @@ void Item::updateAfterProperty()
 
 void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
+    painter.save();
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
+    painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
+    painter.restore();
 }
 
 int Item::boundingBoxPadding() const

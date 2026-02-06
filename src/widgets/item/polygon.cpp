@@ -92,14 +92,6 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
     drawItem(painter, offset);
 }
 
-void PolygonItem::erase(QPainter &painter, const QPointF &offset) const
-{
-    painter.save();
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.fillRect(m_boundingBox.translated(-offset), Qt::transparent);
-    painter.restore();
-}
-
 void PolygonItem::translate(const QPointF &amount)
 {
     m_start += amount;

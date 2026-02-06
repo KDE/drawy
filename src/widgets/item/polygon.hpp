@@ -18,7 +18,6 @@ public:
     virtual void setEndWithShift(QPointF end);
 
     void draw(QPainter &painter, const QPointF &offset) override;
-    void erase(QPainter &painter, const QPointF &offset) const override;
 
     void translate(const QPointF &amount) override;
 

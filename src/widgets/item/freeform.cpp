@@ -165,14 +165,6 @@ void FreeformItem::drawBuffer(QPainter &painter, const QPointF &offset) const
     painter.drawPath(path);
 }
 
-void FreeformItem::erase(QPainter &painter, const QPointF &offset) const
-{
-    painter.save();
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
-    painter.restore();
-}
-
 void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.save();
