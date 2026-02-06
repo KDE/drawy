@@ -20,6 +20,13 @@ enum class AlignType : uint8_t {
     AlignBottom,
 };
 
+enum class ZorderMove : uint8_t {
+    BringForward = 0,
+    SendBackward,
+    SendToBack,
+    BringToFront,
+};
+
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::Type convertItemTypeStringToEnum(const QString &str);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::Type type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);

@@ -6,9 +6,11 @@
 
 #include "zorderwidget.hpp"
 #include "buttonactionswidget.hpp"
+#include "context/uicontext.hpp"
+#include "keybindings/actionmanager.hpp"
 #include <QHBoxLayout>
 
-ZOrderWidget::ZOrderWidget(QWidget *parent)
+ZOrderWidget::ZOrderWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
@@ -22,12 +24,6 @@ ZOrderWidget::ZOrderWidget(QWidget *parent)
     auto moveUpButton{new ButtonActionsWidget(m_widget)};
     auto moveDownButton{new ButtonActionsWidget(m_widget)};
 
-    // TODO add icons
-    moveOnTopButton->setToolTip(tr("Move on Top"));
-    moveUpButton->setToolTip(tr("Move Up"));
-    moveDownButton->setToolTip(tr("Move Down"));
-    moveOnBottomButton->setToolTip(tr("Move on Bottom"));
-
     layout->addWidget(moveOnTopButton);
     layout->addWidget(moveUpButton);
     layout->addWidget(moveDownButton);
@@ -35,19 +31,12 @@ ZOrderWidget::ZOrderWidget(QWidget *parent)
 
     layout->addStretch(1);
 
-    connect(moveOnTopButton, &ButtonActionsWidget::clicked, this, []() {
-        // TODO add enum for defining action.
-        // actionManager->deleteSelection();
-    });
-    connect(moveUpButton, &ButtonActionsWidget::clicked, this, []() {
-        // actionManager->deleteSelection();
-    });
-    connect(moveDownButton, &ButtonActionsWidget::clicked, this, []() {
-        // actionManager->deleteSelection();
-    });
-    connect(moveOnBottomButton, &ButtonActionsWidget::clicked, this, []() {
-        // actionManager->deleteSelection();
-    });
+    if (actionManager) {
+        moveOnBottomButton->addAction(actionManager->action(ActionManager::Action::SendToBack));
+        moveOnTopButton->addAction(actionManager->action(ActionManager::Action::BringToFront));
+        moveUpButton->addAction(actionManager->action(ActionManager::Action::BringForward));
+        moveDownButton->addAction(actionManager->action(ActionManager::Action::SendBackward));
+    }
 
     m_widget->hide();
 }

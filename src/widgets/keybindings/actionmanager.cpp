@@ -20,6 +20,7 @@
 #include "command/removeitemcommand.hpp"
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
+#include "command/zordercommand.hpp"
 #include "common/constants.hpp"
 #include "dialog/configuresettingsdialog.hpp"
 #include "keybindmanager.hpp"
@@ -83,6 +84,18 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     createToolAction(Action::SwitchToArrowTool, tr("Arrow Tool"), {QKeySequence(QKeyCombination(Qt::Key_A))}, Tool::Type::Arrow);
     createToolAction(Action::SwitchToMoveTool, tr("Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))}, Tool::Type::Move);
 
+    createAction(Action::SendToBack, tr("Send To Back"), {}, this, [this]() {
+        zorderMove(ItemUtils::ZorderMove::SendToBack);
+    });
+    createAction(Action::SendBackward, tr("Send Backward"), {}, this, [this]() {
+        zorderMove(ItemUtils::ZorderMove::SendBackward);
+    });
+    createAction(Action::BringForward, tr("Bring Forward"), {}, this, [this]() {
+        zorderMove(ItemUtils::ZorderMove::BringForward);
+    });
+    createAction(Action::BringToFront, tr("Bring To Front"), {}, this, [this]() {
+        zorderMove(ItemUtils::ZorderMove::BringToFront);
+    });
     actionCollection->associateWidget(mainWindow);
     actionCollection->readSettings();
 
@@ -152,8 +165,16 @@ QString ActionManager::actionName(Action type) const
         return u"switch_to_move_tool"_s;
     case Action::Clear:
         return u"clear"_s;
+    case Action::SendToBack:
+        return u"send_to_back"_s;
+    case Action::SendBackward:
+        return u"send_backward"_s;
+    case Action::BringForward:
+        return u"bring_forward"_s;
+    case Action::BringToFront:
+        return u"bring_to_front"_s;
     }
-
+    Q_UNREACHABLE();
     return u""_s;
 }
 
@@ -194,6 +215,18 @@ void ActionManager::zoomOut()
 void ActionManager::switchToTool(Tool::Type type)
 {
     m_context->uiContext()->toolBar()->changeTool(type);
+}
+
+void ActionManager::zorderMove(ItemUtils::ZorderMove move)
+{
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<ZorderCommand>(items, move));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::alignItems(ItemUtils::AlignType alignType)

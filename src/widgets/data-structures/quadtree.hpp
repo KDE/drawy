@@ -11,6 +11,7 @@
 #include <unordered_map>
 
 #include "item/item.hpp"
+#include "item/itemutils.hpp"
 
 class OrderedList;
 
@@ -63,6 +64,9 @@ public:
 
     void draw(QPainter &painter, const QPointF &offset) const;
     [[nodiscard]] const QRectF &boundingBox() const;
+
+    void changeZorder(ItemUtils::ZorderMove move, const ItemPtr &item);
+    [[nodiscard]] int zIndex(const ItemPtr &item) const;
 
 private:
     bool insert(const ItemPtr &item, bool updateOrder);

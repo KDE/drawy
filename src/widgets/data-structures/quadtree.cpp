@@ -278,3 +278,26 @@ void QuadTree::expand(const QPointF &point)
     // expand recursively
     expand(point);
 }
+
+void QuadTree::changeZorder(ItemUtils::ZorderMove move, const ItemPtr &item)
+{
+    switch (move) {
+    case ItemUtils::ZorderMove::BringForward:
+        m_orderedList->bringForward(item);
+        break;
+    case ItemUtils::ZorderMove::SendBackward:
+        m_orderedList->sendBackward(item);
+        break;
+    case ItemUtils::ZorderMove::SendToBack:
+        m_orderedList->sendToBack(item);
+        break;
+    case ItemUtils::ZorderMove::BringToFront:
+        m_orderedList->bringToFront(item);
+        break;
+    }
+}
+
+int QuadTree::zIndex(const ItemPtr &item) const
+{
+    return m_orderedList->zIndex(item);
+}

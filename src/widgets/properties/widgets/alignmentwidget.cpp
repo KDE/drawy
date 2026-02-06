@@ -6,7 +6,6 @@
 
 #include "alignmentwidget.hpp"
 #include "buttonactionswidget.hpp"
-#include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
 #include "keybindings/actionmanager.hpp"
 

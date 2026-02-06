@@ -29,7 +29,7 @@ PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     m_widgets[Property::Type::Actions] = new ActionsWidget(actionManager, parent);
     m_widgets[Property::Type::BackgroundColor] = new BackgroundColorWidget(parent);
     m_widgets[Property::Type::Opacity] = new OpacityWidget(parent);
-    m_widgets[Property::Type::ZOrder] = new ZOrderWidget(parent);
+    m_widgets[Property::Type::ZOrder] = new ZOrderWidget(actionManager, parent);
     m_widgets[Property::Type::Alignment] = new AlignmentWidget(actionManager, parent);
     m_widgets[Property::Type::ArrowStyle] = new ArrowStyleWidget(parent);
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);

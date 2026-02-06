@@ -19,7 +19,7 @@ class ActionManager : public QObject
     Q_OBJECT
 public:
     // All non standard actions (not available in KStandardAction)
-    enum class Action {
+    enum class Action : uint8_t {
         GroupItems,
         UngroupItems,
         DeleteSelection,
@@ -33,7 +33,11 @@ public:
         SwitchToTextTool,
         SwitchToEraserTool,
         SwitchToMoveTool,
-        Clear
+        Clear,
+        SendToBack,
+        SendBackward,
+        BringForward,
+        BringToFront,
     };
 
     Q_ENUM(Action)
@@ -77,6 +81,7 @@ public:
     void clear();
 
 private:
+    void zorderMove(ItemUtils::ZorderMove move);
     void slotLoadDone(const LoadJob::LoadInfo &info);
     QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys);
     QAction *createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType);

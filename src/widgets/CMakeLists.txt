@@ -36,6 +36,8 @@ target_sources(
         command/alignitemcommand.cpp
         command/lockcommand.hpp
         command/lockcommand.cpp
+        command/zordercommand.hpp
+        command/zordercommand.cpp
         common/constants.hpp
         common/renderitems.cpp
         common/renderitems.hpp
