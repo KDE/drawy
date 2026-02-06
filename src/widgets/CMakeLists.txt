@@ -282,6 +282,8 @@ target_sources(
         dialog/general/autosavewidget.cpp
         mime/drawymimehandler.cpp
         mime/drawymimehandler.hpp
+        mime/textmimehandler.cpp
+        mime/textmimehandler.hpp
         mime/mimehandler.cpp
         mime/mimehandler.hpp
         mime/mimemanager.cpp

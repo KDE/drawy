@@ -14,6 +14,7 @@ MimeManager::MimeManager(QObject *parent)
     : QObject(parent)
 {
     registerHandler(std::make_unique<DrawyMimeHandler>());
+    registerHandler(std::make_unique<TextMimeHandler>());
 }
 
 MimeManager::~MimeManager() = default;
