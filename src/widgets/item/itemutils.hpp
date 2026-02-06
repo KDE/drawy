@@ -36,4 +36,7 @@ enum class ZorderMove : uint8_t {
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemBackgroundTypeEnumToString(Item::BackgroundType type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::BrushStyle convertItemBackgroundTypeStringToBrushStyle(const QString &brushStyle);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::BackgroundType convertBackgroundTypeStringToEnum(const QString &str);
+
+[[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::Type type);
+
 }; // namespace ItemUtils

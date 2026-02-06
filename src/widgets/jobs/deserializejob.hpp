@@ -33,7 +33,6 @@ Q_SIGNALS:
     void deserializeDone(const DeserializeJob::DeserializeInfo &info);
 
 private:
-    LIBDRAWYWIDGETS_NO_EXPORT std::shared_ptr<Item> createItem(Item::Type type);
     LIBDRAWYWIDGETS_NO_EXPORT void deserializeItems();
     QJsonObject mJsonObject;
 };

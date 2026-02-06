@@ -5,6 +5,14 @@
  */
 #include "itemutils.hpp"
 #include "drawy_debug.h"
+#include "item/arrow.hpp"
+#include "item/diamond.hpp"
+#include "item/ellipse.hpp"
+#include "item/freeform.hpp"
+#include "item/group.hpp"
+#include "item/line.hpp"
+#include "item/rectangle.hpp"
+#include "item/text.hpp"
 
 using namespace Qt::Literals::StringLiterals;
 Item::Type ItemUtils::convertItemTypeStringToEnum(const QString &str)
@@ -142,4 +150,47 @@ Qt::BrushStyle ItemUtils::convertItemBackgroundTypeStringToBrushStyle(const QStr
         qCWarning(DRAWY_LOG) << "Item::BackgroundType is not defined for: " << brushStyle;
     }
     return Qt::BrushStyle::SolidPattern;
+}
+
+std::shared_ptr<Item> ItemUtils::createItemFromType(Item::Type type)
+{
+    std::shared_ptr<Item> item;
+    switch (type) {
+    case Item::Type::Freeform: {
+        item = std::make_shared<FreeformItem>();
+        break;
+    }
+    case Item::Type::Rectangle: {
+        item = std::make_shared<RectangleItem>();
+        break;
+    }
+    case Item::Type::Line: {
+        item = std::make_shared<LineItem>();
+        break;
+    }
+    case Item::Type::Arrow: {
+        item = std::make_shared<ArrowItem>();
+        break;
+    }
+    case Item::Type::Ellipse: {
+        item = std::make_shared<EllipseItem>();
+        break;
+    }
+    case Item::Type::Text: {
+        item = std::make_shared<TextItem>();
+        break;
+    }
+    case Item::Type::Group: {
+        item = std::make_shared<GroupItem>();
+        break;
+    }
+    case Item::Type::Diamond: {
+        item = std::make_shared<DiamondItem>();
+        break;
+    }
+    case Item::Type::Invalid:
+        Q_ASSERT(false);
+        break;
+    }
+    return item;
 }

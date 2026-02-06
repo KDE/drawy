@@ -5,15 +5,7 @@
  */
 #include "deserializejob.hpp"
 #include "drawy_debug.h"
-#include "item/arrow.hpp"
-#include "item/diamond.hpp"
-#include "item/ellipse.hpp"
-#include "item/freeform.hpp"
-#include "item/group.hpp"
 #include "item/itemutils.hpp"
-#include "item/line.hpp"
-#include "item/rectangle.hpp"
-#include "item/text.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -56,7 +48,7 @@ void DeserializeJob::deserializeItems()
     for (const auto &v : itemsArray) {
         const QJsonObject itemObj = ItemDeserializer::object(v);
         const Item::Type type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
-        const std::shared_ptr<Item> item = createItem(type);
+        const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
         item->deserialize(itemObj);
         items.append(item);
     }
@@ -70,49 +62,6 @@ void DeserializeJob::deserializeItems()
         .items = items,
     };
     Q_EMIT deserializeDone(info);
-}
-
-std::shared_ptr<Item> DeserializeJob::createItem(Item::Type type)
-{
-    std::shared_ptr<Item> item;
-    switch (type) {
-    case Item::Type::Freeform: {
-        item = std::make_shared<FreeformItem>();
-        break;
-    }
-    case Item::Type::Rectangle: {
-        item = std::make_shared<RectangleItem>();
-        break;
-    }
-    case Item::Type::Line: {
-        item = std::make_shared<LineItem>();
-        break;
-    }
-    case Item::Type::Arrow: {
-        item = std::make_shared<ArrowItem>();
-        break;
-    }
-    case Item::Type::Ellipse: {
-        item = std::make_shared<EllipseItem>();
-        break;
-    }
-    case Item::Type::Text: {
-        item = std::make_shared<TextItem>();
-        break;
-    }
-    case Item::Type::Group: {
-        item = std::make_shared<GroupItem>();
-        break;
-    }
-    case Item::Type::Diamond: {
-        item = std::make_shared<DiamondItem>();
-        break;
-    }
-    case Item::Type::Invalid:
-        Q_ASSERT(false);
-        break;
-    }
-    return item;
 }
 
 #include "moc_deserializejob.cpp"
