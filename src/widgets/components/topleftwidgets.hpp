@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include <QWidget>
 class HelpMenu;
+class KActionMenu;
 class TopLeftWidgets : public QWidget
 {
     Q_OBJECT
@@ -16,4 +17,5 @@ public:
 private:
     QHBoxLayout *const m_layout;
     HelpMenu *const mHelpMenu;
+    KActionMenu *mColorSchemeMenu = nullptr;
 };

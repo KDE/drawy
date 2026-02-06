@@ -8,12 +8,14 @@
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
+#include <KActionMenu>
+#include <KColorSchemeManager>
+#include <KColorSchemeMenu>
 #include <KHelpMenu>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QStyle>
 #include <QToolButton>
-
 using namespace Qt::StringLiterals;
 TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     : QWidget{parent}
@@ -42,12 +44,17 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     auto menu{new QMenu{this}};
     menuButton->setMenu(menu);
 
+    auto manager = KColorSchemeManager::instance();
+    mColorSchemeMenu = KColorSchemeMenu::createMenu(manager, this);
+
     // Add more actions as required
     connect(menu, &QMenu::aboutToShow, this, [menu, actionManager, this]() -> void {
         menu->addAction(actionManager->action(KStandardActions::New));
         menu->addAction(actionManager->action(KStandardActions::Open));
         menu->addAction(actionManager->action(KStandardActions::Save));
         menu->addAction(actionManager->action(KStandardActions::SaveAs));
+        menu->addSeparator();
+        menu->addAction(mColorSchemeMenu);
         menu->addSeparator();
         menu->addAction(actionManager->action(ActionManager::Action::Clear));
         menu->addSeparator();
