@@ -10,9 +10,9 @@
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
 #include <QLabel>
+#include <QPushButton>
 #include <QStyle>
 #include <QToolButton>
-#include <qpushbutton.h>
 
 using namespace Qt::Literals::StringLiterals;
 BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)

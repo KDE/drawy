@@ -5,7 +5,6 @@
 #include "toolbar.hpp"
 #include <QApplication>
 #include <QStyle>
-#include <qlogging.h>
 
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
