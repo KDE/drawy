@@ -17,18 +17,6 @@ class ActionManager : public QObject
 {
     Q_OBJECT
 public:
-    enum class AlignType : uint8_t {
-        Unknown = 0,
-        AlignLeft,
-        CentralHorizontal,
-        AlignRight,
-        AlignTop,
-        CentralVertical,
-        AlignBottom,
-    };
-
-    Q_ENUM(AlignType)
-
     // All non standard actions (not available in KStandardAction)
     enum class Action {
         GroupItems,
