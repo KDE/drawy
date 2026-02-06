@@ -63,6 +63,8 @@ inline constexpr int viewportCacheMultiplier{2}; // For viewport cache; increasi
 inline const QString drawyFileExt{u"drawy"_s};
 inline const QString unsavedFileName{u"Untitled"_s};
 
+inline const QString drawyClipboardMime{u"application/x-drawy-clipboard"_s};
+
 inline const QString configSession{u"Session"_s};
 inline const QString configSessionLastSavedFile{u"LastSavedFile"_s};
 inline const QString configSessionLastSavedFileModified{u"LastSavedFileModified"_s};

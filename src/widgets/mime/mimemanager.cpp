@@ -13,6 +13,7 @@
 MimeManager::MimeManager(QObject *parent)
     : QObject(parent)
 {
+    registerHandler(std::make_unique<DrawyMimeHandler>());
 }
 
 MimeManager::~MimeManager() = default;

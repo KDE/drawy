@@ -280,6 +280,8 @@ target_sources(
         dialog/general/configuregeneralwidget.cpp
         dialog/general/autosavewidget.hpp
         dialog/general/autosavewidget.cpp
+        mime/drawymimehandler.cpp
+        mime/drawymimehandler.hpp
         mime/mimehandler.cpp
         mime/mimehandler.hpp
         mime/mimemanager.cpp
