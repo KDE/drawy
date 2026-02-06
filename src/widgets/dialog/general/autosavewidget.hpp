@@ -22,8 +22,8 @@ public:
     void slotEnableChanged(Qt::CheckState state);
 
 private:
-    QSpinBox *const m_delay{};
-    QWidget *const m_pathWidget{};
-    QLineEdit *const m_path{};
-    QCheckBox *const m_enabled{};
+    QSpinBox *const m_delay;
+    QWidget *const m_pathWidget;
+    QLineEdit *const m_path;
+    QCheckBox *const m_enabled;
 };

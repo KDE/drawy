@@ -21,5 +21,5 @@ public:
     void restoreToDefaults();
 
 private:
-    AutoSaveWidget *const m_autoSaveWidget{};
+    AutoSaveWidget *const m_autoSaveWidget;
 };
