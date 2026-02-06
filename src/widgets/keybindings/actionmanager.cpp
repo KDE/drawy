@@ -10,8 +10,11 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 #include <KShortcutsDialog>
+#include <QApplication>
+#include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
+#include <QMimeData>
 #include <QXmlStreamWriter>
 #include <memory>
 #include <utility>
@@ -20,12 +23,14 @@
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/groupcommand.hpp"
+#include "command/insertitemcommand.hpp"
 #include "command/removeitemcommand.hpp"
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
 #include "command/zordercommand.hpp"
 #include "common/constants.hpp"
 #include "dialog/configuresettingsdialog.hpp"
+#include "event/event.hpp"
 #include "keybindmanager.hpp"
 
 #include "components/propertybar.hpp"
@@ -41,6 +46,7 @@
 #include "drawy_debug.h"
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
+#include "mime/mimemanager.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
 
@@ -60,6 +66,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     KStandardActions::open(this, &ActionManager::openFile, actionCollection);
     KStandardActions::undo(this, &ActionManager::undo, actionCollection)->setEnabled(false); // disabled initially
     KStandardActions::redo(this, &ActionManager::redo, actionCollection)->setEnabled(false); // disabled initially
+    KStandardActions::copy(this, &ActionManager::copy, actionCollection);
+    KStandardActions::paste(this, &ActionManager::paste, actionCollection);
     KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection)->setIcon(QIcon::fromTheme(u"value-increase"_s));
     KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection)->setIcon(QIcon::fromTheme(u"value-decrease"_s));
     KStandardActions::actualSize(this, &ActionManager::zoomReset, actionCollection)->setIcon(QIcon::fromTheme(u"zoom_reset"_s));
@@ -206,6 +214,58 @@ void ActionManager::undo()
 void ActionManager::redo()
 {
     m_context->spatialContext()->commandHistory()->redo();
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
+}
+
+void ActionManager::copy()
+{
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+
+    if (selectedItems.empty()) {
+        return;
+    }
+
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+
+    QMimeData *data = new QMimeData;
+    m_context->mimeManager()->writeData(*data, items);
+    QApplication::clipboard()->setMimeData(data);
+}
+
+void ActionManager::paste()
+{
+    const QMimeData *data = QApplication::clipboard()->mimeData();
+    if (data == nullptr) {
+        return;
+    }
+
+    const QList<std::shared_ptr<Item>> items{m_context->mimeManager()->readData(*data)};
+
+    if (items.isEmpty()) {
+        return;
+    }
+
+    QRectF boundingBox;
+
+    for (const auto &item : items) {
+        boundingBox |= item->boundingBox();
+    }
+
+    for (const auto &item : items) {
+        item->translate(-boundingBox.center());
+    }
+
+    const QPointF offset{m_context->spatialContext()->coordinateTransformer().viewToWorld(m_context->uiContext()->appEvent()->pos())};
+
+    for (const auto &item : items) {
+        item->translate(offset);
+    }
+
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<InsertItemCommand>(items));
+
+    m_context->selectionContext()->setSelectedItems(items.begin(), items.end());
+
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }

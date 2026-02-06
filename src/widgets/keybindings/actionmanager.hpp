@@ -65,6 +65,8 @@ public:
     void zoomReset();
     void undo();
     void redo();
+    void copy();
+    void paste();
     void switchToMoveTool();
     void selectAll();
     void deleteSelection();
