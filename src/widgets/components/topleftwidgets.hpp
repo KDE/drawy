@@ -6,7 +6,7 @@
 
 #include <QHBoxLayout>
 #include <QWidget>
-
+class HelpMenu;
 class TopLeftWidgets : public QWidget
 {
     Q_OBJECT
@@ -15,4 +15,5 @@ public:
 
 private:
     QHBoxLayout *const m_layout;
+    HelpMenu *const mHelpMenu;
 };

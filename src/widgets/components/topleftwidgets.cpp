@@ -4,9 +4,11 @@
 
 #include "topleftwidgets.hpp"
 #include "context/applicationcontext.hpp"
+#include "context/helpmenu.hpp"
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
+#include <KHelpMenu>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QStyle>
@@ -16,6 +18,7 @@ using namespace Qt::StringLiterals;
 TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     : QWidget{parent}
     , m_layout{new QHBoxLayout{this}}
+    , mHelpMenu(new HelpMenu(this))
 {
     m_layout->setContentsMargins(0, 0, 0, 0);
 
@@ -40,16 +43,19 @@ TopLeftWidgets::TopLeftWidgets(QWidget *parent)
     menuButton->setMenu(menu);
 
     // Add more actions as required
-    connect(menu, &QMenu::aboutToShow, this, [menu, actionManager]() -> void {
+    connect(menu, &QMenu::aboutToShow, this, [menu, actionManager, this]() -> void {
         menu->addAction(actionManager->action(KStandardActions::New));
         menu->addAction(actionManager->action(KStandardActions::Open));
         menu->addAction(actionManager->action(KStandardActions::Save));
         menu->addAction(actionManager->action(KStandardActions::SaveAs));
         menu->addSeparator();
         menu->addAction(actionManager->action(ActionManager::Action::Clear));
+        menu->addSeparator();
         menu->addAction(actionManager->action(ActionManager::Action::ExportAsSVG));
         menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Preferences));
+        menu->addSeparator();
+        menu->addMenu(mHelpMenu->menu());
         menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Quit));
     });

@@ -11,6 +11,7 @@
 #include <KStyleManager>
 
 #include "config-drawy.hpp"
+#include "context/aboutdata.hpp"
 #include "drawycommandlineparser.hpp"
 #include "window/window.hpp"
 
@@ -29,14 +30,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
 
     KStyleManager::initStyle();
-    KAboutData aboutData(u"Drawy"_s,
-                         QObject::tr("Drawy"),
-                         QStringLiteral(DRAWY_VERSION),
-                         QObject::tr("Your handy, infinite  brainstorming tool!"),
-                         KAboutLicense::GPL_V3,
-                         QObject::tr("(c) 2025-%1 Drawy authors").arg(u"2026"_s));
-    aboutData.addAuthor(QObject::tr("Prayag Jain"), QObject::tr("Maintainer"), u"prayagjain2@gmail.com"_s);
-    aboutData.addAuthor(QObject::tr("Laurent Montel"), QObject::tr("Developer"), u"montel@kde.org"_s);
+    AboutData aboutData;
 
     KCrash::initialize();
 

@@ -3,7 +3,11 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 set(DRAWY_LIB_SOVERSION "0")
-add_library(libdrawywidgets)
+add_library(
+    libdrawywidgets
+    context/helpmenu.hpp
+    context/helpmenu.cpp
+)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -70,6 +74,8 @@ target_sources(
         context/spatialcontext.hpp
         context/uicontext.cpp
         context/uicontext.hpp
+        context/aboutdata.hpp
+        context/aboutdata.cpp
         controller/controller.cpp
         controller/controller.hpp
         data-structures/cachegrid.cpp
@@ -302,6 +308,7 @@ target_link_libraries(
     KF6::WidgetsAddons
     KF6::ConfigWidgets
     KF6::XmlGui
+    KF6::CoreAddons
     ${ZSTD_LINK_LIBRARIES}
 )
 
