@@ -6,9 +6,11 @@
 
 #include <QMouseEvent>
 #include <QObject>
+#include <memory>
 
 #include "tools/tool.hpp"
 class ApplicationContext;
+class Item;
 
 class Controller : public QObject
 {
@@ -29,6 +31,10 @@ public:
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
     void leave(QEvent *event);
+    void dragEnter(QDragEnterEvent *event);
+    void dragMove(QDragMoveEvent *event);
+    void dragLeave();
+    void drop();
 
 public Q_SLOTS:
     void renderZoom();
@@ -44,6 +50,8 @@ private:
     QPointF m_zoomPixmapOffsetPos{};
     QPointF m_zoomLastPos{};
     int m_zoomDelta{0};
+
+    QList<std::shared_ptr<Item>> m_droppedItems;
 
     bool m_mouseMoved{false};
     bool m_movingWithMiddleClick{false};

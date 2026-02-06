@@ -46,6 +46,10 @@ Q_SIGNALS:
     void resizeEnd();
     void destroyed();
     void leave(QEvent *event);
+    void dragEnter(QDragEnterEvent *event);
+    void dragMove(QDragMoveEvent *event);
+    void dragLeave(QDragLeaveEvent *event);
+    void drop(QDropEvent *event);
 
 public Q_SLOTS:
     void triggerUpdate();
@@ -63,6 +67,10 @@ protected:
     void wheelEvent(QWheelEvent *event) override;
     bool event(QEvent *event) override;
     void leaveEvent(QEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dragMoveEvent(QDragMoveEvent *event) override;
+    void dragLeaveEvent(QDragLeaveEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 
 private:
     qreal m_scale{1.0}; // default scale is 1

@@ -9,18 +9,23 @@
 #include <QWheelEvent>
 
 #include "canvas/canvas.hpp"
+#include "command/commandhistory.hpp"
+#include "command/insertitemcommand.hpp"
 #include "common/constants.hpp"
 #include "common/renderitems.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
+#include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "drawy_debug.h"
 #include "event/event.hpp"
+#include "item/item.hpp"
 #include "item/itemcache/itemcache.hpp"
+#include "mime/mimemanager.hpp"
 
 Controller::Controller(ApplicationContext *context, QObject *parent)
     : QObject{parent}
@@ -208,6 +213,91 @@ void Controller::leave([[maybe_unused]] QEvent *event)
     auto toolBar{m_context->uiContext()->toolBar()};
 
     toolBar->curTool().leave(m_context);
+}
+
+void Controller::dragEnter(QDragEnterEvent *event)
+{
+    m_droppedItems = m_context->mimeManager()->readData(*event->mimeData());
+
+    if (m_droppedItems.isEmpty()) {
+        return;
+    }
+
+    event->acceptProposedAction();
+
+    m_context->renderingContext()->canvas()->setOverlayBg(Qt::transparent);
+    dragMove(event);
+}
+
+void Controller::dragMove(QDragMoveEvent *event)
+{
+    auto *canvas{m_context->renderingContext()->canvas()};
+
+    const QPointF offsetPos{m_context->spatialContext()->offsetPos()};
+    const qreal zoom{m_context->renderingContext()->zoomFactor()};
+
+    canvas->paintOverlay([&](QPainter &painter) -> void {
+        painter.scale(zoom, zoom);
+
+        for (const auto &item : std::as_const(m_droppedItems)) {
+            item->erase(painter, offsetPos);
+        }
+    });
+
+    QRectF boundingBox;
+
+    for (const auto &item : std::as_const(m_droppedItems)) {
+        boundingBox |= item->boundingBox();
+    }
+
+    for (const auto &item : std::as_const(m_droppedItems)) {
+        item->translate(-boundingBox.center());
+
+        item->translate(m_context->spatialContext()->coordinateTransformer().viewToWorld(event->position()));
+    }
+
+    canvas->paintOverlay([&](QPainter &painter) -> void {
+        painter.scale(zoom, zoom);
+
+        for (const auto &item : std::as_const(m_droppedItems)) {
+            item->draw(painter, offsetPos);
+        }
+    });
+
+    m_context->renderingContext()->markForUpdate();
+}
+
+void Controller::dragLeave()
+{
+    auto *canvas{m_context->renderingContext()->canvas()};
+
+    const QPointF offsetPos{m_context->spatialContext()->offsetPos()};
+    const qreal zoom{m_context->renderingContext()->zoomFactor()};
+
+    canvas->paintOverlay([&](QPainter &painter) -> void {
+        painter.scale(zoom, zoom);
+
+        for (const auto &item : std::as_const(m_droppedItems)) {
+            item->erase(painter, offsetPos);
+        }
+    });
+
+    m_droppedItems = {};
+
+    m_context->renderingContext()->markForUpdate();
+}
+
+void Controller::drop()
+{
+    auto commandHistory{m_context->spatialContext()->commandHistory()};
+    commandHistory->insert(std::make_shared<InsertItemCommand>(m_droppedItems));
+
+    m_context->selectionContext()->setSelectedItems(m_droppedItems.begin(), m_droppedItems.end());
+
+    dragLeave();
+
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void Controller::renderZoom()

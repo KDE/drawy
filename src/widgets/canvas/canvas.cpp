@@ -26,6 +26,8 @@ Canvas::Canvas(QWidget *parent)
 
     setFocusPolicy(Qt::ClickFocus);
     setContextMenuPolicy(Qt::CustomContextMenu);
+
+    setAcceptDrops(true);
 }
 
 Canvas::~Canvas()
@@ -178,6 +180,30 @@ void Canvas::leaveEvent(QEvent *event)
 {
     Q_EMIT leave(event);
     QWidget::leaveEvent(event);
+}
+
+void Canvas::dragEnterEvent(QDragEnterEvent *event)
+{
+    Q_EMIT dragEnter(event);
+    QWidget::dragEnterEvent(event);
+}
+
+void Canvas::dragMoveEvent(QDragMoveEvent *event)
+{
+    Q_EMIT dragMove(event);
+    QWidget::dragMoveEvent(event);
+}
+
+void Canvas::dragLeaveEvent(QDragLeaveEvent *event)
+{
+    Q_EMIT dragLeave(event);
+    QWidget::dragLeaveEvent(event);
+}
+
+void Canvas::dropEvent(QDropEvent *event)
+{
+    Q_EMIT drop(event);
+    QWidget::dropEvent(event);
 }
 
 bool Canvas::event(QEvent *event)

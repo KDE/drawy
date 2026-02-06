@@ -64,6 +64,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
+    connect(renderingContext->canvas(), &Canvas::dragEnter, controller, &Controller::dragEnter);
+    connect(renderingContext->canvas(), &Canvas::dragMove, controller, &Controller::dragMove);
+    connect(renderingContext->canvas(), &Canvas::dragLeave, controller, &Controller::dragLeave);
+    connect(renderingContext->canvas(), &Canvas::drop, controller, &Controller::drop);
 
     auto restoreAutoSaveJob = new RestoreAutoSaveJob(mApplicationContext, this);
     restoreAutoSaveJob->setParentWidget(this);
