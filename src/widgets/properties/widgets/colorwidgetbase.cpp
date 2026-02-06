@@ -10,7 +10,6 @@
 #include <QColor>
 #include <QColorDialog>
 #include <QHBoxLayout>
-#include <QStyle>
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;

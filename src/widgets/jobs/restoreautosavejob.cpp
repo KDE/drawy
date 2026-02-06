@@ -13,7 +13,6 @@
 #include "jobs/loadjobutil.hpp"
 #include <KConfig>
 #include <KConfigGroup>
-#include <KMessageBox>
 #include <QFile>
 
 RestoreAutoSaveJob::RestoreAutoSaveJob(ApplicationContext *context, QObject *parent)

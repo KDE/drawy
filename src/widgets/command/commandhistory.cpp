@@ -5,8 +5,6 @@
 #include "commandhistory.hpp"
 #include "drawy_debug.h"
 
-#include <QDebug>
-
 CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
     : QObject(parent)
     , m_undoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())

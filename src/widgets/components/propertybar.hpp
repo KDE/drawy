@@ -5,7 +5,6 @@
 #pragma once
 
 #include "frame.hpp"
-#include <QStackedWidget>
 #include <QVBoxLayout>
 
 class Tool;

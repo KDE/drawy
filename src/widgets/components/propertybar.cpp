@@ -4,9 +4,7 @@
 
 #include "propertybar.hpp"
 
-#include <QApplication>
 #include <QLabel>
-#include <QSpacerItem>
 #include <QStyle>
 #include <stdexcept>
 

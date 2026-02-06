@@ -7,8 +7,6 @@
 #include <QList>
 #include <QPainterPath>
 #include <QPoint>
-#include <QPolygonF>
-#include <QtMath>
 
 namespace Common::Utils::Freehand
 {

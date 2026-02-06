@@ -8,7 +8,6 @@
 #include "drawyglobalconfig.h"
 #include <QCheckBox>
 #include <QFileDialog>
-#include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>

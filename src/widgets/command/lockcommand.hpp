@@ -7,7 +7,6 @@
 
 #include "itemcommand.hpp"
 #include <QList>
-#include <QPointF>
 class ApplicationContext;
 class LockCommand : public ItemCommand
 {

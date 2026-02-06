@@ -4,6 +4,7 @@
 
 #include "controller.hpp"
 
+#include <QDateTime>
 #include <QPointingDevice>
 #include <QWheelEvent>
 

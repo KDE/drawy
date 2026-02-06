@@ -4,8 +4,9 @@
 
 #pragma once
 
+#include <QPoint>
+#include <QRect>
 #include <QTimer>
-#include <QWidget>
 #include <qtmetamacros.h>
 class Canvas;
 class ApplicationContext;

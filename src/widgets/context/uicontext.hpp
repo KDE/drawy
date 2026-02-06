@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <QWidget>
 class ToolBar;
 class PropertyBar;
 class Event;

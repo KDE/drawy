@@ -7,7 +7,6 @@
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
-#include <QLabel>
 #include <QPushButton>
 #include <QStyle>
 #include <QToolButton>

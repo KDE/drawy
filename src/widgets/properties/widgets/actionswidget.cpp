@@ -4,7 +4,7 @@
 
 #include "actionswidget.hpp"
 
-#include <QBoxLayout>
+#include <QHBoxLayout>
 #include <QPushButton>
 #include <QWidget>
 

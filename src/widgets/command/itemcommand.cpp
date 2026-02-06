@@ -5,7 +5,6 @@
 #include "itemcommand.hpp"
 #include "drawy_debug.h"
 
-#include <QDebug>
 #include <utility>
 
 ItemCommand::ItemCommand(QList<std::shared_ptr<Item>> items)

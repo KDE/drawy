@@ -8,7 +8,6 @@
 #include "item/itemutils.hpp"
 #include "itemcommand.hpp"
 #include <QList>
-#include <QPointF>
 class ApplicationContext;
 class ZorderCommand : public ItemCommand
 {

@@ -4,7 +4,6 @@
 
 #include "freeform.hpp"
 
-#include <QDateTime>
 #include <QJsonObject>
 
 #include "common/constants.hpp"

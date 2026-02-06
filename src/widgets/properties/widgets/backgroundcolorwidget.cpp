@@ -4,9 +4,7 @@
 
 #include "backgroundcolorwidget.hpp"
 
-#include <QButtonGroup>
 #include <QColor>
-#include <QHBoxLayout>
 #include <QPushButton>
 #include <qtoolbutton.h>
 

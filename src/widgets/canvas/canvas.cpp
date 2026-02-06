@@ -4,7 +4,6 @@
 
 #include "canvas.hpp"
 
-#include <QBuffer>
 #include <QResizeEvent>
 #include <QScreen>
 

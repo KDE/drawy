@@ -6,7 +6,6 @@
 #include "arrowstylewidgettest.hpp"
 #include "properties/widgets/arrowstylewidget.hpp"
 #include "properties/widgets/buttonactionswidget.hpp"
-#include <QHBoxLayout>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(ArrowStyleWidgetTest)

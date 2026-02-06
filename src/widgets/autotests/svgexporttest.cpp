@@ -9,7 +9,6 @@
 #include "jobs/loadjob.hpp"
 #include "serializer/svgserializer.hpp"
 #include <QFontDatabase>
-#include <QSignalSpy>
 #include <QTest>
 #include <QXmlStreamWriter>
 

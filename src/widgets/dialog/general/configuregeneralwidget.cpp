@@ -7,9 +7,6 @@
 #include "configuregeneralwidget.hpp"
 #include "autosavewidget.hpp"
 #include "drawyglobalconfig.h"
-#include <QLabel>
-#include <QSpinBox>
-#include <QToolButton>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;

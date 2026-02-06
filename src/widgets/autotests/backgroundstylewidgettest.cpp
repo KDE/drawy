@@ -6,7 +6,7 @@
 #include "backgroundstylewidgettest.hpp"
 #include "properties/widgets/backgroundstylewidget.hpp"
 #include "properties/widgets/buttonactionswidget.hpp"
-#include <QGridLayout>
+#include <QHBoxLayout>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(BackgroundStyleWidgetTest)

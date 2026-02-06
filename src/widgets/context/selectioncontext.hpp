@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <QWidget>
 #include <unordered_set>
 class Property;
 class Item;

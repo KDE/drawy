@@ -4,9 +4,7 @@
 
 #include "window.hpp"
 
-#include <QButtonGroup>
 #include <QFile>
-#include <QFileDialog>
 #include <QFontDatabase>
 #include <QShortcut>
 
@@ -35,9 +33,6 @@
 #include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
-#include <KMessageBox>
-#include <QDir>
-#include <QMenu>
 
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)

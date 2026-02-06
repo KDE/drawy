@@ -5,7 +5,6 @@
 #pragma once
 
 #include <QByteArray>
-#include <QString>
 
 namespace Common::Utils::Compression
 {

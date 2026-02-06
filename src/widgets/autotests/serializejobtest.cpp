@@ -5,7 +5,6 @@
  */
 #include "serializejobtest.hpp"
 #include "jobs/serializejob.hpp"
-#include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(SerializeJobTest)
 

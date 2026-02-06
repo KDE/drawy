@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include <KAboutData>
 #include <KCrash>
 #include <QApplication>
 #include <QCommandLineParser>

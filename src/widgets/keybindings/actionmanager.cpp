@@ -5,11 +5,9 @@
 #include "actionmanager.hpp"
 
 #include <KActionCollection>
-#include <KGuiItem>
 #include <KMessageBox>
 #include <QDir>
 #include <QFileDialog>
-#include <QMenu>
 #include <QXmlStreamWriter>
 #include <memory>
 

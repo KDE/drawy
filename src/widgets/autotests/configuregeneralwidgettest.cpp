@@ -7,7 +7,6 @@
 #include "configuregeneralwidgettest.hpp"
 #include "dialog/general/autosavewidget.hpp"
 #include "dialog/general/configuregeneralwidget.hpp"
-#include <QSpinBox>
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
