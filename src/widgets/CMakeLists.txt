@@ -284,6 +284,8 @@ target_sources(
         mime/drawymimehandler.hpp
         mime/textmimehandler.cpp
         mime/textmimehandler.hpp
+        mime/svgmimehandler.cpp
+        mime/svgmimehandler.hpp
         mime/mimehandler.cpp
         mime/mimehandler.hpp
         mime/mimemanager.cpp

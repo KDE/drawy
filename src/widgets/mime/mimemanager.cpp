@@ -6,6 +6,7 @@
 #include "item/item.hpp"
 #include "mime/drawymimehandler.hpp"
 #include "mime/mimehandler.hpp"
+#include "mime/svgmimehandler.hpp"
 #include "mime/textmimehandler.hpp"
 #include <memory>
 #include <qmimedata.h>
@@ -15,6 +16,7 @@ MimeManager::MimeManager(QObject *parent)
 {
     registerHandler(std::make_unique<DrawyMimeHandler>());
     registerHandler(std::make_unique<TextMimeHandler>());
+    registerHandler(std::make_unique<SvgMimeHandler>());
 }
 
 MimeManager::~MimeManager() = default;
