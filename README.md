@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2025 None
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Drawy
 Your handy, infinite brainstorming tool!
 
