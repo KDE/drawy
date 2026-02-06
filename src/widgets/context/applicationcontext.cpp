@@ -116,3 +116,5 @@ void ApplicationContext::reset()
     m_currentFileModified = false;
     m_fileHasName = false;
 }
+
+#include "moc_applicationcontext.cpp"

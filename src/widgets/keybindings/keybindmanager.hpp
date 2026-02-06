@@ -8,12 +8,13 @@
 class KActionCollection;
 class KeybindManager : public QObject
 {
+    Q_OBJECT
 public:
     explicit KeybindManager(QObject *parent);
 
     void setEnabled(bool enabled);
 
-    KActionCollection *actionCollection() const;
+    [[nodiscard]] KActionCollection *actionCollection() const;
 
 private:
     KActionCollection *const mActionCollection;

@@ -65,3 +65,5 @@ void SpatialContext::reset()
     commandHistory()->clear();
     setOffsetPos(QPointF{0, 0});
 }
+
+#include "moc_spatialcontext.cpp"

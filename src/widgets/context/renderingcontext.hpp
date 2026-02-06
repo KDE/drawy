@@ -15,7 +15,6 @@ class ItemCache;
 class RenderingContext : public QObject
 {
     Q_OBJECT
-
 public:
     explicit RenderingContext(ApplicationContext *context);
     ~RenderingContext() override;

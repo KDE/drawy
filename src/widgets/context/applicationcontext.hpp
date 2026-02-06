@@ -16,6 +16,7 @@ class SelectionContext;
  */
 class ApplicationContext : public QObject
 {
+    Q_OBJECT
 public:
     ~ApplicationContext() override;
 

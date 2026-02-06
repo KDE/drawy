@@ -23,3 +23,5 @@ KActionCollection *KeybindManager::actionCollection() const
 {
     return mActionCollection;
 }
+
+#include "moc_keybindmanager.cpp"
