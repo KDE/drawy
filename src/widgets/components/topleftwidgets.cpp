@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "topleftwidgets.hpp"
-#include "context/applicationcontext.hpp"
 #include "context/helpmenu.hpp"
 #include "context/uicontext.hpp"
 #include "frame.hpp"
@@ -17,15 +16,12 @@
 #include <QStyle>
 #include <QToolButton>
 using namespace Qt::StringLiterals;
-TopLeftWidgets::TopLeftWidgets(QWidget *parent)
+TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     : QWidget{parent}
     , m_layout{new QHBoxLayout{this}}
     , mHelpMenu(new HelpMenu(this))
 {
     m_layout->setContentsMargins(0, 0, 0, 0);
-
-    auto context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
 
     // menu button
     auto menuFrame{new Frame{this}};

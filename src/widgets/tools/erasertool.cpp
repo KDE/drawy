@@ -25,7 +25,8 @@
 #include "properties/widgets/propertymanager.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-EraserTool::EraserTool()
+EraserTool::EraserTool(ApplicationContext *context)
+    : Tool(context)
 {
     m_cursor = QCursor(Qt::BlankCursor);
 
@@ -137,14 +138,12 @@ void EraserTool::leave([[maybe_unused]] ApplicationContext *context)
 
 void EraserTool::cleanup()
 {
-    ApplicationContext *context{ApplicationContext::instance()};
+    m_context->uiContext()->appEvent()->setButton(Qt::LeftButton);
+    mouseReleased(m_context);
 
-    context->uiContext()->appEvent()->setButton(Qt::LeftButton);
-    mouseReleased(context);
+    m_context->renderingContext()->canvas()->setOverlayBg(Qt::transparent);
 
-    context->renderingContext()->canvas()->setOverlayBg(Qt::transparent);
-
-    context->renderingContext()->markForUpdate();
+    m_context->renderingContext()->markForUpdate();
 }
 
 Tool::Type EraserTool::type() const

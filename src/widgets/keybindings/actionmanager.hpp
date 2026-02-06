@@ -11,6 +11,7 @@
 #include <QAction>
 #include <QObject>
 #include <functional>
+class KActionCollection;
 
 class ApplicationContext;
 class ActionManager : public QObject
@@ -45,7 +46,7 @@ public:
 
     Q_ENUM(Choice)
 
-    explicit ActionManager(ApplicationContext *context);
+    explicit ActionManager(KActionCollection *actionCollection, ApplicationContext *context);
 
     [[nodiscard]] QAction *action(Action type) const;
     [[nodiscard]] QString actionName(Action type) const;
@@ -69,7 +70,6 @@ public:
     bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
     void exportToSvg();
     void configureSettings();
-    void showHamburgerMenu();
 
     void switchToTool(Tool::Type type);
     void alignItems(ItemUtils::AlignType alignType);
@@ -101,4 +101,5 @@ private:
     }
 
     ApplicationContext *const m_context;
+    KActionCollection *const m_actionCollection;
 };

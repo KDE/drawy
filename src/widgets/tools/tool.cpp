@@ -6,7 +6,10 @@
 
 #include "drawy_debug.h"
 
-Tool::Tool() = default;
+Tool::Tool(ApplicationContext *context)
+    : m_context(context)
+{
+}
 
 Tool::~Tool()
 {

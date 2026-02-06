@@ -10,7 +10,7 @@ class FreeformItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT FreeformTool : public DrawingTool
 {
 public:
-    FreeformTool();
+    explicit FreeformTool(ApplicationContext *context);
     ~FreeformTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

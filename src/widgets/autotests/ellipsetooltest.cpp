@@ -16,7 +16,7 @@ EllipseToolTest::EllipseToolTest(QObject *parent)
 
 void EllipseToolTest::shouldHaveDefaultValues()
 {
-    const EllipseTool t;
+    const EllipseTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_ellipse"_s);
     QCOMPARE(t.type(), Tool::Type::Ellipse);

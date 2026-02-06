@@ -12,7 +12,7 @@
 
 #include <QGridLayout>
 using namespace Qt::Literals::StringLiterals;
-AlignmentWidget::AlignmentWidget(QWidget *parent)
+AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
@@ -60,7 +60,6 @@ AlignmentWidget::AlignmentWidget(QWidget *parent)
     layout->addWidget(centralVerticalButton, 1, 1);
     layout->addWidget(alignBottomButton, 1, 2);
 
-    auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
     connect(alignLeftButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
         actionManager->alignItems(ItemUtils::AlignType::AlignLeft);
     });

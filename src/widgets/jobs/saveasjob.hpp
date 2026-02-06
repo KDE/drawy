@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QPointF>
 class QDebug;
+class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT SaveAsJob : public QObject
 {
     Q_OBJECT
@@ -21,7 +22,7 @@ public:
         bool isAutoSave{false};
     };
 
-    explicit SaveAsJob(QObject *parent = nullptr);
+    explicit SaveAsJob(ApplicationContext *context, QObject *parent = nullptr);
     ~SaveAsJob() override;
 
     [[nodiscard]] bool canStart() const;
@@ -37,5 +38,6 @@ Q_SIGNALS:
 private:
     void slotSerializeDone(const QJsonObject &obj);
     SaveAsInfo mSaveAsInfo;
+    ApplicationContext *const mApplicationContext;
 };
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const SaveAsJob::SaveAsInfo &t);

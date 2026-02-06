@@ -41,12 +41,12 @@
 #include "serializer/svgserializer.hpp"
 
 using namespace Qt::StringLiterals;
-ActionManager::ActionManager(ApplicationContext *context)
+ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationContext *context)
     : QObject(context)
     , m_context{context}
+    , m_actionCollection(actionCollection)
 {
-    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
-    auto mainWindow{context->parentWidget()};
+    auto mainWindow{m_context->parentWidget()};
 
     KStandardActions::preferences(this, &ActionManager::configureSettings, actionCollection);
     KStandardActions::openNew(this, &ActionManager::newFile, actionCollection);
@@ -87,28 +87,28 @@ ActionManager::ActionManager(ApplicationContext *context)
     actionCollection->readSettings();
 
     // managing actions
-    connect(context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [context, this]() -> void {
-        if (context->spatialContext()->commandHistory()->hasUndo()) {
+    connect(m_context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
+        if (m_context->spatialContext()->commandHistory()->hasUndo()) {
             action(KStandardActions::Undo)->setEnabled(true);
         } else {
             action(KStandardActions::Undo)->setEnabled(false);
         }
 
-        if (context->spatialContext()->commandHistory()->hasRedo()) {
+        if (m_context->spatialContext()->commandHistory()->hasRedo()) {
             action(KStandardActions::Redo)->setEnabled(true);
         } else {
             action(KStandardActions::Redo)->setEnabled(false);
         }
     });
 
-    connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [context, this]([[maybe_unused]] qreal newZoomFactor) {
-        if (context->renderingContext()->canZoomIn()) {
+    connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [this]([[maybe_unused]] qreal newZoomFactor) {
+        if (m_context->renderingContext()->canZoomIn()) {
             action(KStandardActions::ZoomIn)->setEnabled(true);
         } else {
             action(KStandardActions::ZoomIn)->setEnabled(false);
         }
 
-        if (context->renderingContext()->canZoomOut()) {
+        if (m_context->renderingContext()->canZoomOut()) {
             action(KStandardActions::ZoomOut)->setEnabled(true);
         } else {
             action(KStandardActions::ZoomOut)->setEnabled(false);
@@ -118,8 +118,7 @@ ActionManager::ActionManager(ApplicationContext *context)
 
 QAction *ActionManager::action(Action type) const
 {
-    auto actionManager{m_context->uiContext()->keybindManager()->actionCollection()};
-    return actionManager->action(actionName(type));
+    return m_actionCollection->action(actionName(type));
 }
 
 QString ActionManager::actionName(Action type) const
@@ -160,8 +159,7 @@ QString ActionManager::actionName(Action type) const
 
 QAction *ActionManager::action(KStandardActions::StandardAction standardAction) const
 {
-    auto actionManager{m_context->uiContext()->keybindManager()->actionCollection()};
-    return actionManager->action(actionName(standardAction));
+    return m_actionCollection->action(actionName(standardAction));
 }
 
 QString ActionManager::actionName(KStandardActions::StandardAction standardAction) const
@@ -223,7 +221,7 @@ void ActionManager::groupItems()
     }
 
     const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(items));
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<GroupCommand>(m_context, items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -260,7 +258,7 @@ void ActionManager::selectAll()
 {
     switchToTool(Tool::Type::Selection);
 
-    auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+    const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
 
     m_context->renderingContext()->markForRender();
@@ -289,7 +287,7 @@ void ActionManager::saveAsNewFile()
     if (fileName.isEmpty()) {
         return;
     }
-    auto job = new SaveAsJob(this);
+    auto job = new SaveAsJob(m_context, this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
         .offsetPos = m_context->spatialContext()->offsetPos(),
@@ -311,23 +309,22 @@ void ActionManager::clear()
                                            tr("Clear"),
                                            KStandardGuiItem::ok(),
                                            KStandardGuiItem::cancel())) {
-        ApplicationContext *context{ApplicationContext::instance()};
-        const auto allItems{context->spatialContext()->quadtree().getAllItems()};
-        context->spatialContext()->commandHistory()->insert(std::make_shared<RemoveItemCommand>(allItems));
-        context->renderingContext()->markForRender();
-        context->renderingContext()->markForUpdate();
+        const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+        m_context->spatialContext()->commandHistory()->insert(std::make_shared<RemoveItemCommand>(allItems));
+        m_context->renderingContext()->markForRender();
+        m_context->renderingContext()->markForUpdate();
     }
 }
 
 void ActionManager::saveCurrentFile()
 {
-    auto fileName{m_context->currentFileName()};
     if (m_context->fileNeedsName()) {
         saveAsNewFile();
         return;
     }
 
-    auto job = new SaveAsJob(this);
+    const auto fileName{m_context->currentFileName()};
+    auto job = new SaveAsJob(m_context, this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
         .offsetPos = m_context->spatialContext()->offsetPos(),
@@ -387,7 +384,7 @@ void ActionManager::exportToSvg()
 
 void ActionManager::loadFile(const QString &fileName)
 {
-    auto job = new LoadJob(this);
+    auto job = new LoadJob(m_context, this);
     job->setFileName(fileName);
     connect(job, &LoadJob::loadDone, this, &ActionManager::slotLoadDone);
     job->start();
@@ -424,18 +421,16 @@ bool ActionManager::confirmSaveAfterModification()
 
 void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
 {
-    LoadJobUtil::loadFile(info);
+    LoadJobUtil::loadFile(m_context, info);
 }
 
 QAction *ActionManager::createAction(const Action &type, const QString &title, const QList<QKeySequence> &keys)
 {
-    auto context{ApplicationContext::instance()};
-    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
-    auto result{new QAction(title, actionCollection)};
+    auto result{new QAction(title, m_actionCollection)};
     result->setShortcuts(keys);
 
-    actionCollection->addAction(actionName(type), result);
-    actionCollection->setDefaultShortcuts(result, keys);
+    m_actionCollection->addAction(actionName(type), result);
+    m_actionCollection->setDefaultShortcuts(result, keys);
 
     return result;
 }
@@ -451,10 +446,6 @@ void ActionManager::configureSettings()
 {
     ConfigureSettingsDialog dlg(m_context->parentWidget());
     dlg.exec();
-}
-
-void ActionManager::showHamburgerMenu()
-{
 }
 
 #include "moc_actionmanager.cpp"

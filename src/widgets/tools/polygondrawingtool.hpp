@@ -14,7 +14,7 @@ protected:
     std::shared_ptr<PolygonItem> curItem{};
 
 public:
-    PolygonDrawingTool();
+    explicit PolygonDrawingTool(ApplicationContext *context);
     ~PolygonDrawingTool() override = default;
 
     void mousePressed(ApplicationContext *context) override;

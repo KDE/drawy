@@ -13,7 +13,7 @@ class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Tool
 {
 public:
-    Tool();
+    explicit Tool(ApplicationContext *m_context);
     virtual ~Tool();
 
     const QCursor &cursor() const;
@@ -53,4 +53,5 @@ public:
 protected:
     QCursor m_cursor{};
     QList<Property::Type> m_properties;
+    ApplicationContext *const m_context;
 };

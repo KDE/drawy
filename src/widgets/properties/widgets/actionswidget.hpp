@@ -5,12 +5,12 @@
 #pragma once
 
 #include "propertywidget.hpp"
-
+class ActionManager;
 class ActionsWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
-    explicit ActionsWidget(QWidget *parent = nullptr);
+    explicit ActionsWidget(ActionManager *actionManager, QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;

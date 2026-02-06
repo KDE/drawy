@@ -18,9 +18,10 @@
 #include "tools/tool.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-PropertyBar::PropertyBar(QWidget *parent)
+PropertyBar::PropertyBar(ApplicationContext *context, QWidget *parent)
     : Frame{parent}
     , m_layout(new QVBoxLayout{this})
+    , m_context(context)
 {
     const int margins{style()->pixelMetric(QStyle::PM_ToolBarItemMargin) * 2};
     m_layout->setContentsMargins(margins, margins, margins, margins);
@@ -33,8 +34,7 @@ void PropertyBar::setPropertyManager(PropertyManager *manager)
 
 void PropertyBar::updateToolProperties()
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    updateProperties(context->uiContext()->toolBar()->curTool());
+    updateProperties(m_context->uiContext()->toolBar()->curTool());
 }
 
 void PropertyBar::updateProperties(Tool &tool)

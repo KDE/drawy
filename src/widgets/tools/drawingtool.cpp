@@ -4,4 +4,7 @@
 
 #include "drawingtool.hpp"
 
-DrawingTool::DrawingTool() = default;
+DrawingTool::DrawingTool(ApplicationContext *context)
+    : Tool(context)
+{
+}

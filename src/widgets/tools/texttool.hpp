@@ -10,7 +10,7 @@
 class TextTool : public DrawingTool
 {
 public:
-    TextTool();
+    explicit TextTool(ApplicationContext *context);
     ~TextTool() override = default;
 
     void mousePressed(ApplicationContext *context) override;

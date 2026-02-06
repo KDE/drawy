@@ -19,8 +19,6 @@ public:
     explicit RenderingContext(ApplicationContext *context);
     ~RenderingContext() override;
 
-    void setRenderingContext();
-
     [[nodiscard]] Canvas *canvas() const;
     CacheGrid &cacheGrid() const;
     ItemCache &itemCache() const;

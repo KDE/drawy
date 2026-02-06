@@ -32,7 +32,8 @@
  */
 using namespace Qt::Literals::StringLiterals;
 
-TextTool::TextTool()
+TextTool::TextTool(ApplicationContext *context)
+    : DrawingTool(context)
 {
     m_cursor = QCursor(Qt::CrossCursor);
     m_itemFactory = std::make_unique<TextFactory>();
@@ -475,10 +476,9 @@ void TextTool::cleanup()
         return;
     }
 
-    auto context{ApplicationContext::instance()};
-    auto spatialContext{context->spatialContext()};
-    auto renderingContext{context->renderingContext()};
-    auto uiContext{context->uiContext()};
+    auto spatialContext{m_context->spatialContext()};
+    auto renderingContext{m_context->renderingContext()};
+    auto uiContext{m_context->uiContext()};
     auto &transformer{spatialContext->coordinateTransformer()};
     auto &quadTree{spatialContext->quadtree()};
 
@@ -492,7 +492,7 @@ void TextTool::cleanup()
         quadTree.deleteItem(m_curItem);
     }
 
-    context->selectionContext()->reset();
+    m_context->selectionContext()->reset();
 
     m_curItem = nullptr;
     renderingContext->markForRender();

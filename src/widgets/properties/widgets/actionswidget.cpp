@@ -15,7 +15,7 @@
 #include "keybindings/actionmanager.hpp"
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
-ActionsWidget::ActionsWidget(QWidget *parent)
+ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget{parent}
 {
     m_widget = new QWidget{parent};
@@ -39,8 +39,6 @@ ActionsWidget::ActionsWidget(QWidget *parent)
     layout->addWidget(deleteButton);
     layout->addWidget(groupButton);
     layout->addWidget(ungroupButton);
-
-    auto actionManager{ApplicationContext::instance()->uiContext()->actionManager()};
 
     connect(deleteButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
         actionManager->deleteSelection();

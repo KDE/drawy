@@ -4,8 +4,6 @@
 
 #include "bottomleftwidgets.hpp"
 #include "clickablelabel.hpp"
-#include "context/applicationcontext.hpp"
-#include "context/renderingcontext.hpp"
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
@@ -15,13 +13,10 @@
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;
-BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
+BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, QWidget *parent)
     : QWidget{parent}
     , m_layout(new QHBoxLayout{this})
 {
-    auto context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
-
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     m_layout->setContentsMargins(0, 0, 0, 0);
 
@@ -46,16 +41,14 @@ BottomLeftWidgets::BottomLeftWidgets(QWidget *parent)
     zoomLabel->setText(u"100%"_s);
     zoomLabel->setToolTip(tr("Reset Zoom"));
 
-    connect(zoomLabel, &ClickableLabel::clicked, this, [context]() {
-        context->renderingContext()->updateZoomFactor(1);
-    });
+    connect(zoomLabel, &ClickableLabel::clicked, this, &BottomLeftWidgets::resetZoom);
 
     auto zoomInButton{new QToolButton{zoomControlFrame}};
     zoomInButton->setAutoRaise(true);
     zoomInButton->setIconSize(iconSize);
     zoomInButton->setDefaultAction(actionManager->action(KStandardActions::ZoomIn));
 
-    connect(context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [zoomLabel](qreal newZoomFactor) {
+    connect(this, &BottomLeftWidgets::zoomFactorChanged, this, [zoomLabel](qreal newZoomFactor) {
         const int zoomValue{qRound(newZoomFactor * 100)};
         zoomLabel->setText(u"%1%"_s.arg(zoomValue));
     });

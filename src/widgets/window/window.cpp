@@ -42,15 +42,15 @@
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
-    , m_autoSaveJob{new AutoSaveJob{this}}
+    , mApplicationContext(new ApplicationContext(this))
 {
     loadCustomFonts();
+    m_autoSaveJob = new AutoSaveJob{mApplicationContext, this};
     auto layout{new BoardLayout(this)};
-    auto controller{new Controller(this)};
-    ApplicationContext *context{ApplicationContext::instance()};
+    auto controller{new Controller(mApplicationContext, this)};
 
-    auto renderingContext{context->renderingContext()};
-    auto uiContext{context->uiContext()};
+    auto renderingContext{mApplicationContext->renderingContext()};
+    auto uiContext{mApplicationContext->uiContext()};
 
     renderingContext->canvas()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -70,14 +70,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
 
-    auto restoreAutoSaveJob = new RestoreAutoSaveJob(context, this);
+    auto restoreAutoSaveJob = new RestoreAutoSaveJob(mApplicationContext, this);
     restoreAutoSaveJob->setParentWidget(this);
     restoreAutoSaveJob->start();
 
     AutoSaveJobUtil::createAutoSaveStandardPath();
     m_autoSaveJob->start();
 
-    auto actionCollection{context->uiContext()->keybindManager()->actionCollection()};
+    auto actionCollection{mApplicationContext->uiContext()->keybindManager()->actionCollection()};
     QAction *fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection);
     fullScreenAction->setChecked(isFullScreen());
     connect(fullScreenAction, &QAction::toggled, this, &MainWindow::viewFullScreen);
@@ -102,15 +102,14 @@ void MainWindow::loadCustomFonts()
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    auto context{ApplicationContext::instance()};
     if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
         m_autoSaveJob->saveFile();
         e->accept();
         return;
     }
 
-    if (context->currentFileModified()) {
-        if (context->uiContext()->actionManager()->confirmSaveAfterModification()) {
+    if (mApplicationContext->currentFileModified()) {
+        if (mApplicationContext->uiContext()->actionManager()->confirmSaveAfterModification()) {
             e->accept();
         } else {
             e->ignore();
@@ -128,8 +127,7 @@ void MainWindow::viewFullScreen(bool fullScreen)
 
 void MainWindow::loadFile(const QString &fileName)
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    auto actionManager{context->uiContext()->actionManager()};
+    auto actionManager{mApplicationContext->uiContext()->actionManager()};
     actionManager->loadFile(fileName);
 }
 

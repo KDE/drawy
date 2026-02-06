@@ -8,8 +8,9 @@
 #include "context/applicationcontext.hpp"
 #include "drawy_debug.h"
 #include <QFile>
-LoadJob::LoadJob(QObject *parent)
+LoadJob::LoadJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
+    , mApplicationContext(context)
 {
 }
 
@@ -66,8 +67,10 @@ void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
     Q_EMIT loadDone(loadInfo);
 
     if (!mIsAutoSave) {
-        ApplicationContext::instance()->setCurrentFileModified(false);
-        ApplicationContext::instance()->setCurrentFileName(mFileName);
+        if (mApplicationContext) {
+            mApplicationContext->setCurrentFileModified(false);
+            mApplicationContext->setCurrentFileName(mFileName);
+        }
     }
 
     deleteLater();

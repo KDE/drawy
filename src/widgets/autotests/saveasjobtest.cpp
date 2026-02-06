@@ -20,7 +20,7 @@ void SaveAsJobTest::shouldHaveDefaultValues()
     QCOMPARE(info.zoomFactor, 1.0);
     QVERIFY(info.items.isEmpty());
 
-    const SaveAsJob j;
+    const SaveAsJob j(nullptr);
     QVERIFY(!j.canStart());
 }
 

@@ -16,7 +16,7 @@ RectangleToolTest::RectangleToolTest(QObject *parent)
 
 void RectangleToolTest::shouldHaveDefaultValues()
 {
-    const RectangleTool t;
+    const RectangleTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_rectangle"_s);
     QCOMPARE(t.type(), Tool::Type::Rectangle);

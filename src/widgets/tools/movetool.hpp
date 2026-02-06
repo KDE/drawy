@@ -9,7 +9,7 @@
 class MoveTool : public Tool
 {
 public:
-    MoveTool();
+    explicit MoveTool(ApplicationContext *context);
     ~MoveTool() override = default;
 
     void mousePressed(ApplicationContext *context) override;

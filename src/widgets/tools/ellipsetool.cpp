@@ -7,7 +7,8 @@
 #include "item/factory/ellipsefactory.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-EllipseTool::EllipseTool()
+EllipseTool::EllipseTool(ApplicationContext *context)
+    : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<EllipseFactory>();
     m_properties += Property::Type::BackgroundColor;

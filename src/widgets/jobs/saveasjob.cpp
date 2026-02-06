@@ -14,8 +14,9 @@
 #include <QJsonObject>
 
 using namespace Qt::StringLiterals;
-SaveAsJob::SaveAsJob(QObject *parent)
+SaveAsJob::SaveAsJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
+    , mApplicationContext(context)
 {
 }
 
@@ -46,21 +47,19 @@ void SaveAsJob::slotSerializeDone(const QJsonObject &obj)
 {
     Q_EMIT saveFileDone(obj);
 
-    auto context{ApplicationContext::instance()};
-
     KConfig config{};
     KConfigGroup sessionGroup{&config, Common::configSession};
 
     // only update modified status if it's not the autosaved file
     // the autosave file is just a backup file
     if (!mSaveAsInfo.isAutoSave) {
-        context->setCurrentFileModified(false);
-        context->setCurrentFileName(mSaveAsInfo.filePath);
+        mApplicationContext->setCurrentFileModified(false);
+        mApplicationContext->setCurrentFileName(mSaveAsInfo.filePath);
     }
 
-    if (!context->fileNeedsName()) {
-        sessionGroup.writeEntry(Common::configSessionLastSavedFile, context->currentFileName());
-        if (context->currentFileModified()) {
+    if (!mApplicationContext->fileNeedsName()) {
+        sessionGroup.writeEntry(Common::configSessionLastSavedFile, mApplicationContext->currentFileName());
+        if (mApplicationContext->currentFileModified()) {
             sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, true);
             if (mSaveAsInfo.isAutoSave) {
                 sessionGroup.writeEntry(Common::configSessionLastSavedFileModified, true);

@@ -45,12 +45,12 @@ private:
     ToolBar *m_toolBar = nullptr;
     PropertyBar *m_propertyBar = nullptr;
     PropertyManager *m_propertyManager = nullptr;
-    KeybindManager *m_keybindManager = nullptr;
+    KeybindManager *const m_keybindManager;
     ActionManager *m_actionManager = nullptr;
     TopWidgets *m_topWidgets = nullptr;
     TopLeftWidgets *m_topLeftWidgets = nullptr;
     BottomLeftWidgets *m_bottomLeftWidgets = nullptr;
-    Event *m_event = nullptr;
+    Event *const m_event;
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
 
     ApplicationContext *const m_applicationContext;

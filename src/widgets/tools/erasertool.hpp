@@ -12,7 +12,7 @@ class Item;
 class EraserTool : public Tool
 {
 public:
-    EraserTool();
+    explicit EraserTool(ApplicationContext *context);
     ~EraserTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

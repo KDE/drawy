@@ -16,7 +16,7 @@ LineToolTest::LineToolTest(QObject *parent)
 
 void LineToolTest::shouldHaveDefaultValues()
 {
-    const LineTool t;
+    const LineTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_line"_s);
     QCOMPARE(t.type(), Tool::Type::Line);

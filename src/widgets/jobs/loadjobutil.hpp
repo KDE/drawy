@@ -6,8 +6,8 @@
 #pragma once
 
 #include "jobs/loadjob.hpp"
-
+class ApplicationContext;
 namespace LoadJobUtil
 {
-void loadFile(const LoadJob::LoadInfo &info);
+void loadFile(ApplicationContext *context, const LoadJob::LoadInfo &info);
 };

@@ -9,7 +9,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseTool : public PolygonDrawingTool
 {
 public:
-    EllipseTool();
+    explicit EllipseTool(ApplicationContext *context);
 
     ~EllipseTool() override = default;
 

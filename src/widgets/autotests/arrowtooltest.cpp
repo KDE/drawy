@@ -16,7 +16,7 @@ ArrowToolTest::ArrowToolTest(QObject *parent)
 
 void ArrowToolTest::shouldHaveDefaultValues()
 {
-    const ArrowTool t;
+    const ArrowTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"draw-arrow"_s);
     QCOMPARE(t.type(), Tool::Type::Arrow);

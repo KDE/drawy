@@ -13,13 +13,17 @@
 #include "drawy_debug.h"
 #include "item/item.hpp"
 
+ItemCache::ItemCache(ApplicationContext *context)
+    : mApplicationContext(context)
+{
+}
+
 void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRectF &queryRegion, const QPointF &offset)
 {
     Q_ASSERT(item->needsCaching());
 
-    auto *context{ApplicationContext::instance()};
-    auto &transformer{context->spatialContext()->coordinateTransformer()};
-    auto canvas{context->renderingContext()->canvas()};
+    auto &transformer{mApplicationContext->spatialContext()->coordinateTransformer()};
+    auto canvas{mApplicationContext->renderingContext()->canvas()};
 
     const QRectF boundingBox{item->boundingBox()};
     QTransform transform{item->transformObj()};
@@ -33,7 +37,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
         const QSizeF itemSize{transformer.worldToGrid(boundingBox.size())};
         const QSizeF maxCellSize{Common::maxItemCacheCellSize.toSizeF()};
 
-        const QPointF worldOffset{context->spatialContext()->offsetPos()};
+        const QPointF worldOffset{mApplicationContext->spatialContext()->offsetPos()};
         const QRectF worldViewport(worldOffset, transformer.viewToWorld(canvas->dimensions()));
         const QRectF gridViewport{transformer.worldToGrid(worldViewport)};
         const int rows{static_cast<int>(std::ceil(gridViewport.width() / maxCellSize.width())) + 1};
@@ -53,7 +57,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
         item->setDirty(false);
     }
 
-    const qreal zoom{context->renderingContext()->zoomFactor()};
+    const qreal zoom{mApplicationContext->renderingContext()->zoomFactor()};
     auto visibleCells{m_cacheGrids[item]->queryCells(transformedQueryRegion.toRect())};
 
     for (const auto &cell : visibleCells) {

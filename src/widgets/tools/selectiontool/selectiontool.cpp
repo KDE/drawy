@@ -23,7 +23,8 @@
 #include "selectiontoolselectstate.hpp"
 #include "selectiontoolstate.hpp"
 using namespace Qt::Literals::StringLiterals;
-SelectionTool::SelectionTool()
+SelectionTool::SelectionTool(ApplicationContext *context)
+    : Tool(context)
 {
     m_cursor = QCursor(Qt::ArrowCursor);
 
@@ -108,24 +109,27 @@ void SelectionTool::keyPressed(ApplicationContext *context)
 
 QList<Property::Type> SelectionTool::properties() const
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    const auto &selectedItems{context->selectionContext()->selectedItems()};
+    if (m_context) {
+        const auto &selectedItems{m_context->selectionContext()->selectedItems()};
 
-    std::set<Property::Type> result;
-    for (const auto &item : selectedItems) {
-        for (const auto &property : item->propertyTypes()) {
-            result.insert(property);
+        std::set<Property::Type> result;
+        for (const auto &item : selectedItems) {
+            for (const auto &property : item->propertyTypes()) {
+                result.insert(property);
+            }
         }
-    }
 
-    QList<Property::Type> output(result.begin(), result.end());
-    if (selectedItems.size() > 1) {
-        output += QList<Property::Type>{Property::Type::Alignment};
+        QList<Property::Type> output(result.begin(), result.end());
+        if (selectedItems.size() > 1) {
+            output += QList<Property::Type>{Property::Type::Alignment};
+        }
+        if (!selectedItems.empty()) {
+            output += QList<Property::Type>{Property::Type::ZOrder, Property::Type::Actions};
+        }
+        return output;
+    } else {
+        return {};
     }
-    if (!selectedItems.empty()) {
-        output += QList<Property::Type>{Property::Type::ZOrder, Property::Type::Actions};
-    }
-    return output;
 }
 
 Tool::Type SelectionTool::type() const

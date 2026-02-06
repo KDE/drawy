@@ -9,7 +9,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineTool : public PolygonDrawingTool
 {
 public:
-    LineTool();
+    explicit LineTool(ApplicationContext *context);
     ~LineTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

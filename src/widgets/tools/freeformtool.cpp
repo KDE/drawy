@@ -19,7 +19,8 @@
 #include "properties/widgets/propertymanager.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-FreeformTool::FreeformTool()
+FreeformTool::FreeformTool(ApplicationContext *context)
+    : DrawingTool(context)
 {
     m_itemFactory = std::make_unique<FreeformFactory>();
 
@@ -132,10 +133,9 @@ void FreeformTool::tablet([[maybe_unused]] ApplicationContext *context)
 
 void FreeformTool::cleanup()
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    context->uiContext()->appEvent()->setButton(Qt::LeftButton);
+    m_context->uiContext()->appEvent()->setButton(Qt::LeftButton);
     m_itemList.clear();
-    mouseReleased(context);
+    mouseReleased(m_context);
 }
 
 Tool::Type FreeformTool::type() const

@@ -18,7 +18,7 @@ AlignmentWidgetTest::AlignmentWidgetTest(QObject *parent)
 void AlignmentWidgetTest::shouldHaveDefaultValues()
 {
     auto parent = new QWidget();
-    const AlignmentWidget w(parent);
+    const AlignmentWidget w(nullptr, parent);
     QVERIFY(!w.name().isEmpty());
     auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);

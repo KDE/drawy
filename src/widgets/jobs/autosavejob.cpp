@@ -15,10 +15,9 @@
 #include "serializer/serializerutils.hpp"
 #include <QTimer>
 
-// #define TEST_TIMER
-
-AutoSaveJob::AutoSaveJob(QObject *parent)
+AutoSaveJob::AutoSaveJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
+    , mApplicationContext(context)
 {
 }
 
@@ -32,15 +31,13 @@ void AutoSaveJob::start()
 
 void AutoSaveJob::saveFile()
 {
-    auto context{ApplicationContext::instance()};
-
     const QString fileName = DrawyGlobalConfig::self()->path();
-    auto saveAsJob = new SaveAsJob(this);
+    auto saveAsJob = new SaveAsJob(mApplicationContext, this);
 
     const SaveAsJob::SaveAsInfo info{.filePath = fileName,
-                                     .offsetPos = context->spatialContext()->offsetPos(),
-                                     .zoomFactor = context->renderingContext()->zoomFactor(),
-                                     .items = context->spatialContext()->quadtree().getAllItems(),
+                                     .offsetPos = mApplicationContext->spatialContext()->offsetPos(),
+                                     .zoomFactor = mApplicationContext->renderingContext()->zoomFactor(),
+                                     .items = mApplicationContext->spatialContext()->quadtree().getAllItems(),
                                      .isAutoSave = true};
 
     saveAsJob->setSaveAsInfo(info);

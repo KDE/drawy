@@ -10,12 +10,12 @@
 
 class Tool;
 class PropertyManager;
-
+class ApplicationContext;
 class PropertyBar : public Frame
 {
     Q_OBJECT
 public:
-    explicit PropertyBar(QWidget *parent = nullptr);
+    explicit PropertyBar(ApplicationContext *context, QWidget *parent = nullptr);
 
     void setPropertyManager(PropertyManager *manager);
     void updateToolProperties();
@@ -24,4 +24,5 @@ public:
 private:
     QVBoxLayout *const m_layout;
     PropertyManager *m_propertyManager = nullptr;
+    ApplicationContext *const m_context;
 };

@@ -8,6 +8,7 @@
 #include "backgroundcolorwidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
+#include "keybindings/actionmanager.hpp"
 #include "opacitywidget.hpp"
 #include "properties/widgets/alignmentwidget.hpp"
 #include "properties/widgets/arrowstylewidget.hpp"
@@ -17,7 +18,7 @@
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
-PropertyManager::PropertyManager(QWidget *parent)
+PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     : QObject{parent}
 {
     m_widgets[Property::Type::StrokeWidth] = new StrokeWidthWidget(parent);
@@ -25,11 +26,11 @@ PropertyManager::PropertyManager(QWidget *parent)
     m_widgets[Property::Type::StrokeStyle] = new StokeStyleWidget(parent);
     m_widgets[Property::Type::EraserSize] = new EraserSizeWidget(parent);
     m_widgets[Property::Type::FontSize] = new FontSizeWidget(parent);
-    m_widgets[Property::Type::Actions] = new ActionsWidget(parent);
+    m_widgets[Property::Type::Actions] = new ActionsWidget(actionManager, parent);
     m_widgets[Property::Type::BackgroundColor] = new BackgroundColorWidget(parent);
     m_widgets[Property::Type::Opacity] = new OpacityWidget(parent);
     m_widgets[Property::Type::ZOrder] = new ZOrderWidget(parent);
-    m_widgets[Property::Type::Alignment] = new AlignmentWidget(parent);
+    m_widgets[Property::Type::Alignment] = new AlignmentWidget(actionManager, parent);
     m_widgets[Property::Type::ArrowStyle] = new ArrowStyleWidget(parent);
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);
 

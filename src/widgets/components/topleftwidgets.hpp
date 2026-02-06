@@ -8,11 +8,12 @@
 #include <QWidget>
 class HelpMenu;
 class KActionMenu;
+class ActionManager;
 class TopLeftWidgets : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TopLeftWidgets(QWidget *parent = nullptr);
+    explicit TopLeftWidgets(ActionManager *actionManager, QWidget *parent = nullptr);
 
 private:
     QHBoxLayout *const m_layout;

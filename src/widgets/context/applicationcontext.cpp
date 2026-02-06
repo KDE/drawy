@@ -13,8 +13,6 @@
 #include "spatialcontext.hpp"
 #include "uicontext.hpp"
 
-ApplicationContext *ApplicationContext::m_instance = nullptr;
-
 ApplicationContext::ApplicationContext(QWidget *parent)
     : QObject{parent}
     , m_currentFileName{Common::unsavedFileName}
@@ -24,6 +22,17 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_uiContext(new UIContext(this))
     , m_selectionContext(new SelectionContext(this))
 {
+    m_spatialContext->coordinateTransformer().setCoordinateTransformer();
+
+    connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
+        m_currentFileModified = true;
+    });
+    m_uiContext->initializeUIContext();
+}
+
+ApplicationContext::~ApplicationContext()
+{
+    qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
 }
 
 QString ApplicationContext::currentFileName() const
@@ -50,32 +59,6 @@ bool ApplicationContext::currentFileModified() const
 void ApplicationContext::setCurrentFileModified(bool value)
 {
     m_currentFileModified = value;
-}
-
-ApplicationContext::~ApplicationContext()
-{
-    qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
-}
-
-ApplicationContext *ApplicationContext::instance(QWidget *parent)
-{
-    if (!m_instance) {
-        m_instance = new ApplicationContext(parent);
-    }
-
-    return m_instance;
-}
-
-void ApplicationContext::initializeContexts()
-{
-    m_renderingContext->setRenderingContext();
-    m_spatialContext->setSpatialContext();
-    m_uiContext->initializeUIContext();
-    m_spatialContext->coordinateTransformer().setCoordinateTransformer();
-
-    connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
-        m_currentFileModified = true;
-    });
 }
 
 QWidget *ApplicationContext::parentWidget() const
@@ -111,7 +94,6 @@ void ApplicationContext::reset()
     spatialContext()->reset();
     renderingContext()->reset();
 
-    using namespace Qt::StringLiterals;
     m_currentFileName = Common::unsavedFileName;
     m_currentFileModified = false;
     m_fileHasName = false;

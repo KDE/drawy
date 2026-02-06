@@ -8,11 +8,11 @@
 #include <unordered_map>
 class Item;
 class CacheGrid;
-
+class ApplicationContext;
 class ItemCache
 {
 public:
-    ItemCache() = default;
+    explicit ItemCache(ApplicationContext *context);
     ~ItemCache() = default;
 
     void drawCached(QPainter &painter, const std::shared_ptr<Item> &item, const QRectF &queryRegion, const QPointF &offset);
@@ -21,4 +21,5 @@ public:
 
 private:
     std::unordered_map<std::shared_ptr<Item>, std::unique_ptr<CacheGrid>> m_cacheGrids;
+    ApplicationContext *const mApplicationContext;
 };

@@ -8,6 +8,7 @@
 #include "deserializejob.hpp"
 #include "libdrawywidgets_private_export.h"
 #include <QObject>
+class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT LoadJob : public QObject
 {
     Q_OBJECT
@@ -19,7 +20,7 @@ public:
         bool isAutoSave{false};
     };
 
-    explicit LoadJob(QObject *parent = nullptr);
+    explicit LoadJob(ApplicationContext *context, QObject *parent = nullptr);
     ~LoadJob() override;
 
     [[nodiscard]] bool canStart() const;
@@ -37,4 +38,5 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);
     QString mFileName;
     bool mIsAutoSave{false};
+    ApplicationContext *const mApplicationContext;
 };

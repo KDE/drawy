@@ -22,7 +22,8 @@
 #include "item/polygon.hpp"
 #include "properties/widgets/propertymanager.hpp"
 
-PolygonDrawingTool::PolygonDrawingTool()
+PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
+    : DrawingTool(context)
 {
     m_cursor = QCursor(Qt::CrossCursor);
 
@@ -107,7 +108,6 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 
 void PolygonDrawingTool::cleanup()
 {
-    ApplicationContext *context{ApplicationContext::instance()};
-    context->uiContext()->appEvent()->setButton(Qt::LeftButton);
-    mouseReleased(context);
+    m_context->uiContext()->appEvent()->setButton(Qt::LeftButton);
+    mouseReleased(m_context);
 }

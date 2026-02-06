@@ -7,7 +7,8 @@
 #include "item/factory/rectanglefactory.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-RectangleTool::RectangleTool()
+RectangleTool::RectangleTool(ApplicationContext *context)
+    : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<RectangleFactory>();
     m_properties += Property::Type::BackgroundColor;

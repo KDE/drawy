@@ -10,9 +10,8 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 
-void LoadJobUtil::loadFile(const LoadJob::LoadInfo &info)
+void LoadJobUtil::loadFile(ApplicationContext *context, const LoadJob::LoadInfo &info)
 {
-    ApplicationContext *context{ApplicationContext::instance()};
     context->reset();
 
     QuadTree &quadtree{context->spatialContext()->quadtree()};

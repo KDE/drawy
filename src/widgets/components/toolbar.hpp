@@ -5,13 +5,11 @@
 #pragma once
 
 #include "frame.hpp"
-#include <QButtonGroup>
-#include <QHBoxLayout>
 #include <QShowEvent>
-#include <QToolButton>
 
 #include "tools/tool.hpp"
-
+class QButtonGroup;
+class QHBoxLayout;
 class ToolBar : public Frame
 {
     Q_OBJECT

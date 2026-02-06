@@ -21,12 +21,11 @@
 #include "event/event.hpp"
 #include "item/itemcache/itemcache.hpp"
 
-Controller::Controller(QObject *parent)
+Controller::Controller(ApplicationContext *context, QObject *parent)
     : QObject{parent}
-    , m_context{ApplicationContext::instance(dynamic_cast<QWidget *>(parent))}
+    , m_context{context}
     , m_zoomTimer{new QTimer(this)}
 {
-    m_context->initializeContexts();
     connect(m_zoomTimer, &QTimer::timeout, this, &Controller::renderZoom);
 }
 

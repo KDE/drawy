@@ -15,7 +15,7 @@ SelectionToolTest::SelectionToolTest(QObject *parent)
 
 void SelectionToolTest::shouldHaveDefaultValues()
 {
-    const SelectionTool t;
+    const SelectionTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_rect_selection"_s);
     QCOMPARE(t.type(), Tool::Type::Selection);

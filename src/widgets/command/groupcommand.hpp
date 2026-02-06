@@ -11,7 +11,7 @@ class GroupItem;
 class GroupCommand : public ItemCommand
 {
 public:
-    explicit GroupCommand(QList<std::shared_ptr<Item>> items);
+    explicit GroupCommand(ApplicationContext *context, QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
@@ -19,4 +19,5 @@ public:
 
 private:
     const std::shared_ptr<GroupItem> m_group;
+    ApplicationContext *const m_context;
 };

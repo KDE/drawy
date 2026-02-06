@@ -17,7 +17,7 @@ DiamondToolTest::DiamondToolTest(QObject *parent)
 
 void DiamondToolTest::shouldHaveDefaultValues()
 {
-    const DiamondTool t;
+    const DiamondTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"choice-rhomb"_s);
     QCOMPARE(t.type(), Tool::Type::Diamond);

@@ -7,7 +7,8 @@
 #include "item/factory/arrowfactory.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-ArrowTool::ArrowTool()
+ArrowTool::ArrowTool(ApplicationContext *context)
+    : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<ArrowFactory>();
     m_properties += Property::Type::ArrowStyle;

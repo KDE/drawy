@@ -18,12 +18,13 @@
 #include "item/group.hpp"
 #include "selectcommand.hpp"
 
-GroupCommand::GroupCommand(QList<std::shared_ptr<Item>> items)
+GroupCommand::GroupCommand(ApplicationContext *context, QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
     , m_group(std::make_shared<GroupItem>())
+    , m_context(context)
 {
     // sort according to z order
-    ApplicationContext::instance()->spatialContext()->quadtree().reorder(m_items);
+    m_context->spatialContext()->quadtree().reorder(m_items);
 }
 
 void GroupCommand::execute(ApplicationContext *context)

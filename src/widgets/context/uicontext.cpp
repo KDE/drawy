@@ -37,6 +37,8 @@
 
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
+    , m_keybindManager(new KeybindManager(this))
+    , m_event(new Event())
     , m_applicationContext{context}
 {
 }
@@ -49,40 +51,40 @@ UIContext::~UIContext()
 
 void UIContext::initializeUIContext()
 {
-    m_keybindManager = new KeybindManager(m_applicationContext->renderingContext()->canvas());
-    m_actionManager = new ActionManager(m_applicationContext);
-    m_topWidgets = new TopWidgets(m_applicationContext->parentWidget());
+    m_actionManager = new ActionManager(m_keybindManager->actionCollection(), m_applicationContext);
+
+    m_propertyBar = new PropertyBar(m_applicationContext, m_applicationContext->parentWidget());
+
+    m_topWidgets = new TopWidgets(m_applicationContext, m_applicationContext->parentWidget());
     m_toolBar = new ToolBar(m_topWidgets);
-    m_bottomLeftWidgets = new BottomLeftWidgets(m_applicationContext->parentWidget());
-    m_topLeftWidgets = new TopLeftWidgets(m_applicationContext->parentWidget());
-    m_propertyBar = new PropertyBar(m_applicationContext->parentWidget());
-
-    m_propertyManager = new PropertyManager(m_propertyBar);
-    m_propertyBar->setPropertyManager(m_propertyManager);
-
-    connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
-
-    m_event = new Event();
-
-    m_toolBar->addTool(std::make_shared<SelectionTool>(), Tool::Type::Selection, tr("Selection"));
-    m_toolBar->addTool(std::make_shared<FreeformTool>(), Tool::Type::Freeform, tr("Free Form"));
-    m_toolBar->addTool(std::make_shared<RectangleTool>(), Tool::Type::Rectangle, tr("Rectangle"));
-    m_toolBar->addTool(std::make_shared<DiamondTool>(), Tool::Type::Diamond, tr("Diamond"));
-    m_toolBar->addTool(std::make_shared<EllipseTool>(), Tool::Type::Ellipse, tr("Ellipse"));
-    m_toolBar->addTool(std::make_shared<ArrowTool>(), Tool::Type::Arrow, tr("Arrow"));
-    m_toolBar->addTool(std::make_shared<LineTool>(), Tool::Type::Line, tr("Line"));
-    m_toolBar->addTool(std::make_shared<EraserTool>(), Tool::Type::Eraser, tr("Eraser"));
-    m_toolBar->addTool(std::make_shared<TextTool>(), Tool::Type::Text, tr("Text"));
-    m_toolBar->addTool(std::make_shared<MoveTool>(), Tool::Type::Move, tr("Move"));
+    m_toolBar->addTool(std::make_shared<SelectionTool>(m_applicationContext), Tool::Type::Selection, tr("Selection"));
+    m_toolBar->addTool(std::make_shared<FreeformTool>(m_applicationContext), Tool::Type::Freeform, tr("Free Form"));
+    m_toolBar->addTool(std::make_shared<RectangleTool>(m_applicationContext), Tool::Type::Rectangle, tr("Rectangle"));
+    m_toolBar->addTool(std::make_shared<DiamondTool>(m_applicationContext), Tool::Type::Diamond, tr("Diamond"));
+    m_toolBar->addTool(std::make_shared<EllipseTool>(m_applicationContext), Tool::Type::Ellipse, tr("Ellipse"));
+    m_toolBar->addTool(std::make_shared<ArrowTool>(m_applicationContext), Tool::Type::Arrow, tr("Arrow"));
+    m_toolBar->addTool(std::make_shared<LineTool>(m_applicationContext), Tool::Type::Line, tr("Line"));
+    m_toolBar->addTool(std::make_shared<EraserTool>(m_applicationContext), Tool::Type::Eraser, tr("Eraser"));
+    m_toolBar->addTool(std::make_shared<TextTool>(m_applicationContext), Tool::Type::Text, tr("Text"));
+    m_toolBar->addTool(std::make_shared<MoveTool>(m_applicationContext), Tool::Type::Move, tr("Move"));
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
-    connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
     connect(m_toolBar, &ToolBar::toolbarShown, this, [this]() {
         if (!m_topWidgets->isInitialized()) {
             m_topWidgets->initialize();
         }
     });
+    m_bottomLeftWidgets = new BottomLeftWidgets(m_actionManager, m_applicationContext->parentWidget());
+    connect(m_bottomLeftWidgets, &BottomLeftWidgets::resetZoom, this, [this]() {
+        m_applicationContext->renderingContext()->updateZoomFactor(1);
+    });
+    connect(m_applicationContext->renderingContext(), &RenderingContext::zoomFactorChanged, m_bottomLeftWidgets, &BottomLeftWidgets::zoomFactorChanged);
+    m_topLeftWidgets = new TopLeftWidgets(m_actionManager, m_applicationContext->parentWidget());
 
+    m_propertyManager = new PropertyManager(m_actionManager, m_propertyBar);
+    m_propertyBar->setPropertyManager(m_propertyManager);
+    connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
+    connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
@@ -162,10 +164,9 @@ void UIContext::reset()
 
 void UIContext::showContextMenu() const
 {
-    auto context{ApplicationContext::instance()};
-    auto allItems{context->spatialContext()->quadtree().getAllItems()};
+    auto allItems{m_applicationContext->spatialContext()->quadtree().getAllItems()};
 
-    auto menu = new QMenu(context->parentWidget());
+    auto menu = new QMenu(m_applicationContext->parentWidget());
     menu->addAction(actionManager()->action(KStandardActions::FullScreen));
     menu->addSeparator();
     if (!allItems.empty()) {

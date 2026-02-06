@@ -17,8 +17,6 @@ public:
     explicit SpatialContext(ApplicationContext *context);
     ~SpatialContext() override;
 
-    void setSpatialContext();
-
     // SpatialContext
     QuadTree &quadtree() const;
     CoordinateTransformer &coordinateTransformer() const;

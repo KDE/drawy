@@ -9,7 +9,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleTool : public PolygonDrawingTool
 {
 public:
-    RectangleTool();
+    explicit RectangleTool(ApplicationContext *context);
     ~RectangleTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

@@ -13,7 +13,7 @@ protected:
     std::unique_ptr<ItemFactory> m_itemFactory{};
 
 public:
-    DrawingTool();
+    explicit DrawingTool(ApplicationContext *context);
     ~DrawingTool() override = default;
 
 protected:

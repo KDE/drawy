@@ -6,12 +6,12 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
-
+class ActionManager;
 class LIBDRAWYWIDGETS_TESTS_EXPORT AlignmentWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
-    explicit AlignmentWidget(QWidget *parent = nullptr);
+    explicit AlignmentWidget(ActionManager *actionManager, QWidget *parent = nullptr);
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
 };

@@ -16,7 +16,7 @@ class Controller : public QObject
     Q_OBJECT
 
 public:
-    explicit Controller(QObject *parent = nullptr);
+    explicit Controller(ApplicationContext *context, QObject *parent = nullptr);
     ~Controller() override;
 
     void mousePressed(QMouseEvent *event);

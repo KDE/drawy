@@ -10,7 +10,7 @@ class SelectionToolState;
 class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionTool : public Tool
 {
 public:
-    SelectionTool();
+    explicit SelectionTool(ApplicationContext *context);
     ~SelectionTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

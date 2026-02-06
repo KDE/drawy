@@ -22,18 +22,9 @@ RenderingContext::RenderingContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext(context)
 {
-}
-
-RenderingContext::~RenderingContext()
-{
-    qCDebug(DRAWY_LOG) << "Object deleted: RenderingContext";
-}
-
-void RenderingContext::setRenderingContext()
-{
     m_canvas = new Canvas(m_applicationContext->parentWidget());
     m_cacheGrid = std::make_unique<CacheGrid>(100, QSize{500, 500});
-    m_itemCache = std::make_unique<ItemCache>();
+    m_itemCache = std::make_unique<ItemCache>(m_applicationContext);
     canvasResized();
 
     connect(m_canvas, &Canvas::resizeEventCalled, this, &RenderingContext::canvasResized);
@@ -57,6 +48,11 @@ void RenderingContext::setRenderingContext()
     });
 
     m_frameTimer.start(1000 / fps());
+}
+
+RenderingContext::~RenderingContext()
+{
+    qCDebug(DRAWY_LOG) << "Object deleted: RenderingContext";
 }
 
 Canvas *RenderingContext::canvas() const

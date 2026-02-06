@@ -6,12 +6,16 @@
 
 #include <QHBoxLayout>
 #include <QWidget>
-
+class ActionManager;
 class BottomLeftWidgets : public QWidget
 {
     Q_OBJECT
 public:
-    explicit BottomLeftWidgets(QWidget *parent = nullptr);
+    explicit BottomLeftWidgets(ActionManager *actionManager, QWidget *parent = nullptr);
+
+Q_SIGNALS:
+    void resetZoom();
+    void zoomFactorChanged(qreal newZoomFactor);
 
 private:
     QHBoxLayout *const m_layout;

@@ -11,13 +11,15 @@
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "keybindings/actionmanager.hpp"
+#include <QHBoxLayout>
 #include <QStyle>
 #include <QToolButton>
 
 using namespace Qt::StringLiterals;
-TopWidgets::TopWidgets(QWidget *parent)
+TopWidgets::TopWidgets(ApplicationContext *context, QWidget *parent)
     : QWidget{parent}
     , m_layout{new QHBoxLayout(this)}
+    , m_context(context)
 {
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     m_layout->setContentsMargins(0, 0, 0, 0);
@@ -26,9 +28,8 @@ TopWidgets::TopWidgets(QWidget *parent)
 void TopWidgets::initialize()
 {
     // Toolbar
-    auto context{ApplicationContext::instance()};
-    auto toolBar{context->uiContext()->toolBar()};
-    auto actionManager{context->uiContext()->actionManager()};
+    auto toolBar{m_context->uiContext()->toolBar()};
+    auto actionManager{m_context->uiContext()->actionManager()};
 
     const int iconWidth{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
     const QSize iconSize{iconWidth, iconWidth};

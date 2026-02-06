@@ -13,7 +13,8 @@
 #include "event/event.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-MoveTool::MoveTool()
+MoveTool::MoveTool(ApplicationContext *context)
+    : Tool(context)
 {
     m_cursor = QCursor(Qt::OpenHandCursor);
 }

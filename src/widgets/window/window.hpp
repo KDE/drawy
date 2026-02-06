@@ -7,7 +7,7 @@
 #include "libdrawywidgets_export.h"
 #include <QWidget>
 class AutoSaveJob;
-
+class ApplicationContext;
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
@@ -26,4 +26,5 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
     bool m_forceClose = false;
     AutoSaveJob *m_autoSaveJob{nullptr};
+    ApplicationContext *const mApplicationContext;
 };

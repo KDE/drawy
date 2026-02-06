@@ -18,11 +18,8 @@ class ApplicationContext : public QObject
 {
     Q_OBJECT
 public:
+    explicit ApplicationContext(QWidget *parent = nullptr);
     ~ApplicationContext() override;
-
-    static ApplicationContext *instance(QWidget *parent = nullptr);
-
-    void initializeContexts();
 
     [[nodiscard]] QWidget *parentWidget() const;
 
@@ -41,11 +38,6 @@ public:
     void setCurrentFileModified(bool value);
 
 private:
-    explicit ApplicationContext(QWidget *parent = nullptr);
-
-    ApplicationContext(const ApplicationContext &) = delete;
-    ApplicationContext(ApplicationContext *) = delete;
-
     QString m_currentFileName;
     bool m_currentFileModified{false};
     bool m_fileHasName{false};
@@ -56,6 +48,4 @@ private:
     SpatialContext *const m_spatialContext;
     UIContext *const m_uiContext;
     SelectionContext *const m_selectionContext;
-
-    static ApplicationContext *m_instance;
 };

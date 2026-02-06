@@ -18,20 +18,16 @@ SpatialContext::SpatialContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext{context}
 {
-}
-
-SpatialContext::~SpatialContext()
-{
-    qCDebug(DRAWY_LOG) << "Object deleted: SpatialContext";
-}
-
-void SpatialContext::setSpatialContext()
-{
     auto canvas{m_applicationContext->renderingContext()->canvas()};
 
     m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 100);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
+}
+
+SpatialContext::~SpatialContext()
+{
+    qCDebug(DRAWY_LOG) << "Object deleted: SpatialContext";
 }
 
 QuadTree &SpatialContext::quadtree() const

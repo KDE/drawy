@@ -51,12 +51,12 @@ void RestoreAutoSaveJob::restoreFile()
     const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile, u""_s)};
     const bool lastSavedFileModified{sessionGroup.readEntry(Common::configSessionLastSavedFileModified, false)};
 
-    auto job = new LoadJob(this);
+    auto job = new LoadJob(m_context, this);
     job->setFileName(AutoSaveJobUtil::temporaryFileName());
     job->setIsAutoSave(true);
 
     connect(job, &LoadJob::loadDone, this, [this, lastSavedFile, lastSavedFileModified](const LoadJob::LoadInfo &info) {
-        LoadJobUtil::loadFile(info);
+        LoadJobUtil::loadFile(m_context, info);
         if (!lastSavedFile.isEmpty()) {
             m_context->setCurrentFileName(lastSavedFile);
             m_context->setCurrentFileModified(lastSavedFileModified);

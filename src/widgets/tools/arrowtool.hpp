@@ -9,7 +9,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowTool : public PolygonDrawingTool
 {
 public:
-    ArrowTool();
+    explicit ArrowTool(ApplicationContext *context);
     ~ArrowTool() override = default;
 
     [[nodiscard]] QString tooltip() const override;

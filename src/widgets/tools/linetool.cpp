@@ -7,7 +7,8 @@
 #include "item/factory/linefactory.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-LineTool::LineTool()
+LineTool::LineTool(ApplicationContext *context)
+    : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<LineFactory>();
 }

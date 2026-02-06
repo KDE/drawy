@@ -7,7 +7,8 @@
 #include "item/factory/diamondfactory.hpp"
 using namespace Qt::Literals::StringLiterals;
 
-DiamondTool::DiamondTool()
+DiamondTool::DiamondTool(ApplicationContext *context)
+    : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<DiamondFactory>();
     m_properties += Property::Type::BackgroundColor;

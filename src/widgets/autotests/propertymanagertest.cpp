@@ -15,7 +15,7 @@ PropertyManagerTest::PropertyManagerTest(QObject *parent)
 
 void PropertyManagerTest::shouldHaveDefaultValues()
 {
-    PropertyManager w;
+    PropertyManager w(nullptr);
     QVERIFY(w.widget(Property::Type::StrokeWidth));
     QVERIFY(w.widget(Property::Type::StrokeColor));
     QVERIFY(w.widget(Property::Type::StrokeStyle));

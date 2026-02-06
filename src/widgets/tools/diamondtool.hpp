@@ -9,7 +9,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondTool : public PolygonDrawingTool
 {
 public:
-    DiamondTool();
+    explicit DiamondTool(ApplicationContext *context);
 
     ~DiamondTool() override = default;
 

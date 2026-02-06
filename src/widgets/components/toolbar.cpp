@@ -4,7 +4,10 @@
 
 #include "toolbar.hpp"
 #include <QApplication>
+#include <QButtonGroup>
+#include <QHBoxLayout>
 #include <QStyle>
+#include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;
 ToolBar::ToolBar(QWidget *parent)
