@@ -280,6 +280,10 @@ target_sources(
         dialog/general/configuregeneralwidget.cpp
         dialog/general/autosavewidget.hpp
         dialog/general/autosavewidget.cpp
+        mime/mimehandler.cpp
+        mime/mimehandler.hpp
+        mime/mimemanager.cpp
+        mime/mimemanager.hpp
         libdrawywidgets_private_export.h
 )
 

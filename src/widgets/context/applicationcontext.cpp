@@ -8,6 +8,7 @@
 #include "common/constants.hpp"
 #include "coordinatetransformer.hpp"
 #include "drawy_debug.h"
+#include "mime/mimemanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
 #include "spatialcontext.hpp"
@@ -21,6 +22,7 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_spatialContext(new SpatialContext(this))
     , m_uiContext(new UIContext(this))
     , m_selectionContext(new SelectionContext(this))
+    , m_mimeManager(new MimeManager(this))
 {
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
@@ -84,6 +86,11 @@ UIContext *ApplicationContext::uiContext() const
 SelectionContext *ApplicationContext::selectionContext() const
 {
     return m_selectionContext;
+}
+
+MimeManager *ApplicationContext::mimeManager() const
+{
+    return m_mimeManager;
 }
 
 void ApplicationContext::reset()

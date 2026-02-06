@@ -9,6 +9,7 @@ class RenderingContext;
 class SpatialContext;
 class UIContext;
 class SelectionContext;
+class MimeManager;
 
 /**
  * @note: This class was made a Singleton recently, so in many places it is
@@ -27,6 +28,7 @@ public:
     [[nodiscard]] SpatialContext *spatialContext() const;
     [[nodiscard]] UIContext *uiContext() const;
     [[nodiscard]] SelectionContext *selectionContext() const;
+    [[nodiscard]] MimeManager *mimeManager() const;
 
     void reset(); // resets the canvas to a blank state
 
@@ -48,4 +50,5 @@ private:
     SpatialContext *const m_spatialContext;
     UIContext *const m_uiContext;
     SelectionContext *const m_selectionContext;
+    MimeManager *const m_mimeManager;
 };
