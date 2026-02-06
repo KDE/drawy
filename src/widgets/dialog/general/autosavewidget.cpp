@@ -44,8 +44,9 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
     connect(pathBrowseButton, &QToolButton::clicked, this, [this]() -> void {
         const auto home{QStandardPaths::writableLocation(QStandardPaths::HomeLocation)};
         const auto directory{QFileDialog::getExistingDirectory(this, tr("Open Directory"), home, QFileDialog::ShowDirsOnly)};
-        if (directory.isEmpty())
+        if (directory.isEmpty()) {
             return;
+        }
 
         const auto finalPath{QDir::cleanPath(directory + QDir::separator() + u"drawy.autosave"_s)};
         m_path->setText(finalPath);
@@ -85,7 +86,7 @@ void AutoSaveWidget::load()
 
 void AutoSaveWidget::slotEnableChanged(Qt::CheckState state)
 {
-    bool enable{state == Qt::Checked};
+    const bool enable{state == Qt::Checked};
     m_delay->setEnabled(enable);
     m_pathWidget->setEnabled(enable);
 }
