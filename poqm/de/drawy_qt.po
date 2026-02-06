@@ -14,48 +14,51 @@ msgstr ""
 "X-Generator: Lokalize 25.08.3\n"
 "X-Qt-Contexts: true\n"
 
-#: apps/main.cpp:28
+#: apps/main.cpp:33
 msgctxt "QObject|"
-msgid "drawy"
+msgid "Drawy"
 msgstr ""
 
-#: apps/main.cpp:30
+#: apps/main.cpp:35
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
-msgid "Your handy, infinite, brainstorming tool!"
+msgid "Your handy, infinite  brainstorming tool!"
 msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
 
-#: apps/main.cpp:32
+#: apps/main.cpp:37
 #, qt-format
 msgctxt "QObject|"
-msgid "(c) 2025-%1 drawy authors"
+msgid "(c) 2025-%1 Drawy authors"
 msgstr ""
 
-#: apps/main.cpp:33
+#: apps/main.cpp:38
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr ""
 
-#: apps/main.cpp:33
+#: apps/main.cpp:38
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr ""
 
-#: apps/main.cpp:34
+#: apps/main.cpp:39
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr ""
 
-#: apps/main.cpp:34
+#: apps/main.cpp:39
 msgctxt "QObject|"
 msgid "Developer"
 msgstr ""
 
-#: apps/main.cpp:41
+#: apps/main.cpp:46
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "Ein optionales Argument „Datei“ "
 
-#: apps/main.cpp:44
+#: apps/main.cpp:49
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Your handy, infinite, brainstorming tool!"
@@ -125,22 +128,35 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/components/bottomleftwidgets.cpp:47
+msgctxt "BottomLeftWidgets|"
+msgid "Reset Zoom"
+msgstr ""
+
+#: widgets/components/topleftwidgets.cpp:36
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "TopLeftWidgets|"
+msgid "Open Menu"
+msgstr "Datei öffnen"
+
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Auswahl"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Freihand"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Rechteck"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:70
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -148,83 +164,35 @@ msgctxt "UIContext|"
 msgid "Diamond"
 msgstr "Linie"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:71
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Ellipse"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:72
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Pfeil"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:73
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "Linie"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:74
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Radierer"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:75
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:76
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Verschieben"
-
-#: widgets/context/uicontext.cpp:73
-msgctxt "UIContext|"
-msgid "Save to File"
-msgstr "In Datei speichern"
-
-#: widgets/context/uicontext.cpp:79
-msgctxt "UIContext|"
-msgid "Open File"
-msgstr "Datei öffnen"
-
-#: widgets/context/uicontext.cpp:87
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "In Datei speichern"
-
-#: widgets/context/uicontext.cpp:95
-msgctxt "UIContext|"
-msgid "Zoom Out"
-msgstr "Verkleinern"
-
-#: widgets/context/uicontext.cpp:100
-msgctxt "UIContext|"
-msgid "Zoom In"
-msgstr "Vergrößern"
-
-#: widgets/context/uicontext.cpp:106
-msgctxt "UIContext|"
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: widgets/context/uicontext.cpp:118
-msgctxt "UIContext|"
-msgid "Redo"
-msgstr "Wiederherstellen"
-
-#: widgets/dialog/configuregeneralwidget.cpp:22
-msgctxt "ConfigureGeneralWidget|"
-msgid "minute"
-msgstr ""
-
-#: widgets/dialog/configuregeneralwidget.cpp:23
-msgctxt "ConfigureGeneralWidget|"
-msgid "Auto-save"
-msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -236,61 +204,197 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr ""
 
+#: widgets/dialog/general/autosavewidget.cpp:21
+msgctxt "AutoSaveWidget|"
+msgid "Session"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:29
+msgctxt "AutoSaveWidget|"
+msgid "Time interval for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:31
+msgctxt "AutoSaveWidget|delay unit"
+msgid " minute(s)"
+msgid_plural " minute(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/dialog/general/autosavewidget.cpp:35
+msgctxt "AutoSaveWidget|"
+msgid "Directory for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:46
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "AutoSaveWidget|"
+msgid "Open Directory"
+msgstr "Datei öffnen"
+
+#: widgets/dialog/general/autosavewidget.cpp:54
+msgctxt "AutoSaveWidget|"
+msgid "Restore previous session on start"
+msgstr ""
+
 #: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: widgets/jobs/restoreautosavejob.cpp:48
+#: widgets/keybindings/actionmanager.cpp:62
 #, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
-msgctxt "RestoreAutoSaveJob|"
-msgid "Do you want to restore autosave file?"
-msgstr "Möchten Sie schließen?"
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "ActionManager|"
+msgid "Export as SVG"
+msgstr "In Datei speichern"
 
-#: widgets/jobs/restoreautosavejob.cpp:49
-msgctxt "RestoreAutoSaveJob|"
-msgid "Restore"
-msgstr ""
+#: widgets/keybindings/actionmanager.cpp:64
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Group Elements"
+msgctxt "ActionManager|"
+msgid "Group Items"
+msgstr "Gruppieren"
 
-#: widgets/keybindings/actionmanager.cpp:145 widgets/window/window.cpp:117
-#, qt-format
-msgctxt "QObject|"
+#: widgets/keybindings/actionmanager.cpp:66
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "ActionManager|"
+msgid "Ungroup Items"
+msgstr "Gruppierung aufheben"
+
+#: widgets/keybindings/actionmanager.cpp:70
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Delete"
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr "Löschen"
+
+#: widgets/keybindings/actionmanager.cpp:71
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Save canvas"
+msgctxt "ActionManager|"
+msgid "Clear Canvas"
+msgstr "Zeichenfläche speichern"
+
+#: widgets/keybindings/actionmanager.cpp:74
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Freeform Tool"
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "Freihand"
+
+#: widgets/keybindings/actionmanager.cpp:77
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "Radierer"
+
+#: widgets/keybindings/actionmanager.cpp:78
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "Auswahlwerkzeug"
+
+#: widgets/keybindings/actionmanager.cpp:79
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "Rechtecke"
+
+#: widgets/keybindings/actionmanager.cpp:80
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "Ellipsen"
+
+#: widgets/keybindings/actionmanager.cpp:81
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "Linie"
+
+#: widgets/keybindings/actionmanager.cpp:82
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "Text"
+
+#: widgets/keybindings/actionmanager.cpp:83
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "Pfeile"
+
+#: widgets/keybindings/actionmanager.cpp:84
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "Zum Verschiebewerkzeug wechseln"
+
+#: widgets/keybindings/actionmanager.cpp:285
+#, fuzzy, qt-format
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Unbenannt.%1"
 
-#: widgets/keybindings/actionmanager.cpp:147
-#: widgets/keybindings/actionmanager.cpp:180 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:287
+#: widgets/keybindings/actionmanager.cpp:352
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:148 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:288
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Datei speichern"
 
-#: widgets/keybindings/actionmanager.cpp:169
+#: widgets/keybindings/actionmanager.cpp:310
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to close?"
 msgctxt "ActionManager|"
-msgid "Do you want to clear canvas?"
+msgid "Do you really want to clear the canvas?"
 msgstr "Möchten Sie schließen?"
 
-#: widgets/keybindings/actionmanager.cpp:169
+#: widgets/keybindings/actionmanager.cpp:311
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:184
+#: widgets/keybindings/actionmanager.cpp:355
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Datei öffnen"
 
-#: widgets/keybindings/actionmanager.cpp:194
+#: widgets/keybindings/actionmanager.cpp:366
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -298,18 +402,31 @@ msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Unbenannt.%1"
 
-#: widgets/keybindings/actionmanager.cpp:196
+#: widgets/keybindings/actionmanager.cpp:368
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:198
+#: widgets/keybindings/actionmanager.cpp:370
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "In Datei speichern"
+
+#: widgets/keybindings/actionmanager.cpp:405
+#, qt-format
+msgctxt "ActionManager|"
+msgid ""
+"The document \"%1\" has been modified. Do you want to save your changes or "
+"discard them?"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:409
+msgctxt "ActionManager|"
+msgid "Action Required"
+msgstr ""
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -442,7 +559,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Pfeil"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:23
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
@@ -467,7 +584,15 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:48
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ColorWidgetBase|"
+msgid "Select Custom Color"
+msgstr "Auswahlwerkzeug"
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:75
 #, fuzzy
 #| msgctxt "StrokeColorWidget|"
 #| msgid "Color"
@@ -485,7 +610,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Schriftgröße"
 
-#: widgets/properties/widgets/opacitywidget.cpp:29
+#: widgets/properties/widgets/opacitywidget.cpp:30
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr ""
@@ -513,7 +638,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:22
+#: widgets/properties/widgets/strokecolorwidget.cpp:23
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr ""
@@ -523,7 +648,7 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Dicke"
 
-#: widgets/properties/widgets/zorderwidget.cpp:24
+#: widgets/properties/widgets/zorderwidget.cpp:26
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -531,7 +656,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Top"
 msgstr "Verschieben"
 
-#: widgets/properties/widgets/zorderwidget.cpp:25
+#: widgets/properties/widgets/zorderwidget.cpp:27
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Move"
@@ -539,7 +664,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move Up"
 msgstr "Verschieben"
 
-#: widgets/properties/widgets/zorderwidget.cpp:26
+#: widgets/properties/widgets/zorderwidget.cpp:28
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -547,7 +672,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move Down"
 msgstr "Verschieben"
 
-#: widgets/properties/widgets/zorderwidget.cpp:27
+#: widgets/properties/widgets/zorderwidget.cpp:29
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -555,7 +680,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Verschieben"
 
-#: widgets/properties/widgets/zorderwidget.cpp:57
+#: widgets/properties/widgets/zorderwidget.cpp:59
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr ""
@@ -608,140 +733,122 @@ msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Auswahlwerkzeug"
 
-#: widgets/tools/texttool.cpp:508
+#: widgets/tools/texttool.cpp:509
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Text"
 
-#: widgets/window/window.cpp:105
+#~ msgctxt "QObject|"
+#~ msgid "Your handy, infinite, brainstorming tool!"
+#~ msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Save to File"
+#~ msgstr "In Datei speichern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom Out"
+#~ msgstr "Verkleinern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom In"
+#~ msgstr "Vergrößern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Undo"
+#~ msgstr "Rückgängig"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Redo"
+#~ msgstr "Wiederherstellen"
+
 #, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to close?"
-msgctxt "MainWindow|"
-msgid "Do you want to save file?"
-msgstr "Möchten Sie schließen?"
+#~| msgctxt "MainWindow|"
+#~| msgid "Do you want to close?"
+#~ msgctxt "RestoreAutoSaveJob|"
+#~ msgid "Do you want to restore autosave file?"
+#~ msgstr "Möchten Sie schließen?"
 
-#: widgets/window/window.cpp:106
-msgctxt "MainWindow|"
-msgid "Close"
-msgstr "Schließen"
-
-#: widgets/window/window.cpp:107
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "MainWindow|"
-msgid "Save And Close"
-msgstr "In Datei speichern"
+#~| msgctxt "MainWindow|"
+#~| msgid "Do you want to close?"
+#~ msgctxt "MainWindow|"
+#~ msgid "Do you want to save file?"
+#~ msgstr "Möchten Sie schließen?"
 
-#: widgets/window/window.cpp:108
-msgctxt "MainWindow|"
-msgid "Ignore"
-msgstr ""
+#~ msgctxt "MainWindow|"
+#~ msgid "Close"
+#~ msgstr "Schließen"
 
-#: widgets/window/window.cpp:208
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "MainWindow|"
-msgid "Export to Svg"
-msgstr "In Datei speichern"
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Save And Close"
+#~ msgstr "In Datei speichern"
 
-#: widgets/window/window.cpp:225
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
-msgctxt "MainWindow|"
-msgid "Freeform Tool"
-msgstr "Freihand"
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Export to Svg"
+#~ msgstr "In Datei speichern"
 
-#: widgets/window/window.cpp:228
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
-msgctxt "MainWindow|"
-msgid "Eraser Tool"
-msgstr "Radierer"
+#~| msgctxt "ActionManager|"
+#~| msgid "Eraser Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Eraser Tool"
+#~ msgstr "Radierer"
 
-#: widgets/window/window.cpp:229
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
-msgctxt "MainWindow|"
-msgid "Selection Tool"
-msgstr "Auswahlwerkzeug"
+#~| msgctxt "ActionManager|"
+#~| msgid "Selection Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Selection Tool"
+#~ msgstr "Auswahlwerkzeug"
 
-#: widgets/window/window.cpp:230
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
-msgctxt "MainWindow|"
-msgid "Rectangle Tool"
-msgstr "Rechtecke"
+#~| msgctxt "ActionManager|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Rechtecke"
 
-#: widgets/window/window.cpp:231
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
-msgctxt "MainWindow|"
-msgid "Ellipse Tool"
-msgstr "Ellipsen"
+#~| msgctxt "ActionManager|"
+#~| msgid "Ellipse Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Ellipsen"
 
-#: widgets/window/window.cpp:232
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
-msgctxt "MainWindow|"
-msgid "Line Tool"
-msgstr "Linien"
+#~| msgctxt "ActionManager|"
+#~| msgid "Line Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Line Tool"
+#~ msgstr "Linien"
 
-#: widgets/window/window.cpp:233
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
-msgctxt "MainWindow|"
-msgid "Text Tool"
-msgstr "Text"
+#~| msgctxt "ActionManager|"
+#~| msgid "Text Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Text Tool"
+#~ msgstr "Text"
 
-#: widgets/window/window.cpp:234
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
-msgctxt "MainWindow|"
-msgid "Arrow Tool"
-msgstr "Pfeile"
+#~| msgctxt "ActionManager|"
+#~| msgid "Arrow Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Arrow Tool"
+#~ msgstr "Pfeile"
 
-#: widgets/window/window.cpp:236
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
-msgctxt "MainWindow|"
-msgid "Move Tool"
-msgstr "Verschieben"
-
-#: widgets/window/window.cpp:240
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Group Elements"
-msgctxt "MainWindow|"
-msgid "Group Elements"
-msgstr "Gruppieren"
-
-#: widgets/window/window.cpp:244
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
-msgctxt "MainWindow|"
-msgid "Ungroup Elements"
-msgstr "Gruppierung aufheben"
-
-#: widgets/window/window.cpp:248
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
-msgctxt "MainWindow|"
-msgid "Delete"
-msgstr "Löschen"
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Move Tool"
+#~ msgstr "Verschieben"
 
 #, fuzzy
 #~| msgctxt "UIContext|"
@@ -837,10 +944,6 @@ msgstr "Löschen"
 #~ msgctxt "ActionManager|"
 #~ msgid "Save"
 #~ msgstr "Speichern"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Save canvas"
-#~ msgstr "Zeichenfläche speichern"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Open File"

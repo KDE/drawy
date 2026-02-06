@@ -17,48 +17,51 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
 
-#: apps/main.cpp:28
+#: apps/main.cpp:33
 msgctxt "QObject|"
-msgid "drawy"
+msgid "Drawy"
 msgstr ""
 
-#: apps/main.cpp:30
+#: apps/main.cpp:35
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
 msgctxt "QObject|"
-msgid "Your handy, infinite, brainstorming tool!"
+msgid "Your handy, infinite  brainstorming tool!"
 msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
 
-#: apps/main.cpp:32
+#: apps/main.cpp:37
 #, qt-format
 msgctxt "QObject|"
-msgid "(c) 2025-%1 drawy authors"
+msgid "(c) 2025-%1 Drawy authors"
 msgstr ""
 
-#: apps/main.cpp:33
+#: apps/main.cpp:38
 msgctxt "QObject|"
 msgid "Prayag Jain"
 msgstr ""
 
-#: apps/main.cpp:33
+#: apps/main.cpp:38
 msgctxt "QObject|"
 msgid "Maintainer"
 msgstr ""
 
-#: apps/main.cpp:34
+#: apps/main.cpp:39
 msgctxt "QObject|"
 msgid "Laurent Montel"
 msgstr ""
 
-#: apps/main.cpp:34
+#: apps/main.cpp:39
 msgctxt "QObject|"
 msgid "Developer"
 msgstr ""
 
-#: apps/main.cpp:41
+#: apps/main.cpp:46
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:44
+#: apps/main.cpp:49
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Your handy, infinite, brainstorming tool!"
@@ -128,7 +131,20 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/components/bottomleftwidgets.cpp:47
+msgctxt "BottomLeftWidgets|"
+msgid "Reset Zoom"
+msgstr ""
+
+#: widgets/components/topleftwidgets.cpp:36
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "TopLeftWidgets|"
+msgid "Open Menu"
+msgstr "Ireki fitxategia"
+
+#: widgets/context/uicontext.cpp:67
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Selection Tool"
@@ -136,7 +152,7 @@ msgctxt "UIContext|"
 msgid "Selection"
 msgstr "Hautapen tresna"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:68
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -144,7 +160,7 @@ msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "Forma-askeko tresna"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:69
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Rectangle Tool"
@@ -152,7 +168,7 @@ msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "Laukizuzen tresna"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:70
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -160,7 +176,7 @@ msgctxt "UIContext|"
 msgid "Diamond"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:71
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Ellipse Tool"
@@ -168,7 +184,7 @@ msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "Elipse tresna"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:72
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -176,7 +192,7 @@ msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:73
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -184,7 +200,7 @@ msgctxt "UIContext|"
 msgid "Line"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:74
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Eraser Tool"
@@ -192,7 +208,7 @@ msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "Ezabatzeko tresna"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:75
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Text Tool"
@@ -200,61 +216,13 @@ msgctxt "UIContext|"
 msgid "Text"
 msgstr "Testu tresna"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:76
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "Mugitzeko tresna"
-
-#: widgets/context/uicontext.cpp:73
-msgctxt "UIContext|"
-msgid "Save to File"
-msgstr "Gorde fitxategian"
-
-#: widgets/context/uicontext.cpp:79
-msgctxt "UIContext|"
-msgid "Open File"
-msgstr "Ireki fitxategia"
-
-#: widgets/context/uicontext.cpp:87
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "UIContext|"
-msgid "Export to Svg"
-msgstr "Gorde fitxategian"
-
-#: widgets/context/uicontext.cpp:95
-msgctxt "UIContext|"
-msgid "Zoom Out"
-msgstr "Zooma urrundu"
-
-#: widgets/context/uicontext.cpp:100
-msgctxt "UIContext|"
-msgid "Zoom In"
-msgstr "Zooma gerturatu"
-
-#: widgets/context/uicontext.cpp:106
-msgctxt "UIContext|"
-msgid "Undo"
-msgstr "Desegin"
-
-#: widgets/context/uicontext.cpp:118
-msgctxt "UIContext|"
-msgid "Redo"
-msgstr "Berregin"
-
-#: widgets/dialog/configuregeneralwidget.cpp:22
-msgctxt "ConfigureGeneralWidget|"
-msgid "minute"
-msgstr ""
-
-#: widgets/dialog/configuregeneralwidget.cpp:23
-msgctxt "ConfigureGeneralWidget|"
-msgid "Auto-save"
-msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:24
 msgctxt "ConfigureSettingsDialog|"
@@ -266,55 +234,194 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr ""
 
+#: widgets/dialog/general/autosavewidget.cpp:21
+msgctxt "AutoSaveWidget|"
+msgid "Session"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:29
+msgctxt "AutoSaveWidget|"
+msgid "Time interval for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:31
+msgctxt "AutoSaveWidget|delay unit"
+msgid " minute(s)"
+msgid_plural " minute(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/dialog/general/autosavewidget.cpp:35
+msgctxt "AutoSaveWidget|"
+msgid "Directory for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:46
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "AutoSaveWidget|"
+msgid "Open Directory"
+msgstr "Ireki fitxategia"
+
+#: widgets/dialog/general/autosavewidget.cpp:54
+msgctxt "AutoSaveWidget|"
+msgid "Restore previous session on start"
+msgstr ""
+
 #: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Pantaila-osoa"
 
-#: widgets/jobs/restoreautosavejob.cpp:48
-msgctxt "RestoreAutoSaveJob|"
-msgid "Do you want to restore autosave file?"
-msgstr ""
+#: widgets/keybindings/actionmanager.cpp:62
+#, fuzzy
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "ActionManager|"
+msgid "Export as SVG"
+msgstr "Gorde fitxategian"
 
-#: widgets/jobs/restoreautosavejob.cpp:49
-msgctxt "RestoreAutoSaveJob|"
-msgid "Restore"
-msgstr ""
+#: widgets/keybindings/actionmanager.cpp:64
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Group Elements"
+msgctxt "ActionManager|"
+msgid "Group Items"
+msgstr "Taldekatu elementuak"
 
-#: widgets/keybindings/actionmanager.cpp:145 widgets/window/window.cpp:117
-#, qt-format
-msgctxt "QObject|"
+#: widgets/keybindings/actionmanager.cpp:66
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "ActionManager|"
+msgid "Ungroup Items"
+msgstr "Bereizi elementuak"
+
+#: widgets/keybindings/actionmanager.cpp:70
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Delete"
+msgctxt "ActionManager|"
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: widgets/keybindings/actionmanager.cpp:71
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Save canvas"
+msgctxt "ActionManager|"
+msgid "Clear Canvas"
+msgstr "Gorde mihisea"
+
+#: widgets/keybindings/actionmanager.cpp:74
+#, fuzzy
+#| msgctxt "ActionManager|"
+#| msgid "Freeform Tool"
+msgctxt "ActionManager|"
+msgid "Freeform Tool"
+msgstr "Forma-askeko tresna"
+
+#: widgets/keybindings/actionmanager.cpp:77
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "ActionManager|"
+msgid "Eraser Tool"
+msgstr "Ezabatzeko tresna"
+
+#: widgets/keybindings/actionmanager.cpp:78
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ActionManager|"
+msgid "Selection Tool"
+msgstr "Hautapen tresna"
+
+#: widgets/keybindings/actionmanager.cpp:79
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "ActionManager|"
+msgid "Rectangle Tool"
+msgstr "Laukizuzen tresna"
+
+#: widgets/keybindings/actionmanager.cpp:80
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "ActionManager|"
+msgid "Ellipse Tool"
+msgstr "Elipse tresna"
+
+#: widgets/keybindings/actionmanager.cpp:81
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "ActionManager|"
+msgid "Line Tool"
+msgstr "Lerro tresna"
+
+#: widgets/keybindings/actionmanager.cpp:82
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "ActionManager|"
+msgid "Text Tool"
+msgstr "Testu tresna"
+
+#: widgets/keybindings/actionmanager.cpp:83
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "ActionManager|"
+msgid "Arrow Tool"
+msgstr "Gezi-tresna"
+
+#: widgets/keybindings/actionmanager.cpp:84
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "ActionManager|"
+msgid "Move Tool"
+msgstr "Mugitzeko tresna"
+
+#: widgets/keybindings/actionmanager.cpp:285
+#, fuzzy, qt-format
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:147
-#: widgets/keybindings/actionmanager.cpp:180 widgets/window/window.cpp:119
+#: widgets/keybindings/actionmanager.cpp:287
+#: widgets/keybindings/actionmanager.cpp:352
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:148 widgets/window/window.cpp:120
+#: widgets/keybindings/actionmanager.cpp:288
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:169
+#: widgets/keybindings/actionmanager.cpp:310
 msgctxt "ActionManager|"
-msgid "Do you want to clear canvas?"
+msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:169
+#: widgets/keybindings/actionmanager.cpp:311
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:184
+#: widgets/keybindings/actionmanager.cpp:355
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:194
+#: widgets/keybindings/actionmanager.cpp:366
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -322,18 +429,31 @@ msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:196
+#: widgets/keybindings/actionmanager.cpp:368
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:198
+#: widgets/keybindings/actionmanager.cpp:370
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "Gorde fitxategian"
+
+#: widgets/keybindings/actionmanager.cpp:405
+#, qt-format
+msgctxt "ActionManager|"
+msgid ""
+"The document \"%1\" has been modified. Do you want to save your changes or "
+"discard them?"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:409
+msgctxt "ActionManager|"
+msgid "Action Required"
+msgstr ""
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -466,7 +586,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:23
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
@@ -491,7 +611,15 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:50
+#: widgets/properties/widgets/colorwidgetbase.cpp:48
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "ColorWidgetBase|"
+msgid "Select Custom Color"
+msgstr "Hautapen tresna"
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:75
 #, fuzzy
 #| msgctxt "StrokeColorWidget|"
 #| msgid "Color"
@@ -509,7 +637,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Letra-tipoaren neurria"
 
-#: widgets/properties/widgets/opacitywidget.cpp:29
+#: widgets/properties/widgets/opacitywidget.cpp:30
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr ""
@@ -537,7 +665,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:22
+#: widgets/properties/widgets/strokecolorwidget.cpp:23
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr ""
@@ -547,7 +675,7 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "Loditasuna"
 
-#: widgets/properties/widgets/zorderwidget.cpp:24
+#: widgets/properties/widgets/zorderwidget.cpp:26
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -555,7 +683,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Top"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/zorderwidget.cpp:25
+#: widgets/properties/widgets/zorderwidget.cpp:27
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -563,7 +691,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move Up"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/zorderwidget.cpp:26
+#: widgets/properties/widgets/zorderwidget.cpp:28
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -571,7 +699,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move Down"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/zorderwidget.cpp:27
+#: widgets/properties/widgets/zorderwidget.cpp:29
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -579,7 +707,7 @@ msgctxt "ZOrderWidget|"
 msgid "Move on Bottom"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/zorderwidget.cpp:57
+#: widgets/properties/widgets/zorderwidget.cpp:59
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr ""
@@ -632,137 +760,104 @@ msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "Hautapen tresna"
 
-#: widgets/tools/texttool.cpp:508
+#: widgets/tools/texttool.cpp:509
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Testu tresna"
 
-#: widgets/window/window.cpp:105
-msgctxt "MainWindow|"
-msgid "Do you want to save file?"
-msgstr ""
+#~ msgctxt "QObject|"
+#~ msgid "Your handy, infinite, brainstorming tool!"
+#~ msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
 
-#: widgets/window/window.cpp:106
-msgctxt "MainWindow|"
-msgid "Close"
-msgstr ""
+#~ msgctxt "UIContext|"
+#~ msgid "Save to File"
+#~ msgstr "Gorde fitxategian"
 
-#: widgets/window/window.cpp:107
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom Out"
+#~ msgstr "Zooma urrundu"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom In"
+#~ msgstr "Zooma gerturatu"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Undo"
+#~ msgstr "Desegin"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Redo"
+#~ msgstr "Berregin"
+
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "MainWindow|"
-msgid "Save And Close"
-msgstr "Gorde fitxategian"
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Save And Close"
+#~ msgstr "Gorde fitxategian"
 
-#: widgets/window/window.cpp:108
-msgctxt "MainWindow|"
-msgid "Ignore"
-msgstr ""
-
-#: widgets/window/window.cpp:208
 #, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
-msgctxt "MainWindow|"
-msgid "Export to Svg"
-msgstr "Gorde fitxategian"
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Export to Svg"
+#~ msgstr "Gorde fitxategian"
 
-#: widgets/window/window.cpp:225
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
-msgctxt "MainWindow|"
-msgid "Freeform Tool"
-msgstr "Forma-askeko tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Eraser Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Eraser Tool"
+#~ msgstr "Ezabatzeko tresna"
 
-#: widgets/window/window.cpp:228
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
-msgctxt "MainWindow|"
-msgid "Eraser Tool"
-msgstr "Ezabatzeko tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Selection Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Selection Tool"
+#~ msgstr "Hautapen tresna"
 
-#: widgets/window/window.cpp:229
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
-msgctxt "MainWindow|"
-msgid "Selection Tool"
-msgstr "Hautapen tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Laukizuzen tresna"
 
-#: widgets/window/window.cpp:230
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
-msgctxt "MainWindow|"
-msgid "Rectangle Tool"
-msgstr "Laukizuzen tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Ellipse Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Elipse tresna"
 
-#: widgets/window/window.cpp:231
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
-msgctxt "MainWindow|"
-msgid "Ellipse Tool"
-msgstr "Elipse tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Line Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Line Tool"
+#~ msgstr "Lerro tresna"
 
-#: widgets/window/window.cpp:232
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
-msgctxt "MainWindow|"
-msgid "Line Tool"
-msgstr "Lerro tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Text Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Text Tool"
+#~ msgstr "Testu tresna"
 
-#: widgets/window/window.cpp:233
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
-msgctxt "MainWindow|"
-msgid "Text Tool"
-msgstr "Testu tresna"
+#~| msgctxt "ActionManager|"
+#~| msgid "Arrow Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Arrow Tool"
+#~ msgstr "Gezi tresna"
 
-#: widgets/window/window.cpp:234
 #, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
-msgctxt "MainWindow|"
-msgid "Arrow Tool"
-msgstr "Gezi tresna"
-
-#: widgets/window/window.cpp:236
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
-msgctxt "MainWindow|"
-msgid "Move Tool"
-msgstr "Mugitzeko tresna"
-
-#: widgets/window/window.cpp:240
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Group Elements"
-msgctxt "MainWindow|"
-msgid "Group Elements"
-msgstr "Taldekatu elementuak"
-
-#: widgets/window/window.cpp:244
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Elements"
-msgctxt "MainWindow|"
-msgid "Ungroup Elements"
-msgstr "Bereizi elementuak"
-
-#: widgets/window/window.cpp:248
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
-msgctxt "MainWindow|"
-msgid "Delete"
-msgstr "Ezabatu"
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Move Tool"
+#~ msgstr "Mugitzeko tresna"
 
 #, fuzzy
 #~| msgctxt "ActionManager|"
@@ -858,10 +953,6 @@ msgstr "Ezabatu"
 #~ msgctxt "ActionManager|"
 #~ msgid "Save"
 #~ msgstr "Gorde"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Save canvas"
-#~ msgstr "Gorde mihisea"
 
 #~ msgctxt "ActionManager|"
 #~ msgid "Open File"
