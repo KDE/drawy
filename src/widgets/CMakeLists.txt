@@ -215,6 +215,8 @@ target_sources(
         mime/textmimehandler.hpp
         mime/svgmimehandler.cpp
         mime/svgmimehandler.hpp
+        mime/imagemimehandler.cpp
+        mime/imagemimehandler.hpp
         mime/mimehandler.cpp
         mime/mimehandler.hpp
         mime/mimemanager.cpp
