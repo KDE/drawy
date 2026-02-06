@@ -15,7 +15,7 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT AutoSaveWidget : public ConfigGroupInterface
 {
     Q_OBJECT
 public:
-    explicit AutoSaveWidget(QWidget *parent);
+    explicit AutoSaveWidget(QWidget *parent = nullptr);
 
     void save() override;
     void load() override;
