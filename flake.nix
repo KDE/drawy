@@ -60,6 +60,7 @@
                 kdePackages.kconfig
                 kdePackages.kconfigwidgets
                 kdePackages.kxmlgui
+                kdePackages.ki18n
               ]);
           };
       });

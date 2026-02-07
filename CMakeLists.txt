@@ -50,6 +50,7 @@ find_package(
     ${KF_MIN_VERSION}
     REQUIRED
     COMPONENTS
+        I18n
         Crash
         CoreAddons
         WidgetsAddons
@@ -58,6 +59,9 @@ find_package(
         XmlGui
         IconThemes
 )
+
+ki18n_install(po)
+
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 option(ENABLE_PCH "Enable Precompiled Headers support" ON)

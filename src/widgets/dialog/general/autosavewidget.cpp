@@ -6,6 +6,7 @@
 #include "dialog/general/configuregeneralwidget.hpp"
 
 #include "drawyglobalconfig.h"
+#include <KLocalizedString>
 #include <QCheckBox>
 #include <QFileDialog>
 #include <QHBoxLayout>
@@ -27,7 +28,7 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
     m_delay->setMinimum(1);
     auto delayLabel{new QLabel(tr("Time interval for automatic saving"), this)};
     connect(m_delay, &QSpinBox::valueChanged, this, [this]() -> void {
-        m_delay->setSuffix(tr("delay unit", "%n minute(s)", m_delay->value()));
+        m_delay->setSuffix(i18np("minute", "minutes", m_delay->value()));
     });
 
     // path
