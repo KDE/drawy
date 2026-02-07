@@ -17,16 +17,10 @@ DiamondItem::DiamondItem()
         Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
-void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
+QPainterPath DiamondItem::getPath() const
 {
-    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-    if (backgroundColor != Qt::transparent) {
-        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
-        const Qt::BrushStyle brushStyle{ItemUtils::convertItemBackgroundTypeStringToBrushStyle(property(Property::Type::BackgroundStyle).value<QString>())};
-        painter.setBrush(QBrush(backgroundColor, brushStyle));
-    }
-    const QPointF startPt = start() - offset;
-    const QPointF endPt = end() - offset;
+    const QPointF startPt = start();
+    const QPointF endPt = end();
     const QPointF center = (startPt + endPt) / 2.0;
 
     const QPointF topPoint = QPointF(center.x(), startPt.y());
@@ -36,7 +30,28 @@ void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
 
     const QPolygonF diamond({topPoint, rightPoint, bottomPoint, leftPoint});
 
-    painter.drawPolygon(diamond);
+    QPainterPath painterPath{};
+    painterPath.addPolygon(diamond);
+    painterPath.closeSubpath();
+
+    return painterPath;
+}
+
+void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
+{
+    painter.save();
+    painter.translate(-offset);
+
+    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+    if (backgroundColor != Qt::transparent) {
+        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+        const Qt::BrushStyle brushStyle{ItemUtils::convertItemBackgroundTypeStringToBrushStyle(property(Property::Type::BackgroundStyle).value<QString>())};
+        painter.setBrush(QBrush(backgroundColor, brushStyle));
+    }
+
+    painter.drawPath(getPath());
+
+    painter.restore();
 }
 
 bool DiamondItem::intersects(const QRectF &rect)
@@ -45,25 +60,7 @@ bool DiamondItem::intersects(const QRectF &rect)
         return false;
     }
 
-    const QRectF box{start(), end()};
-    const QPointF p{box.topLeft()};
-    const QPointF q{box.topRight()};
-    const QPointF r{box.bottomRight()};
-    const QPointF s{box.bottomLeft()};
-
-    const QPointF a{rect.topLeft()};
-    const QPointF b{rect.topRight()};
-    const QPointF c{rect.bottomRight()};
-    const QPointF d{rect.bottomLeft()};
-
-    return (Common::Utils::Math::intersects(QLineF{p, q}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{r, s}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, s}, QLineF{d, a}));
+    return getPath().intersects(rect);
 }
 
 Item::Type DiamondItem::type() const

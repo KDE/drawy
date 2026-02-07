@@ -8,6 +8,7 @@
 #include "libdrawywidgets_private_export.h"
 
 #include "polygon.hpp"
+#include <QPainterPath>
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondItem : public PolygonItem
 {
@@ -26,4 +27,6 @@ public:
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
+
+    [[nodiscard]] QPainterPath getPath() const;
 };

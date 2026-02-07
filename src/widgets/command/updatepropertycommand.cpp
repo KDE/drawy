@@ -29,6 +29,7 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
         try {
             m_properties[item] = item->property(type);
             item->setProperty(type, m_newProperty);
+            item->setDirty(true);
             dirtyRegion |= item->boundingBox();
         } catch (const std::logic_error &) {
             // Ignore if not found
@@ -47,6 +48,7 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         try {
             item->setProperty(type, m_properties[item]);
+            item->setDirty(true);
             dirtyRegion |= item->boundingBox();
         } catch (const std::logic_error &) {
             // Ignore if not found
