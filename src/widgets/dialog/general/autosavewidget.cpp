@@ -27,7 +27,7 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
     m_delay->setMinimum(1);
     auto delayLabel{new QLabel(tr("Time interval for automatic saving"), this)};
     connect(m_delay, &QSpinBox::valueChanged, this, [this]() -> void {
-        m_delay->setSuffix(tr(" minute(s)", "delay unit", m_delay->value()));
+        m_delay->setSuffix(tr("delay unit", "%n minute(s)", m_delay->value()));
     });
 
     // path
