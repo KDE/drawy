@@ -25,7 +25,9 @@ void CommandHistory::undo()
     }
 
     const std::shared_ptr<Command> lastCommand{m_undoStack->front()};
-    lastCommand->undo(m_context);
+    if (m_context) {
+        lastCommand->undo(m_context);
+    }
 
     m_redoStack->push_front(lastCommand);
 
@@ -44,7 +46,9 @@ void CommandHistory::redo()
     }
 
     const std::shared_ptr<Command> nextCommand{m_redoStack->front()};
-    nextCommand->execute(m_context);
+    if (m_context) {
+        nextCommand->execute(m_context);
+    }
 
     m_undoStack->push_front(nextCommand);
     if (m_undoStack->size() == maxCommands) {
@@ -61,7 +65,9 @@ void CommandHistory::insert(const std::shared_ptr<Command> &command)
         m_redoStack->pop_front();
     }
 
-    command->execute(m_context);
+    if (m_context) {
+        command->execute(m_context);
+    }
 
     m_undoStack->push_front(command);
     if (m_undoStack->size() == maxCommands) {
