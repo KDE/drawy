@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <QObject>
 class ToolBar;
 class PropertyBar;
 class Event;
