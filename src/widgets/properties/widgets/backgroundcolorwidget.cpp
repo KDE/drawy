@@ -5,8 +5,7 @@
 #include "backgroundcolorwidget.hpp"
 
 #include <QColor>
-#include <QPushButton>
-#include <qtoolbutton.h>
+#include <QToolButton>
 
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
