@@ -15,48 +15,12 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/drawy/drawy_qt.pot\n"
 "X-Crowdin-File-ID: 59824\n"
 
-#: apps/main.cpp:33
-msgctxt "QObject|"
-msgid "Drawy"
-msgstr ""
-
-#: apps/main.cpp:35
-msgctxt "QObject|"
-msgid "Your handy, infinite  brainstorming tool!"
-msgstr ""
-
-#: apps/main.cpp:37
-#, qt-format
-msgctxt "QObject|"
-msgid "(c) 2025-%1 Drawy authors"
-msgstr ""
-
-#: apps/main.cpp:38
-msgctxt "QObject|"
-msgid "Prayag Jain"
-msgstr ""
-
-#: apps/main.cpp:38
-msgctxt "QObject|"
-msgid "Maintainer"
-msgstr ""
-
 #: apps/main.cpp:39
-msgctxt "QObject|"
-msgid "Laurent Montel"
-msgstr ""
-
-#: apps/main.cpp:39
-msgctxt "QObject|"
-msgid "Developer"
-msgstr ""
-
-#: apps/main.cpp:46
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:49
+#: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
@@ -71,7 +35,7 @@ msgctxt "QObject|"
 msgid "Deselect Object"
 msgstr ""
 
-#: widgets/command/groupcommand.cpp:63
+#: widgets/command/groupcommand.cpp:64
 msgctxt "QObject|"
 msgid "Group Object"
 msgstr ""
@@ -111,62 +75,103 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:47
+#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr ""
+
+#: widgets/components/bottomleftwidgets.cpp:41
 msgctxt "BottomLeftWidgets|"
 msgid "Reset Zoom"
 msgstr ""
 
-#: widgets/components/topleftwidgets.cpp:36
+#: widgets/components/topleftwidgets.cpp:37
 msgctxt "TopLeftWidgets|"
 msgid "Open Menu"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/aboutdata.cpp:12
+msgctxt "QObject|"
+msgid "Drawy"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:14
+msgctxt "QObject|"
+msgid "Your handy, infinite  brainstorming tool!"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:16
+#, qt-format
+msgctxt "QObject|"
+msgid "(c) 2025-%1 Drawy authors"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:18
+msgctxt "QObject|"
+msgid "Prayag Jain"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:18
+msgctxt "QObject|"
+msgid "Maintainer"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:19
+msgctxt "QObject|"
+msgid "Laurent Montel"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:19
+msgctxt "QObject|"
+msgid "Developer"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:60
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:63
 msgctxt "UIContext|"
 msgid "Diamond"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Line"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Text"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Move"
 msgstr ""
@@ -181,28 +186,28 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:21
+#: widgets/dialog/general/autosavewidget.cpp:20
 msgctxt "AutoSaveWidget|"
 msgid "Session"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:29
+#: widgets/dialog/general/autosavewidget.cpp:28
 msgctxt "AutoSaveWidget|"
 msgid "Time interval for automatic saving"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:31
+#: widgets/dialog/general/autosavewidget.cpp:30
 msgctxt "AutoSaveWidget|delay unit"
 msgid " minute(s)"
 msgid_plural " minute(s)"
 msgstr[0] ""
 
-#: widgets/dialog/general/autosavewidget.cpp:35
+#: widgets/dialog/general/autosavewidget.cpp:34
 msgctxt "AutoSaveWidget|"
 msgid "Directory for automatic saving"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:46
+#: widgets/dialog/general/autosavewidget.cpp:45
 msgctxt "AutoSaveWidget|"
 msgid "Open Directory"
 msgstr ""
@@ -217,125 +222,145 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:62
+#: widgets/keybindings/actionmanager.cpp:61
 msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:64
+#: widgets/keybindings/actionmanager.cpp:63
 msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:66
+#: widgets/keybindings/actionmanager.cpp:65
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:71
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:74
+#: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:76
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:78
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:79
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:81
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:82
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:285
+#: widgets/keybindings/actionmanager.cpp:85
+msgctxt "ActionManager|"
+msgid "Send To Back"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:88
+msgctxt "ActionManager|"
+msgid "Send Backward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:91
+msgctxt "ActionManager|"
+msgid "Bring Forward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Bring To Front"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:314
 #, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:287
-#: widgets/keybindings/actionmanager.cpp:352
+#: widgets/keybindings/actionmanager.cpp:316
+#: widgets/keybindings/actionmanager.cpp:380
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:288
+#: widgets/keybindings/actionmanager.cpp:317
 msgctxt "QObject|"
 msgid "Save File"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:310
+#: widgets/keybindings/actionmanager.cpp:339
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:311
+#: widgets/keybindings/actionmanager.cpp:340
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:355
+#: widgets/keybindings/actionmanager.cpp:383
 msgctxt "QObject|"
 msgid "Open File"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:366
+#: widgets/keybindings/actionmanager.cpp:394
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:368
+#: widgets/keybindings/actionmanager.cpp:396
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:370
+#: widgets/keybindings/actionmanager.cpp:398
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:405
+#: widgets/keybindings/actionmanager.cpp:433
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -343,7 +368,7 @@ msgid ""
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:409
+#: widgets/keybindings/actionmanager.cpp:437
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr ""
@@ -393,11 +418,6 @@ msgctxt "QObject|"
 msgid "Change Background Style"
 msgstr ""
 
-#: widgets/properties/property.cpp:115
-msgctxt "QObject|"
-msgid "Change ZOrder"
-msgstr ""
-
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
@@ -413,42 +433,42 @@ msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:58
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:29
+#: widgets/properties/widgets/alignmentwidget.cpp:28
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:34
+#: widgets/properties/widgets/alignmentwidget.cpp:33
 msgctxt "AlignmentWidget|"
 msgid "Align to Center"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:39
+#: widgets/properties/widgets/alignmentwidget.cpp:38
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:44
+#: widgets/properties/widgets/alignmentwidget.cpp:43
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:49
+#: widgets/properties/widgets/alignmentwidget.cpp:48
 msgctxt "AlignmentWidget|"
 msgid "Align to Middle"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:54
+#: widgets/properties/widgets/alignmentwidget.cpp:53
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:88
+#: widgets/properties/widgets/alignmentwidget.cpp:86
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr ""
@@ -458,7 +478,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:23
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
@@ -483,12 +503,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:48
+#: widgets/properties/widgets/colorwidgetbase.cpp:47
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:75
+#: widgets/properties/widgets/colorwidgetbase.cpp:74
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr ""
@@ -528,7 +548,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:23
+#: widgets/properties/widgets/strokecolorwidget.cpp:21
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr ""
@@ -538,72 +558,52 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr ""
 
-#: widgets/properties/widgets/zorderwidget.cpp:26
-msgctxt "ZOrderWidget|"
-msgid "Move on Top"
-msgstr ""
-
-#: widgets/properties/widgets/zorderwidget.cpp:27
-msgctxt "ZOrderWidget|"
-msgid "Move Up"
-msgstr ""
-
-#: widgets/properties/widgets/zorderwidget.cpp:28
-msgctxt "ZOrderWidget|"
-msgid "Move Down"
-msgstr ""
-
-#: widgets/properties/widgets/zorderwidget.cpp:29
-msgctxt "ZOrderWidget|"
-msgid "Move on Bottom"
-msgstr ""
-
-#: widgets/properties/widgets/zorderwidget.cpp:59
+#: widgets/properties/widgets/zorderwidget.cpp:46
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr ""
 
-#: widgets/tools/arrowtool.cpp:18
+#: widgets/tools/arrowtool.cpp:19
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr ""
 
-#: widgets/tools/diamondtool.cpp:19
+#: widgets/tools/diamondtool.cpp:20
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr ""
 
-#: widgets/tools/ellipsetool.cpp:19
+#: widgets/tools/ellipsetool.cpp:20
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr ""
 
-#: widgets/tools/erasertool.cpp:157
+#: widgets/tools/erasertool.cpp:156
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr ""
 
-#: widgets/tools/freeformtool.cpp:32
+#: widgets/tools/freeformtool.cpp:33
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr ""
 
-#: widgets/tools/linetool.cpp:17
+#: widgets/tools/linetool.cpp:18
 msgctxt "QObject|"
 msgid "Line Tool"
 msgstr ""
 
-#: widgets/tools/movetool.cpp:76
+#: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr ""
 
-#: widgets/tools/rectangletool.cpp:19
+#: widgets/tools/rectangletool.cpp:20
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr ""
 
-#: widgets/tools/selectiontool/selectiontool.cpp:138
+#: widgets/tools/selectiontool/selectiontool.cpp:142
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr ""

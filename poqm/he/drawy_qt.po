@@ -14,56 +14,12 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.12.1\n"
 
-#: apps/main.cpp:33
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "drawy"
-msgctxt "QObject|"
-msgid "Drawy"
-msgstr "drawy"
-
-#: apps/main.cpp:35
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite brainstorming tool!"
-msgctxt "QObject|"
-msgid "Your handy, infinite  brainstorming tool!"
-msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
-
-#: apps/main.cpp:37
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "(c) 2025-%1 drawy authors"
-msgctxt "QObject|"
-msgid "(c) 2025-%1 Drawy authors"
-msgstr "‏(c) 2025‏-%1 יוצרי drawy"
-
-#: apps/main.cpp:38
-msgctxt "QObject|"
-msgid "Prayag Jain"
-msgstr "פריאג ג׳אין"
-
-#: apps/main.cpp:38
-msgctxt "QObject|"
-msgid "Maintainer"
-msgstr "מתחזק"
-
 #: apps/main.cpp:39
-msgctxt "QObject|"
-msgid "Laurent Montel"
-msgstr "לורנט מונטל"
-
-#: apps/main.cpp:39
-msgctxt "QObject|"
-msgid "Developer"
-msgstr "מפתח"
-
-#: apps/main.cpp:46
 msgctxt "QObject|"
 msgid "An optional argument 'file' "
 msgstr "ארגומנט ‚file’ כרשות"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:42
 msgctxt "QObject|"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
@@ -78,7 +34,7 @@ msgctxt "QObject|"
 msgid "Deselect Object"
 msgstr "ביטול בחירת עצם"
 
-#: widgets/command/groupcommand.cpp:63
+#: widgets/command/groupcommand.cpp:64
 msgctxt "QObject|"
 msgid "Group Object"
 msgstr "קיבוץ עצמים"
@@ -118,12 +74,17 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "עדכון מאפיין"
 
-#: widgets/components/bottomleftwidgets.cpp:47
+#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+msgctxt "QObject|"
+msgid "Change ZOrder"
+msgstr "שינוי מרחק (סדר בציר Z)"
+
+#: widgets/components/bottomleftwidgets.cpp:41
 msgctxt "BottomLeftWidgets|"
 msgid "Reset Zoom"
 msgstr ""
 
-#: widgets/components/topleftwidgets.cpp:36
+#: widgets/components/topleftwidgets.cpp:37
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Open File"
@@ -131,22 +92,66 @@ msgctxt "TopLeftWidgets|"
 msgid "Open Menu"
 msgstr "פתיחת קובץ"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/aboutdata.cpp:12
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "drawy"
+msgctxt "QObject|"
+msgid "Drawy"
+msgstr "drawy"
+
+#: widgets/context/aboutdata.cpp:14
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite brainstorming tool!"
+msgctxt "QObject|"
+msgid "Your handy, infinite  brainstorming tool!"
+msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
+
+#: widgets/context/aboutdata.cpp:16
+#, fuzzy, qt-format
+#| msgctxt "QObject|"
+#| msgid "(c) 2025-%1 drawy authors"
+msgctxt "QObject|"
+msgid "(c) 2025-%1 Drawy authors"
+msgstr "‏(c) 2025‏-%1 יוצרי drawy"
+
+#: widgets/context/aboutdata.cpp:18
+msgctxt "QObject|"
+msgid "Prayag Jain"
+msgstr "פריאג ג׳אין"
+
+#: widgets/context/aboutdata.cpp:18
+msgctxt "QObject|"
+msgid "Maintainer"
+msgstr "מתחזק"
+
+#: widgets/context/aboutdata.cpp:19
+msgctxt "QObject|"
+msgid "Laurent Montel"
+msgstr "לורנט מונטל"
+
+#: widgets/context/aboutdata.cpp:19
+msgctxt "QObject|"
+msgid "Developer"
+msgstr "מפתח"
+
+#: widgets/context/uicontext.cpp:60
 msgctxt "UIContext|"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:61
 msgctxt "UIContext|"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:62
 msgctxt "UIContext|"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:63
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Diamond Tool"
@@ -154,32 +159,32 @@ msgctxt "UIContext|"
 msgid "Diamond"
 msgstr "כלי יהלומים"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:65
 msgctxt "UIContext|"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:66
 msgctxt "UIContext|"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:67
 msgctxt "UIContext|"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:68
 msgctxt "UIContext|"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:69
 msgctxt "UIContext|"
 msgid "Move"
 msgstr "הזזה"
@@ -194,17 +199,17 @@ msgctxt "ConfigureSettingsDialog|"
 msgid "General"
 msgstr "כללי"
 
-#: widgets/dialog/general/autosavewidget.cpp:21
+#: widgets/dialog/general/autosavewidget.cpp:20
 msgctxt "AutoSaveWidget|"
 msgid "Session"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:29
+#: widgets/dialog/general/autosavewidget.cpp:28
 msgctxt "AutoSaveWidget|"
 msgid "Time interval for automatic saving"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:31
+#: widgets/dialog/general/autosavewidget.cpp:30
 #, fuzzy
 #| msgctxt "ConfigureGeneralWidget|"
 #| msgid "minute"
@@ -216,12 +221,12 @@ msgstr[1] "דקה"
 msgstr[2] "דקה"
 msgstr[3] "דקה"
 
-#: widgets/dialog/general/autosavewidget.cpp:35
+#: widgets/dialog/general/autosavewidget.cpp:34
 msgctxt "AutoSaveWidget|"
 msgid "Directory for automatic saving"
 msgstr ""
 
-#: widgets/dialog/general/autosavewidget.cpp:46
+#: widgets/dialog/general/autosavewidget.cpp:45
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Open File"
@@ -239,7 +244,7 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "מסך מלא"
 
-#: widgets/keybindings/actionmanager.cpp:62
+#: widgets/keybindings/actionmanager.cpp:61
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Export to Svg"
@@ -247,7 +252,7 @@ msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:64
+#: widgets/keybindings/actionmanager.cpp:63
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Group Elements"
@@ -255,7 +260,7 @@ msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "קיבוץ רכיבים"
 
-#: widgets/keybindings/actionmanager.cpp:66
+#: widgets/keybindings/actionmanager.cpp:65
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Ungroup Elements"
@@ -263,7 +268,7 @@ msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "פריטת הרכיבים"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:69
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Delete"
@@ -271,7 +276,7 @@ msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Delete"
 
-#: widgets/keybindings/actionmanager.cpp:71
+#: widgets/keybindings/actionmanager.cpp:70
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Save canvas"
@@ -279,7 +284,7 @@ msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "שמירת משטח ציור"
 
-#: widgets/keybindings/actionmanager.cpp:74
+#: widgets/keybindings/actionmanager.cpp:73
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Freeform Tool"
@@ -287,7 +292,7 @@ msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "כלי צורה חופשית"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:76
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Eraser Tool"
@@ -295,7 +300,7 @@ msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:77
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -303,7 +308,7 @@ msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:78
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Rectangle Tool"
@@ -311,7 +316,7 @@ msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Ellipse Tool"
@@ -319,7 +324,7 @@ msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:80
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -327,7 +332,7 @@ msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "כלי קו"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:81
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Text Tool"
@@ -335,7 +340,7 @@ msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "כלי טקסט"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:82
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Arrow Tool"
@@ -343,7 +348,7 @@ msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "כלי חץ"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:83
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Move Tool"
@@ -351,7 +356,27 @@ msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
-#: widgets/keybindings/actionmanager.cpp:285
+#: widgets/keybindings/actionmanager.cpp:85
+msgctxt "ActionManager|"
+msgid "Send To Back"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:88
+msgctxt "ActionManager|"
+msgid "Send Backward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:91
+msgctxt "ActionManager|"
+msgid "Bring Forward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:94
+msgctxt "ActionManager|"
+msgid "Bring To Front"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:314
 #, fuzzy, qt-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -359,19 +384,19 @@ msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/keybindings/actionmanager.cpp:287
-#: widgets/keybindings/actionmanager.cpp:352
+#: widgets/keybindings/actionmanager.cpp:316
+#: widgets/keybindings/actionmanager.cpp:380
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:288
+#: widgets/keybindings/actionmanager.cpp:317
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/keybindings/actionmanager.cpp:310
+#: widgets/keybindings/actionmanager.cpp:339
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to save file?"
@@ -379,32 +404,32 @@ msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "לשמור את הקובץ?"
 
-#: widgets/keybindings/actionmanager.cpp:311
+#: widgets/keybindings/actionmanager.cpp:340
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:355
+#: widgets/keybindings/actionmanager.cpp:383
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/keybindings/actionmanager.cpp:366
+#: widgets/keybindings/actionmanager.cpp:394
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "ללא שם.svg"
 
-#: widgets/keybindings/actionmanager.cpp:368
+#: widgets/keybindings/actionmanager.cpp:396
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:370
+#: widgets/keybindings/actionmanager.cpp:398
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:405
+#: widgets/keybindings/actionmanager.cpp:433
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -412,7 +437,7 @@ msgid ""
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:409
+#: widgets/keybindings/actionmanager.cpp:437
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr ""
@@ -462,11 +487,6 @@ msgctxt "QObject|"
 msgid "Change Background Style"
 msgstr "החלפת סגנון רקע"
 
-#: widgets/properties/property.cpp:115
-msgctxt "QObject|"
-msgid "Change ZOrder"
-msgstr "שינוי מרחק (סדר בציר Z)"
-
 #: widgets/properties/widgets/actionswidget.cpp:35
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
@@ -482,42 +502,42 @@ msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "פריטת הבחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:60
+#: widgets/properties/widgets/actionswidget.cpp:58
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "פעולות"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:29
+#: widgets/properties/widgets/alignmentwidget.cpp:28
 msgctxt "AlignmentWidget|"
 msgid "Align to Left"
 msgstr "יישור לשמאל"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:34
+#: widgets/properties/widgets/alignmentwidget.cpp:33
 msgctxt "AlignmentWidget|"
 msgid "Align to Center"
 msgstr "יישור למרכז"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:39
+#: widgets/properties/widgets/alignmentwidget.cpp:38
 msgctxt "AlignmentWidget|"
 msgid "Align to Right"
 msgstr "יישור לימין"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:44
+#: widgets/properties/widgets/alignmentwidget.cpp:43
 msgctxt "AlignmentWidget|"
 msgid "Align to Top"
 msgstr "יישור למעלה"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:49
+#: widgets/properties/widgets/alignmentwidget.cpp:48
 msgctxt "AlignmentWidget|"
 msgid "Align to Middle"
 msgstr "יישור לאמצע"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:54
+#: widgets/properties/widgets/alignmentwidget.cpp:53
 msgctxt "AlignmentWidget|"
 msgid "Align to Bottom"
 msgstr "יישור לתחתית"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:88
+#: widgets/properties/widgets/alignmentwidget.cpp:86
 msgctxt "AlignmentWidget|"
 msgid "Alignment"
 msgstr "יישור"
@@ -527,7 +547,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:23
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "צבע רקע"
@@ -558,7 +578,7 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "החלפת סגנון רקע"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:48
+#: widgets/properties/widgets/colorwidgetbase.cpp:47
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -566,7 +586,7 @@ msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "כלי בחירה"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:75
+#: widgets/properties/widgets/colorwidgetbase.cpp:74
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "צבע"
@@ -606,7 +626,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "סגנון קו המתאר"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:23
+#: widgets/properties/widgets/strokecolorwidget.cpp:21
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "צבע קו מתאר"
@@ -616,72 +636,52 @@ msgctxt "StrokeWidthWidget|"
 msgid "Thickness"
 msgstr "עובי"
 
-#: widgets/properties/widgets/zorderwidget.cpp:26
-msgctxt "ZOrderWidget|"
-msgid "Move on Top"
-msgstr "קידום לחזית"
-
-#: widgets/properties/widgets/zorderwidget.cpp:27
-msgctxt "ZOrderWidget|"
-msgid "Move Up"
-msgstr "הגבהה"
-
-#: widgets/properties/widgets/zorderwidget.cpp:28
-msgctxt "ZOrderWidget|"
-msgid "Move Down"
-msgstr "הנמכה"
-
-#: widgets/properties/widgets/zorderwidget.cpp:29
-msgctxt "ZOrderWidget|"
-msgid "Move on Bottom"
-msgstr "דחיקה לרקע"
-
-#: widgets/properties/widgets/zorderwidget.cpp:59
+#: widgets/properties/widgets/zorderwidget.cpp:46
 msgctxt "ZOrderWidget|"
 msgid "Z-order"
 msgstr "סדר Z (עומק)"
 
-#: widgets/tools/arrowtool.cpp:18
+#: widgets/tools/arrowtool.cpp:19
 msgctxt "QObject|"
 msgid "Arrow Tool"
 msgstr "כלי חץ"
 
-#: widgets/tools/diamondtool.cpp:19
+#: widgets/tools/diamondtool.cpp:20
 msgctxt "QObject|"
 msgid "Diamond Tool"
 msgstr "כלי יהלומים"
 
-#: widgets/tools/ellipsetool.cpp:19
+#: widgets/tools/ellipsetool.cpp:20
 msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
-#: widgets/tools/erasertool.cpp:157
+#: widgets/tools/erasertool.cpp:156
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
-#: widgets/tools/freeformtool.cpp:32
+#: widgets/tools/freeformtool.cpp:33
 msgctxt "QObject|"
 msgid "Pen Tool"
 msgstr "כלי עט"
 
-#: widgets/tools/linetool.cpp:17
+#: widgets/tools/linetool.cpp:18
 msgctxt "QObject|"
 msgid "Line Tool"
 msgstr "כלי קו"
 
-#: widgets/tools/movetool.cpp:76
+#: widgets/tools/movetool.cpp:77
 msgctxt "QObject|"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
-#: widgets/tools/rectangletool.cpp:19
+#: widgets/tools/rectangletool.cpp:20
 msgctxt "QObject|"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:138
+#: widgets/tools/selectiontool/selectiontool.cpp:142
 msgctxt "QObject|"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
@@ -690,6 +690,22 @@ msgstr "כלי בחירה"
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "כלי טקסט"
+
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move on Top"
+#~ msgstr "קידום לחזית"
+
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move Up"
+#~ msgstr "הגבהה"
+
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move Down"
+#~ msgstr "הנמכה"
+
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move on Bottom"
+#~ msgstr "דחיקה לרקע"
 
 #~ msgctxt "QObject|"
 #~ msgid "Your handy, infinite, brainstorming tool!"
