@@ -73,7 +73,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Desagrupa objectes"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Actualitza una propietat"
@@ -483,7 +483,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Fletxa"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
@@ -553,7 +553,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Estil del traç"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Color del traç"

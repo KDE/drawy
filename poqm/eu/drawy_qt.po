@@ -87,7 +87,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Bereizi elementuak"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr ""
@@ -606,7 +606,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr ""
@@ -685,7 +685,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
-"PO-Revision-Date: 2026-02-06 08:54+0100\n"
+"PO-Revision-Date: 2026-02-07 09:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -73,7 +73,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Desagrupa objectes"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Actualitza una propietat"
@@ -299,22 +299,22 @@ msgstr "Eina de moure"
 #: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Send To Back"
-msgstr ""
+msgstr "Envia al darrere"
 
 #: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Send Backward"
-msgstr ""
+msgstr "Envia enrere"
 
 #: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Bring Forward"
-msgstr ""
+msgstr "Porta endavant"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Bring To Front"
-msgstr ""
+msgstr "Porta al davant"
 
 #: widgets/keybindings/actionmanager.cpp:314
 #, qt-format
@@ -483,7 +483,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Fletxa"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fons"
@@ -553,7 +553,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Estil del traç"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Color del traç"

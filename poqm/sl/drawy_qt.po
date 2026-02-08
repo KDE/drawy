@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-02 08:01+0200\n"
-"PO-Revision-Date: 2026-02-06 07:15+0100\n"
+"PO-Revision-Date: 2026-02-07 08:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -70,7 +70,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Razgrupiraj predmete"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Posodobi lastnost"
@@ -200,10 +200,10 @@ msgstr "Časovni interval za samodejno shranjevanje"
 msgctxt "AutoSaveWidget|delay unit"
 msgid " minute(s)"
 msgid_plural " minute(s)"
-msgstr[0] "minuta"
-msgstr[1] "minuti"
-msgstr[2] "minute"
-msgstr[3] "minut"
+msgstr[0] " minuta"
+msgstr[1] " minuti"
+msgstr[2] " minute"
+msgstr[3] " minut"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 msgctxt "AutoSaveWidget|"
@@ -298,22 +298,22 @@ msgstr "Orodje premikanja"
 #: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Send To Back"
-msgstr ""
+msgstr "Pošlji na hrbtno stran"
 
 #: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Send Backward"
-msgstr ""
+msgstr "Pošlji nazaj"
 
 #: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Bring Forward"
-msgstr ""
+msgstr "Prinesi naprej"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Bring To Front"
-msgstr ""
+msgstr "Prinesi v ospredje"
 
 #: widgets/keybindings/actionmanager.cpp:314
 #, qt-format
@@ -483,7 +483,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Puščica"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Barva ozadja"
@@ -553,7 +553,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Slog poteze"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Barva poteze"

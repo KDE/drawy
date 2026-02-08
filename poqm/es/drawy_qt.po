@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-02 11:49+0100\n"
-"PO-Revision-Date: 2026-02-06 11:40+0100\n"
+"PO-Revision-Date: 2026-02-08 00:21+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -74,7 +74,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Desagrupar objetos"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Actualizar propiedad"
@@ -300,22 +300,22 @@ msgstr "Herramienta de mover"
 #: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Send To Back"
-msgstr ""
+msgstr "Enviar al fondo"
 
 #: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Send Backward"
-msgstr ""
+msgstr "Mover hacia atrás"
 
 #: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Bring Forward"
-msgstr ""
+msgstr "Mover hacia adelante"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Bring To Front"
-msgstr ""
+msgstr "Traer al frente"
 
 #: widgets/keybindings/actionmanager.cpp:314
 #, qt-format
@@ -485,7 +485,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Flecha"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fondo"
@@ -555,7 +555,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Estilo del trazo"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Color del trazo"
@@ -619,19 +619,3 @@ msgstr "Herramienta de selección"
 msgctxt "QObject|"
 msgid "Text Tool"
 msgstr "Herramienta de texto"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Top"
-#~ msgstr "Mover arriba del todo"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Up"
-#~ msgstr "Mover hacia arriba"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Down"
-#~ msgstr "Mover hacia abajo"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Bottom"
-#~ msgstr "Mover abajo del todo"

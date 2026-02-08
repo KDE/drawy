@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-06 07:06+0200\n"
+"PO-Revision-Date: 2026-02-07 17:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -69,7 +69,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Розгрупувати об'єкти"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Оновити властивість"
@@ -297,22 +297,22 @@ msgstr "Інструмент «Пересування»"
 #: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Send To Back"
-msgstr ""
+msgstr "Перемістити на задній план"
 
 #: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Send Backward"
-msgstr ""
+msgstr "Перемістити нижче"
 
 #: widgets/keybindings/actionmanager.cpp:91
 msgctxt "ActionManager|"
 msgid "Bring Forward"
-msgstr ""
+msgstr "Перемістити вище"
 
 #: widgets/keybindings/actionmanager.cpp:94
 msgctxt "ActionManager|"
 msgid "Bring To Front"
-msgstr ""
+msgstr "Перемістити на передній план"
 
 #: widgets/keybindings/actionmanager.cpp:314
 #, qt-format
@@ -482,7 +482,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Стрілка"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Колір тла"
@@ -552,7 +552,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Стиль штриха"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Колір штриха"

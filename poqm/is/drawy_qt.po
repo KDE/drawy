@@ -68,7 +68,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Skipta upp hópi hluta"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Uppfæra eigindi"
@@ -544,7 +544,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Ör"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Bakgrunnslitur"
@@ -623,7 +623,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Stíll útlínu"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Litur útlínu"

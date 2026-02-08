@@ -71,7 +71,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "解除群組化物件"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "更新屬性"
@@ -579,7 +579,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "箭頭"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "背景色"
@@ -661,7 +661,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "筆畫樣式"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "筆畫色彩"

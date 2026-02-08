@@ -69,7 +69,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "فك جمع الكائنات"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "حدّث الخاصية"
@@ -546,7 +546,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "سهم"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "لون الخلفيّة"
@@ -619,7 +619,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "نمط الحد"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "لون الحدّ"

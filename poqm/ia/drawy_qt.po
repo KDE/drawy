@@ -69,7 +69,7 @@ msgctxt "QObject|"
 msgid "Ungroup Objects"
 msgstr "Separa Objectos"
 
-#: widgets/command/updatepropertycommand.cpp:63
+#: widgets/command/updatepropertycommand.cpp:65
 msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Actualisa Proprietate"
@@ -480,7 +480,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Flecha"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Color de fundo"
@@ -550,7 +550,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Stylo de tracto"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Color de Colpo (Stroke)"
