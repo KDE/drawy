@@ -30,7 +30,7 @@ inline constexpr QColor lightForegroundColor{30, 30, 30};
 inline constexpr QColor darkForegroundColor{211, 211, 211};
 
 inline constexpr int maxItemOpacity{255};
-inline constexpr int eraseItemOpacity{50};
+inline constexpr int erasedItemOpacityDecrease{30}; // % to reduce opacity by when erasing items
 
 inline constexpr int maxFreeformPointCount{500}; // max number of points per freeform
 inline constexpr int minFreeformPointCount{50}; // min number of points per freeform

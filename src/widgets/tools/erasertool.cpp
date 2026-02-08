@@ -74,7 +74,9 @@ void EraserTool::mouseMoved(ApplicationContext *context)
                 continue;
             }
 
-            item->setProperty(Property::Type::Opacity, Property{Common::eraseItemOpacity, Property::Type::Opacity});
+            const auto oldOpacity{item->property(Property::Type::Opacity).value<qreal>()};
+            const auto newOpacity{oldOpacity * Common::erasedItemOpacityDecrease / 100};
+            item->setProperty(Property::Type::Opacity, Property{newOpacity, Property::Type::Opacity});
 
             m_toBeErased.insert(item);
             renderingContext->cacheGrid().markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
