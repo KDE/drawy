@@ -8,17 +8,12 @@
 #include <memory>
 #include <unordered_map>
 class Item;
-
+#include "libdrawywidgets_private_export.h"
 // Keeps track of the z-index of every item
-class OrderedList
+class LIBDRAWYWIDGETS_TESTS_EXPORT OrderedList
 {
 public:
     using ItemPtr = std::shared_ptr<Item>;
-
-private:
-    std::unordered_map<ItemPtr, std::list<ItemPtr>::iterator> m_itemIterMap;
-    std::list<ItemPtr> m_itemList;
-    std::unordered_map<ItemPtr, int> m_zIndex;
 
 public:
     ~OrderedList();
@@ -33,4 +28,11 @@ public:
     [[nodiscard]] bool hasItem(const ItemPtr &item) const;
 
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
+
+    [[nodiscard]] std::list<ItemPtr> itemList() const;
+
+private:
+    std::unordered_map<ItemPtr, std::list<ItemPtr>::iterator> m_itemIterMap;
+    std::list<ItemPtr> m_itemList;
+    std::unordered_map<ItemPtr, int> m_zIndex;
 };

@@ -5,7 +5,6 @@
 #include "orderedlist.hpp"
 
 #include "drawy_debug.h"
-#include <stdexcept>
 
 OrderedList::~OrderedList()
 {
@@ -30,13 +29,13 @@ void OrderedList::insert(const ItemPtr &item)
         return;
     }
 
-    int zIndex{0};
+    int zItemIndex{0};
     if (!m_itemList.empty()) {
-        zIndex = m_zIndex[m_itemList.back()] + 1;
+        zItemIndex = m_zIndex[m_itemList.back()] + 1;
     }
 
-    qCDebug(DRAWY_LOG) << "Inserting item with index: " << zIndex;
-    m_zIndex[item] = zIndex;
+    qCDebug(DRAWY_LOG) << "Inserting item with index: " << zItemIndex;
+    m_zIndex[item] = zItemIndex;
     m_itemList.push_back(item);
     m_itemIterMap[item] = std::prev(m_itemList.end());
 }
@@ -57,7 +56,8 @@ void OrderedList::remove(const ItemPtr &item)
 void OrderedList::bringForward(const ItemPtr &item)
 {
     if (!hasItem(item)) {
-        throw std::runtime_error("Item was not found in the iterator map");
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return;
     }
 
     auto iterator = m_itemIterMap[item];
@@ -79,7 +79,8 @@ void OrderedList::bringForward(const ItemPtr &item)
 void OrderedList::sendBackward(const ItemPtr &item)
 {
     if (!hasItem(item)) {
-        throw std::runtime_error("Item was not found in the iterator map");
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return;
     }
 
     auto iterator = m_itemIterMap[item];
@@ -101,7 +102,8 @@ void OrderedList::sendBackward(const ItemPtr &item)
 void OrderedList::sendToBack(const ItemPtr &item)
 {
     if (!hasItem(item)) {
-        throw std::runtime_error("Item was not found in the iterator map");
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return;
     }
 
     auto iterator = m_itemIterMap[item];
@@ -117,7 +119,8 @@ void OrderedList::sendToBack(const ItemPtr &item)
 void OrderedList::bringToFront(const ItemPtr &item)
 {
     if (!hasItem(item)) {
-        throw std::runtime_error("Item was not found in the iterator map");
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return;
     }
 
     auto iterator = m_itemIterMap[item];
@@ -133,7 +136,13 @@ void OrderedList::bringToFront(const ItemPtr &item)
 int OrderedList::zIndex(const ItemPtr &item) const
 {
     if (!hasItem(item)) {
-        throw std::runtime_error("Item not found in zIndex map");
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return -1;
     }
     return m_zIndex.at(item);
+}
+
+std::list<OrderedList::ItemPtr> OrderedList::itemList() const
+{
+    return m_itemList;
 }
