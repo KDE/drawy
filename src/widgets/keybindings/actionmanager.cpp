@@ -498,7 +498,8 @@ void ActionManager::slotUpdateZorderButtons()
     auto selectionContext{m_context->selectionContext()};
     auto &quadtree{m_context->spatialContext()->quadtree()};
 
-    bool atLeastOneCanMoveBack{false}, atLeastOneCanMoveForward{false};
+    bool atLeastOneCanMoveBack{false};
+    bool atLeastOneCanMoveForward{false};
 
     const auto selectedItems{selectionContext->selectedItems()};
     for (const auto &item : std::as_const(selectedItems)) {

@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldRemoveItems();
     void shouldAddItems();
     void shouldUpdateList();
+    void shouldCheckMove();
 };

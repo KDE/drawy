@@ -149,10 +149,16 @@ std::list<OrderedList::ItemPtr> OrderedList::itemList() const
 
 bool OrderedList::canMoveBackwards(const ItemPtr &item) const
 {
+    if (m_itemList.empty()) {
+        return false;
+    }
     return m_itemList.front() != item;
 }
 
 bool OrderedList::canMoveForwards(const ItemPtr &item) const
 {
+    if (m_itemList.empty()) {
+        return false;
+    }
     return m_itemList.back() != item;
 }

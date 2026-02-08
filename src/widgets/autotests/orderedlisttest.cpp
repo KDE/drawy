@@ -27,6 +27,37 @@ void OrderedListTest::shouldContainsItems()
     QVERIFY(!list.hasItem(item));
 }
 
+void OrderedListTest::shouldCheckMove()
+{
+    OrderedList list;
+    auto item = std::make_shared<RectangleItem>();
+    QVERIFY(!list.hasItem(item));
+
+    // Test that it doesn't crash when we have no item
+    QVERIFY(!list.canMoveBackwards(item));
+    QVERIFY(!list.canMoveForwards(item));
+
+    list.insert(item);
+    QVERIFY(!list.canMoveBackwards(item));
+    QVERIFY(!list.canMoveForwards(item));
+
+    // Verify item2
+    auto item2 = std::make_shared<RectangleItem>();
+    list.insert(item2);
+    QVERIFY(list.canMoveBackwards(item2));
+    QVERIFY(!list.canMoveForwards(item2));
+
+    // Verify item3
+    auto item3 = std::make_shared<RectangleItem>();
+    list.insert(item3);
+    QVERIFY(list.canMoveBackwards(item3));
+    QVERIFY(!list.canMoveForwards(item3));
+
+    // Now revverify item2
+    QVERIFY(list.canMoveBackwards(item2));
+    QVERIFY(list.canMoveForwards(item2));
+}
+
 void OrderedListTest::shouldRemoveItems()
 {
     OrderedList list;
