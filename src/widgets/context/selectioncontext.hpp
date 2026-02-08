@@ -19,7 +19,25 @@ public:
 
     [[nodiscard]] const std::unordered_set<std::shared_ptr<Item>> &selectedItems() const;
     void addToSelection(const std::shared_ptr<Item> &item);
+
+    template<typename Iterator>
+    void addToSelection(Iterator begin, Iterator end)
+    {
+        m_selectedItems.insert(begin, end);
+        Q_EMIT selectionUpdated();
+    }
+
     void removeFromSelection(const std::shared_ptr<Item> &item);
+
+    template<typename Iterator>
+    void removeFromSelection(Iterator begin, Iterator end)
+    {
+        for (auto iter = begin; iter != end; iter++) {
+            m_selectedItems.erase(*iter);
+        }
+
+        Q_EMIT selectionUpdated();
+    }
 
     [[nodiscard]] QRectF selectionBox() const;
 

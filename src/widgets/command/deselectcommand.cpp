@@ -23,9 +23,9 @@ void DeselectCommand::execute(ApplicationContext *context)
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
-        context->selectionContext()->removeFromSelection(item);
     }
 
+    context->selectionContext()->removeFromSelection(m_items.begin(), m_items.end());
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
@@ -34,9 +34,9 @@ void DeselectCommand::undo(ApplicationContext *context)
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
-        context->selectionContext()->addToSelection(item);
     }
 
+    context->selectionContext()->addToSelection(m_items.begin(), m_items.end());
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 

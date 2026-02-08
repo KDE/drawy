@@ -52,10 +52,10 @@ void GroupCommand::undo(ApplicationContext *context)
     context->selectionContext()->reset();
 
     for (const auto &item : std::as_const(m_items)) {
-        context->selectionContext()->addToSelection(item);
         quadtree.insertItem(item, false);
     }
 
+    context->selectionContext()->addToSelection(m_items.begin(), m_items.end());
     context->renderingContext()->cacheGrid().markDirty(m_group->boundingBox().toRect());
 }
 
