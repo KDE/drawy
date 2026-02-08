@@ -167,7 +167,11 @@ void QuadTree::deleteItems(const QRectF &boundingBox)
 QList<std::shared_ptr<Item>> QuadTree::getAllItems() const
 {
     auto uniqueItems{getAllUniqueItems()};
-    return QList<std::shared_ptr<Item>>{uniqueItems.begin(), uniqueItems.end()};
+
+    auto uniqueItemList{QList<std::shared_ptr<Item>>{uniqueItems.begin(), uniqueItems.end()}};
+    reorder(uniqueItemList);
+
+    return uniqueItemList;
 }
 
 QSet<std::shared_ptr<Item>> QuadTree::getAllUniqueItems() const
