@@ -122,9 +122,17 @@ void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, 
 
     painter.translate(-offset);
     if (drawBuffer) {
-        painter.drawPath(getStrokeOutline(getStrokePoints(m_pointBuffer, m_pressureBuffer, false)));
+        if (m_pointBuffer.size() == 1) {
+            painter.drawPoint(m_pointBuffer.front());
+        } else {
+            painter.drawPath(getStrokeOutline(getStrokePoints(m_pointBuffer, m_pressureBuffer, false)));
+        }
     } else {
-        painter.drawPath(getStrokeOutline(getStrokePoints(m_points, m_pressures, false)));
+        if (m_points.size() == 1) {
+            painter.drawPoint(m_points.front());
+        } else {
+            painter.drawPath(getStrokeOutline(getStrokePoints(m_points, m_pressures, false)));
+        }
     }
 
     painter.restore();
