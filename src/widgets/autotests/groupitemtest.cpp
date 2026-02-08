@@ -46,15 +46,19 @@ void GroupItemTest::shouldRoundTripItems()
     std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
     r->setId("c9d6f90e757040e78dbf94bef5732e98"_ba);
 
-    f.setItems({r});
+    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    r2->setId("c9d6f90e757040e78dbf94bef5732e99"_ba);
+
+    f.setItems({r, r2});
 
     const QJsonObject obj = f.serialize();
 
     GroupItem f2;
     f2.deserialize(obj);
 
-    QCOMPARE(f2.items().length(), f.items().length());
+    QCOMPARE(f2.items().count(), f.items().count());
     QCOMPARE(f2.items()[0]->id(), f.items()[0]->id());
+    QCOMPARE(f2.items()[1]->id(), f.items()[1]->id());
 }
 
 #include "moc_groupitemtest.cpp"
