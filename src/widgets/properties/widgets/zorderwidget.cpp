@@ -32,10 +32,10 @@ ZOrderWidget::ZOrderWidget(ActionManager *actionManager, QWidget *parent)
     layout->addStretch(1);
 
     if (actionManager) {
-        moveOnBottomButton->addAction(actionManager->action(ActionManager::Action::SendToBack));
-        moveOnTopButton->addAction(actionManager->action(ActionManager::Action::BringToFront));
-        moveUpButton->addAction(actionManager->action(ActionManager::Action::BringForward));
-        moveDownButton->addAction(actionManager->action(ActionManager::Action::SendBackward));
+        moveOnBottomButton->setDefaultAction(actionManager->action(ActionManager::Action::SendToBack));
+        moveOnTopButton->setDefaultAction(actionManager->action(ActionManager::Action::BringToFront));
+        moveUpButton->setDefaultAction(actionManager->action(ActionManager::Action::BringForward));
+        moveDownButton->setDefaultAction(actionManager->action(ActionManager::Action::SendBackward));
     }
 
     m_widget->hide();

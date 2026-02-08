@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include <QXmlStreamWriter>
 #include <memory>
+#include <utility>
 
 #include "command/alignitemcommand.hpp"
 #include "command/commandhistory.hpp"
@@ -84,47 +85,29 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::SendToBack, tr("Send To Back"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendToBack);
-    });
+    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
     createAction(Action::SendBackward, tr("Send Backward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendBackward);
-    });
+    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
     createAction(Action::BringForward, tr("Bring Forward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringForward);
-    });
+    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
     createAction(Action::BringToFront, tr("Bring To Front"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringToFront);
-    });
+    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
+
     actionCollection->associateWidget(mainWindow);
     actionCollection->readSettings();
 
     // managing actions
-    connect(m_context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
-        if (m_context->spatialContext()->commandHistory()->hasUndo()) {
-            action(KStandardActions::Undo)->setEnabled(true);
-        } else {
-            action(KStandardActions::Undo)->setEnabled(false);
-        }
+    connect(m_context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
+    connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, &ActionManager::slotUpdateZoomButtons);
+    connect(m_context->selectionContext(), &SelectionContext::selectionUpdated, this, &ActionManager::slotUpdateZorderButtons);
 
-        if (m_context->spatialContext()->commandHistory()->hasRedo()) {
-            action(KStandardActions::Redo)->setEnabled(true);
-        } else {
-            action(KStandardActions::Redo)->setEnabled(false);
-        }
-    });
-
-    connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, [this]([[maybe_unused]] qreal newZoomFactor) {
-        if (m_context->renderingContext()->canZoomIn()) {
-            action(KStandardActions::ZoomIn)->setEnabled(true);
-        } else {
-            action(KStandardActions::ZoomIn)->setEnabled(false);
-        }
-
-        if (m_context->renderingContext()->canZoomOut()) {
-            action(KStandardActions::ZoomOut)->setEnabled(true);
-        } else {
-            action(KStandardActions::ZoomOut)->setEnabled(false);
-        }
-    });
+    connect(action(Action::BringForward), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
+    connect(action(Action::SendBackward), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
+    connect(action(Action::BringToFront), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
+    connect(action(Action::SendToBack), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
 }
 
 QAction *ActionManager::action(Action type) const
@@ -221,6 +204,7 @@ void ActionManager::zorderMove(ItemUtils::ZorderMove move)
     if (selectedItems.empty()) {
         return;
     }
+
     const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<ZorderCommand>(items, move));
     m_context->renderingContext()->markForRender();
@@ -477,6 +461,71 @@ void ActionManager::configureSettings()
 {
     ConfigureSettingsDialog dlg(m_context->parentWidget());
     dlg.exec();
+}
+
+void ActionManager::slotUpdateZoomButtons()
+{
+    if (m_context->renderingContext()->canZoomIn()) {
+        action(KStandardActions::ZoomIn)->setEnabled(true);
+    } else {
+        action(KStandardActions::ZoomIn)->setEnabled(false);
+    }
+
+    if (m_context->renderingContext()->canZoomOut()) {
+        action(KStandardActions::ZoomOut)->setEnabled(true);
+    } else {
+        action(KStandardActions::ZoomOut)->setEnabled(false);
+    }
+}
+
+void ActionManager::slotUpdateHistoryButtons()
+{
+    if (m_context->spatialContext()->commandHistory()->hasUndo()) {
+        action(KStandardActions::Undo)->setEnabled(true);
+    } else {
+        action(KStandardActions::Undo)->setEnabled(false);
+    }
+
+    if (m_context->spatialContext()->commandHistory()->hasRedo()) {
+        action(KStandardActions::Redo)->setEnabled(true);
+    } else {
+        action(KStandardActions::Redo)->setEnabled(false);
+    }
+}
+
+void ActionManager::slotUpdateZorderButtons()
+{
+    auto selectionContext{m_context->selectionContext()};
+    auto &quadtree{m_context->spatialContext()->quadtree()};
+
+    bool atLeastOneCanMoveBack{false}, atLeastOneCanMoveForward{false};
+
+    const auto selectedItems{selectionContext->selectedItems()};
+    for (const auto &item : std::as_const(selectedItems)) {
+        if (quadtree.canMoveBackwards(item)) {
+            atLeastOneCanMoveBack = true;
+        }
+
+        if (quadtree.canMoveForwards(item)) {
+            atLeastOneCanMoveForward = true;
+        }
+    }
+
+    if (atLeastOneCanMoveForward) {
+        action(Action::BringForward)->setEnabled(true);
+        action(Action::BringToFront)->setEnabled(true);
+    } else {
+        action(Action::BringForward)->setEnabled(false);
+        action(Action::BringToFront)->setEnabled(false);
+    }
+
+    if (atLeastOneCanMoveBack) {
+        action(Action::SendBackward)->setEnabled(true);
+        action(Action::SendToBack)->setEnabled(true);
+    } else {
+        action(Action::SendBackward)->setEnabled(false);
+        action(Action::SendToBack)->setEnabled(false);
+    }
 }
 
 #include "moc_actionmanager.cpp"

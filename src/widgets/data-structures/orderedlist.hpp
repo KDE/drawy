@@ -25,11 +25,15 @@ public:
     void sendBackward(const ItemPtr &item);
     void sendToBack(const ItemPtr &item);
     void bringToFront(const ItemPtr &item);
+
     [[nodiscard]] bool hasItem(const ItemPtr &item) const;
 
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
 
     [[nodiscard]] std::list<ItemPtr> itemList() const;
+
+    [[nodiscard]] bool canMoveBackwards(const ItemPtr &item) const;
+    [[nodiscard]] bool canMoveForwards(const ItemPtr &item) const;
 
 private:
     std::unordered_map<ItemPtr, std::list<ItemPtr>::iterator> m_itemIterMap;

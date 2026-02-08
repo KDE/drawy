@@ -68,6 +68,9 @@ public:
     void changeZorder(ItemUtils::ZorderMove move, const ItemPtr &item);
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
 
+    [[nodiscard]] bool canMoveBackwards(const ItemPtr &item) const;
+    [[nodiscard]] bool canMoveForwards(const ItemPtr &item) const;
+
 private:
     bool insert(const ItemPtr &item, bool updateOrder);
     void update(const ItemPtr &item, const QRectF &oldBoundingBox, bool inserted);

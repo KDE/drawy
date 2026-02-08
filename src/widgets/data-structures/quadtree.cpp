@@ -305,3 +305,13 @@ int QuadTree::zIndex(const ItemPtr &item) const
 {
     return m_orderedList->zIndex(item);
 }
+
+bool QuadTree::canMoveBackwards(const ItemPtr &item) const
+{
+    return m_orderedList->canMoveBackwards(item);
+}
+
+bool QuadTree::canMoveForwards(const ItemPtr &item) const
+{
+    return m_orderedList->canMoveForwards(item);
+}

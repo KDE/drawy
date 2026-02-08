@@ -80,6 +80,11 @@ public:
 
     void clear();
 
+    // SLOTS
+    void slotUpdateZoomButtons();
+    void slotUpdateHistoryButtons();
+    void slotUpdateZorderButtons();
+
 private:
     void zorderMove(ItemUtils::ZorderMove move);
     void slotLoadDone(const LoadJob::LoadInfo &info);
