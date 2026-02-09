@@ -49,10 +49,10 @@ const QPointF &PolygonItem::end() const
     return m_end;
 }
 
-QJsonObject PolygonItem::serialize() const
+QJsonObject PolygonItem::serialize(int zorder) const
 {
     const PolygonSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void PolygonItem::updateBoundingBox()

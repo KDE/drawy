@@ -13,5 +13,5 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT GroupSerializer : public ItemSerializer
 public:
     explicit GroupSerializer(const GroupItem *item);
     ~GroupSerializer() override;
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 };

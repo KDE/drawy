@@ -31,7 +31,7 @@ void GroupItemTest::shouldSerializeDefaultValue()
     GroupItem f;
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/group/"_s, ba, u"defaultvalue"_s);
@@ -51,7 +51,7 @@ void GroupItemTest::shouldRoundTripItems()
 
     f.setItems({r, r2});
 
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
 
     GroupItem f2;
     f2.deserialize(obj);

@@ -20,7 +20,7 @@ void SerializeJobTest::shouldHaveDefaultValues()
     QCOMPARE(info.zoomFactor, 1.0);
     QVERIFY(info.items.isEmpty());
 
-    const SerializeJob j;
+    const SerializeJob j(nullptr);
     QVERIFY(j.canStart());
 }
 

@@ -35,7 +35,7 @@ void TextItemTest::shouldSerializeDefaultValue()
     TextItem f;
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/text/"_s, ba, u"defaultvalue"_s);
@@ -61,7 +61,7 @@ void TextItemTest::shouldSerialize()
     TextItem f;
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setProperty(Property::Type::FontSize, Property(fontSize, Property::Type::FontSize));
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/text/"_s, ba, name);

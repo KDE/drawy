@@ -13,9 +13,9 @@ TextSerializer::TextSerializer(const TextItem *item)
 
 TextSerializer::~TextSerializer() = default;
 
-QJsonObject TextSerializer::serialize() const
+QJsonObject TextSerializer::serialize(int zorder) const
 {
-    QJsonObject obj = ItemSerializer::serialize();
+    QJsonObject obj = ItemSerializer::serialize(zorder);
     const TextItem *text = static_cast<const TextItem *>(mItem);
     obj[u"text"_s] = QJsonValue(text->text());
     return obj;

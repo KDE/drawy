@@ -37,7 +37,7 @@ void ArrowItemTest::shouldSerializeDefaultValue()
     ArrowItem f;
     // Need to have an known id
     f.setId("b06576a8e6d648ba9b282c8a57fa8225"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/arrow/"_s, ba, u"defaultvalue"_s);
@@ -76,7 +76,7 @@ void ArrowItemTest::shouldSerialize()
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setProperty(Property::Type::StrokeStyle, Property(strokeStyle, Property::Type::StrokeStyle));
     f.setLocked(locked);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/arrow/"_s, ba, name);

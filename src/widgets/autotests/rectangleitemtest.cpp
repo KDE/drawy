@@ -37,7 +37,7 @@ void RectangleItemTest::shouldSerializeDefaultValue()
     RectangleItem f;
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/rectangle/"_s, ba, u"defaultvalue"_s);
@@ -77,7 +77,7 @@ void RectangleItemTest::shouldSerialize()
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setLocked(locked);
     f.setProperty(Property::Type::BackgroundColor, Property(backgroundColor, Property::Type::BackgroundColor));
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/rectangle/"_s, ba, name);
@@ -97,7 +97,7 @@ void RectangleItemTest::shouldDeserialize()
     const QString refFile = QLatin1StringView(DRAWY_DATA_DIR) + u"/rectangle/"_s + name + u".ref"_s;
     const QJsonObject obj = AutoTestHelper::loadJsonObject(refFile);
     f.deserialize(obj);
-    const QJsonObject deserializeObj = f.serialize();
+    const QJsonObject deserializeObj = f.serialize(-1); // Not define zorder yet
 
     RectangleItem f2;
     f2.deserialize(deserializeObj);

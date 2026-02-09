@@ -40,7 +40,7 @@ public:
     [[nodiscard]] const QList<QPointF> &points() const;
     [[nodiscard]] const QList<qreal> &pressures() const;
 
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;
 
     bool needsCaching() const override;

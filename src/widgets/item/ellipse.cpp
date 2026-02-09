@@ -50,10 +50,10 @@ Item::Type EllipseItem::type() const
     return Item::Type::Ellipse;
 }
 
-QJsonObject EllipseItem::serialize() const
+QJsonObject EllipseItem::serialize(int zorder) const
 {
     const EllipseSerializer serializer(this);
-    return serializer.serialize();
+    return serializer.serialize(zorder);
 }
 
 void EllipseItem::deserialize(const QJsonObject &obj)

@@ -13,5 +13,5 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT TextSerializer : public ItemSerializer
 public:
     explicit TextSerializer(const TextItem *item);
     ~TextSerializer() override;
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 };

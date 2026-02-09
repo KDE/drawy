@@ -15,7 +15,7 @@ ItemSerializer::ItemSerializer(const Item *item)
 
 ItemSerializer::~ItemSerializer() = default;
 
-QJsonObject ItemSerializer::serialize() const
+QJsonObject ItemSerializer::serialize(int zorder) const
 {
     QJsonObject obj;
 
@@ -26,6 +26,9 @@ QJsonObject ItemSerializer::serialize() const
     obj[u"id"_s] = QString::fromLatin1(mItem->id());
     if (mItem->locked()) {
         obj[u"locked"_s] = true;
+    }
+    if (zorder != -1) {
+        obj[u"zorder"_s] = QString::number(zorder);
     }
     return obj;
 }

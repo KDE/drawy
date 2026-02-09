@@ -4,14 +4,18 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "serializejob.hpp"
+#include "context/applicationcontext.hpp"
+#include "context/spatialcontext.hpp"
+#include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "serializer/serializerutils.hpp"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
-SerializeJob::SerializeJob(QObject *parent)
+SerializeJob::SerializeJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
+    , mApplicationContext(context)
 {
 }
 
@@ -44,7 +48,11 @@ void SerializeJob::serializeItems()
 
     QJsonArray array;
     for (const auto &item : std::as_const(mSerializeInfo.items)) {
-        array.push_back(item->serialize());
+        int zorder = -1;
+        if (mApplicationContext) {
+            zorder = mApplicationContext->spatialContext()->quadtree().zIndex(item);
+        }
+        array.push_back(item->serialize(zorder));
     }
     obj[u"items"_s] = array;
 

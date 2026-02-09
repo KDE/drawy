@@ -50,10 +50,10 @@ Item::Type RectangleItem::type() const
     return Item::Type::Rectangle;
 }
 
-QJsonObject RectangleItem::serialize() const
+QJsonObject RectangleItem::serialize(int zorder) const
 {
     const RectangleSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void RectangleItem::deserialize(const QJsonObject &obj)

@@ -64,7 +64,7 @@ public:
 
     virtual void updateAfterProperty();
 
-    [[nodiscard]] virtual QJsonObject serialize() const = 0;
+    [[nodiscard]] virtual QJsonObject serialize(int zorder) const = 0;
     virtual void deserialize(const QJsonObject &obj) = 0;
 
     [[nodiscard]] bool operator==(const Item &other) const;

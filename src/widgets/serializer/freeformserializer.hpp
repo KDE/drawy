@@ -13,5 +13,5 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT FreeFormSerializer : public ItemSerializer
 public:
     explicit FreeFormSerializer(const FreeformItem *item);
     ~FreeFormSerializer() override;
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 };

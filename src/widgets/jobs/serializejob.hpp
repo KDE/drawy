@@ -10,6 +10,7 @@
 #include <QPointF>
 class QDebug;
 class QJsonObject;
+class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT SerializeJob : public QObject
 {
     Q_OBJECT
@@ -20,7 +21,7 @@ public:
         QList<std::shared_ptr<Item>> items;
     };
 
-    explicit SerializeJob(QObject *parent = nullptr);
+    explicit SerializeJob(ApplicationContext *context, QObject *parent = nullptr);
     ~SerializeJob() override;
 
     [[nodiscard]] bool canStart() const;
@@ -36,5 +37,6 @@ Q_SIGNALS:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void serializeItems();
     SerializeInfo mSerializeInfo;
+    ApplicationContext *const mApplicationContext;
 };
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const SerializeJob::SerializeInfo &t);

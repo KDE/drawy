@@ -15,7 +15,7 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT ItemSerializer
 public:
     explicit ItemSerializer(const Item *item);
     virtual ~ItemSerializer();
-    [[nodiscard]] virtual QJsonObject serialize() const;
+    [[nodiscard]] virtual QJsonObject serialize(int zorder) const;
 
 protected:
     [[nodiscard]] static QJsonObject toJson(const Property &property);

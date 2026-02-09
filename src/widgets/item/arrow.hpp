@@ -22,7 +22,7 @@ public:
 
     [[nodiscard]] Item::Type type() const override;
 
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 
     void deserialize(const QJsonObject &obj) override;
 

@@ -481,10 +481,10 @@ void TextItem::updateAfterProperty()
     updateBoundingBox();
 }
 
-QJsonObject TextItem::serialize() const
+QJsonObject TextItem::serialize(int zorder) const
 {
     const TextSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void TextItem::deserialize(const QJsonObject &obj)

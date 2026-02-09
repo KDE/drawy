@@ -125,10 +125,10 @@ void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] co
 {
 }
 
-QJsonObject GroupItem::serialize() const
+QJsonObject GroupItem::serialize(int zorder) const
 {
     const GroupSerializer serializer(this);
-    return serializer.serialize();
+    return serializer.serialize(zorder);
 }
 
 bool GroupItem::needsCaching() const

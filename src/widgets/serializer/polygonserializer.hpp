@@ -14,5 +14,5 @@ public:
     explicit PolygonSerializer(const PolygonItem *item);
     ~PolygonSerializer() override;
 
-    [[nodiscard]] QJsonObject serialize() const override;
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 };

@@ -15,15 +15,15 @@ GroupSerializer::GroupSerializer(const GroupItem *item)
 
 GroupSerializer::~GroupSerializer() = default;
 
-QJsonObject GroupSerializer::serialize() const
+QJsonObject GroupSerializer::serialize(int zorder) const
 {
     const GroupItem *groupItem = static_cast<const GroupItem *>(mItem);
     const auto items = groupItem->items();
     QJsonArray array;
     for (const auto &i : items) {
-        array.append(i->serialize());
+        array.append(i->serialize(zorder)); // TODO ????
     }
-    QJsonObject obj = ItemSerializer::serialize();
+    QJsonObject obj = ItemSerializer::serialize(zorder);
     obj[u"items"_s] = array;
     return obj;
 }

@@ -36,7 +36,7 @@ void FreeformItemTest::shouldSerializeDefaultValue()
     FreeformItem f;
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354553"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/freeform/"_s, ba, u"defaultvalue"_s);

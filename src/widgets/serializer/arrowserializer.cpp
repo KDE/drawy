@@ -14,10 +14,10 @@ ArrowSerializer::ArrowSerializer(const ArrowItem *item)
 
 ArrowSerializer::~ArrowSerializer() = default;
 
-QJsonObject ArrowSerializer::serialize() const
+QJsonObject ArrowSerializer::serialize(int zorder) const
 {
     const ArrowItem *arrow = dynamic_cast<const ArrowItem *>(mItem);
-    QJsonObject obj = PolygonSerializer::serialize();
+    QJsonObject obj = PolygonSerializer::serialize(zorder);
     obj[u"startArrow"_s] = ArrowUtils::convertArrowTypeEnumToString(arrow->startArrow());
     obj[u"endArrow"_s] = ArrowUtils::convertArrowTypeEnumToString(arrow->endArrow());
     return obj;

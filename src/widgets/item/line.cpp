@@ -52,10 +52,10 @@ Item::Type LineItem::type() const
     return Item::Type::Line;
 }
 
-QJsonObject LineItem::serialize() const
+QJsonObject LineItem::serialize(int zorder) const
 {
     const LineSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void LineItem::deserialize(const QJsonObject &obj)

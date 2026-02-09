@@ -36,7 +36,7 @@ void SaveAsJob::start()
         return;
     }
 
-    auto job = new SerializeJob(this);
+    auto job = new SerializeJob(mApplicationContext, this);
     const SerializeJob::SerializeInfo info{.offsetPos = mSaveAsInfo.offsetPos, .zoomFactor = mSaveAsInfo.zoomFactor, .items = mSaveAsInfo.items};
     job->setSerializeInfo(info);
     connect(job, &SerializeJob::serializeDone, this, &SaveAsJob::slotSerializeDone);

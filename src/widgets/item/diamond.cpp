@@ -68,10 +68,10 @@ Item::Type DiamondItem::type() const
     return Item::Type::Diamond;
 }
 
-QJsonObject DiamondItem::serialize() const
+QJsonObject DiamondItem::serialize(int zorder) const
 {
     const DiamondSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void DiamondItem::deserialize(const QJsonObject &obj)

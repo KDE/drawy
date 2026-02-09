@@ -138,10 +138,10 @@ Item::Type ArrowItem::type() const
     return Item::Type::Arrow;
 }
 
-QJsonObject ArrowItem::serialize() const
+QJsonObject ArrowItem::serialize(int zorder) const
 {
     const ArrowSerializer serializer(this);
-    return serializer.serialize();
+    return serializer.serialize(zorder);
 }
 
 void ArrowItem::deserialize(const QJsonObject &obj)

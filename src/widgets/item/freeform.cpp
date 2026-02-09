@@ -224,10 +224,10 @@ const QList<qreal> &FreeformItem::pressures() const
     return m_pressures;
 }
 
-QJsonObject FreeformItem::serialize() const
+QJsonObject FreeformItem::serialize(int zorder) const
 {
     const FreeFormSerializer serialize(this);
-    return serialize.serialize();
+    return serialize.serialize(zorder);
 }
 
 void FreeformItem::deserialize(const QJsonObject &obj)

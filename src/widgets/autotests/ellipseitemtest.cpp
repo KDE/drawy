@@ -36,7 +36,7 @@ void EllipseItemTest::shouldSerializeDefaultValue()
     EllipseItem f;
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/ellipse/"_s, ba, u"defaultvalue"_s);
@@ -71,7 +71,7 @@ void EllipseItemTest::shouldSerialize()
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setLocked(locked);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/ellipse/"_s, ba, name);

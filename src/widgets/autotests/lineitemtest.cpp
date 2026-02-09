@@ -35,7 +35,7 @@ void LineItemTest::shouldSerializeDefaultValue()
     LineItem f;
     // Need to have an known id
     f.setId("167ce602c9a34f2692304328e8dc03f0"_ba);
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/line/"_s, ba, u"defaultvalue"_s);
@@ -68,7 +68,7 @@ void LineItemTest::shouldSerialize()
     f.setEnd(end);
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
-    const QJsonObject obj = f.serialize();
+    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/line/"_s, ba, name);

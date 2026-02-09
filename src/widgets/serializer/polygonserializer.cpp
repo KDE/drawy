@@ -13,9 +13,9 @@ PolygonSerializer::PolygonSerializer(const PolygonItem *item)
 
 PolygonSerializer::~PolygonSerializer() = default;
 
-QJsonObject PolygonSerializer::serialize() const
+QJsonObject PolygonSerializer::serialize(int zorder) const
 {
-    QJsonObject obj = ItemSerializer::serialize();
+    QJsonObject obj = ItemSerializer::serialize(zorder);
     const PolygonItem *polygon = dynamic_cast<const PolygonItem *>(mItem);
     obj[u"start"_s] = toJson(polygon->start());
     obj[u"end"_s] = toJson(polygon->end());
