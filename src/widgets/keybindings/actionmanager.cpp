@@ -6,6 +6,7 @@
 
 #include <KActionCollection>
 #include <KMessageBox>
+#include <KShortcutsDialog>
 #include <QDir>
 #include <QFileDialog>
 #include <QXmlStreamWriter>
@@ -58,6 +59,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection)->setIcon(QIcon::fromTheme(u"value-increase"_s));
     KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection)->setIcon(QIcon::fromTheme(u"value-decrease"_s));
     KStandardActions::selectAll(this, &ActionManager::selectAll, actionCollection);
+
+    KStandardActions::keyBindings(this, &ActionManager::configureShortcuts, actionCollection);
 
     createAction(Action::ExportAsSVG, tr("Export as SVG"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))}, this, &ActionManager::exportToSvg)
         ->setIcon(QIcon::fromTheme(u"document-export"_s));
@@ -491,6 +494,14 @@ void ActionManager::slotUpdateHistoryButtons()
     } else {
         action(KStandardActions::Redo)->setEnabled(false);
     }
+}
+
+void ActionManager::configureShortcuts()
+{
+    KShortcutsDialog dialog(m_context->parentWidget());
+    dialog.addCollection(m_actionCollection);
+
+    dialog.configure();
 }
 
 void ActionManager::slotUpdateZorderButtons()

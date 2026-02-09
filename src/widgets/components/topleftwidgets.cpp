@@ -58,6 +58,8 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
         menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Preferences));
         menu->addSeparator();
+        menu->addAction(actionManager->action(KStandardActions::KeyBindings));
+        menu->addSeparator();
         menu->addMenu(mHelpMenu->menu());
         menu->addSeparator();
         menu->addAction(actionManager->action(KStandardActions::Quit));
