@@ -11,6 +11,13 @@ OrderedList::~OrderedList()
     qCDebug(DRAWY_LOG) << "Object deleted: OrderedList";
 }
 
+void OrderedList::clear()
+{
+    m_itemIterMap.clear();
+    m_itemList.clear();
+    m_zIndex.clear();
+}
+
 bool OrderedList::hasItem(const ItemPtr &item) const
 {
     if (!m_itemIterMap.contains(item)) {

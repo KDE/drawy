@@ -18,6 +18,8 @@ public:
 public:
     ~OrderedList();
 
+    void clear();
+
     void insert(const ItemPtr &item);
     void remove(const ItemPtr &item);
 

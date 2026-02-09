@@ -125,6 +125,7 @@ void QuadTree::deleteItem(const std::shared_ptr<Item> &item, bool updateOrder)
 void QuadTree::clear()
 {
     m_items.clear();
+    m_orderedList->clear();
 
     if (m_topLeft != nullptr) {
         m_topLeft->clear();
