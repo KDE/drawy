@@ -167,6 +167,8 @@ target_sources(
         properties/widgets/arrowstylewidget.hpp
         properties/widgets/backgroundstylewidget.cpp
         properties/widgets/backgroundstylewidget.hpp
+        properties/propertyutils.cpp
+        properties/propertyutils.hpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

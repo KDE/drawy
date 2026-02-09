@@ -8,6 +8,7 @@
 #include <QToolButton>
 
 #include "properties/property.hpp"
+#include "properties/propertyutils.hpp"
 using namespace Qt::Literals::StringLiterals;
 StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     : ColorWidgetBase{parent}
@@ -27,8 +28,7 @@ const Property StrokeColorWidget::value() const
 
 QList<QColor> StrokeColorWidget::defaultColors() const
 {
-    const QList<QColor> colors{QColor{255, 255, 255}, QColor{0, 0, 0}, QColor{255, 53, 71}, QColor{255, 187, 51}, QColor{51, 181, 229}};
-    return colors;
+    return PropertyUtils::strokeDefaultColors();
 }
 
 #include "moc_strokecolorwidget.cpp"
