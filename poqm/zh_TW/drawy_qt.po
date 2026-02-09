@@ -76,7 +76,7 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "更新屬性"
 
-#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+#: widgets/command/zordercommand.cpp:53 widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
@@ -240,7 +240,7 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "全螢幕"
 
-#: widgets/keybindings/actionmanager.cpp:61
+#: widgets/keybindings/actionmanager.cpp:62
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -248,7 +248,7 @@ msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "儲存到檔案"
 
-#: widgets/keybindings/actionmanager.cpp:63
+#: widgets/keybindings/actionmanager.cpp:64
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Group Elements"
@@ -256,7 +256,7 @@ msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "群組化元素"
 
-#: widgets/keybindings/actionmanager.cpp:65
+#: widgets/keybindings/actionmanager.cpp:66
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Ungroup Elements"
@@ -264,7 +264,7 @@ msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "解除群組化元素"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Delete"
@@ -272,7 +272,7 @@ msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "刪除"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:71
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Save canvas"
@@ -280,7 +280,7 @@ msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "儲存畫布"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:74
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Freeform Tool"
@@ -288,7 +288,7 @@ msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "自由筆畫工具"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:77
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Eraser Tool"
@@ -296,7 +296,7 @@ msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "橡皮擦工具"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:78
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -304,7 +304,7 @@ msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "選取工具"
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Rectangle Tool"
@@ -312,7 +312,7 @@ msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Ellipse Tool"
@@ -320,7 +320,7 @@ msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "橢圓工具"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:81
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -328,7 +328,7 @@ msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "直線工具"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Text Tool"
@@ -336,7 +336,7 @@ msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "文字工具"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:83
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Arrow Tool"
@@ -344,7 +344,7 @@ msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "箭頭工具"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:84
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Move Tool"
@@ -352,27 +352,27 @@ msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "移動工具"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Send To Back"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Send Backward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Bring Forward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Bring To Front"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:314
+#: widgets/keybindings/actionmanager.cpp:298
 #, fuzzy, qt-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -380,19 +380,19 @@ msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:316
-#: widgets/keybindings/actionmanager.cpp:380
+#: widgets/keybindings/actionmanager.cpp:300
+#: widgets/keybindings/actionmanager.cpp:364
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:317
+#: widgets/keybindings/actionmanager.cpp:301
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:339
+#: widgets/keybindings/actionmanager.cpp:323
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to save file?"
@@ -400,17 +400,17 @@ msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "您要儲存檔案嗎？"
 
-#: widgets/keybindings/actionmanager.cpp:340
+#: widgets/keybindings/actionmanager.cpp:324
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:367
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/keybindings/actionmanager.cpp:394
+#: widgets/keybindings/actionmanager.cpp:378
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -418,12 +418,12 @@ msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:396
+#: widgets/keybindings/actionmanager.cpp:380
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:382
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -431,7 +431,7 @@ msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "儲存到檔案"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:417
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:421
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr ""
@@ -691,7 +691,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "橢圓工具"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:158
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "橡皮擦工具"

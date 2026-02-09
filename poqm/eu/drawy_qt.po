@@ -92,7 +92,7 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr ""
 
-#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+#: widgets/command/zordercommand.cpp:53 widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr ""
@@ -279,7 +279,7 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Pantaila-osoa"
 
-#: widgets/keybindings/actionmanager.cpp:61
+#: widgets/keybindings/actionmanager.cpp:62
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -287,7 +287,7 @@ msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "Gorde fitxategian"
 
-#: widgets/keybindings/actionmanager.cpp:63
+#: widgets/keybindings/actionmanager.cpp:64
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Group Elements"
@@ -295,7 +295,7 @@ msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Taldekatu elementuak"
 
-#: widgets/keybindings/actionmanager.cpp:65
+#: widgets/keybindings/actionmanager.cpp:66
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Ungroup Elements"
@@ -303,7 +303,7 @@ msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Bereizi elementuak"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Delete"
@@ -311,7 +311,7 @@ msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:71
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Save canvas"
@@ -319,7 +319,7 @@ msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "Gorde mihisea"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:74
 #, fuzzy
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -327,7 +327,7 @@ msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Forma-askeko tresna"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:77
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Eraser Tool"
@@ -335,7 +335,7 @@ msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Ezabatzeko tresna"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:78
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -343,7 +343,7 @@ msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Hautapen tresna"
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Rectangle Tool"
@@ -351,7 +351,7 @@ msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Ellipse Tool"
@@ -359,7 +359,7 @@ msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Elipse tresna"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:81
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -367,7 +367,7 @@ msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Lerro tresna"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Text Tool"
@@ -375,7 +375,7 @@ msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Testu tresna"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:83
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Arrow Tool"
@@ -383,7 +383,7 @@ msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Gezi-tresna"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:84
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Move Tool"
@@ -391,27 +391,27 @@ msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Mugitzeko tresna"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Send To Back"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Send Backward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Bring Forward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Bring To Front"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:314
+#: widgets/keybindings/actionmanager.cpp:298
 #, fuzzy, qt-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -419,34 +419,34 @@ msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:316
-#: widgets/keybindings/actionmanager.cpp:380
+#: widgets/keybindings/actionmanager.cpp:300
+#: widgets/keybindings/actionmanager.cpp:364
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:317
+#: widgets/keybindings/actionmanager.cpp:301
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:339
+#: widgets/keybindings/actionmanager.cpp:323
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:340
+#: widgets/keybindings/actionmanager.cpp:324
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:367
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:394
+#: widgets/keybindings/actionmanager.cpp:378
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
@@ -454,12 +454,12 @@ msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:396
+#: widgets/keybindings/actionmanager.cpp:380
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:382
 #, fuzzy
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -467,7 +467,7 @@ msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "Gorde fitxategian"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:417
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -475,7 +475,7 @@ msgid ""
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:421
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr ""
@@ -718,7 +718,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Elipse tresna"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:158
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Ezabatzeko tresna"

@@ -73,7 +73,7 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Eigenschap bijwerken"
 
-#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+#: widgets/command/zordercommand.cpp:53 widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr "Z-volgorde wijzigen"
@@ -221,145 +221,145 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Volledig scherm"
 
-#: widgets/keybindings/actionmanager.cpp:61
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "Naar SVG exporteren"
 
-#: widgets/keybindings/actionmanager.cpp:63
+#: widgets/keybindings/actionmanager.cpp:64
 msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Items groeperen"
 
-#: widgets/keybindings/actionmanager.cpp:65
+#: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Groeperen van items ongedaan maken"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:71
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "Werkveld wissen"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:74
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Hulpmiddel voor vrije vorm"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Hulpmiddel voor gum"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:78
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Selectiehulpmiddel"
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:79
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Hulpmiddel voor rechthoek"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Hulpmiddel voor ellips"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:81
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Hulpmiddel voor lijn"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Hulpmiddel voor tekst"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Hulpmiddel voor pijl"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Hulpmiddel voor verplaatsen"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Send To Back"
 msgstr "Naar achtergrond brengen"
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Send Backward"
 msgstr "Achterwaarts zenden"
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Bring Forward"
 msgstr "Voorwaarts brengen"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Bring To Front"
 msgstr "Naar voorgrond brengen"
 
-#: widgets/keybindings/actionmanager.cpp:314
+#: widgets/keybindings/actionmanager.cpp:298
 #, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Naamloos.%1"
 
-#: widgets/keybindings/actionmanager.cpp:316
-#: widgets/keybindings/actionmanager.cpp:380
+#: widgets/keybindings/actionmanager.cpp:300
+#: widgets/keybindings/actionmanager.cpp:364
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:317
+#: widgets/keybindings/actionmanager.cpp:301
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: widgets/keybindings/actionmanager.cpp:339
+#: widgets/keybindings/actionmanager.cpp:323
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "Wilt u het werkveld wissen?"
 
-#: widgets/keybindings/actionmanager.cpp:340
+#: widgets/keybindings/actionmanager.cpp:324
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr "Wissen"
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:367
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: widgets/keybindings/actionmanager.cpp:394
+#: widgets/keybindings/actionmanager.cpp:378
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Naamloze.svg"
 
-#: widgets/keybindings/actionmanager.cpp:396
+#: widgets/keybindings/actionmanager.cpp:380
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:382
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "Naar SVG exporteren"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:417
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -368,7 +368,7 @@ msgid ""
 msgstr ""
 "Het document '%1' is gewijzigd. Wilt u de wijzigingen opslaan of verwerpen?"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:421
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr "Actie vereist"
@@ -578,7 +578,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Gereedschap voor ellips"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:158
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Hulpmiddel voor gum"

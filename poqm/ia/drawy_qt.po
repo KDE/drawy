@@ -74,7 +74,7 @@ msgctxt "QObject|"
 msgid "Update Property"
 msgstr "Actualisa Proprietate"
 
-#: widgets/command/zordercommand.cpp:44 widgets/properties/property.cpp:115
+#: widgets/command/zordercommand.cpp:53 widgets/properties/property.cpp:115
 msgctxt "QObject|"
 msgid "Change ZOrder"
 msgstr "Cambia  ZOrder"
@@ -222,145 +222,145 @@ msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Schermo plen"
 
-#: widgets/keybindings/actionmanager.cpp:61
+#: widgets/keybindings/actionmanager.cpp:62
 msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "Exporta como SVG"
 
-#: widgets/keybindings/actionmanager.cpp:63
+#: widgets/keybindings/actionmanager.cpp:64
 msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Gruppa elementos"
 
-#: widgets/keybindings/actionmanager.cpp:65
+#: widgets/keybindings/actionmanager.cpp:66
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Separa Elementos"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Dele"
 
-#: widgets/keybindings/actionmanager.cpp:70
+#: widgets/keybindings/actionmanager.cpp:71
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "Netta telas"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:74
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Instrumento de forma libere"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Instrumento de gumma"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:78
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Instrumento de Selection"
 
-#: widgets/keybindings/actionmanager.cpp:78
+#: widgets/keybindings/actionmanager.cpp:79
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Instrumento de Rectangulo"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Instrumento de ellipse"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:81
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Instrumento de linea"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Instrumento de Texto"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Instrumento de flecha"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Instrumento de Mover"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Send To Back"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Send Backward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Bring Forward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Bring To Front"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:314
+#: widgets/keybindings/actionmanager.cpp:298
 #, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Sin titulo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:316
-#: widgets/keybindings/actionmanager.cpp:380
+#: widgets/keybindings/actionmanager.cpp:300
+#: widgets/keybindings/actionmanager.cpp:364
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:317
+#: widgets/keybindings/actionmanager.cpp:301
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salveguarda file"
 
-#: widgets/keybindings/actionmanager.cpp:339
+#: widgets/keybindings/actionmanager.cpp:323
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tu vermente vole nettar le telas?"
 
-#: widgets/keybindings/actionmanager.cpp:340
+#: widgets/keybindings/actionmanager.cpp:324
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr "Netta"
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:367
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Aperi file"
 
-#: widgets/keybindings/actionmanager.cpp:394
+#: widgets/keybindings/actionmanager.cpp:378
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Sin titulo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:396
+#: widgets/keybindings/actionmanager.cpp:380
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:382
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "Exporta a Svg"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:417
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -370,7 +370,7 @@ msgstr ""
 "Le documento '%1' ha essite modificate.Tu vole salveguardar tu "
 "modificationes o abandonar los?"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:421
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr "Action requirite"
@@ -580,7 +580,7 @@ msgctxt "QObject|"
 msgid "Ellipse Tool"
 msgstr "Instrumento de ellipse"
 
-#: widgets/tools/erasertool.cpp:156
+#: widgets/tools/erasertool.cpp:158
 msgctxt "QObject|"
 msgid "Eraser Tool"
 msgstr "Instrumento de gumma"
