@@ -34,7 +34,7 @@ Q_SIGNALS:
     void serializeDone(const QJsonObject &obj);
 
 private:
-    void serializeItems();
+    LIBDRAWYWIDGETS_NO_EXPORT void serializeItems();
     SerializeInfo mSerializeInfo;
 };
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const SerializeJob::SerializeInfo &t);

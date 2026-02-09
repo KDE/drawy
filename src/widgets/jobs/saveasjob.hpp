@@ -36,7 +36,7 @@ Q_SIGNALS:
     void saveFileDone(const QJsonObject &obj);
 
 private:
-    void slotSerializeDone(const QJsonObject &obj);
+    LIBDRAWYWIDGETS_NO_EXPORT void slotSerializeDone(const QJsonObject &obj);
     SaveAsInfo mSaveAsInfo;
     ApplicationContext *const mApplicationContext;
 };
