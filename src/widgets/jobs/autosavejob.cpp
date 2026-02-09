@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "autosavejob.hpp"
-#include "autosavejobutil.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
