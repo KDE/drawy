@@ -33,5 +33,6 @@
         "x": -5,
         "y": 5
     },
-    "type": "LINE"
+    "type": "LINE",
+    "zorder": "5"
 }

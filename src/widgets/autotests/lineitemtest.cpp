@@ -48,8 +48,10 @@ void LineItemTest::shouldSerialize_data()
     QTest::addColumn<QPointF>("end");
     QTest::addColumn<int>("strokeWidth");
     QTest::addColumn<QColor>("strokeColor");
-    QTest::addRow("line1") << u"line1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red);
-    QTest::addRow("line2") << u"line2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue);
+    QTest::addColumn<bool>("locked");
+    QTest::addColumn<int>("zorder");
+    QTest::addRow("line1") << u"line1"_s << QPointF(-5.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << false << 5;
+    QTest::addRow("line2") << u"line2"_s << QPointF(0.7, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << true << 10;
 }
 
 void LineItemTest::shouldSerialize()
@@ -59,6 +61,8 @@ void LineItemTest::shouldSerialize()
     QFETCH(QPointF, end);
     QFETCH(int, strokeWidth);
     QFETCH(QColor, strokeColor);
+    QFETCH(bool, locked);
+    QFETCH(int, zorder);
 
     LineItem f;
     // Need to have an known id
@@ -68,7 +72,8 @@ void LineItemTest::shouldSerialize()
     f.setEnd(end);
     f.setProperty(Property::Type::StrokeWidth, Property(strokeWidth, Property::Type::StrokeWidth));
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
-    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
+    f.setLocked(locked);
+    const QJsonObject obj = f.serialize(zorder);
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/line/"_s, ba, name);

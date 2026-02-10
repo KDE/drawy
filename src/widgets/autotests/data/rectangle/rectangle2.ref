@@ -41,5 +41,6 @@
         "x": 0.2,
         "y": 5
     },
-    "type": "RECTANGLE"
+    "type": "RECTANGLE",
+    "zorder": "7"
 }

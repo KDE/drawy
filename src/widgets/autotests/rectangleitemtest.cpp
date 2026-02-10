@@ -52,9 +52,11 @@ void RectangleItemTest::shouldSerialize_data()
     QTest::addColumn<QColor>("strokeColor");
     QTest::addColumn<bool>("locked");
     QTest::addColumn<QColor>("backgroundColor");
-    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << false << QColor(Qt::transparent);
-    QTest::addRow("rectangle2") << u"rectangle2"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << false << QColor(Qt::red);
-    QTest::addRow("rectangle-locked1") << u"rectangle-locked1"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << true << QColor(Qt::blue);
+    QTest::addColumn<int>("zorder");
+    QTest::addRow("rectangle1") << u"rectangle1"_s << QPointF(0.0, 5.0) << QPointF(10.0, 7.5) << 1 << QColor(Qt::red) << false << QColor(Qt::transparent) << 9;
+    QTest::addRow("rectangle2") << u"rectangle2"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << false << QColor(Qt::red) << 7;
+    QTest::addRow("rectangle-locked1") << u"rectangle-locked1"_s << QPointF(0.2, 5.0) << QPointF(8.0, 7.5) << 5 << QColor(Qt::blue) << true << QColor(Qt::blue)
+                                       << 3;
 }
 
 void RectangleItemTest::shouldSerialize()
@@ -66,6 +68,7 @@ void RectangleItemTest::shouldSerialize()
     QFETCH(QColor, strokeColor);
     QFETCH(bool, locked);
     QFETCH(QColor, backgroundColor);
+    QFETCH(int, zorder);
 
     RectangleItem f;
     // Need to have an known id
@@ -77,7 +80,7 @@ void RectangleItemTest::shouldSerialize()
     f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
     f.setLocked(locked);
     f.setProperty(Property::Type::BackgroundColor, Property(backgroundColor, Property::Type::BackgroundColor));
-    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
+    const QJsonObject obj = f.serialize(zorder);
     const QJsonDocument doc(obj);
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/rectangle/"_s, ba, name);
