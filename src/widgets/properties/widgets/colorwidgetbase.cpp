@@ -28,12 +28,16 @@ void ColorWidgetBase::initialize()
 
     const QList<QColor> colors = defaultColors();
 
+    auto colorButtonHLayout = new QHBoxLayout;
+    colorButtonHLayout->setContentsMargins({});
+    colorButtonHLayout->setSpacing(0);
+    layout->addLayout(colorButtonHLayout);
     for (const QColor &color : colors) {
         auto btn{new QToolButton{m_widget}};
         btn->setCheckable(true);
         btn->setStyleSheet(u"background-color: "_s + color.name());
         btn->setProperty("color-value", color);
-        layout->addWidget(btn);
+        colorButtonHLayout->addWidget(btn);
         m_group->addButton(btn);
     }
 
