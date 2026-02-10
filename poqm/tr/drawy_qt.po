@@ -2,16 +2,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-05 16:38+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"PO-Revision-Date: 2026-02-09 19:47+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: apps/main.cpp:39
 msgctxt "QObject|"
@@ -81,36 +81,25 @@ msgstr "Z Sırasını Değiştir"
 #: widgets/components/bottomleftwidgets.cpp:41
 msgctxt "BottomLeftWidgets|"
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Yakınlaştırmayı Sıfırla"
 
 #: widgets/components/topleftwidgets.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "TopLeftWidgets|"
 msgid "Open Menu"
-msgstr "Dosya Aç"
+msgstr "Menüyü Aç"
 
 #: widgets/context/aboutdata.cpp:12
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "drawy"
 msgctxt "QObject|"
 msgid "Drawy"
 msgstr "Drawy"
 
 #: widgets/context/aboutdata.cpp:14
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr "Kullanışlı, sınırsız beyin fırtınası aracın"
+msgstr "Kullanışlı, sınırsız beyin fırtınası aracın!"
 
 #: widgets/context/aboutdata.cpp:16
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "(c) 2025-%1 drawy authors"
+#, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 Drawy authors"
 msgstr "© 2025–%1 Drawy yazarları"
@@ -198,243 +187,192 @@ msgstr "Genel"
 #: widgets/dialog/general/autosavewidget.cpp:20
 msgctxt "AutoSaveWidget|"
 msgid "Session"
-msgstr ""
+msgstr "Oturum"
 
 #: widgets/dialog/general/autosavewidget.cpp:28
 msgctxt "AutoSaveWidget|"
 msgid "Time interval for automatic saving"
-msgstr ""
+msgstr "Kendiliğinden kayıt zaman aralığı"
 
 #: widgets/dialog/general/autosavewidget.cpp:30
-#, fuzzy
-#| msgctxt "ConfigureGeneralWidget|"
-#| msgid "minute"
 msgctxt "AutoSaveWidget|delay unit"
 msgid " minute(s)"
 msgid_plural " minute(s)"
-msgstr[0] "dakika"
-msgstr[1] "dakika"
+msgstr[0] " dakika"
+msgstr[1] " dakika"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 msgctxt "AutoSaveWidget|"
 msgid "Directory for automatic saving"
-msgstr ""
+msgstr "Kendiliğinden kayıt dizini"
 
 #: widgets/dialog/general/autosavewidget.cpp:45
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "AutoSaveWidget|"
 msgid "Open Directory"
-msgstr "Dosya Aç"
+msgstr "Dizin Aç"
 
 #: widgets/dialog/general/autosavewidget.cpp:54
 msgctxt "AutoSaveWidget|"
 msgid "Restore previous session on start"
-msgstr ""
+msgstr "Başlangıçta bir önceki oturumu geri yükle"
 
 #: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
 msgid "Fullscreen"
 msgstr "Tam Ekran"
 
-#: widgets/keybindings/actionmanager.cpp:62
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to Svg"
+#: widgets/keybindings/actionmanager.cpp:65
 msgctxt "ActionManager|"
 msgid "Export as SVG"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:64
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Group Elements"
+#: widgets/keybindings/actionmanager.cpp:67
 msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Ögeleri Grupla"
 
-#: widgets/keybindings/actionmanager.cpp:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Ungroup Elements"
+#: widgets/keybindings/actionmanager.cpp:69
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/keybindings/actionmanager.cpp:70
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
+#: widgets/keybindings/actionmanager.cpp:73
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Sil"
 
-#: widgets/keybindings/actionmanager.cpp:71
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Save canvas"
+#: widgets/keybindings/actionmanager.cpp:74
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
-msgstr "Tuvali kaydet"
+msgstr "Tuvali Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:74
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Freeform Tool"
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:78
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
+#: widgets/keybindings/actionmanager.cpp:81
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:79
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
+#: widgets/keybindings/actionmanager.cpp:82
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:81
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
+#: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:83
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:84
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
+#: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:86
-msgctxt "ActionManager|"
-msgid "Send To Back"
-msgstr ""
-
 #: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
-msgid "Send Backward"
-msgstr ""
+msgid "Send To Back"
+msgstr "Arkaya Gönder"
 
 #: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
-msgid "Bring Forward"
-msgstr ""
+msgid "Send Backward"
+msgstr "Arkaya Doğru Gönder"
 
 #: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
-msgid "Bring To Front"
-msgstr ""
+msgid "Bring Forward"
+msgstr "Öne Doğru Getir"
 
-#: widgets/keybindings/actionmanager.cpp:298
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
+#: widgets/keybindings/actionmanager.cpp:98
+msgctxt "ActionManager|"
+msgid "Bring To Front"
+msgstr "Öne Getir"
+
+#: widgets/keybindings/actionmanager.cpp:301
+#, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:300
-#: widgets/keybindings/actionmanager.cpp:364
+#: widgets/keybindings/actionmanager.cpp:303
+#: widgets/keybindings/actionmanager.cpp:367
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:301
+#: widgets/keybindings/actionmanager.cpp:304
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:323
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Do you want to clear canvas?"
+#: widgets/keybindings/actionmanager.cpp:326
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
-msgstr "Tuvali temizlemek istiyor musunuz?"
+msgstr "Tuvali temizlemeyi gerçekten istiyor musunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:324
+#: widgets/keybindings/actionmanager.cpp:327
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr "Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:367
+#: widgets/keybindings/actionmanager.cpp:370
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/keybindings/actionmanager.cpp:378
+#: widgets/keybindings/actionmanager.cpp:381
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Başlıksız.svg"
 
-#: widgets/keybindings/actionmanager.cpp:380
+#: widgets/keybindings/actionmanager.cpp:383
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:382
+#: widgets/keybindings/actionmanager.cpp:385
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:417
+#: widgets/keybindings/actionmanager.cpp:420
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr ""
+"“%1” belgesinde değişiklikler yapıldı. Değişikliklerinizi kaydetmek mi yoksa "
+"atmak mı istiyorsunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:421
+#: widgets/keybindings/actionmanager.cpp:424
 msgctxt "ActionManager|"
 msgid "Action Required"
-msgstr ""
+msgstr "Eylem Gerekiyor"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -541,7 +479,7 @@ msgctxt "ArrowStyleWidget|"
 msgid "Arrow"
 msgstr "Ok"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 msgctxt "BackgroundColorWidget|"
 msgid "Background Color"
 msgstr "Arka Plan Rengi"
@@ -567,12 +505,9 @@ msgid "Background Style"
 msgstr "Arka Plan Biçemi"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:47
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
-msgstr "Seçim Aracı"
+msgstr "Özel Renk Seç"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:74
 msgctxt "ColorWidgetBase|"
@@ -614,7 +549,7 @@ msgctxt "StokeStyleWidget|"
 msgid "Stroke Style"
 msgstr "Vuruş Biçemi"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:21
 msgctxt "StrokeColorWidget|"
 msgid "Stroke Color"
 msgstr "Vuruş Rengi"
