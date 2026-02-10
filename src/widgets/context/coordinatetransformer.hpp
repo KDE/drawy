@@ -16,11 +16,6 @@ class RenderingContext;
  *  3. View (the viewport) */
 class CoordinateTransformer
 {
-private:
-    SpatialContext *m_spatialContext{};
-    RenderingContext *m_renderingContext{};
-    ApplicationContext *m_applicationContext;
-
 public:
     explicit CoordinateTransformer(ApplicationContext *context);
     ~CoordinateTransformer();
@@ -72,4 +67,9 @@ public:
     [[nodiscard]] QPoint round(QPointF point);
     [[nodiscard]] QRect round(QRectF rect);
     [[nodiscard]] QSize round(QSizeF size);
+
+private:
+    SpatialContext *m_spatialContext = nullptr;
+    RenderingContext *m_renderingContext = nullptr;
+    ApplicationContext *const m_applicationContext;
 };

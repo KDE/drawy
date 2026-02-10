@@ -12,7 +12,9 @@
 #include "spatialcontext.hpp"
 
 CoordinateTransformer::CoordinateTransformer(ApplicationContext *context)
-    : m_applicationContext{context} { };
+    : m_applicationContext{context}
+{
+}
 
 CoordinateTransformer::~CoordinateTransformer()
 {
