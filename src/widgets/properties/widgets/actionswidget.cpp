@@ -28,10 +28,6 @@ ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
     auto groupButton{new ButtonActionsWidget(m_widget)};
     auto ungroupButton{new ButtonActionsWidget(m_widget)};
 
-    deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
-    groupButton->setIcon(QIcon::fromTheme(u"object-group"_s));
-    ungroupButton->setIcon(QIcon::fromTheme(u"object-ungroup"_s));
-
     deleteButton->setToolTip(tr("Delete selection"));
     groupButton->setToolTip(tr("Group selection"));
     ungroupButton->setToolTip(tr("Ungroup selection"));
@@ -40,15 +36,11 @@ ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
     layout->addWidget(groupButton);
     layout->addWidget(ungroupButton);
 
-    connect(deleteButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->deleteSelection();
-    });
-    connect(groupButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->groupItems();
-    });
-    connect(ungroupButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->ungroupItems();
-    });
+    if (actionManager) {
+        deleteButton->setDefaultAction(actionManager->action(ActionManager::Action::DeleteSelection));
+        groupButton->setDefaultAction(actionManager->action(ActionManager::Action::GroupItems));
+        ungroupButton->setDefaultAction(actionManager->action(ActionManager::Action::UngroupItems));
+    }
 
     m_widget->hide();
 }

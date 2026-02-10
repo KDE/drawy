@@ -64,13 +64,16 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::ExportAsSVG, tr("Export as SVG"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))}, this, &ActionManager::exportToSvg)
         ->setIcon(QIcon::fromTheme(u"document-export"_s));
-    createAction(Action::GroupItems, tr("Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems);
+    createAction(Action::GroupItems, tr("Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems)
+        ->setIcon(QIcon::fromTheme(u"object-group"_s));
     createAction(Action::UngroupItems,
                  tr("Ungroup Items"),
                  {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G))},
                  this,
-                 &ActionManager::ungroupItems);
-    createAction(Action::DeleteSelection, tr("Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection);
+                 &ActionManager::ungroupItems)
+        ->setIcon(QIcon::fromTheme(u"object-ungroup"_s));
+    createAction(Action::DeleteSelection, tr("Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection)
+        ->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     createAction(Action::Clear, tr("Clear Canvas"), {}, this, &ActionManager::clear)->setIcon(QIcon::fromTheme(u"edit-delete"_s));
 
     createToolAction(Action::SwitchToFreeformTool,
