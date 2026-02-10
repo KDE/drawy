@@ -120,4 +120,18 @@ void OrderedListTest::shouldUpdateList()
     QCOMPARE(list.zIndex(item3), 2);
 }
 
+void OrderedListTest::shouldClearList()
+{
+    OrderedList list;
+    QVERIFY(list.itemList().empty());
+    for (int i = 0; i < 10; i++) {
+        auto item = std::make_shared<RectangleItem>();
+        list.insert(item);
+    }
+    QCOMPARE(list.itemList().size(), 10);
+
+    list.clear();
+    QVERIFY(list.itemList().empty());
+}
+
 #include "moc_orderedlisttest.cpp"
