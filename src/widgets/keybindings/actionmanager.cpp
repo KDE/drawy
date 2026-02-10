@@ -108,12 +108,12 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     // managing actions
     connect(m_context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
     connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, &ActionManager::slotUpdateZoomButtons);
-    connect(m_context->selectionContext(), &SelectionContext::selectionUpdated, this, &ActionManager::slotUpdateZorderButtons);
+    connect(m_context->selectionContext(), &SelectionContext::selectionUpdated, this, &ActionManager::slotUpdateZorderAndGroupButtons);
 
-    connect(action(Action::BringForward), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
-    connect(action(Action::SendBackward), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
-    connect(action(Action::BringToFront), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
-    connect(action(Action::SendToBack), &QAction::triggered, this, &ActionManager::slotUpdateZorderButtons);
+    connect(action(Action::BringForward), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
+    connect(action(Action::SendBackward), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
+    connect(action(Action::BringToFront), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
+    connect(action(Action::SendToBack), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
 }
 
 QAction *ActionManager::action(Action type) const
@@ -507,7 +507,7 @@ void ActionManager::configureShortcuts()
     dialog.configure();
 }
 
-void ActionManager::slotUpdateZorderButtons()
+void ActionManager::slotUpdateZorderAndGroupButtons()
 {
     auto selectionContext{m_context->selectionContext()};
     auto &quadtree{m_context->spatialContext()->quadtree()};
@@ -541,6 +541,8 @@ void ActionManager::slotUpdateZorderButtons()
         action(Action::SendBackward)->setEnabled(false);
         action(Action::SendToBack)->setEnabled(false);
     }
+
+    action(Action::GroupItems)->setEnabled(selectedItems.size() > 1);
 }
 
 #include "moc_actionmanager.cpp"

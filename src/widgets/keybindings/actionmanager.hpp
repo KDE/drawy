@@ -83,7 +83,7 @@ public:
     // SLOTS
     void slotUpdateZoomButtons();
     void slotUpdateHistoryButtons();
-    void slotUpdateZorderButtons();
+    void slotUpdateZorderAndGroupButtons();
 
 private:
     void zorderMove(ItemUtils::ZorderMove move);
