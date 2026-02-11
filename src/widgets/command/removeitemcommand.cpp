@@ -15,6 +15,7 @@
 #include "data-structures/quadtree.hpp"
 #include "item/item.hpp"
 #include "item/itemcache/itemcache.hpp"
+#include <KLocalizedString>
 
 RemoveItemCommand::RemoveItemCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
@@ -54,5 +55,5 @@ void RemoveItemCommand::undo(ApplicationContext *context)
 
 QString RemoveItemCommand::commandTitle() const
 {
-    return QObject::tr("Remove Object");
+    return i18n("Remove Object");
 }

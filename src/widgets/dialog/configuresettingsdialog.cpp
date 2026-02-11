@@ -7,6 +7,7 @@
 #include "configuresettingsdialog.hpp"
 #include "general/configuregeneralwidget.hpp"
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QPushButton>
@@ -21,10 +22,10 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureGeneralWidget(new ConfigureGeneralWidget(this))
 {
-    setWindowTitle(tr("Configure Drawy"));
+    setWindowTitle(i18nc("@title:window", "Configure Drawy"));
     setFaceType(KPageDialog::List);
 
-    const QString generalPageName = tr("General");
+    const QString generalPageName = i18n("General");
     mConfigureGeneralWidgetPage = new KPageWidgetItem(mConfigureGeneralWidget, generalPageName);
     mConfigureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     addPage(mConfigureGeneralWidgetPage);

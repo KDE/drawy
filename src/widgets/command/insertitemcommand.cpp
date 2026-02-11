@@ -13,6 +13,7 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include <KLocalizedString>
 
 InsertItemCommand::InsertItemCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
@@ -49,5 +50,5 @@ void InsertItemCommand::undo(ApplicationContext *context)
 
 QString InsertItemCommand::commandTitle() const
 {
-    return QObject::tr("Insert Object");
+    return i18n("Insert Object");
 }

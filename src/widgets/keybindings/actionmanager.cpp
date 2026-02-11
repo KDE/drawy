@@ -5,6 +5,7 @@
 #include "actionmanager.hpp"
 
 #include <KActionCollection>
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <KShortcutsDialog>
 #include <QDir>
@@ -63,43 +64,47 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     KStandardActions::keyBindings(this, &ActionManager::configureShortcuts, actionCollection);
 
-    createAction(Action::ExportAsSVG, tr("Export as SVG"), {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))}, this, &ActionManager::exportToSvg)
+    createAction(Action::ExportAsSVG,
+                 i18nc("@action", "Export as SVG"),
+                 {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))},
+                 this,
+                 &ActionManager::exportToSvg)
         ->setIcon(QIcon::fromTheme(u"document-export"_s));
-    createAction(Action::GroupItems, tr("Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems)
+    createAction(Action::GroupItems, i18nc("@action", "Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems)
         ->setIcon(QIcon::fromTheme(u"object-group"_s));
     createAction(Action::UngroupItems,
-                 tr("Ungroup Items"),
+                 i18nc("@action", "Ungroup Items"),
                  {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_G))},
                  this,
                  &ActionManager::ungroupItems)
         ->setIcon(QIcon::fromTheme(u"object-ungroup"_s));
-    createAction(Action::DeleteSelection, tr("Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection)
+    createAction(Action::DeleteSelection, i18nc("@action", "Delete"), {QKeySequence::Delete}, this, &ActionManager::deleteSelection)
         ->setIcon(QIcon::fromTheme(u"edit-delete"_s));
-    createAction(Action::Clear, tr("Clear Canvas"), {}, this, &ActionManager::clear)->setIcon(QIcon::fromTheme(u"edit-delete"_s));
+    createAction(Action::Clear, i18nc("@action", "Clear Canvas"), {}, this, &ActionManager::clear)->setIcon(QIcon::fromTheme(u"edit-delete"_s));
 
     createToolAction(Action::SwitchToFreeformTool,
-                     tr("Freeform Tool"),
+                     i18nc("@action", "Freeform Tool"),
                      {QKeySequence(QKeyCombination(Qt::Key_P)), QKeySequence(QKeyCombination(Qt::Key_B))},
                      Tool::Type::Freeform);
-    createToolAction(Action::SwitchToEraserTool, tr("Eraser Tool"), {QKeySequence(QKeyCombination(Qt::Key_E))}, Tool::Type::Eraser);
-    createToolAction(Action::SwitchToSelectionTool, tr("Selection Tool"), {QKeySequence(QKeyCombination(Qt::Key_S))}, Tool::Type::Selection);
-    createToolAction(Action::SwitchToRectangleTool, tr("Rectangle Tool"), {QKeySequence(QKeyCombination(Qt::Key_R))}, Tool::Type::Rectangle);
-    createToolAction(Action::SwitchToEllipseTool, tr("Ellipse Tool"), {QKeySequence(QKeyCombination(Qt::Key_O))}, Tool::Type::Ellipse);
-    createToolAction(Action::SwitchToLineTool, tr("Line Tool"), {QKeySequence(QKeyCombination(Qt::Key_L))}, Tool::Type::Line);
-    createToolAction(Action::SwitchToTextTool, tr("Text Tool"), {QKeySequence(QKeyCombination(Qt::Key_T))}, Tool::Type::Text);
-    createToolAction(Action::SwitchToArrowTool, tr("Arrow Tool"), {QKeySequence(QKeyCombination(Qt::Key_A))}, Tool::Type::Arrow);
-    createToolAction(Action::SwitchToMoveTool, tr("Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))}, Tool::Type::Move);
+    createToolAction(Action::SwitchToEraserTool, i18nc("@action", "Eraser Tool"), {QKeySequence(QKeyCombination(Qt::Key_E))}, Tool::Type::Eraser);
+    createToolAction(Action::SwitchToSelectionTool, i18nc("@action", "Selection Tool"), {QKeySequence(QKeyCombination(Qt::Key_S))}, Tool::Type::Selection);
+    createToolAction(Action::SwitchToRectangleTool, i18nc("@action", "Rectangle Tool"), {QKeySequence(QKeyCombination(Qt::Key_R))}, Tool::Type::Rectangle);
+    createToolAction(Action::SwitchToEllipseTool, i18nc("@action", "Ellipse Tool"), {QKeySequence(QKeyCombination(Qt::Key_O))}, Tool::Type::Ellipse);
+    createToolAction(Action::SwitchToLineTool, i18nc("@action", "Line Tool"), {QKeySequence(QKeyCombination(Qt::Key_L))}, Tool::Type::Line);
+    createToolAction(Action::SwitchToTextTool, i18nc("@action", "Text Tool"), {QKeySequence(QKeyCombination(Qt::Key_T))}, Tool::Type::Text);
+    createToolAction(Action::SwitchToArrowTool, i18nc("@action", "Arrow Tool"), {QKeySequence(QKeyCombination(Qt::Key_A))}, Tool::Type::Arrow);
+    createToolAction(Action::SwitchToMoveTool, i18nc("@action", "Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))}, Tool::Type::Move);
 
-    createAction(Action::SendToBack, tr("Send To Back"), {}, this, [this]() {
+    createAction(Action::SendToBack, i18nc("@action", "Send To Back"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendToBack);
     })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
-    createAction(Action::SendBackward, tr("Send Backward"), {}, this, [this]() {
+    createAction(Action::SendBackward, i18nc("@action", "Send Backward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendBackward);
     })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
-    createAction(Action::BringForward, tr("Bring Forward"), {}, this, [this]() {
+    createAction(Action::BringForward, i18nc("@action", "Bring Forward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringForward);
     })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
-    createAction(Action::BringToFront, tr("Bring To Front"), {}, this, [this]() {
+    createAction(Action::BringToFront, i18nc("@action", "Bring To Front"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringToFront);
     })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
 
@@ -307,10 +312,10 @@ void ActionManager::newFile()
 void ActionManager::saveAsNewFile()
 {
     const QDir homeDir{QDir::home()};
-    QString text{tr("Untitled.%1").arg(Common::drawyFileExt)};
+    QString text{i18nc("@action", "Untitled.%1").arg(Common::drawyFileExt)};
     const QString defaultFilePath = homeDir.filePath(text);
-    text = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Save File"), defaultFilePath, text)};
+    text = i18nc("@action", "Drawy (*.%1)").arg(Common::drawyFileExt);
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@action", "Save File"), defaultFilePath, text)};
     if (fileName.isEmpty()) {
         return;
     }
@@ -332,8 +337,8 @@ void ActionManager::clear()
 {
     if (KMessageBox::ButtonCode::PrimaryAction
         == KMessageBox::questionTwoActions(nullptr,
-                                           tr("Do you really want to clear the canvas?"),
-                                           tr("Clear"),
+                                           i18nc("@action", "Do you really want to clear the canvas?"),
+                                           i18nc("@action", "Clear"),
                                            KStandardGuiItem::ok(),
                                            KStandardGuiItem::cancel())) {
         const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
@@ -373,10 +378,10 @@ void ActionManager::openFile()
         return;
     }
 
-    const QString filter = QObject::tr("Drawy (*.%1)").arg(Common::drawyFileExt);
+    const QString filter = i18nc("@action", "Drawy (*.%1)").arg(Common::drawyFileExt);
 
     const QDir homeDir{QDir::home()};
-    const QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Open File"), homeDir.path(), filter);
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@action", "Open File"), homeDir.path(), filter);
     if (fileName.isEmpty()) {
         return;
     }
@@ -387,11 +392,11 @@ void ActionManager::openFile()
 void ActionManager::exportToSvg()
 {
     const QDir homeDir{QDir::home()};
-    QString text = QObject::tr("Untitled.svg");
+    QString text = i18nc("@action", "Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
-    text = QObject::tr("SVG (*.svg)");
+    text = i18nc("@action", "SVG (*.svg)");
 
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, QObject::tr("Export to Svg"), defaultFilePath, text)};
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@action", "Export to Svg"), defaultFilePath, text)};
 
     if (fileName.isEmpty()) {
         return;
@@ -426,11 +431,11 @@ bool ActionManager::confirmSaveAfterModification()
     }
 
     const auto fileName{m_context->currentFileName()};
-    const auto message{tr("The document \"%1\" has been modified. Do you want to save your changes or discard them?").arg(fileName)};
+    const auto message{i18nc("@action", "The document \"%1\" has been modified. Do you want to save your changes or discard them?").arg(fileName)};
 
     const int choice = KMessageBox::questionTwoActionsCancel(m_context->parentWidget(),
                                                              message,
-                                                             tr("Action Required"),
+                                                             i18nc("@action", "Action Required"),
                                                              KStandardGuiItem::save(),
                                                              KStandardGuiItem::discard(),
                                                              KStandardGuiItem::cancel());

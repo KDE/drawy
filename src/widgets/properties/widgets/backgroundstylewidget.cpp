@@ -7,6 +7,7 @@
 #include "backgroundstylewidget.hpp"
 #include "buttonactionswidget.hpp"
 #include "item/itemutils.hpp"
+#include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
 
@@ -26,7 +27,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     auto solidButton{new ButtonActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
     solidButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid));
-    solidButton->setToolTip(tr("Solid"));
+    solidButton->setToolTip(i18nc("@info:tooltip", "Solid"));
     solidButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
     solidButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
@@ -35,7 +36,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     auto diagonalCrossButton{new ButtonActionsWidget(m_widget)};
     diagonalCrossButton->setObjectName(u"diagonalCrossButton"_s);
     diagonalCrossButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::CrossDiagonal));
-    diagonalCrossButton->setToolTip(tr("Diagonal Cross"));
+    diagonalCrossButton->setToolTip(i18nc("@info:tooltip", "Diagonal Cross"));
     diagonalCrossButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
     diagonalCrossButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
@@ -44,7 +45,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     auto diagonalButton{new ButtonActionsWidget(m_widget)};
     diagonalButton->setObjectName(u"diagonalButton"_s);
     diagonalButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Diagonal));
-    diagonalButton->setToolTip(tr("Diagonal"));
+    diagonalButton->setToolTip(i18nc("@info:tooltip", "Diagonal"));
     diagonalButton->setCheckable(true);
     // Laurent: wait for icons (from kde team)
     diagonalButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
@@ -64,7 +65,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
 
 QString BackgroundStyleWidget::name() const
 {
-    return tr("Background Style");
+    return i18n("Background Style");
 }
 
 const Property BackgroundStyleWidget::value() const

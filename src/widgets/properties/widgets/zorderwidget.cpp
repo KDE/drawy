@@ -8,6 +8,7 @@
 #include "buttonactionswidget.hpp"
 #include "context/uicontext.hpp"
 #include "keybindings/actionmanager.hpp"
+#include <KLocalizedString>
 #include <QHBoxLayout>
 
 ZOrderWidget::ZOrderWidget(ActionManager *actionManager, QWidget *parent)
@@ -43,7 +44,7 @@ ZOrderWidget::ZOrderWidget(ActionManager *actionManager, QWidget *parent)
 
 QString ZOrderWidget::name() const
 {
-    return tr("Z-order");
+    return i18n("Z-order");
 }
 
 const Property ZOrderWidget::value() const

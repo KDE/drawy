@@ -311,6 +311,7 @@ target_link_libraries(
     KF6::ConfigWidgets
     KF6::XmlGui
     KF6::CoreAddons
+    KF6::I18n
     ${ZSTD_LINK_LIBRARIES}
 )
 

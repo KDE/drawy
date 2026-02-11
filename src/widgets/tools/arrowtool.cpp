@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "arrowtool.hpp"
+#include <KLocalizedString>
 
 #include "item/factory/arrowfactory.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -16,7 +17,7 @@ ArrowTool::ArrowTool(ApplicationContext *context)
 
 QString ArrowTool::tooltip() const
 {
-    return QObject::tr("Arrow Tool");
+    return i18nc("@info:tooltip", "Arrow Tool");
 }
 
 QString ArrowTool::icon() const

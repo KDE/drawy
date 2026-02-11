@@ -8,6 +8,7 @@
 #include "buttonactionswidget.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/uicontext.hpp"
+#include <KLocalizedString>
 
 #include <QHBoxLayout>
 using namespace Qt::Literals::StringLiterals;
@@ -31,7 +32,7 @@ ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
 
 QString ArrowStyleWidget::name() const
 {
-    return tr("Arrow");
+    return i18n("Arrow");
 }
 
 const Property ArrowStyleWidget::value() const

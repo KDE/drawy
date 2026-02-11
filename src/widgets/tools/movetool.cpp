@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "movetool.hpp"
+#include <KLocalizedString>
 
 #include "canvas/canvas.hpp"
 #include "common/renderitems.hpp"
@@ -74,7 +75,7 @@ Tool::Type MoveTool::type() const
 
 QString MoveTool::tooltip() const
 {
-    return QObject::tr("Move Tool");
+    return i18nc("@info:tooltip", "Move Tool");
 }
 
 QString MoveTool::icon() const

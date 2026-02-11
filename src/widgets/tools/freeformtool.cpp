@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "freeformtool.hpp"
+#include <KLocalizedString>
 
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
@@ -30,7 +31,7 @@ FreeformTool::FreeformTool(ApplicationContext *context)
 
 QString FreeformTool::tooltip() const
 {
-    return QObject::tr("Pen Tool");
+    return i18nc("@info:tooltip", "Pen Tool");
 }
 
 void FreeformTool::mousePressed(ApplicationContext *context)

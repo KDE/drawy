@@ -9,6 +9,7 @@
 #include "context/uicontext.hpp"
 #include "keybindings/actionmanager.hpp"
 
+#include <KLocalizedString>
 #include <QGridLayout>
 using namespace Qt::Literals::StringLiterals;
 AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
@@ -25,32 +26,32 @@ AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
     auto alignLeftButton{new ButtonActionsWidget(m_widget)};
     alignLeftButton->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
     alignLeftButton->setObjectName(u"alignLeftButton"_s);
-    alignLeftButton->setToolTip(tr("Align to Left"));
+    alignLeftButton->setToolTip(i18nc("@info:tooltip", "Align to Left"));
 
     auto centralHorizontalButton{new ButtonActionsWidget(m_widget)};
     centralHorizontalButton->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
     centralHorizontalButton->setObjectName(u"centralHorizontalButton"_s);
-    centralHorizontalButton->setToolTip(tr("Align to Center"));
+    centralHorizontalButton->setToolTip(i18nc("@info:tooltip", "Align to Center"));
 
     auto alignRightButton{new ButtonActionsWidget(m_widget)};
     alignRightButton->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
     alignRightButton->setObjectName(u"alignRightButton"_s);
-    alignRightButton->setToolTip(tr("Align to Right"));
+    alignRightButton->setToolTip(i18nc("@info:tooltip", "Align to Right"));
 
     auto alignTopButton{new ButtonActionsWidget(m_widget)};
     alignTopButton->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
     alignTopButton->setObjectName(u"alignTopButton"_s);
-    alignTopButton->setToolTip(tr("Align to Top"));
+    alignTopButton->setToolTip(i18nc("@info:tooltip", "Align to Top"));
 
     auto centralVerticalButton{new ButtonActionsWidget(m_widget)};
     centralVerticalButton->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
     centralVerticalButton->setObjectName(u"centralVerticalButton"_s);
-    centralVerticalButton->setToolTip(tr("Align to Middle"));
+    centralVerticalButton->setToolTip(i18nc("@info:tooltip", "Align to Middle"));
 
     auto alignBottomButton{new ButtonActionsWidget(m_widget)};
     alignBottomButton->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
     alignBottomButton->setObjectName(u"alignBottomButton"_s);
-    alignBottomButton->setToolTip(tr("Align to Bottom"));
+    alignBottomButton->setToolTip(i18nc("@info:tooltip", "Align to Bottom"));
 
     layout->addWidget(alignLeftButton, 0, 0);
     layout->addWidget(centralHorizontalButton, 0, 1);
@@ -83,7 +84,7 @@ AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
 
 QString AlignmentWidget::name() const
 {
-    return tr("Alignment");
+    return i18n("Alignment");
 }
 
 const Property AlignmentWidget::value() const

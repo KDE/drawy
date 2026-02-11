@@ -7,6 +7,7 @@
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
+#include <KLocalizedString>
 #include <QPushButton>
 #include <QStyle>
 #include <QToolButton>
@@ -38,7 +39,7 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, QWidget *pare
 
     auto zoomLabel{new ClickableLabel{zoomControlFrame}};
     zoomLabel->setText(u"100%"_s);
-    zoomLabel->setToolTip(tr("Reset Zoom"));
+    zoomLabel->setToolTip(i18nc("@info:tooltip", "Reset Zoom"));
 
     connect(zoomLabel, &ClickableLabel::clicked, this, &BottomLeftWidgets::resetZoom);
 

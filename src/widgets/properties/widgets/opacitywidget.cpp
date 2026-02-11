@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "opacitywidget.hpp"
+#include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSlider>
@@ -39,7 +40,7 @@ OpacityWidget::OpacityWidget(QWidget *parent)
 
 QString OpacityWidget::name() const
 {
-    return tr("Opacity");
+    return i18n("Opacity");
 }
 
 const Property OpacityWidget::value() const

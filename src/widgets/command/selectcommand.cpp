@@ -13,6 +13,7 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
+#include <KLocalizedString>
 
 SelectCommand::SelectCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
@@ -43,5 +44,5 @@ void SelectCommand::undo(ApplicationContext *context)
 
 QString SelectCommand::commandTitle() const
 {
-    return QObject::tr("Select Object");
+    return i18n("Select Object");
 }

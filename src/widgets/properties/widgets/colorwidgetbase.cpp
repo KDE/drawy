@@ -5,6 +5,7 @@
 #include "colorwidgetbase.hpp"
 
 #include "properties/property.hpp"
+#include <KLocalizedString>
 #include <KSeparator>
 #include <QButtonGroup>
 #include <QColor>
@@ -48,7 +49,7 @@ void ColorWidgetBase::initialize()
     m_currentColorButton = new QToolButton{m_widget};
     m_currentColorButton->setObjectName(u"m_currentColorButton"_s);
     m_currentColorButton->setCheckable(false);
-    m_currentColorButton->setToolTip(tr("Select Custom Color"));
+    m_currentColorButton->setToolTip(i18nc("@info:tooltip", "Select Custom Color"));
     connect(m_currentColorButton, &QToolButton::clicked, [this]() {
         const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
         if (col.isValid()) {
@@ -75,7 +76,7 @@ void ColorWidgetBase::assignCurrentColor(const QColor &col)
 
 QString ColorWidgetBase::name() const
 {
-    return tr("Color");
+    return i18n("Color");
 }
 
 #include "moc_colorwidgetbase.cpp"

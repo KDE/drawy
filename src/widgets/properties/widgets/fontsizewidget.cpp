@@ -5,9 +5,9 @@
 #include "fontsizewidget.hpp"
 #include "drawyglobalconfig.h"
 
-#include <QSpinBox>
-
 #include "properties/property.hpp"
+#include <KLocalizedString>
+#include <QSpinBox>
 
 FontSizeWidget::FontSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
@@ -27,7 +27,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
 
 QString FontSizeWidget::name() const
 {
-    return tr("Font Size");
+    return i18n("Font Size");
 }
 
 const Property FontSizeWidget::value() const

@@ -33,6 +33,7 @@
 #include "tools/rectangletool.hpp"
 #include "tools/selectiontool/selectiontool.hpp"
 #include "tools/texttool.hpp"
+#include <KLocalizedString>
 #include <QMenu>
 
 UIContext::UIContext(ApplicationContext *context)
@@ -57,16 +58,16 @@ void UIContext::initializeUIContext()
 
     m_topWidgets = new TopWidgets(m_applicationContext, m_applicationContext->parentWidget());
     m_toolBar = new ToolBar(m_topWidgets);
-    m_toolBar->addTool(std::make_shared<SelectionTool>(m_applicationContext), Tool::Type::Selection, tr("Selection"));
-    m_toolBar->addTool(std::make_shared<FreeformTool>(m_applicationContext), Tool::Type::Freeform, tr("Free Form"));
-    m_toolBar->addTool(std::make_shared<RectangleTool>(m_applicationContext), Tool::Type::Rectangle, tr("Rectangle"));
-    m_toolBar->addTool(std::make_shared<DiamondTool>(m_applicationContext), Tool::Type::Diamond, tr("Diamond"));
-    m_toolBar->addTool(std::make_shared<EllipseTool>(m_applicationContext), Tool::Type::Ellipse, tr("Ellipse"));
-    m_toolBar->addTool(std::make_shared<ArrowTool>(m_applicationContext), Tool::Type::Arrow, tr("Arrow"));
-    m_toolBar->addTool(std::make_shared<LineTool>(m_applicationContext), Tool::Type::Line, tr("Line"));
-    m_toolBar->addTool(std::make_shared<EraserTool>(m_applicationContext), Tool::Type::Eraser, tr("Eraser"));
-    m_toolBar->addTool(std::make_shared<TextTool>(m_applicationContext), Tool::Type::Text, tr("Text"));
-    m_toolBar->addTool(std::make_shared<MoveTool>(m_applicationContext), Tool::Type::Move, tr("Move"));
+    m_toolBar->addTool(std::make_shared<SelectionTool>(m_applicationContext), Tool::Type::Selection, i18nc("@action:button", "Selection"));
+    m_toolBar->addTool(std::make_shared<FreeformTool>(m_applicationContext), Tool::Type::Freeform, i18nc("@action:button", "Free Form"));
+    m_toolBar->addTool(std::make_shared<RectangleTool>(m_applicationContext), Tool::Type::Rectangle, i18nc("@action:button", "Rectangle"));
+    m_toolBar->addTool(std::make_shared<DiamondTool>(m_applicationContext), Tool::Type::Diamond, i18nc("@action:button", "Diamond"));
+    m_toolBar->addTool(std::make_shared<EllipseTool>(m_applicationContext), Tool::Type::Ellipse, i18nc("@action:button", "Ellipse"));
+    m_toolBar->addTool(std::make_shared<ArrowTool>(m_applicationContext), Tool::Type::Arrow, i18nc("@action:button", "Arrow"));
+    m_toolBar->addTool(std::make_shared<LineTool>(m_applicationContext), Tool::Type::Line, i18nc("@action:button", "Line"));
+    m_toolBar->addTool(std::make_shared<EraserTool>(m_applicationContext), Tool::Type::Eraser, i18nc("@action:button", "Eraser"));
+    m_toolBar->addTool(std::make_shared<TextTool>(m_applicationContext), Tool::Type::Text, i18nc("@action:button", "Text"));
+    m_toolBar->addTool(std::make_shared<MoveTool>(m_applicationContext), Tool::Type::Move, i18nc("@action:button", "Move"));
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolbarShown, this, [this]() {

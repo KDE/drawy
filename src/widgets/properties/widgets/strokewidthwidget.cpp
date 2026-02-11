@@ -4,6 +4,7 @@
 
 #include "strokewidthwidget.hpp"
 #include "drawyglobalconfig.h"
+#include <KLocalizedString>
 #include <QSpinBox>
 
 #include "properties/property.hpp"
@@ -25,7 +26,7 @@ StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
 
 QString StrokeWidthWidget::name() const
 {
-    return tr("Thickness");
+    return i18n("Thickness");
 }
 
 const Property StrokeWidthWidget::value() const

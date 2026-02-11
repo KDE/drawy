@@ -12,6 +12,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "item/item.hpp"
+#include <KLocalizedString>
 
 ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::ZorderMove move)
     : ItemCommand{std::move(items)}
@@ -50,5 +51,5 @@ void ZorderCommand::undo([[maybe_unused]] ApplicationContext *context)
 
 QString ZorderCommand::commandTitle() const
 {
-    return QObject::tr("Change ZOrder");
+    return i18n("Change ZOrder");
 }

@@ -4,6 +4,7 @@
 
 #include "texttool.hpp"
 
+#include <KLocalizedString>
 #include <QClipboard>
 #include <QGuiApplication>
 #include <memory>
@@ -506,7 +507,7 @@ Tool::Type TextTool::type() const
 
 QString TextTool::tooltip() const
 {
-    return QObject::tr("Text Tool");
+    return i18nc("@info:tooltip", "Text Tool");
 }
 
 QString TextTool::icon() const

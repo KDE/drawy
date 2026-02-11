@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "selectiontool.hpp"
+#include <KLocalizedString>
 
 #include <qnamespace.h>
 
@@ -139,7 +140,7 @@ Tool::Type SelectionTool::type() const
 
 QString SelectionTool::tooltip() const
 {
-    return QObject::tr("Selection Tool");
+    return i18nc("@info:tooltip", "Selection Tool");
 }
 
 QString SelectionTool::icon() const

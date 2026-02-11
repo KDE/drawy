@@ -6,15 +6,16 @@
 
 #include "aboutdata.hpp"
 #include "config-drawy.hpp"
+#include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 AboutData::AboutData()
     : KAboutData(u"Drawy"_s,
-                 QObject::tr("Drawy"),
+                 i18n("Drawy"),
                  QStringLiteral(DRAWY_VERSION),
-                 QObject::tr("Your handy, infinite  brainstorming tool!"),
+                 i18n("Your handy, infinite  brainstorming tool!"),
                  KAboutLicense::GPL_V3,
-                 QObject::tr("(c) 2025-%1 Drawy authors").arg(u"2026"_s))
+                 i18n("(c) 2025-%1 Drawy authors", u"2026"_s))
 {
-    addAuthor(QObject::tr("Prayag Jain"), QObject::tr("Maintainer"), u"prayagjain2@gmail.com"_s);
-    addAuthor(QObject::tr("Laurent Montel"), QObject::tr("Developer"), u"montel@kde.org"_s);
+    addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
+    addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
 }
