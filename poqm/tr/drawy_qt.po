@@ -231,135 +231,135 @@ msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Ögeleri Grupla"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:75
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Sil"
 
-#: widgets/keybindings/actionmanager.cpp:74
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "Tuvali Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Send To Back"
 msgstr "Arkaya Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Send Backward"
 msgstr "Arkaya Doğru Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Bring Forward"
 msgstr "Öne Doğru Getir"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Bring To Front"
 msgstr "Öne Getir"
 
-#: widgets/keybindings/actionmanager.cpp:301
+#: widgets/keybindings/actionmanager.cpp:304
 #, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:303
-#: widgets/keybindings/actionmanager.cpp:367
+#: widgets/keybindings/actionmanager.cpp:306
+#: widgets/keybindings/actionmanager.cpp:370
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:304
+#: widgets/keybindings/actionmanager.cpp:307
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:326
+#: widgets/keybindings/actionmanager.cpp:329
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tuvali temizlemeyi gerçekten istiyor musunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:327
+#: widgets/keybindings/actionmanager.cpp:330
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr "Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:370
+#: widgets/keybindings/actionmanager.cpp:373
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/keybindings/actionmanager.cpp:381
+#: widgets/keybindings/actionmanager.cpp:384
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Başlıksız.svg"
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:386
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:385
+#: widgets/keybindings/actionmanager.cpp:388
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:420
+#: widgets/keybindings/actionmanager.cpp:423
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -369,7 +369,7 @@ msgstr ""
 "“%1” belgesinde değişiklikler yapıldı. Değişikliklerinizi kaydetmek mi yoksa "
 "atmak mı istiyorsunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:427
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr "Eylem Gerekiyor"
@@ -419,22 +419,22 @@ msgctxt "QObject|"
 msgid "Change Background Style"
 msgstr "Arka Plan Biçemini Değiştir"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:31
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Seçimi sil"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:32
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Seçimi grupla"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:33
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Seçimin grubunu kaldır"
 
-#: widgets/properties/widgets/actionswidget.cpp:58
+#: widgets/properties/widgets/actionswidget.cpp:50
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Eylemler"

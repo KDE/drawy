@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-06 17:21+0100\n"
+"PO-Revision-Date: 2026-02-10 09:52+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -232,135 +232,135 @@ msgctxt "ActionManager|"
 msgid "Group Items"
 msgstr "Gruppa elementos"
 
-#: widgets/keybindings/actionmanager.cpp:69
+#: widgets/keybindings/actionmanager.cpp:70
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
 msgstr "Separa Elementos"
 
-#: widgets/keybindings/actionmanager.cpp:73
+#: widgets/keybindings/actionmanager.cpp:75
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "Dele"
 
-#: widgets/keybindings/actionmanager.cpp:74
+#: widgets/keybindings/actionmanager.cpp:77
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
 msgstr "Netta telas"
 
-#: widgets/keybindings/actionmanager.cpp:77
+#: widgets/keybindings/actionmanager.cpp:80
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "Instrumento de forma libere"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:83
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "Instrumento de gumma"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:84
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "Instrumento de Selection"
 
-#: widgets/keybindings/actionmanager.cpp:82
+#: widgets/keybindings/actionmanager.cpp:85
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "Instrumento de Rectangulo"
 
-#: widgets/keybindings/actionmanager.cpp:83
+#: widgets/keybindings/actionmanager.cpp:86
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "Instrumento de ellipse"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:87
 msgctxt "ActionManager|"
 msgid "Line Tool"
 msgstr "Instrumento de linea"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:88
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "Instrumento de Texto"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:89
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "Instrumento de flecha"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:90
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "Instrumento de Mover"
 
-#: widgets/keybindings/actionmanager.cpp:89
-msgctxt "ActionManager|"
-msgid "Send To Back"
-msgstr ""
-
 #: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
-msgid "Send Backward"
-msgstr ""
+msgid "Send To Back"
+msgstr "Invia a Retro"
 
 #: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
-msgid "Bring Forward"
-msgstr ""
+msgid "Send Backward"
+msgstr "Invia retro"
 
 #: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
-msgid "Bring To Front"
-msgstr ""
+msgid "Bring Forward"
+msgstr "Porta Avante"
 
-#: widgets/keybindings/actionmanager.cpp:301
+#: widgets/keybindings/actionmanager.cpp:101
+msgctxt "ActionManager|"
+msgid "Bring To Front"
+msgstr "Porta de Fronte"
+
+#: widgets/keybindings/actionmanager.cpp:304
 #, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "Sin titulo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:303
-#: widgets/keybindings/actionmanager.cpp:367
+#: widgets/keybindings/actionmanager.cpp:306
+#: widgets/keybindings/actionmanager.cpp:370
 #, qt-format
 msgctxt "QObject|"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:304
+#: widgets/keybindings/actionmanager.cpp:307
 msgctxt "QObject|"
 msgid "Save File"
 msgstr "Salveguarda file"
 
-#: widgets/keybindings/actionmanager.cpp:326
+#: widgets/keybindings/actionmanager.cpp:329
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tu vermente vole nettar le telas?"
 
-#: widgets/keybindings/actionmanager.cpp:327
+#: widgets/keybindings/actionmanager.cpp:330
 msgctxt "ActionManager|"
 msgid "Clear"
 msgstr "Netta"
 
-#: widgets/keybindings/actionmanager.cpp:370
+#: widgets/keybindings/actionmanager.cpp:373
 msgctxt "QObject|"
 msgid "Open File"
 msgstr "Aperi file"
 
-#: widgets/keybindings/actionmanager.cpp:381
+#: widgets/keybindings/actionmanager.cpp:384
 msgctxt "QObject|"
 msgid "Untitled.svg"
 msgstr "Sin titulo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:383
+#: widgets/keybindings/actionmanager.cpp:386
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:385
+#: widgets/keybindings/actionmanager.cpp:388
 msgctxt "QObject|"
 msgid "Export to Svg"
 msgstr "Exporta a Svg"
 
-#: widgets/keybindings/actionmanager.cpp:420
+#: widgets/keybindings/actionmanager.cpp:423
 #, qt-format
 msgctxt "ActionManager|"
 msgid ""
@@ -370,7 +370,7 @@ msgstr ""
 "Le documento '%1' ha essite modificate.Tu vole salveguardar tu "
 "modificationes o abandonar los?"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:427
 msgctxt "ActionManager|"
 msgid "Action Required"
 msgstr "Action requirite"
@@ -420,22 +420,22 @@ msgctxt "QObject|"
 msgid "Change Background Style"
 msgstr "Cambia Color de fundo"
 
-#: widgets/properties/widgets/actionswidget.cpp:35
+#: widgets/properties/widgets/actionswidget.cpp:31
 msgctxt "ActionsWidget|"
 msgid "Delete selection"
 msgstr "Dele selection"
 
-#: widgets/properties/widgets/actionswidget.cpp:36
+#: widgets/properties/widgets/actionswidget.cpp:32
 msgctxt "ActionsWidget|"
 msgid "Group selection"
 msgstr "Selection de gruppo"
 
-#: widgets/properties/widgets/actionswidget.cpp:37
+#: widgets/properties/widgets/actionswidget.cpp:33
 msgctxt "ActionsWidget|"
 msgid "Ungroup selection"
 msgstr "Separa selection"
 
-#: widgets/properties/widgets/actionswidget.cpp:58
+#: widgets/properties/widgets/actionswidget.cpp:50
 msgctxt "ActionsWidget|"
 msgid "Actions"
 msgstr "Actiones"
