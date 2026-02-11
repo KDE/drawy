@@ -172,6 +172,8 @@ void UIContext::showContextMenu() const
     if (!allItems.empty()) {
         menu->addAction(actionManager()->action(KStandardActions::SelectAll));
         menu->addSeparator();
+        menu->addAction(actionManager()->action(ActionManager::Action::DeleteSelection));
+        menu->addSeparator();
     }
     menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
     menu->addSeparator();
