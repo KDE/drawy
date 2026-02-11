@@ -6,6 +6,7 @@
 
 #include "lockcommand.hpp"
 #include "item/item.hpp"
+#include <KLocalizedString>
 
 LockCommand::LockCommand(QList<std::shared_ptr<Item>> items, bool lock)
     : ItemCommand{std::move(items)}
@@ -30,5 +31,5 @@ void LockCommand::undo([[maybe_unused]] ApplicationContext *context)
 
 QString LockCommand::commandTitle() const
 {
-    return QObject::tr("Change Lock");
+    return i18n("Change Lock");
 }

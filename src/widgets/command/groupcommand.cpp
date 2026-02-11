@@ -17,6 +17,7 @@
 #include "deselectcommand.hpp"
 #include "item/group.hpp"
 #include "selectcommand.hpp"
+#include <KLocalizedString>
 
 GroupCommand::GroupCommand(ApplicationContext *context, QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
@@ -61,5 +62,5 @@ void GroupCommand::undo(ApplicationContext *context)
 
 QString GroupCommand::commandTitle() const
 {
-    return QObject::tr("Group Object");
+    return i18n("Group Object");
 }

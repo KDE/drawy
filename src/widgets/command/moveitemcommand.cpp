@@ -12,6 +12,7 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/item.hpp"
+#include <KLocalizedString>
 
 MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, QPointF delta)
     : ItemCommand{std::move(items)}
@@ -45,5 +46,5 @@ void MoveItemCommand::undo(ApplicationContext *context)
 
 QString MoveItemCommand::commandTitle() const
 {
-    return QObject::tr("Move Object");
+    return i18n("Move Object");
 }

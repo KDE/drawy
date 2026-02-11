@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "rectangletool.hpp"
+#include <KLocalizedString>
 
 #include "item/factory/rectanglefactory.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -17,7 +18,7 @@ RectangleTool::RectangleTool(ApplicationContext *context)
 
 QString RectangleTool::tooltip() const
 {
-    return QObject::tr("Rectangle Tool");
+    return i18nc("@info:tooltip", "Rectangle Tool");
 }
 
 QString RectangleTool::icon() const

@@ -4,6 +4,7 @@
 
 #include "property.hpp"
 #include "drawy_debug.h"
+#include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 Property::Property()
     : m_value{0}
@@ -88,23 +89,23 @@ QString Property::information(Type type)
 {
     switch (type) {
     case Property::Type::StrokeWidth:
-        return QObject::tr("Change Stroke Width");
+        return i18n("Change Stroke Width");
     case Property::Type::StrokeColor:
-        return QObject::tr("Change Stroke Color");
+        return i18n("Change Stroke Color");
     case Property::Type::Opacity:
-        return QObject::tr("Change Opacity");
+        return i18n("Change Opacity");
     case Property::Type::FontSize:
-        return QObject::tr("Change Font Size");
+        return i18n("Change Font Size");
     case Property::Type::EraserSize:
-        return QObject::tr("Change Eraser Size");
+        return i18n("Change Eraser Size");
     case Property::Type::Actions:
-        return QObject::tr("Actions");
+        return i18n("Actions");
     case Property::Type::StrokeStyle:
-        return QObject::tr("Change Stroke Style");
+        return i18n("Change Stroke Style");
     case Property::Type::BackgroundColor:
-        return QObject::tr("Change Background Color");
+        return i18n("Change Background Color");
     case Property::Type::BackgroundStyle:
-        return QObject::tr("Change Background Style");
+        return i18n("Change Background Style");
     case Property::Type::ArrowStyle:
         // We don't store Arrow in XML
         return {};
@@ -112,7 +113,7 @@ QString Property::information(Type type)
         // We don't store Alignment in XML
         return {};
     case Property::Type::ZOrder:
-        return QObject::tr("Change ZOrder");
+        return i18n("Change ZOrder");
     case Property::Type::Null:
         qCWarning(DRAWY_LOG) << "Don't save null property ";
     }

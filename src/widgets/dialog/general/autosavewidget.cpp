@@ -6,6 +6,8 @@
 #include "dialog/general/configuregeneralwidget.hpp"
 
 #include "drawyglobalconfig.h"
+#include <KLocalization>
+#include <KLocalizedString>
 #include <QCheckBox>
 #include <QFileDialog>
 #include <QHBoxLayout>
@@ -17,7 +19,7 @@
 
 using namespace Qt::StringLiterals;
 AutoSaveWidget::AutoSaveWidget(QWidget *parent)
-    : ConfigGroupInterface{parent, tr("Session")}
+    : ConfigGroupInterface{parent, i18n("Session")}
     , m_delay{new QSpinBox{this}}
     , m_pathWidget{new QWidget{this}}
     , m_path{new QLineEdit{m_pathWidget}}
@@ -25,13 +27,11 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
 {
     // delay
     m_delay->setMinimum(1);
-    auto delayLabel{new QLabel(tr("Time interval for automatic saving"), this)};
-    connect(m_delay, &QSpinBox::valueChanged, this, [this]() -> void {
-        m_delay->setSuffix(tr(" minute(s)", "delay unit", m_delay->value()));
-    });
+    auto delayLabel{new QLabel(i18n("Time interval for automatic saving"), this)};
+    KLocalization::setupSpinBoxFormatString(m_delay, ki18ncp("@item %v is a number", "%v minute", "%v minutes"));
 
     // path
-    auto pathLabel{new QLabel(tr("Directory for automatic saving"), this)};
+    auto pathLabel{new QLabel(i18n("Directory for automatic saving"), this)};
     auto pathLayout{new QHBoxLayout{m_pathWidget}};
     auto pathBrowseButton{new QToolButton{m_pathWidget}};
     pathBrowseButton->setIcon(QIcon::fromTheme(u"folder-open"_s));
@@ -42,7 +42,7 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
 
     connect(pathBrowseButton, &QToolButton::clicked, this, [this]() -> void {
         const auto home{QStandardPaths::writableLocation(QStandardPaths::HomeLocation)};
-        const auto directory{QFileDialog::getExistingDirectory(this, tr("Open Directory"), home, QFileDialog::ShowDirsOnly)};
+        const auto directory{QFileDialog::getExistingDirectory(this, i18n("Open Directory"), home, QFileDialog::ShowDirsOnly)};
         if (directory.isEmpty()) {
             return;
         }
@@ -51,7 +51,7 @@ AutoSaveWidget::AutoSaveWidget(QWidget *parent)
         m_path->setText(finalPath);
     });
 
-    m_enabled->setText(tr("Restore previous session on start"));
+    m_enabled->setText(i18n("Restore previous session on start"));
     connect(m_enabled, &QCheckBox::checkStateChanged, this, &AutoSaveWidget::slotEnableChanged);
 
     m_layout->addWidget(m_enabled);

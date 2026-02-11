@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "erasertool.hpp"
+#include <KLocalizedString>
 
 #include "common/constants.hpp"
 #include <QPainter>
@@ -155,7 +156,7 @@ Tool::Type EraserTool::type() const
 
 QString EraserTool::tooltip() const
 {
-    return QObject::tr("Eraser Tool");
+    return i18nc("@info:tooltip", "Eraser Tool");
 }
 
 QString EraserTool::icon() const

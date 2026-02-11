@@ -14,6 +14,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "item/group.hpp"
+#include <KLocalizedString>
 
 UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
     : ItemCommand{items}
@@ -70,5 +71,5 @@ void UngroupCommand::undo(ApplicationContext *context)
 
 QString UngroupCommand::commandTitle() const
 {
-    return QObject::tr("Ungroup Objects");
+    return i18n("Ungroup Objects");
 }

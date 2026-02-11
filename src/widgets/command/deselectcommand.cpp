@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "deselectcommand.hpp"
+#include <KLocalizedString>
 
 #include <utility>
 
@@ -42,5 +43,5 @@ void DeselectCommand::undo(ApplicationContext *context)
 
 QString DeselectCommand::commandTitle() const
 {
-    return QObject::tr("Deselect Object");
+    return i18n("Deselect Object");
 }

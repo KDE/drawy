@@ -5,6 +5,7 @@
 #include "linetool.hpp"
 
 #include "item/factory/linefactory.hpp"
+#include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 
 LineTool::LineTool(ApplicationContext *context)
@@ -15,7 +16,7 @@ LineTool::LineTool(ApplicationContext *context)
 
 QString LineTool::tooltip() const
 {
-    return QObject::tr("Line Tool");
+    return i18nc("@info:tooltip", "Line Tool");
 }
 
 QString LineTool::icon() const

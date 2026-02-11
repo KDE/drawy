@@ -7,6 +7,7 @@
 #include <QCommandLineParser>
 
 #include <KIconTheme>
+#include <KLocalizedString>
 #include <KStyleManager>
 
 #include "config-drawy.hpp"
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
 
     KStyleManager::initStyle();
+    KLocalizedString::setApplicationDomain("drawy"_ba);
     AboutData aboutData;
 
     KCrash::initialize();
@@ -36,10 +38,10 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     const DrawyCommandLineParser commandLineParser(&parser);
-    parser.addPositionalArgument(QStringLiteral("file"), QObject::tr("An optional argument 'file' "), QStringLiteral("[file]"));
+    parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "An optional argument 'file' "), QStringLiteral("[file]"));
 
     parser.addVersionOption();
-    parser.setApplicationDescription(QObject::tr("Your handy, infinite brainstorming tool!"));
+    parser.setApplicationDescription(i18n("Your handy, infinite brainstorming tool!"));
 
     parser.process(a);
     aboutData.processCommandLine(&parser);

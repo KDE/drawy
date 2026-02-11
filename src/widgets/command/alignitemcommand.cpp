@@ -12,6 +12,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "drawy_command_debug.h"
 #include "item/item.hpp"
+#include <KLocalizedString>
 
 AlignItemCommand::AlignItemCommand(QList<std::shared_ptr<Item>> items, ItemUtils::AlignType alignment)
     : ItemCommand{std::move(items)}
@@ -108,5 +109,5 @@ void AlignItemCommand::undo(ApplicationContext *context)
 
 QString AlignItemCommand::commandTitle() const
 {
-    return QObject::tr("Align Items");
+    return i18n("Align Items");
 }

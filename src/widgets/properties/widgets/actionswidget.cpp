@@ -4,6 +4,7 @@
 
 #include "actionswidget.hpp"
 
+#include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QWidget>
@@ -28,9 +29,9 @@ ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
     auto groupButton{new ButtonActionsWidget(m_widget)};
     auto ungroupButton{new ButtonActionsWidget(m_widget)};
 
-    deleteButton->setToolTip(tr("Delete selection"));
-    groupButton->setToolTip(tr("Group selection"));
-    ungroupButton->setToolTip(tr("Ungroup selection"));
+    deleteButton->setToolTip(i18nc("@info:tooltip", "Delete selection"));
+    groupButton->setToolTip(i18nc("@info:tooltip", "Group selection"));
+    ungroupButton->setToolTip(i18nc("@info:tooltip", "Ungroup selection"));
 
     layout->addWidget(deleteButton);
     layout->addWidget(groupButton);
@@ -47,7 +48,7 @@ ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
 
 QString ActionsWidget::name() const
 {
-    return tr("Actions");
+    return i18n("Actions");
 }
 
 const Property ActionsWidget::value() const

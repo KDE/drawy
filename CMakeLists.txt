@@ -57,6 +57,7 @@ find_package(
         ConfigWidgets
         XmlGui
         IconThemes
+        I18n
 )
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
@@ -167,5 +168,5 @@ ecm_qt_install_logging_categories(
 )
 
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
-ecm_install_po_files_as_qm(poqm)
+ki18n_install(po)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

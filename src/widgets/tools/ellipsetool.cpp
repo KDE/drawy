@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "ellipsetool.hpp"
+#include <KLocalizedString>
 
 #include "item/factory/ellipsefactory.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -17,7 +18,7 @@ EllipseTool::EllipseTool(ApplicationContext *context)
 
 QString EllipseTool::tooltip() const
 {
-    return QObject::tr("Ellipse Tool");
+    return i18nc("@info:tooltip", "Ellipse Tool");
 }
 
 QString EllipseTool::icon() const

@@ -4,11 +4,11 @@
 
 #include "strokecolorwidget.hpp"
 
-#include <QColor>
-#include <QToolButton>
-
 #include "properties/property.hpp"
 #include "properties/propertyutils.hpp"
+#include <KLocalizedString>
+#include <QColor>
+#include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 StrokeColorWidget::StrokeColorWidget(QWidget *parent)
     : ColorWidgetBase{parent}
@@ -18,7 +18,7 @@ StrokeColorWidget::StrokeColorWidget(QWidget *parent)
 
 QString StrokeColorWidget::name() const
 {
-    return tr("Stroke Color");
+    return i18n("Stroke Color");
 }
 
 const Property StrokeColorWidget::value() const

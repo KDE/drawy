@@ -4,6 +4,7 @@
 
 #include "updatepropertycommand.hpp"
 
+#include <KLocalizedString>
 #include <QRectF>
 #include <utility>
 
@@ -62,5 +63,5 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
 QString UpdatePropertyCommand::commandTitle() const
 {
     // TODO update title from specific property ?
-    return QObject::tr("Update Property");
+    return i18n("Update Property");
 }

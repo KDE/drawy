@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "diamondtool.hpp"
+#include <KLocalizedString>
 
 #include "item/factory/diamondfactory.hpp"
 using namespace Qt::Literals::StringLiterals;
@@ -17,7 +18,7 @@ DiamondTool::DiamondTool(ApplicationContext *context)
 
 QString DiamondTool::tooltip() const
 {
-    return QObject::tr("Diamond Tool");
+    return i18nc("@info:tooltip", "Diamond Tool");
 }
 
 QString DiamondTool::icon() const

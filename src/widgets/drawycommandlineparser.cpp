@@ -5,6 +5,7 @@
  */
 
 #include "drawycommandlineparser.hpp"
+#include <KLocalizedString>
 #include <QCommandLineParser>
 
 using namespace Qt::Literals::StringLiterals;
@@ -15,7 +16,7 @@ DrawyCommandLineParser::DrawyCommandLineParser(QCommandLineParser *parser)
 
 void DrawyCommandLineParser::initializeCommandLine(QCommandLineParser *parser)
 {
-    parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::FullScreen), QObject::tr("Fullscreen")));
+    parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::FullScreen), i18nc("@info:shell", "Fullscreen")));
 }
 
 QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)

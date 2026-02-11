@@ -11,6 +11,7 @@
 #include <KColorSchemeManager>
 #include <KColorSchemeMenu>
 #include <KHelpMenu>
+#include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QStyle>
@@ -34,7 +35,7 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     menuButton->setIcon(QIcon::fromTheme(u"application-menu"_s));
     menuButton->setAutoRaise(true);
     menuButton->setIconSize(iconSize);
-    menuButton->setToolTip(tr("Open Menu"));
+    menuButton->setToolTip(i18nc("@info:tooltip", "Open Menu"));
     menuButton->setPopupMode(QToolButton::InstantPopup);
 
     auto menu{new QMenu{this}};

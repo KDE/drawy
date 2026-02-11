@@ -5,6 +5,7 @@
 #include "erasersizewidget.hpp"
 #include "drawyglobalconfig.h"
 
+#include <KLocalizedString>
 #include <QSpinBox>
 
 #include "properties/property.hpp"
@@ -26,7 +27,7 @@ EraserSizeWidget::EraserSizeWidget(QWidget *parent)
 
 QString EraserSizeWidget::name() const
 {
-    return tr("Eraser Size");
+    return i18n("Eraser Size");
 }
 
 const Property EraserSizeWidget::value() const

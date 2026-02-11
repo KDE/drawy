@@ -4,6 +4,7 @@
 
 #include "backgroundcolorwidget.hpp"
 
+#include <KLocalizedString>
 #include <QColor>
 #include <QToolButton>
 
@@ -18,7 +19,7 @@ BackgroundColorWidget::BackgroundColorWidget(QWidget *parent)
 
 QString BackgroundColorWidget::name() const
 {
-    return tr("Background Color");
+    return i18n("Background Color");
 }
 
 const Property BackgroundColorWidget::value() const

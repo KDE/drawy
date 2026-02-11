@@ -6,6 +6,7 @@
 #include "opacitywidget.hpp"
 #include <QHBoxLayout>
 #include <QLabel>
+#include <KLocalizedString>
 #include <QSlider>
 using namespace Qt::Literals::StringLiterals;
 OpacityWidget::OpacityWidget(QWidget *parent)
@@ -39,7 +40,7 @@ OpacityWidget::OpacityWidget(QWidget *parent)
 
 QString OpacityWidget::name() const
 {
-    return tr("Opacity");
+    return i18n("Opacity");
 }
 
 const Property OpacityWidget::value() const
