@@ -20,9 +20,9 @@ void OpacityWidgetTest::shouldHaveDefaultValues()
     const OpacityWidget w;
     QVERIFY(!w.name().isEmpty());
     QVERIFY(w.widget());
-    QCOMPARE(w.widget()->objectName(), u"slider"_s);
+    QCOMPARE(w.widget()->objectName(), u"m_widget"_s);
 
-    auto slider = dynamic_cast<QSlider *>(w.widget());
+    auto slider = w.widget()->findChild<QSlider *>(u"slider"_s);
     QVERIFY(slider);
     QCOMPARE(slider->objectName(), u"slider"_s);
     QCOMPARE(slider->minimum(), 1);

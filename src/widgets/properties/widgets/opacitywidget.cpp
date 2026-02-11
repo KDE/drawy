@@ -4,23 +4,35 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "opacitywidget.hpp"
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QSlider>
 using namespace Qt::Literals::StringLiterals;
 OpacityWidget::OpacityWidget(QWidget *parent)
     : PropertyWidget(parent)
 {
-    auto slider{new QSlider(parent)};
-    slider->setObjectName(u"slider"_s);
-    slider->setMinimum(1);
-    slider->setMaximum(255);
-    slider->setValue(255);
-    slider->setOrientation(Qt::Horizontal);
-    slider->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    m_widget = new QWidget{parent};
+    m_widget->setObjectName(u"m_widget"_s);
+    auto layout{new QHBoxLayout{m_widget}};
+    layout->setContentsMargins({});
 
-    slider->hide();
-    m_widget = slider;
+    mSlider = new QSlider(parent);
+    mSlider->setObjectName(u"slider"_s);
+    mSlider->setMinimum(1);
+    mSlider->setMaximum(255);
+    mSlider->setValue(255);
+    mSlider->setOrientation(Qt::Horizontal);
 
-    connect(slider, &QSlider::valueChanged, this, [this]() {
+    auto label = new QLabel(m_widget);
+    label->setObjectName(u"label"_s);
+    label->setText(QString::number(100));
+
+    layout->addWidget(mSlider);
+    layout->addWidget(label);
+    m_widget->hide();
+
+    connect(mSlider, &QSlider::valueChanged, this, [this, label](int v) {
+        label->setText(QString::number(static_cast<int>((v / 255.0) * 100)));
         Q_EMIT changed(value());
     });
 }
@@ -32,7 +44,7 @@ QString OpacityWidget::name() const
 
 const Property OpacityWidget::value() const
 {
-    return Property{static_cast<QSlider *>(m_widget)->value(), Property::Type::Opacity};
+    return Property{mSlider->value(), Property::Type::Opacity};
 }
 
 #include "moc_opacitywidget.cpp"

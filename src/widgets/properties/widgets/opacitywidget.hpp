@@ -6,7 +6,7 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
-
+class QSlider;
 class LIBDRAWYWIDGETS_TESTS_EXPORT OpacityWidget : public PropertyWidget
 {
     Q_OBJECT
@@ -15,4 +15,7 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
+
+private:
+    QSlider *mSlider = nullptr;
 };
