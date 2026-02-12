@@ -312,10 +312,10 @@ void ActionManager::newFile()
 void ActionManager::saveAsNewFile()
 {
     const QDir homeDir{QDir::home()};
-    QString text{i18nc("@action", "Untitled.%1").arg(Common::drawyFileExt)};
+    QString text{i18n("Untitled.%1", Common::drawyFileExt)};
     const QString defaultFilePath = homeDir.filePath(text);
-    text = i18nc("@action", "Drawy (*.%1)").arg(Common::drawyFileExt);
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@action", "Save File"), defaultFilePath, text)};
+    text = i18n("Drawy (*.%1)", Common::drawyFileExt);
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Save File"), defaultFilePath, text)};
     if (fileName.isEmpty()) {
         return;
     }
@@ -378,10 +378,10 @@ void ActionManager::openFile()
         return;
     }
 
-    const QString filter = i18nc("@action", "Drawy (*.%1)").arg(Common::drawyFileExt);
+    const QString filter = i18n("Drawy (*.%1)", Common::drawyFileExt);
 
     const QDir homeDir{QDir::home()};
-    const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@action", "Open File"), homeDir.path(), filter);
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open File"), homeDir.path(), filter);
     if (fileName.isEmpty()) {
         return;
     }
@@ -392,11 +392,11 @@ void ActionManager::openFile()
 void ActionManager::exportToSvg()
 {
     const QDir homeDir{QDir::home()};
-    QString text = i18nc("@action", "Untitled.svg");
+    QString text = i18n("Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
-    text = i18nc("@action", "SVG (*.svg)");
+    text = i18n("SVG (*.svg)");
 
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@action", "Export to Svg"), defaultFilePath, text)};
+    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Export to Svg"), defaultFilePath, text)};
 
     if (fileName.isEmpty()) {
         return;
@@ -431,11 +431,11 @@ bool ActionManager::confirmSaveAfterModification()
     }
 
     const auto fileName{m_context->currentFileName()};
-    const auto message{i18nc("@action", "The document \"%1\" has been modified. Do you want to save your changes or discard them?").arg(fileName)};
+    const auto message{i18n("The document \"%1\" has been modified. Do you want to save your changes or discard them?", fileName)};
 
     const int choice = KMessageBox::questionTwoActionsCancel(m_context->parentWidget(),
                                                              message,
-                                                             i18nc("@action", "Action Required"),
+                                                             i18nc("@title:window", "Action Required"),
                                                              KStandardGuiItem::save(),
                                                              KStandardGuiItem::discard(),
                                                              KStandardGuiItem::cancel());
