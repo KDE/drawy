@@ -23,6 +23,7 @@ public:
     virtual void erase(QPainter &painter, const QPointF &offset) const;
 
     virtual QRectF boundingBox() const;
+    virtual QRectF normalizedBoundingBox() const;
 
     [[nodiscard]] int boundingBoxPadding() const;
 
@@ -72,6 +73,7 @@ public:
     const QTransform &transformObj() const;
 
     virtual void translate(const QPointF &amount) = 0;
+    virtual void normalize();
 
     [[nodiscard]] virtual bool needsCaching() const;
     [[nodiscard]] bool isDirty() const;

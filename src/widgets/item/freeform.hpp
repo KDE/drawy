@@ -29,6 +29,7 @@ public:
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
     void translate(const QPointF &amount) override;
+    void normalize() override;
 
     [[nodiscard]] qsizetype size() const;
 

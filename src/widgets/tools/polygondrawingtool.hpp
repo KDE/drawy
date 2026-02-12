@@ -21,4 +21,7 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
     void cleanup() override;
+
+private:
+    bool m_endSet{false};
 };

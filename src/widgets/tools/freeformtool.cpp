@@ -113,6 +113,8 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
         curItem->finalizeStroke();
+        curItem->normalize();
+
         m_itemList.push_back(curItem);
         commandHistory->insert(std::make_shared<InsertItemCommand>(m_itemList));
 

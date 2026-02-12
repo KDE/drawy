@@ -19,6 +19,7 @@ public:
 
     void draw(QPainter &painter, const QPointF &offset) override;
 
+    void normalize() override;
     void translate(const QPointF &amount) override;
 
     [[nodiscard]] const QPointF &start() const;

@@ -8,6 +8,7 @@
 #include "serializer/linedeserializer.hpp"
 #include "serializer/lineserializer.hpp"
 #include <QJsonObject>
+#include <QPainterPath>
 
 LineItem::LineItem() = default;
 
@@ -44,7 +45,13 @@ void LineItem::setEndWithShift(QPointF end)
 
 bool LineItem::intersects(const QRectF &rect)
 {
-    return Common::Utils::Math::intersects(rect, QLineF{start(), end()});
+    QPainterPath path{};
+    path.moveTo(start());
+    path.lineTo(end());
+
+    path = m_transform.map(path);
+
+    return path.intersects(rect);
 }
 
 Item::FormType LineItem::formType() const

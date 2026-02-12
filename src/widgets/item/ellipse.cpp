@@ -36,6 +36,8 @@ bool EllipseItem::intersects(const QRectF &rect)
         return path.intersects(rect);
     }
 
+    path = m_transform.map(path);
+
     return path.intersects(rect) && !path.contains(rect);
 }
 

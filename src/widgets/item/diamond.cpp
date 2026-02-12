@@ -54,7 +54,7 @@ bool DiamondItem::intersects(const QRectF &rect)
         return false;
     }
 
-    return getPath().intersects(rect);
+    return m_transform.map(getPath()).intersects(rect);
 }
 
 Item::FormType DiamondItem::formType() const

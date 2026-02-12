@@ -12,6 +12,8 @@
 #include "data-structures/cachegrid.hpp"
 #include "drawy_debug.h"
 #include "item/item.hpp"
+#include <QtMath>
+#include <qloggingcategory.h>
 
 ItemCache::ItemCache(ApplicationContext *context)
     : mApplicationContext(context)
@@ -25,71 +27,84 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     auto &transformer{mApplicationContext->spatialContext()->coordinateTransformer()};
     auto canvas{mApplicationContext->renderingContext()->canvas()};
 
-    const QRectF boundingBox{item->boundingBox()};
-    QTransform transform{item->transformObj()};
-    transform.translate(boundingBox.topLeft().x(),
-                        boundingBox.topLeft().y()); // account for the initial translation
+    const QRectF boundingBox{item->normalizedBoundingBox()};
+    const QTransform transform{item->transformObj()};
 
-    const QRectF transformedQueryRegion{transformer.worldToGrid(transform.inverted().mapRect(queryRegion))};
+    bool invertible = false;
+    const QTransform inverseTransform{transform.inverted(&invertible)};
+    if (!invertible) {
+        qCWarning(DRAWY_LOG) << "The transform applied is not invertible. This is most likely a bug. Please report it.";
+        return;
+    }
 
-    // Check if item is not already cached
-    if (item->isDirty() || !m_cacheGrids.contains(item)) {
+    const QRectF transformedQueryRegion{transformer.worldToGrid(inverseTransform.mapRect(queryRegion))};
+
+    auto gridIter{m_cacheGrids.find(item)};
+    const bool isCached{(gridIter != m_cacheGrids.end())};
+
+    if (item->isDirty() || !isCached) {
         const QSizeF itemSize{transformer.worldToGrid(boundingBox.size())};
         const QSizeF maxCellSize{Common::maxItemCacheCellSize.toSizeF()};
 
         const QPointF worldOffset{mApplicationContext->spatialContext()->offsetPos()};
         const QRectF worldViewport(worldOffset, transformer.viewToWorld(canvas->dimensions()));
         const QRectF gridViewport{transformer.worldToGrid(worldViewport)};
-        const int rows{static_cast<int>(std::ceil(gridViewport.width() / maxCellSize.width())) + 1};
-        const int cols{static_cast<int>(std::ceil(gridViewport.height() / maxCellSize.height())) + 1};
+
+        const int rows{static_cast<int>(qCeil(gridViewport.width() / maxCellSize.width())) + 1};
+        const int cols{static_cast<int>(qCeil(gridViewport.height() / maxCellSize.height())) + 1};
         const int maxCellCount{rows * cols};
 
-        // If the item is smaller than the max cell size, we use cells of
-        // size equal to its bounding box
-        QSize cellSize{transformer.worldToGrid(boundingBox.size().toSize())};
-        if (itemSize.width() / maxCellSize.width() > maxCellSize.height() / itemSize.height()) {
-            cellSize = Common::maxItemCacheCellSize;
-        }
+        const QSize cellSize{itemSize.toSize().boundedTo(Common::maxItemCacheCellSize).expandedTo(QSize(1, 1))};
 
-        const QRectF gridAdjustedBoundingBox{transformer.worldToGrid(boundingBox.translated(-boundingBox.topLeft()))};
-        m_cacheGrids[item] = std::make_unique<CacheGrid>(maxCellCount * Common::itemCacheMultiplier, cellSize);
-        m_cacheGrids[item]->setBounds(gridAdjustedBoundingBox.toRect());
+        auto newGrid{std::make_unique<CacheGrid>(maxCellCount * Common::itemCacheMultiplier, cellSize)};
+        newGrid->setBounds(transformer.worldToGrid(boundingBox).toAlignedRect());
+
+        if (isCached) {
+            gridIter->second = std::move(newGrid);
+        } else {
+            gridIter = m_cacheGrids.emplace(item, std::move(newGrid)).first;
+        }
         item->setDirty(false);
     }
 
     const qreal zoom{mApplicationContext->renderingContext()->zoomFactor()};
-    auto visibleCells{m_cacheGrids[item]->queryCells(transformedQueryRegion.toRect())};
+    auto visibleCells{gridIter->second->queryCells(transformedQueryRegion.toAlignedRect())};
+
+    painter.save();
+
+    const qreal transX{transform.m31() * zoom - offset.x()};
+    const qreal transY{transform.m32() * zoom - offset.y()};
+    painter.translate(transX, transY);
 
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {
-            cell->paint([&](QPainter &painter) -> void {
-                painter.scale(zoom, zoom);
-                item->draw(painter, transformer.gridToWorld(transformer.worldToGrid(boundingBox.topLeft()) + cell->rect().topLeft()));
+            cell->paint([&](QPainter &p) -> void {
+                p.scale(zoom, zoom);
+                item->draw(p, transformer.gridToWorld(cell->rect().topLeft().toPointF()));
             });
             cell->setDirty(false);
         }
 
-        painter.drawPixmap(transformer.worldToGrid(boundingBox.topLeft()) + cell->rect().topLeft() - offset, cell->pixmap());
+        painter.drawPixmap(cell->rect().topLeft(), cell->pixmap());
 
-        // UNCOMMENT TO SEE THE TILES
-        // painter.save();
-        // QPen pen{};
-        // pen.setColor(Qt::red);
-        // painter.setPen(pen);
-        // painter.drawRect(cell->rect().toRectF().translated(transformer.worldToGrid(boundingBox.topLeft())
-        // - offset));
-        // painter.drawText(transformer.worldToGrid(boundingBox.topLeft()) +
-        // cell->rect().topLeft() - offset,
-        //                  QString::asprintf("(%d, %d)", cell->point().x(),
-        //                  cell->point().y()));
-        // painter.restore();
+        // Debug visualization
+        /*
+        painter.save();
+        painter.setPen(Qt::red);
+        painter.drawRect(cell->rect());
+        painter.drawText(cell->rect().topLeft(),
+                         QStringLiteral("(%1, %2)").arg(cell->point().x()).arg(cell->point().y()));
+        painter.restore();
+        */
     }
+    painter.restore();
 }
 
 void ItemCache::clearItemCache(const std::shared_ptr<Item> &item)
 {
-    m_cacheGrids.erase(item);
-    qCDebug(DRAWY_LOG) << "DELETING CACHE";
+    if (m_cacheGrids.erase(item) > 0) {
+        qCDebug(DRAWY_LOG) << "DELETING CACHE";
+    }
 }
 
 void ItemCache::clear()

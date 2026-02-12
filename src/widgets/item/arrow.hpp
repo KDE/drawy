@@ -16,9 +16,7 @@ public:
     void setStart(QPointF start) override;
     void setEnd(QPointF end) override;
 
-    [[nodiscard]] bool intersects(const QRectF &rect) override;
-
-    void translate(const QPointF &amount) override;
+    void normalize() override;
 
     [[nodiscard]] Item::FormType formType() const override;
 

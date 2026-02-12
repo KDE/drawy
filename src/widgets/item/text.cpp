@@ -47,7 +47,7 @@ void TextItem::createTextBox(const QPointF position)
 
 bool TextItem::intersects(const QRectF &rect)
 {
-    return m_boundingBox.intersects(rect);
+    return m_transform.map(m_boundingBox).intersects(rect);
 }
 
 void TextItem::draw(QPainter &painter, const QPointF &offset)
@@ -131,7 +131,14 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
 void TextItem::translate(const QPointF &amount)
 {
-    m_boundingBox.translate(amount);
+    m_transform.translate(amount.x(), amount.y());
+}
+
+void TextItem::normalize()
+{
+    const QPointF topLeft{m_boundingBox.topLeft()};
+    m_boundingBox.translate(-topLeft);
+    m_transform.translate(topLeft.x(), topLeft.y());
 }
 
 void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
@@ -235,16 +242,19 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
     return start + index;
 }
 
-void TextItem::setCaret(const QPointF &cursorPos)
+void TextItem::setCaret(QPointF cursorPos)
 {
-    if (!m_boundingBox.contains(cursorPos)) {
+    if (!m_boundingBox.contains(m_transform.inverted().map(cursorPos))) {
         return;
     }
 
-    const int lineNumber{getLineFromY(cursorPos.y())};
-    const qsizetype index{getIndexFromX(cursorPos.x(), lineNumber)};
+    setCaret(getIndexFromCursor(cursorPos));
+}
 
-    setCaret(index);
+qsizetype TextItem::getIndexFromCursor(QPointF cursorPos) const
+{
+    cursorPos = m_transform.inverted().map(cursorPos);
+    return getIndexFromX(cursorPos.x(), getLineFromY(cursorPos.y()));
 }
 
 qsizetype TextItem::selectionStart() const

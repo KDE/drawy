@@ -66,6 +66,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
+                m_curItem->normalize();
                 auto commandHistory{spatialContext->commandHistory()};
                 commandHistory->insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
             } else {
@@ -86,9 +87,7 @@ void TextTool::mousePressed(ApplicationContext *context)
             m_isSelecting = true;
             m_mouseMoved = false;
 
-            const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-            const qsizetype index{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
-            m_curItem->setSelectionStart(index);
+            m_curItem->setSelectionStart(m_curItem->getIndexFromCursor(worldPos));
             m_curItem->setSelectionEnd(TextItem::INVALID);
         }
 
@@ -126,8 +125,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
     }
 
     if (m_isSelecting) {
-        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const qsizetype curIndex{m_curItem->getIndexFromCursor(worldPos)};
         const bool isLeft{curIndex < m_curItem->selectionStart()};
 
         const qsizetype curStart{m_curItem->selectionStart()};
@@ -188,8 +186,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
-        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const qsizetype curIndex{m_curItem->getIndexFromCursor(worldPos)};
 
         m_curItem->setSelectionStart(m_curItem->getPrevBreak(curIndex - 1));
         m_curItem->setSelectionEnd(m_curItem->getNextBreak(curIndex));
@@ -217,8 +214,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
 
-        const int lineNumber{m_curItem->getLineFromY(worldPos.y())};
-        const qsizetype curIndex{m_curItem->getIndexFromX(worldPos.x(), lineNumber)};
+        const qsizetype curIndex{m_curItem->getIndexFromCursor(worldPos)};
 
         const auto [start, end] = m_curItem->getLineRange(curIndex);
         m_curItem->setSelectionStart(start);

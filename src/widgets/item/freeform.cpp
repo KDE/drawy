@@ -74,7 +74,7 @@ bool FreeformItem::intersects(const QRectF &rect)
         return false;
     }
 
-    return m_path.intersects(rect);
+    return m_transform.map(m_path).intersects(rect);
 }
 
 void FreeformItem::draw(QPainter &painter, const QPointF &offset)
@@ -193,12 +193,7 @@ qsizetype FreeformItem::size() const
 
 void FreeformItem::translate(const QPointF &amount)
 {
-    for (QPointF &point : m_points) {
-        point += amount;
-    }
-
-    m_path.translate(amount);
-    m_boundingBox.translate(amount);
+    m_transform.translate(amount.x(), amount.y());
 }
 
 Item::FormType FreeformItem::formType() const
@@ -241,6 +236,18 @@ bool FreeformItem::isPressureSimulated() const
 void FreeformItem::setSimulatePressure(bool value)
 {
     m_simulatePressure = value;
+}
+
+void FreeformItem::normalize()
+{
+    const QPointF topLeft{m_path.boundingRect().topLeft()};
+    for (auto &point : m_points) {
+        point -= topLeft;
+    }
+
+    m_path.translate(-topLeft);
+    m_boundingBox.translate(-topLeft);
+    m_transform.translate(topLeft.x(), topLeft.y());
 }
 
 QDebug operator<<(QDebug d, const FreeformItem &t)

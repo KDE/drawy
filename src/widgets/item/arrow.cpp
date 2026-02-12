@@ -4,23 +4,23 @@
 
 #include "arrow.hpp"
 
-#include "common/utils/math.hpp"
 #include "serializer/arrowdeserializer.hpp"
 #include "serializer/arrowserializer.hpp"
 #include <QJsonObject>
+#include <QPainterPath>
 
 // TODO add end/start arrow type.
 ArrowItem::ArrowItem() = default;
 
 void ArrowItem::setStart(QPointF start)
 {
-    PolygonItem::setStart(start);
+    LineItem::setStart(start);
     calcArrowPoints();
 }
 
 void ArrowItem::setEnd(QPointF end)
 {
-    PolygonItem::setEnd(end);
+    LineItem::setEnd(end);
     calcArrowPoints();
 }
 
@@ -56,7 +56,7 @@ void ArrowItem::setEndArrow(const ArrowUtils::ArrowType &newEndArrow)
 
 bool ArrowItem::operator==(const ArrowItem &other) const
 {
-    return m_startArrow == other.startArrow() && m_endArrow == other.endArrow() && PolygonItem::operator==(other);
+    return m_startArrow == other.startArrow() && m_endArrow == other.endArrow() && LineItem::operator==(other);
 }
 
 ArrowUtils::ArrowType ArrowItem::startArrow() const
@@ -101,36 +101,11 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
     }
 }
 
-bool ArrowItem::intersects(const QRectF &rect)
+void ArrowItem::normalize()
 {
-    if (!boundingBox().intersects(rect)) {
-        return false;
-    }
-
-    // TODO: Use better techniques to detect collision
-    const QPointF p{start()};
-    const QPointF q{end()};
-    const QPointF r{m_arrowEndP1};
-    const QPointF s{m_arrowEndP2};
-    const QPointF a{rect.x(), rect.y()};
-    const QPointF b{rect.x() + rect.width(), rect.y()};
-    const QPointF c{rect.x() + rect.width(), rect.y() + rect.height()};
-    const QPointF d{rect.x(), rect.y() + rect.height()};
-
-    return (Common::Utils::Math::intersects(QLineF{p, q}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{p, q}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, r}, QLineF{d, a})
-            || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{a, b}) || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{b, c})
-            || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{c, d}) || Common::Utils::Math::intersects(QLineF{q, s}, QLineF{d, a}));
-}
-
-void ArrowItem::translate(const QPointF &amount)
-{
-    m_arrowEndP1 += amount;
-    m_arrowEndP2 += amount;
-
-    PolygonItem::translate(amount);
+    m_arrowEndP1 -= start();
+    m_arrowEndP2 -= start();
+    LineItem::normalize();
 }
 
 Item::FormType ArrowItem::formType() const
@@ -154,6 +129,6 @@ QDebug operator<<(QDebug d, const ArrowItem &t)
 {
     d.space() << "startArrow:" << static_cast<int>(t.startArrow());
     d.space() << "endArrow:" << static_cast<int>(t.endArrow());
-    d.space() << "PolygonItem: " << static_cast<const PolygonItem &>(t);
+    d.space() << "LineItem: " << static_cast<const LineItem &>(t);
     return d;
 }

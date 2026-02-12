@@ -25,9 +25,11 @@ public:
     [[nodiscard]] QPointF worldToView(QPointF point);
     [[nodiscard]] QSizeF worldToView(QSizeF size);
     [[nodiscard]] QRectF worldToView(QRectF rect);
+    // [[nodiscard]] QTransform worldToView(QTransform transform);
     [[nodiscard]] QPointF viewToWorld(QPointF point);
     [[nodiscard]] QSizeF viewToWorld(QSizeF size);
     [[nodiscard]] QRectF viewToWorld(QRectF rect);
+    // [[nodiscard]] QTransform viewToWorld(QTransform transform);
 
     [[nodiscard]] QPoint worldToView(QPoint point);
     [[nodiscard]] QSize worldToView(QSize size);
@@ -39,9 +41,11 @@ public:
     [[nodiscard]] QPointF worldToGrid(QPointF point);
     [[nodiscard]] QSizeF worldToGrid(QSizeF size);
     [[nodiscard]] QRectF worldToGrid(QRectF rect);
+    // [[nodiscard]] QTransform worldToGrid(QTransform transform);
     [[nodiscard]] QPointF gridToWorld(QPointF point);
     [[nodiscard]] QSizeF gridToWorld(QSizeF size);
     [[nodiscard]] QRectF gridToWorld(QRectF rect);
+    // [[nodiscard]] QTransform gridToWorld(QTransform transform);
 
     [[nodiscard]] QPoint worldToGrid(QPoint point);
     [[nodiscard]] QSize worldToGrid(QSize size);
@@ -53,9 +57,11 @@ public:
     [[nodiscard]] QPointF viewToGrid(QPointF point);
     [[nodiscard]] QSizeF viewToGrid(QSizeF size);
     [[nodiscard]] QRectF viewToGrid(QRectF rect);
+    // [[nodiscard]] QTransform viewToGrid(QTransform transform);
     [[nodiscard]] QPointF gridToView(QPointF point);
     [[nodiscard]] QSizeF gridToView(QSizeF size);
     [[nodiscard]] QRectF gridToView(QRectF rect);
+    // [[nodiscard]] QTransform gridToView(QTransform transform);
 
     [[nodiscard]] QPoint viewToGrid(QPoint point);
     [[nodiscard]] QSize viewToGrid(QSize size);

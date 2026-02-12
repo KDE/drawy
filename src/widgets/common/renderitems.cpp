@@ -6,7 +6,7 @@
 
 #include <QPointF>
 #include <QRectF>
-#include <memory>
+#include <utility>
 
 #include "canvas/canvas.hpp"
 #include "constants.hpp"
@@ -17,92 +17,91 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
-#include "item/item.hpp"
 #include "item/itemcache/itemcache.hpp"
 
-// TODO: Refactor this
 void Common::renderCanvas(ApplicationContext *context)
 {
-    CoordinateTransformer &transformer{context->spatialContext()->coordinateTransformer()};
-    auto canvas{context->renderingContext()->canvas()};
-    const QPointF offsetPos{context->spatialContext()->offsetPos()};
+    auto &spatial{*context->spatialContext()};
+    auto &rendering{*context->renderingContext()};
+    auto &transformer{spatial.coordinateTransformer()};
+    auto *canvas{rendering.canvas()};
 
+    const QPointF offsetPos{spatial.offsetPos()};
     canvas->setCanvasBg(canvas->canvasBg());
 
     const QPointF gridOffset{transformer.worldToGrid(offsetPos)};
-    const QRectF gridViewport(gridOffset, transformer.viewToGrid(canvas->dimensions()));
+    const QRectF gridViewport{gridOffset, transformer.viewToGrid(canvas->dimensions())};
 
-    const QList<std::shared_ptr<CacheCell>> visibleCells{context->renderingContext()->cacheGrid().queryCells(transformer.round(gridViewport))};
+    const auto visibleCells{rendering.cacheGrid().queryCells(transformer.round(gridViewport))};
 
-    for (const auto &cell : visibleCells) {
-        // UNCOMMENT THIS TO SEE THE CELLS
-        // context->renderingContext()->canvas().paintCanvas([&](QPainter &painter)
-        // -> void {
-        //     QPen pen;
-        //     pen.setColor(Qt::white);
-        //     painter.setPen(pen);
-        //     painter.drawRect(transformer.gridToView(cell->rect()));
-        // });
+    for (const auto &cell : std::as_const(visibleCells)) {
+        canvas->paintCanvas([&](QPainter &painter) {
+            painter.setPen(QPen{Qt::white});
+            painter.drawRect(transformer.gridToView(cell->rect()));
+        });
 
         if (cell->dirty()) {
             cell->pixmap().fill(Qt::transparent);
             cell->setDirty(false);
 
-            const QList<std::shared_ptr<Item>> intersectingItems{
-                context->spatialContext()->quadtree().queryItems(transformer.gridToWorld(cell->rect()), []([[maybe_unused]] auto &a, [[maybe_unused]] auto &b) {
-                    return true;
-                })};
+            const auto intersectingItems{spatial.quadtree().queryItems(transformer.gridToWorld(cell->rect()), [](auto &, auto &) {
+                return true;
+            })};
 
             if (intersectingItems.empty()) {
                 continue;
             }
 
-            const qreal zoomFactor{context->renderingContext()->zoomFactor()};
-            const QPointF topLeftPoint{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
+            const qreal zoom{rendering.zoomFactor()};
+            const QRectF cellRectF{cell->rect().toRectF()};
+            const QPointF topLeft{transformer.gridToWorld(cellRectF.topLeft())};
 
-            for (const auto &intersectingItem : intersectingItems) {
-                if (intersectingItem->needsCaching()) {
-                    cell->paint([&](QPainter &painter) -> void {
-                        context->renderingContext()->itemCache().drawCached(painter,
-                                                                            intersectingItem,
-                                                                            transformer.gridToWorld(cell->rect().toRectF()),
-                                                                            cell->rect().topLeft().toPointF());
-                    });
-                } else {
-                    cell->paint([&](QPainter &painter) -> void {
-                        painter.scale(zoomFactor, zoomFactor);
-                        intersectingItem->draw(painter, topLeftPoint);
-                    });
+            cell->paint([&](QPainter &painter) {
+                for (const auto &item : std::as_const(intersectingItems)) {
+                    if (item->needsCaching()) {
+                        rendering.itemCache().drawCached(painter, item, transformer.gridToWorld(cellRectF), cellRectF.topLeft());
+                    } else {
+                        painter.save();
+                        painter.scale(zoom, zoom);
+                        painter.setTransform(item->transformObj(), true);
+                        item->draw(painter, topLeft);
+                        painter.restore();
+                    }
                 }
-            }
+            });
         }
 
-        context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {
+        canvas->paintCanvas([&](QPainter &painter) {
             painter.drawPixmap(transformer.round(transformer.gridToView(cell->rect())), cell->pixmap());
         });
     }
 
     const auto &selectedItems{context->selectionContext()->selectedItems()};
-
     if (selectedItems.empty()) {
         return;
     }
 
-    // render a box around selected items
-    context->renderingContext()->canvas()->paintCanvas([&](QPainter &painter) -> void {
-        QPen pen{Common::selectionBorderColor};
-        pen.setWidth(1);
-
+    canvas->paintCanvas([&](QPainter &painter) {
+        QPen pen{Common::selectionBorderColor, 1.0, Qt::DashLine};
         painter.setPen(pen);
 
         QRectF selectionBox{};
-        for (const auto &item : selectedItems) {
+        for (const auto &item : std::as_const(selectedItems)) {
             const QRectF curBox{transformer.worldToView(item->boundingBox()).normalized()};
             painter.drawRect(curBox);
             selectionBox |= curBox;
         }
 
+        pen.setStyle(Qt::SolidLine);
         painter.setPen(pen);
         painter.drawRect(selectionBox);
+
+        // NOTE: This is just temporarily drawn like this. I'll update this soon.
+        painter.setBrush(Qt::black);
+        constexpr qreal handleSize{7.0};
+        painter.drawEllipse(selectionBox.topLeft(), handleSize, handleSize);
+        painter.drawEllipse(selectionBox.topRight(), handleSize, handleSize);
+        painter.drawEllipse(selectionBox.bottomRight(), handleSize, handleSize);
+        painter.drawEllipse(selectionBox.bottomLeft(), handleSize, handleSize);
     });
 }

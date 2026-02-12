@@ -21,6 +21,7 @@ public:
     void draw(QPainter &painter, const QPointF &offset) override;
 
     void translate(const QPointF &amount) override;
+    void normalize() override;
 
     void createTextBox(const QPointF position);
 
@@ -32,13 +33,14 @@ public:
     [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);
 
+    [[nodiscard]] qsizetype getIndexFromCursor(QPointF cursor) const;
     [[nodiscard]] int getLineFromY(double yPos) const;
     [[nodiscard]] qsizetype getIndexFromX(double xPos, int lineNumber) const;
 
     [[nodiscard]] qsizetype caret() const;
     [[nodiscard]] qsizetype caretPosInLine() const;
     void setCaret(qsizetype index, bool updatePosInLine = true);
-    void setCaret(const QPointF &cursorPos);
+    void setCaret(QPointF cursorPos);
 
     [[nodiscard]] qsizetype selectionStart() const;
     [[nodiscard]] qsizetype selectionEnd() const;

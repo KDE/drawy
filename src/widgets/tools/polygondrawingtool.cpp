@@ -54,6 +54,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 
         curItem->setStart(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
+        m_endSet = false;
         m_isDrawing = true;
     }
 }
@@ -87,6 +88,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
             curItem->draw(painter, offsetPos);
         });
 
+        m_endSet = true;
         renderingContext->markForUpdate();
     }
 }
@@ -96,16 +98,22 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
     UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton && m_isDrawing) {
+        m_isDrawing = false;
+
+        if (!m_endSet) {
+            curItem.reset();
+            return;
+        }
+
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
+        curItem->normalize();
         const QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
-
-        m_isDrawing = false;
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();

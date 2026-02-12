@@ -97,10 +97,7 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 
 void PolygonItem::translate(const QPointF &amount)
 {
-    m_start += amount;
-    m_end += amount;
-
-    updateBoundingBox();
+    m_transform.translate(amount.x(), amount.y());
 }
 
 void PolygonItem::deserialize(const QJsonObject &obj)
@@ -112,6 +109,16 @@ void PolygonItem::deserialize(const QJsonObject &obj)
 bool PolygonItem::operator==(const PolygonItem &other) const
 {
     return m_start == other.start() && m_end == other.end() && Item::operator==(other);
+}
+
+void PolygonItem::normalize()
+{
+    m_end -= m_start;
+
+    m_boundingBox.translate(-m_start);
+    m_transform.translate(m_start.x(), m_start.y());
+    m_start.setX(0);
+    m_start.setY(0);
 }
 
 QDebug operator<<(QDebug d, const PolygonItem &t)

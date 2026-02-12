@@ -3,12 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "item.hpp"
+#include <QPainterPath>
 #include <QUuid>
 
 #include <utility>
 
 #include "common/constants.hpp"
 #include "drawy_debug.h"
+
 // PUBLIC
 Item::Item()
     : m_id(QUuid::createUuid().toByteArray(QUuid::Id128))
@@ -22,8 +24,12 @@ Item::~Item()
 
 QRectF Item::boundingBox() const
 {
-    const int mg{boundingBoxPadding()};
-    return m_boundingBox.adjusted(-mg, -mg, mg, mg);
+    return m_transform.map(m_boundingBox).boundingRect();
+}
+
+QRectF Item::normalizedBoundingBox() const
+{
+    return m_boundingBox;
 }
 
 Property Item::property(const Property::Type propertyType) const
@@ -102,6 +108,10 @@ void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPoi
     painter.setCompositionMode(QPainter::CompositionMode_Source);
     painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
     painter.restore();
+}
+
+void Item::normalize()
+{
 }
 
 int Item::boundingBoxPadding() const
