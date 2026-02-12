@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-05 11:27+0400\n"
+"PO-Revision-Date: 2026-02-11 21:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -82,36 +82,25 @@ msgstr "غيّر الترتيب المنظوري"
 #: widgets/components/bottomleftwidgets.cpp:41
 msgctxt "BottomLeftWidgets|"
 msgid "Reset Zoom"
-msgstr ""
+msgstr "صفّر التكبير"
 
 #: widgets/components/topleftwidgets.cpp:37
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "TopLeftWidgets|"
 msgid "Open Menu"
-msgstr "افتح ملفًّا"
+msgstr "افتح القائمة"
 
 #: widgets/context/aboutdata.cpp:12
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "drawy"
 msgctxt "QObject|"
 msgid "Drawy"
 msgstr "السبورة"
 
 #: widgets/context/aboutdata.cpp:14
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite brainstorming tool!"
 msgctxt "QObject|"
 msgid "Your handy, infinite  brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
 
 #: widgets/context/aboutdata.cpp:16
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "(c) 2025-%1 drawy authors"
+#, qt-format
 msgctxt "QObject|"
 msgid "(c) 2025-%1 Drawy authors"
 msgstr "(ج) 2025-%1 مؤلفو السبورة"
@@ -199,44 +188,38 @@ msgstr "عامّ"
 #: widgets/dialog/general/autosavewidget.cpp:20
 msgctxt "AutoSaveWidget|"
 msgid "Session"
-msgstr ""
+msgstr "الجلسة"
 
 #: widgets/dialog/general/autosavewidget.cpp:28
 msgctxt "AutoSaveWidget|"
 msgid "Time interval for automatic saving"
-msgstr ""
+msgstr "الفترة الزمنية للحفظ الآلي"
 
 #: widgets/dialog/general/autosavewidget.cpp:30
-#, fuzzy
-#| msgctxt "ConfigureGeneralWidget|"
-#| msgid "minute"
 msgctxt "AutoSaveWidget|delay unit"
 msgid " minute(s)"
 msgid_plural " minute(s)"
-msgstr[0] "دقيقة"
-msgstr[1] "دقيقة"
-msgstr[2] "دقيقة"
-msgstr[3] "دقيقة"
-msgstr[4] "دقيقة"
-msgstr[5] "دقيقة"
+msgstr[0] " من الدقائق"
+msgstr[1] " من الدقائق"
+msgstr[2] " من الدقائق"
+msgstr[3] " من الدقائق"
+msgstr[4] " من الدقائق"
+msgstr[5] " من الدقائق"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 msgctxt "AutoSaveWidget|"
 msgid "Directory for automatic saving"
-msgstr ""
+msgstr "مجلد للحفظ الآلي"
 
 #: widgets/dialog/general/autosavewidget.cpp:45
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Open File"
 msgctxt "AutoSaveWidget|"
 msgid "Open Directory"
-msgstr "افتح ملفًّا"
+msgstr "افتح المجلد"
 
 #: widgets/dialog/general/autosavewidget.cpp:54
 msgctxt "AutoSaveWidget|"
 msgid "Restore previous session on start"
-msgstr ""
+msgstr "استعادة الجلسة السابقة عند البدء"
 
 #: widgets/drawycommandlineparser.cpp:18
 msgctxt "QObject|"
@@ -244,113 +227,71 @@ msgid "Fullscreen"
 msgstr "ملء الشّاشة"
 
 #: widgets/keybindings/actionmanager.cpp:65
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Export to Svg"
 msgctxt "ActionManager|"
 msgid "Export as SVG"
-msgstr "صدّر إلى SVG"
+msgstr "صدِّر كـ SVG"
 
 #: widgets/keybindings/actionmanager.cpp:67
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Group Elements"
 msgctxt "ActionManager|"
 msgid "Group Items"
-msgstr "جمّع العناصر"
+msgstr "عناصر المجموعة"
 
 #: widgets/keybindings/actionmanager.cpp:70
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Ungroup Elements"
 msgctxt "ActionManager|"
 msgid "Ungroup Items"
-msgstr "تفك تجميع العناصر"
+msgstr "فك تجميع العناصر"
 
 #: widgets/keybindings/actionmanager.cpp:75
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ActionManager|"
 msgid "Delete"
 msgstr "احذف"
 
 #: widgets/keybindings/actionmanager.cpp:77
-#, fuzzy
-#| msgctxt "ActionManager|"
-#| msgid "Save canvas"
 msgctxt "ActionManager|"
 msgid "Clear Canvas"
-msgstr "احفظ الرقعة"
+msgstr "امحُ الرقعة"
 
 #: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Freeform Tool"
 msgctxt "ActionManager|"
 msgid "Freeform Tool"
 msgstr "أداة الرسم الحر"
 
 #: widgets/keybindings/actionmanager.cpp:83
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
 msgctxt "ActionManager|"
 msgid "Eraser Tool"
 msgstr "أداة الممحاة"
 
 #: widgets/keybindings/actionmanager.cpp:84
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
 msgctxt "ActionManager|"
 msgid "Selection Tool"
 msgstr "أداة التحديد"
 
 #: widgets/keybindings/actionmanager.cpp:85
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
 msgctxt "ActionManager|"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"
 
 #: widgets/keybindings/actionmanager.cpp:86
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
 msgctxt "ActionManager|"
 msgid "Ellipse Tool"
 msgstr "أداة الشكل البيضاوي"
 
 #: widgets/keybindings/actionmanager.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
 msgctxt "ActionManager|"
 msgid "Line Tool"
-msgstr "أداة رسم الخطوط"
+msgstr "أداة رسم سطور"
 
 #: widgets/keybindings/actionmanager.cpp:88
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
 msgctxt "ActionManager|"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
 #: widgets/keybindings/actionmanager.cpp:89
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
 msgctxt "ActionManager|"
 msgid "Arrow Tool"
 msgstr "أداة السهم"
 
 #: widgets/keybindings/actionmanager.cpp:90
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
 msgctxt "ActionManager|"
 msgid "Move Tool"
 msgstr "أداة التّحريك"
@@ -358,27 +299,25 @@ msgstr "أداة التّحريك"
 #: widgets/keybindings/actionmanager.cpp:92
 msgctxt "ActionManager|"
 msgid "Send To Back"
-msgstr ""
+msgstr "أرسل إلى الخلف"
 
 #: widgets/keybindings/actionmanager.cpp:95
 msgctxt "ActionManager|"
 msgid "Send Backward"
-msgstr ""
+msgstr "أرسل للخلف"
 
 #: widgets/keybindings/actionmanager.cpp:98
 msgctxt "ActionManager|"
 msgid "Bring Forward"
-msgstr ""
+msgstr "أحضر للأمام"
 
 #: widgets/keybindings/actionmanager.cpp:101
 msgctxt "ActionManager|"
 msgid "Bring To Front"
-msgstr ""
+msgstr "إحضار إلى الواجهة"
 
 #: widgets/keybindings/actionmanager.cpp:304
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
+#, qt-format
 msgctxt "ActionManager|"
 msgid "Untitled.%1"
 msgstr "غير معنون.%1"
@@ -396,17 +335,14 @@ msgid "Save File"
 msgstr "احفظ الملفّ"
 
 #: widgets/keybindings/actionmanager.cpp:329
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save file?"
 msgctxt "ActionManager|"
 msgid "Do you really want to clear the canvas?"
-msgstr "هل تريد حفظ الملف؟"
+msgstr "هل حقًّا تريد محو الرقعة؟"
 
 #: widgets/keybindings/actionmanager.cpp:330
 msgctxt "ActionManager|"
 msgid "Clear"
-msgstr ""
+msgstr "امحُ"
 
 #: widgets/keybindings/actionmanager.cpp:373
 msgctxt "QObject|"
@@ -434,12 +370,12 @@ msgctxt "ActionManager|"
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
-msgstr ""
+msgstr "عُدّل المستند '%1' ولم يُحفظ. أتريد حفظ التّعديلات أو رفضها؟"
 
 #: widgets/keybindings/actionmanager.cpp:427
 msgctxt "ActionManager|"
 msgid "Action Required"
-msgstr ""
+msgstr "إجراء مطلوب"
 
 #: widgets/properties/property.cpp:91
 msgctxt "QObject|"
@@ -571,15 +507,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "نمط الخلفيّة"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
-msgstr "أداة التحديد"
+msgstr "حدد لون مخصص"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "اللون"
@@ -594,7 +527,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "حجم الخط"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "العتمة"

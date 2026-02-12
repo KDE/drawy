@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
-"PO-Revision-Date: 2026-02-01 20:28+0100\n"
+"PO-Revision-Date: 2026-02-08 18:50+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -158,12 +158,9 @@ msgid "Rectangle"
 msgstr "Rectangle"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
 msgctxt "UIContext|"
 msgid "Diamond"
-msgstr "Outil de losange"
+msgstr "Losange"
 
 #: widgets/context/uicontext.cpp:64
 msgctxt "UIContext|"
@@ -408,7 +405,7 @@ msgstr "Voulez-vous enregistrer le fichier ?"
 #: widgets/keybindings/actionmanager.cpp:330
 msgctxt "ActionManager|"
 msgid "Clear"
-msgstr ""
+msgstr "Effacer"
 
 #: widgets/keybindings/actionmanager.cpp:373
 msgctxt "QObject|"
@@ -416,25 +413,19 @@ msgid "Open File"
 msgstr "Ouvrir un fichier"
 
 #: widgets/keybindings/actionmanager.cpp:384
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Untitled.%1"
 msgctxt "QObject|"
 msgid "Untitled.svg"
-msgstr "Sans titre. %1"
+msgstr "Sans titre.svg"
 
 #: widgets/keybindings/actionmanager.cpp:386
 msgctxt "QObject|"
 msgid "SVG (*.svg)"
-msgstr ""
+msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:388
-#, fuzzy
-#| msgctxt "UIContext|"
-#| msgid "Save to File"
 msgctxt "QObject|"
 msgid "Export to Svg"
-msgstr "Enregistrer dans un fichier"
+msgstr "Exporter en SVG"
 
 #: widgets/keybindings/actionmanager.cpp:423
 #, qt-format
@@ -560,9 +551,6 @@ msgid "Background Color"
 msgstr "Couleur d'arrière-plan"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:29
-#, fuzzy
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Solid"
 msgctxt "BackgroundStyleWidget|"
 msgid "Solid"
 msgstr "Solide"
@@ -570,22 +558,19 @@ msgstr "Solide"
 #: widgets/properties/widgets/backgroundstylewidget.cpp:38
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal Cross"
-msgstr ""
+msgstr "Diagonales croisées"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:47
 msgctxt "BackgroundStyleWidget|"
 msgid "Diagonal"
-msgstr ""
+msgstr "Diagonale"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:67
-#, fuzzy
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
 msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
-msgstr "Couleur d'arrière-plan"
+msgstr "Style d'arrière-plan"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -593,7 +578,7 @@ msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "Outil de sélection"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Couleur"
@@ -608,7 +593,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Taille de police"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Opacité"

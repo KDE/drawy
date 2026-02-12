@@ -610,7 +610,7 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "背景色"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -618,7 +618,7 @@ msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "選取工具"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "色彩"
@@ -633,7 +633,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "字型大小"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "不透明度"

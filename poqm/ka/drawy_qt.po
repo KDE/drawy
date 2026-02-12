@@ -502,12 +502,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "ფონის სტილი"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "აირჩიეთ მორგებული ფერი"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "ფერი"
@@ -522,7 +522,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "ფონტის ზომა"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "გაუმჭვირვალობა"

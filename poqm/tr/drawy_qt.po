@@ -504,12 +504,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "Arka Plan Biçemi"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "Özel Renk Seç"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Renk"
@@ -524,7 +524,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Yazıtipi Puntosu"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Matlık"

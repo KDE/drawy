@@ -507,12 +507,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "Стиль тла"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "Вибір нетипового кольору"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Колір"
@@ -527,7 +527,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Розмір шрифту"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Непрозорість"

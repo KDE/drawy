@@ -510,12 +510,12 @@ msgctxt "BackgroundStyleWidget|"
 msgid "Background Style"
 msgstr "Estilo del fondo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:47
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 msgctxt "ColorWidgetBase|"
 msgid "Select Custom Color"
 msgstr "Seleccionar color personalizado"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:74
+#: widgets/properties/widgets/colorwidgetbase.cpp:78
 msgctxt "ColorWidgetBase|"
 msgid "Color"
 msgstr "Color"
@@ -530,7 +530,7 @@ msgctxt "FontSizeWidget|"
 msgid "Font Size"
 msgstr "Tamaño del texto"
 
-#: widgets/properties/widgets/opacitywidget.cpp:30
+#: widgets/properties/widgets/opacitywidget.cpp:42
 msgctxt "OpacityWidget|"
 msgid "Opacity"
 msgstr "Opacidad"
