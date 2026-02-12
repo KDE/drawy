@@ -59,6 +59,7 @@ public:
 
     void zoomIn();
     void zoomOut();
+    void zoomReset();
     void undo();
     void redo();
     void switchToMoveTool();

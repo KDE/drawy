@@ -58,6 +58,7 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     KStandardActions::redo(this, &ActionManager::redo, actionCollection)->setEnabled(false); // disabled initially
     KStandardActions::zoomIn(this, &ActionManager::zoomIn, actionCollection)->setIcon(QIcon::fromTheme(u"value-increase"_s));
     KStandardActions::zoomOut(this, &ActionManager::zoomOut, actionCollection)->setIcon(QIcon::fromTheme(u"value-decrease"_s));
+    KStandardActions::actualSize(this, &ActionManager::zoomReset, actionCollection)->setIcon(QIcon::fromTheme(u"zoom_reset"_s));
     KStandardActions::selectAll(this, &ActionManager::selectAll, actionCollection);
 
     KStandardActions::keyBindings(this, &ActionManager::configureShortcuts, actionCollection);
@@ -197,6 +198,11 @@ void ActionManager::zoomIn()
 void ActionManager::zoomOut()
 {
     m_context->renderingContext()->zoomOut();
+}
+
+void ActionManager::zoomReset()
+{
+    m_context->renderingContext()->updateZoomFactor(1);
 }
 
 void ActionManager::switchToTool(Tool::Type type)
