@@ -16,6 +16,7 @@
 #include <QMenu>
 #include <QStyle>
 #include <QToolButton>
+#include <kstandardaction.h>
 using namespace Qt::StringLiterals;
 TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     : QWidget{parent}
@@ -47,6 +48,7 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     // Add more actions as required
     connect(menu, &QMenu::aboutToShow, this, [menu, actionManager, this]() -> void {
         menu->addAction(actionManager->action(KStandardActions::New));
+        menu->addAction(actionManager->action(KStandardAction::OpenRecent));
         menu->addAction(actionManager->action(KStandardActions::Open));
         menu->addAction(actionManager->action(KStandardActions::Save));
         menu->addAction(actionManager->action(KStandardActions::SaveAs));

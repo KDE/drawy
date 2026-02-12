@@ -5,8 +5,10 @@
 #include "actionmanager.hpp"
 
 #include <KActionCollection>
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
 #include <KShortcutsDialog>
 #include <QDir>
 #include <QFileDialog>
@@ -47,6 +49,7 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     : QObject(context)
     , m_context{context}
     , m_actionCollection(actionCollection)
+    , m_recentFiles(KStandardAction::openRecent(this, &ActionManager::openRecentFile, actionCollection))
 {
     auto mainWindow{m_context->parentWidget()};
 
@@ -120,6 +123,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     connect(action(Action::SendBackward), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
     connect(action(Action::BringToFront), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
     connect(action(Action::SendToBack), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
+
+    m_recentFiles->loadEntries(KConfigGroup(KSharedConfig::openConfig(), u"Recent Files"_s));
 }
 
 QAction *ActionManager::action(Action type) const
@@ -179,6 +184,16 @@ QAction *ActionManager::action(KStandardActions::StandardAction standardAction) 
 QString ActionManager::actionName(KStandardActions::StandardAction standardAction) const
 {
     return KStandardActions::name(standardAction);
+}
+
+QAction *ActionManager::action(KStandardAction::StandardAction standardAction) const
+{
+    return m_actionCollection->action(actionName(standardAction));
+}
+
+QString ActionManager::actionName(KStandardAction::StandardAction standardAction) const
+{
+    return KStandardAction::name(standardAction);
 }
 
 void ActionManager::undo()
@@ -297,6 +312,14 @@ void ActionManager::selectAll()
     m_context->renderingContext()->markForUpdate();
 }
 
+void ActionManager::openRecentFile(const QUrl &url)
+{
+    if (!confirmSaveAfterModification()) {
+        return;
+    }
+    loadFile(url.toLocalFile());
+}
+
 void ActionManager::newFile()
 {
     if (!confirmSaveAfterModification()) {
@@ -387,6 +410,8 @@ void ActionManager::openFile()
     }
 
     loadFile(fileName);
+    m_recentFiles->addUrl(QUrl::fromLocalFile(fileName));
+    m_recentFiles->saveEntries(KConfigGroup(KSharedConfig::openConfig(), u"Recent Files"_s));
 }
 
 void ActionManager::exportToSvg()

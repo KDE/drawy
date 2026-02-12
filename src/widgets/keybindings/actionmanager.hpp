@@ -7,6 +7,7 @@
 #include "item/itemutils.hpp"
 #include "jobs/loadjob.hpp"
 #include "tools/tool.hpp"
+#include <KStandardAction>
 #include <KStandardActions>
 #include <QAction>
 #include <QObject>
@@ -56,6 +57,8 @@ public:
     [[nodiscard]] QString actionName(Action type) const;
     [[nodiscard]] QAction *action(KStandardActions::StandardAction standardAction) const;
     [[nodiscard]] QString actionName(KStandardActions::StandardAction standardAction) const;
+    [[nodiscard]] QAction *action(KStandardAction::StandardAction standardAction) const;
+    [[nodiscard]] QString actionName(KStandardAction::StandardAction standardAction) const;
 
     void zoomIn();
     void zoomOut();
@@ -87,6 +90,7 @@ public:
     void slotUpdateZorderAndGroupButtons();
 
 private:
+    void openRecentFile(const QUrl &url);
     void zorderMove(ItemUtils::ZorderMove move);
     void slotLoadDone(const LoadJob::LoadInfo &info);
     void configureShortcuts();
@@ -114,4 +118,5 @@ private:
 
     ApplicationContext *const m_context;
     KActionCollection *const m_actionCollection;
+    KRecentFilesAction *const m_recentFiles;
 };
