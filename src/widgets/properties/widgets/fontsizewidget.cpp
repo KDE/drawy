@@ -21,6 +21,8 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     m_widget = box;
 
     connect(box, &QSpinBox::valueChanged, this, [this]() {
+        DrawyGlobalConfig::self()->setFontSize(static_cast<QSpinBox *>(m_widget)->value());
+        DrawyGlobalConfig::self()->save();
         Q_EMIT changed(value());
     });
 }
