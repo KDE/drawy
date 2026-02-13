@@ -117,3 +117,9 @@ compile_commands.json
 drawy-kde.kdev4
 
 /Testing/
+
+
+.sentry-native/
+
+#for reuse on CI
+ci-utilities/
