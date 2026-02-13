@@ -63,9 +63,9 @@ bool DiamondItem::intersects(const QRectF &rect)
     return getPath().intersects(rect);
 }
 
-Item::Type DiamondItem::type() const
+Item::FormType DiamondItem::formType() const
 {
-    return Item::Type::Diamond;
+    return Item::FormType::Diamond;
 }
 
 QJsonObject DiamondItem::serialize(int zorder) const

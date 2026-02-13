@@ -471,9 +471,9 @@ const QString &TextItem::text() const
     return m_text;
 }
 
-Item::Type TextItem::type() const
+Item::FormType TextItem::formType() const
 {
-    return Item::Type::Text;
+    return Item::FormType::Text;
 }
 
 void TextItem::updateAfterProperty()

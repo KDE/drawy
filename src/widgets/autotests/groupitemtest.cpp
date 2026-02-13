@@ -21,7 +21,7 @@ GroupItemTest::GroupItemTest(QObject *parent)
 void GroupItemTest::shouldHaveDefaultValues()
 {
     const GroupItem i;
-    QCOMPARE(i.type(), Item::Type::Group);
+    QCOMPARE(i.formType(), Item::FormType::Group);
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());
 }

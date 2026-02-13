@@ -19,7 +19,7 @@ QJsonObject ItemSerializer::serialize(int zorder) const
 {
     QJsonObject obj;
 
-    obj[u"type"_s] = ItemUtils::convertItemTypeEnumToString(mItem->type());
+    obj[u"type"_s] = ItemUtils::convertItemTypeEnumToString(mItem->formType());
     obj[u"bounding_box"_s] = toJson(mItem->boundingBox());
     obj[u"bounding_box_padding"_s] = QJsonValue(mItem->boundingBoxPadding());
     obj[u"properties"_s] = toJson(mItem->properties());

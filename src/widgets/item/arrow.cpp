@@ -133,9 +133,9 @@ void ArrowItem::translate(const QPointF &amount)
     PolygonItem::translate(amount);
 }
 
-Item::Type ArrowItem::type() const
+Item::FormType ArrowItem::formType() const
 {
-    return Item::Type::Arrow;
+    return Item::FormType::Arrow;
 }
 
 QJsonObject ArrowItem::serialize(int zorder) const

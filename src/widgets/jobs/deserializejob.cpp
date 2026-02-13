@@ -47,7 +47,7 @@ void DeserializeJob::deserializeItems()
     const QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(mJsonObject, u"items"_s));
     for (const auto &v : itemsArray) {
         const QJsonObject itemObj = ItemDeserializer::object(v);
-        const Item::Type type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
+        const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
         const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
         item->deserialize(itemObj);
         items.append(item);

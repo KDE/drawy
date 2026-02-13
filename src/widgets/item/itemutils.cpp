@@ -15,50 +15,50 @@
 #include "item/text.hpp"
 
 using namespace Qt::Literals::StringLiterals;
-Item::Type ItemUtils::convertItemTypeStringToEnum(const QString &str)
+Item::FormType ItemUtils::convertItemTypeStringToEnum(const QString &str)
 {
     if (str == u"FREEFORM") {
-        return Item::Type::Freeform;
+        return Item::FormType::Freeform;
     } else if (str == u"RECTANGLE") {
-        return Item::Type::Rectangle;
+        return Item::FormType::Rectangle;
     } else if (str == u"ELLIPSE") {
-        return Item::Type::Ellipse;
+        return Item::FormType::Ellipse;
     } else if (str == u"LINE") {
-        return Item::Type::Line;
+        return Item::FormType::Line;
     } else if (str == u"ARROW") {
-        return Item::Type::Arrow;
+        return Item::FormType::Arrow;
     } else if (str == u"TEXT") {
-        return Item::Type::Text;
+        return Item::FormType::Text;
     } else if (str == u"GROUP") {
-        return Item::Type::Group;
+        return Item::FormType::Group;
     } else if (str == u"DIAMOND") {
-        return Item::Type::Diamond;
+        return Item::FormType::Diamond;
     } else {
         qCWarning(DRAWY_LOG) << "Item::Type is not defined for: " << str;
     }
-    return Item::Type::Invalid;
+    return Item::FormType::Invalid;
 }
 
-QString ItemUtils::convertItemTypeEnumToString(Item::Type type)
+QString ItemUtils::convertItemTypeEnumToString(Item::FormType type)
 {
     switch (type) {
-    case Item::Type::Freeform:
+    case Item::FormType::Freeform:
         return u"FREEFORM"_s;
-    case Item::Type::Rectangle:
+    case Item::FormType::Rectangle:
         return u"RECTANGLE"_s;
-    case Item::Type::Ellipse:
+    case Item::FormType::Ellipse:
         return u"ELLIPSE"_s;
-    case Item::Type::Line:
+    case Item::FormType::Line:
         return u"LINE"_s;
-    case Item::Type::Arrow:
+    case Item::FormType::Arrow:
         return u"ARROW"_s;
-    case Item::Type::Text:
+    case Item::FormType::Text:
         return u"TEXT"_s;
-    case Item::Type::Group:
+    case Item::FormType::Group:
         return u"GROUP"_s;
-    case Item::Type::Diamond:
+    case Item::FormType::Diamond:
         return u"DIAMOND"_s;
-    case Item::Type::Invalid:
+    case Item::FormType::Invalid:
         qCWarning(DRAWY_LOG) << "Don't invalid type";
     }
     return {};
@@ -152,43 +152,43 @@ Qt::BrushStyle ItemUtils::convertItemBackgroundTypeStringToBrushStyle(const QStr
     return Qt::BrushStyle::SolidPattern;
 }
 
-std::shared_ptr<Item> ItemUtils::createItemFromType(Item::Type type)
+std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
 {
     std::shared_ptr<Item> item;
     switch (type) {
-    case Item::Type::Freeform: {
+    case Item::FormType::Freeform: {
         item = std::make_shared<FreeformItem>();
         break;
     }
-    case Item::Type::Rectangle: {
+    case Item::FormType::Rectangle: {
         item = std::make_shared<RectangleItem>();
         break;
     }
-    case Item::Type::Line: {
+    case Item::FormType::Line: {
         item = std::make_shared<LineItem>();
         break;
     }
-    case Item::Type::Arrow: {
+    case Item::FormType::Arrow: {
         item = std::make_shared<ArrowItem>();
         break;
     }
-    case Item::Type::Ellipse: {
+    case Item::FormType::Ellipse: {
         item = std::make_shared<EllipseItem>();
         break;
     }
-    case Item::Type::Text: {
+    case Item::FormType::Text: {
         item = std::make_shared<TextItem>();
         break;
     }
-    case Item::Type::Group: {
+    case Item::FormType::Group: {
         item = std::make_shared<GroupItem>();
         break;
     }
-    case Item::Type::Diamond: {
+    case Item::FormType::Diamond: {
         item = std::make_shared<DiamondItem>();
         break;
     }
-    case Item::Type::Invalid:
+    case Item::FormType::Invalid:
         Q_ASSERT(false);
         break;
     }

@@ -20,7 +20,7 @@ UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
     : ItemCommand{items}
 {
     for (const auto &item : items) {
-        if (item->type() == Item::Type::Group) {
+        if (item->formType() == Item::FormType::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
         }
     }

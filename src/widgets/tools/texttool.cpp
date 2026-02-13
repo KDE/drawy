@@ -54,7 +54,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
-            return item->type() == Item::Type::Text && item->boundingBox().contains(point);
+            return item->formType() == Item::FormType::Text && item->boundingBox().contains(point);
         })};
 
         if (intersectingItems.empty()) {
@@ -116,7 +116,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
 
     const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
     const QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
-        return item->type() == Item::Type::Text && item->boundingBox().contains(point);
+        return item->formType() == Item::FormType::Text && item->boundingBox().contains(point);
     })};
 
     if (!intersectingItems.empty()) {

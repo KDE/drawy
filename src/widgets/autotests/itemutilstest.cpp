@@ -16,29 +16,29 @@ ItemUtilsTest::ItemUtilsTest(QObject *parent)
 
 void ItemUtilsTest::shouldConvertItemTypeStringToEnum()
 {
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"FREEFORM"_s), Item::Type::Freeform);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"RECTANGLE"_s), Item::Type::Rectangle);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"ELLIPSE"_s), Item::Type::Ellipse);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"LINE"_s), Item::Type::Line);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"ARROW"_s), Item::Type::Arrow);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"TEXT"_s), Item::Type::Text);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"GROUP"_s), Item::Type::Group);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"DIAMOND"_s), Item::Type::Diamond);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum({}), Item::Type::Invalid);
-    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"foo"_s), Item::Type::Invalid);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"FREEFORM"_s), Item::FormType::Freeform);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"RECTANGLE"_s), Item::FormType::Rectangle);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"ELLIPSE"_s), Item::FormType::Ellipse);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"LINE"_s), Item::FormType::Line);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"ARROW"_s), Item::FormType::Arrow);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"TEXT"_s), Item::FormType::Text);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"GROUP"_s), Item::FormType::Group);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"DIAMOND"_s), Item::FormType::Diamond);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum({}), Item::FormType::Invalid);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"foo"_s), Item::FormType::Invalid);
 }
 
 void ItemUtilsTest::shouldConvertEnumItemTypeToString()
 {
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Freeform), u"FREEFORM"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Rectangle), u"RECTANGLE"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Ellipse), u"ELLIPSE"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Line), u"LINE"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Arrow), u"ARROW"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Text), u"TEXT"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Group), u"GROUP"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Diamond), u"DIAMOND"_s);
-    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::Type::Invalid), QString());
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Freeform), u"FREEFORM"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Rectangle), u"RECTANGLE"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Ellipse), u"ELLIPSE"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Line), u"LINE"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Arrow), u"ARROW"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Text), u"TEXT"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Group), u"GROUP"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Diamond), u"DIAMOND"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Invalid), QString());
 }
 
 void ItemUtilsTest::shouldConvertEnumStrokeTypeToString()

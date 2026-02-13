@@ -20,7 +20,7 @@ public:
 
     void translate(const QPointF &amount) override;
 
-    [[nodiscard]] Item::Type type() const override;
+    [[nodiscard]] Item::FormType formType() const override;
 
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
 

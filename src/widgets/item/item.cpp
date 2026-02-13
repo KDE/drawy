@@ -39,8 +39,8 @@ QList<Property::Type> Item::propertyTypes() const
 {
     QList<Property::Type> result;
 
-    for (auto &[type, _] : m_properties) {
-        result.push_back(type);
+    for (auto &[formType, _] : m_properties) {
+        result.push_back(formType);
     }
 
     return result;

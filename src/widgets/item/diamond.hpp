@@ -18,7 +18,7 @@ public:
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
-    [[nodiscard]] Item::Type type() const override;
+    [[nodiscard]] Item::FormType formType() const override;
 
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;

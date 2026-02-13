@@ -20,7 +20,7 @@ TextItemTest::TextItemTest(QObject *parent)
 void TextItemTest::shouldHaveDefaultValues()
 {
     const TextItem i;
-    QCOMPARE(i.type(), Item::Type::Text);
+    QCOMPARE(i.formType(), Item::FormType::Text);
     const auto properties = QList<Property::Type>() << Property::Type::FontSize << Property::Type::StrokeColor << Property::Type::Opacity;
     QCOMPARE(i.propertyTypes().count(), 3);
     for (const auto &prop : properties) {

@@ -27,8 +27,8 @@ enum class ZorderMove : uint8_t {
     BringToFront,
 };
 
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::Type convertItemTypeStringToEnum(const QString &str);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::Type type);
+[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::FormType convertItemTypeStringToEnum(const QString &str);
+[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::FormType type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemStrokeTypeEnumToString(Item::StrokeType type);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::PenStyle convertItemStrokeTypeStringToPenStyle(const QString &penStyle);
@@ -37,6 +37,6 @@ enum class ZorderMove : uint8_t {
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::BrushStyle convertItemBackgroundTypeStringToBrushStyle(const QString &brushStyle);
 [[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::BackgroundType convertBackgroundTypeStringToEnum(const QString &str);
 
-[[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::Type type);
+[[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::FormType type);
 
 }; // namespace ItemUtils

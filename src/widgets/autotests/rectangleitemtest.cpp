@@ -21,7 +21,7 @@ RectangleItemTest::RectangleItemTest(QObject *parent)
 void RectangleItemTest::shouldHaveDefaultValues()
 {
     const RectangleItem i;
-    QCOMPARE(i.type(), Item::Type::Rectangle);
+    QCOMPARE(i.formType(), Item::FormType::Rectangle);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle;
     QCOMPARE(i.propertyTypes().count(), 6);

@@ -209,9 +209,9 @@ void FreeformItem::translate(const QPointF &amount)
     m_boundingBox.translate(amount);
 }
 
-Item::Type FreeformItem::type() const
+Item::FormType FreeformItem::formType() const
 {
-    return Item::Type::Freeform;
+    return Item::FormType::Freeform;
 }
 
 const QList<QPointF> &FreeformItem::points() const

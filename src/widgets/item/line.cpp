@@ -47,9 +47,9 @@ bool LineItem::intersects(const QRectF &rect)
     return Common::Utils::Math::intersects(rect, QLineF{start(), end()});
 }
 
-Item::Type LineItem::type() const
+Item::FormType LineItem::formType() const
 {
-    return Item::Type::Line;
+    return Item::FormType::Line;
 }
 
 QJsonObject LineItem::serialize(int zorder) const

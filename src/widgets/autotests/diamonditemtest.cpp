@@ -19,7 +19,7 @@ DiamondItemTest::DiamondItemTest(QObject *parent)
 void DiamondItemTest::shouldHaveDefaultValues()
 {
     const DiamondItem i;
-    QCOMPARE(i.type(), Item::Type::Diamond);
+    QCOMPARE(i.formType(), Item::FormType::Diamond);
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());
 }

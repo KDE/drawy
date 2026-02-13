@@ -35,7 +35,7 @@ public:
 
     virtual void addPoint(const QPointF &point, const qreal pressure);
 
-    [[nodiscard]] Item::Type type() const override;
+    [[nodiscard]] Item::FormType formType() const override;
 
     [[nodiscard]] const QList<QPointF> &points() const;
     [[nodiscard]] const QList<qreal> &pressures() const;

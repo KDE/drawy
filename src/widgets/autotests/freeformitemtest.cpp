@@ -20,7 +20,7 @@ FreeformItemTest::FreeformItemTest(QObject *parent)
 void FreeformItemTest::shouldHaveDefaultValues()
 {
     const FreeformItem i;
-    QCOMPARE(i.type(), Item::Type::Freeform);
+    QCOMPARE(i.formType(), Item::FormType::Freeform);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::StrokeStyle
                                                     << Property::Type::Opacity;
     QCOMPARE(i.propertyTypes().count(), 4);

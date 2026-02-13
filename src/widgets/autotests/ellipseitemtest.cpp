@@ -19,7 +19,7 @@ EllipseItemTest::EllipseItemTest(QObject *parent)
 void EllipseItemTest::shouldHaveDefaultValues()
 {
     const EllipseItem i;
-    QCOMPARE(i.type(), Item::Type::Ellipse);
+    QCOMPARE(i.formType(), Item::FormType::Ellipse);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle
                                                     << Property::Type::BackgroundStyle;

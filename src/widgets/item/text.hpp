@@ -59,7 +59,7 @@ public:
     [[nodiscard]] qsizetype getPrevBreak(qsizetype pos) const;
     [[nodiscard]] qsizetype getNextBreak(qsizetype pos) const;
 
-    [[nodiscard]] Item::Type type() const override;
+    [[nodiscard]] Item::FormType formType() const override;
 
     constexpr static int INVALID{-1};
 

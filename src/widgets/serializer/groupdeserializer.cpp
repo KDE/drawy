@@ -28,7 +28,7 @@ void GroupDeserializer::deserialize(const QJsonObject &obj)
 
     for (const auto &val : items) {
         const QJsonObject itemObj = val.toObject();
-        const Item::Type type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
+        const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
         const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
         item->deserialize(itemObj);
 

@@ -45,9 +45,9 @@ bool EllipseItem::intersects(const QRectF &rect)
     return path.intersects(rect) && !path.contains(rect);
 }
 
-Item::Type EllipseItem::type() const
+Item::FormType EllipseItem::formType() const
 {
-    return Item::Type::Ellipse;
+    return Item::FormType::Ellipse;
 }
 
 QJsonObject EllipseItem::serialize(int zorder) const

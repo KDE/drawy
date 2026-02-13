@@ -19,7 +19,7 @@ LineItemTest::LineItemTest(QObject *parent)
 void LineItemTest::shouldHaveDefaultValues()
 {
     const LineItem i;
-    QCOMPARE(i.type(), Item::Type::Line);
+    QCOMPARE(i.formType(), Item::FormType::Line);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle;
     QCOMPARE(i.propertyTypes().count(), 4);

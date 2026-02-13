@@ -45,9 +45,9 @@ bool RectangleItem::intersects(const QRectF &rect)
     return path.intersects(rect) && !path.contains(rect);
 }
 
-Item::Type RectangleItem::type() const
+Item::FormType RectangleItem::formType() const
 {
-    return Item::Type::Rectangle;
+    return Item::FormType::Rectangle;
 }
 
 QJsonObject RectangleItem::serialize(int zorder) const

@@ -19,7 +19,7 @@ ArrowItemTest::ArrowItemTest(QObject *parent)
 void ArrowItemTest::shouldHaveDefaultValues()
 {
     const ArrowItem i;
-    QCOMPARE(i.type(), Item::Type::Arrow);
+    QCOMPARE(i.formType(), Item::FormType::Arrow);
     QCOMPARE(i.startArrow(), ArrowUtils::ArrowType::None);
     QCOMPARE(i.endArrow(), ArrowUtils::ArrowType::Arrow);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity

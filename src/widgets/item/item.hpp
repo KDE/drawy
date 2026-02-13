@@ -31,7 +31,7 @@ public:
     virtual QList<Property> properties() const;
     virtual QList<Property::Type> propertyTypes() const;
 
-    enum class Type : int8_t {
+    enum class FormType : int8_t {
         Freeform,
         Rectangle,
         Ellipse,
@@ -42,7 +42,7 @@ public:
         Diamond,
         Invalid,
     };
-    Q_ENUM(Type)
+    Q_ENUM(FormType)
 
     enum class StrokeType : int8_t {
         Solid,
@@ -60,7 +60,7 @@ public:
     };
     Q_ENUM(BackgroundType)
 
-    [[nodiscard]] virtual Type type() const = 0;
+    [[nodiscard]] virtual FormType formType() const = 0;
 
     virtual void updateAfterProperty();
 
