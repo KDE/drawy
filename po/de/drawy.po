@@ -1,0 +1,1214 @@
+# SPDX-FileCopyrightText: 2026 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: drawy_qt\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-02-13 00:41+0000\n"
+"PO-Revision-Date: 2026-01-09 13:07+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: apps/main.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "An optional argument 'file' "
+msgctxt "@info:shell"
+msgid "An optional argument 'file' "
+msgstr "Ein optionales Argument „Datei“ "
+
+#: apps/main.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
+
+#: widgets/command/alignitemcommand.cpp:112
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgid "Align Items"
+msgstr "Verschieben"
+
+#: widgets/command/deselectcommand.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgid "Deselect Object"
+msgstr "Alles auswählen"
+
+#: widgets/command/groupcommand.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgid "Group Object"
+msgstr "Auswahl gruppieren"
+
+#: widgets/command/insertitemcommand.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgid "Insert Object"
+msgstr "Alles auswählen"
+
+#: widgets/command/lockcommand.cpp:34
+#, kde-format
+msgid "Change Lock"
+msgstr ""
+
+#: widgets/command/moveitemcommand.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgid "Move Object"
+msgstr "Auswahl gruppieren"
+
+#: widgets/command/removeitemcommand.cpp:58
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgid "Remove Object"
+msgstr "Alles auswählen"
+
+#: widgets/command/selectcommand.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Select All"
+msgid "Select Object"
+msgstr "Alles auswählen"
+
+#: widgets/command/ungroupcommand.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgid "Ungroup Objects"
+msgstr "Gruppierung aufheben"
+
+#: widgets/command/updatepropertycommand.cpp:66
+#, kde-format
+msgid "Update Property"
+msgstr ""
+
+#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change ZOrder"
+msgstr "Radierergröße"
+
+#: widgets/components/bottomleftwidgets.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset Zoom"
+msgstr ""
+
+#: widgets/components/topleftwidgets.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgctxt "@info:tooltip"
+msgid "Open Menu"
+msgstr "Datei öffnen"
+
+#: widgets/context/aboutdata.cpp:13
+#, kde-format
+msgid "Drawy"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:15
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Your handy, infinite, brainstorming tool!"
+msgid "Your handy, infinite  brainstorming tool!"
+msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
+
+#: widgets/context/aboutdata.cpp:17
+#, kde-format
+msgid "(c) 2025-%1 Drawy authors"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:19
+#, kde-format
+msgctxt "@info:credit"
+msgid "Prayag Jain"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:19
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:20
+#, kde-format
+msgctxt "@info:credit"
+msgid "Laurent Montel"
+msgstr ""
+
+#: widgets/context/aboutdata.cpp:20
+#, kde-format
+msgid "Developer"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Selection"
+msgctxt "@action:button"
+msgid "Selection"
+msgstr "Auswahl"
+
+#: widgets/context/uicontext.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Free Form"
+msgctxt "@action:button"
+msgid "Free Form"
+msgstr "Freihand"
+
+#: widgets/context/uicontext.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Rectangle"
+msgctxt "@action:button"
+msgid "Rectangle"
+msgstr "Rechteck"
+
+#: widgets/context/uicontext.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "@action:button"
+msgid "Diamond"
+msgstr "Linie"
+
+#: widgets/context/uicontext.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Ellipse"
+msgctxt "@action:button"
+msgid "Ellipse"
+msgstr "Ellipse"
+
+#: widgets/context/uicontext.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Arrow"
+msgctxt "@action:button"
+msgid "Arrow"
+msgstr "Pfeil"
+
+#: widgets/context/uicontext.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Line"
+msgctxt "@action:button"
+msgid "Line"
+msgstr "Linie"
+
+#: widgets/context/uicontext.cpp:68
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Eraser"
+msgctxt "@action:button"
+msgid "Eraser"
+msgstr "Radierer"
+
+#: widgets/context/uicontext.cpp:69
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Text"
+msgctxt "@action:button"
+msgid "Text"
+msgstr "Text"
+
+#: widgets/context/uicontext.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Move"
+msgctxt "@action:button"
+msgid "Move"
+msgstr "Verschieben"
+
+#: widgets/dialog/configuresettingsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Drawy"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:28
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:22
+#, kde-format
+msgid "Session"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:30
+#, kde-format
+msgid "Time interval for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:31
+#, kde-format
+msgctxt "@item %v is a number"
+msgid "%v minute"
+msgid_plural "%v minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/dialog/general/autosavewidget.cpp:34
+#, kde-format
+msgid "Directory for automatic saving"
+msgstr ""
+
+#: widgets/dialog/general/autosavewidget.cpp:45
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Open File"
+msgid "Open Directory"
+msgstr "Datei öffnen"
+
+#: widgets/dialog/general/autosavewidget.cpp:54
+#, kde-format
+msgid "Restore previous session on start"
+msgstr ""
+
+#: widgets/drawycommandlineparser.cpp:19
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Fullscreen"
+msgctxt "@info:shell"
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+#: widgets/keybindings/actionmanager.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "@action"
+msgid "Export as SVG"
+msgstr "In Datei speichern"
+
+#: widgets/keybindings/actionmanager.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Group Elements"
+msgctxt "@action"
+msgid "Group Items"
+msgstr "Gruppieren"
+
+#: widgets/keybindings/actionmanager.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Ungroup Elements"
+msgctxt "@action"
+msgid "Ungroup Items"
+msgstr "Gruppierung aufheben"
+
+#: widgets/keybindings/actionmanager.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Delete"
+msgctxt "@action"
+msgid "Delete"
+msgstr "Löschen"
+
+#: widgets/keybindings/actionmanager.cpp:86
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Save canvas"
+msgctxt "@action"
+msgid "Clear Canvas"
+msgstr "Zeichenfläche speichern"
+
+#: widgets/keybindings/actionmanager.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Freeform Tool"
+msgctxt "@action"
+msgid "Freeform Tool"
+msgstr "Freihand"
+
+#: widgets/keybindings/actionmanager.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "@action"
+msgid "Eraser Tool"
+msgstr "Radierer"
+
+#: widgets/keybindings/actionmanager.cpp:93
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "@action"
+msgid "Selection Tool"
+msgstr "Auswahlwerkzeug"
+
+#: widgets/keybindings/actionmanager.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "@action"
+msgid "Rectangle Tool"
+msgstr "Rechtecke"
+
+#: widgets/keybindings/actionmanager.cpp:95
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "@action"
+msgid "Ellipse Tool"
+msgstr "Ellipsen"
+
+#: widgets/keybindings/actionmanager.cpp:96
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "@action"
+msgid "Line Tool"
+msgstr "Linie"
+
+#: widgets/keybindings/actionmanager.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "@action"
+msgid "Text Tool"
+msgstr "Text"
+
+#: widgets/keybindings/actionmanager.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "@action"
+msgid "Arrow Tool"
+msgstr "Pfeile"
+
+#: widgets/keybindings/actionmanager.cpp:99
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "@action"
+msgid "Move Tool"
+msgstr "Zum Verschiebewerkzeug wechseln"
+
+#: widgets/keybindings/actionmanager.cpp:101
+#, kde-format
+msgctxt "@action"
+msgid "Send To Back"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:104
+#, kde-format
+msgctxt "@action"
+msgid "Send Backward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:107
+#, kde-format
+msgctxt "@action"
+msgid "Bring Forward"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:110
+#, kde-format
+msgctxt "@action"
+msgid "Bring To Front"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:338
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgid "Untitled.%1"
+msgstr "Unbenannt.%1"
+
+#: widgets/keybindings/actionmanager.cpp:340
+#: widgets/keybindings/actionmanager.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Drawy (*.%1)"
+msgid "Drawy (*.%1)"
+msgstr "Drawy (*.%1)"
+
+#: widgets/keybindings/actionmanager.cpp:341
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Save File"
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Datei speichern"
+
+#: widgets/keybindings/actionmanager.cpp:363
+#, fuzzy, kde-format
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to close?"
+msgctxt "@action"
+msgid "Do you really want to clear the canvas?"
+msgstr "Möchten Sie schließen?"
+
+#: widgets/keybindings/actionmanager.cpp:364
+#, kde-format
+msgctxt "@action"
+msgid "Clear"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:407
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Open File"
+msgctxt "@title:window"
+msgid "Open File"
+msgstr "Datei öffnen"
+
+#: widgets/keybindings/actionmanager.cpp:420
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Untitled.%1"
+msgid "Untitled.svg"
+msgstr "Unbenannt.%1"
+
+#: widgets/keybindings/actionmanager.cpp:422
+#, kde-format
+msgid "SVG (*.svg)"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:424
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Save to File"
+msgctxt "@title:window"
+msgid "Export to Svg"
+msgstr "In Datei speichern"
+
+#: widgets/keybindings/actionmanager.cpp:459
+#, kde-format
+msgid ""
+"The document \"%1\" has been modified. Do you want to save your changes or "
+"discard them?"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:463
+#, kde-format
+msgctxt "@title:window"
+msgid "Action Required"
+msgstr ""
+
+#: widgets/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr ""
+
+#: widgets/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr ""
+
+#: widgets/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr ""
+
+#: widgets/properties/property.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Change Font Size"
+msgstr "Schriftgröße"
+
+#: widgets/properties/property.cpp:100
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change Eraser Size"
+msgstr "Radierergröße"
+
+#: widgets/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgid "Actions"
+msgstr "Aktionen"
+
+#: widgets/properties/property.cpp:104
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change Stroke Style"
+msgstr "Radierergröße"
+
+#: widgets/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr ""
+
+#: widgets/properties/property.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Change Background Style"
+msgstr "Schriftgröße"
+
+#: widgets/properties/widgets/actionswidget.cpp:32
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Delete selection"
+msgctxt "@info:tooltip"
+msgid "Delete selection"
+msgstr "Auswahl löschen"
+
+#: widgets/properties/widgets/actionswidget.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Group selection"
+msgctxt "@info:tooltip"
+msgid "Group selection"
+msgstr "Auswahl gruppieren"
+
+#: widgets/properties/widgets/actionswidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Ungroup selection"
+msgctxt "@info:tooltip"
+msgid "Ungroup selection"
+msgstr "Gruppierung aufheben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Left"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Center"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Right"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Top"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Middle"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Align to Bottom"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Move Tool"
+msgid "Alignment"
+msgstr "Verschieben"
+
+#: widgets/properties/widgets/arrowstylewidget.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Arrow"
+msgid "Arrow"
+msgstr "Pfeil"
+
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#, kde-format
+msgid "Background Color"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#: widgets/properties/widgets/stokestylewidget.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Solid"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Diagonal Cross"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Diagonal"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:68
+#, kde-format
+msgid "Background Style"
+msgstr ""
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "@info:tooltip"
+msgid "Select Custom Color"
+msgstr "Auswahlwerkzeug"
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Color"
+msgid "Color"
+msgstr "Farbe"
+
+#: widgets/properties/widgets/erasersizewidget.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Eraser Size"
+msgstr "Radierergröße"
+
+#: widgets/properties/widgets/fontsizewidget.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Font Size"
+msgstr "Schriftgröße"
+
+#: widgets/properties/widgets/opacitywidget.cpp:43
+#, kde-format
+msgid "Opacity"
+msgstr ""
+
+#: widgets/properties/widgets/stokestylewidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Line"
+msgctxt "@info:tooltip"
+msgid "Dashed"
+msgstr "Linie"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Dotted"
+msgstr ""
+
+#: widgets/properties/widgets/stokestylewidget.cpp:69
+#, kde-format
+msgid "Stroke Style"
+msgstr ""
+
+#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#, kde-format
+msgid "Stroke Color"
+msgstr ""
+
+#: widgets/properties/widgets/strokewidthwidget.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "StrokeWidthWidget|"
+#| msgid "Thickness"
+msgid "Thickness"
+msgstr "Dicke"
+
+#: widgets/properties/widgets/zorderwidget.cpp:47
+#, kde-format
+msgid "Z-order"
+msgstr ""
+
+#: widgets/tools/arrowtool.cpp:20
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Arrow Tool"
+msgctxt "@info:tooltip"
+msgid "Arrow Tool"
+msgstr "Pfeile"
+
+#: widgets/tools/diamondtool.cpp:21
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "@info:tooltip"
+msgid "Diamond Tool"
+msgstr "Linie"
+
+#: widgets/tools/ellipsetool.cpp:21
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Ellipse Tool"
+msgctxt "@info:tooltip"
+msgid "Ellipse Tool"
+msgstr "Ellipsen"
+
+#: widgets/tools/erasertool.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Eraser Tool"
+msgctxt "@info:tooltip"
+msgid "Eraser Tool"
+msgstr "Radierer"
+
+#: widgets/tools/freeformtool.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Pen Tool"
+msgctxt "@info:tooltip"
+msgid "Pen Tool"
+msgstr "Stift"
+
+#: widgets/tools/linetool.cpp:19
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Line Tool"
+msgctxt "@info:tooltip"
+msgid "Line Tool"
+msgstr "Linie"
+
+#: widgets/tools/movetool.cpp:78
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
+msgctxt "@info:tooltip"
+msgid "Move Tool"
+msgstr "Zum Verschiebewerkzeug wechseln"
+
+#: widgets/tools/rectangletool.cpp:21
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "@info:tooltip"
+msgid "Rectangle Tool"
+msgstr "Rechtecke"
+
+#: widgets/tools/selectiontool/selectiontool.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Selection Tool"
+msgctxt "@info:tooltip"
+msgid "Selection Tool"
+msgstr "Auswahlwerkzeug"
+
+#: widgets/tools/texttool.cpp:510
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Text Tool"
+msgctxt "@info:tooltip"
+msgid "Text Tool"
+msgstr "Text"
+
+#~ msgctxt "ActionsWidget|"
+#~ msgid "Actions"
+#~ msgstr "Aktionen"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Arrow"
+#~ msgctxt "ArrowStyleWidget|"
+#~ msgid "Arrow"
+#~ msgstr "Pfeil"
+
+#~ msgctxt "QObject|"
+#~ msgid "Arrow Tool"
+#~ msgstr "Pfeile"
+
+#~ msgctxt "QObject|"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Ellipsen"
+
+#~ msgctxt "QObject|"
+#~ msgid "Eraser Tool"
+#~ msgstr "Radierer"
+
+#~ msgctxt "QObject|"
+#~ msgid "Line Tool"
+#~ msgstr "Linie"
+
+#~ msgctxt "QObject|"
+#~ msgid "Move Tool"
+#~ msgstr "Zum Verschiebewerkzeug wechseln"
+
+#~ msgctxt "QObject|"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Rechtecke"
+
+#~ msgctxt "QObject|"
+#~ msgid "Selection Tool"
+#~ msgstr "Auswahlwerkzeug"
+
+#~ msgctxt "QObject|"
+#~ msgid "Text Tool"
+#~ msgstr "Text"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move on Top"
+#~ msgstr "Verschieben"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Move"
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move Up"
+#~ msgstr "Verschieben"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move Down"
+#~ msgstr "Verschieben"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "ZOrderWidget|"
+#~ msgid "Move on Bottom"
+#~ msgstr "Verschieben"
+
+#~ msgctxt "QObject|"
+#~ msgid "Your handy, infinite, brainstorming tool!"
+#~ msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Save to File"
+#~ msgstr "In Datei speichern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom Out"
+#~ msgstr "Verkleinern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Zoom In"
+#~ msgstr "Vergrößern"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Undo"
+#~ msgstr "Rückgängig"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Redo"
+#~ msgstr "Wiederherstellen"
+
+#, fuzzy
+#~| msgctxt "MainWindow|"
+#~| msgid "Do you want to close?"
+#~ msgctxt "RestoreAutoSaveJob|"
+#~ msgid "Do you want to restore autosave file?"
+#~ msgstr "Möchten Sie schließen?"
+
+#, fuzzy
+#~| msgctxt "MainWindow|"
+#~| msgid "Do you want to close?"
+#~ msgctxt "MainWindow|"
+#~ msgid "Do you want to save file?"
+#~ msgstr "Möchten Sie schließen?"
+
+#~ msgctxt "MainWindow|"
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Save And Close"
+#~ msgstr "In Datei speichern"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Save to File"
+#~ msgctxt "MainWindow|"
+#~ msgid "Export to Svg"
+#~ msgstr "In Datei speichern"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Eraser Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Eraser Tool"
+#~ msgstr "Radierer"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Selection Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Selection Tool"
+#~ msgstr "Auswahlwerkzeug"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Rechtecke"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Ellipse Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Ellipsen"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Line Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Line Tool"
+#~ msgstr "Linien"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Text Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Text Tool"
+#~ msgstr "Text"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Arrow Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Arrow Tool"
+#~ msgstr "Pfeile"
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Move Tool"
+#~ msgctxt "MainWindow|"
+#~ msgid "Move Tool"
+#~ msgstr "Verschieben"
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Line"
+#~ msgctxt "StokeStyleWidget|"
+#~ msgid "Dot Line"
+#~ msgstr "Linie"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to freeform drawing tool"
+#~ msgstr "Zum Freihand-Zeichenwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to eraser tool"
+#~ msgstr "Zum Radierer wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to selection tool"
+#~ msgstr "Zum Auswahlwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to rectangle drawing tool"
+#~ msgstr "Zum Rechteck-Zeichenwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to ellipse drawing tool"
+#~ msgstr "Zum Ellipsen-Zeichenwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to line drawing tool"
+#~ msgstr "Zum Linien-Zeichenwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to the text tool"
+#~ msgstr "Zum Textwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to arrow drawing tool"
+#~ msgstr "Zum Pfeil-Zeichenwerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Switch to move tool"
+#~ msgstr "Zum Verschiebewerkzeug wechseln"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Groups selected items"
+#~ msgstr "Ausgewählte Elemente werden gruppiert"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Ungroups selected groups"
+#~ msgstr "Ausgewählte Gruppierungen werden aufgehoben"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Deletes selected items"
+#~ msgstr "Die ausgewählten Elemente werden gelöscht"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo"
+#~ msgstr "Rückgängig"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Undo last action"
+#~ msgstr "Letzte Aktion rückgängig machen"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo"
+#~ msgstr "Wiederherstellen"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Redo last undone action"
+#~ msgstr "Letzte rückgängig gemachte Aktion wiederherstellen"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom In"
+#~ msgstr "Vergrößern"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom in"
+#~ msgstr "Vergrößern"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom Out"
+#~ msgstr "Verkleinern"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Zoom out"
+#~ msgstr "Verkleinern"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Select all items"
+#~ msgstr "Alle Elemente au&swählen"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Save"
+#~ msgstr "Speichern"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open File"
+#~ msgstr "Datei öffnen"
+
+#~ msgctxt "ActionManager|"
+#~ msgid "Open an existing file"
+#~ msgstr "Eine existierende Datei öffnen"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Light Mode"
+#~ msgstr "Heller Modus"
+
+#~ msgctxt "UIContext|"
+#~ msgid "Dark Mode"
+#~ msgstr "Dunkler Modus"
+
+#~ msgctxt "ActionManager|keybinding for the undo action"
+#~ msgid "Ctrl+Z"
+#~ msgstr "Strg+Z"
+
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Y"
+#~ msgstr "Strg+Y"
+
+#~ msgctxt "ActionManager|keybinding for the redo action"
+#~ msgid "Ctrl+Shift+Z"
+#~ msgstr "Strg+Umschalt+Z"
+
+#~ msgctxt "ActionManager|keybinding for the zoom in action"
+#~ msgid "Ctrl++"
+#~ msgstr "Strg++"
+
+#~ msgctxt "ActionManager|keybinding for the zoom out action"
+#~ msgid "Ctrl+-"
+#~ msgstr "Strg+-"
+
+#~ msgctxt "ActionManager|keybinding for the text tool"
+#~ msgid "T"
+#~ msgstr "T"
+
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "P"
+#~ msgstr "P"
+
+#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
+#~ msgid "B"
+#~ msgstr "B"
+
+#~ msgctxt "ActionManager|keybinding for the eraser tool"
+#~ msgid "E"
+#~ msgstr "E"
+
+#~ msgctxt "ActionManager|keybinding for the selection tool"
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
+#~ msgid "R"
+#~ msgstr "R"
+
+#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
+#~ msgid "O"
+#~ msgstr "O"
+
+#~ msgctxt "ActionManager|keybinding for the line drawing tool"
+#~ msgid "L"
+#~ msgstr "L"
+
+#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgctxt "ActionManager|keybinding for the move tool"
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgctxt "ActionManager|keybinding for the select all action"
+#~ msgid "Ctrl+A"
+#~ msgstr "Strg+A"
+
+#~ msgctxt "ActionManager|keybinding for the delete action"
+#~ msgid "Del"
+#~ msgstr "Entf"
+
+#~ msgctxt "ActionManager|keybinding for the save action"
+#~ msgid "Ctrl+S"
+#~ msgstr "Strg+S"
+
+#~ msgctxt "ActionManager|keybinding for the open file action"
+#~ msgid "Ctrl+O"
+#~ msgstr "Strg+O"
+
+#~ msgctxt "ActionManager|keybinding for the group action"
+#~ msgid "Ctrl+G"
+#~ msgstr "Strg+G"
+
+#~ msgctxt "ActionManager|keybinding for the ungroup action"
+#~ msgid "Ctrl+Shift+G"
+#~ msgstr "Strg+Umschalt+G"
