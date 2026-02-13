@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygonserializer.hpp"
 class LineItem;
-class LIBDRAWYWIDGETS_TESTS_EXPORT LineSerializer : public PolygonSerializer
+class LIBDRAWYWIDGETS_EXPORT LineSerializer : public PolygonSerializer
 {
 public:
     explicit LineSerializer(const LineItem *item);

@@ -1,0 +1,7 @@
+{
+    "KPlugin": {
+        "Description": "This plugin adds basic shapes plugin.",
+        "Name": "Basic Shapes",
+        "Version": "1.0"
+    }
+}

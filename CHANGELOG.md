@@ -12,6 +12,8 @@
 * A quick action command to clear the entire canvas.
 * KCrash integration to handle and report application crashes.
 * Extensive internal unit tests and continuous integration checks.
+* Add support for plugin.
+* Add basic shapes plugin.
 
 ### Changed
 * Freehand strokes now use Bezier curves and interpolation to make drawing feel significantly smoother.

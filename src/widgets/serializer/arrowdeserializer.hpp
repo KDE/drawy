@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygondeserializer.hpp"
 class ArrowItem;
-class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowDeserializer : public PolygonDeserializer
+class LIBDRAWYWIDGETS_EXPORT ArrowDeserializer : public PolygonDeserializer
 {
 public:
     explicit ArrowDeserializer(ArrowItem *item);

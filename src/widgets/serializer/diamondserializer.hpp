@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygonserializer.hpp"
 class DiamondItem;
-class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondSerializer : public PolygonSerializer
+class LIBDRAWYWIDGETS_EXPORT DiamondSerializer : public PolygonSerializer
 {
 public:
     explicit DiamondSerializer(const DiamondItem *item);

@@ -16,6 +16,7 @@ class ActionManager;
 class TopWidgets;
 class TopLeftWidgets;
 class BottomLeftWidgets;
+class PluginFormManager;
 
 class UIContext : public QObject
 {
@@ -52,6 +53,7 @@ private:
     BottomLeftWidgets *m_bottomLeftWidgets = nullptr;
     Event *const m_event;
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
+    PluginFormManager *const mPluginFormManager;
 
     ApplicationContext *const m_applicationContext;
 };

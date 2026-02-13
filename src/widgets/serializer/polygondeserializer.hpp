@@ -6,10 +6,10 @@
 #pragma once
 
 #include "itemdeserializer.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 class PolygonItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonDeserializer : public ItemDeserializer
+class LIBDRAWYWIDGETS_EXPORT PolygonDeserializer : public ItemDeserializer
 {
 public:
     explicit PolygonDeserializer(PolygonItem *item);

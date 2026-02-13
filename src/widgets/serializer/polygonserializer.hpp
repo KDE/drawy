@@ -6,10 +6,10 @@
 #pragma once
 
 #include "itemserializer.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 class PolygonItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonSerializer : public ItemSerializer
+class LIBDRAWYWIDGETS_EXPORT PolygonSerializer : public ItemSerializer
 {
 public:
     explicit PolygonSerializer(const PolygonItem *item);

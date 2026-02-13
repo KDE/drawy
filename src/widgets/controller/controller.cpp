@@ -67,7 +67,6 @@ void Controller::mousePressed(QMouseEvent *event)
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
-
     contextEvent->setPos(event->pos(), canvas->scale());
     contextEvent->setButton(event->button());
     contextEvent->setModifiers(event->modifiers());

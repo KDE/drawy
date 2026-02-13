@@ -1,10 +1,12 @@
 # SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
+set(DRAWY_LIB_SOVERSION "0")
 add_subdirectory(widgets)
 add_subdirectory(apps)
 add_subdirectory(icons)
 add_subdirectory(data)
+add_subdirectory(plugins)
 
 # Set bundle properties for macOS / iOS.
 if(APPLE)

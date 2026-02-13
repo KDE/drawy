@@ -4,11 +4,11 @@
 
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include <QVariant>
 #include <utility>
 class QDebug;
-class LIBDRAWYWIDGETS_TESTS_EXPORT Property
+class LIBDRAWYWIDGETS_EXPORT Property
 {
     Q_GADGET
 public:

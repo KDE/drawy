@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "libdrawywidgets_export.h"
 #include <memory>
-
 class Item;
 
-class ItemFactory
+class LIBDRAWYWIDGETS_EXPORT ItemFactory
 {
 public:
     ItemFactory();

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "toolbar.hpp"
+#include "components/toolbuttonplugin.hpp"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QStyle>
@@ -32,13 +33,40 @@ Tool &ToolBar::curTool() const
     return *m_tools.at(curID);
 }
 
-void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name)
+void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
 {
     if (!tool) {
         return;
     }
 
-    auto btn{new QToolButton(this)};
+    auto btn = new ToolButtonPlugin(this);
+    connect(btn, &ToolButtonPlugin::toolActivated, this, [this, tool, btn](const PluginForm::PluginFormInfo &item) {
+        tool->setUpdateTool(item);
+        btn->setToolTip(item.toolTip);
+        btn->setIcon(QIcon::fromTheme(item.iconName));
+        btn->setChecked(true);
+        Q_EMIT toolChanged(*tool);
+    });
+
+    m_tools[Tool::Type::Custom] = tool;
+    m_group->addButton(btn, static_cast<int>(Tool::Type::Custom));
+    m_layout->addWidget(btn);
+    if (m_tools.size() == 1) {
+        btn->setChecked(true);
+        Q_EMIT toolChanged(*tool);
+    }
+}
+
+void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name)
+{
+    if (!tool) {
+        return;
+    }
+    if (type == Tool::Type::Custom) {
+        return;
+    }
+
+    auto btn = new QToolButton(this);
     btn->setToolTip(name);
     btn->setIcon(QIcon::fromTheme(tool->icon()));
     btn->setAutoRaise(true);
@@ -53,7 +81,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
     m_group->addButton(btn, static_cast<int>(type));
     m_layout->addWidget(btn);
     if (m_tools.size() == 1) {
-        m_group->button(static_cast<int>(type))->setChecked(true);
+        btn->setChecked(true);
         Q_EMIT toolChanged(*tool);
     }
 }

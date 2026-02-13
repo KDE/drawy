@@ -32,7 +32,6 @@ PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
 void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
-
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};

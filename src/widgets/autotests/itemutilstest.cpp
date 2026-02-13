@@ -24,6 +24,7 @@ void ItemUtilsTest::shouldConvertItemTypeStringToEnum()
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"TEXT"_s), Item::FormType::Text);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"GROUP"_s), Item::FormType::Group);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"DIAMOND"_s), Item::FormType::Diamond);
+    QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"CUSTOM"_s), Item::FormType::Custom);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum({}), Item::FormType::Invalid);
     QCOMPARE(ItemUtils::convertItemTypeStringToEnum(u"foo"_s), Item::FormType::Invalid);
 }
@@ -31,6 +32,7 @@ void ItemUtilsTest::shouldConvertItemTypeStringToEnum()
 void ItemUtilsTest::shouldConvertEnumItemTypeToString()
 {
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Freeform), u"FREEFORM"_s);
+    QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Custom), u"CUSTOM"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Rectangle), u"RECTANGLE"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Ellipse), u"ELLIPSE"_s);
     QCOMPARE(ItemUtils::convertItemTypeEnumToString(Item::FormType::Line), u"LINE"_s);

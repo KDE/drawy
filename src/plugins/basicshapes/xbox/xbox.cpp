@@ -1,0 +1,85 @@
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+#include "xbox.hpp"
+#include "basicshapespluginutils.hpp"
+#include "item/itemutils.hpp"
+#include "xboxdeserializer.hpp"
+#include "xboxserializer.hpp"
+#include <KLocalizedString>
+#include <QJsonObject>
+#include <QPainterPath>
+using namespace Qt::Literals::StringLiterals;
+
+XBoxItem::XBoxItem()
+{
+    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+    m_properties[Property::Type::BackgroundStyle] =
+        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
+}
+
+void XBoxItem::drawItem(QPainter &painter, const QPointF &offset) const
+{
+    prepareBackground(painter);
+    painter.drawRect(QRectF(start() - offset, end() - offset));
+    painter.drawLine(start() - offset, end() - offset);
+    painter.drawLine(QPointF(end().x(), start().y()) - offset, QPointF(start().x(), end().y()) - offset);
+}
+
+bool XBoxItem::intersects(const QRectF &rect)
+{
+    if (!boundingBox().intersects(rect)) {
+        return false;
+    }
+
+    QPainterPath path;
+    path.addRect(QRectF{start(), end()});
+
+    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    if (isFilled) {
+        return path.intersects(rect);
+    }
+    path = m_transform.map(path);
+    return path.intersects(rect) && !path.contains(rect);
+}
+
+Item::FormType XBoxItem::formType() const
+{
+    return Item::FormType::Custom;
+}
+
+QJsonObject XBoxItem::serialize(int zorder) const
+{
+    const XBoxSerializer serialize(this);
+    return serialize.serialize(zorder);
+}
+
+void XBoxItem::deserialize(const QJsonObject &obj)
+{
+    XBoxDeserializer deserializer(this);
+    deserializer.deserialize(obj);
+}
+
+bool XBoxItem::operator==(const XBoxItem &other) const
+{
+    return start() == other.start() && PolygonItem::operator==(other);
+}
+
+PluginForm::PluginFormInfo XBoxItem::pluginFormInfo()
+{
+    const PluginForm::PluginFormInfo info{
+        .pluginName = BasicShapesPluginUtils::pluginName(),
+        .toolTip = i18nc("@info:tooltip", "X Box"),
+        .name = BasicShapesPluginUtils::convertStandardFormPluginTypeToString(BasicShapesPluginUtils::BasicShapesPluginType::XBox),
+        .iconName = u"tools-wizard"_s, // Just text. Icon is not ok
+        .properties = {
+            Property::Type::BackgroundColor,
+            Property::Type::BackgroundStyle,
+            Property::Type::StrokeWidth,
+            Property::Type::StrokeColor,
+            Property::Type::StrokeStyle,
+            Property::Type::Opacity,
+        }};
+    return info;
+}

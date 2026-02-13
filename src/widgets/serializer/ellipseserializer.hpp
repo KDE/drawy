@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygonserializer.hpp"
 class EllipseItem;
-class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseSerializer : public PolygonSerializer
+class LIBDRAWYWIDGETS_EXPORT EllipseSerializer : public PolygonSerializer
 {
 public:
     explicit EllipseSerializer(const EllipseItem *item);

@@ -43,6 +43,7 @@ public:
         Arrow,
         Text,
         Diamond,
+        Custom,
     };
 
     virtual Type type() const = 0;

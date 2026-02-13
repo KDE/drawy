@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-set(DRAWY_LIB_SOVERSION "0")
 add_library(libdrawywidgets)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -67,6 +66,10 @@ target_sources(
         components/topwidgets.hpp
         components/topleftwidgets.cpp
         components/topleftwidgets.hpp
+        components/toolbuttonplugin.hpp
+        components/toolbuttonplugin.cpp
+        components/flowlayout.hpp
+        components/flowlayout.cpp
         context/applicationcontext.cpp
         context/applicationcontext.hpp
         context/coordinatetransformer.cpp
@@ -202,6 +205,8 @@ target_sources(
         tools/texttool.hpp
         tools/tool.cpp
         tools/tool.hpp
+        tools/customtool.hpp
+        tools/customtool.cpp
         transformhandler/transformhandler.hpp
         transformhandler/transformhandler.cpp
         transformhandler/linemovetransformhandler.hpp
@@ -309,6 +314,12 @@ target_sources(
         debug/debugdialog.hpp
         debug/debugdialog.cpp
         libdrawywidgets_private_export.h
+        pluginform/pluginform.cpp
+        pluginform/pluginform.hpp
+        pluginform/pluginformmanager.cpp
+        pluginform/pluginformmanager.hpp
+        pluginform/pluginformutils.hpp
+        pluginform/pluginformutils.cpp
 )
 
 # precompiled headers support
@@ -322,6 +333,38 @@ if(ENABLE_PCH)
 endif()
 
 generate_export_header(libdrawywidgets BASE_NAME libdrawywidgets)
+
+install(
+    FILES
+        item/item.hpp
+        item/factory/itemfactory.hpp
+        properties/property.hpp
+        pluginform/pluginform.hpp
+        serializer/itemserializer.hpp
+        serializer/rectangleserializer.hpp
+        serializer/polygonserializer.hpp
+        serializer/arrowserializer.hpp
+        serializer/ellipseserializer.hpp
+        serializer/lineserializer.hpp
+        serializer/textserializer.hpp
+        serializer/freeformserializer.hpp
+        serializer/groupserializer.hpp
+        serializer/polygondeserializer.hpp
+        serializer/arrowdeserializer.hpp
+        serializer/ellipsedeserializer.hpp
+        serializer/freeformdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/linedeserializer.hpp
+        serializer/polygondeserializer.hpp
+        serializer/rectangledeserializer.hpp
+        serializer/textdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/diamonddeserializer.hpp
+        serializer/diamondserializer.hpp
+        ${CMAKE_CURRENT_BINARY_DIR}/libdrawywidgets_export.h
+    DESTINATION DrawyWidgets/
+    COMPONENT Devel
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(

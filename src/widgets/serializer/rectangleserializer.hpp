@@ -5,10 +5,10 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygonserializer.hpp"
 class RectangleItem;
-class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleSerializer : public PolygonSerializer
+class LIBDRAWYWIDGETS_EXPORT RectangleSerializer : public PolygonSerializer
 {
 public:
     explicit RectangleSerializer(const RectangleItem *item);

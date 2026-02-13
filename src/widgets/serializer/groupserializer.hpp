@@ -6,10 +6,10 @@
 #pragma once
 
 #include "itemserializer.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 class GroupItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT GroupSerializer : public ItemSerializer
+class LIBDRAWYWIDGETS_EXPORT GroupSerializer : public ItemSerializer
 {
 public:
     explicit GroupSerializer(const GroupItem *item);

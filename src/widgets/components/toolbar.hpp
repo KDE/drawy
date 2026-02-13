@@ -7,6 +7,7 @@
 #include "frame.hpp"
 #include <QShowEvent>
 
+#include "tools/customtool.hpp"
 #include "tools/tool.hpp"
 class QButtonGroup;
 class QHBoxLayout;
@@ -25,6 +26,7 @@ public:
 
     void showEvent(QShowEvent *event) override;
 
+    void addCustomTool(const std::shared_ptr<CustomTool> &tool);
 Q_SIGNALS:
     void toolChanged(Tool &);
     void toolbarShown();

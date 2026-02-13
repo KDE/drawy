@@ -5,11 +5,11 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygondeserializer.hpp"
 class EllipseItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseDeserializer : public PolygonDeserializer
+class LIBDRAWYWIDGETS_EXPORT EllipseDeserializer : public PolygonDeserializer
 {
 public:
     explicit EllipseDeserializer(EllipseItem *item);

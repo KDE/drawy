@@ -4,11 +4,11 @@
 
 #pragma once
 #include "item.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 
 class QDebug;
 
-class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonItem : public Item
+class LIBDRAWYWIDGETS_EXPORT PolygonItem : public Item
 {
 public:
     PolygonItem();

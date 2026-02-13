@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include <QPainter>
 #include <QRect>
 
@@ -12,7 +12,7 @@
 
 class QDebug;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT Item
+class LIBDRAWYWIDGETS_EXPORT Item
 {
     Q_GADGET
 public:
@@ -42,6 +42,7 @@ public:
         Text,
         Group,
         Diamond,
+        Custom,
         Invalid,
     };
     Q_ENUM(FormType)

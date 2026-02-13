@@ -5,11 +5,11 @@
  */
 #pragma once
 
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 #include "polygondeserializer.hpp"
 class RectangleItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleDeserializer : public PolygonDeserializer
+class LIBDRAWYWIDGETS_EXPORT RectangleDeserializer : public PolygonDeserializer
 {
 public:
     explicit RectangleDeserializer(RectangleItem *item);

@@ -7,7 +7,7 @@
 #pragma once
 
 #include "item/item.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 namespace ItemUtils
 {
 enum class AlignType : uint8_t {
@@ -27,15 +27,15 @@ enum class ZorderMove : uint8_t {
     BringToFront,
 };
 
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::FormType convertItemTypeStringToEnum(const QString &str);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemTypeEnumToString(Item::FormType type);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemStrokeTypeEnumToString(Item::StrokeType type);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::PenStyle convertItemStrokeTypeStringToPenStyle(const QString &penStyle);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT Item::FormType convertItemTypeStringToEnum(const QString &str);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT QString convertItemTypeEnumToString(Item::FormType type);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT Item::StrokeType convertStrokeTypeStringToEnum(const QString &str);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT QString convertItemStrokeTypeEnumToString(Item::StrokeType type);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT Qt::PenStyle convertItemStrokeTypeStringToPenStyle(const QString &penStyle);
 
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT QString convertItemBackgroundTypeEnumToString(Item::BackgroundType type);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Qt::BrushStyle convertItemBackgroundTypeStringToBrushStyle(const QString &brushStyle);
-[[nodiscard]] LIBDRAWYWIDGETS_TESTS_EXPORT Item::BackgroundType convertBackgroundTypeStringToEnum(const QString &str);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT QString convertItemBackgroundTypeEnumToString(Item::BackgroundType type);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT Qt::BrushStyle convertItemBackgroundTypeStringToBrushStyle(const QString &brushStyle);
+[[nodiscard]] LIBDRAWYWIDGETS_EXPORT Item::BackgroundType convertBackgroundTypeStringToEnum(const QString &str);
 
 [[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::FormType type);
 

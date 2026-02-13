@@ -19,11 +19,13 @@
 #include "event/event.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
+#include "pluginform/pluginformmanager.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
 #include "spatialcontext.hpp"
 #include "tools/arrowtool.hpp"
+#include "tools/customtool.hpp"
 #include "tools/diamondtool.hpp"
 #include "tools/ellipsetool.hpp"
 #include "tools/erasertool.hpp"
@@ -40,6 +42,7 @@ UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
     , m_keybindManager(new KeybindManager(this))
     , m_event(new Event())
+    , mPluginFormManager(PluginFormManager::self())
     , m_applicationContext{context}
 {
 }
@@ -68,6 +71,7 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<EraserTool>(m_applicationContext), Tool::Type::Eraser, i18nc("@action:button", "Eraser"));
     m_toolBar->addTool(std::make_shared<TextTool>(m_applicationContext), Tool::Type::Text, i18nc("@action:button", "Text"));
     m_toolBar->addTool(std::make_shared<MoveTool>(m_applicationContext), Tool::Type::Move, i18nc("@action:button", "Move"));
+    m_toolBar->addCustomTool(std::make_shared<CustomTool>(m_applicationContext));
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);
     connect(m_toolBar, &ToolBar::toolbarShown, this, [this]() {

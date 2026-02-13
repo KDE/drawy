@@ -5,10 +5,11 @@
  */
 
 #pragma once
+#include "libdrawywidgets_export.h"
 #include "properties/property.hpp"
 class Item;
 class QJsonObject;
-class ItemDeserializer
+class LIBDRAWYWIDGETS_EXPORT ItemDeserializer
 {
 public:
     explicit ItemDeserializer(Item *item);

@@ -6,10 +6,10 @@
 #pragma once
 
 #include "itemdeserializer.hpp"
-#include "libdrawywidgets_private_export.h"
+#include "libdrawywidgets_export.h"
 class TextItem;
 class QJsonObject;
-class LIBDRAWYWIDGETS_TESTS_EXPORT TextDeserializer : public ItemDeserializer
+class LIBDRAWYWIDGETS_EXPORT TextDeserializer : public ItemDeserializer
 {
 public:
     explicit TextDeserializer(TextItem *item);

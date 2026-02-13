@@ -5,8 +5,8 @@
  */
 
 #pragma once
-
 #include "item/item.hpp"
+#include "libdrawywidgets_private_export.h"
 class QXmlStreamWriter;
 namespace SvgSerializer
 {
