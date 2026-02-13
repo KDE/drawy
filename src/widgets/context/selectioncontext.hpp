@@ -39,7 +39,7 @@ public:
         Q_EMIT selectionUpdated();
     }
 
-    [[nodiscard]] QRectF selectionBox() const;
+    [[nodiscard]] QPolygonF selectionBox() const;
 
     void reset();
 

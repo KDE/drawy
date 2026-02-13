@@ -76,6 +76,10 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     const qreal transY{transform.m32() * zoom - offset.y()};
     painter.translate(transX, transY);
 
+    const double angleRad{std::atan2(inverseTransform.m21(), inverseTransform.m11())};
+    const double angleDeg{qRadiansToDegrees(angleRad)};
+    painter.rotate(angleDeg);
+
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {
             cell->paint([&](QPainter &p) -> void {

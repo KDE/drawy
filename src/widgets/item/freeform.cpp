@@ -191,12 +191,7 @@ qsizetype FreeformItem::size() const
     return m_points.size();
 }
 
-void FreeformItem::translate(const QPointF &amount)
-{
-    m_transform.translate(amount.x(), amount.y());
-}
-
-Item::FormType FreeformItem::formType() const
+Item::Type FreeformItem::formType() const
 {
     return Item::FormType::Freeform;
 }

@@ -193,6 +193,10 @@ target_sources(
         tools/selectiontool/selectiontool.hpp
         tools/selectiontool/selectiontoolmovestate.cpp
         tools/selectiontool/selectiontoolmovestate.hpp
+        tools/selectiontool/selectiontoolrotatestate.cpp
+        tools/selectiontool/selectiontoolrotatestate.hpp
+        tools/selectiontool/selectiontoolresizestate.cpp
+        tools/selectiontool/selectiontoolresizestate.hpp
         tools/selectiontool/selectiontoolselectstate.cpp
         tools/selectiontool/selectiontoolselectstate.hpp
         tools/selectiontool/selectiontoolstate.hpp

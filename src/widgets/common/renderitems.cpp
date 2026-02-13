@@ -63,8 +63,13 @@ void Common::renderCanvas(ApplicationContext *context)
                     } else {
                         painter.save();
                         painter.scale(zoom, zoom);
+
+                        QTransform cell{};
+                        cell.translate(topLeft.x(), topLeft.y());
+                        painter.setTransform(cell.inverted(), true);
+
                         painter.setTransform(item->transformObj(), true);
-                        item->draw(painter, topLeft);
+                        item->draw(painter, QPointF{0, 0});
                         painter.restore();
                     }
                 }
@@ -85,23 +90,16 @@ void Common::renderCanvas(ApplicationContext *context)
         QPen pen{Common::selectionBorderColor, 1.0, Qt::DashLine};
         painter.setPen(pen);
 
-        QRectF selectionBox{};
-        for (const auto &item : std::as_const(selectedItems)) {
-            const QRectF curBox{transformer.worldToView(item->boundingBox()).normalized()};
-            painter.drawRect(curBox);
-            selectionBox |= curBox;
-        }
+        QPolygonF viewSelectionBox{transformer.worldToView(context->selectionContext()->selectionBox())};
 
         pen.setStyle(Qt::SolidLine);
         painter.setPen(pen);
-        painter.drawRect(selectionBox);
+        painter.drawPolygon(viewSelectionBox);
 
-        // NOTE: This is just temporarily drawn like this. I'll update this soon.
-        painter.setBrush(Qt::black);
-        constexpr qreal handleSize{7.0};
-        painter.drawEllipse(selectionBox.topLeft(), handleSize, handleSize);
-        painter.drawEllipse(selectionBox.topRight(), handleSize, handleSize);
-        painter.drawEllipse(selectionBox.bottomRight(), handleSize, handleSize);
-        painter.drawEllipse(selectionBox.bottomLeft(), handleSize, handleSize);
+        constexpr qreal handleWidth{10.0}, handleWidthHalf{handleWidth / 2.0};
+        painter.setBrush(context->renderingContext()->canvas()->canvasBg());
+        for (QPointF point : viewSelectionBox) {
+            painter.drawRect(QRectF{point.x() - handleWidthHalf, point.y() - handleWidthHalf, handleWidth, handleWidth});
+        }
     });
 }

@@ -42,6 +42,15 @@ QRectF CoordinateTransformer::worldToView(QRectF rect)
     return {worldToView(rect.topLeft()), worldToView(rect.size())};
 }
 
+QPolygonF CoordinateTransformer::worldToView(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = worldToView(point);
+    }
+
+    return rect;
+}
+
 QPointF CoordinateTransformer::viewToWorld(QPointF point)
 {
     return point / m_renderingContext->zoomFactor() + m_spatialContext->offsetPos();
@@ -55,6 +64,15 @@ QSizeF CoordinateTransformer::viewToWorld(QSizeF size)
 QRectF CoordinateTransformer::viewToWorld(QRectF rect)
 {
     return {viewToWorld(rect.topLeft()), viewToWorld(rect.size())};
+}
+
+QPolygonF CoordinateTransformer::viewToWorld(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = viewToWorld(point);
+    }
+
+    return rect;
 }
 
 QPoint CoordinateTransformer::worldToView(QPoint point)
@@ -72,6 +90,15 @@ QRect CoordinateTransformer::worldToView(QRect rect)
     return round(worldToView(rect.toRectF()));
 }
 
+QPolygon CoordinateTransformer::worldToView(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = worldToView(point);
+    }
+
+    return rect;
+}
+
 QPoint CoordinateTransformer::viewToWorld(QPoint point)
 {
     return round(viewToWorld(point.toPointF()));
@@ -85,6 +112,15 @@ QSize CoordinateTransformer::viewToWorld(QSize size)
 QRect CoordinateTransformer::viewToWorld(QRect rect)
 {
     return round(viewToWorld(rect.toRectF()));
+}
+
+QPolygon CoordinateTransformer::viewToWorld(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = viewToWorld(point);
+    }
+
+    return rect;
 }
 
 QPointF CoordinateTransformer::worldToGrid(QPointF point)
@@ -102,6 +138,15 @@ QRectF CoordinateTransformer::worldToGrid(QRectF rect)
     return {worldToGrid(rect.topLeft()), worldToGrid(rect.size())};
 }
 
+QPolygonF CoordinateTransformer::worldToGrid(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = worldToGrid(point);
+    }
+
+    return rect;
+}
+
 QPointF CoordinateTransformer::gridToWorld(QPointF point)
 {
     return point / m_renderingContext->zoomFactor();
@@ -115,6 +160,15 @@ QSizeF CoordinateTransformer::gridToWorld(QSizeF size)
 QRectF CoordinateTransformer::gridToWorld(QRectF rect)
 {
     return {gridToWorld(rect.topLeft()), gridToWorld(rect.size())};
+}
+
+QPolygonF CoordinateTransformer::gridToWorld(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = gridToWorld(point);
+    }
+
+    return rect;
 }
 
 QPoint CoordinateTransformer::worldToGrid(QPoint point)
@@ -132,6 +186,15 @@ QRect CoordinateTransformer::worldToGrid(QRect rect)
     return round(worldToGrid(rect.toRectF()));
 }
 
+QPolygon CoordinateTransformer::worldToGrid(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = worldToGrid(point);
+    }
+
+    return rect;
+}
+
 QPoint CoordinateTransformer::gridToWorld(QPoint point)
 {
     return round(gridToWorld(point.toPointF()));
@@ -145,6 +208,15 @@ QSize CoordinateTransformer::gridToWorld(QSize size)
 QRect CoordinateTransformer::gridToWorld(QRect rect)
 {
     return round(gridToWorld(rect.toRectF()));
+}
+
+QPolygon CoordinateTransformer::gridToWorld(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = gridToWorld(point);
+    }
+
+    return rect;
 }
 
 QPointF CoordinateTransformer::viewToGrid(QPointF point)
@@ -162,6 +234,15 @@ QRectF CoordinateTransformer::viewToGrid(QRectF rect)
     return QRectF{viewToGrid(rect.topLeft()), viewToGrid(rect.bottomRight())};
 }
 
+QPolygonF CoordinateTransformer::viewToGrid(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = viewToGrid(point);
+    }
+
+    return rect;
+}
+
 QPointF CoordinateTransformer::gridToView(QPointF point)
 {
     return point - worldToGrid(m_spatialContext->offsetPos());
@@ -175,6 +256,15 @@ QSizeF CoordinateTransformer::gridToView(QSizeF size)
 QRectF CoordinateTransformer::gridToView(QRectF rect)
 {
     return QRectF{gridToView(rect.topLeft()), gridToView(rect.bottomRight())};
+}
+
+QPolygonF CoordinateTransformer::gridToView(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = gridToView(point);
+    }
+
+    return rect;
 }
 
 QPoint CoordinateTransformer::viewToGrid(QPoint point)
@@ -192,6 +282,15 @@ QRect CoordinateTransformer::viewToGrid(QRect rect)
     return round(viewToGrid(rect.toRectF()));
 }
 
+QPolygon CoordinateTransformer::viewToGrid(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = viewToGrid(point);
+    }
+
+    return rect;
+}
+
 QPoint CoordinateTransformer::gridToView(QPoint point)
 {
     return round(gridToView(point.toPointF()));
@@ -205,6 +304,15 @@ QSize CoordinateTransformer::gridToView(QSize size)
 QRect CoordinateTransformer::gridToView(QRect rect)
 {
     return round(gridToView(rect.toRectF()));
+}
+
+QPolygon CoordinateTransformer::gridToView(QPolygon rect)
+{
+    for (QPoint &point : rect) {
+        point = gridToView(point);
+    }
+
+    return rect;
 }
 
 QPoint CoordinateTransformer::round(QPointF point)
@@ -225,4 +333,13 @@ QRect CoordinateTransformer::round(QRectF rect)
 QSize CoordinateTransformer::round(QSizeF size)
 {
     return QSize{qRound(size.width()), qRound(size.height())};
+}
+
+QPolygon CoordinateTransformer::round(QPolygonF rect)
+{
+    for (QPointF &point : rect) {
+        point = round(point);
+    }
+
+    return rect.toPolygon();
 }

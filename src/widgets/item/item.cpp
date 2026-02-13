@@ -32,6 +32,29 @@ QRectF Item::normalizedBoundingBox() const
     return m_boundingBox;
 }
 
+QPolygonF Item::displayBoundingBox() const
+{
+    const qreal mg{Common::boundingBoxPadding};
+    return m_transform.map(m_boundingBox.normalized().adjusted(-mg, -mg, mg, mg));
+}
+
+void Item::translate(const QPointF &amount)
+{
+    m_transform.translate(amount.x(), amount.y());
+}
+
+void Item::rotate(const int angle, const QPointF pivot)
+{
+    m_transform.translate(pivot.x(), pivot.y());
+    m_transform.rotate(angle);
+    m_transform.translate(-pivot.x(), -pivot.y());
+}
+
+void Item::resize(qreal amountX, qreal amountY)
+{
+    m_transform.scale(amountX, amountY);
+}
+
 Property Item::property(const Property::Type propertyType) const
 {
     if (!m_properties.contains(propertyType)) {

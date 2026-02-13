@@ -22,13 +22,14 @@ public:
     virtual void draw(QPainter &painter, const QPointF &offset) = 0;
     virtual void erase(QPainter &painter, const QPointF &offset) const;
 
-    virtual QRectF boundingBox() const;
-    virtual QRectF normalizedBoundingBox() const;
+    [[nodiscard]] virtual QRectF boundingBox() const;
+    [[nodiscard]] virtual QRectF normalizedBoundingBox() const;
+    [[nodiscard]] virtual QPolygonF displayBoundingBox() const; // could be rotated as well
 
     [[nodiscard]] int boundingBoxPadding() const;
 
     virtual void setProperty(const Property::Type propertyType, Property newObj);
-    virtual Property property(const Property::Type propertyType) const;
+    [[nodiscard]] virtual Property property(const Property::Type propertyType) const;
     virtual QList<Property> properties() const;
     virtual QList<Property::Type> propertyTypes() const;
 
@@ -72,7 +73,9 @@ public:
 
     const QTransform &transformObj() const;
 
-    virtual void translate(const QPointF &amount) = 0;
+    virtual void translate(const QPointF &amount);
+    virtual void rotate(const int angleDegree, const QPointF pivot);
+    virtual void resize(qreal amountX, qreal amountY);
     virtual void normalize();
 
     [[nodiscard]] virtual bool needsCaching() const;

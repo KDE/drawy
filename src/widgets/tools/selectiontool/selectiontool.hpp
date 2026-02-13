@@ -30,6 +30,8 @@ private:
 
     std::shared_ptr<SelectionToolState> m_moveState;
     std::shared_ptr<SelectionToolState> m_selectState;
+    std::shared_ptr<SelectionToolState> m_rotateState;
+    std::shared_ptr<SelectionToolState> m_resizeState;
     std::shared_ptr<SelectionToolState> m_curState;
 
     bool m_stateLocked{false};

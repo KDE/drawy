@@ -50,13 +50,22 @@ void SelectionContext::removeFromSelection(const std::shared_ptr<Item> &item)
     Q_EMIT selectionUpdated();
 }
 
-QRectF SelectionContext::selectionBox() const
+QPolygonF SelectionContext::selectionBox() const
 {
+    if (m_selectedItems.empty()) {
+        return {};
+    }
+
+    if (m_selectedItems.size() == 1) {
+        return (*m_selectedItems.begin())->displayBoundingBox();
+    }
+
+    // always return a unified rectangle if there are more items
     QRectF selectionBox;
     for (const auto &item : m_selectedItems) {
-        selectionBox |= item->boundingBox();
+        selectionBox |= item->displayBoundingBox().boundingRect();
     }
-    return selectionBox;
+    return static_cast<QPolygonF>(selectionBox);
 }
 
 // PUBLIC SLOTS

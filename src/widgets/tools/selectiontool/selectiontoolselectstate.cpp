@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -34,7 +34,7 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
 
         QList<std::shared_ptr<Item>> intersectingItems{
             spatialContext->quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
-                return item->boundingBox().contains(pos);
+                return item->intersects(QRectF{pos, QSize{1, 1}});
             })};
 
         bool lockState = true;

@@ -95,11 +95,6 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
     drawItem(painter, offset);
 }
 
-void PolygonItem::translate(const QPointF &amount)
-{
-    m_transform.translate(amount.x(), amount.y());
-}
-
 void PolygonItem::deserialize(const QJsonObject &obj)
 {
     PolygonDeserializer deserializer(this);

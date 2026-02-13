@@ -21,8 +21,11 @@
 #include "event/event.hpp"
 #include "item/item.hpp"
 #include "selectiontoolmovestate.hpp"
+#include "selectiontoolresizestate.hpp"
+#include "selectiontoolrotatestate.hpp"
 #include "selectiontoolselectstate.hpp"
 #include "selectiontoolstate.hpp"
+
 using namespace Qt::Literals::StringLiterals;
 SelectionTool::SelectionTool(ApplicationContext *context)
     : Tool(context)
@@ -31,6 +34,8 @@ SelectionTool::SelectionTool(ApplicationContext *context)
 
     m_moveState = std::make_shared<SelectionToolMoveState>();
     m_selectState = std::make_shared<SelectionToolSelectState>();
+    m_rotateState = std::make_shared<SelectionToolRotateState>();
+    m_resizeState = std::make_shared<SelectionToolResizeState>();
 }
 
 void SelectionTool::mousePressed(ApplicationContext *context)
@@ -58,14 +63,30 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     auto uiContext{context->uiContext()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    const QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
+    const QPointF viewCurPos{uiContext->appEvent()->pos()};
+    const QPolygonF viewSelection{transformer.worldToView(selectionContext->selectionBox())};
 
-    // TODO: Implement resizing and rotation as well
-    if (selectionContext->selectionBox().contains(worldCurPos) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
+    // move state
+    if (viewSelection.containsPoint(viewCurPos, Qt::OddEvenFill) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
-    } else {
-        return m_curState = m_selectState;
     }
+
+    // resize and rotate states
+    constexpr qreal rotationHandleSize{100.0}, resizeHandleSize{20.0};
+    for (QPointF point : viewSelection) {
+        QRectF resizeHandle{point.x() - resizeHandleSize / 2.0, point.y() - resizeHandleSize / 2.0, resizeHandleSize, resizeHandleSize};
+        if (resizeHandle.contains(viewCurPos)) {
+            return m_curState = m_resizeState;
+        }
+
+        QRectF rotationHandle{point.x() - rotationHandleSize / 2.0, point.y() - rotationHandleSize / 2.0, rotationHandleSize, rotationHandleSize};
+        if (rotationHandle.contains(viewCurPos)) {
+            return m_curState = m_rotateState;
+        }
+    }
+
+    // select state
+    return m_curState = m_selectState;
 }
 
 void SelectionTool::keyPressed(ApplicationContext *context)

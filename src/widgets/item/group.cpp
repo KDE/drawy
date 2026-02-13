@@ -28,8 +28,9 @@ void GroupItem::erase(QPainter &painter, const QPointF &offset) const
 void GroupItem::translate(const QPointF &amount)
 {
     for (const auto &item : std::as_const(m_items)) {
-        item->translate(amount);
+        item->translate(-amount);
     }
+    Item::translate(amount);
 }
 
 void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
@@ -50,6 +51,10 @@ bool GroupItem::intersects(const QRectF &rect)
 
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
+    const QPointF translationAmount{m_transform.m31(), m_transform.m32()};
+    for (const auto &item : std::as_const(m_items)) {
+        item->translate(translationAmount);
+    }
     setDirty(true);
     return m_items;
 }

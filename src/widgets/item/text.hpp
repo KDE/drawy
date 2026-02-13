@@ -20,7 +20,6 @@ public:
 
     void draw(QPainter &painter, const QPointF &offset) override;
 
-    void translate(const QPointF &amount) override;
     void normalize() override;
 
     void createTextBox(const QPointF position);

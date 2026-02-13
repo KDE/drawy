@@ -55,15 +55,19 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
 
     const QPointF worldCurPos{transformer.viewToWorld(curPos)};
     const QPointF worldLastPos{transformer.viewToWorld(m_lastPos)};
-    const QPointF delta{worldCurPos - worldLastPos};
 
     QRect dirtyRegion{};
     for (const auto &item : selectedItems) {
         if (!item->locked()) {
+            const QTransform invertedTransform{item->transformObj().inverted()};
+            const QPointF localCurPos{invertedTransform.map(worldCurPos)};
+            const QPointF localLastPos{invertedTransform.map(worldLastPos)};
+            const QPointF localDelta{localCurPos - localLastPos};
+
             spatialContext->quadtree().deleteItem(item, false);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
 
-            item->translate(delta);
+            item->translate(localDelta);
 
             spatialContext->quadtree().insertItem(item, false);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toRect();
