@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-13 00:41+0000\n"
-"PO-Revision-Date: 2026-02-08 08:06+0200\n"
+"POT-Creation-Date: 2026-02-14 00:41+0000\n"
+"PO-Revision-Date: 2026-02-13 09:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -19,900 +19,665 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "kde-l10n-he@kde.org"
 
 #: apps/main.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "An optional argument 'file' "
+#, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "ארגומנט ‚file’ כרשות"
 
 #: apps/main.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite brainstorming tool!"
+#, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
 
 #: widgets/command/alignitemcommand.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Align Items"
+#, kde-format
 msgid "Align Items"
 msgstr "יישור פריטים"
 
 #: widgets/command/deselectcommand.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Deselect Object"
+#, kde-format
 msgid "Deselect Object"
 msgstr "ביטול בחירת עצם"
 
 #: widgets/command/groupcommand.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Group Object"
+#, kde-format
 msgid "Group Object"
 msgstr "קיבוץ עצמים"
 
 #: widgets/command/insertitemcommand.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Insert Object"
+#, kde-format
 msgid "Insert Object"
 msgstr "הוספת עצם"
 
 #: widgets/command/lockcommand.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Lock"
+#, kde-format
 msgid "Change Lock"
 msgstr "החלפת נעילה"
 
 #: widgets/command/moveitemcommand.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Move Object"
+#, kde-format
 msgid "Move Object"
 msgstr "הזזת עצם"
 
 #: widgets/command/removeitemcommand.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgstr "הסרת עצם"
 
 #: widgets/command/selectcommand.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Select Object"
+#, kde-format
 msgid "Select Object"
 msgstr "בחירת עצם"
 
 #: widgets/command/ungroupcommand.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Ungroup Objects"
+#, kde-format
 msgid "Ungroup Objects"
 msgstr "פריטת העצמים"
 
 #: widgets/command/updatepropertycommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Update Property"
+#, kde-format
 msgid "Update Property"
 msgstr "עדכון מאפיין"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change ZOrder"
+#, kde-format
 msgid "Change ZOrder"
 msgstr "שינוי מרחק (סדר בציר Z)"
 
 #: widgets/components/bottomleftwidgets.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "BottomLeftWidgets|"
-#| msgid "Reset Zoom"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "איפוס רמת תקריב"
 
 #: widgets/components/topleftwidgets.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "TopLeftWidgets|"
-#| msgid "Open Menu"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
 msgstr "פתיחת התפריט"
 
 #: widgets/context/aboutdata.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Drawy"
+#, kde-format
 msgid "Drawy"
 msgstr "Drawy"
 
 #: widgets/context/aboutdata.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Your handy, infinite  brainstorming tool!"
+#, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
 
 #: widgets/context/aboutdata.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "(c) 2025-%1 Drawy authors"
+#, kde-format
 msgid "(c) 2025-%1 Drawy authors"
 msgstr "‏(c) 2026‏-%1 יוצרי Drawy"
 
 #: widgets/context/aboutdata.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Prayag Jain"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
 msgstr "פריאג ג׳אין"
 
 #: widgets/context/aboutdata.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Maintainer"
+#, kde-format
 msgid "Maintainer"
 msgstr "מתחזק"
 
 #: widgets/context/aboutdata.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "לורנט מונטל"
 
 #: widgets/context/aboutdata.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Developer"
+#, kde-format
 msgid "Developer"
 msgstr "מפתח"
 
 #: widgets/context/uicontext.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "בחירה"
 
 #: widgets/context/uicontext.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Free Form"
+#, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
 #: widgets/context/uicontext.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Rectangle"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "מרובע"
 
 #: widgets/context/uicontext.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Diamond"
+#, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "יהלום"
 
 #: widgets/context/uicontext.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Ellipse"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "אליפסה"
 
 #: widgets/context/uicontext.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "חץ"
 
 #: widgets/context/uicontext.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Line"
+#, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "קו"
 
 #: widgets/context/uicontext.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Eraser"
+#, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "מוחק"
 
 #: widgets/context/uicontext.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Text"
+#, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "טקסט"
 
 #: widgets/context/uicontext.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Move"
+#, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "הזזה"
 
 #: widgets/dialog/configuresettingsdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "ConfigureSettingsDialog|"
-#| msgid "Configure Drawy"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "הגדרת Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "ConfigureSettingsDialog|"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "כללי"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|"
-#| msgid "Session"
+#, kde-format
 msgid "Session"
 msgstr "הפעלה"
 
 #: widgets/dialog/general/autosavewidget.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|"
-#| msgid "Time interval for automatic saving"
+#, kde-format
 msgid "Time interval for automatic saving"
 msgstr "הפרש בין שמירות אוטומטיות"
 
 #: widgets/dialog/general/autosavewidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|delay unit"
-#| msgid " minute(s)"
-#| msgid_plural " minute(s)"
+#, kde-format
 msgctxt "@item %v is a number"
 msgid "%v minute"
 msgid_plural "%v minutes"
-msgstr[0] " דקה"
-msgstr[1] " דקות"
-msgstr[2] " דקות"
-msgstr[3] " דקות"
+msgstr[0] "דקה"
+msgstr[1] "שתי דקות"
+msgstr[2] "%v דקות"
+msgstr[3] "%v דקות"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|"
-#| msgid "Directory for automatic saving"
+#, kde-format
 msgid "Directory for automatic saving"
 msgstr "תיקייה לשמירה אוטומטית"
 
 #: widgets/dialog/general/autosavewidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|"
-#| msgid "Open Directory"
+#, kde-format
 msgid "Open Directory"
 msgstr "פתיחת תיקייה"
 
 #: widgets/dialog/general/autosavewidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "AutoSaveWidget|"
-#| msgid "Restore previous session on start"
+#, kde-format
 msgid "Restore previous session on start"
 msgstr "שחזור הפעלה קודמת עם העלייה"
 
 #: widgets/drawycommandlineparser.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Fullscreen"
 msgstr "מסך מלא"
 
-#: widgets/keybindings/actionmanager.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Export as SVG"
+#: widgets/keybindings/actionmanager.cpp:79
+#, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "ייצוא כ־SVG"
 
-#: widgets/keybindings/actionmanager.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Group Items"
+#: widgets/keybindings/actionmanager.cpp:84
+#, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "קיבוץ פריטים"
 
-#: widgets/keybindings/actionmanager.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Ungroup Items"
+#: widgets/keybindings/actionmanager.cpp:87
+#, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "פריטת פריטים"
 
-#: widgets/keybindings/actionmanager.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Delete"
+#: widgets/keybindings/actionmanager.cpp:92
+#, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: widgets/keybindings/actionmanager.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Clear Canvas"
+#: widgets/keybindings/actionmanager.cpp:94
+#, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "פינוי משטח ציור"
 
-#: widgets/keybindings/actionmanager.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Freeform Tool"
+#: widgets/keybindings/actionmanager.cpp:97
+#, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "כלי צורה חופשית"
 
-#: widgets/keybindings/actionmanager.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
+#: widgets/keybindings/actionmanager.cpp:100
+#, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
-#: widgets/keybindings/actionmanager.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
+#: widgets/keybindings/actionmanager.cpp:101
+#, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
 
-#: widgets/keybindings/actionmanager.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
+#: widgets/keybindings/actionmanager.cpp:102
+#, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/keybindings/actionmanager.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
+#: widgets/keybindings/actionmanager.cpp:103
+#, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
-#: widgets/keybindings/actionmanager.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
+#: widgets/keybindings/actionmanager.cpp:104
+#, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "כלי קווים"
 
-#: widgets/keybindings/actionmanager.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
+#: widgets/keybindings/actionmanager.cpp:105
+#, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "כלי טקסט"
 
-#: widgets/keybindings/actionmanager.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
+#: widgets/keybindings/actionmanager.cpp:106
+#, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "כלי חיצים"
 
-#: widgets/keybindings/actionmanager.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
+#: widgets/keybindings/actionmanager.cpp:107
+#, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
-#: widgets/keybindings/actionmanager.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Send To Back"
+#: widgets/keybindings/actionmanager.cpp:109
+#, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "הרחקה לרקע"
 
-#: widgets/keybindings/actionmanager.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Send Backward"
+#: widgets/keybindings/actionmanager.cpp:112
+#, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "שליחה אחורה"
 
-#: widgets/keybindings/actionmanager.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Bring Forward"
+#: widgets/keybindings/actionmanager.cpp:115
+#, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "הבאה קדימה"
 
-#: widgets/keybindings/actionmanager.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Bring To Front"
+#: widgets/keybindings/actionmanager.cpp:118
+#, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "קידום לחזית"
 
-#: widgets/keybindings/actionmanager.cpp:338
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Untitled.%1"
+#: widgets/keybindings/actionmanager.cpp:398
+#, kde-format
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/keybindings/actionmanager.cpp:340
-#: widgets/keybindings/actionmanager.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Drawy (*.%1)"
+#: widgets/keybindings/actionmanager.cpp:400
+#: widgets/keybindings/actionmanager.cpp:464
+#, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Save File"
+#: widgets/keybindings/actionmanager.cpp:401
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/keybindings/actionmanager.cpp:363
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Do you really want to clear the canvas?"
+#: widgets/keybindings/actionmanager.cpp:423
+#, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "לפנות את משטח הציור?"
 
-#: widgets/keybindings/actionmanager.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Clear"
+#: widgets/keybindings/actionmanager.cpp:424
+#, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "פינוי"
+msgstr "לפנות"
 
-#: widgets/keybindings/actionmanager.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Open File"
+#: widgets/keybindings/actionmanager.cpp:467
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/keybindings/actionmanager.cpp:420
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Untitled.svg"
+#: widgets/keybindings/actionmanager.cpp:480
+#, kde-format
 msgid "Untitled.svg"
 msgstr "ללא שם.svg"
 
-#: widgets/keybindings/actionmanager.cpp:422
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "SVG (*.svg)"
+#: widgets/keybindings/actionmanager.cpp:482
+#, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Export to Svg"
+#: widgets/keybindings/actionmanager.cpp:484
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:459
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#: widgets/keybindings/actionmanager.cpp:519
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "המסמך „%1” נערך. לשמור את השינויים או לבטל אותם?"
 
-#: widgets/keybindings/actionmanager.cpp:463
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Action Required"
+#: widgets/keybindings/actionmanager.cpp:523
+#, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "נדרשת פעולה"
 
 #: widgets/properties/property.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Stroke Width"
+#, kde-format
 msgid "Change Stroke Width"
 msgstr "שינוי עובי קו המתאר"
 
 #: widgets/properties/property.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Stroke Color"
+#, kde-format
 msgid "Change Stroke Color"
 msgstr "החלפת צבע קו מתאר"
 
 #: widgets/properties/property.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Opacity"
+#, kde-format
 msgid "Change Opacity"
 msgstr "שינוי אטימות"
 
 #: widgets/properties/property.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Size"
 msgstr "שינוי גודל כתב"
 
 #: widgets/properties/property.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Eraser Size"
+#, kde-format
 msgid "Change Eraser Size"
 msgstr "שינוי גודל מוחק"
 
 #: widgets/properties/property.cpp:102
 #: widgets/properties/widgets/actionswidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Actions"
+#, kde-format
 msgid "Actions"
 msgstr "פעולות"
 
 #: widgets/properties/property.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change Stroke Style"
 msgstr "החלפת סגנון קו המתאר"
 
 #: widgets/properties/property.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Background Color"
+#, kde-format
 msgid "Change Background Color"
 msgstr "החלפת צבע רקע"
 
 #: widgets/properties/property.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Change Background Style"
+#, kde-format
 msgid "Change Background Style"
 msgstr "החלפת סגנון רקע"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Delete selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "מחיקת בחירה"
 
 #: widgets/properties/widgets/actionswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "קיבוץ הבחירה"
 
 #: widgets/properties/widgets/actionswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Ungroup selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
 msgstr "פריטת הבחירה"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Left"
 msgstr "יישור לשמאל"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Center"
 msgstr "יישור למרכז"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Right"
 msgstr "יישור לימין"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Top"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Top"
 msgstr "יישור למעלה"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Middle"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Middle"
 msgstr "יישור לאמצע"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Align to Bottom"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Bottom"
 msgstr "יישור לתחתית"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "AlignmentWidget|"
-#| msgid "Alignment"
+#, kde-format
 msgid "Alignment"
 msgstr "יישור"
 
 #: widgets/properties/widgets/arrowstylewidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Arrow"
+#, kde-format
 msgid "Arrow"
 msgstr "חץ"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
+#, kde-format
 msgid "Background Color"
 msgstr "צבע רקע"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
 #: widgets/properties/widgets/stokestylewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "BackgroundStyleWidget|"
-#| msgid "Solid"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
 msgstr "אחיד"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "BackgroundStyleWidget|"
-#| msgid "Diagonal Cross"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
 msgstr "צלב אלכסוני"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "BackgroundStyleWidget|"
-#| msgid "Diagonal"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
 msgstr "אלכסוני"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "BackgroundStyleWidget|"
-#| msgid "Background Style"
+#, kde-format
 msgid "Background Style"
 msgstr "סגנון רקע"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "ColorWidgetBase|"
-#| msgid "Select Custom Color"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "בחירת צבע מותאם אישית"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "ColorWidgetBase|"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "צבע"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
+#: widgets/properties/widgets/erasersizewidget.cpp:32
+#, kde-format
 msgid "Eraser Size"
 msgstr "גודל מוחק"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
+#: widgets/properties/widgets/fontsizewidget.cpp:32
+#, kde-format
 msgid "Font Size"
 msgstr "גודל כתב"
 
 #: widgets/properties/widgets/opacitywidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
+#, kde-format
 msgid "Opacity"
 msgstr "אטימות"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Dashed"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "מקווקוו"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Dotted"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "מנוקד"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
+#, kde-format
 msgid "Stroke Style"
 msgstr "סגנון קו המתאר"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
+#, kde-format
 msgid "Stroke Color"
 msgstr "צבע קו מתאר"
 
-#: widgets/properties/widgets/strokewidthwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "StrokeWidthWidget|"
-#| msgid "Thickness"
+#: widgets/properties/widgets/strokewidthwidget.cpp:31
+#, kde-format
 msgid "Thickness"
 msgstr "עובי"
 
 #: widgets/properties/widgets/zorderwidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Z-order"
+#, kde-format
 msgid "Z-order"
 msgstr "סדר Z (עומק)"
 
 #: widgets/tools/arrowtool.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Arrow Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Arrow Tool"
 msgstr "כלי חיצים"
 
 #: widgets/tools/diamondtool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Diamond Tool"
 msgstr "כלי יהלומים"
 
 #: widgets/tools/ellipsetool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Ellipse Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
 #: widgets/tools/erasertool.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Eraser Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
 #: widgets/tools/freeformtool.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Pen Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "כלי עט"
 
 #: widgets/tools/linetool.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Line Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Line Tool"
 msgstr "כלי קווים"
 
 #: widgets/tools/movetool.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
 #: widgets/tools/rectangletool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
 #: widgets/tools/selectiontool/selectiontool.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
 
 #: widgets/tools/texttool.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Text Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "כלי טקסט"

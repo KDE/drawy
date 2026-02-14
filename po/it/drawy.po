@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-13 00:41+0000\n"
+"POT-Creation-Date: 2026-02-14 00:41+0000\n"
 "PO-Revision-Date: 2026-02-07 08:55+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -333,7 +333,7 @@ msgctxt "@info:shell"
 msgid "Fullscreen"
 msgstr "Schermo intero"
 
-#: widgets/keybindings/actionmanager.cpp:71
+#: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Export as SVG"
@@ -341,7 +341,7 @@ msgctxt "@action"
 msgid "Export as SVG"
 msgstr "Esporta come SVG"
 
-#: widgets/keybindings/actionmanager.cpp:76
+#: widgets/keybindings/actionmanager.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Group Items"
@@ -349,7 +349,7 @@ msgctxt "@action"
 msgid "Group Items"
 msgstr "Raggruppa gli elementi"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Ungroup Items"
@@ -357,7 +357,7 @@ msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Separa gli elementi"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Delete"
@@ -365,7 +365,7 @@ msgctxt "@action"
 msgid "Delete"
 msgstr "Elimina"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:94
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Clear Canvas"
@@ -373,7 +373,7 @@ msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Cancella la tela"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -381,7 +381,7 @@ msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Disegno a mano libera"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Eraser Tool"
@@ -389,7 +389,7 @@ msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Gomma"
 
-#: widgets/keybindings/actionmanager.cpp:93
+#: widgets/keybindings/actionmanager.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Selection Tool"
@@ -397,7 +397,7 @@ msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Selezione"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Rectangle Tool"
@@ -405,7 +405,7 @@ msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Rettangolo"
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Ellipse Tool"
@@ -413,7 +413,7 @@ msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Ellisse"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -421,7 +421,7 @@ msgctxt "@action"
 msgid "Line Tool"
 msgstr "Linea"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:105
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Text Tool"
@@ -429,7 +429,7 @@ msgctxt "@action"
 msgid "Text Tool"
 msgstr "Testo"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -437,7 +437,7 @@ msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Freccia"
 
-#: widgets/keybindings/actionmanager.cpp:99
+#: widgets/keybindings/actionmanager.cpp:107
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -445,7 +445,7 @@ msgctxt "@action"
 msgid "Move Tool"
 msgstr "Sposta"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Send To Back"
@@ -453,7 +453,7 @@ msgctxt "@action"
 msgid "Send To Back"
 msgstr "Invia indietro"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:112
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Send Backward"
@@ -461,7 +461,7 @@ msgctxt "@action"
 msgid "Send Backward"
 msgstr "Invia in secondo piano"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Bring Forward"
@@ -469,7 +469,7 @@ msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta avanti"
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Bring To Front"
@@ -477,22 +477,22 @@ msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta in primo piano"
 
-#: widgets/keybindings/actionmanager.cpp:338
+#: widgets/keybindings/actionmanager.cpp:398
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Untitled.%1"
 msgid "Untitled.%1"
 msgstr "Senza titolo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:340
-#: widgets/keybindings/actionmanager.cpp:404
+#: widgets/keybindings/actionmanager.cpp:400
+#: widgets/keybindings/actionmanager.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Drawy (*.%1)"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:341
+#: widgets/keybindings/actionmanager.cpp:401
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Save File"
@@ -500,7 +500,7 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salva file"
 
-#: widgets/keybindings/actionmanager.cpp:363
+#: widgets/keybindings/actionmanager.cpp:423
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Do you really want to clear the canvas?"
@@ -508,7 +508,7 @@ msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Vuoi davvero cancellare la tela?"
 
-#: widgets/keybindings/actionmanager.cpp:364
+#: widgets/keybindings/actionmanager.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Clear"
@@ -516,7 +516,7 @@ msgctxt "@action"
 msgid "Clear"
 msgstr "Pulisci"
 
-#: widgets/keybindings/actionmanager.cpp:407
+#: widgets/keybindings/actionmanager.cpp:467
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Open File"
@@ -524,21 +524,21 @@ msgctxt "@title:window"
 msgid "Open File"
 msgstr "Apri file"
 
-#: widgets/keybindings/actionmanager.cpp:420
+#: widgets/keybindings/actionmanager.cpp:480
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.svg"
 msgid "Untitled.svg"
 msgstr "Senzatitolo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:422
+#: widgets/keybindings/actionmanager.cpp:482
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "SVG (*.svg)"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:484
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Export to Svg"
@@ -546,7 +546,7 @@ msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Esporta in SVG"
 
-#: widgets/keybindings/actionmanager.cpp:459
+#: widgets/keybindings/actionmanager.cpp:519
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid ""
@@ -559,7 +559,7 @@ msgstr ""
 "Il documento «%1» è stato modificato. Vuoi salvare le modifiche fatte, "
 "oppure scartarle?"
 
-#: widgets/keybindings/actionmanager.cpp:463
+#: widgets/keybindings/actionmanager.cpp:523
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Action Required"
@@ -771,14 +771,14 @@ msgstr "Seleziona colore personalizzato"
 msgid "Color"
 msgstr "Colore"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:30
+#: widgets/properties/widgets/erasersizewidget.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "EraserSizeWidget|"
 #| msgid "Eraser Size"
 msgid "Eraser Size"
 msgstr "Dimensione della gomma"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:30
+#: widgets/properties/widgets/fontsizewidget.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "FontSizeWidget|"
 #| msgid "Font Size"
@@ -822,7 +822,7 @@ msgstr "Stile del tratto"
 msgid "Stroke Color"
 msgstr "Colore del tratto"
 
-#: widgets/properties/widgets/strokewidthwidget.cpp:29
+#: widgets/properties/widgets/strokewidthwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "StrokeWidthWidget|"
 #| msgid "Thickness"
