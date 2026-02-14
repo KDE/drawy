@@ -2,11 +2,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-id: org.kde.Drawy
+id: org.kde.drawy
 runtime: org.kde.Platform
 runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: drawy
+rename-icon: drawy
 finish-args:
     # 3D acceleration
   - --device=dri
@@ -20,6 +21,7 @@ cleanup:
   - /include
   - /lib/pkgconfig
   - /share/man
+  - /share/qlogging-categories6
   - '*.pc'
   - '*.a'
   - '*.la'
@@ -28,6 +30,7 @@ modules:
   - name: drawy
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DBUILD_TESTING=OFF
     buildsystem: cmake-ninja
     sources:
       - type: dir
