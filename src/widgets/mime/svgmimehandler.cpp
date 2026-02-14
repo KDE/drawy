@@ -19,7 +19,7 @@ void SvgMimeHandler::contributeData(QMimeData &mimeData, const QList<std::shared
 
     QList<std::shared_ptr<Item>> selectedList;
 
-    for (auto &ptr : selectedItems) {
+    for (const auto &ptr : selectedItems) {
         selectedList.append(ptr);
     }
 
