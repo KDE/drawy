@@ -38,7 +38,7 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, QWidget *pare
     zoomOutButton->setDefaultAction(actionManager->action(KStandardActions::ZoomOut));
 
     auto zoomLabel{new ClickableLabel{zoomControlFrame}};
-    zoomLabel->setText(u"100%"_s);
+    zoomLabel->setText(i18nc("@label, percent text", "100%"));
     zoomLabel->setToolTip(i18nc("@info:tooltip", "Reset Zoom"));
 
     connect(zoomLabel, &ClickableLabel::clicked, this, &BottomLeftWidgets::resetZoom);
@@ -50,7 +50,7 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, QWidget *pare
 
     connect(this, &BottomLeftWidgets::zoomFactorChanged, this, [zoomLabel](qreal newZoomFactor) {
         const int zoomValue{qRound(newZoomFactor * 100)};
-        zoomLabel->setText(u"%1%"_s.arg(zoomValue));
+        zoomLabel->setText(i18nc("@label, percent value", "%1%", zoomValue));
     });
 
     zoomControlLayout->setSpacing(style()->pixelMetric(QStyle::PM_ToolBarItemMargin));
