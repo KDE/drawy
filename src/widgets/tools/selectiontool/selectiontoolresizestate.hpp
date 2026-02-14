@@ -6,6 +6,7 @@
 
 #include <QPointF>
 
+#include "selectiontool.hpp"
 #include "selectiontoolstate.hpp"
 
 class SelectionToolResizeState : public SelectionToolState
@@ -15,6 +16,11 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     [[nodiscard]] bool mouseReleased(ApplicationContext *context) override;
 
+    void setHandle(SelectionTool::SelectionHandle handle);
+
 private:
+    QCursor cursorForHandle(double angle) const;
+
     QPointF m_viewLastPoint{};
+    SelectionTool::SelectionHandle m_handle{};
 };

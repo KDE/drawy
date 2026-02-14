@@ -13,6 +13,7 @@
 #include "properties/property.hpp"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
+#include <utility>
 
 SelectionContext::SelectionContext(ApplicationContext *context)
     : QObject{context}
@@ -62,10 +63,24 @@ QPolygonF SelectionContext::selectionBox() const
 
     // always return a unified rectangle if there are more items
     QRectF selectionBox;
-    for (const auto &item : m_selectedItems) {
+    for (const auto &item : std::as_const(m_selectedItems)) {
         selectionBox |= item->displayBoundingBox().boundingRect();
     }
     return static_cast<QPolygonF>(selectionBox);
+}
+
+std::pair<QRectF, QTransform> SelectionContext::selectionBoxWithTransform() const
+{
+    if (m_selectedItems.empty()) {
+        return {};
+    }
+
+    if (m_selectedItems.size() == 1) {
+        const auto &item{*m_selectedItems.begin()};
+        return std::make_pair(item->normalizedBoundingBox(), item->transformObj());
+    }
+
+    return std::make_pair(selectionBox().boundingRect(), QTransform{});
 }
 
 // PUBLIC SLOTS

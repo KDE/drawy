@@ -40,6 +40,7 @@ public:
     }
 
     [[nodiscard]] QPolygonF selectionBox() const;
+    [[nodiscard]] std::pair<QRectF, QTransform> selectionBoxWithTransform() const;
 
     void reset();
 

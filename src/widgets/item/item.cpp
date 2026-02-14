@@ -29,7 +29,8 @@ QRectF Item::boundingBox() const
 
 QRectF Item::normalizedBoundingBox() const
 {
-    return m_boundingBox;
+    const qreal mg{Common::boundingBoxPadding};
+    return m_boundingBox.normalized().adjusted(-mg, -mg, mg, mg);
 }
 
 QPolygonF Item::displayBoundingBox() const

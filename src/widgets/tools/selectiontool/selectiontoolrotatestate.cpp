@@ -8,6 +8,7 @@
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/selectcommand.hpp"
+#include "common/utils/math.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -71,16 +72,6 @@ void SelectionToolRotateState::mouseMoved(ApplicationContext *context)
             item->rotate(angle, item->transformObj().inverted().map(m_centerPoint));
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
         }
-
-        /*
-        context->renderingContext()->canvas()->paintOverlay([&](QPainter &painter) -> void {
-            painter.setPen(Qt::red);
-            painter.setBrush(Qt::red);
-            painter.drawEllipse(m_centerPoint, 10, 10);
-            painter.drawEllipse(curPoint, 10, 10);
-            painter.drawLine(m_lastPoint, m_centerPoint);
-        });
-        */
 
         context->renderingContext()->cacheGrid().markDirty(dirtyRegion);
         context->renderingContext()->markForRender();

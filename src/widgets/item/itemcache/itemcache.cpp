@@ -5,6 +5,7 @@
 #include "itemcache.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
+#include "common/utils/math.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -75,9 +76,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     const qreal transY{transform.m32() * zoom - offset.y()};
     painter.translate(transX, transY);
 
-    const qreal angleRad{qAtan2(inverseTransform.m21(), inverseTransform.m11())};
-    const qreal angleDeg{qRadiansToDegrees(angleRad)};
-    painter.rotate(angleDeg);
+    painter.rotate(Common::Utils::Math::angle(inverseTransform));
 
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {

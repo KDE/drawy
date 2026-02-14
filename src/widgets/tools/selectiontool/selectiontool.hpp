@@ -13,6 +13,17 @@ public:
     explicit SelectionTool(ApplicationContext *context);
     ~SelectionTool() override = default;
 
+    enum class SelectionHandle : int8_t {
+        TopLeft,
+        TopRight,
+        BottomRight,
+        BottomLeft,
+        Top,
+        Right,
+        Bottom,
+        Left
+    };
+
     [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] QString icon() const override;
 

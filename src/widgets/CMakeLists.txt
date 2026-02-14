@@ -45,6 +45,7 @@ target_sources(
         common/utils/compression.hpp
         common/utils/freehand.cpp
         common/utils/freehand.hpp
+        common/utils/math.cpp
         common/utils/math.hpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp

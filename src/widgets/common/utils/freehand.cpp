@@ -3,7 +3,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "freehand.hpp"
+#include "math.hpp"
 #include <QtMath>
+
 namespace Common::Utils::Freehand
 {
 QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
@@ -13,6 +15,7 @@ QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressur
 
 QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure)
 {
+    using namespace Common::Utils::Math;
     if (points.size() != pressures.size()) {
         throw new std::logic_error("Pressures and points list have different sizes");
     }
@@ -75,6 +78,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
 
 QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal thickness)
 {
+    using namespace Common::Utils::Math;
     if (points.empty()) {
         return QList<QPointF>();
     }
@@ -210,54 +214,5 @@ QPainterPath getStrokeOutline(const QList<StrokePoint> &points)
     path.lineTo(points.back().point);
 
     return path;
-}
-
-qreal length(const QPointF &point)
-{
-    const qreal x{point.x()};
-    const qreal y{point.y()};
-    return qSqrt(x * x + y * y);
-}
-
-QPointF unitVector(const QPointF &point)
-{
-    const qreal len{length(point)};
-    if (len == 0) {
-        return point;
-    }
-
-    return QPointF{point.x() / len, point.y() / len};
-}
-
-QPointF rotateVector(const QPointF &vector, const qreal angle)
-{
-    const qreal cosTheta{qCos(angle)};
-    const qreal sinTheta{qSin(angle)};
-
-    return QPointF{vector.x() * cosTheta - vector.y() * sinTheta, vector.x() * sinTheta + vector.y() * cosTheta};
-}
-
-qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB)
-{
-    return vectorA.x() * vectorB.x() + vectorA.y() * vectorB.y();
-}
-
-qreal angle(const QPointF &vectorA, const QPointF &vectorB)
-{
-    const qreal lenA{length(vectorA)};
-    const qreal lenB{length(vectorB)};
-    const qreal dot{dotProduct(vectorA, vectorB)};
-
-    return qAcos(dot / (lenA * lenB));
-}
-
-int crossProduct(const QPointF &vectorA, const QPointF &vectorB)
-{
-    return ((vectorA.x() * vectorB.y() - vectorB.x() * vectorA.y()) > 0 ? 1 : -1);
-}
-
-QPointF lerp(const QPointF &pointA, const QPointF &pointB, const qreal dist)
-{
-    return (1 - dist) * pointA + dist * pointB;
 }
 }; // namespace Common::Utils::Freehand

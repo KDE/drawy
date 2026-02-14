@@ -5,6 +5,7 @@
 #include "selectiontool.hpp"
 #include <KLocalizedString>
 
+#include <qlogging.h>
 #include <qnamespace.h>
 
 #include <set>
@@ -63,24 +64,45 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
     auto uiContext{context->uiContext()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    const QPointF viewCurPos{uiContext->appEvent()->pos()};
-    const QPolygonF viewSelection{transformer.worldToView(selectionContext->selectionBox())};
+    const QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
+    const auto [selection, transform]{selectionContext->selectionBoxWithTransform()};
+    const QPointF localCurPos{transform.inverted().map(worldCurPos)};
 
     // move state
-    if (viewSelection.containsPoint(viewCurPos, Qt::OddEvenFill) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
+    if (selection.contains(localCurPos) && !(uiContext->appEvent()->modifiers() & Qt::ShiftModifier)) {
         return m_curState = m_moveState;
     }
 
-    // resize and rotate states
-    constexpr qreal rotationHandleSize{100.0}, resizeHandleSize{20.0};
-    for (QPointF point : viewSelection) {
-        QRectF resizeHandle{point.x() - resizeHandleSize / 2.0, point.y() - resizeHandleSize / 2.0, resizeHandleSize, resizeHandleSize};
-        if (resizeHandle.contains(viewCurPos)) {
+    // create handle centered at point
+    constexpr auto createHandle = [](const QPointF point, const qreal size) -> QRectF {
+        return QRectF{point.x() - size / 2.0, point.y() - size / 2.0, size, size};
+    };
+
+    // resize state
+    constexpr qreal resizeHandleSize{20.0};
+    const std::array<std::pair<QRectF, SelectionHandle>, 8> resizeHandles{{
+        {createHandle(selection.topLeft(), resizeHandleSize), SelectionHandle::TopLeft},
+        {createHandle(selection.topRight(), resizeHandleSize), SelectionHandle::TopRight},
+        {createHandle(selection.bottomRight(), resizeHandleSize), SelectionHandle::BottomRight},
+        {createHandle(selection.bottomLeft(), resizeHandleSize), SelectionHandle::BottomLeft},
+        {QRectF{selection.left(), selection.top() - resizeHandleSize / 2.0, selection.width(), resizeHandleSize}, SelectionHandle::Top},
+        {QRectF{selection.right() - resizeHandleSize / 2.0, selection.top(), resizeHandleSize, selection.height()}, SelectionHandle::Right},
+        {QRectF{selection.left(), selection.bottom() - resizeHandleSize / 2.0, selection.width(), resizeHandleSize}, SelectionHandle::Bottom},
+        {QRectF{selection.left() - resizeHandleSize / 2.0, selection.top(), resizeHandleSize, selection.height()}, SelectionHandle::Right},
+    }};
+
+    for (const auto &[handle, handleType] : resizeHandles) {
+        if (handle.contains(localCurPos)) {
+            std::dynamic_pointer_cast<SelectionToolResizeState>(m_resizeState)->setHandle(handleType);
             return m_curState = m_resizeState;
         }
+    }
 
-        QRectF rotationHandle{point.x() - rotationHandleSize / 2.0, point.y() - rotationHandleSize / 2.0, rotationHandleSize, rotationHandleSize};
-        if (rotationHandle.contains(viewCurPos)) {
+    // rotate state
+    constexpr qreal rotationHandleSize{50.0};
+    const QList<QPointF> points{selection.topLeft(), selection.topRight(), selection.bottomRight(), selection.bottomLeft()};
+    for (QPointF point : points) {
+        if (createHandle(point, rotationHandleSize).contains(localCurPos)) {
             return m_curState = m_rotateState;
         }
     }
