@@ -29,5 +29,6 @@
             "value": 1
         }
     ],
+    "simulatePressure": true,
     "type": "FREEFORM"
 }

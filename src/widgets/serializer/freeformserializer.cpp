@@ -21,5 +21,6 @@ QJsonObject FreeFormSerializer::serialize(int zorder) const
     const FreeformItem *freeform = static_cast<const FreeformItem *>(mItem);
     obj[u"points"_s] = toJson(freeform->points());
     obj[u"pressures"_s] = toJson(freeform->pressures());
+    obj[u"simulatePressure"_s] = freeform->isPressureSimulated();
     return obj;
 }
