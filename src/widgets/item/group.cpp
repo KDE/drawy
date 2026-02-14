@@ -3,16 +3,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "group.hpp"
+#include "common/constants.hpp"
 #include "serializer/groupdeserializer.hpp"
 #include "serializer/groupserializer.hpp"
 
 #include <QJsonObject>
-#include <stdexcept>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset)
 {
     for (const auto &item : std::as_const(m_items)) {
         painter.save();
+        painter.setTransform(item->transformObj(), true);
         item->draw(painter, offset);
         painter.restore();
     }
@@ -27,15 +28,26 @@ void GroupItem::erase(QPainter &painter, const QPointF &offset) const
 
 void GroupItem::translate(const QPointF &amount)
 {
-    for (const auto &item : std::as_const(m_items)) {
-        item->translate(-amount);
-    }
     Item::translate(amount);
 }
 
 void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 {
     m_items = items;
+
+    QRectF unitedBoundingBox{};
+    for (const auto &item : std::as_const(m_items)) {
+        unitedBoundingBox |= item->boundingBox();
+    }
+
+    translate(unitedBoundingBox.topLeft());
+
+    for (auto &item : m_items) {
+        const QPointF globalOffset{-unitedBoundingBox.topLeft()};
+        const QTransform t{item->transformObj()};
+        const QPointF localOffset{t.inverted().map(globalOffset) - t.inverted().map(QPointF(0, 0))};
+        item->translate(localOffset);
+    }
 }
 
 bool GroupItem::intersects(const QRectF &rect)
@@ -51,15 +63,24 @@ bool GroupItem::intersects(const QRectF &rect)
 
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
-    const QPointF translationAmount{m_transform.m31(), m_transform.m32()};
-    for (const auto &item : std::as_const(m_items)) {
-        item->translate(translationAmount);
+    const QTransform groupTransform{transformObj()};
+    for (auto &item : m_items) {
+        const QTransform combined{item->transformObj() * groupTransform};
+
+        item->setTransform(combined);
+        item->setDirty(true);
     }
+
     setDirty(true);
     return m_items;
 }
 
 QRectF GroupItem::boundingBox() const
+{
+    return m_transform.map(normalizedBoundingBox()).boundingRect();
+}
+
+QRectF GroupItem::normalizedBoundingBox() const
 {
     QRectF result;
 
@@ -68,6 +89,12 @@ QRectF GroupItem::boundingBox() const
     }
 
     return result;
+}
+
+QPolygonF GroupItem::displayBoundingBox() const
+{
+    const qreal mg{Common::boundingBoxPadding};
+    return boundingBox().normalized().adjusted(-mg, -mg, mg, mg);
 }
 
 Item::FormType GroupItem::formType() const
@@ -152,7 +179,13 @@ QJsonObject GroupItem::serialize(int zorder) const
 
 bool GroupItem::needsCaching() const
 {
-    return true;
+    for (const auto &item : std::as_const(m_items)) {
+        if (item->needsCaching()) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 QList<std::shared_ptr<Item>> GroupItem::items() const

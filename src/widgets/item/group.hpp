@@ -28,6 +28,8 @@ public:
     [[nodiscard]] QList<Property::Type> propertyTypes() const override;
 
     [[nodiscard]] QRectF boundingBox() const override;
+    [[nodiscard]] QRectF normalizedBoundingBox() const override;
+    [[nodiscard]] QPolygonF displayBoundingBox() const override;
 
     [[nodiscard]] Item::FormType formType() const override;
 

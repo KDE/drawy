@@ -32,10 +32,12 @@ bool SelectionToolSelectState::mousePressed(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto transformer{spatialContext->coordinateTransformer()};
 
-        QList<std::shared_ptr<Item>> intersectingItems{
-            spatialContext->quadtree().queryItems(transformer.viewToWorld(m_lastPos), [](const std::shared_ptr<Item> &item, auto &pos) {
-                return item->intersects(QRectF{pos, QSize{1, 1}});
-            })};
+        constexpr qreal cursorHitSize{10.0};
+        const QPointF worldPos{transformer.viewToWorld(m_lastPos)};
+        const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
+        QList<std::shared_ptr<Item>> intersectingItems{spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
+            return item->intersects(region);
+        })};
 
         bool lockState = true;
         const auto &selectedItems{selectionContext->selectedItems()};

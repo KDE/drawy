@@ -191,7 +191,7 @@ qsizetype FreeformItem::size() const
     return m_points.size();
 }
 
-Item::Type FreeformItem::formType() const
+Item::FormType FreeformItem::formType() const
 {
     return Item::FormType::Freeform;
 }

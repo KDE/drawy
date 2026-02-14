@@ -13,7 +13,6 @@
 #include "drawy_debug.h"
 #include "item/item.hpp"
 #include <QtMath>
-#include <qloggingcategory.h>
 
 ItemCache::ItemCache(ApplicationContext *context)
     : mApplicationContext(context)
@@ -76,15 +75,21 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     const qreal transY{transform.m32() * zoom - offset.y()};
     painter.translate(transX, transY);
 
-    const double angleRad{std::atan2(inverseTransform.m21(), inverseTransform.m11())};
-    const double angleDeg{qRadiansToDegrees(angleRad)};
+    const qreal angleRad{qAtan2(inverseTransform.m21(), inverseTransform.m11())};
+    const qreal angleDeg{qRadiansToDegrees(angleRad)};
     painter.rotate(angleDeg);
 
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {
             cell->paint([&](QPainter &p) -> void {
                 p.scale(zoom, zoom);
-                item->draw(p, transformer.gridToWorld(cell->rect().topLeft().toPointF()));
+
+                const QPointF topLeft{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
+                QTransform cellTransform{};
+                cellTransform.translate(topLeft.x(), topLeft.y());
+                p.setTransform(cellTransform.inverted(), true);
+
+                item->draw(p, QPointF{0, 0});
             });
             cell->setDirty(false);
         }

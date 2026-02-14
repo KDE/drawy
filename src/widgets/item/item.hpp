@@ -71,7 +71,8 @@ public:
 
     [[nodiscard]] bool operator==(const Item &other) const;
 
-    const QTransform &transformObj() const;
+    [[nodiscard]] virtual const QTransform &transformObj() const;
+    void setTransform(const QTransform &transformObj);
 
     virtual void translate(const QPointF &amount);
     virtual void rotate(const int angleDegree, const QPointF pivot);

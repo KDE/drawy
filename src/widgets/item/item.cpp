@@ -161,6 +161,11 @@ const QTransform &Item::transformObj() const
     return m_transform;
 }
 
+void Item::setTransform(const QTransform &transformObj)
+{
+    m_transform = transformObj;
+}
+
 // reimplement this if your item can benefit from caching
 bool Item::needsCaching() const
 {
