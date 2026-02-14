@@ -3,17 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "mime/textmimehandler.hpp"
-#include "common/constants.hpp"
 #include "item/item.hpp"
-#include "item/itemutils.hpp"
 #include "item/text.hpp"
-#include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMimeData>
 #include <memory>
-#include <qjsondocument.h>
 
 QList<std::shared_ptr<Item>> TextMimeHandler::tryReadData(const QMimeData &mimeData)
 {

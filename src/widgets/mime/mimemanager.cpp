@@ -8,8 +8,8 @@
 #include "mime/mimehandler.hpp"
 #include "mime/svgmimehandler.hpp"
 #include "mime/textmimehandler.hpp"
+#include <QMimeData>
 #include <memory>
-#include <qmimedata.h>
 
 MimeManager::MimeManager(QObject *parent)
     : QObject(parent)
