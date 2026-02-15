@@ -88,7 +88,7 @@ std::shared_ptr<SelectionToolState> SelectionTool::getCurrentState(ApplicationCo
         {QRectF{selection.left(), selection.top() - resizeHandleSize / 2.0, selection.width(), resizeHandleSize}, SelectionHandle::Top},
         {QRectF{selection.right() - resizeHandleSize / 2.0, selection.top(), resizeHandleSize, selection.height()}, SelectionHandle::Right},
         {QRectF{selection.left(), selection.bottom() - resizeHandleSize / 2.0, selection.width(), resizeHandleSize}, SelectionHandle::Bottom},
-        {QRectF{selection.left() - resizeHandleSize / 2.0, selection.top(), resizeHandleSize, selection.height()}, SelectionHandle::Right},
+        {QRectF{selection.left() - resizeHandleSize / 2.0, selection.top(), resizeHandleSize, selection.height()}, SelectionHandle::Left},
     }};
 
     for (const auto &[handle, handleType] : resizeHandles) {

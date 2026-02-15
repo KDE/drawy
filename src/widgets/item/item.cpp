@@ -44,16 +44,18 @@ void Item::translate(const QPointF &amount)
     m_transform.translate(amount.x(), amount.y());
 }
 
-void Item::rotate(const int angle, const QPointF pivot)
+void Item::rotate(const int angleDeg, const QPointF pivot)
 {
     m_transform.translate(pivot.x(), pivot.y());
-    m_transform.rotate(angle);
+    m_transform.rotate(angleDeg);
     m_transform.translate(-pivot.x(), -pivot.y());
 }
 
-void Item::resize(qreal amountX, qreal amountY)
+void Item::resize(const qreal amountX, const qreal amountY, const QPointF center)
 {
+    m_transform.translate(center.x(), center.y());
     m_transform.scale(amountX, amountY);
+    m_transform.translate(-center.x(), -center.y());
 }
 
 Property Item::property(const Property::Type propertyType) const

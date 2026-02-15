@@ -18,8 +18,17 @@ public:
 
     void setHandle(SelectionTool::SelectionHandle handle);
 
+    std::tuple<qreal, qreal, QPointF> topRightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> rightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomRightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomLeftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> leftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> topLeftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> topHandler(const QRectF prevRect, const QPointF localCurPos);
+
 private:
-    QCursor cursorForHandle(double angle) const;
+    QCursor cursorForHandle(const double angle) const;
 
     QPointF m_viewLastPoint{};
     SelectionTool::SelectionHandle m_handle{};

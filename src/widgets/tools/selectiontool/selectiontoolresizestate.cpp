@@ -20,8 +20,6 @@
 #include "event/event.hpp"
 #include "item/item.hpp"
 #include <QtMath>
-#include <algorithm>
-#include <qnamespace.h>
 
 using namespace Qt::StringLiterals;
 bool SelectionToolResizeState::mousePressed(ApplicationContext *context)
@@ -29,7 +27,9 @@ bool SelectionToolResizeState::mousePressed(ApplicationContext *context)
     auto uiContext{context->uiContext()};
     auto event{uiContext->appEvent()};
 
-    if (event->button() == Qt::LeftButton) { }
+    if (event->button() == Qt::LeftButton) {
+        m_isActive = true;
+    }
 
     return true;
 }
@@ -40,17 +40,64 @@ void SelectionToolResizeState::mouseMoved(ApplicationContext *context)
     auto event{uiContext->appEvent()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    const QTransform selectionTransform{context->selectionContext()->selectionBoxWithTransform().second.inverted()};
-    const int angle{[selectionTransform] {
-        const int curAngle{qRound(Common::Utils::Math::angle(selectionTransform))};
+    const auto [prevRect, transform]{context->selectionContext()->selectionBoxWithTransform()};
+    const QTransform invTransform{transform.inverted()};
+
+    const int angle{[invTransform] {
+        const int curAngle{qRound(Common::Utils::Math::angle(invTransform))};
         return (curAngle >= 0 ? curAngle : 360 + curAngle);
     }()};
 
     context->renderingContext()->canvas()->setCursor(cursorForHandle(angle));
 
     if (m_isActive) {
-        const QPointF viewCurPoint{event->pos()};
-        const QPointF viewDiff{viewCurPoint - m_viewLastPoint};
+        auto &selectedItems{context->selectionContext()->selectedItems()};
+        auto &quadtree{context->spatialContext()->quadtree()};
+
+        const QPointF localCurPos{invTransform.map(transformer.viewToWorld(event->pos()))};
+        const auto [newWidth, newHeight, centerOfScale]{[this, prevRect, localCurPos] {
+            switch (m_handle) {
+            case SelectionTool::SelectionHandle::TopRight:
+                return topRightHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::Right:
+                return rightHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::BottomRight:
+                return bottomRightHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::Bottom:
+                return bottomHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::BottomLeft:
+                return bottomLeftHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::Left:
+                return leftHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::TopLeft:
+                return topLeftHandler(prevRect, localCurPos);
+            case SelectionTool::SelectionHandle::Top:
+                return topHandler(prevRect, localCurPos);
+            }
+
+            return std::make_tuple(1.0, 1.0, QPointF{0, 0});
+        }()};
+
+        constexpr qreal minimumSize{1.0};
+        const qreal scaleX{(newWidth < 0 ? std::min(-minimumSize, newWidth) : std::max(minimumSize, newWidth)) / prevRect.width()};
+        const qreal scaleY{(newHeight < 0 ? std::min(-minimumSize, newHeight) : std::max(minimumSize, newHeight)) / prevRect.height()};
+
+        QRectF dirtyRegion{};
+        for (auto &item : selectedItems) {
+            dirtyRegion |= item->boundingBox();
+            quadtree.deleteItem(item);
+
+            item->resize(scaleX, scaleY, centerOfScale);
+
+            dirtyRegion |= item->boundingBox();
+            quadtree.insertItem(item);
+
+            item->setDirty(true);
+        }
+
+        context->renderingContext()->cacheGrid().markDirty(transformer.worldToGrid(dirtyRegion.toAlignedRect()));
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 }
 
@@ -63,18 +110,78 @@ bool SelectionToolResizeState::mouseReleased(ApplicationContext *context)
     return false;
 }
 
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::topRightHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{localCurPos.x() - prevRect.bottomLeft().x()};
+    const qreal newRectHeight{prevRect.bottomLeft().y() - localCurPos.y()};
+
+    return std::make_tuple(newRectWidth, newRectHeight, prevRect.bottomLeft());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::rightHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{localCurPos.x() - prevRect.bottomLeft().x()};
+
+    return std::make_tuple(newRectWidth, prevRect.height(), prevRect.bottomLeft());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::bottomRightHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{localCurPos.x() - prevRect.topLeft().x()};
+    const qreal newRectHeight{localCurPos.y() - prevRect.topLeft().y()};
+
+    return std::make_tuple(newRectWidth, newRectHeight, prevRect.topLeft());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::bottomHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectHeight{localCurPos.y() - prevRect.topLeft().y()};
+
+    return std::make_tuple(prevRect.width(), newRectHeight, prevRect.topLeft());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::bottomLeftHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{prevRect.topRight().x() - localCurPos.x()};
+    const qreal newRectHeight{localCurPos.y() - prevRect.topRight().y()};
+
+    return std::make_tuple(newRectWidth, newRectHeight, prevRect.topRight());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::leftHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{prevRect.topRight().x() - localCurPos.x()};
+
+    return std::make_tuple(newRectWidth, prevRect.height(), prevRect.topRight());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::topLeftHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectWidth{prevRect.bottomRight().x() - localCurPos.x()};
+    const qreal newRectHeight{prevRect.bottomRight().y() - localCurPos.y()};
+
+    return std::make_tuple(newRectWidth, newRectHeight, prevRect.bottomRight());
+}
+
+std::tuple<qreal, qreal, QPointF> SelectionToolResizeState::topHandler(const QRectF prevRect, const QPointF localCurPos)
+{
+    const qreal newRectHeight{prevRect.bottomRight().y() - localCurPos.y()};
+
+    return std::make_tuple(prevRect.width(), newRectHeight, prevRect.bottomRight());
+}
+
 void SelectionToolResizeState::setHandle(SelectionTool::SelectionHandle handle)
 {
     m_handle = handle;
 }
 
-QCursor SelectionToolResizeState::cursorForHandle(double angle) const
+QCursor SelectionToolResizeState::cursorForHandle(const double angle) const
 {
     // DO NOT REORDER ANYTHING
     constexpr std::array<int, 8> angles{20, 70, 110, 160, 200, 250, 290, 340};
     constexpr std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
 
-    int offset{[this] {
+    const int offset{[this] {
         switch (m_handle) {
         case SelectionTool::SelectionHandle::TopRight:
             return 0;

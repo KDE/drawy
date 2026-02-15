@@ -75,8 +75,8 @@ public:
     void setTransform(const QTransform &transformObj);
 
     virtual void translate(const QPointF &amount);
-    virtual void rotate(const int angleDegree, const QPointF pivot);
-    virtual void resize(qreal amountX, qreal amountY);
+    virtual void rotate(const int angleDeg, const QPointF pivot);
+    virtual void resize(const qreal amountX, const qreal amountY, const QPointF center);
     virtual void normalize();
 
     [[nodiscard]] virtual bool needsCaching() const;
