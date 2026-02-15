@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:41+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2026-01-09 13:07+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -113,10 +113,22 @@ msgstr ""
 msgid "Change ZOrder"
 msgstr "Radierergröße"
 
+#: widgets/components/bottomleftwidgets.cpp:41
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr ""
+
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
+msgstr ""
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@label, percent value"
+msgid "%1%"
 msgstr ""
 
 #: widgets/components/topleftwidgets.cpp:39
@@ -141,7 +153,8 @@ msgstr "Ihr unbegrenzt nützliches Werkzeug zur Ideenfindung!"
 
 #: widgets/context/aboutdata.cpp:17
 #, kde-format
-msgid "(c) 2025-%1 Drawy authors"
+msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
+msgid "© 2025–%1 Drawy authors"
 msgstr ""
 
 #: widgets/context/aboutdata.cpp:19

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:41+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2026-02-13 09:28-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -93,11 +93,23 @@ msgstr "Atualizar propriedade"
 msgid "Change ZOrder"
 msgstr "Alterar ordem Z"
 
+#: widgets/components/bottomleftwidgets.cpp:41
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr ""
+
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "Redefinir zoom"
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@label, percent value"
+msgid "%1%"
+msgstr ""
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
@@ -116,8 +128,10 @@ msgid "Your handy, infinite  brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
 #: widgets/context/aboutdata.cpp:17
-#, kde-format
-msgid "(c) 2025-%1 Drawy authors"
+#, fuzzy, kde-format
+#| msgid "(c) 2025-%1 Drawy authors"
+msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
+msgid "© 2025–%1 Drawy authors"
 msgstr "(c) 2025-%1 Autores do Drawy"
 
 #: widgets/context/aboutdata.cpp:19

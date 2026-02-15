@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:41+0000\n"
+"POT-Creation-Date: 2026-02-15 00:41+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -117,10 +117,22 @@ msgstr "Uppfæra eigindi"
 msgid "Change ZOrder"
 msgstr "Breyta Z-röð"
 
+#: widgets/components/bottomleftwidgets.cpp:41
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr ""
+
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
+msgstr ""
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@label, percent value"
+msgid "%1%"
 msgstr ""
 
 #: widgets/components/topleftwidgets.cpp:39
@@ -149,7 +161,8 @@ msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "(c) 2025-%1 drawy authors"
-msgid "(c) 2025-%1 Drawy authors"
+msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
+msgid "© 2025–%1 Drawy authors"
 msgstr "(c) 2025-%1 höfundar Drawy"
 
 #: widgets/context/aboutdata.cpp:19
