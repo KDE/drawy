@@ -20,6 +20,8 @@ Frame::Frame(QWidget *parent)
 
     setObjectName("outlinedFrame");
 
+    // BUG: setStyleSheet breaks change background color... We really need to port
+    // to other code
     const QString frameStyleSheet =
         QString{
             u"#outlinedFrame {"_s
