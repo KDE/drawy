@@ -18,34 +18,29 @@ public:
     ~FreeformItem() override = default;
     FreeformItem(const FreeformItem &freeform);
 
-    [[nodiscard]] static int minPointDistance();
-
     void draw(QPainter &painter, const QPointF &offset) override;
     void drawBuffer(QPainter &painter, const QPointF &offset) const;
-    [[nodiscard]] bool isBufferFull() const;
-
-    void finalizeStroke();
-
-    [[nodiscard]] bool intersects(const QRectF &rect) override;
-
-    void normalize() override;
 
     [[nodiscard]] qsizetype size() const;
-
-    virtual void addPoint(const QPointF &point, const qreal pressure);
-
+    [[nodiscard]] bool isBufferFull() const;
     [[nodiscard]] Item::FormType formType() const override;
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
+    bool needsCaching() const override;
 
+    void normalize() override;
+    void resize(const QTransform operation) override;
+
+    void addPoint(const QPointF &point, const qreal pressure);
+    void finalizeStroke();
+    [[nodiscard]] static int minPointDistance();
     [[nodiscard]] const QList<QPointF> &points() const;
     [[nodiscard]] const QList<qreal> &pressures() const;
 
-    [[nodiscard]] QJsonObject serialize(int zorder) const override;
-    void deserialize(const QJsonObject &obj) override;
-
-    bool needsCaching() const override;
-
     [[nodiscard]] bool isPressureSimulated() const;
     void setSimulatePressure(bool value);
+
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
+    void deserialize(const QJsonObject &obj) override;
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;

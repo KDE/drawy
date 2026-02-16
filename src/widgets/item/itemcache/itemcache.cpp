@@ -72,11 +72,18 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
 
     painter.save();
 
-    const qreal transX{transform.m31() * zoom - offset.x()};
-    const qreal transY{transform.m32() * zoom - offset.y()};
-    painter.translate(transX, transY);
+    QTransform painterTransform{};
+    painterTransform.setMatrix(transform.m11(),
+                               transform.m12(),
+                               transform.m13(),
+                               transform.m21(),
+                               transform.m22(),
+                               transform.m23(),
+                               transform.m31() * zoom - offset.x(),
+                               transform.m32() * zoom - offset.y(),
+                               transform.m33());
 
-    painter.rotate(Common::Utils::Math::angle(inverseTransform));
+    painter.setTransform(painterTransform, true);
 
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {

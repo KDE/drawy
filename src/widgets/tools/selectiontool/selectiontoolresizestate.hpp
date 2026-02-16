@@ -8,6 +8,7 @@
 
 #include "selectiontool.hpp"
 #include "selectiontoolstate.hpp"
+class Item;
 
 class SelectionToolResizeState : public SelectionToolState
 {
@@ -32,4 +33,8 @@ private:
 
     QPointF m_viewLastPoint{};
     SelectionTool::SelectionHandle m_handle{};
+
+    QRectF m_initialSelectionBox{};
+    QTransform m_initialSelectionTransform{};
+    QHash<std::shared_ptr<Item>, QTransform> m_initialTransform{};
 };

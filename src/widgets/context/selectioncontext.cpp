@@ -80,7 +80,11 @@ std::pair<QRectF, QTransform> SelectionContext::selectionBoxWithTransform() cons
         return std::make_pair(item->normalizedBoundingBox(), item->transformObj());
     }
 
-    return std::make_pair(selectionBox().boundingRect(), QTransform{});
+    const QRectF boundingRect{selectionBox().boundingRect()};
+    QTransform transform{};
+    transform.translate(boundingRect.topLeft().x(), boundingRect.topLeft().y());
+
+    return std::make_pair(boundingRect.translated(-boundingRect.topLeft()), transform);
 }
 
 // PUBLIC SLOTS

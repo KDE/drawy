@@ -5,6 +5,7 @@
 #include "freeform.hpp"
 
 #include <QJsonObject>
+#include <qlogging.h>
 
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"
@@ -243,6 +244,22 @@ void FreeformItem::normalize()
     m_path.translate(-topLeft);
     m_boundingBox.translate(-topLeft);
     m_transform.translate(topLeft.x(), topLeft.y());
+}
+
+void FreeformItem::resize(const QTransform operation)
+{
+    Item::resize(operation);
+    return;
+
+    for (auto &point : m_points) {
+        point = operation.map(point);
+    }
+
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+
+    m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
+    m_boundingBox = m_path.boundingRect().normalized();
+    setDirty(true);
 }
 
 QDebug operator<<(QDebug d, const FreeformItem &t)

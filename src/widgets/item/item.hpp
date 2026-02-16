@@ -26,8 +26,6 @@ public:
     [[nodiscard]] virtual QRectF normalizedBoundingBox() const;
     [[nodiscard]] virtual QPolygonF displayBoundingBox() const; // could be rotated as well
 
-    [[nodiscard]] int boundingBoxPadding() const;
-
     virtual void setProperty(const Property::Type propertyType, Property newObj);
     [[nodiscard]] virtual Property property(const Property::Type propertyType) const;
     virtual QList<Property> properties() const;
@@ -72,11 +70,11 @@ public:
     [[nodiscard]] bool operator==(const Item &other) const;
 
     [[nodiscard]] virtual const QTransform &transformObj() const;
-    void setTransform(const QTransform &transformObj);
+    virtual void setTransform(const QTransform &transformObj);
 
     virtual void translate(const QPointF &amount);
     virtual void rotate(const int angleDeg, const QPointF pivot);
-    virtual void resize(const qreal amountX, const qreal amountY, const QPointF center);
+    virtual void resize(const QTransform operation);
     virtual void normalize();
 
     [[nodiscard]] virtual bool needsCaching() const;

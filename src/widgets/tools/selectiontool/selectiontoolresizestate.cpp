@@ -28,6 +28,15 @@ bool SelectionToolResizeState::mousePressed(ApplicationContext *context)
     auto event{uiContext->appEvent()};
 
     if (event->button() == Qt::LeftButton) {
+        const auto [rect, transform]{context->selectionContext()->selectionBoxWithTransform()};
+        m_initialSelectionBox = rect;
+        m_initialSelectionTransform = transform;
+
+        auto &selectedItems{context->selectionContext()->selectedItems()};
+        for (auto &item : selectedItems) {
+            m_initialTransform[item] = item->transformObj();
+        }
+
         m_isActive = true;
     }
 
@@ -40,8 +49,7 @@ void SelectionToolResizeState::mouseMoved(ApplicationContext *context)
     auto event{uiContext->appEvent()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
 
-    const auto [prevRect, transform]{context->selectionContext()->selectionBoxWithTransform()};
-    const QTransform invTransform{transform.inverted()};
+    const QTransform invTransform{m_initialSelectionTransform.inverted()};
 
     const int angle{[invTransform] {
         const int curAngle{qRound(Common::Utils::Math::angle(invTransform))};
@@ -55,7 +63,7 @@ void SelectionToolResizeState::mouseMoved(ApplicationContext *context)
         auto &quadtree{context->spatialContext()->quadtree()};
 
         const QPointF localCurPos{invTransform.map(transformer.viewToWorld(event->pos()))};
-        const auto [newWidth, newHeight, centerOfScale]{[this, prevRect, localCurPos] {
+        const auto [newWidth, newHeight, centerOfScale]{[this, prevRect = m_initialSelectionBox, localCurPos] {
             switch (m_handle) {
             case SelectionTool::SelectionHandle::TopRight:
                 return topRightHandler(prevRect, localCurPos);
@@ -78,16 +86,24 @@ void SelectionToolResizeState::mouseMoved(ApplicationContext *context)
             return std::make_tuple(1.0, 1.0, QPointF{0, 0});
         }()};
 
-        constexpr qreal minimumSize{1.0};
-        const qreal scaleX{(newWidth < 0 ? std::min(-minimumSize, newWidth) : std::max(minimumSize, newWidth)) / prevRect.width()};
-        const qreal scaleY{(newHeight < 0 ? std::min(-minimumSize, newHeight) : std::max(minimumSize, newHeight)) / prevRect.height()};
+        const qreal scaleX{newWidth / m_initialSelectionBox.width()};
+        const qreal scaleY{newHeight / m_initialSelectionBox.height()};
+        const QPointF center{centerOfScale};
+
+        QTransform newTransform{m_initialSelectionTransform};
+        newTransform.translate(center.x(), center.y());
+        newTransform.scale(scaleX, scaleY);
+        newTransform.translate(-center.x(), -center.y());
+
+        QTransform updateTransform{invTransform * newTransform};
 
         QRectF dirtyRegion{};
         for (auto &item : selectedItems) {
             dirtyRegion |= item->boundingBox();
             quadtree.deleteItem(item);
 
-            item->resize(scaleX, scaleY, centerOfScale);
+            item->setTransform(m_initialTransform[item]);
+            item->resize(updateTransform);
 
             dirtyRegion |= item->boundingBox();
             quadtree.insertItem(item);
