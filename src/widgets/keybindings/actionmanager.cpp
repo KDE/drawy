@@ -220,7 +220,7 @@ void ActionManager::redo()
 
 void ActionManager::copy()
 {
-    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    const auto &selectedItems{m_context->selectionContext()->selectedItems()};
 
     if (selectedItems.empty()) {
         return;
