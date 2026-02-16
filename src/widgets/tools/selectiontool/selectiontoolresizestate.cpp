@@ -121,6 +121,15 @@ bool SelectionToolResizeState::mouseReleased(ApplicationContext *context)
 {
     if (m_isActive) {
         m_isActive = false;
+
+        auto &selectedItems{context->selectionContext()->selectedItems()};
+        for (auto &item : selectedItems) {
+            item->commitTransformation();
+        }
+
+        context->renderingContext()->cacheGrid().markAllDirty();
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 
     return false;

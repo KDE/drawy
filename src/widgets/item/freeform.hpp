@@ -28,7 +28,7 @@ public:
     bool needsCaching() const override;
 
     void normalize() override;
-    void resize(const QTransform operation) override;
+    void commitTransformation() override;
 
     void addPoint(const QPointF &point, const qreal pressure);
     void finalizeStroke();

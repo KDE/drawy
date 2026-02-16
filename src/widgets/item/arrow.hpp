@@ -17,6 +17,7 @@ public:
     void setEnd(QPointF end) override;
 
     void normalize() override;
+    void commitTransformation() override;
 
     [[nodiscard]] Item::FormType formType() const override;
 

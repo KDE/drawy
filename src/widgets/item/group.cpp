@@ -31,6 +31,13 @@ void GroupItem::translate(const QPointF &amount)
     Item::translate(amount);
 }
 
+void GroupItem::commitTransformation()
+{
+    for (auto &item : m_items) {
+        item->commitTransformation();
+    }
+}
+
 void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 {
     m_items = items;

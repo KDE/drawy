@@ -116,6 +116,15 @@ void PolygonItem::normalize()
     m_start.setY(0);
 }
 
+void PolygonItem::commitTransformation()
+{
+    m_start = m_transform.map(m_start);
+    m_end = m_transform.map(m_end);
+
+    updateBoundingBox();
+    m_transform = {};
+}
+
 QDebug operator<<(QDebug d, const PolygonItem &t)
 {
     d.space() << "start:" << t.start();

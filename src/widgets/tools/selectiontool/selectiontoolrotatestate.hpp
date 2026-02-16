@@ -8,6 +8,7 @@
 #include <QPointF>
 
 #include "selectiontoolstate.hpp"
+class Item;
 
 class SelectionToolRotateState : public SelectionToolState
 {

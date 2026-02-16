@@ -246,19 +246,18 @@ void FreeformItem::normalize()
     m_transform.translate(topLeft.x(), topLeft.y());
 }
 
-void FreeformItem::resize(const QTransform operation)
+void FreeformItem::commitTransformation()
 {
-    Item::resize(operation);
-    return;
-
     for (auto &point : m_points) {
-        point = operation.map(point);
+        point = m_transform.map(point);
     }
 
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
     m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
     m_boundingBox = m_path.boundingRect().normalized();
+    m_transform = {};
+
     setDirty(true);
 }
 

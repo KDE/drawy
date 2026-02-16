@@ -18,6 +18,7 @@ public:
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
     void translate(const QPointF &amount) override;
+    void commitTransformation() override;
 
     void group(const QList<std::shared_ptr<Item>> &items);
     [[nodiscard]] QList<std::shared_ptr<Item>> unGroup();

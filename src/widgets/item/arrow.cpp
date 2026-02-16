@@ -108,6 +108,12 @@ void ArrowItem::normalize()
     LineItem::normalize();
 }
 
+void ArrowItem::commitTransformation()
+{
+    LineItem::commitTransformation();
+    calcArrowPoints();
+}
+
 Item::FormType ArrowItem::formType() const
 {
     return Item::FormType::Arrow;

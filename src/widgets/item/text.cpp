@@ -136,6 +136,11 @@ void TextItem::normalize()
     m_transform.translate(topLeft.x(), topLeft.y());
 }
 
+void TextItem::commitTransformation()
+{
+    // do nothing for now
+}
+
 void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }

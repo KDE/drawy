@@ -76,6 +76,7 @@ public:
     virtual void rotate(const int angleDeg, const QPointF pivot);
     virtual void resize(const QTransform operation);
     virtual void normalize();
+    virtual void commitTransformation() = 0;
 
     [[nodiscard]] virtual bool needsCaching() const;
     [[nodiscard]] bool isDirty() const;
