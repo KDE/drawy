@@ -20,7 +20,7 @@ public:
     // SpatialContext
     QuadTree &quadtree() const;
     CoordinateTransformer &coordinateTransformer() const;
-    CommandHistory *commandHistory() const;
+    [[nodiscard]] CommandHistory *commandHistory() const;
 
     [[nodiscard]] const QPointF &offsetPos() const;
     void setOffsetPos(const QPointF &pos);
