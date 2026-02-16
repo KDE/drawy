@@ -3,38 +3,81 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "frame.hpp"
-#include <QApplication>
+#include <QEvent>
+#include <QPainter>
 #include <QStyle>
 
 using namespace Qt::Literals::StringLiterals;
 Frame::Frame(QWidget *parent)
-    : QFrame{parent}
+    : QFrame(parent)
 {
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     setFrameShape(QFrame::NoFrame);
-    setFrameShadow(QFrame::Plain);
-    setAutoFillBackground(true);
+    setAutoFillBackground(false);
 
-    const QPalette pal{QApplication::palette()};
-    const QColor borderColor{pal.color(QPalette::Light)};
-
-    setObjectName("outlinedFrame");
-
-    // BUG: setStyleSheet breaks change background color... We really need to port
-    // to other code
-    const QString frameStyleSheet =
-        QString{
-            u"#outlinedFrame {"_s
-            u"  border: %1px solid %2;"_s
-            u"  border-radius: %3px;"_s
-            u"  background: %4;"_s
-            u"}"_s}
-            .arg(1)
-            .arg(borderColor.name(QColor::HexArgb))
-            .arg(style()->pixelMetric(QStyle::PM_ToolBarItemMargin))
-            .arg(pal.color(QPalette::Window).name());
-
-    setStyleSheet(frameStyleSheet);
+    setAttribute(Qt::WA_Hover, true);
+    setFocusPolicy(Qt::StrongFocus);
 }
 
+void Frame::paintEvent([[maybe_unused]] QPaintEvent *event)
+{
+    QPainter p(this);
+    p.setRenderHint(QPainter::Antialiasing);
+
+    const QPalette pal = palette();
+
+    const QColor background = pal.color(QPalette::Window);
+    QColor borderColor = pal.color(QPalette::Light);
+
+    if (m_hovered) {
+        borderColor = pal.color(QPalette::Mid);
+    }
+
+    if (hasFocus()) {
+        borderColor = pal.color(QPalette::Highlight);
+    }
+
+    const int radius = style()->pixelMetric(QStyle::PM_ToolBarItemMargin, nullptr, this);
+
+    QRectF r = rect();
+
+    // High-DPI 1-physical-pixel border
+    const qreal dpr = devicePixelRatioF();
+    const qreal penWidth = 1.0 / dpr;
+
+    r.adjust(penWidth / 2.0, penWidth / 2.0, -penWidth / 2.0, -penWidth / 2.0);
+
+    // Background
+    p.setPen(Qt::NoPen);
+    p.setBrush(background);
+    p.drawRoundedRect(r, radius, radius);
+
+    // Border
+    QPen pen(borderColor);
+    pen.setWidthF(penWidth);
+    p.setPen(pen);
+    p.setBrush(Qt::NoBrush);
+    p.drawRoundedRect(r, radius, radius);
+}
+
+void Frame::enterEvent(QEnterEvent *)
+{
+    m_hovered = true;
+    update();
+}
+
+void Frame::leaveEvent(QEvent *)
+{
+    m_hovered = false;
+    update();
+}
+
+void Frame::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::PaletteChange || event->type() == QEvent::StyleChange) {
+        update();
+    }
+
+    QFrame::changeEvent(event);
+}
 #include "moc_frame.cpp"

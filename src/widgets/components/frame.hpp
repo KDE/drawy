@@ -11,4 +11,16 @@ class Frame : public QFrame
     Q_OBJECT
 public:
     explicit Frame(QWidget *parent = nullptr);
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
+    void enterEvent(QEnterEvent *) override;
+
+    void leaveEvent(QEvent *) override;
+
+    void changeEvent(QEvent *event) override;
+
+private:
+    bool m_hovered = false;
 };
