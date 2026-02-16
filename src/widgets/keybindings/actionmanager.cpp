@@ -236,7 +236,7 @@ void ActionManager::copy()
 void ActionManager::paste()
 {
     const QMimeData *data = QApplication::clipboard()->mimeData();
-    if (data == nullptr) {
+    if (!data) {
         return;
     }
 
