@@ -7,7 +7,6 @@
 #include <QResizeEvent>
 #include <QScreen>
 
-// PUBLIC
 Canvas::Canvas(QWidget *parent)
     : QWidget{parent}
     , m_maxSize(m_sizeHint)
