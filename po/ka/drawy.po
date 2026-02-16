@@ -94,7 +94,7 @@ msgstr "ZOrder-ის შეცვლა"
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "გადიდების ჩამოყრა"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
@@ -125,11 +125,10 @@ msgid "Your handy, infinite  brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
 #: widgets/context/aboutdata.cpp:17
-#, fuzzy, kde-format
-#| msgid "(c) 2025-%1 Drawy authors"
+#, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "(c) 2025-%1 drawy-ის ავტორები"
+msgstr "© 2025-%1 drawy-ის ავტორები"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format

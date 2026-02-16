@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-15 00:41+0000\n"
-"PO-Revision-Date: 2026-02-13 09:37+0100\n"
+"PO-Revision-Date: 2026-02-15 09:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -100,7 +100,7 @@ msgstr "Canvia l'ordre de Z"
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "Reinicialitza el zoom"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
@@ -131,11 +131,10 @@ msgid "Your handy, infinite  brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
 #: widgets/context/aboutdata.cpp:17
-#, fuzzy, kde-format
-#| msgid "(c) 2025-%1 Drawy authors"
+#, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "(c) 2025-%1 Drawy authors"
+msgstr "© 2025–%1 Drawy authors"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
