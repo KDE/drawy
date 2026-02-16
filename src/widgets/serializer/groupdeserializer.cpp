@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "groupdeserializer.hpp"
+#include "item/group.hpp"
 #include "item/itemutils.hpp"
+
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;

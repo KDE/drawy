@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "ellipsedeserializer.hpp"
+#include "item/ellipse.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 EllipseDeserializer::EllipseDeserializer(EllipseItem *item)

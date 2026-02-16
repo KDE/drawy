@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #pragma once
-#include "item/item.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "properties/property.hpp"
 #include <QJsonArray>
 #include <QList>
 class QJsonObject;
+class Item;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ItemSerializer
 {
 public:

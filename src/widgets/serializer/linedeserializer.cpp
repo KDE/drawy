@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "linedeserializer.hpp"
+#include "item/line.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 LineDeserializer::LineDeserializer(LineItem *item)

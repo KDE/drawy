@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/ellipse.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygondeserializer.hpp"
+class EllipseItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseDeserializer : public PolygonDeserializer
 {
 public:

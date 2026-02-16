@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include "item/rectangle.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
+class RectangleItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT RectangleSerializer : public PolygonSerializer
 {
 public:

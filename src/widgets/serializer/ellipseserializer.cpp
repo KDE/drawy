@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "ellipseserializer.hpp"
+#include "item/ellipse.hpp"
+
 using namespace Qt::Literals::StringLiterals;
 EllipseSerializer::EllipseSerializer(const EllipseItem *item)
     : PolygonSerializer(item)

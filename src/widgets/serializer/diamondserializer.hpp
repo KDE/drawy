@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include "item/diamond.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
+class DiamondItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondSerializer : public PolygonSerializer
 {
 public:

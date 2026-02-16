@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "rectangleserializer.hpp"
+#include "item/rectangle.hpp"
+
 using namespace Qt::Literals::StringLiterals;
 RectangleSerializer::RectangleSerializer(const RectangleItem *item)
     : PolygonSerializer(item)

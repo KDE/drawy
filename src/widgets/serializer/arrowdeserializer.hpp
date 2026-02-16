@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include "item/arrow.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygondeserializer.hpp"
+class ArrowItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowDeserializer : public PolygonDeserializer
 {
 public:

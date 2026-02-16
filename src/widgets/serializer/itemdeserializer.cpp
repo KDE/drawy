@@ -6,8 +6,10 @@
 
 #include "itemdeserializer.hpp"
 #include "drawy_debug.h"
+#include "item/item.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 ItemDeserializer::ItemDeserializer(Item *item)
     : mItem(item)

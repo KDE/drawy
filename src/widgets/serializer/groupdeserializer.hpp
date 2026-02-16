@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/group.hpp"
 #include "itemdeserializer.hpp"
 #include "libdrawywidgets_private_export.h"
+class GroupItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT GroupDeserializer : public ItemDeserializer
 {
 public:

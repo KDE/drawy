@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include "item/line.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
+class LineItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineSerializer : public PolygonSerializer
 {
 public:

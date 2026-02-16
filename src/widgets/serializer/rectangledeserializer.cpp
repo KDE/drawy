@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "rectangledeserializer.hpp"
+#include "item/rectangle.hpp"
 #include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 RectangleDeserializer::RectangleDeserializer(RectangleItem *item)
     : PolygonDeserializer(item)

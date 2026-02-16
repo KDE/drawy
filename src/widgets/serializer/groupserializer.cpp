@@ -7,6 +7,7 @@
 #include "item/group.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 GroupSerializer::GroupSerializer(const GroupItem *item)
     : ItemSerializer(item)

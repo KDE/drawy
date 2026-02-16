@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/text.hpp"
 #include "itemserializer.hpp"
 #include "libdrawywidgets_private_export.h"
+class TextItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT TextSerializer : public ItemSerializer
 {
 public:

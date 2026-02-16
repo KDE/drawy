@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/line.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygondeserializer.hpp"
+class LineItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineDeserializer : public PolygonDeserializer
 {
 public:

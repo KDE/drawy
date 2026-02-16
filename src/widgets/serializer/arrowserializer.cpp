@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "arrowserializer.hpp"
+#include "item/arrow.hpp"
 #include "item/arrowutils.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;

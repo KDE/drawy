@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "polygonserializer.hpp"
+#include "item/polygon.hpp"
 #include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 PolygonSerializer::PolygonSerializer(const PolygonItem *item)
     : ItemSerializer(item)

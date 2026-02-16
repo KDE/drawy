@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "itemserializer.hpp"
+#include "item/item.hpp"
 #include "item/itemutils.hpp"
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;

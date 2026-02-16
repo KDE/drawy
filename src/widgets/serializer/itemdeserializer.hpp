@@ -5,7 +5,8 @@
  */
 
 #pragma once
-#include "item/item.hpp"
+#include "properties/property.hpp"
+class Item;
 class QJsonObject;
 class ItemDeserializer
 {

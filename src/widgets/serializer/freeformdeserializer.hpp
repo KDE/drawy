@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/freeform.hpp"
 #include "itemdeserializer.hpp"
 #include "libdrawywidgets_private_export.h"
+class FreeformItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT FreeformDeserializer : public ItemDeserializer
 {
 public:

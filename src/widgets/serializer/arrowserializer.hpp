@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include "item/arrow.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
+class ArrowItem;
+class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowSerializer : public PolygonSerializer
 {
 public:

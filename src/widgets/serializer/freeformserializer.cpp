@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "freeformserializer.hpp"
+#include "item/freeform.hpp"
 #include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 FreeFormSerializer::FreeFormSerializer(const FreeformItem *item)
     : ItemSerializer(item)

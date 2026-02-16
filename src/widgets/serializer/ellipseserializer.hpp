@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include "item/ellipse.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "polygonserializer.hpp"
+class EllipseItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseSerializer : public PolygonSerializer
 {
 public:
