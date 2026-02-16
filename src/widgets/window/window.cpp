@@ -30,7 +30,6 @@
 #include "jobs/autosavejob.hpp"
 #include "jobs/autosavejobutil.hpp"
 #include "jobs/restoreautosavejob.hpp"
-#include "jobs/saveasjob.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
 
