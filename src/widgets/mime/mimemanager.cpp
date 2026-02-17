@@ -7,6 +7,7 @@
 #include "mime/drawymimehandler.hpp"
 #include "mime/imagemimehandler.hpp"
 #include "mime/mimehandler.hpp"
+#include "mime/rendermimehandler.hpp"
 #include "mime/svgmimehandler.hpp"
 #include "mime/textmimehandler.hpp"
 #include <QMimeData>
@@ -19,6 +20,7 @@ MimeManager::MimeManager(QObject *parent)
     registerHandler(std::make_unique<ImageMimeHandler>());
     registerHandler(std::make_unique<TextMimeHandler>());
     registerHandler(std::make_unique<SvgMimeHandler>());
+    registerHandler(std::make_unique<RenderMimeHandler>());
 }
 
 MimeManager::~MimeManager() = default;
