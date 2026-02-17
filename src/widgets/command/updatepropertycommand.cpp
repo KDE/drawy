@@ -62,6 +62,5 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
 
 QString UpdatePropertyCommand::commandTitle() const
 {
-    // TODO update title from specific property ?
-    return i18n("Update Property");
+    return m_newProperty.convertEnumToString(m_newProperty.type());
 }
