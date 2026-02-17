@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-15 00:41+0000\n"
-"PO-Revision-Date: 2026-02-13 18:01+0300\n"
+"PO-Revision-Date: 2026-02-16 16:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
@@ -95,7 +95,7 @@ msgstr "Z Sırasını Değiştir"
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "%​100"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "Yakınlaştırmayı Sıfırla"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%​%1"
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
@@ -126,8 +126,7 @@ msgid "Your handy, infinite  brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın!"
 
 #: widgets/context/aboutdata.cpp:17
-#, fuzzy, kde-format
-#| msgid "(c) 2025-%1 Drawy authors"
+#, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
 msgstr "© 2025–%1 Drawy yazarları"
