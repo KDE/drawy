@@ -1,14 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
-//
-// SPDX-License-Identifier: GPL-3.0-or-later
-
-#include "selectiontoolmovestate.hpp"
-
-#include <memory>
-
+#include "movetransformhandler.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/moveitemcommand.hpp"
+#include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -19,8 +13,50 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include "item/item.hpp"
+#include <QPainter>
+#include <QRectF>
 
-bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
+void MoveTransformHandler::renderHandles(ApplicationContext *context)
+{
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
+
+    if (selectedItems.empty()) {
+        return;
+    }
+
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+
+    context->renderingContext()->canvas()->paintCanvas([&selectedItems, &transformer, &context](QPainter &painter) -> void {
+        painter.setPen(Common::selectionBorderColor);
+
+        if (selectedItems.size() == 1) {
+            const auto &item{(*selectedItems.begin())};
+            painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
+        } else {
+            QPen pen{Common::selectionBorderColor};
+            pen.setStyle(Qt::DotLine);
+            painter.setPen(pen);
+
+            for (const auto &item : std::as_const(selectedItems)) {
+                painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
+            }
+
+            pen.setStyle(Qt::SolidLine);
+            painter.setPen(pen);
+
+            painter.drawPolygon(transformer.worldToView(context->selectionContext()->selectionBox()));
+        }
+    });
+
+    context->renderingContext()->markForUpdate();
+}
+
+bool MoveTransformHandler::shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos)
+{
+    return selectionBox.contains(relativeCurPos);
+}
+
+TransformHandler::State MoveTransformHandler::mousePressed(ApplicationContext *context)
 {
     auto uiContext{context->uiContext()};
 
@@ -33,16 +69,16 @@ bool SelectionToolMoveState::mousePressed(ApplicationContext *context)
         m_isActive = true;
     }
 
-    return true;
+    return TransformHandler::State::Locked;
 }
 
-void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
+TransformHandler::State MoveTransformHandler::mouseMoved(ApplicationContext *context)
 {
     auto renderingContext{context->renderingContext()};
 
     if (!m_isActive) {
         renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
-        return;
+        return TransformHandler::State::Unlocked;
     }
 
     auto spatialContext{context->spatialContext()};
@@ -79,9 +115,11 @@ void SelectionToolMoveState::mouseMoved(ApplicationContext *context)
     m_lastPos = curPos;
     renderingContext->markForRender();
     renderingContext->markForUpdate();
+
+    return TransformHandler::State::Locked;
 }
 
-bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
+TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *context)
 {
     auto renderingContext{context->renderingContext()};
     auto spatialContext{context->spatialContext()};
@@ -96,7 +134,7 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
     const QPointF delta{worldFinalPos - worldOriginalPos};
 
     if (!m_isActive) {
-        return false;
+        return TransformHandler::State::Unlocked;
     }
 
     m_isActive = false;
@@ -117,5 +155,5 @@ bool SelectionToolMoveState::mouseReleased(ApplicationContext *context)
         commandHistory->insert(std::make_shared<MoveItemCommand>(items, delta));
     }
 
-    return false;
+    return TransformHandler::State::Unlocked;
 }

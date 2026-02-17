@@ -162,6 +162,11 @@ void Item::setTransform(const QTransform &transformObj)
     m_transform = transformObj;
 }
 
+QList<TransformHandler::Type> Item::transformHandlers() const
+{
+    return {TransformHandler::Type::MoveTransformHandler, TransformHandler::Type::ResizeTransformHandler, TransformHandler::Type::RotateTransformHandler};
+}
+
 // reimplement this if your item can benefit from caching
 bool Item::needsCaching() const
 {

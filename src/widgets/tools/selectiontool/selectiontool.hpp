@@ -5,24 +5,13 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include "tools/tool.hpp"
-class SelectionToolState;
+#include "transformhandler/transformhandler.hpp"
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionTool : public Tool
 {
 public:
     explicit SelectionTool(ApplicationContext *context);
     ~SelectionTool() override = default;
-
-    enum class SelectionHandle : int8_t {
-        TopLeft,
-        TopRight,
-        BottomRight,
-        BottomLeft,
-        Top,
-        Right,
-        Bottom,
-        Left
-    };
 
     [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] QString icon() const override;
@@ -37,13 +26,11 @@ public:
     [[nodiscard]] Tool::Type type() const override;
 
 private:
-    std::shared_ptr<SelectionToolState> getCurrentState(ApplicationContext *context);
+    void updateCurrentHandler(ApplicationContext *context);
 
-    std::shared_ptr<SelectionToolState> m_moveState;
-    std::shared_ptr<SelectionToolState> m_selectState;
-    std::shared_ptr<SelectionToolState> m_rotateState;
-    std::shared_ptr<SelectionToolState> m_resizeState;
-    std::shared_ptr<SelectionToolState> m_curState;
+    TransformHandler *m_curHandler{};
+    TransformHandler::State m_curHandlerState;
 
-    bool m_stateLocked{false};
+    QPointF m_lastPos{};
+    bool m_isSelecting{false};
 };

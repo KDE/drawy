@@ -192,19 +192,18 @@ target_sources(
         tools/diamondtool.hpp
         tools/selectiontool/selectiontool.cpp
         tools/selectiontool/selectiontool.hpp
-        tools/selectiontool/selectiontoolmovestate.cpp
-        tools/selectiontool/selectiontoolmovestate.hpp
-        tools/selectiontool/selectiontoolrotatestate.cpp
-        tools/selectiontool/selectiontoolrotatestate.hpp
-        tools/selectiontool/selectiontoolresizestate.cpp
-        tools/selectiontool/selectiontoolresizestate.hpp
-        tools/selectiontool/selectiontoolselectstate.cpp
-        tools/selectiontool/selectiontoolselectstate.hpp
-        tools/selectiontool/selectiontoolstate.hpp
         tools/texttool.cpp
         tools/texttool.hpp
         tools/tool.cpp
         tools/tool.hpp
+        transformhandler/transformhandler.hpp
+        transformhandler/transformhandler.cpp
+        transformhandler/movetransformhandler.hpp
+        transformhandler/movetransformhandler.cpp
+        transformhandler/resizetransformhandler.hpp
+        transformhandler/resizetransformhandler.cpp
+        transformhandler/rotatetransformhandler.hpp
+        transformhandler/rotatetransformhandler.cpp
         window/boardlayout.cpp
         window/boardlayout.hpp
         window/window.cpp

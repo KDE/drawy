@@ -8,6 +8,8 @@
 #include <QRect>
 
 #include "properties/property.hpp"
+#include "transformhandler/movetransformhandler.hpp"
+
 class QDebug;
 class QJsonObject;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Item
@@ -26,8 +28,8 @@ public:
     [[nodiscard]] virtual QRectF normalizedBoundingBox() const;
     [[nodiscard]] virtual QPolygonF displayBoundingBox() const; // could be rotated as well
 
-    virtual void setProperty(const Property::Type propertyType, Property newObj);
     [[nodiscard]] virtual Property property(const Property::Type propertyType) const;
+    virtual void setProperty(const Property::Type propertyType, Property newObj);
     virtual QList<Property> properties() const;
     virtual QList<Property::Type> propertyTypes() const;
 
@@ -77,6 +79,8 @@ public:
     virtual void resize(const QTransform operation);
     virtual void normalize();
     virtual void commitTransformation() = 0;
+
+    virtual QList<TransformHandler::Type> transformHandlers() const;
 
     [[nodiscard]] virtual bool needsCaching() const;
     [[nodiscard]] bool isDirty() const;

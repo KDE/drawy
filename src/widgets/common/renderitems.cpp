@@ -81,25 +81,5 @@ void Common::renderCanvas(ApplicationContext *context)
         });
     }
 
-    const auto &selectedItems{context->selectionContext()->selectedItems()};
-    if (selectedItems.empty()) {
-        return;
-    }
-
-    canvas->paintCanvas([&](QPainter &painter) {
-        QPen pen{Common::selectionBorderColor, 1.0, Qt::DashLine};
-        painter.setPen(pen);
-
-        QPolygonF viewSelectionBox{transformer.worldToView(context->selectionContext()->selectionBox())};
-
-        pen.setStyle(Qt::SolidLine);
-        painter.setPen(pen);
-        painter.drawPolygon(viewSelectionBox);
-
-        constexpr qreal handleWidth{10.0}, handleWidthHalf{handleWidth / 2.0};
-        painter.setBrush(context->renderingContext()->canvas()->canvasBg());
-        for (QPointF point : viewSelectionBox) {
-            painter.drawRect(QRectF{point.x() - handleWidthHalf, point.y() - handleWidthHalf, handleWidth, handleWidth});
-        }
-    });
+    context->selectionContext()->renderHandles();
 }

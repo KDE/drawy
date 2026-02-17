@@ -13,6 +13,7 @@
 #include "properties/property.hpp"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
+#include <QPainter>
 #include <utility>
 
 SelectionContext::SelectionContext(ApplicationContext *context)
@@ -111,6 +112,33 @@ void SelectionContext::reset()
 
     m_selectedItems.clear();
     Q_EMIT selectionUpdated();
+}
+
+void SelectionContext::renderHandles()
+{
+    const auto &items{selectedItems()};
+
+    if (items.empty()) {
+        return;
+    }
+
+    auto handlerTypes{defaultHandlerTypesForMultiSelection()};
+    if (items.size() == 1) {
+        handlerTypes = (*items.begin())->transformHandlers();
+    }
+
+    for (const auto handlerType : std::as_const(handlerTypes)) {
+        auto handler{TransformHandler::getHandler(handlerType)};
+
+        handler->renderHandles(m_applicationContext);
+    }
+
+    m_applicationContext->renderingContext()->markForUpdate();
+}
+
+QList<TransformHandler::Type> SelectionContext::defaultHandlerTypesForMultiSelection() const
+{
+    return {TransformHandler::Type::MoveTransformHandler, TransformHandler::Type::ResizeTransformHandler, TransformHandler::Type::RotateTransformHandler};
 }
 
 #include "moc_selectioncontext.cpp"

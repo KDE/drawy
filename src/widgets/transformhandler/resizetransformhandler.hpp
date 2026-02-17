@@ -1,0 +1,60 @@
+#pragma once
+
+#include "transformhandler.hpp"
+#include <QTransform>
+
+class Item;
+
+class ResizeTransformHandler : public TransformHandler
+{
+    Q_GADGET
+public:
+    void renderHandles(ApplicationContext *context) override;
+
+    [[nodiscard]] bool shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos) override;
+    [[nodiscard]] TransformHandler::State mousePressed(ApplicationContext *context) override;
+    [[nodiscard]] TransformHandler::State mouseMoved(ApplicationContext *context) override;
+    [[nodiscard]] TransformHandler::State mouseReleased(ApplicationContext *context) override;
+
+private:
+    enum class ResizeHandleType {
+        TopRight,
+        Right,
+        BottomRight,
+        Bottom,
+        BottomLeft,
+        Left,
+        TopLeft,
+        Top
+    };
+
+    Q_ENUM(ResizeHandleType)
+
+    struct ResizeHandle {
+        QRectF rect{};
+        ResizeHandleType type{};
+    };
+
+private:
+    QCursor cursorForHandle(const double angle) const;
+    static constexpr QList<ResizeHandle> getHandles(const QRectF selectionBox);
+
+    std::tuple<qreal, qreal, QPointF> topRightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> rightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomRightHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> bottomLeftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> leftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> topLeftHandler(const QRectF prevRect, const QPointF localCurPos);
+    std::tuple<qreal, qreal, QPointF> topHandler(const QRectF prevRect, const QPointF localCurPos);
+
+private:
+    QPointF m_viewLastPoint{};
+    QRectF m_initialSelectionBox{};
+    QTransform m_initialSelectionTransform{};
+    QHash<std::shared_ptr<Item>, QTransform> m_initialTransform{};
+
+    ResizeHandleType m_activeHandleType{};
+
+    bool m_isActive{false};
+};

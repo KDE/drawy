@@ -4,11 +4,14 @@
 
 #pragma once
 
+#include "transformhandler/transformhandler.hpp"
 #include <QObject>
 #include <unordered_set>
+
 class Property;
 class Item;
 class ApplicationContext;
+class QPainter;
 
 class SelectionContext : public QObject
 {
@@ -42,10 +45,6 @@ public:
     [[nodiscard]] QPolygonF selectionBox() const;
     [[nodiscard]] std::pair<QRectF, QTransform> selectionBoxWithTransform() const;
 
-    void reset();
-
-    void updatePropertyOfSelectedItems(const Property &property);
-
     template<typename Iterator>
     void setSelectedItems(Iterator begin, Iterator end)
     {
@@ -57,6 +56,12 @@ public:
         m_selectedItems = newItems;
         Q_EMIT selectionUpdated();
     }
+
+    void reset();
+    void updatePropertyOfSelectedItems(const Property &property);
+
+    void renderHandles();
+    [[nodiscard]] QList<TransformHandler::Type> defaultHandlerTypesForMultiSelection() const;
 
 Q_SIGNALS:
     void selectionUpdated();
