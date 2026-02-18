@@ -72,6 +72,14 @@ Item::FormType GroupItem::formType() const
 
 void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
 {
+    if (newObj.variant().typeId() == QMetaType::QVariantHash) {
+        const QVariantHash variant = newObj.variant().toHash();
+        for (const auto &item : m_items) {
+            if (variant.contains(QString::fromUtf8(item->id())))
+                item->setProperty(propertyType, Property(variant[QString::fromUtf8(item->id())], propertyType));
+        }
+        return;
+    }
     for (const auto &item : std::as_const(m_items)) {
         item->setProperty(propertyType, newObj);
     }
@@ -85,16 +93,20 @@ Property GroupItem::property(const Property::Type propertyType) const
 
     Property property;
     for (const auto &item : m_items) {
-        try {
-            if (property.type() != Property::Type::Null) {
-                if (property.variant() != item->property(propertyType).variant()) {
-                    return Property{};
+        if (!item->hasProperty(propertyType))
+            continue;
+
+        if (property.type() != Property::Type::Null) {
+            if (property.variant() != item->property(propertyType).variant()) {
+                QVariantHash itemVariant;
+                for (const auto &child : m_items) {
+                    if (child->hasProperty(propertyType))
+                        itemVariant.insert(QString::fromUtf8(child->id()), child->property(propertyType).variant());
                 }
-            } else {
-                property = item->property(propertyType);
+                return Property(itemVariant, propertyType);
             }
-        } catch (const std::logic_error &) {
-            // ignore
+        } else {
+            property = item->property(propertyType);
         }
     }
 
