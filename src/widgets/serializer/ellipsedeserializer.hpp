@@ -14,6 +14,4 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT EllipseDeserializer : public PolygonDeseriali
 public:
     explicit EllipseDeserializer(EllipseItem *item);
     ~EllipseDeserializer() override;
-
-    void deserialize(const QJsonObject &obj) override;
 };

@@ -14,6 +14,4 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT DiamondDeserializer : public PolygonDeseriali
 public:
     explicit DiamondDeserializer(DiamondItem *item);
     ~DiamondDeserializer() override;
-
-    void deserialize(const QJsonObject &obj) override;
 };

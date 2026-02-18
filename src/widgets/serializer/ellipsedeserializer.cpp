@@ -13,8 +13,3 @@ EllipseDeserializer::EllipseDeserializer(EllipseItem *item)
 }
 
 EllipseDeserializer::~EllipseDeserializer() = default;
-
-void EllipseDeserializer::deserialize(const QJsonObject &obj)
-{
-    PolygonDeserializer::deserialize(obj);
-}

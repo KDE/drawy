@@ -46,11 +46,9 @@ void SvgPaintEngine::drawEllipse(const QRectF &rect)
     m_writer.writeEndElement();
 }
 
-void SvgPaintEngine::drawImage(const QRectF &dest, const QImage &image, const QRectF &src, Qt::ImageConversionFlags flags)
+void SvgPaintEngine::drawImage(const QRectF &dest, const QImage &image, [[maybe_unused]] const QRectF &src, [[maybe_unused]] Qt::ImageConversionFlags flags)
 {
     // TODO: use src.
-    Q_UNUSED(src);
-    Q_UNUSED(flags);
 
     m_writer.writeStartElement("image");
     m_writer.writeAttribute("x", QString::number(dest.x()));
@@ -80,7 +78,7 @@ void SvgPaintEngine::drawPath(const QPainterPath &path)
 
     for (int i = 0; i < path.elementCount(); i++) {
         if (i != 0) {
-            svgPath += QChar::fromLatin1(' ');
+            svgPath += u' ';
         }
 
         const QPainterPath::Element element = path.elementAt(i);
@@ -116,10 +114,9 @@ void SvgPaintEngine::drawPath(const QPainterPath &path)
     m_writer.writeEndElement();
 }
 
-void SvgPaintEngine::drawPolygon(const QPointF *points, int pointCount, QPaintEngine::PolygonDrawMode mode)
+void SvgPaintEngine::drawPolygon(const QPointF *points, int pointCount, [[maybe_unused]] QPaintEngine::PolygonDrawMode mode)
 {
     // TODO: use mode
-    Q_UNUSED(mode);
 
     QString svgPoints;
 
@@ -226,7 +223,7 @@ void SvgPaintEngine::writeStrokeFill()
             QString dashArray;
             for (int i = 0; i < pattern.size(); i++) {
                 if (i != 0) {
-                    dashArray += u" "_s;
+                    dashArray += u' ';
                 }
 
                 dashArray += QString::number(pattern[i] * state->pen().widthF());
