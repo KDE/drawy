@@ -28,6 +28,6 @@ repos:
     # than the one provided by CI
       args: ["--style=file:.clang-format-pre-commit"]
  - repo: https://github.com/BlankSpruce/gersemi
-   rev: 0.25.4
+   rev: 0.26.0
    hooks:
     - id: gersemi
