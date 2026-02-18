@@ -12,7 +12,9 @@
 void GroupItem::draw(QPainter &painter, const QPointF &offset)
 {
     for (const auto &item : std::as_const(m_items)) {
+        painter.save();
         item->draw(painter, offset);
+        painter.restore();
     }
 }
 
