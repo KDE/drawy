@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-02-15 12:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -81,11 +81,6 @@ msgstr "Selige Objecto"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Separa Objectos"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, kde-format
-msgid "Update Property"
-msgstr "Actualisa Proprietate"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, kde-format
@@ -694,6 +689,9 @@ msgstr "Instrumento de Selection"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Instrumento de Texto"
+
+#~ msgid "Update Property"
+#~ msgstr "Actualisa Proprietate"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

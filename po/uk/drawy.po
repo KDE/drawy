@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-02-15 08:25+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -81,11 +81,6 @@ msgstr "Позначити об’єкт"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Розгрупувати об'єкти"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, kde-format
-msgid "Update Property"
-msgstr "Оновити властивість"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, kde-format
@@ -696,6 +691,9 @@ msgstr "Інструмент вибору"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
+
+#~ msgid "Update Property"
+#~ msgstr "Оновити властивість"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

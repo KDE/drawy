@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-02-08 18:50+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -102,13 +102,6 @@ msgstr "Sélectionner l'objet"
 #| msgid "Ungroup Objects"
 msgid "Ungroup Objects"
 msgstr "Dissocier les objets"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Update Property"
-msgid "Update Property"
-msgstr "Mettre à jour la propriété"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, fuzzy, kde-format
@@ -899,6 +892,12 @@ msgstr "Outil de sélection"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Outil de texte"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Update Property"
+#~ msgid "Update Property"
+#~ msgstr "Mettre à jour la propriété"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

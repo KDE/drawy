@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-02-13 09:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -81,11 +81,6 @@ msgstr "בחירת עצם"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "פריטת העצמים"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, kde-format
-msgid "Update Property"
-msgstr "עדכון מאפיין"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, kde-format
@@ -695,6 +690,9 @@ msgstr "כלי בחירה"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "כלי טקסט"
+
+#~ msgid "Update Property"
+#~ msgstr "עדכון מאפיין"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

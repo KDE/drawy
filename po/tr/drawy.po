@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-02-16 16:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -80,11 +80,6 @@ msgstr "Nesneyi Seç"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Nesneleri Gruptan Çıkar"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, kde-format
-msgid "Update Property"
-msgstr "Özelliği Güncelle"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, kde-format
@@ -693,6 +688,9 @@ msgstr "Seçim aracı"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Metin aracı"
+
+#~ msgid "Update Property"
+#~ msgstr "Özelliği Güncelle"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

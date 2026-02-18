@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-18 00:42+0000\n"
 "PO-Revision-Date: 2026-01-28 20:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -102,13 +102,6 @@ msgstr "選取物件"
 #| msgid "Ungroup Objects"
 msgid "Ungroup Objects"
 msgstr "解除群組化物件"
-
-#: widgets/command/updatepropertycommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Update Property"
-msgid "Update Property"
-msgstr "更新屬性"
 
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, fuzzy, kde-format
@@ -888,6 +881,12 @@ msgstr "選取工具"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "文字工具"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Update Property"
+#~ msgid "Update Property"
+#~ msgstr "更新屬性"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"
