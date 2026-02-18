@@ -54,6 +54,7 @@ void ColorWidgetBase::initialize()
         const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
         if (col.isValid()) {
             assignCurrentColor(col);
+            Q_EMIT changed(value());
         }
     });
     layout->addWidget(m_currentColorButton);
