@@ -31,3 +31,11 @@ repos:
    rev: 0.26.0
    hooks:
     - id: gersemi
+ - repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+   rev: v0.14.14
+   hooks:
+    # Run the linter.
+    - id: ruff
+    # Run the formatter.
+    - id: ruff-format
