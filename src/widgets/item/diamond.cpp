@@ -4,7 +4,6 @@
 
 #include "diamond.hpp"
 
-#include "common/utils/math.hpp"
 #include "item/itemutils.hpp"
 #include "serializer/diamonddeserializer.hpp"
 #include "serializer/diamondserializer.hpp"
