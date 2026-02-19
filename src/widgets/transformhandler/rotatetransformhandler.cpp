@@ -21,15 +21,16 @@ RotateTransformHandler::RotateTransformHandler()
     m_cursor = QCursor(image.scaled(24, 24, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
-bool RotateTransformHandler::shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos)
+bool RotateTransformHandler::shouldActivate(ApplicationContext *context)
 {
-    constexpr auto createHandle = [](const QPointF point, const qreal size) -> QRectF {
-        return QRectF{point.x() - size / 2.0, point.y() - size / 2.0, size, size};
-    };
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
 
-    constexpr qreal rotationHandleSize{50.0};
+    const auto [selectionBox, selectionBoxTransform]{context->selectionContext()->selectionBoxWithTransform()};
+    const QPointF worldPos{transformer.viewToWorld(context->uiContext()->appEvent()->pos())};
+    const QPointF relativeCurPos{selectionBoxTransform.inverted().map(worldPos)};
 
     const QList<QPointF> points{selectionBox.topLeft(), selectionBox.topRight(), selectionBox.bottomRight(), selectionBox.bottomLeft()};
+    constexpr qreal rotationHandleSize{50.0};
 
     for (QPointF point : points) {
         if (createHandle(point, rotationHandleSize).contains(relativeCurPos)) {

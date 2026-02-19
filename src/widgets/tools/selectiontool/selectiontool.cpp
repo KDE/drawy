@@ -192,12 +192,7 @@ void SelectionTool::updateCurrentHandler(ApplicationContext *context)
     }
 
     auto selectionContext{context->selectionContext()};
-    auto uiContext{context->uiContext()};
     auto transformer{context->spatialContext()->coordinateTransformer()};
-
-    const QPointF worldCurPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
-    const auto [selection, transform]{selectionContext->selectionBoxWithTransform()};
-    const QPointF localCurPos{transform.inverted().map(worldCurPos)};
 
     const auto &selectedItems{selectionContext->selectedItems()};
 
@@ -209,7 +204,7 @@ void SelectionTool::updateCurrentHandler(ApplicationContext *context)
     for (const auto &handlerType : std::as_const(handlerTypes)) {
         auto handler{TransformHandler::getHandler(handlerType)};
 
-        if (handler->shouldActivate(selection, localCurPos)) {
+        if (handler->shouldActivate(context)) {
             m_curHandler = handler;
             return;
         }

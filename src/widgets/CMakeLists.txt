@@ -198,6 +198,10 @@ target_sources(
         tools/tool.hpp
         transformhandler/transformhandler.hpp
         transformhandler/transformhandler.cpp
+        transformhandler/linemovetransformhandler.hpp
+        transformhandler/linemovetransformhandler.cpp
+        transformhandler/lineresizetransformhandler.hpp
+        transformhandler/lineresizetransformhandler.cpp
         transformhandler/movetransformhandler.hpp
         transformhandler/movetransformhandler.cpp
         transformhandler/resizetransformhandler.hpp

@@ -1,4 +1,6 @@
 #include "transformhandler.hpp"
+#include "linemovetransformhandler.hpp"
+#include "lineresizetransformhandler.hpp"
 #include "movetransformhandler.hpp"
 #include "resizetransformhandler.hpp"
 #include "rotatetransformhandler.hpp"
@@ -17,6 +19,14 @@ TransformHandler *TransformHandler::getHandler(TransformHandler::Type handlerTyp
     case TransformHandler::Type::ResizeTransformHandler: {
         static ResizeTransformHandler s_resizeHandler{};
         return &s_resizeHandler;
+    };
+    case TransformHandler::Type::LineMoveTransformHandler: {
+        static LineMoveTransformHandler s_lineMoveHandler{};
+        return &s_lineMoveHandler;
+    };
+    case TransformHandler::Type::LineResizeTransformHandler: {
+        static LineResizeTransformHandler s_lineResizeHandler{};
+        return &s_lineResizeHandler;
     };
     }
 

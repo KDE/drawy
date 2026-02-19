@@ -27,7 +27,7 @@ void MoveTransformHandler::renderHandles(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
 
     context->renderingContext()->canvas()->paintCanvas([&selectedItems, &transformer, &context](QPainter &painter) -> void {
-        painter.setPen(Common::selectionBorderColor);
+        painter.setPen(Common::selectionBorderPen);
 
         if (selectedItems.size() == 1) {
             const auto &item{(*selectedItems.begin())};
@@ -51,8 +51,14 @@ void MoveTransformHandler::renderHandles(ApplicationContext *context)
     context->renderingContext()->markForUpdate();
 }
 
-bool MoveTransformHandler::shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos)
+bool MoveTransformHandler::shouldActivate(ApplicationContext *context)
 {
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+
+    const auto [selectionBox, selectionBoxTransform]{context->selectionContext()->selectionBoxWithTransform()};
+    const QPointF worldPos{transformer.viewToWorld(context->uiContext()->appEvent()->pos())};
+    const QPointF relativeCurPos{selectionBoxTransform.inverted().map(worldPos)};
+
     return selectionBox.contains(relativeCurPos);
 }
 
@@ -62,7 +68,7 @@ TransformHandler::State MoveTransformHandler::mousePressed(ApplicationContext *c
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto renderingContext{context->renderingContext()};
-        renderingContext->canvas()->setCursor(Qt::ClosedHandCursor);
+        renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
         m_lastPos = uiContext->appEvent()->pos();
         m_initialPos = m_lastPos;
@@ -77,7 +83,7 @@ TransformHandler::State MoveTransformHandler::mouseMoved(ApplicationContext *con
     auto renderingContext{context->renderingContext()};
 
     if (!m_isActive) {
-        renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
+        renderingContext->canvas()->setCursor(Qt::ArrowCursor);
         return TransformHandler::State::Unlocked;
     }
 
@@ -125,7 +131,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
     auto spatialContext{context->spatialContext()};
     auto transformer{spatialContext->coordinateTransformer()};
 
-    renderingContext->canvas()->setCursor(Qt::OpenHandCursor);
+    renderingContext->canvas()->setCursor(Qt::ArrowCursor);
     auto commandHistory{spatialContext->commandHistory()};
 
     const QPointF curPos{context->uiContext()->appEvent()->pos()};

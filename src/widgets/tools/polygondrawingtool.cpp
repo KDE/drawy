@@ -52,7 +52,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
             curItem->setProperty(Property::Type::BackgroundStyle, uiContext->propertyManager()->value(Property::Type::BackgroundStyle));
         }
 
-        curItem->setStart(transformer.viewToWorld(uiContext->appEvent()->pos()));
+        curItem->initPoints(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
         m_endSet = false;
         m_isDrawing = true;

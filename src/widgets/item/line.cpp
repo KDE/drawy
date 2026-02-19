@@ -70,3 +70,9 @@ void LineItem::deserialize(const QJsonObject &obj)
     LineDeserializer deserializer(this);
     deserializer.deserialize(obj);
 }
+
+QList<TransformHandler::Type> LineItem::transformHandlers() const
+{
+    using enum TransformHandler::Type;
+    return {LineResizeTransformHandler, LineMoveTransformHandler};
+}

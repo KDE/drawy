@@ -9,7 +9,7 @@ class RotateTransformHandler : public TransformHandler
 public:
     RotateTransformHandler();
 
-    [[nodiscard]] bool shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos) override;
+    [[nodiscard]] bool shouldActivate(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mousePressed(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mouseMoved(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mouseReleased(ApplicationContext *context) override;

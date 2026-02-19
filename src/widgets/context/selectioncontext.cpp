@@ -127,6 +127,10 @@ void SelectionContext::renderHandles()
         handlerTypes = (*items.begin())->transformHandlers();
     }
 
+    // reversing because the first item must be drawn at the top as
+    // it has higher priority
+    std::reverse(handlerTypes.begin(), handlerTypes.end());
+
     for (const auto handlerType : std::as_const(handlerTypes)) {
         auto handler{TransformHandler::getHandler(handlerType)};
 
@@ -138,7 +142,8 @@ void SelectionContext::renderHandles()
 
 QList<TransformHandler::Type> SelectionContext::defaultHandlerTypesForMultiSelection() const
 {
-    return {TransformHandler::Type::MoveTransformHandler, TransformHandler::Type::ResizeTransformHandler, TransformHandler::Type::RotateTransformHandler};
+    using enum TransformHandler::Type;
+    return {ResizeTransformHandler, MoveTransformHandler, RotateTransformHandler};
 }
 
 #include "moc_selectioncontext.cpp"

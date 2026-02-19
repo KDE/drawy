@@ -164,7 +164,8 @@ void Item::setTransform(const QTransform &transformObj)
 
 QList<TransformHandler::Type> Item::transformHandlers() const
 {
-    return {TransformHandler::Type::MoveTransformHandler, TransformHandler::Type::ResizeTransformHandler, TransformHandler::Type::RotateTransformHandler};
+    using enum TransformHandler::Type;
+    return {ResizeTransformHandler, MoveTransformHandler, RotateTransformHandler};
 }
 
 // reimplement this if your item can benefit from caching

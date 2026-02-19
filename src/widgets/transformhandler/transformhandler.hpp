@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QRectF>
 class QPainter;
 class Event;
 class ApplicationContext;
@@ -17,7 +18,15 @@ public:
         MoveTransformHandler,
         ResizeTransformHandler,
         RotateTransformHandler,
+        LineMoveTransformHandler,
+        LineResizeTransformHandler,
     };
+
+    // just a helper function
+    inline static constexpr QRectF createHandle(const QPointF pos, const qreal size)
+    {
+        return QRectF{pos.x() - size / 2.0, pos.y() - size / 2.0, size, size};
+    }
 
     // static members
 public:
@@ -30,7 +39,7 @@ public:
 
     virtual void renderHandles(ApplicationContext *context);
 
-    [[nodiscard]] virtual bool shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos) = 0;
+    [[nodiscard]] virtual bool shouldActivate(ApplicationContext *context) = 0;
     [[nodiscard]] virtual TransformHandler::State mousePressed(ApplicationContext *context);
     [[nodiscard]] virtual TransformHandler::State mouseMoved(ApplicationContext *context);
     [[nodiscard]] virtual TransformHandler::State mouseReleased(ApplicationContext *context);

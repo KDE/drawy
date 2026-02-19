@@ -17,11 +17,17 @@ PolygonItem::PolygonItem()
     m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
 }
 
-void PolygonItem::setStart(QPointF start)
+void PolygonItem::initPoints(QPointF start)
 {
     m_start = start;
     m_end = start;
     m_boundingBox = QRectF{start, start};
+}
+
+void PolygonItem::setStart(QPointF start)
+{
+    m_start = start;
+    updateBoundingBox();
 }
 
 void PolygonItem::setEnd(QPointF end)

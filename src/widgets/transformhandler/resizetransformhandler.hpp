@@ -11,7 +11,7 @@ class ResizeTransformHandler : public TransformHandler
 public:
     void renderHandles(ApplicationContext *context) override;
 
-    [[nodiscard]] bool shouldActivate(const QRectF selectionBox, const QPointF relativeCurPos) override;
+    [[nodiscard]] bool shouldActivate(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mousePressed(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mouseMoved(ApplicationContext *context) override;
     [[nodiscard]] TransformHandler::State mouseReleased(ApplicationContext *context) override;
@@ -53,6 +53,8 @@ private:
     QRectF m_initialSelectionBox{};
     QTransform m_initialSelectionTransform{};
     QHash<std::shared_ptr<Item>, QTransform> m_initialTransform{};
+
+    QTransform m_lastTransformUpdate{};
 
     ResizeHandleType m_activeHandleType{};
 

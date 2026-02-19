@@ -3,15 +3,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "item.hpp"
 #include "libdrawywidgets_private_export.h"
 
-#include "item.hpp"
 class QDebug;
+
 class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonItem : public Item
 {
 public:
     PolygonItem();
 
+    virtual void initPoints(QPointF start);
     virtual void setStart(QPointF start);
     virtual void setEnd(QPointF end);
 
@@ -34,9 +36,10 @@ protected:
     void prepareBackground(QPainter &painter) const;
 
 private:
-    QPointF m_start;
-    QPointF m_end;
+    QPointF m_start{};
+    QPointF m_end{};
 
     void updateBoundingBox();
 };
+
 LIBDRAWYWIDGETS_EXPORT QDebug operator<<(QDebug d, const PolygonItem &t);

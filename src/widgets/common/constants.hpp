@@ -6,9 +6,11 @@
 
 #include <QColor>
 #include <QMargins>
+#include <QPen>
 #include <QSize>
 #include <array>
 using namespace Qt::Literals::StringLiterals;
+
 namespace Common
 {
 inline constexpr QMargins cleanupMargin{10, 10, 10, 10}; // in pixels
@@ -18,8 +20,11 @@ inline constexpr QColor eraserBorderColor{255, 0, 0};
 inline constexpr QColor eraserBackgroundColor{255, 0, 0, 50};
 inline constexpr int eraserBorderWidth{2};
 
+inline constexpr int selectionBorderWidth{2};
 inline constexpr QColor selectionBorderColor{67, 135, 244, 255};
 inline constexpr QColor selectionBackgroundColor{67, 135, 244, 50};
+inline constexpr qreal selectionHandleSize{10.0};
+const QPen selectionBorderPen{selectionBorderColor, selectionBorderWidth};
 
 inline constexpr unsigned int erasedItemColor{0x6E6E6E96};
 
