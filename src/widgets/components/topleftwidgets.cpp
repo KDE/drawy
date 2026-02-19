@@ -22,6 +22,7 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     : QWidget{parent}
     , m_layout{new QHBoxLayout{this}}
     , mHelpMenu(new HelpMenu(this))
+    , mColorSchemeMenu(KColorSchemeMenu::createMenu(KColorSchemeManager::instance(), this))
 {
     m_layout->setContentsMargins(0, 0, 0, 0);
 
@@ -41,9 +42,6 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
 
     auto menu{new QMenu{this}};
     menuButton->setMenu(menu);
-
-    auto manager = KColorSchemeManager::instance();
-    mColorSchemeMenu = KColorSchemeMenu::createMenu(manager, this);
 
     // Add more actions as required
     connect(menu, &QMenu::aboutToShow, this, [menu, actionManager, this]() -> void {

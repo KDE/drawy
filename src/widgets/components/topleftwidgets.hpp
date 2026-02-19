@@ -18,5 +18,5 @@ public:
 private:
     QHBoxLayout *const m_layout;
     HelpMenu *const mHelpMenu;
-    KActionMenu *mColorSchemeMenu = nullptr;
+    KActionMenu *const mColorSchemeMenu;
 };
