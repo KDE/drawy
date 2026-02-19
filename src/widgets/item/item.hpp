@@ -77,7 +77,6 @@ public:
     virtual void translate(const QPointF &amount);
     virtual void rotate(const int angleDeg, const QPointF pivot);
     virtual void resize(const QTransform operation);
-    virtual void normalize();
     virtual void commitTransformation() = 0;
 
     virtual QList<TransformHandler::Type> transformHandlers() const;

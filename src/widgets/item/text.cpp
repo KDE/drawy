@@ -129,13 +129,6 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     painter.restore();
 }
 
-void TextItem::normalize()
-{
-    const QPointF topLeft{m_boundingBox.topLeft()};
-    m_boundingBox.translate(-topLeft);
-    m_transform.translate(topLeft.x(), topLeft.y());
-}
-
 void TextItem::commitTransformation()
 {
     // do nothing for now

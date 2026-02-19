@@ -109,7 +109,6 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        curItem->normalize();
         const QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
 

@@ -234,18 +234,6 @@ void FreeformItem::setSimulatePressure(bool value)
     m_simulatePressure = value;
 }
 
-void FreeformItem::normalize()
-{
-    const QPointF topLeft{m_path.boundingRect().topLeft()};
-    for (auto &point : m_points) {
-        point -= topLeft;
-    }
-
-    m_path.translate(-topLeft);
-    m_boundingBox.translate(-topLeft);
-    m_transform.translate(topLeft.x(), topLeft.y());
-}
-
 void FreeformItem::commitTransformation()
 {
     for (auto &point : m_points) {

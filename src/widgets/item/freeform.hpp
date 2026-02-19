@@ -27,7 +27,6 @@ public:
     [[nodiscard]] bool intersects(const QRectF &rect) override;
     bool needsCaching() const override;
 
-    void normalize() override;
     void commitTransformation() override;
 
     void addPoint(const QPointF &point, const qreal pressure);

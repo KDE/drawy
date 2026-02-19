@@ -52,7 +52,6 @@ private:
     QPointF m_viewLastPoint{};
     QRectF m_initialSelectionBox{};
     QTransform m_initialSelectionTransform{};
-    QHash<std::shared_ptr<Item>, QTransform> m_initialTransform{};
 
     QTransform m_lastTransformUpdate{};
 

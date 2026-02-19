@@ -66,7 +66,6 @@ void TextTool::mousePressed(ApplicationContext *context)
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
-                m_curItem->normalize();
                 auto commandHistory{spatialContext->commandHistory()};
                 commandHistory->insert(std::make_shared<InsertItemCommand>(QList<std::shared_ptr<Item>>{m_curItem}));
             } else {

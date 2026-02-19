@@ -14,7 +14,6 @@
 #include "event/event.hpp"
 #include <QPainter>
 #include <QRectF>
-#include <algorithm>
 
 using namespace Qt::StringLiterals;
 
@@ -56,11 +55,7 @@ TransformHandler::State ResizeTransformHandler::mousePressed(ApplicationContext 
 
         m_initialSelectionBox = selectionBox;
         m_initialSelectionTransform = selectionBoxTransform;
-
-        const auto &selectedItems{context->selectionContext()->selectedItems()};
-        for (const auto &item : selectedItems) {
-            m_initialTransform[item] = item->transformObj();
-        }
+        m_lastTransformUpdate = {};
 
         m_isActive = true;
     }
@@ -138,8 +133,14 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             dirtyRegion |= item->boundingBox();
             quadtree.deleteItem(item);
 
-            item->setTransform(m_initialTransform[item]);
+            item->resize(m_lastTransformUpdate.inverted());
             item->resize(updateTransform);
+
+            // items that require caching are usually expensive to re-render
+            // so we shouldn't commit their transformations immediately
+            if (!item->needsCaching()) {
+                item->commitTransformation();
+            }
 
             dirtyRegion |= item->boundingBox();
             quadtree.insertItem(item);
@@ -151,6 +152,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
 
+        m_lastTransformUpdate = updateTransform;
         return TransformHandler::State::Locked;
     }
 

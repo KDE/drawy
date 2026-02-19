@@ -101,13 +101,6 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
     }
 }
 
-void ArrowItem::normalize()
-{
-    m_arrowEndP1 -= start();
-    m_arrowEndP2 -= start();
-    LineItem::normalize();
-}
-
 void ArrowItem::commitTransformation()
 {
     LineItem::commitTransformation();

@@ -134,10 +134,6 @@ void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPoi
     painter.restore();
 }
 
-void Item::normalize()
-{
-}
-
 bool Item::operator==(const Item &other) const
 {
     return m_boundingBox == other.m_boundingBox && m_properties == other.m_properties && m_id == other.m_id && m_locked == other.m_locked;

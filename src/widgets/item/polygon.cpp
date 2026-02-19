@@ -112,16 +112,6 @@ bool PolygonItem::operator==(const PolygonItem &other) const
     return m_start == other.start() && m_end == other.end() && Item::operator==(other);
 }
 
-void PolygonItem::normalize()
-{
-    m_end -= m_start;
-
-    m_boundingBox.translate(-m_start);
-    m_transform.translate(m_start.x(), m_start.y());
-    m_start.setX(0);
-    m_start.setY(0);
-}
-
 void PolygonItem::commitTransformation()
 {
     m_start = m_transform.map(m_start);
