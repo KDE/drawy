@@ -29,6 +29,9 @@ public:
 
     [[nodiscard]] bool operator==(const PolygonItem &other) const;
 
+protected:
+    void prepareBackground(QPainter &painter) const;
+
 private:
     QPointF m_start;
     QPointF m_end;

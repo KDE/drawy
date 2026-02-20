@@ -41,12 +41,7 @@ void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
     painter.save();
     painter.translate(-offset);
 
-    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-    if (backgroundColor != Qt::transparent) {
-        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
-        const Qt::BrushStyle brushStyle{ItemUtils::convertItemBackgroundTypeStringToBrushStyle(property(Property::Type::BackgroundStyle).value<QString>())};
-        painter.setBrush(QBrush(backgroundColor, brushStyle));
-    }
+    prepareBackground(painter);
 
     painter.drawPath(getPath());
 
