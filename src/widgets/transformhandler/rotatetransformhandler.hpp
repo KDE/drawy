@@ -15,9 +15,12 @@ public:
     [[nodiscard]] TransformHandler::State mouseReleased(ApplicationContext *context) override;
 
 private:
-    QPointF m_lastPos{};
-    QPointF m_centerPos{};
+    QPointF m_worldLastPos{};
+    QPointF m_worldCenterPos{};
+
     bool m_isActive{false};
+
+    int m_lastRotationAngle{};
 
     QCursor m_cursor{};
 };

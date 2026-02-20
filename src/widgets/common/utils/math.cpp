@@ -71,11 +71,16 @@ qreal dotProduct(const QPointF &vectorA, const QPointF &vectorB)
 
 qreal angle(const QPointF &vectorA, const QPointF &vectorB)
 {
-    const qreal lenA{length(vectorA)};
-    const qreal lenB{length(vectorB)};
     const qreal dot{dotProduct(vectorA, vectorB)};
+    const qreal cross{vectorA.x() * vectorB.y() - vectorA.y() * vectorB.x()};
 
-    return qAcos(dot / (lenA * lenB));
+    qreal theta{qAtan2(cross, dot)};
+
+    if (theta < 0) {
+        theta += 2 * M_PI;
+    }
+
+    return theta;
 }
 
 int crossProduct(const QPointF &vectorA, const QPointF &vectorB)

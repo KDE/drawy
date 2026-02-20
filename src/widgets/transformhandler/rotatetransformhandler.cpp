@@ -2,6 +2,7 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/moveitemcommand.hpp"
+#include "common/utils/math.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -13,6 +14,7 @@
 #include "event/event.hpp"
 #include <QPainter>
 #include <QRectF>
+#include <qmath.h>
 using namespace Qt::StringLiterals;
 
 RotateTransformHandler::RotateTransformHandler()
@@ -47,9 +49,13 @@ TransformHandler::State RotateTransformHandler::mousePressed(ApplicationContext 
     auto event{uiContext->appEvent()};
 
     if (event->button() == Qt::LeftButton) {
-        m_lastPos = event->pos();
+        auto &transformer{context->spatialContext()->coordinateTransformer()};
+
+        m_worldLastPos = transformer.viewToWorld(event->pos());
         m_isActive = true;
-        m_centerPos = context->selectionContext()->selectionBox().boundingRect().center();
+        m_worldCenterPos = context->selectionContext()->selectionBox().boundingRect().center();
+
+        m_lastRotationAngle = 0;
     }
 
     return TransformHandler::State::Locked;
@@ -62,17 +68,12 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
     auto transformer{context->spatialContext()->coordinateTransformer()};
     context->renderingContext()->canvas()->setCursor(m_cursor);
 
-    // distance between two points
-    constexpr auto dist = [](const QPointF first, const QPointF second) -> qreal {
-        return qSqrt(qPow(first.x() - second.x(), 2) + qPow(first.y() - second.y(), 2));
-    };
-
     if (m_isActive) {
-        const QPointF curPoint{event->pos()};
+        const QPointF worldCurPos{transformer.viewToWorld(event->pos())};
 
-        const qreal perp{dist(m_lastPos, curPoint)};
-        const qreal radius{dist(m_lastPos, transformer.worldToView(m_centerPos))};
-        const int angle{qRound(qAtan(perp / radius) * 180 / M_PI)};
+        const QPointF initialVec{m_worldLastPos - m_worldCenterPos};
+        const QPointF newVec{worldCurPos - m_worldCenterPos};
+        const int angle{qRound(qRadiansToDegrees(Common::Utils::Math::angle(initialVec, newVec)))};
 
         if (angle == 0) {
             return TransformHandler::State::Locked;
@@ -87,17 +88,18 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
             quadtree.deleteItem(item);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
 
-            item->rotate(angle, item->transformObj().inverted().map(m_centerPos));
+            item->rotate(-m_lastRotationAngle, item->transformObj().inverted().map(m_worldCenterPos));
+            item->rotate(angle, item->transformObj().inverted().map(m_worldCenterPos));
 
             quadtree.insertItem(item);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
         }
 
+        m_lastRotationAngle = angle;
+
         context->renderingContext()->cacheGrid().markDirty(dirtyRegion);
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
-
-        m_lastPos = curPoint;
 
         return TransformHandler::State::Locked;
     }

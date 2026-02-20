@@ -105,7 +105,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
         // if it's a sharp angle, we draw a semi circular cap (looks good)
         const QPointF prevVector{cur.point - prev.point};
         const qreal curAngle{angle(vector, prevVector)};
-        if (curAngle > PI / 2) {
+        if (PI / 2.0 < curAngle && curAngle < PI * 3.0 / 2.0) {
             QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
             const qreal arcAngle{5.0 * PI / 6.0};
 
