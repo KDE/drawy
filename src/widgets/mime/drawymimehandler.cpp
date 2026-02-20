@@ -32,8 +32,10 @@ QList<std::shared_ptr<Item>> DrawyMimeHandler::tryReadData(const QMimeData &mime
         const QJsonObject itemObj = ItemDeserializer::object(v);
         const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
         const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
-        item->deserialize(itemObj);
-        items.append(item);
+        if (item) {
+            item->deserialize(itemObj);
+            items.append(item);
+        }
     }
 
     return items;
