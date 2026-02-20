@@ -63,6 +63,16 @@ void ApplicationContext::setCurrentFileModified(bool value)
     m_currentFileModified = value;
 }
 
+bool ApplicationContext::debug() const
+{
+    return mDebug;
+}
+
+void ApplicationContext::setDebug(bool newDebug)
+{
+    mDebug = newDebug;
+}
+
 QWidget *ApplicationContext::parentWidget() const
 {
     return m_parentWidget;

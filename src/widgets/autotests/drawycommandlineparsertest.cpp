@@ -18,6 +18,7 @@ DrawyCommandLineParserTest::DrawyCommandLineParserTest(QObject *parent)
 void DrawyCommandLineParserTest::shouldHaveDefaultValues()
 {
     QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen), u"fullscreen"_s);
+    QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::Debug), u"debug"_s);
 }
 
 #include "moc_drawycommandlineparsertest.cpp"

@@ -189,6 +189,7 @@ void UIContext::showContextMenu() const
     menu->addAction(actionManager()->action(KStandardActions::Preferences));
     menu->addSeparator();
     menu->addAction(actionManager()->action(KStandardActions::Quit));
+    if (m_applicationContext->debug()) { }
     menu->exec(QCursor::pos());
     delete menu;
 }

@@ -17,6 +17,7 @@ DrawyCommandLineParser::DrawyCommandLineParser(QCommandLineParser *parser)
 void DrawyCommandLineParser::initializeCommandLine(QCommandLineParser *parser)
 {
     parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::FullScreen), i18nc("@info:shell", "Fullscreen")));
+    parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::Debug), i18nc("@info:shell", "Activate Debug Mode")));
 }
 
 QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
@@ -24,6 +25,8 @@ QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
     switch (e) {
     case OptionParser::FullScreen:
         return u"fullscreen"_s;
+    case OptionParser::Debug:
+        return u"debug"_s;
     }
     return {};
 }

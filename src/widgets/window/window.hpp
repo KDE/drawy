@@ -17,6 +17,7 @@ public:
 
     void viewFullScreen(bool fullScreen);
     void loadFile(const QString &fileName);
+    void activeDebug();
 
 protected:
     void closeEvent(QCloseEvent *event) override;

@@ -39,6 +39,7 @@ public:
         SendBackward,
         BringForward,
         BringToFront,
+        Debug,
     };
 
     Q_ENUM(Action)
@@ -92,6 +93,7 @@ public:
     void slotUpdateZorderAndGroupButtons();
 
 private:
+    void slotDebug();
     void openRecentFile(const QUrl &url);
     void zorderMove(ItemUtils::ZorderMove move);
     void slotLoadDone(const LoadJob::LoadInfo &info);

@@ -39,6 +39,9 @@ public:
     [[nodiscard]] bool currentFileModified() const;
     void setCurrentFileModified(bool value);
 
+    [[nodiscard]] bool debug() const;
+    void setDebug(bool newDebug);
+
 private:
     QString m_currentFileName;
     bool m_currentFileModified{false};
@@ -51,4 +54,5 @@ private:
     UIContext *const m_uiContext;
     SelectionContext *const m_selectionContext;
     MimeManager *const m_mimeManager;
+    bool mDebug = false;
 };

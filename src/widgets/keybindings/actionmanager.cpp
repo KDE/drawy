@@ -119,6 +119,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
         zorderMove(ItemUtils::ZorderMove::BringToFront);
     })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
 
+    createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
+
     actionCollection->associateWidget(mainWindow);
     actionCollection->readSettings();
 
@@ -179,6 +181,8 @@ QString ActionManager::actionName(Action type) const
         return u"bring_forward"_s;
     case Action::BringToFront:
         return u"bring_to_front"_s;
+    case Action::Debug:
+        return u"debug"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
@@ -216,6 +220,11 @@ void ActionManager::redo()
     m_context->spatialContext()->commandHistory()->redo();
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
+}
+
+void ActionManager::slotDebug()
+{
+    // TODO add dialogbox.
 }
 
 void ActionManager::copy()
