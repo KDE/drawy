@@ -21,7 +21,7 @@ public:
     void draw(QPainter &painter, const QPointF &offset) override;
 
     void commitTransformation() override;
-    bool lockAspectRatioWhenResizing() const override;
+    [[nodiscard]] bool lockAspectRatioWhenResizing() const override;
 
     void createTextBox(const QPointF position);
 

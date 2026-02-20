@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "group.hpp"
-#include "common/constants.hpp"
+#include "common/utils/math.hpp"
 #include "serializer/groupdeserializer.hpp"
 #include "serializer/groupserializer.hpp"
 
@@ -33,9 +33,18 @@ void GroupItem::translate(const QPointF &amount)
 
 void GroupItem::commitTransformation()
 {
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
+    const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
+
     for (auto &item : m_items) {
+        const QTransform combined{item->transformObj() * filtered};
+
+        item->setTransform(combined);
         item->commitTransformation();
+        item->setDirty(true);
     }
+
+    setDirty(true);
 }
 
 void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
@@ -60,7 +69,7 @@ void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 bool GroupItem::intersects(const QRectF &rect)
 {
     for (const auto &item : std::as_const(m_items)) {
-        if (item->intersects(rect)) {
+        if (item->intersects(m_transform.inverted().map(rect).boundingRect())) {
             return true;
         }
     }
@@ -75,6 +84,7 @@ QList<std::shared_ptr<Item>> GroupItem::unGroup()
         const QTransform combined{item->transformObj() * groupTransform};
 
         item->setTransform(combined);
+        item->commitTransformation();
         item->setDirty(true);
     }
 
@@ -100,8 +110,7 @@ QRectF GroupItem::normalizedBoundingBox() const
 
 QPolygonF GroupItem::displayBoundingBox() const
 {
-    const qreal mg{Common::boundingBoxPadding};
-    return boundingBox().normalized().adjusted(-mg, -mg, mg, mg);
+    return m_transform.map(normalizedBoundingBox());
 }
 
 Item::FormType GroupItem::formType() const
@@ -209,4 +218,9 @@ void GroupItem::deserialize(const QJsonObject &obj)
 {
     GroupDeserializer deserializer(this);
     deserializer.deserialize(obj);
+}
+
+bool GroupItem::lockAspectRatioWhenResizing() const
+{
+    return true;
 }

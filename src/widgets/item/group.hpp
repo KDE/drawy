@@ -19,6 +19,7 @@ public:
 
     void translate(const QPointF &amount) override;
     void commitTransformation() override;
+    [[nodiscard]] bool lockAspectRatioWhenResizing() const override;
 
     void group(const QList<std::shared_ptr<Item>> &items);
     [[nodiscard]] QList<std::shared_ptr<Item>> unGroup();
