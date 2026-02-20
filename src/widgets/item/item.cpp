@@ -29,14 +29,12 @@ QRectF Item::boundingBox() const
 
 QRectF Item::normalizedBoundingBox() const
 {
-    const qreal mg{Common::boundingBoxPadding};
-    return m_boundingBox.normalized().adjusted(-mg, -mg, mg, mg);
+    return m_boundingBox.normalized();
 }
 
 QPolygonF Item::displayBoundingBox() const
 {
-    const qreal mg{Common::boundingBoxPadding};
-    return m_transform.map(m_boundingBox.normalized().adjusted(-mg, -mg, mg, mg));
+    return m_transform.map(m_boundingBox.normalized());
 }
 
 void Item::translate(const QPointF &amount)
@@ -178,6 +176,11 @@ bool Item::isDirty() const
 void Item::setDirty(bool value)
 {
     m_isDirty = value;
+}
+
+bool Item::lockAspectRatioWhenResizing() const
+{
+    return false;
 }
 
 #include "moc_item.cpp"

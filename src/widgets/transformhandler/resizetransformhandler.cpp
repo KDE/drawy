@@ -38,11 +38,11 @@ void ResizeTransformHandler::renderHandles(ApplicationContext *context)
 
 bool ResizeTransformHandler::shouldActivate(ApplicationContext *context)
 {
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
     const auto [selectionBox, selectionBoxTransform]{context->selectionContext()->selectionBoxWithTransform()};
-    const auto worldPos{context->spatialContext()->coordinateTransformer().viewToWorld(context->uiContext()->appEvent()->pos())};
-    const auto relativeCurPos{selectionBoxTransform.inverted().map(worldPos)};
+    const auto relativeCurPos{selectionBoxTransform.inverted().map(transformer.viewToWorld(context->uiContext()->appEvent()->pos()))};
 
-    const auto handles{getHandles(selectionBox)};
+    const auto handles{getHandles(selectionBox, context->renderingContext()->zoomFactor())};
     return std::ranges::any_of(handles, [&relativeCurPos](const auto &handle) {
         return handle.rect.contains(relativeCurPos);
     });
@@ -56,6 +56,7 @@ TransformHandler::State ResizeTransformHandler::mousePressed(ApplicationContext 
         m_initialSelectionBox = selectionBox;
         m_initialSelectionTransform = selectionBoxTransform;
         m_lastTransformUpdate = {};
+        m_lastLockedTransformUpdate = {};
 
         m_isActive = true;
     }
@@ -73,7 +74,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         const auto worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
         const auto relativeCurPos{selectionBoxTransform.inverted().map(worldPos)};
 
-        const auto handles{getHandles(selectionBox)};
+        const auto handles{getHandles(selectionBox, context->renderingContext()->zoomFactor())};
         auto it{std::ranges::find_if(handles, [&relativeCurPos](const auto &handle) {
             return handle.rect.contains(relativeCurPos);
         })};
@@ -84,7 +85,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
     }
 
     const int angle{[invTransform = selectionBoxTransform.inverted()] {
-        const int curAngle{qRound(Common::Utils::Math::angle(invTransform))};
+        int curAngle{qRound(Common::Utils::Math::angle(invTransform))};
         return (curAngle >= 0 ? curAngle : 360 + curAngle);
     }()};
 
@@ -118,26 +119,49 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             return std::make_tuple(1.0, 1.0, QPointF{0, 0});
         }()};
 
-        const qreal scaleX{newWidth / m_initialSelectionBox.width()};
-        const qreal scaleY{newHeight / m_initialSelectionBox.height()};
+        qreal scaleX{newWidth / m_initialSelectionBox.width()};
+        qreal scaleY{newHeight / m_initialSelectionBox.height()};
 
         QTransform newTransform{m_initialSelectionTransform};
         newTransform.translate(centerOfScale.x(), centerOfScale.y());
         newTransform.scale(scaleX, scaleY);
         newTransform.translate(-centerOfScale.x(), -centerOfScale.y());
 
-        const QTransform updateTransform{invTransform * newTransform};
+        qreal scaleLocked{};
+        if (std::abs(scaleX - 1.0) > std::abs(scaleY - 1.0)) {
+            scaleLocked = scaleX;
+        } else {
+            scaleLocked = scaleY;
+        }
+
+        QTransform newTransformLocked{m_initialSelectionTransform};
+        newTransformLocked.translate(centerOfScale.x(), centerOfScale.y());
+        newTransformLocked.scale(scaleLocked, scaleLocked);
+        newTransformLocked.translate(-centerOfScale.x(), -centerOfScale.y());
+
+        // we don't want the scale to ever be 0
+        if (newTransform.m11() == 0 || newTransform.m22() == 0) {
+            return TransformHandler::State::Locked;
+        }
+
+        const QTransform transformUpdate{invTransform * newTransform};
+        const QTransform lockedTransformUpdate{invTransform * newTransformLocked};
+
+        const bool useLocked{uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier) || selectedItems.size() > 1};
 
         QRectF dirtyRegion{};
         for (const auto &item : selectedItems) {
             dirtyRegion |= item->boundingBox();
             quadtree.deleteItem(item);
 
-            item->resize(m_lastTransformUpdate.inverted());
-            item->resize(updateTransform);
+            if (item->lockAspectRatioWhenResizing() || useLocked) {
+                item->resize(m_lastLockedTransformUpdate.inverted());
+                item->resize(lockedTransformUpdate);
+            } else {
+                item->resize(m_lastTransformUpdate.inverted());
+                item->resize(transformUpdate);
+            }
 
-            // items that require caching are usually expensive to re-render
-            // so we shouldn't commit their transformations immediately
             if (!item->needsCaching()) {
                 item->commitTransformation();
             }
@@ -152,7 +176,8 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
 
-        m_lastTransformUpdate = updateTransform;
+        m_lastTransformUpdate = transformUpdate;
+        m_lastLockedTransformUpdate = lockedTransformUpdate;
         return TransformHandler::State::Locked;
     }
 
@@ -184,7 +209,7 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topRightHandler(const 
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::rightHandler(const QRectF prevRect, const QPointF localCurPos)
 {
-    return {localCurPos.x() - prevRect.bottomLeft().x(), prevRect.height(), prevRect.bottomLeft()};
+    return {localCurPos.x() - prevRect.bottomLeft().x(), prevRect.height(), QPointF{prevRect.left(), prevRect.center().y()}};
 }
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::bottomRightHandler(const QRectF prevRect, const QPointF localCurPos)
@@ -194,7 +219,7 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::bottomRightHandler(con
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::bottomHandler(const QRectF prevRect, const QPointF localCurPos)
 {
-    return {prevRect.width(), localCurPos.y() - prevRect.topLeft().y(), prevRect.topLeft()};
+    return {prevRect.width(), localCurPos.y() - prevRect.topLeft().y(), QPointF{prevRect.center().x(), prevRect.top()}};
 }
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::bottomLeftHandler(const QRectF prevRect, const QPointF localCurPos)
@@ -204,7 +229,7 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::bottomLeftHandler(cons
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::leftHandler(const QRectF prevRect, const QPointF localCurPos)
 {
-    return {prevRect.topRight().x() - localCurPos.x(), prevRect.height(), prevRect.topRight()};
+    return {prevRect.topRight().x() - localCurPos.x(), prevRect.height(), QPointF{prevRect.right(), prevRect.center().y()}};
 }
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topLeftHandler(const QRectF prevRect, const QPointF localCurPos)
@@ -214,13 +239,13 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topLeftHandler(const Q
 
 std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topHandler(const QRectF prevRect, const QPointF localCurPos)
 {
-    return {prevRect.width(), prevRect.bottomRight().y() - localCurPos.y(), prevRect.bottomRight()};
+    return {prevRect.width(), prevRect.bottomRight().y() - localCurPos.y(), QPointF{prevRect.center().x(), prevRect.bottom()}};
 }
 
-constexpr QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(const QRectF selectionBox)
+constexpr QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(const QRectF selectionBox, const qreal zoom)
 {
-    constexpr qreal handleSize{20.0};
-    constexpr qreal handleSizeHalf{handleSize / 2.0};
+    const qreal handleSize{20.0 / zoom};
+    const qreal handleSizeHalf{handleSize / 2.0};
 
     return {
         {createHandle(selectionBox.topLeft(), handleSize), ResizeHandleType::TopLeft},
@@ -237,7 +262,7 @@ constexpr QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::ge
 QCursor ResizeTransformHandler::cursorForHandle(const double angle) const
 {
     constexpr std::array<int, 8> angles{20, 70, 110, 160, 200, 250, 290, 340};
-    constexpr std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
+    std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
 
     const int offset{[this] {
         switch (m_activeHandleType) {

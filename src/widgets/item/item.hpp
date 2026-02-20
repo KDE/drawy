@@ -93,6 +93,8 @@ public:
     [[nodiscard]] bool locked() const;
     void setLocked(bool newLocked);
 
+    [[nodiscard]] virtual bool lockAspectRatioWhenResizing() const;
+
 protected:
     QByteArray m_id;
     QRectF m_boundingBox{};

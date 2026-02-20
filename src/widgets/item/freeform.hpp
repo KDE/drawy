@@ -28,6 +28,7 @@ public:
     bool needsCaching() const override;
 
     void commitTransformation() override;
+    QList<TransformHandler::Type> transformHandlers() const override;
 
     void addPoint(const QPointF &point, const qreal pressure);
     void finalizeStroke();

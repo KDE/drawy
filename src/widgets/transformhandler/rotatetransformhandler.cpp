@@ -25,17 +25,16 @@ RotateTransformHandler::RotateTransformHandler()
 
 bool RotateTransformHandler::shouldActivate(ApplicationContext *context)
 {
-    auto &transformer{context->spatialContext()->coordinateTransformer()};
-
     const auto [selectionBox, selectionBoxTransform]{context->selectionContext()->selectionBoxWithTransform()};
-    const QPointF worldPos{transformer.viewToWorld(context->uiContext()->appEvent()->pos())};
-    const QPointF relativeCurPos{selectionBoxTransform.inverted().map(worldPos)};
+    const QPointF curPos{context->uiContext()->appEvent()->pos()};
 
     const QList<QPointF> points{selectionBox.topLeft(), selectionBox.topRight(), selectionBox.bottomRight(), selectionBox.bottomLeft()};
     constexpr qreal rotationHandleSize{50.0};
 
+    auto &transformer{context->spatialContext()->coordinateTransformer()};
+
     for (QPointF point : points) {
-        if (createHandle(point, rotationHandleSize).contains(relativeCurPos)) {
+        if (createHandle(transformer.worldToView(selectionBoxTransform.map(point)), rotationHandleSize).contains(curPos)) {
             return true;
         }
     }
@@ -88,8 +87,16 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
             quadtree.deleteItem(item);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
 
-            item->rotate(-m_lastRotationAngle, item->transformObj().inverted().map(m_worldCenterPos));
-            item->rotate(angle, item->transformObj().inverted().map(m_worldCenterPos));
+            const qreal determinant{item->transformObj().determinant()};
+            const int itemLastAngle{determinant < 0 ? -m_lastRotationAngle : m_lastRotationAngle};
+            const int itemAngle{determinant < 0 ? -angle : angle};
+
+            item->rotate(-itemLastAngle, item->transformObj().inverted().map(m_worldCenterPos));
+            item->rotate(itemAngle, item->transformObj().inverted().map(m_worldCenterPos));
+
+            if (!item->needsCaching()) {
+                item->commitTransformation();
+            }
 
             quadtree.insertItem(item);
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
@@ -111,6 +118,11 @@ TransformHandler::State RotateTransformHandler::mouseReleased(ApplicationContext
 {
     if (m_isActive) {
         m_isActive = false;
+
+        auto &selectedItems{context->selectionContext()->selectedItems()};
+        for (auto &item : selectedItems) {
+            item->commitTransformation();
+        }
     }
 
     return TransformHandler::State::Unlocked;

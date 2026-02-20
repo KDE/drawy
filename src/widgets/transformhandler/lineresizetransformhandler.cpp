@@ -69,12 +69,14 @@ TransformHandler::State LineResizeTransformHandler::mouseMoved(ApplicationContex
 {
     auto item{getSelectedLineItem(context)};
     auto renderingContext{context->renderingContext()};
-    const auto worldPos{context->spatialContext()->coordinateTransformer().viewToWorld(context->uiContext()->appEvent()->pos())};
+    const auto mousePos{context->uiContext()->appEvent()->pos()};
+    const auto worldPos{context->spatialContext()->coordinateTransformer().viewToWorld(mousePos)};
 
     if (!m_isActive) {
+        auto &transformer{context->spatialContext()->coordinateTransformer()};
         const auto handles{getHandles(item)};
-        auto it{std::ranges::find_if(handles, [worldPos](const auto &handle) {
-            return handle.rect.contains(worldPos);
+        auto it{std::ranges::find_if(handles, [&transformer, mousePos](const auto &handle) {
+            return createHandle(transformer.worldToView(handle.rect.center()), Common::selectionHandleSize).contains(mousePos);
         })};
 
         if (it != handles.end()) {

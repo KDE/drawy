@@ -116,6 +116,10 @@ void SelectionContext::reset()
 
 void SelectionContext::renderHandles()
 {
+    if (!m_shouldRenderHandles) {
+        return;
+    }
+
     const auto &items{selectedItems()};
 
     if (items.empty()) {
@@ -144,6 +148,16 @@ QList<TransformHandler::Type> SelectionContext::defaultHandlerTypesForMultiSelec
 {
     using enum TransformHandler::Type;
     return {ResizeTransformHandler, MoveTransformHandler, RotateTransformHandler};
+}
+
+bool SelectionContext::shouldRenderHandles() const
+{
+    return m_shouldRenderHandles;
+}
+
+void SelectionContext::setShouldRenderHandles(bool value)
+{
+    m_shouldRenderHandles = value;
 }
 
 #include "moc_selectioncontext.cpp"

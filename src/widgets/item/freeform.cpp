@@ -9,6 +9,7 @@
 
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"
+#include "common/utils/math.hpp"
 #include "itemutils.hpp"
 #include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
@@ -236,15 +237,17 @@ void FreeformItem::setSimulatePressure(bool value)
 
 void FreeformItem::commitTransformation()
 {
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
+
+    const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
     for (auto &point : m_points) {
-        point = m_transform.map(point);
+        point = filtered.map(point);
     }
 
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
     m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
     m_boundingBox = m_path.boundingRect().normalized();
-    m_transform = {};
 
     setDirty(true);
 }
@@ -255,4 +258,13 @@ QDebug operator<<(QDebug d, const FreeformItem &t)
     d.space() << "pressures:" << t.pressures();
     d.space() << "Item: " << static_cast<const Item &>(t);
     return d;
+}
+
+QList<TransformHandler::Type> FreeformItem::transformHandlers() const
+{
+    if (m_points.size() > 1) {
+        return Item::transformHandlers();
+    }
+
+    return {TransformHandler::Type::MoveTransformHandler};
 }

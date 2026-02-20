@@ -63,11 +63,16 @@ public:
     void renderHandles();
     [[nodiscard]] QList<TransformHandler::Type> defaultHandlerTypesForMultiSelection() const;
 
+    [[nodiscard]] bool shouldRenderHandles() const;
+    void setShouldRenderHandles(bool value);
+
 Q_SIGNALS:
     void selectionUpdated();
 
 private:
     std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};
+
+    bool m_shouldRenderHandles{true};
 
     ApplicationContext *const m_applicationContext;
 };

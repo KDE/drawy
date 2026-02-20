@@ -6,6 +6,7 @@
 
 #include <QFontMetricsF>
 #include <QJsonObject>
+#include <qassert.h>
 #include <utility>
 
 #include "common/constants.hpp"
@@ -131,7 +132,18 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
 void TextItem::commitTransformation()
 {
-    // do nothing for now
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
+    Q_ASSERT(scaleX == scaleY);
+
+    const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
+
+    const int curFontSize{property(Property::Type::FontSize).value<int>()};
+    const int newFontSize{qRound(curFontSize * scaleX)};
+
+    setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
+
+    m_boundingBox = filtered.map(m_boundingBox).boundingRect();
+    updateBoundingBox();
 }
 
 void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
@@ -506,4 +518,9 @@ QDebug operator<<(QDebug d, const TextItem &t)
     d.space() << "text:" << t.text();
     d.space() << "Item:" << static_cast<const Item &>(t);
     return d;
+}
+
+bool TextItem::lockAspectRatioWhenResizing() const
+{
+    return true;
 }

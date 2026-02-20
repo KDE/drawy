@@ -98,4 +98,52 @@ qreal angle(QTransform transform)
     const qreal angleRad{qAtan2(transform.m21(), transform.m11())};
     return qRadiansToDegrees(angleRad);
 }
+
+std::pair<qreal, qreal> extractScale(QTransform &transform)
+{
+    qreal m11{transform.m11()};
+    qreal m12{transform.m12()};
+    qreal m21{transform.m21()};
+    qreal m22{transform.m22()};
+
+    const qreal scaleX{qHypot(m11, m12)};
+    const qreal scaleY{qHypot(m21, m22)};
+
+    if (scaleX > 0) {
+        m11 /= scaleX;
+        m12 /= scaleX;
+    }
+
+    if (scaleY > 0) {
+        m21 /= scaleY;
+        m22 /= scaleY;
+    }
+
+    transform.setMatrix(m11, m12, 0, m21, m22, 0, transform.dx(), transform.dy(), 1.0);
+
+    return {scaleX, scaleY};
+}
+
+void removeShear(QTransform &transform)
+{
+    qreal m11{transform.m11()};
+    qreal m12{transform.m12()};
+    qreal m21{transform.m21()};
+    qreal m22{transform.m22()};
+
+    const qreal scaleX{std::hypot(m11, m12)};
+    const qreal angle{std::atan2(m12, m11)};
+
+    const qreal sinTheta{std::sin(angle)};
+    const qreal cosTheta{std::cos(angle)};
+
+    const qreal scaleY{-m21 * sinTheta + m22 * cosTheta};
+
+    QTransform rigidTransform;
+    rigidTransform.translate(transform.dx(), transform.dy());
+    rigidTransform.rotateRadians(angle);
+    rigidTransform.scale(scaleX, scaleY);
+
+    transform = rigidTransform;
+}
 };

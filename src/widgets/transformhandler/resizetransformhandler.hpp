@@ -37,7 +37,7 @@ private:
 
 private:
     QCursor cursorForHandle(const double angle) const;
-    static constexpr QList<ResizeHandle> getHandles(const QRectF selectionBox);
+    static constexpr QList<ResizeHandle> getHandles(const QRectF selectionBox, const qreal zoom);
 
     std::tuple<qreal, qreal, QPointF> topRightHandler(const QRectF prevRect, const QPointF localCurPos);
     std::tuple<qreal, qreal, QPointF> rightHandler(const QRectF prevRect, const QPointF localCurPos);
@@ -54,6 +54,7 @@ private:
     QTransform m_initialSelectionTransform{};
 
     QTransform m_lastTransformUpdate{};
+    QTransform m_lastLockedTransformUpdate{};
 
     ResizeHandleType m_activeHandleType{};
 

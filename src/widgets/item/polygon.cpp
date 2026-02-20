@@ -3,11 +3,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "polygon.hpp"
+#include "common/utils/math.hpp"
 #include "item/itemutils.hpp"
 #include "serializer/polygondeserializer.hpp"
 #include "serializer/polygonserializer.hpp"
 #include <QJsonObject>
-#include <qnamespace.h>
+
 using namespace Qt::Literals::StringLiterals;
 PolygonItem::PolygonItem()
 {
@@ -114,11 +115,14 @@ bool PolygonItem::operator==(const PolygonItem &other) const
 
 void PolygonItem::commitTransformation()
 {
-    m_start = m_transform.map(m_start);
-    m_end = m_transform.map(m_end);
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
+    const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
+    m_start = filtered.map(m_start);
+    m_end = filtered.map(m_end);
+
+    setDirty(true);
     updateBoundingBox();
-    m_transform = {};
 }
 
 QDebug operator<<(QDebug d, const PolygonItem &t)
