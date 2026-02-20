@@ -1,5 +1,6 @@
 #include "math.hpp"
 #include <QTransform>
+#include <qmath.h>
 
 namespace Common::Utils::Math
 {
@@ -96,7 +97,7 @@ QPointF lerp(const QPointF &pointA, const QPointF &pointB, const qreal dist)
 qreal angle(QTransform transform)
 {
     const qreal angleRad{qAtan2(transform.m21(), transform.m11())};
-    return qRadiansToDegrees(angleRad);
+    return (angleRad >= 0 ? angleRad : 2 * M_PI + angleRad);
 }
 
 std::pair<qreal, qreal> extractScale(QTransform &transform)

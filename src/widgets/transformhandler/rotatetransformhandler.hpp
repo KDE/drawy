@@ -20,7 +20,8 @@ private:
 
     bool m_isActive{false};
 
-    int m_lastRotationAngle{};
+    qreal m_lastRotationAngle{};
+    qreal m_initialAngle{};
 
     QCursor m_cursor{};
 };

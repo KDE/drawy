@@ -14,7 +14,9 @@
 #include "event/event.hpp"
 #include <QPainter>
 #include <QRectF>
+#include <algorithm>
 #include <qmath.h>
+#include <qnamespace.h>
 using namespace Qt::StringLiterals;
 
 RotateTransformHandler::RotateTransformHandler()
@@ -55,6 +57,9 @@ TransformHandler::State RotateTransformHandler::mousePressed(ApplicationContext 
         m_worldCenterPos = context->selectionContext()->selectionBox().boundingRect().center();
 
         m_lastRotationAngle = 0;
+
+        const auto [selectionBox, selectionBoxTransform]{context->selectionContext()->selectionBoxWithTransform()};
+        m_initialAngle = qRadiansToDegrees(Common::Utils::Math::angle(selectionBoxTransform.inverted()));
     }
 
     return TransformHandler::State::Locked;
@@ -72,7 +77,28 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
 
         const QPointF initialVec{m_worldLastPos - m_worldCenterPos};
         const QPointF newVec{worldCurPos - m_worldCenterPos};
-        const int angle{qRound(qRadiansToDegrees(Common::Utils::Math::angle(initialVec, newVec)))};
+
+        qreal angle{qRadiansToDegrees(Common::Utils::Math::angle(initialVec, newVec))};
+        Q_ASSERT(0 <= angle && angle <= 360);
+
+        if (event->modifiers().testFlag(Qt::ShiftModifier)) {
+            constexpr std::array<qreal, 17> snapAngles{0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330, 360};
+            const auto lowerBound{std::lower_bound(std::next(snapAngles.begin()), snapAngles.end(), angle)};
+            const auto previous{std::prev(lowerBound)};
+
+            const qreal prevDiff{angle - *previous};
+            const qreal nextDiff{*lowerBound - angle};
+
+            if (prevDiff < nextDiff) {
+                angle = *previous;
+            } else {
+                angle = *lowerBound;
+            }
+
+            const auto prevSnapAngle{std::prev(std::lower_bound(std::next(snapAngles.begin()), snapAngles.end(), m_initialAngle))};
+
+            angle -= (m_initialAngle - *prevSnapAngle);
+        }
 
         if (angle == 0) {
             return TransformHandler::State::Locked;
@@ -88,8 +114,8 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
             dirtyRegion |= transformer.worldToGrid(item->boundingBox()).toAlignedRect();
 
             const qreal determinant{item->transformObj().determinant()};
-            const int itemLastAngle{determinant < 0 ? -m_lastRotationAngle : m_lastRotationAngle};
-            const int itemAngle{determinant < 0 ? -angle : angle};
+            const qreal itemLastAngle{determinant < 0 ? -m_lastRotationAngle : m_lastRotationAngle};
+            const qreal itemAngle{determinant < 0 ? -angle : angle};
 
             item->rotate(-itemLastAngle, item->transformObj().inverted().map(m_worldCenterPos));
             item->rotate(itemAngle, item->transformObj().inverted().map(m_worldCenterPos));

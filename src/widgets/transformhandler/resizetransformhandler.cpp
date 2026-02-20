@@ -84,12 +84,9 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         }
     }
 
-    const int angle{[invTransform = selectionBoxTransform.inverted()] {
-        int curAngle{qRound(Common::Utils::Math::angle(invTransform))};
-        return (curAngle >= 0 ? curAngle : 360 + curAngle);
-    }()};
-
     const QTransform invTransform{m_initialSelectionTransform.inverted()};
+    const int angle{qRound(qRadiansToDegrees((Common::Utils::Math::angle(invTransform))))};
+
     context->renderingContext()->canvas()->setCursor(cursorForHandle(angle));
 
     if (m_isActive) {

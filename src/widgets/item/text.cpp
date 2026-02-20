@@ -4,9 +4,9 @@
 
 #include "text.hpp"
 
+#include "common/utils/math.hpp"
 #include <QFontMetricsF>
 #include <QJsonObject>
-#include <qassert.h>
 #include <utility>
 
 #include "common/constants.hpp"
