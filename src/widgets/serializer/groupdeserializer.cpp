@@ -5,7 +5,7 @@
  */
 #include "groupdeserializer.hpp"
 #include "item/group.hpp"
-#include "item/itemutils.hpp"
+#include "jobs/deserializeutils.hpp"
 
 #include <QJsonArray>
 #include <QJsonObject>
@@ -25,19 +25,6 @@ void GroupDeserializer::deserialize(const QJsonObject &obj)
 
     const QJsonArray items = obj[u"items"_s].toArray();
 
-    QList<std::shared_ptr<Item>> itemsToAdd;
-    itemsToAdd.reserve(items.size());
-
-    for (const auto &val : items) {
-        const QJsonObject itemObj = val.toObject();
-        const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
-        const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
-        if (item) {
-            item->deserialize(itemObj);
-
-            itemsToAdd.append(item);
-        }
-    }
-
+    const QList<std::shared_ptr<Item>> itemsToAdd = DeserializeUtils::deserializeItems(items);
     groupItem->setItems(itemsToAdd);
 }

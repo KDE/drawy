@@ -272,6 +272,8 @@ target_sources(
         jobs/restoreautosavejob.cpp
         jobs/loadjobutil.hpp
         jobs/loadjobutil.cpp
+        jobs/deserializeutils.hpp
+        jobs/deserializeutils.cpp
         dialog/configuresettingsdialog.cpp
         dialog/configuresettingsdialog.hpp
         dialog/configgroupinterface.cpp

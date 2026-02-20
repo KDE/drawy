@@ -5,7 +5,7 @@
 #include "mime/drawymimehandler.hpp"
 #include "common/constants.hpp"
 #include "item/item.hpp"
-#include "item/itemutils.hpp"
+#include "jobs/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -25,19 +25,7 @@ QList<std::shared_ptr<Item>> DrawyMimeHandler::tryReadData(const QMimeData &mime
         return {};
     }
 
-    QList<std::shared_ptr<Item>> items;
-    items.reserve(data.array().count());
-
-    for (const auto &v : data.array()) {
-        const QJsonObject itemObj = ItemDeserializer::object(v);
-        const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
-        const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
-        if (item) {
-            item->deserialize(itemObj);
-            items.append(item);
-        }
-    }
-
+    const QList<std::shared_ptr<Item>> items = DeserializeUtils::deserializeItems(data.array());
     return items;
 }
 
