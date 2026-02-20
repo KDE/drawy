@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:42+0000\n"
-"PO-Revision-Date: 2026-02-13 09:47+0200\n"
+"POT-Creation-Date: 2026-02-20 00:42+0000\n"
+"PO-Revision-Date: 2026-02-15 07:58+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -91,7 +91,7 @@ msgstr "שינוי מרחק (סדר בציר Z)"
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
@@ -103,9 +103,9 @@ msgstr "איפוס רמת תקריב"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
-#: widgets/components/topleftwidgets.cpp:39
+#: widgets/components/topleftwidgets.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -122,11 +122,10 @@ msgid "Your handy, infinite  brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
 
 #: widgets/context/aboutdata.cpp:17
-#, fuzzy, kde-format
-#| msgid "(c) 2025-%1 Drawy authors"
+#, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "‏(c) 2026‏-%1 יוצרי Drawy"
+msgstr "© 2025‏-%1 יוצרי Drawy"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
@@ -579,7 +578,7 @@ msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "בחירת צבע מותאם אישית"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#: widgets/properties/widgets/colorwidgetbase.cpp:80
 #, kde-format
 msgid "Color"
 msgstr "צבע"

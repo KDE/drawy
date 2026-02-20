@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:42+0000\n"
+"POT-Creation-Date: 2026-02-20 00:42+0000\n"
 "PO-Revision-Date: 2026-01-28 20:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -128,7 +128,7 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/topleftwidgets.cpp:39
+#: widgets/components/topleftwidgets.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Open File"
@@ -732,7 +732,7 @@ msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "選取工具"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#: widgets/properties/widgets/colorwidgetbase.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "ColorWidgetBase|"
 #| msgid "Color"
