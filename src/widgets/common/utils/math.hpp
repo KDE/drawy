@@ -6,6 +6,7 @@
 
 #include <QLineF>
 #include <QRectF>
+#include <QTransform>
 
 namespace Common::Utils::Math
 {
@@ -81,6 +82,4 @@ namespace Common::Utils::Math
  * @returns a pair containing scaleX and scaleY
  */
 [[nodiscard]] std::pair<qreal, qreal> extractScale(QTransform &transform);
-
-void removeShear(QTransform &transform);
 }; // namespace Common::Utils::Math

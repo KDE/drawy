@@ -2,7 +2,9 @@
 
 #include "transformhandler.hpp"
 #include <QCursor>
+#include <QObject>
 #include <QPointF>
+
 class LineItem;
 
 class LineResizeTransformHandler : public TransformHandler

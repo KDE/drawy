@@ -17,7 +17,7 @@
 ResizeItemCommand::ResizeItemCommand(QList<std::shared_ptr<Item>> items,
                                      const QTransform transform,
                                      const QTransform lockedTransform,
-                                     QHash<std::shared_ptr<Item>, bool> useLocked)
+                                     std::unordered_map<std::shared_ptr<Item>, bool> useLocked)
     : ItemCommand{std::move(items)}
     , m_transform{transform}
     , m_lockedTransform{lockedTransform}

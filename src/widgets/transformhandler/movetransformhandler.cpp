@@ -27,7 +27,7 @@ void MoveTransformHandler::renderHandles(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
 
     context->renderingContext()->canvas()->paintCanvas([&selectedItems, &transformer, &context](QPainter &painter) -> void {
-        painter.setPen(Common::selectionBorderPen);
+        painter.setPen(Common::selectionBorderPen());
 
         if (selectedItems.size() == 1) {
             const auto &item{(*selectedItems.begin())};

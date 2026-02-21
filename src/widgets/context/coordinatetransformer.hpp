@@ -4,7 +4,10 @@
 
 #pragma once
 
+#include <QPolygon>
+#include <QPolygonF>
 #include <QRect>
+
 class ApplicationContext;
 class SpatialContext;
 class RenderingContext;
@@ -25,13 +28,11 @@ public:
     [[nodiscard]] QPointF worldToView(QPointF point);
     [[nodiscard]] QSizeF worldToView(QSizeF size);
     [[nodiscard]] QRectF worldToView(QRectF rect);
-    // [[nodiscard]] QTransform worldToView(QTransform transform);
     [[nodiscard]] QPolygonF worldToView(QPolygonF rect);
     [[nodiscard]] QPointF viewToWorld(QPointF point);
     [[nodiscard]] QSizeF viewToWorld(QSizeF size);
     [[nodiscard]] QRectF viewToWorld(QRectF rect);
     [[nodiscard]] QPolygonF viewToWorld(QPolygonF rect);
-    // [[nodiscard]] QTransform viewToWorld(QTransform transform);
 
     [[nodiscard]] QPoint worldToView(QPoint point);
     [[nodiscard]] QSize worldToView(QSize size);
@@ -45,13 +46,11 @@ public:
     [[nodiscard]] QPointF worldToGrid(QPointF point);
     [[nodiscard]] QSizeF worldToGrid(QSizeF size);
     [[nodiscard]] QRectF worldToGrid(QRectF rect);
-    // [[nodiscard]] QTransform worldToGrid(QTransform transform);
     [[nodiscard]] QPolygonF worldToGrid(QPolygonF rect);
     [[nodiscard]] QPointF gridToWorld(QPointF point);
     [[nodiscard]] QSizeF gridToWorld(QSizeF size);
     [[nodiscard]] QRectF gridToWorld(QRectF rect);
     [[nodiscard]] QPolygonF gridToWorld(QPolygonF rect);
-    // [[nodiscard]] QTransform gridToWorld(QTransform transform);
 
     [[nodiscard]] QPoint worldToGrid(QPoint point);
     [[nodiscard]] QSize worldToGrid(QSize size);
@@ -66,12 +65,10 @@ public:
     [[nodiscard]] QSizeF viewToGrid(QSizeF size);
     [[nodiscard]] QRectF viewToGrid(QRectF rect);
     [[nodiscard]] QPolygonF viewToGrid(QPolygonF rect);
-    // [[nodiscard]] QTransform viewToGrid(QTransform transform);
     [[nodiscard]] QPointF gridToView(QPointF point);
     [[nodiscard]] QSizeF gridToView(QSizeF size);
     [[nodiscard]] QRectF gridToView(QRectF rect);
     [[nodiscard]] QPolygonF gridToView(QPolygonF rect);
-    // [[nodiscard]] QTransform gridToView(QTransform transform);
 
     [[nodiscard]] QPoint viewToGrid(QPoint point);
     [[nodiscard]] QSize viewToGrid(QSize size);

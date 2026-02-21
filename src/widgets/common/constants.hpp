@@ -24,7 +24,11 @@ inline constexpr int selectionBorderWidth{2};
 inline constexpr QColor selectionBorderColor{67, 135, 244, 255};
 inline constexpr QColor selectionBackgroundColor{67, 135, 244, 50};
 inline constexpr qreal selectionHandleSize{10.0};
-const QPen selectionBorderPen{selectionBorderColor, selectionBorderWidth};
+
+inline QPen selectionBorderPen()
+{
+    return QPen{selectionBorderColor, selectionBorderWidth};
+};
 
 inline constexpr unsigned int erasedItemColor{0x6E6E6E96};
 

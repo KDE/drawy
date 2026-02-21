@@ -56,7 +56,7 @@ private:
     QTransform m_lastTransformUpdate{};
     QTransform m_lastLockedTransformUpdate{};
 
-    QHash<std::shared_ptr<Item>, bool> m_aspectRatioLocked{};
+    std::unordered_map<std::shared_ptr<Item>, bool> m_aspectRatioLocked{};
 
     ResizeHandleType m_activeHandleType{};
 

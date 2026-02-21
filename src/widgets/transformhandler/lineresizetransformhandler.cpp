@@ -36,7 +36,7 @@ void LineResizeTransformHandler::renderHandles(ApplicationContext *context)
     const auto handles{getHandles(getSelectedLineItem(context))};
 
     context->renderingContext()->canvas()->paintCanvas([context, &transformer, &handles](QPainter &painter) {
-        painter.setPen(Common::selectionBorderPen);
+        painter.setPen(Common::selectionBorderPen());
         painter.setBrush(context->renderingContext()->canvas()->canvasBg());
 
         for (const auto &handle : handles) {

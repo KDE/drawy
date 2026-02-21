@@ -47,6 +47,7 @@
 
                 pre-commit
                 cmake
+                clazy
                 ninja
                 bear
                 entr

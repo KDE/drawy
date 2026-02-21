@@ -30,7 +30,7 @@ void LineMoveTransformHandler::renderHandles(ApplicationContext *context)
     auto item{getSelectedLineItem(context)};
 
     context->renderingContext()->canvas()->paintCanvas([item, &transformer](QPainter &painter) {
-        painter.setPen(Common::selectionBorderPen);
+        painter.setPen(Common::selectionBorderPen());
 
         const QPointF start{item->transformObj().map(item->start())};
         const QPointF end{item->transformObj().map(item->end())};

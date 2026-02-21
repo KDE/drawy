@@ -27,7 +27,7 @@ void ResizeTransformHandler::renderHandles(ApplicationContext *context)
     const auto viewSelectionBox{context->spatialContext()->coordinateTransformer().worldToView(context->selectionContext()->selectionBox())};
 
     context->renderingContext()->canvas()->paintCanvas([viewSelectionBox, context](QPainter &painter) {
-        painter.setPen(Common::selectionBorderPen);
+        painter.setPen(Common::selectionBorderPen());
         painter.setBrush(context->renderingContext()->canvas()->canvasBg());
 
         for (const QPointF &point : viewSelectionBox) {

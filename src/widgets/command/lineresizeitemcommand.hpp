@@ -7,6 +7,8 @@
 #include <QPointF>
 
 #include "itemcommand.hpp"
+#include <QObject>
+
 class ApplicationContext;
 
 class LineResizeItemCommand : public ItemCommand

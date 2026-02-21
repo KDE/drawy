@@ -124,27 +124,4 @@ std::pair<qreal, qreal> extractScale(QTransform &transform)
 
     return {scaleX, scaleY};
 }
-
-void removeShear(QTransform &transform)
-{
-    qreal m11{transform.m11()};
-    qreal m12{transform.m12()};
-    qreal m21{transform.m21()};
-    qreal m22{transform.m22()};
-
-    const qreal scaleX{std::hypot(m11, m12)};
-    const qreal angle{std::atan2(m12, m11)};
-
-    const qreal sinTheta{std::sin(angle)};
-    const qreal cosTheta{std::cos(angle)};
-
-    const qreal scaleY{-m21 * sinTheta + m22 * cosTheta};
-
-    QTransform rigidTransform;
-    rigidTransform.translate(transform.dx(), transform.dy());
-    rigidTransform.rotateRadians(angle);
-    rigidTransform.scale(scaleX, scaleY);
-
-    transform = rigidTransform;
-}
 };
