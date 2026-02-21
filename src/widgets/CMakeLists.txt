@@ -292,6 +292,8 @@ target_sources(
         mime/mimehandler.hpp
         mime/mimemanager.cpp
         mime/mimemanager.hpp
+        debug/debugdialog.hpp
+        debug/debugdialog.cpp
         libdrawywidgets_private_export.h
 )
 

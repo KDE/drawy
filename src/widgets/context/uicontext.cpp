@@ -187,9 +187,12 @@ void UIContext::showContextMenu() const
     menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
     menu->addSeparator();
     menu->addAction(actionManager()->action(KStandardActions::Preferences));
+    if (m_applicationContext->debug()) {
+        menu->addSeparator();
+        menu->addAction(actionManager()->action(ActionManager::Action::Debug));
+    }
     menu->addSeparator();
     menu->addAction(actionManager()->action(KStandardActions::Quit));
-    if (m_applicationContext->debug()) { }
     menu->exec(QCursor::pos());
     delete menu;
 }

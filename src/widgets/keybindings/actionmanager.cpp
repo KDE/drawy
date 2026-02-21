@@ -31,6 +31,7 @@
 #include "common/constants.hpp"
 #include "dialog/configuresettingsdialog.hpp"
 #include "event/event.hpp"
+#include "jobs/serializejob.hpp"
 #include "keybindmanager.hpp"
 
 #include "components/propertybar.hpp"
@@ -43,6 +44,7 @@
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "debug/debugdialog.hpp"
 #include "drawy_debug.h"
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
@@ -224,7 +226,22 @@ void ActionManager::redo()
 
 void ActionManager::slotDebug()
 {
-    // TODO add dialogbox.
+    auto d = new DebugDialog;
+    auto job = new SerializeJob(m_context, this);
+    const SerializeJob::SerializeInfo info{
+        .offsetPos = m_context->spatialContext()->offsetPos(),
+        .zoomFactor = m_context->renderingContext()->zoomFactor(),
+        .items = m_context->spatialContext()->quadtree().getAllItems(),
+    };
+    job->setSerializeInfo(info);
+    connect(job, &SerializeJob::serializeDone, this, [d](const QJsonObject &obj) {
+        const QJsonDocument doc(obj);
+        const QString str = QString::fromLatin1(doc.toJson());
+        d->setDebugInfo(str);
+    });
+    job->start();
+    d->exec();
+    delete d;
 }
 
 void ActionManager::copy()
