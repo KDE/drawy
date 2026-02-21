@@ -189,7 +189,7 @@ std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
         break;
     }
     case Item::FormType::Invalid:
-        Q_ASSERT(false);
+        qCWarning(DRAWY_LOG) << "Item::FormType::Invalid it's a bug";
         break;
     }
     return item;

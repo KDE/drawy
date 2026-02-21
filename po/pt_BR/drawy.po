@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-15 07:10-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -83,11 +83,6 @@ msgstr "Selecionar objeto"
 msgid "Ungroup Objects"
 msgstr "Desagrupar objetos"
 
-#: widgets/command/updatepropertycommand.cpp:66
-#, kde-format
-msgid "Update Property"
-msgstr "Atualizar propriedade"
-
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, kde-format
 msgid "Change ZOrder"
@@ -111,7 +106,7 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/topleftwidgets.cpp:39
+#: widgets/components/topleftwidgets.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -265,6 +260,12 @@ msgctxt "@info:shell"
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
+#: widgets/drawycommandlineparser.cpp:20
+#, kde-format
+msgctxt "@info:shell"
+msgid "Activate Debug Mode"
+msgstr ""
+
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
 msgctxt "@action"
@@ -373,58 +374,64 @@ msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Trazer para o primeiro plano"
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:122
+#, kde-format
+msgctxt "@action"
+msgid "Debug"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:407
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:400
-#: widgets/keybindings/actionmanager.cpp:464
+#: widgets/keybindings/actionmanager.cpp:409
+#: widgets/keybindings/actionmanager.cpp:473
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:401
+#: widgets/keybindings/actionmanager.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:423
+#: widgets/keybindings/actionmanager.cpp:432
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Você realmente deseja limpar a tela?"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:433
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Limpar"
 
-#: widgets/keybindings/actionmanager.cpp:467
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sem título.svg"
 
-#: widgets/keybindings/actionmanager.cpp:482
+#: widgets/keybindings/actionmanager.cpp:491
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:484
+#: widgets/keybindings/actionmanager.cpp:493
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exportar para Svg"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:528
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -432,7 +439,7 @@ msgid ""
 msgstr ""
 "O documento \"%1\" foi modificado. Deseja salvar as mudanças ou descartá-las?"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -583,7 +590,7 @@ msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Selecionar cor personalizada"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#: widgets/properties/widgets/colorwidgetbase.cpp:80
 #, kde-format
 msgid "Color"
 msgstr "Cor"
@@ -694,6 +701,9 @@ msgstr "Ferramenta de seleção"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Ferramenta de texto"
+
+#~ msgid "Update Property"
+#~ msgstr "Atualizar propriedade"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

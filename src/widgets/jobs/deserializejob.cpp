@@ -5,7 +5,7 @@
  */
 #include "deserializejob.hpp"
 #include "drawy_debug.h"
-#include "item/itemutils.hpp"
+#include "jobs/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
@@ -43,15 +43,8 @@ void DeserializeJob::setJsonObject(const QJsonObject &newJsonObject)
 
 void DeserializeJob::deserializeItems()
 {
-    QList<std::shared_ptr<Item>> items;
     const QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(mJsonObject, u"items"_s));
-    for (const auto &v : itemsArray) {
-        const QJsonObject itemObj = ItemDeserializer::object(v);
-        const Item::FormType type{ItemUtils::convertItemTypeStringToEnum(ItemDeserializer::value(itemObj, u"type"_s).toString())};
-        const std::shared_ptr<Item> item = ItemUtils::createItemFromType(type);
-        item->deserialize(itemObj);
-        items.append(item);
-    }
+    const QList<std::shared_ptr<Item>> items = DeserializeUtils::deserializeItems(itemsArray);
 
     const qreal zoomFactor = ItemDeserializer::value(mJsonObject, u"zoom_factor"_s).toDouble();
 

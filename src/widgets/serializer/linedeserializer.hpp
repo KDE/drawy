@@ -14,6 +14,4 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT LineDeserializer : public PolygonDeserializer
 public:
     explicit LineDeserializer(LineItem *item);
     ~LineDeserializer() override;
-
-    void deserialize(const QJsonObject &obj) override;
 };

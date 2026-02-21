@@ -50,6 +50,10 @@ int main(int argc, char *argv[])
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
         w.viewFullScreen(true);
     }
+    if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::Debug))) {
+        w.activeDebug();
+    }
+
     const QStringList &args = parser.positionalArguments();
 
     if (!args.isEmpty()) {

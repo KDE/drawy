@@ -18,13 +18,7 @@ EllipseItem::EllipseItem()
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
-    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
-    if (backgroundColor != Qt::transparent) {
-        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
-        const Qt::BrushStyle brushStyle{ItemUtils::convertItemBackgroundTypeStringToBrushStyle(property(Property::Type::BackgroundStyle).value<QString>())};
-        painter.setBrush(QBrush(backgroundColor, brushStyle));
-    }
-
+    prepareBackground(painter);
     painter.drawEllipse(QRectF(start() - offset, end() - offset));
 }
 

@@ -14,8 +14,3 @@ DiamondDeserializer::DiamondDeserializer(DiamondItem *item)
 }
 
 DiamondDeserializer::~DiamondDeserializer() = default;
-
-void DiamondDeserializer::deserialize(const QJsonObject &obj)
-{
-    PolygonDeserializer::deserialize(obj);
-}

@@ -272,6 +272,8 @@ target_sources(
         jobs/restoreautosavejob.cpp
         jobs/loadjobutil.hpp
         jobs/loadjobutil.cpp
+        jobs/deserializeutils.hpp
+        jobs/deserializeutils.cpp
         dialog/configuresettingsdialog.cpp
         dialog/configuresettingsdialog.hpp
         dialog/configgroupinterface.cpp
@@ -290,6 +292,8 @@ target_sources(
         mime/mimehandler.hpp
         mime/mimemanager.cpp
         mime/mimemanager.hpp
+        debug/debugdialog.hpp
+        debug/debugdialog.cpp
         libdrawywidgets_private_export.h
 )
 

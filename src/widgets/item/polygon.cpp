@@ -67,6 +67,16 @@ void PolygonItem::updateBoundingBox()
     m_boundingBox.adjust(-w, -w, w, w);
 }
 
+void PolygonItem::prepareBackground(QPainter &painter) const
+{
+    QColor backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()};
+    if (backgroundColor != Qt::transparent) {
+        backgroundColor.setAlpha(property(Property::Type::Opacity).value<int>());
+        const Qt::BrushStyle brushStyle{ItemUtils::convertItemBackgroundTypeStringToBrushStyle(property(Property::Type::BackgroundStyle).value<QString>())};
+        painter.setBrush(QBrush(backgroundColor, brushStyle));
+    }
+}
+
 void PolygonItem::draw(QPainter &painter, const QPointF &offset)
 {
     QPen pen;
@@ -74,14 +84,7 @@ void PolygonItem::draw(QPainter &painter, const QPointF &offset)
     QColor color{property(Property::Type::StrokeColor).value<QColor>()};
     color.setAlpha(property(Property::Type::Opacity).value<int>());
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
-    /*
-    if (hasProperty(Property::Type::BackgroundColor)) {
-        const QColor
-    backgroundColor{property(Property::Type::BackgroundColor).value<QColor>()}; if
-    (backgroundColor != Qt::transparent) { pen.setBrush(QBrush(backgroundColor));
-        }
-    }
-    */
+
     pen.setCapStyle(Qt::RoundCap);
     pen.setJoinStyle(Qt::RoundJoin);
     pen.setWidth(property(Property::Type::StrokeWidth).value<int>());

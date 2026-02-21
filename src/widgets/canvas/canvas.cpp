@@ -233,8 +233,8 @@ void Canvas::resize()
     std::unique_ptr<QPixmap> canvas{new QPixmap(m_maxSize)};
     std::unique_ptr<QPixmap> overlay{new QPixmap(m_maxSize)};
 
-    setCanvasBg(canvasBg());
-    setOverlayBg(overlayBg());
+    canvas->fill(canvasBg());
+    overlay->fill(overlayBg());
 
     QPainter canvasPainter{canvas.get()};
     QPainter overlayPainter{overlay.get()};

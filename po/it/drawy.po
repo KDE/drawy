@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-07 08:55+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -103,13 +103,6 @@ msgstr "Seleziona oggetto "
 msgid "Ungroup Objects"
 msgstr "Separa elementi"
 
-#: widgets/command/updatepropertycommand.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Update Property"
-msgid "Update Property"
-msgstr "Aggiorna proprietà"
-
 #: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
@@ -137,7 +130,7 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/topleftwidgets.cpp:39
+#: widgets/components/topleftwidgets.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "TopLeftWidgets|"
 #| msgid "Open Menu"
@@ -346,6 +339,12 @@ msgctxt "@info:shell"
 msgid "Fullscreen"
 msgstr "Schermo intero"
 
+#: widgets/drawycommandlineparser.cpp:20
+#, kde-format
+msgctxt "@info:shell"
+msgid "Activate Debug Mode"
+msgstr ""
+
 #: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
@@ -490,22 +489,28 @@ msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta in primo piano"
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:122
+#, kde-format
+msgctxt "@action"
+msgid "Debug"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:407
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Untitled.%1"
 msgid "Untitled.%1"
 msgstr "Senza titolo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:400
-#: widgets/keybindings/actionmanager.cpp:464
+#: widgets/keybindings/actionmanager.cpp:409
+#: widgets/keybindings/actionmanager.cpp:473
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Drawy (*.%1)"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:401
+#: widgets/keybindings/actionmanager.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Save File"
@@ -513,7 +518,7 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salva file"
 
-#: widgets/keybindings/actionmanager.cpp:423
+#: widgets/keybindings/actionmanager.cpp:432
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Do you really want to clear the canvas?"
@@ -521,7 +526,7 @@ msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Vuoi davvero cancellare la tela?"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:433
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Clear"
@@ -529,7 +534,7 @@ msgctxt "@action"
 msgid "Clear"
 msgstr "Pulisci"
 
-#: widgets/keybindings/actionmanager.cpp:467
+#: widgets/keybindings/actionmanager.cpp:476
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Open File"
@@ -537,21 +542,21 @@ msgctxt "@title:window"
 msgid "Open File"
 msgstr "Apri file"
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.svg"
 msgid "Untitled.svg"
 msgstr "Senzatitolo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:482
+#: widgets/keybindings/actionmanager.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "SVG (*.svg)"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:484
+#: widgets/keybindings/actionmanager.cpp:493
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Export to Svg"
@@ -559,7 +564,7 @@ msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Esporta in SVG"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:528
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid ""
@@ -572,7 +577,7 @@ msgstr ""
 "Il documento «%1» è stato modificato. Vuoi salvare le modifiche fatte, "
 "oppure scartarle?"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:532
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Action Required"
@@ -777,7 +782,7 @@ msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Seleziona colore personalizzato"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#: widgets/properties/widgets/colorwidgetbase.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "ColorWidgetBase|"
 #| msgid "Color"
@@ -928,6 +933,12 @@ msgstr "Selezione"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Testo"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Update Property"
+#~ msgid "Update Property"
+#~ msgstr "Aggiorna proprietà"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

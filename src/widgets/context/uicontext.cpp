@@ -182,10 +182,15 @@ void UIContext::showContextMenu() const
             menu->addSeparator();
         }
         menu->addAction(actionManager()->action(KStandardActions::SelectAll));
+        menu->addSeparator();
     }
     menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
     menu->addSeparator();
     menu->addAction(actionManager()->action(KStandardActions::Preferences));
+    if (m_applicationContext->debug()) {
+        menu->addSeparator();
+        menu->addAction(actionManager()->action(ActionManager::Action::Debug));
+    }
     menu->addSeparator();
     menu->addAction(actionManager()->action(KStandardActions::Quit));
     menu->exec(QCursor::pos());

@@ -1,16 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Tommi Nieminen <translator@legisign.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: drawy_qt\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"Language-Team: Irish Translation Team <gaeilge-gnulinux@lists.sourceforge."
-"net>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-01-02 11:41+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -233,9 +235,6 @@ msgid "%v minute"
 msgid_plural "%v minutes"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 #, kde-format

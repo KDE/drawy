@@ -9,7 +9,6 @@
 #include <utility>
 
 #include "common/constants.hpp"
-#include "common/utils/math.hpp"
 #include "serializer/textdeserializer.hpp"
 #include "serializer/textserializer.hpp"
 

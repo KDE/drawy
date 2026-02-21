@@ -39,6 +39,9 @@ public:
     [[nodiscard]] bool currentFileModified() const;
     void setCurrentFileModified(bool value);
 
+    [[nodiscard]] bool debug() const;
+    void setDebug(bool newDebug);
+
 Q_SIGNALS:
     void currentFileStateChanged();
 
@@ -54,4 +57,5 @@ private:
     UIContext *const m_uiContext;
     SelectionContext *const m_selectionContext;
     MimeManager *const m_mimeManager;
+    bool mDebug = false;
 };

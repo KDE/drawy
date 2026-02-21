@@ -123,6 +123,11 @@ void MainWindow::closeEvent(QCloseEvent *e)
     }
 }
 
+void MainWindow::activeDebug()
+{
+    mApplicationContext->setDebug(true);
+}
+
 void MainWindow::viewFullScreen(bool fullScreen)
 {
     KToggleFullScreenAction::setFullScreen(this, fullScreen);

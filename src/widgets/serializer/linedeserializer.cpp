@@ -13,8 +13,3 @@ LineDeserializer::LineDeserializer(LineItem *item)
 }
 
 LineDeserializer::~LineDeserializer() = default;
-
-void LineDeserializer::deserialize(const QJsonObject &obj)
-{
-    PolygonDeserializer::deserialize(obj);
-}
