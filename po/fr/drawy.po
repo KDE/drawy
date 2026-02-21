@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-20 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-08 18:50+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -326,6 +326,12 @@ msgctxt "@info:shell"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
+#: widgets/drawycommandlineparser.cpp:20
+#, kde-format
+msgctxt "@info:shell"
+msgid "Activate Debug Mode"
+msgstr ""
+
 #: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
@@ -462,22 +468,28 @@ msgctxt "@action"
 msgid "Bring To Front"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:398
+#: widgets/keybindings/actionmanager.cpp:122
+#, kde-format
+msgctxt "@action"
+msgid "Debug"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:407
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
 msgid "Untitled.%1"
 msgstr "Sans titre. %1"
 
-#: widgets/keybindings/actionmanager.cpp:400
-#: widgets/keybindings/actionmanager.cpp:464
+#: widgets/keybindings/actionmanager.cpp:409
+#: widgets/keybindings/actionmanager.cpp:473
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Drawy (*.%1)"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:401
+#: widgets/keybindings/actionmanager.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Save File"
@@ -485,7 +497,7 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:423
+#: widgets/keybindings/actionmanager.cpp:432
 #, fuzzy, kde-format
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to save file?"
@@ -493,7 +505,7 @@ msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Voulez-vous enregistrer le fichier ?"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:433
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Clear"
@@ -501,7 +513,7 @@ msgctxt "@action"
 msgid "Clear"
 msgstr "Effacer"
 
-#: widgets/keybindings/actionmanager.cpp:467
+#: widgets/keybindings/actionmanager.cpp:476
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Open File"
@@ -509,21 +521,21 @@ msgctxt "@title:window"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.svg"
 msgid "Untitled.svg"
 msgstr "Sans titre.svg"
 
-#: widgets/keybindings/actionmanager.cpp:482
+#: widgets/keybindings/actionmanager.cpp:491
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "SVG (*.svg)"
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:484
+#: widgets/keybindings/actionmanager.cpp:493
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Export to Svg"
@@ -531,14 +543,14 @@ msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exporter en SVG"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:528
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
