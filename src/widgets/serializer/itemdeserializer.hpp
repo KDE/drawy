@@ -21,6 +21,7 @@ public:
     [[nodiscard]] static QJsonObject object(const QJsonValue &value);
     [[nodiscard]] static Property createProperty(const QJsonObject &obj);
     [[nodiscard]] static QPointF toPointF(const QJsonValue &val);
+    [[nodiscard]] static QTransform toTransform(const QJsonValue &val);
 
     Item *const mItem;
 };

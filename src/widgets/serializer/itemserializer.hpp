@@ -21,6 +21,7 @@ protected:
     [[nodiscard]] static QJsonObject toJson(const Property &property);
     [[nodiscard]] static QJsonObject toJson(const QRectF &rect);
     [[nodiscard]] static QJsonObject toJson(const QPointF &point);
+    [[nodiscard]] static QJsonObject toJson(const QTransform &transform);
 
     const Item *mItem = nullptr;
 

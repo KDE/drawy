@@ -21,15 +21,18 @@ QJsonObject ItemSerializer::serialize(int zorder) const
     QJsonObject obj;
 
     obj[u"type"_s] = ItemUtils::convertItemTypeEnumToString(mItem->formType());
-    obj[u"bounding_box"_s] = toJson(mItem->boundingBox());
     obj[u"properties"_s] = toJson(mItem->properties());
     obj[u"id"_s] = QString::fromLatin1(mItem->id());
+    obj[u"transform"_s] = toJson(mItem->transformObj());
+
     if (mItem->locked()) {
         obj[u"locked"_s] = true;
     }
+
     if (zorder != -1) {
         obj[u"zorder"_s] = QString::number(zorder);
     }
+
     return obj;
 }
 
@@ -59,6 +62,23 @@ QJsonObject ItemSerializer::toJson(const QPointF &point)
     QJsonObject result;
     result[u"x"_s] = QJsonValue(point.x());
     result[u"y"_s] = QJsonValue(point.y());
+
+    return result;
+}
+
+QJsonObject ItemSerializer::toJson(const QTransform &transform)
+{
+    QJsonObject result;
+
+    result[u"m11"_s] = QJsonValue(transform.m11());
+    result[u"m12"_s] = QJsonValue(transform.m12());
+    result[u"m13"_s] = QJsonValue(transform.m13());
+    result[u"m21"_s] = QJsonValue(transform.m21());
+    result[u"m22"_s] = QJsonValue(transform.m22());
+    result[u"m23"_s] = QJsonValue(transform.m23());
+    result[u"m31"_s] = QJsonValue(transform.m31());
+    result[u"m32"_s] = QJsonValue(transform.m32());
+    result[u"m33"_s] = QJsonValue(transform.m33());
 
     return result;
 }

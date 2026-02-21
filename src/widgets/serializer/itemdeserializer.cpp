@@ -22,11 +22,14 @@ void ItemDeserializer::deserialize(const QJsonObject &obj)
 {
     mItem->setId(obj[u"id"_s].toString().toLatin1());
     mItem->setLocked(obj[u"id"_s].toBool(false));
+
     QJsonArray properties = array(value(obj, u"properties"_s));
     for (const auto &propertyValue : std::as_const(properties)) {
         const Property prop{createProperty(object(propertyValue))};
         mItem->setProperty(prop.type(), prop);
     }
+
+    mItem->setTransform(toTransform(value(obj, u"transform"_s)));
 }
 
 QJsonArray ItemDeserializer::array(const QJsonValue &value)
@@ -80,4 +83,21 @@ QPointF ItemDeserializer::toPointF(const QJsonValue &val)
 
     qCWarning(DRAWY_LOG) << "Given point value is not an object";
     return {};
+}
+
+QTransform ItemDeserializer::toTransform(const QJsonValue &val)
+{
+    QJsonObject obj = object(val);
+
+    const qreal m11 = value(obj, u"m11"_s).toDouble();
+    const qreal m12 = value(obj, u"m12"_s).toDouble();
+    const qreal m13 = value(obj, u"m13"_s).toDouble();
+    const qreal m21 = value(obj, u"m21"_s).toDouble();
+    const qreal m22 = value(obj, u"m22"_s).toDouble();
+    const qreal m23 = value(obj, u"m23"_s).toDouble();
+    const qreal m31 = value(obj, u"m31"_s).toDouble();
+    const qreal m32 = value(obj, u"m32"_s).toDouble();
+    const qreal m33 = value(obj, u"m33"_s).toDouble();
+
+    return QTransform{m11, m12, m13, m21, m22, m23, m31, m32, m33};
 }
