@@ -32,7 +32,9 @@ private:
 private:
     QList<ResizeHandle> getHandles(const std::shared_ptr<LineItem> &item) const;
 
+    QPointF m_initialPos{};
     QPointF m_lastPos{};
+
     bool m_isActive{false};
 
     ResizeHandleType m_curHandleType{};

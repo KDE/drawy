@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "moveitemcommand.hpp"
+#include "rotateitemcommand.hpp"
 
 #include <utility>
 
@@ -14,14 +14,14 @@
 #include "item/item.hpp"
 #include <KLocalizedString>
 
-MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPointF worldInitialPos, const QPointF worldFinalPos)
+RotateItemCommand::RotateItemCommand(QList<std::shared_ptr<Item>> items, const qreal angle, const QPointF pivot)
     : ItemCommand{std::move(items)}
-    , m_worldInitialPos{worldInitialPos}
-    , m_worldFinalPos{worldFinalPos}
+    , m_angle{angle}
+    , m_pivot{pivot}
 {
 }
 
-void MoveItemCommand::execute(ApplicationContext *context)
+void RotateItemCommand::execute(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -29,18 +29,14 @@ void MoveItemCommand::execute(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
 
-        const QTransform invertedTransform{item->transformObj().inverted()};
-        const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
-        const QPointF localInitialPos{invertedTransform.map(m_worldInitialPos)};
-        const QPointF localDelta{localFinalPos - localInitialPos};
-
-        item->translate(localDelta);
+        item->rotate(m_angle, item->transformObj().inverted().map(m_pivot));
+        item->commitTransformation();
 
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
 
-void MoveItemCommand::undo(ApplicationContext *context)
+void RotateItemCommand::undo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -48,18 +44,14 @@ void MoveItemCommand::undo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
 
-        const QTransform invertedTransform{item->transformObj().inverted()};
-        const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
-        const QPointF localInitialPos{invertedTransform.map(m_worldInitialPos)};
-        const QPointF localDelta{localFinalPos - localInitialPos};
-
-        item->translate(-localDelta);
+        item->rotate(-m_angle, item->transformObj().inverted().map(m_pivot));
+        item->commitTransformation();
 
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
 
-QString MoveItemCommand::commandTitle() const
+QString RotateItemCommand::commandTitle() const
 {
-    return i18n("Move Object");
+    return i18n("Rotate Object");
 }

@@ -9,16 +9,26 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class MoveItemCommand : public ItemCommand
+class LineResizeItemCommand : public ItemCommand
 {
+    Q_GADGET
 public:
-    MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPointF worldInitialPos, const QPointF worldFinalPos);
+    enum class HandleType {
+        Start,
+        End
+    };
+
+    Q_ENUM(HandleType)
+
+    LineResizeItemCommand(QList<std::shared_ptr<Item>> items, const QPointF initialPos, const QPointF finalPos, const HandleType handleType);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
     [[nodiscard]] QString commandTitle() const override;
 
 private:
-    QPointF m_worldInitialPos;
-    QPointF m_worldFinalPos;
+    QPointF m_initialPos{};
+    QPointF m_finalPos{};
+
+    HandleType m_handleType{};
 };

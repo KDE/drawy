@@ -1,7 +1,7 @@
 #include "rotatetransformhandler.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
-#include "command/moveitemcommand.hpp"
+#include "command/rotateitemcommand.hpp"
 #include "common/utils/math.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -146,9 +146,20 @@ TransformHandler::State RotateTransformHandler::mouseReleased(ApplicationContext
         m_isActive = false;
 
         auto &selectedItems{context->selectionContext()->selectedItems()};
+
+        // undo visible rotation
         for (auto &item : selectedItems) {
-            item->commitTransformation();
+            item->rotate(-m_lastRotationAngle, item->transformObj().inverted().map(m_worldCenterPos));
         }
+
+        // redo rotation as a command
+        auto commandHistory{context->spatialContext()->commandHistory()};
+
+        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        commandHistory->insert(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
+
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
     }
 
     return TransformHandler::State::Unlocked;

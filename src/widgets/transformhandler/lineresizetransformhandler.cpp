@@ -1,7 +1,7 @@
 #include "lineresizetransformhandler.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
-#include "command/moveitemcommand.hpp"
+#include "command/lineresizeitemcommand.hpp"
 #include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -16,6 +16,7 @@
 #include <QPainter>
 #include <QRectF>
 #include <algorithm>
+#include <stdexcept>
 
 using namespace Qt::StringLiterals;
 
@@ -59,6 +60,20 @@ TransformHandler::State LineResizeTransformHandler::mousePressed(ApplicationCont
 {
     if (context->uiContext()->appEvent()->button() == Qt::LeftButton) {
         context->renderingContext()->canvas()->setCursor(Qt::ClosedHandCursor);
+
+        auto item{getSelectedLineItem(context)};
+
+        m_initialPos = [&item, this] {
+            switch (m_curHandleType) {
+            case ResizeHandleType::Start:
+                return item->start();
+            case ResizeHandleType::End:
+                return item->end();
+            default:
+                return QPointF{};
+            }
+        }();
+
         m_isActive = true;
     }
 
@@ -108,6 +123,8 @@ TransformHandler::State LineResizeTransformHandler::mouseMoved(ApplicationContex
         quadtree.insertItem(item);
         dirtyRegion |= item->boundingBox();
 
+        m_lastPos = relativeCurPos;
+
         renderingContext->cacheGrid().markDirty(transformer.worldToGrid(dirtyRegion.toAlignedRect()));
         renderingContext->markForRender();
         renderingContext->markForUpdate();
@@ -118,9 +135,27 @@ TransformHandler::State LineResizeTransformHandler::mouseMoved(ApplicationContex
     return TransformHandler::State::Unlocked;
 }
 
-TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationContext *)
+TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationContext *context)
 {
     m_isActive = false;
+
+    LineResizeItemCommand::HandleType handleType{[this] {
+        switch (m_curHandleType) {
+        case ResizeHandleType::Start:
+            return LineResizeItemCommand::HandleType::Start;
+        case ResizeHandleType::End:
+            return LineResizeItemCommand::HandleType::End;
+        default: {
+            throw std::logic_error("Incorrect line resize handle selected! Please report this as a bug.");
+        };
+        }
+    }()};
+
+    auto item{getSelectedLineItem(context)};
+
+    auto commandHistory{context->spatialContext()->commandHistory()};
+    commandHistory->insert(std::make_shared<LineResizeItemCommand>(QList<std::shared_ptr<Item>>{item}, m_initialPos, m_lastPos, handleType));
+
     return TransformHandler::State::Unlocked;
 }
 

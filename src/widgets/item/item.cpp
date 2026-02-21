@@ -42,7 +42,7 @@ void Item::translate(const QPointF &amount)
     m_transform.translate(amount.x(), amount.y());
 }
 
-void Item::rotate(const int angleDeg, const QPointF pivot)
+void Item::rotate(const qreal angleDeg, const QPointF pivot)
 {
     m_transform.translate(pivot.x(), pivot.y());
     m_transform.rotate(angleDeg);

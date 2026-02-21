@@ -24,6 +24,12 @@ target_sources(
         command/itemcommand.hpp
         command/moveitemcommand.cpp
         command/moveitemcommand.hpp
+        command/resizeitemcommand.cpp
+        command/resizeitemcommand.hpp
+        command/lineresizeitemcommand.cpp
+        command/lineresizeitemcommand.hpp
+        command/rotateitemcommand.cpp
+        command/rotateitemcommand.hpp
         command/removeitemcommand.cpp
         command/removeitemcommand.hpp
         command/selectcommand.cpp

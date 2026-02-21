@@ -154,11 +154,16 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         //       just make it not translate manually at all in the mouseMoved method
         for (auto &item : items) {
             if (!item->locked()) {
-                item->translate(-delta);
+                const QTransform invertedTransform{item->transformObj().inverted()};
+                const QPointF localInitialPos{invertedTransform.map(worldOriginalPos)};
+                const QPointF localFinalPos{invertedTransform.map(worldFinalPos)};
+                const QPointF localDelta{localFinalPos - localInitialPos};
+
+                item->translate(-localDelta);
             }
         }
 
-        commandHistory->insert(std::make_shared<MoveItemCommand>(items, delta));
+        commandHistory->insert(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
     }
 
     return TransformHandler::State::Unlocked;

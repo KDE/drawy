@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "moveitemcommand.hpp"
+#include "resizeitemcommand.hpp"
 
 #include <utility>
 
@@ -14,14 +14,18 @@
 #include "item/item.hpp"
 #include <KLocalizedString>
 
-MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPointF worldInitialPos, const QPointF worldFinalPos)
+ResizeItemCommand::ResizeItemCommand(QList<std::shared_ptr<Item>> items,
+                                     const QTransform transform,
+                                     const QTransform lockedTransform,
+                                     QHash<std::shared_ptr<Item>, bool> useLocked)
     : ItemCommand{std::move(items)}
-    , m_worldInitialPos{worldInitialPos}
-    , m_worldFinalPos{worldFinalPos}
+    , m_transform{transform}
+    , m_lockedTransform{lockedTransform}
+    , m_useLocked{std::move(useLocked)}
 {
 }
 
-void MoveItemCommand::execute(ApplicationContext *context)
+void ResizeItemCommand::execute(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -29,18 +33,19 @@ void MoveItemCommand::execute(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
 
-        const QTransform invertedTransform{item->transformObj().inverted()};
-        const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
-        const QPointF localInitialPos{invertedTransform.map(m_worldInitialPos)};
-        const QPointF localDelta{localFinalPos - localInitialPos};
+        if (m_useLocked[item]) {
+            item->resize(m_lockedTransform);
+        } else {
+            item->resize(m_transform);
+        }
 
-        item->translate(localDelta);
+        item->commitTransformation();
 
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
 
-void MoveItemCommand::undo(ApplicationContext *context)
+void ResizeItemCommand::undo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -48,18 +53,19 @@ void MoveItemCommand::undo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
 
-        const QTransform invertedTransform{item->transformObj().inverted()};
-        const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
-        const QPointF localInitialPos{invertedTransform.map(m_worldInitialPos)};
-        const QPointF localDelta{localFinalPos - localInitialPos};
+        if (m_useLocked[item]) {
+            item->resize(m_lockedTransform.inverted());
+        } else {
+            item->resize(m_transform.inverted());
+        }
 
-        item->translate(-localDelta);
+        item->commitTransformation();
 
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
     }
 }
 
-QString MoveItemCommand::commandTitle() const
+QString ResizeItemCommand::commandTitle() const
 {
-    return i18n("Move Object");
+    return i18n("Resize Object");
 }

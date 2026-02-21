@@ -75,7 +75,7 @@ public:
     virtual void setTransform(const QTransform &transformObj);
 
     virtual void translate(const QPointF &amount);
-    virtual void rotate(const int angleDeg, const QPointF pivot);
+    virtual void rotate(const qreal angleDeg, const QPointF pivot);
     virtual void resize(const QTransform operation);
     virtual void commitTransformation() = 0;
 

@@ -9,16 +9,16 @@
 #include "itemcommand.hpp"
 class ApplicationContext;
 
-class MoveItemCommand : public ItemCommand
+class RotateItemCommand : public ItemCommand
 {
 public:
-    MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPointF worldInitialPos, const QPointF worldFinalPos);
+    RotateItemCommand(QList<std::shared_ptr<Item>> items, const qreal angle, const QPointF pivot);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
     [[nodiscard]] QString commandTitle() const override;
 
 private:
-    QPointF m_worldInitialPos;
-    QPointF m_worldFinalPos;
+    qreal m_angle;
+    QPointF m_pivot{};
 };

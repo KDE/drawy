@@ -1,7 +1,7 @@
 #include "resizetransformhandler.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
-#include "command/moveitemcommand.hpp"
+#include "command/resizeitemcommand.hpp"
 #include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -57,6 +57,7 @@ TransformHandler::State ResizeTransformHandler::mousePressed(ApplicationContext 
         m_initialSelectionTransform = selectionBoxTransform;
         m_lastTransformUpdate = {};
         m_lastLockedTransformUpdate = {};
+        m_aspectRatioLocked.clear();
 
         m_isActive = true;
     }
@@ -154,6 +155,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             if (item->lockAspectRatioWhenResizing() || useLocked) {
                 item->resize(m_lastLockedTransformUpdate.inverted());
                 item->resize(lockedTransformUpdate);
+                m_aspectRatioLocked[item] = true;
             } else {
                 item->resize(m_lastTransformUpdate.inverted());
                 item->resize(transformUpdate);
@@ -187,11 +189,21 @@ TransformHandler::State ResizeTransformHandler::mouseReleased(ApplicationContext
         m_isActive = false;
 
         const auto &selectedItems{context->selectionContext()->selectedItems()};
+
+        // undo resize
         for (const auto &item : selectedItems) {
-            item->commitTransformation();
+            if (m_aspectRatioLocked[item]) {
+                item->resize(m_lastLockedTransformUpdate.inverted());
+            } else {
+                item->resize(m_lastTransformUpdate.inverted());
+            }
         }
 
-        context->renderingContext()->cacheGrid().markAllDirty();
+        auto commandHistory{context->spatialContext()->commandHistory()};
+
+        QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        commandHistory->insert(std::make_shared<ResizeItemCommand>(items, m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
+
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
     }
