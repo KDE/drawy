@@ -74,3 +74,5 @@ QString LineResizeItemCommand::commandTitle() const
 {
     return i18n("Resize Line");
 }
+
+#include "moc_lineresizeitemcommand.cpp"

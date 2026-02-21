@@ -70,7 +70,7 @@ public:
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;
 
-    bool needsCaching() const override;
+    [[nodiscard]] bool needsCaching() const override;
 
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;

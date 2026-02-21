@@ -7,7 +7,7 @@
 #include <QPoint>
 #include <QRect>
 #include <QTimer>
-#include <qtmetamacros.h>
+
 class Canvas;
 class ApplicationContext;
 class CacheGrid;

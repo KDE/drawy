@@ -5,7 +5,6 @@
 #include "boardlayout.hpp"
 
 #include <QWidget>
-#include <qnamespace.h>
 
 BoardLayout::BoardLayout(QWidget *parent)
     : QLayout(parent)

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] TransformHandler::State mouseReleased(ApplicationContext *context) override;
 
 private:
-    enum class ResizeHandleType {
+    enum class ResizeHandleType : int8_t {
         TopRight,
         Right,
         BottomRight,

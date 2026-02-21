@@ -19,8 +19,7 @@
 #include <QPainter>
 #include <QRectF>
 #include <algorithm>
-#include <qmath.h>
-#include <qnamespace.h>
+
 using namespace Qt::StringLiterals;
 
 RotateTransformHandler::RotateTransformHandler()

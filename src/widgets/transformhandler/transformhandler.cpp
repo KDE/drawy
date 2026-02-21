@@ -15,23 +15,23 @@ TransformHandler *TransformHandler::getHandler(TransformHandler::Type handlerTyp
     case TransformHandler::Type::MoveTransformHandler: {
         static MoveTransformHandler s_moveHandler{};
         return &s_moveHandler;
-    };
+    }
     case TransformHandler::Type::RotateTransformHandler: {
         static RotateTransformHandler s_rotateHandler{};
         return &s_rotateHandler;
-    };
+    }
     case TransformHandler::Type::ResizeTransformHandler: {
         static ResizeTransformHandler s_resizeHandler{};
         return &s_resizeHandler;
-    };
+    }
     case TransformHandler::Type::LineMoveTransformHandler: {
         static LineMoveTransformHandler s_lineMoveHandler{};
         return &s_lineMoveHandler;
-    };
+    }
     case TransformHandler::Type::LineResizeTransformHandler: {
         static LineResizeTransformHandler s_lineResizeHandler{};
         return &s_lineResizeHandler;
-    };
+    }
     }
 
     return nullptr;

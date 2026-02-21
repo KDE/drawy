@@ -302,3 +302,5 @@ QCursor ResizeTransformHandler::cursorForHandle(const double angle) const
     const std::size_t cursorIndex{static_cast<std::size_t>(std::lower_bound(angles.begin(), angles.end(), angle) - angles.begin()) + offset};
     return cursorShapes.at(cursorIndex % 4);
 }
+
+#include "moc_resizetransformhandler.cpp"

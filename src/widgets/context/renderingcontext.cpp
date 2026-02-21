@@ -6,7 +6,6 @@
 
 #include <QPoint>
 #include <QScreen>
-#include <qminmax.h>
 
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
@@ -14,9 +13,10 @@
 #include "common/renderitems.hpp"
 #include "coordinatetransformer.hpp"
 #include "data-structures/cachegrid.hpp"
-#include "drawy_debug.h"
 #include "item/itemcache/itemcache.hpp"
 #include "spatialcontext.hpp"
+
+#include "drawy_debug.h"
 
 RenderingContext::RenderingContext(ApplicationContext *context)
     : QObject{context}

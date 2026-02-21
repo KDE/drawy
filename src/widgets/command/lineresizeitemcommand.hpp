@@ -15,7 +15,7 @@ class LineResizeItemCommand : public ItemCommand
 {
     Q_GADGET
 public:
-    enum class HandleType {
+    enum class HandleType : int8_t {
         Start,
         End
     };

@@ -25,7 +25,7 @@ public:
     [[nodiscard]] bool isBufferFull() const;
     [[nodiscard]] Item::FormType formType() const override;
     [[nodiscard]] bool intersects(const QRectF &rect) override;
-    bool needsCaching() const override;
+    [[nodiscard]] bool needsCaching() const override;
 
     void commitTransformation() override;
     QList<TransformHandler::Type> transformHandlers() const override;

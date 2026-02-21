@@ -8,7 +8,7 @@
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
-#include <qlayoutitem.h>
+
 using namespace Qt::Literals::StringLiterals;
 StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     : PropertyWidget{parent}

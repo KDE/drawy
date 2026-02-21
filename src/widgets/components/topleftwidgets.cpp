@@ -16,7 +16,7 @@
 #include <QMenu>
 #include <QStyle>
 #include <QToolButton>
-#include <kstandardaction.h>
+
 using namespace Qt::StringLiterals;
 TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
     : QWidget{parent}

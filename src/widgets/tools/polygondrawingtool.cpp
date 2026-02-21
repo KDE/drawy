@@ -5,7 +5,6 @@
 #include "polygondrawingtool.hpp"
 
 #include <memory>
-#include <qnamespace.h>
 
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"

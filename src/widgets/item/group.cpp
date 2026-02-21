@@ -36,7 +36,7 @@ void GroupItem::commitTransformation()
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
     const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
-    for (auto &item : m_items) {
+    for (auto &item : std::as_const(m_items)) {
         const QTransform combined{item->transformObj() * filtered};
 
         item->setTransform(combined);
@@ -58,7 +58,7 @@ void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 
     translate(unitedBoundingBox.topLeft());
 
-    for (auto &item : m_items) {
+    for (auto &item : std::as_const(m_items)) {
         const QPointF globalOffset{-unitedBoundingBox.topLeft()};
         const QTransform t{item->transformObj()};
         const QPointF localOffset{t.inverted().map(globalOffset) - t.inverted().map(QPointF(0, 0))};
@@ -80,7 +80,7 @@ bool GroupItem::intersects(const QRectF &rect)
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
 {
     const QTransform groupTransform{transformObj()};
-    for (auto &item : m_items) {
+    for (auto &item : std::as_const(m_items)) {
         const QTransform combined{item->transformObj() * groupTransform};
 
         item->setTransform(combined);

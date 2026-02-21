@@ -54,3 +54,5 @@ bool LineMoveTransformHandler::shouldActivate(ApplicationContext *context)
 
     return getSelectedLineItem(context)->intersects(cursorHandle);
 }
+
+#include "moc_linemovetransformhandler.cpp"

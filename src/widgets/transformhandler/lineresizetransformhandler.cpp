@@ -169,3 +169,5 @@ QList<LineResizeTransformHandler::ResizeHandle> LineResizeTransformHandler::getH
     return {{createHandle(transform.map(item->start()), Common::selectionHandleSize), ResizeHandleType::Start},
             {createHandle(transform.map(item->end()), Common::selectionHandleSize), ResizeHandleType::End}};
 }
+
+#include "moc_lineresizetransformhandler.cpp"

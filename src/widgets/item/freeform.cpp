@@ -5,7 +5,6 @@
 #include "freeform.hpp"
 
 #include <QJsonObject>
-#include <qlogging.h>
 
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"

@@ -7,7 +7,6 @@
 
 #include "common/constants.hpp"
 #include <QPainter>
-#include <qnamespace.h>
 
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
