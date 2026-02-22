@@ -332,7 +332,8 @@ void TextItem::deleteSelection()
         return;
     }
 
-    qsizetype selStart{selectionStart()}, selEnd{selectionEnd()};
+    qsizetype selStart{selectionStart()};
+    qsizetype selEnd{selectionEnd()};
     if (selStart > selEnd) {
         std::swap(selStart, selEnd);
     }

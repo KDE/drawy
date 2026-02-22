@@ -44,8 +44,8 @@ void RestoreAutoSaveJob::setParentWidget(QWidget *newParentWidget)
 
 void RestoreAutoSaveJob::restoreFile()
 {
-    KConfig config{};
-    KConfigGroup sessionGroup{&config, Common::configSession};
+    KConfig config;
+    const KConfigGroup sessionGroup{&config, Common::configSession};
 
     const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile, u""_s)};
     const bool lastSavedFileModified{sessionGroup.readEntry(Common::configSessionLastSavedFileModified, false)};
