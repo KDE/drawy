@@ -6,16 +6,16 @@
     ],
     "properties": [
         {
-            "type": "StrokeStyle",
-            "value": "Solid"
-        },
-        {
             "type": "Opacity",
             "value": 255
         },
         {
             "type": "StrokeColor",
             "value": "#000000"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
         },
         {
             "type": "StrokeWidth",

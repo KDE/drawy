@@ -7,16 +7,16 @@
     "id": "4d8b0fe427a143a4b553399816007640",
     "properties": [
         {
-            "type": "StrokeStyle",
-            "value": "Solid"
-        },
-        {
             "type": "Opacity",
             "value": 255
         },
         {
             "type": "StrokeColor",
             "value": "#ff0000"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
         },
         {
             "type": "StrokeWidth",

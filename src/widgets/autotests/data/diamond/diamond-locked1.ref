@@ -7,15 +7,11 @@
     "locked": true,
     "properties": [
         {
-            "type": "BackgroundStyle",
-            "value": "Solid"
-        },
-        {
             "type": "BackgroundColor",
             "value": "#0000ff"
         },
         {
-            "type": "StrokeStyle",
+            "type": "BackgroundStyle",
             "value": "Solid"
         },
         {
@@ -25,6 +21,10 @@
         {
             "type": "StrokeColor",
             "value": "#0000ff"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
         },
         {
             "type": "StrokeWidth",

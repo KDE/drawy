@@ -8,16 +8,16 @@
     "locked": true,
     "properties": [
         {
-            "type": "StrokeStyle",
-            "value": "DashLine"
-        },
-        {
             "type": "Opacity",
             "value": 255
         },
         {
             "type": "StrokeColor",
             "value": "#0000ff"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "DashLine"
         },
         {
             "type": "StrokeWidth",

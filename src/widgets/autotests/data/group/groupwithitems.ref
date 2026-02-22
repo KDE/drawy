@@ -9,15 +9,11 @@
             "id": "c9d6f90e757040e78dbf94bef5732e98",
             "properties": [
                 {
-                    "type": "BackgroundStyle",
-                    "value": "Solid"
-                },
-                {
                     "type": "BackgroundColor",
                     "value": "#00000000"
                 },
                 {
-                    "type": "StrokeStyle",
+                    "type": "BackgroundStyle",
                     "value": "Solid"
                 },
                 {
@@ -27,6 +23,10 @@
                 {
                     "type": "StrokeColor",
                     "value": "#000000"
+                },
+                {
+                    "type": "StrokeStyle",
+                    "value": "Solid"
                 },
                 {
                     "type": "StrokeWidth",
@@ -58,15 +58,11 @@
             "id": "c9d6f90e757040e78dbf94bef5732e99",
             "properties": [
                 {
-                    "type": "BackgroundStyle",
-                    "value": "Solid"
-                },
-                {
                     "type": "BackgroundColor",
                     "value": "#00000000"
                 },
                 {
-                    "type": "StrokeStyle",
+                    "type": "BackgroundStyle",
                     "value": "Solid"
                 },
                 {
@@ -76,6 +72,10 @@
                 {
                     "type": "StrokeColor",
                     "value": "#000000"
+                },
+                {
+                    "type": "StrokeStyle",
+                    "value": "Solid"
                 },
                 {
                     "type": "StrokeWidth",
@@ -110,8 +110,8 @@
             "value": "Solid"
         },
         {
-            "type": "StrokeWidth",
-            "value": 1
+            "type": "Opacity",
+            "value": 255
         },
         {
             "type": "StrokeColor",
@@ -122,8 +122,8 @@
             "value": "Solid"
         },
         {
-            "type": "Opacity",
-            "value": 255
+            "type": "StrokeWidth",
+            "value": 1
         }
     ],
     "transform": {

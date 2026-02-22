@@ -6,6 +6,7 @@
 #include "itemserializer.hpp"
 #include "item/item.hpp"
 #include "item/itemutils.hpp"
+
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 
@@ -21,7 +22,13 @@ QJsonObject ItemSerializer::serialize(int zorder) const
     QJsonObject obj;
 
     obj[u"type"_s] = ItemUtils::convertItemTypeEnumToString(mItem->formType());
-    obj[u"properties"_s] = toJson(mItem->properties());
+
+    auto properties{mItem->properties()};
+    std::sort(properties.begin(), properties.end(), [](const auto &a, const auto &b) -> bool {
+        return a.type() < b.type();
+    });
+
+    obj[u"properties"_s] = toJson(properties);
     obj[u"id"_s] = QString::fromLatin1(mItem->id());
     obj[u"transform"_s] = toJson(mItem->transformObj());
 

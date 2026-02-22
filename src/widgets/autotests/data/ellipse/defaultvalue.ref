@@ -6,15 +6,11 @@
     "id": "acff679ae3c14260b56ef00f1d354883",
     "properties": [
         {
-            "type": "BackgroundStyle",
-            "value": "Solid"
-        },
-        {
             "type": "BackgroundColor",
             "value": "#00000000"
         },
         {
-            "type": "StrokeStyle",
+            "type": "BackgroundStyle",
             "value": "Solid"
         },
         {
@@ -24,6 +20,10 @@
         {
             "type": "StrokeColor",
             "value": "#000000"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
         },
         {
             "type": "StrokeWidth",

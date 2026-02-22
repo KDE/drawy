@@ -15,20 +15,21 @@ public:
     Property();
 
     enum class Type : int8_t {
-        BackgroundColor,
-        BackgroundStyle,
-        StrokeWidth,
-        StrokeColor,
-        StrokeStyle,
-        Opacity,
-        FontSize,
-        EraserSize,
         Actions,
         Alignment,
-        ZOrder,
         ArrowStyle,
-        Null
+        BackgroundColor,
+        BackgroundStyle,
+        EraserSize,
+        FontSize,
+        Null,
+        Opacity,
+        StrokeColor,
+        StrokeStyle,
+        StrokeWidth,
+        ZOrder
     };
+
     Q_ENUM(Type)
 
     template<typename T>
