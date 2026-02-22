@@ -138,4 +138,30 @@ void RectangleItemTest::shouldTestTransformations()
     QCOMPARE(i.transformObj(), QTransform());
 }
 
+void RectangleItemTest::shouldTestIntersects()
+{
+    RectangleItem i;
+    i.setStart(QPointF(10, 10));
+    i.setEnd(QPointF(30, 30));
+
+    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+}
+
+void RectangleItemTest::shouldTestOperatorEqual()
+{
+    RectangleItem i1;
+    i1.setStart(QPointF(10, 10));
+    i1.setEnd(QPointF(30, 30));
+
+    RectangleItem i2;
+    i2.setStart(QPointF(10, 10));
+    i2.setEnd(QPointF(30, 30));
+
+    QVERIFY(i1 == i2);
+
+    i2.setStart(QPointF(0, 0));
+    QVERIFY(!(i1 == i2));
+}
+
 #include "moc_rectangleitemtest.cpp"

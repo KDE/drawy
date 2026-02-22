@@ -21,4 +21,8 @@ private Q_SLOTS:
     void shouldSerialize_data();
     void shouldSerialize();
     void shouldTestTransformations();
+    void shouldTestIntersects();
+    void shouldRoundTrip();
+    void shouldTestSetEndWithShift();
+    void shouldTestTransformHandlers();
 };

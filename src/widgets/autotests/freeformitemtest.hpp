@@ -19,4 +19,9 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSerializeDefaultValue();
     void shouldTestTransformations();
+    void shouldTestIntersects();
+    void shouldRoundTrip();
+    void shouldTestPressureSimulation();
+    void shouldTestNeedsCaching();
+    void shouldTestTransformHandlers();
 };

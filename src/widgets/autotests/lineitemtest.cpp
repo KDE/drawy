@@ -110,4 +110,46 @@ void LineItemTest::shouldTestTransformations()
     QCOMPARE(i.transformObj(), QTransform());
 }
 
+void LineItemTest::shouldTestIntersects()
+{
+    LineItem i;
+    i.setStart(QPointF(10, 10));
+    i.setEnd(QPointF(30, 30));
+
+    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+}
+
+void LineItemTest::shouldRoundTrip()
+{
+    LineItem f;
+    f.setId("fb0ba748fee64b4a89de76d94787f73e"_ba);
+    f.setStart(QPointF(10, 10));
+    f.setEnd(QPointF(20, 20));
+
+    const QJsonObject obj = f.serialize(-1);
+
+    LineItem f2;
+    f2.deserialize(obj);
+
+    QCOMPARE(f2.start(), f.start());
+    QCOMPARE(f2.end(), f.end());
+}
+
+void LineItemTest::shouldTestSetEndWithShift()
+{
+    LineItem i;
+    i.setStart(QPointF(0, 0));
+    i.setEndWithShift(QPointF(10, 2)); // Should snap to horizontal
+    QCOMPARE(i.end().y(), 0.0);
+}
+
+void LineItemTest::shouldTestTransformHandlers()
+{
+    LineItem i;
+    QCOMPARE(i.transformHandlers().count(), 2);
+    QVERIFY(i.transformHandlers().contains(TransformHandler::Type::LineResizeTransformHandler));
+    QVERIFY(i.transformHandlers().contains(TransformHandler::Type::LineMoveTransformHandler));
+}
+
 #include "moc_lineitemtest.cpp"

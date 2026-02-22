@@ -74,4 +74,59 @@ void FreeformItemTest::shouldTestTransformations()
     QCOMPARE(i.transformObj(), QTransform());
 }
 
+void FreeformItemTest::shouldTestIntersects()
+{
+    FreeformItem i;
+    i.addPoint(QPointF(10, 10), 1.0);
+    i.addPoint(QPointF(30, 30), 1.0);
+    i.finalizeStroke();
+
+    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+}
+
+void FreeformItemTest::shouldRoundTrip()
+{
+    FreeformItem f;
+    f.setId("acff679ae3c14260b56ef00f1d354553"_ba);
+    f.addPoint(QPointF(10, 10), 1.0);
+    f.addPoint(QPointF(20, 20), 1.0);
+    f.finalizeStroke();
+
+    const QJsonObject obj = f.serialize(-1);
+
+    FreeformItem f2;
+    f2.deserialize(obj);
+
+    QCOMPARE(f2.points().count(), f.points().count());
+    QCOMPARE(f2.points().at(0), f.points().at(0));
+    QCOMPARE(f2.points().at(1), f.points().at(1));
+}
+
+void FreeformItemTest::shouldTestPressureSimulation()
+{
+    FreeformItem i;
+    QVERIFY(i.isPressureSimulated());
+
+    i.setSimulatePressure(false);
+    QVERIFY(!i.isPressureSimulated());
+}
+
+void FreeformItemTest::shouldTestNeedsCaching()
+{
+    FreeformItem i;
+    QVERIFY(i.needsCaching());
+}
+
+void FreeformItemTest::shouldTestTransformHandlers()
+{
+    FreeformItem i;
+    i.addPoint(QPointF(10, 10), 1.0);
+    QCOMPARE(i.transformHandlers().count(), 1);
+    QCOMPARE(i.transformHandlers().first(), TransformHandler::Type::MoveTransformHandler);
+
+    i.addPoint(QPointF(20, 20), 1.0);
+    QVERIFY(i.transformHandlers().count() > 1);
+}
+
 #include "moc_freeformitemtest.cpp"

@@ -17,12 +17,11 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldSerializeDefaultValue();
     void shouldSerialize_data();
     void shouldSerialize();
-    void shouldSerializeDefaultValue();
-
-    void shouldTestTransformations();
-
     void shouldDeserialize_data();
     void shouldDeserialize();
+    void shouldTestIntersects();
+    void shouldTestOperatorEqual();
 };

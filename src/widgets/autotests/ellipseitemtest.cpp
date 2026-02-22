@@ -108,4 +108,30 @@ void EllipseItemTest::shouldTestTransformations()
     QCOMPARE(i.transformObj(), QTransform());
 }
 
+void EllipseItemTest::shouldTestIntersects()
+{
+    EllipseItem i;
+    i.setStart(QPointF(10, 10));
+    i.setEnd(QPointF(30, 30));
+
+    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+}
+
+void EllipseItemTest::shouldRoundTrip()
+{
+    EllipseItem f;
+    f.setId("70a68950047e4a2797ee2f32b21cba61"_ba);
+    f.setStart(QPointF(10, 10));
+    f.setEnd(QPointF(20, 20));
+
+    const QJsonObject obj = f.serialize(-1);
+
+    EllipseItem f2;
+    f2.deserialize(obj);
+
+    QCOMPARE(f2.start(), f.start());
+    QCOMPARE(f2.end(), f.end());
+}
+
 #include "moc_ellipseitemtest.cpp"

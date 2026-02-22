@@ -113,4 +113,58 @@ void ArrowItemTest::shouldTestTransformations()
     QCOMPARE(i.transformObj(), QTransform());
 }
 
+void ArrowItemTest::shouldTestArrows()
+{
+    ArrowItem i;
+    QCOMPARE(i.startArrow(), ArrowUtils::ArrowType::None);
+    QCOMPARE(i.endArrow(), ArrowUtils::ArrowType::Arrow);
+
+    i.setStartArrow(ArrowUtils::ArrowType::Triangle);
+    QCOMPARE(i.startArrow(), ArrowUtils::ArrowType::Triangle);
+
+    i.setEndArrow(ArrowUtils::ArrowType::None);
+    QCOMPARE(i.endArrow(), ArrowUtils::ArrowType::None);
+}
+
+void ArrowItemTest::shouldTestOperatorEqual()
+{
+    ArrowItem i1;
+    i1.setStart(QPointF(0, 0));
+    i1.setEnd(QPointF(10, 10));
+    i1.setStartArrow(ArrowUtils::ArrowType::Triangle);
+    i1.setEndArrow(ArrowUtils::ArrowType::None);
+
+    ArrowItem i2;
+    i2.setStart(QPointF(0, 0));
+    i2.setEnd(QPointF(10, 10));
+    i2.setStartArrow(ArrowUtils::ArrowType::Triangle);
+    i2.setEndArrow(ArrowUtils::ArrowType::None);
+
+    QVERIFY(i1 == i2);
+
+    i2.setStartArrow(ArrowUtils::ArrowType::Arrow);
+    QVERIFY(!(i1 == i2));
+}
+
+void ArrowItemTest::shouldRoundTrip()
+{
+    ArrowItem f;
+    f.setId("4d8b0fe427a143a4b553399816007640"_ba);
+    f.setStart(QPointF(10, 10));
+    f.setEnd(QPointF(20, 20));
+    f.setStartArrow(ArrowUtils::ArrowType::Triangle);
+    f.setEndArrow(ArrowUtils::ArrowType::None);
+
+    const QJsonObject obj = f.serialize(-1);
+
+    ArrowItem f2;
+    f2.deserialize(obj);
+
+    QCOMPARE(f2.start(), f.start());
+    QCOMPARE(f2.end(), f.end());
+    QCOMPARE(f2.startArrow(), f.startArrow());
+    QCOMPARE(f2.endArrow(), f.endArrow());
+    QVERIFY(f == f2);
+}
+
 #include "moc_arrowitemtest.cpp"

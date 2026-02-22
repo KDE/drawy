@@ -17,4 +17,10 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldTestInitPoints();
+    void shouldTestSetPoints();
+    void shouldTestSetEndWithShift();
+    void shouldRoundTrip();
+    void shouldTestOperatorEqual();
+    void shouldTestTransformations();
 };
