@@ -136,7 +136,7 @@ void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
 Property GroupItem::property(const Property::Type propertyType) const
 {
     if (m_items.empty()) {
-        throw new std::logic_error("Group does not contain any item with this property");
+        throw std::logic_error("Group does not contain any item with this property");
     }
 
     Property property;
@@ -164,11 +164,14 @@ Property GroupItem::property(const Property::Type propertyType) const
 QList<Property> GroupItem::properties() const
 {
     QList<Property> result;
-
-    for (const auto &item : m_items) {
-        result += item->properties();
+    auto types = propertyTypes();
+    std::sort(types.begin(), types.end());
+    for (const auto type : types) {
+        const Property prop = property(type);
+        if (prop.type() != Property::Type::Null) {
+            result.append(prop);
+        }
     }
-
     return result;
 }
 

@@ -1,0 +1,141 @@
+{
+    "id": "acff679ae3c14260b56ef00f1d354883",
+    "items": [
+        {
+            "end": {
+                "x": 20,
+                "y": 20
+            },
+            "id": "c9d6f90e757040e78dbf94bef5732e98",
+            "properties": [
+                {
+                    "type": "BackgroundStyle",
+                    "value": "Solid"
+                },
+                {
+                    "type": "BackgroundColor",
+                    "value": "#00000000"
+                },
+                {
+                    "type": "StrokeStyle",
+                    "value": "Solid"
+                },
+                {
+                    "type": "Opacity",
+                    "value": 255
+                },
+                {
+                    "type": "StrokeColor",
+                    "value": "#000000"
+                },
+                {
+                    "type": "StrokeWidth",
+                    "value": 1
+                }
+            ],
+            "start": {
+                "x": 10,
+                "y": 10
+            },
+            "transform": {
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m31": -9,
+                "m32": -9,
+                "m33": 1
+            },
+            "type": "RECTANGLE"
+        },
+        {
+            "end": {
+                "x": 40,
+                "y": 40
+            },
+            "id": "c9d6f90e757040e78dbf94bef5732e99",
+            "properties": [
+                {
+                    "type": "BackgroundStyle",
+                    "value": "Solid"
+                },
+                {
+                    "type": "BackgroundColor",
+                    "value": "#00000000"
+                },
+                {
+                    "type": "StrokeStyle",
+                    "value": "Solid"
+                },
+                {
+                    "type": "Opacity",
+                    "value": 255
+                },
+                {
+                    "type": "StrokeColor",
+                    "value": "#000000"
+                },
+                {
+                    "type": "StrokeWidth",
+                    "value": 1
+                }
+            ],
+            "start": {
+                "x": 30,
+                "y": 30
+            },
+            "transform": {
+                "m11": 1,
+                "m12": 0,
+                "m13": 0,
+                "m21": 0,
+                "m22": 1,
+                "m23": 0,
+                "m31": -9,
+                "m32": -9,
+                "m33": 1
+            },
+            "type": "RECTANGLE"
+        }
+    ],
+    "properties": [
+        {
+            "type": "BackgroundColor",
+            "value": "#00000000"
+        },
+        {
+            "type": "BackgroundStyle",
+            "value": "Solid"
+        },
+        {
+            "type": "StrokeWidth",
+            "value": 1
+        },
+        {
+            "type": "StrokeColor",
+            "value": "#000000"
+        },
+        {
+            "type": "StrokeStyle",
+            "value": "Solid"
+        },
+        {
+            "type": "Opacity",
+            "value": 255
+        }
+    ],
+    "transform": {
+        "m11": 1,
+        "m12": 0,
+        "m13": 0,
+        "m21": 0,
+        "m22": 1,
+        "m23": 0,
+        "m31": 9,
+        "m32": 9,
+        "m33": 1
+    },
+    "type": "GROUP"
+}

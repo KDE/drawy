@@ -18,6 +18,14 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSerializeDefaultValue();
+    void shouldSerializeGroupWithItems();
     void shouldRoundTripItems();
     void shouldTestTransformations();
+    void shouldGroupItems();
+    void shouldUnGroupItems();
+    void shouldTestIntersects();
+    void shouldTestBoundingBox();
+    void shouldTestProperties();
+    void shouldTestNeedsCaching();
+    void shouldTestLockAspectRatioWhenResizing();
 };
