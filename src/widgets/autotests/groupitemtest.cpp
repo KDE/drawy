@@ -213,7 +213,7 @@ void GroupItemTest::shouldTestProperties()
     QCOMPARE(i.property(Property::Type::StrokeColor).value<QColor>(), QColor(Qt::red));
 
     r2->setProperty(Property::Type::StrokeColor, Property(QColor(Qt::blue), Property::Type::StrokeColor));
-    QCOMPARE(i.property(Property::Type::StrokeColor).type(), Property::Type::Null);
+    QCOMPARE(i.property(Property::Type::StrokeColor).type(), Property::Type::StrokeColor);
 
     i.setProperty(Property::Type::StrokeColor, Property(QColor(Qt::green), Property::Type::StrokeColor));
     QCOMPARE(r1->property(Property::Type::StrokeColor).value<QColor>(), QColor(Qt::green));

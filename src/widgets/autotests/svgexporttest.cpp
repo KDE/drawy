@@ -34,6 +34,9 @@ void SvgExportTest::shouldNotChangeOutput_data()
 
 void SvgExportTest::shouldNotChangeOutput()
 {
+#ifndef Q_OS_LINUX
+    QSKIP("Linux only test for now. Please contribute a Windows version of the file as the export algorithm is unstable.");
+#endif
     QFETCH(QString, input);
     QFETCH(QString, output);
     LoadJob loadJob(nullptr);

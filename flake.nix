@@ -61,6 +61,7 @@
                 kdePackages.kconfig
                 kdePackages.kconfigwidgets
                 kdePackages.kxmlgui
+                kdePackages.syntax-highlighting
               ]);
           };
       });
