@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
+"POT-Creation-Date: 2026-02-22 00:41+0000\n"
 "PO-Revision-Date: 2026-02-15 12:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -265,172 +265,172 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "Exporta como SVG"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Gruppa elementos"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Separa Elementos"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Dele"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Netta telas"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Instrumento de forma libere"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Instrumento de gumma"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Instrumento de Selection"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Instrumento de Rectangulo"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Instrumento de Ellipse"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Instrumento de Linea"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Instrumento de Texto"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Instrumento de flecha"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Instrumento de Mover"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Invia a Retro"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Invia retro"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta Avante"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta de Fronte"
 
-#: widgets/keybindings/actionmanager.cpp:122
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:407
+#: widgets/keybindings/actionmanager.cpp:424
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sin titulo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:409
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:426
+#: widgets/keybindings/actionmanager.cpp:490
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:410
+#: widgets/keybindings/actionmanager.cpp:427
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salveguarda file"
 
-#: widgets/keybindings/actionmanager.cpp:432
+#: widgets/keybindings/actionmanager.cpp:449
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tu vermente vole nettar le telas?"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Netta"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:493
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Aperi file"
 
-#: widgets/keybindings/actionmanager.cpp:489
+#: widgets/keybindings/actionmanager.cpp:506
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sin titulo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:491
+#: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exporta a Svg"
 
-#: widgets/keybindings/actionmanager.cpp:528
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -439,7 +439,7 @@ msgstr ""
 "Le documento '%1' ha essite modificate.Tu vole salveguardar tu "
 "modificationes o abandonar los?"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:549
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -701,6 +701,12 @@ msgstr "Instrumento de Selection"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Instrumento de Texto"
+
+#: widgets/window/window.cpp:151
+#, kde-format
+msgctxt "@title:window %1 is a filename"
+msgid "%1 — Drawy"
+msgstr ""
 
 #~ msgid "Update Property"
 #~ msgstr "Actualisa Proprietate"

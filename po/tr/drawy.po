@@ -3,17 +3,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"PO-Revision-Date: 2026-02-16 16:34+0300\n"
+"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"PO-Revision-Date: 2026-02-21 12:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -262,174 +262,174 @@ msgstr "Tam ekran"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr ""
+msgstr "Hata ayıklama kipini etkinleştir"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Ögeleri Grupla"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Sil"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Tuvali Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Arkaya Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Arkaya Doğru Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Öne Doğru Getir"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Öne Getir"
 
-#: widgets/keybindings/actionmanager.cpp:122
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr ""
+msgstr "Hata Ayıkla"
 
-#: widgets/keybindings/actionmanager.cpp:407
+#: widgets/keybindings/actionmanager.cpp:424
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:409
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:426
+#: widgets/keybindings/actionmanager.cpp:490
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:410
+#: widgets/keybindings/actionmanager.cpp:427
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:432
+#: widgets/keybindings/actionmanager.cpp:449
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tuvali temizlemeyi gerçekten istiyor musunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:493
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/keybindings/actionmanager.cpp:489
+#: widgets/keybindings/actionmanager.cpp:506
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Başlıksız.svg"
 
-#: widgets/keybindings/actionmanager.cpp:491
+#: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:528
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -438,7 +438,7 @@ msgstr ""
 "“%1” belgesinde değişiklikler yapıldı. Değişikliklerinizi kaydetmek mi yoksa "
 "atmak mı istiyorsunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:549
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -700,6 +700,12 @@ msgstr "Seçim aracı"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Metin aracı"
+
+#: widgets/window/window.cpp:151
+#, kde-format
+msgctxt "@title:window %1 is a filename"
+msgid "%1 — Drawy"
+msgstr ""
 
 #~ msgid "Update Property"
 #~ msgstr "Özelliği Güncelle"

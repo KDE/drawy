@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"PO-Revision-Date: 2026-02-15 20:36+0400\n"
+"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"PO-Revision-Date: 2026-02-21 17:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -269,181 +269,181 @@ msgstr "ملء الشّاشة"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr ""
+msgstr "نشّط وضع التنقيح"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "صدِّر كـ SVG"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "عناصر المجموعة"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "فك تجميع العناصر"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "احذف"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "امحُ الرقعة"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "أداة الرسم الحر"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "أداة الممحاة"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "أداة التحديد"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "أداة الشكل البيضاوي"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "أداة رسم الخطوط"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "أداة السهم"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "أداة التّحريك"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "أرسل إلى الخلف"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "أرسل للخلف"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "أحضر للأمام"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "إحضار إلى الواجهة"
 
-#: widgets/keybindings/actionmanager.cpp:122
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr ""
+msgstr "نقّح"
 
-#: widgets/keybindings/actionmanager.cpp:407
+#: widgets/keybindings/actionmanager.cpp:424
 #, kde-format
 msgid "Untitled.%1"
 msgstr "غير معنون.%1"
 
-#: widgets/keybindings/actionmanager.cpp:409
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:426
+#: widgets/keybindings/actionmanager.cpp:490
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "السبورة (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:410
+#: widgets/keybindings/actionmanager.cpp:427
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "احفظ الملفّ"
 
-#: widgets/keybindings/actionmanager.cpp:432
+#: widgets/keybindings/actionmanager.cpp:449
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "هل حقًّا تريد محو الرقعة؟"
 
-#: widgets/keybindings/actionmanager.cpp:433
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "امحُ"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:493
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "افتح ملفًّا"
 
-#: widgets/keybindings/actionmanager.cpp:489
+#: widgets/keybindings/actionmanager.cpp:506
 #, kde-format
 msgid "Untitled.svg"
 msgstr "غير معنون.svg"
 
-#: widgets/keybindings/actionmanager.cpp:491
+#: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "صدّر إلى SVG"
 
-#: widgets/keybindings/actionmanager.cpp:528
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "عُدّل المستند '%1' ولم يُحفظ. أتريد حفظ التّعديلات أو رفضها؟"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:549
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -705,6 +705,12 @@ msgstr "أداة التحديد"
 msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "أداة النصوص"
+
+#: widgets/window/window.cpp:151
+#, kde-format
+msgctxt "@title:window %1 is a filename"
+msgid "%1 — Drawy"
+msgstr ""
 
 #~ msgid "Update Property"
 #~ msgstr "حدّث الخاصية"
