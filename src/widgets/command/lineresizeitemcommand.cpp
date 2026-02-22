@@ -37,11 +37,11 @@ void LineResizeItemCommand::execute(ApplicationContext *context)
     case HandleType::Start: {
         item->setStart(m_finalPos);
         break;
-    };
+    }
     case HandleType::End: {
         item->setEnd(m_finalPos);
         break;
-    };
+    }
     }
 
     cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
@@ -60,11 +60,11 @@ void LineResizeItemCommand::undo(ApplicationContext *context)
     case HandleType::Start: {
         item->setStart(m_initialPos);
         break;
-    };
+    }
     case HandleType::End: {
         item->setEnd(m_initialPos);
         break;
-    };
+    }
     }
 
     cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());

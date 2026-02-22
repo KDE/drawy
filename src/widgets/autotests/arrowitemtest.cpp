@@ -142,7 +142,7 @@ void ArrowItemTest::shouldTestOperatorEqual()
     i2.setStartArrow(ArrowUtils::ArrowType::Triangle);
     i2.setEndArrow(ArrowUtils::ArrowType::None);
 
-    QVERIFY(i1 == i2);
+    QCOMPARE(i1, i2);
 
     i2.setStartArrow(ArrowUtils::ArrowType::Arrow);
     QVERIFY(!(i1 == i2));
@@ -170,7 +170,7 @@ void ArrowItemTest::shouldRoundTrip()
         qDebug() << "f:" << f;
         qDebug() << "f2:" << f2;
     }
-    QVERIFY(f == f2);
+    QCOMPARE(f, f2);
 }
 
 #include "moc_arrowitemtest.cpp"

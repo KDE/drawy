@@ -161,7 +161,7 @@ void RectangleItemTest::shouldTestOperatorEqual()
     i2.setStart(QPointF(10, 10));
     i2.setEnd(QPointF(30, 30));
 
-    QVERIFY(i1 == i2);
+    QCOMPARE(i1, i2);
 
     i2.setStart(QPointF(0, 0));
     QVERIFY(!(i1 == i2));

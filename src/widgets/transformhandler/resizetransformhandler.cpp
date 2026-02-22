@@ -255,7 +255,7 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topHandler(const QRect
     return {prevRect.width(), prevRect.bottomRight().y() - localCurPos.y(), QPointF{prevRect.center().x(), prevRect.bottom()}};
 }
 
-constexpr QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(const QRectF selectionBox, const qreal zoom)
+QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(const QRectF selectionBox, const qreal zoom)
 {
     const qreal handleSize{20.0 / zoom};
     const qreal handleSizeHalf{handleSize / 2.0};
