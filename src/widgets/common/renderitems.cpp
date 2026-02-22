@@ -35,10 +35,11 @@ void Common::renderCanvas(ApplicationContext *context)
     const auto visibleCells{rendering.cacheGrid().queryCells(transformer.round(gridViewport))};
 
     for (const auto &cell : std::as_const(visibleCells)) {
-        canvas->paintCanvas([&](QPainter &painter) {
-            painter.setPen(QPen{Qt::white});
-            painter.drawRect(transformer.gridToView(cell->rect()));
-        });
+        // DEBUG VISUALIZATION
+        // canvas->paintCanvas([&](QPainter &painter) {
+        //     painter.setPen(QPen{Qt::white});
+        //     painter.drawRect(transformer.gridToView(cell->rect()));
+        // });
 
         if (cell->dirty()) {
             cell->pixmap().fill(Qt::transparent);
