@@ -114,8 +114,9 @@ void EllipseItemTest::shouldTestIntersects()
     i.setStart(QPointF(10, 10));
     i.setEnd(QPointF(30, 30));
 
-    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
-    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+    QVERIFY(i.intersects(QRectF(10, 10, 10, 10))); // Intersects the border
+    QVERIFY(!i.intersects(QRectF(15, 15, 5, 5))); // Completely inside, not filled
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5))); // Completely outside
 }
 
 void EllipseItemTest::shouldRoundTrip()

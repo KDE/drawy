@@ -143,10 +143,12 @@ void DiamondItemTest::shouldTestIntersects()
 void DiamondItemTest::shouldTestOperatorEqual()
 {
     DiamondItem i1;
+    i1.setId("acff679ae3c14260b56ef00f1d354553"_ba);
     i1.setStart(QPointF(10, 10));
     i1.setEnd(QPointF(30, 30));
 
     DiamondItem i2;
+    i2.setId("acff679ae3c14260b56ef00f1d354553"_ba);
     i2.setStart(QPointF(10, 10));
     i2.setEnd(QPointF(30, 30));
 

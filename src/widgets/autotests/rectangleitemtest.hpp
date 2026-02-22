@@ -24,4 +24,5 @@ private Q_SLOTS:
     void shouldDeserialize();
     void shouldTestIntersects();
     void shouldTestOperatorEqual();
+    void shouldTestTransformations();
 };

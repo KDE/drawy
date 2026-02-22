@@ -144,17 +144,20 @@ void RectangleItemTest::shouldTestIntersects()
     i.setStart(QPointF(10, 10));
     i.setEnd(QPointF(30, 30));
 
-    QVERIFY(i.intersects(QRectF(15, 15, 10, 10)));
-    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5)));
+    QVERIFY(i.intersects(QRectF(10, 10, 10, 10))); // Intersects the border
+    QVERIFY(!i.intersects(QRectF(15, 15, 5, 5))); // Completely inside, not filled
+    QVERIFY(!i.intersects(QRectF(0, 0, 5, 5))); // Completely outside
 }
 
 void RectangleItemTest::shouldTestOperatorEqual()
 {
     RectangleItem i1;
+    i1.setId("acff679ae3c14260b56ef00f1d354553"_ba);
     i1.setStart(QPointF(10, 10));
     i1.setEnd(QPointF(30, 30));
 
     RectangleItem i2;
+    i2.setId("acff679ae3c14260b56ef00f1d354553"_ba);
     i2.setStart(QPointF(10, 10));
     i2.setEnd(QPointF(30, 30));
 

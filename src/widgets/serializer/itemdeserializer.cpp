@@ -21,7 +21,7 @@ ItemDeserializer::~ItemDeserializer() = default;
 void ItemDeserializer::deserialize(const QJsonObject &obj)
 {
     mItem->setId(obj[u"id"_s].toString().toLatin1());
-    mItem->setLocked(obj[u"id"_s].toBool(false));
+    mItem->setLocked(obj[u"locked"_s].toBool(false));
 
     QJsonArray properties = array(value(obj, u"properties"_s));
     for (const auto &propertyValue : std::as_const(properties)) {
@@ -65,7 +65,14 @@ QJsonObject ItemDeserializer::object(const QJsonValue &value)
 Property ItemDeserializer::createProperty(const QJsonObject &obj)
 {
     const Property::Type type{Property::convertStringToEnum(value(obj, u"type"_s).toString())};
-    const QVariant val{value(obj, u"value"_s).toVariant()};
+    QVariant val{value(obj, u"value"_s).toVariant()};
+
+    if (type == Property::Type::StrokeColor || type == Property::Type::BackgroundColor) {
+        val = QColor(val.toString());
+    } else if (type == Property::Type::StrokeWidth || type == Property::Type::Opacity || type == Property::Type::FontSize || type == Property::Type::EraserSize
+               || type == Property::Type::ZOrder) {
+        val = val.toInt();
+    }
 
     return Property{val, type};
 }

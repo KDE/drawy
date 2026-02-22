@@ -292,7 +292,7 @@ QString TextItem::selectedText() const
 
     const qsizetype selStart{selectionStart()};
     const qsizetype selEnd{selectionEnd()};
-    return m_text.mid(std::min(selStart, selEnd), selEnd - selStart + 1);
+    return m_text.mid(std::min(selStart, selEnd), std::abs(selEnd - selStart));
 }
 
 void TextItem::insertText(const QString &text)

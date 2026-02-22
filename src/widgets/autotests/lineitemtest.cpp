@@ -140,7 +140,7 @@ void LineItemTest::shouldTestSetEndWithShift()
 {
     LineItem i;
     i.setStart(QPointF(0, 0));
-    i.setEndWithShift(QPointF(10, 2)); // Should snap to horizontal
+    i.setEndWithShift(QPointF(10, 1)); // Should snap to horizontal
     QCOMPARE(i.end().y(), 0.0);
 }
 

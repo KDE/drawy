@@ -129,12 +129,14 @@ void ArrowItemTest::shouldTestArrows()
 void ArrowItemTest::shouldTestOperatorEqual()
 {
     ArrowItem i1;
+    i1.setId("4d8b0fe427a143a4b553399816007640"_ba);
     i1.setStart(QPointF(0, 0));
     i1.setEnd(QPointF(10, 10));
     i1.setStartArrow(ArrowUtils::ArrowType::Triangle);
     i1.setEndArrow(ArrowUtils::ArrowType::None);
 
     ArrowItem i2;
+    i2.setId("4d8b0fe427a143a4b553399816007640"_ba);
     i2.setStart(QPointF(0, 0));
     i2.setEnd(QPointF(10, 10));
     i2.setStartArrow(ArrowUtils::ArrowType::Triangle);
@@ -164,6 +166,10 @@ void ArrowItemTest::shouldRoundTrip()
     QCOMPARE(f2.end(), f.end());
     QCOMPARE(f2.startArrow(), f.startArrow());
     QCOMPARE(f2.endArrow(), f.endArrow());
+    if (!(f == f2)) {
+        qDebug() << "f:" << f;
+        qDebug() << "f2:" << f2;
+    }
     QVERIFY(f == f2);
 }
 
