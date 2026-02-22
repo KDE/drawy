@@ -41,4 +41,37 @@ void FreeformItemTest::shouldSerializeDefaultValue()
     const QByteArray ba = doc.toJson();
     AutoTestHelper::compareFile(u"/freeform/"_s, ba, u"defaultvalue"_s);
 }
+
+void FreeformItemTest::shouldTestTransformations()
+{
+    FreeformItem i;
+    QCOMPARE(i.transformObj(), QTransform());
+
+    i.translate(QPointF(10, 20));
+    QCOMPARE(i.transformObj(), QTransform().translate(10, 20));
+
+    i.rotate(45, QPointF(5, 5));
+    QTransform expected;
+    expected.translate(10, 20);
+    expected.translate(5, 5);
+    expected.rotate(45);
+    expected.translate(-5, -5);
+    QCOMPARE(i.transformObj(), expected);
+
+    i.resize(QTransform::fromScale(2, 2));
+    expected = expected * QTransform::fromScale(2, 2);
+    QCOMPARE(i.transformObj(), expected);
+
+    i.setTransform(QTransform::fromScale(3, 3));
+    QCOMPARE(i.transformObj(), QTransform::fromScale(3, 3));
+
+    i.addPoint(QPointF(0, 0), 1.0);
+    i.addPoint(QPointF(10, 10), 1.0);
+    i.finalizeStroke();
+    i.commitTransformation();
+    QCOMPARE(i.points().at(0), QPointF(0, 0));
+    QCOMPARE(i.points().at(1), QPointF(30, 30));
+    QCOMPARE(i.transformObj(), QTransform());
+}
+
 #include "moc_freeformitemtest.cpp"

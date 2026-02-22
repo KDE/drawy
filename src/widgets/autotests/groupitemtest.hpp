@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSerializeDefaultValue();
     void shouldRoundTripItems();
+    void shouldTestTransformations();
 };

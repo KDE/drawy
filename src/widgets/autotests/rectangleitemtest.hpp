@@ -21,6 +21,8 @@ private Q_SLOTS:
     void shouldSerialize();
     void shouldSerializeDefaultValue();
 
+    void shouldTestTransformations();
+
     void shouldDeserialize_data();
     void shouldDeserialize();
 };
