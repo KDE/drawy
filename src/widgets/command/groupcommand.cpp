@@ -49,6 +49,11 @@ void GroupCommand::undo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
 
+    const QRect dirtyRegion{m_group->boundingBox().toAlignedRect()};
+    m_items = m_group->unGroup();
+
+    m_group->setTransform({});
+
     quadtree.deleteItem(m_group);
     context->selectionContext()->reset();
 
@@ -57,7 +62,7 @@ void GroupCommand::undo(ApplicationContext *context)
     }
 
     context->selectionContext()->addToSelection(m_items.begin(), m_items.end());
-    context->renderingContext()->cacheGrid().markDirty(m_group->boundingBox().toRect());
+    context->renderingContext()->cacheGrid().markDirty(dirtyRegion);
 }
 
 QString GroupCommand::commandTitle() const
