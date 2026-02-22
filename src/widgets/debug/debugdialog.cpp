@@ -5,9 +5,13 @@
  */
 
 #include "debugdialog.hpp"
+#include "drawy_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Theme>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPlainTextEdit>
@@ -25,6 +29,16 @@ DebugDialog::DebugDialog(QWidget *parent)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
+
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(u"Json"_s);
+    if (!def.isValid()) {
+        qCWarning(DRAWY_LOG) << "Invalid definition name";
+    }
+
+    auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mPlainTextEdit->document());
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                     : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setDefinition(def);
 
     mPlainTextEdit->setObjectName(u"mPlainTextEdit"_s);
     mPlainTextEdit->setReadOnly(true);

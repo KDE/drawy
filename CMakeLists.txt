@@ -58,6 +58,7 @@ find_package(
         XmlGui
         IconThemes
         I18n
+        SyntaxHighlighting
 )
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

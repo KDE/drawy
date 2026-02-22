@@ -326,6 +326,7 @@ target_link_libraries(
     KF6::XmlGui
     KF6::CoreAddons
     KF6::I18n
+    KF6::SyntaxHighlighting
     ${ZSTD_LINK_LIBRARIES}
 )
 

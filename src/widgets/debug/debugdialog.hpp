@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include <KSyntaxHighlighting/Repository>
 #include <QDialog>
 class QPlainTextEdit;
 class DebugDialog : public QDialog
@@ -21,4 +22,5 @@ private:
     void readConfig();
     void writeConfig();
     QPlainTextEdit *const mPlainTextEdit;
+    KSyntaxHighlighting::Repository mRepo;
 };
