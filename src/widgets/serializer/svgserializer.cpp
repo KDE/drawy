@@ -31,21 +31,29 @@ void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Ite
         boundingBox |= item->boundingBox();
     }
 
-    stream.writeAttribute("width", QString::number(boundingBox.width()) + u"pt"_s);
-    stream.writeAttribute("height", QString::number(boundingBox.height()) + u"pt"_s);
-    stream.writeAttribute("viewBox", u"%1 %2 %3 %4"_s.arg(boundingBox.x()).arg(boundingBox.y()).arg(boundingBox.width()).arg(boundingBox.height()));
+    stream.writeAttribute("width", QString::number(boundingBox.width()) + u"px"_s);
+    stream.writeAttribute("height", QString::number(boundingBox.height()) + u"px"_s);
+    stream.writeAttribute("viewBox", u"0 0 %3 %4"_s.arg(boundingBox.width()).arg(boundingBox.height()));
 
     SvgPaintDevice device(stream, (int)boundingBox.width(), (int)boundingBox.height());
     QPainter painter(&device);
 
     // Draw background.
+    QTransform t{};
+    t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
+
+    painter.setTransform(t.inverted(), true);
     painter.fillRect(boundingBox, Common::darkBackgroundColor);
-    painter.end();
+
+    painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     for (const auto &item : std::as_const(items)) {
-        painter.begin(&device);
+        painter.save();
+
+        painter.setTransform(item->transformObj(), true);
         item->draw(painter, QPointF{0, 0});
-        painter.end();
+
+        painter.restore();
     }
 
     stream.writeEndElement();

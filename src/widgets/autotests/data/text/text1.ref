@@ -1,11 +1,4 @@
 {
-    "bounding_box": {
-        "height": 37.125,
-        "width": 20,
-        "x": -10,
-        "y": -10
-    },
-    "bounding_box_padding": 10,
     "properties": [
         {
             "type": "FontSize",
@@ -21,5 +14,20 @@
         }
     ],
     "text": "",
+    "top_left": {
+        "x": 0,
+        "y": 0
+    },
+    "transform": {
+        "m11": 1,
+        "m12": 0,
+        "m13": 0,
+        "m21": 0,
+        "m22": 1,
+        "m23": 0,
+        "m31": 0,
+        "m32": 0,
+        "m33": 1
+    },
     "type": "TEXT"
 }

@@ -1,11 +1,4 @@
 {
-    "bounding_box": {
-        "height": 24.5,
-        "width": 32,
-        "x": -11,
-        "y": -6
-    },
-    "bounding_box_padding": 10,
     "end": {
         "x": 10,
         "y": 7.5
@@ -40,6 +33,17 @@
     "start": {
         "x": 0,
         "y": 5
+    },
+    "transform": {
+        "m11": 1,
+        "m12": 0,
+        "m13": 0,
+        "m21": 0,
+        "m22": 1,
+        "m23": 0,
+        "m31": 0,
+        "m32": 0,
+        "m33": 1
     },
     "type": "RECTANGLE",
     "zorder": "9"
