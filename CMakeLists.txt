@@ -60,6 +60,17 @@ find_package(
         I18n
         SyntaxHighlighting
 )
+
+find_package(KF6DocTools ${KF_MIN_VERSION})
+set_package_properties(
+    KF6DocTools
+    PROPERTIES
+        DESCRIPTION
+            "Tools to generate documentation"
+        TYPE
+            OPTIONAL
+)
+
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 option(ENABLE_PCH "Enable Precompiled Headers support" ON)
@@ -170,4 +181,8 @@ ecm_qt_install_logging_categories(
 
 update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 ki18n_install(po)
+if(KF6DocTools_FOUND)
+    kdoctools_install(po)
+    add_subdirectory(doc)
+endif()
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

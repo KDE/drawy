@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-kapplication "<application>Drawy</application>">
+  <!ENTITY kappname "&i18n-kapplication;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+
+<book id="drawy" lang="&language;">
+
+<bookinfo id="drawyinfo">
+
+<title>The &i18n-kapplication; Handbook</title>
+
+<authorgroup>
+<author>
+<personname>
+<firstname>Laurent</firstname>
+<surname>Montel</surname>
+</personname>
+<email>montel@kde.org</email>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<copyright>
+<year>2026</year>
+<holder>Laurent Montel</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2026-02-23</date>
+<releaseinfo></releaseinfo>
+
+<abstract>
+<para>
+&i18n-kapplication; is a work-in-progress infinite whiteboard tool.
+</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>whiteboard</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+<para>&i18n-kapplication; is a work-in-progress infinite whiteboard tool written in Qt/C++.</para>
+
+<sect1 id="using-kapp">
+<title>Using &i18n-kapplication;</title>
+
+<para>&i18n-kapplication; is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+
+<para>&i18n-kapplication;</para>
+<para>
+Program copyright 2026 &Laurent.Montel; &Laurent.Montel.mail;
+</para>
+<para>
+Documentation Copyright &copy; &Laurent.Montel; &Laurent.Montel.mail;
+</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;               <!-- FDL: do not remove -->
+&underGPL;        	 <!-- GPL License -->
+</chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
