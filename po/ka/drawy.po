@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -45,7 +45,7 @@ msgstr "ელემენტების გასწორება"
 msgid "Deselect Object"
 msgstr "ობიექტის მონიშვნის გაუქმება"
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:70
 #, kde-format
 msgid "Group Object"
 msgstr "ჯგუფური ობიექტი"
@@ -55,12 +55,17 @@ msgstr "ჯგუფური ობიექტი"
 msgid "Insert Object"
 msgstr "ობიექტის ჩასმა"
 
+#: widgets/command/lineresizeitemcommand.cpp:75
+#, kde-format
+msgid "Resize Line"
+msgstr ""
+
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
 msgid "Change Lock"
 msgstr "დაბლოკვის შეცვლა"
 
-#: widgets/command/moveitemcommand.cpp:49
+#: widgets/command/moveitemcommand.cpp:64
 #, kde-format
 msgid "Move Object"
 msgstr "ობიექტის გადატანა"
@@ -68,6 +73,18 @@ msgstr "ობიექტის გადატანა"
 #: widgets/command/removeitemcommand.cpp:58
 #, kde-format
 msgid "Remove Object"
+msgstr "ობიექტის წაშლა"
+
+#: widgets/command/resizeitemcommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Resize Object"
+msgstr "ობიექტის წაშლა"
+
+#: widgets/command/rotateitemcommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Rotate Object"
 msgstr "ობიექტის წაშლა"
 
 #: widgets/command/selectcommand.cpp:47
@@ -656,7 +673,7 @@ msgctxt "@info:tooltip"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Eraser Tool"
@@ -686,13 +703,13 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:143
+#: widgets/tools/selectiontool/selectiontool.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: widgets/tools/texttool.cpp:510
+#: widgets/tools/texttool.cpp:505
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text Tool"
@@ -702,7 +719,7 @@ msgstr "ტექსტის ხელსაწყო"
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
-msgstr ""
+msgstr "%1 — Drawy"
 
 #~ msgid "Update Property"
 #~ msgstr "თვისების განახლება"

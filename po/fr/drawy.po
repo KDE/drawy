@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2026-02-08 18:50+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -54,7 +54,7 @@ msgstr "Aligner les objets"
 msgid "Deselect Object"
 msgstr "Sélectionner l'objet"
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "ActionsWidget|"
 #| msgid "Group selection"
@@ -68,6 +68,11 @@ msgstr "Grouper la sélection"
 msgid "Insert Object"
 msgstr "Sélectionner l'objet"
 
+#: widgets/command/lineresizeitemcommand.cpp:75
+#, kde-format
+msgid "Resize Line"
+msgstr ""
+
 #: widgets/command/lockcommand.cpp:34
 #, fuzzy, kde-format
 #| msgctxt "OpacityWidget|"
@@ -75,7 +80,7 @@ msgstr "Sélectionner l'objet"
 msgid "Change Lock"
 msgstr "Opacité"
 
-#: widgets/command/moveitemcommand.cpp:49
+#: widgets/command/moveitemcommand.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Move Object"
@@ -87,6 +92,20 @@ msgstr "Déplacer l'objet"
 #| msgctxt "QObject|"
 #| msgid "Remove Object"
 msgid "Remove Object"
+msgstr "Supprimer l'objet"
+
+#: widgets/command/resizeitemcommand.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Remove Object"
+msgid "Resize Object"
+msgstr "Supprimer l'objet"
+
+#: widgets/command/rotateitemcommand.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Remove Object"
+msgid "Rotate Object"
 msgstr "Supprimer l'objet"
 
 #: widgets/command/selectcommand.cpp:47
@@ -849,7 +868,7 @@ msgctxt "@info:tooltip"
 msgid "Ellipse Tool"
 msgstr "Outil d'ellipse"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Eraser Tool"
@@ -889,7 +908,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Outil de rectangle"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:143
+#: widgets/tools/selectiontool/selectiontool.cpp:253
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -897,7 +916,7 @@ msgctxt "@info:tooltip"
 msgid "Selection Tool"
 msgstr "Outil de sélection"
 
-#: widgets/tools/texttool.cpp:510
+#: widgets/tools/texttool.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Text Tool"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2026-02-21 12:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -46,7 +46,7 @@ msgstr "Ögeleri Hizala"
 msgid "Deselect Object"
 msgstr "Nesnenin Seçimini Kaldır"
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:70
 #, kde-format
 msgid "Group Object"
 msgstr "Nesneyi Grupla"
@@ -56,12 +56,17 @@ msgstr "Nesneyi Grupla"
 msgid "Insert Object"
 msgstr "Nesne Ekle"
 
+#: widgets/command/lineresizeitemcommand.cpp:75
+#, kde-format
+msgid "Resize Line"
+msgstr ""
+
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
 msgid "Change Lock"
 msgstr "Kilidi Değiştir"
 
-#: widgets/command/moveitemcommand.cpp:49
+#: widgets/command/moveitemcommand.cpp:64
 #, kde-format
 msgid "Move Object"
 msgstr "Nesneyi Taşı"
@@ -69,6 +74,18 @@ msgstr "Nesneyi Taşı"
 #: widgets/command/removeitemcommand.cpp:58
 #, kde-format
 msgid "Remove Object"
+msgstr "Nesneyi Kaldır"
+
+#: widgets/command/resizeitemcommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Resize Object"
+msgstr "Nesneyi Kaldır"
+
+#: widgets/command/rotateitemcommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Rotate Object"
 msgstr "Nesneyi Kaldır"
 
 #: widgets/command/selectcommand.cpp:47
@@ -659,7 +676,7 @@ msgctxt "@info:tooltip"
 msgid "Ellipse Tool"
 msgstr "Elips aracı"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Eraser Tool"
@@ -689,13 +706,13 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Dörtgen aracı"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:143
+#: widgets/tools/selectiontool/selectiontool.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
 msgstr "Seçim aracı"
 
-#: widgets/tools/texttool.cpp:510
+#: widgets/tools/texttool.cpp:505
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text Tool"

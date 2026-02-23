@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2026-02-21 17:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -49,7 +49,7 @@ msgstr "حاذِ العناصر"
 msgid "Deselect Object"
 msgstr "أزل التّحديد الكائن"
 
-#: widgets/command/groupcommand.cpp:65
+#: widgets/command/groupcommand.cpp:70
 #, kde-format
 msgid "Group Object"
 msgstr "اجمع الكائن"
@@ -59,12 +59,17 @@ msgstr "اجمع الكائن"
 msgid "Insert Object"
 msgstr "إدراج كائن"
 
+#: widgets/command/lineresizeitemcommand.cpp:75
+#, kde-format
+msgid "Resize Line"
+msgstr ""
+
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
 msgid "Change Lock"
 msgstr "غيّر قفل"
 
-#: widgets/command/moveitemcommand.cpp:49
+#: widgets/command/moveitemcommand.cpp:64
 #, kde-format
 msgid "Move Object"
 msgstr "حرّك الكائن"
@@ -72,6 +77,18 @@ msgstr "حرّك الكائن"
 #: widgets/command/removeitemcommand.cpp:58
 #, kde-format
 msgid "Remove Object"
+msgstr "أزل كائن"
+
+#: widgets/command/resizeitemcommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Resize Object"
+msgstr "أزل كائن"
+
+#: widgets/command/rotateitemcommand.cpp:56
+#, fuzzy, kde-format
+#| msgid "Remove Object"
+msgid "Rotate Object"
 msgstr "أزل كائن"
 
 #: widgets/command/selectcommand.cpp:47
@@ -664,7 +681,7 @@ msgctxt "@info:tooltip"
 msgid "Ellipse Tool"
 msgstr "أداة الشكل البيضاوي"
 
-#: widgets/tools/erasertool.cpp:159
+#: widgets/tools/erasertool.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Eraser Tool"
@@ -694,13 +711,13 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:143
+#: widgets/tools/selectiontool/selectiontool.cpp:253
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
 msgstr "أداة التحديد"
 
-#: widgets/tools/texttool.cpp:510
+#: widgets/tools/texttool.cpp:505
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text Tool"
