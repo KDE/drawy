@@ -5,6 +5,7 @@
 #pragma once
 
 #include "transformhandler/transformhandler.hpp"
+#include "transformhandlerutils.hpp"
 #include <QObject>
 #include <unordered_set>
 
@@ -61,7 +62,7 @@ public:
     void updatePropertyOfSelectedItems(const Property &property);
 
     void renderHandles();
-    [[nodiscard]] QList<TransformHandler::Type> defaultHandlerTypesForMultiSelection() const;
+    [[nodiscard]] QList<TransformHandlerUtils::Type> defaultHandlerTypesForMultiSelection() const;
 
     [[nodiscard]] bool shouldRenderHandles() const;
     void setShouldRenderHandles(bool value);

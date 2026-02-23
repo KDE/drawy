@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 set(DRAWY_LIB_SOVERSION "0")
+add_subdirectory(gui)
 add_subdirectory(widgets)
 add_subdirectory(apps)
 add_subdirectory(icons)

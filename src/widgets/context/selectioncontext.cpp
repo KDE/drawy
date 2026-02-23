@@ -144,9 +144,9 @@ void SelectionContext::renderHandles()
     m_applicationContext->renderingContext()->markForUpdate();
 }
 
-QList<TransformHandler::Type> SelectionContext::defaultHandlerTypesForMultiSelection() const
+QList<TransformHandlerUtils::Type> SelectionContext::defaultHandlerTypesForMultiSelection() const
 {
-    using enum TransformHandler::Type;
+    using enum TransformHandlerUtils::Type;
     return {ResizeTransformHandler, MoveTransformHandler, RotateTransformHandler};
 }
 

@@ -5,7 +5,7 @@
  */
 #include "deserializejob.hpp"
 #include "drawy_debug.h"
-#include "jobs/deserializeutils.hpp"
+#include "serializer/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;

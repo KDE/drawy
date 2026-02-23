@@ -1,0 +1,32 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#pragma once
+#include "libdrawygui_export.h"
+
+#include "polygon.hpp"
+#include <QPainterPath>
+
+class LIBDRAWYGUI_EXPORT DiamondItem : public PolygonItem
+{
+public:
+    DiamondItem();
+    ~DiamondItem() override = default;
+
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
+
+    [[nodiscard]] Item::FormType formType() const override;
+
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
+    void deserialize(const QJsonObject &obj) override;
+
+    [[nodiscard]] bool operator==(const DiamondItem &other) const;
+
+protected:
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
+
+    [[nodiscard]] QPainterPath getPath() const;
+};

@@ -30,7 +30,7 @@ ecm_qt_declare_logging_category(libstandardformplugin HEADER standardformplugin_
     DESCRIPTION "Drawy standardformplugin" EXPORT DRAWY
 )
 
-target_link_libraries(libstandardformplugin libdrawywidgets)
+target_link_libraries(libstandardformplugin libdrawygui)
 
 set_target_properties(
     libstandardformplugin

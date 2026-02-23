@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "transformhandlerutils.hpp"
 #include <QRectF>
 class QPainter;
 class Event;
@@ -18,14 +19,6 @@ public:
         Unlocked
     };
 
-    enum class Type {
-        MoveTransformHandler,
-        ResizeTransformHandler,
-        RotateTransformHandler,
-        LineMoveTransformHandler,
-        LineResizeTransformHandler,
-    };
-
     // just a helper function
     inline static constexpr QRectF createHandle(const QPointF pos, const qreal size)
     {
@@ -35,7 +28,7 @@ public:
     // static members
 public:
     /// @brief It returns a singleton instance of the provided handlerType since these handlers are stateless
-    static TransformHandler *getHandler(TransformHandler::Type handlerType);
+    static TransformHandler *getHandler(TransformHandlerUtils::Type handlerType);
 
     // virtual members
 public:

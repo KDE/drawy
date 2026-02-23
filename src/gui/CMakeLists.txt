@@ -1,0 +1,202 @@
+# SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+#
+# SPDX-License-Identifier: BSD-2-Clause
+
+add_library(libdrawygui)
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+target_sources(
+    libdrawygui
+    PRIVATE
+        item/factory/arrowfactory.cpp
+        item/factory/arrowfactory.hpp
+        item/factory/ellipsefactory.cpp
+        item/factory/ellipsefactory.hpp
+        item/factory/freeformfactory.cpp
+        item/factory/freeformfactory.hpp
+        item/factory/itemfactory.cpp
+        item/factory/itemfactory.hpp
+        item/factory/linefactory.cpp
+        item/factory/linefactory.hpp
+        item/factory/rectanglefactory.cpp
+        item/factory/rectanglefactory.hpp
+        item/factory/textfactory.cpp
+        item/factory/textfactory.hpp
+        item/factory/diamondfactory.cpp
+        item/factory/diamondfactory.hpp
+        item/arrow.cpp
+        item/arrow.hpp
+        item/ellipse.cpp
+        item/ellipse.hpp
+        item/freeform.cpp
+        item/freeform.hpp
+        item/group.cpp
+        item/group.hpp
+        item/item.cpp
+        item/item.hpp
+        item/line.cpp
+        item/line.hpp
+        item/polygon.cpp
+        item/polygon.hpp
+        item/rectangle.cpp
+        item/rectangle.hpp
+        item/text.cpp
+        item/text.hpp
+        item/itemutils.hpp
+        item/itemutils.cpp
+        item/arrowutils.hpp
+        item/arrowutils.cpp
+        item/diamond.cpp
+        item/diamond.hpp
+        properties/property.cpp
+        properties/property.hpp
+        serializer/itemserializer.hpp
+        serializer/itemserializer.cpp
+        serializer/rectangleserializer.hpp
+        serializer/rectangleserializer.cpp
+        serializer/polygonserializer.hpp
+        serializer/polygonserializer.cpp
+        serializer/arrowserializer.cpp
+        serializer/arrowserializer.hpp
+        serializer/ellipseserializer.cpp
+        serializer/ellipseserializer.hpp
+        serializer/lineserializer.cpp
+        serializer/lineserializer.hpp
+        serializer/textserializer.cpp
+        serializer/textserializer.hpp
+        serializer/freeformserializer.hpp
+        serializer/freeformserializer.cpp
+        serializer/serializerutils.hpp
+        serializer/serializerutils.cpp
+        serializer/groupserializer.cpp
+        serializer/groupserializer.hpp
+        serializer/polygondeserializer.cpp
+        serializer/polygondeserializer.hpp
+        serializer/arrowdeserializer.cpp
+        serializer/arrowdeserializer.hpp
+        serializer/ellipsedeserializer.cpp
+        serializer/ellipsedeserializer.hpp
+        serializer/freeformdeserializer.cpp
+        serializer/freeformdeserializer.hpp
+        serializer/groupdeserializer.cpp
+        serializer/groupdeserializer.hpp
+        serializer/itemdeserializer.cpp
+        serializer/itemdeserializer.hpp
+        serializer/linedeserializer.cpp
+        serializer/linedeserializer.hpp
+        serializer/polygondeserializer.cpp
+        serializer/polygondeserializer.hpp
+        serializer/rectangledeserializer.cpp
+        serializer/rectangledeserializer.hpp
+        serializer/svgpaintdevice.cpp
+        serializer/svgserializer.cpp
+        serializer/svgserializer.hpp
+        serializer/textdeserializer.cpp
+        serializer/textdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/itemdeserializer.cpp
+        serializer/diamonddeserializer.cpp
+        serializer/diamonddeserializer.hpp
+        serializer/diamondserializer.cpp
+        serializer/diamondserializer.hpp
+        serializer/deserializeutils.hpp
+        serializer/deserializeutils.cpp
+        transformhandlerutils.hpp
+        transformhandlerutils.cpp
+        pluginform/pluginform.cpp
+        pluginform/pluginform.hpp
+        pluginform/pluginformmanager.cpp
+        pluginform/pluginformmanager.hpp
+        pluginform/pluginformutils.hpp
+        pluginform/pluginformutils.cpp
+        common/constants.hpp
+        common/utils/compression.cpp
+        common/utils/compression.hpp
+        common/utils/freehand.cpp
+        common/utils/freehand.hpp
+        common/utils/math.cpp
+        common/utils/math.hpp
+)
+
+ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER DRAWY_GUI_LOG
+    CATEGORY_NAME org.kde.drawy_gui DESCRIPTION "drawy (libdrawygui)" EXPORT DRAWY
+)
+
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        libdrawygui
+        PRIVATE
+            <QObject>
+            <QDebug>
+    )
+endif()
+
+generate_export_header(libdrawygui BASE_NAME libdrawygui)
+
+install(
+    FILES
+        item/item.hpp
+        item/factory/itemfactory.hpp
+        properties/property.hpp
+        pluginform/pluginform.hpp
+        serializer/itemserializer.hpp
+        serializer/rectangleserializer.hpp
+        serializer/polygonserializer.hpp
+        serializer/arrowserializer.hpp
+        serializer/ellipseserializer.hpp
+        serializer/lineserializer.hpp
+        serializer/textserializer.hpp
+        serializer/freeformserializer.hpp
+        serializer/groupserializer.hpp
+        serializer/polygondeserializer.hpp
+        serializer/arrowdeserializer.hpp
+        serializer/ellipsedeserializer.hpp
+        serializer/freeformdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/linedeserializer.hpp
+        serializer/polygondeserializer.hpp
+        serializer/rectangledeserializer.hpp
+        serializer/textdeserializer.hpp
+        serializer/itemdeserializer.hpp
+        serializer/diamonddeserializer.hpp
+        serializer/diamondserializer.hpp
+        ${CMAKE_CURRENT_BINARY_DIR}/libdrawygui_export.h
+    DESTINATION DrawyCore/
+    COMPONENT Devel
+)
+
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(
+        libdrawygui
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
+endif()
+
+target_link_libraries(
+    libdrawygui
+    PUBLIC
+        Qt::Gui
+        KF6::I18n
+        KF6::CoreAddons
+        ${ZSTD_LINK_LIBRARIES}
+)
+
+set_target_properties(
+    libdrawygui
+    PROPERTIES
+        OUTPUT_NAME
+            drawygui
+        VERSION
+            ${DRAWY_LIB_VERSION}
+        SOVERSION
+            ${DRAWY_LIB_SOVERSION}
+)
+
+install(
+    TARGETS
+        libdrawygui
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+)

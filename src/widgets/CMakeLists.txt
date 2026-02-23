@@ -8,6 +8,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 target_sources(
     libdrawywidgets
     PRIVATE
+        item/itemcache/itemcache.cpp
+        item/itemcache/itemcache.hpp
         canvas/canvas.cpp
         canvas/canvas.hpp
         command/commandhistory.cpp
@@ -43,15 +45,6 @@ target_sources(
         command/lockcommand.cpp
         command/zordercommand.hpp
         command/zordercommand.cpp
-        common/constants.hpp
-        common/renderitems.cpp
-        common/renderitems.hpp
-        common/utils/compression.cpp
-        common/utils/compression.hpp
-        common/utils/freehand.cpp
-        common/utils/freehand.hpp
-        common/utils/math.cpp
-        common/utils/math.hpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp
         components/propertybar.cpp
@@ -97,54 +90,10 @@ target_sources(
         data-structures/quadtree.ipp
         event/event.cpp
         event/event.hpp
-        item/arrow.cpp
-        item/arrow.hpp
-        item/ellipse.cpp
-        item/ellipse.hpp
-        item/factory/arrowfactory.cpp
-        item/factory/arrowfactory.hpp
-        item/factory/ellipsefactory.cpp
-        item/factory/ellipsefactory.hpp
-        item/factory/freeformfactory.cpp
-        item/factory/freeformfactory.hpp
-        item/factory/itemfactory.cpp
-        item/factory/itemfactory.hpp
-        item/factory/linefactory.cpp
-        item/factory/linefactory.hpp
-        item/factory/rectanglefactory.cpp
-        item/factory/rectanglefactory.hpp
-        item/factory/textfactory.cpp
-        item/factory/textfactory.hpp
-        item/factory/diamondfactory.cpp
-        item/factory/diamondfactory.hpp
-        item/freeform.cpp
-        item/freeform.hpp
-        item/group.cpp
-        item/group.hpp
-        item/item.cpp
-        item/item.hpp
-        item/itemcache/itemcache.cpp
-        item/itemcache/itemcache.hpp
-        item/line.cpp
-        item/line.hpp
-        item/polygon.cpp
-        item/polygon.hpp
-        item/rectangle.cpp
-        item/rectangle.hpp
-        item/text.cpp
-        item/text.hpp
-        item/itemutils.hpp
-        item/itemutils.cpp
-        item/arrowutils.hpp
-        item/arrowutils.cpp
-        item/diamond.cpp
-        item/diamond.hpp
         keybindings/actionmanager.cpp
         keybindings/actionmanager.hpp
         keybindings/keybindmanager.cpp
         keybindings/keybindmanager.hpp
-        properties/property.cpp
-        properties/property.hpp
         properties/widgets/actionswidget.cpp
         properties/widgets/actionswidget.hpp
         properties/widgets/erasersizewidget.cpp
@@ -226,55 +175,6 @@ target_sources(
         resources/res.qrc
         drawycommandlineparser.hpp
         drawycommandlineparser.cpp
-        serializer/itemserializer.hpp
-        serializer/itemserializer.cpp
-        serializer/rectangleserializer.hpp
-        serializer/rectangleserializer.cpp
-        serializer/polygonserializer.hpp
-        serializer/polygonserializer.cpp
-        serializer/arrowserializer.cpp
-        serializer/arrowserializer.hpp
-        serializer/ellipseserializer.cpp
-        serializer/ellipseserializer.hpp
-        serializer/lineserializer.cpp
-        serializer/lineserializer.hpp
-        serializer/textserializer.cpp
-        serializer/textserializer.hpp
-        serializer/freeformserializer.hpp
-        serializer/freeformserializer.cpp
-        serializer/serializerutils.hpp
-        serializer/serializerutils.cpp
-        serializer/groupserializer.cpp
-        serializer/groupserializer.hpp
-        serializer/polygondeserializer.cpp
-        serializer/polygondeserializer.hpp
-        serializer/arrowdeserializer.cpp
-        serializer/arrowdeserializer.hpp
-        serializer/ellipsedeserializer.cpp
-        serializer/ellipsedeserializer.hpp
-        serializer/freeformdeserializer.cpp
-        serializer/freeformdeserializer.hpp
-        serializer/groupdeserializer.cpp
-        serializer/groupdeserializer.hpp
-        serializer/itemdeserializer.cpp
-        serializer/itemdeserializer.hpp
-        serializer/linedeserializer.cpp
-        serializer/linedeserializer.hpp
-        serializer/polygondeserializer.cpp
-        serializer/polygondeserializer.hpp
-        serializer/rectangledeserializer.cpp
-        serializer/rectangledeserializer.hpp
-        serializer/svgpaintdevice.cpp
-        serializer/svgserializer.cpp
-        serializer/svgserializer.hpp
-        serializer/textdeserializer.cpp
-        serializer/textdeserializer.hpp
-        serializer/itemdeserializer.hpp
-        serializer/itemdeserializer.cpp
-        serializer/diamonddeserializer.cpp
-        serializer/diamonddeserializer.hpp
-        serializer/diamondserializer.cpp
-        serializer/diamondserializer.hpp
         jobs/serializejob.hpp
         jobs/serializejob.cpp
         jobs/saveasjob.cpp
@@ -291,8 +191,6 @@ target_sources(
         jobs/restoreautosavejob.cpp
         jobs/loadjobutil.hpp
         jobs/loadjobutil.cpp
-        jobs/deserializeutils.hpp
-        jobs/deserializeutils.cpp
         dialog/configuresettingsdialog.cpp
         dialog/configuresettingsdialog.hpp
         dialog/configgroupinterface.cpp
@@ -318,12 +216,8 @@ target_sources(
         debug/debugdialog.hpp
         debug/debugdialog.cpp
         libdrawywidgets_private_export.h
-        pluginform/pluginform.cpp
-        pluginform/pluginform.hpp
-        pluginform/pluginformmanager.cpp
-        pluginform/pluginformmanager.hpp
-        pluginform/pluginformutils.hpp
-        pluginform/pluginformutils.cpp
+        common/renderitems.cpp
+        common/renderitems.hpp
 )
 
 if(USE_DBUS)
@@ -347,38 +241,6 @@ endif()
 
 generate_export_header(libdrawywidgets BASE_NAME libdrawywidgets)
 
-install(
-    FILES
-        item/item.hpp
-        item/factory/itemfactory.hpp
-        properties/property.hpp
-        pluginform/pluginform.hpp
-        serializer/itemserializer.hpp
-        serializer/rectangleserializer.hpp
-        serializer/polygonserializer.hpp
-        serializer/arrowserializer.hpp
-        serializer/ellipseserializer.hpp
-        serializer/lineserializer.hpp
-        serializer/textserializer.hpp
-        serializer/freeformserializer.hpp
-        serializer/groupserializer.hpp
-        serializer/polygondeserializer.hpp
-        serializer/arrowdeserializer.hpp
-        serializer/ellipsedeserializer.hpp
-        serializer/freeformdeserializer.hpp
-        serializer/itemdeserializer.hpp
-        serializer/linedeserializer.hpp
-        serializer/polygondeserializer.hpp
-        serializer/rectangledeserializer.hpp
-        serializer/textdeserializer.hpp
-        serializer/itemdeserializer.hpp
-        serializer/diamonddeserializer.hpp
-        serializer/diamondserializer.hpp
-        ${CMAKE_CURRENT_BINARY_DIR}/libdrawywidgets_export.h
-    DESTINATION DrawyWidgets/
-    COMPONENT Devel
-)
-
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
         libdrawywidgets
@@ -390,18 +252,19 @@ endif()
 
 target_link_libraries(
     libdrawywidgets
-    Qt::Widgets
-    KF6::WidgetsAddons
-    KF6::ConfigWidgets
-    KF6::XmlGui
-    KF6::CoreAddons
-    KF6::I18n
-    KF6::SyntaxHighlighting
-    ${ZSTD_LINK_LIBRARIES}
+    PUBLIC
+        libdrawygui
+    PRIVATE
+        Qt::Widgets
+        KF6::WidgetsAddons
+        KF6::ConfigWidgets
+        KF6::XmlGui
+        KF6::I18n
+        KF6::SyntaxHighlighting
 )
 
 if(USE_DBUS)
-    target_link_libraries(libdrawywidgets Qt::DBus)
+    target_link_libraries(libdrawywidgets PRIVATE Qt::DBus)
 endif()
 
 kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)

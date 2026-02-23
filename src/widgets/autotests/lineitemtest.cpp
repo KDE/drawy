@@ -146,10 +146,10 @@ void LineItemTest::shouldTestSetEndWithShift()
 
 void LineItemTest::shouldTestTransformHandlers()
 {
-    LineItem i;
+    const LineItem i;
     QCOMPARE(i.transformHandlers().count(), 2);
-    QVERIFY(i.transformHandlers().contains(TransformHandler::Type::LineResizeTransformHandler));
-    QVERIFY(i.transformHandlers().contains(TransformHandler::Type::LineMoveTransformHandler));
+    QVERIFY(i.transformHandlers().contains(TransformHandlerUtils::Type::LineResizeTransformHandler));
+    QVERIFY(i.transformHandlers().contains(TransformHandlerUtils::Type::LineMoveTransformHandler));
 }
 
 #include "moc_lineitemtest.cpp"

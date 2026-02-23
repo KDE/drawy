@@ -5,7 +5,7 @@
 #include "mime/drawymimehandler.hpp"
 #include "common/constants.hpp"
 #include "item/item.hpp"
-#include "jobs/deserializeutils.hpp"
+#include "serializer/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 #include <QJsonDocument>

@@ -124,7 +124,7 @@ void FreeformItemTest::shouldTestTransformHandlers()
     i.addPoint(QPointF(10, 10), 1.0);
     i.finalizeStroke();
     QCOMPARE(i.transformHandlers().count(), 1);
-    QCOMPARE(i.transformHandlers().first(), TransformHandler::Type::MoveTransformHandler);
+    QCOMPARE(i.transformHandlers().first(), TransformHandlerUtils::Type::MoveTransformHandler);
 
     FreeformItem i2;
     i2.addPoint(QPointF(10, 10), 1.0);

@@ -9,26 +9,26 @@
 #include "resizetransformhandler.hpp"
 #include "rotatetransformhandler.hpp"
 
-TransformHandler *TransformHandler::getHandler(TransformHandler::Type handlerType)
+TransformHandler *TransformHandler::getHandler(TransformHandlerUtils::Type handlerType)
 {
     switch (handlerType) {
-    case TransformHandler::Type::MoveTransformHandler: {
+    case TransformHandlerUtils::Type::MoveTransformHandler: {
         static MoveTransformHandler s_moveHandler{};
         return &s_moveHandler;
     }
-    case TransformHandler::Type::RotateTransformHandler: {
+    case TransformHandlerUtils::Type::RotateTransformHandler: {
         static RotateTransformHandler s_rotateHandler{};
         return &s_rotateHandler;
     }
-    case TransformHandler::Type::ResizeTransformHandler: {
+    case TransformHandlerUtils::Type::ResizeTransformHandler: {
         static ResizeTransformHandler s_resizeHandler{};
         return &s_resizeHandler;
     }
-    case TransformHandler::Type::LineMoveTransformHandler: {
+    case TransformHandlerUtils::Type::LineMoveTransformHandler: {
         static LineMoveTransformHandler s_lineMoveHandler{};
         return &s_lineMoveHandler;
     }
-    case TransformHandler::Type::LineResizeTransformHandler: {
+    case TransformHandlerUtils::Type::LineResizeTransformHandler: {
         static LineResizeTransformHandler s_lineResizeHandler{};
         return &s_lineResizeHandler;
     }
