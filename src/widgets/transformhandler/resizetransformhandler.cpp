@@ -121,15 +121,15 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             return std::make_tuple(1.0, 1.0, QPointF{0, 0});
         }()};
 
-        qreal scaleX{newWidth / m_initialSelectionBox.width()};
-        qreal scaleY{newHeight / m_initialSelectionBox.height()};
+        const qreal scaleX{newWidth / m_initialSelectionBox.width()};
+        const qreal scaleY{newHeight / m_initialSelectionBox.height()};
 
         QTransform newTransform{m_initialSelectionTransform};
         newTransform.translate(centerOfScale.x(), centerOfScale.y());
         newTransform.scale(scaleX, scaleY);
         newTransform.translate(-centerOfScale.x(), -centerOfScale.y());
 
-        qreal scaleLocked{};
+        qreal scaleLocked;
         if (std::abs(scaleX - 1.0) > std::abs(scaleY - 1.0)) {
             scaleLocked = scaleX;
         } else {
@@ -205,7 +205,7 @@ TransformHandler::State ResizeTransformHandler::mouseReleased(ApplicationContext
 
         auto commandHistory{context->spatialContext()->commandHistory()};
 
-        QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
         commandHistory->insert(std::make_shared<ResizeItemCommand>(items, m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
 
         context->renderingContext()->markForRender();

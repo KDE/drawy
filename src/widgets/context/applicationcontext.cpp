@@ -62,7 +62,7 @@ bool ApplicationContext::currentFileModified() const
 
 void ApplicationContext::setCurrentFileModified(bool value)
 {
-    bool old = m_currentFileModified;
+    const bool old = m_currentFileModified;
 
     m_currentFileModified = value;
 

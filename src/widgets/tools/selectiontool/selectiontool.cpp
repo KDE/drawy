@@ -211,7 +211,6 @@ void SelectionTool::updateCurrentHandler(ApplicationContext *context)
     }
 
     m_curHandler = nullptr;
-    return;
 }
 
 void SelectionTool::keyPressed([[maybe_unused]] ApplicationContext *context)

@@ -52,7 +52,7 @@ public:
     }
 
     [[nodiscard]] Type type() const;
-    [[nodiscard]] const QVariant variant() const;
+    [[nodiscard]] QVariant variant() const;
 
     [[nodiscard]] static Property::Type convertStringToEnum(const QString &str);
     [[nodiscard]] static QString convertEnumToString(Property::Type type);

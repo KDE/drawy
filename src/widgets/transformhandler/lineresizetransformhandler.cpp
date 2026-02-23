@@ -143,7 +143,7 @@ TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationCon
 {
     m_isActive = false;
 
-    LineResizeItemCommand::HandleType handleType{[this] {
+    const LineResizeItemCommand::HandleType handleType{[this] {
         switch (m_curHandleType) {
         case ResizeHandleType::Start:
             return LineResizeItemCommand::HandleType::Start;

@@ -94,7 +94,7 @@ QPointF ItemDeserializer::toPointF(const QJsonValue &val)
 
 QTransform ItemDeserializer::toTransform(const QJsonValue &val)
 {
-    QJsonObject obj = object(val);
+    const QJsonObject obj = object(val);
 
     const qreal m11 = value(obj, u"m11"_s).toDouble();
     const qreal m12 = value(obj, u"m12"_s).toDouble();

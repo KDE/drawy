@@ -24,7 +24,7 @@ using namespace Qt::StringLiterals;
 
 RotateTransformHandler::RotateTransformHandler()
 {
-    QPixmap image{u":/cursors/rotate.png"_s};
+    const QPixmap image{u":/cursors/rotate.png"_s};
     m_cursor = QCursor(image.scaled(24, 24, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
@@ -38,7 +38,7 @@ bool RotateTransformHandler::shouldActivate(ApplicationContext *context)
 
     auto &transformer{context->spatialContext()->coordinateTransformer()};
 
-    for (QPointF point : points) {
+    for (const QPointF point : points) {
         if (createHandle(transformer.worldToView(selectionBoxTransform.map(point)), rotationHandleSize).contains(curPos)) {
             return true;
         }

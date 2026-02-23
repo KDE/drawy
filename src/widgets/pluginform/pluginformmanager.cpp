@@ -53,7 +53,7 @@ void PluginFormManager::initializePluginList()
         mPluginList.push_back(info);
         unique.insert(info.metaDataFileNameBaseName);
     }
-    QList<PluginFormManagerInfo>::iterator end(mPluginList.end());
+    const QList<PluginFormManagerInfo>::iterator end(mPluginList.end());
     for (QList<PluginFormManagerInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
