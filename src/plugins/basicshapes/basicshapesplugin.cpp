@@ -28,7 +28,7 @@ int BasicShapesPlugin::order() const
 
 QString BasicShapesPlugin::title() const
 {
-    return i18n("Standard Forms");
+    return i18n("Basic Shapes");
 }
 
 QString BasicShapesPlugin::pluginName() const
