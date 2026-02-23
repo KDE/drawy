@@ -29,14 +29,6 @@ void Frame::paintEvent([[maybe_unused]] QPaintEvent *event)
     const QColor background = pal.color(QPalette::Window);
     QColor borderColor = pal.color(QPalette::Light);
 
-    if (m_hovered) {
-        borderColor = pal.color(QPalette::Mid);
-    }
-
-    if (hasFocus()) {
-        borderColor = pal.color(QPalette::Highlight);
-    }
-
     const int radius = style()->pixelMetric(QStyle::PM_ToolBarItemMargin, nullptr, this);
 
     QRectF r = rect();
@@ -58,18 +50,6 @@ void Frame::paintEvent([[maybe_unused]] QPaintEvent *event)
     p.setPen(pen);
     p.setBrush(Qt::NoBrush);
     p.drawRoundedRect(r, radius, radius);
-}
-
-void Frame::enterEvent(QEnterEvent *)
-{
-    m_hovered = true;
-    update();
-}
-
-void Frame::leaveEvent(QEvent *)
-{
-    m_hovered = false;
-    update();
 }
 
 void Frame::changeEvent(QEvent *event)
