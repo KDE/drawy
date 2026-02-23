@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "commandhistory.hpp"
-#include "drawy_debug.h"
+#include "drawy_command_debug.h"
 
 CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
     : QObject(parent)
@@ -15,7 +15,7 @@ CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
 
 CommandHistory::~CommandHistory()
 {
-    qCDebug(DRAWY_LOG) << "Object deleted: CommandHistory";
+    qCDebug(DRAWY_COMMAND_LOG) << "Object deleted: CommandHistory";
 }
 
 void CommandHistory::undo()
@@ -61,6 +61,7 @@ void CommandHistory::redo()
 
 void CommandHistory::insert(const std::shared_ptr<Command> &command)
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "Insert command";
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }
