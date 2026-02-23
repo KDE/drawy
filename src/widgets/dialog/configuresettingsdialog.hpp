@@ -4,9 +4,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #pragma once
+#include "config-drawy.hpp"
 #include "libdrawywidgets_private_export.h"
 #include <KPageDialog>
 class ConfigureGeneralWidget;
+class ConfigureMiscWidget;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureSettingsDialog : public KPageDialog
 {
@@ -23,4 +25,8 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotRestoreDefaults();
     ConfigureGeneralWidget *const mConfigureGeneralWidget;
     KPageWidgetItem *mConfigureGeneralWidgetPage = nullptr;
+#if WITH_DBUS
+    ConfigureMiscWidget *const mConfigureMiscWidget;
+    KPageWidgetItem *mConfigureMiscWidgetPage = nullptr;
+#endif
 };

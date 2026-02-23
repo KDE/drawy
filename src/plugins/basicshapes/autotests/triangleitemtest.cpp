@@ -26,3 +26,5 @@ void TriangleItemTest::shouldHaveDefaultValues()
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());
 }
+
+#include "moc_triangleitemtest.cpp"

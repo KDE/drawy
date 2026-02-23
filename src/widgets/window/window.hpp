@@ -4,10 +4,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "config-drawy.hpp"
 #include "libdrawywidgets_export.h"
 #include <QWidget>
 class AutoSaveJob;
 class ApplicationContext;
+class ManagePowerManagement;
 class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
@@ -29,4 +31,7 @@ private:
     bool m_forceClose = false;
     AutoSaveJob *m_autoSaveJob{nullptr};
     ApplicationContext *const mApplicationContext;
+#if WITH_DBUS
+    ManagePowerManagement *const mManagePowerManagement;
+#endif
 };

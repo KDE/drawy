@@ -35,10 +35,17 @@
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
 
+#if WITH_DBUS
+#include "dbus/managepowermanagement.hpp"
+#endif
+
 using namespace Qt::Literals::StringLiterals;
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , mApplicationContext(new ApplicationContext(this))
+#if WITH_DBUS
+    , mManagePowerManagement(new ManagePowerManagement(this))
+#endif
 {
     loadCustomFonts();
     m_autoSaveJob = new AutoSaveJob{mApplicationContext, this};
@@ -130,6 +137,15 @@ void MainWindow::activeDebug()
 
 void MainWindow::viewFullScreen(bool fullScreen)
 {
+#if WITH_DBUS
+    if (DrawyGlobalConfig::self()->enabledInFullScreen()) {
+        if (fullScreen) {
+            mManagePowerManagement->inhibitPowerManagement();
+        } else {
+            mManagePowerManagement->allowPowerManagement();
+        }
+    }
+#endif
     KToggleFullScreenAction::setFullScreen(this, fullScreen);
 }
 

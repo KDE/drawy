@@ -71,6 +71,18 @@ set_package_properties(
             OPTIONAL
 )
 
+# shall we use DBus?
+# enabled per default on Linux & BSD systems
+set(USE_DBUS_DEFAULT OFF)
+if(UNIX AND NOT APPLE AND NOT HAIKU)
+    set(USE_DBUS_DEFAULT ON)
+endif()
+
+option(USE_DBUS "Build components using DBus" ${USE_DBUS_DEFAULT})
+if(USE_DBUS)
+    set(WITH_DBUS TRUE)
+endif()
+
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 option(ENABLE_PCH "Enable Precompiled Headers support" ON)

@@ -6,6 +6,7 @@
 
 #include "configuresettingsdialog.hpp"
 #include "general/configuregeneralwidget.hpp"
+#include "misc/configuremiscwidget.hpp"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -21,6 +22,9 @@ using namespace Qt::Literals::StringLiterals;
 ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureGeneralWidget(new ConfigureGeneralWidget(this))
+#if WITH_DBUS
+    , mConfigureMiscWidget(new ConfigureMiscWidget(this))
+#endif
 {
     setWindowTitle(i18nc("@title:window", "Configure Drawy"));
     setFaceType(KPageDialog::List);
@@ -30,6 +34,12 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     mConfigureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     addPage(mConfigureGeneralWidgetPage);
 
+#if WITH_DBUS
+    const QString miscPageName = i18n("Misc");
+    mConfigureMiscWidgetPage = new KPageWidgetItem(mConfigureMiscWidget, miscPageName);
+    mConfigureMiscWidgetPage->setIcon(QIcon::fromTheme(u"preferences-other"_s));
+    addPage(mConfigureMiscWidgetPage);
+#endif
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
 
     connect(buttonBox()->button(QDialogButtonBox::Ok), &QPushButton::clicked, this, &ConfigureSettingsDialog::slotAccepted);
@@ -62,15 +72,25 @@ void ConfigureSettingsDialog::writeConfig()
 void ConfigureSettingsDialog::slotAccepted()
 {
     mConfigureGeneralWidget->save();
+#if WITH_DBUS
+    mConfigureMiscWidget->save();
+#endif
 }
 
 void ConfigureSettingsDialog::load()
 {
     mConfigureGeneralWidget->load();
+#if WITH_DBUS
+    mConfigureMiscWidget->load();
+#endif
 }
 
 void ConfigureSettingsDialog::slotRestoreDefaults()
 {
     mConfigureGeneralWidget->restoreToDefaults();
+#if WITH_DBUS
+    mConfigureMiscWidget->restoreToDefaults();
+#endif
 }
+
 #include "moc_configuresettingsdialog.cpp"

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -301,6 +301,10 @@ target_sources(
         dialog/general/configuregeneralwidget.cpp
         dialog/general/autosavewidget.hpp
         dialog/general/autosavewidget.cpp
+        dialog/misc/configuremiscwidget.hpp
+        dialog/misc/configuremiscwidget.cpp
+        dialog/misc/powermanagerwidget.hpp
+        dialog/misc/powermanagerwidget.cpp
         mime/drawymimehandler.cpp
         mime/drawymimehandler.hpp
         mime/textmimehandler.cpp
@@ -321,6 +325,15 @@ target_sources(
         pluginform/pluginformutils.hpp
         pluginform/pluginformutils.cpp
 )
+
+if(USE_DBUS)
+    target_sources(
+        libdrawywidgets
+        PRIVATE
+            dbus/managepowermanagement.hpp
+            dbus/managepowermanagement.cpp
+    )
+endif()
 
 # precompiled headers support
 if(ENABLE_PCH)
@@ -387,6 +400,10 @@ target_link_libraries(
     ${ZSTD_LINK_LIBRARIES}
 )
 
+if(USE_DBUS)
+    target_link_libraries(libdrawywidgets Qt::DBus)
+endif()
+
 kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
@@ -399,6 +416,10 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_command_debug.h IDE
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_autosave_debug.h IDENTIFIER DRAWY_AUTOSAVE_LOG
     CATEGORY_NAME org.kde.drawy_autosave DESCRIPTION "drawy (autosave job)" EXPORT DRAWY
+)
+
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_powermanager_debug.h IDENTIFIER DRAWY_POWERMANAGER_LOG
+    CATEGORY_NAME org.kde.drawy_powermanager DESCRIPTION "drawy (powermanager)" EXPORT DRAWY
 )
 
 set_target_properties(
