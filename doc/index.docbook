@@ -36,7 +36,7 @@
 <holder>Laurent Montel</holder>
 </copyright>
 
-<legalnotice>&FDLNotice;</legalnotice>
+<legalnotice>&CCBYSA4Notice;</legalnotice>
 
 <date>2026-02-23</date>
 <releaseinfo></releaseinfo>
@@ -80,7 +80,7 @@ Documentation Copyright &copy; &Laurent.Montel; &Laurent.Montel.mail;
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
-&underFDL;               <!-- FDL: do not remove -->
+&underCCBYSA4;           <!-- CCBYSA4: do not remove -->
 &underGPL;        	 <!-- GPL License -->
 </chapter>
 
