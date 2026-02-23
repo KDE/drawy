@@ -9,6 +9,11 @@
   <!ENTITY % English "INCLUDE">
 ]>
 
+<!--
+	SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+	SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 <book id="drawy" lang="&language;">
 
 <bookinfo id="drawyinfo">
