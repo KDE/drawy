@@ -14,7 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 namespace Common
 {
 inline constexpr QMargins cleanupMargin{10, 10, 10, 10}; // in pixels
-inline constexpr int defaultEraserSize{30};
 
 inline constexpr QColor eraserBorderColor{255, 0, 0};
 inline constexpr QColor eraserBackgroundColor{255, 0, 0, 50};
@@ -32,11 +31,7 @@ inline QPen selectionBorderPen()
 
 inline constexpr unsigned int erasedItemColor{0x6E6E6E96};
 
-inline constexpr QColor lightBackgroundColor{248, 249, 250};
 inline constexpr QColor darkBackgroundColor{18, 18, 18};
-
-inline constexpr QColor lightForegroundColor{30, 30, 30};
-inline constexpr QColor darkForegroundColor{211, 211, 211};
 
 inline constexpr int maxItemOpacity{255};
 inline constexpr int erasedItemOpacityDecrease{30}; // % to reduce opacity by when erasing items
