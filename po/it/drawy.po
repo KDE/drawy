@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
 "PO-Revision-Date: 2026-02-21 20:42+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -34,6 +34,74 @@ msgstr "Un argomento facoltativo 'file'"
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Il tuo pratico e infinito strumento di brainstorming!"
+
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "Cambia larghezza del tratto"
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "Cambia colore del tratto"
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr "Cambia opacità"
+
+#: gui/properties/property.cpp:98
+#, kde-format
+msgid "Change Font Size"
+msgstr "Cambia dimensione del carattere"
+
+#: gui/properties/property.cpp:100
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "Cambia dimensione della gomma"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, kde-format
+msgid "Actions"
+msgstr "Azioni"
+
+#: gui/properties/property.cpp:104
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "Cambia stile del tratto"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr "Cambia colore sfondo"
+
+#: gui/properties/property.cpp:108
+#, kde-format
+msgid "Change Background Style"
+msgstr "Cambia stile dello sfondo"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, kde-format
+msgid "Change ZOrder"
+msgstr "Cambia Ordine Z"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:112
 #, kde-format
@@ -97,11 +165,6 @@ msgstr "Seleziona oggetto "
 msgid "Ungroup Objects"
 msgstr "Separa elementi"
 
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, kde-format
-msgid "Change ZOrder"
-msgstr "Cambia Ordine Z"
-
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
@@ -119,6 +182,14 @@ msgstr "Ripristina ingrandimento"
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "Selezione"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -164,76 +235,89 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Sviluppatore"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Selezione"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Disegno a mano libera"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Rettangolo"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Rombo"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Ellisse"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Freccia"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Linea"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Gomma"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Testo"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "Sposta"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Configura Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
 msgstr "Generale"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -267,6 +351,16 @@ msgstr "Apri cartella"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "Ripristina la sessione precedente all'avvio"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -459,52 +553,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Azione richiesta"
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr "Cambia larghezza del tratto"
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr "Cambia colore del tratto"
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr "Cambia opacità"
-
-#: widgets/properties/property.cpp:98
-#, kde-format
-msgid "Change Font Size"
-msgstr "Cambia dimensione del carattere"
-
-#: widgets/properties/property.cpp:100
-#, kde-format
-msgid "Change Eraser Size"
-msgstr "Cambia dimensione della gomma"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, kde-format
-msgid "Actions"
-msgstr "Azioni"
-
-#: widgets/properties/property.cpp:104
-#, kde-format
-msgid "Change Stroke Style"
-msgstr "Cambia stile del tratto"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr "Cambia colore sfondo"
-
-#: widgets/properties/property.cpp:108
-#, kde-format
-msgid "Change Background Style"
-msgstr "Cambia stile dello sfondo"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
@@ -705,7 +753,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Rettangolo"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
@@ -717,7 +765,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Testo"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
-"PO-Revision-Date: 2026-02-22 10:01+0100\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
+"PO-Revision-Date: 2026-02-23 08:50+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -41,6 +41,74 @@ msgstr "Un argument «file» opcional "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "Canvia l'amplada del traç"
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "Canvia el color del traç"
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr "Canvia l'opacitat"
+
+#: gui/properties/property.cpp:98
+#, kde-format
+msgid "Change Font Size"
+msgstr "Canvia la mida de la lletra"
+
+#: gui/properties/property.cpp:100
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "Canvia la mida de l'esborrador"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, kde-format
+msgid "Actions"
+msgstr "Accions"
+
+#: gui/properties/property.cpp:104
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "Canvia l'estil del traç"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr "Canvia el color de fons"
+
+#: gui/properties/property.cpp:108
+#, kde-format
+msgid "Change Background Style"
+msgstr "Canvia l'estil del fons"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, kde-format
+msgid "Change ZOrder"
+msgstr "Canvia l'ordre de Z"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
+
 #: widgets/command/alignitemcommand.cpp:112
 #, kde-format
 msgid "Align Items"
@@ -64,7 +132,7 @@ msgstr "Insereix un objecte"
 #: widgets/command/lineresizeitemcommand.cpp:75
 #, kde-format
 msgid "Resize Line"
-msgstr ""
+msgstr "Redimensiona la línia"
 
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
@@ -82,16 +150,14 @@ msgid "Remove Object"
 msgstr "Elimina un objecte"
 
 #: widgets/command/resizeitemcommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Resize Object"
-msgstr "Elimina un objecte"
+msgstr "Redimensiona l'objecte"
 
 #: widgets/command/rotateitemcommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Rotate Object"
-msgstr "Elimina un objecte"
+msgstr "Gira l'objecte"
 
 #: widgets/command/selectcommand.cpp:47
 #, kde-format
@@ -102,11 +168,6 @@ msgstr "Selecciona un objecte"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Desagrupa objectes"
-
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, kde-format
-msgid "Change ZOrder"
-msgstr "Canvia l'ordre de Z"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
@@ -125,6 +186,14 @@ msgstr "Reinicialitza el zoom"
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "Selecció"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -170,76 +239,89 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Selecció"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Forma lliure"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Rectangle"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Diamant"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "El·lipse"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Fletxa"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Línia"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Esborrador"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "Mou"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Configura el Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
 msgstr "General"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -273,6 +355,16 @@ msgstr "Obre un directori"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "Restaura la sessió anterior en iniciar"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -464,52 +556,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Cal una acció"
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr "Canvia l'amplada del traç"
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr "Canvia el color del traç"
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr "Canvia l'opacitat"
-
-#: widgets/properties/property.cpp:98
-#, kde-format
-msgid "Change Font Size"
-msgstr "Canvia la mida de la lletra"
-
-#: widgets/properties/property.cpp:100
-#, kde-format
-msgid "Change Eraser Size"
-msgstr "Canvia la mida de l'esborrador"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, kde-format
-msgid "Actions"
-msgstr "Accions"
-
-#: widgets/properties/property.cpp:104
-#, kde-format
-msgid "Change Stroke Style"
-msgstr "Canvia l'estil del traç"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr "Canvia el color de fons"
-
-#: widgets/properties/property.cpp:108
-#, kde-format
-msgid "Change Background Style"
-msgstr "Canvia l'estil del fons"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
@@ -711,7 +757,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
@@ -723,7 +769,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

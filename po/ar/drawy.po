@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
 "PO-Revision-Date: 2026-02-21 17:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -38,6 +38,74 @@ msgstr "مُعطى اختياري 'ملفّ' "
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
+
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "غيّر عرض الحد"
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "غيّر لون الحدّ"
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr "غيّر العتمة"
+
+#: gui/properties/property.cpp:98
+#, kde-format
+msgid "Change Font Size"
+msgstr "غيّر حجم الخط"
+
+#: gui/properties/property.cpp:100
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "غيّر حجم الممحاة"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, kde-format
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: gui/properties/property.cpp:104
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "غيّر نمط الحد"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr "غير لون الخلفية"
+
+#: gui/properties/property.cpp:108
+#, kde-format
+msgid "Change Background Style"
+msgstr "غير نمط الخلفية"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, kde-format
+msgid "Change ZOrder"
+msgstr "غيّر الترتيب المنظوري"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:112
 #, kde-format
@@ -101,11 +169,6 @@ msgstr "حدد الكائن"
 msgid "Ungroup Objects"
 msgstr "فك جمع الكائنات"
 
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, kde-format
-msgid "Change ZOrder"
-msgstr "غيّر الترتيب المنظوري"
-
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
@@ -123,6 +186,14 @@ msgstr "صفّر التكبير"
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1٪"
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "التحديد"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -168,76 +239,89 @@ msgstr "لوران مونتال"
 msgid "Developer"
 msgstr "مطوّر"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "التحديد"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "شكل حر"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "مستطيل"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "معين"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "بيضاوي"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "سهم"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "خط"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "ممحاة"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "نص"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "حرّك"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "اضبط السبورة"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
 msgstr "عامّ"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -275,6 +359,16 @@ msgstr "افتح مجلدًا"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "استعادة الجلسة السابقة عند البدء"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -465,52 +559,6 @@ msgstr "عُدّل المستند '%1' ولم يُحفظ. أتريد حفظ ال
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "إجراء مطلوب"
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr "غيّر عرض الحد"
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr "غيّر لون الحدّ"
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr "غيّر العتمة"
-
-#: widgets/properties/property.cpp:98
-#, kde-format
-msgid "Change Font Size"
-msgstr "غيّر حجم الخط"
-
-#: widgets/properties/property.cpp:100
-#, kde-format
-msgid "Change Eraser Size"
-msgstr "غيّر حجم الممحاة"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, kde-format
-msgid "Actions"
-msgstr "الإجراءات"
-
-#: widgets/properties/property.cpp:104
-#, kde-format
-msgid "Change Stroke Style"
-msgstr "غيّر نمط الحد"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr "غير لون الخلفية"
-
-#: widgets/properties/property.cpp:108
-#, kde-format
-msgid "Change Background Style"
-msgstr "غير نمط الخلفية"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
@@ -711,7 +759,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "أداة المستطيل"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
@@ -723,7 +771,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "أداة النصوص"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

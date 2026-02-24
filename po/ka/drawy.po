@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -35,6 +35,74 @@ msgstr "არასავალდებული არგუმენტი '
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
 
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "გამოძრავების სიგანის შეცვლა"
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "გამოძრავების ფერის შეცვლა"
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr "გაუმჭვირვალობის შეცვლა"
+
+#: gui/properties/property.cpp:98
+#, kde-format
+msgid "Change Font Size"
+msgstr "ფონტის ზომის შეცვლა"
+
+#: gui/properties/property.cpp:100
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "საშლელის ზომის შეცვლა"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, kde-format
+msgid "Actions"
+msgstr "ქმედებები"
+
+#: gui/properties/property.cpp:104
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "გამოძრავების სტილის შეცვლა"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr "ფონის ფერის შეცვლა"
+
+#: gui/properties/property.cpp:108
+#, kde-format
+msgid "Change Background Style"
+msgstr "ფონის სტილის შეცვლა"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, kde-format
+msgid "Change ZOrder"
+msgstr "ZOrder-ის შეცვლა"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
+
 #: widgets/command/alignitemcommand.cpp:112
 #, kde-format
 msgid "Align Items"
@@ -58,7 +126,7 @@ msgstr "ობიექტის ჩასმა"
 #: widgets/command/lineresizeitemcommand.cpp:75
 #, kde-format
 msgid "Resize Line"
-msgstr ""
+msgstr "ხაზის ზომის შეცვლა"
 
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
@@ -76,16 +144,14 @@ msgid "Remove Object"
 msgstr "ობიექტის წაშლა"
 
 #: widgets/command/resizeitemcommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Resize Object"
-msgstr "ობიექტის წაშლა"
+msgstr "ობიექტის ზომის შეცვლა"
 
 #: widgets/command/rotateitemcommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Rotate Object"
-msgstr "ობიექტის წაშლა"
+msgstr "ობიექტის მობრუნება"
 
 #: widgets/command/selectcommand.cpp:47
 #, kde-format
@@ -96,11 +162,6 @@ msgstr "აირჩიეთ ობიექტი"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "ელემენტების განჯგუფება"
-
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, kde-format
-msgid "Change ZOrder"
-msgstr "ZOrder-ის შეცვლა"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
@@ -119,6 +180,14 @@ msgstr "გადიდების ჩამოყრა"
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "მონიშნული"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -164,76 +233,89 @@ msgstr "ლორან მონტელი"
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "მონიშნული"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "თავისუფალი მდებარეობა"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "მართკუთხედი"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "ალმასი"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "ოვალი"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "ისარი"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "ხაზი"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "საშლელი"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "ტექსტი"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "გადატანა"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Drawy-ის მორგება"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
 msgstr "ზოგადი"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -267,6 +349,16 @@ msgstr "საქაღალდის გახსნა"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "წინა სესიის აღდგენა გაშვებისას"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -457,52 +549,6 @@ msgstr "დოკუმენტი %1 შეიცვალა. გნება
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "საჭიროა ქმედება"
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr "გამოძრავების სიგანის შეცვლა"
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr "გამოძრავების ფერის შეცვლა"
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr "გაუმჭვირვალობის შეცვლა"
-
-#: widgets/properties/property.cpp:98
-#, kde-format
-msgid "Change Font Size"
-msgstr "ფონტის ზომის შეცვლა"
-
-#: widgets/properties/property.cpp:100
-#, kde-format
-msgid "Change Eraser Size"
-msgstr "საშლელის ზომის შეცვლა"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, kde-format
-msgid "Actions"
-msgstr "ქმედებები"
-
-#: widgets/properties/property.cpp:104
-#, kde-format
-msgid "Change Stroke Style"
-msgstr "გამოძრავების სტილის შეცვლა"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr "ფონის ფერის შეცვლა"
-
-#: widgets/properties/property.cpp:108
-#, kde-format
-msgid "Change Background Style"
-msgstr "ფონის სტილის შეცვლა"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
@@ -703,7 +749,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
@@ -715,7 +761,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

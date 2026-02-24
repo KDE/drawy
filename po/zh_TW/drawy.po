@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
 "PO-Revision-Date: 2026-01-28 20:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -39,6 +39,94 @@ msgstr "選擇性參數 'file'"
 #| msgid "Your handy, infinite brainstorming tool!"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
+
+#: gui/properties/property.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgid "Change Stroke Width"
+msgstr "筆畫樣式"
+
+#: gui/properties/property.cpp:94
+#, fuzzy, kde-format
+#| msgctxt "StrokeColorWidget|"
+#| msgid "Stroke Color"
+msgid "Change Stroke Color"
+msgstr "筆畫色彩"
+
+#: gui/properties/property.cpp:96
+#, fuzzy, kde-format
+#| msgctxt "OpacityWidget|"
+#| msgid "Opacity"
+msgid "Change Opacity"
+msgstr "不透明度"
+
+#: gui/properties/property.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Change Font Size"
+msgstr "字型大小"
+
+#: gui/properties/property.cpp:100
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change Eraser Size"
+msgstr "橡皮擦大小"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgid "Actions"
+msgstr "動作"
+
+#: gui/properties/property.cpp:104
+#, fuzzy, kde-format
+#| msgctxt "StokeStyleWidget|"
+#| msgid "Stroke Style"
+msgid "Change Stroke Style"
+msgstr "筆畫樣式"
+
+#: gui/properties/property.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgid "Change Background Color"
+msgstr "背景色"
+
+#: gui/properties/property.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "BackgroundColorWidget|"
+#| msgid "Background Color"
+msgid "Change Background Style"
+msgstr "背景色"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change ZOrder"
+msgstr "橡皮擦大小"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:112
 #, fuzzy, kde-format
@@ -122,13 +210,6 @@ msgstr "選取物件"
 msgid "Ungroup Objects"
 msgstr "解除群組化物件"
 
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
-msgid "Change ZOrder"
-msgstr "橡皮擦大小"
-
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
@@ -146,6 +227,14 @@ msgstr ""
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "選取"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, fuzzy, kde-format
@@ -207,7 +296,7 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "開發者"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Selection"
@@ -215,7 +304,7 @@ msgctxt "@action:button"
 msgid "Selection"
 msgstr "選取"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Free Form"
@@ -223,7 +312,7 @@ msgctxt "@action:button"
 msgid "Free Form"
 msgstr "自由筆畫"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Rectangle"
@@ -231,7 +320,7 @@ msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "矩形"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Diamond Tool"
@@ -239,7 +328,7 @@ msgctxt "@action:button"
 msgid "Diamond"
 msgstr "鑽石工具"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Ellipse"
@@ -247,7 +336,7 @@ msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "橢圓"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Arrow"
@@ -255,7 +344,7 @@ msgctxt "@action:button"
 msgid "Arrow"
 msgstr "箭頭"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Line"
@@ -263,7 +352,7 @@ msgctxt "@action:button"
 msgid "Line"
 msgstr "線條"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Eraser"
@@ -271,7 +360,7 @@ msgctxt "@action:button"
 msgid "Eraser"
 msgstr "橡皮擦"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Text"
@@ -279,7 +368,7 @@ msgctxt "@action:button"
 msgid "Text"
 msgstr "文字"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Move"
@@ -287,7 +376,15 @@ msgctxt "@action:button"
 msgid "Move"
 msgstr "移動"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, fuzzy, kde-format
 #| msgctxt "ConfigureSettingsDialog|"
 #| msgid "Configure Drawy"
@@ -295,12 +392,17 @@ msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "設定 Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "ConfigureSettingsDialog|"
 #| msgid "General"
 msgid "General"
 msgstr "一般"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -334,6 +436,16 @@ msgstr "開啟檔案"
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
 msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
@@ -569,70 +681,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr ""
-
-#: widgets/properties/property.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
-msgid "Change Stroke Width"
-msgstr "筆畫樣式"
-
-#: widgets/properties/property.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "StrokeColorWidget|"
-#| msgid "Stroke Color"
-msgid "Change Stroke Color"
-msgstr "筆畫色彩"
-
-#: widgets/properties/property.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
-msgid "Change Opacity"
-msgstr "不透明度"
-
-#: widgets/properties/property.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
-msgid "Change Font Size"
-msgstr "字型大小"
-
-#: widgets/properties/property.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
-msgid "Change Eraser Size"
-msgstr "橡皮擦大小"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
-msgid "Actions"
-msgstr "動作"
-
-#: widgets/properties/property.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "StokeStyleWidget|"
-#| msgid "Stroke Style"
-msgid "Change Stroke Style"
-msgstr "筆畫樣式"
-
-#: widgets/properties/property.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
-msgid "Change Background Color"
-msgstr "背景色"
-
-#: widgets/properties/property.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "BackgroundColorWidget|"
-#| msgid "Background Color"
-msgid "Change Background Style"
-msgstr "背景色"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, fuzzy, kde-format
@@ -897,7 +945,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "矩形工具"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -913,7 +961,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "文字工具"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

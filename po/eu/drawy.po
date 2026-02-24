@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -41,6 +41,86 @@ msgstr ""
 #| msgid "Your handy, infinite, brainstorming tool!"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Zure ideia-jasa tresna erabilgarri eta infinitua!"
+
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr ""
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr ""
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr ""
+
+#: gui/properties/property.cpp:98
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Change Font Size"
+msgstr "Letra-tipoaren neurria"
+
+#: gui/properties/property.cpp:100
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change Eraser Size"
+msgstr "Ezabatzailearen neurria"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "ActionsWidget|"
+#| msgid "Actions"
+msgid "Actions"
+msgstr "Ekintzak"
+
+#: gui/properties/property.cpp:104
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change Stroke Style"
+msgstr "Ezabatzailearen neurria"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr ""
+
+#: gui/properties/property.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "FontSizeWidget|"
+#| msgid "Font Size"
+msgid "Change Background Style"
+msgstr "Letra-tipoaren neurria"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "EraserSizeWidget|"
+#| msgid "Eraser Size"
+msgid "Change ZOrder"
+msgstr "Ezabatzailearen neurria"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:112
 #, fuzzy, kde-format
@@ -122,13 +202,6 @@ msgstr "Hautatu dena"
 msgid "Ungroup Objects"
 msgstr "Bereizi elementuak"
 
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
-msgid "Change ZOrder"
-msgstr "Ezabatzailearen neurria"
-
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
@@ -146,6 +219,14 @@ msgstr ""
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "ActionManager|"
+#| msgid "Selection Tool"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "Hautapen tresna"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, fuzzy, kde-format
@@ -195,7 +276,7 @@ msgstr ""
 msgid "Developer"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Selection Tool"
@@ -203,7 +284,7 @@ msgctxt "@action:button"
 msgid "Selection"
 msgstr "Hautapen tresna"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -211,7 +292,7 @@ msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Forma-askeko tresna"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Rectangle Tool"
@@ -219,7 +300,7 @@ msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Laukizuzen tresna"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -227,7 +308,7 @@ msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Ellipse Tool"
@@ -235,7 +316,7 @@ msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elipse tresna"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -243,7 +324,7 @@ msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -251,7 +332,7 @@ msgctxt "@action:button"
 msgid "Line"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Eraser Tool"
@@ -259,7 +340,7 @@ msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Ezabatzeko tresna"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Text Tool"
@@ -267,7 +348,7 @@ msgctxt "@action:button"
 msgid "Text"
 msgstr "Testu tresna"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -275,15 +356,28 @@ msgctxt "@action:button"
 msgid "Move"
 msgstr "Mugitzeko tresna"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
 msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
@@ -319,6 +413,16 @@ msgstr "Ireki fitxategia"
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
 msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
@@ -552,62 +656,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr ""
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr ""
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr ""
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr ""
-
-#: widgets/properties/property.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
-msgid "Change Font Size"
-msgstr "Letra-tipoaren neurria"
-
-#: widgets/properties/property.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
-msgid "Change Eraser Size"
-msgstr "Ezabatzailearen neurria"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Actions"
-msgid "Actions"
-msgstr "Ekintzak"
-
-#: widgets/properties/property.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "EraserSizeWidget|"
-#| msgid "Eraser Size"
-msgid "Change Stroke Style"
-msgstr "Ezabatzailearen neurria"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr ""
-
-#: widgets/properties/property.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "FontSizeWidget|"
-#| msgid "Font Size"
-msgid "Change Background Style"
-msgstr "Letra-tipoaren neurria"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, fuzzy, kde-format
@@ -858,7 +906,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Laukizuzen tresna"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -874,7 +922,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Testu tresna"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

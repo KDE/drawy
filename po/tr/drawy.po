@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
-"PO-Revision-Date: 2026-02-21 12:23+0300\n"
+"POT-Creation-Date: 2026-02-24 00:41+0000\n"
+"PO-Revision-Date: 2026-02-23 08:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -36,6 +36,74 @@ msgstr "İsteğe bağlı bir “dosya” argümanı "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın!"
 
+#: gui/properties/property.cpp:92
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "Vuruş Genişliğini Değiştir"
+
+#: gui/properties/property.cpp:94
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "Vuruş Rengini Değiştir"
+
+#: gui/properties/property.cpp:96
+#, kde-format
+msgid "Change Opacity"
+msgstr "Matlığı Değiştir"
+
+#: gui/properties/property.cpp:98
+#, kde-format
+msgid "Change Font Size"
+msgstr "Yazıtipi Puntosunu Değiştir"
+
+#: gui/properties/property.cpp:100
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "Silgi Boyutunu Değiştir"
+
+#: gui/properties/property.cpp:102
+#: widgets/properties/widgets/actionswidget.cpp:51
+#, kde-format
+msgid "Actions"
+msgstr "Eylemler"
+
+#: gui/properties/property.cpp:104
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "Vuruş Biçemini Değiştir"
+
+#: gui/properties/property.cpp:106
+#, kde-format
+msgid "Change Background Color"
+msgstr "Arka Plan Rengini Değiştir"
+
+#: gui/properties/property.cpp:108
+#, kde-format
+msgid "Change Background Style"
+msgstr "Arka Plan Biçemini Değiştir"
+
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#, kde-format
+msgid "Change ZOrder"
+msgstr "Z Sırasını Değiştir"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr ""
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr ""
+
+#: plugins/basicshapes/xbox/xbox.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr ""
+
 #: widgets/command/alignitemcommand.cpp:112
 #, kde-format
 msgid "Align Items"
@@ -59,7 +127,7 @@ msgstr "Nesne Ekle"
 #: widgets/command/lineresizeitemcommand.cpp:75
 #, kde-format
 msgid "Resize Line"
-msgstr ""
+msgstr "Çizgiyi Yeniden Boyutlandır"
 
 #: widgets/command/lockcommand.cpp:34
 #, kde-format
@@ -77,16 +145,14 @@ msgid "Remove Object"
 msgstr "Nesneyi Kaldır"
 
 #: widgets/command/resizeitemcommand.cpp:70
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Resize Object"
-msgstr "Nesneyi Kaldır"
+msgstr "Nesneyi Yeniden Boyutlandır"
 
 #: widgets/command/rotateitemcommand.cpp:56
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Rotate Object"
-msgstr "Nesneyi Kaldır"
+msgstr "Nesneyi Döndür"
 
 #: widgets/command/selectcommand.cpp:47
 #, kde-format
@@ -97,11 +163,6 @@ msgstr "Nesneyi Seç"
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Nesneleri Gruptan Çıkar"
-
-#: widgets/command/zordercommand.cpp:54 widgets/properties/property.cpp:116
-#, kde-format
-msgid "Change ZOrder"
-msgstr "Z Sırasını Değiştir"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
@@ -120,6 +181,14 @@ msgstr "Yakınlaştırmayı Sıfırla"
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%​%1"
+
+#: widgets/components/toolbuttonplugin.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgctxt "@info:tooltip"
+msgid "Select Plugin"
+msgstr "Seçim"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -165,76 +234,89 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Geliştirici"
 
-#: widgets/context/uicontext.cpp:61
+#: widgets/context/uicontext.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Seçim"
 
-#: widgets/context/uicontext.cpp:62
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Serbest Çizim"
 
-#: widgets/context/uicontext.cpp:63
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Dörtgen"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Elmas"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elips"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Ok"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Çizgi"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Silgi"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Metin"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "Taşıma"
 
-#: widgets/dialog/configuresettingsdialog.cpp:25
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Drawy’i Yapılandır"
 
-#: widgets/dialog/configuresettingsdialog.cpp:28
+#: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
 msgstr "Genel"
+
+#: widgets/dialog/configuresettingsdialog.cpp:38
+#, kde-format
+msgid "Misc"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -268,6 +350,16 @@ msgstr "Dizini Aç"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "Başlangıçta bir önceki oturumu geri yükle"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -460,52 +552,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Eylem Gerekiyor"
-
-#: widgets/properties/property.cpp:92
-#, kde-format
-msgid "Change Stroke Width"
-msgstr "Vuruş Genişliğini Değiştir"
-
-#: widgets/properties/property.cpp:94
-#, kde-format
-msgid "Change Stroke Color"
-msgstr "Vuruş Rengini Değiştir"
-
-#: widgets/properties/property.cpp:96
-#, kde-format
-msgid "Change Opacity"
-msgstr "Matlığı Değiştir"
-
-#: widgets/properties/property.cpp:98
-#, kde-format
-msgid "Change Font Size"
-msgstr "Yazıtipi Puntosunu Değiştir"
-
-#: widgets/properties/property.cpp:100
-#, kde-format
-msgid "Change Eraser Size"
-msgstr "Silgi Boyutunu Değiştir"
-
-#: widgets/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
-#, kde-format
-msgid "Actions"
-msgstr "Eylemler"
-
-#: widgets/properties/property.cpp:104
-#, kde-format
-msgid "Change Stroke Style"
-msgstr "Vuruş Biçemini Değiştir"
-
-#: widgets/properties/property.cpp:106
-#, kde-format
-msgid "Change Background Color"
-msgstr "Arka Plan Rengini Değiştir"
-
-#: widgets/properties/property.cpp:108
-#, kde-format
-msgid "Change Background Style"
-msgstr "Arka Plan Biçemini Değiştir"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
@@ -706,7 +752,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Dörtgen aracı"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:253
+#: widgets/tools/selectiontool/selectiontool.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
@@ -718,11 +764,11 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "Metin aracı"
 
-#: widgets/window/window.cpp:151
+#: widgets/window/window.cpp:167
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
-msgstr ""
+msgstr "%1 — Drawy"
 
 #~ msgid "Update Property"
 #~ msgstr "Özelliği Güncelle"
