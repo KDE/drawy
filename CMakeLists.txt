@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.27)
 
 set(DRAWY_VERSION "1.0.0")
 project(drawy VERSION ${DRAWY_VERSION})
