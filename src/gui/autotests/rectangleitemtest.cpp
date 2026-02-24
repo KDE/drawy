@@ -97,7 +97,7 @@ void RectangleItemTest::shouldDeserialize()
 {
     QFETCH(QString, name);
     RectangleItem f;
-    const QString refFile = QLatin1StringView(DRAWY_DATA_DIR) + u"/rectangle/"_s + name + u".ref"_s;
+    const QString refFile = QLatin1StringView(DRAWY_GUI_DATA_DIR) + u"/rectangle/"_s + name + u".ref"_s;
     const QJsonObject obj = AutoTestHelper::loadJsonObject(refFile);
     f.deserialize(obj);
     const QJsonObject deserializeObj = f.serialize(-1); // Not define zorder yet

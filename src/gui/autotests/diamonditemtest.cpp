@@ -89,7 +89,7 @@ void DiamondItemTest::shouldDeserialize()
 {
     QFETCH(QString, name);
     DiamondItem f;
-    const QString refFile = QLatin1StringView(DRAWY_DATA_DIR) + u"/diamond/"_s + name + u".ref"_s;
+    const QString refFile = QLatin1StringView(DRAWY_GUI_DATA_DIR) + u"/diamond/"_s + name + u".ref"_s;
     const QJsonObject obj = AutoTestHelper::loadJsonObject(refFile);
     f.deserialize(obj);
     const QJsonObject deserializeObj = f.serialize(-1); // Not define zorder yet
