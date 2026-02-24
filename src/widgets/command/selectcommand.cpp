@@ -12,12 +12,14 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
 SelectCommand::SelectCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "SelectCommand" << m_items.count();
 }
 
 void SelectCommand::execute(ApplicationContext *context)

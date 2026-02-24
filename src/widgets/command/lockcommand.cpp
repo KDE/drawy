@@ -5,6 +5,7 @@
  */
 
 #include "lockcommand.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
@@ -12,6 +13,7 @@ LockCommand::LockCommand(QList<std::shared_ptr<Item>> items, bool lock)
     : ItemCommand{std::move(items)}
     , m_locked(lock)
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "LockCommand" << m_items.count();
 }
 
 void LockCommand::execute([[maybe_unused]] ApplicationContext *context)

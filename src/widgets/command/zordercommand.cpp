@@ -11,6 +11,7 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
@@ -18,6 +19,7 @@ ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::Zord
     : ItemCommand{std::move(items)}
     , m_zordermove(move)
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "ZorderCommand" << m_items.count();
 }
 
 void ZorderCommand::execute(ApplicationContext *context)

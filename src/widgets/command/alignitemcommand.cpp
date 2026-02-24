@@ -18,6 +18,7 @@ AlignItemCommand::AlignItemCommand(QList<std::shared_ptr<Item>> items, ItemUtils
     : ItemCommand{std::move(items)}
     , m_alignment(alignment)
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "AlignItemCommand" << m_items.count();
     calculateMoveItems();
 }
 

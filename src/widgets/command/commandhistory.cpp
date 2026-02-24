@@ -61,7 +61,7 @@ void CommandHistory::redo()
 
 void CommandHistory::insert(const std::shared_ptr<Command> &command)
 {
-    qCDebug(DRAWY_COMMAND_LOG) << "Insert command";
+    qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->commandTitle();
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }

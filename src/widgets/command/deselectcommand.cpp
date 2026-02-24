@@ -12,11 +12,13 @@
 #include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 
 DeselectCommand::DeselectCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "DeselectCommand" << m_items.count();
 }
 
 void DeselectCommand::execute(ApplicationContext *context)

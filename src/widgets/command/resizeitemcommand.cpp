@@ -11,6 +11,7 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
@@ -23,6 +24,7 @@ ResizeItemCommand::ResizeItemCommand(QList<std::shared_ptr<Item>> items,
     , m_lockedTransform{lockedTransform}
     , m_useLocked{std::move(useLocked)}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "ResizeItemCommand" << m_items.count();
 }
 
 void ResizeItemCommand::execute(ApplicationContext *context)

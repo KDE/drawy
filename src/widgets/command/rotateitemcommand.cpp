@@ -11,6 +11,7 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
@@ -19,6 +20,7 @@ RotateItemCommand::RotateItemCommand(QList<std::shared_ptr<Item>> items, const q
     , m_angle{angle}
     , m_pivot{pivot}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "RotateItemCommand" << m_items.count();
 }
 
 void RotateItemCommand::execute(ApplicationContext *context)

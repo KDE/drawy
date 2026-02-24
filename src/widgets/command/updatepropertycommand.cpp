@@ -13,12 +13,14 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 
 UpdatePropertyCommand::UpdatePropertyCommand(QList<std::shared_ptr<Item>> items, Property newProperty)
     : ItemCommand{std::move(items)}
     , m_newProperty{std::move(newProperty)}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "UpdatePropertyCommand" << m_items.count();
 }
 
 void UpdatePropertyCommand::execute(ApplicationContext *context)

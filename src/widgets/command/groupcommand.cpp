@@ -15,6 +15,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "deselectcommand.hpp"
+#include "drawy_command_debug.h"
 #include "item/group.hpp"
 #include "selectcommand.hpp"
 #include <KLocalizedString>
@@ -24,6 +25,8 @@ GroupCommand::GroupCommand(ApplicationContext *context, QList<std::shared_ptr<It
     , m_group(std::make_shared<GroupItem>())
     , m_context(context)
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "GroupCommand" << m_items.count();
+
     // sort according to z order
     m_context->spatialContext()->quadtree().reorder(m_items);
 }

@@ -13,12 +13,14 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawy_command_debug.h"
 #include "item/group.hpp"
 #include <KLocalizedString>
 
 UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
     : ItemCommand{items}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "UngroupCommand" << m_items.count();
     for (const auto &item : items) {
         if (item->formType() == Item::FormType::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));

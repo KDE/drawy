@@ -13,11 +13,13 @@
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawy_command_debug.h"
 #include <KLocalizedString>
 
 InsertItemCommand::InsertItemCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "InsertItemCommand" << m_items.count();
 }
 
 void InsertItemCommand::execute(ApplicationContext *context)

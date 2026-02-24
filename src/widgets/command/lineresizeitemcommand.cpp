@@ -11,6 +11,7 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include "item/line.hpp"
 #include <KLocalizedString>
@@ -21,6 +22,7 @@ LineResizeItemCommand::LineResizeItemCommand(QList<std::shared_ptr<Item>> items,
     , m_finalPos{finalPos}
     , m_handleType{handleType}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "LineResizeItemCommand" << m_items.count();
     Q_ASSERT(m_items.size() == 1);
 }
 

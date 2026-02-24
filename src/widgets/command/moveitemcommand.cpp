@@ -11,6 +11,7 @@
 #include "context/renderingcontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
 
@@ -19,6 +20,7 @@ MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPoin
     , m_worldInitialPos{worldInitialPos}
     , m_worldFinalPos{worldFinalPos}
 {
+    qCDebug(DRAWY_COMMAND_LOG) << "MoveItemCommand" << m_items.count();
 }
 
 void MoveItemCommand::execute(ApplicationContext *context)
