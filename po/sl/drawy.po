@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 07:01+0100\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"PO-Revision-Date: 2026-02-24 07:09+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -82,7 +82,7 @@ msgstr "Spremeni barvo ozadja"
 msgid "Change Background Style"
 msgstr "Spremeni barvo ozadja"
 
-#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Spremeni Z-vrstni red"
@@ -90,76 +90,76 @@ msgstr "Spremeni Z-vrstni red"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "Osnovne oblike"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "Trikotnik"
 
 #: plugins/basicshapes/xbox/xbox.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "Okvir X"
 
-#: widgets/command/alignitemcommand.cpp:112
+#: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
 msgstr "Poravnaj elemente"
 
-#: widgets/command/deselectcommand.cpp:46
+#: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
 msgstr "Prekliči izbor predmeta"
 
-#: widgets/command/groupcommand.cpp:70
+#: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
 msgstr "Grupiraj predmet"
 
-#: widgets/command/insertitemcommand.cpp:53
+#: widgets/command/insertitemcommand.cpp:55
 #, kde-format
 msgid "Insert Object"
 msgstr "Vstavi predmet"
 
-#: widgets/command/lineresizeitemcommand.cpp:75
+#: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
 msgstr "Spremeni velikost črte"
 
-#: widgets/command/lockcommand.cpp:34
+#: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
 msgstr "Spremeni zaklep"
 
-#: widgets/command/moveitemcommand.cpp:64
+#: widgets/command/moveitemcommand.cpp:66
 #, kde-format
 msgid "Move Object"
 msgstr "Premakni predmet"
 
-#: widgets/command/removeitemcommand.cpp:58
+#: widgets/command/removeitemcommand.cpp:60
 #, kde-format
 msgid "Remove Object"
 msgstr "Odstrani predmet"
 
-#: widgets/command/resizeitemcommand.cpp:70
+#: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
 msgid "Resize Object"
 msgstr "Spremeni velikost predmeta"
 
-#: widgets/command/rotateitemcommand.cpp:56
+#: widgets/command/rotateitemcommand.cpp:58
 #, kde-format
 msgid "Rotate Object"
 msgstr "Zavrti predmet"
 
-#: widgets/command/selectcommand.cpp:47
+#: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
 msgstr "Izberi predmet"
 
-#: widgets/command/ungroupcommand.cpp:74
+#: widgets/command/ungroupcommand.cpp:76
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Razgrupiraj predmete"
@@ -183,12 +183,10 @@ msgid "%1%"
 msgstr "%1%"
 
 #: widgets/components/toolbuttonplugin.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "Izbira"
+msgstr "Izberi vtičnik"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -300,7 +298,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "Izvajanje predstavitve"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -316,7 +314,7 @@ msgstr "Splošno"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Razno"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -356,12 +354,12 @@ msgstr "Obnovi prejšnjo sejo ob zagonu"
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "Upravljalnik energije"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "Onemogoči zaklepanje zaslona med celozaslonskim načinom"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format

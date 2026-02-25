@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 09:05-0300\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"PO-Revision-Date: 2026-02-24 08:55-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -84,7 +84,7 @@ msgstr "Alterar cor do fundo"
 msgid "Change Background Style"
 msgstr "Alterar estilo do fundo"
 
-#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Alterar ordem Z"
@@ -92,76 +92,76 @@ msgstr "Alterar ordem Z"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "Formas básicas"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "Triângulo"
 
 #: plugins/basicshapes/xbox/xbox.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "Caixa X"
 
-#: widgets/command/alignitemcommand.cpp:112
+#: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
 msgstr "Alinhar itens"
 
-#: widgets/command/deselectcommand.cpp:46
+#: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
 msgstr "Desmarcar objeto"
 
-#: widgets/command/groupcommand.cpp:70
+#: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
 msgstr "Agrupar objeto"
 
-#: widgets/command/insertitemcommand.cpp:53
+#: widgets/command/insertitemcommand.cpp:55
 #, kde-format
 msgid "Insert Object"
 msgstr "Inserir objeto"
 
-#: widgets/command/lineresizeitemcommand.cpp:75
+#: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
 msgstr "Redimensionar linha"
 
-#: widgets/command/lockcommand.cpp:34
+#: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
 msgstr "Alterar trava"
 
-#: widgets/command/moveitemcommand.cpp:64
+#: widgets/command/moveitemcommand.cpp:66
 #, kde-format
 msgid "Move Object"
 msgstr "Mover objeto"
 
-#: widgets/command/removeitemcommand.cpp:58
+#: widgets/command/removeitemcommand.cpp:60
 #, kde-format
 msgid "Remove Object"
 msgstr "Remover objeto"
 
-#: widgets/command/resizeitemcommand.cpp:70
+#: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
 msgid "Resize Object"
 msgstr "Redimensionar objeto"
 
-#: widgets/command/rotateitemcommand.cpp:56
+#: widgets/command/rotateitemcommand.cpp:58
 #, kde-format
 msgid "Rotate Object"
 msgstr "Girar objeto"
 
-#: widgets/command/selectcommand.cpp:47
+#: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
 msgstr "Selecionar objeto"
 
-#: widgets/command/ungroupcommand.cpp:74
+#: widgets/command/ungroupcommand.cpp:76
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Desagrupar objetos"
@@ -185,12 +185,10 @@ msgid "%1%"
 msgstr "%1%"
 
 #: widgets/components/toolbuttonplugin.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "Seleção"
+msgstr "Selecionar plugin"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -302,7 +300,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "Mostrar uma apresentação"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -318,7 +316,7 @@ msgstr "Geral"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Diversos"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -356,12 +354,12 @@ msgstr "Restaurar sessão anterior na inicialização"
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "Gerenciador de energia"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "Desativar o bloqueador de tela durante o modo de tela cheia"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format

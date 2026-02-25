@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-24 00:41+0000\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgstr "ფონის ფერის შეცვლა"
 msgid "Change Background Style"
 msgstr "ფონის სტილის შეცვლა"
 
-#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:54
+#: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
 msgstr "ZOrder-ის შეცვლა"
@@ -89,76 +89,76 @@ msgstr "ZOrder-ის შეცვლა"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "ძირითადი ფიგურები"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "სამკუთხედი"
 
 #: plugins/basicshapes/xbox/xbox.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "X Box"
 
-#: widgets/command/alignitemcommand.cpp:112
+#: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
 msgstr "ელემენტების გასწორება"
 
-#: widgets/command/deselectcommand.cpp:46
+#: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
 msgstr "ობიექტის მონიშვნის გაუქმება"
 
-#: widgets/command/groupcommand.cpp:70
+#: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
 msgstr "ჯგუფური ობიექტი"
 
-#: widgets/command/insertitemcommand.cpp:53
+#: widgets/command/insertitemcommand.cpp:55
 #, kde-format
 msgid "Insert Object"
 msgstr "ობიექტის ჩასმა"
 
-#: widgets/command/lineresizeitemcommand.cpp:75
+#: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
 msgstr "ხაზის ზომის შეცვლა"
 
-#: widgets/command/lockcommand.cpp:34
+#: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
 msgstr "დაბლოკვის შეცვლა"
 
-#: widgets/command/moveitemcommand.cpp:64
+#: widgets/command/moveitemcommand.cpp:66
 #, kde-format
 msgid "Move Object"
 msgstr "ობიექტის გადატანა"
 
-#: widgets/command/removeitemcommand.cpp:58
+#: widgets/command/removeitemcommand.cpp:60
 #, kde-format
 msgid "Remove Object"
 msgstr "ობიექტის წაშლა"
 
-#: widgets/command/resizeitemcommand.cpp:70
+#: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
 msgid "Resize Object"
 msgstr "ობიექტის ზომის შეცვლა"
 
-#: widgets/command/rotateitemcommand.cpp:56
+#: widgets/command/rotateitemcommand.cpp:58
 #, kde-format
 msgid "Rotate Object"
 msgstr "ობიექტის მობრუნება"
 
-#: widgets/command/selectcommand.cpp:47
+#: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
 msgstr "აირჩიეთ ობიექტი"
 
-#: widgets/command/ungroupcommand.cpp:74
+#: widgets/command/ungroupcommand.cpp:76
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "ელემენტების განჯგუფება"
@@ -182,12 +182,10 @@ msgid "%1%"
 msgstr "%1%"
 
 #: widgets/components/toolbuttonplugin.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "მონიშნული"
+msgstr "აირჩიეთ დამატება"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -299,7 +297,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "პრეზენტაციის წარდგენა"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -315,7 +313,7 @@ msgstr "ზოგადი"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "სხვადასხვა"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -353,12 +351,12 @@ msgstr "წინა სესიის აღდგენა გაშვებ
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "კვების მმართველი"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "ეკრანის დამზოგავის გამორთვა სრულეკრანიანი რეჟიმისას"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
