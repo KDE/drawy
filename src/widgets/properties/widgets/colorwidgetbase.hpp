@@ -15,6 +15,7 @@ public:
     explicit ColorWidgetBase(QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
+    void setValue(const QVariant &val) override;
 
 protected:
     [[nodiscard]] virtual QList<QColor> defaultColors() const = 0;

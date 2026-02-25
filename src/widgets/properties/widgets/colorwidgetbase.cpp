@@ -80,4 +80,9 @@ QString ColorWidgetBase::name() const
     return i18n("Color");
 }
 
+void ColorWidgetBase::setValue(const QVariant &val)
+{
+    assignCurrentColor(val.value<QColor>());
+}
+
 #include "moc_colorwidgetbase.cpp"

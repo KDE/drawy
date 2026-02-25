@@ -74,4 +74,14 @@ const Property StokeStyleWidget::value() const
     return Property{m_group->checkedButton()->property("stroke-style"), Property::Type::StrokeStyle};
 }
 
+void StokeStyleWidget::setValue(const QVariant &val)
+{
+    for (auto b : m_group->buttons()) {
+        if (b->property("stroke-style").toString() == val.toString()) {
+            b->setChecked(true);
+            break;
+        }
+    }
+}
+
 #include "moc_stokestylewidget.cpp"

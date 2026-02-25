@@ -73,4 +73,14 @@ const Property BackgroundStyleWidget::value() const
     return Property{m_group->checkedButton()->property("background-style"), Property::Type::BackgroundStyle};
 }
 
+void BackgroundStyleWidget::setValue(const QVariant &val)
+{
+    for (auto b : m_group->buttons()) {
+        if (b->property("background-style").toString() == val.toString()) {
+            b->setChecked(true);
+            break;
+        }
+    }
+}
+
 #include "moc_backgroundstylewidget.cpp"
