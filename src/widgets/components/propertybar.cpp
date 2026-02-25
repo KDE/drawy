@@ -91,7 +91,9 @@ void PropertyBar::assignPropertyValue(Property::Type property, PropertyWidget *w
             propertyValue = item->property(property).variant();
         }
     }
-    widget->setValue(propertyValue);
+    if (propertyValue.isValid()) {
+        widget->setValue(propertyValue);
+    }
 }
 
 #include "moc_propertybar.cpp"
