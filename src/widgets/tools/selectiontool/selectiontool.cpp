@@ -254,5 +254,5 @@ QString SelectionTool::tooltip() const
 
 QString SelectionTool::icon() const
 {
-    return u"tool_rect_selection"_s;
+    return u"edit-select"_s;
 }

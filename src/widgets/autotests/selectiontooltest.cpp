@@ -17,7 +17,7 @@ void SelectionToolTest::shouldHaveDefaultValues()
 {
     const SelectionTool t(nullptr);
     QVERIFY(!t.tooltip().isEmpty());
-    QCOMPARE(t.icon(), u"tool_rect_selection"_s);
+    QCOMPARE(t.icon(), u"edit-select"_s);
     QCOMPARE(t.type(), Tool::Type::Selection);
 
     QCOMPARE(t.properties().count(), 0);
