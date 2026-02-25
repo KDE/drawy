@@ -14,7 +14,7 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
-    void setValue(int value);
+    void setValue(const QVariant &value) override;
 
 private:
     QSpinBox *const mSpinBox;

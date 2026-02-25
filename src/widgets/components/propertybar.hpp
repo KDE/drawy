@@ -5,10 +5,12 @@
 #pragma once
 
 #include "frame.hpp"
+#include "properties/property.hpp"
 #include <QVBoxLayout>
 
 class Tool;
 class PropertyManager;
+class PropertyWidget;
 class ApplicationContext;
 class PropertyBar : public Frame
 {
@@ -21,6 +23,7 @@ public:
     void updateProperties(Tool &);
 
 private:
+    void assignPropertyValue(Property::Type property, PropertyWidget *widget);
     QVBoxLayout *const m_layout;
     PropertyManager *m_propertyManager = nullptr;
     ApplicationContext *const m_context;

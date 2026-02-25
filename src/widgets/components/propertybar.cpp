@@ -9,7 +9,9 @@
 #include <stdexcept>
 
 #include "context/applicationcontext.hpp"
+#include "context/selectioncontext.hpp"
 #include "context/uicontext.hpp"
+#include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "properties/widgets/propertywidget.hpp"
 #include "toolbar.hpp"
@@ -60,20 +62,36 @@ void PropertyBar::updateProperties(Tool &tool)
         show();
     }
 
-    for (const Property::Type &property : properties) {
+    for (Property::Type property : properties) {
         try {
-            const PropertyWidget *widget{m_propertyManager->widget(property)};
+            PropertyWidget *const widget{m_propertyManager->widget(property)};
             auto *widgetLabel{new QLabel{widget->name(), this}};
             m_layout->addWidget(widgetLabel);
             m_layout->addWidget(widget->widget());
 
             widget->widget()->show();
+            assignPropertyValue(property, widget);
         } catch (const std::logic_error &) {
             // ignore this property
         }
     }
 
     update();
+}
+
+void PropertyBar::assignPropertyValue(Property::Type property, PropertyWidget *widget)
+{
+    const auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    QVariant propertyValue;
+    for (const auto &item : selectedItems) {
+        if (item->hasProperty(property)) {
+            if (propertyValue.isValid() && (propertyValue != item->property(property).variant())) {
+                return;
+            }
+            propertyValue = item->property(property).variant();
+        }
+    }
+    widget->setValue(propertyValue);
 }
 
 #include "moc_propertybar.cpp"

@@ -38,9 +38,9 @@ OpacityWidget::OpacityWidget(QWidget *parent)
     });
 }
 
-void OpacityWidget::setValue(int value)
+void OpacityWidget::setValue(const QVariant &value)
 {
-    mSlider->setValue(value);
+    mSlider->setValue(value.toInt());
 }
 
 QString OpacityWidget::name() const

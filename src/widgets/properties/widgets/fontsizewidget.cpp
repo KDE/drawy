@@ -27,9 +27,9 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     });
 }
 
-void FontSizeWidget::setValue(int value)
+void FontSizeWidget::setValue(const QVariant &value)
 {
-    mSpinBox->setValue(value);
+    mSpinBox->setValue(value.toInt());
 }
 
 QString FontSizeWidget::name() const

@@ -9,6 +9,10 @@ PropertyWidget::PropertyWidget(QWidget *parent)
 {
 }
 
+void PropertyWidget::setValue([[maybe_unused]] const QVariant &val)
+{
+}
+
 QWidget *PropertyWidget::widget() const
 {
     return m_widget;

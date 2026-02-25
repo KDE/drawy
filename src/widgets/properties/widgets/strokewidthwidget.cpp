@@ -31,9 +31,9 @@ QString StrokeWidthWidget::name() const
     return i18n("Thickness");
 }
 
-void StrokeWidthWidget::setValue(int value)
+void StrokeWidthWidget::setValue(const QVariant &value)
 {
-    mSpinBox->setValue(value);
+    mSpinBox->setValue(value.toInt());
 }
 
 const Property StrokeWidthWidget::value() const
