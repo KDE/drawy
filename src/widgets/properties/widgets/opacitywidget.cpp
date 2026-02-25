@@ -38,6 +38,11 @@ OpacityWidget::OpacityWidget(QWidget *parent)
     });
 }
 
+void OpacityWidget::setValue(int value)
+{
+    mSlider->setValue(value);
+}
+
 QString OpacityWidget::name() const
 {
     return i18n("Opacity");

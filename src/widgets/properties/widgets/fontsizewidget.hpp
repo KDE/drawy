@@ -5,7 +5,7 @@
 #pragma once
 
 #include "propertywidget.hpp"
-
+class QSpinBox;
 class FontSizeWidget : public PropertyWidget
 {
     Q_OBJECT
@@ -14,4 +14,9 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
+
+    void setValue(int value);
+
+private:
+    QSpinBox *const mSpinBox;
 };

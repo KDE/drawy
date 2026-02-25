@@ -16,6 +16,8 @@ public:
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
 
+    void setValue(int value);
+
 private:
     QSlider *mSlider = nullptr;
 };

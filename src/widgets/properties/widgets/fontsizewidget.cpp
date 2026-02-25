@@ -11,20 +11,25 @@
 
 FontSizeWidget::FontSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
+    , mSpinBox(new QSpinBox(parent))
 {
     // TODO: Remove magic numbers
-    auto box{new QSpinBox(parent)};
-    box->setMinimum(1);
-    box->setValue(DrawyGlobalConfig::self()->fontSize());
+    mSpinBox->setMinimum(1);
+    mSpinBox->setValue(DrawyGlobalConfig::self()->fontSize());
 
-    box->hide();
-    m_widget = box;
+    mSpinBox->hide();
+    m_widget = mSpinBox;
 
-    connect(box, &QSpinBox::valueChanged, this, [this]() {
-        DrawyGlobalConfig::self()->setFontSize(static_cast<QSpinBox *>(m_widget)->value());
+    connect(mSpinBox, &QSpinBox::valueChanged, this, [this]() {
+        DrawyGlobalConfig::self()->setFontSize(static_cast<QSpinBox *>(mSpinBox)->value());
         DrawyGlobalConfig::self()->save();
         Q_EMIT changed(value());
     });
+}
+
+void FontSizeWidget::setValue(int value)
+{
+    mSpinBox->setValue(value);
 }
 
 QString FontSizeWidget::name() const
@@ -34,7 +39,7 @@ QString FontSizeWidget::name() const
 
 const Property FontSizeWidget::value() const
 {
-    return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::Type::FontSize};
+    return Property{static_cast<QSpinBox *>(mSpinBox)->value(), Property::Type::FontSize};
 }
 
 #include "moc_fontsizewidget.cpp"

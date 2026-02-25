@@ -11,16 +11,16 @@
 
 StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
     : PropertyWidget{parent}
+    , mSpinBox(new QSpinBox(parent))
 {
-    auto box{new QSpinBox(parent)};
-    box->setRange(1, 10);
-    box->setValue(DrawyGlobalConfig::self()->strokeWidth());
+    mSpinBox->setRange(1, 10);
+    mSpinBox->setValue(DrawyGlobalConfig::self()->strokeWidth());
 
-    box->hide();
-    m_widget = box;
+    mSpinBox->hide();
+    m_widget = mSpinBox;
 
-    connect(box, &QSpinBox::valueChanged, this, [this]() {
-        DrawyGlobalConfig::self()->setStrokeWidth(static_cast<QSpinBox *>(m_widget)->value());
+    connect(mSpinBox, &QSpinBox::valueChanged, this, [this]() {
+        DrawyGlobalConfig::self()->setStrokeWidth(static_cast<QSpinBox *>(mSpinBox)->value());
         DrawyGlobalConfig::self()->save();
         Q_EMIT changed(value());
     });
@@ -31,9 +31,14 @@ QString StrokeWidthWidget::name() const
     return i18n("Thickness");
 }
 
+void StrokeWidthWidget::setValue(int value)
+{
+    mSpinBox->setValue(value);
+}
+
 const Property StrokeWidthWidget::value() const
 {
-    return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::Type::StrokeWidth};
+    return Property{static_cast<QSpinBox *>(mSpinBox)->value(), Property::Type::StrokeWidth};
 }
 
 #include "moc_strokewidthwidget.cpp"
