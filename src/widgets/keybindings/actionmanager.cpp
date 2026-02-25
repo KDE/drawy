@@ -636,6 +636,7 @@ void ActionManager::slotUpdateZorderAndGroupButtons()
 
     bool atLeastOneCanMoveBack{false};
     bool atLeastOneCanMoveForward{false};
+    bool atLeastOneGroup{false};
 
     const auto selectedItems{selectionContext->selectedItems()};
     for (const auto &item : std::as_const(selectedItems)) {
@@ -645,6 +646,9 @@ void ActionManager::slotUpdateZorderAndGroupButtons()
 
         if (quadtree.canMoveForwards(item)) {
             atLeastOneCanMoveForward = true;
+        }
+        if (item->formType() == Item::FormType::Group) {
+            atLeastOneGroup = true;
         }
     }
 
@@ -665,6 +669,7 @@ void ActionManager::slotUpdateZorderAndGroupButtons()
     }
 
     action(Action::GroupItems)->setEnabled(selectedItems.size() > 1);
+    action(Action::UngroupItems)->setEnabled(atLeastOneGroup);
 }
 
 #include "moc_actionmanager.cpp"
