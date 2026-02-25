@@ -14,7 +14,7 @@ class TransformHandler
 {
     // structs
 public:
-    enum class State {
+    enum class State : uint8_t {
         Locked,
         Unlocked
     };

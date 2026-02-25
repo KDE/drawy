@@ -16,7 +16,7 @@ public:
     explicit Tool(ApplicationContext *m_context);
     virtual ~Tool();
 
-    const QCursor &cursor() const;
+    [[nodiscard]] const QCursor &cursor() const;
     virtual QString tooltip() const = 0;
 
     virtual void mousePressed(ApplicationContext *context);

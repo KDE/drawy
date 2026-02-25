@@ -44,14 +44,6 @@ public:
 
     Q_ENUM(Action)
 
-    enum class Choice {
-        Save,
-        Discard,
-        Cancel
-    };
-
-    Q_ENUM(Choice)
-
     explicit ActionManager(KActionCollection *actionCollection, ApplicationContext *context);
 
     [[nodiscard]] QAction *action(Action type) const;

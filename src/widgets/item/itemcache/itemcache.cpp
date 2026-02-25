@@ -5,7 +5,6 @@
 #include "itemcache.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
-#include "common/utils/math.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
