@@ -9,7 +9,6 @@
 #include <utility>
 
 #include "canvas/canvas.hpp"
-#include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
