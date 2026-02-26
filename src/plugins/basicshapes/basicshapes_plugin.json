@@ -1,7 +1,23 @@
 {
     "KPlugin": {
         "Description": "This plugin adds basic shapes plugin.",
+        "Description[ca@valencia]": "Este connector afig el suport de formes bàsiques.",
+        "Description[ca]": "Aquest connector afegeix el suport de formes bàsiques.",
+        "Description[es]": "Este complemento añade formas básicas.",
+        "Description[ia]": "Iste plugin adde plugin per formas basic.",
+        "Description[nl]": "Deze plug-in voegt basis vormen plug-in toe.",
+        "Description[pt_BR]": "Este plugin adiciona formas básicas.",
+        "Description[tr]": "Bu eklenti, temel şekiller desteği ekler",
+        "Description[uk]": "Цей додаток є додатком базових форм.",
         "Name": "Basic Shapes",
+        "Name[ca@valencia]": "Formes bàsiques",
+        "Name[ca]": "Formes bàsiques",
+        "Name[es]": "Formas básicas",
+        "Name[ia]": "Formas Basic",
+        "Name[nl]": "Basis vormen",
+        "Name[pt_BR]": "Formas básicas",
+        "Name[tr]": "Temel Şekiller",
+        "Name[uk]": "Базові форми",
         "Version": "1.0"
     }
 }
