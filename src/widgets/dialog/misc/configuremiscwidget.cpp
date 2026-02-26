@@ -17,7 +17,7 @@ ConfigureMiscWidget::ConfigureMiscWidget(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->addWidget(mPowerManagerWidget);
-    mainLayout->addStretch(0);
+    mainLayout->addStretch(1);
 }
 
 ConfigureMiscWidget::~ConfigureMiscWidget() = default;
