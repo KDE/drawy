@@ -12,6 +12,10 @@ enum class ArrowType : int8_t {
     None,
     Arrow,
     Triangle,
+    FullTriangle,
+    Circle,
+    FullCircle,
+    Line,
     // TODO add more in the future
 };
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString convertArrowTypeEnumToString(ArrowUtils::ArrowType type);

@@ -15,6 +15,14 @@ QString ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType type)
         return u"Arrow"_s;
     case ArrowUtils::ArrowType::Triangle:
         return u"Triangle"_s;
+    case ArrowUtils::ArrowType::FullTriangle:
+        return u"FullTriangle"_s;
+    case ArrowUtils::ArrowType::Circle:
+        return u"Circle"_s;
+    case ArrowUtils::ArrowType::FullCircle:
+        return u"FullCircle"_s;
+    case ArrowUtils::ArrowType::Line:
+        return u"Line"_s;
     }
     return {};
 }
@@ -27,6 +35,14 @@ ArrowUtils::ArrowType ArrowUtils::convertArrowTypeStringToArrowEnum(const QStrin
         return ArrowUtils::ArrowType::Arrow;
     } else if (str == u"Triangle") {
         return ArrowUtils::ArrowType::Triangle;
+    } else if (str == u"FullTriangle") {
+        return ArrowUtils::ArrowType::FullTriangle;
+    } else if (str == u"Circle") {
+        return ArrowUtils::ArrowType::Circle;
+    } else if (str == u"FullCircle") {
+        return ArrowUtils::ArrowType::FullCircle;
+    } else if (str == u"Line") {
+        return ArrowUtils::ArrowType::Line;
     } else {
         qCWarning(DRAWY_GUI_LOG) << "ArrowItem::ArrowType is not defined for: " << str;
     }

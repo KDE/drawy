@@ -83,6 +83,10 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
         painter.drawLine(m_arrowEndP2 - offset, m_arrowEndP1 - offset);
         break;
     case ArrowUtils::ArrowType::None:
+    case ArrowUtils::ArrowType::FullTriangle:
+    case ArrowUtils::ArrowType::Circle:
+    case ArrowUtils::ArrowType::FullCircle:
+    case ArrowUtils::ArrowType::Line:
         break;
     }
 
@@ -97,6 +101,10 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
         painter.drawLine(m_arrowStartP2 - offset, m_arrowStartP1 - offset);
         break;
     case ArrowUtils::ArrowType::None:
+    case ArrowUtils::ArrowType::FullTriangle:
+    case ArrowUtils::ArrowType::Circle:
+    case ArrowUtils::ArrowType::FullCircle:
+    case ArrowUtils::ArrowType::Line:
         break;
     }
 }
