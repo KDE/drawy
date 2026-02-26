@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"POT-Creation-Date: 2026-02-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-23 21:33+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -63,7 +63,7 @@ msgid "Change Eraser Size"
 msgstr "שינוי גודל מוחק"
 
 #: gui/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
+#: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
 msgstr "פעולות"
@@ -554,19 +554,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "נדרשת פעולה"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "מחיקת בחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "קיבוץ הבחירה"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -663,12 +663,12 @@ msgstr "צבע"
 msgid "Eraser Size"
 msgstr "גודל מוחק"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:32
+#: widgets/properties/widgets/fontsizewidget.cpp:37
 #, kde-format
 msgid "Font Size"
 msgstr "גודל כתב"
 
-#: widgets/properties/widgets/opacitywidget.cpp:43
+#: widgets/properties/widgets/opacitywidget.cpp:48
 #, kde-format
 msgid "Opacity"
 msgstr "אטימות"

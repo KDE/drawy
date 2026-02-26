@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-kapplication "<application
+>Drawy</application
+>">
+  <!ENTITY kappname "&i18n-kapplication;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE">
+]>
+
+<!--
+	SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+	SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
+<book id="drawy" lang="&language;">
+
+<bookinfo id="drawyinfo">
+
+<title
+>El manual del &i18n-kapplication;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+&traductor.JosepMa.Ferrer; 
+</authorgroup>
+
+<copyright>
+<year
+>2026</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<legalnotice
+>&CCBYSA4Notice;</legalnotice>
+
+<date
+>23 de febrer de 2026</date>
+<releaseinfo
+></releaseinfo>
+
+<abstract>
+<para
+>El &i18n-kapplication; és una eina de pissarra infinita que està en desenvolupament. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>pissarra</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+<para
+>El &i18n-kapplication; és una eina de pissarra infinita que està en desenvolupament i s'ha escrit en Qt/C++.</para>
+
+<sect1 id="using-kapp">
+<title
+>Ús del &i18n-kapplication;</title>
+
+<para
+>El &i18n-kapplication; és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Crèdits i llicència</title>
+
+<para
+>&i18n-kapplication;</para>
+<para
+>Copyright del programa 2026 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Copyright de la documentació &copy; 2013 &Laurent.Montel; &Laurent.Montel.mail; </para>
+
+<para
+>Traductor de la documentació: &credits.JosepMa.Ferrer;</para
+> &underCCBYSA4; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

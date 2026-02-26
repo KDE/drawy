@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"POT-Creation-Date: 2026-02-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -76,7 +76,7 @@ msgid "Change Eraser Size"
 msgstr "Breyta stærð útþurrkunar"
 
 #: gui/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
+#: widgets/properties/widgets/actionswidget.cpp:50
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Actions"
@@ -687,7 +687,7 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "ActionsWidget|"
 #| msgid "Delete selection"
@@ -695,7 +695,7 @@ msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "Eyða vali"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "ActionsWidget|"
 #| msgid "Group selection"
@@ -703,7 +703,7 @@ msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "Val hóps"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:33
 #, fuzzy, kde-format
 #| msgctxt "ActionsWidget|"
 #| msgid "Ungroup selection"
@@ -830,14 +830,14 @@ msgstr "Litur"
 msgid "Eraser Size"
 msgstr "Stærð útþurrkunar"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:32
+#: widgets/properties/widgets/fontsizewidget.cpp:37
 #, fuzzy, kde-format
 #| msgctxt "FontSizeWidget|"
 #| msgid "Font Size"
 msgid "Font Size"
 msgstr "Leturstærð"
 
-#: widgets/properties/widgets/opacitywidget.cpp:43
+#: widgets/properties/widgets/opacitywidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "OpacityWidget|"
 #| msgid "Opacity"

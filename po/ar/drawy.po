@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:44+0000\n"
-"PO-Revision-Date: 2026-02-24 22:32+0400\n"
+"POT-Creation-Date: 2026-02-26 00:41+0000\n"
+"PO-Revision-Date: 2026-02-25 21:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -65,7 +65,7 @@ msgid "Change Eraser Size"
 msgstr "غيّر حجم الممحاة"
 
 #: gui/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
+#: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
 msgstr "الإجراءات"
@@ -93,19 +93,19 @@ msgstr "غيّر الترتيب المنظوري"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "أشكال أساسية"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "مثلّث"
 
 #: plugins/basicshapes/xbox/xbox.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "صندوق X"
 
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
@@ -186,12 +186,10 @@ msgid "%1%"
 msgstr "%1٪"
 
 #: widgets/components/toolbuttonplugin.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "التحديد"
+msgstr "حدد ملحقة"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -303,7 +301,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "إعطاء عرض تقديمي"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -319,7 +317,7 @@ msgstr "عامّ"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "متنوّع"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -361,12 +359,12 @@ msgstr "استعادة الجلسة السابقة عند البدء"
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "مدير الطاقة"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "عطّل قفل الشاشة أثناء العرض بملء الشاشة"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -558,19 +556,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "إجراء مطلوب"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "امحُ المحدد"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "جمّع التحديد"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -667,12 +665,12 @@ msgstr "اللون"
 msgid "Eraser Size"
 msgstr "حجم الممحاة"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:32
+#: widgets/properties/widgets/fontsizewidget.cpp:37
 #, kde-format
 msgid "Font Size"
 msgstr "حجم الخط"
 
-#: widgets/properties/widgets/opacitywidget.cpp:43
+#: widgets/properties/widgets/opacitywidget.cpp:48
 #, kde-format
 msgid "Opacity"
 msgstr "العتمة"

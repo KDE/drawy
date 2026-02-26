@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"POT-Creation-Date: 2026-02-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-22 17:06+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -62,7 +62,7 @@ msgid "Change Eraser Size"
 msgstr "Changer la taille de gomme"
 
 #: gui/properties/property.cpp:102
-#: widgets/properties/widgets/actionswidget.cpp:51
+#: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
 msgstr "Actions"
@@ -563,19 +563,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Action requise"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "Supprimer la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "Grouper la sélection"
 
-#: widgets/properties/widgets/actionswidget.cpp:34
+#: widgets/properties/widgets/actionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -672,12 +672,12 @@ msgstr "Couleur"
 msgid "Eraser Size"
 msgstr "Taille de gomme"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:32
+#: widgets/properties/widgets/fontsizewidget.cpp:37
 #, kde-format
 msgid "Font Size"
 msgstr "Taille de police"
 
-#: widgets/properties/widgets/opacitywidget.cpp:43
+#: widgets/properties/widgets/opacitywidget.cpp:48
 #, kde-format
 msgid "Opacity"
 msgstr "Opacité"
