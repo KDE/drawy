@@ -5,6 +5,8 @@
  */
 #include "arrowutils.hpp"
 #include "drawy_gui_debug.h"
+#include <KLocalizedString>
+
 using namespace Qt::Literals::StringLiterals;
 QString ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType type)
 {
@@ -23,6 +25,49 @@ QString ArrowUtils::convertArrowTypeEnumToString(ArrowUtils::ArrowType type)
         return u"FullCircle"_s;
     case ArrowUtils::ArrowType::Line:
         return u"Line"_s;
+    }
+    return {};
+}
+
+QString ArrowUtils::tooltipFromArrowType(ArrowUtils::ArrowType type)
+{
+    switch (type) {
+    case ArrowUtils::ArrowType::None:
+        return i18n("None");
+    case ArrowUtils::ArrowType::Arrow:
+        return i18n("Arrow");
+    case ArrowUtils::ArrowType::Triangle:
+        return i18n("Triangle");
+    case ArrowUtils::ArrowType::FullTriangle:
+        return i18n("Full Triangle");
+    case ArrowUtils::ArrowType::Circle:
+        return i18n("Circle");
+    case ArrowUtils::ArrowType::FullCircle:
+        return i18n("Fill Circle");
+    case ArrowUtils::ArrowType::Line:
+        return i18n("Line");
+    }
+    return {};
+}
+
+QString ArrowUtils::iconFromArrowType(ArrowUtils::ArrowType type)
+{
+    // TODO need icons
+    switch (type) {
+    case ArrowUtils::ArrowType::None:
+        return {};
+    case ArrowUtils::ArrowType::Arrow:
+        return u""_s;
+    case ArrowUtils::ArrowType::Triangle:
+        return u""_s;
+    case ArrowUtils::ArrowType::FullTriangle:
+        return u""_s;
+    case ArrowUtils::ArrowType::Circle:
+        return u""_s;
+    case ArrowUtils::ArrowType::FullCircle:
+        return u""_s;
+    case ArrowUtils::ArrowType::Line:
+        return u""_s;
     }
     return {};
 }

@@ -41,7 +41,7 @@ void UpdatePropertyCommand::execute(ApplicationContext *context)
 
     const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
-};
+}
 
 void UpdatePropertyCommand::undo(ApplicationContext *context)
 {

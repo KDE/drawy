@@ -20,6 +20,7 @@
 #include <utility>
 
 #include "command/alignitemcommand.hpp"
+#include "command/arrowtypecommand.hpp"
 #include "command/commandhistory.hpp"
 #include "command/deselectcommand.hpp"
 #include "command/groupcommand.hpp"
@@ -339,6 +340,16 @@ void ActionManager::alignItems(ItemUtils::AlignType alignType)
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, alignType));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
+}
+
+void ActionManager::changeArrowType(ArrowUtils::ArrowPos arrowPos, ArrowUtils::ArrowType arrowStyle)
+{
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->insert(std::make_shared<ArrowTypeCommand>(items, arrowPos, arrowStyle));
 }
 
 void ActionManager::switchToMoveTool()

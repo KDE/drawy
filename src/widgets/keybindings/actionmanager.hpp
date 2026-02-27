@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "item/arrowutils.hpp"
 #include "item/itemutils.hpp"
 #include "jobs/loadjob.hpp"
 #include "tools/tool.hpp"
@@ -76,6 +77,7 @@ public:
 
     void switchToTool(Tool::Type type);
     void alignItems(ItemUtils::AlignType alignType);
+    void changeArrowType(ArrowUtils::ArrowPos arrowPos, ArrowUtils::ArrowType arrowStyle);
 
     void clear();
 

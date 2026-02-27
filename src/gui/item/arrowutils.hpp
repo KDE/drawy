@@ -8,6 +8,11 @@
 #include <QString>
 namespace ArrowUtils
 {
+enum class ArrowPos : int8_t {
+    StartArrow,
+    EndArrow,
+};
+
 enum class ArrowType : int8_t {
     None,
     Arrow,
@@ -16,8 +21,11 @@ enum class ArrowType : int8_t {
     Circle,
     FullCircle,
     Line,
+    Last = Line,
     // TODO add more in the future
 };
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString convertArrowTypeEnumToString(ArrowUtils::ArrowType type);
 [[nodiscard]] LIBDRAWYGUI_EXPORT ArrowUtils::ArrowType convertArrowTypeStringToArrowEnum(const QString &penStyle);
+[[nodiscard]] LIBDRAWYGUI_EXPORT QString tooltipFromArrowType(ArrowUtils::ArrowType type);
+[[nodiscard]] LIBDRAWYGUI_EXPORT QString iconFromArrowType(ArrowUtils::ArrowType type);
 } // namespace ArrowUtils

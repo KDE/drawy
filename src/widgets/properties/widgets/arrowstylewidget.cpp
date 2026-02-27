@@ -5,14 +5,15 @@
  */
 
 #include "arrowstylewidget.hpp"
-#include "buttonactionswidget.hpp"
-#include "context/applicationcontext.hpp"
+#include "arrowbuttonactionswidget.hpp"
 #include "context/uicontext.hpp"
+#include "item/arrowutils.hpp"
+#include "keybindings/actionmanager.hpp"
 #include <KLocalizedString>
-
 #include <QHBoxLayout>
+
 using namespace Qt::Literals::StringLiterals;
-ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
+ArrowStyleWidget::ArrowStyleWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget(parent)
 {
     m_widget = new QWidget{parent};
@@ -22,8 +23,18 @@ ArrowStyleWidget::ArrowStyleWidget(QWidget *parent)
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
-    auto startArrowButton{new ButtonActionsWidget(m_widget)};
-    auto endArrowButton{new ButtonActionsWidget(m_widget)};
+    auto startArrowButton{new ArrowButtonActionsWidget(m_widget)};
+    connect(startArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
+        if (actionManager) {
+            actionManager->changeArrowType(ArrowUtils::ArrowPos::StartArrow, type);
+        }
+    });
+    auto endArrowButton{new ArrowButtonActionsWidget(m_widget)};
+    connect(endArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
+        if (actionManager) {
+            actionManager->changeArrowType(ArrowUtils::ArrowPos::EndArrow, type);
+        }
+    });
 
     layout->addWidget(startArrowButton);
     layout->addWidget(endArrowButton);

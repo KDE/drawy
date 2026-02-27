@@ -6,12 +6,12 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
-
+class ActionManager;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowStyleWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
-    explicit ArrowStyleWidget(QWidget *parent = nullptr);
+    explicit ArrowStyleWidget(ActionManager *actionManager, QWidget *parent = nullptr);
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
 };

@@ -45,6 +45,8 @@ target_sources(
         command/lockcommand.cpp
         command/zordercommand.hpp
         command/zordercommand.cpp
+        command/arrowtypecommand.hpp
+        command/arrowtypecommand.cpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp
         components/propertybar.cpp
@@ -126,6 +128,8 @@ target_sources(
         properties/widgets/arrowstylewidget.hpp
         properties/widgets/backgroundstylewidget.cpp
         properties/widgets/backgroundstylewidget.hpp
+        properties/widgets/arrowbuttonactionswidget.cpp
+        properties/widgets/arrowbuttonactionswidget.hpp
         properties/propertyutils.cpp
         properties/propertyutils.hpp
         tools/arrowtool.cpp
