@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-26 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 21:33+0200\n"
+"PO-Revision-Date: 2026-02-26 09:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -91,19 +91,19 @@ msgstr "שינוי מרחק (סדר בציר Z)"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "צורות בסיסיות"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "משולש"
 
 #: plugins/basicshapes/xbox/xbox.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "תיבת X"
 
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
@@ -184,12 +184,10 @@ msgid "%1%"
 msgstr "%1%"
 
 #: widgets/components/toolbuttonplugin.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "בחירה"
+msgstr "בחירת תוסף"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -301,7 +299,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "הצגת מצגת"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -317,7 +315,7 @@ msgstr "כללי"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "שונות"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -357,12 +355,12 @@ msgstr "שחזור הפעלה קודמת עם העלייה"
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "ניהול צריכת חשמל"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "השבתת נעילת מסך כשמוצג על כל המסך"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
