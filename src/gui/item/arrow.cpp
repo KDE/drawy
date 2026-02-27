@@ -42,6 +42,10 @@ void ArrowItem::calcArrowPoints()
         m_arrowEndP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
         m_arrowEndP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
     }
+    if (m_startArrow != ArrowUtils::ArrowType::None) {
+        m_arrowStartP1 = QPointF(x1 + arrowSize * std::cos(angle - angleArrow), y1 + arrowSize * std::sin(angle - angleArrow));
+        m_arrowStartP2 = QPointF(x1 + arrowSize * std::cos(angle + angleArrow), y1 + arrowSize * std::sin(angle + angleArrow));
+    }
 }
 
 ArrowUtils::ArrowType ArrowItem::endArrow() const
@@ -73,38 +77,88 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     painter.drawLine(start() - offset, end() - offset);
     switch (m_endArrow) {
-    case ArrowUtils::ArrowType::Arrow:
-        painter.drawLine(end() - offset, m_arrowEndP1 - offset);
-        painter.drawLine(end() - offset, m_arrowEndP2 - offset);
+    case ArrowUtils::ArrowType::Arrow: {
+        const QPolygonF triangle({m_arrowEndP1, end(), m_arrowEndP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painter.save();
+        painter.translate(-offset);
+        painter.drawPath(painterPath);
+        painter.restore();
         break;
-    case ArrowUtils::ArrowType::Triangle:
-        painter.drawLine(end() - offset, m_arrowEndP1 - offset);
-        painter.drawLine(end() - offset, m_arrowEndP2 - offset);
-        painter.drawLine(m_arrowEndP2 - offset, m_arrowEndP1 - offset);
+    }
+    case ArrowUtils::ArrowType::Triangle: {
+        const QPolygonF triangle({m_arrowEndP1, end(), m_arrowEndP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painterPath.closeSubpath();
+        painter.save();
+        painter.translate(-offset);
+        painter.drawPath(painterPath);
+        painter.restore();
         break;
-    case ArrowUtils::ArrowType::None:
-    case ArrowUtils::ArrowType::FullTriangle:
+    }
+    case ArrowUtils::ArrowType::FullTriangle: {
+        const QPolygonF triangle({m_arrowEndP1, end(), m_arrowEndP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painterPath.closeSubpath();
+        painter.save();
+        painter.translate(-offset);
+        painter.fillPath(painterPath, painter.pen().color());
+        painter.restore();
+        break;
+    }
     case ArrowUtils::ArrowType::Circle:
     case ArrowUtils::ArrowType::FullCircle:
-    case ArrowUtils::ArrowType::Line:
+        break;
+    case ArrowUtils::ArrowType::Line: {
+        break;
+    }
+    case ArrowUtils::ArrowType::None:
+        // Nothing
         break;
     }
 
     switch (m_startArrow) {
-    case ArrowUtils::ArrowType::Arrow:
-        painter.drawLine(end() - offset, m_arrowStartP1 - offset);
-        painter.drawLine(end() - offset, m_arrowStartP2 - offset);
+    case ArrowUtils::ArrowType::Arrow: {
+        const QPolygonF triangle({m_arrowStartP1, start(), m_arrowStartP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painter.save();
+        painter.translate(-offset);
+        painter.drawPath(painterPath);
+        painter.restore();
         break;
-    case ArrowUtils::ArrowType::Triangle:
-        painter.drawLine(end() - offset, m_arrowStartP1 - offset);
-        painter.drawLine(end() - offset, m_arrowStartP2 - offset);
-        painter.drawLine(m_arrowStartP2 - offset, m_arrowStartP1 - offset);
+    }
+    case ArrowUtils::ArrowType::Triangle: {
+        const QPolygonF triangle({m_arrowStartP1, start(), m_arrowStartP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painterPath.closeSubpath();
+        painter.save();
+        painter.translate(-offset);
+        painter.drawPath(painterPath);
+        painter.restore();
         break;
-    case ArrowUtils::ArrowType::None:
-    case ArrowUtils::ArrowType::FullTriangle:
+    }
+    case ArrowUtils::ArrowType::FullTriangle: {
+        const QPolygonF triangle({m_arrowStartP1, start(), m_arrowStartP2});
+        QPainterPath painterPath;
+        painterPath.addPolygon(triangle);
+        painterPath.closeSubpath();
+        painter.save();
+        painter.translate(-offset);
+        painter.fillPath(painterPath, painter.pen().color());
+        painter.restore();
+        break;
+    }
     case ArrowUtils::ArrowType::Circle:
     case ArrowUtils::ArrowType::FullCircle:
     case ArrowUtils::ArrowType::Line:
+        break;
+    case ArrowUtils::ArrowType::None:
+        // Nothing
         break;
     }
 }
