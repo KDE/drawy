@@ -38,14 +38,10 @@ void ArrowItem::calcArrowPoints()
     const int arrowSize{std::min(maxArrowSize, static_cast<int>(arrowLength * 0.5))};
 
     constexpr double angleArrow = (M_PI / 180) * 30;
-    if (m_endArrow != ArrowUtils::ArrowType::None) {
-        m_arrowEndP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
-        m_arrowEndP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
-    }
-    if (m_startArrow != ArrowUtils::ArrowType::None) {
-        m_arrowStartP1 = QPointF(x1 + arrowSize * std::cos(angle - angleArrow), y1 + arrowSize * std::sin(angle - angleArrow));
-        m_arrowStartP2 = QPointF(x1 + arrowSize * std::cos(angle + angleArrow), y1 + arrowSize * std::sin(angle + angleArrow));
-    }
+    m_arrowEndP1 = QPointF(x2 - arrowSize * std::cos(angle - angleArrow), y2 - arrowSize * std::sin(angle - angleArrow));
+    m_arrowEndP2 = QPointF(x2 - arrowSize * std::cos(angle + angleArrow), y2 - arrowSize * std::sin(angle + angleArrow));
+    m_arrowStartP1 = QPointF(x1 + arrowSize * std::cos(angle - angleArrow), y1 + arrowSize * std::sin(angle - angleArrow));
+    m_arrowStartP2 = QPointF(x1 + arrowSize * std::cos(angle + angleArrow), y1 + arrowSize * std::sin(angle + angleArrow));
 }
 
 ArrowUtils::ArrowType ArrowItem::endArrow() const
