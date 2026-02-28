@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:41+0000\n"
+"POT-Creation-Date: 2026-02-28 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -34,6 +34,48 @@ msgstr "არასავალდებული არგუმენტი '
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
+
+#: gui/item/arrowutils.cpp:36
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:38
+#: widgets/properties/widgets/arrowstylewidget.cpp:46
+#, kde-format
+msgid "Arrow"
+msgstr "ისარი"
+
+#: gui/item/arrowutils.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Triangle"
+msgstr "სამკუთხედი"
+
+#: gui/item/arrowutils.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Full Triangle"
+msgstr "სამკუთხედი"
+
+#: gui/item/arrowutils.cpp:44
+#, kde-format
+msgid "Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:46
+#, kde-format
+msgid "Fill Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Line"
+msgid "Line"
+msgstr "ხაზი"
 
 #: gui/properties/property.cpp:92
 #, kde-format
@@ -107,6 +149,12 @@ msgstr "X Box"
 #, kde-format
 msgid "Align Items"
 msgstr "ელემენტების გასწორება"
+
+#: widgets/command/arrowtypecommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Change Stroke Style"
+msgid "Change Arrow Type"
+msgstr "გამოძრავების სტილის შეცვლა"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -370,179 +418,179 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "გამართვის რეჟიმის გააქტიურება"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "SVG ფაილად გატანა"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "ელემენტების დაჯგუფება"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "ელემენტების განჯგუფება"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "ტილოს გასუფთავება"
 
-#: widgets/keybindings/actionmanager.cpp:99
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "თავისუფალი ფორმით ხატვის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "საშლელი ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "მონიშვნის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "ოვალის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "ხაზის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "ტექსტის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "ისრის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "გადატანის ხელსაწყო"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "უკან გადაგზავნა"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "უკან გაგზავნა"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "წინ გადმოტანა"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "წინა პლანზე გამოტანა"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "გამართვა"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:435
 #, kde-format
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
-#: widgets/keybindings/actionmanager.cpp:426
-#: widgets/keybindings/actionmanager.cpp:490
+#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:427
+#: widgets/keybindings/actionmanager.cpp:438
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: widgets/keybindings/actionmanager.cpp:449
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "მართლა გნებავთ ტილოს გასუფთავება?"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "გასუფთავება"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:504
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:517
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:508
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:510
+#: widgets/keybindings/actionmanager.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "SVG ფაილად გატანა"
 
-#: widgets/keybindings/actionmanager.cpp:545
+#: widgets/keybindings/actionmanager.cpp:556
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "დოკუმენტი %1 შეიცვალა. გნებავთ ცვლილებების შენახვა თუ მოვაცილო ისინი?"
 
-#: widgets/keybindings/actionmanager.cpp:549
+#: widgets/keybindings/actionmanager.cpp:560
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -606,11 +654,6 @@ msgstr "სწორება ქვემოთ"
 #, kde-format
 msgid "Alignment"
 msgstr "სწორება"
-
-#: widgets/properties/widgets/arrowstylewidget.cpp:35
-#, kde-format
-msgid "Arrow"
-msgstr "ისარი"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -747,7 +790,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "მართკუთხედის ხელსაწყო"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:252
+#: widgets/tools/selectiontool/selectiontool.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"

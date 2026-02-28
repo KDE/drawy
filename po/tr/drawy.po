@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:41+0000\n"
+"POT-Creation-Date: 2026-02-28 00:41+0000\n"
 "PO-Revision-Date: 2026-02-24 07:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -35,6 +35,48 @@ msgstr "İsteğe bağlı bir “dosya” argümanı "
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Kullanışlı, sınırsız beyin fırtınası aracın!"
+
+#: gui/item/arrowutils.cpp:36
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:38
+#: widgets/properties/widgets/arrowstylewidget.cpp:46
+#, kde-format
+msgid "Arrow"
+msgstr "Ok"
+
+#: gui/item/arrowutils.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Triangle"
+msgstr "Üçgen"
+
+#: gui/item/arrowutils.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Full Triangle"
+msgstr "Üçgen"
+
+#: gui/item/arrowutils.cpp:44
+#, kde-format
+msgid "Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:46
+#, kde-format
+msgid "Fill Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Line"
+msgid "Line"
+msgstr "Çizgi"
 
 #: gui/properties/property.cpp:92
 #, kde-format
@@ -108,6 +150,12 @@ msgstr "X Kutusu"
 #, kde-format
 msgid "Align Items"
 msgstr "Ögeleri Hizala"
+
+#: widgets/command/arrowtypecommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Change Stroke Style"
+msgid "Change Arrow Type"
+msgstr "Vuruş Biçemini Değiştir"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -371,172 +419,172 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Hata ayıklama kipini etkinleştir"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Ögeleri Grupla"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Ögeleri Gruptan Çıkar"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Sil"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Tuvali Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:99
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Serbest Çizim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Silgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Seçim Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Dörtgen Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Elips Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Çizgi Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Metin Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Ok Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Taşıma Aracı"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Arkaya Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Arkaya Doğru Gönder"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Öne Doğru Getir"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Öne Getir"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:435
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Başlıksız.%1"
 
-#: widgets/keybindings/actionmanager.cpp:426
-#: widgets/keybindings/actionmanager.cpp:490
+#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:427
+#: widgets/keybindings/actionmanager.cpp:438
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: widgets/keybindings/actionmanager.cpp:449
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tuvali temizlemeyi gerçekten istiyor musunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Temizle"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:504
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:517
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Başlıksız.svg"
 
-#: widgets/keybindings/actionmanager.cpp:508
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:510
+#: widgets/keybindings/actionmanager.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "SVG Olarak Dışa Aktar"
 
-#: widgets/keybindings/actionmanager.cpp:545
+#: widgets/keybindings/actionmanager.cpp:556
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -545,7 +593,7 @@ msgstr ""
 "“%1” belgesinde değişiklikler yapıldı. Değişikliklerinizi kaydetmek mi yoksa "
 "atmak mı istiyorsunuz?"
 
-#: widgets/keybindings/actionmanager.cpp:549
+#: widgets/keybindings/actionmanager.cpp:560
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -609,11 +657,6 @@ msgstr "Alta hizala"
 #, kde-format
 msgid "Alignment"
 msgstr "Hizalama"
-
-#: widgets/properties/widgets/arrowstylewidget.cpp:35
-#, kde-format
-msgid "Arrow"
-msgstr "Ok"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -750,7 +793,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "Dörtgen aracı"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:252
+#: widgets/tools/selectiontool/selectiontool.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-26 00:41+0000\n"
+"POT-Creation-Date: 2026-02-28 00:41+0000\n"
 "PO-Revision-Date: 2026-02-26 09:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -36,6 +36,48 @@ msgstr "ארגומנט ‚file’ כרשות"
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
+
+#: gui/item/arrowutils.cpp:36
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:38
+#: widgets/properties/widgets/arrowstylewidget.cpp:46
+#, kde-format
+msgid "Arrow"
+msgstr "חץ"
+
+#: gui/item/arrowutils.cpp:40
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Triangle"
+msgstr "משולש"
+
+#: gui/item/arrowutils.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Full Triangle"
+msgstr "משולש"
+
+#: gui/item/arrowutils.cpp:44
+#, kde-format
+msgid "Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:46
+#, kde-format
+msgid "Fill Circle"
+msgstr ""
+
+#: gui/item/arrowutils.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Line"
+msgid "Line"
+msgstr "קו"
 
 #: gui/properties/property.cpp:92
 #, kde-format
@@ -109,6 +151,12 @@ msgstr "תיבת X"
 #, kde-format
 msgid "Align Items"
 msgstr "יישור פריטים"
+
+#: widgets/command/arrowtypecommand.cpp:70
+#, fuzzy, kde-format
+#| msgid "Change Stroke Style"
+msgid "Change Arrow Type"
+msgstr "החלפת סגנון קו המתאר"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -374,179 +422,179 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "הפעלת מצב ניפוי שגיאות"
 
-#: widgets/keybindings/actionmanager.cpp:81
+#: widgets/keybindings/actionmanager.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Export as SVG"
 msgstr "ייצוא כ־SVG"
 
-#: widgets/keybindings/actionmanager.cpp:86
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "קיבוץ פריטים"
 
-#: widgets/keybindings/actionmanager.cpp:89
+#: widgets/keybindings/actionmanager.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "פריטת פריטים"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "פינוי משטח ציור"
 
-#: widgets/keybindings/actionmanager.cpp:99
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "כלי צורה חופשית"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "כלי מוחק"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "כלי בחירה"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "כלי אליפסות"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "כלי קווים"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "כלי טקסט"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "כלי חיצים"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "כלי הזזה"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "הרחקה לרקע"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "שליחה אחורה"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "הבאה קדימה"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "קידום לחזית"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "ניפוי שגיאות"
 
-#: widgets/keybindings/actionmanager.cpp:424
+#: widgets/keybindings/actionmanager.cpp:435
 #, kde-format
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/keybindings/actionmanager.cpp:426
-#: widgets/keybindings/actionmanager.cpp:490
+#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:427
+#: widgets/keybindings/actionmanager.cpp:438
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/keybindings/actionmanager.cpp:449
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "לפנות את משטח הציור?"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "לפנות"
 
-#: widgets/keybindings/actionmanager.cpp:493
+#: widgets/keybindings/actionmanager.cpp:504
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:517
 #, kde-format
 msgid "Untitled.svg"
 msgstr "ללא שם.svg"
 
-#: widgets/keybindings/actionmanager.cpp:508
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:510
+#: widgets/keybindings/actionmanager.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:545
+#: widgets/keybindings/actionmanager.cpp:556
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "המסמך „%1” נערך. לשמור את השינויים או לבטל אותם?"
 
-#: widgets/keybindings/actionmanager.cpp:549
+#: widgets/keybindings/actionmanager.cpp:560
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -610,11 +658,6 @@ msgstr "יישור לתחתית"
 #, kde-format
 msgid "Alignment"
 msgstr "יישור"
-
-#: widgets/properties/widgets/arrowstylewidget.cpp:35
-#, kde-format
-msgid "Arrow"
-msgstr "חץ"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -751,7 +794,7 @@ msgctxt "@info:tooltip"
 msgid "Rectangle Tool"
 msgstr "כלי מרובעים"
 
-#: widgets/tools/selectiontool/selectiontool.cpp:252
+#: widgets/tools/selectiontool/selectiontool.cpp:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Selection Tool"
