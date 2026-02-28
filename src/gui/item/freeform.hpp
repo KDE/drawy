@@ -42,6 +42,8 @@ public:
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;
 
+    void updateAfterProperty() override;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
