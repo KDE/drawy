@@ -219,6 +219,20 @@ void FreeformItem::deserialize(const QJsonObject &obj)
     deserializer.deserialize(obj);
 }
 
+void FreeformItem::updateAfterProperty()
+{
+    if (m_points.isEmpty()) {
+        return;
+    }
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+
+    m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    m_path.setCachingEnabled(true);
+#endif
+    m_boundingBox = m_path.boundingRect().normalized();
+}
+
 bool FreeformItem::needsCaching() const
 {
     return true;
