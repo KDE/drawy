@@ -350,6 +350,8 @@ void ActionManager::changeArrowType(ArrowUtils::ArrowPos arrowPos, ArrowUtils::A
     }
     const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->insert(std::make_shared<ArrowTypeCommand>(items, arrowPos, arrowStyle));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
 }
 
 void ActionManager::switchToMoveTool()
