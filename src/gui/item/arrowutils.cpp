@@ -43,7 +43,7 @@ QString ArrowUtils::tooltipFromArrowType(ArrowUtils::ArrowType type)
     case ArrowUtils::ArrowType::Circle:
         return i18n("Circle");
     case ArrowUtils::ArrowType::FullCircle:
-        return i18n("Fill Circle");
+        return i18n("Full Circle");
     case ArrowUtils::ArrowType::Line:
         return i18n("Line");
     }
