@@ -47,22 +47,17 @@ void ArrowTypeCommand::undo(ApplicationContext *context)
 {
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
-        dirtyRegion |= item->boundingBox();
-    }
-    auto &transformer{context->spatialContext()->coordinateTransformer()};
-    auto &cacheGrid{context->renderingContext()->cacheGrid()};
-
-    for (const auto &item : std::as_const(m_items)) {
         if (auto arrowItem = dynamic_cast<ArrowItem *>(item.get())) {
-            cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+            dirtyRegion |= item->boundingBox();
             if (m_arrowPos == ArrowUtils::ArrowPos::EndArrow) {
                 arrowItem->setEndArrow(m_originalArrowStyle[item]);
             } else if (m_arrowPos == ArrowUtils::ArrowPos::StartArrow) {
                 arrowItem->setStartArrow(m_originalArrowStyle[item]);
             }
-            cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         }
     }
+    const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 }
 
 QString ArrowTypeCommand::commandTitle() const
