@@ -22,7 +22,11 @@ public:
     void activeDebug();
 
 protected:
+    void changeEvent(QEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
+
+Q_SIGNALS:
+    void paletteChanged();
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);

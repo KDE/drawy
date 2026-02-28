@@ -35,4 +35,12 @@
      <default>false</default>
    </entry>
   </group>
+    <group name="Canvas">
+      <entry name="BackgroundColorLight" type="Color">
+        <default>#f8f9fa</default>
+      </entry>
+      <entry name="BackgroundColorDark" type="Color">
+        <default>#121212</default>
+      </entry>
+    </group>
 </kcfg>

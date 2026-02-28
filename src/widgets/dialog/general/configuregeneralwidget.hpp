@@ -7,6 +7,7 @@
 #include "libdrawywidgets_private_export.h"
 #include <QWidget>
 class AutoSaveWidget;
+class CanvasColorWidget;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureGeneralWidget : public QWidget
 {
@@ -21,4 +22,5 @@ public:
 
 private:
     AutoSaveWidget *const m_autoSaveWidget;
+    CanvasColorWidget *const m_canvasColorWidget;
 };

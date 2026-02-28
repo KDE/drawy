@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     auto renderingContext{mApplicationContext->renderingContext()};
     auto uiContext{mApplicationContext->uiContext()};
 
+    connect(this, &MainWindow::paletteChanged, uiContext, &UIContext::slotThemeChanged);
     renderingContext->canvas()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     layout->setMargins(10);
@@ -165,6 +166,13 @@ void MainWindow::updateWindowTitle()
     }
 
     setWindowTitle(i18nc("@title:window %1 is a filename", "%1 — Drawy", fileName));
+}
+
+void MainWindow::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::PaletteChange) {
+        Q_EMIT paletteChanged();
+    }
 }
 
 #include "moc_window.cpp"

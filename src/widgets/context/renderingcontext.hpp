@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <QPoint>
 #include <QRect>
 #include <QTimer>
 
@@ -38,6 +37,7 @@ public:
 
     [[nodiscard]] int fps() const;
 
+    void setCanvasBackground(const QColor &color);
     void reset();
 
 Q_SIGNALS:

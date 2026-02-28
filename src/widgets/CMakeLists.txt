@@ -203,6 +203,8 @@ target_sources(
         dialog/general/configuregeneralwidget.cpp
         dialog/general/autosavewidget.hpp
         dialog/general/autosavewidget.cpp
+        dialog/general/canvascolorwidget.hpp
+        dialog/general/canvascolorwidget.cpp
         dialog/misc/configuremiscwidget.hpp
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp

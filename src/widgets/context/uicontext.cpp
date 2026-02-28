@@ -16,6 +16,7 @@
 #include "components/topwidgets.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
+#include "drawyglobalconfig.h"
 #include "event/event.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
@@ -93,7 +94,19 @@ void UIContext::initializeUIContext()
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
+    connect(DrawyGlobalConfig::self(), &DrawyGlobalConfig::configChanged, this, &UIContext::slotThemeChanged);
+    slotThemeChanged();
+
     m_propertyBar->updateProperties(m_toolBar->curTool());
+}
+
+void UIContext::slotThemeChanged()
+{
+    QColor bgColor = QGuiApplication::palette().color(QPalette::Window);
+    bool isDarkTheme = bgColor.lightnessF() < 0.5;
+    bgColor = isDarkTheme ? DrawyGlobalConfig::backgroundColorDark() : DrawyGlobalConfig::backgroundColorLight();
+    m_applicationContext->renderingContext()->setCanvasBackground(bgColor);
+    Q_EMIT themeChanged(isDarkTheme);
 }
 
 ToolBar *UIContext::toolBar() const

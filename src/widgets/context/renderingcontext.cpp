@@ -60,6 +60,14 @@ Canvas *RenderingContext::canvas() const
     return m_canvas;
 }
 
+void RenderingContext::setCanvasBackground(const QColor &color)
+{
+    m_canvas->setCanvasBg(color);
+    cacheGrid().markAllDirty();
+    markForRender();
+    markForUpdate();
+}
+
 CacheGrid &RenderingContext::cacheGrid() const
 {
     return *m_cacheGrid;

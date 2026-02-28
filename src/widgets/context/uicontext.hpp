@@ -42,6 +42,11 @@ public:
 
     void toolChanged(Tool &);
 
+    void slotThemeChanged();
+
+Q_SIGNALS:
+    void themeChanged(bool isDark);
+
 private:
     ToolBar *m_toolBar = nullptr;
     PropertyBar *m_propertyBar = nullptr;
