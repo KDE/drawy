@@ -53,7 +53,7 @@ ArrowUtils::ArrowType ArrowItem::endArrow() const
     return m_endArrow;
 }
 
-void ArrowItem::setEndArrow(const ArrowUtils::ArrowType &newEndArrow)
+void ArrowItem::setEndArrow(ArrowUtils::ArrowType newEndArrow)
 {
     m_endArrow = newEndArrow;
 }
@@ -68,7 +68,7 @@ ArrowUtils::ArrowType ArrowItem::startArrow() const
     return m_startArrow;
 }
 
-void ArrowItem::setStartArrow(const ArrowUtils::ArrowType &newStartArrow)
+void ArrowItem::setStartArrow(ArrowUtils::ArrowType newStartArrow)
 {
     m_startArrow = newStartArrow;
 }

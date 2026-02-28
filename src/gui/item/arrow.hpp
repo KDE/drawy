@@ -25,10 +25,10 @@ public:
     void deserialize(const QJsonObject &obj) override;
 
     [[nodiscard]] ArrowUtils::ArrowType startArrow() const;
-    void setStartArrow(const ArrowUtils::ArrowType &newStartArrow);
+    void setStartArrow(ArrowUtils::ArrowType newStartArrow);
 
     [[nodiscard]] ArrowUtils::ArrowType endArrow() const;
-    void setEndArrow(const ArrowUtils::ArrowType &newEndArrow);
+    void setEndArrow(ArrowUtils::ArrowType newEndArrow);
 
     [[nodiscard]] bool operator==(const ArrowItem &other) const;
 
