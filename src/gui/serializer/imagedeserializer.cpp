@@ -23,10 +23,10 @@ void ImageDeserializer::deserialize(const QJsonObject &obj)
 
     ImageItem *image = static_cast<ImageItem *>(mItem);
 
-    QRectF box = toRectF(value(obj, u"bounding_box"_s));
+    const QRectF box = toRectF(value(obj, u"bounding_box"_s));
     image->setBox(box);
 
-    QByteArray data{QByteArray::fromBase64(value(obj, u"image_data"_s).toString().toUtf8())};
+    const QByteArray data{QByteArray::fromBase64(value(obj, u"image_data"_s).toString().toUtf8())};
     QPixmap pixmap;
     pixmap.loadFromData(data, "PNG");
     image->setPixmap(pixmap);
