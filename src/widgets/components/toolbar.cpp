@@ -51,10 +51,6 @@ void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
     m_tools[Tool::Type::Custom] = tool;
     m_group->addButton(btn, static_cast<int>(Tool::Type::Custom));
     m_layout->addWidget(btn);
-    if (m_tools.size() == 1) {
-        btn->setChecked(true);
-        Q_EMIT toolChanged(*tool);
-    }
 }
 
 void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name)
