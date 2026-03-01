@@ -12,7 +12,6 @@
 class Property;
 class Item;
 class ApplicationContext;
-class QPainter;
 
 class SelectionContext : public QObject
 {

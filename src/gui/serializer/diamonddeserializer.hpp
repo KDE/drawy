@@ -8,7 +8,6 @@
 #include "libdrawygui_export.h"
 #include "polygondeserializer.hpp"
 class DiamondItem;
-class QJsonObject;
 class LIBDRAWYGUI_EXPORT DiamondDeserializer : public PolygonDeserializer
 {
 public:

@@ -8,7 +8,6 @@
 #include "libdrawygui_export.h"
 #include "polygondeserializer.hpp"
 class EllipseItem;
-class QJsonObject;
 class LIBDRAWYGUI_EXPORT EllipseDeserializer : public PolygonDeserializer
 {
 public:

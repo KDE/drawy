@@ -6,8 +6,6 @@
 
 #include "transformhandlerutils.hpp"
 #include <QRectF>
-class QPainter;
-class Event;
 class ApplicationContext;
 
 class TransformHandler

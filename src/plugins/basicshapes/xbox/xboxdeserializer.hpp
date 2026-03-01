@@ -7,7 +7,6 @@
 
 #include "serializer/polygondeserializer.hpp"
 class XBoxItem;
-class QJsonObject;
 class XBoxDeserializer : public PolygonDeserializer
 {
 public:

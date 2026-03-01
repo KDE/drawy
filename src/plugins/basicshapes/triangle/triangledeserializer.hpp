@@ -6,7 +6,6 @@
 #pragma once
 
 #include "serializer/polygondeserializer.hpp"
-class QJsonObject;
 class TriangleItem;
 class TriangleDeserializer : public PolygonDeserializer
 {
