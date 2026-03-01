@@ -44,7 +44,7 @@ void ImageItemTest::shouldSerializeImage()
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
     QPixmap pixmap;
-    pixmap.load(QLatin1StringView(DRAWY_DATA_DIR) + u"/image/testimage.png"_s);
+    pixmap.load(QLatin1StringView(DRAWY_GUI_DATA_DIR) + u"/image/testimage.png"_s);
     f.setPixmap(pixmap);
     const QJsonObject obj = f.serialize(-1);
     const QJsonDocument doc(obj);
