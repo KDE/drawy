@@ -43,6 +43,7 @@ public:
         Arrow,
         Text,
         Diamond,
+        Image,
         Custom,
     };
 

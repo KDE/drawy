@@ -24,6 +24,8 @@ target_sources(
         item/factory/textfactory.hpp
         item/factory/diamondfactory.cpp
         item/factory/diamondfactory.hpp
+        item/factory/imagefactory.cpp
+        item/factory/imagefactory.hpp
         item/arrow.cpp
         item/arrow.hpp
         item/ellipse.cpp

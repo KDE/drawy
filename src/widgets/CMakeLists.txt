@@ -160,6 +160,8 @@ target_sources(
         tools/tool.hpp
         tools/customtool.hpp
         tools/customtool.cpp
+        tools/imagetool.cpp
+        tools/imagetool.hpp
         transformhandler/transformhandler.hpp
         transformhandler/transformhandler.cpp
         transformhandler/linemovetransformhandler.hpp

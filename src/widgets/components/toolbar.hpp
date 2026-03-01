@@ -27,6 +27,7 @@ public:
     void showEvent(QShowEvent *event) override;
 
     void addCustomTool(const std::shared_ptr<CustomTool> &tool);
+    void addImageTool(const std::shared_ptr<Tool> &tool);
 Q_SIGNALS:
     void toolChanged(Tool &);
     void toolbarShown();

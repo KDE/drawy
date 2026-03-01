@@ -31,6 +31,7 @@
 #include "tools/ellipsetool.hpp"
 #include "tools/erasertool.hpp"
 #include "tools/freeformtool.hpp"
+#include "tools/imagetool.hpp"
 #include "tools/linetool.hpp"
 #include "tools/movetool.hpp"
 #include "tools/rectangletool.hpp"
@@ -72,6 +73,7 @@ void UIContext::initializeUIContext()
     m_toolBar->addTool(std::make_shared<EraserTool>(m_applicationContext), Tool::Type::Eraser, i18nc("@action:button", "Eraser"));
     m_toolBar->addTool(std::make_shared<TextTool>(m_applicationContext), Tool::Type::Text, i18nc("@action:button", "Text"));
     m_toolBar->addTool(std::make_shared<MoveTool>(m_applicationContext), Tool::Type::Move, i18nc("@action:button", "Move"));
+    m_toolBar->addImageTool(std::make_shared<ImageTool>(m_applicationContext));
     m_toolBar->addCustomTool(std::make_shared<CustomTool>(m_applicationContext));
 
     connect(m_toolBar, &ToolBar::toolChanged, this, &UIContext::toolChanged);

@@ -15,6 +15,7 @@
 * Add support for plugin.
 * Add basic shapes plugin.
 * Disable screenlocker when using apps in fullscreen mode.
+* Add Image support.
 
 ### Changed
 * Freehand strokes now use Bezier curves and interpolation to make drawing feel significantly smoother.

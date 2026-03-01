@@ -4,6 +4,7 @@
 
 #include "toolbar.hpp"
 #include "components/toolbuttonplugin.hpp"
+#include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QStyle>
@@ -53,12 +54,39 @@ void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
     m_layout->addWidget(btn);
 }
 
+void ToolBar::addImageTool(const std::shared_ptr<Tool> &tool)
+{
+    if (!tool) {
+        return;
+    }
+
+    auto btn = new QToolButton(this);
+    btn->setToolTip(i18nc("@action:button", "Image"));
+    btn->setIcon(QIcon::fromTheme(tool->icon()));
+    btn->setAutoRaise(true);
+    btn->setCheckable(true);
+
+    connect(btn, &QToolButton::clicked, this, [this, tool, btn]() {
+        btn->setChecked(true);
+        Q_EMIT toolChanged(*tool);
+    });
+
+    const int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+    btn->setIconSize(QSize{iconSize, iconSize});
+
+    btn->setCursor(Qt::PointingHandCursor);
+    m_tools[Tool::Type::Image] = tool;
+    m_group->addButton(btn, static_cast<int>(Tool::Type::Image));
+    m_layout->addWidget(btn);
+}
+
 void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const QString &name)
 {
     if (!tool) {
         return;
     }
-    if (type == Tool::Type::Custom) {
+
+    if (type == Tool::Type::Custom || type == Tool::Type::Image) {
         return;
     }
 
