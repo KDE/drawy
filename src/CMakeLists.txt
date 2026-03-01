@@ -12,15 +12,21 @@ add_subdirectory(plugins)
 # Set bundle properties for macOS / iOS.
 if(APPLE)
     set_target_properties(
-        ${PROJECT_NAME}
+        drawy
         PROPERTIES
-            MACOSX_BUNDLE_GUI_IDENTIFIER
-                com.example.${PROJECT_NAME}
-            MACOSX_BUNDLE_BUNDLE_VERSION
-                ${PROJECT_VERSION}
+            MACOSX_BUNDLE_DISPLAY_NAME
+                "Drawy"
+            MACOSX_BUNDLE_BUNDLE_NAME
+                "Drawy"
+            MACOSX_BUNDLE_LONG_VERSION_STRING
+                "Drawy ${PROJECT_VERSION}"
             MACOSX_BUNDLE_SHORT_VERSION_STRING
-                "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
-            MACOSX_BUNDLE
-                TRUE
+                "${PROJECT_VERSION}"
+            MACOSX_BUNDLE_BUNDLE_VERSION
+                "${PROJECT_VERSION}"
+            MACOSX_BUNDLE_GUI_IDENTIFIER
+                "org.kde.drawy"
+            MACOSX_BUNDLE_COPYRIGHT
+                "2025-2026 The Drawy Developers"
     )
 endif()
