@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-01 00:42+0000\n"
 "PO-Revision-Date: 2026-02-26 09:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -68,9 +68,11 @@ msgid "Circle"
 msgstr ""
 
 #: gui/item/arrowutils.cpp:46
-#, kde-format
-msgid "Fill Circle"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Triangle"
+msgid "Full Circle"
+msgstr "משולש"
 
 #: gui/item/arrowutils.cpp:48
 #, fuzzy, kde-format
@@ -152,7 +154,7 @@ msgstr "תיבת X"
 msgid "Align Items"
 msgstr "יישור פריטים"
 
-#: widgets/command/arrowtypecommand.cpp:70
+#: widgets/command/arrowtypecommand.cpp:65
 #, fuzzy, kde-format
 #| msgid "Change Stroke Style"
 msgid "Change Arrow Type"
@@ -281,61 +283,61 @@ msgstr "לורנט מונטל"
 msgid "Developer"
 msgstr "מפתח"
 
-#: widgets/context/uicontext.cpp:64
+#: widgets/context/uicontext.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "יהלום"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -399,6 +401,23 @@ msgstr "פתיחת תיקייה"
 #, kde-format
 msgid "Restore previous session on start"
 msgstr "שחזור הפעלה קודמת עם העלייה"
+
+#: widgets/dialog/general/canvascolorwidget.cpp:13
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Clear Canvas"
+msgid "Canvas"
+msgstr "פינוי משטח ציור"
+
+#: widgets/dialog/general/canvascolorwidget.cpp:21
+#, kde-format
+msgid "Light theme color"
+msgstr ""
+
+#: widgets/dialog/general/canvascolorwidget.cpp:22
+#, kde-format
+msgid "Dark theme color"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -536,65 +555,65 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "ניפוי שגיאות"
 
-#: widgets/keybindings/actionmanager.cpp:435
+#: widgets/keybindings/actionmanager.cpp:437
 #, kde-format
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/keybindings/actionmanager.cpp:437
-#: widgets/keybindings/actionmanager.cpp:501
+#: widgets/keybindings/actionmanager.cpp:439
+#: widgets/keybindings/actionmanager.cpp:503
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:438
+#: widgets/keybindings/actionmanager.cpp:440
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/keybindings/actionmanager.cpp:460
+#: widgets/keybindings/actionmanager.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "לפנות את משטח הציור?"
 
-#: widgets/keybindings/actionmanager.cpp:461
+#: widgets/keybindings/actionmanager.cpp:463
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "לפנות"
 
-#: widgets/keybindings/actionmanager.cpp:504
+#: widgets/keybindings/actionmanager.cpp:506
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/keybindings/actionmanager.cpp:517
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgid "Untitled.svg"
 msgstr "ללא שם.svg"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:521
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:521
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:556
+#: widgets/keybindings/actionmanager.cpp:558
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "המסמך „%1” נערך. לשמור את השינויים או לבטל אותם?"
 
-#: widgets/keybindings/actionmanager.cpp:560
+#: widgets/keybindings/actionmanager.cpp:562
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -806,7 +825,7 @@ msgctxt "@info:tooltip"
 msgid "Text Tool"
 msgstr "כלי טקסט"
 
-#: widgets/window/window.cpp:167
+#: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
