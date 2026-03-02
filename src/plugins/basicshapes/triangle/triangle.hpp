@@ -7,10 +7,10 @@
 #pragma once
 
 #include "item/polygon.hpp"
-#include "libstandardformplugin_export.h"
+#include "libbasicshapesformplugin_export.h"
 #include "pluginform/pluginform.hpp"
 class QPainterPath;
-class LIBSTANDARDFORMPLUGIN_EXPORT TriangleItem : public PolygonItem
+class LIBBASICSHAPESFORMPLUGIN_EXPORT TriangleItem : public PolygonItem
 {
 public:
     TriangleItem();

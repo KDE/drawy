@@ -4,7 +4,7 @@
 macro(add_standardformplugin_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.hpp TEST_NAME ${_name}
-        LINK_LIBRARIES Qt::Test libstandardformplugin
+        LINK_LIBRARIES Qt::Test libbasicshapesformplugin
     )
 endmacro()
 

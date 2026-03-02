@@ -2,9 +2,9 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(libstandardformplugin)
+add_library(libbasicshapesformplugin)
 target_sources(
-    libstandardformplugin
+    libbasicshapesformplugin
     PRIVATE
         triangle/triangle.hpp
         triangle/triangle.cpp
@@ -25,15 +25,15 @@ target_sources(
         basicshapespluginutils.hpp
         basicshapespluginutils.cpp
 )
-generate_export_header(libstandardformplugin BASE_NAME libstandardformplugin)
-ecm_qt_declare_logging_category(libstandardformplugin HEADER standardformplugin_debug.h IDENTIFIER STANDARD_FORM_LOG CATEGORY_NAME org.kde.drawy.standardformplugin
-    DESCRIPTION "Drawy standardformplugin" EXPORT DRAWY
+generate_export_header(libbasicshapesformplugin BASE_NAME libbasicshapesformplugin)
+ecm_qt_declare_logging_category(libbasicshapesformplugin HEADER basicshapesformplugin_debug.h IDENTIFIER BASICSHAPES_FORM_LOG CATEGORY_NAME org.kde.drawy.basicshapesformplugin
+    DESCRIPTION "Drawy basic shapes form plugin" EXPORT DRAWY
 )
 
-target_link_libraries(libstandardformplugin libdrawygui)
+target_link_libraries(libbasicshapesformplugin libdrawygui)
 
 set_target_properties(
-    libstandardformplugin
+    libbasicshapesformplugin
     PROPERTIES
         OUTPUT_NAME
             standardformplugin
@@ -45,7 +45,7 @@ set_target_properties(
 
 install(
     TARGETS
-        libstandardformplugin
+        libbasicshapesformplugin
         ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     LIBRARY
         NAMELINK_SKIP
@@ -53,15 +53,15 @@ install(
 
 ###
 
-kcoreaddons_add_plugin(standardform_plugin INSTALL_NAMESPACE drawypluginforms)
+kcoreaddons_add_plugin(basicshapesform_plugin INSTALL_NAMESPACE drawypluginforms)
 
 target_sources(
-    standardform_plugin
+    basicshapesform_plugin
     PRIVATE
         basicshapesplugin.hpp
         basicshapesplugin.cpp
 )
-target_link_libraries(standardform_plugin libstandardformplugin)
+target_link_libraries(basicshapesform_plugin libbasicshapesformplugin)
 
 ###
 if(BUILD_TESTING)

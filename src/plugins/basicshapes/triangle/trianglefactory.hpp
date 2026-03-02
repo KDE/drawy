@@ -6,10 +6,10 @@
 
 #pragma once
 #include "item/factory/itemfactory.hpp"
-#include "libstandardformplugin_export.h"
+#include "libbasicshapesformplugin_export.h"
 class Item;
 
-class LIBSTANDARDFORMPLUGIN_EXPORT TriangleFactory : public ItemFactory
+class LIBBASICSHAPESFORMPLUGIN_EXPORT TriangleFactory : public ItemFactory
 {
 public:
     TriangleFactory();

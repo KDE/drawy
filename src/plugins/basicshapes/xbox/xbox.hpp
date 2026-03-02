@@ -7,11 +7,11 @@
 #pragma once
 
 #include "item/rectangle.hpp"
-#include "libstandardformplugin_export.h"
+#include "libbasicshapesformplugin_export.h"
 #include "pluginform/pluginform.hpp"
 
 class QPainterPath;
-class LIBSTANDARDFORMPLUGIN_EXPORT XBoxItem : public RectangleItem
+class LIBBASICSHAPESFORMPLUGIN_EXPORT XBoxItem : public RectangleItem
 {
 public:
     XBoxItem();

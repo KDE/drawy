@@ -7,10 +7,10 @@
 #pragma once
 
 #include "item/factory/itemfactory.hpp"
-#include "libstandardformplugin_export.h"
+#include "libbasicshapesformplugin_export.h"
 class Item;
 
-class LIBSTANDARDFORMPLUGIN_EXPORT XBoxFactory : public ItemFactory
+class LIBBASICSHAPESFORMPLUGIN_EXPORT XBoxFactory : public ItemFactory
 {
 public:
     XBoxFactory();

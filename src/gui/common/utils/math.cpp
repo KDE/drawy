@@ -24,8 +24,10 @@ bool intersects(const QRectF &rectA, const QRectF &rectB)
 
 bool intersects(const QLineF &a, const QLineF &b)
 {
-    const QPointF p{a.p1()}, q{a.p2()};
-    const QPointF r{b.p1()}, s{b.p2()};
+    const QPointF p{a.p1()};
+    const QPointF q{a.p2()};
+    const QPointF r{b.p1()};
+    const QPointF s{b.p2()};
     return orientation(p, q, r) != orientation(p, q, s) && orientation(r, s, p) != orientation(r, s, q);
 }
 

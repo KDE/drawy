@@ -5,7 +5,7 @@
  */
 #pragma once
 #include "item/factory/itemfactory.hpp"
-#include "libstandardformplugin_export.h"
+#include "libbasicshapesformplugin_export.h"
 #include "pluginform/pluginform.hpp"
 #include <QString>
 namespace BasicShapesPluginUtils
@@ -16,13 +16,13 @@ enum class BasicShapesPluginType : int8_t {
     XBox,
 };
 
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT QString pluginName();
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT QString pluginName();
 
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT QString convertStandardFormPluginTypeToString(BasicShapesPluginUtils::BasicShapesPluginType type);
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT QString convertStandardFormPluginTypeToString(BasicShapesPluginUtils::BasicShapesPluginType type);
 
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT BasicShapesPluginUtils::BasicShapesPluginType convertStandardFormPluginTypeFromString(const QString &str);
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT BasicShapesPluginUtils::BasicShapesPluginType convertStandardFormPluginTypeFromString(const QString &str);
 
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT std::unique_ptr<ItemFactory> generateItemFactory(const QString &name);
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT QList<PluginForm::PluginFormInfo> pluginFormInfoList();
-[[nodiscard]] LIBSTANDARDFORMPLUGIN_EXPORT std::shared_ptr<Item> createItem(const QString &customPluginName);
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT std::unique_ptr<ItemFactory> generateItemFactory(const QString &name);
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT QList<PluginForm::PluginFormInfo> pluginFormInfoList();
+[[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT std::shared_ptr<Item> createItem(const QString &customPluginName);
 };

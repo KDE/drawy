@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "basicshapespluginutils.hpp"
-#include "standardformplugin_debug.h"
+#include "basicshapesformplugin_debug.h"
 #include "triangle/triangle.hpp"
 #include "triangle/trianglefactory.hpp"
 #include "xbox/xbox.hpp"
@@ -25,7 +25,7 @@ QString BasicShapesPluginUtils::convertStandardFormPluginTypeToString(BasicShape
     case BasicShapesPluginUtils::BasicShapesPluginType::XBox:
         return u"XBOX"_s;
     case BasicShapesPluginUtils::BasicShapesPluginType::Unknown:
-        qCWarning(STANDARD_FORM_LOG) << "Incorrect StandardFormPluginType Unknown it's a bug";
+        qCWarning(BASICSHAPES_FORM_LOG) << "Incorrect StandardFormPluginType Unknown it's a bug";
         break;
     }
     Q_UNREACHABLE();
@@ -39,7 +39,7 @@ BasicShapesPluginUtils::BasicShapesPluginType BasicShapesPluginUtils::convertSta
     } else if (str == u"XBOX"_s) {
         return BasicShapesPluginUtils::BasicShapesPluginType::XBox;
     } else {
-        qCWarning(STANDARD_FORM_LOG) << "Incorrect StandardFormPluginType name " << str;
+        qCWarning(BASICSHAPES_FORM_LOG) << "Incorrect StandardFormPluginType name " << str;
     }
     return BasicShapesPluginUtils::BasicShapesPluginType::Unknown;
 }
