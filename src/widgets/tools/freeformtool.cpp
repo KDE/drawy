@@ -43,17 +43,17 @@ void FreeformTool::mousePressed(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
-        curItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
+        m_currentItem = std::dynamic_pointer_cast<FreeformItem>(m_itemFactory->create());
 
-        curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
-        curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
-        curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
-        curItem->setProperty(Property::Type::StrokeStyle, uiContext->propertyManager()->value(Property::Type::StrokeStyle));
+        m_currentItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
+        m_currentItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
+        m_currentItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
+        m_currentItem->setProperty(Property::Type::StrokeStyle, uiContext->propertyManager()->value(Property::Type::StrokeStyle));
 
         m_lastPoint = uiContext->appEvent()->pos();
         m_itemList.clear();
 
-        curItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext->appEvent()->pressure());
+        m_currentItem->addPoint(transformer.viewToWorld(m_lastPoint), uiContext->appEvent()->pressure());
         m_currentCache = QPixmap{renderingContext->canvas()->dimensions()};
         m_currentCache.fill(Qt::transparent);
 
@@ -79,20 +79,20 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         }
 
         const qreal zoom{renderingContext->zoomFactor()};
-        curItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
+        m_currentItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
 
-        if (curItem->isBufferFull()) {
+        if (m_currentItem->isBufferFull()) {
             QPainter cachePainter{&m_currentCache};
             cachePainter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
             cachePainter.scale(zoom, zoom);
-            curItem->drawBuffer(cachePainter, spatialContext->offsetPos());
+            m_currentItem->drawBuffer(cachePainter, spatialContext->offsetPos());
         } else {
             // clear the overlay and draw the cached pixmap and the latest buffer
             renderingContext->canvas()->setOverlayBg(renderingContext->canvas()->overlayBg());
             renderingContext->canvas()->paintOverlay([&](QPainter &painter) -> void {
                 painter.drawPixmap(QPointF{0, 0}, m_currentCache);
                 painter.scale(zoom, zoom);
-                curItem->drawBuffer(painter, spatialContext->offsetPos());
+                m_currentItem->drawBuffer(painter, spatialContext->offsetPos());
             });
         }
 
@@ -112,12 +112,12 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
-        curItem->finalizeStroke();
+        m_currentItem->finalizeStroke();
 
-        m_itemList.push_back(curItem);
+        m_itemList.push_back(m_currentItem);
         commandHistory->insert(std::make_shared<InsertItemCommand>(m_itemList));
 
-        curItem.reset();
+        m_currentItem.reset();
         m_currentCache = QPixmap{};
 
         m_isDrawing = false;
@@ -128,8 +128,8 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
 
 void FreeformTool::tablet([[maybe_unused]] ApplicationContext *context)
 {
-    if (curItem && curItem->isPressureSimulated()) {
-        curItem->setSimulatePressure(false);
+    if (m_currentItem && m_currentItem->isPressureSimulated()) {
+        m_currentItem->setSimulatePressure(false);
     }
 }
 

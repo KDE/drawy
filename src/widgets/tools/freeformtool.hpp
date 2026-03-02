@@ -25,7 +25,7 @@ public:
     [[nodiscard]] Tool::Type type() const override;
 
 private:
-    std::shared_ptr<FreeformItem> curItem{};
+    std::shared_ptr<FreeformItem> m_currentItem{};
     QList<std::shared_ptr<Item>> m_itemList{};
 
     QPixmap m_currentCache{};
