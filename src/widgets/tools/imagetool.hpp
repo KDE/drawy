@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -19,4 +19,7 @@ public:
     [[nodiscard]] QString icon() const override;
 
     void mouseReleased(ApplicationContext *context) override;
+
+private:
+    QString m_filter;
 };

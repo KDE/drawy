@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -27,6 +27,14 @@ ImageTool::ImageTool(ApplicationContext *context)
 {
     m_itemFactory = std::make_unique<ImageFactory>();
     m_properties = {Property::Type::Opacity};
+    const QList<QByteArray> supportedImage = QImageReader::supportedImageFormats();
+    for (const QByteArray &ba : supportedImage) {
+        if (!m_filter.isEmpty()) {
+            m_filter += u' ';
+        }
+        m_filter += "*."_L1 + QString::fromLatin1(ba);
+    }
+    m_filter = u"%1 (%2)"_s.arg(i18n("Image"), m_filter);
 }
 
 QString ImageTool::tooltip() const
@@ -50,17 +58,7 @@ void ImageTool::mouseReleased(ApplicationContext *context)
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         const QPointF lastPoint = uiContext->appEvent()->pos();
-        QString filter;
-        const QList<QByteArray> supportedImage = QImageReader::supportedImageFormats();
-        for (const QByteArray &ba : supportedImage) {
-            if (!filter.isEmpty()) {
-                filter += u' ';
-            }
-            filter += "*."_L1 + QString::fromLatin1(ba);
-        }
-        filter = u"%1 (%2)"_s.arg(i18n("Image"), filter);
-
-        const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Insert Image"), {}, filter);
+        const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Insert Image"), {}, m_filter);
         if (fileName.isEmpty()) {
             return;
         }
