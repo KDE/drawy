@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-28 09:04+0100\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-03-01 08:17+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -63,8 +63,7 @@ msgid "Circle"
 msgstr "Krog"
 
 #: gui/item/arrowutils.cpp:46
-#, fuzzy, kde-format
-#| msgid "Fill Circle"
+#, kde-format
 msgid "Full Circle"
 msgstr "Polni krog"
 
@@ -224,6 +223,12 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
+#: widgets/components/toolbar.cpp:64
+#, kde-format
+msgctxt "@action:button"
+msgid "Image"
+msgstr ""
+
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
@@ -274,61 +279,61 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Razvijalec"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Izbira"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Prosto oblikovanje"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Pravokotnik"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Romb"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elipsa"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Puščica"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Črta"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Radirka"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Besedilo"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -394,21 +399,19 @@ msgid "Restore previous session on start"
 msgstr "Obnovi prejšnjo sejo ob zagonu"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "Počisti platno"
+msgstr "Platno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "Barva svetle teme"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "Barva temne teme"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -787,6 +790,26 @@ msgstr "Orodje radirke"
 msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "Orodje pero"
+
+#: widgets/tools/imagetool.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Rectangle Tool"
+msgctxt "@info:tooltip"
+msgid "Image Tool"
+msgstr "Orodje za pravokotnik"
+
+#: widgets/tools/imagetool.cpp:61
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:63
+#, fuzzy, kde-format
+#| msgid "Insert Object"
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Vstavi predmet"
 
 #: widgets/tools/linetool.cpp:19
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -62,10 +62,9 @@ msgid "Circle"
 msgstr "წრე"
 
 #: gui/item/arrowutils.cpp:46
-#, fuzzy, kde-format
-#| msgid "Fill Circle"
+#, kde-format
 msgid "Full Circle"
-msgstr "წრეწირის შევსება"
+msgstr "სრული წრეწირი"
 
 #: gui/item/arrowutils.cpp:48
 #, kde-format
@@ -223,6 +222,12 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
+#: widgets/components/toolbar.cpp:64
+#, kde-format
+msgctxt "@action:button"
+msgid "Image"
+msgstr ""
+
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
@@ -273,61 +278,61 @@ msgstr "ლორან მონტელი"
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "მონიშნული"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "თავისუფალი მდებარეობა"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "მართკუთხედი"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "ალმასი"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "ოვალი"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "ისარი"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "ხაზი"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "საშლელი"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "ტექსტი"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -391,21 +396,19 @@ msgid "Restore previous session on start"
 msgstr "წინა სესიის აღდგენა გაშვებისას"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "ტილოს გასუფთავება"
+msgstr "ტილო"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "ღია თემის ფერი"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "მუქი თემის ფერი"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -782,6 +785,26 @@ msgstr "საშლელი ხელსაწყო"
 msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "კალამი ხელსაწყო"
+
+#: widgets/tools/imagetool.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Rectangle Tool"
+msgctxt "@info:tooltip"
+msgid "Image Tool"
+msgstr "მართკუთხედის ხელსაწყო"
+
+#: widgets/tools/imagetool.cpp:61
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:63
+#, fuzzy, kde-format
+#| msgid "Insert Object"
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "ობიექტის ჩასმა"
 
 #: widgets/tools/linetool.cpp:19
 #, kde-format

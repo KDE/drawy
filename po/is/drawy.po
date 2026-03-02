@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -275,6 +275,12 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
+#: widgets/components/toolbar.cpp:64
+#, kde-format
+msgctxt "@action:button"
+msgid "Image"
+msgstr ""
+
 #: widgets/components/toolbuttonplugin.cpp:30
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
@@ -343,7 +349,7 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Forritari"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Selection"
@@ -351,7 +357,7 @@ msgctxt "@action:button"
 msgid "Selection"
 msgstr "Valið"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Free Form"
@@ -359,7 +365,7 @@ msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Fríhendis"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Rectangle"
@@ -367,7 +373,7 @@ msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Rétthyrningur"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Diamond Tool"
@@ -375,7 +381,7 @@ msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Tíglaverkfæri"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Ellipse"
@@ -383,7 +389,7 @@ msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Sporbaugur"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Arrow"
@@ -391,7 +397,7 @@ msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Ör"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Line"
@@ -399,7 +405,7 @@ msgctxt "@action:button"
 msgid "Line"
 msgstr "Lína"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Eraser"
@@ -407,7 +413,7 @@ msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Strokleður"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Text"
@@ -415,7 +421,7 @@ msgctxt "@action:button"
 msgid "Text"
 msgstr "Texti"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Move"
@@ -984,6 +990,27 @@ msgstr "Útþurrkunarverkfæri"
 msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "Pennaverkfæri"
+
+#: widgets/tools/imagetool.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Rectangle Tool"
+msgctxt "@info:tooltip"
+msgid "Image Tool"
+msgstr "Rétthyrningaverkfæri"
+
+#: widgets/tools/imagetool.cpp:61
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:63
+#, fuzzy, kde-format
+#| msgctxt "QObject|"
+#| msgid "Insert Object"
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Setja inn hlut"
 
 #: widgets/tools/linetool.cpp:19
 #, fuzzy, kde-format

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-26 09:07+0200\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-03-01 18:55+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -40,7 +40,7 @@ msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!
 #: gui/item/arrowutils.cpp:36
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "ללא"
 
 #: gui/item/arrowutils.cpp:38
 #: widgets/properties/widgets/arrowstylewidget.cpp:46
@@ -49,35 +49,27 @@ msgid "Arrow"
 msgstr "חץ"
 
 #: gui/item/arrowutils.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Triangle"
 msgstr "משולש"
 
 #: gui/item/arrowutils.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Full Triangle"
-msgstr "משולש"
+msgstr "משולש מלא"
 
 #: gui/item/arrowutils.cpp:44
 #, kde-format
 msgid "Circle"
-msgstr ""
+msgstr "עיגול"
 
 #: gui/item/arrowutils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Full Circle"
-msgstr "משולש"
+msgstr "עיגול מלא"
 
 #: gui/item/arrowutils.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Line"
+#, kde-format
 msgid "Line"
 msgstr "קו"
 
@@ -155,10 +147,9 @@ msgid "Align Items"
 msgstr "יישור פריטים"
 
 #: widgets/command/arrowtypecommand.cpp:65
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change Arrow Type"
-msgstr "החלפת סגנון קו המתאר"
+msgstr "שינוי סוג חץ"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -233,6 +224,12 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
+#: widgets/components/toolbar.cpp:64
+#, kde-format
+msgctxt "@action:button"
+msgid "Image"
+msgstr ""
+
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
@@ -283,61 +280,61 @@ msgstr "לורנט מונטל"
 msgid "Developer"
 msgstr "מפתח"
 
-#: widgets/context/uicontext.cpp:65
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "יהלום"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -403,21 +400,19 @@ msgid "Restore previous session on start"
 msgstr "שחזור הפעלה קודמת עם העלייה"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "פינוי משטח ציור"
+msgstr "משטח ציור"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "צבע ערכת עיצוב בהירה"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "צבע ערכת עיצוב כהה"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -794,6 +789,26 @@ msgstr "כלי מוחק"
 msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "כלי עט"
+
+#: widgets/tools/imagetool.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Rectangle Tool"
+msgctxt "@info:tooltip"
+msgid "Image Tool"
+msgstr "כלי מרובעים"
+
+#: widgets/tools/imagetool.cpp:61
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:63
+#, fuzzy, kde-format
+#| msgid "Insert Object"
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "הוספת עצם"
 
 #: widgets/tools/linetool.cpp:19
 #, kde-format
