@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -108,6 +108,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     createToolAction(Action::SwitchToTextTool, i18nc("@action", "Text Tool"), {QKeySequence(QKeyCombination(Qt::Key_T))}, Tool::Type::Text);
     createToolAction(Action::SwitchToArrowTool, i18nc("@action", "Arrow Tool"), {QKeySequence(QKeyCombination(Qt::Key_A))}, Tool::Type::Arrow);
     createToolAction(Action::SwitchToMoveTool, i18nc("@action", "Move Tool"), {QKeySequence(QKeyCombination(Qt::Key_M))}, Tool::Type::Move);
+    createToolAction(Action::SwitchToImageTool, i18nc("@action", "Image Tool"), {QKeySequence(QKeyCombination(Qt::Key_I))}, Tool::Type::Image);
+    createToolAction(Action::SwitchToDiamondTool, i18nc("@action", "Diamond Tool"), {QKeySequence(QKeyCombination(Qt::Key_D))}, Tool::Type::Diamond);
 
     createAction(Action::SendToBack, i18nc("@action", "Send To Back"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendToBack);
@@ -186,6 +188,10 @@ QString ActionManager::actionName(Action type) const
         return u"bring_to_front"_s;
     case Action::Debug:
         return u"debug"_s;
+    case Action::SwitchToDiamondTool:
+        return u"switch_to_diamond_tool"_s;
+    case Action::SwitchToImageTool:
+        return u"switch_to_image_tool"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
