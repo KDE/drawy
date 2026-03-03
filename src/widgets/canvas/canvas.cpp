@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -258,11 +258,6 @@ QPixmap Canvas::canvasPixmap() const
 QPixmap Canvas::overlayPixmap() const
 {
     return QPixmap{*m_canvas};
-}
-
-void Canvas::triggerUpdate()
-{
-    this->update();
 }
 
 #include "moc_canvas.cpp"

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -50,9 +50,6 @@ Q_SIGNALS:
     void dragMove(QDragMoveEvent *event);
     void dragLeave(QDragLeaveEvent *event);
     void drop(QDropEvent *event);
-
-public Q_SLOTS:
-    void triggerUpdate();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
