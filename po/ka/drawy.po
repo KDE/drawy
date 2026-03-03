@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"POT-Creation-Date: 2026-03-03 00:43+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -226,7 +226,7 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "გამოსახულება"
 
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
@@ -516,95 +516,111 @@ msgctxt "@action"
 msgid "Move Tool"
 msgstr "გადატანის ხელსაწყო"
 
+#: widgets/keybindings/actionmanager.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Image Tool"
+msgctxt "@action"
+msgid "Image Tool"
+msgstr "გამოსახულების ხელსაწყო"
+
 #: widgets/keybindings/actionmanager.cpp:112
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Diamond Tool"
+msgctxt "@action"
+msgid "Diamond Tool"
+msgstr "ალმასის ხელსაწყო"
+
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "უკან გადაგზავნა"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "უკან გაგზავნა"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "წინ გადმოტანა"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "წინა პლანზე გამოტანა"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "გამართვა"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:443
 #, kde-format
 msgid "Untitled.%1"
 msgstr "უსახელო.%1"
 
-#: widgets/keybindings/actionmanager.cpp:439
-#: widgets/keybindings/actionmanager.cpp:503
+#: widgets/keybindings/actionmanager.cpp:445
+#: widgets/keybindings/actionmanager.cpp:509
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:440
+#: widgets/keybindings/actionmanager.cpp:446
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
 
-#: widgets/keybindings/actionmanager.cpp:462
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "მართლა გნებავთ ტილოს გასუფთავება?"
 
-#: widgets/keybindings/actionmanager.cpp:463
+#: widgets/keybindings/actionmanager.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "გასუფთავება"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:525
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:521
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "SVG ფაილად გატანა"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:564
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "დოკუმენტი %1 შეიცვალა. გნებავთ ცვლილებების შენახვა თუ მოვაცილო ისინი?"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:568
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -786,25 +802,22 @@ msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "კალამი ხელსაწყო"
 
-#: widgets/tools/imagetool.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#: widgets/tools/imagetool.cpp:37
+#, kde-format
+msgid "Image"
+msgstr "გამოსახულება"
+
+#: widgets/tools/imagetool.cpp:42
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Tool"
-msgstr "მართკუთხედის ხელსაწყო"
+msgstr "გამოსახულების ხელსაწყო"
 
 #: widgets/tools/imagetool.cpp:61
 #, kde-format
-msgid "Image"
-msgstr ""
-
-#: widgets/tools/imagetool.cpp:63
-#, fuzzy, kde-format
-#| msgid "Insert Object"
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "ობიექტის ჩასმა"
+msgstr "გამოსახულების ჩასმა"
 
 #: widgets/tools/linetool.cpp:19
 #, kde-format

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"POT-Creation-Date: 2026-03-03 00:43+0000\n"
 "PO-Revision-Date: 2026-03-02 06:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -516,95 +516,111 @@ msgctxt "@action"
 msgid "Move Tool"
 msgstr "移動工具"
 
+#: widgets/keybindings/actionmanager.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Rectangle Tool"
+msgctxt "@action"
+msgid "Image Tool"
+msgstr "矩形工具"
+
 #: widgets/keybindings/actionmanager.cpp:112
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Diamond Tool"
+msgctxt "@action"
+msgid "Diamond Tool"
+msgstr "鑽石工具"
+
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "移到最後"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "移動到後面"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "移到最前"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "移動到前面"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "除錯"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:443
 #, kde-format
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:439
-#: widgets/keybindings/actionmanager.cpp:503
+#: widgets/keybindings/actionmanager.cpp:445
+#: widgets/keybindings/actionmanager.cpp:509
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:440
+#: widgets/keybindings/actionmanager.cpp:446
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:462
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "您確定要清空整個畫布嗎？"
 
-#: widgets/keybindings/actionmanager.cpp:463
+#: widgets/keybindings/actionmanager.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:525
 #, kde-format
 msgid "Untitled.svg"
 msgstr "未命名.svg"
 
-#: widgets/keybindings/actionmanager.cpp:521
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "匯出為 SVG"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:564
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "文件「%1」已被修改。您想要儲存變更還是放棄變更？"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:568
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -786,7 +802,12 @@ msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "尖筆工具"
 
-#: widgets/tools/imagetool.cpp:34
+#: widgets/tools/imagetool.cpp:37
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:42
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rectangle Tool"
@@ -795,11 +816,6 @@ msgid "Image Tool"
 msgstr "矩形工具"
 
 #: widgets/tools/imagetool.cpp:61
-#, kde-format
-msgid "Image"
-msgstr ""
-
-#: widgets/tools/imagetool.cpp:63
 #, fuzzy, kde-format
 #| msgid "Insert Object"
 msgctxt "@title:window"

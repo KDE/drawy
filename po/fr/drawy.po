@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"POT-Creation-Date: 2026-03-03 00:43+0000\n"
 "PO-Revision-Date: 2026-02-26 21:49+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -526,88 +526,104 @@ msgctxt "@action"
 msgid "Move Tool"
 msgstr "Outil de déplacement"
 
+#: widgets/keybindings/actionmanager.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Rectangle Tool"
+msgctxt "@action"
+msgid "Image Tool"
+msgstr "Outil de rectangle"
+
 #: widgets/keybindings/actionmanager.cpp:112
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Diamond Tool"
+msgctxt "@action"
+msgid "Diamond Tool"
+msgstr "Outil de losange"
+
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Mettre à l'arrière plan"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Envoyer en arrière"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Avancer"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Mettre au premier plan"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Déboguer"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:443
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sans titre.%1"
 
-#: widgets/keybindings/actionmanager.cpp:439
-#: widgets/keybindings/actionmanager.cpp:503
+#: widgets/keybindings/actionmanager.cpp:445
+#: widgets/keybindings/actionmanager.cpp:509
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:440
+#: widgets/keybindings/actionmanager.cpp:446
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Enregistrer un fichier"
 
-#: widgets/keybindings/actionmanager.cpp:462
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Voulez-vous vraiment effacer le canevas ?"
 
-#: widgets/keybindings/actionmanager.cpp:463
+#: widgets/keybindings/actionmanager.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Effacer"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Ouvrir"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:525
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sans titre.svg"
 
-#: widgets/keybindings/actionmanager.cpp:521
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exporter en SVG"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:564
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -616,7 +632,7 @@ msgstr ""
 "Le document « %1 » a été modifié. Voulez-vous enregistrer ou abandonner vos "
 "modifications ?"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:568
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -798,7 +814,12 @@ msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "Outil de crayon"
 
-#: widgets/tools/imagetool.cpp:34
+#: widgets/tools/imagetool.cpp:37
+#, kde-format
+msgid "Image"
+msgstr ""
+
+#: widgets/tools/imagetool.cpp:42
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rectangle Tool"
@@ -807,11 +828,6 @@ msgid "Image Tool"
 msgstr "Outil de rectangle"
 
 #: widgets/tools/imagetool.cpp:61
-#, kde-format
-msgid "Image"
-msgstr ""
-
-#: widgets/tools/imagetool.cpp:63
 #, fuzzy, kde-format
 #| msgid "Insert Object"
 msgctxt "@title:window"

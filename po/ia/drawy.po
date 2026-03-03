@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-02-24 11:32+0100\n"
+"POT-Creation-Date: 2026-03-03 00:43+0000\n"
+"PO-Revision-Date: 2026-03-02 12:35+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,7 +40,7 @@ msgstr "Tu instrumento de brainstorming infinite, commode !"
 #: gui/item/arrowutils.cpp:36
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Necun"
 
 #: gui/item/arrowutils.cpp:38
 #: widgets/properties/widgets/arrowstylewidget.cpp:46
@@ -49,35 +49,27 @@ msgid "Arrow"
 msgstr "Flecha"
 
 #: gui/item/arrowutils.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Triangle"
 msgstr "Triangulo"
 
 #: gui/item/arrowutils.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Full Triangle"
-msgstr "Triangulo"
+msgstr "Triangulo Plen"
 
 #: gui/item/arrowutils.cpp:44
 #, kde-format
 msgid "Circle"
-msgstr ""
+msgstr "Circulo"
 
 #: gui/item/arrowutils.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Triangle"
+#, kde-format
 msgid "Full Circle"
-msgstr "Triangulo"
+msgstr "Circulo Plen"
 
 #: gui/item/arrowutils.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Line"
+#, kde-format
 msgid "Line"
 msgstr "Linea"
 
@@ -155,10 +147,9 @@ msgid "Align Items"
 msgstr "Alinea elementos"
 
 #: widgets/command/arrowtypecommand.cpp:65
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change Arrow Type"
-msgstr "Cambia Stylo de tracto"
+msgstr "Cambia Typo de flecha"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -237,7 +228,7 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "Imagine"
 
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
@@ -407,21 +398,19 @@ msgid "Restore previous session on start"
 msgstr "Restabili previe session al startar"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "Netta telas"
+msgstr "Telas (canvas)"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "Color de thema clar"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "Color de thema obscur"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -529,88 +518,104 @@ msgctxt "@action"
 msgid "Move Tool"
 msgstr "Instrumento de Mover"
 
+#: widgets/keybindings/actionmanager.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Image Tool"
+msgctxt "@action"
+msgid "Image Tool"
+msgstr "Instrumento de imagine"
+
 #: widgets/keybindings/actionmanager.cpp:112
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Diamond Tool"
+msgctxt "@action"
+msgid "Diamond Tool"
+msgstr "Instrumento de Diamante (Quadro)"
+
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Invia a Retro"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Invia retro"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta Avante"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta de Fronte"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Cribra (debug)"
 
-#: widgets/keybindings/actionmanager.cpp:437
+#: widgets/keybindings/actionmanager.cpp:443
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sin titulo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:439
-#: widgets/keybindings/actionmanager.cpp:503
+#: widgets/keybindings/actionmanager.cpp:445
+#: widgets/keybindings/actionmanager.cpp:509
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:440
+#: widgets/keybindings/actionmanager.cpp:446
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salveguarda file"
 
-#: widgets/keybindings/actionmanager.cpp:462
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Tu vermente vole nettar le telas?"
 
-#: widgets/keybindings/actionmanager.cpp:463
+#: widgets/keybindings/actionmanager.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Netta"
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Aperi file"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:525
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sin titulo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:521
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exporta a Svg"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:564
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -619,7 +624,7 @@ msgstr ""
 "Le documento '%1' ha essite modificate.Tu vole salveguardar tu "
 "modificationes o abandonar los?"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:568
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -801,25 +806,22 @@ msgctxt "@info:tooltip"
 msgid "Pen Tool"
 msgstr "Instrumento de pluma"
 
-#: widgets/tools/imagetool.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#: widgets/tools/imagetool.cpp:37
+#, kde-format
+msgid "Image"
+msgstr "Imagine"
+
+#: widgets/tools/imagetool.cpp:42
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Tool"
-msgstr "Instrumento de Rectangulo"
+msgstr "Instrumento de imagine"
 
 #: widgets/tools/imagetool.cpp:61
 #, kde-format
-msgid "Image"
-msgstr ""
-
-#: widgets/tools/imagetool.cpp:63
-#, fuzzy, kde-format
-#| msgid "Insert Object"
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Inserta Objecto"
+msgstr "Inserta imagine"
 
 #: widgets/tools/linetool.cpp:19
 #, kde-format
