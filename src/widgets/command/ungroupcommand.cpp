@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -17,11 +17,11 @@
 #include "item/group.hpp"
 #include <KLocalizedString>
 
-UngroupCommand::UngroupCommand(const QList<std::shared_ptr<Item>> &items)
-    : ItemCommand{items}
+UngroupCommand::UngroupCommand(QList<std::shared_ptr<Item>> items)
+    : ItemCommand{std::move(items)}
 {
     qCDebug(DRAWY_COMMAND_LOG) << "UngroupCommand" << m_items.count();
-    for (const auto &item : items) {
+    for (const auto &item : m_items) {
         if (item->formType() == Item::FormType::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
         }

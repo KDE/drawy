@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -11,7 +11,7 @@ class GroupItem;
 class UngroupCommand : public ItemCommand
 {
 public:
-    explicit UngroupCommand(const QList<std::shared_ptr<Item>> &items);
+    explicit UngroupCommand(QList<std::shared_ptr<Item>> items);
 
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
