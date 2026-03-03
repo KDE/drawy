@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -13,7 +13,6 @@ public:
     explicit FreeformTool(ApplicationContext *context);
     ~FreeformTool() override = default;
 
-    [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] QString icon() const override;
 
     void mousePressed(ApplicationContext *context) override;

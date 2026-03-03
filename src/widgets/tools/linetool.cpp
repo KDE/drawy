@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -12,11 +12,6 @@ LineTool::LineTool(ApplicationContext *context)
     : PolygonDrawingTool(context)
 {
     m_itemFactory = std::make_unique<LineFactory>();
-}
-
-QString LineTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Line Tool");
 }
 
 QString LineTool::icon() const

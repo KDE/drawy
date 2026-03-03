@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -71,11 +71,6 @@ void MoveTool::mouseReleased(ApplicationContext *context)
 Tool::Type MoveTool::type() const
 {
     return Tool::Type::Move;
-}
-
-QString MoveTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Move Tool");
 }
 
 QString MoveTool::icon() const

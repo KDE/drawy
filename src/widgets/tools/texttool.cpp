@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -498,11 +498,6 @@ void TextTool::cleanup()
 Tool::Type TextTool::type() const
 {
     return Tool::Type::Text;
-}
-
-QString TextTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Text Tool");
 }
 
 QString TextTool::icon() const

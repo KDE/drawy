@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -17,11 +17,6 @@ CustomTool::~CustomTool() = default;
 Tool::Type CustomTool::type() const
 {
     return Tool::Type::Custom;
-}
-
-QString CustomTool::tooltip() const
-{
-    return {};
 }
 
 QString CustomTool::icon() const

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -17,7 +17,6 @@ EllipseToolTest::EllipseToolTest(QObject *parent)
 void EllipseToolTest::shouldHaveDefaultValues()
 {
     const EllipseTool t(nullptr);
-    QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"tool_ellipse"_s);
     QCOMPARE(t.type(), Tool::Type::Ellipse);
 

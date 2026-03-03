@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -253,11 +253,6 @@ QList<Property::Type> SelectionTool::properties() const
 Tool::Type SelectionTool::type() const
 {
     return Tool::Type::Selection;
-}
-
-QString SelectionTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Selection Tool");
 }
 
 QString SelectionTool::icon() const

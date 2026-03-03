@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -17,7 +17,6 @@ public:
     virtual ~Tool();
 
     [[nodiscard]] const QCursor &cursor() const;
-    virtual QString tooltip() const = 0;
 
     virtual void mousePressed(ApplicationContext *context);
     virtual void mouseMoved(ApplicationContext *context);

@@ -37,11 +37,6 @@ ImageTool::ImageTool(ApplicationContext *context)
     m_filter = u"%1 (%2)"_s.arg(i18n("Image"), m_filter);
 }
 
-QString ImageTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Image Tool");
-}
-
 QString ImageTool::icon() const
 {
     return u"insert-image"_s;

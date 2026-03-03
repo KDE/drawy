@@ -14,7 +14,6 @@ public:
     explicit ImageTool(ApplicationContext *context);
     ~ImageTool() override = default;
 
-    [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] Tool::Type type() const override;
     [[nodiscard]] QString icon() const override;
 

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -151,11 +151,6 @@ void EraserTool::cleanup()
 Tool::Type EraserTool::type() const
 {
     return Tool::Type::Eraser;
-}
-
-QString EraserTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Eraser Tool");
 }
 
 QString EraserTool::icon() const

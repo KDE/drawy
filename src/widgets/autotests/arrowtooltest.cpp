@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -17,7 +17,6 @@ ArrowToolTest::ArrowToolTest(QObject *parent)
 void ArrowToolTest::shouldHaveDefaultValues()
 {
     const ArrowTool t(nullptr);
-    QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"draw-arrow"_s);
     QCOMPARE(t.type(), Tool::Type::Arrow);
 

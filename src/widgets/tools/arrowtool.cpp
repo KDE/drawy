@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -13,11 +13,6 @@ ArrowTool::ArrowTool(ApplicationContext *context)
 {
     m_itemFactory = std::make_unique<ArrowFactory>();
     m_properties += Property::Type::ArrowStyle;
-}
-
-QString ArrowTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Arrow Tool");
 }
 
 QString ArrowTool::icon() const

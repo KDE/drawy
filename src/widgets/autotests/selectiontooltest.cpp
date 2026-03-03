@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -16,7 +16,6 @@ SelectionToolTest::SelectionToolTest(QObject *parent)
 void SelectionToolTest::shouldHaveDefaultValues()
 {
     const SelectionTool t(nullptr);
-    QVERIFY(!t.tooltip().isEmpty());
     QCOMPARE(t.icon(), u"edit-select"_s);
     QCOMPARE(t.type(), Tool::Type::Selection);
 

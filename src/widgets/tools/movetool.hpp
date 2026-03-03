@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -18,7 +18,6 @@ public:
 
     [[nodiscard]] Tool::Type type() const override;
 
-    [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] QString icon() const override;
 
 private:

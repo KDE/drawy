@@ -1,4 +1,4 @@
-/*
+﻿/*
   SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
@@ -13,7 +13,6 @@ public:
     explicit CustomTool(ApplicationContext *context);
     ~CustomTool() override;
     [[nodiscard]] Tool::Type type() const override;
-    [[nodiscard]] QString tooltip() const override;
     [[nodiscard]] QString icon() const override;
     [[nodiscard]] QList<Property::Type> properties() const override;
 

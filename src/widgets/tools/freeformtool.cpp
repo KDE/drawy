@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -27,11 +27,6 @@ FreeformTool::FreeformTool(ApplicationContext *context)
 
     m_cursor = QCursor{Qt::CrossCursor};
     m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::StrokeStyle, Property::Type::Opacity};
-}
-
-QString FreeformTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Pen Tool");
 }
 
 void FreeformTool::mousePressed(ApplicationContext *context)

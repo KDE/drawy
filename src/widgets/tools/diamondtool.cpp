@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -14,11 +14,6 @@ DiamondTool::DiamondTool(ApplicationContext *context)
     m_itemFactory = std::make_unique<DiamondFactory>();
     m_properties += Property::Type::BackgroundColor;
     m_properties += Property::Type::BackgroundStyle;
-}
-
-QString DiamondTool::tooltip() const
-{
-    return i18nc("@info:tooltip", "Diamond Tool");
 }
 
 QString DiamondTool::icon() const
