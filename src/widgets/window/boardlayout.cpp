@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -23,6 +23,8 @@ BoardLayout::~BoardLayout()
     delete m_topWidget;
     delete m_rightWidget;
     delete m_bottomWidget;
+    delete m_bottomLeftWidget;
+    delete m_topLeftWidget;
 }
 
 void BoardLayout::addItem(QLayoutItem *item)
