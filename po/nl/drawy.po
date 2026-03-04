@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:43+0000\n"
-"PO-Revision-Date: 2026-03-02 23:34+0100\n"
+"POT-Creation-Date: 2026-03-04 00:42+0000\n"
+"PO-Revision-Date: 2026-03-03 10:49+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -518,17 +518,13 @@ msgid "Move Tool"
 msgstr "Hulpmiddel voor verplaatsen"
 
 #: widgets/keybindings/actionmanager.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Image Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Hulpmiddel voor afbeelding"
 
 #: widgets/keybindings/actionmanager.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Hulpmiddel voor ruit"
@@ -774,88 +770,66 @@ msgstr "Dikte"
 msgid "Z-order"
 msgstr "Z-volgorde"
 
-#: widgets/tools/arrowtool.cpp:20
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Arrow Tool"
-msgstr "Hulpmiddel voor pijl"
-
-#: widgets/tools/diamondtool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Diamond Tool"
-msgstr "Hulpmiddel voor ruit"
-
-#: widgets/tools/ellipsetool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Ellipse Tool"
-msgstr "Hulpmiddel voor ellips"
-
-#: widgets/tools/erasertool.cpp:158
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Eraser Tool"
-msgstr "Hulpmiddel voor gum"
-
-#: widgets/tools/freeformtool.cpp:34
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Pen Tool"
-msgstr "Hulpmiddel voor pen"
-
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
 msgstr "Afbeelding"
 
-#: widgets/tools/imagetool.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Image Tool"
-msgstr "Hulpmiddel voor afbeelding"
-
-#: widgets/tools/imagetool.cpp:61
+#: widgets/tools/imagetool.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Afbeelding invoegen"
-
-#: widgets/tools/linetool.cpp:19
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Line Tool"
-msgstr "Lijnhulpmiddel"
-
-#: widgets/tools/movetool.cpp:78
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Move Tool"
-msgstr "Hulpmiddel voor verplaatsen"
-
-#: widgets/tools/rectangletool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Rectangle Tool"
-msgstr "Hulpmiddel voor rechthoek"
-
-#: widgets/tools/selectiontool/selectiontool.cpp:260
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Selection Tool"
-msgstr "Selectiehulpmiddel"
-
-#: widgets/tools/texttool.cpp:505
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Text Tool"
-msgstr "Hulpmiddel voor tekst"
 
 #: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Arrow Tool"
+#~ msgstr "Hulpmiddel voor pijl"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Diamond Tool"
+#~ msgstr "Hulpmiddel voor ruit"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Hulpmiddel voor ellips"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Eraser Tool"
+#~ msgstr "Hulpmiddel voor gum"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Pen Tool"
+#~ msgstr "Hulpmiddel voor pen"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Image Tool"
+#~ msgstr "Hulpmiddel voor afbeelding"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Line Tool"
+#~ msgstr "Lijnhulpmiddel"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Move Tool"
+#~ msgstr "Hulpmiddel voor verplaatsen"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Hulpmiddel voor rechthoek"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Selection Tool"
+#~ msgstr "Selectiehulpmiddel"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Text Tool"
+#~ msgstr "Hulpmiddel voor tekst"
 
 #~ msgid "Update Property"
 #~ msgstr "Eigenschap bijwerken"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:43+0000\n"
+"POT-Creation-Date: 2026-03-04 00:42+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -921,60 +921,12 @@ msgstr "Loditasuna"
 msgid "Z-order"
 msgstr ""
 
-#: widgets/tools/arrowtool.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
-msgctxt "@info:tooltip"
-msgid "Arrow Tool"
-msgstr "Gezi-tresna"
-
-#: widgets/tools/diamondtool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
-msgctxt "@info:tooltip"
-msgid "Diamond Tool"
-msgstr "Lerro tresna"
-
-#: widgets/tools/ellipsetool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
-msgctxt "@info:tooltip"
-msgid "Ellipse Tool"
-msgstr "Elipse tresna"
-
-#: widgets/tools/erasertool.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
-msgctxt "@info:tooltip"
-msgid "Eraser Tool"
-msgstr "Ezabatzeko tresna"
-
-#: widgets/tools/freeformtool.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Pen Tool"
-msgctxt "@info:tooltip"
-msgid "Pen Tool"
-msgstr "Arkatz tresna"
-
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
 msgstr ""
 
-#: widgets/tools/imagetool.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
-msgctxt "@info:tooltip"
-msgid "Image Tool"
-msgstr "Laukizuzen tresna"
-
-#: widgets/tools/imagetool.cpp:61
+#: widgets/tools/imagetool.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Select All"
@@ -982,51 +934,88 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Hautatu dena"
 
-#: widgets/tools/linetool.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
-msgctxt "@info:tooltip"
-msgid "Line Tool"
-msgstr "Lerro tresna"
-
-#: widgets/tools/movetool.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
-msgctxt "@info:tooltip"
-msgid "Move Tool"
-msgstr "Mugitzeko tresna"
-
-#: widgets/tools/rectangletool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
-msgctxt "@info:tooltip"
-msgid "Rectangle Tool"
-msgstr "Laukizuzen tresna"
-
-#: widgets/tools/selectiontool/selectiontool.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
-msgctxt "@info:tooltip"
-msgid "Selection Tool"
-msgstr "Hautapen tresna"
-
-#: widgets/tools/texttool.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
-msgctxt "@info:tooltip"
-msgid "Text Tool"
-msgstr "Testu tresna"
-
 #: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Arrow Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Arrow Tool"
+#~ msgstr "Gezi-tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Line Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Diamond Tool"
+#~ msgstr "Lerro tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Ellipse Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Elipse tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Eraser Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Eraser Tool"
+#~ msgstr "Ezabatzeko tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Pen Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Pen Tool"
+#~ msgstr "Arkatz tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Image Tool"
+#~ msgstr "Laukizuzen tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Line Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Line Tool"
+#~ msgstr "Lerro tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Move Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Move Tool"
+#~ msgstr "Mugitzeko tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Laukizuzen tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Selection Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Selection Tool"
+#~ msgstr "Hautapen tresna"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Text Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Text Tool"
+#~ msgstr "Testu tresna"
 
 #~ msgctxt "ActionsWidget|"
 #~ msgid "Actions"

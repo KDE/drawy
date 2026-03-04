@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:43+0000\n"
-"PO-Revision-Date: 2026-03-02 08:53-0300\n"
+"POT-Creation-Date: 2026-03-04 00:42+0000\n"
+"PO-Revision-Date: 2026-03-03 08:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -520,17 +520,13 @@ msgid "Move Tool"
 msgstr "Ferramenta de movimento"
 
 #: widgets/keybindings/actionmanager.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Image Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Ferramenta de imagem"
 
 #: widgets/keybindings/actionmanager.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Ferramenta de diamante"
@@ -776,88 +772,66 @@ msgstr "Espessura"
 msgid "Z-order"
 msgstr "Ordem-Z"
 
-#: widgets/tools/arrowtool.cpp:20
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Arrow Tool"
-msgstr "Ferramenta de seta"
-
-#: widgets/tools/diamondtool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Diamond Tool"
-msgstr "Ferramenta de diamante"
-
-#: widgets/tools/ellipsetool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Ellipse Tool"
-msgstr "Ferramenta de elipse"
-
-#: widgets/tools/erasertool.cpp:158
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Eraser Tool"
-msgstr "Ferramenta de borracha"
-
-#: widgets/tools/freeformtool.cpp:34
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Pen Tool"
-msgstr "Ferramenta de caneta"
-
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
 msgstr "Imagem"
 
-#: widgets/tools/imagetool.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Image Tool"
-msgstr "Ferramenta de imagem"
-
-#: widgets/tools/imagetool.cpp:61
+#: widgets/tools/imagetool.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Inserir imagem"
-
-#: widgets/tools/linetool.cpp:19
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Line Tool"
-msgstr "Ferramenta de linha"
-
-#: widgets/tools/movetool.cpp:78
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Move Tool"
-msgstr "Ferramenta de movimento"
-
-#: widgets/tools/rectangletool.cpp:21
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Rectangle Tool"
-msgstr "Ferramenta de retângulo"
-
-#: widgets/tools/selectiontool/selectiontool.cpp:260
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Selection Tool"
-msgstr "Ferramenta de seleção"
-
-#: widgets/tools/texttool.cpp:505
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Text Tool"
-msgstr "Ferramenta de texto"
 
 #: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Arrow Tool"
+#~ msgstr "Ferramenta de seta"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Diamond Tool"
+#~ msgstr "Ferramenta de diamante"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Ferramenta de elipse"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Eraser Tool"
+#~ msgstr "Ferramenta de borracha"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Pen Tool"
+#~ msgstr "Ferramenta de caneta"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Image Tool"
+#~ msgstr "Ferramenta de imagem"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Line Tool"
+#~ msgstr "Ferramenta de linha"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Move Tool"
+#~ msgstr "Ferramenta de movimento"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Ferramenta de retângulo"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Selection Tool"
+#~ msgstr "Ferramenta de seleção"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Text Tool"
+#~ msgstr "Ferramenta de texto"
 
 #~ msgid "Update Property"
 #~ msgstr "Atualizar propriedade"

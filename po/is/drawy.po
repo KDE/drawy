@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:43+0000\n"
+"POT-Creation-Date: 2026-03-04 00:42+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -967,60 +967,12 @@ msgstr "Þykkt"
 msgid "Z-order"
 msgstr "Z-röð"
 
-#: widgets/tools/arrowtool.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Arrow Tool"
-msgctxt "@info:tooltip"
-msgid "Arrow Tool"
-msgstr "Örvaverkfæri"
-
-#: widgets/tools/diamondtool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Diamond Tool"
-msgctxt "@info:tooltip"
-msgid "Diamond Tool"
-msgstr "Tíglaverkfæri"
-
-#: widgets/tools/ellipsetool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Ellipse Tool"
-msgctxt "@info:tooltip"
-msgid "Ellipse Tool"
-msgstr "Sporbaugaverkfæri"
-
-#: widgets/tools/erasertool.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Eraser Tool"
-msgctxt "@info:tooltip"
-msgid "Eraser Tool"
-msgstr "Útþurrkunarverkfæri"
-
-#: widgets/tools/freeformtool.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Pen Tool"
-msgctxt "@info:tooltip"
-msgid "Pen Tool"
-msgstr "Pennaverkfæri"
-
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
 msgstr ""
 
-#: widgets/tools/imagetool.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
-msgctxt "@info:tooltip"
-msgid "Image Tool"
-msgstr "Rétthyrningaverkfæri"
-
-#: widgets/tools/imagetool.cpp:61
+#: widgets/tools/imagetool.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Insert Object"
@@ -1028,51 +980,88 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Setja inn hlut"
 
-#: widgets/tools/linetool.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Line Tool"
-msgctxt "@info:tooltip"
-msgid "Line Tool"
-msgstr "Línuverkfæri"
-
-#: widgets/tools/movetool.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
-msgctxt "@info:tooltip"
-msgid "Move Tool"
-msgstr "Færsluverkfæri"
-
-#: widgets/tools/rectangletool.cpp:21
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Rectangle Tool"
-msgctxt "@info:tooltip"
-msgid "Rectangle Tool"
-msgstr "Rétthyrningaverkfæri"
-
-#: widgets/tools/selectiontool/selectiontool.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Selection Tool"
-msgctxt "@info:tooltip"
-msgid "Selection Tool"
-msgstr "Valverkfæri"
-
-#: widgets/tools/texttool.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Text Tool"
-msgctxt "@info:tooltip"
-msgid "Text Tool"
-msgstr "Textaverkfæri"
-
 #: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Arrow Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Arrow Tool"
+#~ msgstr "Örvaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Diamond Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Diamond Tool"
+#~ msgstr "Tíglaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Ellipse Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Ellipse Tool"
+#~ msgstr "Sporbaugaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Eraser Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Eraser Tool"
+#~ msgstr "Útþurrkunarverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Pen Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Pen Tool"
+#~ msgstr "Pennaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Image Tool"
+#~ msgstr "Rétthyrningaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Line Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Line Tool"
+#~ msgstr "Línuverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Move Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Move Tool"
+#~ msgstr "Færsluverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Rectangle Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Rectangle Tool"
+#~ msgstr "Rétthyrningaverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Selection Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Selection Tool"
+#~ msgstr "Valverkfæri"
+
+#, fuzzy
+#~| msgctxt "QObject|"
+#~| msgid "Text Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Text Tool"
+#~ msgstr "Textaverkfæri"
 
 #, fuzzy
 #~| msgctxt "QObject|"
