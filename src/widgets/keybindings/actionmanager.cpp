@@ -343,9 +343,12 @@ void ActionManager::alignItems(ItemUtils::AlignType alignType)
         return;
     }
     const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<AlignItemCommand>(items, alignType));
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+    auto alignCommand = std::make_shared<AlignItemCommand>(items, alignType);
+    if (alignCommand->hasChanged()) {
+        m_context->spatialContext()->commandHistory()->insert(std::move(alignCommand));
+        m_context->renderingContext()->markForRender();
+        m_context->renderingContext()->markForUpdate();
+    }
 }
 
 void ActionManager::changeArrowType(ArrowUtils::ArrowPos arrowPos, ArrowUtils::ArrowType arrowStyle)

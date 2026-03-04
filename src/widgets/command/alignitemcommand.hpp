@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -18,6 +18,7 @@ public:
     void undo(ApplicationContext *context) override;
 
     [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] bool hasChanged() const;
 
 private:
     void calculateMoveItems();
