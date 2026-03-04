@@ -403,7 +403,9 @@ void ActionManager::deleteSelection()
     m_context->renderingContext()->markForUpdate();
 
     const QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    if (!selectedItemsVector.isEmpty()) {
+        m_context->spatialContext()->commandHistory()->insert(std::make_shared<DeselectCommand>(selectedItemsVector));
+    }
 }
 
 void ActionManager::selectAll()
@@ -411,10 +413,12 @@ void ActionManager::selectAll()
     switchToTool(Tool::Type::Selection);
 
     const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
-    m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
+    if (!allItems.isEmpty()) {
+        m_context->spatialContext()->commandHistory()->insert(std::make_shared<SelectCommand>(allItems));
 
-    m_context->renderingContext()->markForRender();
-    m_context->renderingContext()->markForUpdate();
+        m_context->renderingContext()->markForRender();
+        m_context->renderingContext()->markForUpdate();
+    }
 }
 
 void ActionManager::openRecentFile(const QUrl &url)
