@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -148,21 +148,23 @@ TransformHandler::State RotateTransformHandler::mouseReleased(ApplicationContext
     if (m_isActive) {
         m_isActive = false;
 
-        auto &selectedItems{context->selectionContext()->selectedItems()};
+        if (m_lastRotationAngle != 0) {
+            auto &selectedItems{context->selectionContext()->selectedItems()};
 
-        // undo visible rotation
-        for (auto &item : selectedItems) {
-            item->rotate(-m_lastRotationAngle, item->transformObj().inverted().map(m_worldCenterPos));
+            // undo visible rotation
+            for (auto &item : selectedItems) {
+                item->rotate(-m_lastRotationAngle, item->transformObj().inverted().map(m_worldCenterPos));
+            }
+
+            // redo rotation as a command
+            auto commandHistory{context->spatialContext()->commandHistory()};
+
+            const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            commandHistory->insert(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
+
+            context->renderingContext()->markForRender();
+            context->renderingContext()->markForUpdate();
         }
-
-        // redo rotation as a command
-        auto commandHistory{context->spatialContext()->commandHistory()};
-
-        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-        commandHistory->insert(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
-
-        context->renderingContext()->markForRender();
-        context->renderingContext()->markForUpdate();
     }
 
     return TransformHandler::State::Unlocked;

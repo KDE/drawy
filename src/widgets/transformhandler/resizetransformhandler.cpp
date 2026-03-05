@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -202,7 +202,10 @@ TransformHandler::State ResizeTransformHandler::mouseReleased(ApplicationContext
                 item->resize(m_lastTransformUpdate.inverted());
             }
         }
-
+        if (m_lastLockedTransformUpdate.type() == QTransform::TransformationType::TxNone
+            && m_lastTransformUpdate.type() == QTransform::TransformationType::TxNone) {
+            return TransformHandler::State::Unlocked;
+        }
         auto commandHistory{context->spatialContext()->commandHistory()};
 
         const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
