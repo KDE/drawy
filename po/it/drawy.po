@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-04 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 16:24+0100\n"
+"PO-Revision-Date: 2026-03-03 09:15+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -226,7 +226,7 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
@@ -517,17 +517,13 @@ msgid "Move Tool"
 msgstr "Sposta"
 
 #: widgets/keybindings/actionmanager.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "Rettangolo"
+msgstr "Immagine"
 
 #: widgets/keybindings/actionmanager.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Rombo"
@@ -777,14 +773,13 @@ msgstr "Ordine Z"
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: widgets/tools/imagetool.cpp:56
-#, fuzzy, kde-format
-#| msgid "Insert Object"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Inserisci oggetto"
+msgstr "Inserisci immagine"
 
 #: widgets/window/window.cpp:168
 #, kde-format
