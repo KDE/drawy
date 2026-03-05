@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -111,4 +111,14 @@ void AlignItemCommand::undo(ApplicationContext *context)
 QString AlignItemCommand::commandTitle() const
 {
     return i18n("Align Items");
+}
+
+bool AlignItemCommand::hasChanged() const
+{
+    for (const auto &move : m_moveToPoint) {
+        if (!move.isNull()) {
+            return true;
+        }
+    }
+    return false;
 }
