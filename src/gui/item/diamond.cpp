@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -50,11 +50,14 @@ void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool DiamondItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect)) {
-        return false;
+    const QPainterPath path = getPath();
+
+    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    if (isFilled) {
+        return path.intersects(rect);
     }
 
-    return m_transform.map(getPath()).intersects(rect);
+    return path.intersects(rect) && !path.contains(rect);
 }
 
 Item::FormType DiamondItem::formType() const

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+﻿// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -52,11 +52,12 @@ void TriangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool TriangleItem::intersects(const QRectF &rect)
 {
-    if (!boundingBox().intersects(rect)) {
-        return false;
+    const QPainterPath path = getPath();
+    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
+    if (isFilled) {
+        return path.intersects(rect);
     }
-
-    return m_transform.map(getPath()).intersects(rect);
+    return path.intersects(rect) && !path.contains(rect);
 }
 
 Item::FormType TriangleItem::formType() const
