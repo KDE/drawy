@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+﻿// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -35,6 +35,10 @@ bool XBoxItem::intersects(const QRectF &rect)
 
     QPainterPath path;
     path.addRect(QRectF{start(), end()});
+    path.moveTo(start());
+    path.lineTo(end());
+    path.moveTo(QPointF(end().x(), start().y()));
+    path.lineTo(QPointF(start().x(), end().y()));
 
     const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
     if (isFilled) {
