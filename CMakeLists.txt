@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -37,7 +37,7 @@ find_package(SharedMimeInfo ${SharedMimeInfo_MINIMUM_VERSION} REQUIRED)
 
 kde_enable_exceptions()
 
-ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.23.0)
+ecm_set_disabled_deprecation_versions(QT 6.11.0  KF 6.24.0)
 
 # Find Qt6
 find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Widgets)
