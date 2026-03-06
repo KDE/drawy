@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:42+0000\n"
-"PO-Revision-Date: 2026-02-28 13:34+0400\n"
+"POT-Creation-Date: 2026-03-06 02:40+0000\n"
+"PO-Revision-Date: 2026-03-05 10:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -66,10 +66,9 @@ msgid "Circle"
 msgstr "دائرة"
 
 #: gui/item/arrowutils.cpp:46
-#, fuzzy, kde-format
-#| msgid "Fill Circle"
+#, kde-format
 msgid "Full Circle"
-msgstr "دائرة التعبئة"
+msgstr "دائرة كاملة"
 
 #: gui/item/arrowutils.cpp:48
 #, kde-format
@@ -132,13 +131,13 @@ msgstr "غيّر الترتيب المنظوري"
 msgid "Basic Shapes"
 msgstr "أشكال أساسية"
 
-#: plugins/basicshapes/triangle/triangle.cpp:88
+#: plugins/basicshapes/triangle/triangle.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "مثلّث"
 
-#: plugins/basicshapes/xbox/xbox.cpp:73
+#: plugins/basicshapes/xbox/xbox.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -231,7 +230,7 @@ msgstr "%1٪"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "صورة"
 
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
@@ -405,21 +404,19 @@ msgid "Restore previous session on start"
 msgstr "استعادة الجلسة السابقة عند البدء"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "امحُ الرقعة"
+msgstr "اللوحة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "لون السمة الفاتحة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "لون السمة المظلمة"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -528,17 +525,13 @@ msgid "Move Tool"
 msgstr "أداة التّحريك"
 
 #: widgets/keybindings/actionmanager.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "أداة المستطيل"
+msgstr "أداة الصورة"
 
 #: widgets/keybindings/actionmanager.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "أداة المعين"
@@ -573,65 +566,65 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "نقّح"
 
-#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgid "Untitled.%1"
 msgstr "غير معنون.%1"
 
-#: widgets/keybindings/actionmanager.cpp:445
-#: widgets/keybindings/actionmanager.cpp:509
+#: widgets/keybindings/actionmanager.cpp:452
+#: widgets/keybindings/actionmanager.cpp:516
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "السبورة (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:446
+#: widgets/keybindings/actionmanager.cpp:453
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "احفظ الملفّ"
 
-#: widgets/keybindings/actionmanager.cpp:468
+#: widgets/keybindings/actionmanager.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "هل حقًّا تريد محو الرقعة؟"
 
-#: widgets/keybindings/actionmanager.cpp:469
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "امحُ"
 
-#: widgets/keybindings/actionmanager.cpp:512
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "افتح ملفًّا"
 
-#: widgets/keybindings/actionmanager.cpp:525
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgid "Untitled.svg"
 msgstr "غير معنون.svg"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:534
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "صدّر إلى SVG"
 
-#: widgets/keybindings/actionmanager.cpp:564
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "عُدّل المستند '%1' ولم يُحفظ. أتريد حفظ التّعديلات أو رفضها؟"
 
-#: widgets/keybindings/actionmanager.cpp:568
+#: widgets/keybindings/actionmanager.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -786,14 +779,13 @@ msgstr "الترتيب المنظوري"
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "صورة"
 
 #: widgets/tools/imagetool.cpp:56
-#, fuzzy, kde-format
-#| msgid "Insert Object"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "إدراج كائن"
+msgstr "أدرج صورة"
 
 #: widgets/window/window.cpp:168
 #, kde-format

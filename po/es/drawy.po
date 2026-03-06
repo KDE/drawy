@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:42+0000\n"
+"POT-Creation-Date: 2026-03-06 02:40+0000\n"
 "PO-Revision-Date: 2026-03-03 13:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -132,13 +132,13 @@ msgstr "Cambiar orden Z"
 msgid "Basic Shapes"
 msgstr "Formas básicas"
 
-#: plugins/basicshapes/triangle/triangle.cpp:88
+#: plugins/basicshapes/triangle/triangle.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "Triángulo"
 
-#: plugins/basicshapes/xbox/xbox.cpp:73
+#: plugins/basicshapes/xbox/xbox.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -563,58 +563,58 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Depurar"
 
-#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sin título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:445
-#: widgets/keybindings/actionmanager.cpp:509
+#: widgets/keybindings/actionmanager.cpp:452
+#: widgets/keybindings/actionmanager.cpp:516
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:446
+#: widgets/keybindings/actionmanager.cpp:453
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Guardar archivo"
 
-#: widgets/keybindings/actionmanager.cpp:468
+#: widgets/keybindings/actionmanager.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "¿Realmente quiere borrar el lienzo?"
 
-#: widgets/keybindings/actionmanager.cpp:469
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Borrar"
 
-#: widgets/keybindings/actionmanager.cpp:512
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Abrir archivo"
 
-#: widgets/keybindings/actionmanager.cpp:525
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sin título.svg"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:534
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exportar a SVG"
 
-#: widgets/keybindings/actionmanager.cpp:564
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -623,7 +623,7 @@ msgstr ""
 "El documento «%1» contiene modificaciones. ¿Quiere guardar los cambios o "
 "descartarlos?"
 
-#: widgets/keybindings/actionmanager.cpp:568
+#: widgets/keybindings/actionmanager.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

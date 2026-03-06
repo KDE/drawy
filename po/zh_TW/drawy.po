@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:42+0000\n"
+"POT-Creation-Date: 2026-03-06 02:40+0000\n"
 "PO-Revision-Date: 2026-03-02 06:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -128,13 +128,13 @@ msgstr "變更 Z 軸排序"
 msgid "Basic Shapes"
 msgstr "基礎形狀"
 
-#: plugins/basicshapes/triangle/triangle.cpp:88
+#: plugins/basicshapes/triangle/triangle.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "三角形"
 
-#: plugins/basicshapes/xbox/xbox.cpp:73
+#: plugins/basicshapes/xbox/xbox.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -562,65 +562,65 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "除錯"
 
-#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:445
-#: widgets/keybindings/actionmanager.cpp:509
+#: widgets/keybindings/actionmanager.cpp:452
+#: widgets/keybindings/actionmanager.cpp:516
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:446
+#: widgets/keybindings/actionmanager.cpp:453
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:468
+#: widgets/keybindings/actionmanager.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "您確定要清空整個畫布嗎？"
 
-#: widgets/keybindings/actionmanager.cpp:469
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/keybindings/actionmanager.cpp:512
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/keybindings/actionmanager.cpp:525
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgid "Untitled.svg"
 msgstr "未命名.svg"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:534
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "匯出為 SVG"
 
-#: widgets/keybindings/actionmanager.cpp:564
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "文件「%1」已被修改。您想要儲存變更還是放棄變更？"
 
-#: widgets/keybindings/actionmanager.cpp:568
+#: widgets/keybindings/actionmanager.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
