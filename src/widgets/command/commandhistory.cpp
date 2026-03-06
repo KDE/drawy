@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -7,8 +7,8 @@
 
 CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
     : QObject(parent)
-    , m_undoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
-    , m_redoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
+    , m_undoStack(std::make_unique<std::deque<std::shared_ptr<ItemCommand>>>())
+    , m_redoStack(std::make_unique<std::deque<std::shared_ptr<ItemCommand>>>())
     , m_context{context}
 {
 }
@@ -24,7 +24,7 @@ void CommandHistory::undo()
         return;
     }
 
-    const std::shared_ptr<Command> lastCommand{m_undoStack->front()};
+    const std::shared_ptr<ItemCommand> lastCommand{m_undoStack->front()};
     if (m_context) {
         lastCommand->undo(m_context);
     }
@@ -45,7 +45,7 @@ void CommandHistory::redo()
         return;
     }
 
-    const std::shared_ptr<Command> nextCommand{m_redoStack->front()};
+    const std::shared_ptr<ItemCommand> nextCommand{m_redoStack->front()};
     if (m_context) {
         nextCommand->execute(m_context);
     }
@@ -59,7 +59,7 @@ void CommandHistory::redo()
     Q_EMIT undoRedoChanged();
 }
 
-void CommandHistory::insert(const std::shared_ptr<Command> &command)
+void CommandHistory::insert(const std::shared_ptr<ItemCommand> &command)
 {
     qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->commandTitle();
     while (!m_redoStack->empty()) {

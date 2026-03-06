@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
+﻿# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -14,7 +14,6 @@ target_sources(
         canvas/canvas.hpp
         command/commandhistory.cpp
         command/commandhistory.hpp
-        command/command.hpp
         command/deselectcommand.cpp
         command/deselectcommand.hpp
         command/groupcommand.cpp
