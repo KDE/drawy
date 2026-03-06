@@ -22,7 +22,7 @@ ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::Zord
     qCDebug(DRAWY_COMMAND_LOG) << "ZorderCommand" << m_items.count();
 }
 
-void ZorderCommand::execute(ApplicationContext *context)
+void ZorderCommand::redo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
 
@@ -51,7 +51,7 @@ void ZorderCommand::undo([[maybe_unused]] ApplicationContext *context)
 #endif
 }
 
-QString ZorderCommand::commandTitle() const
+QString ZorderCommand::text() const
 {
     return i18n("Change ZOrder");
 }

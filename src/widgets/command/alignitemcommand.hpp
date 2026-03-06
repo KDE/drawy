@@ -14,10 +14,10 @@ class AlignItemCommand : public ItemCommand
 public:
     explicit AlignItemCommand(QList<std::shared_ptr<Item>> items, ItemUtils::AlignType alignment);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
     [[nodiscard]] bool hasChanged() const;
 
 private:

@@ -70,7 +70,7 @@ void AlignItemCommand::calculateMoveItems()
     }
 }
 
-void AlignItemCommand::execute(ApplicationContext *context)
+void AlignItemCommand::redo(ApplicationContext *context)
 {
     if (m_moveToPoint.isEmpty()) {
         return;
@@ -108,7 +108,7 @@ void AlignItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString AlignItemCommand::commandTitle() const
+QString AlignItemCommand::text() const
 {
     return i18n("Align Items");
 }

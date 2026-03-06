@@ -15,9 +15,9 @@ public:
     explicit ItemCommand(QList<std::shared_ptr<Item>> items);
     virtual ~ItemCommand();
 
-    virtual void execute(ApplicationContext *context) = 0;
+    virtual void redo(ApplicationContext *context) = 0;
     virtual void undo(ApplicationContext *context) = 0;
-    virtual QString commandTitle() const = 0;
+    virtual QString text() const = 0;
 
 protected:
     QList<std::shared_ptr<Item>> m_items;

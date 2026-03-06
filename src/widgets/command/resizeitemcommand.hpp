@@ -17,9 +17,9 @@ public:
                       const QTransform lockedTransform,
                       std::unordered_map<std::shared_ptr<Item>, bool> useLocked);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     QTransform m_transform{};

@@ -34,7 +34,7 @@ bool UpdatePropertyCommand::verifyDifferentProperty() const
     return false;
 }
 
-void UpdatePropertyCommand::execute(ApplicationContext *context)
+void UpdatePropertyCommand::redo(ApplicationContext *context)
 {
     const Property::Type type{m_newProperty.type()};
 
@@ -73,7 +73,7 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 }
 
-QString UpdatePropertyCommand::commandTitle() const
+QString UpdatePropertyCommand::text() const
 {
-    return m_newProperty.convertEnumToString(m_newProperty.type());
+    return m_newProperty.information(m_newProperty.type());
 }

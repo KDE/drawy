@@ -36,7 +36,7 @@ void CommandHistory::undo()
     }
 
     m_undoStack->pop_front();
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
 void CommandHistory::redo()
@@ -47,7 +47,7 @@ void CommandHistory::redo()
 
     const std::shared_ptr<ItemCommand> nextCommand{m_redoStack->front()};
     if (m_context) {
-        nextCommand->execute(m_context);
+        nextCommand->redo(m_context);
     }
 
     m_undoStack->push_front(nextCommand);
@@ -56,40 +56,51 @@ void CommandHistory::redo()
     }
 
     m_redoStack->pop_front();
+    updateUndoRedoActions();
+}
+
+void CommandHistory::updateUndoRedoActions()
+{
     Q_EMIT undoRedoChanged();
+    if (!m_undoStack->empty()) {
+        Q_EMIT undoTextChanged(m_undoStack->front()->text());
+    }
+    if (!m_redoStack->empty()) {
+        Q_EMIT redoTextChanged(m_redoStack->front()->text());
+    }
 }
 
 void CommandHistory::insert(const std::shared_ptr<ItemCommand> &command)
 {
-    qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->commandTitle();
+    qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->text();
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }
 
     if (m_context) {
-        command->execute(m_context);
+        command->redo(m_context);
     }
 
     m_undoStack->push_front(command);
     if (m_undoStack->size() == maxCommands) {
         m_undoStack->pop_back();
     }
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
 void CommandHistory::clear()
 {
     m_undoStack->clear();
     m_redoStack->clear();
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
-bool CommandHistory::hasUndo() const
+bool CommandHistory::canUndo() const
 {
     return !m_undoStack->empty();
 }
 
-bool CommandHistory::hasRedo() const
+bool CommandHistory::canRedo() const
 {
     return !m_redoStack->empty();
 }

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -22,7 +22,7 @@ SelectCommand::SelectCommand(QList<std::shared_ptr<Item>> items)
     qCDebug(DRAWY_COMMAND_LOG) << "SelectCommand" << m_items.count();
 }
 
-void SelectCommand::execute(ApplicationContext *context)
+void SelectCommand::redo(ApplicationContext *context)
 {
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
@@ -44,7 +44,7 @@ void SelectCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-QString SelectCommand::commandTitle() const
+QString SelectCommand::text() const
 {
     return i18n("Select Object");
 }

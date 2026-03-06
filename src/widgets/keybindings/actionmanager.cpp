@@ -130,7 +130,14 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     actionCollection->readSettings();
 
     // managing actions
-    connect(m_context->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
+    const auto commandHistory = m_context->spatialContext()->commandHistory();
+    connect(commandHistory, &CommandHistory::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
+    connect(commandHistory, &CommandHistory::redoTextChanged, this, [this](const QString &toolTip) {
+        action(KStandardActions::Redo)->setToolTip(toolTip);
+    });
+    connect(commandHistory, &CommandHistory::undoTextChanged, this, [this](const QString &toolTip) {
+        action(KStandardActions::Undo)->setToolTip(toolTip);
+    });
     connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, &ActionManager::slotUpdateZoomButtons);
     connect(m_context->selectionContext(), &SelectionContext::selectionUpdated, this, &ActionManager::slotUpdateZorderAndGroupButtons);
 
@@ -634,13 +641,13 @@ void ActionManager::slotUpdateZoomButtons()
 
 void ActionManager::slotUpdateHistoryButtons()
 {
-    if (m_context->spatialContext()->commandHistory()->hasUndo()) {
+    if (m_context->spatialContext()->commandHistory()->canUndo()) {
         action(KStandardActions::Undo)->setEnabled(true);
     } else {
         action(KStandardActions::Undo)->setEnabled(false);
     }
 
-    if (m_context->spatialContext()->commandHistory()->hasRedo()) {
+    if (m_context->spatialContext()->commandHistory()->canRedo()) {
         action(KStandardActions::Redo)->setEnabled(true);
     } else {
         action(KStandardActions::Redo)->setEnabled(false);

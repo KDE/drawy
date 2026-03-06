@@ -24,7 +24,7 @@ RemoveItemCommand::RemoveItemCommand(QList<std::shared_ptr<Item>> items)
     qCDebug(DRAWY_COMMAND_LOG) << "RemoveItemCommand" << m_items.count();
 }
 
-void RemoveItemCommand::execute(ApplicationContext *context)
+void RemoveItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &quadtree{context->spatialContext()->quadtree()};
@@ -55,7 +55,7 @@ void RemoveItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString RemoveItemCommand::commandTitle() const
+QString RemoveItemCommand::text() const
 {
     return i18n("Remove Object");
 }

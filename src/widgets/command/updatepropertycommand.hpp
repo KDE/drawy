@@ -13,9 +13,9 @@ class UpdatePropertyCommand : public ItemCommand
 public:
     UpdatePropertyCommand(QList<std::shared_ptr<Item>> items, Property newProperty);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
     [[nodiscard]] bool verifyDifferentProperty() const;
 

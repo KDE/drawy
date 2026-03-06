@@ -14,9 +14,9 @@ class RotateItemCommand : public ItemCommand
 public:
     RotateItemCommand(QList<std::shared_ptr<Item>> items, const qreal angle, const QPointF pivot);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     qreal m_angle;

@@ -28,7 +28,7 @@ UngroupCommand::UngroupCommand(QList<std::shared_ptr<Item>> items)
     }
 }
 
-void UngroupCommand::execute(ApplicationContext *context)
+void UngroupCommand::redo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
 
@@ -71,7 +71,7 @@ void UngroupCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-QString UngroupCommand::commandTitle() const
+QString UngroupCommand::text() const
 {
     return i18n("Ungroup Objects");
 }

@@ -13,10 +13,10 @@ class LockCommand : public ItemCommand
 public:
     explicit LockCommand(QList<std::shared_ptr<Item>> items, bool lock);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     std::unordered_map<std::shared_ptr<Item>, bool> m_lockedStates;

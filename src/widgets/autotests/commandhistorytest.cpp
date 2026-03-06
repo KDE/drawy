@@ -18,12 +18,12 @@ public:
     {
     }
     ~CustomCommand() override = default;
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 };
 
-void CustomCommand::execute([[maybe_unused]] ApplicationContext *context)
+void CustomCommand::redo([[maybe_unused]] ApplicationContext *context)
 {
 }
 
@@ -31,7 +31,7 @@ void CustomCommand::undo([[maybe_unused]] ApplicationContext *context)
 {
 }
 
-QString CustomCommand::commandTitle() const
+QString CustomCommand::text() const
 {
     return u"title"_s;
 }
@@ -44,8 +44,8 @@ CommandHistoryTest::CommandHistoryTest(QObject *parent)
 void CommandHistoryTest::shouldHaveDefaultValues()
 {
     const CommandHistory t(nullptr);
-    QVERIFY(!t.hasRedo());
-    QVERIFY(!t.hasUndo());
+    QVERIFY(!t.canRedo());
+    QVERIFY(!t.canUndo());
 }
 
 void CommandHistoryTest::shouldTestInsertCommands()
@@ -53,13 +53,13 @@ void CommandHistoryTest::shouldTestInsertCommands()
     CommandHistory t(nullptr);
     QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
     t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
-    QVERIFY(!t.hasRedo());
-    QVERIFY(t.hasUndo());
+    QVERIFY(!t.canRedo());
+    QVERIFY(t.canUndo());
     QCOMPARE(spy.count(), 1);
 
     t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
-    QVERIFY(!t.hasRedo());
-    QVERIFY(t.hasUndo());
+    QVERIFY(!t.canRedo());
+    QVERIFY(t.canUndo());
     QCOMPARE(spy.count(), 2);
 }
 
@@ -68,22 +68,22 @@ void CommandHistoryTest::shouldTestUndoCommands()
     CommandHistory t(nullptr);
     QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
     t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
-    QVERIFY(!t.hasRedo());
-    QVERIFY(t.hasUndo());
+    QVERIFY(!t.canRedo());
+    QVERIFY(t.canUndo());
     spy.clear();
     t.undo();
 
     QCOMPARE(spy.count(), 1);
-    QVERIFY(t.hasRedo());
-    QVERIFY(!t.hasUndo());
+    QVERIFY(t.canRedo());
+    QVERIFY(!t.canUndo());
 
     spy.clear();
     // No stock
     t.undo();
 
     QCOMPARE(spy.count(), 0);
-    QVERIFY(t.hasRedo());
-    QVERIFY(!t.hasUndo());
+    QVERIFY(t.canRedo());
+    QVERIFY(!t.canUndo());
 }
 
 void CommandHistoryTest::shouldTestClearCommands()
@@ -100,12 +100,12 @@ void CommandHistoryTest::shouldTestClearCommands()
     spy.clear();
 
     // We have undo and redo
-    QVERIFY(t.hasRedo());
-    QVERIFY(t.hasUndo());
+    QVERIFY(t.canRedo());
+    QVERIFY(t.canUndo());
 
     t.clear();
     QCOMPARE(spy.count(), 1);
-    QVERIFY(!t.hasRedo());
-    QVERIFY(!t.hasUndo());
+    QVERIFY(!t.canRedo());
+    QVERIFY(!t.canUndo());
 }
 #include "moc_commandhistorytest.cpp"

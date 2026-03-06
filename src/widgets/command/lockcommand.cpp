@@ -16,7 +16,7 @@ LockCommand::LockCommand(QList<std::shared_ptr<Item>> items, bool lock)
     qCDebug(DRAWY_COMMAND_LOG) << "LockCommand" << m_items.count();
 }
 
-void LockCommand::execute([[maybe_unused]] ApplicationContext *context)
+void LockCommand::redo([[maybe_unused]] ApplicationContext *context)
 {
     for (const auto &item : std::as_const(m_items)) {
         m_lockedStates[item] = item->locked();
@@ -31,7 +31,7 @@ void LockCommand::undo([[maybe_unused]] ApplicationContext *context)
     }
 }
 
-QString LockCommand::commandTitle() const
+QString LockCommand::text() const
 {
     return i18n("Change Lock");
 }

@@ -26,13 +26,16 @@ public:
 
     void clear();
 
-    [[nodiscard]] bool hasUndo() const;
-    [[nodiscard]] bool hasRedo() const;
+    [[nodiscard]] bool canUndo() const;
+    [[nodiscard]] bool canRedo() const;
 
 Q_SIGNALS:
     void undoRedoChanged();
+    void redoTextChanged(const QString &redoText);
+    void undoTextChanged(const QString &undoText);
 
 private:
+    void updateUndoRedoActions();
     static constexpr int maxCommands{100}; // arbitrary
     std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_undoStack;
     std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_redoStack;

@@ -23,7 +23,7 @@ ArrowTypeCommand::ArrowTypeCommand(QList<std::shared_ptr<Item>> items, ArrowUtil
     qCDebug(DRAWY_COMMAND_LOG) << "ArrowTypeCommand" << m_items.count();
 }
 
-void ArrowTypeCommand::execute(ApplicationContext *context)
+void ArrowTypeCommand::redo(ApplicationContext *context)
 {
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
@@ -60,7 +60,7 @@ void ArrowTypeCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 }
 
-QString ArrowTypeCommand::commandTitle() const
+QString ArrowTypeCommand::text() const
 {
     return i18n("Change Arrow Type");
 }
