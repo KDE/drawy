@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -21,6 +21,17 @@ UpdatePropertyCommand::UpdatePropertyCommand(QList<std::shared_ptr<Item>> items,
     , m_newProperty{std::move(newProperty)}
 {
     qCDebug(DRAWY_COMMAND_LOG) << "UpdatePropertyCommand" << m_items.count();
+}
+
+bool UpdatePropertyCommand::verifyDifferentProperty() const
+{
+    const Property::Type type{m_newProperty.type()};
+    for (const auto &item : std::as_const(m_items)) {
+        if (item->property(type) != m_newProperty) {
+            return true;
+        }
+    }
+    return false;
 }
 
 void UpdatePropertyCommand::execute(ApplicationContext *context)

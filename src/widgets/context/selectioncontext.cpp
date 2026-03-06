@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -97,11 +97,14 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
     const QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
-    const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
-    commandHistory->insert(std::make_shared<UpdatePropertyCommand>(items, property));
+    auto command = std::make_shared<UpdatePropertyCommand>(items, property);
+    if (command->verifyDifferentProperty()) {
+        const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
+        commandHistory->insert(command);
 
-    m_applicationContext->renderingContext()->markForRender();
-    m_applicationContext->renderingContext()->markForUpdate();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
+    }
 }
 
 void SelectionContext::reset()

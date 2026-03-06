@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -16,6 +16,8 @@ public:
     void execute(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
     [[nodiscard]] QString commandTitle() const override;
+
+    [[nodiscard]] bool verifyDifferentProperty() const;
 
 private:
     Property m_newProperty{};
