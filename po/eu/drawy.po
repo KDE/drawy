@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:42+0000\n"
+"POT-Creation-Date: 2026-03-06 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -150,7 +150,7 @@ msgstr "Ezabatzailearen neurria"
 msgid "Basic Shapes"
 msgstr ""
 
-#: plugins/basicshapes/triangle/triangle.cpp:88
+#: plugins/basicshapes/triangle/triangle.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
@@ -667,22 +667,22 @@ msgctxt "@action"
 msgid "Debug"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:450
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
 msgid "Untitled.%1"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:445
-#: widgets/keybindings/actionmanager.cpp:509
+#: widgets/keybindings/actionmanager.cpp:452
+#: widgets/keybindings/actionmanager.cpp:516
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Drawy (*.%1)"
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:446
+#: widgets/keybindings/actionmanager.cpp:453
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Save File"
@@ -690,19 +690,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Gorde fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:468
+#: widgets/keybindings/actionmanager.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:469
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:512
+#: widgets/keybindings/actionmanager.cpp:519
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Open File"
@@ -710,19 +710,19 @@ msgctxt "@title:window"
 msgid "Open File"
 msgstr "Ireki fitxategia"
 
-#: widgets/keybindings/actionmanager.cpp:525
+#: widgets/keybindings/actionmanager.cpp:532
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Untitled.%1"
 msgid "Untitled.svg"
 msgstr "Izengabea.%1"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:534
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:536
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Save to File"
@@ -730,14 +730,14 @@ msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Gorde fitxategian"
 
-#: widgets/keybindings/actionmanager.cpp:564
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:568
+#: widgets/keybindings/actionmanager.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

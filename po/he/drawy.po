@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-04 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 18:55+0200\n"
+"POT-Creation-Date: 2026-03-06 00:41+0000\n"
+"PO-Revision-Date: 2026-03-05 07:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -129,7 +129,7 @@ msgstr "שינוי מרחק (סדר בציר Z)"
 msgid "Basic Shapes"
 msgstr "צורות בסיסיות"
 
-#: plugins/basicshapes/triangle/triangle.cpp:88
+#: plugins/basicshapes/triangle/triangle.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
@@ -228,7 +228,7 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "תמונה"
 
 #: widgets/components/toolbuttonplugin.cpp:30
 #, kde-format
@@ -521,17 +521,13 @@ msgid "Move Tool"
 msgstr "כלי הזזה"
 
 #: widgets/keybindings/actionmanager.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "כלי מרובעים"
+msgstr "כלי תמונות"
 
 #: widgets/keybindings/actionmanager.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "כלי יהלומים"
@@ -566,65 +562,65 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "ניפוי שגיאות"
 
-#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:450
 #, kde-format
 msgid "Untitled.%1"
 msgstr "ללא שם.%1"
 
-#: widgets/keybindings/actionmanager.cpp:445
-#: widgets/keybindings/actionmanager.cpp:509
+#: widgets/keybindings/actionmanager.cpp:452
+#: widgets/keybindings/actionmanager.cpp:516
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:446
+#: widgets/keybindings/actionmanager.cpp:453
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "שמירת הקובץ"
 
-#: widgets/keybindings/actionmanager.cpp:468
+#: widgets/keybindings/actionmanager.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "לפנות את משטח הציור?"
 
-#: widgets/keybindings/actionmanager.cpp:469
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "לפנות"
 
-#: widgets/keybindings/actionmanager.cpp:512
+#: widgets/keybindings/actionmanager.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "פתיחת קובץ"
 
-#: widgets/keybindings/actionmanager.cpp:525
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgid "Untitled.svg"
 msgstr "ללא שם.svg"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:534
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "ייצוא ל־Svg"
 
-#: widgets/keybindings/actionmanager.cpp:564
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "המסמך „%1” נערך. לשמור את השינויים או לבטל אותם?"
 
-#: widgets/keybindings/actionmanager.cpp:568
+#: widgets/keybindings/actionmanager.cpp:575
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -779,14 +775,13 @@ msgstr "סדר Z (עומק)"
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "תמונה"
 
 #: widgets/tools/imagetool.cpp:56
-#, fuzzy, kde-format
-#| msgid "Insert Object"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "הוספת עצם"
+msgstr "הוספת תמונה"
 
 #: widgets/window/window.cpp:168
 #, kde-format
