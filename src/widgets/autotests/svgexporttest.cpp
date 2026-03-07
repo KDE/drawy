@@ -41,7 +41,7 @@ void SvgExportTest::shouldNotChangeOutput()
     QFETCH(QString, output);
     LoadJob loadJob(nullptr);
     loadJob.setFileName(QLatin1StringView(DRAWY_DATA_DIR) + u"/svg/"_s + input);
-    connect(&loadJob, &LoadJob::loadDone, [output](const LoadJob::LoadInfo &info) {
+    connect(&loadJob, &LoadJob::loadDone, this, [output](const LoadJob::LoadInfo &info) {
         QByteArray data;
         QXmlStreamWriter writer(&data);
         writer.setAutoFormatting(true);

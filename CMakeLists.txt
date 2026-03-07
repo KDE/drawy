@@ -183,6 +183,8 @@ if(WARNINGS_AS_ERRORS)
     endif()
 endif()
 
+add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
+
 add_subdirectory(src)
 
 ecm_qt_install_logging_categories(
