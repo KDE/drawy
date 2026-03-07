@@ -4,7 +4,6 @@
 
 #include "colorwidgetbase.hpp"
 
-#include "properties/property.hpp"
 #include <KLocalizedString>
 #include <KSeparator>
 #include <QButtonGroup>
