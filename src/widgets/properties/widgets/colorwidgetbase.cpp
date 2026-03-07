@@ -49,7 +49,7 @@ void ColorWidgetBase::initialize()
     m_currentColorButton->setObjectName(u"m_currentColorButton"_s);
     m_currentColorButton->setCheckable(false);
     m_currentColorButton->setToolTip(i18nc("@info:tooltip", "Select Custom Color"));
-    connect(m_currentColorButton, &QToolButton::clicked, [this]() {
+    connect(m_currentColorButton, &QToolButton::clicked, this, [this]() {
         const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
         if (col.isValid()) {
             assignCurrentColor(col);
