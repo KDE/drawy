@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 00:41+0000\n"
+"POT-Creation-Date: 2026-03-07 00:41+0000\n"
 "PO-Revision-Date: 2026-03-05 07:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -135,7 +135,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "משולש"
 
-#: plugins/basicshapes/xbox/xbox.cpp:73
+#: plugins/basicshapes/xbox/xbox.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"

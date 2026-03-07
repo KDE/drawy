@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 00:41+0000\n"
+"POT-Creation-Date: 2026-03-07 00:41+0000\n"
 "PO-Revision-Date: 2026-03-03 17:06+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -135,7 +135,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "Triangulo"
 
-#: plugins/basicshapes/xbox/xbox.cpp:73
+#: plugins/basicshapes/xbox/xbox.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
