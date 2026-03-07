@@ -14,9 +14,9 @@ class MoveItemCommand : public ItemCommand
 public:
     MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPointF worldInitialPos, const QPointF worldFinalPos);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     QPointF m_worldInitialPos;

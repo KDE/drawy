@@ -31,7 +31,7 @@ GroupCommand::GroupCommand(ApplicationContext *context, QList<std::shared_ptr<It
     m_context->spatialContext()->quadtree().reorder(m_items);
 }
 
-void GroupCommand::execute(ApplicationContext *context)
+void GroupCommand::redo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
 
@@ -68,7 +68,7 @@ void GroupCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion);
 }
 
-QString GroupCommand::commandTitle() const
+QString GroupCommand::text() const
 {
     return i18n("Group Object");
 }

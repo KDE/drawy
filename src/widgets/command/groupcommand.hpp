@@ -13,9 +13,9 @@ class GroupCommand : public ItemCommand
 public:
     explicit GroupCommand(ApplicationContext *context, QList<std::shared_ptr<Item>> items);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     const std::shared_ptr<GroupItem> m_group;

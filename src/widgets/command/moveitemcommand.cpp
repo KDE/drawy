@@ -23,7 +23,7 @@ MoveItemCommand::MoveItemCommand(QList<std::shared_ptr<Item>> items, const QPoin
     qCDebug(DRAWY_COMMAND_LOG) << "MoveItemCommand" << m_items.count();
 }
 
-void MoveItemCommand::execute(ApplicationContext *context)
+void MoveItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -61,7 +61,7 @@ void MoveItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString MoveItemCommand::commandTitle() const
+QString MoveItemCommand::text() const
 {
     return i18n("Move Object");
 }

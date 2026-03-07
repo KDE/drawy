@@ -26,7 +26,7 @@ LineResizeItemCommand::LineResizeItemCommand(QList<std::shared_ptr<Item>> items,
     Q_ASSERT(m_items.size() == 1);
 }
 
-void LineResizeItemCommand::execute(ApplicationContext *context)
+void LineResizeItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -72,7 +72,7 @@ void LineResizeItemCommand::undo(ApplicationContext *context)
     cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
 }
 
-QString LineResizeItemCommand::commandTitle() const
+QString LineResizeItemCommand::text() const
 {
     return i18n("Resize Line");
 }

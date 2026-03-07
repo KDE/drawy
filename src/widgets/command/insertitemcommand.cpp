@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -22,7 +22,7 @@ InsertItemCommand::InsertItemCommand(QList<std::shared_ptr<Item>> items)
     qCDebug(DRAWY_COMMAND_LOG) << "InsertItemCommand" << m_items.count();
 }
 
-void InsertItemCommand::execute(ApplicationContext *context)
+void InsertItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &quadtree{context->spatialContext()->quadtree()};
@@ -50,7 +50,7 @@ void InsertItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString InsertItemCommand::commandTitle() const
+QString InsertItemCommand::text() const
 {
     return i18n("Insert Object");
 }

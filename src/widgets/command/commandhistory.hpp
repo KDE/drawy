@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -8,7 +8,7 @@
 #include <deque>
 #include <memory>
 
-#include "command.hpp"
+#include "itemcommand.hpp"
 
 #include "libdrawywidgets_private_export.h"
 
@@ -22,21 +22,23 @@ public:
 
     void undo();
     void redo();
-    void insert(const std::shared_ptr<Command> &command);
-
-    static constexpr int maxCommands{100}; // arbitrary
+    void insert(const std::shared_ptr<ItemCommand> &command);
 
     void clear();
 
-    [[nodiscard]] bool hasUndo() const;
-    [[nodiscard]] bool hasRedo() const;
+    [[nodiscard]] bool canUndo() const;
+    [[nodiscard]] bool canRedo() const;
 
 Q_SIGNALS:
     void undoRedoChanged();
+    void redoTextChanged(const QString &redoText);
+    void undoTextChanged(const QString &undoText);
 
 private:
-    std::unique_ptr<std::deque<std::shared_ptr<Command>>> m_undoStack;
-    std::unique_ptr<std::deque<std::shared_ptr<Command>>> m_redoStack;
+    void updateUndoRedoActions();
+    static constexpr int maxCommands{100}; // arbitrary
+    std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_undoStack;
+    std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_redoStack;
 
     ApplicationContext *const m_context;
 };

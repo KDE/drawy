@@ -23,7 +23,7 @@ RotateItemCommand::RotateItemCommand(QList<std::shared_ptr<Item>> items, const q
     qCDebug(DRAWY_COMMAND_LOG) << "RotateItemCommand" << m_items.count();
 }
 
-void RotateItemCommand::execute(ApplicationContext *context)
+void RotateItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -53,7 +53,7 @@ void RotateItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString RotateItemCommand::commandTitle() const
+QString RotateItemCommand::text() const
 {
     return i18n("Rotate Object");
 }

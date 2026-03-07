@@ -21,7 +21,7 @@ DeselectCommand::DeselectCommand(QList<std::shared_ptr<Item>> items)
     qCDebug(DRAWY_COMMAND_LOG) << "DeselectCommand" << m_items.count();
 }
 
-void DeselectCommand::execute(ApplicationContext *context)
+void DeselectCommand::redo(ApplicationContext *context)
 {
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
@@ -43,7 +43,7 @@ void DeselectCommand::undo(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
 }
 
-QString DeselectCommand::commandTitle() const
+QString DeselectCommand::text() const
 {
     return i18n("Deselect Object");
 }

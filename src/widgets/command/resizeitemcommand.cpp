@@ -27,7 +27,7 @@ ResizeItemCommand::ResizeItemCommand(QList<std::shared_ptr<Item>> items,
     qCDebug(DRAWY_COMMAND_LOG) << "ResizeItemCommand" << m_items.count();
 }
 
-void ResizeItemCommand::execute(ApplicationContext *context)
+void ResizeItemCommand::redo(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
@@ -67,7 +67,7 @@ void ResizeItemCommand::undo(ApplicationContext *context)
     }
 }
 
-QString ResizeItemCommand::commandTitle() const
+QString ResizeItemCommand::text() const
 {
     return i18n("Resize Object");
 }

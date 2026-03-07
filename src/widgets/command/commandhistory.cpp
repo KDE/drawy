@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -7,8 +7,8 @@
 
 CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
     : QObject(parent)
-    , m_undoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
-    , m_redoStack(std::make_unique<std::deque<std::shared_ptr<Command>>>())
+    , m_undoStack(std::make_unique<std::deque<std::shared_ptr<ItemCommand>>>())
+    , m_redoStack(std::make_unique<std::deque<std::shared_ptr<ItemCommand>>>())
     , m_context{context}
 {
 }
@@ -24,7 +24,7 @@ void CommandHistory::undo()
         return;
     }
 
-    const std::shared_ptr<Command> lastCommand{m_undoStack->front()};
+    const std::shared_ptr<ItemCommand> lastCommand{m_undoStack->front()};
     if (m_context) {
         lastCommand->undo(m_context);
     }
@@ -36,7 +36,7 @@ void CommandHistory::undo()
     }
 
     m_undoStack->pop_front();
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
 void CommandHistory::redo()
@@ -45,9 +45,9 @@ void CommandHistory::redo()
         return;
     }
 
-    const std::shared_ptr<Command> nextCommand{m_redoStack->front()};
+    const std::shared_ptr<ItemCommand> nextCommand{m_redoStack->front()};
     if (m_context) {
-        nextCommand->execute(m_context);
+        nextCommand->redo(m_context);
     }
 
     m_undoStack->push_front(nextCommand);
@@ -56,40 +56,51 @@ void CommandHistory::redo()
     }
 
     m_redoStack->pop_front();
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
-void CommandHistory::insert(const std::shared_ptr<Command> &command)
+void CommandHistory::updateUndoRedoActions()
 {
-    qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->commandTitle();
+    Q_EMIT undoRedoChanged();
+    if (!m_undoStack->empty()) {
+        Q_EMIT undoTextChanged(m_undoStack->front()->text());
+    }
+    if (!m_redoStack->empty()) {
+        Q_EMIT redoTextChanged(m_redoStack->front()->text());
+    }
+}
+
+void CommandHistory::insert(const std::shared_ptr<ItemCommand> &command)
+{
+    qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->text();
     while (!m_redoStack->empty()) {
         m_redoStack->pop_front();
     }
 
     if (m_context) {
-        command->execute(m_context);
+        command->redo(m_context);
     }
 
     m_undoStack->push_front(command);
     if (m_undoStack->size() == maxCommands) {
         m_undoStack->pop_back();
     }
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
 void CommandHistory::clear()
 {
     m_undoStack->clear();
     m_redoStack->clear();
-    Q_EMIT undoRedoChanged();
+    updateUndoRedoActions();
 }
 
-bool CommandHistory::hasUndo() const
+bool CommandHistory::canUndo() const
 {
     return !m_undoStack->empty();
 }
 
-bool CommandHistory::hasRedo() const
+bool CommandHistory::canRedo() const
 {
     return !m_redoStack->empty();
 }

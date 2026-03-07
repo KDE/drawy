@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -12,7 +12,7 @@ class InsertItemCommand : public ItemCommand
 public:
     explicit InsertItemCommand(QList<std::shared_ptr<Item>> items);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 };

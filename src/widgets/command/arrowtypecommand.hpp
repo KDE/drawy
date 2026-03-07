@@ -12,10 +12,10 @@ class ArrowTypeCommand : public ItemCommand
 public:
     explicit ArrowTypeCommand(QList<std::shared_ptr<Item>> items, ArrowUtils::ArrowPos arrowPos, ArrowUtils::ArrowType arrowStyle);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     std::unordered_map<std::shared_ptr<Item>, ArrowUtils::ArrowType> m_originalArrowStyle;

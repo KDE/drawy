@@ -14,10 +14,10 @@ class ZorderCommand : public ItemCommand
 public:
     explicit ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::ZorderMove move);
 
-    void execute(ApplicationContext *context) override;
+    void redo(ApplicationContext *context) override;
     void undo(ApplicationContext *context) override;
 
-    [[nodiscard]] QString commandTitle() const override;
+    [[nodiscard]] QString text() const override;
 
 private:
     std::unordered_map<std::shared_ptr<Item>, int> m_orderIndex;
