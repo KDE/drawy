@@ -213,7 +213,7 @@ void UIContext::showContextMenu() const
     menu->addSeparator();
 
     menu->addAction(actionManager()->action(KStandardActions::FullScreen));
-    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
+    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsImage));
 
     menu->addSeparator();
 

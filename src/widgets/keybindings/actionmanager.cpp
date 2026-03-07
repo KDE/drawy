@@ -78,11 +78,11 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     KStandardActions::keyBindings(this, &ActionManager::configureShortcuts, actionCollection);
 
-    createAction(Action::ExportAsSVG,
-                 i18nc("@action", "Export as SVG"),
+    createAction(Action::ExportAsImage,
+                 i18nc("@action", "Export as Image"),
                  {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_E))},
                  this,
-                 &ActionManager::exportToSvg)
+                 &ActionManager::exportToImage)
         ->setIcon(QIcon::fromTheme(u"document-export"_s));
     createAction(Action::GroupItems, i18nc("@action", "Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems)
         ->setIcon(QIcon::fromTheme(u"object-group"_s));
@@ -163,8 +163,8 @@ QString ActionManager::actionName(Action type) const
         return u"ungroup_items"_s;
     case Action::DeleteSelection:
         return u"delete_selection"_s;
-    case Action::ExportAsSVG:
-        return u"export_as_svg"_s;
+    case Action::ExportAsImage:
+        return u"export_as_image"_s;
     case Action::SwitchToSelectionTool:
         return u"switch_to_selection_tool"_s;
     case Action::SwitchToFreeformTool:
@@ -533,14 +533,18 @@ void ActionManager::openFile()
     m_recentFiles->saveEntries(KConfigGroup(KSharedConfig::openConfig(), u"Recent Files"_s));
 }
 
-void ActionManager::exportToSvg()
+void ActionManager::exportToImage()
 {
     const QDir homeDir{QDir::home()};
     QString text = i18n("Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
-    text = i18n("SVG (*.svg)");
 
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Export to Svg"), defaultFilePath, text)};
+    QString svgFilter = i18n("SVG (*.svg)");
+    QString pngFilter = i18n("PNG (*.png)");
+
+    QString selectedFilter;
+    const QString fileName{
+        QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Export to Image"), defaultFilePath, svgFilter + u";;"_s + pngFilter, &selectedFilter)};
 
     if (fileName.isEmpty()) {
         return;
@@ -552,10 +556,33 @@ void ActionManager::exportToSvg()
         return;
     }
 
-    QXmlStreamWriter stream(&file);
-    stream.setAutoFormatting(true);
+    if (selectedFilter == svgFilter) {
+        QXmlStreamWriter stream(&file);
+        stream.setAutoFormatting(true);
 
-    SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems());
+        SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems());
+    } else if (selectedFilter == pngFilter) {
+        QList<std::shared_ptr<Item>> selectedItems{m_context->spatialContext()->quadtree().getAllItems()};
+        QRectF boundingBox;
+
+        for (const auto &item : std::as_const(selectedItems)) {
+            boundingBox |= item->boundingBox();
+        }
+
+        QImage image(boundingBox.size().toSize(), QImage::Format_ARGB32);
+        image.fill(Common::darkBackgroundColor);
+
+        QPainter painter(&image);
+        painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+
+        for (const auto &item : std::as_const(selectedItems)) {
+            painter.save();
+            item->draw(painter, boundingBox.topLeft());
+            painter.restore();
+        }
+
+        image.save(&file, "PNG");
+    }
 }
 
 void ActionManager::loadFile(const QString &fileName)

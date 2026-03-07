@@ -25,7 +25,7 @@ public:
         GroupItems,
         UngroupItems,
         DeleteSelection,
-        ExportAsSVG,
+        ExportAsImage,
         SwitchToSelectionTool,
         SwitchToFreeformTool,
         SwitchToRectangleTool,
@@ -74,7 +74,7 @@ public:
     void openFile();
     void loadFile(const QString &fileName);
     bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
-    void exportToSvg();
+    void exportToImage();
     void configureSettings();
 
     void switchToTool(Tool::Type type);
