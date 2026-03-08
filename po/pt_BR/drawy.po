@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 02:40+0000\n"
+"POT-Creation-Date: 2026-03-08 02:50+0000\n"
 "PO-Revision-Date: 2026-03-03 08:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -561,58 +561,58 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Depurar"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:457
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sem título.%1"
 
-#: widgets/keybindings/actionmanager.cpp:452
-#: widgets/keybindings/actionmanager.cpp:516
+#: widgets/keybindings/actionmanager.cpp:459
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:453
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salvar arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:475
+#: widgets/keybindings/actionmanager.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Você realmente deseja limpar a tela?"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Limpar"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Abrir arquivo"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:539
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sem título.svg"
 
-#: widgets/keybindings/actionmanager.cpp:534
+#: widgets/keybindings/actionmanager.cpp:541
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:536
+#: widgets/keybindings/actionmanager.cpp:543
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Exportar para Svg"
 
-#: widgets/keybindings/actionmanager.cpp:571
+#: widgets/keybindings/actionmanager.cpp:578
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -620,7 +620,7 @@ msgid ""
 msgstr ""
 "O documento \"%1\" foi modificado. Deseja salvar as mudanças ou descartá-las?"
 
-#: widgets/keybindings/actionmanager.cpp:575
+#: widgets/keybindings/actionmanager.cpp:582
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -714,13 +714,13 @@ msgstr "Diagonal"
 msgid "Background Style"
 msgstr "Estilo de fundo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Selecionar cor personalizada"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:80
+#: widgets/properties/widgets/colorwidgetbase.cpp:79
 #, kde-format
 msgid "Color"
 msgstr "Cor"
