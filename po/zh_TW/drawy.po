@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
 "PO-Revision-Date: 2026-03-02 06:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -562,65 +562,65 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "除錯"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:457
 #, kde-format
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:452
-#: widgets/keybindings/actionmanager.cpp:516
+#: widgets/keybindings/actionmanager.cpp:459
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:453
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:475
+#: widgets/keybindings/actionmanager.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "您確定要清空整個畫布嗎？"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:539
 #, kde-format
 msgid "Untitled.svg"
 msgstr "未命名.svg"
 
-#: widgets/keybindings/actionmanager.cpp:534
+#: widgets/keybindings/actionmanager.cpp:541
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:536
+#: widgets/keybindings/actionmanager.cpp:543
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "匯出為 SVG"
 
-#: widgets/keybindings/actionmanager.cpp:571
+#: widgets/keybindings/actionmanager.cpp:578
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
 "discard them?"
 msgstr "文件「%1」已被修改。您想要儲存變更還是放棄變更？"
 
-#: widgets/keybindings/actionmanager.cpp:575
+#: widgets/keybindings/actionmanager.cpp:582
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -714,13 +714,13 @@ msgstr ""
 msgid "Background Style"
 msgstr "背景風格"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "選取自訂色彩"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:80
+#: widgets/properties/widgets/colorwidgetbase.cpp:79
 #, kde-format
 msgid "Color"
 msgstr "色彩"

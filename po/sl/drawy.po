@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
 "PO-Revision-Date: 2026-03-03 07:33+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -561,58 +561,58 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: widgets/keybindings/actionmanager.cpp:450
+#: widgets/keybindings/actionmanager.cpp:457
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Brez_naslova.%1"
 
-#: widgets/keybindings/actionmanager.cpp:452
-#: widgets/keybindings/actionmanager.cpp:516
+#: widgets/keybindings/actionmanager.cpp:459
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:453
+#: widgets/keybindings/actionmanager.cpp:460
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: widgets/keybindings/actionmanager.cpp:475
+#: widgets/keybindings/actionmanager.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Ali zares želite počistiti platno?"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Počisti"
 
-#: widgets/keybindings/actionmanager.cpp:519
+#: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/keybindings/actionmanager.cpp:532
+#: widgets/keybindings/actionmanager.cpp:539
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:534
+#: widgets/keybindings/actionmanager.cpp:541
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:536
+#: widgets/keybindings/actionmanager.cpp:543
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Svg"
 msgstr "Izvozi v Svg"
 
-#: widgets/keybindings/actionmanager.cpp:571
+#: widgets/keybindings/actionmanager.cpp:578
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified. Do you want to save your changes or "
@@ -621,7 +621,7 @@ msgstr ""
 "Dokument \"%1\" je bil spremenjen. Ali želite shraniti spremembe ali jih "
 "zavreči?"
 
-#: widgets/keybindings/actionmanager.cpp:575
+#: widgets/keybindings/actionmanager.cpp:582
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -715,13 +715,13 @@ msgstr "Diagonalno"
 msgid "Background Style"
 msgstr "Slog ozadja"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Izberi barvo po meri"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:80
+#: widgets/properties/widgets/colorwidgetbase.cpp:79
 #, kde-format
 msgid "Color"
 msgstr "Barva"
