@@ -57,5 +57,5 @@ void RemoveItemCommand::undo(ApplicationContext *context)
 
 QString RemoveItemCommand::text() const
 {
-    return i18n("Remove Object");
+    return i18np("Remove Object", "Remove %1 Objects", m_items.count());
 }

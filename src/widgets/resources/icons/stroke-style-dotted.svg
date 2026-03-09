@@ -1,0 +1,19 @@
+<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <rect x="2.513061" y="2.4505615" width="27.000084" height="27.000084" ry="3.6463006" fill="#3c3f41" stroke="#4c5052" stroke-linecap="round" stroke-linejoin="round" style="paint-order:normal"/>
+        <g fill="#fff">
+            <circle cx="7.3139281" cy="24.655666" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="8.8976479" cy="23.074009" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="10.480337" cy="21.491325" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="12.063009" cy="19.908627" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="13.645687" cy="18.325928" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="15.228385" cy="16.743248" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="16.811068" cy="15.16056" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="18.392735" cy="13.57685" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="19.976454" cy="11.995196" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="21.559145" cy="10.412509" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="23.141821" cy="8.8298101" r=".5" style="paint-order:stroke fill markers"/>
+            <circle cx="24.716692" cy="7.2393088" r=".5" style="paint-order:stroke fill markers"/>
+        </g>
+    </g>
+</svg>
