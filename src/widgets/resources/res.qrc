@@ -1,12 +1,10 @@
-<!--
-SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
-
-SPDX-License-Identifier: GPL-3.0-or-later
--->
 <RCC>
     <qresource prefix="/">
         <file>fonts/Inter.ttf</file>
         <file>fonts/FuzzyBubbles.ttf</file>
         <file>cursors/rotate.png</file>
+        <file>icons/stroke-style-dashed.svg</file>
+        <file>icons/stroke-style-dotted.svg</file>
+        <file>icons/stroke-style-solid.svg</file>
     </qresource>
 </RCC>
