@@ -66,10 +66,10 @@
     <p xml:lang="uk">Drawy динамічна нескінченна дошка, яка має стати альтернативою чудової мережевої Excalidraw для робочих станцій.</p>
     <p xml:lang="zh-TW">Drawy 是一個開發中的無限白板工具，希望成為網路上好用的 Excalidraw 的原生桌面替代品。</p>
   </description>
-  <url type="homepage">https://invent.kde.org/prayag/drawy</url>
-  <url type="bugtracker">https://invent.kde.org/prayag/drawy/issues</url>
-  <url type="vcs-browser">https://invent.kde.org/prayag/drawy</url>
-  <url type="contribute">https://invent.kde.org/prayag/drawy</url>
+  <url type="homepage">https://invent.kde.org/graphics/drawy</url>
+  <url type="bugtracker">https://invent.kde.org/graphics/drawy/issues</url>
+  <url type="vcs-browser">https://invent.kde.org/graphics/drawy</url>
+  <url type="contribute">https://invent.kde.org/graphics/drawy</url>
   <categories>
     <category>Qt</category>
     <category>Graphics</category>
