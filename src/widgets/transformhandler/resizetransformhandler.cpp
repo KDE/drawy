@@ -129,7 +129,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         newTransform.scale(scaleX, scaleY);
         newTransform.translate(-centerOfScale.x(), -centerOfScale.y());
 
-        qreal scaleLocked;
+        qreal scaleLocked = 0.0;
         if (std::abs(scaleX - 1.0) > std::abs(scaleY - 1.0)) {
             scaleLocked = scaleX;
         } else {
