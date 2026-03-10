@@ -15,6 +15,7 @@
 #include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawy_resize_debug.h"
 #include "event/event.hpp"
 #include "item/line.hpp"
 #include <QPainter>
@@ -158,6 +159,7 @@ TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationCon
     auto item{getSelectedLineItem(context)};
 
     auto commandHistory{context->spatialContext()->commandHistory()};
+    qCDebug(DRAWY_RESIZE_LOG) << " m_initialPos " << m_initialPos << " m_lastPos " << m_lastPos;
     commandHistory->insert(std::make_shared<LineResizeItemCommand>(QList<std::shared_ptr<Item>>{item}, m_initialPos, m_lastPos, handleType));
 
     return TransformHandler::State::Unlocked;

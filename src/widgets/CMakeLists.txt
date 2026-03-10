@@ -294,8 +294,8 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_powermanager_debug.
     CATEGORY_NAME org.kde.drawy_powermanager DESCRIPTION "drawy (powermanager)" EXPORT DRAWY
 )
 
-ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_command_debug.h IDENTIFIER DRAWY_COMMAND_LOG
-    CATEGORY_NAME org.kde.drawy_command DESCRIPTION "drawy (command)" EXPORT DRAWY
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_resize_debug.h IDENTIFIER DRAWY_RESIZE_LOG
+    CATEGORY_NAME org.kde.drawy_resize DESCRIPTION "drawy (resize)" EXPORT DRAWY
 )
 
 set_target_properties(
