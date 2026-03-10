@@ -79,6 +79,7 @@ TransformHandler::State LineResizeTransformHandler::mousePressed(ApplicationCont
             }
         }();
 
+        qCDebug(DRAWY_RESIZE_LOG) << "LineResizeTransformHandler::mousePressed m_initialPos " << m_initialPos;
         m_isActive = true;
     }
 
