@@ -278,7 +278,7 @@ QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(c
 QCursor ResizeTransformHandler::cursorForHandle(const double angle) const
 {
     constexpr std::array<int, 8> angles{20, 70, 110, 160, 200, 250, 290, 340};
-    std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
+    static std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
 
     const int offset{[this] {
         switch (m_activeHandleType) {
