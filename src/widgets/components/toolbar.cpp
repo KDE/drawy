@@ -41,6 +41,7 @@ void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
     }
 
     auto btn = new ToolButtonPlugin(this);
+    btn->setFocusPolicy(Qt::NoFocus);
     connect(btn, &ToolButtonPlugin::toolActivated, this, [this, tool, btn](const PluginForm::PluginFormInfo &item) {
         tool->setUpdateTool(item);
         btn->setToolTip(item.toolTip);
@@ -61,6 +62,7 @@ void ToolBar::addImageTool(const std::shared_ptr<Tool> &tool)
     }
 
     auto btn = new QToolButton(this);
+    btn->setFocusPolicy(Qt::NoFocus);
     btn->setToolTip(i18nc("@action:button", "Image"));
     btn->setIcon(QIcon::fromTheme(tool->icon()));
     btn->setAutoRaise(true);
@@ -91,6 +93,7 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
     }
 
     auto btn = new QToolButton(this);
+    btn->setFocusPolicy(Qt::NoFocus);
     btn->setToolTip(name);
     btn->setIcon(QIcon::fromTheme(tool->icon()));
     btn->setAutoRaise(true);

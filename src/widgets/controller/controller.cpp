@@ -188,6 +188,15 @@ void Controller::keyPressed(QKeyEvent *event)
     contextEvent->setModifiers(event->modifiers());
     contextEvent->setText(event->text());
 
+    if (event->key() == Qt::Key_Space && !event->isAutoRepeat() && !m_spacePanActive) {
+        if (toolBar->curTool().type() != Tool::Type::Text) {
+            m_spacePanPreviousTool = toolBar->curTool().type();
+            m_spacePanActive = true;
+            toolBar->changeTool(Tool::Type::Move);
+            return;
+        }
+    }
+
     toolBar->curTool().keyPressed(m_context);
 }
 
@@ -199,6 +208,12 @@ void Controller::keyReleased(QKeyEvent *event)
     contextEvent->setKey(event->key());
     contextEvent->setModifiers(event->modifiers());
     contextEvent->setText(event->text());
+
+    if (event->key() == Qt::Key_Space && !event->isAutoRepeat() && m_spacePanActive) {
+        m_spacePanActive = false;
+        toolBar->changeTool(m_spacePanPreviousTool);
+        return;
+    }
 
     toolBar->curTool().keyReleased(m_context);
 }

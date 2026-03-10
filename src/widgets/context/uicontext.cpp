@@ -173,6 +173,7 @@ void UIContext::toolChanged(Tool &tool)
 
     m_lastTool = &tool;
     canvas->setCursor(tool.cursor());
+    canvas->setFocus(Qt::OtherFocusReason);
 
     m_applicationContext->renderingContext()->markForUpdate();
 }

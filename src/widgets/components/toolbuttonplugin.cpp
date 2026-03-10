@@ -18,6 +18,7 @@
 ToolButtonPlugin::ToolButtonPlugin(QWidget *parent)
     : QToolButton(parent)
 {
+    setFocusPolicy(Qt::NoFocus);
     setPopupMode(QToolButton::InstantPopup);
     fillMenu();
     const int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
@@ -52,6 +53,7 @@ void ToolButtonPlugin::fillMenu()
         pluginCustomLayout->addLayout(flowLayout);
         for (const auto &item : plugin->pluginFormInfos()) {
             auto toolButton = new QToolButton(pluginCustomWidget);
+            toolButton->setFocusPolicy(Qt::NoFocus);
             toolButton->setToolTip(item.toolTip);
             toolButton->setIcon(QIcon::fromTheme(item.iconName));
             toolButton->setAutoRaise(true);
