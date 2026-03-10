@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 02:50+0000\n"
+"POT-Creation-Date: 2026-03-10 02:44+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -227,7 +227,9 @@ msgstr "Færa hlut"
 #| msgctxt "QObject|"
 #| msgid "Remove Object"
 msgid "Remove Object"
-msgstr "Fjarlægja hlut"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "Fjarlægja hlut"
+msgstr[1] "Fjarlægja hlut"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, fuzzy, kde-format
@@ -923,7 +925,7 @@ msgstr "Leturstærð"
 msgid "Opacity"
 msgstr "Ógegnsæi"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:36
 #, fuzzy, kde-format
 #| msgctxt "StokeStyleWidget|"
 #| msgid "Dashed"
@@ -931,7 +933,7 @@ msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "Bandstrik"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:46
+#: widgets/properties/widgets/stokestylewidget.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "StokeStyleWidget|"
 #| msgid "Dotted"
@@ -939,7 +941,7 @@ msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "Punktalína"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:69
+#: widgets/properties/widgets/stokestylewidget.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "StokeStyleWidget|"
 #| msgid "Stroke Style"

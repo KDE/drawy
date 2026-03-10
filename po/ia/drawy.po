@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 02:50+0000\n"
+"POT-Creation-Date: 2026-03-10 02:44+0000\n"
 "PO-Revision-Date: 2026-03-03 17:06+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -182,9 +182,12 @@ msgid "Move Object"
 msgstr "Move Objecto"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Object"
 msgid "Remove Object"
-msgstr "Remove Objecto"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "Remove Objecto"
+msgstr[1] "Remove Objecto"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -740,19 +743,19 @@ msgstr "Dimension de Font"
 msgid "Opacity"
 msgstr "Opacitate"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "a Lineetta"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:46
+#: widgets/properties/widgets/stokestylewidget.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "Punctate"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:69
+#: widgets/properties/widgets/stokestylewidget.cpp:66
 #, kde-format
 msgid "Stroke Style"
 msgstr "Stylo de tracto"
