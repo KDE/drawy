@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-03 10:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -181,9 +181,12 @@ msgid "Move Object"
 msgstr "Nesneyi Taşı"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Object"
 msgid "Remove Object"
-msgstr "Nesneyi Kaldır"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "Nesneyi Kaldır"
+msgstr[1] "Nesneyi Kaldır"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -739,19 +742,19 @@ msgstr "Yazıtipi Puntosu"
 msgid "Opacity"
 msgstr "Matlık"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "Tireli"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:46
+#: widgets/properties/widgets/stokestylewidget.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "Noktalı"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:69
+#: widgets/properties/widgets/stokestylewidget.cpp:66
 #, kde-format
 msgid "Stroke Style"
 msgstr "Vuruş Biçemi"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-03 15:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -182,9 +182,14 @@ msgid "Move Object"
 msgstr "Пересунути об'єкт"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Object"
 msgid "Remove Object"
-msgstr "Вилучити об’єкт"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "Вилучити об’єкт"
+msgstr[1] "Вилучити об’єкт"
+msgstr[2] "Вилучити об’єкт"
+msgstr[3] "Вилучити об’єкт"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -742,19 +747,19 @@ msgstr "Розмір шрифту"
 msgid "Opacity"
 msgstr "Непрозорість"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "Штрихова"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:46
+#: widgets/properties/widgets/stokestylewidget.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "Пунктирна"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:69
+#: widgets/properties/widgets/stokestylewidget.cpp:66
 #, kde-format
 msgid "Stroke Style"
 msgstr "Стиль штриха"

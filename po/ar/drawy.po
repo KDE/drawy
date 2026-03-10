@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-05 10:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -184,9 +184,16 @@ msgid "Move Object"
 msgstr "حرّك الكائن"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Object"
 msgid "Remove Object"
-msgstr "أزل كائن"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "أزل كائن"
+msgstr[1] "أزل كائن"
+msgstr[2] "أزل كائن"
+msgstr[3] "أزل كائن"
+msgstr[4] "أزل كائن"
+msgstr[5] "أزل كائن"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -744,19 +751,19 @@ msgstr "حجم الخط"
 msgid "Opacity"
 msgstr "العتمة"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:37
+#: widgets/properties/widgets/stokestylewidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "متقطّع"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:46
+#: widgets/properties/widgets/stokestylewidget.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "منقّط"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:69
+#: widgets/properties/widgets/stokestylewidget.cpp:66
 #, kde-format
 msgid "Stroke Style"
 msgstr "نمط الحد"
