@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 00:41+0000\n"
-"PO-Revision-Date: 2026-03-03 10:26+0100\n"
+"PO-Revision-Date: 2026-03-10 10:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -186,12 +186,11 @@ msgid "Move Object"
 msgstr "Mou un objecte"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "Elimina un objecte"
-msgstr[1] "Elimina un objecte"
+msgstr[1] "Elimina %1 objectes"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format

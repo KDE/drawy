@@ -180,12 +180,11 @@ msgid "Move Object"
 msgstr "ობიექტის გადატანა"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "ობიექტის წაშლა"
-msgstr[1] "ობიექტის წაშლა"
+msgstr[1] "%1 ობიექტის წაშლა"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format

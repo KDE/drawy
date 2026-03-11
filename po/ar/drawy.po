@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 00:41+0000\n"
-"PO-Revision-Date: 2026-03-05 10:20+0400\n"
+"PO-Revision-Date: 2026-03-10 22:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -184,16 +184,15 @@ msgid "Move Object"
 msgstr "حرّك الكائن"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "أزل كائن"
 msgstr[1] "أزل كائن"
-msgstr[2] "أزل كائن"
-msgstr[3] "أزل كائن"
-msgstr[4] "أزل كائن"
-msgstr[5] "أزل كائن"
+msgstr[2] "أزل كائنين"
+msgstr[3] "أزل %1 كائنات"
+msgstr[4] "أزل %1 كائنًا"
+msgstr[5] "أزل %1 كائن"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format

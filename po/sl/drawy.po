@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 00:41+0000\n"
-"PO-Revision-Date: 2026-03-03 07:33+0100\n"
+"PO-Revision-Date: 2026-03-10 06:50+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -181,14 +181,13 @@ msgid "Move Object"
 msgstr "Premakni predmet"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "Odstrani predmet"
-msgstr[1] "Odstrani predmet"
-msgstr[2] "Odstrani predmet"
-msgstr[3] "Odstrani predmet"
+msgstr[0] "Odstrani %1 predmetov"
+msgstr[1] "Odstrani %1 predmet"
+msgstr[2] "Odstrani %1 predmeta"
+msgstr[3] "Odstrani %1 predmete"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
