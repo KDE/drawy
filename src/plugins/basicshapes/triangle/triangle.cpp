@@ -53,8 +53,7 @@ void TriangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 bool TriangleItem::intersects(const QRectF &rect)
 {
     const QPainterPath path = getPath();
-    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
-    if (isFilled) {
+    if (isFilled()) {
         return path.intersects(rect);
     }
     return path.intersects(rect) && !path.contains(rect);

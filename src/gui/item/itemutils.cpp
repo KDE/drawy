@@ -125,6 +125,8 @@ Item::BackgroundType ItemUtils::convertBackgroundTypeStringToEnum(const QString 
         return Item::BackgroundType::Diagonal;
     } else if (str == u"CrossDiagonal") {
         return Item::BackgroundType::CrossDiagonal;
+    } else if (str == u"None") {
+        return Item::BackgroundType::None;
     } else {
         qCWarning(DRAWY_GUI_LOG) << "Item::BackgroundType is not defined for: " << str;
     }
@@ -140,6 +142,8 @@ QString ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType ty
         return u"Diagonal"_s;
     case Item::BackgroundType::CrossDiagonal:
         return u"CrossDiagonal"_s;
+    case Item::BackgroundType::None:
+        return u"None"_s;
     case Item::BackgroundType::Invalid:
         qCWarning(DRAWY_GUI_LOG) << "Don't invalid BackgroundType";
         break;
@@ -155,6 +159,8 @@ Qt::BrushStyle ItemUtils::convertItemBackgroundTypeStringToBrushStyle(const QStr
         return Qt::BrushStyle::BDiagPattern;
     } else if (brushStyle == u"CrossDiagonal") {
         return Qt::BrushStyle::DiagCrossPattern;
+    } else if (brushStyle == u"None") {
+        return Qt::BrushStyle::NoBrush;
     } else {
         qCWarning(DRAWY_GUI_LOG) << "Item::BackgroundType is not defined for: " << brushStyle;
     }

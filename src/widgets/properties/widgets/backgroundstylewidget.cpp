@@ -24,6 +24,15 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
+    auto noneButton{new ButtonActionsWidget(m_widget)};
+    noneButton->setObjectName(u"noneButton"_s);
+    noneButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::None));
+    noneButton->setToolTip(i18nc("@info:tooltip", "None"));
+    noneButton->setCheckable(true);
+    // Laurent: wait for icons (from kde team)
+    noneButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
+    m_group->addButton(noneButton);
+
     auto solidButton{new ButtonActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
     solidButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid));
@@ -51,6 +60,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     diagonalButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
     m_group->addButton(diagonalButton);
 
+    layout->addWidget(noneButton);
     layout->addWidget(solidButton);
     layout->addWidget(diagonalCrossButton);
     layout->addWidget(diagonalButton);

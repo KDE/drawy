@@ -60,6 +60,7 @@ public:
         Solid,
         CrossDiagonal,
         Diagonal,
+        None,
         Invalid,
     };
     Q_ENUM(BackgroundType)
@@ -98,6 +99,7 @@ public:
     [[nodiscard]] virtual bool lockAspectRatioWhenResizing() const;
 
 protected:
+    [[nodiscard]] bool isFilled() const;
     QByteArray m_id;
     QRectF m_boundingBox{};
     std::unordered_map<Property::Type, Property> m_properties{};
