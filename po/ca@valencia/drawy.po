@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 02:44+0000\n"
-"PO-Revision-Date: 2026-03-03 10:26+0100\n"
+"PO-Revision-Date: 2026-03-10 10:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -186,12 +186,11 @@ msgid "Move Object"
 msgstr "Mou un objecte"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "Elimina un objecte"
-msgstr[1] "Elimina un objecte"
+msgstr[1] "Elimina %1 objectes"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -795,47 +794,3 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Arrow Tool"
-#~ msgstr "Eina de fletxes"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Diamond Tool"
-#~ msgstr "Eina de diamant"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Eina d'el·lipses"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Eraser Tool"
-#~ msgstr "Eina d'esborrador"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Pen Tool"
-#~ msgstr "Eina llapis"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Image Tool"
-#~ msgstr "Eina d'imatges"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Line Tool"
-#~ msgstr "Eina de línies"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "Eina de moure"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Eina de rectangles"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Selection Tool"
-#~ msgstr "Eina de selecció"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Text Tool"
-#~ msgstr "Eina de text"

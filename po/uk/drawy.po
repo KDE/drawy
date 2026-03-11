@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 02:44+0000\n"
-"PO-Revision-Date: 2026-03-03 15:40+0200\n"
+"PO-Revision-Date: 2026-03-10 14:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -182,13 +182,12 @@ msgid "Move Object"
 msgstr "Пересунути об'єкт"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "Вилучити об’єкт"
-msgstr[1] "Вилучити об’єкт"
-msgstr[2] "Вилучити об’єкт"
+msgstr[0] "Вилучити %1 об’єкт"
+msgstr[1] "Вилучити %1 об’єкти"
+msgstr[2] "Вилучити %1 об’єктів"
 msgstr[3] "Вилучити об’єкт"
 
 #: widgets/command/resizeitemcommand.cpp:72

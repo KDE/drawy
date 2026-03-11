@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-10 02:44+0000\n"
-"PO-Revision-Date: 2026-03-03 13:58+0100\n"
+"PO-Revision-Date: 2026-03-10 23:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -185,12 +185,11 @@ msgid "Move Object"
 msgstr "Mover objeto"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "Eliminar objeto"
-msgstr[1] "Eliminar objeto"
+msgstr[1] "Eliminar %1 objetos"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -794,47 +793,3 @@ msgstr "Insertar imagen"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Arrow Tool"
-#~ msgstr "Herramienta de flecha"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Diamond Tool"
-#~ msgstr "Herramienta de diamante"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Herramienta de elipse"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Eraser Tool"
-#~ msgstr "Herramienta de borrador"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Pen Tool"
-#~ msgstr "Herramienta de lápiz"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Image Tool"
-#~ msgstr "Herramienta de imagen"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Line Tool"
-#~ msgstr "Herramienta de línea"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "Herramienta de mover"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Herramienta de rectángulo"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Selection Tool"
-#~ msgstr "Herramienta de selección"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Text Tool"
-#~ msgstr "Herramienta de texto"
