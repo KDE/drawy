@@ -36,14 +36,6 @@ inline constexpr QColor darkBackgroundColor{18, 18, 18};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int erasedItemOpacityDecrease{30}; // % to reduce opacity by when erasing items
 
-inline constexpr int maxFreeformPointCount{500}; // max number of points per freeform
-inline constexpr int minFreeformPointCount{50}; // min number of points per freeform
-
-inline constexpr int boundingBoxPadding{10}; // in pixels
-
-inline constexpr int translationDelta{1}; // in pixels
-inline constexpr int shiftTranslationDelta{10}; // in pixels, when holding shift
-
 inline constexpr double defaultTextBoxWidth{5}; // in pixels
 inline constexpr std::array<QChar, 38> wordSeparators{u'\t', u'\n', u'\v', u'\f', u'\r', u' ', // whitespace
                                                       u'!',  u'"',  u'#',  u'$',  u'%',  u'&', u'\'', u'(',  u')', u'*', u'+', u',', u'-', u'.', u'/', u':',

@@ -22,7 +22,7 @@ public:
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;
 
-    QList<TransformHandlerUtils::Type> transformHandlers() const override;
+    [[nodiscard]] QList<TransformHandlerUtils::Type> transformHandlers() const override;
 
 private:
     void drawItem(QPainter &painter, const QPointF &offset) const override;

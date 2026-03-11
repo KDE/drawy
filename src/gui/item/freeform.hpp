@@ -28,7 +28,7 @@ public:
     [[nodiscard]] bool needsCaching() const override;
 
     void commitTransformation() override;
-    QList<TransformHandlerUtils::Type> transformHandlers() const override;
+    [[nodiscard]] QList<TransformHandlerUtils::Type> transformHandlers() const override;
 
     void addPoint(const QPointF &point, const qreal pressure);
     void finalizeStroke();
