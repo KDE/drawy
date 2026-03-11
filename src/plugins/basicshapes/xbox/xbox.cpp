@@ -40,8 +40,7 @@ bool XBoxItem::intersects(const QRectF &rect)
     path.moveTo(QPointF(end().x(), start().y()));
     path.lineTo(QPointF(start().x(), end().y()));
 
-    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
-    if (isFilled) {
+    if (isFilled()) {
         return path.intersects(rect);
     }
     path = m_transform.map(path);

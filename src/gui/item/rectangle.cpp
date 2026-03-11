@@ -32,8 +32,7 @@ bool RectangleItem::intersects(const QRectF &rect)
     QPainterPath path{};
     path.addRect(QRectF{start(), end()});
 
-    const bool isFilled{property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0};
-    if (isFilled) {
+    if (isFilled()) {
         return path.intersects(rect);
     }
 

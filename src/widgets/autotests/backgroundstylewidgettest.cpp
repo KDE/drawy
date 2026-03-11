@@ -28,6 +28,12 @@ void BackgroundStyleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(layout);
     QCOMPARE(layout->contentsMargins(), QMargins{});
 
+    auto noneButton = m_widget->findChild<ButtonActionsWidget *>(u"noneButton"_s);
+    QVERIFY(noneButton);
+    QCOMPARE(noneButton->property("background-style"), u"None"_s);
+    QVERIFY(!noneButton->toolTip().isEmpty());
+    QVERIFY(noneButton->isCheckable());
+
     auto solidButton = m_widget->findChild<ButtonActionsWidget *>(u"solidButton"_s);
     QVERIFY(solidButton);
     QCOMPARE(solidButton->property("background-style"), u"Solid"_s);

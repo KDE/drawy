@@ -129,7 +129,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         newTransform.scale(scaleX, scaleY);
         newTransform.translate(-centerOfScale.x(), -centerOfScale.y());
 
-        qreal scaleLocked;
+        qreal scaleLocked = 0.0;
         if (std::abs(scaleX - 1.0) > std::abs(scaleY - 1.0)) {
             scaleLocked = scaleX;
         } else {
@@ -278,7 +278,7 @@ QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(c
 QCursor ResizeTransformHandler::cursorForHandle(const double angle) const
 {
     constexpr std::array<int, 8> angles{20, 70, 110, 160, 200, 250, 290, 340};
-    std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
+    static std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
 
     const int offset{[this] {
         switch (m_activeHandleType) {

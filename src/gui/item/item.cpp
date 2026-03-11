@@ -6,10 +6,10 @@
 #include <QPainterPath>
 #include <QUuid>
 
-#include <utility>
-
 #include "common/constants.hpp"
 #include "drawy_gui_debug.h"
+#include "item/itemutils.hpp"
+#include <utility>
 
 // PUBLIC
 Item::Item()
@@ -52,6 +52,18 @@ void Item::rotate(const qreal angleDeg, const QPointF pivot)
 void Item::resize(const QTransform operation)
 {
     m_transform = m_transform * operation;
+}
+
+bool Item::isFilled() const
+{
+    if (!hasProperty(Property::Type::BackgroundColor)) {
+        return false;
+    }
+    if (hasProperty(Property::Type::BackgroundStyle)
+        && ItemUtils::convertBackgroundTypeStringToEnum(property(Property::Type::BackgroundStyle).value<QString>()) == Item::BackgroundType::None) {
+        return true;
+    }
+    return property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0;
 }
 
 Property Item::property(const Property::Type propertyType) const
