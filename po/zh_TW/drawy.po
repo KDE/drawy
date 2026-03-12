@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:41+0000\n"
+"POT-Creation-Date: 2026-03-12 00:41+0000\n"
 "PO-Revision-Date: 2026-03-02 06:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -128,13 +128,13 @@ msgstr "變更 Z 軸排序"
 msgid "Basic Shapes"
 msgstr "基礎形狀"
 
-#: plugins/basicshapes/triangle/triangle.cpp:89
+#: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "三角形"
 
-#: plugins/basicshapes/xbox/xbox.cpp:77
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -693,25 +693,32 @@ msgid "Background Color"
 msgstr "背景色"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:tooltip"
+msgid "None"
+msgstr "無"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
 msgstr "實心"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:68
+#: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
 msgstr "背景風格"

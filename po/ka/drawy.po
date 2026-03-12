@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:41+0000\n"
+"POT-Creation-Date: 2026-03-12 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -127,13 +127,13 @@ msgstr "ZOrder-ის შეცვლა"
 msgid "Basic Shapes"
 msgstr "ძირითადი ფიგურები"
 
-#: plugins/basicshapes/triangle/triangle.cpp:89
+#: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "სამკუთხედი"
 
-#: plugins/basicshapes/xbox/xbox.cpp:77
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -689,25 +689,32 @@ msgid "Background Color"
 msgstr "ფონის ფერი"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:tooltip"
+msgid "None"
+msgstr "არცერთი"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
 msgstr "მყარი"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
 msgstr "დიაგონალური ჯვარი"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
 msgstr "დიაგონალური"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:68
+#: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
 msgstr "ფონის სტილი"

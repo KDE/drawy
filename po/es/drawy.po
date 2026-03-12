@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 00:41+0000\n"
+"POT-Creation-Date: 2026-03-12 00:41+0000\n"
 "PO-Revision-Date: 2026-03-10 23:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -132,13 +132,13 @@ msgstr "Cambiar orden Z"
 msgid "Basic Shapes"
 msgstr "Formas básicas"
 
-#: plugins/basicshapes/triangle/triangle.cpp:89
+#: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "Triángulo"
 
-#: plugins/basicshapes/xbox/xbox.cpp:77
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -696,25 +696,32 @@ msgid "Background Color"
 msgstr "Color de fondo"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:tooltip"
+msgid "None"
+msgstr "Ninguna"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
 msgstr "Sólido"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
 msgstr "Cruzado en diagonal"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
 msgstr "Diagonal"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:68
+#: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
 msgstr "Estilo del fondo"
