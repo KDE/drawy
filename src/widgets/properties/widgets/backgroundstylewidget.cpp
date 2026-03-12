@@ -5,7 +5,7 @@
  */
 
 #include "backgroundstylewidget.hpp"
-#include "buttonactionswidget.hpp"
+#include "backgroundstyleactionswidget.h"
 #include "item/itemutils.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
@@ -24,7 +24,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
-    auto noneButton{new ButtonActionsWidget(m_widget)};
+    auto noneButton{new BackgroundStyleActionsWidget(m_widget)};
     noneButton->setObjectName(u"noneButton"_s);
     noneButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::None));
     noneButton->setToolTip(i18nc("@info:tooltip", "None"));
@@ -33,7 +33,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     noneButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
     m_group->addButton(noneButton);
 
-    auto solidButton{new ButtonActionsWidget(m_widget)};
+    auto solidButton{new BackgroundStyleActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
     solidButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid));
     solidButton->setToolTip(i18nc("@info:tooltip", "Solid"));
@@ -42,7 +42,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     solidButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
     m_group->addButton(solidButton);
 
-    auto diagonalCrossButton{new ButtonActionsWidget(m_widget)};
+    auto diagonalCrossButton{new BackgroundStyleActionsWidget(m_widget)};
     diagonalCrossButton->setObjectName(u"diagonalCrossButton"_s);
     diagonalCrossButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::CrossDiagonal));
     diagonalCrossButton->setToolTip(i18nc("@info:tooltip", "Diagonal Cross"));
@@ -51,7 +51,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     diagonalCrossButton->setIcon(QIcon::fromTheme(u"line_solid"_s));
     m_group->addButton(diagonalCrossButton);
 
-    auto diagonalButton{new ButtonActionsWidget(m_widget)};
+    auto diagonalButton{new BackgroundStyleActionsWidget(m_widget)};
     diagonalButton->setObjectName(u"diagonalButton"_s);
     diagonalButton->setProperty("background-style", ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Diagonal));
     diagonalButton->setToolTip(i18nc("@info:tooltip", "Diagonal"));
@@ -85,7 +85,8 @@ const Property BackgroundStyleWidget::value() const
 
 void BackgroundStyleWidget::setValue(const QVariant &val)
 {
-    for (auto b : m_group->buttons()) {
+    const auto grpButtons = m_group->buttons();
+    for (auto b : grpButtons) {
         if (b->property("background-style").toString() == val.toString()) {
             b->setChecked(true);
             break;
