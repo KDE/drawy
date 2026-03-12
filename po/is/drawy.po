@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-10 02:44+0000\n"
+"POT-Creation-Date: 2026-03-12 02:35+0000\n"
 "PO-Revision-Date: 2026-02-02 12:02+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -156,13 +156,13 @@ msgstr "Breyta Z-röð"
 msgid "Basic Shapes"
 msgstr ""
 
-#: plugins/basicshapes/triangle/triangle.cpp:89
+#: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr ""
 
-#: plugins/basicshapes/xbox/xbox.cpp:77
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -862,6 +862,12 @@ msgid "Background Color"
 msgstr "Bakgrunnslitur"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "None"
+msgstr ""
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "StokeStyleWidget|"
@@ -870,19 +876,19 @@ msgctxt "@info:tooltip"
 msgid "Solid"
 msgstr "Gegnheilt"
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundstylewidget.cpp:68
+#: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Change Background Style"
