@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "backgroundstylewidgettest.hpp"
+#include "properties/widgets/backgroundstyleactionswidget.h"
 #include "properties/widgets/backgroundstylewidget.hpp"
-#include "properties/widgets/buttonactionswidget.hpp"
 #include <QHBoxLayout>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
@@ -28,25 +28,25 @@ void BackgroundStyleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(layout);
     QCOMPARE(layout->contentsMargins(), QMargins{});
 
-    auto noneButton = m_widget->findChild<ButtonActionsWidget *>(u"noneButton"_s);
+    auto noneButton = m_widget->findChild<BackgroundStyleActionsWidget *>(u"noneButton"_s);
     QVERIFY(noneButton);
     QCOMPARE(noneButton->property("background-style"), u"None"_s);
     QVERIFY(!noneButton->toolTip().isEmpty());
     QVERIFY(noneButton->isCheckable());
 
-    auto solidButton = m_widget->findChild<ButtonActionsWidget *>(u"solidButton"_s);
+    auto solidButton = m_widget->findChild<BackgroundStyleActionsWidget *>(u"solidButton"_s);
     QVERIFY(solidButton);
     QCOMPARE(solidButton->property("background-style"), u"Solid"_s);
     QVERIFY(!solidButton->toolTip().isEmpty());
     QVERIFY(solidButton->isCheckable());
 
-    auto diagonalCrossButton = m_widget->findChild<ButtonActionsWidget *>(u"diagonalCrossButton"_s);
+    auto diagonalCrossButton = m_widget->findChild<BackgroundStyleActionsWidget *>(u"diagonalCrossButton"_s);
     QVERIFY(diagonalCrossButton);
     QCOMPARE(diagonalCrossButton->property("background-style"), u"CrossDiagonal"_s);
     QVERIFY(!diagonalCrossButton->toolTip().isEmpty());
     QVERIFY(diagonalCrossButton->isCheckable());
 
-    auto diagonalButton = m_widget->findChild<ButtonActionsWidget *>(u"diagonalButton"_s);
+    auto diagonalButton = m_widget->findChild<BackgroundStyleActionsWidget *>(u"diagonalButton"_s);
     QVERIFY(diagonalButton);
     QCOMPARE(diagonalButton->property("background-style"), u"Diagonal"_s);
     QVERIFY(!diagonalButton->toolTip().isEmpty());
