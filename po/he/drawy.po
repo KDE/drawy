@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-12 00:41+0000\n"
-"PO-Revision-Date: 2026-03-10 12:38+0200\n"
+"PO-Revision-Date: 2026-03-12 13:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -695,8 +695,7 @@ msgid "Background Color"
 msgstr "צבע רקע"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
 msgstr "ללא"

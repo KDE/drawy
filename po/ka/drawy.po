@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -689,8 +689,7 @@ msgid "Background Color"
 msgstr "ფონის ფერი"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
 msgstr "არცერთი"

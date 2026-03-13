@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-12 00:41+0000\n"
-"PO-Revision-Date: 2026-03-10 10:34+0100\n"
+"PO-Revision-Date: 2026-03-12 08:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -696,8 +696,7 @@ msgid "Background Color"
 msgstr "Color de fons"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
 msgstr "Cap"
