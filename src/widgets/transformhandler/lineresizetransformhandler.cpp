@@ -161,7 +161,7 @@ TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationCon
 
     auto commandHistory{context->spatialContext()->commandHistory()};
     qCDebug(DRAWY_RESIZE_LOG) << " m_initialPos " << m_initialPos << " m_lastPos " << m_lastPos;
-    commandHistory->insert(std::make_shared<LineResizeItemCommand>(QList<std::shared_ptr<Item>>{item}, m_initialPos, m_lastPos, handleType));
+    commandHistory->push(std::make_shared<LineResizeItemCommand>(QList<std::shared_ptr<Item>>{item}, m_initialPos, m_lastPos, handleType));
 
     return TransformHandler::State::Unlocked;
 }

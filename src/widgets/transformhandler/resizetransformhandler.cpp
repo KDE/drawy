@@ -209,7 +209,7 @@ TransformHandler::State ResizeTransformHandler::mouseReleased(ApplicationContext
         auto commandHistory{context->spatialContext()->commandHistory()};
 
         const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-        commandHistory->insert(std::make_shared<ResizeItemCommand>(items, m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
+        commandHistory->push(std::make_shared<ResizeItemCommand>(items, m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
 
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();

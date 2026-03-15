@@ -22,7 +22,7 @@ public:
 
     void undo();
     void redo();
-    void insert(const std::shared_ptr<ItemCommand> &command);
+    void push(const std::shared_ptr<ItemCommand> &command);
 
     void clear();
 

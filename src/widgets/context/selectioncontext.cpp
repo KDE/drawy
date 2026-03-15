@@ -100,7 +100,7 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
     auto command = std::make_shared<UpdatePropertyCommand>(items, property);
     if (command->verifyDifferentProperty()) {
         const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
-        commandHistory->insert(command);
+        commandHistory->push(command);
 
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();

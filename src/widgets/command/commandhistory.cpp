@@ -75,7 +75,7 @@ void CommandHistory::updateUndoRedoActions()
     }
 }
 
-void CommandHistory::insert(const std::shared_ptr<ItemCommand> &command)
+void CommandHistory::push(const std::shared_ptr<ItemCommand> &command)
 {
     qCDebug(DRAWY_COMMAND_LOG) << "Insert command:" << command->text();
     while (!m_redoStack->empty()) {

@@ -160,7 +160,7 @@ TransformHandler::State RotateTransformHandler::mouseReleased(ApplicationContext
             auto commandHistory{context->spatialContext()->commandHistory()};
 
             const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory->insert(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
+            commandHistory->push(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
 
             context->renderingContext()->markForRender();
             context->renderingContext()->markForUpdate();

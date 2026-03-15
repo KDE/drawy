@@ -110,7 +110,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         m_currentItem->finalizeStroke();
 
         m_itemList.push_back(m_currentItem);
-        commandHistory->insert(std::make_shared<InsertItemCommand>(m_itemList));
+        commandHistory->push(std::make_shared<InsertItemCommand>(m_itemList));
 
         m_currentItem.reset();
         m_currentCache = QPixmap{};

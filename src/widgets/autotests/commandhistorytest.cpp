@@ -52,12 +52,12 @@ void CommandHistoryTest::shouldTestInsertCommands()
 {
     CommandHistory t(nullptr);
     QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
-    t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
+    t.push(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
     QVERIFY(!t.canRedo());
     QVERIFY(t.canUndo());
     QCOMPARE(spy.count(), 1);
 
-    t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
+    t.push(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
     QVERIFY(!t.canRedo());
     QVERIFY(t.canUndo());
     QCOMPARE(spy.count(), 2);
@@ -67,7 +67,7 @@ void CommandHistoryTest::shouldTestUndoCommands()
 {
     CommandHistory t(nullptr);
     QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
-    t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
+    t.push(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
     QVERIFY(!t.canRedo());
     QVERIFY(t.canUndo());
     spy.clear();
@@ -91,7 +91,7 @@ void CommandHistoryTest::shouldTestClearCommands()
     CommandHistory t(nullptr);
     QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
     for (int i = 0; i < 10; i++) {
-        t.insert(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
+        t.push(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
     }
     QCOMPARE(spy.count(), 10);
 

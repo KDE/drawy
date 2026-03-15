@@ -108,7 +108,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         auto commandHistory{spatialContext->commandHistory()};
 
         const QList<std::shared_ptr<Item>> itemVector{curItem};
-        commandHistory->insert(std::make_shared<InsertItemCommand>(itemVector));
+        commandHistory->push(std::make_shared<InsertItemCommand>(itemVector));
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 
