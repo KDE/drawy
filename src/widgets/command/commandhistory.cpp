@@ -18,6 +18,11 @@ CommandHistory::~CommandHistory()
     qCDebug(DRAWY_COMMAND_LOG) << "Object deleted: CommandHistory";
 }
 
+void CommandHistory::setUndoLimit(int limit)
+{
+    m_maxCommands = limit;
+}
+
 void CommandHistory::undo()
 {
     if (m_undoStack->empty()) {
@@ -31,7 +36,7 @@ void CommandHistory::undo()
 
     m_redoStack->push_front(lastCommand);
 
-    if (m_redoStack->size() == maxCommands) {
+    if (m_redoStack->size() == m_maxCommands) {
         m_redoStack->pop_back();
     }
 
@@ -51,7 +56,7 @@ void CommandHistory::redo()
     }
 
     m_undoStack->push_front(nextCommand);
-    if (m_undoStack->size() == maxCommands) {
+    if (m_undoStack->size() == m_maxCommands) {
         m_undoStack->pop_back();
     }
 
@@ -82,7 +87,7 @@ void CommandHistory::insert(const std::shared_ptr<ItemCommand> &command)
     }
 
     m_undoStack->push_front(command);
-    if (m_undoStack->size() == maxCommands) {
+    if (m_undoStack->size() == m_maxCommands) {
         m_undoStack->pop_back();
     }
     updateUndoRedoActions();
