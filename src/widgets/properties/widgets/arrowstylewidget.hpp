@@ -7,6 +7,7 @@
 #include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
 class ActionManager;
+class ArrowButtonActionsWidget;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ArrowStyleWidget : public PropertyWidget
 {
     Q_OBJECT
@@ -14,4 +15,8 @@ public:
     explicit ArrowStyleWidget(ActionManager *actionManager, QWidget *parent = nullptr);
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
+
+private:
+    ArrowButtonActionsWidget *mStartArrowButton = nullptr;
+    ArrowButtonActionsWidget *mEndArrowButton = nullptr;
 };
