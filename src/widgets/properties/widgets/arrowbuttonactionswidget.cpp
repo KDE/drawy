@@ -40,7 +40,9 @@ void ArrowButtonActionsWidget::fillMenu()
         toolButton->setAutoRaise(true);
         toolButton->setIconSize(QSize{iconSize, iconSize});
 
-        connect(toolButton, &QToolButton::clicked, this, [this, arrowType]() {
+        connect(toolButton, &QToolButton::clicked, this, [this, arrowType, toolButton]() {
+            setToolTip(toolButton->toolTip());
+            setIcon(toolButton->icon());
             Q_EMIT selectedArrow(arrowType);
         });
         gridLayout->addWidget(toolButton, row, col);

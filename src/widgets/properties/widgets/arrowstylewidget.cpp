@@ -23,21 +23,21 @@ ArrowStyleWidget::ArrowStyleWidget(ActionManager *actionManager, QWidget *parent
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
-    auto startArrowButton{new ArrowButtonActionsWidget(m_widget)};
-    connect(startArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
+    mStartArrowButton = new ArrowButtonActionsWidget(m_widget);
+    connect(mStartArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
         if (actionManager) {
             actionManager->changeArrowType(ArrowUtils::ArrowPos::StartArrow, type);
         }
     });
-    auto endArrowButton{new ArrowButtonActionsWidget(m_widget)};
-    connect(endArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
+    mEndArrowButton = new ArrowButtonActionsWidget(m_widget);
+    connect(mEndArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
         if (actionManager) {
             actionManager->changeArrowType(ArrowUtils::ArrowPos::EndArrow, type);
         }
     });
 
-    layout->addWidget(startArrowButton);
-    layout->addWidget(endArrowButton);
+    layout->addWidget(mStartArrowButton);
+    layout->addWidget(mEndArrowButton);
     m_widget->hide();
 }
 
