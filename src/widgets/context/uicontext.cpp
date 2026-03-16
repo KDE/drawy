@@ -185,33 +185,46 @@ void UIContext::reset()
 void UIContext::showContextMenu() const
 {
     auto allItems{m_applicationContext->spatialContext()->quadtree().getAllItems()};
+    bool hasItems = !allItems.empty();
+    bool hasSelection = false;
+
+    if (hasItems) {
+        const auto &selectedItems{m_applicationContext->selectionContext()->selectedItems()};
+        hasSelection = !selectedItems.empty();
+    }
 
     auto menu = new QMenu(m_applicationContext->parentWidget());
-    menu->addAction(actionManager()->action(KStandardActions::FullScreen));
-    menu->addSeparator();
-    menu->addAction(actionManager()->action(KStandardActions::Paste));
-    menu->addSeparator();
-    if (!allItems.empty()) {
-        const auto &selectedItems{m_applicationContext->selectionContext()->selectedItems()};
-        menu->addSeparator();
-        if (!selectedItems.empty()) {
-            menu->addAction(actionManager()->action(KStandardActions::Copy));
-            menu->addSeparator();
-            menu->addAction(actionManager()->action(ActionManager::Action::DeleteSelection));
-            menu->addSeparator();
-        }
-        menu->addAction(actionManager()->action(KStandardActions::SelectAll));
-        menu->addSeparator();
+
+    if (hasSelection) {
+        menu->addAction(actionManager()->action(KStandardActions::Copy));
     }
-    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
+
+    menu->addAction(actionManager()->action(KStandardActions::Paste));
+    if (hasSelection) {
+        menu->addAction(actionManager()->action(ActionManager::Action::DeleteSelection));
+    }
+
+    if (hasItems) {
+        menu->addAction(actionManager()->action(KStandardActions::SelectAll));
+    }
+
     menu->addSeparator();
+
+    menu->addAction(actionManager()->action(KStandardActions::FullScreen));
+    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsSVG));
+
+    menu->addSeparator();
+
     menu->addAction(actionManager()->action(KStandardActions::Preferences));
+
     if (m_applicationContext->debug()) {
-        menu->addSeparator();
         menu->addAction(actionManager()->action(ActionManager::Action::Debug));
     }
+
     menu->addSeparator();
+
     menu->addAction(actionManager()->action(KStandardActions::Quit));
+
     menu->exec(QCursor::pos());
     delete menu;
 }
