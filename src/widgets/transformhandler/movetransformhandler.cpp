@@ -167,7 +167,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             }
         }
 
-        commandHistory->insert(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+        commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
     }
 
     return TransformHandler::State::Unlocked;

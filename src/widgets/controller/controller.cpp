@@ -289,7 +289,7 @@ void Controller::dragLeave()
 void Controller::drop()
 {
     auto commandHistory{m_context->spatialContext()->commandHistory()};
-    commandHistory->insert(std::make_shared<InsertItemCommand>(m_droppedItems));
+    commandHistory->push(std::make_shared<InsertItemCommand>(m_droppedItems));
 
     m_context->selectionContext()->setSelectedItems(m_droppedItems.begin(), m_droppedItems.end());
 

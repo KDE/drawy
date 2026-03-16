@@ -69,7 +69,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
             const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
             if (!items.empty()) {
-                commandHistory->insert(std::make_shared<DeselectCommand>(items));
+                commandHistory->push(std::make_shared<DeselectCommand>(items));
             }
         }
 
@@ -81,9 +81,9 @@ void SelectionTool::mousePressed(ApplicationContext *context)
             if (!item->locked()) {
                 if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.contains(item)) {
                     // deselect the item if selected
-                    commandHistory->insert(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
+                    commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
                 } else {
-                    commandHistory->insert(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
+                    commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
                 }
             }
 
@@ -174,7 +174,7 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
             context->selectionContext()->reset();
 
             auto commandHistory{context->spatialContext()->commandHistory()};
-            commandHistory->insert(std::make_shared<SelectCommand>(items));
+            commandHistory->push(std::make_shared<SelectCommand>(items));
         }
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);

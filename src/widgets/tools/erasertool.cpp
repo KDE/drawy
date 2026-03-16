@@ -122,7 +122,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
         }
 
         if (!erasedItems.empty()) {
-            commandHistory->insert(std::make_shared<RemoveItemCommand>(erasedItems));
+            commandHistory->push(std::make_shared<RemoveItemCommand>(erasedItems));
         }
 
         renderingContext->markForRender();

@@ -72,7 +72,7 @@ void ImageTool::mouseReleased(ApplicationContext *context)
 
         QList<std::shared_ptr<Item>> lst;
         lst << curItem;
-        commandHistory->insert(std::make_shared<InsertItemCommand>(lst));
+        commandHistory->push(std::make_shared<InsertItemCommand>(lst));
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();

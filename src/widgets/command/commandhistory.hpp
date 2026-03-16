@@ -22,13 +22,14 @@ public:
 
     void undo();
     void redo();
-    void insert(const std::shared_ptr<ItemCommand> &command);
+    void push(const std::shared_ptr<ItemCommand> &command);
 
     void clear();
 
     [[nodiscard]] bool canUndo() const;
     [[nodiscard]] bool canRedo() const;
 
+    void setUndoLimit(int limit);
 Q_SIGNALS:
     void undoRedoChanged();
     void redoTextChanged(const QString &redoText);
@@ -36,7 +37,7 @@ Q_SIGNALS:
 
 private:
     void updateUndoRedoActions();
-    static constexpr int maxCommands{100}; // arbitrary
+    quint32 m_maxCommands = 100;
     std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_undoStack;
     std::unique_ptr<std::deque<std::shared_ptr<ItemCommand>>> m_redoStack;
 
