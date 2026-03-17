@@ -19,5 +19,5 @@ public:
     void setValue(const QVariant &value) override;
 
 private:
-    QSlider *mSlider = nullptr;
+    QSlider *const mSlider;
 };

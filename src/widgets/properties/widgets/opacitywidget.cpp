@@ -11,13 +11,13 @@
 using namespace Qt::Literals::StringLiterals;
 OpacityWidget::OpacityWidget(QWidget *parent)
     : PropertyWidget(parent)
+    , mSlider(new QSlider(parent))
 {
     m_widget = new QWidget{parent};
     m_widget->setObjectName(u"m_widget"_s);
     auto layout{new QHBoxLayout{m_widget}};
     layout->setContentsMargins({});
 
-    mSlider = new QSlider(parent);
     mSlider->setObjectName(u"slider"_s);
     mSlider->setMinimum(1);
     mSlider->setMaximum(255);

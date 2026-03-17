@@ -15,6 +15,8 @@
 using namespace Qt::Literals::StringLiterals;
 ArrowStyleWidget::ArrowStyleWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget(parent)
+    , mStartArrowButton(new ArrowButtonActionsWidget(parent))
+    , mEndArrowButton(new ArrowButtonActionsWidget(parent))
 {
     m_widget = new QWidget{parent};
 
@@ -23,13 +25,11 @@ ArrowStyleWidget::ArrowStyleWidget(ActionManager *actionManager, QWidget *parent
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
-    mStartArrowButton = new ArrowButtonActionsWidget(m_widget);
     connect(mStartArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
         if (actionManager) {
             actionManager->changeArrowType(ArrowUtils::ArrowPos::StartArrow, type);
         }
     });
-    mEndArrowButton = new ArrowButtonActionsWidget(m_widget);
     connect(mEndArrowButton, &ArrowButtonActionsWidget::selectedArrow, this, [actionManager](ArrowUtils::ArrowType type) {
         if (actionManager) {
             actionManager->changeArrowType(ArrowUtils::ArrowPos::EndArrow, type);
