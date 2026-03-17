@@ -47,7 +47,7 @@ void RestoreAutoSaveJob::restoreFile()
     KConfig config;
     const KConfigGroup sessionGroup{&config, Common::configSession};
 
-    const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile, u""_s)};
+    const auto lastSavedFile{sessionGroup.readEntry(Common::configSessionLastSavedFile)};
     const bool lastSavedFileModified{sessionGroup.readEntry(Common::configSessionLastSavedFileModified, false)};
 
     auto job = new LoadJob(m_context, this);
