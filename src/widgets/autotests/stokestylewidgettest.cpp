@@ -6,6 +6,7 @@
 #include "stokestylewidgettest.hpp"
 #include "properties/widgets/buttonactionswidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
+#include "properties/widgets/strokestyleactionswidget.hpp"
 #include <QHBoxLayout>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
@@ -27,19 +28,19 @@ void StokeStyleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(layout);
     QCOMPARE(layout->contentsMargins(), QMargins{});
 
-    auto solidButton = m_widget->findChild<ButtonActionsWidget *>(u"solidButton"_s);
+    auto solidButton = m_widget->findChild<StrokeStyleActionsWidget *>(u"solidButton"_s);
     QVERIFY(solidButton);
     QCOMPARE(solidButton->property("stroke-style"), u"Solid"_s);
     QVERIFY(!solidButton->toolTip().isEmpty());
     QVERIFY(solidButton->isCheckable());
 
-    auto dashLineButton = m_widget->findChild<ButtonActionsWidget *>(u"dashLineButton"_s);
+    auto dashLineButton = m_widget->findChild<StrokeStyleActionsWidget *>(u"dashLineButton"_s);
     QVERIFY(dashLineButton);
     QCOMPARE(dashLineButton->property("stroke-style"), u"DashLine"_s);
     QVERIFY(!dashLineButton->toolTip().isEmpty());
     QVERIFY(dashLineButton->isCheckable());
 
-    auto dotLineButton = m_widget->findChild<ButtonActionsWidget *>(u"dotLineButton"_s);
+    auto dotLineButton = m_widget->findChild<StrokeStyleActionsWidget *>(u"dotLineButton"_s);
     QVERIFY(dotLineButton);
     QCOMPARE(dotLineButton->property("stroke-style"), u"DotLine"_s);
     QVERIFY(!dotLineButton->toolTip().isEmpty());

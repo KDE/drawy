@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "stokestylewidget.hpp"
-#include "buttonactionswidget.hpp"
+#include "strokestyleactionswidget.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -22,27 +22,24 @@ StokeStyleWidget::StokeStyleWidget(QWidget *parent)
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setAlignment(Qt::AlignLeft);
 
-    auto solidButton{new ButtonActionsWidget(m_widget)};
+    auto solidButton{new StrokeStyleActionsWidget(m_widget)};
     solidButton->setObjectName(u"solidButton"_s);
     solidButton->setProperty("stroke-style", u"Solid"_s);
     solidButton->setToolTip(i18nc("@info:tooltip", "Solid"));
     solidButton->setCheckable(true);
-    solidButton->setIcon(QIcon::fromTheme(u"://icons/stroke-style-solid.svg"_s));
     m_group->addButton(solidButton);
 
-    auto dashLineButton{new ButtonActionsWidget(m_widget)};
+    auto dashLineButton{new StrokeStyleActionsWidget(m_widget)};
     dashLineButton->setObjectName(u"dashLineButton"_s);
     dashLineButton->setProperty("stroke-style", u"DashLine"_s);
     dashLineButton->setToolTip(i18nc("@info:tooltip", "Dashed"));
-    dashLineButton->setIcon(QIcon::fromTheme(u"://icons/stroke-style-dashed.svg"_s));
     dashLineButton->setCheckable(true);
     m_group->addButton(dashLineButton);
 
-    auto dotLineButton{new ButtonActionsWidget(m_widget)};
+    auto dotLineButton{new StrokeStyleActionsWidget(m_widget)};
     dotLineButton->setObjectName(u"dotLineButton"_s);
     dotLineButton->setProperty("stroke-style", u"DotLine"_s);
     dotLineButton->setToolTip(i18nc("@info:tooltip", "Dotted"));
-    dotLineButton->setIcon(QIcon::fromTheme(u"://icons/stroke-style-dotted.svg"_s));
     dotLineButton->setCheckable(true);
     m_group->addButton(dotLineButton);
 

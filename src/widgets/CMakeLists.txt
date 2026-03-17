@@ -131,6 +131,8 @@ target_sources(
         properties/widgets/arrowbuttonactionswidget.hpp
         properties/widgets/backgroundstyleactionswidget.h
         properties/widgets/backgroundstyleactionswidget.cpp
+        properties/widgets/strokestyleactionswidget.hpp
+        properties/widgets/strokestyleactionswidget.cpp
         properties/propertyutils.cpp
         properties/propertyutils.hpp
         tools/arrowtool.cpp
