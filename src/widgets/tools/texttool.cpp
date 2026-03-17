@@ -495,6 +495,11 @@ void TextTool::cleanup()
     renderingContext->markForUpdate();
 }
 
+std::shared_ptr<TextItem> TextTool::curItem() const
+{
+    return m_curItem;
+}
+
 Tool::Type TextTool::type() const
 {
     return Tool::Type::Text;

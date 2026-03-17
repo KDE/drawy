@@ -68,6 +68,11 @@ void MoveTool::mouseReleased(ApplicationContext *context)
     }
 }
 
+void MoveTool::cleanup()
+{
+    m_isActive = false;
+}
+
 Tool::Type MoveTool::type() const
 {
     return Tool::Type::Move;

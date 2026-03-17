@@ -23,6 +23,7 @@ public:
 
     void cleanup() override;
 
+    [[nodiscard]] std::shared_ptr<TextItem> curItem() const;
     [[nodiscard]] Tool::Type type() const override;
     [[nodiscard]] QString icon() const override;
 

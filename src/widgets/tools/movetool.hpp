@@ -15,6 +15,7 @@ public:
     void mousePressed(ApplicationContext *context) override;
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
+    void cleanup() override;
 
     [[nodiscard]] Tool::Type type() const override;
 

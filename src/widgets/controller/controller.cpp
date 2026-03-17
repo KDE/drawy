@@ -26,6 +26,7 @@
 #include "item/item.hpp"
 #include "item/itemcache/itemcache.hpp"
 #include "mime/mimemanager.hpp"
+#include "tools/texttool.hpp"
 
 Controller::Controller(ApplicationContext *context, QObject *parent)
     : QObject{parent}
@@ -189,8 +190,20 @@ void Controller::keyPressed(QKeyEvent *event)
     contextEvent->setText(event->text());
 
     if (event->key() == Qt::Key_Space && !event->isAutoRepeat() && !m_spacePanActive) {
-        if (toolBar->curTool().type() != Tool::Type::Text) {
-            m_spacePanPreviousTool = toolBar->curTool().type();
+        bool shouldActivateSpacePan{true};
+        Tool &curTool{toolBar->curTool()};
+        if (curTool.type() == Tool::Type::Text) {
+            auto *textTool{dynamic_cast<TextTool *>(&curTool)};
+            const std::shared_ptr<TextItem> curItem{textTool == nullptr ? nullptr : textTool->curItem()};
+
+            // we don't want to handle it in case the user is editing text
+            if (curItem && curItem->mode() == TextItem::Mode::Edit) {
+                shouldActivateSpacePan = false;
+            }
+        }
+
+        if (shouldActivateSpacePan) {
+            m_spacePanPreviousTool = curTool.type();
             m_spacePanActive = true;
             toolBar->changeTool(Tool::Type::Move);
             return;
