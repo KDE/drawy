@@ -1,4 +1,4 @@
-﻿/*
+/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -22,9 +22,9 @@ void LineToolTest::shouldHaveDefaultValues()
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle;
-    QCOMPARE(t.properties().count(), 4);
+    QCOMPARE(t.allProperties().count(), 4);
     for (const auto &prop : properties) {
-        QVERIFY(t.properties().contains(prop));
+        QVERIFY(t.allProperties().contains(prop));
     }
 }
 

@@ -79,6 +79,11 @@ Property Item::property(const Property::Type propertyType) const
 
 QList<Property::Type> Item::propertyTypes() const
 {
+    return allPropertyTypes();
+}
+
+QList<Property::Type> Item::allPropertyTypes() const
+{
     QList<Property::Type> result;
 
     for (auto &[formType, _] : m_properties) {

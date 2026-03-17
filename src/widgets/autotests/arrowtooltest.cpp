@@ -1,4 +1,4 @@
-﻿/*
+/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -22,9 +22,9 @@ void ArrowToolTest::shouldHaveDefaultValues()
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::ArrowStyle;
-    QCOMPARE(t.properties().count(), 5);
+    QCOMPARE(t.allProperties().count(), 5);
     for (const auto &prop : properties) {
-        QVERIFY(t.properties().contains(prop));
+        QVERIFY(t.allProperties().contains(prop));
     }
 }
 

@@ -26,6 +26,11 @@ QList<Property::Type> Tool::properties() const
     return m_properties;
 }
 
+QList<Property::Type> Tool::allProperties() const
+{
+    return m_properties;
+};
+
 void Tool::mousePressed([[maybe_unused]] ApplicationContext *context)
 {
 }

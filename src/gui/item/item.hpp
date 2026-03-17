@@ -31,6 +31,7 @@ public:
     [[nodiscard]] virtual Property property(const Property::Type propertyType) const;
     virtual void setProperty(const Property::Type propertyType, Property newObj);
     virtual QList<Property> properties() const;
+    virtual QList<Property::Type> allPropertyTypes() const;
     virtual QList<Property::Type> propertyTypes() const;
 
     enum class FormType : int8_t {

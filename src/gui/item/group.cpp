@@ -189,6 +189,17 @@ QList<Property::Type> GroupItem::propertyTypes() const
     return QList<Property::Type>(types.begin(), types.end());
 }
 
+QList<Property::Type> GroupItem::allPropertyTypes() const
+{
+    std::unordered_set<Property::Type> types;
+    for (const auto &item : m_items) {
+        const auto itemPropertyTypes{item->allPropertyTypes()};
+        types.insert(itemPropertyTypes.begin(), itemPropertyTypes.end());
+    }
+
+    return QList<Property::Type>(types.begin(), types.end());
+}
+
 void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }

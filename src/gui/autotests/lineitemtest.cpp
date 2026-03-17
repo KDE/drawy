@@ -22,9 +22,9 @@ void LineItemTest::shouldHaveDefaultValues()
     QCOMPARE(i.formType(), Item::FormType::Line);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle;
-    QCOMPARE(i.propertyTypes().count(), 4);
+    QCOMPARE(i.allPropertyTypes().count(), 4);
     for (const auto &prop : properties) {
-        QVERIFY(i.propertyTypes().contains(prop));
+        QVERIFY(i.allPropertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());

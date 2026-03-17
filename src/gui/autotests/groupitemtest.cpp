@@ -220,7 +220,7 @@ void GroupItemTest::shouldTestProperties()
     QCOMPARE(r2->property(Property::Type::StrokeColor).value<QColor>(), QColor(Qt::green));
     QCOMPARE(i.property(Property::Type::StrokeColor).value<QColor>(), QColor(Qt::green));
 
-    QCOMPARE(i.propertyTypes().count(), r1->propertyTypes().count());
+    QCOMPARE(i.allPropertyTypes().count(), r1->allPropertyTypes().count());
 }
 
 void GroupItemTest::shouldTestNeedsCaching()

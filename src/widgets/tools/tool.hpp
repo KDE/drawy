@@ -50,6 +50,7 @@ public:
     virtual QString icon() const = 0;
 
     virtual QList<Property::Type> properties() const;
+    virtual QList<Property::Type> allProperties() const final;
 
 protected:
     QCursor m_cursor{};

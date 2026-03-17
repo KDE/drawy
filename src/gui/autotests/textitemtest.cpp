@@ -22,9 +22,9 @@ void TextItemTest::shouldHaveDefaultValues()
     const TextItem i;
     QCOMPARE(i.formType(), Item::FormType::Text);
     const auto properties = QList<Property::Type>() << Property::Type::FontSize << Property::Type::StrokeColor << Property::Type::Opacity;
-    QCOMPARE(i.propertyTypes().count(), 3);
+    QCOMPARE(i.allPropertyTypes().count(), 3);
     for (const auto &prop : properties) {
-        QVERIFY(i.propertyTypes().contains(prop));
+        QVERIFY(i.allPropertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());
