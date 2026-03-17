@@ -5,6 +5,7 @@
 #include "image.hpp"
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
+#include "drawy_gui_intercept_item_debug.h"
 #include "serializer/imagedeserializer.hpp"
 #include "serializer/imageserializer.hpp"
 #include <QJsonObject>
@@ -33,6 +34,7 @@ void ImageItem::commitTransformation()
 
 bool ImageItem::intersects(const QRectF &rect)
 {
+    qCDebug(DRAWY_GUI_INTERCEPT_ITEM_LOG) << "rect:" << rect << " m_boundingBox " << m_boundingBox;
     return m_boundingBox.intersects(rect);
 }
 
