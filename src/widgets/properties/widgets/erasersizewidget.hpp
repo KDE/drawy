@@ -5,7 +5,7 @@
 #pragma once
 
 #include "propertywidget.hpp"
-
+class QSpinBox;
 class EraserSizeWidget : public PropertyWidget
 {
     Q_OBJECT
@@ -14,4 +14,7 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
+
+private:
+    QSpinBox *const mSpinBox;
 };

@@ -12,16 +12,15 @@
 
 EraserSizeWidget::EraserSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
+    , mSpinBox(new QSpinBox(parent))
 {
-    auto box{new QSpinBox(parent)};
-    box->setRange(1, 100);
-    box->setValue(DrawyGlobalConfig::self()->eraserSize());
+    mSpinBox->setRange(1, 100);
+    mSpinBox->setValue(DrawyGlobalConfig::self()->eraserSize());
+    mSpinBox->hide();
+    m_widget = mSpinBox;
 
-    box->hide();
-    m_widget = box;
-
-    connect(box, &QSpinBox::valueChanged, this, [this]() {
-        DrawyGlobalConfig::self()->setEraserSize(static_cast<QSpinBox *>(m_widget)->value());
+    connect(mSpinBox, &QSpinBox::valueChanged, this, [this]() {
+        DrawyGlobalConfig::self()->setEraserSize(mSpinBox->value());
         DrawyGlobalConfig::self()->save();
         Q_EMIT changed(value());
     });
@@ -34,7 +33,7 @@ QString EraserSizeWidget::name() const
 
 const Property EraserSizeWidget::value() const
 {
-    return Property{static_cast<QSpinBox *>(m_widget)->value(), Property::Type::EraserSize};
+    return Property{mSpinBox->value(), Property::Type::EraserSize};
 }
 
 #include "moc_erasersizewidget.cpp"

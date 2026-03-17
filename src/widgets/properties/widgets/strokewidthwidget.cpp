@@ -20,7 +20,7 @@ StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
     m_widget = mSpinBox;
 
     connect(mSpinBox, &QSpinBox::valueChanged, this, [this]() {
-        DrawyGlobalConfig::self()->setStrokeWidth(static_cast<QSpinBox *>(mSpinBox)->value());
+        DrawyGlobalConfig::self()->setStrokeWidth(mSpinBox->value());
         DrawyGlobalConfig::self()->save();
         Q_EMIT changed(value());
     });
@@ -38,7 +38,7 @@ void StrokeWidthWidget::setValue(const QVariant &value)
 
 const Property StrokeWidthWidget::value() const
 {
-    return Property{static_cast<QSpinBox *>(mSpinBox)->value(), Property::Type::StrokeWidth};
+    return Property{mSpinBox->value(), Property::Type::StrokeWidth};
 }
 
 #include "moc_strokewidthwidget.cpp"

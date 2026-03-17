@@ -17,6 +17,6 @@ public:
     [[nodiscard]] const Property value() const override;
 
 private:
-    ArrowButtonActionsWidget *mStartArrowButton = nullptr;
-    ArrowButtonActionsWidget *mEndArrowButton = nullptr;
+    ArrowButtonActionsWidget *const mStartArrowButton;
+    ArrowButtonActionsWidget *const mEndArrowButton;
 };
