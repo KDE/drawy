@@ -11,9 +11,6 @@
 
 EllipseItem::EllipseItem()
 {
-    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
-    m_properties[Property::Type::BackgroundStyle] =
-        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void EllipseItem::drawItem(QPainter &painter, const QPointF &offset) const
@@ -31,11 +28,11 @@ bool EllipseItem::intersects(const QRectF &rect)
     QPainterPath path{};
     path.addEllipse(QRectF{start(), end()});
 
+    path = m_transform.map(path);
+
     if (isFilled()) {
         return path.intersects(rect);
     }
-
-    path = m_transform.map(path);
 
     return path.intersects(rect) && !path.contains(rect);
 }

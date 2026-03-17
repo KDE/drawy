@@ -8,9 +8,11 @@
 #include "libdrawygui_export.h"
 #include "polygondeserializer.hpp"
 class LineItem;
-class LIBDRAWYGUI_EXPORT LineDeserializer : public PolygonDeserializer
+class LIBDRAWYGUI_EXPORT LineDeserializer : public ItemDeserializer
 {
 public:
     explicit LineDeserializer(LineItem *item);
     ~LineDeserializer() override;
+
+    void deserialize(const QJsonObject &obj) override;
 };

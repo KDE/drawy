@@ -12,9 +12,6 @@
 
 RectangleItem::RectangleItem()
 {
-    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
-    m_properties[Property::Type::BackgroundStyle] =
-        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
@@ -32,11 +29,11 @@ bool RectangleItem::intersects(const QRectF &rect)
     QPainterPath path{};
     path.addRect(QRectF{start(), end()});
 
+    path = transformObj().map(path);
+
     if (isFilled()) {
         return path.intersects(rect);
     }
-
-    path = m_transform.map(path);
 
     return path.intersects(rect) && !path.contains(rect);
 }

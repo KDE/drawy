@@ -32,6 +32,7 @@ void ColorWidgetBase::initialize()
     colorButtonHLayout->setContentsMargins({});
     colorButtonHLayout->setSpacing(0);
     layout->addLayout(colorButtonHLayout);
+
     for (const QColor &color : colors) {
         auto btn{new QToolButton{m_widget}};
         btn->setCheckable(true);
@@ -49,6 +50,7 @@ void ColorWidgetBase::initialize()
     m_currentColorButton->setObjectName(u"m_currentColorButton"_s);
     m_currentColorButton->setCheckable(false);
     m_currentColorButton->setToolTip(i18nc("@info:tooltip", "Select Custom Color"));
+
     connect(m_currentColorButton, &QToolButton::clicked, this, [this]() {
         const QColor col = QColorDialog::getColor(m_currentColorButton->property("color-value").value<QColor>(), m_widget);
         if (col.isValid()) {
@@ -56,6 +58,7 @@ void ColorWidgetBase::initialize()
             Q_EMIT changed(value());
         }
     });
+
     layout->addWidget(m_currentColorButton);
 
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
@@ -63,6 +66,7 @@ void ColorWidgetBase::initialize()
         assignCurrentColor(selectedColor);
         Q_EMIT changed(value());
     });
+
     m_group->buttons().at(0)->setChecked(true);
     assignCurrentColor(m_group->buttons().at(0)->property("color-value").value<QColor>());
     m_widget->hide();

@@ -59,11 +59,13 @@ bool Item::isFilled() const
     if (!hasProperty(Property::Type::BackgroundColor)) {
         return false;
     }
-    if (hasProperty(Property::Type::BackgroundStyle)
-        && ItemUtils::convertBackgroundTypeStringToEnum(property(Property::Type::BackgroundStyle).value<QString>()) == Item::BackgroundType::None) {
-        return true;
+
+    if (property(Property::Type::BackgroundColor).value<QColor>().alpha() == 0) {
+        return false;
     }
-    return property(Property::Type::BackgroundColor).value<QColor>().alpha() != 0;
+
+    return hasProperty(Property::Type::BackgroundStyle)
+        && ItemUtils::convertBackgroundTypeStringToEnum(property(Property::Type::BackgroundStyle).value<QString>()) != Item::BackgroundType::None;
 }
 
 Property Item::property(const Property::Type propertyType) const

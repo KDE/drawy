@@ -8,9 +8,11 @@
 #include "libdrawygui_export.h"
 #include "polygonserializer.hpp"
 class LineItem;
-class LIBDRAWYGUI_EXPORT LineSerializer : public PolygonSerializer
+class LIBDRAWYGUI_EXPORT LineSerializer : public ItemSerializer
 {
 public:
     explicit LineSerializer(const LineItem *item);
     ~LineSerializer() override;
+
+    [[nodiscard]] QJsonObject serialize(int zorder) const override;
 };

@@ -6,9 +6,10 @@
 #pragma once
 
 #include "libdrawygui_export.h"
-#include "polygondeserializer.hpp"
+#include "linedeserializer.hpp"
 class ArrowItem;
-class LIBDRAWYGUI_EXPORT ArrowDeserializer : public PolygonDeserializer
+
+class LIBDRAWYGUI_EXPORT ArrowDeserializer : public LineDeserializer
 {
 public:
     explicit ArrowDeserializer(ArrowItem *item);

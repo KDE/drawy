@@ -6,10 +6,12 @@
 #pragma once
 
 #include "libdrawygui_export.h"
-#include "polygonserializer.hpp"
+#include "lineserializer.hpp"
+
 class ArrowItem;
 class QJsonObject;
-class LIBDRAWYGUI_EXPORT ArrowSerializer : public PolygonSerializer
+
+class LIBDRAWYGUI_EXPORT ArrowSerializer : public LineSerializer
 {
 public:
     explicit ArrowSerializer(const ArrowItem *item);

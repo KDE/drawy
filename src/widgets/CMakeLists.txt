@@ -1,4 +1,4 @@
-﻿# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2025-2026 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -147,6 +147,8 @@ target_sources(
         tools/linetool.hpp
         tools/movetool.cpp
         tools/movetool.hpp
+        tools/linedrawingtool.cpp
+        tools/linedrawingtool.hpp
         tools/polygondrawingtool.cpp
         tools/polygondrawingtool.hpp
         tools/rectangletool.cpp

@@ -31,6 +31,8 @@ public:
 
     [[nodiscard]] bool operator==(const PolygonItem &other) const;
 
+    QList<Property::Type> propertyTypes() const override;
+
 protected:
     void prepareBackground(QPainter &painter) const;
 

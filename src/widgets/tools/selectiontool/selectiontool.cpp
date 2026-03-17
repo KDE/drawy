@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -238,12 +238,15 @@ QList<Property::Type> SelectionTool::properties() const
         if (selectedItems.size() > 1) {
             output += QList<Property::Type>{Property::Type::Alignment};
         }
+
         if (!selectedItems.empty()) {
             output += QList<Property::Type>{Property::Type::ZOrder, Property::Type::Actions};
         }
+
         if (hasArrow) {
             output += QList<Property::Type>{Property::Type::ArrowStyle};
         }
+
         return output;
     } else {
         return {};

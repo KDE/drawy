@@ -9,7 +9,7 @@
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 ArrowDeserializer::ArrowDeserializer(ArrowItem *item)
-    : PolygonDeserializer(item)
+    : LineDeserializer(item)
 {
 }
 
@@ -17,7 +17,7 @@ ArrowDeserializer::~ArrowDeserializer() = default;
 
 void ArrowDeserializer::deserialize(const QJsonObject &obj)
 {
-    PolygonDeserializer::deserialize(obj);
+    LineDeserializer::deserialize(obj);
     ArrowItem *arrowItem = static_cast<ArrowItem *>(mItem);
     if (!obj.contains(u"startArrow")) {
         arrowItem->setStartArrow(ArrowUtils::ArrowType::None);
