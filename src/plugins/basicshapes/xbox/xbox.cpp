@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -14,9 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 
 XBoxItem::XBoxItem()
 {
-    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
-    m_properties[Property::Type::BackgroundStyle] =
-        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 void XBoxItem::drawItem(QPainter &painter, const QPointF &offset) const
@@ -40,10 +37,12 @@ bool XBoxItem::intersects(const QRectF &rect)
     path.moveTo(QPointF(end().x(), start().y()));
     path.lineTo(QPointF(start().x(), end().y()));
 
+    path = m_transform.map(path);
+
     if (isFilled()) {
         return path.intersects(rect);
     }
-    path = m_transform.map(path);
+
     return path.intersects(rect) && !path.contains(rect);
 }
 

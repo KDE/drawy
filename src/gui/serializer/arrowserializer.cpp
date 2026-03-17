@@ -9,7 +9,7 @@
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 ArrowSerializer::ArrowSerializer(const ArrowItem *item)
-    : PolygonSerializer(item)
+    : LineSerializer(item)
 {
 }
 
@@ -18,7 +18,7 @@ ArrowSerializer::~ArrowSerializer() = default;
 QJsonObject ArrowSerializer::serialize(int zorder) const
 {
     const ArrowItem *arrow = dynamic_cast<const ArrowItem *>(mItem);
-    QJsonObject obj = PolygonSerializer::serialize(zorder);
+    QJsonObject obj = LineSerializer::serialize(zorder);
     obj[u"startArrow"_s] = ArrowUtils::convertArrowTypeEnumToString(arrow->startArrow());
     obj[u"endArrow"_s] = ArrowUtils::convertArrowTypeEnumToString(arrow->endArrow());
     return obj;

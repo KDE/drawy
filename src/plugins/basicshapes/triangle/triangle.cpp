@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -14,9 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 
 TriangleItem::TriangleItem()
 {
-    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
-    m_properties[Property::Type::BackgroundStyle] =
-        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 QPainterPath TriangleItem::getPath() const
@@ -52,10 +49,13 @@ void TriangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool TriangleItem::intersects(const QRectF &rect)
 {
-    const QPainterPath path = getPath();
+    QPainterPath path = getPath();
+    path = transformObj().map(path);
+
     if (isFilled()) {
         return path.intersects(rect);
     }
+
     return path.intersects(rect) && !path.contains(rect);
 }
 

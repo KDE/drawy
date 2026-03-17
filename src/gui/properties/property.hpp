@@ -14,6 +14,8 @@ class LIBDRAWYGUI_EXPORT Property
 public:
     Property();
 
+    // They must be in alphabetical order
+    // Otherwise, good luck rewriting the autotest files :)
     enum class Type : int8_t {
         Actions,
         Alignment,
@@ -31,6 +33,41 @@ public:
     };
 
     Q_ENUM(Type)
+
+    // used to show the widgets in the correct order
+    constexpr static int propertyPriority(Type type)
+    {
+        switch (type) {
+        case Type::StrokeColor:
+            return 1;
+        case Type::StrokeStyle:
+            return 2;
+        case Type::BackgroundColor:
+            return 3;
+        case Type::BackgroundStyle:
+            return 4;
+        case Type::StrokeWidth:
+            return 5;
+        case Type::ArrowStyle:
+            return 6;
+        case Type::Opacity:
+            return 7;
+        case Type::EraserSize:
+            return 8;
+        case Type::FontSize:
+            return 9;
+        case Type::Alignment:
+            return 10;
+        case Type::ZOrder:
+            return 11;
+        case Type::Actions:
+            return 12;
+        case Type::Null:
+            return 13;
+        }
+
+        return 0;
+    }
 
     template<typename T>
     Property(T value, Type type)

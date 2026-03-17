@@ -11,7 +11,7 @@
         },
         {
             "type": "BackgroundStyle",
-            "value": "Solid"
+            "value": "None"
         },
         {
             "type": "Opacity",

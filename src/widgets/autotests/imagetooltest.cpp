@@ -1,4 +1,4 @@
-﻿/*
+/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -20,9 +20,9 @@ void ImageToolTest::shouldHaveDefaultValues()
     QCOMPARE(t.icon(), u"insert-image"_s);
     QCOMPARE(t.type(), Tool::Type::Image);
     const auto properties = QList<Property::Type>() << Property::Type::Opacity;
-    QCOMPARE(t.properties().count(), 1);
+    QCOMPARE(t.allProperties().count(), 1);
     for (const auto &prop : properties) {
-        QVERIFY(t.properties().contains(prop));
+        QVERIFY(t.allProperties().contains(prop));
     }
 }
 

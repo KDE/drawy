@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "polygondrawingtool.hpp"
+#include "linedrawingtool.hpp"
 
 #include <memory>
 
@@ -18,11 +18,10 @@
 #include "context/uicontext.hpp"
 #include "event/event.hpp"
 #include "item/factory/itemfactory.hpp"
-#include "item/itemutils.hpp"
-#include "item/polygon.hpp"
+#include "item/line.hpp"
 #include "properties/widgets/propertymanager.hpp"
 
-PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
+LineDrawingTool::LineDrawingTool(ApplicationContext *context)
     : DrawingTool(context)
 {
     m_cursor = QCursor(Qt::CrossCursor);
@@ -30,14 +29,14 @@ PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
     m_properties = {Property::Type::StrokeWidth, Property::Type::StrokeColor, Property::Type::StrokeStyle, Property::Type::Opacity};
 }
 
-void PolygonDrawingTool::mousePressed(ApplicationContext *context)
+void LineDrawingTool::mousePressed(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
 
-        curItem = std::dynamic_pointer_cast<PolygonItem>(m_itemFactory->create());
+        curItem = std::dynamic_pointer_cast<LineItem>(m_itemFactory->create());
 
         curItem->setProperty(Property::Type::StrokeWidth, uiContext->propertyManager()->value(Property::Type::StrokeWidth));
         curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
@@ -58,7 +57,7 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
     }
 }
 
-void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
+void LineDrawingTool::mouseMoved(ApplicationContext *context)
 {
     if (m_isDrawing) {
         auto spatialContext{context->spatialContext()};
@@ -92,7 +91,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
     }
 }
 
-void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
+void LineDrawingTool::mouseReleased(ApplicationContext *context)
 {
     UIContext *uiContext{context->uiContext()};
 
@@ -118,26 +117,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
     }
 }
 
-QList<Property::Type> PolygonDrawingTool::properties() const
-{
-    UIContext *uiContext{m_context->uiContext()};
-    QList<Property::Type> result{};
-
-    const auto bgStyleString{uiContext->propertyManager()->value(Property::Type::BackgroundStyle).value<QString>()};
-    const auto bgStyleEnum{ItemUtils::convertBackgroundTypeStringToEnum(bgStyleString)};
-
-    for (const auto propertyType : m_properties) {
-        if (propertyType == Property::Type::BackgroundColor && bgStyleEnum == Item::BackgroundType::None) {
-            continue;
-        }
-
-        result.push_back(propertyType);
-    }
-
-    return result;
-}
-
-void PolygonDrawingTool::cleanup()
+void LineDrawingTool::cleanup()
 {
     m_context->uiContext()->appEvent()->setButton(Qt::LeftButton);
     mouseReleased(m_context);

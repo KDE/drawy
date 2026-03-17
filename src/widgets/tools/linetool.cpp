@@ -1,15 +1,16 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "linetool.hpp"
 
 #include "item/factory/linefactory.hpp"
+#include "linedrawingtool.hpp"
 #include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 
 LineTool::LineTool(ApplicationContext *context)
-    : PolygonDrawingTool(context)
+    : LineDrawingTool(context)
 {
     m_itemFactory = std::make_unique<LineFactory>();
 }

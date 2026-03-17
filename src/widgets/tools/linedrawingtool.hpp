@@ -6,23 +6,21 @@
 
 #include "drawingtool.hpp"
 #include "libdrawywidgets_private_export.h"
-class PolygonItem;
+class LineItem;
 
-class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonDrawingTool : public DrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT LineDrawingTool : public DrawingTool
 {
 protected:
-    std::shared_ptr<PolygonItem> curItem{};
+    std::shared_ptr<LineItem> curItem{};
 
 public:
-    explicit PolygonDrawingTool(ApplicationContext *context);
-    ~PolygonDrawingTool() override = default;
+    explicit LineDrawingTool(ApplicationContext *context);
+    ~LineDrawingTool() override = default;
 
     void mousePressed(ApplicationContext *context) override;
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
     void cleanup() override;
-
-    [[nodiscard]] QList<Property::Type> properties() const override;
 
 private:
     bool m_endSet{false};

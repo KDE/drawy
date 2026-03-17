@@ -12,6 +12,7 @@
 #include "context/selectioncontext.hpp"
 #include "context/uicontext.hpp"
 #include "item/item.hpp"
+#include "properties/property.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "properties/widgets/propertywidget.hpp"
 #include "toolbar.hpp"
@@ -55,12 +56,17 @@ void PropertyBar::updateProperties(Tool &tool)
         delete curItem;
     }
 
-    const QList<Property::Type> properties{tool.properties()};
+    QList<Property::Type> properties{tool.properties()};
+
     if (properties.empty()) {
         hide();
     } else {
         show();
     }
+
+    std::sort(properties.begin(), properties.end(), [](const auto first, const auto second) -> bool {
+        return Property::propertyPriority(first) < Property::propertyPriority(second);
+    });
 
     for (Property::Type property : properties) {
         try {

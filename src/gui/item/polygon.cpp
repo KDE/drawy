@@ -16,6 +16,9 @@ PolygonItem::PolygonItem()
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::black), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::StrokeStyle] = Property{ItemUtils::convertItemStrokeTypeEnumToString(Item::StrokeType::Solid), Property::Type::StrokeStyle};
+    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
+    m_properties[Property::Type::BackgroundStyle] =
+        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::None), Property::Type::BackgroundStyle};
 }
 
 void PolygonItem::initPoints(QPointF start)
@@ -123,6 +126,23 @@ void PolygonItem::commitTransformation()
 
     setDirty(true);
     updateBoundingBox();
+}
+
+QList<Property::Type> PolygonItem::propertyTypes() const
+{
+    QList<Property::Type> result;
+
+    for (auto &[formType, _] : m_properties) {
+        // only show the background color property if the background style is not None
+        if (formType == Property::Type::BackgroundColor
+            && ItemUtils::convertBackgroundTypeStringToEnum(property(Property::Type::BackgroundStyle).value<QString>()) == Item::BackgroundType::None) {
+            continue;
+        }
+
+        result.push_back(formType);
+    }
+
+    return result;
 }
 
 QDebug operator<<(QDebug d, const PolygonItem &t)

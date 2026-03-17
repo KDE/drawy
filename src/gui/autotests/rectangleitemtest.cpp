@@ -24,9 +24,9 @@ void RectangleItemTest::shouldHaveDefaultValues()
     QCOMPARE(i.formType(), Item::FormType::Rectangle);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
                                                     << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle;
-    QCOMPARE(i.propertyTypes().count(), 6);
+    QCOMPARE(i.allPropertyTypes().count(), 6);
     for (const auto &prop : properties) {
-        QVERIFY(i.propertyTypes().contains(prop));
+        QVERIFY(i.allPropertyTypes().contains(prop));
     }
     QVERIFY(!i.id().isEmpty());
     QVERIFY(!i.locked());

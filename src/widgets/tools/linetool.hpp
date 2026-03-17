@@ -1,12 +1,12 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
 #include "libdrawywidgets_private_export.h"
-#include "polygondrawingtool.hpp"
+#include "linedrawingtool.hpp"
 
-class LIBDRAWYWIDGETS_TESTS_EXPORT LineTool : public PolygonDrawingTool
+class LIBDRAWYWIDGETS_TESTS_EXPORT LineTool : public LineDrawingTool
 {
 public:
     explicit LineTool(ApplicationContext *context);

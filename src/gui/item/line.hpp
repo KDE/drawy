@@ -7,13 +7,24 @@
 
 #include "polygon.hpp"
 
-class LIBDRAWYGUI_EXPORT LineItem : public PolygonItem
+class LIBDRAWYGUI_EXPORT LineItem : public Item
 {
 public:
     LineItem();
     ~LineItem() override = default;
 
-    void setEndWithShift(QPointF end) override;
+    virtual void initPoints(QPointF start);
+    virtual void setStart(QPointF start);
+    virtual void setEnd(QPointF end);
+
+    void setEndWithShift(QPointF end);
+
+    void draw(QPainter &painter, const QPointF &offset) override;
+
+    void commitTransformation() override;
+
+    [[nodiscard]] const QPointF &start() const;
+    [[nodiscard]] const QPointF &end() const;
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
@@ -24,6 +35,13 @@ public:
 
     [[nodiscard]] QList<TransformHandlerUtils::Type> transformHandlers() const override;
 
+    [[nodiscard]] bool operator==(const LineItem &other) const;
+
 private:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
+
+    QPointF m_start{};
+    QPointF m_end{};
+
+    void updateBoundingBox();
 };

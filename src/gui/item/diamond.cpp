@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -11,9 +11,6 @@
 
 DiamondItem::DiamondItem()
 {
-    m_properties[Property::Type::BackgroundColor] = Property{QColor(Qt::transparent), Property::Type::BackgroundColor};
-    m_properties[Property::Type::BackgroundStyle] =
-        Property{ItemUtils::convertItemBackgroundTypeEnumToString(Item::BackgroundType::Solid), Property::Type::BackgroundStyle};
 }
 
 QPainterPath DiamondItem::getPath() const
@@ -50,7 +47,8 @@ void DiamondItem::drawItem(QPainter &painter, const QPointF &offset) const
 
 bool DiamondItem::intersects(const QRectF &rect)
 {
-    const QPainterPath path = getPath();
+    QPainterPath path = getPath();
+    path = transformObj().map(path);
 
     if (isFilled()) {
         return path.intersects(rect);
