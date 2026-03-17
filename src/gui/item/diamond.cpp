@@ -4,6 +4,7 @@
 
 #include "diamond.hpp"
 
+#include "drawy_gui_intercept_item_debug.h"
 #include "item/itemutils.hpp"
 #include "serializer/diamonddeserializer.hpp"
 #include "serializer/diamondserializer.hpp"
@@ -49,6 +50,7 @@ bool DiamondItem::intersects(const QRectF &rect)
 {
     QPainterPath path = getPath();
     path = transformObj().map(path);
+    qCDebug(DRAWY_GUI_INTERCEPT_ITEM_LOG) << "rect:" << rect << " m_boundingBox " << m_boundingBox << " path " << path;
 
     if (isFilled()) {
         return path.intersects(rect);

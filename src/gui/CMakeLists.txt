@@ -130,6 +130,10 @@ ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER 
     CATEGORY_NAME org.kde.drawy_gui DESCRIPTION "drawy (libdrawygui)" EXPORT DRAWY
 )
 
+ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_intercept_item_debug.h IDENTIFIER DRAWY_GUI_INTERCEPT_ITEM_LOG
+    CATEGORY_NAME org.kde.drawy_intercept_item_gui DESCRIPTION "drawy (libdrawygui intercept item)" EXPORT DRAWY
+)
+
 # precompiled headers support
 if(ENABLE_PCH)
     target_precompile_headers(
