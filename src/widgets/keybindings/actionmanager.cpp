@@ -575,7 +575,7 @@ bool ActionManager::confirmSaveAfterModification()
     }
 
     const auto fileName{m_context->currentFileName()};
-    const auto message{i18n("The document \"%1\" has been modified. Do you want to save your changes or discard them?", fileName)};
+    const auto message{i18n("The document \"%1\" has been modified.\nDo you want to save your changes or discard them?", fileName)};
 
     const int choice = KMessageBox::questionTwoActionsCancel(m_context->parentWidget(),
                                                              message,
