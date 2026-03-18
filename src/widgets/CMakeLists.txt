@@ -2,7 +2,11 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(libdrawywidgets)
+add_library(
+    libdrawywidgets
+    properties/widgets/arrowstyleactionswidget.h
+    properties/widgets/arrowstyleactionswidget.cpp
+)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
