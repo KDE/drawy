@@ -5,6 +5,7 @@
  */
 
 #include "arrowbuttonactionswidget.hpp"
+#include "arrowstyleactionswidget.h"
 #include <QGridLayout>
 #include <QMenu>
 #include <QStyle>
@@ -34,13 +35,11 @@ void ArrowButtonActionsWidget::fillMenu()
     int col = 0;
     for (auto index = static_cast<int>(ArrowUtils::ArrowType::None); index <= static_cast<int>(ArrowUtils::ArrowType::FullTriangle); index++) {
         const auto arrowType = static_cast<ArrowUtils::ArrowType>(index);
-        auto toolButton = new QToolButton(arrowWidget);
-        toolButton->setToolTip(ArrowUtils::tooltipFromArrowType(arrowType));
+        auto toolButton = new ArrowStyleActionsWidget(arrowType, arrowWidget);
         toolButton->setIcon(QIcon::fromTheme(ArrowUtils::iconFromArrowType(arrowType)));
-        toolButton->setAutoRaise(true);
         toolButton->setIconSize(QSize{iconSize, iconSize});
 
-        connect(toolButton, &QToolButton::clicked, this, [this, arrowType, toolButton]() {
+        connect(toolButton, &ArrowStyleActionsWidget::clicked, this, [this, arrowType, toolButton]() {
             setToolTip(toolButton->toolTip());
             setIcon(toolButton->icon());
             Q_EMIT selectedArrow(arrowType);

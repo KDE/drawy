@@ -32,3 +32,5 @@ void StrokeStyleActionsWidget::paintEvent(QPaintEvent *event)
     p.setPen(QPen(pal.color(QPalette::Text), 2, strokeStyle));
     p.drawLine(r.topLeft(), r.bottomRight());
 }
+
+#include "moc_strokestyleactionswidget.cpp"
