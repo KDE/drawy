@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -36,15 +36,20 @@ void UngroupCommand::redo(ApplicationContext *context)
 
     QRectF dirtyRegion;
     for (const auto &group : std::as_const(m_groups)) {
+        dirtyRegion |= group->boundingBox().toAlignedRect();
+        m_ungroupedItems.push_back(group->unGroup());
+        context->spatialContext()->quadtree().reorder(m_ungroupedItems.back());
+
+        group->setTransform({});
+
         quadtree.deleteItem(group);
+        context->selectionContext()->reset();
 
-        dirtyRegion |= group->boundingBox();
-
-        auto subItems{group->unGroup()};
-        for (const auto &subItem : subItems) {
-            quadtree.insertItem(subItem, false);
-            context->selectionContext()->addToSelection(subItem);
+        for (const auto &item : std::as_const(m_ungroupedItems.back())) {
+            quadtree.insertItem(item, false);
         }
+
+        context->selectionContext()->addToSelection(m_ungroupedItems.back().begin(), m_ungroupedItems.back().end());
     }
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
@@ -56,19 +61,26 @@ void UngroupCommand::undo(ApplicationContext *context)
 
     context->selectionContext()->reset();
 
-    QRectF dirtyRegion;
-    for (const auto &group : std::as_const(m_groups)) {
-        quadtree.insertItem(group);
-        context->selectionContext()->addToSelection(group);
-        dirtyRegion |= group->boundingBox();
+    const qsizetype groupCount{m_ungroupedItems.size()};
+    Q_ASSERT(groupCount == m_groups.size());
 
-        const auto subItems{group->unGroup()};
-        for (const auto &subItem : subItems) {
-            quadtree.deleteItem(subItem, false);
+    QRectF dirtyRegion;
+    for (qsizetype pos{0}; pos < groupCount; pos++) {
+        for (const auto &item : std::as_const(m_ungroupedItems[pos])) {
+            quadtree.deleteItem(item, false);
         }
+
+        m_groups[pos]->group(m_ungroupedItems[pos]);
+        quadtree.insertItem(m_groups[pos]);
+
+        dirtyRegion |= m_groups[pos]->boundingBox().toAlignedRect();
+        context->selectionContext()->addToSelection(m_groups[pos]);
     }
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
+    context->selectionContext()->reset();
+
+    m_ungroupedItems.clear();
 }
 
 QString UngroupCommand::text() const

@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -19,4 +19,5 @@ public:
 
 private:
     QList<std::shared_ptr<GroupItem>> m_groups;
+    QList<QList<std::shared_ptr<Item>>> m_ungroupedItems;
 };
