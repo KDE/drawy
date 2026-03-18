@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-12 00:41+0000\n"
+"POT-Creation-Date: 2026-03-18 02:47+0000\n"
 "PO-Revision-Date: 2026-02-23 20:34+0100\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -136,7 +136,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr ""
 
-#: plugins/basicshapes/xbox/xbox.cpp:76
+#: plugins/basicshapes/xbox/xbox.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -233,13 +233,13 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/toolbar.cpp:64
+#: widgets/components/toolbar.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr ""
 
-#: widgets/components/toolbuttonplugin.cpp:30
+#: widgets/components/toolbuttonplugin.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Selection"
@@ -448,9 +448,11 @@ msgid "Activate Debug Mode"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Export as SVG"
 msgctxt "@action"
-msgid "Export as SVG"
+msgid "Export as Image"
 msgstr "Als SVG exportieren"
 
 #: widgets/keybindings/actionmanager.cpp:87
@@ -617,27 +619,38 @@ msgstr "Datei öffnen"
 msgid "Untitled.svg"
 msgstr "Unbenannt.svg"
 
-#: widgets/keybindings/actionmanager.cpp:541
+#: widgets/keybindings/actionmanager.cpp:542
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG-Grafik (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "SVG (*.svg)"
+msgid "PNG (*.png)"
+msgstr "SVG-Grafik (*.svg)"
+
+#: widgets/keybindings/actionmanager.cpp:547
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Export to Svg"
 msgctxt "@title:window"
-msgid "Export to Svg"
+msgid "Export to Image"
 msgstr "Als SVG exportieren"
 
-#: widgets/keybindings/actionmanager.cpp:578
-#, kde-format
+#: widgets/keybindings/actionmanager.cpp:605
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified. Do you want to save your changes "
+#| "or discard them?"
 msgid ""
-"The document \"%1\" has been modified. Do you want to save your changes or "
-"discard them?"
+"The document \"%1\" has been modified.\n"
+"Do you want to save your changes or discard them?"
 msgstr ""
 "Das Dokument „%1“ wurde geändert. Möchten Sie die Änderungen speichern oder "
 "verwerfen?"
 
-#: widgets/keybindings/actionmanager.cpp:582
+#: widgets/keybindings/actionmanager.cpp:609
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -737,18 +750,18 @@ msgstr "Schrägschraffur"
 msgid "Background Style"
 msgstr "Hintergrundstil"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:51
+#: widgets/properties/widgets/colorwidgetbase.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Benutzerdefinierte Farbe auswählen"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:79
+#: widgets/properties/widgets/colorwidgetbase.cpp:83
 #, kde-format
 msgid "Color"
 msgstr "Farbe"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:32
+#: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
 msgid "Eraser Size"
 msgstr "Radierergröße"
@@ -763,19 +776,19 @@ msgstr "Schriftgröße"
 msgid "Opacity"
 msgstr "Deckkraft"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:36
+#: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
 msgstr "Gestrichelt"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:44
+#: widgets/properties/widgets/stokestylewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
 msgstr "Gepunktet"
 
-#: widgets/properties/widgets/stokestylewidget.cpp:66
+#: widgets/properties/widgets/stokestylewidget.cpp:63
 #, kde-format
 msgid "Stroke Style"
 msgstr "Strichstil"

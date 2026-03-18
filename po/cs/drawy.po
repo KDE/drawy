@@ -1,247 +1,250 @@
-# SPDX-FileCopyrightText: 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the drawy package.
+# SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 02:47+0000\n"
-"PO-Revision-Date: 2026-03-12 10:34+0100\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2026-03-17 08:45+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Qt-Contexts: true\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2026"
+msgstr "Vít Pelčák"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "freekdekruijf@kde.nl"
+msgstr "vit@pelcak.org"
 
 #: apps/main.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
-msgstr "Een optioneel argument 'bestand' "
+msgstr "Volitelný argument 'file' "
 
 #: apps/main.cpp:44
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
-msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
+msgstr ""
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format
 msgid "None"
-msgstr "Geen"
+msgstr "Žádný"
 
 #: gui/item/arrowutils.cpp:38
 #: widgets/properties/widgets/arrowstylewidget.cpp:46
 #, kde-format
 msgid "Arrow"
-msgstr "Pijl"
+msgstr "Šipka"
 
 #: gui/item/arrowutils.cpp:40
 #, kde-format
 msgid "Triangle"
-msgstr "Driehoek"
+msgstr "Trojúhelník"
 
 #: gui/item/arrowutils.cpp:42
 #, kde-format
 msgid "Full Triangle"
-msgstr "Volledige driehoek"
+msgstr ""
 
 #: gui/item/arrowutils.cpp:44
 #, kde-format
 msgid "Circle"
-msgstr "Cirkel"
+msgstr "Kolečko"
 
 #: gui/item/arrowutils.cpp:46
 #, kde-format
 msgid "Full Circle"
-msgstr "Gevulde cirkel"
+msgstr ""
 
 #: gui/item/arrowutils.cpp:48
 #, kde-format
 msgid "Line"
-msgstr "Lijn"
+msgstr "Čára"
 
 #: gui/properties/property.cpp:92
 #, kde-format
 msgid "Change Stroke Width"
-msgstr "Dikte van streek wijzigen"
+msgstr ""
 
 #: gui/properties/property.cpp:94
 #, kde-format
 msgid "Change Stroke Color"
-msgstr "Kleur van streek wijzigen"
+msgstr ""
 
 #: gui/properties/property.cpp:96
 #, kde-format
 msgid "Change Opacity"
-msgstr "Dekking wijzigen"
+msgstr "Změnit krytí"
 
 #: gui/properties/property.cpp:98
 #, kde-format
 msgid "Change Font Size"
-msgstr "Tekengrootte wijzigen"
+msgstr "Změnit velikost písma"
 
 #: gui/properties/property.cpp:100
 #, kde-format
 msgid "Change Eraser Size"
-msgstr "Grootte van gum wijzigen"
+msgstr ""
 
 #: gui/properties/property.cpp:102
 #: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
-msgstr "Acties"
+msgstr "Činnosti"
 
 #: gui/properties/property.cpp:104
 #, kde-format
 msgid "Change Stroke Style"
-msgstr "Streekstijl wijzigen"
+msgstr ""
 
 #: gui/properties/property.cpp:106
 #, kde-format
 msgid "Change Background Color"
-msgstr "Achtergrondkleur wijzigen"
+msgstr "Změnit barvu pozadí"
 
 #: gui/properties/property.cpp:108
 #, kde-format
 msgid "Change Background Style"
-msgstr "Achtergrondkleurstijl wijzigen"
+msgstr ""
 
 #: gui/properties/property.cpp:116 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
-msgstr "Z-volgorde wijzigen"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr "Basis vormen"
+msgstr ""
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr "Driehoek"
+msgstr "Trojúhelník"
 
 #: plugins/basicshapes/xbox/xbox.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr "X-vak"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
-msgstr "Items uitlijnen"
+msgstr ""
 
 #: widgets/command/arrowtypecommand.cpp:65
 #, kde-format
 msgid "Change Arrow Type"
-msgstr "Pijltype wijzigen"
+msgstr ""
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
-msgstr "Selectie van object opheffen"
+msgstr ""
 
 #: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
-msgstr "Object groeperen"
+msgstr ""
 
 #: widgets/command/insertitemcommand.cpp:55
 #, kde-format
 msgid "Insert Object"
-msgstr "Object invoegen"
+msgstr ""
 
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
-msgstr "Grootte van lijn wijzigen"
+msgstr ""
 
 #: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
-msgstr "Vergrendeling wijzigen"
+msgstr ""
 
 #: widgets/command/moveitemcommand.cpp:66
 #, kde-format
 msgid "Move Object"
-msgstr "Object verplaatsen"
+msgstr "Přesunout objekt"
 
 #: widgets/command/removeitemcommand.cpp:60
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "Object verwijderen"
-msgstr[1] "%1 objecten verwijderen"
+msgstr[0] "Odstranit objekt"
+msgstr[1] "Odstraněné %1 objekty"
+msgstr[2] "Odstranit %1 objektů"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
 msgid "Resize Object"
-msgstr "Grootte van object wijzigen"
+msgstr ""
 
 #: widgets/command/rotateitemcommand.cpp:58
 #, kde-format
 msgid "Rotate Object"
-msgstr "Object draaien"
+msgstr "Otočit objekt"
 
 #: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
-msgstr "Selecteer object"
+msgstr "Vybrat objekt"
 
 #: widgets/command/ungroupcommand.cpp:76
 #, kde-format
 msgid "Ungroup Objects"
-msgstr "Groepering van objecten opheffen"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
-msgstr "Zoom resetten"
+msgstr "Původní přiblížení"
 
 #: widgets/components/bottomleftwidgets.cpp:53
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: widgets/components/toolbar.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr "Afbeelding"
+msgstr "Obrázek"
 
 #: widgets/components/toolbuttonplugin.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Plugin"
-msgstr "Plug-in selecteren"
+msgstr ""
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
-msgstr "Menu openen"
+msgstr "Otevřít nabídku"
 
 #: widgets/context/aboutdata.cpp:13
 #, kde-format
@@ -251,24 +254,24 @@ msgstr "Drawy"
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "(c) 2025-%1 auteurs van Drawy"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
-msgstr "Prayag Jain"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgid "Maintainer"
-msgstr "Onderhouder"
+msgstr "Správce"
 
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
@@ -279,67 +282,67 @@ msgstr "Laurent Montel"
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
 msgid "Developer"
-msgstr "Ontwikkelaar"
+msgstr "Vývojář"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
-msgstr "Selectie"
+msgstr "Výběr"
 
 #: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
-msgstr "Vrije vorm"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
-msgstr "Rechthoek"
+msgstr "Obdélník"
 
 #: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
-msgstr "Ruit"
+msgstr "Diamant"
 
 #: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
-msgstr "Ellips"
+msgstr "Elipsa"
 
 #: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
-msgstr "Pijl"
+msgstr "Šipka"
 
 #: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
-msgstr "Lijn"
+msgstr "Čára"
 
 #: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
-msgstr "Gum"
+msgstr "Guma"
 
 #: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
-msgstr "Tekst"
+msgstr "Text"
 
 #: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
-msgstr "Verplaatsen"
+msgstr "Přesunout"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -347,93 +350,94 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr "Een presentatie geven"
+msgstr "Probíhá prezentace"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
-msgstr "Drawy configureren"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
-msgstr "Algemeen"
+msgstr "Obecné"
 
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr "Diversen"
+msgstr "Různé"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
 msgid "Session"
-msgstr "Sessie"
+msgstr "Sezení"
 
 #: widgets/dialog/general/autosavewidget.cpp:30
 #, kde-format
 msgid "Time interval for automatic saving"
-msgstr "Tijdinterval voor automatisch opslaan"
+msgstr "Časový interval pro automatické ukládání"
 
 #: widgets/dialog/general/autosavewidget.cpp:31
 #, kde-format
 msgctxt "@item %v is a number"
 msgid "%v minute"
 msgid_plural "%v minutes"
-msgstr[0] "%v minuut"
-msgstr[1] " minuten"
+msgstr[0] "%v minuta"
+msgstr[1] "%v minuty"
+msgstr[2] "%v minut"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 #, kde-format
 msgid "Directory for automatic saving"
-msgstr "Map voor automatisch opslaan"
+msgstr "Adresář pro automatické ukládání"
 
 #: widgets/dialog/general/autosavewidget.cpp:45
 #, kde-format
 msgid "Open Directory"
-msgstr "Map openen"
+msgstr "Otevřít adresář"
 
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
-msgstr "Vorige sessie bij opstarten herstellen"
+msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
 #, kde-format
 msgid "Canvas"
-msgstr "Werkveld"
+msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr "Lichte themakleur"
+msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr "Donkere themakleur"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr "Energiebeheerder"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr "Schermvergrendeling tijdens volledig scherm uitschakelen"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
 msgctxt "@info:shell"
 msgid "Fullscreen"
-msgstr "Volledig scherm"
+msgstr "Celá obrazovka"
 
 #: widgets/drawycommandlineparser.cpp:20
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr "Modus debug activeren"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:82
 #, fuzzy, kde-format
@@ -441,132 +445,132 @@ msgstr "Modus debug activeren"
 #| msgid "Export as SVG"
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Exporteren als SVG"
+msgstr "Exportovat jako SVG"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
-msgstr "Items groeperen"
+msgstr "Seskupit položky"
 
 #: widgets/keybindings/actionmanager.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
-msgstr "Groeperen van items ongedaan maken"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
-msgstr "Verwijderen"
+msgstr "Smazat"
 
 #: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
-msgstr "Werkveld wissen"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
-msgstr "Hulpmiddel voor vrije vorm"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
-msgstr "Hulpmiddel voor gum"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
-msgstr "Selectiehulpmiddel"
+msgstr "Nástroj výběru"
 
 #: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
-msgstr "Hulpmiddel voor rechthoek"
+msgstr "Nástroj pro obdélníky"
 
 #: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
-msgstr "Gereedschap voor ellips"
+msgstr "Nástroj pro elipsy"
 
 #: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
-msgstr "Lijnhulpmiddel"
+msgstr "Nástroj pro čáry"
 
 #: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
-msgstr "Hulpmiddel voor tekst"
+msgstr "Nástroj na text"
 
 #: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
-msgstr "Hulpmiddel voor pijl"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
-msgstr "Hulpmiddel voor verplaatsen"
+msgstr "Nástroj pro přesouvání"
 
 #: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "Hulpmiddel voor afbeelding"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
-msgstr "Hulpmiddel voor ruit"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
-msgstr "Naar achtergrond brengen"
+msgstr "Odsunout do pozadí"
 
 #: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
-msgstr "Achterwaarts zenden"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
-msgstr "Voorwaarts brengen"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
-msgstr "Naar voorgrond brengen"
+msgstr "Přenést do popředí"
 
 #: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr "Debuggen"
+msgstr "Ladění"
 
 #: widgets/keybindings/actionmanager.cpp:457
 #, kde-format
 msgid "Untitled.%1"
-msgstr "Naamloos.%1"
+msgstr "Nepojmenovaný.%1"
 
 #: widgets/keybindings/actionmanager.cpp:459
 #: widgets/keybindings/actionmanager.cpp:523
@@ -578,41 +582,40 @@ msgstr "Drawy (*.%1)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "Bestand opslaan"
+msgstr "Uložit soubor"
 
 #: widgets/keybindings/actionmanager.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
-msgstr "Wilt u het werkveld wissen?"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "Wissen"
+msgstr "Vyčistit"
 
 #: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
-msgstr "Bestand openen"
+msgstr "Otevřít soubor"
 
 #: widgets/keybindings/actionmanager.cpp:539
 #, kde-format
 msgid "Untitled.svg"
-msgstr "Naamloze.svg"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:542
 #, kde-format
 msgid "SVG (*.svg)"
-msgstr "SVG (*.svg)"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:547
 #, fuzzy, kde-format
@@ -620,7 +623,7 @@ msgstr "SVG (*.svg)"
 #| msgid "Export to Svg"
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Naar SVG exporteren"
+msgstr "Exportovat do SVG"
 
 #: widgets/keybindings/actionmanager.cpp:605
 #, fuzzy, kde-format
@@ -631,574 +634,179 @@ msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"Het document '%1' is gewijzigd. Wilt u de wijzigingen opslaan of verwerpen?"
+"Dokument \"%1\" byl změněn. Přejete si uložit změny nebo je zapomenout?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
-msgstr "Actie vereist"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
-msgstr "Selectie verwijderen"
+msgstr "Smazat výběr"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
-msgstr "Groepsselectie"
+msgstr "Výběr skupin"
 
 #: widgets/properties/widgets/actionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
-msgstr "Selectie van groep ongedaan maken"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Left"
-msgstr "Links uitlijnen"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Center"
-msgstr "Centraal uitlijnen"
+msgstr "Zarovnat na střed"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Right"
-msgstr "Rechts uitlijnen"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Top"
-msgstr "Boven uitlijnen"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Middle"
-msgstr "Naar midden uitlijnen"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Bottom"
-msgstr "Onderaan uitlijnen"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:87
 #, kde-format
 msgid "Alignment"
-msgstr "Uitlijning"
+msgstr "Zarovnání"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
 msgid "Background Color"
-msgstr "Achtergrondkleur"
+msgstr "Barva pozadí"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
-msgstr "Geen"
+msgstr "Žádný"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
-msgstr "Aaneengesloten"
+msgstr "Plný"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
-msgstr "Diagonaal kruis"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
-msgstr "Diagonaal"
+msgstr "Diagonální"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
-msgstr "Achtergrondstijl"
+msgstr "Styl pozadí"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
-msgstr "Aangepaste kleur selecteren"
+msgstr ""
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:83
 #, kde-format
 msgid "Color"
-msgstr "Kleur"
+msgstr "Barva"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
 msgid "Eraser Size"
-msgstr "Grootte van gum"
+msgstr ""
 
 #: widgets/properties/widgets/fontsizewidget.cpp:37
 #, kde-format
 msgid "Font Size"
-msgstr "Tekengrootte"
+msgstr "Velikost písma"
 
 #: widgets/properties/widgets/opacitywidget.cpp:48
 #, kde-format
 msgid "Opacity"
-msgstr "Dekking"
+msgstr "Krytí"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
-msgstr "Streepjes"
+msgstr "Čárkovaný"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
-msgstr "Gestippeld"
+msgstr "Tečkovaný"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:63
 #, kde-format
 msgid "Stroke Style"
-msgstr "Streekstijl"
+msgstr ""
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:21
 #, kde-format
 msgid "Stroke Color"
-msgstr "Kleur van streek"
+msgstr "Barva tahu"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:31
 #, kde-format
 msgid "Thickness"
-msgstr "Dikte"
+msgstr "Tloušťka"
 
 #: widgets/properties/widgets/zorderwidget.cpp:47
 #, kde-format
 msgid "Z-order"
-msgstr "Z-volgorde"
+msgstr ""
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr "Afbeelding"
+msgstr "Obrázek"
 
 #: widgets/tools/imagetool.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Afbeelding invoegen"
+msgstr "Vložit obrázek"
 
 #: widgets/window/window.cpp:168
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Arrow Tool"
-#~ msgstr "Hulpmiddel voor pijl"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Diamond Tool"
-#~ msgstr "Hulpmiddel voor ruit"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Hulpmiddel voor ellips"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Eraser Tool"
-#~ msgstr "Hulpmiddel voor gum"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Pen Tool"
-#~ msgstr "Hulpmiddel voor pen"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Image Tool"
-#~ msgstr "Hulpmiddel voor afbeelding"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Line Tool"
-#~ msgstr "Lijnhulpmiddel"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "Hulpmiddel voor verplaatsen"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Hulpmiddel voor rechthoek"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Selection Tool"
-#~ msgstr "Selectiehulpmiddel"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Text Tool"
-#~ msgstr "Hulpmiddel voor tekst"
-
-#~ msgid "Update Property"
-#~ msgstr "Eigenschap bijwerken"
-
-#~ msgctxt "ActionsWidget|"
-#~ msgid "Actions"
-#~ msgstr "Acties"
-
-#~ msgctxt "ArrowStyleWidget|"
-#~ msgid "Arrow"
-#~ msgstr "Pijl"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Solid"
-#~ msgstr "Egaal"
-
-#~ msgctxt "QObject|"
-#~ msgid "Arrow Tool"
-#~ msgstr "Hulpmiddel voor pijl"
-
-#~ msgctxt "QObject|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Gereedschap voor ellips"
-
-#~ msgctxt "QObject|"
-#~ msgid "Eraser Tool"
-#~ msgstr "Hulpmiddel voor gum"
-
-#~ msgctxt "QObject|"
-#~ msgid "Line Tool"
-#~ msgstr "Lijnhulpmiddel"
-
-#~ msgctxt "QObject|"
-#~ msgid "Move Tool"
-#~ msgstr "Hulpmiddel voor verplaatsen"
-
-#~ msgctxt "QObject|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Gereedschap voor rechthoek"
-
-#~ msgctxt "QObject|"
-#~ msgid "Selection Tool"
-#~ msgstr "Selectiehulpmiddel"
-
-#~ msgctxt "QObject|"
-#~ msgid "Text Tool"
-#~ msgstr "Hulpmiddel voor tekst"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Top"
-#~ msgstr "Naar de top verplaatsen"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Up"
-#~ msgstr "Omhoog verplaatsen"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Down"
-#~ msgstr "Omlaag verplaatsen"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Bottom"
-#~ msgstr "Naar onderaan verplaatsen"
-
-#~ msgctxt "QObject|"
-#~ msgid "Your handy, infinite, brainstorming tool!"
-#~ msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Save to File"
-#~ msgstr "Naar bestand opslaan"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom Out"
-#~ msgstr "Uitzoomen"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom In"
-#~ msgstr "Inzoomen"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Undo"
-#~ msgstr "Ongedaan maken"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Redo"
-#~ msgstr "Opnieuw doen"
-
-#~ msgctxt "ConfigureGeneralWidget|"
-#~ msgid "Auto-save"
-#~ msgstr "Automatisch opslaan"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Do you want to restore autosave file?"
-#~ msgstr "Wilt u het automatisch opgeslagen bestand herstellen?"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Restore"
-#~ msgstr "Herstellen"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Do you want to save file?"
-#~ msgstr "Wilt u het bestand opslaan?"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Close"
-#~ msgstr "Sluiten"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Save And Close"
-#~ msgstr "Opslaan en sluiten"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Ignore"
-#~ msgstr "Negeren"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Export to Svg"
-#~ msgstr "Naar SVG exporteren"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Eraser Tool"
-#~ msgstr "Hulpmiddel voor gum"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Selection Tool"
-#~ msgstr "Selectiehulpmiddel"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Hulpmiddel voor rechthoek"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Hulpmiddel voor ellips"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Line Tool"
-#~ msgstr "Hulpmiddel voor lijn"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Text Tool"
-#~ msgstr "Hulpmiddel voor tekst"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Arrow Tool"
-#~ msgstr "Hulpmiddel voor pijl"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Move Tool"
-#~ msgstr "Hulpmiddel voor verplaatsen"
-
-#~ msgctxt "AlignmentWidget|"
-#~ msgid "Align Horizontal Center"
-#~ msgstr "Horizontaal centreren"
-
-#~ msgctxt "AlignmentWidget|"
-#~ msgid "Align Vertical Center"
-#~ msgstr "Vertical centreren"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Dot Line"
-#~ msgstr "Stippellijn"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to freeform drawing tool"
-#~ msgstr "Schakel om naar tekenhulpmiddel voor vrij vorm"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to eraser tool"
-#~ msgstr "Schakel om naar hulpmiddel voor gum"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to selection tool"
-#~ msgstr "Schakel om naar selectiehulpmiddel"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to rectangle drawing tool"
-#~ msgstr "Schakel om naar tekenhulpmiddel voor rechthoek"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to ellipse drawing tool"
-#~ msgstr "Schakel om naar tekenhulpmiddel voor ellips"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to line drawing tool"
-#~ msgstr "Schakel om naar tekenhulpmiddel voor lijn"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to the text tool"
-#~ msgstr "Omschakelen naar teksthulpmiddel"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to arrow drawing tool"
-#~ msgstr "Schakel om naar tekenhulpmiddel voor pijl"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to move tool"
-#~ msgstr "Scheel om naar hulpmiddel voor verplaatsen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Groups selected items"
-#~ msgstr "Groepeert geselecteerde items"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Ungroups selected groups"
-#~ msgstr "Maakt groepering in geselecteerde groepen ongedaan"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Deletes selected items"
-#~ msgstr "Verwijdert geselecteerde items"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo"
-#~ msgstr "Ongedaan maken"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo last action"
-#~ msgstr "Laatste actie ongedaan maken"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo"
-#~ msgstr "Opnieuw doen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo last undone action"
-#~ msgstr "Laatste ongedaan gemaakte actie opnieuw uitvoeren"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom In"
-#~ msgstr "Inzoomen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom in"
-#~ msgstr "Inzoomen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom Out"
-#~ msgstr "Uitzoomen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom out"
-#~ msgstr "Uitzoomen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select all items"
-#~ msgstr "Alle items selecteren"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Save"
-#~ msgstr "Opslaan"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open File"
-#~ msgstr "Bestand openen"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open an existing file"
-#~ msgstr "Een bestaand bestand openen"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Lichte modus"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Donkere modus"
-
-#~ msgctxt "ActionManager|keybinding for the undo action"
-#~ msgid "Ctrl+Z"
-#~ msgstr "Ctrl+Z"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Y"
-#~ msgstr "Ctrl+Y"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Shift+Z"
-#~ msgstr "Ctrl+Shift+Z"
-
-#~ msgctxt "ActionManager|keybinding for the zoom in action"
-#~ msgid "Ctrl++"
-#~ msgstr "Ctrl++"
-
-#~ msgctxt "ActionManager|keybinding for the zoom out action"
-#~ msgid "Ctrl+-"
-#~ msgstr "Ctrl+-"
-
-#~ msgctxt "ActionManager|keybinding for the text tool"
-#~ msgid "T"
-#~ msgstr "T"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "P"
-#~ msgstr "P"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgctxt "ActionManager|keybinding for the eraser tool"
-#~ msgid "E"
-#~ msgstr "E"
-
-#~ msgctxt "ActionManager|keybinding for the selection tool"
-#~ msgid "S"
-#~ msgstr "S"
-
-#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-#~ msgid "R"
-#~ msgstr "R"
-
-#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-#~ msgid "O"
-#~ msgstr "O"
-
-#~ msgctxt "ActionManager|keybinding for the line drawing tool"
-#~ msgid "L"
-#~ msgstr "L"
-
-#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgctxt "ActionManager|keybinding for the move tool"
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgctxt "ActionManager|keybinding for the select all action"
-#~ msgid "Ctrl+A"
-#~ msgstr "Ctrl+A"
-
-#~ msgctxt "ActionManager|keybinding for the delete action"
-#~ msgid "Del"
-#~ msgstr "Del"
-
-#~ msgctxt "ActionManager|keybinding for the save action"
-#~ msgid "Ctrl+S"
-#~ msgstr "Ctrl+S"
-
-#~ msgctxt "ActionManager|keybinding for the open file action"
-#~ msgid "Ctrl+O"
-#~ msgstr "Ctrl+O"
-
-#~ msgctxt "ActionManager|keybinding for the group action"
-#~ msgid "Ctrl+G"
-#~ msgstr "Ctrl+G"
-
-#~ msgctxt "ActionManager|keybinding for the ungroup action"
-#~ msgid "Ctrl+Shift+G"
-#~ msgstr "Ctrl+Shift+G"
