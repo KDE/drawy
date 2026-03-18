@@ -23,8 +23,10 @@ void StrokeStyleActionsWidget::paintEvent(QPaintEvent *event)
 
     QPainter p(this);
 
+    constexpr int margin{9};
+
     QRectF r = rect();
-    r.adjust(5, 5, -5, -5);
+    r.adjust(margin, margin, -margin, -margin);
 
     p.setRenderHint(QPainter::Antialiasing);
 
