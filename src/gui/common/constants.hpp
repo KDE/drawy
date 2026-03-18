@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <KLocalizedString>
+
 #include <QColor>
 #include <QMargins>
 #include <QPen>
@@ -57,7 +59,7 @@ inline constexpr int viewportCacheMultiplier{2}; // For viewport cache; increasi
                                                  // increases memory usage
 
 inline const QString drawyFileExt{u"drawy"_s};
-inline const QString unsavedFileName{u"Untitled"_s};
+inline const QString unsavedFileName{i18nc("Default unsaved file name", "Untitled")};
 
 inline const QString drawyClipboardMime{u"application/x-drawy-clipboard"_s};
 
