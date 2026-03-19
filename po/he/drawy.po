@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 02:47+0000\n"
-"PO-Revision-Date: 2026-03-12 13:57+0200\n"
+"POT-Creation-Date: 2026-03-19 02:44+0000\n"
+"PO-Revision-Date: 2026-03-18 16:02+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -205,7 +205,7 @@ msgstr "הטיית עצם"
 msgid "Select Object"
 msgstr "בחירת עצם"
 
-#: widgets/command/ungroupcommand.cpp:76
+#: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "פריטת העצמים"
@@ -441,12 +441,10 @@ msgid "Activate Debug Mode"
 msgstr "הפעלת מצב ניפוי שגיאות"
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "ייצוא כ־SVG"
+msgstr "ייצוא כתמונה"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
@@ -614,28 +612,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:547
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "ייצוא ל־Svg"
+msgstr "ייצוא לתמונה"
 
 #: widgets/keybindings/actionmanager.cpp:605
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
-msgstr "המסמך „%1” נערך. לשמור את השינויים או לבטל אותם?"
+msgstr ""
+"המסמך „%1” נערך.\n"
+"לשמור את השינויים או לבטל אותם?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 02:47+0000\n"
-"PO-Revision-Date: 2026-03-12 08:14+0100\n"
+"POT-Creation-Date: 2026-03-19 02:44+0000\n"
+"PO-Revision-Date: 2026-03-18 10:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -207,7 +207,7 @@ msgstr "Gira l'objecte"
 msgid "Select Object"
 msgstr "Tria un objecte"
 
-#: widgets/command/ungroupcommand.cpp:76
+#: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Desagrupa objectes"
@@ -441,12 +441,10 @@ msgid "Activate Debug Mode"
 msgstr "Activa el mode de depuració"
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Exporta com a SVG"
+msgstr "Exporta com una imatge"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
@@ -614,29 +612,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:547
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Exporta cap a SVG"
+msgstr "Exporta cap a una imatge"
 
 #: widgets/keybindings/actionmanager.cpp:605
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"S'ha modificat el document «%1». Voleu guardar els canvis o descartar-los?"
+"S'ha modificat el document «%1».\n"
+"Voleu guardar els canvis o descartar-los?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format

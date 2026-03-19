@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 02:47+0000\n"
-"PO-Revision-Date: 2026-03-12 12:51+0300\n"
+"POT-Creation-Date: 2026-03-19 02:44+0000\n"
+"PO-Revision-Date: 2026-03-18 13:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -202,7 +202,7 @@ msgstr "Nesneyi Döndür"
 msgid "Select Object"
 msgstr "Nesneyi Seç"
 
-#: widgets/command/ungroupcommand.cpp:76
+#: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Nesneleri Gruptan Çıkar"
@@ -436,12 +436,10 @@ msgid "Activate Debug Mode"
 msgstr "Hata ayıklama kipini etkinleştir"
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "SVG Olarak Dışa Aktar"
+msgstr "GÖrsel Olarak Dışa Aktar"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
@@ -609,30 +607,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:547
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "SVG Olarak Dışa Aktar"
+msgstr "Görsel Olarak Dışa Aktar"
 
 #: widgets/keybindings/actionmanager.cpp:605
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"“%1” belgesinde değişiklikler yapıldı. Değişikliklerinizi kaydetmek mi yoksa "
-"atmak mı istiyorsunuz?"
+"“%1” belgesinde değişiklikler yapıldı.\n"
+"Değişikliklerinizi kaydetmek mi yoksa atmak mı istiyorsunuz?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format

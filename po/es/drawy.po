@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 02:47+0000\n"
-"PO-Revision-Date: 2026-03-12 12:08+0100\n"
+"POT-Creation-Date: 2026-03-19 02:44+0000\n"
+"PO-Revision-Date: 2026-03-18 10:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -206,7 +206,7 @@ msgstr "Rotar objeto"
 msgid "Select Object"
 msgstr "Seleccionar objeto"
 
-#: widgets/command/ungroupcommand.cpp:76
+#: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
 msgstr "Desagrupar objetos"
@@ -440,12 +440,10 @@ msgid "Activate Debug Mode"
 msgstr "Activar el modo de depuración"
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Exportar como SVG"
+msgstr "Exportar como imagen"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
@@ -613,30 +611,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:547
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Exportar a SVG"
+msgstr "Exportar a imagen"
 
 #: widgets/keybindings/actionmanager.cpp:605
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"El documento «%1» contiene modificaciones. ¿Quiere guardar los cambios o "
-"descartarlos?"
+"El documento «%1» contiene modificaciones.\n"
+"¿Quiere guardar los cambios o descartarlos?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format
