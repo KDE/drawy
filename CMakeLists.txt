@@ -16,10 +16,7 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 set(KF_MIN_VERSION "6.19.0")
 set(QT_REQUIRED_VERSION "6.9.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH
-    ${CMAKE_MODULE_PATH}
-    ${ECM_MODULE_PATH}
-)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(ECMQtDeclareLoggingCategory)
 include(ECMPoQmTools)
@@ -172,7 +169,7 @@ endif()
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(BUILD_TESTING)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+    find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
 endif()
 
