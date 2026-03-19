@@ -18,4 +18,6 @@ AboutData::AboutData()
 {
     addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
     addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
+    setProductName("drawy"_ba);
+    setOrganizationDomain("kde.org"_ba);
 }
