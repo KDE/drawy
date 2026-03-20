@@ -46,6 +46,7 @@ Q_SIGNALS:
     void currentFileStateChanged();
 
 private:
+    [[nodiscard]] QString unsavedFileName() const;
     QString m_currentFileName;
     bool m_currentFileModified{false};
     bool m_fileHasName{false};

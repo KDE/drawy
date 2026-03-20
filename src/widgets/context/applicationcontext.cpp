@@ -16,7 +16,7 @@
 
 ApplicationContext::ApplicationContext(QWidget *parent)
     : QObject{parent}
-    , m_currentFileName{Common::unsavedFileName}
+    , m_currentFileName{unsavedFileName()}
     , m_parentWidget{parent}
     , m_renderingContext(new RenderingContext(this))
     , m_spatialContext(new SpatialContext(this))
@@ -35,6 +35,11 @@ ApplicationContext::ApplicationContext(QWidget *parent)
 ApplicationContext::~ApplicationContext()
 {
     qCDebug(DRAWY_LOG) << "Object deleted: ApplicationContext";
+}
+
+QString ApplicationContext::unsavedFileName() const
+{
+    return i18nc("Default unsaved file name", "Untitled");
 }
 
 QString ApplicationContext::currentFileName() const
@@ -119,7 +124,7 @@ void ApplicationContext::reset()
     spatialContext()->reset();
     renderingContext()->reset();
 
-    m_currentFileName = Common::unsavedFileName;
+    m_currentFileName = unsavedFileName();
     m_currentFileModified = false;
     m_fileHasName = false;
     Q_EMIT currentFileStateChanged();
