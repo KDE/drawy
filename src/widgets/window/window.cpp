@@ -94,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     updateWindowTitle();
     connect(mApplicationContext, &ApplicationContext::currentFileStateChanged, this, &MainWindow::updateWindowTitle);
+    actionCollection->associateWidget(this);
 }
 
 MainWindow::~MainWindow() = default;
