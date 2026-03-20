@@ -152,7 +152,6 @@ void ArrowItem::drawItem(QPainter &painter, const QPointF &offset) const
     case ArrowUtils::ArrowType::Circle:
     case ArrowUtils::ArrowType::FullCircle:
     case ArrowUtils::ArrowType::Line:
-        break;
     case ArrowUtils::ArrowType::None:
         // Nothing
         break;
