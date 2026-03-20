@@ -55,17 +55,11 @@ QString ArrowUtils::iconFromArrowType(ArrowUtils::ArrowType type)
     // TODO need icons
     switch (type) {
     case ArrowUtils::ArrowType::None:
-        return {};
     case ArrowUtils::ArrowType::Arrow:
-        return u""_s;
     case ArrowUtils::ArrowType::Triangle:
-        return u""_s;
     case ArrowUtils::ArrowType::FullTriangle:
-        return u""_s;
     case ArrowUtils::ArrowType::Circle:
-        return u""_s;
     case ArrowUtils::ArrowType::FullCircle:
-        return u""_s;
     case ArrowUtils::ArrowType::Line:
         return u""_s;
     }
