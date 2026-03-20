@@ -60,8 +60,6 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     , m_actionCollection(actionCollection)
     , m_recentFiles(KStandardAction::openRecent(this, &ActionManager::openRecentFile, actionCollection))
 {
-    auto mainWindow{m_context->parentWidget()};
-
     KStandardActions::preferences(this, &ActionManager::configureSettings, actionCollection);
     KStandardActions::openNew(this, &ActionManager::newFile, actionCollection);
     KStandardActions::save(this, &ActionManager::saveCurrentFile, actionCollection);
@@ -126,7 +124,6 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 
-    actionCollection->associateWidget(mainWindow);
     actionCollection->readSettings();
 
     // managing actions
