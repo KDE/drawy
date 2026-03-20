@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-03-18 16:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -35,6 +35,13 @@ msgstr "Een optioneel argument 'bestand' "
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Uw handige, oneindige hulpmiddel voor brainstormen!"
+
+#: gui/common/constants.hpp:62
+#, fuzzy, kde-format
+#| msgid "Untitled.%1"
+msgctxt "Default unsaved file name"
+msgid "Untitled"
+msgstr "Naamloos.%1"
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
-"PO-Revision-Date: 2026-03-13 15:11+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-19 22:44+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -35,6 +35,13 @@ msgstr "Valfrjálst 'skrá' viðfang "
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Handhæga, óendanlega hugmyndaflæðitólið!"
+
+#: gui/common/constants.hpp:62
+#, fuzzy, kde-format
+#| msgid "Untitled.%1"
+msgctxt "Default unsaved file name"
+msgid "Untitled"
+msgstr "Ónefnt.%1"
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format
@@ -436,12 +443,10 @@ msgid "Activate Debug Mode"
 msgstr "Virkja villuleitarham"
 
 #: widgets/keybindings/actionmanager.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Flytja út sem SVG"
+msgstr "Flytja út sem mynd"
 
 #: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
@@ -609,29 +614,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:543
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:547
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Flytja út í SVG-skrá"
+msgstr "Flytja út í mynd"
 
 #: widgets/keybindings/actionmanager.cpp:605
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"Skjalinu \"%1\" hefur verið breytt. Viltu vista breytingarnar eða henda þeim?"
+"Skjalinu \"%1\" hefur verið breytt.\n"
+"Viltu vista það eða henda breytingunum?"
 
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format

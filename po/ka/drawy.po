@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -34,6 +34,13 @@ msgstr "არასავალდებული არგუმენტი '
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
+
+#: gui/common/constants.hpp:62
+#, fuzzy, kde-format
+#| msgid "Untitled.%1"
+msgctxt "Default unsaved file name"
+msgid "Untitled"
+msgstr "უსახელო.%1"
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format

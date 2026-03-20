@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-03-13 07:52+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -34,6 +34,13 @@ msgstr "Un argomento facoltativo 'file'"
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Il tuo pratico e infinito strumento di brainstorming!"
+
+#: gui/common/constants.hpp:62
+#, fuzzy, kde-format
+#| msgid "Untitled.%1"
+msgctxt "Default unsaved file name"
+msgid "Untitled"
+msgstr "Senza titolo.%1"
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format

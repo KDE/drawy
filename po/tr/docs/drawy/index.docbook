@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-kapplication "<application
+>Drawy</application
+>">
+  <!ENTITY kappname "&i18n-kapplication;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Turkish "INCLUDE">
+]>
+
+<!--
+	SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+	SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
+<book id="drawy" lang="&language;">
+
+<bookinfo id="drawyinfo">
+
+<title
+>Drawy El Kitabı</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Emir</firstname
+><surname
+>SARI</surname
+><affiliation
+><address
+><email
+>emir_sari@icloud.com</email
+></address
+></affiliation
+><contrib
+>Çeviri</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2026</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<legalnotice
+>&CCBYSA4Notice;</legalnotice>
+
+<date
+>2026‒02‒23</date>
+<releaseinfo
+></releaseinfo>
+
+<abstract>
+<para
+>Drawy, geliştirilmesi sürmekte olan, sonsuz bir tuvale sahip bir beyaz tahta aracıdır. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>beyaz tahta</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Giriş</title>
+<para
+>Drawy, Qt/C++ ile yazılan ve geliştirilmesi sürmekte olan, sonsuz bir tuvale sahip bir beyaz tahta aracıdır.</para>
+
+<sect1 id="using-kapp">
+<title
+>Drawy Kullanımı</title>
+
+<para
+>Drawy, Qt/C++ ile yazılan ve geliştirilmesi sürmekte olan, sonsuz bir tuvale sahip bir beyaz tahta aracıdır. Web tabanlı mükemmel bir araç olan Excalidraw’a alternatif olması amaçlanmaktadır.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Emeği Geçenler ve Lisans</title>
+
+<para
+>Drawy</para>
+<para
+>Program telif hakkı © 2026 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Belgelendirme telif hakkı © 2026 &Laurent.Montel; &Laurent.Montel.mail; </para>
+
+<para
+>Çeviri: Emir SARI<email
+>emir_sari@icloud.com</email
+></para
+> &underCCBYSA4; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-02-23 20:34+0100\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -35,6 +35,13 @@ msgstr "Ein optionales Argument „Datei“ "
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Ihr nützliches, unendliches Werkzeug zur Ideenfindung!"
+
+#: gui/common/constants.hpp:62
+#, fuzzy, kde-format
+#| msgid "Untitled.%1"
+msgctxt "Default unsaved file name"
+msgid "Untitled"
+msgstr "Unbenannt.%1"
 
 #: gui/item/arrowutils.cpp:36
 #, kde-format
