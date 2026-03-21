@@ -19,7 +19,8 @@ public:
     enum class Type : int8_t {
         Actions,
         Alignment,
-        ArrowStyle,
+        StartArrowType,
+        EndArrowType,
         BackgroundColor,
         BackgroundStyle,
         EraserSize,
@@ -35,7 +36,7 @@ public:
     Q_ENUM(Type)
 
     // used to show the widgets in the correct order
-    constexpr static int propertyPriority(Type type)
+    constexpr static int propertyPriority(const Type type)
     {
         switch (type) {
         case Type::StrokeColor:
@@ -48,22 +49,24 @@ public:
             return 4;
         case Type::StrokeWidth:
             return 5;
-        case Type::ArrowStyle:
+        case Type::StartArrowType:
             return 6;
-        case Type::Opacity:
+        case Type::EndArrowType:
             return 7;
-        case Type::EraserSize:
+        case Type::Opacity:
             return 8;
-        case Type::FontSize:
+        case Type::EraserSize:
             return 9;
-        case Type::Alignment:
+        case Type::FontSize:
             return 10;
-        case Type::ZOrder:
+        case Type::Alignment:
             return 11;
-        case Type::Actions:
+        case Type::ZOrder:
             return 12;
-        case Type::Null:
+        case Type::Actions:
             return 13;
+        case Type::Null:
+            return 14;
         }
 
         return 0;

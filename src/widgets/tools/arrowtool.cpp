@@ -12,7 +12,6 @@ ArrowTool::ArrowTool(ApplicationContext *context)
     : LineDrawingTool(context)
 {
     m_itemFactory = std::make_unique<ArrowFactory>();
-    m_properties += Property::Type::ArrowStyle;
 }
 
 QString ArrowTool::icon() const

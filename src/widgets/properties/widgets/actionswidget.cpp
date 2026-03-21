@@ -15,6 +15,7 @@
 #include "keybindings/actionmanager.hpp"
 #include "properties/property.hpp"
 using namespace Qt::Literals::StringLiterals;
+
 ActionsWidget::ActionsWidget(ActionManager *actionManager, QWidget *parent)
     : PropertyWidget{parent}
 {

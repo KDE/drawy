@@ -21,7 +21,7 @@
 #include "context/uicontext.hpp"
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
-#include "item/arrow.hpp"
+#include "item/arrow/arrow.hpp"
 #include "item/item.hpp"
 
 using namespace Qt::Literals::StringLiterals;
@@ -241,10 +241,6 @@ QList<Property::Type> SelectionTool::properties() const
 
         if (!selectedItems.empty()) {
             output += QList<Property::Type>{Property::Type::ZOrder, Property::Type::Actions};
-        }
-
-        if (hasArrow) {
-            output += QList<Property::Type>{Property::Type::ArrowStyle};
         }
 
         return output;

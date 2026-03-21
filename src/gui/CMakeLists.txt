@@ -26,8 +26,24 @@ target_sources(
         item/factory/diamondfactory.hpp
         item/factory/imagefactory.cpp
         item/factory/imagefactory.hpp
-        item/arrow.cpp
-        item/arrow.hpp
+        item/arrow/arrow.cpp
+        item/arrow/arrow.hpp
+        item/arrow/arrowhead.cpp
+        item/arrow/arrowhead.hpp
+        item/arrow/nonearrowhead.cpp
+        item/arrow/nonearrowhead.hpp
+        item/arrow/openarrowhead.cpp
+        item/arrow/openarrowhead.hpp
+        item/arrow/unfilledarrowhead.cpp
+        item/arrow/unfilledarrowhead.hpp
+        item/arrow/filledarrowhead.cpp
+        item/arrow/filledarrowhead.hpp
+        item/arrow/circlearrowhead.cpp
+        item/arrow/circlearrowhead.hpp
+        item/arrow/diamondarrowhead.cpp
+        item/arrow/diamondarrowhead.hpp
+        item/arrow/arrowutils.hpp
+        item/arrow/arrowutils.cpp
         item/ellipse.cpp
         item/ellipse.hpp
         item/freeform.cpp
@@ -48,8 +64,6 @@ target_sources(
         item/text.hpp
         item/itemutils.hpp
         item/itemutils.cpp
-        item/arrowutils.hpp
-        item/arrowutils.cpp
         item/diamond.cpp
         item/diamond.hpp
         properties/property.cpp

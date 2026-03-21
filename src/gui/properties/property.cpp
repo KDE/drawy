@@ -38,6 +38,10 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::Actions;
     } else if (str == u"StrokeStyle") {
         return Property::Type::StrokeStyle;
+    } else if (str == u"StartArrowType"_s) {
+        return Property::Type::StartArrowType;
+    } else if (str == u"EndArrowType"_s) {
+        return Property::Type::EndArrowType;
     } else if (str == u"BackgroundColor") {
         return Property::Type::BackgroundColor;
     } else if (str == u"BackgroundStyle") {
@@ -71,8 +75,10 @@ QString Property::convertEnumToString(Property::Type type)
         return u"BackgroundColor"_s;
     case Property::Type::BackgroundStyle:
         return u"BackgroundStyle"_s;
-    case Property::Type::ArrowStyle:
-        // We don't store Arrow in XML
+    case Property::Type::StartArrowType:
+        return u"StartArrowType"_s;
+    case Property::Type::EndArrowType:
+        return u"EndArrowType"_s;
     case Property::Type::Alignment:
         // We don't store Alignment in XML
         return {};
@@ -105,8 +111,10 @@ QString Property::information(Type type)
         return i18n("Change Background Color");
     case Property::Type::BackgroundStyle:
         return i18n("Change Background Style");
-    case Property::Type::ArrowStyle:
-        // We don't store Arrow in XML
+    case Property::Type::StartArrowType:
+        return i18n("Change Start Arrow Head");
+    case Property::Type::EndArrowType:
+        return i18n("Change End Arrow Head");
     case Property::Type::Alignment:
         // We don't store Alignment in XML
         return {};

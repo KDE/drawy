@@ -4,9 +4,8 @@
 
 add_library(
     libdrawywidgets
-    properties/widgets/arrowstyleactionswidget.h
-    properties/widgets/arrowstyleactionswidget.cpp
 )
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -48,8 +47,6 @@ target_sources(
         command/lockcommand.cpp
         command/zordercommand.hpp
         command/zordercommand.cpp
-        command/arrowtypecommand.hpp
-        command/arrowtypecommand.cpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp
         components/propertybar.cpp
@@ -127,12 +124,8 @@ target_sources(
         properties/widgets/alignmentwidget.cpp
         properties/widgets/zorderwidget.hpp
         properties/widgets/zorderwidget.cpp
-        properties/widgets/arrowstylewidget.cpp
-        properties/widgets/arrowstylewidget.hpp
         properties/widgets/backgroundstylewidget.cpp
         properties/widgets/backgroundstylewidget.hpp
-        properties/widgets/arrowbuttonactionswidget.cpp
-        properties/widgets/arrowbuttonactionswidget.hpp
         properties/widgets/backgroundstyleactionswidget.h
         properties/widgets/backgroundstyleactionswidget.cpp
         properties/widgets/strokestyleactionswidget.hpp

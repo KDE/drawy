@@ -26,7 +26,6 @@ void PropertyManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.widget(Property::Type::Opacity));
     QVERIFY(w.widget(Property::Type::ZOrder));
     QVERIFY(w.widget(Property::Type::Alignment));
-    QVERIFY(w.widget(Property::Type::ArrowStyle));
     QVERIFY(w.widget(Property::Type::BackgroundStyle));
 }
 
