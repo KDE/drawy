@@ -29,7 +29,7 @@ include(KDECMakeSettings)
 include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-set(SharedMimeInfo_MINIMUM_VERSION "1.3")
+set(SharedMimeInfo_MINIMUM_VERSION "1.10")
 find_package(SharedMimeInfo ${SharedMimeInfo_MINIMUM_VERSION} REQUIRED)
 
 kde_enable_exceptions()
