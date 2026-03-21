@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "startarrowtypewidget.hpp"
+#include "item/arrow/arrowutils.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QToolButton>
@@ -11,6 +12,8 @@ using namespace Qt::StringLiterals;
 StartArrowTypeWidget::StartArrowTypeWidget(QWidget *parent)
     : ArrowTypeWidget{parent}
 {
+    // default value
+    setValue(ArrowUtils::toString(ArrowHead::Type::None));
 }
 
 QString StartArrowTypeWidget::name() const

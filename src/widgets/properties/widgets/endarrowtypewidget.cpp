@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "endarrowtypewidget.hpp"
+#include "item/arrow/arrowutils.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QToolButton>
@@ -11,6 +12,7 @@ using namespace Qt::StringLiterals;
 EndArrowTypeWidget::EndArrowTypeWidget(QWidget *parent)
     : ArrowTypeWidget{parent}
 {
+    setValue(ArrowUtils::toString(ArrowHead::Type::Open));
 }
 
 QString EndArrowTypeWidget::name() const

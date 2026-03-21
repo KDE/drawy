@@ -13,8 +13,8 @@
 
 ArrowItem::ArrowItem()
 {
-    m_properties[Property::Type::StartArrowType] = Property{ArrowUtils::toString(ArrowHead::Type::Circle), Property::Type::StartArrowType};
-    m_properties[Property::Type::EndArrowType] = Property{ArrowUtils::toString(ArrowHead::Type::Diamond), Property::Type::EndArrowType};
+    m_properties[Property::Type::StartArrowType] = Property{ArrowUtils::toString(ArrowHead::Type::None), Property::Type::StartArrowType};
+    m_properties[Property::Type::EndArrowType] = Property{ArrowUtils::toString(ArrowHead::Type::Open), Property::Type::EndArrowType};
 }
 
 void ArrowItem::setStart(QPointF start)

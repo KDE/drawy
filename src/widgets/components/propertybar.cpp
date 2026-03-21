@@ -97,6 +97,7 @@ void PropertyBar::assignPropertyValue(Property::Type property, PropertyWidget *w
             propertyValue = item->property(property).variant();
         }
     }
+
     if (propertyValue.isValid()) {
         widget->setValue(propertyValue);
     }

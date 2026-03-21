@@ -12,6 +12,8 @@ public:
     explicit ArrowTool(ApplicationContext *context);
     ~ArrowTool() override = default;
 
+    void mousePressed(ApplicationContext *context) override;
+
     [[nodiscard]] Tool::Type type() const override;
     [[nodiscard]] QString icon() const override;
 };
