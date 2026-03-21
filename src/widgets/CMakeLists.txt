@@ -100,6 +100,12 @@ target_sources(
         properties/widgets/actionswidget.hpp
         properties/widgets/erasersizewidget.cpp
         properties/widgets/erasersizewidget.hpp
+        properties/widgets/arrowtypewidget.cpp
+        properties/widgets/arrowtypewidget.hpp
+        properties/widgets/startarrowtypewidget.cpp
+        properties/widgets/startarrowtypewidget.hpp
+        properties/widgets/endarrowtypewidget.cpp
+        properties/widgets/endarrowtypewidget.hpp
         properties/widgets/fontsizewidget.cpp
         properties/widgets/fontsizewidget.hpp
         properties/widgets/propertymanager.cpp

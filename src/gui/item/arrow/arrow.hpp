@@ -29,6 +29,8 @@ public:
     QPointF getLineStart() const;
     QPointF getLineEnd() const;
 
+    void updateAfterProperty() override;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 

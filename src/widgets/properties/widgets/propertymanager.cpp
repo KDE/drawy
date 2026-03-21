@@ -6,6 +6,7 @@
 
 #include "actionswidget.hpp"
 #include "backgroundcolorwidget.hpp"
+#include "endarrowtypewidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
 #include "keybindings/actionmanager.hpp"
@@ -14,6 +15,7 @@
 #include "properties/widgets/backgroundstylewidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
 #include "properties/widgets/zorderwidget.hpp"
+#include "startarrowtypewidget.hpp"
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
@@ -31,6 +33,8 @@ PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     m_widgets[Property::Type::ZOrder] = new ZOrderWidget(actionManager, parent);
     m_widgets[Property::Type::Alignment] = new AlignmentWidget(actionManager, parent);
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);
+    m_widgets[Property::Type::StartArrowType] = new StartArrowTypeWidget(parent);
+    m_widgets[Property::Type::EndArrowType] = new EndArrowTypeWidget(parent);
 
     for (auto i = m_widgets.cbegin(), end = m_widgets.cend(); i != end; ++i) {
         connect(i.value(), &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

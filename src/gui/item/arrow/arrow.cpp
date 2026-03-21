@@ -10,7 +10,6 @@
 #include "serializer/arrowserializer.hpp"
 #include <QJsonObject>
 #include <QPainterPath>
-#include <qnamespace.h>
 
 ArrowItem::ArrowItem()
 {
@@ -119,7 +118,13 @@ void ArrowItem::updatePath()
 
 bool ArrowItem::intersects(const QRectF &rect)
 {
-    return m_path.intersects(rect);
+    return transformObj().map(m_path).intersects(rect);
+}
+
+void ArrowItem::updateAfterProperty()
+{
+    updatePath();
+    Item::updateAfterProperty();
 }
 
 QDebug operator<<(QDebug d, const ArrowItem &t)

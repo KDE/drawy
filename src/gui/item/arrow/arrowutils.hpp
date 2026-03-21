@@ -6,10 +6,11 @@
 
 #pragma once
 #include "arrowhead.hpp"
+#include "libdrawygui_export.h"
 #include <QString>
 
 namespace ArrowUtils
 {
-QString toString(ArrowHead::Type arrowType);
-ArrowHead::Type fromString(const QString &arrowType);
+[[nodiscard]] LIBDRAWYGUI_EXPORT QString toString(ArrowHead::Type arrowType);
+[[nodiscard]] LIBDRAWYGUI_EXPORT ArrowHead::Type fromString(const QString &arrowType);
 } // namespace ArrowUtils
