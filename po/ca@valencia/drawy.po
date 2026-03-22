@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:42+0000\n"
-"PO-Revision-Date: 2026-03-18 10:57+0100\n"
+"PO-Revision-Date: 2026-03-20 09:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -287,11 +287,10 @@ msgid "Developer"
 msgstr "Desenvolupador"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Sense_títol.%1"
+msgstr "Sense títol"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
