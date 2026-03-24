@@ -30,8 +30,6 @@ void ArrowTool::mousePressed(ApplicationContext *context)
             curItem->setProperty(Property::Type::StartArrowType, uiContext->propertyManager()->value(Property::Type::StartArrowType));
             curItem->setProperty(Property::Type::EndArrowType, uiContext->propertyManager()->value(Property::Type::EndArrowType));
         }
-
-        qDebug() << "Property: " << uiContext->propertyManager()->value(Property::Type::StartArrowType);
     }
 }
 
