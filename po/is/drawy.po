@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:42+0000\n"
-"PO-Revision-Date: 2026-03-19 22:44+0000\n"
+"PO-Revision-Date: 2026-03-23 09:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -282,11 +282,10 @@ msgid "Developer"
 msgstr "Forritari"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Ónefnt.%1"
+msgstr "Ónefnt"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format

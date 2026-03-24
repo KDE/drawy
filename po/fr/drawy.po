@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:42+0000\n"
-"PO-Revision-Date: 2026-02-26 21:49+0100\n"
+"PO-Revision-Date: 2026-03-22 15:16+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -39,7 +39,7 @@ msgstr "Votre outil de brainstorming pratique et sans limites !"
 #: gui/item/arrowutils.cpp:36
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: gui/item/arrowutils.cpp:38
 #: widgets/properties/widgets/arrowstylewidget.cpp:46
@@ -50,27 +50,25 @@ msgstr "Flèche"
 #: gui/item/arrowutils.cpp:40
 #, kde-format
 msgid "Triangle"
-msgstr ""
+msgstr "Triangle"
 
 #: gui/item/arrowutils.cpp:42
 #, kde-format
 msgid "Full Triangle"
-msgstr ""
+msgstr "Triangle rempli"
 
 #: gui/item/arrowutils.cpp:44
 #, kde-format
 msgid "Circle"
-msgstr ""
+msgstr "Cercle"
 
 #: gui/item/arrowutils.cpp:46
 #, kde-format
 msgid "Full Circle"
-msgstr ""
+msgstr "Cercle rempli"
 
 #: gui/item/arrowutils.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Line"
+#, kde-format
 msgid "Line"
 msgstr "Ligne"
 
@@ -148,10 +146,9 @@ msgid "Align Items"
 msgstr "Aligner les objets"
 
 #: widgets/command/arrowtypecommand.cpp:65
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change Arrow Type"
-msgstr "Changer le style du trait"
+msgstr "Changer le style de flèche"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -188,12 +185,11 @@ msgid "Move Object"
 msgstr "Déplacer l'objet"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "Supprimer l'objet"
-msgstr[1] "Supprimer l'objet"
+msgstr[0] "Supprimer un objet"
+msgstr[1] "Supprimer %1 objets"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
@@ -237,7 +233,7 @@ msgstr "%1 %"
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #: widgets/components/toolbuttonplugin.cpp:31
 #, kde-format
@@ -290,11 +286,10 @@ msgid "Developer"
 msgstr "Développeur"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Sans titre.%1"
+msgstr "Sans titre"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
@@ -414,21 +409,19 @@ msgid "Restore previous session on start"
 msgstr "Restaurer la session précédente au démarrage"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "Effacer le canevas"
+msgstr "Canevas"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light theme color"
-msgstr ""
+msgstr "Couleur du thème clair"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark theme color"
-msgstr ""
+msgstr "Couleur du thème sombre"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -453,12 +446,10 @@ msgid "Activate Debug Mode"
 msgstr "Activer le mode débogage"
 
 #: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Exporter en SVG"
+msgstr "Exporter en tant qu'image"
 
 #: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
@@ -539,17 +530,13 @@ msgid "Move Tool"
 msgstr "Outil de déplacement"
 
 #: widgets/keybindings/actionmanager.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "Outil de rectangle"
+msgstr "Outil d'image"
 
 #: widgets/keybindings/actionmanager.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Outil de losange"
@@ -630,30 +617,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:540
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG (*.svg)"
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:544
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Exporter en SVG"
+msgstr "Exporter en tant qu'image"
 
 #: widgets/keybindings/actionmanager.cpp:602
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"Le document « %1 » a été modifié. Voulez-vous enregistrer ou abandonner vos "
-"modifications ?"
+"Le document « %1 » a été modifié.\n"
+"Voulez-vous enregistrer ou abandonner vos modifications ?"
 
 #: widgets/keybindings/actionmanager.cpp:606
 #, kde-format
@@ -729,7 +710,7 @@ msgstr "Couleur d'arrière-plan"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
@@ -816,14 +797,13 @@ msgstr "Ordre d'empilement"
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #: widgets/tools/imagetool.cpp:56
-#, fuzzy, kde-format
-#| msgid "Insert Object"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Insérer l'objet"
+msgstr "Insérer une image"
 
 #: widgets/window/window.cpp:169
 #, kde-format

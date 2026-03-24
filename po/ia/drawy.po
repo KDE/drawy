@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-21 00:42+0000\n"
-"PO-Revision-Date: 2026-03-18 10:33+0100\n"
+"PO-Revision-Date: 2026-03-23 16:54+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -283,11 +283,10 @@ msgid "Developer"
 msgstr "Disveloppator"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Sin titulo.%1"
+msgstr "Sin titulo"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
