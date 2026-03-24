@@ -29,10 +29,7 @@ Canvas::Canvas(QWidget *parent)
     setAcceptDrops(true);
 }
 
-Canvas::~Canvas()
-{
-    Q_EMIT destroyed();
-}
+Canvas::~Canvas() = default;
 
 QSize Canvas::sizeHint() const
 {
@@ -219,8 +216,6 @@ bool Canvas::event(QEvent *event)
 
 void Canvas::resize()
 {
-    Q_EMIT resizeStart();
-
     if (m_canvas->paintingActive() || m_overlay->paintingActive()) {
         return;
     }
@@ -246,7 +241,6 @@ void Canvas::resize()
 
     canvasPainter.end();
     overlayPainter.end();
-    Q_EMIT resizeEnd();
 }
 
 // returns a copy of the content on the canvas

@@ -36,10 +36,8 @@ public:
     void dragLeave();
     void drop();
 
-public Q_SLOTS:
-    void renderZoom();
-
 private:
+    void renderZoom();
     ApplicationContext *const m_context;
     qint64 m_lastTime{};
     qint64 m_lastClickTime{};

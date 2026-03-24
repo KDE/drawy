@@ -42,9 +42,6 @@ Q_SIGNALS:
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
     void resizeEventCalled();
-    void resizeStart();
-    void resizeEnd();
-    void destroyed();
     void leave(QEvent *event);
     void dragEnter(QDragEnterEvent *event);
     void dragMove(QDragMoveEvent *event);
