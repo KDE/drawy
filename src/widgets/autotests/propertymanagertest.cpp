@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "propertymanagertest.hpp"
+#include "context/applicationcontext.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include <QTest>
 QTEST_MAIN(PropertyManagerTest)
@@ -15,7 +16,8 @@ PropertyManagerTest::PropertyManagerTest(QObject *parent)
 
 void PropertyManagerTest::shouldHaveDefaultValues()
 {
-    PropertyManager w(nullptr);
+    ApplicationContext context;
+    PropertyManager w(nullptr, &context, nullptr);
     QVERIFY(w.widget(Property::Type::StrokeWidth));
     QVERIFY(w.widget(Property::Type::StrokeColor));
     QVERIFY(w.widget(Property::Type::StrokeStyle));
@@ -27,6 +29,8 @@ void PropertyManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.widget(Property::Type::ZOrder));
     QVERIFY(w.widget(Property::Type::Alignment));
     QVERIFY(w.widget(Property::Type::BackgroundStyle));
+    QVERIFY(w.widget(Property::Type::StartArrowType));
+    QVERIFY(w.widget(Property::Type::EndArrowType));
 }
 
 #include "moc_propertymanagertest.cpp"

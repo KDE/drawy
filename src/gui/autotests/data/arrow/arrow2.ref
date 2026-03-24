@@ -3,10 +3,17 @@
         "x": 8,
         "y": 7.5
     },
-    "endArrow": "Arrow",
     "id": "4d8b0fe427a143a4b553399816007640",
     "locked": true,
     "properties": [
+        {
+            "type": "StartArrowType",
+            "value": "None"
+        },
+        {
+            "type": "EndArrowType",
+            "value": "Open"
+        },
         {
             "type": "Opacity",
             "value": 255
@@ -28,7 +35,6 @@
         "x": 0.7,
         "y": 5
     },
-    "startArrow": "None",
     "transform": {
         "m11": 1,
         "m12": 0,

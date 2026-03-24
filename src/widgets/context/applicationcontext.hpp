@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include <QWidget>
 class RenderingContext;
 class SpatialContext;
@@ -15,7 +16,7 @@ class MimeManager;
  * @note: This class was made a Singleton recently, so in many places it is
  * still accessed by passing its pointer instead of using the `instance` method.
  */
-class ApplicationContext : public QObject
+class LIBDRAWYWIDGETS_TESTS_EXPORT ApplicationContext : public QObject
 {
     Q_OBJECT
 public:

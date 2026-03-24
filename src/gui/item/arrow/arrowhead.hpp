@@ -4,11 +4,12 @@
 
 #pragma once
 
+#include "libdrawygui_export.h"
 #include <QObject>
 #include <QPainter>
 #include <QPainterPath>
 
-class ArrowHead
+class LIBDRAWYGUI_EXPORT ArrowHead
 {
     Q_GADGET
 public:

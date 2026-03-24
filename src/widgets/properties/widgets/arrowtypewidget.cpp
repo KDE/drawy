@@ -3,10 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "arrowtypewidget.hpp"
+#include "context/uicontext.hpp"
+#include "iconmanager/iconmanager.hpp"
 #include "item/arrow/arrowhead.hpp"
 #include "item/arrow/arrowutils.hpp"
 
-#include "properties/property.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QGridLayout>
@@ -14,7 +15,7 @@
 #include <QToolButton>
 using namespace Qt::StringLiterals;
 
-ArrowTypeWidget::ArrowTypeWidget(QWidget *parent)
+ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
     : PropertyWidget{parent}
     , m_group{new QButtonGroup{parent}}
 {
@@ -39,23 +40,26 @@ ArrowTypeWidget::ArrowTypeWidget(QWidget *parent)
     };
 
     // buttons
-    const QList<ArrowData> arrowHeads{{ArrowHead::Type::None, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "None")},
-                                      {ArrowHead::Type::Open, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "Open Arrow")},
-                                      {ArrowHead::Type::Unfilled, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "Triangle")},
-                                      {ArrowHead::Type::Filled, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "Filled Triangle")},
-                                      {ArrowHead::Type::Circle, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "Circle")},
-                                      {ArrowHead::Type::Diamond, u"draw-arrow"_s, i18nc("Tooltip for arrow head", "Diamond")}};
+    const QList<ArrowData> arrowHeads{{ArrowHead::Type::None, u"none-arrow"_s, i18nc("Tooltip for arrow head", "None")},
+                                      {ArrowHead::Type::Open, u"open-arrow"_s, i18nc("Tooltip for arrow head", "Open Arrow")},
+                                      {ArrowHead::Type::Unfilled, u"unfilled-arrow"_s, i18nc("Tooltip for arrow head", "Triangle")},
+                                      {ArrowHead::Type::Filled, u"filled-arrow"_s, i18nc("Tooltip for arrow head", "Filled Triangle")},
+                                      {ArrowHead::Type::Circle, u"circle-arrow"_s, i18nc("Tooltip for arrow head", "Circle")},
+                                      {ArrowHead::Type::Diamond, u"diamond-arrow"_s, i18nc("Tooltip for arrow head", "Diamond")}};
 
     constexpr int maxCols{4};
     int gridRow{0};
     int gridCol{0};
 
+    auto iconManager{context->uiContext()->iconManager()};
+
     for (const auto &head : arrowHeads) {
         auto *btn = new QToolButton{menu};
         btn->setProperty("arrow-head", ArrowUtils::toString(head.type));
-        btn->setIcon(QIcon::fromTheme(head.icon));
         btn->setToolTip(head.tooltip);
         btn->setCheckable(true);
+        btn->setProperty("icon-name", head.icon);
+        iconManager->setIcon(btn, head.icon);
 
         m_group->addButton(btn, static_cast<int>(head.type));
         gridLayout->addWidget(btn, gridRow, gridCol);
@@ -77,7 +81,9 @@ ArrowTypeWidget::ArrowTypeWidget(QWidget *parent)
     layout->addWidget(expandButton);
     layout->addStretch();
 
-    connect(m_group, &QButtonGroup::idClicked, this, [this]([[maybe_unused]] int id) -> void {
+    connect(m_group, &QButtonGroup::idToggled, this, [this, expandButton, iconManager, menu]() -> void {
+        iconManager->setIcon(expandButton, m_group->checkedButton()->property("icon-name").value<QString>());
+        menu->hide();
         Q_EMIT changed(value());
     });
 

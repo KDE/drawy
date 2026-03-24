@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg1"
+   width="22"
+   height="22"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <style
+     type="text/css"
+     id="current-color-scheme">
+	.ColorScheme-Text {
+		color: currentColor;
+	}</style>
+  <path
+     style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;enable-background:accumulate;stop-opacity:1"
+     d="M 17.976562,3.1738281 3.0195313,18.132812 3.8144531,18.929687 18.773437,3.9707031 Z"
+     id="path2" />
+</svg>

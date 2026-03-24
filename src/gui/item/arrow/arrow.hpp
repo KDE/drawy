@@ -31,6 +31,8 @@ public:
 
     void updateAfterProperty() override;
 
+    [[nodiscard]] bool operator==(const ArrowItem &other) const;
+
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 

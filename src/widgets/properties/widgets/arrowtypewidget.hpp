@@ -6,12 +6,13 @@
 
 #include "propertywidget.hpp"
 class QButtonGroup;
+class ApplicationContext;
 
 class ArrowTypeWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
-    explicit ArrowTypeWidget(QWidget *parent = nullptr);
+    explicit ArrowTypeWidget(ApplicationContext *context, QWidget *parent = nullptr);
 
     void setValue(const QVariant &value) override;
 

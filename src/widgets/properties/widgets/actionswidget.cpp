@@ -10,7 +10,6 @@
 #include <QWidget>
 
 #include "buttonactionswidget.hpp"
-#include "context/uicontext.hpp"
 
 #include "keybindings/actionmanager.hpp"
 #include "properties/property.hpp"

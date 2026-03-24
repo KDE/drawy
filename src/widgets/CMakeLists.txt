@@ -2,9 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(
-    libdrawywidgets
-)
+add_library(libdrawywidgets)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -219,6 +217,8 @@ target_sources(
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp
         dialog/misc/powermanagerwidget.cpp
+        iconmanager/iconmanager.hpp
+        iconmanager/iconmanager.cpp
         mime/drawymimehandler.cpp
         mime/drawymimehandler.hpp
         mime/textmimehandler.cpp

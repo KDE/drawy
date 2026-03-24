@@ -9,8 +9,8 @@
 #include <QToolButton>
 using namespace Qt::StringLiterals;
 
-StartArrowTypeWidget::StartArrowTypeWidget(QWidget *parent)
-    : ArrowTypeWidget{parent}
+StartArrowTypeWidget::StartArrowTypeWidget(ApplicationContext *context, QWidget *parent)
+    : ArrowTypeWidget{context, parent}
 {
     // default value
     setValue(ArrowUtils::toString(ArrowHead::Type::None));

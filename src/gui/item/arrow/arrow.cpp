@@ -127,6 +127,11 @@ void ArrowItem::updateAfterProperty()
     Item::updateAfterProperty();
 }
 
+bool ArrowItem::operator==(const ArrowItem &other) const
+{
+    return LineItem::operator==(other);
+}
+
 QDebug operator<<(QDebug d, const ArrowItem &t)
 {
     d.space() << "LineItem: " << static_cast<const LineItem &>(t);

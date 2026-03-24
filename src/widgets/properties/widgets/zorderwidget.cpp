@@ -6,7 +6,6 @@
 
 #include "zorderwidget.hpp"
 #include "buttonactionswidget.hpp"
-#include "context/uicontext.hpp"
 #include "keybindings/actionmanager.hpp"
 #include <KLocalizedString>
 #include <QHBoxLayout>
