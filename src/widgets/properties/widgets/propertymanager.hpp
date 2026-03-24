@@ -3,16 +3,19 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include "context/applicationcontext.hpp"
 #include "libdrawywidgets_private_export.h"
 #include "properties/property.hpp"
 #include "properties/widgets/propertywidget.hpp"
 #include <QObject>
+
 class ActionManager;
+
 class LIBDRAWYWIDGETS_TESTS_EXPORT PropertyManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit PropertyManager(ActionManager *actionManager, QWidget *parent = nullptr);
+    explicit PropertyManager(ActionManager *actionManager, ApplicationContext *context, QWidget *parent = nullptr);
     ~PropertyManager() override;
 
     [[nodiscard]] PropertyWidget *widget(const Property::Type type) const;

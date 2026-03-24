@@ -3,5 +3,20 @@
         <file>fonts/Inter.ttf</file>
         <file>fonts/FuzzyBubbles.ttf</file>
         <file>cursors/rotate.png</file>
+
+        <file>icons/dark/open-arrow.svg</file>
+        <file>icons/dark/filled-arrow.svg</file>
+        <file>icons/dark/unfilled-arrow.svg</file>
+        <file>icons/dark/circle-arrow.svg</file>
+        <file>icons/dark/diamond-arrow.svg</file>
+        <file>icons/dark/none-arrow.svg</file>
+
+        <file>icons/light/open-arrow.svg</file>
+        <file>icons/light/filled-arrow.svg</file>
+        <file>icons/light/unfilled-arrow.svg</file>
+        <file>icons/light/circle-arrow.svg</file>
+        <file>icons/light/diamond-arrow.svg</file>
+        <file>icons/light/none-arrow.svg</file>
+
     </qresource>
 </RCC>

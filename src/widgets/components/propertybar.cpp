@@ -6,6 +6,7 @@
 
 #include <QLabel>
 #include <QStyle>
+#include <qsharedpointer.h>
 #include <stdexcept>
 
 #include "context/applicationcontext.hpp"
@@ -40,6 +41,12 @@ void PropertyBar::updateToolProperties()
 
 void PropertyBar::updateProperties(Tool &tool)
 {
+    if (m_updateInProgress) {
+        return;
+    }
+
+    m_updateInProgress = true;
+
     // remove existing widgets
     QLayoutItem *curItem = nullptr;
     while ((curItem = m_layout->takeAt(0)) != nullptr) {
@@ -83,6 +90,8 @@ void PropertyBar::updateProperties(Tool &tool)
     }
 
     update();
+
+    m_updateInProgress = false;
 }
 
 void PropertyBar::assignPropertyValue(Property::Type property, PropertyWidget *widget)
@@ -97,6 +106,7 @@ void PropertyBar::assignPropertyValue(Property::Type property, PropertyWidget *w
             propertyValue = item->property(property).variant();
         }
     }
+
     if (propertyValue.isValid()) {
         widget->setValue(propertyValue);
     }

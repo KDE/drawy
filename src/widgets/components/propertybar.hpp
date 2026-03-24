@@ -27,4 +27,6 @@ private:
     QVBoxLayout *const m_layout;
     PropertyManager *m_propertyManager = nullptr;
     ApplicationContext *const m_context;
+
+    bool m_updateInProgress{false};
 };

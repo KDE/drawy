@@ -130,4 +130,14 @@ std::pair<qreal, qreal> extractScale(QTransform &transform)
 
     return {scaleX, scaleY};
 }
+
+qreal dist(const QPointF &first, const QPointF &second)
+{
+    return qSqrt(qPow(first.x() - second.x(), 2) + qPow(first.y() - second.y(), 2));
+}
+
+QPointF perp(const QPointF &vec)
+{
+    return unitVector({-vec.y(), vec.x()});
+}
 };

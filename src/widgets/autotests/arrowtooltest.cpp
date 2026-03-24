@@ -21,8 +21,8 @@ void ArrowToolTest::shouldHaveDefaultValues()
     QCOMPARE(t.type(), Tool::Type::Arrow);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
-                                                    << Property::Type::StrokeStyle << Property::Type::ArrowStyle;
-    QCOMPARE(t.allProperties().count(), 5);
+                                                    << Property::Type::StrokeStyle << Property::Type::StartArrowType << Property::Type::EndArrowType;
+    QCOMPARE(t.allProperties().count(), 6);
     for (const auto &prop : properties) {
         QVERIFY(t.allProperties().contains(prop));
     }

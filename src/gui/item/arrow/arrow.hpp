@@ -3,9 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
-#include "item/arrowutils.hpp"
 #include "item/line.hpp"
 #include "libdrawygui_export.h"
+#include <QPainterPath>
+class ArrowHead;
 
 class LIBDRAWYGUI_EXPORT ArrowItem : public LineItem
 {
@@ -23,12 +24,12 @@ public:
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
 
     void deserialize(const QJsonObject &obj) override;
+    [[nodiscard]] bool intersects(const QRectF &rect) override;
 
-    [[nodiscard]] ArrowUtils::ArrowType startArrow() const;
-    void setStartArrow(ArrowUtils::ArrowType newStartArrow);
+    QPointF getLineStart() const;
+    QPointF getLineEnd() const;
 
-    [[nodiscard]] ArrowUtils::ArrowType endArrow() const;
-    void setEndArrow(ArrowUtils::ArrowType newEndArrow);
+    void updateAfterProperty() override;
 
     [[nodiscard]] bool operator==(const ArrowItem &other) const;
 
@@ -36,14 +37,14 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
-    void calcArrowPoints();
-    QPointF m_arrowEndP1;
-    QPointF m_arrowEndP2;
-    QPointF m_arrowStartP1;
-    QPointF m_arrowStartP2;
-    ArrowUtils::ArrowType m_startArrow = ArrowUtils::ArrowType::None;
-    ArrowUtils::ArrowType m_endArrow = ArrowUtils::ArrowType::Arrow;
+    std::shared_ptr<ArrowHead> m_startArrowHead;
+    std::shared_ptr<ArrowHead> m_endArrowHead;
 
-    int m_maxArrowSize{15}; // hardcoded for now
+    void updatePath();
+
+    constexpr static qreal arrowHeadMaxWidth{20};
+
+    QPainterPath m_path{};
 };
+
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const ArrowItem &t);

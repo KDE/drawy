@@ -2,11 +2,8 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(
-    libdrawywidgets
-    properties/widgets/arrowstyleactionswidget.h
-    properties/widgets/arrowstyleactionswidget.cpp
-)
+add_library(libdrawywidgets)
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 target_sources(
@@ -48,8 +45,6 @@ target_sources(
         command/lockcommand.cpp
         command/zordercommand.hpp
         command/zordercommand.cpp
-        command/arrowtypecommand.hpp
-        command/arrowtypecommand.cpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp
         components/propertybar.cpp
@@ -103,6 +98,12 @@ target_sources(
         properties/widgets/actionswidget.hpp
         properties/widgets/erasersizewidget.cpp
         properties/widgets/erasersizewidget.hpp
+        properties/widgets/arrowtypewidget.cpp
+        properties/widgets/arrowtypewidget.hpp
+        properties/widgets/startarrowtypewidget.cpp
+        properties/widgets/startarrowtypewidget.hpp
+        properties/widgets/endarrowtypewidget.cpp
+        properties/widgets/endarrowtypewidget.hpp
         properties/widgets/fontsizewidget.cpp
         properties/widgets/fontsizewidget.hpp
         properties/widgets/propertymanager.cpp
@@ -127,12 +128,8 @@ target_sources(
         properties/widgets/alignmentwidget.cpp
         properties/widgets/zorderwidget.hpp
         properties/widgets/zorderwidget.cpp
-        properties/widgets/arrowstylewidget.cpp
-        properties/widgets/arrowstylewidget.hpp
         properties/widgets/backgroundstylewidget.cpp
         properties/widgets/backgroundstylewidget.hpp
-        properties/widgets/arrowbuttonactionswidget.cpp
-        properties/widgets/arrowbuttonactionswidget.hpp
         properties/widgets/backgroundstyleactionswidget.h
         properties/widgets/backgroundstyleactionswidget.cpp
         properties/widgets/strokestyleactionswidget.hpp
@@ -220,6 +217,8 @@ target_sources(
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp
         dialog/misc/powermanagerwidget.cpp
+        iconmanager/iconmanager.hpp
+        iconmanager/iconmanager.cpp
         mime/drawymimehandler.cpp
         mime/drawymimehandler.hpp
         mime/textmimehandler.cpp

@@ -6,19 +6,20 @@
 
 #include "actionswidget.hpp"
 #include "backgroundcolorwidget.hpp"
+#include "endarrowtypewidget.hpp"
 #include "erasersizewidget.hpp"
 #include "fontsizewidget.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "opacitywidget.hpp"
 #include "properties/widgets/alignmentwidget.hpp"
-#include "properties/widgets/arrowstylewidget.hpp"
 #include "properties/widgets/backgroundstylewidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
 #include "properties/widgets/zorderwidget.hpp"
+#include "startarrowtypewidget.hpp"
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
-PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
+PropertyManager::PropertyManager(ActionManager *actionManager, ApplicationContext *context, QWidget *parent)
     : QObject{parent}
 {
     m_widgets[Property::Type::StrokeWidth] = new StrokeWidthWidget(parent);
@@ -31,8 +32,9 @@ PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     m_widgets[Property::Type::Opacity] = new OpacityWidget(parent);
     m_widgets[Property::Type::ZOrder] = new ZOrderWidget(actionManager, parent);
     m_widgets[Property::Type::Alignment] = new AlignmentWidget(actionManager, parent);
-    m_widgets[Property::Type::ArrowStyle] = new ArrowStyleWidget(actionManager, parent);
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);
+    m_widgets[Property::Type::StartArrowType] = new StartArrowTypeWidget(context, parent);
+    m_widgets[Property::Type::EndArrowType] = new EndArrowTypeWidget(context, parent);
 
     for (auto i = m_widgets.cbegin(), end = m_widgets.cend(); i != end; ++i) {
         connect(i.value(), &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

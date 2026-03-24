@@ -24,6 +24,11 @@ namespace Common::Utils::Math
 [[nodiscard]] qreal length(const QPointF &vector);
 
 /**
+ * @brief get distance between two points
+ */
+[[nodiscard]] qreal dist(const QPointF &first, const QPointF &second);
+
+/**
  * @brief normalizes a vector
  * @param vector the vector you want to normalize as a QPointF
  * @returns the normalized vector as a QPointF
@@ -82,4 +87,9 @@ namespace Common::Utils::Math
  * @returns a pair containing scaleX and scaleY
  */
 [[nodiscard]] std::pair<qreal, qreal> extractScale(QTransform &transform);
+
+/**
+ * @brief returns a unit vector perpendicular to the given vector
+ */
+[[nodiscard]] QPointF perp(const QPointF &vec);
 } // namespace Common::Utils::Math

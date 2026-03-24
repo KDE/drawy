@@ -4,7 +4,7 @@
 
 #include "arrowfactory.hpp"
 
-#include "item/arrow.hpp"
+#include "item/arrow/arrow.hpp"
 
 ArrowFactory::ArrowFactory() = default;
 

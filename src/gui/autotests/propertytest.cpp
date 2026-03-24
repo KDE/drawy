@@ -41,7 +41,6 @@ void PropertyTest::shouldConvertEnumToString()
     QCOMPARE(Property::convertEnumToString(Property::Type::Actions), u"Actions"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::ZOrder), u"ZOrder"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Alignment), QString());
-    QCOMPARE(Property::convertEnumToString(Property::Type::ArrowStyle), QString());
     QCOMPARE(Property::convertEnumToString(Property::Type::Null), QString());
 }
 

@@ -5,7 +5,7 @@
  */
 #include "itemutils.hpp"
 #include "drawy_gui_debug.h"
-#include "item/arrow.hpp"
+#include "item/arrow/arrow.hpp"
 #include "item/diamond.hpp"
 #include "item/ellipse.hpp"
 #include "item/freeform.hpp"

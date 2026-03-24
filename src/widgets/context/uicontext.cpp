@@ -18,6 +18,7 @@
 #include "drawy_debug.h"
 #include "drawyglobalconfig.h"
 #include "event/event.hpp"
+#include "iconmanager/iconmanager.hpp"
 #include "keybindings/actionmanager.hpp"
 #include "keybindings/keybindmanager.hpp"
 #include "pluginform/pluginformmanager.hpp"
@@ -58,7 +59,7 @@ UIContext::~UIContext()
 void UIContext::initializeUIContext()
 {
     m_actionManager = new ActionManager(m_keybindManager->actionCollection(), m_applicationContext);
-
+    m_iconManager = new IconManager(m_applicationContext);
     m_propertyBar = new PropertyBar(m_applicationContext, m_applicationContext->parentWidget());
 
     m_topWidgets = new TopWidgets(m_applicationContext, m_applicationContext->parentWidget());
@@ -89,13 +90,14 @@ void UIContext::initializeUIContext()
     connect(m_applicationContext->renderingContext(), &RenderingContext::zoomFactorChanged, m_bottomLeftWidgets, &BottomLeftWidgets::zoomFactorChanged);
     m_topLeftWidgets = new TopLeftWidgets(m_actionManager, m_applicationContext->parentWidget());
 
-    m_propertyManager = new PropertyManager(m_actionManager, m_propertyBar);
+    m_propertyManager = new PropertyManager(m_actionManager, m_applicationContext, m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
+    connect(this, &UIContext::themeChanged, m_iconManager, &IconManager::slotUpdateIcons);
 
     connect(DrawyGlobalConfig::self(), &DrawyGlobalConfig::configChanged, this, &UIContext::slotThemeChanged);
     slotThemeChanged();
@@ -103,13 +105,18 @@ void UIContext::initializeUIContext()
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
 
+bool UIContext::isDarkTheme() const
+{
+    const QColor bgColor = QGuiApplication::palette().color(QPalette::Window);
+    return bgColor.lightnessF() < 0.5;
+}
+
 void UIContext::slotThemeChanged()
 {
-    QColor bgColor = QGuiApplication::palette().color(QPalette::Window);
-    bool isDarkTheme = bgColor.lightnessF() < 0.5;
-    bgColor = isDarkTheme ? DrawyGlobalConfig::backgroundColorDark() : DrawyGlobalConfig::backgroundColorLight();
+    const bool isDark = isDarkTheme();
+    const auto bgColor = isDark ? DrawyGlobalConfig::backgroundColorDark() : DrawyGlobalConfig::backgroundColorLight();
     m_applicationContext->renderingContext()->setCanvasBackground(bgColor);
-    Q_EMIT themeChanged(isDarkTheme);
+    Q_EMIT themeChanged(isDark);
 }
 
 ToolBar *UIContext::toolBar() const
@@ -150,6 +157,11 @@ ActionManager *UIContext::actionManager() const
 PropertyManager *UIContext::propertyManager() const
 {
     return m_propertyManager;
+}
+
+IconManager *UIContext::iconManager() const
+{
+    return m_iconManager;
 }
 
 Event *UIContext::appEvent() const
