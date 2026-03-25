@@ -18,7 +18,7 @@ public:
     void slotUpdateIcons(bool isDarkTheme);
 
 private:
-    ApplicationContext *m_context;
+    ApplicationContext *const m_context;
     QHash<QAction *, QString> m_actionMap;
     QHash<QAbstractButton *, QString> m_buttonMap;
 };
