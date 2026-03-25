@@ -20,7 +20,7 @@
 
 namespace
 {
-std::shared_ptr<LineItem> getSelectedLineItem(ApplicationContext *context)
+std::shared_ptr<LineItem> getSelectedMoveLineItem(ApplicationContext *context)
 {
     const auto &selectedItems{context->selectionContext()->selectedItems()};
     Q_ASSERT(selectedItems.size() == 1);
@@ -31,7 +31,7 @@ std::shared_ptr<LineItem> getSelectedLineItem(ApplicationContext *context)
 void LineMoveTransformHandler::renderHandles(ApplicationContext *context)
 {
     auto &transformer{context->spatialContext()->coordinateTransformer()};
-    auto item{getSelectedLineItem(context)};
+    auto item{getSelectedMoveLineItem(context)};
 
     context->renderingContext()->canvas()->paintCanvas([item, &transformer](QPainter &painter) {
         painter.setPen(Common::selectionBorderPen());
@@ -52,5 +52,5 @@ bool LineMoveTransformHandler::shouldActivate(ApplicationContext *context)
     constexpr qreal cursorHitSize{20.0};
     const QRectF cursorHandle{createHandle(worldPos, cursorHitSize)};
 
-    return getSelectedLineItem(context)->intersects(cursorHandle);
+    return getSelectedMoveLineItem(context)->intersects(cursorHandle);
 }
