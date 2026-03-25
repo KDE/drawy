@@ -21,13 +21,13 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
 {
     m_widget = new QWidget{parent};
 
-    auto *layout = new QHBoxLayout{m_widget};
+    auto layout = new QHBoxLayout{m_widget};
     m_widget->setLayout(layout);
 
     // Menu
-    QMenu *menu = new QMenu{m_widget};
+    auto menu = new QMenu{m_widget};
 
-    auto *gridLayout = new QGridLayout{menu};
+    auto gridLayout = new QGridLayout{menu};
 
     menu->setLayout(gridLayout);
 
@@ -53,7 +53,7 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
     auto iconManager{context->uiContext()->iconManager()};
 
     for (const auto &head : arrowHeads) {
-        auto *btn = new QToolButton{menu};
+        auto btn = new QToolButton{menu};
         btn->setProperty("arrow-head", ArrowUtils::toString(head.type));
         btn->setToolTip(head.tooltip);
         btn->setCheckable(true);
@@ -71,7 +71,7 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
         }
     }
 
-    auto *expandButton = new QToolButton{m_widget};
+    auto expandButton = new QToolButton{m_widget};
     expandButton->setMenu(menu);
     expandButton->setPopupMode(QToolButton::InstantPopup);
     expandButton->setToolTip(i18nc("Tooltip for a button to change arrow head", "Select Arrow Head"));
@@ -93,7 +93,7 @@ void ArrowTypeWidget::setValue(const QVariant &value)
 {
     const auto stringValue{value.value<QString>()};
 
-    for (auto *button : m_group->buttons()) {
+    for (auto button : m_group->buttons()) {
         if (button->property("arrow-head").value<QString>() == stringValue) {
             button->setChecked(true);
             return;
