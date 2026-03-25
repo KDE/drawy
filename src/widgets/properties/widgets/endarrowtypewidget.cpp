@@ -24,3 +24,5 @@ const Property EndArrowTypeWidget::value() const
 {
     return Property{m_group->checkedButton()->property("arrow-head").value<QString>(), Property::Type::EndArrowType};
 }
+
+#include "moc_endarrowtypewidget.cpp"

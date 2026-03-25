@@ -25,3 +25,5 @@ const Property StartArrowTypeWidget::value() const
 {
     return Property{m_group->checkedButton()->property("arrow-head").value<QString>(), Property::Type::StartArrowType};
 }
+
+#include "moc_startarrowtypewidget.cpp"

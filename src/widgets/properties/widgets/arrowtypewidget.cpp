@@ -101,3 +101,5 @@ void ArrowTypeWidget::setValue(const QVariant &value)
         }
     }
 }
+
+#include "moc_arrowtypewidget.cpp"
