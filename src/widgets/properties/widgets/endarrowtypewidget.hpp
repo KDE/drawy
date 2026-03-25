@@ -5,7 +5,6 @@
 #pragma once
 
 #include "arrowtypewidget.hpp"
-class QButtonGroup;
 
 class EndArrowTypeWidget : public ArrowTypeWidget
 {

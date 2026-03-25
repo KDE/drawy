@@ -43,3 +43,5 @@ std::shared_ptr<ArrowHead> ArrowHead::create(ArrowHead::Type arrowType, const QP
 
     return std::make_shared<NoneArrowHead>(start, end);
 }
+
+#include "moc_arrowhead.cpp"

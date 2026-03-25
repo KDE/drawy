@@ -78,7 +78,7 @@ void PropertyBar::updateProperties(Tool &tool)
     for (Property::Type property : properties) {
         try {
             PropertyWidget *const widget{m_propertyManager->widget(property)};
-            auto *widgetLabel{new QLabel{widget->name(), this}};
+            auto widgetLabel{new QLabel{widget->name(), this}};
             m_layout->addWidget(widgetLabel);
             m_layout->addWidget(widget->widget());
 
