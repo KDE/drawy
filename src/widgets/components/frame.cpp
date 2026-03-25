@@ -27,7 +27,8 @@ void Frame::paintEvent([[maybe_unused]] QPaintEvent *event)
     const QPalette pal = palette();
 
     const QColor background = pal.color(QPalette::Window);
-    QColor borderColor = pal.color(QPalette::Light);
+    const bool isLightBackground = background.lightnessF() > 0.5;
+    QColor borderColor = isLightBackground ? pal.color(QPalette::Dark) : pal.color(QPalette::Light);
 
     const int radius = style()->pixelMetric(QStyle::PM_ToolBarItemMargin, nullptr, this);
 
