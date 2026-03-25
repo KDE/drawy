@@ -28,7 +28,6 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
     QMenu *menu = new QMenu{m_widget};
 
     auto *gridLayout = new QGridLayout{menu};
-    m_group = new QButtonGroup{menu};
 
     menu->setLayout(gridLayout);
 

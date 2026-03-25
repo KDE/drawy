@@ -17,5 +17,5 @@ public:
     void setValue(const QVariant &value) override;
 
 protected:
-    QButtonGroup *m_group;
+    QButtonGroup *const m_group;
 };
