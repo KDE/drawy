@@ -32,18 +32,24 @@ QString toString(ArrowHead::Type arrowType)
 
 ArrowHead::Type fromString(const QString &arrowType)
 {
-    if (arrowType == u"None"_s)
+    if (arrowType == u"None"_s) {
         return ArrowHead::Type::None;
-    if (arrowType == u"Open"_s)
+    }
+    if (arrowType == u"Open"_s) {
         return ArrowHead::Type::Open;
-    if (arrowType == u"Unfilled"_s)
+    }
+    if (arrowType == u"Unfilled"_s) {
         return ArrowHead::Type::Unfilled;
-    if (arrowType == u"Filled"_s)
+    }
+    if (arrowType == u"Filled"_s) {
         return ArrowHead::Type::Filled;
-    if (arrowType == u"Circle"_s)
+    }
+    if (arrowType == u"Circle"_s) {
         return ArrowHead::Type::Circle;
-    if (arrowType == u"Diamond"_s)
+    }
+    if (arrowType == u"Diamond"_s) {
         return ArrowHead::Type::Diamond;
+    }
 
     return ArrowHead::Type::None;
 }

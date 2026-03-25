@@ -99,8 +99,8 @@ void ArrowItem::updatePath()
 {
     m_path.clear();
 
-    ArrowHead::Type startType{ArrowUtils::fromString(property(Property::Type::StartArrowType).value<QString>())};
-    ArrowHead::Type endType{ArrowUtils::fromString(property(Property::Type::EndArrowType).value<QString>())};
+    const ArrowHead::Type startType{ArrowUtils::fromString(property(Property::Type::StartArrowType).value<QString>())};
+    const ArrowHead::Type endType{ArrowUtils::fromString(property(Property::Type::EndArrowType).value<QString>())};
 
     m_startArrowHead = ArrowHead::create(startType, start(), getLineStart());
     m_endArrowHead = ArrowHead::create(endType, end(), getLineEnd());
