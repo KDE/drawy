@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-21 02:41+0000\n"
+"POT-Creation-Date: 2026-03-25 02:47+0000\n"
 "PO-Revision-Date: 2026-03-17 08:45+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -38,89 +38,63 @@ msgstr "Volitelný argument 'file' "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
 
-#: gui/item/arrowutils.cpp:36
-#, kde-format
-msgid "None"
-msgstr "Žádný"
-
-#: gui/item/arrowutils.cpp:38
-#: widgets/properties/widgets/arrowstylewidget.cpp:46
-#, kde-format
-msgid "Arrow"
-msgstr "Šipka"
-
-#: gui/item/arrowutils.cpp:40
-#, kde-format
-msgid "Triangle"
-msgstr "Trojúhelník"
-
-#: gui/item/arrowutils.cpp:42
-#, kde-format
-msgid "Full Triangle"
-msgstr ""
-
-#: gui/item/arrowutils.cpp:44
-#, kde-format
-msgid "Circle"
-msgstr "Kolečko"
-
-#: gui/item/arrowutils.cpp:46
-#, kde-format
-msgid "Full Circle"
-msgstr ""
-
-#: gui/item/arrowutils.cpp:48
-#, kde-format
-msgid "Line"
-msgstr "Čára"
-
-#: gui/properties/property.cpp:91
+#: gui/properties/property.cpp:97
 #, kde-format
 msgid "Change Stroke Width"
 msgstr ""
 
-#: gui/properties/property.cpp:93
+#: gui/properties/property.cpp:99
 #, kde-format
 msgid "Change Stroke Color"
 msgstr ""
 
-#: gui/properties/property.cpp:95
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Opacity"
 msgstr "Změnit krytí"
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Font Size"
 msgstr "Změnit velikost písma"
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Eraser Size"
 msgstr ""
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:107
 #: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
 msgstr "Činnosti"
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Stroke Style"
 msgstr ""
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:111
 #, kde-format
 msgid "Change Background Color"
 msgstr "Změnit barvu pozadí"
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Background Style"
 msgstr ""
 
-#: gui/properties/property.cpp:114 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:115
+#, kde-format
+msgid "Change Start Arrow Head"
+msgstr ""
+
+#: gui/properties/property.cpp:117
+#, kde-format
+msgid "Change End Arrow Head"
+msgstr ""
+
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
 msgstr ""
@@ -145,11 +119,6 @@ msgstr ""
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
-msgstr ""
-
-#: widgets/command/arrowtypecommand.cpp:65
-#, kde-format
-msgid "Change Arrow Type"
 msgstr ""
 
 #: widgets/command/deselectcommand.cpp:48
@@ -284,61 +253,61 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Vývojář"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Výběr"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Obdélník"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Diamant"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elipsa"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Šipka"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Čára"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Guma"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -439,7 +408,7 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:79
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export as SVG"
@@ -447,177 +416,177 @@ msgctxt "@action"
 msgid "Export as Image"
 msgstr "Exportovat jako SVG"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Seskupit položky"
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:93
+#: widgets/keybindings/actionmanager.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Smazat"
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Nástroj výběru"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Nástroj pro obdélníky"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Nástroj pro elipsy"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Nástroj pro čáry"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Nástroj na text"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Nástroj pro přesouvání"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Odsunout do pozadí"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Přenést do popředí"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Ladění"
 
-#: widgets/keybindings/actionmanager.cpp:454
+#: widgets/keybindings/actionmanager.cpp:441
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Nepojmenovaný.%1"
 
-#: widgets/keybindings/actionmanager.cpp:456
-#: widgets/keybindings/actionmanager.cpp:520
+#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:507
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:457
+#: widgets/keybindings/actionmanager.cpp:444
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Uložit soubor"
 
-#: widgets/keybindings/actionmanager.cpp:479
+#: widgets/keybindings/actionmanager.cpp:466
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Vyčistit"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#: widgets/keybindings/actionmanager.cpp:536
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgid "Untitled.svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:539
+#: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:540
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "PNG (*.png)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:544
+#: widgets/keybindings/actionmanager.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Svg"
@@ -625,7 +594,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exportovat do SVG"
 
-#: widgets/keybindings/actionmanager.cpp:602
+#: widgets/keybindings/actionmanager.cpp:589
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -634,7 +603,7 @@ msgstr ""
 "Dokument \"%1\" byl změněn.\n"
 "Přejete si uložit změny nebo je zapomenout?"
 
-#: widgets/keybindings/actionmanager.cpp:606
+#: widgets/keybindings/actionmanager.cpp:593
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -658,46 +627,95 @@ msgctxt "@info:tooltip"
 msgid "Ungroup selection"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:29
+#: widgets/properties/widgets/alignmentwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Left"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:34
+#: widgets/properties/widgets/alignmentwidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Center"
 msgstr "Zarovnat na střed"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:39
+#: widgets/properties/widgets/alignmentwidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Right"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:44
+#: widgets/properties/widgets/alignmentwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Top"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:49
+#: widgets/properties/widgets/alignmentwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Middle"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:54
+#: widgets/properties/widgets/alignmentwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Bottom"
 msgstr ""
 
-#: widgets/properties/widgets/alignmentwidget.cpp:87
+#: widgets/properties/widgets/alignmentwidget.cpp:86
 #, kde-format
 msgid "Alignment"
 msgstr "Zarovnání"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "Tooltip for arrow head"
+msgid "None"
+msgstr "Žádný"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "Arrow"
+msgctxt "Tooltip for arrow head"
+msgid "Open Arrow"
+msgstr "Šipka"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, fuzzy, kde-format
+#| msgid "Triangle"
+msgctxt "Tooltip for arrow head"
+msgid "Triangle"
+msgstr "Trojúhelník"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, fuzzy, kde-format
+#| msgid "Triangle"
+msgctxt "Tooltip for arrow head"
+msgid "Filled Triangle"
+msgstr "Trojúhelník"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#, fuzzy, kde-format
+#| msgid "Circle"
+msgctxt "Tooltip for arrow head"
+msgid "Circle"
+msgstr "Kolečko"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Diamond"
+msgctxt "Tooltip for arrow head"
+msgid "Diamond"
+msgstr "Diamant"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#, kde-format
+msgctxt "Tooltip for a button to change arrow head"
+msgid "Select Arrow Head"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -745,6 +763,12 @@ msgstr ""
 msgid "Color"
 msgstr "Barva"
 
+#: widgets/properties/widgets/endarrowtypewidget.cpp:20
+#, kde-format
+msgctxt "Name of a property"
+msgid "End Arrow Head"
+msgstr ""
+
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
 msgid "Eraser Size"
@@ -759,6 +783,12 @@ msgstr "Velikost písma"
 #, kde-format
 msgid "Opacity"
 msgstr "Krytí"
+
+#: widgets/properties/widgets/startarrowtypewidget.cpp:21
+#, kde-format
+msgctxt "Name of a property"
+msgid "Start Arrow Head"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
@@ -787,7 +817,7 @@ msgstr "Barva tahu"
 msgid "Thickness"
 msgstr "Tloušťka"
 
-#: widgets/properties/widgets/zorderwidget.cpp:47
+#: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
 msgid "Z-order"
 msgstr ""
@@ -808,3 +838,6 @@ msgstr "Vložit obrázek"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Line"
+#~ msgstr "Čára"

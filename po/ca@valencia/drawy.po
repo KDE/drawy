@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-21 02:41+0000\n"
+"POT-Creation-Date: 2026-03-25 02:47+0000\n"
 "PO-Revision-Date: 2026-03-18 10:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -41,89 +41,65 @@ msgstr "Un argument «file» opcional "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
 
-#: gui/item/arrowutils.cpp:36
-#, kde-format
-msgid "None"
-msgstr "Cap"
-
-#: gui/item/arrowutils.cpp:38
-#: widgets/properties/widgets/arrowstylewidget.cpp:46
-#, kde-format
-msgid "Arrow"
-msgstr "Fletxa"
-
-#: gui/item/arrowutils.cpp:40
-#, kde-format
-msgid "Triangle"
-msgstr "Triangle"
-
-#: gui/item/arrowutils.cpp:42
-#, kde-format
-msgid "Full Triangle"
-msgstr "Triangle complet"
-
-#: gui/item/arrowutils.cpp:44
-#, kde-format
-msgid "Circle"
-msgstr "Cercle"
-
-#: gui/item/arrowutils.cpp:46
-#, kde-format
-msgid "Full Circle"
-msgstr "Cercle complet"
-
-#: gui/item/arrowutils.cpp:48
-#, kde-format
-msgid "Line"
-msgstr "Línia"
-
-#: gui/properties/property.cpp:91
+#: gui/properties/property.cpp:97
 #, kde-format
 msgid "Change Stroke Width"
 msgstr "Canvia l'amplària del traç"
 
-#: gui/properties/property.cpp:93
+#: gui/properties/property.cpp:99
 #, kde-format
 msgid "Change Stroke Color"
 msgstr "Canvia el color del traç"
 
-#: gui/properties/property.cpp:95
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Opacity"
 msgstr "Canvia l'opacitat"
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Font Size"
 msgstr "Canvia la mida de la lletra"
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Eraser Size"
 msgstr "Canvia la mida de l'esborrador"
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:107
 #: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
 msgstr "Accions"
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Stroke Style"
 msgstr "Canvia l'estil del traç"
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:111
 #, kde-format
 msgid "Change Background Color"
 msgstr "Canvia el color de fons"
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Background Style"
 msgstr "Canvia l'estil del fons"
 
-#: gui/properties/property.cpp:114 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:115
+#, fuzzy, kde-format
+#| msgid "Change Arrow Type"
+msgid "Change Start Arrow Head"
+msgstr "Canvia el tipus de fletxa"
+
+#: gui/properties/property.cpp:117
+#, fuzzy, kde-format
+#| msgid "Change Arrow Type"
+msgid "Change End Arrow Head"
+msgstr "Canvia el tipus de fletxa"
+
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Canvia l'ordre de Z"
@@ -149,11 +125,6 @@ msgstr "X Box"
 #, kde-format
 msgid "Align Items"
 msgstr "Alinea elements"
-
-#: widgets/command/arrowtypecommand.cpp:65
-#, kde-format
-msgid "Change Arrow Type"
-msgstr "Canvia el tipus de fletxa"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -286,61 +257,61 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Desenvolupador"
 
-#: widgets/context/uicontext.cpp:66
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Selecció"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Forma lliure"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Rectangle"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Diamant"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "El·lipse"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Fletxa"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Línia"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Esborrador"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -440,189 +411,189 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Activa el mode de depuració"
 
-#: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr "Exporta com una imatge"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Agrupa elements"
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Desagrupa elements"
 
-#: widgets/keybindings/actionmanager.cpp:93
+#: widgets/keybindings/actionmanager.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Neteja el llenç"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Eina de forma lliure"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Eina d'esborrador"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Eina de línies"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Eina de moure"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Eina d'imatges"
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Eina de diamant"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Envia al darrere"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Envia arrere"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta avant"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta al davant"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Depura"
 
-#: widgets/keybindings/actionmanager.cpp:454
+#: widgets/keybindings/actionmanager.cpp:441
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sense_títol.%1"
 
-#: widgets/keybindings/actionmanager.cpp:456
-#: widgets/keybindings/actionmanager.cpp:520
+#: widgets/keybindings/actionmanager.cpp:443
+#: widgets/keybindings/actionmanager.cpp:507
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:457
+#: widgets/keybindings/actionmanager.cpp:444
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Guarda el fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:479
+#: widgets/keybindings/actionmanager.cpp:466
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Segur que voleu netejar el llenç?"
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Neteja"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Obri un fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:536
+#: widgets/keybindings/actionmanager.cpp:523
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sense_títol .svg"
 
-#: widgets/keybindings/actionmanager.cpp:539
+#: widgets/keybindings/actionmanager.cpp:526
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:540
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:544
+#: widgets/keybindings/actionmanager.cpp:531
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporta cap a una imatge"
 
-#: widgets/keybindings/actionmanager.cpp:602
+#: widgets/keybindings/actionmanager.cpp:589
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -631,7 +602,7 @@ msgstr ""
 "S'ha modificat el document «%1».\n"
 "Voleu guardar els canvis o descartar-los?"
 
-#: widgets/keybindings/actionmanager.cpp:606
+#: widgets/keybindings/actionmanager.cpp:593
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -655,46 +626,95 @@ msgctxt "@info:tooltip"
 msgid "Ungroup selection"
 msgstr "Desagrupa la selecció"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:29
+#: widgets/properties/widgets/alignmentwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Left"
 msgstr "Alinea a l'esquerra"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:34
+#: widgets/properties/widgets/alignmentwidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Center"
 msgstr "Alinea al centre"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:39
+#: widgets/properties/widgets/alignmentwidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Right"
 msgstr "Alinea a la dreta"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:44
+#: widgets/properties/widgets/alignmentwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Top"
 msgstr "Alinea a dalt"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:49
+#: widgets/properties/widgets/alignmentwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Middle"
 msgstr "Alinea al mig"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:54
+#: widgets/properties/widgets/alignmentwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Bottom"
 msgstr "Alinea a baix"
 
-#: widgets/properties/widgets/alignmentwidget.cpp:87
+#: widgets/properties/widgets/alignmentwidget.cpp:86
 #, kde-format
 msgid "Alignment"
 msgstr "Alineació"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "Tooltip for arrow head"
+msgid "None"
+msgstr "Cap"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, fuzzy, kde-format
+#| msgid "Arrow"
+msgctxt "Tooltip for arrow head"
+msgid "Open Arrow"
+msgstr "Fletxa"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, fuzzy, kde-format
+#| msgid "Triangle"
+msgctxt "Tooltip for arrow head"
+msgid "Triangle"
+msgstr "Triangle"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, fuzzy, kde-format
+#| msgid "Full Triangle"
+msgctxt "Tooltip for arrow head"
+msgid "Filled Triangle"
+msgstr "Triangle complet"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#, fuzzy, kde-format
+#| msgid "Circle"
+msgctxt "Tooltip for arrow head"
+msgid "Circle"
+msgstr "Cercle"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Diamond"
+msgctxt "Tooltip for arrow head"
+msgid "Diamond"
+msgstr "Diamant"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#, kde-format
+msgctxt "Tooltip for a button to change arrow head"
+msgid "Select Arrow Head"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -742,6 +762,12 @@ msgstr "Trieu un color personalitzat"
 msgid "Color"
 msgstr "Color"
 
+#: widgets/properties/widgets/endarrowtypewidget.cpp:20
+#, kde-format
+msgctxt "Name of a property"
+msgid "End Arrow Head"
+msgstr ""
+
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
 msgid "Eraser Size"
@@ -756,6 +782,12 @@ msgstr "Mida de la lletra"
 #, kde-format
 msgid "Opacity"
 msgstr "Opacitat"
+
+#: widgets/properties/widgets/startarrowtypewidget.cpp:21
+#, kde-format
+msgctxt "Name of a property"
+msgid "Start Arrow Head"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
@@ -785,7 +817,7 @@ msgid "Thickness"
 msgstr "Gruix"
 
 # NdT: Ordre d'elements segons l'eix Z
-#: widgets/properties/widgets/zorderwidget.cpp:47
+#: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
 msgid "Z-order"
 msgstr "Ordre de Z"
@@ -806,3 +838,9 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Full Circle"
+#~ msgstr "Cercle complet"
+
+#~ msgid "Line"
+#~ msgstr "Línia"
