@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 09:38-0300\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"PO-Revision-Date: 2026-03-25 09:16-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -85,16 +85,14 @@ msgid "Change Background Style"
 msgstr "Alterar estilo do fundo"
 
 #: gui/properties/property.cpp:115
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Alterar tipo de seta"
+msgstr "Alterar início da seta"
 
 #: gui/properties/property.cpp:117
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change End Arrow Head"
-msgstr "Alterar tipo de seta"
+msgstr "Alterar fim da seta"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -670,54 +668,47 @@ msgstr "Alinhar à base"
 msgid "Alignment"
 msgstr "Alinhamento"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "None"
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "Nenhum"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Seta"
+msgstr "Seta aberta"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Triângulo"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Full Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr "Triângulo cheio"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Circle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Círculo"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Diamante"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#: widgets/properties/widgets/arrowtypewidget.cpp:77
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Selecione ponta da seta"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -769,7 +760,7 @@ msgstr "Cor"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Fim da seta"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -790,7 +781,7 @@ msgstr "Opacidade"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Início da seta"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format

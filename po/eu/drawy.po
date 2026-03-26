@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -804,13 +804,13 @@ msgstr "Mugitzeko tresna"
 msgid "Alignment"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -818,25 +818,25 @@ msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:48
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -844,7 +844,7 @@ msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Lerro tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#: widgets/properties/widgets/arrowtypewidget.cpp:77
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"

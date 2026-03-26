@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -82,16 +82,14 @@ msgid "Change Background Style"
 msgstr "ფონის სტილის შეცვლა"
 
 #: gui/properties/property.cpp:115
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change Start Arrow Head"
-msgstr "ისრის ტიპის შეცვლა"
+msgstr "დაწყების ისრის თავის შეცვლა"
 
 #: gui/properties/property.cpp:117
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change End Arrow Head"
-msgstr "ისრის ტიპის შეცვლა"
+msgstr "დასრულების ისრის თავის შეცვლა"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -667,54 +665,47 @@ msgstr "სწორება ქვემოთ"
 msgid "Alignment"
 msgstr "სწორება"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "None"
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "არცერთი"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "ისარი"
+msgstr "ღია ისარი"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "სამკუთხედი"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Full Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "სრული სამკუთხედი"
+msgstr "შევსებული სამკუთხედი"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Circle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "წრე"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "ალმასი"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#: widgets/properties/widgets/arrowtypewidget.cpp:77
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "აირჩიეთ ისრის თავი"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -766,7 +757,7 @@ msgstr "ფერი"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "ისრის თავის დასრულება"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -787,7 +778,7 @@ msgstr "გაუმჭვირვალობა"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "ისრის თავის დასაწყისი"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format

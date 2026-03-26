@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2026-03-22 15:16+0100\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -672,42 +672,42 @@ msgstr "Aligner en bas"
 msgid "Alignment"
 msgstr "Alignement"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "Aucun"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Arrow"
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "Flèche"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, fuzzy, kde-format
 #| msgid "Triangle"
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Triangle"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, fuzzy, kde-format
 #| msgid "Full Triangle"
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr "Triangle rempli"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, fuzzy, kde-format
 #| msgid "Circle"
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Cercle"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:48
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Diamond"
@@ -715,7 +715,7 @@ msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Losange"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#: widgets/properties/widgets/arrowtypewidget.cpp:77
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
