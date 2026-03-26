@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 02:47+0000\n"
-"PO-Revision-Date: 2026-03-19 17:20+0300\n"
+"POT-Creation-Date: 2026-03-26 02:41+0000\n"
+"PO-Revision-Date: 2026-03-25 06:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -114,7 +114,7 @@ msgstr "Üçgen"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr "X Kutusu"
+msgstr "X kutusu"
 
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "Genel"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr "Başka"
+msgstr "Çeşitli"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -662,54 +662,47 @@ msgstr "Alta hizala"
 msgid "Alignment"
 msgstr "Hizalama"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "None"
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "Yok"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Ok"
+msgstr "Açık ok"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Üçgen"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Full Triangle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "Tam Üçgen"
+msgstr "Dolu üçgen"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Circle"
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Çember"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Elmas"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:78
+#: widgets/properties/widgets/arrowtypewidget.cpp:77
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Ok başı seç"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -761,7 +754,7 @@ msgstr "Renk"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Ok Kuyruğu"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -782,7 +775,7 @@ msgstr "Matlık"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Ok Başı"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
