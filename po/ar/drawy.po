@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-26 02:41+0000\n"
-"PO-Revision-Date: 2026-03-24 09:52+0400\n"
+"PO-Revision-Date: 2026-03-26 10:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -86,16 +86,14 @@ msgid "Change Background Style"
 msgstr "غير نمط الخلفية"
 
 #: gui/properties/property.cpp:115
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change Start Arrow Head"
-msgstr "غيّر نوع السهم"
+msgstr "غيّر رأس بداية السهم"
 
 #: gui/properties/property.cpp:117
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change End Arrow Head"
-msgstr "غيّر نوع السهم"
+msgstr "غيّر رأس نهاية السهم"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -674,44 +672,37 @@ msgid "Alignment"
 msgstr "محاذاة"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "لا شيء"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "سهم"
+msgstr "سهم مفتوح"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "مثلّث"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Full Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "مثلّث كامل"
+msgstr "مثلث مملوء"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "دائرة"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "معين"
@@ -720,7 +711,7 @@ msgstr "معين"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "اختر رأس السهم"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -772,7 +763,7 @@ msgstr "اللون"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "رأس نهاية السهم"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -793,7 +784,7 @@ msgstr "العتمة"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "رأس بداية السهم"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
