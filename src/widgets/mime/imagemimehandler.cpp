@@ -30,7 +30,7 @@ QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mime
 
     std::shared_ptr<ImageItem> image = std::make_shared<ImageItem>();
     image->setPixmap(pixmap);
-    image->setBox({0, 0, (qreal)pixmap.width(), (qreal)pixmap.height()});
+    image->setBox({0, 0, static_cast<qreal>(pixmap.width()), static_cast<qreal>(pixmap.height())});
     return {image};
 }
 
