@@ -8,11 +8,15 @@
 #include <QFileInfo>
 #include <QFontDatabase>
 #include <QShortcut>
+#include <QWindow>
 
 #include <KActionCollection>
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <KStandardAction>
 #include <KStandardActions>
+#include <KWindowConfig>
 
 #include "boardlayout.hpp"
 #include "canvas/canvas.hpp"
@@ -40,6 +44,12 @@
 #endif
 
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+const char myConfigGroupName[] = "MainWindow";
+}
+
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , mApplicationContext(new ApplicationContext(this))
@@ -95,6 +105,8 @@ MainWindow::MainWindow(QWidget *parent)
     updateWindowTitle();
     connect(mApplicationContext, &ApplicationContext::currentFileStateChanged, this, &MainWindow::updateWindowTitle);
     actionCollection->associateWidget(this);
+
+    readConfig();
 }
 
 MainWindow::~MainWindow() = default;
@@ -116,20 +128,23 @@ void MainWindow::closeEvent(QCloseEvent *e)
 {
     if (DrawyGlobalConfig::self()->autoSaveEnabled()) {
         m_autoSaveJob->saveFile();
+        writeConfig();
         e->accept();
         return;
     }
 
     if (mApplicationContext->currentFileModified()) {
         if (mApplicationContext->uiContext()->actionManager()->confirmSaveAfterModification()) {
+            writeConfig();
             e->accept();
         } else {
             e->ignore();
         }
         return;
-    } else {
-        e->accept();
     }
+
+    writeConfig();
+    e->accept();
 }
 
 void MainWindow::activeDebug()
@@ -174,6 +189,33 @@ void MainWindow::changeEvent(QEvent *event)
     if (event->type() == QEvent::PaletteChange) {
         Q_EMIT paletteChanged();
     }
+}
+
+void MainWindow::readConfig()
+{
+    create(); // ensure a window is created
+    if (!windowHandle()) {
+        return;
+    }
+
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGroupName));
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+
+    if (group.readEntry("FullScreen", false)) {
+        viewFullScreen(true);
+    }
+}
+
+void MainWindow::writeConfig() const
+{
+    if (!windowHandle()) {
+        return;
+    }
+
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGroupName));
+    group.writeEntry("FullScreen", isFullScreen());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 #include "moc_window.cpp"
