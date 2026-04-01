@@ -44,3 +44,5 @@ void IconManager::slotUpdateIcons(bool isDarkTheme)
         iterator.key()->setIcon(QIcon(u":/icons/"_s + themeString + iterator.value()));
     }
 }
+
+#include "moc_iconmanager.cpp"
