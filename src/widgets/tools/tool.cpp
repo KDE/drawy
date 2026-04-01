@@ -16,6 +16,11 @@ Tool::~Tool()
     qCDebug(DRAWY_LOG) << "Object deleted: Tool";
 }
 
+bool Tool::useCustomIcon() const
+{
+    return false;
+}
+
 const QCursor &Tool::cursor() const
 {
     return m_cursor;

@@ -19,7 +19,7 @@
 #include "strokecolorwidget.hpp"
 #include "strokewidthwidget.hpp"
 
-PropertyManager::PropertyManager(ActionManager *actionManager, ApplicationContext *context, QWidget *parent)
+PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     : QObject{parent}
 {
     m_widgets[Property::Type::StrokeWidth] = new StrokeWidthWidget(parent);
@@ -33,8 +33,8 @@ PropertyManager::PropertyManager(ActionManager *actionManager, ApplicationContex
     m_widgets[Property::Type::ZOrder] = new ZOrderWidget(actionManager, parent);
     m_widgets[Property::Type::Alignment] = new AlignmentWidget(actionManager, parent);
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);
-    m_widgets[Property::Type::StartArrowType] = new StartArrowTypeWidget(context, parent);
-    m_widgets[Property::Type::EndArrowType] = new EndArrowTypeWidget(context, parent);
+    m_widgets[Property::Type::StartArrowType] = new StartArrowTypeWidget(parent);
+    m_widgets[Property::Type::EndArrowType] = new EndArrowTypeWidget(parent);
 
     for (auto i = m_widgets.cbegin(), end = m_widgets.cend(); i != end; ++i) {
         connect(i.value(), &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

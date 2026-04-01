@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "arrowtypewidget.hpp"
-#include "context/uicontext.hpp"
 #include "iconmanager/iconmanager.hpp"
 #include "item/arrow/arrowhead.hpp"
 #include "item/arrow/arrowutils.hpp"
@@ -15,7 +14,7 @@
 #include <QToolButton>
 using namespace Qt::StringLiterals;
 
-ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
+ArrowTypeWidget::ArrowTypeWidget(QWidget *parent)
     : PropertyWidget{parent}
     , m_group{new QButtonGroup{parent}}
 {
@@ -50,15 +49,13 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
     int gridRow{0};
     int gridCol{0};
 
-    auto iconManager{context->uiContext()->iconManager()};
-
     for (const auto &head : arrowHeads) {
         auto btn = new QToolButton{menu};
         btn->setProperty("arrow-head", ArrowUtils::toString(head.type));
         btn->setToolTip(head.tooltip);
         btn->setCheckable(true);
         btn->setProperty("icon-name", head.icon);
-        iconManager->setIcon(btn, head.icon);
+        IconManager::instance().setIcon(btn, head.icon);
 
         m_group->addButton(btn, static_cast<int>(head.type));
         gridLayout->addWidget(btn, gridRow, gridCol);
@@ -80,8 +77,8 @@ ArrowTypeWidget::ArrowTypeWidget(ApplicationContext *context, QWidget *parent)
     layout->addWidget(expandButton);
     layout->addStretch();
 
-    connect(m_group, &QButtonGroup::idToggled, this, [this, expandButton, iconManager, menu]() -> void {
-        iconManager->setIcon(expandButton, m_group->checkedButton()->property("icon-name").value<QString>());
+    connect(m_group, &QButtonGroup::idToggled, this, [this, expandButton, menu]() -> void {
+        IconManager::instance().setIcon(expandButton, m_group->checkedButton()->property("icon-name").value<QString>());
         menu->hide();
         Q_EMIT changed(value());
     });

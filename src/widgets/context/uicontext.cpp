@@ -59,7 +59,6 @@ UIContext::~UIContext()
 void UIContext::initializeUIContext()
 {
     m_actionManager = new ActionManager(m_keybindManager->actionCollection(), m_applicationContext);
-    m_iconManager = new IconManager(m_applicationContext);
     m_propertyBar = new PropertyBar(m_applicationContext, m_applicationContext->parentWidget());
 
     m_topWidgets = new TopWidgets(m_applicationContext, m_applicationContext->parentWidget());
@@ -90,14 +89,18 @@ void UIContext::initializeUIContext()
     connect(m_applicationContext->renderingContext(), &RenderingContext::zoomFactorChanged, m_bottomLeftWidgets, &BottomLeftWidgets::zoomFactorChanged);
     m_topLeftWidgets = new TopLeftWidgets(m_actionManager, m_applicationContext->parentWidget());
 
-    m_propertyManager = new PropertyManager(m_actionManager, m_applicationContext, m_propertyBar);
+    m_propertyManager = new PropertyManager(m_actionManager, m_propertyBar);
     m_propertyBar->setPropertyManager(m_propertyManager);
     connect(m_toolBar, &ToolBar::toolChanged, m_propertyBar, &PropertyBar::updateProperties);
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
-    connect(this, &UIContext::themeChanged, m_iconManager, &IconManager::slotUpdateIcons);
+
+    connect(this, &UIContext::themeChanged, &IconManager::instance(), &IconManager::slotUpdateIcons);
+    connect(&IconManager::instance(), &IconManager::requestIconUpdate, this, [this]() -> void {
+        IconManager::instance().slotUpdateIcons(isDarkTheme());
+    });
 
     connect(DrawyGlobalConfig::self(), &DrawyGlobalConfig::configChanged, this, &UIContext::slotThemeChanged);
     slotThemeChanged();
@@ -157,11 +160,6 @@ ActionManager *UIContext::actionManager() const
 PropertyManager *UIContext::propertyManager() const
 {
     return m_propertyManager;
-}
-
-IconManager *UIContext::iconManager() const
-{
-    return m_iconManager;
 }
 
 Event *UIContext::appEvent() const

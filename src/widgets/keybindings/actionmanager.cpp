@@ -110,16 +110,16 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::SendToBack, i18nc("@action", "Send To Back"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendToBack);
-    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
+    })->setIcon(QIcon::fromTheme(u"arrow-down-double"_s));
     createAction(Action::SendBackward, i18nc("@action", "Send Backward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::SendBackward);
-    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
+    })->setIcon(QIcon::fromTheme(u"arrow-down"_s));
     createAction(Action::BringForward, i18nc("@action", "Bring Forward"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringForward);
-    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
+    })->setIcon(QIcon::fromTheme(u"arrow-up"_s));
     createAction(Action::BringToFront, i18nc("@action", "Bring To Front"), {}, this, [this]() {
         zorderMove(ItemUtils::ZorderMove::BringToFront);
-    })->setIcon(QIcon::fromTheme(u"viewimage"_s)); // just a placeholder icon for now
+    })->setIcon(QIcon::fromTheme(u"arrow-up-double"_s));
 
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 22 22"
+   id="svg2"
+   sodipodi:docname="draw-rectangle.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.090909"
+     inkscape:cx="11"
+     inkscape:cy="11.372881"
+     inkscape:window-width="1535"
+     inkscape:window-height="834"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="current-color-scheme">.ColorScheme-Text {
+        color:#232629;
+      }</style>
+  </defs>
+  <g
+     id="g5">
+    <path
+       class="ColorScheme-Text"
+       transform="translate(-.99999-.99999)"
+       d="m4 4v16h16v-16h-16m1 1h14v14h-14v-14"
+       fill="currentColor"
+       id="path1" />
+    <path
+       d="m3.5056345 10.977883v-7.5052069h14.878582v15.010415h-14.878582z"
+       class="ColorScheme-Text"
+       fill="currentColor"
+       fill-opacity=".50196078"
+       id="path2" />
+    <path
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#232629;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1"
+       d="M 3.8613281,3.1210938 3.1503906,3.8242188 18.029297,18.835937 18.740234,18.130859 Z"
+       id="path3" />
+    <path
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#232629;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1"
+       d="M 18.097656,3.1835938 3.0878906,18.0625 3.7910156,18.771484 18.802734,3.8945313 Z"
+       id="path4" />
+  </g>
+</svg>

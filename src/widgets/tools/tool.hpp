@@ -48,6 +48,7 @@ public:
 
     virtual Type type() const = 0;
     virtual QString icon() const = 0;
+    [[nodiscard]] virtual bool useCustomIcon() const;
 
     virtual QList<Property::Type> properties() const;
     virtual QList<Property::Type> allProperties() const final;

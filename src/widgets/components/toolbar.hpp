@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "context/applicationcontext.hpp"
 #include "frame.hpp"
 #include <QShowEvent>
 
@@ -11,6 +12,7 @@
 #include "tools/tool.hpp"
 class QButtonGroup;
 class QHBoxLayout;
+
 class ToolBar : public Frame
 {
     Q_OBJECT
@@ -28,6 +30,7 @@ public:
 
     void addCustomTool(const std::shared_ptr<CustomTool> &tool);
     void addImageTool(const std::shared_ptr<Tool> &tool);
+
 Q_SIGNALS:
     void toolChanged(Tool &);
     void toolbarShown();

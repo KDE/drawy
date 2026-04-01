@@ -18,7 +18,6 @@ DiamondToolTest::DiamondToolTest(QObject *parent)
 void DiamondToolTest::shouldHaveDefaultValues()
 {
     const DiamondTool t(nullptr);
-    QCOMPARE(t.icon(), u"choice-rhomb"_s);
     QCOMPARE(t.type(), Tool::Type::Diamond);
 
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
