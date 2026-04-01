@@ -3,13 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "iconmanager.hpp"
-#include "context/uicontext.hpp"
 #include <QAbstractButton>
 using namespace Qt::StringLiterals;
 
-IconManager::IconManager()
-{
-}
+IconManager::IconManager() = default;
 
 void IconManager::setIcon(QAction *action, const QString &iconName)
 {
