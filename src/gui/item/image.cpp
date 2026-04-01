@@ -5,7 +5,6 @@
 #include "image.hpp"
 #include "common/constants.hpp"
 #include "common/utils/math.hpp"
-#include "drawy_gui_intercept_item_debug.h"
 #include "serializer/imagedeserializer.hpp"
 #include "serializer/imageserializer.hpp"
 #include <QJsonObject>
@@ -18,7 +17,7 @@ ImageItem::ImageItem()
 
 void ImageItem::draw(QPainter &painter, const QPointF &offset)
 {
-    painter.setOpacity((qreal)property(Property::Type::Opacity).value<int>() / Common::maxItemOpacity);
+    painter.setOpacity(property(Property::Type::Opacity).value<qreal>() / Common::maxItemOpacity);
     drawItem(painter, offset);
 }
 
@@ -27,20 +26,14 @@ void ImageItem::commitTransformation()
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
     const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
-    m_boundingBox = filtered.mapRect(m_boundingBox);
+    m_boundingBox = filtered.map(m_boundingBox).boundingRect();
 
     setDirty(true);
 }
 
 bool ImageItem::intersects(const QRectF &rect)
 {
-    qCDebug(DRAWY_GUI_INTERCEPT_ITEM_LOG) << "rect:" << rect << " m_boundingBox " << m_boundingBox;
-    return m_boundingBox.intersects(rect);
-}
-
-void ImageItem::translate(const QPointF &amount)
-{
-    m_boundingBox.translate(amount);
+    return transformObj().inverted().map(rect).intersects(m_boundingBox);
 }
 
 Item::FormType ImageItem::formType() const

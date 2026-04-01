@@ -21,8 +21,6 @@ public:
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
-    void translate(const QPointF &amount) override;
-
     [[nodiscard]] Item::FormType formType() const override;
 
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
