@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -18,7 +18,12 @@ DiamondTool::DiamondTool(ApplicationContext *context)
 
 QString DiamondTool::icon() const
 {
-    return u"choice-rhomb"_s;
+    return u"draw-diamond"_s;
+}
+
+bool DiamondTool::useCustomIcon() const
+{
+    return true;
 }
 
 Tool::Type DiamondTool::type() const

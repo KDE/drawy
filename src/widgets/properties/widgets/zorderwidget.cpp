@@ -43,7 +43,7 @@ ZOrderWidget::ZOrderWidget(ActionManager *actionManager, QWidget *parent)
 
 QString ZOrderWidget::name() const
 {
-    return i18n("Z-order");
+    return i18n("Order");
 }
 
 const Property ZOrderWidget::value() const

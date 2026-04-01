@@ -15,6 +15,7 @@ class LIBDRAWYGUI_EXPORT PluginForm : public QObject
     Q_OBJECT
 public:
     struct LIBDRAWYGUI_EXPORT PluginFormInfo {
+        bool useCustomIcon = false;
         QString pluginName;
         QString toolTip;
         QString name;

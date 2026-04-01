@@ -5,6 +5,7 @@
  */
 #include "toolbuttonplugin.hpp"
 #include "flowlayout.hpp"
+#include "iconmanager/iconmanager.hpp"
 #include "pluginform/pluginform.hpp"
 #include "pluginform/pluginformmanager.hpp"
 #include <KLocalizedString>
@@ -14,6 +15,7 @@
 #include <QStyle>
 #include <QVBoxLayout>
 #include <QWidgetAction>
+using namespace Qt::StringLiterals;
 
 ToolButtonPlugin::ToolButtonPlugin(QWidget *parent)
     : QToolButton(parent)
@@ -28,7 +30,8 @@ ToolButtonPlugin::ToolButtonPlugin(QWidget *parent)
     setCursor(Qt::PointingHandCursor);
     setVisible(!PluginFormManager::self()->isEmpty());
     connect(this, &ToolButtonPlugin::toolActivated, this, &ToolButtonPlugin::updateToolButton);
-    setToolTip(i18nc("@info:tooltip", "Select Plugin"));
+    setToolTip(i18nc("@info:tooltip", "More Tools"));
+    setIcon(QIcon::fromTheme(u"expand"_s));
 }
 
 ToolButtonPlugin::~ToolButtonPlugin() = default;
@@ -55,7 +58,13 @@ void ToolButtonPlugin::fillMenu()
             auto toolButton = new QToolButton(pluginCustomWidget);
             toolButton->setFocusPolicy(Qt::NoFocus);
             toolButton->setToolTip(item.toolTip);
-            toolButton->setIcon(QIcon::fromTheme(item.iconName));
+
+            if (item.useCustomIcon) {
+                IconManager::instance().setIcon(toolButton, item.iconName);
+            } else {
+                toolButton->setIcon(QIcon::fromTheme(item.iconName));
+            }
+
             toolButton->setAutoRaise(true);
             toolButton->setIconSize(QSize{iconSize, iconSize});
 

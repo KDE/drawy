@@ -17,7 +17,6 @@ class TopWidgets;
 class TopLeftWidgets;
 class BottomLeftWidgets;
 class PluginFormManager;
-class IconManager;
 
 class UIContext : public QObject
 {
@@ -37,7 +36,6 @@ public:
     [[nodiscard]] KeybindManager *keybindManager() const;
     [[nodiscard]] ActionManager *actionManager() const;
     [[nodiscard]] PropertyManager *propertyManager() const;
-    [[nodiscard]] IconManager *iconManager() const;
 
     void showContextMenu() const;
     void reset();
@@ -59,7 +57,6 @@ private:
     TopWidgets *m_topWidgets = nullptr;
     TopLeftWidgets *m_topLeftWidgets = nullptr;
     BottomLeftWidgets *m_bottomLeftWidgets = nullptr;
-    IconManager *m_iconManager = nullptr;
     Event *const m_event;
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
     PluginFormManager *const mPluginFormManager;

@@ -87,7 +87,7 @@ PluginForm::PluginFormInfo TriangleItem::pluginFormInfo()
         .pluginName = BasicShapesPluginUtils::pluginName(),
         .toolTip = i18nc("@info:tooltip", "Triangle"),
         .name = BasicShapesPluginUtils::convertStandardFormPluginTypeToString(BasicShapesPluginUtils::BasicShapesPluginType::Triangle),
-        .iconName = u"tool_brush"_s, // Just test. Icon is not ok
+        .iconName = u"draw-triangle3"_s,
         .properties = {
             Property::Type::BackgroundColor,
             Property::Type::BackgroundStyle,

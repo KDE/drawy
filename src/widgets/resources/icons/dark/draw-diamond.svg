@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="choice-rhomb.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.181818"
+     inkscape:cx="7.8174157"
+     inkscape:cy="7.9101124"
+     inkscape:window-width="1076"
+     inkscape:window-height="830"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs3051">
+    <style
+       type="text/css"
+       id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#232629;
+      }
+      </style>
+  </defs>
+  <path
+     style="fill:#fcfcfc;fill-opacity:0.50999999"
+     d="m 11,3.6924157 7.276685,7.2766853 -7.26896,7.268961 -7.2535115,-7.253511 z"
+     id="path2" />
+  <path
+     style="fill:#f9f9f9;fill-opacity:1;stroke:none"
+     d="m 562.28572,610.6479 -8,8 0,0 8,7.99999 8,-7.99999 z m -5.6e-4,1.4146 6.58593,6.58594 -6.58593,6.58594 -6.58594,-6.58594 z"
+     class="ColorScheme-Text"
+     id="path1"
+     transform="translate(-551.28571,-607.64789)" />
+</svg>

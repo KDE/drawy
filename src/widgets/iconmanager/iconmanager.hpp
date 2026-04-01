@@ -4,21 +4,26 @@
 
 #pragma once
 
-#include "context/applicationcontext.hpp"
 class QAction;
 class QAbstractButton;
 
 class IconManager : public QObject
 {
+    Q_OBJECT
 public:
-    explicit IconManager(ApplicationContext *context);
+    explicit IconManager();
 
     void setIcon(QAction *action, const QString &iconName);
     void setIcon(QAbstractButton *action, const QString &iconName);
     void slotUpdateIcons(bool isDarkTheme);
 
+Q_SIGNALS:
+    void requestIconUpdate();
+
+public:
+    static IconManager &instance();
+
 private:
-    ApplicationContext *const m_context;
     QHash<QAction *, QString> m_actionMap;
     QHash<QAbstractButton *, QString> m_buttonMap;
 };

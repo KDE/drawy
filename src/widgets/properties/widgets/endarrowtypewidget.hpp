@@ -10,7 +10,7 @@ class EndArrowTypeWidget : public ArrowTypeWidget
 {
     Q_OBJECT
 public:
-    explicit EndArrowTypeWidget(ApplicationContext *context, QWidget *parent = nullptr);
+    explicit EndArrowTypeWidget(QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;

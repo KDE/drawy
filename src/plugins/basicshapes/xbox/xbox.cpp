@@ -71,10 +71,11 @@ bool XBoxItem::operator==(const XBoxItem &other) const
 PluginForm::PluginFormInfo XBoxItem::pluginFormInfo()
 {
     const PluginForm::PluginFormInfo info{
+        .useCustomIcon = true,
         .pluginName = BasicShapesPluginUtils::pluginName(),
         .toolTip = i18nc("@info:tooltip", "X Box"),
         .name = BasicShapesPluginUtils::convertStandardFormPluginTypeToString(BasicShapesPluginUtils::BasicShapesPluginType::XBox),
-        .iconName = u"tools-wizard"_s, // Just text. Icon is not ok
+        .iconName = u"draw-xbox"_s,
         .properties = {
             Property::Type::BackgroundColor,
             Property::Type::BackgroundStyle,

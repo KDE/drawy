@@ -12,7 +12,7 @@ class ArrowTypeWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
-    explicit ArrowTypeWidget(ApplicationContext *context, QWidget *parent = nullptr);
+    explicit ArrowTypeWidget(QWidget *parent = nullptr);
 
     void setValue(const QVariant &value) override;
 

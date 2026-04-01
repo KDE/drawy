@@ -10,6 +10,8 @@
         <file>icons/dark/circle-arrow.svg</file>
         <file>icons/dark/diamond-arrow.svg</file>
         <file>icons/dark/none-arrow.svg</file>
+        <file>icons/dark/draw-diamond.svg</file>
+        <file>icons/dark/draw-xbox.svg</file>
 
         <file>icons/light/open-arrow.svg</file>
         <file>icons/light/filled-arrow.svg</file>
@@ -17,6 +19,7 @@
         <file>icons/light/circle-arrow.svg</file>
         <file>icons/light/diamond-arrow.svg</file>
         <file>icons/light/none-arrow.svg</file>
-
+        <file>icons/light/draw-diamond.svg</file>
+        <file>icons/light/draw-xbox.svg</file>
     </qresource>
 </RCC>

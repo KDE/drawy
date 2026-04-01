@@ -7,9 +7,7 @@
 #include <QAbstractButton>
 using namespace Qt::StringLiterals;
 
-IconManager::IconManager(ApplicationContext *context)
-    : QObject{context}
-    , m_context{context}
+IconManager::IconManager()
 {
 }
 
@@ -17,14 +15,21 @@ void IconManager::setIcon(QAction *action, const QString &iconName)
 {
     m_actionMap[action] = iconName;
 
-    slotUpdateIcons(m_context->uiContext()->isDarkTheme());
+    Q_EMIT requestIconUpdate();
 }
 
 void IconManager::setIcon(QAbstractButton *button, const QString &iconName)
 {
     m_buttonMap[button] = iconName;
 
-    slotUpdateIcons(m_context->uiContext()->isDarkTheme());
+    Q_EMIT requestIconUpdate();
+}
+
+IconManager &IconManager::instance()
+{
+    static IconManager iconManager;
+
+    return iconManager;
 }
 
 void IconManager::slotUpdateIcons(bool isDarkTheme)

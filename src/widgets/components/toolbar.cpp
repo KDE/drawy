@@ -4,6 +4,7 @@
 
 #include "toolbar.hpp"
 #include "components/toolbuttonplugin.hpp"
+#include "iconmanager/iconmanager.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -42,11 +43,18 @@ void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
 
     auto btn = new ToolButtonPlugin(this);
     btn->setFocusPolicy(Qt::NoFocus);
+
     connect(btn, &ToolButtonPlugin::toolActivated, this, [this, tool, btn](const PluginForm::PluginFormInfo &item) {
         tool->setUpdateTool(item);
         btn->setToolTip(item.toolTip);
-        btn->setIcon(QIcon::fromTheme(item.iconName));
         btn->setChecked(true);
+
+        if (item.useCustomIcon) {
+            IconManager::instance().setIcon(btn, item.iconName);
+        } else {
+            btn->setIcon(QIcon::fromTheme(item.iconName));
+        }
+
         Q_EMIT toolChanged(*tool);
     });
 
@@ -95,8 +103,13 @@ void ToolBar::addTool(const std::shared_ptr<Tool> &tool, Tool::Type type, const 
     auto btn = new QToolButton(this);
     btn->setFocusPolicy(Qt::NoFocus);
     btn->setToolTip(name);
-    btn->setIcon(QIcon::fromTheme(tool->icon()));
     btn->setAutoRaise(true);
+
+    if (tool->useCustomIcon()) {
+        IconManager::instance().setIcon(btn, tool->icon());
+    } else {
+        btn->setIcon(QIcon::fromTheme(tool->icon()));
+    }
 
     const int iconSize{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
     btn->setIconSize(QSize{iconSize, iconSize});

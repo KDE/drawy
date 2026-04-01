@@ -10,7 +10,7 @@ class StartArrowTypeWidget : public ArrowTypeWidget
 {
     Q_OBJECT
 public:
-    explicit StartArrowTypeWidget(ApplicationContext *context, QWidget *parent = nullptr);
+    explicit StartArrowTypeWidget(QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
