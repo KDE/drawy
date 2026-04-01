@@ -31,6 +31,8 @@ Q_SIGNALS:
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void contextMenuRequested(const QPoint &pos);
     LIBDRAWYWIDGETS_NO_EXPORT void loadCustomFonts();
+    LIBDRAWYWIDGETS_NO_EXPORT void readConfig();
+    LIBDRAWYWIDGETS_NO_EXPORT void writeConfig() const;
     LIBDRAWYWIDGETS_NO_EXPORT void updateWindowTitle();
     bool m_forceClose = false;
     AutoSaveJob *m_autoSaveJob{nullptr};
