@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-02 00:41+0000\n"
 "PO-Revision-Date: 2026-02-23 20:34+0100\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -110,7 +110,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr ""
 
-#: plugins/basicshapes/xbox/xbox.cpp:75
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -201,19 +201,19 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/toolbar.cpp:66
+#: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr ""
 
-#: widgets/components/toolbuttonplugin.cpp:31
+#: widgets/components/toolbuttonplugin.cpp:33
 #, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Selection"
+#| msgctxt "@info:tooltip"
+#| msgid "Move Tool"
 msgctxt "@info:tooltip"
-msgid "Select Plugin"
-msgstr "Auswahl"
+msgid "More Tools"
+msgstr "Verschiebewerkzeug"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -266,61 +266,61 @@ msgctxt "Default unsaved file name"
 msgid "Untitled"
 msgstr "Unbenannt.%1"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Auswahl"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Freihand"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Rechteck"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Raute"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Ellipse"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Pfeil"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Linie"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Radierer"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -690,38 +690,38 @@ msgstr "Unten ausrichten"
 msgid "Alignment"
 msgstr "Ausrichtung"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, fuzzy, kde-format
 #| msgid "Arrow"
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "Pfeil"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Diamond"
@@ -729,7 +729,7 @@ msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Raute"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:77
+#: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
@@ -836,8 +836,9 @@ msgid "Thickness"
 msgstr "Dicke"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, kde-format
-msgid "Z-order"
+#, fuzzy, kde-format
+#| msgid "Z-order"
+msgid "Order"
 msgstr "Z-Reihenfolge"
 
 #: widgets/tools/imagetool.cpp:37
@@ -852,11 +853,18 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Objekt einfügen"
 
-#: widgets/window/window.cpp:169
+#: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "UIContext|"
+#~| msgid "Selection"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select Plugin"
+#~ msgstr "Auswahl"
 
 #, fuzzy
 #~| msgctxt "@action:button"
@@ -894,10 +902,6 @@ msgstr ""
 #~ msgctxt "@info:tooltip"
 #~ msgid "Line Tool"
 #~ msgstr "Linienwerkzeug"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "Verschiebewerkzeug"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Rectangle Tool"

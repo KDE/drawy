@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-02 00:41+0000\n"
 "PO-Revision-Date: 2026-03-25 09:02+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -109,7 +109,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "משולש"
 
-#: plugins/basicshapes/xbox/xbox.cpp:75
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -197,17 +197,19 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/toolbar.cpp:66
+#: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "תמונה"
 
-#: widgets/components/toolbuttonplugin.cpp:31
-#, kde-format
+#: widgets/components/toolbuttonplugin.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Move Tool"
 msgctxt "@info:tooltip"
-msgid "Select Plugin"
-msgstr "בחירת תוסף"
+msgid "More Tools"
+msgstr "כלי הזזה"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -259,61 +261,61 @@ msgctxt "Default unsaved file name"
 msgid "Untitled"
 msgstr "ללא שם"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "בחירה"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "צורה חופשית"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "מרובע"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "יהלום"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "אליפסה"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "חץ"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "קו"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "מוחק"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "טקסט"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -671,43 +673,43 @@ msgstr "יישור לתחתית"
 msgid "Alignment"
 msgstr "יישור"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "ללא"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "חץ פתוח"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "משולש"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr "משולש מלא"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "עיגול"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "יהלום"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:77
+#: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
@@ -814,8 +816,9 @@ msgid "Thickness"
 msgstr "עובי"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, kde-format
-msgid "Z-order"
+#, fuzzy, kde-format
+#| msgid "Z-order"
+msgid "Order"
 msgstr "סדר Z (עומק)"
 
 #: widgets/tools/imagetool.cpp:37
@@ -829,11 +832,15 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "הוספת תמונה"
 
-#: widgets/window/window.cpp:169
+#: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select Plugin"
+#~ msgstr "בחירת תוסף"
 
 #~ msgid "Full Circle"
 #~ msgstr "עיגול מלא"
@@ -871,10 +878,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Line Tool"
 #~ msgstr "כלי קווים"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "כלי הזזה"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Rectangle Tool"
