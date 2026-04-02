@@ -11,6 +11,7 @@ class IconManager : public QObject
 {
     Q_OBJECT
 public:
+    static IconManager &instance();
     explicit IconManager();
 
     void setIcon(QAction *action, const QString &iconName);
@@ -19,9 +20,6 @@ public:
 
 Q_SIGNALS:
     void requestIconUpdate();
-
-public:
-    static IconManager &instance();
 
 private:
     QHash<QAction *, QString> m_actionMap;

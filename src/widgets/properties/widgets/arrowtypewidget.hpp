@@ -6,7 +6,6 @@
 
 #include "propertywidget.hpp"
 class QButtonGroup;
-class ApplicationContext;
 
 class ArrowTypeWidget : public PropertyWidget
 {
