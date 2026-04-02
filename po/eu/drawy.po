@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 02:41+0000\n"
+"POT-Creation-Date: 2026-04-02 02:37+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -130,7 +130,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr ""
 
-#: plugins/basicshapes/xbox/xbox.cpp:75
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -236,19 +236,19 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/toolbar.cpp:66
+#: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr ""
 
-#: widgets/components/toolbuttonplugin.cpp:31
+#: widgets/components/toolbuttonplugin.cpp:33
 #, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Selection Tool"
+#| msgctxt "QObject|"
+#| msgid "Move Tool"
 msgctxt "@info:tooltip"
-msgid "Select Plugin"
-msgstr "Hautapen tresna"
+msgid "More Tools"
+msgstr "Mugitzeko tresna"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, fuzzy, kde-format
@@ -298,7 +298,7 @@ msgstr ""
 msgid "Developer"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Selection Tool"
@@ -306,7 +306,7 @@ msgctxt "@action:button"
 msgid "Selection"
 msgstr "Hautapen tresna"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Freeform Tool"
@@ -314,7 +314,7 @@ msgctxt "@action:button"
 msgid "Free Form"
 msgstr "Forma-askeko tresna"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Rectangle Tool"
@@ -322,7 +322,7 @@ msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Laukizuzen tresna"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -330,7 +330,7 @@ msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Ellipse Tool"
@@ -338,7 +338,7 @@ msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elipse tresna"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -346,7 +346,7 @@ msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Line Tool"
@@ -354,7 +354,7 @@ msgctxt "@action:button"
 msgid "Line"
 msgstr "Lerro tresna"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Eraser Tool"
@@ -362,7 +362,7 @@ msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Ezabatzeko tresna"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:74
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Text Tool"
@@ -370,7 +370,7 @@ msgctxt "@action:button"
 msgid "Text"
 msgstr "Testu tresna"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Move Tool"
@@ -796,13 +796,13 @@ msgstr "Mugitzeko tresna"
 msgid "Alignment"
 msgstr "Mugitzeko tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, fuzzy, kde-format
 #| msgctxt "ActionManager|"
 #| msgid "Arrow Tool"
@@ -810,25 +810,25 @@ msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "Gezi tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr ""
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Line Tool"
@@ -836,7 +836,7 @@ msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Lerro tresna"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:77
+#: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
@@ -956,7 +956,7 @@ msgstr "Loditasuna"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
-msgid "Z-order"
+msgid "Order"
 msgstr ""
 
 #: widgets/tools/imagetool.cpp:37
@@ -972,11 +972,18 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Hautatu dena"
 
-#: widgets/window/window.cpp:169
+#: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "ActionManager|"
+#~| msgid "Selection Tool"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select Plugin"
+#~ msgstr "Hautapen tresna"
 
 #, fuzzy
 #~| msgctxt "ActionManager|"
@@ -1032,13 +1039,6 @@ msgstr ""
 #~ msgctxt "@info:tooltip"
 #~ msgid "Line Tool"
 #~ msgstr "Lerro tresna"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Move Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move Tool"
-#~ msgstr "Mugitzeko tresna"
 
 #, fuzzy
 #~| msgctxt "QObject|"

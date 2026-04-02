@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 02:41+0000\n"
+"POT-Creation-Date: 2026-04-02 02:37+0000\n"
 "PO-Revision-Date: 2026-03-17 08:45+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -110,7 +110,7 @@ msgctxt "@info:tooltip"
 msgid "Triangle"
 msgstr "Trojúhelník"
 
-#: plugins/basicshapes/xbox/xbox.cpp:75
+#: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
@@ -197,17 +197,19 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/toolbar.cpp:66
+#: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "Obrázek"
 
-#: widgets/components/toolbuttonplugin.cpp:31
-#, kde-format
+#: widgets/components/toolbuttonplugin.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Move Tool"
 msgctxt "@info:tooltip"
-msgid "Select Plugin"
-msgstr ""
+msgid "More Tools"
+msgstr "Nástroj pro přesouvání"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -253,61 +255,61 @@ msgstr "Laurent Montel"
 msgid "Developer"
 msgstr "Vývojář"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "Výběr"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "Obdélník"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "Diamant"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "Elipsa"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "Šipka"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "Čára"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "Guma"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "Text"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
@@ -668,42 +670,42 @@ msgstr ""
 msgid "Alignment"
 msgstr "Zarovnání"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Tooltip for arrow head"
 msgid "None"
 msgstr "Žádný"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, fuzzy, kde-format
 #| msgid "Arrow"
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
 msgstr "Šipka"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Triangle"
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Trojúhelník"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, fuzzy, kde-format
 #| msgid "Triangle"
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr "Trojúhelník"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, fuzzy, kde-format
 #| msgid "Circle"
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Kolečko"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:47
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Diamond"
@@ -711,7 +713,7 @@ msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Diamant"
 
-#: widgets/properties/widgets/arrowtypewidget.cpp:77
+#: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
@@ -819,7 +821,7 @@ msgstr "Tloušťka"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
-msgid "Z-order"
+msgid "Order"
 msgstr ""
 
 #: widgets/tools/imagetool.cpp:37
@@ -833,7 +835,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Vložit obrázek"
 
-#: widgets/window/window.cpp:169
+#: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
