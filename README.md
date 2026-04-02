@@ -24,6 +24,12 @@ cmake --build build-release
 ./build-release/bin/drawy
 ```
 
+### Using ASAN
+
+We can use sanitizers.supp file
+example: LSAN_OPTIONS=suppressions=$PWD/sanitizers.supp drawy
+
+
 ### Keyboard Shortcuts
 Default keyboard shortcuts can be viewed here: [KEYBINDINGS.md](docs/keybindings.md)
 
