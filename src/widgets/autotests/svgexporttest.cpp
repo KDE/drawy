@@ -53,4 +53,9 @@ void SvgExportTest::shouldNotChangeOutput()
     loadJob.start();
 }
 
+void SvgExportTest::cleanupTestCase()
+{
+    QFontDatabase::removeAllApplicationFonts();
+}
+
 #include "moc_svgexporttest.cpp"

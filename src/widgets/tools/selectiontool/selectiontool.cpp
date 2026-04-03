@@ -244,11 +244,9 @@ void SelectionTool::keyPressed(ApplicationContext *context)
         break;
     case Qt::Key_Up:
         worldFinalPos.setY(worldFinalPos.y() - delta);
-        ;
         break;
     case Qt::Key_Down:
         worldFinalPos.setY(worldFinalPos.y() + delta);
-        ;
         break;
     default:
         updated = false;
