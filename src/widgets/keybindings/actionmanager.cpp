@@ -34,6 +34,7 @@
 #include "jobs/serializejob.hpp"
 #include "keybindmanager.hpp"
 
+#include "canvas/canvas.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
@@ -544,7 +545,7 @@ void ActionManager::exportToImage()
         QXmlStreamWriter stream(&file);
         stream.setAutoFormatting(true);
 
-        SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems());
+        SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
     } else if (selectedFilter == pngFilter) {
         QList<std::shared_ptr<Item>> selectedItems{m_context->spatialContext()->quadtree().getAllItems()};
         QRectF boundingBox;
@@ -554,7 +555,7 @@ void ActionManager::exportToImage()
         }
 
         QImage image(boundingBox.size().toSize(), QImage::Format_ARGB32);
-        image.fill(Common::darkBackgroundColor);
+        image.fill(m_context->renderingContext()->canvas()->canvasBg());
 
         QPainter painter(&image);
         painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);

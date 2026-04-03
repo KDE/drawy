@@ -4,11 +4,14 @@
 
 #include "mime/rendermimehandler.hpp"
 #include "common/constants.hpp"
+#include "drawyglobalconfig.h"
 #include "item/item.hpp"
 #include <QByteArray>
+#include <QGuiApplication>
 #include <QImage>
 #include <QMimeData>
 #include <QPainter>
+#include <QPalette>
 #include <memory>
 
 using namespace Qt::StringLiterals;
@@ -22,7 +25,10 @@ void RenderMimeHandler::contributeData(QMimeData &mimeData, const QList<std::sha
     }
 
     QImage image(boundingBox.size().toSize(), QImage::Format_ARGB32);
-    image.fill(Common::darkBackgroundColor);
+
+    const bool isDark = QGuiApplication::palette().color(QPalette::Window).lightnessF() < 0.5;
+    const QColor backgroundColor = isDark ? DrawyGlobalConfig::backgroundColorDark() : DrawyGlobalConfig::backgroundColorLight();
+    image.fill(backgroundColor);
 
     QPainter painter(&image);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);

@@ -5,6 +5,7 @@
  */
 
 #include "svgexporttest.hpp"
+#include "common/constants.hpp"
 #include "drawy_autotest_helper.hpp"
 #include "jobs/loadjob.hpp"
 #include "serializer/svgserializer.hpp"
@@ -46,7 +47,7 @@ void SvgExportTest::shouldNotChangeOutput()
         QXmlStreamWriter writer(&data);
         writer.setAutoFormatting(true);
 
-        SvgSerializer::writeSvg(writer, info.items);
+        SvgSerializer::writeSvg(writer, info.items, Common::darkBackgroundColor);
 
         AutoTestHelper::compareFile(u"/svg/"_s, data, output);
     });

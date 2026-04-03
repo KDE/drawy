@@ -11,6 +11,6 @@ class QXmlStreamWriter;
 namespace SvgSerializer
 {
 
-LIBDRAWYGUI_EXPORT void writeSvg(QXmlStreamWriter &writer, QList<std::shared_ptr<Item>> items);
+LIBDRAWYGUI_EXPORT void writeSvg(QXmlStreamWriter &writer, QList<std::shared_ptr<Item>> items, const QColor &backgroundColor);
 
 } // namespace SvgSerializer

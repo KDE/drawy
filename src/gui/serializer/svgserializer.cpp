@@ -13,7 +13,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Item>> items)
+void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Item>> items, const QColor &backgroundColor)
 {
     stream.writeStartDocument();
 
@@ -43,7 +43,7 @@ void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Ite
     t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
 
     painter.setTransform(t.inverted(), true);
-    painter.fillRect(boundingBox, Common::darkBackgroundColor);
+    painter.fillRect(boundingBox, backgroundColor);
 
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
