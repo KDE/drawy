@@ -40,7 +40,7 @@ private:
     };
 
 private:
-    [[nodiscard]] QCursor cursorForHandle(const double angle) const;
+    [[nodiscard]] QCursor cursorForHandle(const double angle, bool flipH, bool flipV) const;
     [[nodiscard]] static QList<ResizeHandle> getHandles(const QRectF selectionBox, const qreal zoom);
 
     [[nodiscard]] std::tuple<qreal, qreal, QPointF> topRightHandler(const QRectF prevRect, const QPointF localCurPos);

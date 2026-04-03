@@ -169,7 +169,6 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
     } else {
         auto uiContext{context->uiContext()};
-        auto commandHistory{context->spatialContext()->commandHistory()};
 
         const QRectF cursorRegion{createHandle(transformer.viewToWorld(uiContext->appEvent()->pos()), Common::selectionCursorHitSize)};
         const auto intersectingItems{spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
@@ -184,7 +183,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
 
         } else if (uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
-            // if the users holds shift and clicks on an element, deselect that element, else select it
+            // if the users holds shift and clicks on an element, deselect or select it, depending on the situation
 
             if (selectedItems.contains(intersectingItems.back())) {
                 commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));

@@ -90,9 +90,12 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
     }
 
     const QTransform invTransform{m_initialSelectionTransform.inverted()};
-    const int angle{qRound(qRadiansToDegrees((Common::Utils::Math::angle(invTransform))))};
+    const int angle{qRound(qRadiansToDegrees((Common::Utils::Math::angle(selectionBoxTransform.inverted()))))};
 
-    context->renderingContext()->canvas()->setCursor(cursorForHandle(angle));
+    const bool flipH{selectionBoxTransform.m11() < 0};
+    const bool flipV{selectionBoxTransform.m22() < 0};
+
+    context->renderingContext()->canvas()->setCursor(cursorForHandle(angle, flipH, flipV));
 
     if (m_isActive) {
         auto &selectedItems{context->selectionContext()->selectedItems()};
@@ -275,13 +278,53 @@ QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(c
     };
 }
 
-QCursor ResizeTransformHandler::cursorForHandle(const double angle) const
+QCursor ResizeTransformHandler::cursorForHandle(const double angle, bool flipH, bool flipV) const
 {
     constexpr std::array<int, 8> angles{20, 70, 110, 160, 200, 250, 290, 340};
     static std::array<Qt::CursorShape, 4> cursorShapes{Qt::SizeBDiagCursor, Qt::SizeHorCursor, Qt::SizeFDiagCursor, Qt::SizeVerCursor};
 
-    const int offset{[this] {
-        switch (m_activeHandleType) {
+    ResizeHandleType curHandleType{m_activeHandleType};
+
+    if (flipH) {
+        switch (curHandleType) {
+        case ResizeHandleType::TopRight:
+            curHandleType = ResizeHandleType::TopLeft;
+            break;
+        case ResizeHandleType::BottomRight:
+            curHandleType = ResizeHandleType::BottomLeft;
+            break;
+        case ResizeHandleType::TopLeft:
+            curHandleType = ResizeHandleType::TopRight;
+            break;
+        case ResizeHandleType::BottomLeft:
+            curHandleType = ResizeHandleType::BottomRight;
+            break;
+        default:
+            break;
+        }
+    }
+
+    if (flipV) {
+        switch (curHandleType) {
+        case ResizeHandleType::TopRight:
+            curHandleType = ResizeHandleType::BottomRight;
+            break;
+        case ResizeHandleType::BottomRight:
+            curHandleType = ResizeHandleType::TopRight;
+            break;
+        case ResizeHandleType::TopLeft:
+            curHandleType = ResizeHandleType::BottomLeft;
+            break;
+        case ResizeHandleType::BottomLeft:
+            curHandleType = ResizeHandleType::TopLeft;
+            break;
+        default:
+            break;
+        }
+    }
+
+    const int offset{[curHandleType] {
+        switch (curHandleType) {
         case ResizeHandleType::TopRight:
             return 0;
         case ResizeHandleType::Right:
