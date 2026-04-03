@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 00:41+0000\n"
-"PO-Revision-Date: 2026-03-25 12:26+0100\n"
+"PO-Revision-Date: 2026-04-02 11:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -205,12 +205,10 @@ msgid "Image"
 msgstr "Imagen"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Herramienta de mover"
+msgstr "Más herramientas"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -815,10 +813,9 @@ msgid "Thickness"
 msgstr "Grosor"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Orden Z"
+msgstr "Orden"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
@@ -836,7 +833,3 @@ msgstr "Insertar imagen"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select Plugin"
-#~ msgstr "Seleccionar complemento"

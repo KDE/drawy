@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 00:41+0000\n"
-"PO-Revision-Date: 2026-03-25 16:07+0100\n"
+"PO-Revision-Date: 2026-04-02 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -201,12 +201,10 @@ msgid "Image"
 msgstr "Afbeelding"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Hulpmiddel voor verplaatsen"
+msgstr "Meer hulpmiddelen"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -811,10 +809,9 @@ msgid "Thickness"
 msgstr "Dikte"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Z-volgorde"
+msgstr "Volgorde"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
