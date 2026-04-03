@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-26 10:31+0100\n"
+"PO-Revision-Date: 2026-04-02 16:40+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -202,12 +202,10 @@ msgid "Image"
 msgstr "Imagine"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Instrumento de Mover"
+msgstr "Plus instrumentos"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -806,10 +804,9 @@ msgid "Thickness"
 msgstr "Spissor"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Z-Ordine"
+msgstr "Ordine"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format

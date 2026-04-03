@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-25 09:02+0200\n"
+"PO-Revision-Date: 2026-04-02 08:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -204,12 +204,10 @@ msgid "Image"
 msgstr "תמונה"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "כלי הזזה"
+msgstr "כלים נוספים"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -810,10 +808,9 @@ msgid "Thickness"
 msgstr "עובי"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "סדר Z (עומק)"
+msgstr "סדר"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format

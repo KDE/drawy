@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-25 06:44+0100\n"
+"PO-Revision-Date: 2026-04-02 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -203,12 +203,10 @@ msgid "Image"
 msgstr "Slika"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Orodje premikanja"
+msgstr "Več orodij"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -809,10 +807,9 @@ msgid "Thickness"
 msgstr "Debelina"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Z-vrstni red"
+msgstr "Vrstni red"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format

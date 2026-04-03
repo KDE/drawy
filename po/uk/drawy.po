@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-25 20:39+0200\n"
+"PO-Revision-Date: 2026-04-02 09:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -204,12 +204,10 @@ msgid "Image"
 msgstr "Зображення"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Інструмент «Пересування»"
+msgstr "Додаткові інструменти"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -810,10 +808,9 @@ msgid "Thickness"
 msgstr "Товщина"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Порядок за віссю Z"
+msgstr "Порядок"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
