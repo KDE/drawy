@@ -214,8 +214,51 @@ void SelectionTool::updateCurrentHandler(ApplicationContext *context)
     m_curHandler = nullptr;
 }
 
-void SelectionTool::keyPressed([[maybe_unused]] ApplicationContext *context)
+void SelectionTool::keyPressed(ApplicationContext *context)
 {
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+
+    auto event{context->uiContext()->appEvent()};
+    auto commandHistory{context->spatialContext()->commandHistory()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+
+    int delta{Common::translationDelta};
+    if (event->modifiers() & Qt::ShiftModifier) {
+        delta = Common::shiftTranslationDelta;
+    }
+
+    const QPointF worldOriginalPos{context->selectionContext()->selectionBox().boundingRect().topLeft()};
+
+    bool updated{true};
+    QPointF worldFinalPos{worldOriginalPos};
+
+    switch (event->key()) {
+    case Qt::Key_Left:
+        worldFinalPos.setX(worldFinalPos.x() - delta);
+        break;
+    case Qt::Key_Right:
+        worldFinalPos.setX(worldFinalPos.x() + delta);
+        break;
+    case Qt::Key_Up:
+        worldFinalPos.setY(worldFinalPos.y() - delta);
+        ;
+        break;
+    case Qt::Key_Down:
+        worldFinalPos.setY(worldFinalPos.y() + delta);
+        ;
+        break;
+    default:
+        updated = false;
+    }
+
+    if (updated) {
+        commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
+    }
 }
 
 QList<Property::Type> SelectionTool::properties() const
