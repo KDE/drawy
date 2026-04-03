@@ -176,10 +176,10 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         })};
 
         const auto selectedItems{context->selectionContext()->selectedItems()};
+        const QList<std::shared_ptr<Item>> selectedItemsList{selectedItems.begin(), selectedItems.end()};
 
         if (intersectingItems.empty()) {
             // if the users clicks in an empty region, deselect everything
-            const QList<std::shared_ptr<Item>> selectedItemsList{selectedItems.begin(), selectedItems.end()};
             commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
 
         } else if (uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
@@ -190,6 +190,10 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             } else {
                 commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
             }
+        } else {
+            // deselect everything and select that one item
+            commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
+            commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
         }
 
         renderingContext->markForRender();

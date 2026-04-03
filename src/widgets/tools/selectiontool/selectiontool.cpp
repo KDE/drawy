@@ -37,6 +37,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
     updateCurrentHandler(context);
 
     if (m_curHandler) {
+        context->selectionContext()->setShouldRenderHandles(false);
         m_curHandlerState = m_curHandler->mousePressed(context);
         return;
     }
@@ -96,13 +97,18 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
 {
     updateCurrentHandler(context);
 
-    if (!m_isSelecting) {
-        const auto intersectingItems{getItemsUnderCursor(context)};
-        auto canvas{context->renderingContext()->canvas()};
-        auto transformer{context->spatialContext()->coordinateTransformer()};
+    auto canvas{context->renderingContext()->canvas()};
 
-        // highlight item under cursor
+    if (m_highlightDrawn) {
         canvas->setOverlayBg(canvas->overlayBg());
+        m_highlightDrawn = false;
+
+        context->renderingContext()->markForUpdate();
+    }
+
+    if (!m_isSelecting && context->selectionContext()->shouldRenderHandles()) {
+        const auto intersectingItems{getItemsUnderCursor(context)};
+        auto transformer{context->spatialContext()->coordinateTransformer()};
 
         if (!intersectingItems.empty()) {
             canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
@@ -112,6 +118,8 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
                 painter.setPen(pen);
                 painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
             });
+
+            m_highlightDrawn = true;
         }
 
         context->renderingContext()->markForUpdate();
@@ -165,6 +173,10 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
 {
     updateCurrentHandler(context);
 
+    context->selectionContext()->setShouldRenderHandles(true);
+    context->renderingContext()->markForRender();
+    context->renderingContext()->markForUpdate();
+
     if (m_curHandler) {
         m_curHandlerState = m_curHandler->mouseReleased(context);
         return;
@@ -196,6 +208,11 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
     }
 
     m_curHandlerState = TransformHandler::State::Unlocked;
+}
+
+void SelectionTool::cleanup()
+{
+    mouseReleased(m_context);
 }
 
 void SelectionTool::updateCurrentHandler(ApplicationContext *context)

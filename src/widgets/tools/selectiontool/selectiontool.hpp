@@ -20,6 +20,7 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
     void keyPressed(ApplicationContext *context) override;
+    void cleanup() override;
 
     [[nodiscard]] QList<Property::Type> properties() const override;
 
@@ -35,4 +36,5 @@ private:
 
     QPointF m_lastPos{};
     bool m_isSelecting{false};
+    bool m_highlightDrawn{false};
 };
