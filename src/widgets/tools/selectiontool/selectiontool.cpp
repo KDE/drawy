@@ -53,14 +53,6 @@ void SelectionTool::mousePressed(ApplicationContext *context)
         auto commandHistory{spatialContext->commandHistory()};
         auto transformer{spatialContext->coordinateTransformer()};
 
-        constexpr int cursorHitSize{Common::selectionCursorHitSize};
-        const QPointF worldPos{transformer.viewToWorld(m_lastPos)};
-        const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
-
-        QList<std::shared_ptr<Item>> intersectingItems{spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
-            return item->intersects(region);
-        })};
-
         auto lockState{TransformHandler::State::Locked};
 
         const auto &selectedItems{selectionContext->selectedItems()};
@@ -72,6 +64,8 @@ void SelectionTool::mousePressed(ApplicationContext *context)
                 commandHistory->push(std::make_shared<DeselectCommand>(items));
             }
         }
+
+        const auto intersectingItems{getItemsUnderCursor(context)};
 
         if (intersectingItems.empty()) {
             m_isSelecting = true;
@@ -101,6 +95,27 @@ void SelectionTool::mousePressed(ApplicationContext *context)
 void SelectionTool::mouseMoved(ApplicationContext *context)
 {
     updateCurrentHandler(context);
+
+    if (!m_isSelecting) {
+        const auto intersectingItems{getItemsUnderCursor(context)};
+        auto canvas{context->renderingContext()->canvas()};
+        auto transformer{context->spatialContext()->coordinateTransformer()};
+
+        // highlight item under cursor
+        canvas->setOverlayBg(canvas->overlayBg());
+
+        if (!intersectingItems.empty()) {
+            canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
+                QPen pen{Common::selectionBorderColor};
+                pen.setStyle(Qt::DotLine);
+
+                painter.setPen(pen);
+                painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
+            });
+        }
+
+        context->renderingContext()->markForUpdate();
+    }
 
     if (m_curHandler) {
         m_curHandlerState = m_curHandler->mouseMoved(context);
@@ -285,6 +300,20 @@ QList<Property::Type> SelectionTool::properties() const
     } else {
         return {};
     }
+}
+
+QList<std::shared_ptr<Item>> SelectionTool::getItemsUnderCursor(ApplicationContext *context) const
+{
+    auto spatialContext{context->spatialContext()};
+    auto transformer{spatialContext->coordinateTransformer()};
+
+    constexpr int cursorHitSize{Common::selectionCursorHitSize};
+    const QPointF worldPos{transformer.viewToWorld(context->uiContext()->appEvent()->pos())};
+    const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
+
+    return spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
+        return item->intersects(region);
+    });
 }
 
 Tool::Type SelectionTool::type() const

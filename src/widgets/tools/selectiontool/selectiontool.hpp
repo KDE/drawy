@@ -6,6 +6,7 @@
 #include "libdrawywidgets_private_export.h"
 #include "tools/tool.hpp"
 #include "transformhandler/transformhandler.hpp"
+class Item;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionTool : public Tool
 {
@@ -26,6 +27,8 @@ public:
 
 private:
     void updateCurrentHandler(ApplicationContext *context);
+
+    QList<std::shared_ptr<Item>> getItemsUnderCursor(ApplicationContext *context) const;
 
     TransformHandler *m_curHandler{};
     TransformHandler::State m_curHandlerState;

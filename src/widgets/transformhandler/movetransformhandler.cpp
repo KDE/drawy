@@ -40,15 +40,11 @@ void MoveTransformHandler::renderHandles(ApplicationContext *context)
             painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
         } else {
             QPen pen{Common::selectionBorderColor};
-            pen.setStyle(Qt::DotLine);
             painter.setPen(pen);
 
             for (const auto &item : std::as_const(selectedItems)) {
                 painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
             }
-
-            pen.setStyle(Qt::SolidLine);
-            painter.setPen(pen);
 
             painter.drawPolygon(transformer.worldToView(context->selectionContext()->selectionBox()));
         }
