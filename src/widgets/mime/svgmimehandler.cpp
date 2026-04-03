@@ -17,13 +17,7 @@ void SvgMimeHandler::contributeData(QMimeData &mimeData, const QList<std::shared
     QByteArray svgData;
     QXmlStreamWriter svgWriter(&svgData);
 
-    QList<std::shared_ptr<Item>> selectedList;
-
-    for (const auto &ptr : selectedItems) {
-        selectedList.append(ptr);
-    }
-
-    SvgSerializer::writeSvg(svgWriter, selectedList);
+    SvgSerializer::writeSvg(svgWriter, selectedItems);
 
     mimeData.setData(u"image/svg+xml"_s, svgData);
 }
