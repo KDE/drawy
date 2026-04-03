@@ -53,7 +53,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
         auto commandHistory{spatialContext->commandHistory()};
         auto transformer{spatialContext->coordinateTransformer()};
 
-        constexpr qreal cursorHitSize{10.0};
+        constexpr int cursorHitSize{Common::selectionCursorHitSize};
         const QPointF worldPos{transformer.viewToWorld(m_lastPos)};
         const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
 
@@ -79,10 +79,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
             auto &item{intersectingItems.back()};
 
             if (!item->locked()) {
-                if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.contains(item)) {
-                    // deselect the item if selected
-                    commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
-                } else {
+                if (!(event->modifiers() & Qt::ShiftModifier) || !selectedItems.contains(item)) {
                     commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
                 }
             }

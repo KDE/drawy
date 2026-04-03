@@ -5,7 +5,9 @@
 #include "movetransformhandler.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
+#include "command/deselectcommand.hpp"
 #include "command/moveitemcommand.hpp"
+#include "command/selectcommand.hpp"
 #include "common/constants.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -72,6 +74,7 @@ TransformHandler::State MoveTransformHandler::mousePressed(ApplicationContext *c
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto renderingContext{context->renderingContext()};
+
         renderingContext->canvas()->setCursor(Qt::ArrowCursor);
 
         m_lastPos = uiContext->appEvent()->pos();
@@ -168,6 +171,34 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         }
 
         commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+    } else {
+        auto uiContext{context->uiContext()};
+        auto commandHistory{context->spatialContext()->commandHistory()};
+
+        const QRectF cursorRegion{createHandle(transformer.viewToWorld(uiContext->appEvent()->pos()), Common::selectionCursorHitSize)};
+        const auto intersectingItems{spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
+            return item->intersects(region);
+        })};
+
+        const auto selectedItems{context->selectionContext()->selectedItems()};
+
+        if (intersectingItems.empty()) {
+            // if the users clicks in an empty region, deselect everything
+            const QList<std::shared_ptr<Item>> selectedItemsList{selectedItems.begin(), selectedItems.end()};
+            commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
+
+        } else if (uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
+            // if the users holds shift and clicks on an element, deselect that element, else select it
+
+            if (selectedItems.contains(intersectingItems.back())) {
+                commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
+            } else {
+                commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
+            }
+        }
+
+        renderingContext->markForRender();
+        renderingContext->markForUpdate();
     }
 
     return TransformHandler::State::Unlocked;
