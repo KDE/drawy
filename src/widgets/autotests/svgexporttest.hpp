@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldNotChangeOutput();
     void shouldNotChangeOutput_data();
     void initTestCase();
+    void cleanupTestCase();
 };

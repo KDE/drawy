@@ -4,8 +4,11 @@
 
 #pragma once
 
+#include <QHash>
+#include <QObject>
 class QAction;
 class QAbstractButton;
+class QString;
 
 class IconManager : public QObject
 {

@@ -331,7 +331,7 @@ void TextItem::deleteSubStr(qsizetype start, qsizetype end)
         std::swap(start, end);
     }
 
-    m_text.erase(m_text.begin() + start, m_text.begin() + end + 1);
+    m_text.erase(std::next(m_text.cbegin(), start), std::next(m_text.cbegin(), end + 1));
 
     const QFontMetricsF metrics{getFont()};
     const QSizeF size{metrics.size(getTextFlags(), m_text)};

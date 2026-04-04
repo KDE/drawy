@@ -12,6 +12,7 @@ class Tool;
 class PropertyManager;
 class PropertyWidget;
 class ApplicationContext;
+
 class PropertyBar : public Frame
 {
     Q_OBJECT
@@ -22,8 +23,12 @@ public:
     void updateToolProperties();
     void updateProperties(Tool &);
 
+    [[nodiscard]] QSize sizeHint() const override;
+
 private:
     void assignPropertyValue(Property::Type property, PropertyWidget *widget);
+
+    QWidget *m_contentWidget = nullptr; // Added container widget
     QVBoxLayout *const m_layout;
     PropertyManager *m_propertyManager = nullptr;
     ApplicationContext *const m_context;

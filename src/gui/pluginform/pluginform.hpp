@@ -32,7 +32,7 @@ public:
 
     [[nodiscard]] virtual QString pluginName() const = 0;
 
-    [[nodiscard]] QList<PluginFormInfo> pluginFormInfos() const;
+    [[nodiscard]] const QList<PluginFormInfo> &pluginFormInfos() const;
 
     [[nodiscard]] virtual std::unique_ptr<ItemFactory> generateItemFactory(const PluginForm::PluginFormInfo &pluginInfo) = 0;
 

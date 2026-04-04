@@ -6,6 +6,7 @@
 #include "libdrawywidgets_private_export.h"
 #include "tools/tool.hpp"
 #include "transformhandler/transformhandler.hpp"
+class Item;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionTool : public Tool
 {
@@ -19,6 +20,7 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
     void keyPressed(ApplicationContext *context) override;
+    void cleanup() override;
 
     [[nodiscard]] QList<Property::Type> properties() const override;
 
@@ -27,9 +29,12 @@ public:
 private:
     void updateCurrentHandler(ApplicationContext *context);
 
+    QList<std::shared_ptr<Item>> getItemsUnderCursor(ApplicationContext *context) const;
+
     TransformHandler *m_curHandler{};
     TransformHandler::State m_curHandlerState;
 
     QPointF m_lastPos{};
     bool m_isSelecting{false};
+    bool m_highlightDrawn{false};
 };

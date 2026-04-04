@@ -37,6 +37,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
     updateCurrentHandler(context);
 
     if (m_curHandler) {
+        context->selectionContext()->setShouldRenderHandles(false);
         m_curHandlerState = m_curHandler->mousePressed(context);
         return;
     }
@@ -53,14 +54,6 @@ void SelectionTool::mousePressed(ApplicationContext *context)
         auto commandHistory{spatialContext->commandHistory()};
         auto transformer{spatialContext->coordinateTransformer()};
 
-        constexpr qreal cursorHitSize{10.0};
-        const QPointF worldPos{transformer.viewToWorld(m_lastPos)};
-        const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
-
-        QList<std::shared_ptr<Item>> intersectingItems{spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
-            return item->intersects(region);
-        })};
-
         auto lockState{TransformHandler::State::Locked};
 
         const auto &selectedItems{selectionContext->selectedItems()};
@@ -73,16 +66,15 @@ void SelectionTool::mousePressed(ApplicationContext *context)
             }
         }
 
+        const auto intersectingItems{getItemsUnderCursor(context)};
+
         if (intersectingItems.empty()) {
             m_isSelecting = true;
         } else {
             auto &item{intersectingItems.back()};
 
             if (!item->locked()) {
-                if ((event->modifiers() & Qt::ShiftModifier) && selectedItems.contains(item)) {
-                    // deselect the item if selected
-                    commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{item}));
-                } else {
+                if (!(event->modifiers() & Qt::ShiftModifier) || !selectedItems.contains(item)) {
                     commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{item}));
                 }
             }
@@ -104,6 +96,34 @@ void SelectionTool::mousePressed(ApplicationContext *context)
 void SelectionTool::mouseMoved(ApplicationContext *context)
 {
     updateCurrentHandler(context);
+
+    auto canvas{context->renderingContext()->canvas()};
+
+    if (m_highlightDrawn) {
+        canvas->setOverlayBg(canvas->overlayBg());
+        m_highlightDrawn = false;
+
+        context->renderingContext()->markForUpdate();
+    }
+
+    if (!m_isSelecting && context->selectionContext()->shouldRenderHandles()) {
+        const auto intersectingItems{getItemsUnderCursor(context)};
+        auto transformer{context->spatialContext()->coordinateTransformer()};
+
+        if (!intersectingItems.empty()) {
+            canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
+                QPen pen{Common::selectionBorderColor};
+                pen.setStyle(Qt::DotLine);
+
+                painter.setPen(pen);
+                painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
+            });
+
+            m_highlightDrawn = true;
+        }
+
+        context->renderingContext()->markForUpdate();
+    }
 
     if (m_curHandler) {
         m_curHandlerState = m_curHandler->mouseMoved(context);
@@ -153,6 +173,10 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
 {
     updateCurrentHandler(context);
 
+    context->selectionContext()->setShouldRenderHandles(true);
+    context->renderingContext()->markForRender();
+    context->renderingContext()->markForUpdate();
+
     if (m_curHandler) {
         m_curHandlerState = m_curHandler->mouseReleased(context);
         return;
@@ -186,6 +210,11 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
     m_curHandlerState = TransformHandler::State::Unlocked;
 }
 
+void SelectionTool::cleanup()
+{
+    mouseReleased(m_context);
+}
+
 void SelectionTool::updateCurrentHandler(ApplicationContext *context)
 {
     if (m_curHandlerState == TransformHandler::State::Locked) {
@@ -214,8 +243,49 @@ void SelectionTool::updateCurrentHandler(ApplicationContext *context)
     m_curHandler = nullptr;
 }
 
-void SelectionTool::keyPressed([[maybe_unused]] ApplicationContext *context)
+void SelectionTool::keyPressed(ApplicationContext *context)
 {
+    const auto &selectedItems{context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+
+    auto event{context->uiContext()->appEvent()};
+    auto commandHistory{context->spatialContext()->commandHistory()};
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+
+    int delta{Common::translationDelta};
+    if (event->modifiers() & Qt::ShiftModifier) {
+        delta = Common::shiftTranslationDelta;
+    }
+
+    const QPointF worldOriginalPos{context->selectionContext()->selectionBox().boundingRect().topLeft()};
+
+    bool updated{true};
+    QPointF worldFinalPos{worldOriginalPos};
+
+    switch (event->key()) {
+    case Qt::Key_Left:
+        worldFinalPos.setX(worldFinalPos.x() - delta);
+        break;
+    case Qt::Key_Right:
+        worldFinalPos.setX(worldFinalPos.x() + delta);
+        break;
+    case Qt::Key_Up:
+        worldFinalPos.setY(worldFinalPos.y() - delta);
+        break;
+    case Qt::Key_Down:
+        worldFinalPos.setY(worldFinalPos.y() + delta);
+        break;
+    default:
+        updated = false;
+    }
+
+    if (updated) {
+        commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+        context->renderingContext()->markForRender();
+        context->renderingContext()->markForUpdate();
+    }
 }
 
 QList<Property::Type> SelectionTool::properties() const
@@ -226,7 +296,8 @@ QList<Property::Type> SelectionTool::properties() const
         std::set<Property::Type> result;
         bool hasArrow = false;
         for (const auto &item : selectedItems) {
-            for (const auto &property : item->propertyTypes()) {
+            const auto &propertyTypes{item->propertyTypes()};
+            for (const auto &property : std::as_const(propertyTypes)) {
                 result.insert(property);
                 if (!hasArrow && dynamic_cast<const ArrowItem *>(item.get())) {
                     hasArrow = true;
@@ -247,6 +318,20 @@ QList<Property::Type> SelectionTool::properties() const
     } else {
         return {};
     }
+}
+
+QList<std::shared_ptr<Item>> SelectionTool::getItemsUnderCursor(ApplicationContext *context) const
+{
+    auto spatialContext{context->spatialContext()};
+    auto transformer{spatialContext->coordinateTransformer()};
+
+    constexpr int cursorHitSize{Common::selectionCursorHitSize};
+    const QPointF worldPos{transformer.viewToWorld(context->uiContext()->appEvent()->pos())};
+    const QRectF cursorRegion{worldPos.x() - cursorHitSize / 2.0, worldPos.y() - cursorHitSize / 2.0, cursorHitSize, cursorHitSize};
+
+    return spatialContext->quadtree().queryItems(cursorRegion, [](const std::shared_ptr<Item> &item, auto &region) {
+        return item->intersects(region);
+    });
 }
 
 Tool::Type SelectionTool::type() const

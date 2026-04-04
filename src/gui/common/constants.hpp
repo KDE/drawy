@@ -62,6 +62,10 @@ inline const QString drawyFileExt{u"drawy"_s};
 
 inline const QString drawyClipboardMime{u"application/x-drawy-clipboard"_s};
 
+inline constexpr int translationDelta{1}; // in px
+inline constexpr int shiftTranslationDelta{10}; // in px
+inline constexpr int selectionCursorHitSize{10}; // in px, the size for detecting collisions with the cursor
+
 inline const QString configSession{u"Session"_s};
 inline const QString configSessionLastSavedFile{u"LastSavedFile"_s};
 inline const QString configSessionLastSavedFileModified{u"LastSavedFileModified"_s};

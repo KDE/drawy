@@ -207,7 +207,7 @@ void CacheGrid::setSize(int newSize)
 
 void CacheGrid::markAllDirty()
 {
-    for (const auto &cell : std::move(m_grid)) {
+    for (const auto &cell : std::as_const(m_grid)) {
         cell->setDirty(true);
     }
 }

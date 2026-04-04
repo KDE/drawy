@@ -90,7 +90,8 @@ void ArrowTypeWidget::setValue(const QVariant &value)
 {
     const auto stringValue{value.value<QString>()};
 
-    for (auto button : m_group->buttons()) {
+    const auto buttons{m_group->buttons()};
+    for (const auto button : std::as_const(buttons)) {
         if (button->property("arrow-head").value<QString>() == stringValue) {
             button->setChecked(true);
             return;
