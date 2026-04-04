@@ -829,7 +829,7 @@ msgstr "Tloušťka"
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
 msgid "Order"
-msgstr ""
+msgstr "Pořadí"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
