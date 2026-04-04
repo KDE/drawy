@@ -181,6 +181,10 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
 
 QPainterPath getStrokePath(const QList<QPointF> &points)
 {
+    if (points.isEmpty()) {
+        return {};
+    }
+
     QPainterPath path{};
     path.moveTo(points[0]);
 
