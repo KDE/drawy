@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-25 11:00+0100\n"
+"PO-Revision-Date: 2026-04-02 10:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -206,12 +206,10 @@ msgid "Image"
 msgstr "Imatge"
 
 #: widgets/components/toolbuttonplugin.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Eina de moure"
+msgstr "Més eines"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -811,10 +809,9 @@ msgstr "Gruix"
 
 # NdT: Ordre d'elements segons l'eix Z
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Ordre de Z"
+msgstr "Ordre"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
@@ -832,7 +829,3 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select Plugin"
-#~ msgstr "Connector de selecció"

@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 02:37+0000\n"
-"PO-Revision-Date: 2026-03-22 15:16+0100\n"
-"Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2026-04-02 09:10+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,16 +83,14 @@ msgid "Change Background Style"
 msgstr "Changer le style d'arrière-plan"
 
 #: gui/properties/property.cpp:115
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Changer le style de flèche"
+msgstr "Changer le style de la flèche de début"
 
 #: gui/properties/property.cpp:117
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change End Arrow Head"
-msgstr "Changer le style de flèche"
+msgstr "Changer le style de la flèche de fin"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -127,11 +125,9 @@ msgid "Deselect Object"
 msgstr "Désélectionner l'objet"
 
 #: widgets/command/groupcommand.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "ActionsWidget|"
-#| msgid "Group selection"
+#, kde-format
 msgid "Group Object"
-msgstr "Grouper la sélection"
+msgstr "Regrouper l'objet"
 
 #: widgets/command/insertitemcommand.cpp:55
 #, kde-format
@@ -144,11 +140,9 @@ msgid "Resize Line"
 msgstr "Redimensionner la ligne"
 
 #: widgets/command/lockcommand.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "OpacityWidget|"
-#| msgid "Opacity"
+#, kde-format
 msgid "Change Lock"
-msgstr "Opacité"
+msgstr "Modifier le verrouillage"
 
 #: widgets/command/moveitemcommand.cpp:66
 #, kde-format
@@ -669,44 +663,37 @@ msgid "Alignment"
 msgstr "Alignement"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
-msgstr "Aucun"
+msgstr "Aucune"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Flèche"
+msgstr "Flèche ouverte"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Triangle"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Full Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
 msgstr "Triangle rempli"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Cercle"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Losange"
@@ -715,7 +702,7 @@ msgstr "Losange"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Sélectionner le style de flèche"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -767,7 +754,7 @@ msgstr "Couleur"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Style de flèche de fin"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -788,7 +775,7 @@ msgstr "Opacité"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Style de flèche de début"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
