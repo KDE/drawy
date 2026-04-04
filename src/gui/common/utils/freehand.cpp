@@ -17,7 +17,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
 {
     using namespace Common::Utils::Math;
     if (points.size() != pressures.size()) {
-        throw new std::logic_error("Pressures and points list have different sizes");
+        throw std::logic_error("Pressures and points list have different sizes");
     }
 
     if (points.empty()) {
