@@ -21,7 +21,7 @@ UngroupCommand::UngroupCommand(QList<std::shared_ptr<Item>> items)
     : ItemCommand{std::move(items)}
 {
     qCDebug(DRAWY_COMMAND_LOG) << "UngroupCommand" << m_items.count();
-    for (const auto &item : m_items) {
+    for (const auto &item : std::as_const(m_items)) {
         if (item->formType() == Item::FormType::Group) {
             m_groups.push_back(std::dynamic_pointer_cast<GroupItem>(item));
         }

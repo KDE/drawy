@@ -296,7 +296,8 @@ QList<Property::Type> SelectionTool::properties() const
         std::set<Property::Type> result;
         bool hasArrow = false;
         for (const auto &item : selectedItems) {
-            for (const auto &property : item->propertyTypes()) {
+            const auto &propertyTypes{item->propertyTypes()};
+            for (const auto &property : std::as_const(propertyTypes)) {
                 result.insert(property);
                 if (!hasArrow && dynamic_cast<const ArrowItem *>(item.get())) {
                     hasArrow = true;

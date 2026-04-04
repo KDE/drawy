@@ -12,7 +12,7 @@ PluginForm::PluginForm(QObject *parent)
 
 PluginForm::~PluginForm() = default;
 
-QList<PluginForm::PluginFormInfo> PluginForm::pluginFormInfos() const
+const QList<PluginForm::PluginFormInfo> &PluginForm::pluginFormInfos() const
 {
     return mPluginFormInfoList;
 }

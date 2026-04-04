@@ -169,7 +169,7 @@ QList<Property> GroupItem::properties() const
     QList<Property> result;
     auto types = propertyTypes();
     std::sort(types.begin(), types.end());
-    for (const auto type : types) {
+    for (const auto type : std::as_const(types)) {
         const Property prop = property(type);
         if (prop.type() != Property::Type::Null) {
             result.append(prop);

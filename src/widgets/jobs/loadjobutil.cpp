@@ -23,11 +23,11 @@ void LoadJobUtil::loadFile(ApplicationContext *context, const LoadJob::LoadInfo 
             auto groupItem = std::static_pointer_cast<GroupItem>(item);
 
             auto children = groupItem->unGroup();
-            for (const auto &child : children) {
+            for (const auto &child : std::as_const(children)) {
                 processItem(child);
             }
 
-            for (const auto &child : children) {
+            for (const auto &child : std::as_const(children)) {
                 quadtree.deleteItem(child, false);
             }
 

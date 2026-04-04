@@ -70,7 +70,8 @@ const Property StokeStyleWidget::value() const
 
 void StokeStyleWidget::setValue(const QVariant &val)
 {
-    for (auto b : m_group->buttons()) {
+    const auto buttons{m_group->buttons()};
+    for (const auto b : std::as_const(buttons)) {
         if (b->property("stroke-style").toString() == val.toString()) {
             b->setChecked(true);
             break;
