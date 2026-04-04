@@ -171,7 +171,22 @@ void BoardLayout::setGeometry(const QRect &rect)
     }
     if (m_leftWidget != nullptr) {
         const QSize size{effectiveSize(m_leftWidget)};
-        m_leftWidget->setGeometry(QRect(m_margins, (rect.height() - size.height()) / 2, size.width(), size.height()));
+
+        int topPosition{(rect.height() - size.height()) / 2};
+        if (m_topLeftWidget) {
+            topPosition = qMax(topPosition, m_topLeftWidget->geometry().bottom() + m_margins);
+        }
+
+        int maxHeight{rect.height() - 2 * m_margins};
+        if (m_topLeftWidget) {
+            maxHeight -= (m_topLeftWidget->geometry().height() + m_margins);
+        }
+
+        if (m_bottomLeftWidget) {
+            maxHeight -= (m_bottomLeftWidget->geometry().height() + m_margins);
+        }
+
+        m_leftWidget->setGeometry(QRect(m_margins, topPosition, size.width(), qMin(size.height(), maxHeight)));
     }
     if (m_rightWidget != nullptr) {
         const QSize size{effectiveSize(m_rightWidget)};
