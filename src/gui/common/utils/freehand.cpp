@@ -17,7 +17,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
 {
     using namespace Common::Utils::Math;
     if (points.size() != pressures.size()) {
-        throw new std::logic_error("Pressures and points list have different sizes");
+        throw std::logic_error("Pressures and points list have different sizes");
     }
 
     if (points.empty()) {
@@ -181,6 +181,10 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
 
 QPainterPath getStrokePath(const QList<QPointF> &points)
 {
+    if (points.isEmpty()) {
+        return {};
+    }
+
     QPainterPath path{};
     path.moveTo(points[0]);
 

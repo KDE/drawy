@@ -16,7 +16,6 @@ class LIBDRAWYGUI_EXPORT FreeformItem : public Item, public std::enable_shared_f
 public:
     FreeformItem();
     ~FreeformItem() override = default;
-    FreeformItem(const FreeformItem &freeform);
 
     void draw(QPainter &painter, const QPointF &offset) override;
     void drawBuffer(QPainter &painter, const QPointF &offset) const;

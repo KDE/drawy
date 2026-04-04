@@ -83,12 +83,9 @@ QPointF ItemDeserializer::toPointF(const QJsonValue &val)
 
     if (obj.contains(u"x"_s) && obj.contains(u"y"_s)) {
         return QPointF{obj[u"x"].toDouble(), obj[u"y"].toDouble()};
-    } else {
-        qCWarning(DRAWY_GUI_LOG) << "Given point does not contain x and y properties";
-        return {};
     }
 
-    qCWarning(DRAWY_GUI_LOG) << "Given point value is not an object";
+    qCWarning(DRAWY_GUI_LOG) << "Given point does not contain x and y properties";
     return {};
 }
 
@@ -115,11 +112,8 @@ QRectF ItemDeserializer::toRectF(const QJsonValue &val)
 
     if (obj.contains(u"x"_s) && obj.contains(u"y"_s) && obj.contains(u"width"_s) && obj.contains(u"height"_s)) {
         return QRectF{obj[u"x"].toDouble(), obj[u"y"].toDouble(), obj[u"width"].toDouble(), obj[u"height"].toDouble()};
-    } else {
-        qCWarning(DRAWY_GUI_LOG) << "Given rect does not contain x, y, width and height properties";
-        return {};
     }
 
-    qCWarning(DRAWY_GUI_LOG) << "Given rect value is not an object";
+    qCWarning(DRAWY_GUI_LOG) << "Given rect does not contain x, y, width and height properties";
     return {};
 }

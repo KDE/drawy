@@ -13,8 +13,8 @@ int orientation(QPointF a, QPointF b, QPointF c)
     const QPointF ab{b.x() - a.x(), b.y() - a.y()};
     const QPointF ac{c.x() - a.x(), c.y() - a.y()};
 
-    const int orient{static_cast<int>(ab.x() * ac.y() - ac.x() * ab.y())};
-    return (orient == 0 ? 0 : (orient < 0 ? -1 : 1));
+    const qreal orient{ab.x() * ac.y() - ac.x() * ab.y()};
+    return (qFuzzyIsNull(orient) ? 0 : (orient < 0 ? -1 : 1));
 }
 
 bool intersects(const QRectF &rectA, const QRectF &rectB)
