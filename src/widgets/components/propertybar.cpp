@@ -5,9 +5,8 @@
 #include "propertybar.hpp"
 
 #include <QLabel>
+#include <QScrollArea>
 #include <QStyle>
-#include <qsharedpointer.h>
-#include <stdexcept>
 
 #include "context/applicationcontext.hpp"
 #include "context/selectioncontext.hpp"
@@ -22,11 +21,33 @@ using namespace Qt::Literals::StringLiterals;
 
 PropertyBar::PropertyBar(ApplicationContext *context, QWidget *parent)
     : Frame{parent}
-    , m_layout(new QVBoxLayout{this})
-    , m_context(context)
+    , m_contentWidget{new QWidget(this)}
+    , m_layout{new QVBoxLayout(m_contentWidget)}
+    , m_context{context}
 {
     const int margins{style()->pixelMetric(QStyle::PM_ToolBarItemMargin) * 2};
     m_layout->setContentsMargins(margins, margins, margins, margins);
+
+    m_layout->setAlignment(Qt::AlignTop);
+
+    QScrollArea *scrollArea = new QScrollArea(this);
+    scrollArea->setWidget(m_contentWidget);
+
+    scrollArea->setWidgetResizable(true);
+
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+
+    scrollArea->setFrameShape(QFrame::NoFrame);
+
+    auto *mainLayout = new QVBoxLayout(this);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->addWidget(scrollArea);
+}
+
+QSize PropertyBar::sizeHint() const
+{
+    return m_contentWidget->sizeHint();
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)
@@ -47,6 +68,8 @@ void PropertyBar::updateProperties(Tool &tool)
 
     m_updateInProgress = true;
 
+    hide();
+
     // remove existing widgets
     QLayoutItem *curItem = nullptr;
     while ((curItem = m_layout->takeAt(0)) != nullptr) {
@@ -65,12 +88,6 @@ void PropertyBar::updateProperties(Tool &tool)
 
     QList<Property::Type> properties{tool.properties()};
 
-    if (properties.empty()) {
-        hide();
-    } else {
-        show();
-    }
-
     std::sort(properties.begin(), properties.end(), [](const auto first, const auto second) -> bool {
         return Property::propertyPriority(first) < Property::propertyPriority(second);
     });
@@ -78,7 +95,9 @@ void PropertyBar::updateProperties(Tool &tool)
     for (Property::Type property : properties) {
         try {
             PropertyWidget *const widget{m_propertyManager->widget(property)};
-            auto widgetLabel{new QLabel{widget->name(), this}};
+
+            auto widgetLabel{new QLabel{widget->name(), m_contentWidget}};
+
             m_layout->addWidget(widgetLabel);
             m_layout->addWidget(widget->widget());
 
@@ -87,6 +106,12 @@ void PropertyBar::updateProperties(Tool &tool)
         } catch (const std::logic_error &) {
             // ignore this property
         }
+    }
+
+    if (properties.empty()) {
+        hide();
+    } else {
+        show();
     }
 
     update();
