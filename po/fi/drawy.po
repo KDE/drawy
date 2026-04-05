@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 02:37+0000\n"
+"POT-Creation-Date: 2026-04-05 02:39+0000\n"
 "PO-Revision-Date: 2026-01-02 11:41+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -199,7 +199,7 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr ""
 
-#: widgets/components/toolbuttonplugin.cpp:33
+#: widgets/components/toolbuttonplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
@@ -761,7 +761,7 @@ msgstr ""
 msgid "Font Size"
 msgstr ""
 
-#: widgets/properties/widgets/opacitywidget.cpp:48
+#: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
 msgid "Opacity"
 msgstr ""
