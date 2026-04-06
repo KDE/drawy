@@ -200,12 +200,10 @@ msgid "Image"
 msgstr "გამოსახულება"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "გადატანის ხელსაწყო"
+msgstr "მეტი ხელსაწყო"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -804,10 +802,9 @@ msgid "Thickness"
 msgstr "სისქე"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Z-მიმდევრობა"
+msgstr "დალაგება"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
