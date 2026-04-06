@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-05 00:41+0000\n"
-"PO-Revision-Date: 2026-04-02 09:10+0200\n"
+"PO-Revision-Date: 2026-04-04 10:00+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -201,12 +201,10 @@ msgid "Image"
 msgstr "Image"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Outil de déplacement"
+msgstr "Plus d'outils"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -811,10 +809,9 @@ msgid "Thickness"
 msgstr "Épaisseur"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Ordre d'empilement"
+msgstr "Ordre"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
