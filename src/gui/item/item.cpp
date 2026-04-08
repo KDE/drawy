@@ -133,10 +133,10 @@ void Item::setProperty(const Property::Type propertyType, Property newObj)
 {
     if (m_properties.contains(propertyType)) {
         m_properties[propertyType] = std::move(newObj);
-    }
 
-    setDirty(true);
-    updateAfterProperty();
+        setDirty(true);
+        updateAfterProperty();
+    }
 }
 
 void Item::updateAfterProperty()

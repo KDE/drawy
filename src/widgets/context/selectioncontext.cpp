@@ -97,8 +97,18 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
     const QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
-    auto command = std::make_shared<UpdatePropertyCommand>(items, property);
-    if (command->verifyDifferentProperty()) {
+    bool shouldUpdateProperty{false}; // we must only insert it in the command history if the new property is different
+
+    const auto propertyType{property.type()};
+    for (const auto &item : items) {
+        if (item->hasProperty(propertyType) && item->property(propertyType) != property) {
+            shouldUpdateProperty = true;
+            break;
+        }
+    }
+
+    if (shouldUpdateProperty) {
+        const auto command{std::make_shared<UpdatePropertyCommand>(items, property)};
         const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
         commandHistory->push(command);
 

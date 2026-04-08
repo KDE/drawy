@@ -17,8 +17,6 @@ public:
     void undo(ApplicationContext *context) override;
     [[nodiscard]] QString text() const override;
 
-    [[nodiscard]] bool verifyDifferentProperty() const;
-
 private:
     Property m_newProperty{};
     std::unordered_map<std::shared_ptr<Item>, Property> m_properties{};

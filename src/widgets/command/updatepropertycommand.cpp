@@ -23,30 +23,17 @@ UpdatePropertyCommand::UpdatePropertyCommand(QList<std::shared_ptr<Item>> items,
     qCDebug(DRAWY_COMMAND_LOG) << "UpdatePropertyCommand" << m_items.count();
 }
 
-bool UpdatePropertyCommand::verifyDifferentProperty() const
-{
-    const Property::Type type{m_newProperty.type()};
-    for (const auto &item : std::as_const(m_items)) {
-        if (item->property(type) != m_newProperty) {
-            return true;
-        }
-    }
-    return false;
-}
-
 void UpdatePropertyCommand::redo(ApplicationContext *context)
 {
     const Property::Type type{m_newProperty.type()};
 
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
-        try {
+        if (item->hasProperty(type)) {
             m_properties[item] = item->property(type);
             item->setProperty(type, m_newProperty);
             item->setDirty(true);
             dirtyRegion |= item->boundingBox();
-        } catch (const std::logic_error &) {
-            // Ignore if not found
         }
     }
 
@@ -60,12 +47,10 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
 
     QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        try {
+        if (item->hasProperty(type)) {
             item->setProperty(type, m_properties[item]);
             item->setDirty(true);
             dirtyRegion |= item->boundingBox();
-        } catch (const std::logic_error &) {
-            // Ignore if not found
         }
     }
 
