@@ -42,7 +42,7 @@ public:
 
     void toolChanged(Tool &);
 
-    [[nodiscard]] bool isDarkTheme() const;
+    [[nodiscard]] static bool isDarkTheme();
     void slotThemeChanged();
 
 Q_SIGNALS:

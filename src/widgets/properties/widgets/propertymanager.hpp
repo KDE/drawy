@@ -20,6 +20,8 @@ public:
     [[nodiscard]] PropertyWidget *widget(const Property::Type type) const;
     [[nodiscard]] Property value(const Property::Type type) const;
 
+    void slotUpdateWidgets();
+
 Q_SIGNALS:
     void propertyUpdated(Property property);
 

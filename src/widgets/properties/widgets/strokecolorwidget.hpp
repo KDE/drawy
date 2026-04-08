@@ -13,7 +13,4 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] const Property value() const override;
-
-protected:
-    [[nodiscard]] QList<QColor> defaultColors() const override;
 };

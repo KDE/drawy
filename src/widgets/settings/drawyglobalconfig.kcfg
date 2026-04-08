@@ -43,4 +43,40 @@
         <default>#121212</default>
       </entry>
     </group>
+    <group name="Palette">
+      <entry name="ForegroundColorLight" type="Color">
+        <default>#2B2F36</default>
+      </entry>
+      <entry name="ForegroundColorDark" type="Color">
+        <default>#F5F6F8</default>
+      </entry>
+
+      <entry name="FirstColorLight" type="Color">
+        <default>#D84452</default>
+      </entry>
+      <entry name="FirstColorDark" type="Color">
+        <default>#D84452</default>
+      </entry>
+
+      <entry name="SecondColorLight" type="Color">
+        <default>#F5BA45</default>
+      </entry>
+      <entry name="SecondColorDark" type="Color">
+        <default>#F5BA45</default>
+      </entry>
+
+      <entry name="ThirdColorLight" type="Color">
+        <default>#4A89D9</default>
+      </entry>
+      <entry name="ThirdColorDark" type="Color">
+        <default>#4A89D9</default>
+      </entry>
+
+      <entry name="FourthColorLight" type="Color">
+        <default>#88C053</default>
+      </entry>
+      <entry name="FourthColorDark" type="Color">
+        <default>#88C053</default>
+      </entry>
+    </group>
 </kcfg>

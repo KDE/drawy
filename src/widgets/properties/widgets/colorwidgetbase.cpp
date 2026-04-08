@@ -3,7 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "colorwidgetbase.hpp"
-
+#include "context/uicontext.hpp"
+#include "drawyglobalconfig.h"
 #include <KLocalizedString>
 #include <KSeparator>
 #include <QButtonGroup>
@@ -11,8 +12,23 @@
 #include <QColorDialog>
 #include <QHBoxLayout>
 #include <QToolButton>
-
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+QList<QColor> paletteColors()
+{
+    const bool isDark{UIContext::isDarkTheme()};
+    const auto cfg{DrawyGlobalConfig::self()};
+
+    return {isDark ? cfg->foregroundColorDark() : cfg->foregroundColorLight(),
+            isDark ? cfg->firstColorDark() : cfg->firstColorLight(),
+            isDark ? cfg->secondColorDark() : cfg->secondColorLight(),
+            isDark ? cfg->thirdColorDark() : cfg->thirdColorLight(),
+            isDark ? cfg->fourthColorDark() : cfg->fourthColorLight()};
+}
+};
+
 ColorWidgetBase::ColorWidgetBase(QWidget *parent)
     : PropertyWidget{parent}
 {
@@ -26,20 +42,22 @@ void ColorWidgetBase::initialize()
     layout->setContentsMargins({});
     layout->setAlignment(Qt::AlignLeft);
 
-    const QList<QColor> colors = defaultColors();
-
     auto colorButtonHLayout = new QHBoxLayout;
     colorButtonHLayout->setContentsMargins({});
     colorButtonHLayout->setSpacing(0);
     layout->addLayout(colorButtonHLayout);
 
-    for (const QColor &color : colors) {
+    const auto colors{paletteColors()};
+    for (qsizetype pos = 0; pos < colors.size(); pos++) {
+        const auto color{colors[pos]};
+
         auto btn{new QToolButton{m_widget}};
         btn->setCheckable(true);
         btn->setStyleSheet(u"background-color: "_s + color.name());
         btn->setProperty("color-value", color);
         colorButtonHLayout->addWidget(btn);
-        m_group->addButton(btn);
+
+        m_group->addButton(btn, static_cast<int>(pos));
     }
 
     auto separator = new KSeparator(Qt::Vertical, m_widget);
@@ -70,6 +88,24 @@ void ColorWidgetBase::initialize()
     m_group->buttons().at(0)->setChecked(true);
     assignCurrentColor(m_group->buttons().at(0)->property("color-value").value<QColor>());
     m_widget->hide();
+}
+
+void ColorWidgetBase::updateWidget()
+{
+    const auto colors{paletteColors()};
+
+    for (qsizetype pos = 0; pos < colors.size(); pos++) {
+        const auto btn{m_group->button(static_cast<int>(pos))};
+        const auto color{colors[pos]};
+
+        if (m_currentColorButton->property("color-value") == btn->property("color-value")) {
+            assignCurrentColor(color);
+        }
+
+        btn->setCheckable(true);
+        btn->setStyleSheet(u"background-color: "_s + color.name());
+        btn->setProperty("color-value", color);
+    }
 }
 
 void ColorWidgetBase::assignCurrentColor(const QColor &col)

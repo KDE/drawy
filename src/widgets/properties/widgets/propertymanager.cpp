@@ -60,4 +60,11 @@ Property PropertyManager::value(const Property::Type type) const
     return widget(type)->value();
 }
 
+void PropertyManager::slotUpdateWidgets()
+{
+    for (const auto &widget : m_widgets) {
+        widget->updateWidget();
+    }
+}
+
 #include "moc_propertymanager.cpp"

@@ -16,6 +16,7 @@ public:
     virtual QString name() const = 0;
     virtual const Property value() const = 0;
     virtual void setValue(const QVariant &val);
+    virtual void updateWidget();
 
     QWidget *widget() const;
 
