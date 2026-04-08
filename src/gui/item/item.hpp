@@ -89,7 +89,7 @@ public:
     [[nodiscard]] bool isDirty() const;
     void setDirty(bool value);
 
-    [[nodiscard]] bool hasProperty(Property::Type propertyType) const;
+    [[nodiscard]] virtual bool hasProperty(Property::Type propertyType) const;
 
     [[nodiscard]] QByteArray id() const;
     void setId(const QByteArray &newId);

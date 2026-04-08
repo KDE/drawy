@@ -29,6 +29,7 @@ public:
     [[nodiscard]] QList<Property> properties() const override;
     [[nodiscard]] QList<Property::Type> propertyTypes() const override;
     [[nodiscard]] QList<Property::Type> allPropertyTypes() const override;
+    [[nodiscard]] bool hasProperty(Property::Type propertyType) const override;
 
     [[nodiscard]] QRectF boundingBox() const override;
     [[nodiscard]] QRectF normalizedBoundingBox() const override;
