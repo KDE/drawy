@@ -100,7 +100,7 @@ void UIContext::initializeUIContext()
     connect(this, &UIContext::themeChanged, &IconManager::instance(), &IconManager::slotUpdateIcons);
     connect(this, &UIContext::themeChanged, m_propertyManager, &PropertyManager::slotUpdateWidgets);
 
-    connect(&IconManager::instance(), &IconManager::requestIconUpdate, this, [this]() -> void {
+    connect(&IconManager::instance(), &IconManager::requestIconUpdate, this, []() -> void {
         IconManager::instance().slotUpdateIcons(isDarkTheme());
     });
 
