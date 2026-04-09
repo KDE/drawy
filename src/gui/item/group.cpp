@@ -200,6 +200,17 @@ QList<Property::Type> GroupItem::allPropertyTypes() const
     return QList<Property::Type>(types.begin(), types.end());
 }
 
+bool GroupItem::hasProperty(Property::Type propertyType) const
+{
+    for (const auto &item : std::as_const(m_items)) {
+        if (item->hasProperty(propertyType)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
 {
 }

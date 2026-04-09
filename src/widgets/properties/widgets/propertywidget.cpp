@@ -18,4 +18,10 @@ QWidget *PropertyWidget::widget() const
     return m_widget;
 }
 
+void PropertyWidget::updateWidget()
+{
+    // implement this to automatically update your widget
+    // upon changes to the theme, drawy config, etc.
+}
+
 #include "moc_propertywidget.cpp"

@@ -16,9 +16,9 @@ public:
 
     [[nodiscard]] QString name() const override;
     void setValue(const QVariant &val) override;
+    void updateWidget() override;
 
 protected:
-    [[nodiscard]] virtual QList<QColor> defaultColors() const = 0;
     void initialize();
     QButtonGroup *m_group = nullptr;
     QToolButton *m_currentColorButton = nullptr;

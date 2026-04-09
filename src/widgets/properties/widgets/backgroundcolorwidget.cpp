@@ -4,13 +4,12 @@
 
 #include "backgroundcolorwidget.hpp"
 
+#include "properties/property.hpp"
 #include <KLocalizedString>
 #include <QColor>
 #include <QToolButton>
-
-#include "properties/property.hpp"
-#include "properties/propertyutils.hpp"
 using namespace Qt::Literals::StringLiterals;
+
 BackgroundColorWidget::BackgroundColorWidget(QWidget *parent)
     : ColorWidgetBase{parent}
 {
@@ -25,11 +24,6 @@ QString BackgroundColorWidget::name() const
 const Property BackgroundColorWidget::value() const
 {
     return Property{m_currentColorButton->property("color-value"), Property::Type::BackgroundColor};
-}
-
-QList<QColor> BackgroundColorWidget::defaultColors() const
-{
-    return PropertyUtils::backgroundDefaultColors();
 }
 
 #include "moc_backgroundcolorwidget.cpp"

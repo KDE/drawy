@@ -134,8 +134,6 @@ target_sources(
         properties/widgets/backgroundstyleactionswidget.cpp
         properties/widgets/strokestyleactionswidget.hpp
         properties/widgets/strokestyleactionswidget.cpp
-        properties/propertyutils.cpp
-        properties/propertyutils.hpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp
@@ -213,6 +211,8 @@ target_sources(
         dialog/general/autosavewidget.cpp
         dialog/general/canvascolorwidget.hpp
         dialog/general/canvascolorwidget.cpp
+        dialog/general/defaultcolorswidget.hpp
+        dialog/general/defaultcolorswidget.cpp
         dialog/misc/configuremiscwidget.hpp
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp

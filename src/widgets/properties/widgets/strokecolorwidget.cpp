@@ -5,7 +5,6 @@
 #include "strokecolorwidget.hpp"
 
 #include "properties/property.hpp"
-#include "properties/propertyutils.hpp"
 #include <KLocalizedString>
 #include <QColor>
 #include <QToolButton>
@@ -24,11 +23,6 @@ QString StrokeColorWidget::name() const
 const Property StrokeColorWidget::value() const
 {
     return Property{m_currentColorButton->property("color-value"), Property::Type::StrokeColor};
-}
-
-QList<QColor> StrokeColorWidget::defaultColors() const
-{
-    return PropertyUtils::strokeDefaultColors();
 }
 
 #include "moc_strokecolorwidget.cpp"

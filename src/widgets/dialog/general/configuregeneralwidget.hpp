@@ -8,6 +8,7 @@
 #include <QWidget>
 class AutoSaveWidget;
 class CanvasColorWidget;
+class DefaultColorsWidget;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureGeneralWidget : public QWidget
 {
@@ -23,4 +24,5 @@ public:
 private:
     AutoSaveWidget *const m_autoSaveWidget;
     CanvasColorWidget *const m_canvasColorWidget;
+    DefaultColorsWidget *const m_defaultColorsWidget;
 };

@@ -18,8 +18,8 @@ CanvasColorWidget::CanvasColorWidget(QWidget *parent)
     const auto layout{new QFormLayout{widget}};
     layout->setContentsMargins(0, 0, 0, 0);
 
-    layout->addRow(i18n("Light theme color"), m_lightThemeColor);
-    layout->addRow(i18n("Dark theme color"), m_darkThemeColor);
+    layout->addRow(i18n("Light background color"), m_lightThemeColor);
+    layout->addRow(i18n("Dark background color"), m_darkThemeColor);
 
     m_layout->addWidget(widget);
 }

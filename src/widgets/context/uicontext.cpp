@@ -98,6 +98,8 @@ void UIContext::initializeUIContext()
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
     connect(this, &UIContext::themeChanged, &IconManager::instance(), &IconManager::slotUpdateIcons);
+    connect(this, &UIContext::themeChanged, m_propertyManager, &PropertyManager::slotUpdateWidgets);
+
     connect(&IconManager::instance(), &IconManager::requestIconUpdate, this, [this]() -> void {
         IconManager::instance().slotUpdateIcons(isDarkTheme());
     });
@@ -108,7 +110,7 @@ void UIContext::initializeUIContext()
     m_propertyBar->updateProperties(m_toolBar->curTool());
 }
 
-bool UIContext::isDarkTheme() const
+bool UIContext::isDarkTheme()
 {
     const QColor bgColor = QGuiApplication::palette().color(QPalette::Window);
     return bgColor.lightnessF() < 0.5;
