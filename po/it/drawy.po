@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-07 00:41+0000\n"
-"PO-Revision-Date: 2026-03-25 14:26+0100\n"
+"PO-Revision-Date: 2026-04-02 14:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -84,12 +84,12 @@ msgstr "Cambia stile dello sfondo"
 #: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Cambia estremità della freccia iniziale"
+msgstr "Cambia estremità iniziale della freccia"
 
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change End Arrow Head"
-msgstr "Cambia estremità della freccia finale"
+msgstr "Cambia estremità finale della freccia"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -200,12 +200,10 @@ msgid "Image"
 msgstr "Immagine"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Sposta"
+msgstr "Altri strumenti"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -707,7 +705,7 @@ msgstr "Rombo"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Seleziona l'estremità della freccia"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:22
 #, kde-format
@@ -759,7 +757,7 @@ msgstr "Colore"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Estremità finale della freccia"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -780,7 +778,7 @@ msgstr "Opacità"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Estremità iniziale della freccia"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
@@ -810,10 +808,9 @@ msgid "Thickness"
 msgstr "Spessore"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Ordine Z"
+msgstr "Ordine"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
