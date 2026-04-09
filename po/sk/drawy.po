@@ -1,323 +1,317 @@
+# Slovak translations for drawy package.
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the drawy package.
-# SPDX-FileCopyrightText: 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 03:27+0000\n"
-"PO-Revision-Date: 2026-03-26 10:33+0400\n"
-"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
-"Language: ar\n"
+"PO-Revision-Date: 2026-04-05 02:39+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "زايد السعيدي"
+msgstr "Roman Paholík"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zayed.alsaidi@gmail.com"
+msgstr "wizzardsk@gmail.com"
 
 #: apps/main.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
-msgstr "مُعطى اختياري 'ملفّ' "
+msgstr "Voliteľný argument 'súbor'"
 
 #: apps/main.cpp:44
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
-msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
+msgstr "Váš šikovný, nekonečný nástroj na brainstorming!"
 
 #: gui/properties/property.cpp:97
 #, kde-format
 msgid "Change Stroke Width"
-msgstr "غيّر عرض الحد"
+msgstr "Zmeniť šírku ťahu"
 
 #: gui/properties/property.cpp:99
 #, kde-format
 msgid "Change Stroke Color"
-msgstr "غيّر لون الحدّ"
+msgstr "Zmeniť farbu ťahu"
 
 #: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Opacity"
-msgstr "غيّر العتمة"
+msgstr "Zmeniť nepriehľadnosť"
 
 #: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Font Size"
-msgstr "غيّر حجم الخط"
+msgstr "Zmeniť veľkosť písma"
 
 #: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Eraser Size"
-msgstr "غيّر حجم الممحاة"
+msgstr "Zmeniť veľkosť gumy"
 
 #: gui/properties/property.cpp:107
 #: widgets/properties/widgets/actionswidget.cpp:50
 #, kde-format
 msgid "Actions"
-msgstr "الإجراءات"
+msgstr "Akcie"
 
 #: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Stroke Style"
-msgstr "غيّر نمط الحد"
+msgstr "Zmeniť štýl ťahu"
 
 #: gui/properties/property.cpp:111
 #, kde-format
 msgid "Change Background Color"
-msgstr "غير لون الخلفية"
+msgstr "Zmeniť farbu pozadia"
 
 #: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Background Style"
-msgstr "غير نمط الخلفية"
+msgstr "Zmeniť štýl pozadia"
 
 #: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Start Arrow Head"
-msgstr "غيّر رأس بداية السهم"
+msgstr "Zmeniť začiatok šípky"
 
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change End Arrow Head"
-msgstr "غيّر رأس نهاية السهم"
+msgstr "Zmeniť koniec šípky"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
 msgid "Change ZOrder"
-msgstr "غيّر الترتيب المنظوري"
+msgstr "Zmeniť poradie Z"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr "أشكال أساسية"
+msgstr "Základné tvary"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr "مثلّث"
+msgstr "Trojuholník"
 
 #: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr "صندوق X"
+msgstr "X Box"
 
 #: widgets/command/alignitemcommand.cpp:113
 #, kde-format
 msgid "Align Items"
-msgstr "حاذِ العناصر"
+msgstr "Zarovnať položky"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
-msgstr "أزل التّحديد الكائن"
+msgstr "Zrušiť výber objektu"
 
 #: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
-msgstr "اجمع الكائن"
+msgstr "Zoskupiť objekt"
 
 #: widgets/command/insertitemcommand.cpp:55
 #, kde-format
 msgid "Insert Object"
-msgstr "إدراج كائن"
+msgstr "Vložiť objekt"
 
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
-msgstr "غيّر حجم الخط"
+msgstr "Zmeniť veľkosť čiary"
 
 #: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
-msgstr "غيّر قفل"
+msgstr "Zmeniť zámok"
 
 #: widgets/command/moveitemcommand.cpp:66
 #, kde-format
 msgid "Move Object"
-msgstr "حرّك الكائن"
+msgstr "Presunúť objekt"
 
 #: widgets/command/removeitemcommand.cpp:60
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "أزل كائن"
-msgstr[1] "أزل كائن"
-msgstr[2] "أزل كائنين"
-msgstr[3] "أزل %1 كائنات"
-msgstr[4] "أزل %1 كائنًا"
-msgstr[5] "أزل %1 كائن"
+msgstr[0] "Odstrániť objekt"
+msgstr[1] "Odstrániť %1 objekty"
+msgstr[2] "Odstrániť %1 objektov"
 
 #: widgets/command/resizeitemcommand.cpp:72
 #, kde-format
 msgid "Resize Object"
-msgstr "غير حجم كائن"
+msgstr "Zmeniť veľkosť objektu"
 
 #: widgets/command/rotateitemcommand.cpp:58
 #, kde-format
 msgid "Rotate Object"
-msgstr "دوّر كائن"
+msgstr "Otočiť objekt"
 
 #: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
-msgstr "حدد الكائن"
+msgstr "Vybrať objekt"
 
 #: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
-msgstr "فك جمع الكائنات"
+msgstr "Zrušiť zoskupenie objektov"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr "100٪"
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
-msgstr "صفّر التكبير"
+msgstr "Obnoviť priblíženie"
 
 #: widgets/components/bottomleftwidgets.cpp:53
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr "%1٪"
+msgstr "%1%"
 
 #: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr "صورة"
+msgstr "Obrázok"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "أداة التّحريك"
+msgstr "Ďalšie nástroje"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
-msgstr "افتح القائمة"
+msgstr "Otvoriť ponuku"
 
 #: widgets/context/aboutdata.cpp:13
 #, kde-format
 msgid "Drawy"
-msgstr "السبورة"
+msgstr "Drawy"
 
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
+msgstr "Váš šikovný, nekonečný nástroj na brainstorming!"
 
 #: widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "© 2025-%1 مؤلفو السبورة"
+msgstr "© 2025–%1 autori Drawy"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
-msgstr "براياغ جاين"
+msgstr "Prayag Jain"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgid "Maintainer"
-msgstr "الصائن"
+msgstr "Správca"
 
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr "لوران مونتال"
+msgstr "Laurent Montel"
 
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
 msgid "Developer"
-msgstr "مطوّر"
+msgstr "Vývojár"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
-msgstr "التحديد"
+msgstr "Výber"
 
 #: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
-msgstr "شكل حر"
+msgstr "Voľný tvar"
 
 #: widgets/context/uicontext.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
-msgstr "مستطيل"
+msgstr "Obdĺžnik"
 
 #: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
-msgstr "معين"
+msgstr "Diamant"
 
 #: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
-msgstr "بيضاوي"
+msgstr "Elipsa"
 
 #: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
-msgstr "سهم"
+msgstr "Šípka"
 
 #: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
-msgstr "خط"
+msgstr "Čiara"
 
 #: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
-msgstr "ممحاة"
+msgstr "Guma"
 
 #: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
-msgstr "نص"
+msgstr "Text"
 
 #: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
-msgstr "حرّك"
+msgstr "Presunúť"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -325,77 +319,74 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr "إعطاء عرض تقديمي"
+msgstr "Prebieha prezentácia"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
-msgstr "اضبط السبورة"
+msgstr "Nastaviť Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:32
 #, kde-format
 msgid "General"
-msgstr "عامّ"
+msgstr "Hlavné"
 
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr "متنوّع"
+msgstr "Rôzne"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
 msgid "Session"
-msgstr "الجلسة"
+msgstr "Sedenie"
 
 #: widgets/dialog/general/autosavewidget.cpp:30
 #, kde-format
 msgid "Time interval for automatic saving"
-msgstr "الفترة الزمنية للحفظ الآلي"
+msgstr "Časový interval pre automatické ukladanie"
 
 #: widgets/dialog/general/autosavewidget.cpp:31
 #, kde-format
 msgctxt "@item %v is a number"
 msgid "%v minute"
 msgid_plural "%v minutes"
-msgstr[0] "أقل من دقيقة"
-msgstr[1] "دقيقة واحدة"
-msgstr[2] "دقيقتان"
-msgstr[3] "%v دقائق"
-msgstr[4] "%v دقيقة"
-msgstr[5] "%v دقيقة"
+msgstr[0] "%v minúta"
+msgstr[1] "%v minúty"
+msgstr[2] "%v minút"
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 #, kde-format
 msgid "Directory for automatic saving"
-msgstr "مجلد للحفظ الآلي"
+msgstr "Adresár pre automatické ukladanie"
 
 #: widgets/dialog/general/autosavewidget.cpp:45
 #, kde-format
 msgid "Open Directory"
-msgstr "افتح مجلدًا"
+msgstr "Otvoriť adresár"
 
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
-msgstr "استعادة الجلسة السابقة عند البدء"
+msgstr "Obnoviť predchádzajúcu reláciu pri spustení"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
 #, kde-format
 msgid "Canvas"
-msgstr "اللوحة"
+msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, fuzzy, kde-format
 #| msgid "Background Color"
 msgid "Light background color"
-msgstr "لون الخلفيّة"
+msgstr "Farba pozadia"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, fuzzy, kde-format
 #| msgid "Background Color"
 msgid "Dark background color"
-msgstr "لون الخلفيّة"
+msgstr "Farba pozadia"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
@@ -403,206 +394,202 @@ msgid "Color Palette"
 msgstr ""
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Light Mode"
+#, kde-format
 msgid "Light Mode"
-msgstr "الوضع الفاتح"
+msgstr ""
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Dark Mode"
+#, kde-format
 msgid "Dark Mode"
-msgstr "الوضع المظلم"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr "مدير الطاقة"
+msgstr "Správca napájania"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr "عطّل قفل الشاشة أثناء العرض بملء الشاشة"
+msgstr "Vypnúť uzamknutie obrazovky počas celej obrazovky"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
 msgctxt "@info:shell"
 msgid "Fullscreen"
-msgstr "ملء الشّاشة"
+msgstr "Celá obrazovka"
 
 #: widgets/drawycommandlineparser.cpp:20
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr "نشّط وضع التنقيح"
+msgstr "Zadajte užívateľské meno"
 
 #: widgets/keybindings/actionmanager.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "صدِّر كصورة"
+msgstr "Exportovať ako obrázok"
 
 #: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
-msgstr "عناصر المجموعة"
+msgstr "Zoskupiť položky"
 
 #: widgets/keybindings/actionmanager.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
-msgstr "فك تجميع العناصر"
+msgstr "Zrušiť zoskupenie položiek"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
-msgstr "احذف"
+msgstr "Odstrániť"
 
 #: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
-msgstr "امحُ الرقعة"
+msgstr "Clear Canvas"
 
 #: widgets/keybindings/actionmanager.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
-msgstr "أداة الرسم الحر"
+msgstr "Nástroj voľného tvaru"
 
 #: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
-msgstr "أداة الممحاة"
+msgstr "Nástroj guma"
 
 #: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
-msgstr "أداة التحديد"
+msgstr "Nástroj pre výber"
 
 #: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
-msgstr "أداة المستطيل"
+msgstr "Nástroj obdĺžnik"
 
 #: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
-msgstr "أداة الشكل البيضاوي"
+msgstr "Nástroj elipsa"
 
 #: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
-msgstr "أداة رسم الخطوط"
+msgstr "Nástroj čiar"
 
 #: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
-msgstr "أداة النصوص"
+msgstr "Textový nástroj"
 
 #: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
-msgstr "أداة السهم"
+msgstr "Nástroj šípka"
 
 #: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
-msgstr "أداة التّحريك"
+msgstr "Nástroj presunu"
 
 #: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "أداة الصورة"
+msgstr "Nástroj obrázok"
 
 #: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
-msgstr "أداة المعين"
+msgstr "Nástroj diamant"
 
 #: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
-msgstr "أرسل إلى الخلف"
+msgstr "Odoslať dozadu"
 
 #: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
-msgstr "أرسل للخلف"
+msgstr "Odoslať o vrstvu dozadu"
 
 #: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
-msgstr "أحضر للأمام"
+msgstr "Preniesť o vrstvu dopredu"
 
 #: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
-msgstr "إحضار إلى الواجهة"
+msgstr "Preniesť dopredu"
 
 #: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr "نقّح"
+msgstr "Ladenie"
 
 #: widgets/keybindings/actionmanager.cpp:442
 #, kde-format
 msgid "Untitled.%1"
-msgstr "غير معنون.%1"
+msgstr "Bez názvu.%1"
 
 #: widgets/keybindings/actionmanager.cpp:444
 #: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "Drawy (*.%1)"
-msgstr "السبورة (*.%1)"
+msgstr "Drawy (*.%1)"
 
 #: widgets/keybindings/actionmanager.cpp:445
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "احفظ الملفّ"
+msgstr "Uložiť súbor"
 
 #: widgets/keybindings/actionmanager.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
-msgstr "هل حقًّا تريد محو الرقعة؟"
+msgstr "Naozaj chcete vyčistiť plátno?"
 
 #: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "امحُ"
+msgstr "Vyčistiť"
 
 #: widgets/keybindings/actionmanager.cpp:511
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
-msgstr "افتح ملفًّا"
+msgstr "Otvoriť súbor"
 
 #: widgets/keybindings/actionmanager.cpp:524
 #, kde-format
 msgid "Untitled.svg"
-msgstr "غير معنون.svg"
+msgstr "Bez názvu.svg"
 
 #: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
@@ -618,7 +605,7 @@ msgstr "PNG (*.png)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "صدِّر إلى صورة"
+msgstr "Exportovať do obrázka"
 
 #: widgets/keybindings/actionmanager.cpp:590
 #, kde-format
@@ -626,637 +613,240 @@ msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"عُدّل المستند \"%1\" ولم يُحفظ.\n"
-"أتريد حفظ التّعديلات أو رفضها؟"
+"Dokument \"%1\" bol upravený.\n"
+"Chcete uložiť alebo zahodiť zmeny?"
 
 #: widgets/keybindings/actionmanager.cpp:594
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
-msgstr "إجراء مطلوب"
+msgstr "Vyžaduje sa akcia"
 
 #: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
-msgstr "امحُ المحدد"
+msgstr "Odstrániť výber"
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
-msgstr "جمّع التحديد"
+msgstr "Zoskupiť výber"
 
 #: widgets/properties/widgets/actionswidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
-msgstr "فك تجميع التحديد"
+msgstr "Zrušiť zoskupenie výberu"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Left"
-msgstr "محاذاة إلى اليسار"
+msgstr "Zarovnať doľava"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Center"
-msgstr "حاذِ إلى الوسط"
+msgstr "Zarovnať na stred"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Right"
-msgstr "محاذاة إلى اليمين"
+msgstr "Zarovnať doprava"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Top"
-msgstr "محاذاة للأعلى"
+msgstr "Zarovnať nahor"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Middle"
-msgstr "حاذِ إلى الوسط"
+msgstr "Zarovnať na stred vertikálne"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align to Bottom"
-msgstr "محاذاة للأسفل"
+msgstr "Zarovnať nadol"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:86
 #, kde-format
 msgid "Alignment"
-msgstr "محاذاة"
+msgstr "Zarovnanie"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
-msgstr "لا شيء"
+msgstr "Žiadny"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "سهم مفتوح"
+msgstr "Otvorená šípka"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
-msgstr "مثلّث"
+msgstr "Trojuholník"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "مثلث مملوء"
+msgstr "Vyplnený trojuholník"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
-msgstr "دائرة"
+msgstr "Kruh"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
-msgstr "معين"
+msgstr "Diamant"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr "اختر رأس السهم"
+msgstr "Vybrať hrot šípky"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
-msgstr "لون الخلفيّة"
+msgstr "Farba pozadia"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
-msgstr "لا شيء"
+msgstr "Žiadne"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
-msgstr "خالص"
+msgstr "Plný"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
-msgstr "قُطري متقاطع"
+msgstr "Diagonálny kríž"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
-msgstr "قطري"
+msgstr "Diagonálny"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
-msgstr "نمط الخلفيّة"
+msgstr "Štýl pozadia"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
-msgstr "حدد لون مخصص"
+msgstr "Vybrať vlastnú farbu"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
-msgstr "اللون"
+msgstr "Farba"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr "رأس نهاية السهم"
+msgstr "Koniec šípky"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
 msgid "Eraser Size"
-msgstr "حجم الممحاة"
+msgstr "Veľkosť gumy"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:37
 #, kde-format
 msgid "Font Size"
-msgstr "حجم الخط"
+msgstr "Veľkosť písma"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
 msgid "Opacity"
-msgstr "العتمة"
+msgstr "Nepriehľadnosť"
 
 #: widgets/properties/widgets/startarrowtypewidget.cpp:21
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr "رأس بداية السهم"
+msgstr "Začiatok šípky"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
-msgstr "متقطّع"
+msgstr "Čiarkovaný"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
-msgstr "منقّط"
+msgstr "Bodkovaný"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:63
 #, kde-format
 msgid "Stroke Style"
-msgstr "نمط الحد"
+msgstr "Ťah (štýl)"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
-msgstr "لون الحدّ"
+msgstr "Farba ťahu štetca"
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:31
 #, kde-format
 msgid "Thickness"
-msgstr "السّمك"
+msgstr "Hrúbka"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "الترتيب المنظوري"
+msgstr "Poradie"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr "صورة"
+msgstr "Obrázok"
 
 #: widgets/tools/imagetool.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "أدرج صورة"
+msgstr "Vložiť obrázok"
 
 #: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
-msgstr "%1 — السبورة"
+msgstr "%1 — Drawy"
 
 #~ msgid "Light theme color"
-#~ msgstr "لون السمة الفاتحة"
+#~ msgstr "Farba svetlej témy"
 
 #~ msgid "Dark theme color"
-#~ msgstr "لون السمة المظلمة"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select Plugin"
-#~ msgstr "حدد ملحقة"
-
-#~ msgid "Full Circle"
-#~ msgstr "دائرة كاملة"
-
-#~ msgid "Line"
-#~ msgstr "خط"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Arrow Tool"
-#~ msgstr "أداة السهم"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Diamond Tool"
-#~ msgstr "أداة المعين"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Ellipse Tool"
-#~ msgstr "أداة الشكل البيضاوي"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Eraser Tool"
-#~ msgstr "أداة الممحاة"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Pen Tool"
-#~ msgstr "أداة الريشة"
-
-#, fuzzy
-#~| msgctxt "@info:tooltip"
-#~| msgid "Rectangle Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Image Tool"
-#~ msgstr "أداة المستطيل"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Line Tool"
-#~ msgstr "أداة رسم سطور"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Rectangle Tool"
-#~ msgstr "أداة المستطيل"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Selection Tool"
-#~ msgstr "أداة التحديد"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Text Tool"
-#~ msgstr "أداة النصوص"
-
-#~ msgid "Update Property"
-#~ msgstr "حدّث الخاصية"
-
-#~ msgctxt "ActionsWidget|"
-#~ msgid "Actions"
-#~ msgstr "الإجراءات"
-
-#~ msgctxt "ArrowStyleWidget|"
-#~ msgid "Arrow"
-#~ msgstr "سهم"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Solid"
-#~ msgstr "خالص"
-
-#~ msgctxt "QObject|"
-#~ msgid "Arrow Tool"
-#~ msgstr "أداة السهم"
-
-#~ msgctxt "QObject|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "أداة الشكل البيضاوي"
-
-#~ msgctxt "QObject|"
-#~ msgid "Eraser Tool"
-#~ msgstr "أداة الممحاة"
-
-#~ msgctxt "QObject|"
-#~ msgid "Line Tool"
-#~ msgstr "أداة رسم الخطوط"
-
-#~ msgctxt "QObject|"
-#~ msgid "Move Tool"
-#~ msgstr "أداة التّحريك"
-
-#~ msgctxt "QObject|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "أداة المستطيل"
-
-#~ msgctxt "QObject|"
-#~ msgid "Selection Tool"
-#~ msgstr "أداة التحديد"
-
-#~ msgctxt "QObject|"
-#~ msgid "Text Tool"
-#~ msgstr "أداة النصوص"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Top"
-#~ msgstr "انقل إلى الأعلى"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Up"
-#~ msgstr "انقل لأعلى"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Down"
-#~ msgstr "انقل لأسفل"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Bottom"
-#~ msgstr "انقل إلى الأسفل"
-
-#~ msgctxt "QObject|"
-#~ msgid "Your handy, infinite, brainstorming tool!"
-#~ msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Save to File"
-#~ msgstr "احفظ في ملفّ"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom Out"
-#~ msgstr "بعّد"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom In"
-#~ msgstr "قرّب"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Undo"
-#~ msgstr "تراجع"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Redo"
-#~ msgstr "كرّر"
-
-#~ msgctxt "ConfigureGeneralWidget|"
-#~ msgid "Auto-save"
-#~ msgstr "حفظ آليّ"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Do you want to restore autosave file?"
-#~ msgstr "هل تريد استعادة ملف الحفظ الآلي؟"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Restore"
-#~ msgstr "استعد"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Do you want to save file?"
-#~ msgstr "هل تريد حفظ الملف؟"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Close"
-#~ msgstr "أغلق"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Save And Close"
-#~ msgstr "اِحفظ وأَغلِق"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Ignore"
-#~ msgstr "تجاهل"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Export to Svg"
-#~ msgstr "صدّر إلى SVG"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Eraser Tool"
-#~ msgstr "أداة الممحاة"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Selection Tool"
-#~ msgstr "أداة التحديد"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "أداة المستطيل"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "أداة الشكل البيضاوي"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Line Tool"
-#~ msgstr "أداة رسم الخطوط"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Text Tool"
-#~ msgstr "أداة النصوص"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Arrow Tool"
-#~ msgstr "أداة السهم"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Move Tool"
-#~ msgstr "أداة التّحريك"
-
-#~ msgctxt "AlignmentWidget|"
-#~ msgid "Align Horizontal Center"
-#~ msgstr "حاذِ إلى المركز الأفقي"
-
-#~ msgctxt "AlignmentWidget|"
-#~ msgid "Align Vertical Center"
-#~ msgstr "حاذِ إلى المركز الرّأسي"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Dot Line"
-#~ msgstr "خطّ مُنقَّط"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to freeform drawing tool"
-#~ msgstr "بدّل إلى أداة الرسم الحر"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to eraser tool"
-#~ msgstr "بدّل إلى أداة الممحاة"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to selection tool"
-#~ msgstr "بدّل إلى أداة التحديد"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to rectangle drawing tool"
-#~ msgstr "بدّل إلى أداة المستطيل"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to ellipse drawing tool"
-#~ msgstr "بدّل إلى أداة الشكل البيضاوي"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to line drawing tool"
-#~ msgstr "بدّل إلى أداة رسم الخطوط"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to the text tool"
-#~ msgstr "بدّل إلى أداة النص"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to arrow drawing tool"
-#~ msgstr "بدّل إلى أداة رسم السهم"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to move tool"
-#~ msgstr "بدّل إلى أداة التحريك"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Groups selected items"
-#~ msgstr "تجمع العناصر المحددة"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Ungroups selected groups"
-#~ msgstr "تفك جمع التجميعات المحددة"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Deletes selected items"
-#~ msgstr "تحذف العناصر المحددة"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo"
-#~ msgstr "تراجع"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo last action"
-#~ msgstr "تراجع عن آخر إجراء"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo"
-#~ msgstr "كرّر"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo last undone action"
-#~ msgstr "أعد آخر إجراء تراجعت عنه"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom In"
-#~ msgstr "قرّب"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom in"
-#~ msgstr "قرّب"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom Out"
-#~ msgstr "بعّد"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom out"
-#~ msgstr "بعّد"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select all items"
-#~ msgstr "حدّد كلّ العناصر"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Save"
-#~ msgstr "احفظ"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open File"
-#~ msgstr "افتح ملفًّا"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open an existing file"
-#~ msgstr "افتح ملفًا موجودًا"
-
-#~ msgctxt "ActionManager|keybinding for the undo action"
-#~ msgid "Ctrl+Z"
-#~ msgstr "Ctrl+Z"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Y"
-#~ msgstr "Ctrl+Y"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Shift+Z"
-#~ msgstr "Ctrl+Shift+Z"
-
-#~ msgctxt "ActionManager|keybinding for the zoom in action"
-#~ msgid "Ctrl++"
-#~ msgstr "Ctrl++"
-
-#~ msgctxt "ActionManager|keybinding for the zoom out action"
-#~ msgid "Ctrl+-"
-#~ msgstr "Ctrl+-"
-
-#~ msgctxt "ActionManager|keybinding for the text tool"
-#~ msgid "T"
-#~ msgstr "T"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "P"
-#~ msgstr "P"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgctxt "ActionManager|keybinding for the eraser tool"
-#~ msgid "E"
-#~ msgstr "E"
-
-#~ msgctxt "ActionManager|keybinding for the selection tool"
-#~ msgid "S"
-#~ msgstr "S"
-
-#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-#~ msgid "R"
-#~ msgstr "R"
-
-#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-#~ msgid "O"
-#~ msgstr "O"
-
-#~ msgctxt "ActionManager|keybinding for the line drawing tool"
-#~ msgid "L"
-#~ msgstr "L"
-
-#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgctxt "ActionManager|keybinding for the move tool"
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgctxt "ActionManager|keybinding for the select all action"
-#~ msgid "Ctrl+A"
-#~ msgstr "Ctrl+A"
-
-#~ msgctxt "ActionManager|keybinding for the delete action"
-#~ msgid "Del"
-#~ msgstr "Del"
-
-#~ msgctxt "ActionManager|keybinding for the save action"
-#~ msgid "Ctrl+S"
-#~ msgstr "Ctrl+S"
-
-#~ msgctxt "ActionManager|keybinding for the open file action"
-#~ msgid "Ctrl+O"
-#~ msgstr "Ctrl+O"
-
-#~ msgctxt "ActionManager|keybinding for the group action"
-#~ msgid "Ctrl+G"
-#~ msgstr "Ctrl+G"
-
-#~ msgctxt "ActionManager|keybinding for the ungroup action"
-#~ msgid "Ctrl+Shift+G"
-#~ msgstr "Ctrl+Shift+G"
+#~ msgstr "Farba tmavej témy"

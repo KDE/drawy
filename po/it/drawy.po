@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 02:39+0000\n"
-"PO-Revision-Date: 2026-03-25 14:26+0100\n"
+"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"PO-Revision-Date: 2026-04-02 14:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -84,12 +84,12 @@ msgstr "Cambia stile dello sfondo"
 #: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Cambia estremità della freccia iniziale"
+msgstr "Cambia estremità iniziale della freccia"
 
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change End Arrow Head"
-msgstr "Cambia estremità della freccia finale"
+msgstr "Cambia estremità finale della freccia"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
 #, kde-format
@@ -200,12 +200,10 @@ msgid "Image"
 msgstr "Immagine"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Sposta"
+msgstr "Altri strumenti"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -374,14 +372,35 @@ msgid "Canvas"
 msgstr "Tela"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Colore del tema chiaro"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Colore di sfondo"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Colore di sfondo"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Colore del tema scuro"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Modalità chiara"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Modalità scura"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -405,189 +424,189 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Attiva la modalità debug"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr "Esporta come immagine"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Raggruppa gli elementi"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Separa gli elementi"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Elimina"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Cancella la tela"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Disegno a mano libera"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Gomma"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Selezione"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Rettangolo"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Ellisse"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Linea"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Testo"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Freccia"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Sposta"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Immagine"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Rombo"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Invia indietro"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Invia in secondo piano"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta avanti"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta in primo piano"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Debug"
 
-#: widgets/keybindings/actionmanager.cpp:441
+#: widgets/keybindings/actionmanager.cpp:442
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Senza titolo.%1"
 
-#: widgets/keybindings/actionmanager.cpp:443
-#: widgets/keybindings/actionmanager.cpp:507
+#: widgets/keybindings/actionmanager.cpp:444
+#: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:444
+#: widgets/keybindings/actionmanager.cpp:445
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Salva file"
 
-#: widgets/keybindings/actionmanager.cpp:466
+#: widgets/keybindings/actionmanager.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Vuoi davvero cancellare la tela?"
 
-#: widgets/keybindings/actionmanager.cpp:467
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Pulisci"
 
-#: widgets/keybindings/actionmanager.cpp:510
+#: widgets/keybindings/actionmanager.cpp:511
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Apri file"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:524
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Senzatitolo.svg"
 
-#: widgets/keybindings/actionmanager.cpp:526
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:528
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:531
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Esporta come immagine"
 
-#: widgets/keybindings/actionmanager.cpp:589
+#: widgets/keybindings/actionmanager.cpp:590
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -596,7 +615,7 @@ msgstr ""
 "Il documento «%1» è stato modificato.\n"
 "Vuoi salvare o scartare le modifiche?"
 
-#: widgets/keybindings/actionmanager.cpp:593
+#: widgets/keybindings/actionmanager.cpp:594
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -701,9 +720,9 @@ msgstr "Rombo"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Seleziona l'estremità della freccia"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Colore di sfondo"
@@ -738,13 +757,13 @@ msgstr "Diagonale"
 msgid "Background Style"
 msgstr "Stile dello sfondo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Seleziona colore personalizzato"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Colore"
@@ -753,7 +772,7 @@ msgstr "Colore"
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Estremità finale della freccia"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:31
 #, kde-format
@@ -774,7 +793,7 @@ msgstr "Opacità"
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Estremità iniziale della freccia"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
@@ -793,7 +812,7 @@ msgstr "Punti"
 msgid "Stroke Style"
 msgstr "Stile del tratto"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Colore del tratto"
@@ -804,10 +823,9 @@ msgid "Thickness"
 msgstr "Spessore"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Ordine Z"
+msgstr "Ordine"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
@@ -825,6 +843,12 @@ msgstr "Inserisci immagine"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Colore del tema chiaro"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Colore del tema scuro"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1131,14 +1155,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Apri un file esistente"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Modalità chiara"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Modalità scura"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 02:39+0000\n"
+"POT-Creation-Date: 2026-04-09 03:27+0000\n"
 "PO-Revision-Date: 2026-03-13 15:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -377,14 +377,35 @@ msgid "Canvas"
 msgstr "Myndflötur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Litur í ljósu þema"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Bakgrunnslitur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Bakgrunnslitur"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Litur í dökku þema"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Ljós hamur"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Dökkur hamur"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -408,7 +429,7 @@ msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Virkja villuleitarham"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export as SVG"
@@ -416,178 +437,178 @@ msgctxt "@action"
 msgid "Export as Image"
 msgstr "Flytja út sem SVG"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Hópa atriði"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Skipta atriðum upp úr hóp"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Eyða"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Hreinsa myndflöt"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Fríhendisverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Útþurrkunarverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Valverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Rétthyrningaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Sporbaugaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Línuverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Textaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Örvaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Færsluverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Myndaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Tíglaverkfæri"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Setja aftast"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Setja aftar"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Setja framar"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Setja fremst"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Villukemba"
 
-#: widgets/keybindings/actionmanager.cpp:441
+#: widgets/keybindings/actionmanager.cpp:442
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Ónefnt.%1"
 
-#: widgets/keybindings/actionmanager.cpp:443
-#: widgets/keybindings/actionmanager.cpp:507
+#: widgets/keybindings/actionmanager.cpp:444
+#: widgets/keybindings/actionmanager.cpp:508
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:444
+#: widgets/keybindings/actionmanager.cpp:445
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Vista skrá"
 
-#: widgets/keybindings/actionmanager.cpp:466
+#: widgets/keybindings/actionmanager.cpp:467
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Viltu örugglega hreinsa myndflötinn?"
 
-#: widgets/keybindings/actionmanager.cpp:467
+#: widgets/keybindings/actionmanager.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Hreinsa"
 
-#: widgets/keybindings/actionmanager.cpp:510
+#: widgets/keybindings/actionmanager.cpp:511
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Opna skrá"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:524
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Ónefnt.svg"
 
-#: widgets/keybindings/actionmanager.cpp:526
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:528
 #, fuzzy, kde-format
 #| msgid "SVG (*.svg)"
 msgid "PNG (*.png)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:531
+#: widgets/keybindings/actionmanager.cpp:532
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Svg"
@@ -595,7 +616,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Flytja út í SVG-skrá"
 
-#: widgets/keybindings/actionmanager.cpp:589
+#: widgets/keybindings/actionmanager.cpp:590
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified. Do you want to save your changes "
@@ -606,7 +627,7 @@ msgid ""
 msgstr ""
 "Skjalinu \"%1\" hefur verið breytt. Viltu vista breytingarnar eða henda þeim?"
 
-#: widgets/keybindings/actionmanager.cpp:593
+#: widgets/keybindings/actionmanager.cpp:594
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -720,7 +741,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Bakgrunnslitur"
@@ -755,13 +776,13 @@ msgstr "Skálína"
 msgid "Background Style"
 msgstr "Stíll bakgrunns"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Veldu sérsniðinn lit"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Litur"
@@ -810,7 +831,7 @@ msgstr "Punktalína"
 msgid "Stroke Style"
 msgstr "Stíll útlínu"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Litur útlínu"
@@ -842,6 +863,12 @@ msgstr "Setja inn mynd"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 - Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Litur í ljósu þema"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Litur í dökku þema"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1176,14 +1203,6 @@ msgstr "%1 - Drawy"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Opna fyrirliggjandi skrá"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Ljós hamur"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Dökkur hamur"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"
