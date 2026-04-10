@@ -377,31 +377,29 @@ msgid "Canvas"
 msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Farba pozadia"
+msgstr "Farba svetlého pozadia"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Farba pozadia"
+msgstr "Farba tmavého pozadia"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta farieb"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
 #, kde-format
 msgid "Light Mode"
-msgstr ""
+msgstr "Svetlý režim"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "Tmavý režim"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

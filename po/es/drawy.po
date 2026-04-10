@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 03:27+0000\n"
-"PO-Revision-Date: 2026-04-02 11:24+0100\n"
+"PO-Revision-Date: 2026-04-09 11:20+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -377,31 +377,29 @@ msgid "Canvas"
 msgstr "Lienzo"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Color de fondo"
+msgstr "Color de fondo claro"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Color de fondo"
+msgstr "Color de fondo oscuro"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta de color"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
 #, kde-format
 msgid "Light Mode"
-msgstr ""
+msgstr "Modo claro"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "Modo oscuro"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -844,9 +842,3 @@ msgstr "Insertar imagen"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgid "Light theme color"
-#~ msgstr "Tema de color claro"
-
-#~ msgid "Dark theme color"
-#~ msgstr "Tema de color oscuro"

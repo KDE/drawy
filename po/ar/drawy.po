@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 03:27+0000\n"
-"PO-Revision-Date: 2026-03-26 10:33+0400\n"
+"PO-Revision-Date: 2026-04-09 11:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -208,12 +208,10 @@ msgid "Image"
 msgstr "صورة"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "أداة التّحريك"
+msgstr "المزيد من الأدوات"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -837,10 +835,9 @@ msgid "Thickness"
 msgstr "السّمك"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "الترتيب المنظوري"
+msgstr "الترتيب"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
