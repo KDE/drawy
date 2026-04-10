@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-03-17 08:45+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -386,13 +386,30 @@ msgid "Canvas"
 msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Barva pozadí"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Barva pozadí"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, kde-format
+msgid "Light Mode"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, kde-format
+msgid "Dark Mode"
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
@@ -726,7 +743,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Barva pozadí"
@@ -761,13 +778,13 @@ msgstr "Diagonální"
 msgid "Background Style"
 msgstr "Styl pozadí"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Barva"
@@ -816,7 +833,7 @@ msgstr "Tečkovaný"
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Barva tahu"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-04-02 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -379,14 +379,35 @@ msgid "Canvas"
 msgstr "Werkveld"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Lichte themakleur"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Achtergrondkleur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Achtergrondkleur"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Donkere themakleur"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Lichte modus"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Donkere modus"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -708,7 +729,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Pijlkop selecteren"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Achtergrondkleur"
@@ -743,13 +764,13 @@ msgstr "Diagonaal"
 msgid "Background Style"
 msgstr "Achtergrondstijl"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Aangepaste kleur selecteren"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Kleur"
@@ -798,7 +819,7 @@ msgstr "Gestippeld"
 msgid "Stroke Style"
 msgstr "Streekstijl"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Kleur van streek"
@@ -829,6 +850,12 @@ msgstr "Afbeelding invoegen"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Lichte themakleur"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Donkere themakleur"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1138,14 +1165,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Een bestaand bestand openen"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Lichte modus"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Donkere modus"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

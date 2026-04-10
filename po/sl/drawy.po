@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-04-02 06:26+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -383,14 +383,35 @@ msgid "Canvas"
 msgstr "Platno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Barva svetle teme"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Barva ozadja"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Barva ozadja"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Barva temne teme"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Svetli način"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Temni način"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -712,7 +733,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Izberi konec puščice"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Barva ozadja"
@@ -747,13 +768,13 @@ msgstr "Diagonalno"
 msgid "Background Style"
 msgstr "Slog ozadja"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Izberi barvo po meri"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Barva"
@@ -802,7 +823,7 @@ msgstr "Pikčasta"
 msgid "Stroke Style"
 msgstr "Slog poteze"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Barva poteze"
@@ -833,6 +854,12 @@ msgstr "Vstavi sliko"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Barva svetle teme"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Barva temne teme"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1142,14 +1169,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Odpri obstoječo datoteko"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Svetli način"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Temni način"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

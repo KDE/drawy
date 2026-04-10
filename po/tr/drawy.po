@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-04-02 14:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -379,14 +379,31 @@ msgid "Canvas"
 msgstr "Tuval"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Açık tema rengi"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Arka Plan Rengi"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Arka Plan Rengi"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Koyu tema rengi"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, kde-format
+msgid "Light Mode"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, kde-format
+msgid "Dark Mode"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -708,7 +725,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Ok başı seç"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Arka Plan Rengi"
@@ -743,13 +760,13 @@ msgstr "Köşegenel"
 msgid "Background Style"
 msgstr "Arka Plan Biçemi"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Özel renk seç"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Renk"
@@ -798,7 +815,7 @@ msgstr "Noktalı"
 msgid "Stroke Style"
 msgstr "Vuruş Biçemi"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Vuruş Rengi"
@@ -829,6 +846,12 @@ msgstr "Görsel Ekle"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Açık tema rengi"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Koyu tema rengi"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"

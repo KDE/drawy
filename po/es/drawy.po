@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-04-02 11:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -383,14 +383,31 @@ msgid "Canvas"
 msgstr "Lienzo"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Tema de color claro"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Color de fondo"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Color de fondo"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Tema de color oscuro"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, kde-format
+msgid "Light Mode"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, kde-format
+msgid "Dark Mode"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -712,7 +729,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Seleccionar punta de flecha"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Color de fondo"
@@ -747,13 +764,13 @@ msgstr "Diagonal"
 msgid "Background Style"
 msgstr "Estilo del fondo"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Seleccionar color personalizado"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Color"
@@ -802,7 +819,7 @@ msgstr "Puntos"
 msgid "Stroke Style"
 msgstr "Estilo del trazo"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Color del trazo"
@@ -833,3 +850,9 @@ msgstr "Insertar imagen"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Tema de color claro"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Tema de color oscuro"

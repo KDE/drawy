@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
-"PO-Revision-Date: 2026-03-26 10:33+0400\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"PO-Revision-Date: 2026-04-09 11:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -208,12 +208,10 @@ msgid "Image"
 msgstr "صورة"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "أداة التّحريك"
+msgstr "المزيد من الأدوات"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -392,14 +390,35 @@ msgid "Canvas"
 msgstr "اللوحة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "لون السمة الفاتحة"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "لون الخلفيّة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "لون الخلفيّة"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "لون السمة المظلمة"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "الوضع الفاتح"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "الوضع المظلم"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -721,7 +740,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "اختر رأس السهم"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "لون الخلفيّة"
@@ -756,13 +775,13 @@ msgstr "قطري"
 msgid "Background Style"
 msgstr "نمط الخلفيّة"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "حدد لون مخصص"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "اللون"
@@ -811,7 +830,7 @@ msgstr "منقّط"
 msgid "Stroke Style"
 msgstr "نمط الحد"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "لون الحدّ"
@@ -822,10 +841,9 @@ msgid "Thickness"
 msgstr "السّمك"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "الترتيب المنظوري"
+msgstr "الترتيب"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
@@ -843,6 +861,12 @@ msgstr "أدرج صورة"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — السبورة"
+
+#~ msgid "Light theme color"
+#~ msgstr "لون السمة الفاتحة"
+
+#~ msgid "Dark theme color"
+#~ msgstr "لون السمة المظلمة"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1155,14 +1179,6 @@ msgstr "%1 — السبورة"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "افتح ملفًا موجودًا"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "الوضع الفاتح"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "الوضع المظلم"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

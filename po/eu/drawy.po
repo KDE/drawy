@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -454,13 +454,32 @@ msgstr "Gorde mihisea"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
-msgid "Light theme color"
+msgid "Light background color"
 msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
-msgid "Dark theme color"
+msgid "Dark background color"
 msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#, kde-format
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Modu argia"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Modu iluna"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -850,7 +869,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr ""
@@ -885,7 +904,7 @@ msgstr ""
 msgid "Background Style"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "QObject|"
 #| msgid "Selection Tool"
@@ -893,7 +912,7 @@ msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Hautapen tresna"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, fuzzy, kde-format
 #| msgctxt "StrokeColorWidget|"
 #| msgid "Color"
@@ -950,7 +969,7 @@ msgstr ""
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr ""
@@ -1336,14 +1355,6 @@ msgstr ""
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Ireki dagoen fitxategi bat"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Modu argia"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Modu iluna"
 
 #, fuzzy
 #~| msgctxt "ActionManager|"

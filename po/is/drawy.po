@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-03-29 15:24+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -381,14 +381,35 @@ msgid "Canvas"
 msgstr "Myndflötur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, kde-format
-msgid "Light theme color"
-msgstr "Litur í ljósu þema"
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Light background color"
+msgstr "Bakgrunnslitur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
+#, fuzzy, kde-format
+#| msgid "Background Color"
+msgid "Dark background color"
+msgstr "Bakgrunnslitur"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
-msgid "Dark theme color"
-msgstr "Litur í dökku þema"
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Light Mode"
+msgid "Light Mode"
+msgstr "Ljós hamur"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Dark Mode"
+msgid "Dark Mode"
+msgstr "Dökkur hamur"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -710,7 +731,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Veldu örvarodd"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr "Bakgrunnslitur"
@@ -745,13 +766,13 @@ msgstr "Skálína"
 msgid "Background Style"
 msgstr "Stíll bakgrunns"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr "Veldu sérsniðinn lit"
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr "Litur"
@@ -800,7 +821,7 @@ msgstr "Punktalína"
 msgid "Stroke Style"
 msgstr "Stíll útlínu"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr "Litur útlínu"
@@ -832,6 +853,12 @@ msgstr "Setja inn mynd"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 - Drawy"
+
+#~ msgid "Light theme color"
+#~ msgstr "Litur í ljósu þema"
+
+#~ msgid "Dark theme color"
+#~ msgstr "Litur í dökku þema"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Select Plugin"
@@ -1166,14 +1193,6 @@ msgstr "%1 - Drawy"
 #~ msgctxt "ActionManager|"
 #~ msgid "Open an existing file"
 #~ msgstr "Opna fyrirliggjandi skrá"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Light Mode"
-#~ msgstr "Ljós hamur"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Dark Mode"
-#~ msgstr "Dökkur hamur"
 
 #~ msgctxt "ActionManager|keybinding for the undo action"
 #~ msgid "Ctrl+Z"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-02 11:41+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -379,12 +379,27 @@ msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
-msgid "Light theme color"
+msgid "Light background color"
 msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
-msgid "Dark theme color"
+msgid "Dark background color"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#, kde-format
+msgid "Color Palette"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#, kde-format
+msgid "Light Mode"
+msgstr ""
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#, kde-format
+msgid "Dark Mode"
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
@@ -705,7 +720,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:22
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
 msgid "Background Color"
 msgstr ""
@@ -740,13 +755,13 @@ msgstr ""
 msgid "Background Style"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:52
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
 msgstr ""
 
-#: widgets/properties/widgets/colorwidgetbase.cpp:83
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
 msgstr ""
@@ -795,7 +810,7 @@ msgstr ""
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:21
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
 #, kde-format
 msgid "Stroke Color"
 msgstr ""
