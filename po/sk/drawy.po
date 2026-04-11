@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-10 00:42+0000\n"
-"PO-Revision-Date: 2026-04-07 00:41+0000\n"
+"PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: sk\n"
@@ -383,31 +383,29 @@ msgid "Canvas"
 msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Farba pozadia"
+msgstr "Svetlá farba pozadia"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Farba pozadia"
+msgstr "Tmavá farba pozadia"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta farieb"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
 #, kde-format
 msgid "Light Mode"
-msgstr ""
+msgstr "Svetlý režim"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "Tmavý režim"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

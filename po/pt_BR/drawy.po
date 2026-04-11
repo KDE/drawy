@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-10 00:42+0000\n"
-"PO-Revision-Date: 2026-04-02 06:33-0300\n"
+"PO-Revision-Date: 2026-04-10 07:01-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -381,33 +381,27 @@ msgid "Canvas"
 msgstr "Tela"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Cor de fundo"
+msgstr "Cor de fundo claro"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Cor de fundo"
+msgstr "Cor de fundo escuro"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta de cor"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Light Mode"
+#, kde-format
 msgid "Light Mode"
 msgstr "Modo claro"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Dark Mode"
+#, kde-format
 msgid "Dark Mode"
 msgstr "Modo escuro"
 
