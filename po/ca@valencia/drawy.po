@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 03:27+0000\n"
-"PO-Revision-Date: 2026-04-02 10:01+0200\n"
+"PO-Revision-Date: 2026-04-09 08:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -378,31 +378,29 @@ msgid "Canvas"
 msgstr "Llenç"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Color de fons"
+msgstr "Color de fons clar"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Color de fons"
+msgstr "Color de fons fosc"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta de colors"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
 #, kde-format
 msgid "Light Mode"
-msgstr ""
+msgstr "Mode clar"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "Mode fosc"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -846,9 +844,3 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgid "Light theme color"
-#~ msgstr "Color de tema clar"
-
-#~ msgid "Dark theme color"
-#~ msgstr "Color de tema fosc"

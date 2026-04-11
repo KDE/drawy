@@ -403,7 +403,7 @@ msgstr ""
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
 #, kde-format
 msgid "Dark Mode"
-msgstr ""
+msgstr "Tmavý režim"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
