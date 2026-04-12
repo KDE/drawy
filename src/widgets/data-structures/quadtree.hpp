@@ -12,8 +12,7 @@
 
 #include "item/item.hpp"
 #include "item/itemutils.hpp"
-
-class OrderedList;
+#include "orderedlist.hpp"
 
 /*
  * A QuadTree is a tree data structure which divides the space,
@@ -29,6 +28,7 @@ class QuadTree
 {
 public:
     using ItemPtr = std::shared_ptr<Item>;
+    using ZorderPosition = ItemOrderPosition<ItemPtr>;
 
 private:
     QList<ItemPtr> m_items{};
@@ -67,6 +67,8 @@ public:
 
     void changeZorder(ItemUtils::ZorderMove move, const ItemPtr &item);
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
+    [[nodiscard]] ZorderPosition zorderPosition(const ItemPtr &item) const;
+    void restoreZorderPosition(const ItemPtr &item, const ZorderPosition &position);
 
     [[nodiscard]] bool canMoveBackwards(const ItemPtr &item) const;
     [[nodiscard]] bool canMoveForwards(const ItemPtr &item) const;

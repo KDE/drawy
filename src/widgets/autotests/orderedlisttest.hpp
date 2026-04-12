@@ -22,4 +22,7 @@ private Q_SLOTS:
     void shouldUpdateList();
     void shouldCheckMove();
     void shouldClearList();
+    void shouldRestoreItemPosition();
+    void shouldRestoreMultipleItemPositions();
+    void shouldFallbackWhenAnchorsAreUnavailable();
 };

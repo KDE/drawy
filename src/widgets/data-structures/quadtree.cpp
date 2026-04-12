@@ -307,6 +307,17 @@ int QuadTree::zIndex(const ItemPtr &item) const
     return m_orderedList->zIndex(item);
 }
 
+QuadTree::ZorderPosition QuadTree::zorderPosition(const ItemPtr &item) const
+{
+    const auto orderedPosition = m_orderedList->position(item);
+    return {orderedPosition.previousItem, orderedPosition.nextItem};
+}
+
+void QuadTree::restoreZorderPosition(const ItemPtr &item, const ZorderPosition &position)
+{
+    m_orderedList->restorePosition(item, {position.previousItem, position.nextItem});
+}
+
 bool QuadTree::canMoveBackwards(const ItemPtr &item) const
 {
     return m_orderedList->canMoveBackwards(item);

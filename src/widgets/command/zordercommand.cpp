@@ -14,10 +14,19 @@
 #include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
+#include <algorithm>
+
+namespace
+{
+[[nodiscard]] bool shouldExecuteInReverseOrder(const ItemUtils::ZorderMove move)
+{
+    return move == ItemUtils::ZorderMove::BringForward || move == ItemUtils::ZorderMove::SendToBack;
+}
+}
 
 ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::ZorderMove move)
     : ItemCommand{std::move(items)}
-    , m_zordermove(move)
+    , m_zorderMove(move)
 {
     qCDebug(DRAWY_COMMAND_LOG) << "ZorderCommand" << m_items.count();
 }
@@ -25,30 +34,53 @@ ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::Zord
 void ZorderCommand::redo(ApplicationContext *context)
 {
     auto &quadtree{context->spatialContext()->quadtree()};
+    auto sortedItems = m_items;
+
+    std::sort(sortedItems.begin(), sortedItems.end(), [&quadtree](const auto &leftItem, const auto &rightItem) {
+        return quadtree.zIndex(leftItem) < quadtree.zIndex(rightItem);
+    });
+    m_originalSortedItems = sortedItems;
 
     QRectF dirtyRegion;
-    for (const auto &item : std::as_const(m_items)) {
-        m_orderIndex[item] = quadtree.zIndex(item);
+    m_originalOrder.clear();
+    for (const auto &item : std::as_const(sortedItems)) {
+        const auto position = quadtree.zorderPosition(item);
+        m_originalOrder[item] = {position.previousItem, position.nextItem};
         dirtyRegion |= item->boundingBox();
-        quadtree.changeZorder(m_zordermove, item);
+    }
+
+    if (shouldExecuteInReverseOrder(m_zorderMove)) {
+        std::reverse(sortedItems.begin(), sortedItems.end());
+    }
+
+    for (const auto &item : std::as_const(sortedItems)) {
+        quadtree.changeZorder(m_zorderMove, item);
     }
 
     const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
     context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 }
 
-void ZorderCommand::undo([[maybe_unused]] ApplicationContext *context)
+void ZorderCommand::undo(ApplicationContext *context)
 {
-#if 0
     auto &quadtree{context->spatialContext()->quadtree()};
+    const auto &sortedItems = m_originalSortedItems;
+    QRectF dirtyRegion;
 
-    for (const auto &item : std::as_const(m_items)) {
-        for (const auto &item : std::as_const(m_items)) {
-            quadtree.(m_zordermove[item], item);
+    for (const auto &item : std::as_const(sortedItems)) {
+        const auto originalState = m_originalOrder.find(item);
+        if (originalState == m_originalOrder.end()) {
+            continue;
         }
-        // TODO
+
+        const auto previousItem = originalState->second.previousItem.lock();
+        const auto nextItem = originalState->second.nextItem.lock();
+        dirtyRegion |= item->boundingBox();
+        quadtree.restoreZorderPosition(item, {previousItem, nextItem});
     }
-#endif
+
+    const QRect gridDirtyRegion{context->spatialContext()->coordinateTransformer().worldToGrid(dirtyRegion).toRect()};
+    context->renderingContext()->cacheGrid().markDirty(gridDirtyRegion);
 }
 
 QString ZorderCommand::text() const

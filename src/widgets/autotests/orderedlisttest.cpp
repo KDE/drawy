@@ -9,6 +9,14 @@
 #include <QTest>
 QTEST_GUILESS_MAIN(OrderedListTest)
 
+namespace
+{
+[[nodiscard]] QList<OrderedList::ItemPtr> asList(const std::list<OrderedList::ItemPtr> &items)
+{
+    return {items.begin(), items.end()};
+}
+}
+
 OrderedListTest::OrderedListTest(QObject *parent)
     : QObject{parent}
 {
@@ -132,6 +140,79 @@ void OrderedListTest::shouldClearList()
 
     list.clear();
     QVERIFY(list.itemList().empty());
+}
+
+void OrderedListTest::shouldRestoreItemPosition()
+{
+    OrderedList list;
+    auto item1 = std::make_shared<RectangleItem>();
+    auto item2 = std::make_shared<RectangleItem>();
+    auto item3 = std::make_shared<RectangleItem>();
+    auto item4 = std::make_shared<RectangleItem>();
+
+    list.insert(item1);
+    list.insert(item2);
+    list.insert(item3);
+    list.insert(item4);
+
+    const auto originalOrder = asList(list.itemList());
+    const auto item2Position = list.position(item2);
+
+    list.sendToBack(item2);
+    QCOMPARE(asList(list.itemList()).front(), item2);
+
+    list.restorePosition(item2, item2Position);
+    QCOMPARE(asList(list.itemList()), originalOrder);
+}
+
+void OrderedListTest::shouldRestoreMultipleItemPositions()
+{
+    OrderedList list;
+    auto item1 = std::make_shared<RectangleItem>();
+    auto item2 = std::make_shared<RectangleItem>();
+    auto item3 = std::make_shared<RectangleItem>();
+    auto item4 = std::make_shared<RectangleItem>();
+
+    list.insert(item1);
+    list.insert(item2);
+    list.insert(item3);
+    list.insert(item4);
+
+    const auto originalOrder = asList(list.itemList());
+    const auto item2Position = list.position(item2);
+    const auto item3Position = list.position(item3);
+
+    list.sendToBack(item3);
+    list.sendToBack(item2);
+    QVERIFY(asList(list.itemList()) != originalOrder);
+
+    list.restorePosition(item2, item2Position);
+    list.restorePosition(item3, item3Position);
+    QCOMPARE(asList(list.itemList()), originalOrder);
+}
+
+void OrderedListTest::shouldFallbackWhenAnchorsAreUnavailable()
+{
+    OrderedList list;
+    auto item1 = std::make_shared<RectangleItem>();
+    auto item2 = std::make_shared<RectangleItem>();
+    auto item3 = std::make_shared<RectangleItem>();
+    auto item4 = std::make_shared<RectangleItem>();
+
+    list.insert(item1);
+    list.insert(item2);
+    list.insert(item3);
+    list.insert(item4);
+
+    const auto item3Position = list.position(item3);
+    list.remove(item2);
+    list.remove(item4);
+
+    list.sendToBack(item3);
+    QCOMPARE(asList(list.itemList()).front(), item3);
+
+    list.restorePosition(item3, item3Position);
+    QCOMPARE(asList(list.itemList()).back(), item3);
 }
 
 #include "moc_orderedlisttest.cpp"

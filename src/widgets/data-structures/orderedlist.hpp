@@ -4,16 +4,24 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include <list>
 #include <memory>
 #include <unordered_map>
 class Item;
-#include "libdrawywidgets_private_export.h"
+
+template<typename ItemPointer>
+struct ItemOrderPosition {
+    ItemPointer previousItem{};
+    ItemPointer nextItem{};
+};
+
 // Keeps track of the z-index of every item
 class LIBDRAWYWIDGETS_TESTS_EXPORT OrderedList
 {
 public:
     using ItemPtr = std::shared_ptr<Item>;
+    using Position = ItemOrderPosition<ItemPtr>;
 
 public:
     ~OrderedList();
@@ -31,6 +39,8 @@ public:
     [[nodiscard]] bool hasItem(const ItemPtr &item) const;
 
     [[nodiscard]] int zIndex(const ItemPtr &item) const;
+    [[nodiscard]] Position position(const ItemPtr &item) const;
+    void restorePosition(const ItemPtr &item, const Position &position);
 
     [[nodiscard]] std::list<ItemPtr> itemList() const;
 
@@ -38,6 +48,9 @@ public:
     [[nodiscard]] bool canMoveForwards(const ItemPtr &item) const;
 
 private:
+    void normalizeZIndexes();
+    void updateZIndexFromNeighbors(const ItemPtr &item);
+
     std::unordered_map<ItemPtr, std::list<ItemPtr>::iterator> m_itemIterMap;
     std::list<ItemPtr> m_itemList;
     std::unordered_map<ItemPtr, int> m_zIndex;
