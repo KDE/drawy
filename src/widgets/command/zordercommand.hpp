@@ -5,9 +5,12 @@
  */
 #pragma once
 
+#include "data-structures/orderedlist.hpp"
+#include "item/item.hpp"
 #include "item/itemutils.hpp"
 #include "itemcommand.hpp"
 #include <QList>
+#include <unordered_map>
 class ApplicationContext;
 class ZorderCommand : public ItemCommand
 {
@@ -20,6 +23,9 @@ public:
     [[nodiscard]] QString text() const override;
 
 private:
-    std::unordered_map<std::shared_ptr<Item>, int> m_orderIndex;
-    ItemUtils::ZorderMove m_zordermove = ItemUtils::ZorderMove::BringForward;
+    using OriginalItemOrder = ItemOrderPosition<std::weak_ptr<Item>>;
+
+    std::unordered_map<std::shared_ptr<Item>, OriginalItemOrder> m_originalOrder;
+    QList<std::shared_ptr<Item>> m_originalSortedItems;
+    ItemUtils::ZorderMove m_zorderMove = ItemUtils::ZorderMove::BringForward;
 };

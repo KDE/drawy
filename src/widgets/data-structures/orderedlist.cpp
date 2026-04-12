@@ -6,6 +6,11 @@
 
 #include "drawy_debug.h"
 
+namespace
+{
+constexpr int normalizeZIndexStep = 1024;
+}
+
 OrderedList::~OrderedList()
 {
     qCDebug(DRAWY_LOG) << "Object deleted: OrderedList";
@@ -149,6 +154,56 @@ int OrderedList::zIndex(const ItemPtr &item) const
     return m_zIndex.at(item);
 }
 
+OrderedList::Position OrderedList::position(const ItemPtr &item) const
+{
+    if (!hasItem(item)) {
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return {};
+    }
+
+    const auto iterator = m_itemIterMap.at(item);
+
+    Position position;
+    if (iterator != m_itemList.begin()) {
+        position.previousItem = *std::prev(iterator);
+    }
+
+    const auto nextIterator = std::next(iterator);
+    if (nextIterator != m_itemList.end()) {
+        position.nextItem = *nextIterator;
+    }
+
+    return position;
+}
+
+void OrderedList::restorePosition(const ItemPtr &item, const Position &position)
+{
+    if (!hasItem(item)) {
+        qCWarning(DRAWY_LOG) << "Item was not found in the iterator map";
+        return;
+    }
+
+    const auto iterator = m_itemIterMap[item];
+    auto targetIterator = m_itemList.end();
+
+    if (position.previousItem && position.previousItem != item && hasItem(position.previousItem)) {
+        targetIterator = std::next(m_itemIterMap[position.previousItem]);
+    } else if (position.nextItem && position.nextItem != item && hasItem(position.nextItem)) {
+        targetIterator = m_itemIterMap[position.nextItem];
+    } else if (!position.previousItem) {
+        targetIterator = m_itemList.begin();
+    } else {
+        qCWarning(DRAWY_LOG) << "Unable to restore item position using previous/next anchors, falling back to list end";
+        targetIterator = m_itemList.end();
+    }
+
+    if (targetIterator != iterator && std::next(iterator) != targetIterator) {
+        m_itemList.splice(targetIterator, m_itemList, iterator);
+    }
+
+    updateZIndexFromNeighbors(item);
+}
+
 std::list<OrderedList::ItemPtr> OrderedList::itemList() const
 {
     return m_itemList;
@@ -168,4 +223,56 @@ bool OrderedList::canMoveForwards(const ItemPtr &item) const
         return false;
     }
     return m_itemList.back() != item;
+}
+
+void OrderedList::normalizeZIndexes()
+{
+    int index = 0;
+    for (const auto &currentItem : m_itemList) {
+        m_zIndex[currentItem] = index;
+        index += normalizeZIndexStep;
+    }
+}
+
+void OrderedList::updateZIndexFromNeighbors(const ItemPtr &item)
+{
+    if (!hasItem(item)) {
+        return;
+    }
+
+    const auto iterator = m_itemIterMap[item];
+    const bool hasPrevious = iterator != m_itemList.begin();
+    const auto nextIterator = std::next(iterator);
+    const bool hasNext = nextIterator != m_itemList.end();
+
+    if (!hasPrevious && !hasNext) {
+        m_zIndex[item] = 0;
+        return;
+    }
+
+    if (!hasPrevious) {
+        m_zIndex[item] = m_zIndex[*nextIterator] - 1;
+        return;
+    }
+
+    const auto previousIterator = std::prev(iterator);
+    if (!hasNext) {
+        m_zIndex[item] = m_zIndex[*previousIterator] + 1;
+        return;
+    }
+
+    const int previousZIndex = m_zIndex[*previousIterator];
+    const int nextZIndex = m_zIndex[*nextIterator];
+
+    if (nextZIndex - previousZIndex <= 1) {
+        normalizeZIndexes();
+    }
+
+    const auto normalizedIterator = m_itemIterMap[item];
+    const auto normalizedPreviousIterator = std::prev(normalizedIterator);
+    const auto normalizedNextIterator = std::next(normalizedIterator);
+
+    const int normalizedPreviousZ = m_zIndex[*normalizedPreviousIterator];
+    const int normalizedNextZ = m_zIndex[*normalizedNextIterator];
+    m_zIndex[item] = normalizedPreviousZ + (normalizedNextZ - normalizedPreviousZ) / 2;
 }
