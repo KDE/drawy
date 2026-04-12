@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-09 03:27+0000\n"
-"PO-Revision-Date: 2026-04-09 11:26+0400\n"
+"PO-Revision-Date: 2026-04-11 18:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -384,33 +384,27 @@ msgid "Canvas"
 msgstr "اللوحة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "لون الخلفيّة"
+msgstr "لون الخلفيّة الفاتحة"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "لون الخلفيّة"
+msgstr "لون الخلفيّة المظلمة"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "لوح الألوان"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Light Mode"
+#, kde-format
 msgid "Light Mode"
 msgstr "الوضع الفاتح"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Dark Mode"
+#, kde-format
 msgid "Dark Mode"
 msgstr "الوضع المظلم"
 
