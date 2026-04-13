@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"POT-Creation-Date: 2026-04-13 02:37+0000\n"
 "Language-Team: Irish Translation Team <gaeilge-gnulinux@lists.sourceforge."
 "net>\n"
 "Language: ga\n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Change End Arrow Head"
 msgstr ""
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr ""

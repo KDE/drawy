@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"POT-Creation-Date: 2026-04-13 02:37+0000\n"
 "PO-Revision-Date: 2026-04-09 08:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr "Canvia l'inici de la punta de fletxa"
 msgid "Change End Arrow Head"
 msgstr "Canvia el final de la punta de fletxa"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Canvia l'ordre de Z"
@@ -844,19 +844,3 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgid "Light theme color"
-#~ msgstr "Color de tema clar"
-
-#~ msgid "Dark theme color"
-#~ msgstr "Color de tema fosc"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select Plugin"
-#~ msgstr "Connector de selecció"
-
-#~ msgid "Full Circle"
-#~ msgstr "Cercle complet"
-
-#~ msgid "Line"
-#~ msgstr "Línia"

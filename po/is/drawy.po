@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"POT-Creation-Date: 2026-04-13 02:37+0000\n"
 "PO-Revision-Date: 2026-03-13 15:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -94,7 +94,7 @@ msgstr "Skipta um gerð örvar"
 msgid "Change End Arrow Head"
 msgstr "Skipta um gerð örvar"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Breyta Z-röð"

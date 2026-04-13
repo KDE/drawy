@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"POT-Creation-Date: 2026-04-13 02:37+0000\n"
 "PO-Revision-Date: 2026-01-04 16:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -112,7 +112,7 @@ msgstr "Ezabatzailearen neurria"
 msgid "Change End Arrow Head"
 msgstr "Ezabatzailearen neurria"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, fuzzy, kde-format
 #| msgctxt "EraserSizeWidget|"
 #| msgid "Eraser Size"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-09 03:27+0000\n"
+"POT-Creation-Date: 2026-04-13 02:37+0000\n"
 "PO-Revision-Date: 2026-04-10 11:12+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -93,7 +93,7 @@ msgstr "שינוי ראש חץ התחלה"
 msgid "Change End Arrow Head"
 msgstr "שינוי ראש חץ סוף"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr "שינוי מרחק (סדר בציר Z)"
