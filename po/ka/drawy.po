@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-13 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -91,7 +91,7 @@ msgstr "დაწყების ისრის თავის შეცვლ
 msgid "Change End Arrow Head"
 msgstr "დასრულების ისრის თავის შეცვლა"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr "ZOrder-ის შეცვლა"

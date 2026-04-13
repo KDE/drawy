@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-13 00:41+0000\n"
 "PO-Revision-Date: 2026-04-10 11:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -92,7 +92,7 @@ msgstr "Begin van pijlkop wijzigen"
 msgid "Change End Arrow Head"
 msgstr "Einde van pijlkop wijzigen"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:56
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Z-volgorde wijzigen"
