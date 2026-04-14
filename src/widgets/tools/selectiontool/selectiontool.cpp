@@ -97,6 +97,7 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
 {
     updateCurrentHandler(context);
 
+    auto uiContext{context->uiContext()};
     auto canvas{context->renderingContext()->canvas()};
 
     if (m_highlightDrawn) {
@@ -138,7 +139,6 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
     }
 
     auto spatialContext{context->spatialContext()};
-    auto uiContext{context->uiContext()};
     auto selectionContext{context->selectionContext()};
     auto &transformer{spatialContext->coordinateTransformer()};
 
