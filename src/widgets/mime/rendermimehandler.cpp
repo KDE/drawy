@@ -33,9 +33,17 @@ void RenderMimeHandler::contributeData(QMimeData &mimeData, const QList<std::sha
     QPainter painter(&image);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
+    QTransform t{};
+    t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
+
+    painter.setTransform(t.inverted(), true);
+
     for (const auto &item : std::as_const(selectedItems)) {
         painter.save();
-        item->draw(painter, boundingBox.topLeft());
+        painter.setTransform(item->transformObj(), true);
+
+        item->draw(painter, QPointF{0, 0});
+
         painter.restore();
     }
 
