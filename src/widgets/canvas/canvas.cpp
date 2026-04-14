@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -56,6 +56,8 @@ void Canvas::setOverlayBg(const QColor &color)
 {
     m_overlayBg = color;
     m_overlay->fill(color);
+
+    m_isOverlayDirty = (color != Qt::transparent);
 }
 
 void Canvas::paintCanvas(const std::function<void(QPainter &)> &paintFunc)
@@ -72,6 +74,10 @@ void Canvas::paintOverlay(const std::function<void(QPainter &)> &paintFunc)
     painter.setRenderHints(QPainter::SmoothPixmapTransform | QPainter::Antialiasing);
 
     paintFunc(painter);
+
+    // assumes something must have been drawn on the overlay if this
+    // function was used
+    m_isOverlayDirty = true;
 }
 
 qreal Canvas::scale() const
@@ -241,6 +247,11 @@ void Canvas::resize()
 
     canvasPainter.end();
     overlayPainter.end();
+}
+
+bool Canvas::overlayDirty() const
+{
+    return m_isOverlayDirty;
 }
 
 // returns a copy of the content on the canvas

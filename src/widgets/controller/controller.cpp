@@ -363,6 +363,10 @@ void Controller::wheel(QWheelEvent *event)
     contextEvent->setPos(event->position().toPoint(), canvas->scale());
     contextEvent->setModifiers(event->modifiers());
 
+    if (canvas->overlayDirty()) {
+        canvas->setOverlayBg(canvas->overlayBg());
+    }
+
     if (event->modifiers() & Qt::ControlModifier) {
         if (m_zoomPixmap.isNull()) {
             m_zoomPixmap = canvas->canvasPixmap();

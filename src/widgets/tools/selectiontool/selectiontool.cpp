@@ -213,6 +213,9 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
 void SelectionTool::cleanup()
 {
     mouseReleased(m_context);
+
+    auto canvas{m_context->renderingContext()->canvas()};
+    canvas->setOverlayBg(canvas->overlayBg());
 }
 
 void SelectionTool::updateCurrentHandler(ApplicationContext *context)
