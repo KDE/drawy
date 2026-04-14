@@ -1,4 +1,4 @@
-﻿/*
+/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -27,54 +27,54 @@ void AlignItemCommand::calculateMoveItems()
     if (m_alignment == ItemUtils::AlignType::Unknown) {
         return;
     }
+
     QRectF fullRegion;
     for (const auto &item : std::as_const(m_items)) {
         fullRegion |= item->boundingBox();
     }
+
     for (const auto &item : std::as_const(m_items)) {
-        switch (m_alignment) {
-        case ItemUtils::AlignType::AlignBottom: {
-            const QPointF move{0, (fullRegion.bottom() - item->boundingBox().bottom())};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::AlignHorizontalCenter: {
-            const QPointF move{(fullRegion.center().x() - item->boundingBox().center().x()), 0};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::AlignTop: {
-            const QPointF move{0, (fullRegion.top() - item->boundingBox().top())};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::AlignLeft: {
-            const QPointF move{(fullRegion.left() - item->boundingBox().left()), 0};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::AlignRight: {
-            const QPointF move{(fullRegion.right() - item->boundingBox().right()), 0};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::AlignVerticalCenter: {
-            const QPointF move{0, (fullRegion.center().y() - item->boundingBox().center().y())};
-            m_moveToPoint.append(move);
-            break;
-        }
-        case ItemUtils::AlignType::Unknown:
-            qCWarning(DRAWY_COMMAND_LOG) << "Invalid alignment";
-            break;
-        }
+        const auto bbox{item->boundingBox()};
+        m_initialPositions.append(bbox.center());
+
+        const auto delta{[this, &fullRegion, &bbox] {
+            switch (m_alignment) {
+            case ItemUtils::AlignType::AlignBottom: {
+                return QPointF{0, (fullRegion.bottom() - bbox.bottom())};
+            }
+            case ItemUtils::AlignType::AlignHorizontalCenter: {
+                return QPointF{(fullRegion.center().x() - bbox.center().x()), 0};
+            }
+            case ItemUtils::AlignType::AlignTop: {
+                return QPointF{0, (fullRegion.top() - bbox.top())};
+            }
+            case ItemUtils::AlignType::AlignLeft: {
+                return QPointF{(fullRegion.left() - bbox.left()), 0};
+            }
+            case ItemUtils::AlignType::AlignRight: {
+                return QPointF{(fullRegion.right() - bbox.right()), 0};
+            }
+            case ItemUtils::AlignType::AlignVerticalCenter: {
+                return QPointF{0, (fullRegion.center().y() - bbox.center().y())};
+            }
+            case ItemUtils::AlignType::Unknown: {
+                return QPointF{0, 0};
+            }
+            }
+
+            return QPointF{0, 0};
+        }()};
+
+        m_finalPositions.append(bbox.center() + delta);
     }
 }
 
 void AlignItemCommand::redo(ApplicationContext *context)
 {
-    if (m_moveToPoint.isEmpty()) {
+    if (m_finalPositions.isEmpty()) {
         return;
     }
+
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
@@ -82,10 +82,17 @@ void AlignItemCommand::redo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
     }
+
     int index = 0;
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
-        item->translate(m_moveToPoint.at(index));
+
+        const QTransform invertedTransform{item->transformObj().inverted()};
+        const QPointF localInitialPos{invertedTransform.map(m_initialPositions.at(index))};
+        const QPointF localFinalPos{invertedTransform.map(m_finalPositions.at(index))};
+        const QPointF localDelta{localFinalPos - localInitialPos};
+        item->translate(localDelta);
+
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         index++;
     }
@@ -93,7 +100,7 @@ void AlignItemCommand::redo(ApplicationContext *context)
 
 void AlignItemCommand::undo(ApplicationContext *context)
 {
-    if (m_moveToPoint.isEmpty()) {
+    if (m_finalPositions.isEmpty()) {
         return;
     }
     auto &transformer{context->spatialContext()->coordinateTransformer()};
@@ -102,7 +109,13 @@ void AlignItemCommand::undo(ApplicationContext *context)
     int index = 0;
     for (const auto &item : std::as_const(m_items)) {
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
-        item->translate(-m_moveToPoint.at(index));
+
+        const QTransform invertedTransform{item->transformObj().inverted()};
+        const QPointF localInitialPos{invertedTransform.map(m_finalPositions.at(index))};
+        const QPointF localFinalPos{invertedTransform.map(m_initialPositions.at(index))};
+        const QPointF localDelta{localFinalPos - localInitialPos};
+        item->translate(localDelta);
+
         cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
         index++;
     }
@@ -115,7 +128,7 @@ QString AlignItemCommand::text() const
 
 bool AlignItemCommand::hasChanged() const
 {
-    for (const auto &move : m_moveToPoint) {
+    for (const auto &move : m_finalPositions) {
         if (!move.isNull()) {
             return true;
         }

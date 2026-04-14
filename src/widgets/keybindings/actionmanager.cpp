@@ -121,6 +121,25 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
         zorderMove(ItemUtils::ZorderMove::BringToFront);
     })->setIcon(QIcon::fromTheme(u"arrow-up-double"_s));
 
+    createAction(Action::AlignTop, i18nc("@action", "Align Top"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignTop);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
+    createAction(Action::AlignVerticalCenter, i18nc("@action", "Center Vertically"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignVerticalCenter);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
+    createAction(Action::AlignBottom, i18nc("@action", "Align Bottom"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignBottom);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
+    createAction(Action::AlignLeft, i18nc("@action", "Align Left"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignLeft);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
+    createAction(Action::AlignHorizontalCenter, i18nc("@action", "Center Horizontally"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignHorizontalCenter);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
+    createAction(Action::AlignRight, i18nc("@action", "Align Right"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignRight);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
+
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 
     actionCollection->readSettings();
@@ -189,6 +208,18 @@ QString ActionManager::actionName(Action type) const
         return u"bring_forward"_s;
     case Action::BringToFront:
         return u"bring_to_front"_s;
+    case Action::AlignTop:
+        return u"align_top"_s;
+    case Action::AlignVerticalCenter:
+        return u"align_vertical_center"_s;
+    case Action::AlignBottom:
+        return u"align_bottom"_s;
+    case Action::AlignLeft:
+        return u"align_left"_s;
+    case Action::AlignHorizontalCenter:
+        return u"align_horizontal_center"_s;
+    case Action::AlignRight:
+        return u"align_right"_s;
     case Action::Debug:
         return u"debug"_s;
     case Action::SwitchToDiamondTool:

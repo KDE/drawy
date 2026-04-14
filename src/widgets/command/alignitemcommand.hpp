@@ -1,4 +1,4 @@
-﻿/*
+/*
  * SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -22,6 +22,8 @@ public:
 
 private:
     void calculateMoveItems();
-    const ItemUtils::AlignType m_alignment = ItemUtils::AlignType::Unknown;
-    QList<QPointF> m_moveToPoint;
+    ItemUtils::AlignType m_alignment = ItemUtils::AlignType::Unknown;
+
+    QList<QPointF> m_initialPositions;
+    QList<QPointF> m_finalPositions;
 };
