@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 02:37+0000\n"
-"PO-Revision-Date: 2026-04-09 15:29+0200\n"
+"PO-Revision-Date: 2026-04-13 11:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -374,16 +374,14 @@ msgid "Canvas"
 msgstr "Telas (canvas)"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Color de fundo"
+msgstr "Color de fundo clar"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Color de fundo"
+msgstr "Color de fundo obscur"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
