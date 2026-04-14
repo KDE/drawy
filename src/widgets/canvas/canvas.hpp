@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -31,6 +31,8 @@ public:
 
     [[nodiscard]] QPixmap canvasPixmap() const;
     [[nodiscard]] QPixmap overlayPixmap() const;
+
+    [[nodiscard]] bool overlayDirty() const;
 
 Q_SIGNALS:
     void mousePressed(QMouseEvent *event);
@@ -76,6 +78,8 @@ private:
 
     QSize m_sizeHint{500, 500};
     QSize m_maxSize{};
+
+    bool m_isOverlayDirty{false};
 
     void resize();
 };

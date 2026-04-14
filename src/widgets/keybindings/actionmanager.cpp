@@ -43,7 +43,6 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
-#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "debug/debugdialog.hpp"
 #include "drawy_debug.h"
@@ -122,6 +121,25 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
         zorderMove(ItemUtils::ZorderMove::BringToFront);
     })->setIcon(QIcon::fromTheme(u"arrow-up-double"_s));
 
+    createAction(Action::AlignTop, i18nc("@action", "Align Top"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignTop);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
+    createAction(Action::AlignVerticalCenter, i18nc("@action", "Center Vertically"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignVerticalCenter);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
+    createAction(Action::AlignBottom, i18nc("@action", "Align Bottom"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignBottom);
+    })->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
+    createAction(Action::AlignLeft, i18nc("@action", "Align Left"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignLeft);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
+    createAction(Action::AlignHorizontalCenter, i18nc("@action", "Center Horizontally"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignHorizontalCenter);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
+    createAction(Action::AlignRight, i18nc("@action", "Align Right"), {}, this, [this]() {
+        alignItems(ItemUtils::AlignType::AlignRight);
+    })->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
+
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 
     actionCollection->readSettings();
@@ -190,6 +208,18 @@ QString ActionManager::actionName(Action type) const
         return u"bring_forward"_s;
     case Action::BringToFront:
         return u"bring_to_front"_s;
+    case Action::AlignTop:
+        return u"align_top"_s;
+    case Action::AlignVerticalCenter:
+        return u"align_vertical_center"_s;
+    case Action::AlignBottom:
+        return u"align_bottom"_s;
+    case Action::AlignLeft:
+        return u"align_left"_s;
+    case Action::AlignHorizontalCenter:
+        return u"align_horizontal_center"_s;
+    case Action::AlignRight:
+        return u"align_right"_s;
     case Action::Debug:
         return u"debug"_s;
     case Action::SwitchToDiamondTool:
@@ -263,7 +293,7 @@ void ActionManager::copy()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
 
     QMimeData *data = new QMimeData;
     m_context->mimeManager()->writeData(*data, items);
@@ -334,7 +364,7 @@ void ActionManager::zorderMove(ItemUtils::ZorderMove move)
         return;
     }
 
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->push(std::make_shared<ZorderCommand>(items, move));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
@@ -346,7 +376,8 @@ void ActionManager::alignItems(ItemUtils::AlignType alignType)
     if (selectedItems.empty()) {
         return;
     }
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
     auto alignCommand = std::make_shared<AlignItemCommand>(items, alignType);
     if (alignCommand->hasChanged()) {
         m_context->spatialContext()->commandHistory()->push(std::move(alignCommand));
@@ -367,7 +398,7 @@ void ActionManager::groupItems()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
     m_context->spatialContext()->commandHistory()->push(std::make_shared<GroupCommand>(m_context, items));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
@@ -391,13 +422,13 @@ void ActionManager::deleteSelection()
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
     auto commandHistory{m_context->spatialContext()->commandHistory()};
 
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
     commandHistory->push(std::make_shared<RemoveItemCommand>(items));
 
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 
-    const QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
+    const QList<std::shared_ptr<Item>> &selectedItemsVector{selectedItems.begin(), selectedItems.end()};
     if (!selectedItemsVector.isEmpty()) {
         m_context->spatialContext()->commandHistory()->push(std::make_shared<DeselectCommand>(selectedItemsVector));
     }
@@ -407,7 +438,7 @@ void ActionManager::selectAll()
 {
     switchToTool(Tool::Type::Selection);
 
-    const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+    const auto &allItems{m_context->spatialContext()->quadtree().getAllItems()};
     if (!allItems.isEmpty()) {
         m_context->spatialContext()->commandHistory()->push(std::make_shared<SelectCommand>(allItems));
 
@@ -468,7 +499,7 @@ void ActionManager::clear()
                                            i18nc("@action", "Clear"),
                                            KStandardGuiItem::ok(),
                                            KStandardGuiItem::cancel())) {
-        const auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+        const auto &allItems{m_context->spatialContext()->quadtree().getAllItems()};
         m_context->spatialContext()->commandHistory()->push(std::make_shared<RemoveItemCommand>(allItems));
         m_context->renderingContext()->markForRender();
         m_context->renderingContext()->markForUpdate();
@@ -547,7 +578,7 @@ void ActionManager::exportToImage()
 
         SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
     } else if (selectedFilter == pngFilter) {
-        QList<std::shared_ptr<Item>> selectedItems{m_context->spatialContext()->quadtree().getAllItems()};
+        const QList<std::shared_ptr<Item>> &selectedItems{m_context->spatialContext()->quadtree().getAllItems()};
         QRectF boundingBox;
 
         for (const auto &item : std::as_const(selectedItems)) {

@@ -23,34 +23,31 @@ AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
     layout->setAlignment(Qt::AlignLeft);
 
     auto alignLeftButton{new ButtonActionsWidget(m_widget)};
-    alignLeftButton->setIcon(QIcon::fromTheme(u"align-horizontal-left"_s));
     alignLeftButton->setObjectName(u"alignLeftButton"_s);
-    alignLeftButton->setToolTip(i18nc("@info:tooltip", "Align to Left"));
 
     auto centralHorizontalButton{new ButtonActionsWidget(m_widget)};
-    centralHorizontalButton->setIcon(QIcon::fromTheme(u"align-horizontal-center"_s));
     centralHorizontalButton->setObjectName(u"centralHorizontalButton"_s);
-    centralHorizontalButton->setToolTip(i18nc("@info:tooltip", "Align to Center"));
 
     auto alignRightButton{new ButtonActionsWidget(m_widget)};
-    alignRightButton->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
     alignRightButton->setObjectName(u"alignRightButton"_s);
-    alignRightButton->setToolTip(i18nc("@info:tooltip", "Align to Right"));
 
     auto alignTopButton{new ButtonActionsWidget(m_widget)};
-    alignTopButton->setIcon(QIcon::fromTheme(u"align-vertical-top"_s));
     alignTopButton->setObjectName(u"alignTopButton"_s);
-    alignTopButton->setToolTip(i18nc("@info:tooltip", "Align to Top"));
 
     auto centralVerticalButton{new ButtonActionsWidget(m_widget)};
-    centralVerticalButton->setIcon(QIcon::fromTheme(u"align-vertical-center"_s));
     centralVerticalButton->setObjectName(u"centralVerticalButton"_s);
-    centralVerticalButton->setToolTip(i18nc("@info:tooltip", "Align to Middle"));
 
     auto alignBottomButton{new ButtonActionsWidget(m_widget)};
-    alignBottomButton->setIcon(QIcon::fromTheme(u"align-vertical-bottom"_s));
     alignBottomButton->setObjectName(u"alignBottomButton"_s);
-    alignBottomButton->setToolTip(i18nc("@info:tooltip", "Align to Bottom"));
+
+    if (actionManager) {
+        alignLeftButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignLeft));
+        centralHorizontalButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignHorizontalCenter));
+        alignRightButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignRight));
+        alignTopButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignTop));
+        centralVerticalButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignVerticalCenter));
+        alignBottomButton->setDefaultAction(actionManager->action(ActionManager::Action::AlignBottom));
+    }
 
     layout->addWidget(alignLeftButton, 0, 0);
     layout->addWidget(centralHorizontalButton, 0, 1);
@@ -58,25 +55,6 @@ AlignmentWidget::AlignmentWidget(ActionManager *actionManager, QWidget *parent)
     layout->addWidget(alignTopButton, 1, 0);
     layout->addWidget(centralVerticalButton, 1, 1);
     layout->addWidget(alignBottomButton, 1, 2);
-
-    connect(alignLeftButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignLeft);
-    });
-    connect(centralHorizontalButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignHorizontalCenter);
-    });
-    connect(alignRightButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignRight);
-    });
-    connect(alignTopButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignTop);
-    });
-    connect(centralVerticalButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignVerticalCenter);
-    });
-    connect(alignBottomButton, &ButtonActionsWidget::clicked, this, [actionManager]() {
-        actionManager->alignItems(ItemUtils::AlignType::AlignBottom);
-    });
 
     m_widget->hide();
 }

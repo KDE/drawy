@@ -58,4 +58,6 @@ private:
 
     bool m_usingStylusEraser{false};
     Tool::Type m_stashedTool{Tool::Type::Eraser};
+
+    bool m_zoomInProgress{false};
 };

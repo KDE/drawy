@@ -32,6 +32,8 @@ RenderingContext::RenderingContext(ApplicationContext *context)
         if (m_needsReRender) {
             Common::renderCanvas(m_applicationContext);
             m_needsReRender = false;
+
+            Q_EMIT canvasRendered();
         }
 
         if (m_needsUpdate) {
@@ -44,6 +46,8 @@ RenderingContext::RenderingContext(ApplicationContext *context)
             m_updateRegion.setWidth(0);
             m_updateRegion.setHeight(0);
             m_needsUpdate = false;
+
+            Q_EMIT canvasUpdated();
         }
     });
 

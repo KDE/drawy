@@ -41,6 +41,12 @@ public:
         SendBackward,
         BringForward,
         BringToFront,
+        AlignTop,
+        AlignVerticalCenter,
+        AlignBottom,
+        AlignLeft,
+        AlignHorizontalCenter,
+        AlignRight,
         Debug,
     };
 

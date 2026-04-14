@@ -74,11 +74,11 @@ void UngroupCommand::undo(ApplicationContext *context)
         quadtree.insertItem(m_groups[pos]);
 
         dirtyRegion |= m_groups[pos]->boundingBox().toAlignedRect();
+
         context->selectionContext()->addToSelection(m_groups[pos]);
     }
 
     context->renderingContext()->cacheGrid().markDirty(dirtyRegion.toRect());
-    context->selectionContext()->reset();
 
     m_ungroupedItems.clear();
 }

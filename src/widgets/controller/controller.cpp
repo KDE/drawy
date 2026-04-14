@@ -31,7 +31,7 @@
 Controller::Controller(ApplicationContext *context, QObject *parent)
     : QObject{parent}
     , m_context{context}
-    , m_zoomTimer{new QTimer(this)}
+    , m_zoomTimer{new QTimer{this}}
 {
     connect(m_zoomTimer, &QTimer::timeout, this, &Controller::renderZoom);
 }
@@ -43,6 +43,10 @@ Controller::~Controller()
 
 void Controller::mousePressed(QMouseEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     // No on really clicks in this corner (0, 0) and this solves a
     // bug on Hyprland where it would register a mouse press in this corner
     if (event->pos() == QPoint{0, 0}) {
@@ -88,6 +92,10 @@ void Controller::mousePressed(QMouseEvent *event)
 
 void Controller::mouseDoubleClick(QMouseEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
@@ -101,6 +109,10 @@ void Controller::mouseDoubleClick(QMouseEvent *event)
 
 void Controller::mouseTripleClick(QMouseEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
@@ -114,6 +126,10 @@ void Controller::mouseTripleClick(QMouseEvent *event)
 
 void Controller::mouseMoved(QMouseEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     m_mouseMoved = true;
 
     auto contextEvent{m_context->uiContext()->appEvent()};
@@ -134,6 +150,10 @@ void Controller::mouseMoved(QMouseEvent *event)
 
 void Controller::mouseReleased(QMouseEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
     auto canvas{m_context->renderingContext()->canvas()};
@@ -154,6 +174,10 @@ void Controller::mouseReleased(QMouseEvent *event)
 
 void Controller::tablet(QTabletEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto ev{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
 
@@ -182,6 +206,10 @@ void Controller::tablet(QTabletEvent *event)
 
 void Controller::keyPressed(QKeyEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
 
@@ -215,6 +243,10 @@ void Controller::keyPressed(QKeyEvent *event)
 
 void Controller::keyReleased(QKeyEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto contextEvent{m_context->uiContext()->appEvent()};
     auto toolBar{m_context->uiContext()->toolBar()};
 
@@ -233,10 +265,17 @@ void Controller::keyReleased(QKeyEvent *event)
 
 void Controller::inputMethodInvoked([[maybe_unused]] QInputMethodEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
 }
 
 void Controller::leave([[maybe_unused]] QEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto toolBar{m_context->uiContext()->toolBar()};
 
     toolBar->curTool().leave(m_context);
@@ -244,6 +283,10 @@ void Controller::leave([[maybe_unused]] QEvent *event)
 
 void Controller::dragEnter(QDragEnterEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     m_droppedItems = m_context->mimeManager()->readData(*event->mimeData());
 
     if (m_droppedItems.isEmpty()) {
@@ -258,6 +301,10 @@ void Controller::dragEnter(QDragEnterEvent *event)
 
 void Controller::dragMove(QDragMoveEvent *event)
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto *canvas{m_context->renderingContext()->canvas()};
 
     const QPointF offsetPos{m_context->spatialContext()->offsetPos()};
@@ -296,6 +343,10 @@ void Controller::dragMove(QDragMoveEvent *event)
 
 void Controller::dragLeave()
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto *canvas{m_context->renderingContext()->canvas()};
 
     const QPointF offsetPos{m_context->spatialContext()->offsetPos()};
@@ -316,6 +367,10 @@ void Controller::dragLeave()
 
 void Controller::drop()
 {
+    if (m_zoomInProgress) {
+        return;
+    }
+
     auto commandHistory{m_context->spatialContext()->commandHistory()};
     commandHistory->push(std::make_shared<InsertItemCommand>(m_droppedItems));
 
@@ -348,6 +403,15 @@ void Controller::renderZoom()
     renderingContext->markForRender();
     renderingContext->markForUpdate();
 
+    connect(
+        renderingContext,
+        &RenderingContext::canvasRendered,
+        this,
+        [this]() -> void {
+            m_zoomInProgress = false;
+        },
+        Qt::SingleShotConnection);
+
     m_zoomDelta = 0;
     m_zoomPixmap = QPixmap{};
     m_zoomPixmapOffsetPos = QPointF{0, 0};
@@ -362,6 +426,10 @@ void Controller::wheel(QWheelEvent *event)
 
     contextEvent->setPos(event->position().toPoint(), canvas->scale());
     contextEvent->setModifiers(event->modifiers());
+
+    if (canvas->overlayDirty()) {
+        canvas->setOverlayBg(canvas->overlayBg());
+    }
 
     if (event->modifiers() & Qt::ControlModifier) {
         if (m_zoomPixmap.isNull()) {
@@ -396,7 +464,12 @@ void Controller::wheel(QWheelEvent *event)
 
         m_context->renderingContext()->markForUpdate();
 
+        m_zoomInProgress = true;
         m_zoomTimer->start(Common::zoomRenderWaitTime);
+        return;
+    }
+
+    if (m_zoomInProgress) {
         return;
     }
 

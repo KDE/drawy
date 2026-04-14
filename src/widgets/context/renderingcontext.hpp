@@ -42,6 +42,8 @@ public:
 
 Q_SIGNALS:
     void zoomFactorChanged(qreal newZoomFactor);
+    void canvasRendered();
+    void canvasUpdated();
 
 private:
     void canvasResized();
