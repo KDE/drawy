@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 00:41+0000\n"
-"PO-Revision-Date: 2026-03-29 15:24+0000\n"
+"PO-Revision-Date: 2026-04-13 18:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -201,12 +201,10 @@ msgid "Image"
 msgstr "Mynd"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "QObject|"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Færsluverkfæri"
+msgstr "Fleiri verkfæri"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -381,33 +379,27 @@ msgid "Canvas"
 msgstr "Myndflötur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Bakgrunnslitur"
+msgstr "Ljós bakgrunnslitur"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Bakgrunnslitur"
+msgstr "Dökkur bakgrunnslitur"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:14
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Litaspjald"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Light Mode"
+#, kde-format
 msgid "Light Mode"
 msgstr "Ljós hamur"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Dark Mode"
+#, kde-format
 msgid "Dark Mode"
 msgstr "Dökkur hamur"
 
@@ -832,10 +824,9 @@ msgid "Thickness"
 msgstr "Þykkt"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Z-order"
+#, kde-format
 msgid "Order"
-msgstr "Z-röð"
+msgstr "Röðun"
 
 #: widgets/tools/imagetool.cpp:37
 #, kde-format

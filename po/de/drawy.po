@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 20:34+0100\n"
+"PO-Revision-Date: 2026-04-12 13:21+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -102,13 +102,13 @@ msgstr "Z-Reihenfolge ändern"
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "Grundlegende Formen"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "Dreieck"
 
 #: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
@@ -139,7 +139,7 @@ msgstr "Objekt einfügen"
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
-msgstr ""
+msgstr "Liniengröße ändern"
 
 #: widgets/command/lockcommand.cpp:36
 #, kde-format
@@ -152,26 +152,21 @@ msgid "Move Object"
 msgstr "Objekt verschieben"
 
 #: widgets/command/removeitemcommand.cpp:60
-#, fuzzy, kde-format
-#| msgid "Remove Object"
+#, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "Objekt entfernen"
-msgstr[1] "Objekt entfernen"
+msgstr[1] "%1 Objekte entfernen"
 
 #: widgets/command/resizeitemcommand.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
+#, kde-format
 msgid "Resize Object"
-msgstr "Alles auswählen"
+msgstr "Objektgröße ändern"
 
 #: widgets/command/rotateitemcommand.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "ActionManager|"
-#| msgid "Select All"
+#, kde-format
 msgid "Rotate Object"
-msgstr "Alles auswählen"
+msgstr "Objekt drehen"
 
 #: widgets/command/selectcommand.cpp:49
 #, kde-format
@@ -187,7 +182,7 @@ msgstr "Gruppierung der Objekte aufheben"
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: widgets/components/bottomleftwidgets.cpp:42
 #, kde-format
@@ -199,13 +194,13 @@ msgstr "Vergrößerung zurücksetzen"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1 %"
 
 #: widgets/components/toolbar.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: widgets/components/toolbuttonplugin.cpp:65
 #, fuzzy, kde-format
@@ -235,7 +230,7 @@ msgstr "Ihr nützliches, unendliches Werkzeug zur Ideenfindung!"
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr ""
+msgstr "© 2025–%1 Drawy-Autoren"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
@@ -260,11 +255,10 @@ msgid "Developer"
 msgstr "Entwickler"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Unbenannt.%1"
+msgstr "Unbenannt"
 
 #: widgets/context/uicontext.cpp:66
 #, kde-format
@@ -332,7 +326,7 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr ""
+msgstr "Eine Präsentation wird gehalten"
 
 #: widgets/dialog/configuresettingsdialog.cpp:29
 #, kde-format
@@ -348,7 +342,7 @@ msgstr "Allgemein"
 #: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Verschiedenes"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -384,11 +378,9 @@ msgid "Restore previous session on start"
 msgstr "Vorherige Sitzung beim Start wiederherstellen"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Clear Canvas"
+#, kde-format
 msgid "Canvas"
-msgstr "Zeichenfläche leeren"
+msgstr "Zeichenfläche"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, fuzzy, kde-format
@@ -441,15 +433,13 @@ msgstr "Vollbild"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr ""
+msgstr "Fehlersuchmodus aktivieren"
 
 #: widgets/keybindings/actionmanager.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Als SVG exportieren"
+msgstr "Als Bild exportieren"
 
 #: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
@@ -530,17 +520,13 @@ msgid "Move Tool"
 msgstr "Verschiebewerkzeug"
 
 #: widgets/keybindings/actionmanager.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Rectangle Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "Rechteckwerkzeug"
+msgstr "Bildwerkzeug"
 
 #: widgets/keybindings/actionmanager.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Diamond Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Rautenwerkzeug"
@@ -573,7 +559,7 @@ msgstr "Ganz nach vorne"
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr ""
+msgstr "Fehlersuche"
 
 #: widgets/keybindings/actionmanager.cpp:442
 #, kde-format
@@ -621,30 +607,24 @@ msgid "SVG (*.svg)"
 msgstr "SVG-Grafik (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:528
-#, fuzzy, kde-format
-#| msgid "SVG (*.svg)"
+#, kde-format
 msgid "PNG (*.png)"
-msgstr "SVG-Grafik (*.svg)"
+msgstr "PNG-Bild (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Als SVG exportieren"
+msgstr "Als Bild exportieren"
 
 #: widgets/keybindings/actionmanager.cpp:590
-#, fuzzy, kde-format
-#| msgid ""
-#| "The document \"%1\" has been modified. Do you want to save your changes "
-#| "or discard them?"
+#, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"Das Dokument „%1“ wurde geändert. Möchten Sie die Änderungen speichern oder "
-"verwerfen?"
+"Das Dokument „%1“ wurde geändert.\n"
+"Möchten Sie die Änderungen speichern oder verwerfen?"
 
 #: widgets/keybindings/actionmanager.cpp:594
 #, kde-format
@@ -715,37 +695,34 @@ msgstr "Ausrichtung"
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Pfeil"
+msgstr "Offener Pfeil"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
-msgstr ""
+msgstr "Dreieck"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr ""
+msgstr "Ausgefülltes Dreieck"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
-msgstr ""
+msgstr "Kreis"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Raute"
@@ -754,7 +731,7 @@ msgstr "Raute"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Pfeilspitze auswählen"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:21
 #, kde-format
@@ -765,7 +742,7 @@ msgstr "Hintergrundfarbe"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
-msgstr ""
+msgstr "Keiner"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
@@ -865,20 +842,19 @@ msgstr "Z-Reihenfolge"
 #: widgets/tools/imagetool.cpp:37
 #, kde-format
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: widgets/tools/imagetool.cpp:56
-#, fuzzy, kde-format
-#| msgid "Insert Object"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Objekt einfügen"
+msgstr "Bild einfügen"
 
 #: widgets/window/window.cpp:184
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
-msgstr ""
+msgstr "%1 — Drawy"
 
 #, fuzzy
 #~| msgctxt "UIContext|"
