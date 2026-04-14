@@ -12,7 +12,7 @@
 using namespace Qt::StringLiterals;
 
 SvgPaintEngine::SvgPaintEngine(QXmlStreamWriter &writer)
-    : QPaintEngine(PainterPaths | Antialiasing | AlphaBlend | PaintOutsidePaintEvent)
+    : QPaintEngine(PainterPaths | Antialiasing | AlphaBlend | PaintOutsidePaintEvent | PrimitiveTransform | PixmapTransform)
     , m_writer(writer)
 {
 }
@@ -42,6 +42,7 @@ void SvgPaintEngine::drawEllipse(const QRectF &rect)
     m_writer.writeAttribute("ry", QString::number(rect.height() / 2));
 
     writeStrokeFill();
+    writeTransform();
 
     m_writer.writeEndElement();
 }
@@ -64,6 +65,9 @@ void SvgPaintEngine::drawImage(const QRectF &dest, const QImage &image, [[maybe_
     buffer.close();
 
     m_writer.writeAttribute("xlink:href", u"data:image/png;base64,"_s + QString::fromLocal8Bit(data.toBase64()));
+
+    writeTransform();
+
     m_writer.writeEndElement();
 }
 
@@ -111,6 +115,7 @@ void SvgPaintEngine::drawPath(const QPainterPath &path)
     m_writer.writeStartElement("path");
     m_writer.writeAttribute("d", svgPath);
     writeStrokeFill();
+    writeTransform();
     m_writer.writeEndElement();
 }
 
@@ -128,6 +133,7 @@ void SvgPaintEngine::drawPolygon(const QPointF *points, int pointCount, [[maybe_
     m_writer.writeStartElement("polygon");
     m_writer.writeAttribute("points", svgPoints);
     writeStrokeFill();
+    writeTransform();
     m_writer.writeEndElement();
 }
 
@@ -143,6 +149,7 @@ void SvgPaintEngine::drawRects(const QRectF *rects, int rectCount)
         m_writer.writeAttribute("height", QString::number(rects[i].height()));
 
         writeStrokeFill();
+        writeTransform();
 
         m_writer.writeEndElement();
     }
@@ -160,6 +167,7 @@ void SvgPaintEngine::drawLines(const QLineF *lines, int lineCount)
         m_writer.writeAttribute("y2", QString::number(lines[i].y2()));
 
         writeStrokeFill();
+        writeTransform();
 
         m_writer.writeEndElement();
     }
@@ -239,6 +247,21 @@ void SvgPaintEngine::writeStrokeFill()
         m_writer.writeAttribute("fill", state->brush().color().name());
         m_writer.writeAttribute("fill-opacity", QString::number((state->brush().color().alpha() * 100.0) / 255.0) + u'%');
     }
+}
+
+void SvgPaintEngine::writeTransform()
+{
+    if (state->transform().isIdentity()) {
+        return;
+    }
+
+    m_writer.writeAttribute("transform",
+                            u"matrix(%1, %2, %3, %4, %5, %6)"_s.arg(state->transform().m11())
+                                .arg(state->transform().m12())
+                                .arg(state->transform().m21())
+                                .arg(state->transform().m22())
+                                .arg(state->transform().dx())
+                                .arg(state->transform().dy()));
 }
 
 SvgPaintDevice::SvgPaintDevice(QXmlStreamWriter &writer, int width, int height)

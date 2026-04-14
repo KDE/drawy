@@ -42,6 +42,7 @@ public:
 
 private:
     void writeStrokeFill();
+    void writeTransform();
 
     QXmlStreamWriter &m_writer;
 };
