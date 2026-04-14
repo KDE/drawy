@@ -40,6 +40,7 @@
 #include "tools/texttool.hpp"
 #include <KLocalizedString>
 #include <QMenu>
+#include <ranges>
 
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
@@ -198,14 +199,11 @@ void UIContext::reset()
 
 void UIContext::showContextMenu() const
 {
-    auto allItems{m_applicationContext->spatialContext()->quadtree().getAllItems()};
-    bool hasItems = !allItems.empty();
-    bool hasSelection = false;
+    const auto &allItems{m_applicationContext->spatialContext()->quadtree().getAllItems()};
+    const auto &selectedItems{m_applicationContext->selectionContext()->selectedItems()};
 
-    if (hasItems) {
-        const auto &selectedItems{m_applicationContext->selectionContext()->selectedItems()};
-        hasSelection = !selectedItems.empty();
-    }
+    const bool hasItems{!allItems.empty()};
+    const bool hasSelection{!selectedItems.empty()};
 
     auto menu = new QMenu(m_applicationContext->parentWidget());
 
@@ -214,18 +212,44 @@ void UIContext::showContextMenu() const
     }
 
     menu->addAction(actionManager()->action(KStandardActions::Paste));
+
     if (hasSelection) {
         menu->addAction(actionManager()->action(ActionManager::Action::DeleteSelection));
     }
 
-    if (hasItems) {
+    // only show option to select all if everything is not selected
+    if (hasItems && allItems.size() != static_cast<qsizetype>(selectedItems.size())) {
         menu->addAction(actionManager()->action(KStandardActions::SelectAll));
     }
 
     menu->addSeparator();
 
+    if (selectedItems.size() > 1) {
+        menu->addAction(actionManager()->action(ActionManager::Action::GroupItems));
+    }
+
+    const bool hasGroups{std::ranges::any_of(selectedItems, [](const auto &item) -> bool {
+        return item->formType() == Item::FormType::Group;
+    })};
+
+    if (hasGroups) {
+        menu->addAction(actionManager()->action(ActionManager::Action::UngroupItems));
+    }
+
+    if (hasItems) {
+        auto reorderMenu = new QMenu(i18nc("Title of a submenu inside the context menu which allows users to reorder items", "Reorder"));
+
+        reorderMenu->addAction(actionManager()->action(ActionManager::Action::BringToFront));
+        reorderMenu->addAction(actionManager()->action(ActionManager::Action::BringForward));
+        reorderMenu->addAction(actionManager()->action(ActionManager::Action::SendBackward));
+        reorderMenu->addAction(actionManager()->action(ActionManager::Action::SendToBack));
+
+        menu->addMenu(reorderMenu);
+    }
+
+    menu->addSeparator();
+
     menu->addAction(actionManager()->action(KStandardActions::FullScreen));
-    menu->addAction(actionManager()->action(ActionManager::Action::ExportAsImage));
 
     menu->addSeparator();
 
@@ -240,6 +264,8 @@ void UIContext::showContextMenu() const
     menu->addAction(actionManager()->action(KStandardActions::Quit));
 
     menu->exec(QCursor::pos());
+
+    toolBar()->curTool().cleanup();
     delete menu;
 }
 
