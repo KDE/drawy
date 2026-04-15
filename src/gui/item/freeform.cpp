@@ -24,7 +24,7 @@ FreeformItem::FreeformItem()
 
 int FreeformItem::minPointDistance()
 {
-    return 4;
+    return 0;
 }
 
 void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
