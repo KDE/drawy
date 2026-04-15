@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -12,6 +12,7 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
+#include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -95,6 +96,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
         m_curItem->setMode(TextItem::Mode::Edit);
         uiContext->keybindManager()->setEnabled(false);
+        context->selectionContext()->setShouldRenderHandles(false);
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();
@@ -237,6 +239,8 @@ void TextTool::keyPressed(ApplicationContext *context)
     if (ev->key() == Qt::Key_Escape) {
         m_curItem->setMode(TextItem::Mode::Normal);
         context->uiContext()->keybindManager()->setEnabled(true);
+        context->selectionContext()->setShouldRenderHandles(true);
+        context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
         m_curItem = nullptr;
 
         context->renderingContext()->cacheGrid().markAllDirty();
@@ -483,6 +487,7 @@ void TextTool::cleanup()
 
     // enable keybindings again
     uiContext->keybindManager()->setEnabled(true);
+    m_context->selectionContext()->setShouldRenderHandles(true);
 
     if (m_curItem->text().isEmpty()) {
         quadTree.deleteItem(m_curItem);
