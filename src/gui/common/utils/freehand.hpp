@@ -19,7 +19,7 @@ struct StrokePoint {
  * @brief: smoothness factor, the lower it is, the smoother the lines are but
  * they look more unnatural
  */
-inline constexpr qreal t = 0.45;
+inline constexpr qreal t = 0.25;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
 
