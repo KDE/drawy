@@ -307,6 +307,10 @@ void Controller::dragMove(QDragMoveEvent *event)
 
     auto *canvas{m_context->renderingContext()->canvas()};
 
+    auto contextEvent{m_context->uiContext()->appEvent()};
+    contextEvent->setPos(event->position().toPoint(), canvas->scale());
+    contextEvent->setModifiers(event->modifiers());
+
     const QPointF offsetPos{m_context->spatialContext()->offsetPos()};
     const qreal zoom{m_context->renderingContext()->zoomFactor()};
 
@@ -324,17 +328,29 @@ void Controller::dragMove(QDragMoveEvent *event)
         boundingBox |= item->boundingBox();
     }
 
-    for (const auto &item : std::as_const(m_droppedItems)) {
-        item->translate(-boundingBox.center());
+    auto transformer{m_context->spatialContext()->coordinateTransformer()};
 
-        item->translate(m_context->spatialContext()->coordinateTransformer().viewToWorld(event->position()));
+    for (const auto &item : std::as_const(m_droppedItems)) {
+        const auto transform{item->transformObj().inverted()};
+
+        const auto localInitialPos{transform.map(item->boundingBox().center())};
+        const auto localFinalPos{transform.map(transformer.viewToWorld(contextEvent->pos()))};
+
+        const auto localDelta{localFinalPos - localInitialPos};
+
+        item->translate(localDelta);
     }
 
     canvas->paintOverlay([&](QPainter &painter) -> void {
         painter.scale(zoom, zoom);
 
+        painter.translate(-offsetPos);
+
         for (const auto &item : std::as_const(m_droppedItems)) {
-            item->draw(painter, offsetPos);
+            painter.save();
+            painter.setTransform(item->transformObj(), true);
+            item->draw(painter, QPointF{0, 0});
+            painter.restore();
         }
     });
 
