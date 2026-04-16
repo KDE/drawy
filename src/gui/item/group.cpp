@@ -129,9 +129,12 @@ void GroupItem::setProperty(const Property::Type propertyType, Property newObj)
         }
         return;
     }
+
     for (const auto &item : std::as_const(m_items)) {
         item->setProperty(propertyType, newObj);
     }
+
+    setDirty(true);
 }
 
 Property GroupItem::property(const Property::Type propertyType) const

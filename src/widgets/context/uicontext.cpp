@@ -236,7 +236,7 @@ void UIContext::showContextMenu() const
         menu->addAction(actionManager()->action(ActionManager::Action::UngroupItems));
     }
 
-    if (hasItems) {
+    if (hasSelection) {
         auto reorderMenu = new QMenu(i18nc("Title of a submenu inside the context menu which allows users to reorder items", "Reorder"));
 
         reorderMenu->addAction(actionManager()->action(ActionManager::Action::BringToFront));
@@ -245,6 +245,19 @@ void UIContext::showContextMenu() const
         reorderMenu->addAction(actionManager()->action(ActionManager::Action::SendToBack));
 
         menu->addMenu(reorderMenu);
+
+        if (selectedItems.size() > 1) {
+            auto alignmentMenu = new QMenu(i18nc("Title of a submenu inside the context menu which allows users to align items", "Align"));
+
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignTop));
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignVerticalCenter));
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignBottom));
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignLeft));
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignHorizontalCenter));
+            alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignRight));
+
+            menu->addMenu(alignmentMenu);
+        }
     }
 
     menu->addSeparator();

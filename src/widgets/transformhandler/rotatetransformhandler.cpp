@@ -25,7 +25,7 @@ using namespace Qt::StringLiterals;
 RotateTransformHandler::RotateTransformHandler()
 {
     const QPixmap image{u":/cursors/rotate.png"_s};
-    m_cursor = QCursor(image.scaled(24, 24, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    m_cursor = QCursor(image.scaled(30, 30, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
 bool RotateTransformHandler::shouldActivate(ApplicationContext *context)
