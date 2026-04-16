@@ -35,12 +35,13 @@ int main(int argc, char *argv[])
 
     KCrash::initialize();
 
+    QCoreApplication::setApplicationVersion(QString::fromUtf8(DRAWY_VERSION));
+
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     const DrawyCommandLineParser commandLineParser(&parser);
-    parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "An optional argument 'file' "), QStringLiteral("[file]"));
 
-    parser.addVersionOption();
+    parser.addPositionalArgument(QStringLiteral("file"), i18nc("@info:shell", "An optional argument 'file' "), QStringLiteral("[file]"));
     parser.setApplicationDescription(i18n("Your handy, infinite brainstorming tool!"));
 
     parser.process(a);

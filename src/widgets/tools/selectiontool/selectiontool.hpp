@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -20,6 +20,7 @@ public:
     void mouseMoved(ApplicationContext *context) override;
     void mouseReleased(ApplicationContext *context) override;
     void keyPressed(ApplicationContext *context) override;
+    void mouseDoubleClick(ApplicationContext *context) override;
     void cleanup() override;
 
     [[nodiscard]] QList<Property::Type> properties() const override;

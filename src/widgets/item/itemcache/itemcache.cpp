@@ -83,6 +83,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
                                transform.m33());
 
     painter.setTransform(painterTransform, true);
+    painter.setRenderHint(QPainter::Antialiasing, false);
 
     for (const auto &cell : visibleCells) {
         if (cell->dirty()) {
@@ -99,10 +100,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
             cell->setDirty(false);
         }
 
-        QRectF destRect{cell->rect()};
-        destRect.adjust(-0.10, -0.10, 0.10, 0.10); // prevents thin intersection lines
-
-        painter.drawPixmap(destRect, cell->pixmap(), QRectF(cell->pixmap().rect()));
+        painter.drawPixmap(cell->rect().topLeft(), cell->pixmap());
 
         // Debug visualization
         /*

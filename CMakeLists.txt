@@ -1,4 +1,4 @@
-﻿# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
@@ -28,6 +28,7 @@ include(ECMAddAppIcon)
 include(KDECMakeSettings)
 include(ECMAddTests)
 include(ECMDeprecationSettings)
+include(ECMSetupVersion)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 set(SharedMimeInfo_MINIMUM_VERSION "1.10")
 find_package(SharedMimeInfo ${SharedMimeInfo_MINIMUM_VERSION} REQUIRED)
@@ -203,3 +204,9 @@ if(KF6DocTools_FOUND)
     add_subdirectory(doc)
 endif()
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX ${PROJECT_NAME}
+    SOVERSION ${PROJECT_VERSION_MAJOR}
+    VERSION_HEADER config-drawy.h.in
+)

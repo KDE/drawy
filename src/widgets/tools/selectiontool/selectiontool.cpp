@@ -13,6 +13,7 @@
 #include "command/moveitemcommand.hpp"
 #include "command/selectcommand.hpp"
 #include "common/constants.hpp"
+#include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -320,6 +321,18 @@ QList<Property::Type> SelectionTool::properties() const
         return output;
     } else {
         return {};
+    }
+}
+
+void SelectionTool::mouseDoubleClick(ApplicationContext *context)
+{
+    const auto &items{getItemsUnderCursor(context)};
+
+    if (items.back()->formType() == Item::FormType::Text) {
+        auto toolBar{context->uiContext()->toolBar()};
+
+        toolBar->changeTool(Tool::Type::Text);
+        toolBar->curTool().mousePressed(context);
     }
 }
 
