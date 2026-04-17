@@ -319,14 +319,17 @@ void ActionManager::paste()
         boundingBox |= item->boundingBox();
     }
 
-    for (const auto &item : items) {
-        item->translate(-boundingBox.center());
-    }
-
     const QPointF offset{m_context->spatialContext()->coordinateTransformer().viewToWorld(m_context->uiContext()->appEvent()->pos())};
 
     for (const auto &item : items) {
-        item->translate(offset);
+        const auto transform{item->transformObj().inverted()};
+
+        const auto localInitialPos{transform.map(boundingBox.center())};
+        const auto localFinalPos{transform.map(offset)};
+
+        const auto localDelta{localFinalPos - localInitialPos};
+
+        item->translate(localDelta);
     }
 
     m_context->spatialContext()->commandHistory()->push(std::make_shared<InsertItemCommand>(items));
