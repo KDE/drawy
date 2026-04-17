@@ -8,6 +8,9 @@ runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: drawy
 rename-icon: drawy
+rename-mime-file: application-x-drawy.xml
+rename-mime-icons:
+  - "application-x-drawy"
 finish-args:
     # 3D acceleration
   - --device=dri
