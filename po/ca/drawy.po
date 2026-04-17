@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2026-04-15 09:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,13 +30,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: apps/main.cpp:41
+#: apps/main.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Un argument «file» opcional "
 
-#: apps/main.cpp:44
+#: apps/main.cpp:45
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "La vostra eina pràctica, infinita i de pluja d'idees!"
@@ -329,6 +329,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Reordena"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Alineació"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -657,7 +665,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporta a imatge"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -666,7 +674,7 @@ msgstr ""
 "S'ha modificat el document «%1».\n"
 "Voleu desar els canvis o descartar-los?"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

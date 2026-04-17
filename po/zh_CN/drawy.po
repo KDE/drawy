@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2026-01-01 18:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,13 +27,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: apps/main.cpp:41
+#: apps/main.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:44
+#: apps/main.cpp:45
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
@@ -323,6 +323,13 @@ msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
 "items"
 msgid "Reorder"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:250
+#, kde-format
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
 msgstr ""
 
 #: widgets/dbus/managepowermanagement.cpp:30
@@ -651,14 +658,14 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

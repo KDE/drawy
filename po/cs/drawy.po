@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2026-03-17 08:45+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,13 +27,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: apps/main.cpp:41
+#: apps/main.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Volitelný argument 'file' "
 
-#: apps/main.cpp:44
+#: apps/main.cpp:45
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
@@ -330,6 +330,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Pořadí"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Zarovnání"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -667,7 +675,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exportovat do SVG"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -676,7 +684,7 @@ msgstr ""
 "Dokument \"%1\" byl změněn.\n"
 "Přejete si uložit změny nebo je zapomenout?"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

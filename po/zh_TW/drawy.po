@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2026-03-02 06:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -25,13 +25,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: apps/main.cpp:41
+#: apps/main.cpp:44
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "選擇性參數 'file'"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:45
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
@@ -329,6 +329,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Z 軸排序"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "對齊"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -679,7 +687,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "匯出為 SVG"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified. Do you want to save your changes "
@@ -689,7 +697,7 @@ msgid ""
 "Do you want to save your changes or discard them?"
 msgstr "文件「%1」已被修改。您想要儲存變更還是放棄變更？"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
