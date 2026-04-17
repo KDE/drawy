@@ -23,6 +23,8 @@ public:
     void mouseDoubleClick(ApplicationContext *context) override;
     void cleanup() override;
 
+    void renderHighlights(ApplicationContext *context);
+
     [[nodiscard]] QList<Property::Type> properties() const override;
 
     [[nodiscard]] Tool::Type type() const override;
