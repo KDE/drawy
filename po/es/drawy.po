@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-16 02:33+0000\n"
+"POT-Creation-Date: 2026-04-17 02:39+0000\n"
 "PO-Revision-Date: 2026-04-16 00:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -321,6 +321,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Reordenar"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Alineación"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -649,7 +657,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exportar a imagen"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -658,7 +666,7 @@ msgstr ""
 "El documento «%1» contiene modificaciones.\n"
 "¿Quiere guardar los cambios o descartarlos?"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

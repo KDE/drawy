@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-16 02:33+0000\n"
+"POT-Creation-Date: 2026-04-17 02:39+0000\n"
 "PO-Revision-Date: 2026-04-15 16:27+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -318,6 +318,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Reordina"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Alineamento"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -646,7 +654,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporta a Imagine"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -655,7 +663,7 @@ msgstr ""
 "Le documento \"%1\" ha essite modificate.\n"
 "Tu vole salveguardar tu modificationes o abandonar los?"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-16 02:33+0000\n"
+"POT-Creation-Date: 2026-04-17 02:39+0000\n"
 "PO-Revision-Date: 2026-03-13 15:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -322,6 +322,14 @@ msgctxt ""
 "items"
 msgid "Reorder"
 msgstr "Z-röð"
+
+#: widgets/context/uicontext.cpp:250
+#, fuzzy, kde-format
+#| msgid "Alignment"
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Hliðjöfnun"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -669,7 +677,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Flytja út í SVG-skrá"
 
-#: widgets/keybindings/actionmanager.cpp:621
+#: widgets/keybindings/actionmanager.cpp:629
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified. Do you want to save your changes "
@@ -680,7 +688,7 @@ msgid ""
 msgstr ""
 "Skjalinu \"%1\" hefur verið breytt. Viltu vista breytingarnar eða henda þeim?"
 
-#: widgets/keybindings/actionmanager.cpp:625
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
