@@ -147,7 +147,7 @@ void Item::erase([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPoi
 {
     painter.save();
     painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.fillRect(boundingBox().translated(-offset), Qt::transparent);
+    painter.fillRect(boundingBox().marginsAdded(Common::cleanupMargin).translated(-offset), Qt::transparent);
     painter.restore();
 }
 
