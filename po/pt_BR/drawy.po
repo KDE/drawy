@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:41+0000\n"
-"PO-Revision-Date: 2026-04-15 08:44-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-04-17 02:57-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -327,8 +327,7 @@ msgid "Reorder"
 msgstr "Reordenar"
 
 #: widgets/context/uicontext.cpp:250
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"

@@ -324,8 +324,7 @@ msgid "Reorder"
 msgstr "გადალაგება"
 
 #: widgets/context/uicontext.cpp:250
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"
