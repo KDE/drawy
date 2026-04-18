@@ -4,11 +4,18 @@
 
 #include "mime/imagemimehandler.hpp"
 #include "common/constants.hpp"
+#include "context/applicationcontext.hpp"
+#include "context/renderingcontext.hpp"
 #include "item/image.hpp"
 #include "item/item.hpp"
 #include <QMimeData>
 #include <QUrl>
 #include <memory>
+
+ImageMimeHandler::ImageMimeHandler(ApplicationContext *context)
+    : m_context(context)
+{
+}
 
 QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mimeData)
 {
@@ -30,7 +37,24 @@ QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mime
 
     std::shared_ptr<ImageItem> image = std::make_shared<ImageItem>();
     image->setPixmap(pixmap);
-    image->setBox({0, 0, static_cast<qreal>(pixmap.width()), static_cast<qreal>(pixmap.height())});
+
+    qreal width{static_cast<qreal>(pixmap.width())};
+    qreal height{static_cast<qreal>(pixmap.height())};
+
+    if (std::max(width, height) > Common::pastedImageBoxSize) {
+        if (width > height) {
+            height = height / width * Common::pastedImageBoxSize;
+            width = Common::pastedImageBoxSize;
+        } else {
+            width = width / height * Common::pastedImageBoxSize;
+            height = Common::pastedImageBoxSize;
+        }
+    }
+
+    width /= m_context->renderingContext()->zoomFactor();
+    height /= m_context->renderingContext()->zoomFactor();
+
+    image->setBox({0, 0, width, height});
     return {image};
 }
 

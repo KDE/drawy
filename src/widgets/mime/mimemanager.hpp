@@ -11,12 +11,13 @@
 
 class Item;
 class QMimeData;
+class ApplicationContext;
 
 class MimeManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MimeManager(QObject *parent = nullptr);
+    explicit MimeManager(ApplicationContext *parent = nullptr);
     ~MimeManager() override;
 
     void registerHandler(std::unique_ptr<MimeHandler> &&handler);
