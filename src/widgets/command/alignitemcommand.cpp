@@ -10,6 +10,7 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "data-structures/cachegrid.hpp"
+#include "data-structures/quadtree.hpp"
 #include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include <KLocalizedString>
@@ -77,15 +78,15 @@ void AlignItemCommand::redo(ApplicationContext *context)
 
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
+    auto &quadtree{context->spatialContext()->quadtree()};
 
     QRectF dirtyRegion;
-    for (const auto &item : std::as_const(m_items)) {
-        dirtyRegion |= item->boundingBox();
-    }
 
     int index = 0;
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
+
+        quadtree.deleteItem(item, false);
 
         const QTransform invertedTransform{item->transformObj().inverted()};
         const QPointF localInitialPos{invertedTransform.map(m_initialPositions.at(index))};
@@ -93,9 +94,13 @@ void AlignItemCommand::redo(ApplicationContext *context)
         const QPointF localDelta{localFinalPos - localInitialPos};
         item->translate(localDelta);
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        quadtree.insertItem(item, false);
+
+        dirtyRegion |= item->boundingBox();
         index++;
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 void AlignItemCommand::undo(ApplicationContext *context)
@@ -105,10 +110,15 @@ void AlignItemCommand::undo(ApplicationContext *context)
     }
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
+    auto &quadtree{context->spatialContext()->quadtree()};
+
+    QRectF dirtyRegion{};
 
     int index = 0;
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
+
+        quadtree.deleteItem(item, false);
 
         const QTransform invertedTransform{item->transformObj().inverted()};
         const QPointF localInitialPos{invertedTransform.map(m_finalPositions.at(index))};
@@ -116,9 +126,13 @@ void AlignItemCommand::undo(ApplicationContext *context)
         const QPointF localDelta{localFinalPos - localInitialPos};
         item->translate(localDelta);
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        quadtree.insertItem(item, false);
+
+        dirtyRegion |= item->boundingBox();
         index++;
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 QString AlignItemCommand::text() const

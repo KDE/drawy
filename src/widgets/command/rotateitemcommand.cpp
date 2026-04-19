@@ -28,14 +28,17 @@ void RotateItemCommand::redo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         item->rotate(m_angle, item->transformObj().inverted().map(m_pivot));
         item->commitTransformation();
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 void RotateItemCommand::undo(ApplicationContext *context)
@@ -43,14 +46,17 @@ void RotateItemCommand::undo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         item->rotate(-m_angle, item->transformObj().inverted().map(m_pivot));
         item->commitTransformation();
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 QString RotateItemCommand::text() const

@@ -31,14 +31,16 @@ void RemoveItemCommand::redo(ApplicationContext *context)
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
     auto &itemCache{context->renderingContext()->itemCache()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        dirtyRegion |= item->boundingBox();
 
         context->selectionContext()->removeFromSelection(item);
         quadtree.deleteItem(item, false);
-        cacheGrid.markDirty(dirtyRegion);
         itemCache.clearItemCache(item);
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 void RemoveItemCommand::undo(ApplicationContext *context)
@@ -47,12 +49,13 @@ void RemoveItemCommand::undo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
-
+        dirtyRegion |= item->boundingBox();
         quadtree.insertItem(item, false);
-        cacheGrid.markDirty(dirtyRegion);
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 QString RemoveItemCommand::text() const
