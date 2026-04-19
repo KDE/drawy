@@ -6,9 +6,17 @@
 
 #include "mime/mimehandler.hpp"
 
+class ApplicationContext;
+
 class ImageMimeHandler : public MimeHandler
 {
+public:
+    explicit ImageMimeHandler(ApplicationContext *context);
+
     [[nodiscard]] QList<std::shared_ptr<Item>> tryReadData(const QMimeData &mimeData) override;
 
     void contributeData(QMimeData &mimeData, const QList<std::shared_ptr<Item>> &selectedItems) override;
+
+private:
+    ApplicationContext *const m_context;
 };

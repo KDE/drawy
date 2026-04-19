@@ -109,33 +109,8 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
     updateCurrentHandler(context);
 
     auto uiContext{context->uiContext()};
-    auto canvas{context->renderingContext()->canvas()};
 
-    if (m_highlightDrawn) {
-        canvas->setOverlayBg(canvas->overlayBg());
-        m_highlightDrawn = false;
-
-        context->renderingContext()->markForUpdate();
-    }
-
-    if (!m_isSelecting && context->selectionContext()->shouldRenderHandles()) {
-        const auto intersectingItems{getItemsUnderCursor(context)};
-        auto transformer{context->spatialContext()->coordinateTransformer()};
-
-        if (!intersectingItems.empty()) {
-            canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
-                QPen pen{Common::selectionBorderColor};
-                pen.setStyle(Qt::DotLine);
-
-                painter.setPen(pen);
-                painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
-            });
-
-            m_highlightDrawn = true;
-        }
-
-        context->renderingContext()->markForUpdate();
-    }
+    renderHighlights(context);
 
     if (m_curHandler) {
         m_curHandlerState = m_curHandler->mouseMoved(context);
@@ -219,6 +194,37 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
     }
 
     m_curHandlerState = TransformHandler::State::Unlocked;
+}
+
+void SelectionTool::renderHighlights(ApplicationContext *context)
+{
+    auto canvas{context->renderingContext()->canvas()};
+
+    if (m_highlightDrawn) {
+        canvas->setOverlayBg(canvas->overlayBg());
+        m_highlightDrawn = false;
+
+        context->renderingContext()->markForUpdate();
+    }
+
+    if (!m_isSelecting && context->selectionContext()->shouldRenderHandles()) {
+        const auto intersectingItems{getItemsUnderCursor(context)};
+        auto transformer{context->spatialContext()->coordinateTransformer()};
+
+        if (!intersectingItems.empty()) {
+            canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
+                QPen pen{Common::selectionBorderColor};
+                pen.setStyle(Qt::DotLine);
+
+                painter.setPen(pen);
+                painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
+            });
+
+            m_highlightDrawn = true;
+        }
+
+        context->renderingContext()->markForUpdate();
+    }
 }
 
 void SelectionTool::cleanup()

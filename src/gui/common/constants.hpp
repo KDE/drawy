@@ -58,6 +58,8 @@ inline constexpr int itemCacheMultiplier{2}; // For per-item cache; increasing t
 inline constexpr int viewportCacheMultiplier{2}; // For viewport cache; increasing this value decreases thrashing but
                                                  // increases memory usage
 
+inline constexpr int pastedImageBoxSize{250}; // the size of the box that a dropped image will be scaled to fit in
+
 inline const QString drawyFileExt{u"drawy"_s};
 
 inline const QString drawyClipboardMime{u"application/x-drawy-clipboard"_s};

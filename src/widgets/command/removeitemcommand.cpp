@@ -6,16 +6,19 @@
 
 #include <utility>
 
+#include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
+#include "context/uicontext.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_command_debug.h"
 #include "item/item.hpp"
 #include "item/itemcache/itemcache.hpp"
+#include "tools/selectiontool/selectiontool.hpp"
 #include <KLocalizedString>
 
 RemoveItemCommand::RemoveItemCommand(QList<std::shared_ptr<Item>> items)
@@ -41,6 +44,11 @@ void RemoveItemCommand::redo(ApplicationContext *context)
     }
 
     cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
+
+    auto toolBar{context->uiContext()->toolBar()};
+    if (toolBar->curTool().type() == Tool::Type::Selection) {
+        dynamic_cast<SelectionTool &>(toolBar->curTool()).renderHighlights(context);
+    }
 }
 
 void RemoveItemCommand::undo(ApplicationContext *context)
@@ -56,6 +64,11 @@ void RemoveItemCommand::undo(ApplicationContext *context)
     }
 
     cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
+
+    auto toolBar{context->uiContext()->toolBar()};
+    if (toolBar->curTool().type() == Tool::Type::Selection) {
+        dynamic_cast<SelectionTool &>(toolBar->curTool()).renderHighlights(context);
+    }
 }
 
 QString RemoveItemCommand::text() const

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "mime/mimemanager.hpp"
+#include "context/applicationcontext.hpp"
 #include "item/item.hpp"
 #include "mime/drawymimehandler.hpp"
 #include "mime/imagemimehandler.hpp"
@@ -13,11 +14,11 @@
 #include <QMimeData>
 #include <memory>
 
-MimeManager::MimeManager(QObject *parent)
+MimeManager::MimeManager(ApplicationContext *parent)
     : QObject(parent)
 {
     registerHandler(std::make_unique<DrawyMimeHandler>());
-    registerHandler(std::make_unique<ImageMimeHandler>());
+    registerHandler(std::make_unique<ImageMimeHandler>(parent));
     registerHandler(std::make_unique<TextMimeHandler>());
     registerHandler(std::make_unique<SvgMimeHandler>());
     registerHandler(std::make_unique<RenderMimeHandler>());
