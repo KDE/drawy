@@ -20,7 +20,7 @@ SpatialContext::SpatialContext(ApplicationContext *context)
 {
     auto canvas{m_applicationContext->renderingContext()->canvas()};
 
-    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 100);
+    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 10000);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
     m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }
