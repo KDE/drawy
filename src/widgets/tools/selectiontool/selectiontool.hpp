@@ -38,4 +38,6 @@ private:
     QPointF m_lastPos{};
     bool m_isSelecting{false};
     bool m_highlightDrawn{false};
+
+    qint64 m_lastMouseMoveTime{};
 };

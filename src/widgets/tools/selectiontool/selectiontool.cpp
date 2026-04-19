@@ -5,6 +5,7 @@
 #include "selectiontool.hpp"
 #include <KLocalizedString>
 
+#include <QDateTime>
 #include <set>
 
 #include "canvas/canvas.hpp"
@@ -96,6 +97,15 @@ void SelectionTool::mousePressed(ApplicationContext *context)
 
 void SelectionTool::mouseMoved(ApplicationContext *context)
 {
+    const auto curTime{QDateTime::currentMSecsSinceEpoch()};
+    const auto minimumTime{1000 / context->renderingContext()->fps()};
+
+    if (curTime - m_lastMouseMoveTime < minimumTime) {
+        return;
+    }
+
+    m_lastMouseMoveTime = curTime;
+
     updateCurrentHandler(context);
 
     auto uiContext{context->uiContext()};

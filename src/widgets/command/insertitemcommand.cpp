@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -28,11 +28,15 @@ void InsertItemCommand::redo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
+
     for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        dirtyRegion |= item->boundingBox();
+
         quadtree.insertItem(item);
-        cacheGrid.markDirty(dirtyRegion);
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 void InsertItemCommand::undo(ApplicationContext *context)
@@ -41,13 +45,15 @@ void InsertItemCommand::undo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        const QRect dirtyRegion{transformer.worldToGrid(item->boundingBox()).toRect()};
+        dirtyRegion |= item->boundingBox();
 
         context->selectionContext()->removeFromSelection(item);
         quadtree.deleteItem(item);
-        cacheGrid.markDirty(dirtyRegion);
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 QString InsertItemCommand::text() const

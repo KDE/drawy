@@ -28,8 +28,9 @@ void MoveItemCommand::redo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         const QTransform invertedTransform{item->transformObj().inverted()};
         const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
@@ -38,8 +39,10 @@ void MoveItemCommand::redo(ApplicationContext *context)
 
         item->translate(localDelta);
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toRect());
 }
 
 void MoveItemCommand::undo(ApplicationContext *context)
@@ -47,8 +50,9 @@ void MoveItemCommand::undo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         const QTransform invertedTransform{item->transformObj().inverted()};
         const QPointF localFinalPos{invertedTransform.map(m_worldFinalPos)};
@@ -57,8 +61,10 @@ void MoveItemCommand::undo(ApplicationContext *context)
 
         item->translate(-localDelta);
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toRect());
 }
 
 QString MoveItemCommand::text() const

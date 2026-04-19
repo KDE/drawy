@@ -32,8 +32,9 @@ void ResizeItemCommand::redo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         if (m_useLocked[item]) {
             item->resize(m_lockedTransform);
@@ -43,8 +44,10 @@ void ResizeItemCommand::redo(ApplicationContext *context)
 
         item->commitTransformation();
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 void ResizeItemCommand::undo(ApplicationContext *context)
@@ -52,8 +55,9 @@ void ResizeItemCommand::undo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
+    QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
 
         if (m_useLocked[item]) {
             item->resize(m_lockedTransform.inverted());
@@ -63,8 +67,10 @@ void ResizeItemCommand::undo(ApplicationContext *context)
 
         item->commitTransformation();
 
-        cacheGrid.markDirty(transformer.worldToGrid(item->boundingBox()).toRect());
+        dirtyRegion |= item->boundingBox();
     }
+
+    cacheGrid.markDirty(transformer.worldToGrid(dirtyRegion).toAlignedRect());
 }
 
 QString ResizeItemCommand::text() const

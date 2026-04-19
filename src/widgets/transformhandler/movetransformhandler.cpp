@@ -19,6 +19,7 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include "item/item.hpp"
+#include <QDateTime>
 #include <QPainter>
 #include <QRectF>
 
@@ -152,9 +153,6 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         auto &selectedItems{context->selectionContext()->selectedItems()};
         const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
-        // TODO: Instead of un-doing the translation so that the command can execute
-        // it again,
-        //       just make it not translate manually at all in the mouseMoved method
         for (auto &item : items) {
             if (!item->locked()) {
                 const QTransform invertedTransform{item->transformObj().inverted()};

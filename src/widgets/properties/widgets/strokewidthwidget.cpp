@@ -33,6 +33,7 @@ QString StrokeWidthWidget::name() const
 
 void StrokeWidthWidget::setValue(const QVariant &value)
 {
+    const QSignalBlocker blocker(mSpinBox);
     mSpinBox->setValue(value.toInt());
 }
 
