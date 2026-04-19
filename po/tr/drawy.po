@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 02:39+0000\n"
-"PO-Revision-Date: 2026-04-17 07:06+0300\n"
+"POT-Creation-Date: 2026-04-19 02:45+0000\n"
+"PO-Revision-Date: 2026-04-18 20:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -83,16 +83,14 @@ msgid "Change Background Style"
 msgstr "Arka Plan Biçemini Değiştir"
 
 #: gui/properties/property.cpp:115
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Ok Biçemini Değiştir"
+msgstr "Ok Kuyruğunu Değiştir"
 
 #: gui/properties/property.cpp:117
-#, fuzzy, kde-format
-#| msgid "Change Arrow Type"
+#, kde-format
 msgid "Change End Arrow Head"
-msgstr "Ok Biçemini Değiştir"
+msgstr "Ok Başını Değiştir"
 
 #: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
 #, kde-format
@@ -203,12 +201,10 @@ msgid "Image"
 msgstr "Görsel"
 
 #: widgets/components/toolbuttonplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Taşıma aracı"
+msgstr "Daha fazla araç"
 
 #: widgets/components/topleftwidgets.cpp:40
 #, kde-format
@@ -407,16 +403,12 @@ msgid "Color Palette"
 msgstr "Renk Paleti"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Light Mode"
+#, kde-format
 msgid "Light Mode"
 msgstr "Açık Kip"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Dark Mode"
+#, kde-format
 msgid "Dark Mode"
 msgstr "Koyu Kip"
 
@@ -797,7 +789,7 @@ msgstr "Ok Kuyruğu"
 msgid "Eraser Size"
 msgstr "Silgi Boyutu"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:37
+#: widgets/properties/widgets/fontsizewidget.cpp:38
 #, kde-format
 msgid "Font Size"
 msgstr "Yazıtipi Puntosu"

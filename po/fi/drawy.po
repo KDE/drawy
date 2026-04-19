@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 02:39+0000\n"
+"POT-Creation-Date: 2026-04-19 02:45+0000\n"
 "PO-Revision-Date: 2026-01-02 11:41+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -786,7 +786,7 @@ msgstr ""
 msgid "Eraser Size"
 msgstr ""
 
-#: widgets/properties/widgets/fontsizewidget.cpp:37
+#: widgets/properties/widgets/fontsizewidget.cpp:38
 #, kde-format
 msgid "Font Size"
 msgstr ""

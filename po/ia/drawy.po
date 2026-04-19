@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 02:39+0000\n"
+"POT-Creation-Date: 2026-04-19 02:45+0000\n"
 "PO-Revision-Date: 2026-04-17 12:03+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -790,7 +790,7 @@ msgstr "Puncta de flecha de finir"
 msgid "Eraser Size"
 msgstr "Grandor de gumma"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:37
+#: widgets/properties/widgets/fontsizewidget.cpp:38
 #, kde-format
 msgid "Font Size"
 msgstr "Dimension de Font"
