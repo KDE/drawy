@@ -6,5 +6,3 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 $XGETTEXT `find -name \*.cpp -o -name \*.hpp` -o $podir/drawy.pot
-
-$EXTRACTRC `find -name \*.xml` >> rc.cpp
