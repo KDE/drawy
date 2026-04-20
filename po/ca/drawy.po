@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-19 02:45+0000\n"
+"POT-Creation-Date: 2026-04-20 02:44+0000\n"
 "PO-Revision-Date: 2026-04-17 08:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -119,7 +119,7 @@ msgctxt "@info:tooltip"
 msgid "X Box"
 msgstr "X Box"
 
-#: widgets/command/alignitemcommand.cpp:126
+#: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
 msgstr "Alinea elements"
@@ -134,7 +134,7 @@ msgstr "Desselecciona un objecte"
 msgid "Group Object"
 msgstr "Agrupa un objecte"
 
-#: widgets/command/insertitemcommand.cpp:55
+#: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
 msgstr "Insereix un objecte"
@@ -149,24 +149,24 @@ msgstr "Redimensiona la línia"
 msgid "Change Lock"
 msgstr "Canvia el bloqueig"
 
-#: widgets/command/moveitemcommand.cpp:66
+#: widgets/command/moveitemcommand.cpp:72
 #, kde-format
 msgid "Move Object"
 msgstr "Mou un objecte"
 
-#: widgets/command/removeitemcommand.cpp:60
+#: widgets/command/removeitemcommand.cpp:76
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
 msgstr[0] "Elimina un objecte"
 msgstr[1] "Elimina %1 objectes"
 
-#: widgets/command/resizeitemcommand.cpp:72
+#: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
 msgstr "Redimensiona l'objecte"
 
-#: widgets/command/rotateitemcommand.cpp:58
+#: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
 msgid "Rotate Object"
 msgstr "Gira l'objecte"
@@ -602,63 +602,63 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Depura"
 
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sense_títol.%1"
 
-#: widgets/keybindings/actionmanager.cpp:475
-#: widgets/keybindings/actionmanager.cpp:539
+#: widgets/keybindings/actionmanager.cpp:478
+#: widgets/keybindings/actionmanager.cpp:542
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:479
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Desa el fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:498
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Segur que voleu netejar el llenç?"
 
-#: widgets/keybindings/actionmanager.cpp:499
+#: widgets/keybindings/actionmanager.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Neteja"
 
-#: widgets/keybindings/actionmanager.cpp:542
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Obre un fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:555
+#: widgets/keybindings/actionmanager.cpp:558
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sense_títol .svg"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:561
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:559
+#: widgets/keybindings/actionmanager.cpp:562
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:563
+#: widgets/keybindings/actionmanager.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporta a imatge"
 
-#: widgets/keybindings/actionmanager.cpp:629
+#: widgets/keybindings/actionmanager.cpp:632
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -667,7 +667,7 @@ msgstr ""
 "S'ha modificat el document «%1».\n"
 "Voleu desar els canvis o descartar-los?"
 
-#: widgets/keybindings/actionmanager.cpp:633
+#: widgets/keybindings/actionmanager.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
