@@ -2,6 +2,14 @@
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
   <mime-type type="application/x-drawy">
     <comment>Drawy document</comment>
+    <comment xml:lang="ca">Document del Drawy</comment>
+    <comment xml:lang="ca@valencia">Document de Drawy</comment>
+    <comment xml:lang="es">Documento de Drawy</comment>
+    <comment xml:lang="he">מסמך Drawy</comment>
+    <comment xml:lang="nl">Drawy-document</comment>
+    <comment xml:lang="pt_BR">Documento Drawy</comment>
+    <comment xml:lang="tr">Drawy belgesi</comment>
+    <comment xml:lang="uk">документ Drawy</comment>
     <glob pattern="*.drawy"/>
     <icon name="application-x-drawy"/>
   </mime-type>
