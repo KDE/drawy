@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2026-03-17 08:45+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -116,7 +116,7 @@ msgctxt "@info:tooltip"
 msgid "X Box"
 msgstr ""
 
-#: widgets/command/alignitemcommand.cpp:126
+#: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
 msgstr ""
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Group Object"
 msgstr ""
 
-#: widgets/command/insertitemcommand.cpp:55
+#: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
 msgstr ""
@@ -146,12 +146,12 @@ msgstr ""
 msgid "Change Lock"
 msgstr ""
 
-#: widgets/command/moveitemcommand.cpp:66
+#: widgets/command/moveitemcommand.cpp:72
 #, kde-format
 msgid "Move Object"
 msgstr "Přesunout objekt"
 
-#: widgets/command/removeitemcommand.cpp:60
+#: widgets/command/removeitemcommand.cpp:76
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
@@ -159,12 +159,12 @@ msgstr[0] "Odstranit objekt"
 msgstr[1] "Odstraněné %1 objekty"
 msgstr[2] "Odstranit %1 objektů"
 
-#: widgets/command/resizeitemcommand.cpp:72
+#: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
 msgstr ""
 
-#: widgets/command/rotateitemcommand.cpp:58
+#: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
 msgid "Rotate Object"
 msgstr "Otočit objekt"
@@ -617,57 +617,57 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Ladění"
 
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Nepojmenovaný.%1"
 
-#: widgets/keybindings/actionmanager.cpp:475
-#: widgets/keybindings/actionmanager.cpp:539
+#: widgets/keybindings/actionmanager.cpp:478
+#: widgets/keybindings/actionmanager.cpp:542
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:479
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Uložit soubor"
 
-#: widgets/keybindings/actionmanager.cpp:498
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:499
+#: widgets/keybindings/actionmanager.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Vyčistit"
 
-#: widgets/keybindings/actionmanager.cpp:542
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#: widgets/keybindings/actionmanager.cpp:555
+#: widgets/keybindings/actionmanager.cpp:558
 #, kde-format
 msgid "Untitled.svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:561
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:559
+#: widgets/keybindings/actionmanager.cpp:562
 #, kde-format
 msgid "PNG (*.png)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:563
+#: widgets/keybindings/actionmanager.cpp:566
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Svg"
@@ -675,7 +675,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exportovat do SVG"
 
-#: widgets/keybindings/actionmanager.cpp:629
+#: widgets/keybindings/actionmanager.cpp:632
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -684,7 +684,7 @@ msgstr ""
 "Dokument \"%1\" byl změněn.\n"
 "Přejete si uložit změny nebo je zapomenout?"
 
-#: widgets/keybindings/actionmanager.cpp:633
+#: widgets/keybindings/actionmanager.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -819,7 +819,7 @@ msgstr ""
 msgid "Eraser Size"
 msgstr ""
 
-#: widgets/properties/widgets/fontsizewidget.cpp:37
+#: widgets/properties/widgets/fontsizewidget.cpp:38
 #, kde-format
 msgid "Font Size"
 msgstr "Velikost písma"

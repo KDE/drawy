@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2026-04-17 06:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -114,7 +114,7 @@ msgctxt "@info:tooltip"
 msgid "X Box"
 msgstr "Okvir X"
 
-#: widgets/command/alignitemcommand.cpp:126
+#: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
 msgstr "Poravnaj elemente"
@@ -129,7 +129,7 @@ msgstr "Prekliči izbor predmeta"
 msgid "Group Object"
 msgstr "Grupiraj predmet"
 
-#: widgets/command/insertitemcommand.cpp:55
+#: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
 msgstr "Vstavi predmet"
@@ -144,12 +144,12 @@ msgstr "Spremeni velikost črte"
 msgid "Change Lock"
 msgstr "Spremeni zaklep"
 
-#: widgets/command/moveitemcommand.cpp:66
+#: widgets/command/moveitemcommand.cpp:72
 #, kde-format
 msgid "Move Object"
 msgstr "Premakni predmet"
 
-#: widgets/command/removeitemcommand.cpp:60
+#: widgets/command/removeitemcommand.cpp:76
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
@@ -158,12 +158,12 @@ msgstr[1] "Odstrani %1 predmet"
 msgstr[2] "Odstrani %1 predmeta"
 msgstr[3] "Odstrani %1 predmete"
 
-#: widgets/command/resizeitemcommand.cpp:72
+#: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
 msgstr "Spremeni velikost predmeta"
 
-#: widgets/command/rotateitemcommand.cpp:58
+#: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
 msgid "Rotate Object"
 msgstr "Zavrti predmet"
@@ -606,63 +606,63 @@ msgctxt "@action"
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: widgets/keybindings/actionmanager.cpp:473
+#: widgets/keybindings/actionmanager.cpp:476
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Brez_naslova.%1"
 
-#: widgets/keybindings/actionmanager.cpp:475
-#: widgets/keybindings/actionmanager.cpp:539
+#: widgets/keybindings/actionmanager.cpp:478
+#: widgets/keybindings/actionmanager.cpp:542
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:479
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: widgets/keybindings/actionmanager.cpp:498
+#: widgets/keybindings/actionmanager.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Ali zares želite počistiti platno?"
 
-#: widgets/keybindings/actionmanager.cpp:499
+#: widgets/keybindings/actionmanager.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Počisti"
 
-#: widgets/keybindings/actionmanager.cpp:542
+#: widgets/keybindings/actionmanager.cpp:545
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: widgets/keybindings/actionmanager.cpp:555
+#: widgets/keybindings/actionmanager.cpp:558
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Untitled.svg"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:561
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:559
+#: widgets/keybindings/actionmanager.cpp:562
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:563
+#: widgets/keybindings/actionmanager.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Izvozi v sliko"
 
-#: widgets/keybindings/actionmanager.cpp:629
+#: widgets/keybindings/actionmanager.cpp:632
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -671,7 +671,7 @@ msgstr ""
 "Dokument \"%1\" je bil spremenjen.\n"
 "Ali želite shraniti spremembe ali jih zavreči?"
 
-#: widgets/keybindings/actionmanager.cpp:633
+#: widgets/keybindings/actionmanager.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -799,7 +799,7 @@ msgstr "Končni konec puščice"
 msgid "Eraser Size"
 msgstr "Velikost radirke"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:37
+#: widgets/properties/widgets/fontsizewidget.cpp:38
 #, kde-format
 msgid "Font Size"
 msgstr "Velikost pisave"
