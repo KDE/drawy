@@ -5,11 +5,16 @@
     <comment xml:lang="ca">Document del Drawy</comment>
     <comment xml:lang="ca@valencia">Document de Drawy</comment>
     <comment xml:lang="es">Documento de Drawy</comment>
+    <comment xml:lang="eu">Drawy dokumentua</comment>
     <comment xml:lang="he">מסמך Drawy</comment>
+    <comment xml:lang="ia">Documento de Drawy</comment>
+    <comment xml:lang="ka">Drawy-ის დოკუმენტი</comment>
     <comment xml:lang="nl">Drawy-document</comment>
     <comment xml:lang="pt_BR">Documento Drawy</comment>
+    <comment xml:lang="sl">Dokument Drawy</comment>
     <comment xml:lang="tr">Drawy belgesi</comment>
     <comment xml:lang="uk">документ Drawy</comment>
+    <comment xml:lang="zh_TW">Drawy 文件</comment>
     <glob pattern="*.drawy"/>
     <icon name="application-x-drawy"/>
   </mime-type>
