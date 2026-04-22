@@ -188,7 +188,7 @@ install(
         serializer/diamonddeserializer.hpp
         serializer/diamondserializer.hpp
         ${CMAKE_CURRENT_BINARY_DIR}/libdrawygui_export.h
-    DESTINATION DrawyCore/
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/DrawyCore/
     COMPONENT Devel
 )
 
