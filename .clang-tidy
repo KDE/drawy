@@ -72,3 +72,5 @@ CheckOptions:
       value: true
     - key: VectorLikeClasses
       value: 'std::vector;QList'
+ExcludePaths:
+  - /tmp/drawy-tidy-build/src/widgets/drawyglobalconfig.cpp
