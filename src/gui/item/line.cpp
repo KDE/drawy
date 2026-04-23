@@ -53,7 +53,7 @@ static QPointF straightLine(QPointF lineVector)
 
     const qreal ANGLE_BETWEEN_CONSTRAINED_LINES = (2 * M_PI) / 24;
 
-    const quint32 constrainedLineIndex = static_cast<quint32>((lineAngle / ANGLE_BETWEEN_CONSTRAINED_LINES) + 0.5);
+    const quint32 constrainedLineIndex = qFloor((lineAngle / ANGLE_BETWEEN_CONSTRAINED_LINES) + 0.5);
     const qreal constrainedLineAngle = constrainedLineIndex * ANGLE_BETWEEN_CONSTRAINED_LINES;
 
     const qreal lineLength = std::sqrt((lineVector.x() * lineVector.x()) + (lineVector.y() * lineVector.y()));

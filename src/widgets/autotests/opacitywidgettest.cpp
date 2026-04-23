@@ -42,7 +42,7 @@ void OpacityWidgetTest::shouldHaveDefaultValues()
 void OpacityWidgetTest::shouldSnapOpacityValuesToDiscreteSteps()
 {
     OpacityWidget w;
-    QSignalSpy spy(&w, &PropertyWidget::changed);
+    const QSignalSpy spy(&w, &PropertyWidget::changed);
 
     auto slider = w.widget()->findChild<QSlider *>(u"slider"_s);
     QVERIFY(slider);
@@ -60,7 +60,7 @@ void OpacityWidgetTest::shouldSnapOpacityValuesToDiscreteSteps()
 void OpacityWidgetTest::shouldNotEmitChangedWhenSettingValueProgrammatically()
 {
     OpacityWidget w;
-    QSignalSpy spy(&w, &PropertyWidget::changed);
+    const QSignalSpy spy(&w, &PropertyWidget::changed);
 
     w.setValue(128);
     QCOMPARE(spy.count(), 0);

@@ -89,14 +89,18 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     if (points.size() == 1) {
         QList<QPointF> polygonPoints{};
         const QPointF radiusVector{dist, 0};
-        for (qreal delta = 0, step = 1.0 / 26; delta <= 1; delta += step) {
+
+        constexpr int steps{26};
+        for (int i = 0; i <= steps; i++) {
+            const qreal delta{static_cast<qreal>(i) / steps};
             const QPointF point{QPointF{rotateVector(radiusVector, 2 * PI * delta) + points.back().point}};
             polygonPoints.push_back(point);
         }
         return polygonPoints;
     }
 
-    QList<QPointF> leftPoints{}, rightPoints{};
+    QList<QPointF> leftPoints{};
+    QList<QPointF> rightPoints{};
 
     const auto insertCap = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> bool {
         const QPointF vector{next.point - cur.point};
@@ -109,8 +113,9 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
             QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
             const qreal arcAngle{5.0 * PI / 6.0};
 
-            constexpr qreal step{1.0 / 13.0};
-            for (qreal delta = 0; delta <= 1; delta += step) {
+            constexpr int steps{13};
+            for (int i = 0; i <= steps; i++) {
+                const qreal delta{static_cast<qreal>(i) / steps};
                 const QPointF point{QPointF{rotateVector(radiusVector, arcAngle * delta) + cur.point}};
                 leftPoints.push_back(point);
             }
@@ -121,7 +126,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
                 radiusVector = rotateVector(radiusVector, PI - arcAngle - PI / 18);
             }
 
-            for (qreal delta = 0; delta <= 1; delta += step) {
+            for (int i = 0; i <= steps; i++) {
+                const qreal delta{static_cast<qreal>(i) / steps};
                 const QPointF point{QPointF{rotateVector(-radiusVector, -arcAngle * delta) + cur.point}};
                 rightPoints.push_back(point);
             }
@@ -137,8 +143,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
         const QPointF vector{unitVector(next.point - cur.point)};
         const QPointF prevVector{unitVector(cur.point - prev.point)};
 
-        QPointF lerped{lerp(vector, prevVector, dotProduct(vector, prevVector))};
-        QPointF perp{QPointF{lerped.y(), -lerped.x()} * thickness};
+        const QPointF lerped{lerp(vector, prevVector, dotProduct(vector, prevVector))};
+        const QPointF perp{QPointF{lerped.y(), -lerped.x()} * thickness};
 
         leftPoints.push_back(cur.point + perp);
         rightPoints.push_back(cur.point - perp);
@@ -154,12 +160,13 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2));
     std::swap(leftPoints.back(), rightPoints.back());
 
-    constexpr qreal step{1.0 / 26};
+    constexpr int steps{26};
 
     // drawing the end cap
     {
         const QPointF radiusVector{leftPoints.back() - points.back().point};
-        for (qreal delta = 0; delta <= 1; delta += step) {
+        for (int i = 0; i <= steps; i++) {
+            const qreal delta{static_cast<qreal>(i) / steps};
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.back().point}};
             leftPoints.push_back(point);
         }
@@ -170,7 +177,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     // drawing the start cap
     {
         const QPointF radiusVector{rightPoints.back() - points.front().point};
-        for (qreal delta = 0; delta <= 1; delta += step) {
+        for (int i = 0; i <= steps; i++) {
+            const qreal delta{static_cast<qreal>(i) / steps};
             const QPointF point{QPointF{rotateVector(radiusVector, PI * delta) + points.front().point}};
             rightPoints.push_back(point);
         }

@@ -142,10 +142,7 @@ QString AlignItemCommand::text() const
 
 bool AlignItemCommand::hasChanged() const
 {
-    for (const auto &move : m_finalPositions) {
-        if (!move.isNull()) {
-            return true;
-        }
-    }
-    return false;
+    return std::ranges::any_of(m_finalPositions, [](const auto &move) {
+        return !move.isNull();
+    });
 }

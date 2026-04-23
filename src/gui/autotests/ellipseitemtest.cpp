@@ -56,12 +56,12 @@ void EllipseItemTest::shouldSerialize_data()
 
 void EllipseItemTest::shouldSerialize()
 {
-    QFETCH(QString, name);
-    QFETCH(QPointF, start);
-    QFETCH(QPointF, end);
-    QFETCH(int, strokeWidth);
-    QFETCH(QColor, strokeColor);
-    QFETCH(bool, locked);
+    QFETCH(const QString, name);
+    QFETCH(const QPointF, start);
+    QFETCH(const QPointF, end);
+    QFETCH(const int, strokeWidth);
+    QFETCH(const QColor, strokeColor);
+    QFETCH(const bool, locked);
 
     EllipseItem f;
     // Becarefull order ! start before end !

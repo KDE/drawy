@@ -114,7 +114,7 @@ void FreeformItemTest::shouldTestPressureSimulation()
 
 void FreeformItemTest::shouldTestNeedsCaching()
 {
-    FreeformItem i;
+    const FreeformItem i;
     QVERIFY(i.needsCaching());
 }
 

@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -48,7 +48,7 @@ QLayoutItem *BoardLayout::itemAt(int index) const
 QLayoutItem *BoardLayout::takeAt(int index)
 {
     try {
-        QLayoutItem *item{*m_widgets.at(index)};
+        QLayoutItem *item{*m_widgets.at(index)}; // NOLINT(misc-const-correctness)
         *(m_widgets.at(index)) = nullptr;
         return item;
     } catch (const std::out_of_range &) {

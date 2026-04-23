@@ -555,7 +555,7 @@ void ActionManager::openFile()
 void ActionManager::exportToImage()
 {
     const QDir homeDir{QDir::home()};
-    QString text = i18n("Untitled.svg");
+    const QString text = i18n("Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
 
     QString svgFilter = i18n("SVG (*.svg)");

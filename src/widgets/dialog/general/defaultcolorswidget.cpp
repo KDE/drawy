@@ -32,8 +32,9 @@ DefaultColorsWidget::DefaultColorsWidget(QWidget *parent)
         auto h = new QHBoxLayout{container};
         h->setContentsMargins(0, 0, 0, 0);
 
-        for (auto w : widgets)
+        for (auto w : widgets) {
             h->addWidget(w);
+        }
 
         h->addStretch();
         return container;

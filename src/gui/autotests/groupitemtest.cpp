@@ -42,12 +42,12 @@ void GroupItemTest::shouldSerializeGroupWithItems()
     GroupItem f;
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
 
-    std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
     r->setId("c9d6f90e757040e78dbf94bef5732e98"_ba);
     r->setStart(QPointF(10, 10));
     r->setEnd(QPointF(20, 20));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setId("c9d6f90e757040e78dbf94bef5732e99"_ba);
     r2->setStart(QPointF(30, 30));
     r2->setEnd(QPointF(40, 40));
@@ -66,10 +66,10 @@ void GroupItemTest::shouldRoundTripItems()
     // Need to have an known id
     f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
 
-    std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
     r->setId("c9d6f90e757040e78dbf94bef5732e98"_ba);
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setId("c9d6f90e757040e78dbf94bef5732e99"_ba);
 
     f.setItems({r, r2});
@@ -107,7 +107,7 @@ void GroupItemTest::shouldTestTransformations()
     i.setTransform(QTransform::fromScale(3, 3));
     QCOMPARE(i.transformObj(), QTransform::fromScale(3, 3));
 
-    std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r = std::make_shared<RectangleItem>();
     r->setStart(QPointF(0, 0));
     r->setEnd(QPointF(10, 10));
     i.setItems({r});
@@ -122,11 +122,11 @@ void GroupItemTest::shouldTestTransformations()
 void GroupItemTest::shouldGroupItems()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
     r1->setStart(QPointF(10, 10));
     r1->setEnd(QPointF(20, 20));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setStart(QPointF(30, 30));
     r2->setEnd(QPointF(40, 40));
 
@@ -145,11 +145,11 @@ void GroupItemTest::shouldGroupItems()
 void GroupItemTest::shouldUnGroupItems()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
     r1->setStart(QPointF(10, 10));
     r1->setEnd(QPointF(20, 20));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setStart(QPointF(30, 30));
     r2->setEnd(QPointF(40, 40));
 
@@ -166,11 +166,11 @@ void GroupItemTest::shouldUnGroupItems()
 void GroupItemTest::shouldTestIntersects()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
     r1->setStart(QPointF(10, 10));
     r1->setEnd(QPointF(20, 20));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setStart(QPointF(30, 30));
     r2->setEnd(QPointF(40, 40));
 
@@ -184,11 +184,11 @@ void GroupItemTest::shouldTestIntersects()
 void GroupItemTest::shouldTestBoundingBox()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
     r1->setStart(QPointF(10, 10));
     r1->setEnd(QPointF(20, 20));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setStart(QPointF(30, 30));
     r2->setEnd(QPointF(40, 40));
 
@@ -202,10 +202,10 @@ void GroupItemTest::shouldTestBoundingBox()
 void GroupItemTest::shouldTestProperties()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
     r1->setProperty(Property::Type::StrokeColor, Property(QColor(Qt::red), Property::Type::StrokeColor));
 
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
     r2->setProperty(Property::Type::StrokeColor, Property(QColor(Qt::red), Property::Type::StrokeColor));
 
     i.group({r1, r2});
@@ -226,8 +226,8 @@ void GroupItemTest::shouldTestProperties()
 void GroupItemTest::shouldTestNeedsCaching()
 {
     GroupItem i;
-    std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
-    std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r1 = std::make_shared<RectangleItem>();
+    const std::shared_ptr<RectangleItem> r2 = std::make_shared<RectangleItem>();
 
     i.group({r1, r2});
     QVERIFY(!i.needsCaching());
@@ -235,7 +235,7 @@ void GroupItemTest::shouldTestNeedsCaching()
 
 void GroupItemTest::shouldTestLockAspectRatioWhenResizing()
 {
-    GroupItem i;
+    const GroupItem i;
     QVERIFY(i.lockAspectRatioWhenResizing());
 }
 
