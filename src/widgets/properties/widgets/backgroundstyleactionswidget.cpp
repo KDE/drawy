@@ -37,7 +37,7 @@ void BackgroundStyleActionsWidget::paintEvent(QPaintEvent *event)
     const Qt::BrushStyle style = ItemUtils::convertItemBackgroundTypeStringToBrushStyle(bgStyleString);
     p.setRenderHint(QPainter::Antialiasing);
 
-    QPalette pal{palette()};
+    const QPalette pal{palette()};
 
     const QBrush backgroundBrush(pal.color(QPalette::Text), style);
     p.fillRect(r, backgroundBrush);

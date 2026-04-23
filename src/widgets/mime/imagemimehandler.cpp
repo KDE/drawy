@@ -35,7 +35,7 @@ QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mime
         return {};
     }
 
-    std::shared_ptr<ImageItem> image = std::make_shared<ImageItem>();
+    const std::shared_ptr<ImageItem> image = std::make_shared<ImageItem>();
     image->setPixmap(pixmap);
 
     qreal width{static_cast<qreal>(pixmap.width())};
@@ -64,7 +64,7 @@ void ImageMimeHandler::contributeData(QMimeData &mimeData, const QList<std::shar
         return;
     }
 
-    ImageItem *item = static_cast<ImageItem *>(&*selectedItems[0]);
+    const ImageItem *item = static_cast<ImageItem *>(&*selectedItems[0]);
 
     mimeData.setImageData(item->pixmap().toImage());
 }

@@ -56,13 +56,13 @@ void LineItemTest::shouldSerialize_data()
 
 void LineItemTest::shouldSerialize()
 {
-    QFETCH(QString, name);
-    QFETCH(QPointF, start);
-    QFETCH(QPointF, end);
-    QFETCH(int, strokeWidth);
-    QFETCH(QColor, strokeColor);
-    QFETCH(bool, locked);
-    QFETCH(int, zorder);
+    QFETCH(const QString, name);
+    QFETCH(const QPointF, start);
+    QFETCH(const QPointF, end);
+    QFETCH(const int, strokeWidth);
+    QFETCH(const QColor, strokeColor);
+    QFETCH(const bool, locked);
+    QFETCH(const int, zorder);
 
     LineItem f;
     // Need to have an known id

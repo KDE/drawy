@@ -31,7 +31,7 @@ FreeformTool::FreeformTool(ApplicationContext *context)
 
 void FreeformTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
@@ -98,7 +98,7 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
 
 void FreeformTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton && m_isDrawing) {
         auto spatialContext{context->spatialContext()};

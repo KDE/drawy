@@ -32,7 +32,7 @@ PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
 
 void PolygonDrawingTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
@@ -94,7 +94,7 @@ void PolygonDrawingTool::mouseMoved(ApplicationContext *context)
 
 void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton && m_isDrawing) {
         m_isDrawing = false;
@@ -120,7 +120,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 
 QList<Property::Type> PolygonDrawingTool::properties() const
 {
-    UIContext *uiContext{m_context->uiContext()};
+    const UIContext *uiContext{m_context->uiContext()};
     QList<Property::Type> result{};
 
     const auto bgStyleString{uiContext->propertyManager()->value(Property::Type::BackgroundStyle).value<QString>()};

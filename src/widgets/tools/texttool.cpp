@@ -45,13 +45,13 @@ TextTool::TextTool(ApplicationContext *context)
 
 void TextTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
         auto renderingContext{context->renderingContext()};
-        QuadTree &quadTree{spatialContext->quadtree()};
+        const QuadTree &quadTree{spatialContext->quadtree()};
 
         const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
         QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
@@ -110,8 +110,8 @@ void TextTool::mouseMoved(ApplicationContext *context)
     auto spatialContext{context->spatialContext()};
     CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
     auto renderingContext{context->renderingContext()};
-    UIContext *uiContext{context->uiContext()};
-    QuadTree &quadTree{spatialContext->quadtree()};
+    const UIContext *uiContext{context->uiContext()};
+    const QuadTree &quadTree{spatialContext->quadtree()};
     m_mouseMoved = true;
 
     const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};

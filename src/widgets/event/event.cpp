@@ -6,7 +6,7 @@
 
 Event::Event() = default;
 
-void Event::setPos(const QPoint &point, qreal const scale)
+void Event::setPos(const QPoint &point, const qreal scale)
 {
     m_pos = point * scale;
 }

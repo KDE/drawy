@@ -143,7 +143,7 @@ void RenderingContext::setZoomFactor(qreal newValue)
 
 int RenderingContext::fps() const
 {
-    QScreen *screen{m_canvas->screen()};
+    const QScreen *screen{m_canvas->screen()};
     if (screen) {
         return static_cast<int>(screen->refreshRate());
     }

@@ -61,14 +61,14 @@ void RectangleItemTest::shouldSerialize_data()
 
 void RectangleItemTest::shouldSerialize()
 {
-    QFETCH(QString, name);
-    QFETCH(QPointF, start);
-    QFETCH(QPointF, end);
-    QFETCH(int, strokeWidth);
-    QFETCH(QColor, strokeColor);
-    QFETCH(bool, locked);
-    QFETCH(QColor, backgroundColor);
-    QFETCH(int, zorder);
+    QFETCH(const QString, name);
+    QFETCH(const QPointF, start);
+    QFETCH(const QPointF, end);
+    QFETCH(const int, strokeWidth);
+    QFETCH(const QColor, strokeColor);
+    QFETCH(const bool, locked);
+    QFETCH(const QColor, backgroundColor);
+    QFETCH(const int, zorder);
 
     RectangleItem f;
     // Need to have an known id
@@ -95,7 +95,7 @@ void RectangleItemTest::shouldDeserialize_data()
 
 void RectangleItemTest::shouldDeserialize()
 {
-    QFETCH(QString, name);
+    QFETCH(const QString, name);
     RectangleItem f;
     const QString refFile = QLatin1StringView(DRAWY_GUI_DATA_DIR) + u"/rectangle/"_s + name + u".ref"_s;
     const QJsonObject obj = AutoTestHelper::loadJsonObject(refFile);

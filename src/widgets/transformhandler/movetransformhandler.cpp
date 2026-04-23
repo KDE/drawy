@@ -40,7 +40,7 @@ void MoveTransformHandler::renderHandles(ApplicationContext *context)
             const auto &item{(*selectedItems.begin())};
             painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
         } else {
-            QPen pen{Common::selectionBorderColor};
+            const QPen pen{Common::selectionBorderColor};
             painter.setPen(pen);
 
             for (const auto &item : std::as_const(selectedItems)) {

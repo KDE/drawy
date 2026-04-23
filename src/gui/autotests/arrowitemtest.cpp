@@ -56,13 +56,13 @@ void ArrowItemTest::shouldSerialize_data()
 
 void ArrowItemTest::shouldSerialize()
 {
-    QFETCH(QString, name);
-    QFETCH(QPointF, start);
-    QFETCH(QPointF, end);
-    QFETCH(int, strokeWidth);
-    QFETCH(QColor, strokeColor);
-    QFETCH(QString, strokeStyle);
-    QFETCH(bool, locked);
+    QFETCH(const QString, name);
+    QFETCH(const QPointF, start);
+    QFETCH(const QPointF, end);
+    QFETCH(const int, strokeWidth);
+    QFETCH(const QColor, strokeColor);
+    QFETCH(const QString, strokeStyle);
+    QFETCH(const bool, locked);
 
     ArrowItem f;
     // Need to have an known id

@@ -35,7 +35,7 @@ void TextMimeHandler::contributeData(QMimeData &mimeData, const QList<std::share
         return;
     }
 
-    TextItem *item = static_cast<TextItem *>(&*selectedItems[0]);
+    const TextItem *item = static_cast<TextItem *>(&*selectedItems[0]);
 
     mimeData.setText(item->text());
 }
