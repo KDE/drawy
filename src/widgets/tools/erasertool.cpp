@@ -104,7 +104,7 @@ void EraserTool::mouseMoved(ApplicationContext *context)
 
 void EraserTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};

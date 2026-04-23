@@ -432,13 +432,9 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
 qsizetype TextItem::getPrevBreak(qsizetype position) const
 {
     auto isBreak = [&](qsizetype pos) {
-        for (const auto &sep : Common::wordSeparators) {
-            if (m_text[pos] == sep) {
-                return true;
-            }
-        }
-
-        return false;
+        return std::ranges::any_of(Common::wordSeparators, [pos, this](const auto &sep) {
+            return m_text[pos] == sep;
+        });
     };
 
     while (position > 0 && isBreak(position)) {

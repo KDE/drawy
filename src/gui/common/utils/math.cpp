@@ -46,21 +46,21 @@ bool intersects(const QRectF &rect, const QPointF &point)
     return rect.contains(point);
 }
 
-qreal length(const QPointF &point)
+qreal length(const QPointF &vector)
 {
-    const qreal x{point.x()};
-    const qreal y{point.y()};
+    const qreal x{vector.x()};
+    const qreal y{vector.y()};
     return qSqrt(x * x + y * y);
 }
 
-QPointF unitVector(const QPointF &point)
+QPointF unitVector(const QPointF &vector)
 {
-    const qreal len{length(point)};
+    const qreal len{length(vector)};
     if (len == 0) {
-        return point;
+        return vector;
     }
 
-    return QPointF{point.x() / len, point.y() / len};
+    return QPointF{vector.x() / len, vector.y() / len};
 }
 
 QPointF rotateVector(const QPointF &vector, const qreal angle)

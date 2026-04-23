@@ -51,7 +51,7 @@ void CommandHistoryTest::shouldHaveDefaultValues()
 void CommandHistoryTest::shouldTestInsertCommands()
 {
     CommandHistory t(nullptr);
-    QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
+    const QSignalSpy spy(&t, &CommandHistory::undoRedoChanged);
     t.push(std::make_shared<CustomCommand>(QList<std::shared_ptr<Item>>()));
     QVERIFY(!t.canRedo());
     QVERIFY(t.canUndo());

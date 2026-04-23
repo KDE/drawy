@@ -68,13 +68,9 @@ void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 
 bool GroupItem::intersects(const QRectF &rect)
 {
-    for (const auto &item : std::as_const(m_items)) {
-        if (item->intersects(m_transform.inverted().map(rect).boundingRect())) {
-            return true;
-        }
-    }
-
-    return false;
+    return std::ranges::any_of(m_items, [this, rect](const auto &item) {
+        return item->intersects(m_transform.inverted().map(rect).boundingRect());
+    });
 }
 
 QList<std::shared_ptr<Item>> GroupItem::unGroup()
@@ -205,13 +201,9 @@ QList<Property::Type> GroupItem::allPropertyTypes() const
 
 bool GroupItem::hasProperty(Property::Type propertyType) const
 {
-    for (const auto &item : std::as_const(m_items)) {
-        if (item->hasProperty(propertyType)) {
-            return true;
-        }
-    }
-
-    return false;
+    return std::ranges::any_of(m_items, [propertyType](const auto &item) {
+        return item->hasProperty(propertyType);
+    });
 }
 
 void GroupItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
@@ -226,13 +218,9 @@ QJsonObject GroupItem::serialize(int zorder) const
 
 bool GroupItem::needsCaching() const
 {
-    for (const auto &item : std::as_const(m_items)) {
-        if (item->needsCaching()) {
-            return true;
-        }
-    }
-
-    return false;
+    return std::ranges::any_of(m_items, [](const auto &item) {
+        return item->needsCaching();
+    });
 }
 
 QList<std::shared_ptr<Item>> GroupItem::items() const

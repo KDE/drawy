@@ -41,33 +41,6 @@ void TextItemTest::shouldSerializeDefaultValue()
     AutoTestHelper::compareFile(u"/text/"_s, ba, u"defaultvalue"_s);
 }
 
-// CI doesn't use same font as local => it failed
-#if 0
-void TextItemTest::shouldSerialize_data()
-{
-    QTest::addColumn<QString>("name");
-    QTest::addColumn<int>("fontSize");
-    QTest::addColumn<QColor>("strokeColor");
-    QTest::addRow("text1") << u"text1"_s << 10 << QColor(Qt::red);
-    QTest::addRow("text2") << u"text2"_s << 15 << QColor(Qt::blue);
-}
-
-void TextItemTest::shouldSerialize()
-{
-    QFETCH(QString, name);
-    QFETCH(int, fontSize);
-    QFETCH(QColor, strokeColor);
-
-    TextItem f;
-    f.setProperty(Property::Type::StrokeColor, Property(strokeColor, Property::Type::StrokeColor));
-    f.setProperty(Property::Type::FontSize, Property(fontSize, Property::Type::FontSize));
-    const QJsonObject obj = f.serialize(-1); // Not define zorder yet
-    const QJsonDocument doc(obj);
-    const QByteArray ba = doc.toJson();
-    AutoTestHelper::compareFile(u"/text/"_s, ba, name);
-}
-#endif
-
 void TextItemTest::shouldTestTransformations()
 {
     TextItem i;
@@ -192,13 +165,13 @@ void TextItemTest::shouldTestBreaks()
 
 void TextItemTest::shouldTestNeedsCaching()
 {
-    TextItem i;
+    const TextItem i;
     QVERIFY(i.needsCaching());
 }
 
 void TextItemTest::shouldTestLockAspectRatioWhenResizing()
 {
-    TextItem i;
+    const TextItem i;
     QVERIFY(i.lockAspectRatioWhenResizing());
 }
 

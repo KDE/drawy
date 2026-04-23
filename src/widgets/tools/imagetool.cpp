@@ -49,7 +49,7 @@ Tool::Type ImageTool::type() const
 
 void ImageTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         const QPointF lastPoint = uiContext->appEvent()->pos();
@@ -64,7 +64,7 @@ void ImageTool::mouseReleased(ApplicationContext *context)
         QPixmap pixmap;
         pixmap.load(fileName);
 
-        std::shared_ptr<ImageItem> curItem = std::dynamic_pointer_cast<ImageItem>(m_itemFactory->create());
+        const std::shared_ptr<ImageItem> curItem = std::dynamic_pointer_cast<ImageItem>(m_itemFactory->create());
         curItem->setBox(QRectF(transformer.viewToWorld(lastPoint), transformer.viewToWorld(QSizeF(100, 100))));
 
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));

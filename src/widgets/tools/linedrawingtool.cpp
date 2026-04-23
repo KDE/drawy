@@ -31,7 +31,7 @@ LineDrawingTool::LineDrawingTool(ApplicationContext *context)
 
 void LineDrawingTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         auto spatialContext{context->spatialContext()};
         CoordinateTransformer &transformer{spatialContext->coordinateTransformer()};
@@ -93,7 +93,7 @@ void LineDrawingTool::mouseMoved(ApplicationContext *context)
 
 void LineDrawingTool::mouseReleased(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton && m_isDrawing) {
         m_isDrawing = false;

@@ -137,14 +137,14 @@ void FlowLayout::setGeometry(const QRect &rect)
 
 void FlowLayout::clear()
 {
-    while (QLayoutItem *item = takeAt(0)) {
+    while (const QLayoutItem *item = takeAt(0)) {
         delete item;
     }
 }
 
 void FlowLayout::clearAndDeleteWidgets()
 {
-    while (QLayoutItem *item = takeAt(0)) {
+    while (const QLayoutItem *item = takeAt(0)) {
         item->widget()->deleteLater();
         delete item;
     }

@@ -18,7 +18,7 @@ public:
     explicit IconManager();
 
     void setIcon(QAction *action, const QString &iconName);
-    void setIcon(QAbstractButton *action, const QString &iconName);
+    void setIcon(QAbstractButton *button, const QString &iconName);
     void slotUpdateIcons(bool isDarkTheme);
 
 Q_SIGNALS:

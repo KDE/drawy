@@ -18,7 +18,7 @@ public:
     [[nodiscard]] int key() const;
     [[nodiscard]] Qt::KeyboardModifiers modifiers() const;
 
-    void setPos(const QPoint &point, qreal const scale = 1.0);
+    void setPos(const QPoint &point, const qreal scale = 1.0);
     void setButton(Qt::MouseButton btn);
     void setPressure(qreal pressure);
     void setKey(int key);

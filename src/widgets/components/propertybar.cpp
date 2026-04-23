@@ -71,7 +71,7 @@ void PropertyBar::updateProperties(Tool &tool)
     hide();
 
     // remove existing widgets
-    QLayoutItem *curItem = nullptr;
+    const QLayoutItem *curItem = nullptr;
     while ((curItem = m_layout->takeAt(0)) != nullptr) {
         QWidget *widget = curItem->widget();
         if (widget) {
@@ -92,7 +92,7 @@ void PropertyBar::updateProperties(Tool &tool)
         return Property::propertyPriority(first) < Property::propertyPriority(second);
     });
 
-    for (Property::Type property : properties) {
+    for (const Property::Type property : properties) {
         try {
             PropertyWidget *const widget{m_propertyManager->widget(property)};
 
@@ -103,8 +103,8 @@ void PropertyBar::updateProperties(Tool &tool)
 
             widget->widget()->show();
             assignPropertyValue(property, widget);
-        } catch (const std::logic_error &) {
-            // ignore this property
+        } catch (const std::logic_error &) { // NOLINT(bugprone-empty-catch)
+            // ignore since the item does not support this property
         }
     }
 

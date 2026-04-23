@@ -22,7 +22,7 @@ MoveTool::MoveTool(ApplicationContext *context)
 
 void MoveTool::mousePressed(ApplicationContext *context)
 {
-    UIContext *uiContext{context->uiContext()};
+    const UIContext *uiContext{context->uiContext()};
     auto button{uiContext->appEvent()->button()};
 
     if (button == Qt::LeftButton || button == Qt::MiddleButton) {
@@ -43,7 +43,7 @@ void MoveTool::mouseMoved(ApplicationContext *context)
     if (m_isActive) {
         auto spatialContext{context->spatialContext()};
         auto renderingContext{context->renderingContext()};
-        UIContext *uiContext{context->uiContext()};
+        const UIContext *uiContext{context->uiContext()};
 
         const qreal zoom{renderingContext->zoomFactor()};
         const QPointF newPoint{m_initialOffsetPos * zoom - uiContext->appEvent()->pos() + m_initialPos};
