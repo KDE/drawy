@@ -24,10 +24,9 @@ cmake --build build-release
 ./build-release/bin/drawy
 ```
 
-### Using ASAN
-
-We can use sanitizers.supp file
-example: LSAN_OPTIONS=suppressions=$PWD/sanitizers.supp drawy
+#### Using ASAN
+You may use the `sanitizers.supp` file.
+For example: `LSAN_OPTIONS=suppressions=$PWD/sanitizers.supp drawy`
 
 
 ### Keyboard Shortcuts
