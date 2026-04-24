@@ -62,8 +62,8 @@ If you are new to contributing:
 ## Improving the Documentation
 Documentation improvements are welcome. Update or extend documentation when you modify behavior or add new features.
 
-## Pull Requests
-* Open an issue before starting a pull request.
+## Merge Requests
+* Open an issue before starting a merge request.
 * Discuss the proposed solution in detail.
 * Only begin work once the approach is approved.
 * Ensure the project builds without warnings.
@@ -71,7 +71,7 @@ Documentation improvements are welcome. Update or extend documentation when you 
 
 ## Style Guidelines
 ### C++ Code
-* Format all C++ code with `clang-format` before submitting. Using `nix develop` installs a git hook that formats code automatically on pre commit.
+* Format all C++ code with `clang-format` before submitting.
 * Always use brace initialization such as `int a{5}`.
 * Use smart pointers instead of raw pointers.
 * Write clear and descriptive variable names.
@@ -79,15 +79,11 @@ Documentation improvements are welcome. Update or extend documentation when you 
 * Do not use [magic numbers](https://stackoverflow.com/a/47902).
 
 ### Licensing
-* New source files must include the [LICENSE_HEADER](./LICENSE_HEADER) comment at the top.
-* Append your name and email to the comment's `Authors` section.
+* New source files must include REUSE-compliant license headers at the top.
 
 ## Commit Messages
 Use the Conventional Commits standard.
 See [https://www.conventionalcommits.org](https://www.conventionalcommits.org)
-
-## Join the Project Team
-Active contributors may be invited to join the project team. Consistency, quality, and constructive communication are key.
 
 ## Attribution
 This guide takes inspiration from [contributing.md](https://contributing.md).

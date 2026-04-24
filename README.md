@@ -3,7 +3,13 @@ Your handy, infinite brainstorming tool!
 
 <img src="./assets/screenshot.png" style="width: 100%" />
 
-Drawy is a work-in-progress infinite whiteboard tool written in Qt/C++, which aims to be a native-desktop alternative to the amazing web-based Excalidraw.
+Drawy is a lightweight infinite whiteboard built for simplicity and high performance. It includes core features expected from whiteboard tools, such as:
+1. Pressure-sensitive drawing with tablet support
+2. An infinite canvas
+3. Support for images, text, and basic shapes including rectangles, ellipses, arrows, and lines
+4. Exporting drawings as images
+5. Customizable color palette
+6. And many more!
 
 ### Discuss
 If you wish to discuss anything regarding Drawy, you are welcome to join its Matrix room here: https://go.kde.org/matrix/#/#drawy:kde.org
@@ -28,12 +34,8 @@ cmake --build build-release
 You may use the `sanitizers.supp` file.
 For example: `LSAN_OPTIONS=suppressions=$PWD/sanitizers.supp drawy`
 
-
-### Keyboard Shortcuts
-Default keyboard shortcuts can be viewed here: [KEYBINDINGS.md](docs/keybindings.md)
-
 ### Contributing
-Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) before opening pull requests.
+Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) before opening merge requests.
 
 ### License
 This project uses the GNU General Public License V3.
