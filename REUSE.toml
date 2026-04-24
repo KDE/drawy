@@ -1,11 +1,6 @@
 version = 1
 
 [[annotations]]
-path = ["src/resources/icons/**/*.svg", "**/*.png", "**/*.svg", "**/*.ico"]
-SPDX-FileCopyrightText = "www.svgrepo.com"
-SPDX-License-Identifier = "CC-BY-SA-4.0"
-
-[[annotations]]
 path = ["flake.lock", "src/widgets/autotests/data/**"]
 SPDX-FileCopyrightText = "None"
 SPDX-License-Identifier = "CC0-1.0"
@@ -16,7 +11,7 @@ SPDX-FileCopyrightText = "Prayag Jain <prayagjain2@gmail.com>"
 SPDX-License-Identifier = "GPL-3.0-or-later"
 
 [[annotations]]
-path = ["po/**"]
+path = ["po/**", "poqm/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "LGPL-2.0-or-later"

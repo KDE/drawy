@@ -14,6 +14,7 @@ include:
       - /gitlab-templates/craft-macos-arm64-qt6.yml
       - /gitlab-templates/craft-macos-x86-64-qt6.yml
       - /gitlab-templates/pre-commit.yml
+      - /gitlab-templates/reuse-lint.yml
 
 build_clazy:
   extends:
