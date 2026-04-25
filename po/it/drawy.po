@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-02 14:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -411,14 +411,14 @@ msgstr "Colore di sfondo"
 msgid "Color Palette"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Light Mode"
 msgid "Light Mode"
 msgstr "Modalità chiara"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, fuzzy, kde-format
 #| msgctxt "UIContext|"
 #| msgid "Dark Mode"

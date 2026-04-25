@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-17 15:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -413,12 +413,12 @@ msgstr "צבע רקע כהה"
 msgid "Color Palette"
 msgstr "לוח צבעים"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr "מצב בהיר"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr "מצב כהה"

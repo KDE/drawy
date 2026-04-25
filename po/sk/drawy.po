@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -412,12 +412,12 @@ msgstr "Tmavá farba pozadia"
 msgid "Color Palette"
 msgstr "Paleta farieb"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr "Svetlý režim"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr "Tmavý režim"

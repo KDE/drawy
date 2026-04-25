@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-19 21:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -414,12 +414,12 @@ msgstr "Atzeko planoaren kolore iluna"
 msgid "Color Palette"
 msgstr "Kolore-paleta"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr "Modu argia"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modu iluna"

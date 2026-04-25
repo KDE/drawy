@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-17 11:50+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -409,12 +409,12 @@ msgstr "Color de fundo obscur"
 msgid "Color Palette"
 msgstr "Paletta de Color"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr "Modo Clar"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modo obscur"
