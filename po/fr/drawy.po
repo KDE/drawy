@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 02:44+0000\n"
+"POT-Creation-Date: 2026-04-25 02:42+0000\n"
 "PO-Revision-Date: 2026-04-11 11:59+0200\n"
 "Last-Translator: Alexandre Bento <alexandre.bento@nightrain.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -404,12 +404,12 @@ msgstr "Couleur d'arrière-plan du thème sombre"
 msgid "Color Palette"
 msgstr "Palette de couleurs"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr "Thème clair"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr "Thème sombre"

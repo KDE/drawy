@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 02:44+0000\n"
+"POT-Creation-Date: 2026-04-25 02:42+0000\n"
 "Language-Team: Irish Translation Team <gaeilge-gnulinux@lists.sourceforge."
 "net>\n"
 "Language: ga\n"
@@ -405,12 +405,12 @@ msgstr ""
 msgid "Color Palette"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:43
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
 #, kde-format
 msgid "Light Mode"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:46
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
 msgstr ""
