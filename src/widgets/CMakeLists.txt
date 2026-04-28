@@ -309,6 +309,8 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_resize_debug.h IDEN
     CATEGORY_NAME org.kde.drawy_resize DESCRIPTION "drawy (resize)" EXPORT DRAWY
 )
 
+install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+
 set_target_properties(
     libdrawywidgets
     PROPERTIES
