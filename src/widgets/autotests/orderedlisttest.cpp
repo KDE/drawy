@@ -15,7 +15,7 @@ namespace
 {
     return {items.begin(), items.end()};
 }
-}
+} // namespace
 
 OrderedListTest::OrderedListTest(QObject *parent)
     : QObject{parent}

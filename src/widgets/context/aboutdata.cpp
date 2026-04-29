@@ -14,7 +14,10 @@ AboutData::AboutData()
                  QStringLiteral(DRAWY_VERSION),
                  i18n("Your handy, infinite  brainstorming tool!"),
                  KAboutLicense::GPL_V3,
-                 i18nc("Copyright text, keep the © symbol and the en dash for the year range", "© 2025–%1 Drawy authors", u"2026"_s))
+                 i18nc("Copyright text, keep the © symbol and the en dash for "
+                       "the year range",
+                       "© 2025–%1 Drawy authors",
+                       u"2026"_s))
 {
     setProductName("drawy"_ba);
     setOrganizationDomain("kde.org"_ba);

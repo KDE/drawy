@@ -193,7 +193,8 @@ void OrderedList::restorePosition(const ItemPtr &item, const Position &position)
     } else if (!position.previousItem) {
         targetIterator = m_itemList.begin();
     } else {
-        qCWarning(DRAWY_LOG) << "Unable to restore item position using previous/next anchors, falling back to list end";
+        qCWarning(DRAWY_LOG) << "Unable to restore item position using "
+                                "previous/next anchors, falling back to list end";
         targetIterator = m_itemList.end();
     }
 

@@ -26,7 +26,7 @@ std::shared_ptr<LineItem> getSelectedMoveLineItem(ApplicationContext *context)
     Q_ASSERT(selectedItems.size() == 1);
     return std::dynamic_pointer_cast<LineItem>(*selectedItems.begin());
 }
-}
+} // namespace
 
 void LineMoveTransformHandler::renderHandles(ApplicationContext *context)
 {

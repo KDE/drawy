@@ -83,7 +83,8 @@ namespace Common::Utils::Math
 
 /**
  * @brief extracs and removes scale information from the given QTransform
- * @param transform the transformation matrix (it updates it by removing its scale info)
+ * @param transform the transformation matrix (it updates it by removing its
+ * scale info)
  * @returns a pair containing scaleX and scaleY
  */
 [[nodiscard]] std::pair<qreal, qreal> extractScale(QTransform &transform);

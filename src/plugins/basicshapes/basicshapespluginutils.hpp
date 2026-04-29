@@ -25,4 +25,4 @@ enum class BasicShapesPluginType : int8_t {
 [[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT std::unique_ptr<ItemFactory> generateItemFactory(const QString &name);
 [[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT QList<PluginForm::PluginFormInfo> pluginFormInfoList();
 [[nodiscard]] LIBBASICSHAPESFORMPLUGIN_EXPORT std::shared_ptr<Item> createItem(const QString &customPluginName);
-};
+}; // namespace BasicShapesPluginUtils
