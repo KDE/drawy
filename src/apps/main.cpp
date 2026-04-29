@@ -22,6 +22,10 @@
 #include <unistd.h>
 #endif
 
+#if HAVE_KUSERFEEDBACK
+#include "userfeedback/drawyuserfeedbackprovider.hpp"
+#endif
+
 using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
@@ -46,7 +50,14 @@ int main(int argc, char *argv[])
 
     parser.process(a);
     aboutData.processCommandLine(&parser);
-
+#if HAVE_KUSERFEEDBACK
+    if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FeedBack))) {
+        auto userFeedback = new DrawyUserFeedbackProvider;
+        QTextStream(stdout) << userFeedback->describeDataSources() << '\n';
+        delete userFeedback;
+        return 0;
+    }
+#endif
     MainWindow w;
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
         w.viewFullScreen(true);

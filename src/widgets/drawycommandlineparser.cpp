@@ -5,9 +5,9 @@
  */
 
 #include "drawycommandlineparser.hpp"
+#include "config-drawy.hpp"
 #include <KLocalizedString>
 #include <QCommandLineParser>
-
 using namespace Qt::Literals::StringLiterals;
 DrawyCommandLineParser::DrawyCommandLineParser(QCommandLineParser *parser)
 {
@@ -18,6 +18,9 @@ void DrawyCommandLineParser::initializeCommandLine(QCommandLineParser *parser)
 {
     parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::FullScreen), i18nc("@info:shell", "Fullscreen")));
     parser->addOption(QCommandLineOption(QStringList() << optionParserFromEnum(OptionParser::Debug), i18nc("@info:shell", "Activate Debug Mode")));
+#if HAVE_KUSERFEEDBACK
+    parser->addOption(QCommandLineOption(optionParserFromEnum(OptionParser::FeedBack), i18nc("@info:shell", "Lists the available options for user feedback")));
+#endif
 }
 
 QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
@@ -27,6 +30,10 @@ QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
         return u"fullscreen"_s;
     case OptionParser::Debug:
         return u"debug"_s;
+#if HAVE_KUSERFEEDBACK
+    case OptionParser::FeedBack:
+        return u"feedback"_s;
+#endif
     }
     return {};
 }

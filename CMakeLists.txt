@@ -59,6 +59,19 @@ find_package(
         SyntaxHighlighting
 )
 
+find_package(KF6UserFeedback ${KF_MIN_VERSION} CONFIG)
+set(HAVE_KUSERFEEDBACK ${KF6UserFeedback_FOUND})
+set_package_properties(
+    KF6UserFeedback
+    PROPERTIES
+        DESCRIPTION
+            "User Feedback lib"
+        TYPE
+            OPTIONAL
+        PURPOSE
+            "Allow to send Telemetry Information (optional)."
+)
+
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(
     KF6DocTools

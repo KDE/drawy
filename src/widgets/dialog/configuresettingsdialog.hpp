@@ -9,7 +9,9 @@
 #include <KPageDialog>
 class ConfigureGeneralWidget;
 class ConfigureMiscWidget;
-
+#if HAVE_KUSERFEEDBACK
+class ConfigureUserFeedbackWidget;
+#endif
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureSettingsDialog : public KPageDialog
 {
     Q_OBJECT
@@ -28,5 +30,9 @@ private:
 #if WITH_DBUS
     ConfigureMiscWidget *const mConfigureMiscWidget;
     KPageWidgetItem *mConfigureMiscWidgetPage = nullptr;
+#endif
+#if HAVE_KUSERFEEDBACK
+    KPageWidgetItem *mConfigureUserFeedBackWidgetPage = nullptr;
+    ConfigureUserFeedbackWidget *const mConfigureUserFeedBackWidget = nullptr;
 #endif
 };

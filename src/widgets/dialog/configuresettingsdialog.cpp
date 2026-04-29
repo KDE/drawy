@@ -13,6 +13,9 @@
 #include <KWindowConfig>
 #include <QPushButton>
 #include <QWindow>
+#if HAVE_KUSERFEEDBACK
+#include "userfeedback/configureuserfeedbackwidget.hpp"
+#endif
 
 namespace
 {
@@ -24,6 +27,9 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     , mConfigureGeneralWidget(new ConfigureGeneralWidget(this))
 #if WITH_DBUS
     , mConfigureMiscWidget(new ConfigureMiscWidget(this))
+#endif
+#if HAVE_KUSERFEEDBACK
+    , mConfigureUserFeedBackWidget(new ConfigureUserFeedbackWidget(this))
 #endif
 {
     setWindowTitle(i18nc("@title:window", "Configure Drawy"));
@@ -39,6 +45,12 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     mConfigureMiscWidgetPage = new KPageWidgetItem(mConfigureMiscWidget, miscPageName);
     mConfigureMiscWidgetPage->setIcon(QIcon::fromTheme(u"preferences-other"_s));
     addPage(mConfigureMiscWidgetPage);
+#endif
+#if HAVE_KUSERFEEDBACK
+    const QString userFeedBackPageName = i18nc("@title Preferences page name", "User Feedback");
+    mConfigureUserFeedBackWidgetPage = new KPageWidgetItem(mConfigureUserFeedBackWidget, userFeedBackPageName);
+    mConfigureUserFeedBackWidgetPage->setIcon(QIcon::fromTheme(u"preferences-other"_s));
+    addPage(mConfigureUserFeedBackWidgetPage);
 #endif
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
 
@@ -75,6 +87,9 @@ void ConfigureSettingsDialog::slotAccepted()
 #if WITH_DBUS
     mConfigureMiscWidget->save();
 #endif
+#if HAVE_KUSERFEEDBACK
+    mConfigureUserFeedBackWidget->save();
+#endif
 }
 
 void ConfigureSettingsDialog::load()
@@ -83,6 +98,9 @@ void ConfigureSettingsDialog::load()
 #if WITH_DBUS
     mConfigureMiscWidget->load();
 #endif
+#if HAVE_KUSERFEEDBACK
+    mConfigureUserFeedBackWidget->load();
+#endif
 }
 
 void ConfigureSettingsDialog::slotRestoreDefaults()
@@ -90,6 +108,9 @@ void ConfigureSettingsDialog::slotRestoreDefaults()
     mConfigureGeneralWidget->restoreToDefaults();
 #if WITH_DBUS
     mConfigureMiscWidget->restoreToDefaults();
+#endif
+#if HAVE_KUSERFEEDBACK
+    mConfigureUserFeedBackWidget->restoreToDefaults();
 #endif
 }
 

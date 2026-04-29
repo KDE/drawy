@@ -13,7 +13,8 @@ class LIBDRAWYWIDGETS_EXPORT DrawyCommandLineParser
 public:
     enum class OptionParser : uint8_t {
         FullScreen = 0,
-        Debug
+        Debug,
+        FeedBack,
     };
     explicit DrawyCommandLineParser(QCommandLineParser *parser);
     ~DrawyCommandLineParser() = default;

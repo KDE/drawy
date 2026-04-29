@@ -42,7 +42,11 @@
 #if WITH_DBUS
 #include "dbus/managepowermanagement.hpp"
 #endif
-
+#if HAVE_KUSERFEEDBACK
+#include "userfeedback/userfeedbackmanager.hpp"
+#include <KUserFeedback/NotificationPopup>
+#include <KUserFeedback/Provider>
+#endif
 using namespace Qt::Literals::StringLiterals;
 
 namespace
@@ -107,6 +111,10 @@ MainWindow::MainWindow(QWidget *parent)
     actionCollection->associateWidget(this);
 
     readConfig();
+#if HAVE_KUSERFEEDBACK
+    auto userFeedBackNotificationPopup = new KUserFeedback::NotificationPopup(this);
+    userFeedBackNotificationPopup->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
+#endif
 }
 
 MainWindow::~MainWindow() = default;

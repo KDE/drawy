@@ -6,3 +6,4 @@
 
 #define DRAWY_VERSION "${DRAWY_VERSION}"
 #cmakedefine01 WITH_DBUS
+#cmakedefine01 HAVE_KUSERFEEDBACK

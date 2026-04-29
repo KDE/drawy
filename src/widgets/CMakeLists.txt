@@ -249,6 +249,23 @@ if(USE_DBUS)
     )
 endif()
 
+if(TARGET KF6::UserFeedbackWidgets)
+    target_sources(
+        libdrawywidgets
+        PRIVATE
+            userfeedback/userfeedbackmanager.cpp
+            userfeedback/userfeedbackmanager.hpp
+            userfeedback/drawyuserfeedbackprovider.cpp
+            userfeedback/drawyuserfeedbackprovider.hpp
+            dialog/userfeedback/configureuserfeedbackwidget.cpp
+            dialog/userfeedback/configureuserfeedbackwidget.hpp
+    )
+endif()
+
+if(TARGET KF6::UserFeedbackWidgets)
+    target_link_libraries(libdrawywidgets PUBLIC KF6::UserFeedbackWidgets)
+endif()
+
 # precompiled headers support
 if(ENABLE_PCH)
     target_precompile_headers(

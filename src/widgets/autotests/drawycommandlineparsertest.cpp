@@ -5,6 +5,7 @@
  */
 
 #include "drawycommandlineparsertest.hpp"
+#include "config-drawy.hpp"
 #include "drawycommandlineparser.hpp"
 #include <QTest>
 QTEST_GUILESS_MAIN(DrawyCommandLineParserTest)
@@ -19,6 +20,9 @@ void DrawyCommandLineParserTest::shouldHaveDefaultValues()
 {
     QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen), u"fullscreen"_s);
     QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::Debug), u"debug"_s);
+#if HAVE_KUSERFEEDBACK
+    QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::FeedBack), u"feedback"_s);
+#endif
 }
 
 #include "moc_drawycommandlineparsertest.cpp"
