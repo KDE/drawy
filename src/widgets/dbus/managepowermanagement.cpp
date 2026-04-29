@@ -27,7 +27,10 @@ ManagePowerManagement::~ManagePowerManagement()
 
 void ManagePowerManagement::inhibitPowerManagement()
 {
-    const QString reason = i18nc("Reason for inhibiting the screensaver activation, when the presentation mode is active", "Giving a presentation");
+    const QString reason = i18nc(
+        "Reason for inhibiting the screensaver activation, when the "
+        "presentation mode is active",
+        "Giving a presentation");
 
     if (!mScreenInhibitCookie) {
         QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),

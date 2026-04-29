@@ -15,4 +15,4 @@ LIBDRAWYGUI_EXPORT void serializePluginForm(QJsonObject &obj, const QString &plu
 LIBDRAWYGUI_EXPORT void deserializePluginForm(const QJsonObject &obj, QString &pluginName, QString &customObjectName);
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString pluginNameStr();
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString customObjectNameStr();
-}
+} // namespace PluginFormUtils

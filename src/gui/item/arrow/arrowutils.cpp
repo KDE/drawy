@@ -53,4 +53,4 @@ ArrowHead::Type fromString(const QString &arrowType)
 
     return ArrowHead::Type::None;
 }
-}
+} // namespace ArrowUtils
