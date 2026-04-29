@@ -7,3 +7,13 @@
 
 Page::Page() = default;
 Page::~Page() = default;
+
+QString Page::name() const
+{
+    return mName;
+}
+
+void Page::setName(const QString &newName)
+{
+    mName = newName;
+}
