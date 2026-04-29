@@ -4,8 +4,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #pragma once
+#include "data-structures/quadtree.hpp"
 #include "libdrawywidgets_private_export.h"
-
+#include <memory>
+class QuadTree;
 class LIBDRAWYWIDGETS_TESTS_EXPORT Page
 {
 public:
@@ -17,4 +19,5 @@ public:
 
 private:
     QString mName;
+    std::unique_ptr<QuadTree> m_quadtree{nullptr};
 };
