@@ -12,6 +12,7 @@
   <name xml:lang="fi">Drawy</name>
   <name xml:lang="fr">Drawy</name>
   <name xml:lang="he">Drawy</name>
+  <name xml:lang="hr">Drawy</name>
   <name xml:lang="ia">Drawy</name>
   <name xml:lang="is">Drawy</name>
   <name xml:lang="it">Drawy</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="eu">Zure ideia-jasa tresna erabilgarri eta infinitua</summary>
   <summary xml:lang="fr">Votre outil de brainstorming pratique et sans limites</summary>
   <summary xml:lang="he">כלי סיעור המוחין השימושי והאינסופי שלך</summary>
+  <summary xml:lang="hr">Tvoj praktičan alat za brainstorming</summary>
   <summary xml:lang="ia">Tu instrumento de brainstorming infinite, commode </summary>
   <summary xml:lang="is">Handhæga, óendanlega hugmyndaflæðitólið.</summary>
   <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
@@ -59,6 +61,7 @@
     <p xml:lang="fi">Drawy on vielä vaiheessa oleva rajaton valkotaulutyökalu, joka tähtää verkon mahtavan Excalidraw’n natiiviksi työpöytävaihtoehdoksi.</p>
     <p xml:lang="fr">Drawy est une application de bureau de tableau blanc sans limites. Cette application est en cours de développement, se voulant une alternative Excalidraw, un excellent outil sur navigateur Internet.</p>
     <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>
+    <p xml:lang="hr">Drawy je alat koji omogućuje beskonačnu razvojnu ploču sa svrhom izvorne desktop alternative izvrsnom web alatu Excalidraw.</p>
     <p xml:lang="ia">Drawy es un instrumento de tabula blanc (whiteboard) infinite de labor in progresso, que vole esser un alternative de scriptorio native al stupende Excalidraw basate sur web.</p>
     <p xml:lang="is">Drawy er verkfæri til að teikna upp hugmyndir, það er enn á hönnunarstigi en því er ætlað að verða sambærilegt verkfæri fyrir borðtölvur í líkingu við hið veflæga Excalidraw.</p>
     <p xml:lang="it">Drawy è una lavagna infinita in fase di sviluppo, che si propone di essere un'alternativa desktop nativa allo straordinario Excalidraw basato sul web.</p>
