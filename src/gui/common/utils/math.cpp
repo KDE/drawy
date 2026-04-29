@@ -139,4 +139,4 @@ QPointF perp(const QPointF &vec)
 {
     return unitVector({-vec.y(), vec.x()});
 }
-};
+}; // namespace Common::Utils::Math

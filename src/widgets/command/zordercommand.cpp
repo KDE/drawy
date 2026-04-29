@@ -21,7 +21,7 @@ namespace
 {
     return move == ItemUtils::ZorderMove::BringForward || move == ItemUtils::ZorderMove::SendToBack;
 }
-}
+} // namespace
 
 ZorderCommand::ZorderCommand(QList<std::shared_ptr<Item>> items, ItemUtils::ZorderMove move)
     : ItemCommand{std::move(items)}

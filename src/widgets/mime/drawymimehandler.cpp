@@ -34,7 +34,8 @@ void DrawyMimeHandler::contributeData(QMimeData &mimeData, const QList<std::shar
     QJsonArray array;
 
     for (const auto &item : std::as_const(selectedItems)) {
-        // TODO: fetch zorder from application context... if that even makes sense here
+        // TODO: fetch zorder from application context... if that even makes sense
+        // here
         array.push_back(item->serialize(-1));
     }
 

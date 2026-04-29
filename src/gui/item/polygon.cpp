@@ -133,7 +133,8 @@ QList<Property::Type> PolygonItem::propertyTypes() const
     QList<Property::Type> result;
 
     for (auto &[formType, _] : m_properties) {
-        // only show the background color property if the background style is not None
+        // only show the background color property if the background style is not
+        // None
         if (formType == Property::Type::BackgroundColor
             && ItemUtils::convertBackgroundTypeStringToEnum(property(Property::Type::BackgroundStyle).value<QString>()) == Item::BackgroundType::None) {
             continue;

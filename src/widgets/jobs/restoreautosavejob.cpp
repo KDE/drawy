@@ -60,7 +60,8 @@ void RestoreAutoSaveJob::restoreFile()
             m_context->setCurrentFileName(lastSavedFile);
             m_context->setCurrentFileModified(lastSavedFileModified);
         } else {
-            // the last file was not saved which means we should mark it as modified
+            // the last file was not saved which means we should mark it as
+            // modified
             m_context->setCurrentFileModified(true);
         }
     });

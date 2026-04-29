@@ -180,7 +180,8 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
 
         } else if (uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
-            // if the users holds shift and clicks on an element, deselect or select it, depending on the situation
+            // if the users holds shift and clicks on an element, deselect or select
+            // it, depending on the situation
 
             if (selectedItems.contains(intersectingItems.back())) {
                 commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));

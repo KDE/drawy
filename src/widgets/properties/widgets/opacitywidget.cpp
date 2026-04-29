@@ -43,7 +43,7 @@ int snapPercent(int percent)
     const int boundedPercent = std::clamp(percent, minimumPercent, maximumPercent);
     return ((boundedPercent + (percentStep / 2)) / percentStep) * percentStep;
 }
-}
+} // namespace
 
 OpacityWidget::OpacityWidget(QWidget *parent)
     : PropertyWidget(parent)

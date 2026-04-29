@@ -31,7 +31,8 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
     bool invertible = false;
     const QTransform inverseTransform{transform.inverted(&invertible)};
     if (!invertible) {
-        qCWarning(DRAWY_LOG) << "The transform applied is not invertible. This is most likely a bug. Please report it.";
+        qCWarning(DRAWY_LOG) << "The transform applied is not invertible. This is "
+                                "most likely a bug. Please report it.";
         return;
     }
 
@@ -107,8 +108,8 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
         painter.setPen(Qt::red);
         painter.drawRect(cell->rect());
         painter.drawText(cell->rect().topLeft(),
-                         QStringLiteral("(%1, %2)").arg(cell->point().x()).arg(cell->point().y()));
-        painter.restore();
+                         QStringLiteral("(%1,
+        %2)").arg(cell->point().x()).arg(cell->point().y())); painter.restore();
         */
     }
     painter.restore();

@@ -76,7 +76,8 @@ getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, con
 [[nodiscard]] QPainterPath getStrokePath(const QList<QPointF> &points);
 
 /**
- * @brief converts stroke points to a QPainterPath having a single stroke, no outline
+ * @brief converts stroke points to a QPainterPath having a single stroke, no
+ * outline
  * @param points stroke points
  * @returns a QPainterPath
  */

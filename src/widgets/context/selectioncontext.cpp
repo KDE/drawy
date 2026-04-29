@@ -96,7 +96,8 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
     const QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
-    bool shouldUpdateProperty{false}; // we must only insert it in the command history if the new property is different
+    bool shouldUpdateProperty{false}; // we must only insert it in the command
+                                      // history if the new property is different
 
     const auto propertyType{property.type()};
     for (const auto &item : items) {

@@ -24,7 +24,8 @@ public:
     }
 
     // static members
-    /// @brief It returns a singleton instance of the provided handlerType since these handlers are stateless
+    /// @brief It returns a singleton instance of the provided handlerType since
+    /// these handlers are stateless
     static TransformHandler *getHandler(TransformHandlerUtils::Type handlerType);
 
     // virtual members

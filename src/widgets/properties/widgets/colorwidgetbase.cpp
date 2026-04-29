@@ -27,7 +27,7 @@ QList<QColor> paletteColors()
             isDark ? cfg->thirdColorDark() : cfg->thirdColorLight(),
             isDark ? cfg->fourthColorDark() : cfg->fourthColorLight()};
 }
-};
+}; // namespace
 
 ColorWidgetBase::ColorWidgetBase(QWidget *parent)
     : PropertyWidget{parent}

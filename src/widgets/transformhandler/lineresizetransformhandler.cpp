@@ -33,7 +33,7 @@ std::shared_ptr<LineItem> getSelectedLineItem(ApplicationContext *context)
     Q_ASSERT(selectedItems.size() == 1);
     return std::dynamic_pointer_cast<LineItem>(*selectedItems.begin());
 }
-}
+} // namespace
 
 void LineResizeTransformHandler::renderHandles(ApplicationContext *context)
 {
@@ -152,7 +152,9 @@ TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationCon
         case ResizeHandleType::End:
             return LineResizeItemCommand::HandleType::End;
         default: {
-            throw std::logic_error("Incorrect line resize handle selected! Please report this as a bug.");
+            throw std::logic_error(
+                "Incorrect line resize handle selected! Please "
+                "report this as a bug.");
         };
         }
     }()};

@@ -10,14 +10,16 @@
 class Item;
 class QMimeData;
 
-// This class represents anything that might contribute to the handling of the clipboard or drag and drop.
+// This class represents anything that might contribute to the handling of the
+// clipboard or drag and drop.
 class MimeHandler
 {
 public:
     virtual ~MimeHandler();
 
     // Called to read items from a QMimeData, used when dropping or pasting.
-    // If the returned list is not empty, the operation is considered to have been handled.
+    // If the returned list is not empty, the operation is considered to have been
+    // handled.
     [[nodiscard]] virtual QList<std::shared_ptr<Item>> tryReadData(const QMimeData &mimeData);
 
     // Called to contribute formats to a QMimeData, used when dragging or copying.

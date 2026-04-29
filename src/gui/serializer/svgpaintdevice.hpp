@@ -12,7 +12,8 @@
 // There is a class in Qt for doing exactly this (QSvgGenerator).
 // The reason we hand-roll our own is because QSvgGenerator:
 // 1. Doesn't render text correctly
-// 2. Renders text as SVG text elements, and not paths (we want them as paths as the font we use isn't standard),
+// 2. Renders text as SVG text elements, and not paths (we want them as paths as
+// the font we use isn't standard),
 //    and wrapping it to not do that seems impossible.
 class SvgPaintEngine : public QPaintEngine
 {
