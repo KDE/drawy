@@ -266,6 +266,8 @@ target_sources(
         customelementswidget/customelementslistview.cpp
         customelementswidget/customelementslistviewdelegate.hpp
         customelementswidget/customelementslistviewdelegate.cpp
+        page/page.hpp
+        page/page.cpp
 )
 
 if(USE_DBUS)
