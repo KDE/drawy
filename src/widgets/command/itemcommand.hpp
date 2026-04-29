@@ -4,20 +4,17 @@
 
 #pragma once
 
+#include "commandbase.hpp"
 #include "libdrawywidgets_private_export.h"
 #include <QList>
 #include <memory>
 class Item;
 class ApplicationContext;
-class LIBDRAWYWIDGETS_TESTS_EXPORT ItemCommand
+class LIBDRAWYWIDGETS_TESTS_EXPORT ItemCommand : public CommandBase
 {
 public:
     explicit ItemCommand(QList<std::shared_ptr<Item>> items);
-    virtual ~ItemCommand();
-
-    virtual void redo(ApplicationContext *context) = 0;
-    virtual void undo(ApplicationContext *context) = 0;
-    virtual QString text() const = 0;
+    ~ItemCommand() override;
 
 protected:
     QList<std::shared_ptr<Item>> m_items;

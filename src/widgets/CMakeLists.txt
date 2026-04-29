@@ -45,6 +45,8 @@ target_sources(
         command/lockcommand.cpp
         command/zordercommand.hpp
         command/zordercommand.cpp
+        command/commandbase.hpp
+        command/commandbase.cpp
         components/bottomleftwidgets.cpp
         components/bottomleftwidgets.hpp
         components/propertybar.cpp
