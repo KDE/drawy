@@ -252,6 +252,8 @@ target_sources(
         libdrawywidgets_private_export.h
         common/renderitems.cpp
         common/renderitems.hpp
+        page/page.hpp
+        page/page.cpp
 )
 
 if(USE_DBUS)
