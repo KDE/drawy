@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-25 00:42+0000\n"
-"PO-Revision-Date: 2026-04-16 08:53+0000\n"
+"PO-Revision-Date: 2026-04-29 15:59+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -325,12 +325,11 @@ msgid "Reorder"
 msgstr "Endurraða"
 
 #: widgets/context/uicontext.cpp:250
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"
-msgstr "Hliðjöfnun"
+msgstr "Hliðjafna"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
