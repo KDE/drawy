@@ -43,56 +43,68 @@
   <summary xml:lang="tr">Kullanışlı, sınırsız beyin fırtınası aracın!</summary>
   <summary xml:lang="uk">Ваша зручна, нескінченна програма для мозкових штурмів</summary>
   <summary xml:lang="zh-TW">好用的無限畫布腦力激盪工具</summary>
-  <developer id="org.kde.drawy">
-    <name>Prayag Jain</name>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+    <url>https://kde.org</url>
   </developer>
   <metadata_license>CC-BY-4.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <description>
-    <p>Drawy is a work-in-progress infinite whiteboard tool, which aims to be a native desktop alternative to the amazing web-based Excalidraw.</p>
-    <p xml:lang="ar">السبورة  هي أداة لوحة بيضاء لا نهائية لا تزال تحت التطوير، وتهدف إلى أن تكون بديلاً أصلياً لبرنامج Excalidraw الرائع القائم على الويب.</p>
-    <p xml:lang="ca">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
-    <p xml:lang="ca-valencia">Drawy és una eina de pissarra infinita en desenvolupament, que pretén ser una alternativa nativa d'escriptori a l'increïble Excalidraw basat en web.</p>
-    <p xml:lang="de">Drawy ist ein in Entwicklung befindliches Whiteboard-Werkzeug mit unendlicher Zeichenfläche. Ziel ist, eine für den Desktop optimierte Alternative zum fantastischen webbasierten Excalidraw zu bieten.</p>
-    <p xml:lang="es">Drawy es una herramienta de pizarra ilimitada en desarrollo, que pretende ser una alternativa nativa de escritorio a la increíble herramienta web Excalidraw.</p>
-    <p xml:lang="eu">Drawy garapen fasean dagoen arbela mugagabeko tresna bat da, web oinarriko Excalidraw tresna bikainaren mahaigaineko alternatiba natiboa izatea helburu duena.</p>
-    <p xml:lang="fi">Drawy on vielä vaiheessa oleva rajaton valkotaulutyökalu, joka tähtää verkon mahtavan Excalidraw’n natiiviksi työpöytävaihtoehdoksi.</p>
-    <p xml:lang="fr">Drawy est une application de bureau de tableau blanc sans limites. Cette application est en cours de développement, se voulant une alternative Excalidraw, un excellent outil sur navigateur Internet.</p>
-    <p xml:lang="he">Drawy הוא כלי לוח רעיונות אינסופי שעדיין נמצא בפיתוח, מטרתו היא לספק חלופה טבעית לשולחן העבודה לכלי המקוון המדהים Excalidraw.</p>
-    <p xml:lang="ia">Drawy es un instrumento de tabula blanc (whiteboard) infinite de labor in progresso, que vole esser un alternative de scriptorio native al stupende Excalidraw basate sur web.</p>
-    <p xml:lang="is">Drawy er verkfæri til að teikna upp hugmyndir, það er enn á hönnunarstigi en því er ætlað að verða sambærilegt verkfæri fyrir borðtölvur í líkingu við hið veflæga Excalidraw.</p>
-    <p xml:lang="it">Drawy è una lavagna infinita in fase di sviluppo, che si propone di essere un'alternativa desktop nativa allo straordinario Excalidraw basato sul web.</p>
-    <p xml:lang="ka">Drawy ჯერ კიდევ შემუშავების ქვეშ მყოფი უსასრულო დაფაა, რომელიც აპირებს, ვებზე დაფუძნებული Excalidraw-ის ალტერნატივას წარმოადგენდეს.</p>
-    <p xml:lang="nl">Drawy is een oneindig whiteboardprogramma in ontwikkeling, dat een inheems bureaubladalternatief wil zijn voor het fantastische webgebaseerde Excalidraw.</p>
-    <p xml:lang="pt-BR">Drawy é uma ferramenta de quadro branco infinito em desenvolvimento, que pretende ser uma alternativa nativa para desktop ao incrível Excalidraw, baseado na web.</p>
-    <p xml:lang="sk">Drawy je vyvíjaný nekonečný tabuľový nástroj, ktorý sa snaží byť natívnou desktopovou alternatívou k úžasnému webovému Excalidraw.</p>
-    <p xml:lang="sl">Drawy je orodje v razvoju za neskončno tablo, ki naj bi postalo izvorna namizna alternativa neverjetnemu spletnemu programu Excalidraw.</p>
-    <p xml:lang="tr">Drawy, harika web tabanlı Excalidraw’a yerel bir masaüstü alternatifi olmayı hedefleyen, geliştirme aşamasında bir sınırsız beyaz tahta aracıdır.</p>
-    <p xml:lang="uk">Drawy динамічна нескінченна дошка, яка має стати альтернативою чудової мережевої Excalidraw для робочих станцій.</p>
-    <p xml:lang="zh-TW">Drawy 是一個開發中的無限白板工具，希望成為網路上好用的 Excalidraw 的原生桌面替代品。</p>
+    <p>Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.</p>
   </description>
   <url type="homepage">https://invent.kde.org/graphics/drawy</url>
-  <url type="bugtracker">https://invent.kde.org/graphics/drawy/issues</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=drawy</url>
   <url type="vcs-browser">https://invent.kde.org/graphics/drawy</url>
-  <url type="contribute">https://invent.kde.org/graphics/drawy</url>
+  <url type="contribute">https://community.kde.org/Get_Involved/</url>
   <categories>
-    <category>Qt</category>
     <category>Graphics</category>
+    <category>Education</category>
+    <category>Qt</category>
+    <category>KDE</category>
   </categories>
-  <recommends>
+  <supports>
     <control>pointing</control>
-  </recommends>
+    <control>keyboard</control>
+    <control>tablet</control>
+    <control>touch</control>
+  </supports>
   <project_group>KDE</project_group>
-  <content_rating type="oars-1.1">
-    <content_attribute id="social-chat">moderate</content_attribute>
-    <content_attribute id="social-audio">moderate</content_attribute>
-  </content_rating>
+  <content_rating type="oars-1.0" />
   <provides>
     <binary>drawy</binary>
   </provides>
   <launchable type="desktop-id">org.kde.drawy.desktop</launchable>
   <branding>
-    <color type="primary" scheme_preference="light">#27a9ff</color>
-    <color type="primary" scheme_preference="dark">#002d6c</color>
+    <color type="primary" scheme_preference="light">#21C8FB</color>
+    <color type="primary" scheme_preference="dark">#197CF1</color>
   </branding>
+  <keywords>
+    <keyword>Whiteboard</keyword>
+    <keyword>Draw</keyword>
+    <keyword>Drawy</keyword>
+    <keyword>Canvas</keyword>
+    <keyword>Notes</keyword>
+    <keyword>Diagram</keyword>
+    <keyword>Mindmap</keyword>
+    <keyword>Sketch</keyword>
+    <keyword>Planning</keyword>
+  </keywords>
+  <screenshots>
+    <screenshot type="default" environment="plasma">
+      <caption>Create diagrams, notes, and ideas on an infinite whiteboard.</caption>
+      <image type="source">https://cdn.kde.org/screenshots/drawy/drawy.png</image>
+    </screenshot>
+    <screenshot environment="plasma">
+      <caption>Adjust colors, stroke styles, and tools with ease.</caption>
+      <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-2.png</image>
+    </screenshot>
+    <screenshot environment="plasma:dark">
+      <caption>Stay focused with a dark mode workspace.</caption>
+      <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-dark.png</image>
+    </screenshot>
+    <screenshot environment="plasma:dark">
+      <caption>Work smoothly with fast and responsive tools.</caption>
+      <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-dark-2.png</image>
+    </screenshot>
+  </screenshots>
 </component>
