@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-05-01 00:41+0000\n"
 "PO-Revision-Date: 2026-04-17 08:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -26,13 +26,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:48
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Додатковий параметр «file» "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:49
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Ваша зручна, нескінченна програма для мозкових штурмів!"
@@ -342,21 +342,27 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "Презентація"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Налаштувати Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "General"
 msgstr "Загальне"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:44
 #, kde-format
 msgid "Misc"
 msgstr "Інше"
+
+#: widgets/dialog/configuresettingsdialog.cpp:50
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "User Feedback"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -444,6 +450,12 @@ msgstr "На весь екран"
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Задіяти діагностичний режим"
+
+#: widgets/drawycommandlineparser.cpp:22
+#, kde-format
+msgctxt "@info:shell"
+msgid "Lists the available options for user feedback"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
@@ -859,7 +871,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Вставлення зображення"
 
-#: widgets/window/window.cpp:184
+#: widgets/window/window.cpp:192
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

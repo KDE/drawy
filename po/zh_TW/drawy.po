@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-05-01 00:41+0000\n"
 "PO-Revision-Date: 2026-04-20 02:08+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -25,13 +25,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:48
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "選擇性參數 'file'"
 
-#: apps/main.cpp:45
+#: apps/main.cpp:49
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
@@ -338,21 +338,27 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "正在做簡報"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "設定 Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "General"
 msgstr "一般"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:44
 #, kde-format
 msgid "Misc"
 msgstr "雜項"
+
+#: widgets/dialog/configuresettingsdialog.cpp:50
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "User Feedback"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -437,6 +443,12 @@ msgstr "全螢幕"
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "啟用除錯模式"
+
+#: widgets/drawycommandlineparser.cpp:22
+#, kde-format
+msgctxt "@info:shell"
+msgid "Lists the available options for user feedback"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
@@ -852,7 +864,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "插入影像"
 
-#: widgets/window/window.cpp:184
+#: widgets/window/window.cpp:192
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

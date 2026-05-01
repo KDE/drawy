@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-05-01 00:41+0000\n"
 "PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,13 +27,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:48
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Voliteľný argument 'súbor'"
 
-#: apps/main.cpp:45
+#: apps/main.cpp:49
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Váš šikovný, nekonečný nástroj na brainstorming!"
@@ -342,21 +342,27 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "Prebieha prezentácia"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Nastaviť Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "General"
 msgstr "Hlavné"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:44
 #, kde-format
 msgid "Misc"
 msgstr "Rôzne"
+
+#: widgets/dialog/configuresettingsdialog.cpp:50
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "User Feedback"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -443,6 +449,12 @@ msgstr "Celá obrazovka"
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "Zadajte užívateľské meno"
+
+#: widgets/drawycommandlineparser.cpp:22
+#, kde-format
+msgctxt "@info:shell"
+msgid "Lists the available options for user feedback"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
@@ -858,7 +870,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Vložiť obrázok"
 
-#: widgets/window/window.cpp:184
+#: widgets/window/window.cpp:192
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

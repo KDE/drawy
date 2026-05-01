@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-05-01 00:41+0000\n"
 "PO-Revision-Date: 2026-04-23 10:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,13 +28,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:48
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "مُعطى اختياري 'ملفّ' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:49
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"
@@ -346,21 +346,27 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "إعطاء عرض تقديمي"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "اضبط السبورة"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "General"
 msgstr "عامّ"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:44
 #, kde-format
 msgid "Misc"
 msgstr "متنوّع"
+
+#: widgets/dialog/configuresettingsdialog.cpp:50
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "User Feedback"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -450,6 +456,12 @@ msgstr "ملء الشّاشة"
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "نشّط وضع التنقيح"
+
+#: widgets/drawycommandlineparser.cpp:22
+#, kde-format
+msgctxt "@info:shell"
+msgid "Lists the available options for user feedback"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
@@ -865,7 +877,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "أدرج صورة"
 
-#: widgets/window/window.cpp:184
+#: widgets/window/window.cpp:192
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-05-01 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -24,13 +24,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "temuri.doghonadze@gmail.com"
 
-#: apps/main.cpp:44
+#: apps/main.cpp:48
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "არასავალდებული არგუმენტი 'ფაილი' "
 
-#: apps/main.cpp:45
+#: apps/main.cpp:49
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო!"
@@ -338,21 +338,27 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "პრეზენტაციის წარდგენა"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Drawy-ის მორგება"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:38
 #, kde-format
 msgid "General"
 msgstr "ზოგადი"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:44
 #, kde-format
 msgid "Misc"
 msgstr "სხვადასხვა"
+
+#: widgets/dialog/configuresettingsdialog.cpp:50
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "User Feedback"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -438,6 +444,12 @@ msgstr "სრულ ეკრანზე"
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
 msgstr "გამართვის რეჟიმის გააქტიურება"
+
+#: widgets/drawycommandlineparser.cpp:22
+#, kde-format
+msgctxt "@info:shell"
+msgid "Lists the available options for user feedback"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
@@ -853,7 +865,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "გამოსახულების ჩასმა"
 
-#: widgets/window/window.cpp:184
+#: widgets/window/window.cpp:192
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
