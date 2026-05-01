@@ -5,6 +5,9 @@ set(icons
     32-apps-drawy.png
     48-apps-drawy.png
     64-apps-drawy.png
+    128-apps-drawy.png
+    256-apps-drawy.png
+    sc-apps-drawy.svg
     32-mimetypes-application-x-drawy.png
     64-mimetypes-application-x-drawy.png
 )
