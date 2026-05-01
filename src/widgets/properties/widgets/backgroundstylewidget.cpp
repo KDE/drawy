@@ -65,7 +65,7 @@ BackgroundStyleWidget::BackgroundStyleWidget(QWidget *parent)
     layout->addWidget(diagonalCrossButton);
     layout->addWidget(diagonalButton);
 
-    m_group->button(m_group->id(solidButton))->setChecked(true);
+    m_group->button(m_group->id(noneButton))->setChecked(true);
     connect(m_group, &QButtonGroup::idClicked, this, [this]() {
         Q_EMIT changed(value());
     });
