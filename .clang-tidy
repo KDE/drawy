@@ -72,5 +72,3 @@ CheckOptions:
       value: true
     - key: VectorLikeClasses
       value: 'std::vector;QList'
-HeaderFilterRegex:
-  - /tmp/drawy-tidy-build/src/widgets/drawyglobalconfig.cpp
