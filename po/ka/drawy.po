@@ -358,7 +358,7 @@ msgstr "სხვადასხვა"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "მომხარებლის უკუკავშირი"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -449,7 +449,7 @@ msgstr "გამართვის რეჟიმის გააქტიუ�
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "მომხმარებლის უკუკავშირის ხელმისაწვდომი ვარიანტები"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format

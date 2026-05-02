@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-01 00:41+0000\n"
-"PO-Revision-Date: 2026-04-17 08:01+0300\n"
+"PO-Revision-Date: 2026-05-01 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -362,7 +362,7 @@ msgstr "Інше"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Відгуки користувача"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -455,7 +455,7 @@ msgstr "Задіяти діагностичний режим"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "Показати доступні варіанти для відгуків користувача"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
