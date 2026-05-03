@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
+
   <id>org.kde.drawy</id>
+
   <name>Drawy</name>
   <name xml:lang="ar">السبورة</name>
   <name xml:lang="ca">Drawy</name>
@@ -24,6 +26,7 @@
   <name xml:lang="tr">Drawy</name>
   <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
+
   <summary>Your handy, infinite brainstorming tool</summary>
   <summary xml:lang="ar">أداة مفيدة غير محدودة لتبادل الأفكار</summary>
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
@@ -45,41 +48,55 @@
   <summary xml:lang="tr">Kullanışlı, sınırsız beyin fırtınası aracın!</summary>
   <summary xml:lang="uk">Ваша зручна, нескінченна програма для мозкових штурмів</summary>
   <summary xml:lang="zh-TW">好用的無限畫布腦力激盪工具</summary>
+
   <developer id="org.kde">
     <name translate="no">KDE</name>
     <url>https://kde.org</url>
   </developer>
+
   <metadata_license>CC-BY-4.0</metadata_license>
+
   <project_license>GPL-3.0-or-later</project_license>
+
   <description>
     <p>Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.</p>
   </description>
+
   <url type="homepage">https://invent.kde.org/graphics/drawy</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=drawy</url>
   <url type="vcs-browser">https://invent.kde.org/graphics/drawy</url>
   <url type="contribute">https://community.kde.org/Get_Involved/</url>
+
   <categories>
     <category>Graphics</category>
     <category>Education</category>
     <category>Qt</category>
     <category>KDE</category>
   </categories>
+
   <supports>
     <control>pointing</control>
     <control>keyboard</control>
     <control>tablet</control>
     <control>touch</control>
   </supports>
+
   <project_group>KDE</project_group>
+
   <content_rating type="oars-1.0"/>
+
   <provides>
     <binary>drawy</binary>
+    <mediatype>application/x-drawy</mediatype>
   </provides>
+
   <launchable type="desktop-id">org.kde.drawy.desktop</launchable>
+
   <branding>
     <color type="primary" scheme_preference="light">#21C8FB</color>
     <color type="primary" scheme_preference="dark">#197CF1</color>
   </branding>
+
   <keywords>
     <keyword>Whiteboard</keyword>
     <keyword>Draw</keyword>
@@ -91,6 +108,7 @@
     <keyword>Sketch</keyword>
     <keyword>Planning</keyword>
   </keywords>
+
   <screenshots>
     <screenshot type="default" environment="plasma">
       <caption>Create diagrams, notes, and ideas on an infinite whiteboard.</caption>
@@ -109,4 +127,5 @@
       <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-dark-2.png</image>
     </screenshot>
   </screenshots>
+
 </component>

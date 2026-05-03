@@ -3,7 +3,7 @@
 set(icons
     16-apps-drawy.png
     32-apps-drawy.png
-    48-apps-drawy.png
+    # 48-apps-drawy.png remove temporarily as it causes the icon to look blurry in apps.kde.org/drawy
     64-apps-drawy.png
     128-apps-drawy.png
     256-apps-drawy.png
