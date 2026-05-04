@@ -362,7 +362,7 @@ msgstr "Rôzne"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Spätná väzba používateľa"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -454,7 +454,7 @@ msgstr "Zadajte užívateľské meno"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "Zobrazí dostupné možnosti spätnej väzby používateľa"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format

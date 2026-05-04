@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-01 00:41+0000\n"
-"PO-Revision-Date: 2026-04-17 08:46+0200\n"
+"PO-Revision-Date: 2026-05-01 10:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -365,7 +365,7 @@ msgstr "Miscel·lània"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Comentaris de l'usuari"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -456,7 +456,7 @@ msgstr "Activa el mode de depuració"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "Llista les opcions disponibles per als comentaris dels usuaris"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
