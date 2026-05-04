@@ -111,7 +111,7 @@ void ColorWidgetBase::updateWidget()
 void ColorWidgetBase::assignCurrentColor(const QColor &col)
 {
     m_currentColorButton->setProperty("color-value", col);
-    m_currentColorButton->setStyleSheet(u"background-color: "_s + col.name());
+    m_currentColorButton->setStyleSheet(u"QToolButton { background-color: "_s + col.name() + u"; }"_s);
 }
 
 QString ColorWidgetBase::name() const
