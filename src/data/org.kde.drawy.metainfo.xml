@@ -113,7 +113,7 @@
   <releases>
     <release version="1.0.1" date="2026-05-04">
       <description>
-        <p>This is a small patch that improves the icons and updates the appstream metadata to include the correct information.</p>
+        <p>This is a small patch that improves the icons, updates the appstream metadata to include the correct information, and includes some bug fixes.</p>
       </description>
     </release>
     <release version="1.0.0" date="2026-05-03">
