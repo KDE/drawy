@@ -32,11 +32,7 @@ int main(int argc, char *argv[])
     KStyleManager::initStyle();
     KLocalizedString::setApplicationDomain("drawy"_ba);
 
-    KAboutData aboutData(u"drawy"_s, i18n("Drawy"), QStringLiteral(DRAWY_VERSION), i18n("Your handy, infinite brainstorming tool!"), KAboutLicense::GPL_V3);
-
-    aboutData.setOrganizationDomain("kde.org");
-    aboutData.setDesktopFileName(QStringLiteral("org.kde.kate"));
-    aboutData.setProgramLogo(QIcon(QStringLiteral(":/drawy/drawy.svg")));
+    AboutData aboutData;
 
     KCrash::initialize();
 
