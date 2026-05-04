@@ -35,7 +35,12 @@ int main(int argc, char *argv[])
 
     KStyleManager::initStyle();
     KLocalizedString::setApplicationDomain("drawy"_ba);
-    AboutData aboutData;
+
+    KAboutData aboutData(u"drawy"_s, i18n("Drawy"), QStringLiteral(DRAWY_VERSION), i18n("Your handy, infinite brainstorming tool!"), KAboutLicense::GPL_V3);
+
+    aboutData.setOrganizationDomain("kde.org");
+    aboutData.setDesktopFileName(QStringLiteral("org.kde.kate"));
+    aboutData.setProgramLogo(QIcon(QStringLiteral(":/drawy/drawy.svg")));
 
     KCrash::initialize();
 
@@ -50,6 +55,7 @@ int main(int argc, char *argv[])
 
     parser.process(a);
     aboutData.processCommandLine(&parser);
+
 #if HAVE_KUSERFEEDBACK
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FeedBack))) {
         auto userFeedback = new DrawyUserFeedbackProvider;
@@ -58,6 +64,9 @@ int main(int argc, char *argv[])
         return 0;
     }
 #endif
+
+    KAboutData::setApplicationData(aboutData);
+
     MainWindow w;
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
         w.viewFullScreen(true);
