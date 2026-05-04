@@ -62,9 +62,7 @@ void FreeformItem::finalizeStroke()
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
     m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
     m_path.setCachingEnabled(true);
-#endif
 
     m_boundingBox = m_path.boundingRect().normalized();
 }
@@ -227,9 +225,7 @@ void FreeformItem::updateAfterProperty()
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
     m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
     m_path.setCachingEnabled(true);
-#endif
     m_boundingBox = m_path.boundingRect().normalized();
 }
 
