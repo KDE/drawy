@@ -9,7 +9,7 @@
 #include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 AboutData::AboutData()
-    : KAboutData(u"Drawy"_s,
+    : KAboutData(u"drawy"_s,
                  i18n("Drawy"),
                  QStringLiteral(DRAWY_VERSION),
                  i18n("Your handy, infinite  brainstorming tool!"),
