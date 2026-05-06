@@ -51,6 +51,14 @@
   <project_license>GPL-3.0-or-later</project_license>
   <description>
     <p>Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.</p>
+    <p xml:lang="ca">El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
+    <p xml:lang="ca-valencia">Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
+    <p xml:lang="es">Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
+    <p xml:lang="nl">Met Drawy creëert u ideeën, diagrammen en visuele notities op een oneindig whiteboard met een vloeiend en responsief werkveld. U kunt tekenen met drukgevoelige tabletondersteuning, tekst toevoegen, afbeeldingen invoegen en basisvormen zoals rechthoeken, ellipsen, pijlen en lijnen gebruiken om uw inhoud overzichtelijk te ordenen. U kunt uw eigen kleurenpalet kiezen en uw werk exporteren als afbeeldingsbestanden wanneer dat nodig is. Drawy is ontworpen om lichtgewicht en snel te blijven, waardoor het gemakkelijk is om ideeën vast te leggen en ongestoord te werken.</p>
+    <p xml:lang="pt-BR">O Drawy permite que você crie ideias, diagramas e anotações visuais em um quadro branco infinito com uma tela suave e responsiva. Você pode desenhar com suporte para tablets sensíveis à pressão, adicionar texto, inserir imagens e usar formas básicas como retângulos, elipses, setas e linhas para organizar seu conteúdo com clareza. Você pode escolher sua própria paleta de cores e exportar seu trabalho como arquivos de imagem sempre que necessário. O Drawy foi desenvolvido para ser leve e rápido, facilitando a captura de ideias e o trabalho livre, sem distrações.</p>
+    <p xml:lang="sk">Drawy vám umožňuje vytvárať nápady, diagramy a vizuálne poznámky na nekonečnej tabuli s plynulým a responzívnym plátnom. Môžete kresliť s podporou tabletu citlivého na tlak, pridávať text, vkladať obrázky a používať základné tvary ako obdĺžniky, elipsy, šípky a čiary na prehľadnú organizáciu obsahu. Môžete si zvoliť vlastnú farebnú paletu a svoje dielo exportovať ako obrázkové súbory, kedykoľvek to potrebujete. Drawy je navrhnutý tak, aby zostal odľahčený a rýchly, čo umožňuje ľahko zachytávať nápady a pracovať bez rozptyľovania.</p>
+    <p xml:lang="sl">Drawy vam omogoča ustvarjanje idej, diagramov in vizualnih zapiskov na neskončni beli tabli z gladkim in odzivnim platnom. Rišete lahko s podporo za tablico, občutljivo na pritisk, dodajate besedilo, vstavljate slike in uporabljate osnovne oblike, kot so pravokotniki, elipse, puščice in črte, da jasno organizirate svojo vsebino. Izberete lahko svojo barvno paleto in svoje delo izvozite kot slikovne datoteke, kadar koli je to potrebno. Drawy je zasnovan tako, da ostane lahek in hiter, kar omogoča enostavno zajemanje idej in prosto delo brez motenj.</p>
+    <p xml:lang="uk">Drawy надає змогу створювати записи ідей, діаграми та візуальні нотатки на нескінченній дошці з гладким та адаптивним полотном. Ви можете малювати за допомогою планшета, чутливого до тиску, додавати текст, вставляти зображення та використовувати основні фігури, зокрема прямокутники, еліпси, стрілки та лінії, для чіткої організації вмісту. Ви можете вибрати власну кольорову палітру та, коли у цьому виникне потреба, експортувати свою роботу у вигляді файлів зображень. Drawy створена для того, щоб залишатися невибагливою та швидкою, що дозволяє легко фіксувати ідеї і працювати вільно і сконцентровано.</p>
   </description>
   <url type="homepage">https://invent.kde.org/graphics/drawy</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=drawy</url>
@@ -93,18 +101,50 @@
   <screenshots>
     <screenshot type="default" environment="plasma">
       <caption>Create diagrams, notes, and ideas on an infinite whiteboard.</caption>
+      <caption xml:lang="ca">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
+      <caption xml:lang="ca-valencia">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
+      <caption xml:lang="es">Creación de diagramas, notas e ideas en una pizarra infinita.</caption>
+      <caption xml:lang="nl">Maak diagrammen, notities en ideeën op een oneindig whiteboard.</caption>
+      <caption xml:lang="pt-BR">Crie diagramas, anotações e ideias em um quadro branco infinito.</caption>
+      <caption xml:lang="sk">Vytvárajte diagramy, poznámky a nápady na nekonečnej tabuli.</caption>
+      <caption xml:lang="sl">Ustvarjajte diagrame, zapiske in ideje na neskončni beli tabli.</caption>
+      <caption xml:lang="uk">Створення діаграм, нотаток та записів ідей на нескінченному полотні.</caption>
       <image type="source">https://cdn.kde.org/screenshots/drawy/drawy.png</image>
     </screenshot>
     <screenshot environment="plasma">
       <caption>Adjust colors, stroke styles, and tools with ease.</caption>
+      <caption xml:lang="ca">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
+      <caption xml:lang="ca-valencia">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
+      <caption xml:lang="es">Ajuste fácil de colores, estilos de trazos y herramientas.</caption>
+      <caption xml:lang="nl">Pas kleuren, lijnstijlen en gereedschappen eenvoudig aan.</caption>
+      <caption xml:lang="pt-BR">Ajuste cores, estilos de traço e ferramentas com facilidade.</caption>
+      <caption xml:lang="sk">Jednoducho upravujte farby, štýly ťahov a nástroje.</caption>
+      <caption xml:lang="sl">Z lahkoto prilagodite barve, sloge potez in orodja.</caption>
+      <caption xml:lang="uk">Просте коригування кольорів, стилів ліній та інструментів.</caption>
       <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-2.png</image>
     </screenshot>
     <screenshot environment="plasma:dark">
       <caption>Stay focused with a dark mode workspace.</caption>
+      <caption xml:lang="ca">Estigueu centrat amb un espai de treball en mode fosc.</caption>
+      <caption xml:lang="ca-valencia">Esteu centrat amb un espai de treball en mode fosc.</caption>
+      <caption xml:lang="es">Trabaje concentrado en un espacio de trabajo con modo oscuro.</caption>
+      <caption xml:lang="nl">Blijf geconcentreerd met een donkere werkruimte.</caption>
+      <caption xml:lang="pt-BR">Mantenha o foco com um espaço de trabalho em modo escuro.</caption>
+      <caption xml:lang="sk">Zostaňte sústredení s tmavým režimom pracovnej plochy.</caption>
+      <caption xml:lang="sl">Ostanite osredotočeni s temnim delovnim prostorom.</caption>
+      <caption xml:lang="uk">Фокусування на вмісті у темному режимі робочого простору.</caption>
       <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-dark.png</image>
     </screenshot>
     <screenshot environment="plasma:dark">
       <caption>Work smoothly with fast and responsive tools.</caption>
+      <caption xml:lang="ca">Treballeu sense problemes amb eines ràpides i fluides.</caption>
+      <caption xml:lang="ca-valencia">Treballeu sense problemes amb eines ràpides i fluides.</caption>
+      <caption xml:lang="es">Trabaje sin problemas con herramientas rápidas y de rápida respuesta.</caption>
+      <caption xml:lang="nl">Werk soepel met snelle en responsieve hulpmiddelen.</caption>
+      <caption xml:lang="pt-BR">Trabalhe sem problemas com ferramentas rápidas e responsivas.</caption>
+      <caption xml:lang="sk">Pracujte plynule s rýchlymi a responzívnymi nástrojmi.</caption>
+      <caption xml:lang="sl">Delajte gladko s hitrimi in odzivnimi orodji.</caption>
+      <caption xml:lang="uk">Зручна робота за допомогою швидких і точних інструментів.</caption>
       <image type="source">https://cdn.kde.org/screenshots/drawy/drawy-dark-2.png</image>
     </screenshot>
   </screenshots>
@@ -119,6 +159,15 @@
         <p>
           After months of work, Drawy has finally released! Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.
         </p>
+        <p xml:lang="ca">Després de mesos de feina, finalment el Drawy s'ha publicat! El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
+        <p xml:lang="ca-valencia">Després de mesos de faena, finalment Drawy s'ha publicat! Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
+        <p xml:lang="es">Tras meses de trabajo, ¡Drawy se ha publicado! Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
+        <p xml:lang="nl">Na een maand werk is Drawy eindelijk uitgegeven. Met Drawy creëert u ideeën, diagrammen en visuele notities op een oneindig whiteboard met een vloeiend en responsief werkveld. U kunt tekenen met drukgevoelige tabletondersteuning, tekst toevoegen, afbeeldingen invoegen en basisvormen zoals rechthoeken, ellipsen, pijlen en lijnen gebruiken om uw inhoud overzichtelijk te ordenen. U kunt uw eigen kleurenpalet kiezen en uw werk exporteren als afbeeldingsbestanden wanneer dat nodig is. Drawy is ontworpen om lichtgewicht en snel te blijven, waardoor het gemakkelijk is om ideeën vast te leggen en ongestoord te werken.</p>
+        <p xml:lang="pt-BR">Após meses de trabalho, o Drawy finalmente foi lançado! O Drawy permite que você crie ideias, diagramas e anotações visuais em um quadro branco infinito com uma tela suave e responsiva. Você pode desenhar com suporte para tablets sensíveis à pressão, adicionar texto, inserir imagens e usar formas básicas como retângulos, elipses, setas e linhas para organizar seu conteúdo com clareza. Você pode escolher sua própria paleta de cores e exportar seu trabalho como arquivos de imagem sempre que necessário. O Drawy foi desenvolvido para ser leve e rápido, facilitando a captura de ideias e o trabalho livre, sem distrações.</p>
+        <p xml:lang="sk">Po mesiacoch práce bol Drawy konečne vydaný! Drawy vám umožňuje vytvárať nápady, diagramy a vizuálne poznámky na nekonečnej tabuli s plynulým a responzívnym plátnom. Môžete kresliť s podporou tabletu citlivého na tlak, pridávať text, vkladať obrázky a používať základné tvary ako obdĺžniky, elipsy, šípky a čiary na prehľadnú organizáciu obsahu. Môžete si zvoliť vlastnú farebnú paletu a svoje dielo exportovať ako obrázkové súbory, kedykoľvek to potrebujete. Drawy je navrhnutý tak, aby zostal odľahčený a rýchly, čo umožňuje ľahko zachytávať nápady a pracovať bez rozptyľovania.</p>
+        <p xml:lang="sl">Po mesecih dela je Drawy končno izšel! Drawy vam omogoča ustvarjanje idej, diagramov in vizualnih zapiskov na neskončni beli tabli z gladkim in odzivnim platnom. Rišete lahko s podporo za tablico, občutljivo na pritisk, dodajate besedilo, vstavljate slike in uporabljate osnovne oblike, kot so pravokotniki, elipse, puščice in črte, da jasno organizirate svojo vsebino. Izberete lahko svojo barvno paleto in svoje delo izvozite kot slikovne datoteke, kadar koli je to potrebno. Drawy je zasnovan tako, da ostane lahek in hiter, kar omogoča enostavno zajemanje idej in prosto delo brez motenj.</p>
+        <p xml:lang="tr">Aylar süren çalışmalardan sonra Drawy en sonunda yayımlandı! Drawy, akıcı ve duyarlı bir tuval üzerinde sonsuz bir beyaz tahtada fikirler, diyagramlar ve görsel notlar oluşturmanıza olanak tanır. Basınca duyarlı tablet desteğiyle çizim yapabilir, metin ekleyebilir, görseller ekleyebilir ve içeriğinizi net bir şekilde düzenlemek için dikdörtgenler, elipsler, oklar ve çizgiler gibi temel şekilleri kullanabilirsiniz. Kendi renk paletinizi seçebilir ve gerektiğinde çalışmalarınızı görsel dosyaları olarak dışa aktarabilirsiniz. Drawy, hafif ve hızlı kalacak şekilde tasarlanmıştır, bu da fikirleri yakalamayı ve dikkat dağıtıcı unsurlar olmadan özgürce çalışmayı kolaylaştırır.</p>
+        <p xml:lang="uk">Місяці роботи надали змогу нарешті випустити Drawy! Drawy надає змогу створювати записи ідей, діаграми та візуальні нотатки на нескінченній дошці з гладким та адаптивним полотном. Ви можете малювати за допомогою планшета, чутливого до тиску, додавати текст, вставляти зображення та використовувати основні фігури, зокрема прямокутники, еліпси, стрілки та лінії, для чіткої організації вмісту. Ви можете вибрати власну кольорову палітру та, коли у цьому виникне потреба, експортувати свою роботу у вигляді файлів зображень. Drawy створена для того, щоб залишатися невибагливою та швидкою, що дозволяє легко фіксувати ідеї і працювати вільно і сконцентровано.</p>
       </description>
     </release>
   </releases>
