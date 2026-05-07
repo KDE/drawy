@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-05 00:41+0000\n"
-"PO-Revision-Date: 2026-04-29 15:59+0000\n"
+"PO-Revision-Date: 2026-05-06 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -359,7 +359,7 @@ msgstr "Ýmislegt"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Umsagnir notenda"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -450,7 +450,7 @@ msgstr "Virkja villuleitarham"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "Yfirlit yfir tiltækar leiðir fyrir umsagnir notenda"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
