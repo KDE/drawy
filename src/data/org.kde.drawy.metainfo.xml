@@ -164,6 +164,14 @@
     <release version="1.0.1" date="2026-05-04">
       <description>
         <p>This is a small patch that improves the icons, updates the appstream metadata to include the correct information, and includes some bug fixes.</p>
+        <p xml:lang="ca">Aquest és un pedaç petit que millora les icones, actualitza les metadades de l'appstream per a incloure la informació correcta i inclou algunes correccions d'errors.</p>
+        <p xml:lang="es">Pequeño parche que mejora los iconos, actualiza los metadatos de appstream para incluir información correcta e incluye algunas correcciones de fallos.</p>
+        <p xml:lang="ka">ეს პატარა პაჩია, რომელის აუმჯობესებს ხატულებს, განაახლებს appstream-ის მონაცემებს, რომ ის სწორ მონაცემებს შეიცავდეს და სწორებს რამდენიმე შეცდომას.</p>
+        <p xml:lang="nl">Dit is een kleine patch die de pictogrammen verbetert, de appstream-metagegevens bijwerkt met de juiste informatie en enkele reparaties van fouten bevat.</p>
+        <p xml:lang="pt-BR">Esta é uma pequena atualização que melhora os ícones, atualiza os metadados do appstream para incluir as informações corretas e inclui algumas correções de bugs.</p>
+        <p xml:lang="sl">To je majhen popravek, ki izboljšuje ikone, posodablja metapodatke aplikacij, da vključujejo pravilne informacije, in vključuje nekaj popravkov napak.</p>
+        <p xml:lang="tr">Bu; simgeleri iyileştiren, AppStream üst verilerini doğru bilgileri içerecek şekilde güncelleyen ve bazı hata düzeltmeleri içeren küçük bir yamadır.</p>
+        <p xml:lang="uk">Невеличке виправлення з удосконаленням піктограм, оновленням метаданих appstream та виправленням декількох вад.</p>
       </description>
     </release>
     <release version="1.0.0" date="2026-05-03">
