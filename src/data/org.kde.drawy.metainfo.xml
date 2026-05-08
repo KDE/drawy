@@ -158,6 +158,7 @@
       <description>
         <p>This is a small patch that improves the icons, updates the appstream metadata to include the correct information, and includes some bug fixes.</p>
         <p xml:lang="ca">Aquest és un pedaç petit que millora les icones, actualitza les metadades de l'appstream per a incloure la informació correcta i inclou algunes correccions d'errors.</p>
+        <p xml:lang="ca-valencia">Este és un pedaç xicotet que millora les icones, actualitza les metadades d'appstream per a incloure la informació correcta i inclou algunes esmenes d'errors.</p>
         <p xml:lang="es">Pequeño parche que mejora los iconos, actualiza los metadatos de appstream para incluir información correcta e incluye algunas correcciones de fallos.</p>
         <p xml:lang="he">זה טלאי קטן שמשפר את הסמלים, מעדכן את נתוני העל ל־appstream כך שיכללו את המידע הנכון וכולל כל מיני תיקוני תקלות.</p>
         <p xml:lang="nl">Dit is een kleine patch die de pictogrammen verbetert, de appstream-metagegevens bijwerkt met de juiste informatie en enkele reparaties van fouten bevat.</p>
