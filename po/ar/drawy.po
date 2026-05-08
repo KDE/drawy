@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-05 00:41+0000\n"
-"PO-Revision-Date: 2026-04-23 10:39+0400\n"
+"PO-Revision-Date: 2026-05-07 13:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -366,7 +366,7 @@ msgstr "متنوّع"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "ملاحظات المستخدمين"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -461,7 +461,7 @@ msgstr "نشّط وضع التنقيح"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "يسرد الخيارات المتاحة لمشاركة بياناتك"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
