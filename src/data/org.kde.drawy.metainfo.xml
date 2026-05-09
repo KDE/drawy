@@ -51,6 +51,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <description>
     <p>Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.</p>
+    <p xml:lang="ar">تتيح لك السبورة إنشاء الأفكار والرسوم التخطيطية والملاحظات المرئية على لوحة بيضاء لا نهائية تتميز بسطح عمل سلس وسريع الاستجابة. يمكنك الرسم باستخدام الأجهزة اللوحية الحساسة للضغط، وإضافة النصوص، وإدراج الصور، واستخدام الأشكال الأساسية مثل المستطيلات والأشكال البيضاوية والسهام والخطوط لتنظيم المحتوى الخاص بك بوضوح. يمكنك اختيار لوحة الألوان الخاصة بك وتصدير عملك كملفات صور عند الحاجة. صُمم برنامج السبورة ليكون خفيفًا وسريعًا، مما يسهل عليك تسجيل الأفكار والعمل بحرية دون أي عوامل تشتيت.</p>
     <p xml:lang="ca">El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
     <p xml:lang="ca-valencia">Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
     <p xml:lang="es">Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
@@ -102,6 +103,7 @@
   <screenshots>
     <screenshot type="default" environment="plasma">
       <caption>Create diagrams, notes, and ideas on an infinite whiteboard.</caption>
+      <caption xml:lang="ar">إنشاء مخططات وملاحظات وأفكار على لوحة بيضاء لا حدود لها.</caption>
       <caption xml:lang="ca">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
       <caption xml:lang="ca-valencia">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
       <caption xml:lang="es">Creación de diagramas, notas e ideas en una pizarra infinita.</caption>
@@ -115,6 +117,7 @@
     </screenshot>
     <screenshot environment="plasma">
       <caption>Adjust colors, stroke styles, and tools with ease.</caption>
+      <caption xml:lang="ar">اضبط الألوان وأنماط الخطوط والأدوات بسهولة.</caption>
       <caption xml:lang="ca">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
       <caption xml:lang="ca-valencia">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
       <caption xml:lang="es">Ajuste fácil de colores, estilos de trazos y herramientas.</caption>
@@ -128,6 +131,7 @@
     </screenshot>
     <screenshot environment="plasma:dark">
       <caption>Stay focused with a dark mode workspace.</caption>
+      <caption xml:lang="ar">حافظ على تركيزك باستخدام مساحة عمل بالوضع المظلم.</caption>
       <caption xml:lang="ca">Estigueu centrat amb un espai de treball en mode fosc.</caption>
       <caption xml:lang="ca-valencia">Esteu centrat amb un espai de treball en mode fosc.</caption>
       <caption xml:lang="es">Trabaje concentrado en un espacio de trabajo con modo oscuro.</caption>
@@ -141,6 +145,7 @@
     </screenshot>
     <screenshot environment="plasma:dark">
       <caption>Work smoothly with fast and responsive tools.</caption>
+      <caption xml:lang="ar">اعمل بسلاسة باستخدام أدوات سريعة وسريعة الاستجابة.</caption>
       <caption xml:lang="ca">Treballeu sense problemes amb eines ràpides i fluides.</caption>
       <caption xml:lang="ca-valencia">Treballeu sense problemes amb eines ràpides i fluides.</caption>
       <caption xml:lang="es">Trabaje sin problemas con herramientas rápidas y de rápida respuesta.</caption>
@@ -157,6 +162,7 @@
     <release version="1.0.1" date="2026-05-04">
       <description>
         <p>This is a small patch that improves the icons, updates the appstream metadata to include the correct information, and includes some bug fixes.</p>
+        <p xml:lang="ar">هذا تحديث بسيط يعمل على تحسين الرموز، وتحديث بيانات تعريف AppStream لتشمل المعلومات الصحيحة، بالإضافة إلى إصلاح بعض الأخطاء.</p>
         <p xml:lang="ca">Aquest és un pedaç petit que millora les icones, actualitza les metadades de l'appstream per a incloure la informació correcta i inclou algunes correccions d'errors.</p>
         <p xml:lang="ca-valencia">Este és un pedaç xicotet que millora les icones, actualitza les metadades d'appstream per a incloure la informació correcta i inclou algunes esmenes d'errors.</p>
         <p xml:lang="es">Pequeño parche que mejora los iconos, actualiza los metadatos de appstream para incluir información correcta e incluye algunas correcciones de fallos.</p>
@@ -173,6 +179,7 @@
         <p>
           After months of work, Drawy has finally released! Drawy lets you create ideas, diagrams, and visual notes on an infinite whiteboard with a smooth and responsive canvas. You can draw with pressure-sensitive tablet support, add text, insert images, and use basic shapes such as rectangles, ellipses, arrows, and lines to organise your content clearly. You can choose your own color palette and export your work as image files whenever needed. Drawy is built to stay lightweight and fast, making it easy to capture ideas and work freely without distractions.
         </p>
+        <p xml:lang="ar">بعد أشهر من العمل، تم إطلاق برنامج السبورة أخيرًا! تتيح لك السبورة إنشاء الأفكار والرسوم التخطيطية والملاحظات المرئية على لوحة بيضاء لا نهائية تتميز بسطح عمل سلس وسريع الاستجابة. يمكنك الرسم باستخدام الأجهزة اللوحية الحساسة للضغط، وإضافة النصوص، وإدراج الصور، واستخدام الأشكال الأساسية مثل المستطيلات والأشكال البيضاوية والسهام والخطوط لتنظيم المحتوى الخاص بك بوضوح. يمكنك اختيار لوحة الألوان الخاصة بك وتصدير عملك كملفات صور عند الحاجة. صُمم برنامج السبورة ليكون خفيفًا وسريعًا، مما يسهل عليك تسجيل الأفكار والعمل بحرية دون أي عوامل تشتيت.</p>
         <p xml:lang="ca">Després de mesos de feina, finalment el Drawy s'ha publicat! El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
         <p xml:lang="ca-valencia">Després de mesos de faena, finalment Drawy s'ha publicat! Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
         <p xml:lang="es">Tras meses de trabajo, ¡Drawy se ha publicado! Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
