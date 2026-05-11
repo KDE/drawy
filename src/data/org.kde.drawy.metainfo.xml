@@ -58,6 +58,7 @@
     <p xml:lang="he">Drawy מאפשר לך ליצור רעיונות, תרשימים ופתקיות חזותיות עם לוח ציור אינסופרי עם משטח ציור חלק שמגיב היטב. אפשר לצייר עם תמיכה בלוחות ציור שרגישים ללחיצה, להוסיף טקסט, תמונות ולהשתמש בצורות בסיסיות כגון מרובעים, אליפסות, חיצים וקווים כדי לארגן את התוכן שלך בצורה ברורה. אפשר לבחור ערכת צבעים משלך ולייצא את העבודה שלך כקובצי תמונות במקרה הצורך. Drawy נבנה על מנת להישאר קליל ומהיר, מה שמקל על תיעוד רעיונות ועבודה ללא הסחות.</p>
     <p xml:lang="ia">Drawy permitte crear ideas, diagrammas, e notas visual sur un tabula blanc infinite  con un canvas fluide e reactive. Tu pote traher con supporto pro tablettas sensibile  al pression, adder texto, inserer imagines, e usar formas basic como rectangulos, ellipses, flechas, e lineas pro organisar tu contento clarmente. Tu pote seliger tu proprie paletta de colores e exportar tu travalio como files de imagine quando necessari. Drawy es construite pro remaner leve e rapide, facente facile capturar ideas e travaliar liberemente sin distractiones.</p>
     <p xml:lang="it">Drawy ti permette di creare idee, diagrammi e appunti visivi su una lavagna virtuale infinita con una superficie di lavoro fluida e reattiva. Puoi disegnare con il supporto per tavolette sensibili alla pressione, aggiungere testo, inserire immagini e utilizzare forme geometriche semplici come rettangoli, ellissi, frecce e linee per organizzare i tuoi contenuti in modo chiaro. Puoi scegliere la tua tavolozza di colori e esportare il tuo lavoro come file immagine ogni volta che ne hai bisogno. Drawy è progettato per essere leggero e veloce, rendendo facile catturare idee e lavorare liberamente senza distrazioni.</p>
+    <p xml:lang="ka">Drawy საშუალებას გაძლევთ, შექმნათ იდეები, დიაგრამები და ვიზუალური შენიშვნები უსასრულო დაფაზე რბილი და მგრძნობიარე ტილოთი. შეგიძლიათ, დახატოთ დაწოლაზე მგრძნობიარე ტაბლეტის მხარდაჭერით, დაამატოთ ტექსტი, ჩასვათ სურათები, და გამოიყენოთ ისეთი მარტივი ფიგურები, როგორიცაა მართკუთხედები, ოვალები და ისრები, რომ მოახდინოთ თქვენი შემცველობის მკაფიო ორგანიზაცია. შეგიძლიათ, აირჩიოთ თქვენი საკუთარი ფერთა პალიტრა და გაიტანოთ თქვენი ნამუშევარი გამოსახულების სახით, როცა ეს დაგჭირდებათ. Drawy აგებულია, რომ დარჩეს სწრაფი და მსუბუქი, რითიც აადვილებს იდეების დაჭერას და თავისუფლად მუშაობას ყურადღების გაფანტვის გარეშე.</p>
     <p xml:lang="nl">Met Drawy creëert u ideeën, diagrammen en visuele notities op een oneindig whiteboard met een vloeiend en responsief werkveld. U kunt tekenen met drukgevoelige tabletondersteuning, tekst toevoegen, afbeeldingen invoegen en basisvormen zoals rechthoeken, ellipsen, pijlen en lijnen gebruiken om uw inhoud overzichtelijk te ordenen. U kunt uw eigen kleurenpalet kiezen en uw werk exporteren als afbeeldingsbestanden wanneer dat nodig is. Drawy is ontworpen om lichtgewicht en snel te blijven, waardoor het gemakkelijk is om ideeën vast te leggen en ongestoord te werken.</p>
     <p xml:lang="pt-BR">O Drawy permite que você crie ideias, diagramas e anotações visuais em um quadro branco infinito com uma tela suave e responsiva. Você pode desenhar com suporte para tablets sensíveis à pressão, adicionar texto, inserir imagens e usar formas básicas como retângulos, elipses, setas e linhas para organizar seu conteúdo com clareza. Você pode escolher sua própria paleta de cores e exportar seu trabalho como arquivos de imagem sempre que necessário. O Drawy foi desenvolvido para ser leve e rápido, facilitando a captura de ideias e o trabalho livre, sem distrações.</p>
     <p xml:lang="sk">Drawy vám umožňuje vytvárať nápady, diagramy a vizuálne poznámky na nekonečnej tabuli s plynulým a responzívnym plátnom. Môžete kresliť s podporou tabletu citlivého na tlak, pridávať text, vkladať obrázky a používať základné tvary ako obdĺžniky, elipsy, šípky a čiary na prehľadnú organizáciu obsahu. Môžete si zvoliť vlastnú farebnú paletu a svoje dielo exportovať ako obrázkové súbory, kedykoľvek to potrebujete. Drawy je navrhnutý tak, aby zostal odľahčený a rýchly, čo umožňuje ľahko zachytávať nápady a pracovať bez rozptyľovania.</p>
@@ -112,6 +113,7 @@
       <caption xml:lang="he">ליצור תרשימים, פתקיות ורעיונות בלוחות אינסופיים</caption>
       <caption xml:lang="ia">Crea diagrammas, notas  e  ideas sur un tabula blanc infinite.</caption>
       <caption xml:lang="it">Crea diagrammi, appunti e idee su una lavagna infinita.</caption>
+      <caption xml:lang="ka">შექმენით დიაგრამები, შენიშვნები და იდეები უსასრულო დაფაზე.</caption>
       <caption xml:lang="nl">Maak diagrammen, notities en ideeën op een oneindig whiteboard.</caption>
       <caption xml:lang="pt-BR">Crie diagramas, anotações e ideias em um quadro branco infinito.</caption>
       <caption xml:lang="sk">Vytvárajte diagramy, poznámky a nápady na nekonečnej tabuli.</caption>
@@ -128,6 +130,7 @@
       <caption xml:lang="he">להתאים צבעים, סגנונות מתאר וכלים בקלות.</caption>
       <caption xml:lang="ia">Ajusta colores, stilos de tracia, e instrumentos con facilitate.</caption>
       <caption xml:lang="it">Regola colori, stili di tratto e strumenti con facilità.</caption>
+      <caption xml:lang="ka">გაასწორეთ მარტივად ფერები, დაშტრიხვის სტილები და ხელსაწყოები.</caption>
       <caption xml:lang="nl">Pas kleuren, lijnstijlen en gereedschappen eenvoudig aan.</caption>
       <caption xml:lang="pt-BR">Ajuste cores, estilos de traço e ferramentas com facilidade.</caption>
       <caption xml:lang="sk">Jednoducho upravujte farby, štýly ťahov a nástroje.</caption>
@@ -144,6 +147,7 @@
       <caption xml:lang="he">להישאר במיקוד עם סביבת עבודה בגוונים כהים.</caption>
       <caption xml:lang="ia">Remane concentrate con un spatio de travalio )workspace)  in modo obscur.</caption>
       <caption xml:lang="it">Rimani concentrato grazie all'area di lavoro scura.</caption>
+      <caption xml:lang="ka">იყავით კონცენტრირებული ბნელი რეჟიმის სამუშაო სივრცით.</caption>
       <caption xml:lang="nl">Blijf geconcentreerd met een donkere werkruimte.</caption>
       <caption xml:lang="pt-BR">Mantenha o foco com um espaço de trabalho em modo escuro.</caption>
       <caption xml:lang="sk">Zostaňte sústredení s tmavým režimom pracovnej plochy.</caption>
@@ -160,6 +164,7 @@
       <caption xml:lang="he">עבודה חלקה עם כלים מהירים ותגובתיים.</caption>
       <caption xml:lang="ia">Travalia sin difficultate con instrumentos rapide e reactive.</caption>
       <caption xml:lang="it">Lavora senza intoppi grazie a strumenti veloci e reattivi.</caption>
+      <caption xml:lang="ka">იმუშავეთ შეუფერხებლად სწრაფი ხელსაწყოებით.</caption>
       <caption xml:lang="nl">Werk soepel met snelle en responsieve hulpmiddelen.</caption>
       <caption xml:lang="pt-BR">Trabalhe sem problemas com ferramentas rápidas e responsivas.</caption>
       <caption xml:lang="sk">Pracujte plynule s rýchlymi a responzívnymi nástrojmi.</caption>
