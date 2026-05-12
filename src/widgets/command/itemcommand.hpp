@@ -9,7 +9,6 @@
 #include <QList>
 #include <memory>
 class Item;
-class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ItemCommand : public CommandBase
 {
 public:
