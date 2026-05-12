@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-05 00:41+0000\n"
-"PO-Revision-Date: 2026-04-20 02:08+0900\n"
+"PO-Revision-Date: 2026-05-12 04:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -358,7 +358,7 @@ msgstr "雜項"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "使用者回饋"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -448,7 +448,7 @@ msgstr "啟用除錯模式"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "列出能用於使用者回饋的選項"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format

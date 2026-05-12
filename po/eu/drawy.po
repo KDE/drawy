@@ -4,13 +4,13 @@
 # SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2026 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: Iñigo Salvador Azurmendi <xalba@ni.eus>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-05 00:41+0000\n"
-"PO-Revision-Date: 2026-04-19 21:08+0200\n"
+"PO-Revision-Date: 2026-05-11 18:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -365,7 +365,7 @@ msgstr "Hainbat"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Erabiltzailearen atzera-elikadura"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -457,6 +457,7 @@ msgstr "Aktibatu arazteko modua"
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr ""
+"Erabiltzailearen atzera-elikaduraren aukera erabilgarriak zerrendatzen ditu"
 
 #: widgets/keybindings/actionmanager.cpp:79
 #, kde-format
