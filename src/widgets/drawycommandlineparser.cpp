@@ -21,6 +21,9 @@ void DrawyCommandLineParser::initializeCommandLine(QCommandLineParser *parser)
 #if HAVE_KUSERFEEDBACK
     parser->addOption(QCommandLineOption(optionParserFromEnum(OptionParser::FeedBack), i18nc("@info:shell", "Lists the available options for user feedback")));
 #endif
+    QCommandLineOption selfTestOption(optionParserFromEnum(OptionParser::SelfTest), QStringLiteral("internal, for automated testing"));
+    selfTestOption.setFlags(QCommandLineOption::HiddenFromHelp);
+    parser->addOption(selfTestOption);
 }
 
 QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
@@ -34,6 +37,8 @@ QString DrawyCommandLineParser::optionParserFromEnum(OptionParser e)
     case OptionParser::FeedBack:
         return u"feedback"_s;
 #endif
+    case OptionParser::SelfTest:
+        return u"self-test"_s;
     }
     return {};
 }

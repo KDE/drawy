@@ -9,6 +9,7 @@
 #include <KIconTheme>
 #include <KLocalizedString>
 #include <KStyleManager>
+#include <QTimer>
 
 #include "config-drawy.hpp"
 #include "context/aboutdata.hpp"
@@ -92,5 +93,9 @@ int main(int argc, char *argv[])
 #endif
 
     w.show();
+
+    if (parser.isSet(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::SelfTest))) {
+        QTimer::singleShot(std::chrono::milliseconds(250), &a, &QCoreApplication::quit);
+    }
     return a.exec();
 }

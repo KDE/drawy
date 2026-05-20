@@ -23,6 +23,7 @@ void DrawyCommandLineParserTest::shouldHaveDefaultValues()
 #if HAVE_KUSERFEEDBACK
     QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::FeedBack), u"feedback"_s);
 #endif
+    QCOMPARE(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::SelfTest), u"self-test"_s);
 }
 
 #include "moc_drawycommandlineparsertest.cpp"

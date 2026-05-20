@@ -15,6 +15,7 @@ public:
         FullScreen = 0,
         Debug,
         FeedBack,
+        SelfTest,
     };
     explicit DrawyCommandLineParser(QCommandLineParser *parser);
     ~DrawyCommandLineParser() = default;
