@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2026-05-01 13:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,13 +29,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Un argumento «archivo» opcional "
 
-#: apps/main.cpp:50
+#: apps/main.cpp:51
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Herramienta práctica y sin límites para generar lluvia de ideas"

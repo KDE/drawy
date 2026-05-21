@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2026-05-08 11:42+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -26,13 +26,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Un argumento optional 'file' "
 
-#: apps/main.cpp:50
+#: apps/main.cpp:51
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Tu instrumento de brainstorming infinite, commode !"
