@@ -55,7 +55,7 @@ public:
 
     [[nodiscard]] bool hasSelection() const;
 
-    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRange(int lineNumber) const;
+    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRangeForLine(int lineNumber) const;
     [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRange(qsizetype position) const;
 
     [[nodiscard]] qsizetype getPrevBreak(qsizetype pos) const;

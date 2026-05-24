@@ -205,7 +205,7 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
 {
     const QFontMetricsF metrics{getFont()};
 
-    auto [start, end] = getLineRange(lineNumber);
+    auto [start, end] = getLineRangeForLine(lineNumber);
     const QString line{m_text.mid(start, end - start + 1)};
 
     const double distanceFromLeft{std::max(xPos - m_boundingBox.x(), 0.0)};
@@ -390,7 +390,7 @@ QPen TextItem::getPen() const
     return pen;
 }
 
-std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
+std::pair<qsizetype, qsizetype> TextItem::getLineRangeForLine(int lineNumber) const
 {
     const qsizetype len{m_text.length()};
 
