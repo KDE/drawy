@@ -141,7 +141,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
                 m_curItem->setSelectionEnd(m_curItem->getNextBreak(curIndex));
             }
         } else if (m_tripleClicked) {
-            auto [start, end] = m_curItem->getLineRange(curIndex);
+            auto [start, end] = m_curItem->getLineRangeForPosition(curIndex);
             if (isLeft) {
                 m_curItem->setSelectionStart(std::max(curStart, curEnd));
                 m_curItem->setSelectionEnd(start);
@@ -217,7 +217,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
 
         const qsizetype curIndex{m_curItem->getIndexFromCursor(worldPos)};
 
-        const auto [start, end] = m_curItem->getLineRange(curIndex);
+        const auto [start, end] = m_curItem->getLineRangeForPosition(curIndex);
         m_curItem->setSelectionStart(start);
         m_curItem->setSelectionEnd(end + 1);
 
