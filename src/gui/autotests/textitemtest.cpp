@@ -145,11 +145,11 @@ void TextItemTest::shouldTestLineRange()
     TextItem i;
     i.insertText(u"Line 1\nLine 2\nLine 3"_s);
 
-    auto range1 = i.getLineRange(1);
+    auto range1 = i.getLineRangeForLine(1);
     QCOMPARE(range1.first, 0);
     QCOMPARE(range1.second, 6);
 
-    auto range2 = i.getLineRange(2);
+    auto range2 = i.getLineRangeForLine(2);
     QCOMPARE(range2.first, 7);
     QCOMPARE(range2.second, 13);
 }

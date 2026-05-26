@@ -62,7 +62,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         // Drawing the caret
         // PERF: There is no need to scan the entire text just to place the caret
         // This can be a lot more efficient, so feel free to open a PR
-        auto [start, end] = getLineRange(cur);
+        auto [start, end] = getLineRangeForPosition(cur);
         const QString &curLine{m_text.mid(start, cur - start)};
 
         int lineCount{0};
@@ -205,7 +205,7 @@ qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
 {
     const QFontMetricsF metrics{getFont()};
 
-    auto [start, end] = getLineRange(lineNumber);
+    auto [start, end] = getLineRangeForLine(lineNumber);
     const QString line{m_text.mid(start, end - start + 1)};
 
     const double distanceFromLeft{std::max(xPos - m_boundingBox.x(), 0.0)};
@@ -390,7 +390,7 @@ QPen TextItem::getPen() const
     return pen;
 }
 
-std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
+std::pair<qsizetype, qsizetype> TextItem::getLineRangeForLine(int lineNumber) const
 {
     const qsizetype len{m_text.length()};
 
@@ -414,7 +414,7 @@ std::pair<qsizetype, qsizetype> TextItem::getLineRange(int lineNumber) const
     return std::make_pair(startIndex, endIndex);
 }
 
-std::pair<qsizetype, qsizetype> TextItem::getLineRange(qsizetype position) const
+std::pair<qsizetype, qsizetype> TextItem::getLineRangeForPosition(qsizetype position) const
 {
     qsizetype start{m_text.lastIndexOf(u'\n', position - 1)};
     if (start == -1 || position == 0) {
