@@ -15,6 +15,7 @@ StrokeWidthWidget::StrokeWidthWidget(QWidget *parent)
 {
     mSpinBox->setRange(1, 10);
     mSpinBox->setValue(DrawyGlobalConfig::self()->strokeWidth());
+    mSpinBox->setKeyboardTracking(false);
 
     mSpinBox->hide();
     m_widget = mSpinBox;

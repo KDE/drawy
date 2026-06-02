@@ -5,9 +5,9 @@
 #include "selectioncontext.hpp"
 
 #include "applicationcontext.hpp"
+#include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/updatepropertycommand.hpp"
-#include "coordinatetransformer.hpp"
 #include "drawy_debug.h"
 #include "item/item.hpp"
 #include "properties/property.hpp"
@@ -112,6 +112,7 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
         const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
         commandHistory->push(command);
 
+        m_applicationContext->renderingContext()->canvas()->setFocus(Qt::OtherFocusReason);
         m_applicationContext->renderingContext()->markForRender();
         m_applicationContext->renderingContext()->markForUpdate();
     }

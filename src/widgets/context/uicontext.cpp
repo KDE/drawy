@@ -96,6 +96,7 @@ void UIContext::initializeUIContext()
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_applicationContext->selectionContext(), &SelectionContext::updatePropertyOfSelectedItems);
     connect(m_propertyManager, &PropertyManager::propertyUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->selectionContext(), &SelectionContext::selectionUpdated, m_propertyBar, &PropertyBar::updateToolProperties);
+    connect(m_applicationContext->spatialContext()->commandHistory(), &CommandHistory::undoRedoChanged, m_propertyBar, &PropertyBar::updateToolProperties);
     connect(m_applicationContext->renderingContext()->canvas(), &Canvas::customContextMenuRequested, this, &UIContext::showContextMenu);
 
     connect(this, &UIContext::themeChanged, &IconManager::instance(), &IconManager::slotUpdateIcons);

@@ -16,6 +16,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
     // TODO: Remove magic numbers
     mSpinBox->setMinimum(1);
     mSpinBox->setValue(DrawyGlobalConfig::self()->fontSize());
+    mSpinBox->setKeyboardTracking(false);
 
     mSpinBox->hide();
     m_widget = mSpinBox;
