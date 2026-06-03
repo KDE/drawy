@@ -46,8 +46,9 @@ public:
 
     void setItems(const QList<std::shared_ptr<Item>> &newItems);
 
+protected:
+    void drawItem(QPainter &painter, const QPointF &offset) const override;
+
 private:
     QList<std::shared_ptr<Item>> m_items;
-
-    void drawItem(QPainter &painter, const QPointF &offset) const override;
 };

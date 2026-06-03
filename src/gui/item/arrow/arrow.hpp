@@ -26,8 +26,8 @@ public:
     void deserialize(const QJsonObject &obj) override;
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
-    QPointF getLineStart() const;
-    QPointF getLineEnd() const;
+    [[nodiscard]] QPointF getLineStart() const;
+    [[nodiscard]] QPointF getLineEnd() const;
 
     void updateAfterProperty() override;
 
@@ -37,10 +37,9 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
+    LIBDRAWYGUI_NO_EXPORT void updatePath();
     std::shared_ptr<ArrowHead> m_startArrowHead;
     std::shared_ptr<ArrowHead> m_endArrowHead;
-
-    void updatePath();
 
     constexpr static qreal arrowHeadMaxWidth{20};
 

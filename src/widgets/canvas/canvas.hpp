@@ -70,14 +70,14 @@ protected:
 
 private:
     qreal m_scale{1.0}; // default scale is 1
-    std::unique_ptr<QPixmap> m_canvas{};
-    std::unique_ptr<QPixmap> m_overlay{};
+    std::unique_ptr<QPixmap> m_canvas;
+    std::unique_ptr<QPixmap> m_overlay;
 
     QColor m_canvasBg{};
     QColor m_overlayBg{};
 
     QSize m_sizeHint{500, 500};
-    QSize m_maxSize{};
+    QSize m_maxSize;
 
     bool m_isOverlayDirty{false};
 

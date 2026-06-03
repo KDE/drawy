@@ -46,7 +46,7 @@ public:
 protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
-    bool isSolid() const;
+    [[nodiscard]] bool isSolid() const;
     void drawNonSolidStroke(QPainter &painter, const QPointF &offset, bool drawBuffer = false) const;
 
     QList<QPointF> m_points;

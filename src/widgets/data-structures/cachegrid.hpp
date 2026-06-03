@@ -28,10 +28,10 @@ public:
     void paint(const std::function<void(QPainter &)> &paintFunc);
 
 private:
-    QPoint m_point{};
+    QPoint m_point;
     std::unique_ptr<QPixmap> m_pixmap{nullptr};
-    std::weak_ptr<CacheCell> nextCell{};
-    std::weak_ptr<CacheCell> prevCell{};
+    std::weak_ptr<CacheCell> nextCell;
+    std::weak_ptr<CacheCell> prevCell;
     bool m_dirty{};
 
     QSize m_size{};

@@ -24,12 +24,10 @@ public:
     }
 
     // static members
-public:
     /// @brief It returns a singleton instance of the provided handlerType since these handlers are stateless
     static TransformHandler *getHandler(TransformHandlerUtils::Type handlerType);
 
     // virtual members
-public:
     virtual ~TransformHandler() = default;
 
     virtual void renderHandles(ApplicationContext *context);

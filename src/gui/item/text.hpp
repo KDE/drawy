@@ -76,13 +76,13 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
-    [[nodiscard]] QFont getFont() const;
-    [[nodiscard]] QPen getPen() const;
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QFont getFont() const;
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QPen getPen() const;
 
-    [[nodiscard]] static QTextOption getTextOptions();
-    constexpr static int getTextFlags();
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT static QTextOption getTextOptions();
+    constexpr LIBDRAWYGUI_NO_EXPORT static int getTextFlags();
 
-    void updateBoundingBox();
+    LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
     QString m_text;
     qsizetype m_caretIndex{};

@@ -13,9 +13,9 @@ class CircleArrowHead : public ArrowHead
 public:
     CircleArrowHead(const QPointF &start, const QPointF &end);
 
-    QPainterPath getPath() override;
-    bool isFilled() const override;
-    ArrowHead::Type type() const override;
+    [[nodiscard]] QPainterPath getPath() override;
+    [[nodiscard]] bool isFilled() const override;
+    [[nodiscard]] ArrowHead::Type type() const override;
 
 private:
     constexpr static int s_angleDeg{30};
