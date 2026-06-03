@@ -22,6 +22,7 @@
   <name xml:lang="sk">Drawy</name>
   <name xml:lang="sl">Drawy</name>
   <name xml:lang="tr">Drawy</name>
+  <name xml:lang="ug">Drawy</name>
   <name xml:lang="uk">Drawy</name>
   <name xml:lang="zh-TW">Drawy</name>
   <summary>Your handy, infinite brainstorming tool</summary>
@@ -43,6 +44,7 @@
   <summary xml:lang="sk">Váš šikovný, nekonečný nástroj na brainstorming</summary>
   <summary xml:lang="sl">Vaše priročno, neskončno orodje za viharjenje možgan</summary>
   <summary xml:lang="tr">Kullanışlı, sınırsız beyin fırtınası aracın!</summary>
+  <summary xml:lang="ug">قولايلىق، چەكسىز تەسەۋۋۇر قورالى</summary>
   <summary xml:lang="uk">Ваша зручна, нескінченна програма для мозкових штурмів</summary>
   <summary xml:lang="zh-TW">好用的無限畫布腦力激盪工具</summary>
   <developer id="org.kde">
