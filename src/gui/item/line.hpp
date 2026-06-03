@@ -37,11 +37,11 @@ public:
 
     [[nodiscard]] bool operator==(const LineItem &other) const;
 
-private:
+protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
+private:
+    LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
     QPointF m_start{};
     QPointF m_end{};
-
-    void updateBoundingBox();
 };

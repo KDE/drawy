@@ -73,8 +73,8 @@ public:
     }
 
     template<typename T>
-    Property(T value, Type type)
-        : m_value(std::move(value))
+    Property(const T &value, Type type)
+        : m_value(value)
         , m_type(type)
     {
     }
@@ -86,7 +86,7 @@ public:
     }
 
     template<typename T>
-    const T value() const
+    T value() const
     {
         return m_value.value<T>();
     }

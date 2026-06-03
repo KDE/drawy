@@ -50,8 +50,9 @@ public:
     {
         std::unordered_set<std::shared_ptr<Item>> newItems{begin, end};
 
-        if (newItems == m_selectedItems)
+        if (newItems == m_selectedItems) {
             return;
+        }
 
         m_selectedItems = newItems;
         Q_EMIT selectionUpdated();
@@ -70,7 +71,7 @@ Q_SIGNALS:
     void selectionUpdated();
 
 private:
-    std::unordered_set<std::shared_ptr<Item>> m_selectedItems{};
+    std::unordered_set<std::shared_ptr<Item>> m_selectedItems;
 
     bool m_shouldRenderHandles{true};
 

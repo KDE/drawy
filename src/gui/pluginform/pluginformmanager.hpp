@@ -56,9 +56,9 @@ public:
 
 private:
     explicit PluginFormManager(QObject *parent = nullptr);
-    void initializePluginList();
-    void loadPlugin(PluginFormManagerInfo *item);
-    [[nodiscard]] PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
+    LIBDRAWYGUI_NO_EXPORT void initializePluginList();
+    LIBDRAWYGUI_NO_EXPORT void loadPlugin(PluginFormManagerInfo *item);
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
     QList<PluginFormManagerInfo> mPluginList;
     QList<PluginUtilData> mPluginDataList;
 };

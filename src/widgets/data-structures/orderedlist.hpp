@@ -23,7 +23,6 @@ public:
     using ItemPtr = std::shared_ptr<Item>;
     using Position = ItemOrderPosition<ItemPtr>;
 
-public:
     ~OrderedList();
 
     void clear();

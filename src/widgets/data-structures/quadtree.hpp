@@ -31,7 +31,7 @@ public:
     using ZorderPosition = ItemOrderPosition<ItemPtr>;
 
 private:
-    QList<ItemPtr> m_items{};
+    QList<ItemPtr> m_items;
     QRectF m_boundingBox{};
     int m_capacity{};
     std::unique_ptr<QuadTree> m_topLeft{nullptr};

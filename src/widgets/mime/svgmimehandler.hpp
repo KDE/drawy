@@ -8,5 +8,6 @@
 
 class SvgMimeHandler : public MimeHandler
 {
+public:
     void contributeData(QMimeData &mimeData, const QList<std::shared_ptr<Item>> &selectedItems) override;
 };

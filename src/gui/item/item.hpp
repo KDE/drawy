@@ -103,7 +103,7 @@ protected:
     [[nodiscard]] bool isFilled() const;
     QByteArray m_id;
     QRectF m_boundingBox{};
-    std::unordered_map<Property::Type, Property> m_properties{};
+    std::unordered_map<Property::Type, Property> m_properties;
 
     QTransform m_transform{};
     bool m_isDirty{true};

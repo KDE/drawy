@@ -24,7 +24,6 @@ public:
 
     Q_ENUM(Type);
 
-public:
     ArrowHead(const QPointF &start, const QPointF &end);
     virtual ~ArrowHead();
 
@@ -34,7 +33,6 @@ public:
     virtual bool isFilled() const = 0;
     virtual Type type() const = 0;
 
-public:
     static std::shared_ptr<ArrowHead> create(ArrowHead::Type arrowType, const QPointF &start, const QPointF &end);
 
 protected:

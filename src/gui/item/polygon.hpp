@@ -31,16 +31,15 @@ public:
 
     [[nodiscard]] bool operator==(const PolygonItem &other) const;
 
-    QList<Property::Type> propertyTypes() const override;
+    [[nodiscard]] QList<Property::Type> propertyTypes() const override;
 
 protected:
     void prepareBackground(QPainter &painter) const;
 
 private:
+    LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
     QPointF m_start{};
     QPointF m_end{};
-
-    void updateBoundingBox();
 };
 
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const PolygonItem &t);
