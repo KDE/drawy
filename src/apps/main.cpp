@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 {
     KIconTheme::initTheme();
     QApplication a{argc, argv};
+    a.setDesktopFileName(u"org.kde.drawy"_s);
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
 
     KStyleManager::initStyle();
