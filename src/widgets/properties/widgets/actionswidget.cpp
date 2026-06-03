@@ -50,7 +50,7 @@ QString ActionsWidget::name() const
     return i18n("Actions");
 }
 
-const Property ActionsWidget::value() const
+Property ActionsWidget::value() const
 {
     return Property{};
 }

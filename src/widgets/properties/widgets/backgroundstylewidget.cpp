@@ -78,7 +78,7 @@ QString BackgroundStyleWidget::name() const
     return i18n("Background Style");
 }
 
-const Property BackgroundStyleWidget::value() const
+Property BackgroundStyleWidget::value() const
 {
     return Property{m_group->checkedButton()->property("background-style"), Property::Type::BackgroundStyle};
 }

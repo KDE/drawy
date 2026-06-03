@@ -20,7 +20,7 @@ QString EndArrowTypeWidget::name() const
     return i18nc("Name of a property", "End Arrow Head");
 }
 
-const Property EndArrowTypeWidget::value() const
+Property EndArrowTypeWidget::value() const
 {
     return Property{m_group->checkedButton()->property("arrow-head").value<QString>(), Property::Type::EndArrowType};
 }

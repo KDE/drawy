@@ -21,7 +21,7 @@ QString StartArrowTypeWidget::name() const
     return i18nc("Name of a property", "Start Arrow Head");
 }
 
-const Property StartArrowTypeWidget::value() const
+Property StartArrowTypeWidget::value() const
 {
     return Property{m_group->checkedButton()->property("arrow-head").value<QString>(), Property::Type::StartArrowType};
 }

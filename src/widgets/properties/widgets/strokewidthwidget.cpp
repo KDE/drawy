@@ -37,7 +37,7 @@ void StrokeWidthWidget::setValue(const QVariant &value)
     mSpinBox->setValue(value.toInt());
 }
 
-const Property StrokeWidthWidget::value() const
+Property StrokeWidthWidget::value() const
 {
     return Property{mSpinBox->value(), Property::Type::StrokeWidth};
 }

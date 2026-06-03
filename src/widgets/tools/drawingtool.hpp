@@ -10,7 +10,7 @@
 class LIBDRAWYWIDGETS_TESTS_EXPORT DrawingTool : public Tool
 {
 protected:
-    std::unique_ptr<ItemFactory> m_itemFactory{};
+    std::unique_ptr<ItemFactory> m_itemFactory;
 
 public:
     explicit DrawingTool(ApplicationContext *context);

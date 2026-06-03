@@ -20,7 +20,7 @@ QString StrokeColorWidget::name() const
     return i18n("Stroke Color");
 }
 
-const Property StrokeColorWidget::value() const
+Property StrokeColorWidget::value() const
 {
     return Property{m_currentColorButton->property("color-value"), Property::Type::StrokeColor};
 }

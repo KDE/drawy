@@ -31,7 +31,7 @@ QString EraserSizeWidget::name() const
     return i18n("Eraser Size");
 }
 
-const Property EraserSizeWidget::value() const
+Property EraserSizeWidget::value() const
 {
     return Property{mSpinBox->value(), Property::Type::EraserSize};
 }

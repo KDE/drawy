@@ -64,7 +64,7 @@ QString AlignmentWidget::name() const
     return i18n("Alignment");
 }
 
-const Property AlignmentWidget::value() const
+Property AlignmentWidget::value() const
 {
     return {};
 }

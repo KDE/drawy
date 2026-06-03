@@ -63,7 +63,7 @@ QString StokeStyleWidget::name() const
     return i18n("Stroke Style");
 }
 
-const Property StokeStyleWidget::value() const
+Property StokeStyleWidget::value() const
 {
     return Property{m_group->checkedButton()->property("stroke-style"), Property::Type::StrokeStyle};
 }

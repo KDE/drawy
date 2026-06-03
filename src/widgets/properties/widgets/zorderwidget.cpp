@@ -46,7 +46,7 @@ QString ZOrderWidget::name() const
     return i18n("Order");
 }
 
-const Property ZOrderWidget::value() const
+Property ZOrderWidget::value() const
 {
     return {};
 }

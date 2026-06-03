@@ -16,7 +16,7 @@ public:
     ~StokeStyleWidget() override;
 
     [[nodiscard]] QString name() const override;
-    [[nodiscard]] const Property value() const override;
+    [[nodiscard]] Property value() const override;
 
     void setValue(const QVariant &val) override;
 

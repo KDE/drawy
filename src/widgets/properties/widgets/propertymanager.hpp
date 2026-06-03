@@ -26,5 +26,5 @@ Q_SIGNALS:
     void propertyUpdated(Property property);
 
 private:
-    QMap<Property::Type, PropertyWidget *> m_widgets{};
+    QMap<Property::Type, PropertyWidget *> m_widgets;
 };
