@@ -34,7 +34,7 @@ private:
     std::weak_ptr<CacheCell> prevCell;
     bool m_dirty{};
 
-    QSize m_size{};
+    QSize m_size;
 
     // CacheGrid can access private members
     friend CacheGrid;
@@ -61,11 +61,11 @@ public:
     void clear();
 
 private:
-    QHash<QPoint, std::shared_ptr<CacheCell>> m_grid{};
+    QHash<QPoint, std::shared_ptr<CacheCell>> m_grid;
     std::shared_ptr<CacheCell> m_headCell{std::make_shared<CacheCell>(QPoint{0, 0}, QSize{0, 0})};
     std::shared_ptr<CacheCell> m_tailCell{std::make_shared<CacheCell>(QPoint{0, 0}, QSize{0, 0})};
 
-    QSize m_cellSize{};
+    QSize m_cellSize;
     int m_curSize{0};
     int m_maxSize{0};
 

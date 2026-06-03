@@ -13,7 +13,7 @@ public:
     explicit FontSizeWidget(QWidget *parent = nullptr);
 
     [[nodiscard]] QString name() const override;
-    [[nodiscard]] const Property value() const override;
+    [[nodiscard]] Property value() const override;
 
     void setValue(const QVariant &value) override;
 

@@ -11,7 +11,7 @@ class LineItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT LineDrawingTool : public DrawingTool
 {
 protected:
-    std::shared_ptr<LineItem> curItem{};
+    std::shared_ptr<LineItem> curItem;
 
 public:
     explicit LineDrawingTool(ApplicationContext *context);

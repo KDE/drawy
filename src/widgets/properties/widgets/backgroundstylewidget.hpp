@@ -13,7 +13,7 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT BackgroundStyleWidget : public PropertyWidget
 public:
     explicit BackgroundStyleWidget(QWidget *parent = nullptr);
     [[nodiscard]] QString name() const override;
-    [[nodiscard]] const Property value() const override;
+    [[nodiscard]] Property value() const override;
     void setValue(const QVariant &val) override;
 
 private:

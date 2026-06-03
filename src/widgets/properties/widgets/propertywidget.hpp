@@ -14,7 +14,7 @@ public:
     explicit PropertyWidget(QWidget *parent = nullptr);
 
     virtual QString name() const = 0;
-    virtual const Property value() const = 0;
+    virtual Property value() const = 0;
     virtual void setValue(const QVariant &val);
     virtual void updateWidget();
 

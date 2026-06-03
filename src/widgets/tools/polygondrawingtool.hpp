@@ -11,7 +11,7 @@ class PolygonItem;
 class LIBDRAWYWIDGETS_TESTS_EXPORT PolygonDrawingTool : public DrawingTool
 {
 protected:
-    std::shared_ptr<PolygonItem> curItem{};
+    std::shared_ptr<PolygonItem> curItem;
 
 public:
     explicit PolygonDrawingTool(ApplicationContext *context);

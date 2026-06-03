@@ -18,7 +18,7 @@ public:
     };
 
     // just a helper function
-    inline static constexpr QRectF createHandle(const QPointF pos, const qreal size)
+    static constexpr QRectF createHandle(const QPointF pos, const qreal size)
     {
         return QRectF{pos.x() - size / 2.0, pos.y() - size / 2.0, size, size};
     }

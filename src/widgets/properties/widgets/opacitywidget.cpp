@@ -99,7 +99,7 @@ QString OpacityWidget::name() const
     return i18n("Opacity");
 }
 
-const Property OpacityWidget::value() const
+Property OpacityWidget::value() const
 {
     return Property{percentToAlpha(mSlider->value()), Property::Type::Opacity};
 }

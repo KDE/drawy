@@ -21,7 +21,7 @@ QString BackgroundColorWidget::name() const
     return i18n("Background Color");
 }
 
-const Property BackgroundColorWidget::value() const
+Property BackgroundColorWidget::value() const
 {
     return Property{m_currentColorButton->property("color-value"), Property::Type::BackgroundColor};
 }
