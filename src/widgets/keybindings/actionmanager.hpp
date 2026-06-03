@@ -78,7 +78,7 @@ public:
     void saveCurrentFile();
     void openFile();
     void loadFile(const QString &fileName);
-    bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
+    [[nodiscard]] bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
     void exportToImage();
     void configureSettings();
 
