@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-21 00:42+0000\n"
+"POT-Creation-Date: 2026-06-04 00:41+0000\n"
 "PO-Revision-Date: 2026-05-17 07:47-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,13 +27,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marcus.gama@kde.org"
 
-#: apps/main.cpp:50
+#: apps/main.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "Um argumento opcional 'arquivo' "
 
-#: apps/main.cpp:51
+#: apps/main.cpp:52
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"

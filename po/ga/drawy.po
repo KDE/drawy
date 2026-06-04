@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-21 00:42+0000\n"
+"POT-Creation-Date: 2026-06-04 00:41+0000\n"
 "Language-Team: Irish Translation Team <gaeilge-gnulinux@lists.sourceforge."
 "net>\n"
 "Language: ga\n"
@@ -22,13 +22,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: apps/main.cpp:50
+#: apps/main.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:51
+#: apps/main.cpp:52
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
