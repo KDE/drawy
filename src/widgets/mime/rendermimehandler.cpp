@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "mime/rendermimehandler.hpp"
-#include "common/constants.hpp"
 #include "drawyglobalconfig.h"
 #include "item/item.hpp"
 #include <QByteArray>
