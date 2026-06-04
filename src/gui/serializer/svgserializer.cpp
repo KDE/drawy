@@ -7,7 +7,6 @@
 #include <QString>
 #include <QXmlStreamWriter>
 
-#include "common/constants.hpp"
 #include "serializer/svgpaintdevice.hpp"
 #include "serializer/svgserializer.hpp"
 
