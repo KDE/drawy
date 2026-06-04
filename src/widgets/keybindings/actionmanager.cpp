@@ -49,6 +49,7 @@
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "mime/mimemanager.hpp"
+#include "serializer/pngserializer.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
 
@@ -558,8 +559,8 @@ void ActionManager::exportToImage()
     const QString text = i18n("Untitled.svg");
     const QString defaultFilePath = homeDir.filePath(text);
 
-    QString svgFilter = i18n("SVG (*.svg)");
-    QString pngFilter = i18n("PNG (*.png)");
+    const QString svgFilter = i18n("SVG (*.svg)");
+    const QString pngFilter = i18n("PNG (*.png)");
 
     QString selectedFilter;
     const QString fileName{
@@ -581,34 +582,7 @@ void ActionManager::exportToImage()
 
         SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
     } else if (selectedFilter == pngFilter) {
-        const QList<std::shared_ptr<Item>> &selectedItems{m_context->spatialContext()->quadtree().getAllItems()};
-        QRectF boundingBox;
-
-        for (const auto &item : std::as_const(selectedItems)) {
-            boundingBox |= item->boundingBox();
-        }
-
-        QImage image(boundingBox.size().toSize(), QImage::Format_ARGB32);
-        image.fill(m_context->renderingContext()->canvas()->canvasBg());
-
-        QPainter painter(&image);
-        painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-
-        QTransform t{};
-        t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
-
-        painter.setTransform(t.inverted(), true);
-
-        for (const auto &item : std::as_const(selectedItems)) {
-            painter.save();
-            painter.setTransform(item->transformObj(), true);
-
-            item->draw(painter, QPointF{0, 0});
-
-            painter.restore();
-        }
-
-        image.save(&file, "PNG");
+        PngSerializer::writePng(file, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
     }
 }
 

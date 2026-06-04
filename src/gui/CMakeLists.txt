@@ -123,6 +123,8 @@ target_sources(
         serializer/imageserializer.hpp
         serializer/deserializeutils.hpp
         serializer/deserializeutils.cpp
+        serializer/pngserializer.hpp
+        serializer/pngserializer.cpp
         transformhandlerutils.hpp
         transformhandlerutils.cpp
         pluginform/pluginform.cpp
