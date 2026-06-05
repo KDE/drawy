@@ -25,6 +25,7 @@ public:
         UngroupItems,
         DeleteSelection,
         ExportAsImage,
+        ExportSelectedElementsAsImage,
         SwitchToSelectionTool,
         SwitchToFreeformTool,
         SwitchToRectangleTool,
@@ -98,6 +99,8 @@ private:
     void zorderMove(ItemUtils::ZorderMove move);
     void slotLoadDone(const LoadJob::LoadInfo &info);
     void configureShortcuts();
+    void exportSelectedElementsToImage();
+    void exportToImageElements(const QList<std::shared_ptr<Item>> &items);
     QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys);
     QAction *createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType);
 

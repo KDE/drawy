@@ -224,7 +224,9 @@ void UIContext::showContextMenu() const
 
     menu->addSeparator();
 
-    if (selectedItems.size() > 1) {
+    const bool hasSelectedItems = selectedItems.size() > 1;
+
+    if (hasSelectedItems) {
         menu->addAction(actionManager()->action(ActionManager::Action::GroupItems));
     }
 
@@ -246,7 +248,7 @@ void UIContext::showContextMenu() const
 
         menu->addMenu(reorderMenu);
 
-        if (selectedItems.size() > 1) {
+        if (hasSelectedItems) {
             auto alignmentMenu = new QMenu(i18nc("Title of a submenu inside the context menu which allows users to align items", "Align"));
 
             alignmentMenu->addAction(actionManager()->action(ActionManager::Action::AlignTop));
@@ -258,6 +260,8 @@ void UIContext::showContextMenu() const
 
             menu->addMenu(alignmentMenu);
         }
+        menu->addSeparator();
+        menu->addAction(actionManager()->action(ActionManager::Action::ExportSelectedElementsAsImage));
     }
 
     menu->addSeparator();

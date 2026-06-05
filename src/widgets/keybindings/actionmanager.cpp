@@ -82,6 +82,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
                  this,
                  &ActionManager::exportToImage)
         ->setIcon(QIcon::fromTheme(u"document-export"_s));
+    createAction(Action::ExportSelectedElementsAsImage, i18nc("@action", "Export as Image"), {}, this, &ActionManager::exportSelectedElementsToImage)
+        ->setIcon(QIcon::fromTheme(u"document-export"_s));
     createAction(Action::GroupItems, i18nc("@action", "Group Items"), {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_G))}, this, &ActionManager::groupItems)
         ->setIcon(QIcon::fromTheme(u"object-group"_s));
     createAction(Action::UngroupItems,
@@ -181,6 +183,8 @@ QString ActionManager::actionName(Action type) const
         return u"delete_selection"_s;
     case Action::ExportAsImage:
         return u"export_as_image"_s;
+    case Action::ExportSelectedElementsAsImage:
+        return u"export_selected_elements_as_image"_s;
     case Action::SwitchToSelectionTool:
         return u"switch_to_selection_tool"_s;
     case Action::SwitchToFreeformTool:
@@ -553,7 +557,7 @@ void ActionManager::openFile()
     m_recentFiles->saveEntries(KConfigGroup(KSharedConfig::openConfig(), u"Recent Files"_s));
 }
 
-void ActionManager::exportToImage()
+void ActionManager::exportToImageElements(const QList<std::shared_ptr<Item>> &items)
 {
     const QDir homeDir{QDir::home()};
     const QString text = i18n("Untitled.svg");
@@ -580,10 +584,22 @@ void ActionManager::exportToImage()
         QXmlStreamWriter stream(&file);
         stream.setAutoFormatting(true);
 
-        SvgSerializer::writeSvg(stream, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
+        SvgSerializer::writeSvg(stream, items, m_context->renderingContext()->canvas()->canvasBg());
     } else if (selectedFilter == pngFilter) {
-        PngSerializer::writePng(file, m_context->spatialContext()->quadtree().getAllItems(), m_context->renderingContext()->canvas()->canvasBg());
+        PngSerializer::writePng(file, items, m_context->renderingContext()->canvas()->canvasBg());
     }
+}
+
+void ActionManager::exportSelectedElementsToImage()
+{
+    const auto selectedItems = m_context->selectionContext()->selectedItems();
+    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    exportToImageElements(items);
+}
+
+void ActionManager::exportToImage()
+{
+    exportToImageElements(m_context->spatialContext()->quadtree().getAllItems());
 }
 
 void ActionManager::loadFile(const QString &fileName)
