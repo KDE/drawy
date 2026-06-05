@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:41+0000\n"
+"POT-Creation-Date: 2026-06-05 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 11:24+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -454,225 +454,225 @@ msgstr ""
 "Geeft een overzicht van de beschikbare opties voor terugkoppeling van "
 "gebruikers"
 
-#: widgets/keybindings/actionmanager.cpp:79
+#: widgets/keybindings/actionmanager.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr "Exporteren als afbeelding"
 
-#: widgets/keybindings/actionmanager.cpp:84
+#: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Items groeperen"
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Groeperen van items ongedaan maken"
 
-#: widgets/keybindings/actionmanager.cpp:92
+#: widgets/keybindings/actionmanager.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: widgets/keybindings/actionmanager.cpp:94
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Werkveld wissen"
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Hulpmiddel voor vrije vorm"
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Hulpmiddel voor gum"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Selectiehulpmiddel"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Hulpmiddel voor rechthoek"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Gereedschap voor ellips"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Lijnhulpmiddel"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Hulpmiddel voor tekst"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Hulpmiddel voor pijl"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Hulpmiddel voor verplaatsen"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Hulpmiddel voor afbeelding"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Hulpmiddel voor ruit"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Naar achtergrond brengen"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Achterwaarts zenden"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Voorwaarts brengen"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Naar voorgrond brengen"
 
-#: widgets/keybindings/actionmanager.cpp:124
+#: widgets/keybindings/actionmanager.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
 msgstr "Boven uitlijnen"
 
-#: widgets/keybindings/actionmanager.cpp:127
+#: widgets/keybindings/actionmanager.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
 msgstr "Verticaal centreren"
 
-#: widgets/keybindings/actionmanager.cpp:130
+#: widgets/keybindings/actionmanager.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
 msgstr "Onder uitlijnen"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:134
 #, kde-format
 msgctxt "@action"
 msgid "Align Left"
 msgstr "Links uitlijnen"
 
-#: widgets/keybindings/actionmanager.cpp:136
+#: widgets/keybindings/actionmanager.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
 msgstr "Horizontaal centreren"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Align Right"
 msgstr "Rechts uitlijnen"
 
-#: widgets/keybindings/actionmanager.cpp:143
+#: widgets/keybindings/actionmanager.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Debuggen"
 
-#: widgets/keybindings/actionmanager.cpp:476
+#: widgets/keybindings/actionmanager.cpp:477
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Naamloos.%1"
 
-#: widgets/keybindings/actionmanager.cpp:478
-#: widgets/keybindings/actionmanager.cpp:542
+#: widgets/keybindings/actionmanager.cpp:479
+#: widgets/keybindings/actionmanager.cpp:543
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:479
+#: widgets/keybindings/actionmanager.cpp:480
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: widgets/keybindings/actionmanager.cpp:501
+#: widgets/keybindings/actionmanager.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Wilt u het werkveld wissen?"
 
-#: widgets/keybindings/actionmanager.cpp:502
+#: widgets/keybindings/actionmanager.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Wissen"
 
-#: widgets/keybindings/actionmanager.cpp:545
+#: widgets/keybindings/actionmanager.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: widgets/keybindings/actionmanager.cpp:558
+#: widgets/keybindings/actionmanager.cpp:559
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Naamloze.svg"
 
-#: widgets/keybindings/actionmanager.cpp:561
+#: widgets/keybindings/actionmanager.cpp:562
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:563
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:566
+#: widgets/keybindings/actionmanager.cpp:567
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporteren naar afbeelding"
 
-#: widgets/keybindings/actionmanager.cpp:632
+#: widgets/keybindings/actionmanager.cpp:606
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -681,7 +681,7 @@ msgstr ""
 "Het document '%1' is gewijzigd.\n"
 "Wilt u de wijzigingen opslaan of verwerpen?"
 
-#: widgets/keybindings/actionmanager.cpp:636
+#: widgets/keybindings/actionmanager.cpp:610
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
