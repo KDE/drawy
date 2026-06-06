@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:41+0000\n"
+"POT-Creation-Date: 2026-06-06 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -319,7 +319,7 @@ msgctxt "@action:button"
 msgid "Move"
 msgstr "Пересунути"
 
-#: widgets/context/uicontext.cpp:240
+#: widgets/context/uicontext.cpp:242
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -327,7 +327,7 @@ msgctxt ""
 msgid "Reorder"
 msgstr "Перевпорядкування"
 
-#: widgets/context/uicontext.cpp:250
+#: widgets/context/uicontext.cpp:252
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
@@ -458,224 +458,225 @@ msgid "Lists the available options for user feedback"
 msgstr "Показати доступні варіанти для відгуків користувача"
 
 #: widgets/keybindings/actionmanager.cpp:80
+#: widgets/keybindings/actionmanager.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr "Експортувати як зображення"
 
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Групувати елементи"
 
-#: widgets/keybindings/actionmanager.cpp:88
+#: widgets/keybindings/actionmanager.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Розгрупувати елементи"
 
-#: widgets/keybindings/actionmanager.cpp:93
+#: widgets/keybindings/actionmanager.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Очистити полотно"
 
-#: widgets/keybindings/actionmanager.cpp:98
+#: widgets/keybindings/actionmanager.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Інструмент «Довільний контур»"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Інструмент «Гумка»"
 
-#: widgets/keybindings/actionmanager.cpp:102
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Інструмент вибору"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Інструмент «Прямокутник»"
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Інструмент «Еліпс»"
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Інструмент «Пряма»"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Інструмент «Текст»"
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Інструмент «Стрілка»"
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Інструмент «Пересування»"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Інструмент «Зображення»"
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Інструмент «Ромб»"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Перемістити на задній план"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Перемістити нижче"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Перемістити вище"
 
-#: widgets/keybindings/actionmanager.cpp:121
+#: widgets/keybindings/actionmanager.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Перемістити на передній план"
 
-#: widgets/keybindings/actionmanager.cpp:125
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
 msgstr "Вирівняти за верхнім краєм"
 
-#: widgets/keybindings/actionmanager.cpp:128
+#: widgets/keybindings/actionmanager.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
 msgstr "За центром вертикально"
 
-#: widgets/keybindings/actionmanager.cpp:131
+#: widgets/keybindings/actionmanager.cpp:133
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
 msgstr "Вирівняти за нижнім краєм"
 
-#: widgets/keybindings/actionmanager.cpp:134
+#: widgets/keybindings/actionmanager.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "Align Left"
 msgstr "Вирівняти ліворуч"
 
-#: widgets/keybindings/actionmanager.cpp:137
+#: widgets/keybindings/actionmanager.cpp:139
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
 msgstr "За центром горизонтально"
 
-#: widgets/keybindings/actionmanager.cpp:140
+#: widgets/keybindings/actionmanager.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "Align Right"
 msgstr "Вирівняти праворуч"
 
-#: widgets/keybindings/actionmanager.cpp:144
+#: widgets/keybindings/actionmanager.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Діагностика"
 
-#: widgets/keybindings/actionmanager.cpp:477
+#: widgets/keybindings/actionmanager.cpp:481
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Без назви.%1"
 
-#: widgets/keybindings/actionmanager.cpp:479
-#: widgets/keybindings/actionmanager.cpp:543
+#: widgets/keybindings/actionmanager.cpp:483
+#: widgets/keybindings/actionmanager.cpp:547
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:480
+#: widgets/keybindings/actionmanager.cpp:484
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Збереження файла"
 
-#: widgets/keybindings/actionmanager.cpp:502
+#: widgets/keybindings/actionmanager.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Ви справді хочете очистити полотно?"
 
-#: widgets/keybindings/actionmanager.cpp:503
+#: widgets/keybindings/actionmanager.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Спорожнити"
 
-#: widgets/keybindings/actionmanager.cpp:546
+#: widgets/keybindings/actionmanager.cpp:550
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Відкриття файла"
 
-#: widgets/keybindings/actionmanager.cpp:559
+#: widgets/keybindings/actionmanager.cpp:563
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Без назви.svg"
 
-#: widgets/keybindings/actionmanager.cpp:562
+#: widgets/keybindings/actionmanager.cpp:566
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:563
+#: widgets/keybindings/actionmanager.cpp:567
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:567
+#: widgets/keybindings/actionmanager.cpp:571
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Експортування до зображення"
 
-#: widgets/keybindings/actionmanager.cpp:606
+#: widgets/keybindings/actionmanager.cpp:622
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -684,7 +685,7 @@ msgstr ""
 "До документа «%1» було внесено зміни.\n"
 "Хочете зберегти внесені зміни чи відкинути їх?"
 
-#: widgets/keybindings/actionmanager.cpp:610
+#: widgets/keybindings/actionmanager.cpp:626
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
