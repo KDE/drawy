@@ -16,6 +16,11 @@ int SerializerUtils::version()
     return static_cast<int>(Version::HtmlText);
 }
 
+int SerializerUtils::pageVersion()
+{
+    return 2;
+}
+
 QJsonObject SerializerUtils::toJson(const QPointF &point)
 {
     QJsonObject result;
