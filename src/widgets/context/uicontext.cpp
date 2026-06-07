@@ -262,7 +262,6 @@ void UIContext::showContextMenu() const
 
         menu->addMenu(reorderMenu);
 
-
         if (hasSelectedItems) {
             auto alignmentMenu = new QMenu(i18nc("Title of a submenu inside the context menu which allows users to align items", "Align"));
 
