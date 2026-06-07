@@ -43,6 +43,13 @@ void SerializeJob::serializeItems()
 {
     QJsonObject obj;
     obj[u"version"_s] = SerializerUtils::version();
+    serializePage(obj);
+    Q_EMIT serializeDone(obj);
+    deleteLater();
+}
+
+void SerializeJob::serializePage(QJsonObject &obj)
+{
     obj[u"offset_pos"_s] = SerializerUtils::toJson(mSerializeInfo.offsetPos);
     obj[u"zoom_factor"_s] = mSerializeInfo.zoomFactor;
 
@@ -55,9 +62,6 @@ void SerializeJob::serializeItems()
         array.push_back(item->serialize(zorder));
     }
     obj[u"items"_s] = array;
-
-    Q_EMIT serializeDone(obj);
-    deleteLater();
 }
 
 SerializeJob::SerializeInfo SerializeJob::serializeInfo() const
