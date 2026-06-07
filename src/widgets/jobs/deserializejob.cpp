@@ -7,6 +7,7 @@
 #include "drawy_debug.h"
 #include "serializer/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
+#include "serializer/serializerutils.hpp"
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 DeserializeJob::DeserializeJob(QObject *parent)
@@ -29,9 +30,9 @@ void DeserializeJob::start()
         return;
     }
     const int version = mJsonObject["version"_L1].toInt();
-    if (version == 1) {
+    if (version == SerializerUtils::version()) {
         deserializeItems();
-    } else if (version == 2) {
+    } else if (version == SerializerUtils::pageVersion()) {
         deserializePages();
     }
 }
