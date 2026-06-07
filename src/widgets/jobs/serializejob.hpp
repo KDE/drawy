@@ -36,6 +36,7 @@ Q_SIGNALS:
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void serializeItems();
+    LIBDRAWYWIDGETS_NO_EXPORT void serializePage(QJsonObject &obj);
     SerializeInfo mSerializeInfo;
     ApplicationContext *const mApplicationContext;
 };

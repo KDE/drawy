@@ -35,5 +35,6 @@ Q_SIGNALS:
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void deserializeItems();
+    LIBDRAWYWIDGETS_NO_EXPORT void deserializePages();
     QJsonObject mJsonObject;
 };

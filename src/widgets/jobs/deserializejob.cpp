@@ -29,7 +29,12 @@ void DeserializeJob::start()
         deleteLater();
         return;
     }
-    deserializeItems();
+    const int version = mJsonObject["version"_L1].toInt();
+    if (version == 1) {
+        deserializeItems();
+    } else if (version == 2) {
+        deserializePages();
+    }
 }
 
 QJsonObject DeserializeJob::jsonObject() const
@@ -40,6 +45,11 @@ QJsonObject DeserializeJob::jsonObject() const
 void DeserializeJob::setJsonObject(const QJsonObject &newJsonObject)
 {
     mJsonObject = newJsonObject;
+}
+
+void DeserializeJob::deserializePages()
+{
+    deserializeItems();
 }
 
 void DeserializeJob::deserializeItems()
