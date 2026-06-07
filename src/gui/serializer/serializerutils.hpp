@@ -12,6 +12,7 @@ class QPointF;
 namespace SerializerUtils
 {
 [[nodiscard]] LIBDRAWYGUI_EXPORT int version();
+[[nodiscard]] LIBDRAWYGUI_EXPORT int pageVersion();
 [[nodiscard]] LIBDRAWYGUI_EXPORT QJsonObject toJson(const QPointF &point);
 [[nodiscard]] LIBDRAWYGUI_EXPORT QByteArray compressData(const QJsonObject &obj);
 LIBDRAWYGUI_EXPORT void saveInFile(const QJsonObject &obj, const QString &filename);

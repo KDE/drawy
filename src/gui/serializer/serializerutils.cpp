@@ -13,7 +13,13 @@
 using namespace Qt::Literals::StringLiterals;
 int SerializerUtils::version()
 {
+    // Original version
     return 1;
+}
+
+int SerializerUtils::pageVersion()
+{
+    return 2;
 }
 
 QJsonObject SerializerUtils::toJson(const QPointF &point)
