@@ -17,6 +17,7 @@
   <name xml:lang="is">Drawy</name>
   <name xml:lang="it">Drawy</name>
   <name xml:lang="ka">Drawy</name>
+  <name xml:lang="ko">Drawy</name>
   <name xml:lang="lt">Drawy</name>
   <name xml:lang="nl">Drawy</name>
   <name xml:lang="pt-BR">Drawy</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="is">Handhæga, óendanlega hugmyndaflæðitólið.</summary>
   <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
+  <summary xml:lang="ko">편안한 무한 브레인스토밍 도구</summary>
   <summary xml:lang="lt">Patogus, begalinis naujų idėjų svarstymo įrankis</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
@@ -208,6 +210,15 @@
     <release version="1.1.0" type="snapshot">
       <description>
         <p>Allow to export selected elements as image</p>
+        <p xml:lang="ca">Permet exportar els elements seleccionats com a imatges</p>
+        <p xml:lang="es">Permitir exportar los elementos seleccionados como imagen.</p>
+        <p xml:lang="he">לאפשר לייצא את הרכיבים הנבחרים כתמונה</p>
+        <p xml:lang="ka">მონიშნული ელემენტების გამოსახულების სახით გატანის დაშვება</p>
+        <p xml:lang="nl">Exporteer geselecteerde elementen als afbeelding</p>
+        <p xml:lang="pt-BR">Permitir exportar os elementos selecionados como imagem</p>
+        <p xml:lang="sl">Dovoli izvoz izbranih elementov kot sliko</p>
+        <p xml:lang="tr">Seçili ögelerin görsel olarak dışa aktarılmasına olanak tanıyın.</p>
+        <p xml:lang="uk">Уможливлено експортування позначених елементів як зображення</p>
       </description>
     </release>
     <release version="1.0.1" date="2026-05-04">
