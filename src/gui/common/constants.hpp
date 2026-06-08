@@ -39,9 +39,6 @@ inline constexpr int maxItemOpacity{255};
 inline constexpr int erasedItemOpacityDecrease{30}; // % to reduce opacity by when erasing items
 
 inline constexpr double defaultTextBoxWidth{5}; // in pixels
-inline constexpr std::array<QChar, 38> wordSeparators{u'\t', u'\n', u'\v', u'\f', u'\r', u' ', // whitespace
-                                                      u'!',  u'"',  u'#',  u'$',  u'%',  u'&', u'\'', u'(',  u')', u'*', u'+', u',', u'-', u'.', u'/', u':',
-                                                      u';',  u'<',  u'=',  u'>',  u'?',  u'@', u'[',  u'\\', u']', u'^', u'_', u'`', u'{', u'|', u'}', u'~'};
 
 inline constexpr int doubleClickInterval{300}; // milliseconds
 
