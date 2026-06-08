@@ -5,6 +5,7 @@
 #pragma once
 
 #include "drawingtool.hpp"
+#include "event/event.hpp"
 #include "item/text.hpp"
 
 class TextTool : public DrawingTool
@@ -34,4 +35,6 @@ private:
     bool m_mouseMoved{false};
     bool m_doubleClicked{false};
     bool m_tripleClicked{false};
+
+    void processKey(const Event *ev);
 };

@@ -5,30 +5,29 @@
 #include "text.hpp"
 
 #include "common/utils/math.hpp"
+#include <QAbstractTextDocumentLayout>
 #include <QFontMetricsF>
 #include <QJsonObject>
+#include <QTextBlock>
+#include <QTextLayout>
+#include <QTextLine>
 #include <utility>
 
 #include "common/constants.hpp"
 #include "serializer/textdeserializer.hpp"
 #include "serializer/textserializer.hpp"
 
-/*
- * TODO: The current implementation is not optimal. A single character insertion
- * costs n operations on average, making it O(n) per character. Use a better
- * data structure like Rope or Gap buffer, although it may be overkill for a
- * simple whiteboard app.
- *
- * TODO: This file needs some refactoring as well, feel free to open a PR
- */
 using namespace Qt::Literals::StringLiterals;
 TextItem::TextItem()
-    : m_selectionStart(INVALID)
-    , m_selectionEnd(INVALID)
+    : m_cursor(&m_document)
 {
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::white), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
+
+    QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this]() {
+        updateBoundingBox();
+    });
 }
 
 TextItem::~TextItem()
@@ -40,6 +39,7 @@ void TextItem::createTextBox(const QPointF position)
     m_boundingBox.setTopLeft(position);
     m_boundingBox.setWidth(Common::defaultTextBoxWidth);
 
+    m_document.setDefaultFont(getFont());
     const QFontMetricsF metrics{getFont()};
     m_boundingBox.setHeight(metrics.height());
 
@@ -54,79 +54,36 @@ bool TextItem::intersects(const QRectF &rect)
 void TextItem::draw(QPainter &painter, const QPointF &offset)
 {
     painter.save();
+    painter.translate(m_boundingBox.topLeft() - offset);
 
-    const QRectF curBox{m_boundingBox.translated(-offset)};
-    const qsizetype cur{caret()};
+    const QColor color{getPen().color()};
+    QAbstractTextDocumentLayout::PaintContext ctx;
+    ctx.palette.setColor(QPalette::Text, color);
 
-    if (mode() == Mode::Edit) {
-        // Drawing the caret
-        // PERF: There is no need to scan the entire text just to place the caret
-        // This can be a lot more efficient, so feel free to open a PR
-        auto [start, end] = getLineRangeForPosition(cur);
-        const QString &curLine{m_text.mid(start, cur - start)};
+    if (m_mode == Mode::Edit && m_cursor.hasSelection()) {
+        // draw selection
+        QAbstractTextDocumentLayout::Selection selection;
+        selection.cursor = m_cursor;
+        selection.format.setBackground(Common::selectionBackgroundColor);
+        selection.format.setForeground(color);
+        ctx.selections.append(selection);
+    }
 
-        int lineCount{0};
-        for (int pos{0}; pos < cur; pos++) {
-            if (m_text[pos] == u'\n') {
-                lineCount++;
-            }
-        }
-
-        const QFontMetrics metrics{getFont()};
-
-        const int width{metrics.size(getTextFlags(), curLine).width()};
-        const int lineHeight{metrics.height()};
-
-        const QPointF caretTop{curBox.topLeft().x() + width, curBox.topLeft().y() + lineHeight * lineCount};
-
-        const QPointF caretBottom{caretTop.x(), caretTop.y() + lineHeight};
-
-        painter.setPen(getPen());
-        painter.drawLine(caretTop, caretBottom);
-
-        // Drawing selection
-        // PERF: Can be optimized but.. me lazy
-        if (hasSelection()) {
-            const qsizetype selStart = qMin(selectionStart(), selectionEnd());
-            const qsizetype selEnd = qMax(selectionStart(), selectionEnd());
-
-            painter.setBrush(Common::selectionBackgroundColor);
-            painter.setPen(Qt::NoPen);
-
-            qsizetype currentLineStartPos = 0;
-            int lineIndex = 0;
-
-            for (qsizetype pos{0}; pos <= m_text.length(); pos++) {
-                if (pos == m_text.length() || m_text[pos] == u'\n') {
-                    const qsizetype currentLineEndPos = pos;
-
-                    const qsizetype selectionRectStart = qMax(selStart, currentLineStartPos);
-                    const qsizetype selectionRectEnd = qMin(selEnd, currentLineEndPos);
-
-                    if (selectionRectStart < selectionRectEnd) {
-                        const QString linePrefix = m_text.mid(currentLineStartPos, selectionRectStart - currentLineStartPos);
-                        const QString selectedTextOnLine = m_text.mid(selectionRectStart, selectionRectEnd - selectionRectStart);
-
-                        const int prefixWidth = metrics.size(getTextFlags(), linePrefix).width();
-                        const int selectionWidth = metrics.size(getTextFlags(), selectedTextOnLine).width();
-
-                        const qreal x{curBox.left() + prefixWidth};
-                        const qreal y{curBox.top() + (lineIndex * lineHeight)};
-
-                        const QRectF selectionRect(x, y, selectionWidth, lineHeight);
-                        painter.drawRect(selectionRect);
-                    }
-
-                    currentLineStartPos = pos + 1;
-                    lineIndex++;
-                }
+    if (m_mode == Mode::Edit) {
+        // draw caret
+        const auto cursor = m_cursor;
+        const auto block = cursor.block();
+        if (const auto *layout = block.layout()) {
+            const QTextLine line = layout->lineForTextPosition(cursor.positionInBlock());
+            if (line.isValid()) {
+                const qreal x = line.cursorToX(cursor.positionInBlock());
+                const qreal y = layout->position().y() + line.y();
+                painter.setPen(getPen());
+                painter.drawLine(QPointF(x, y), QPointF(x, y + line.height()));
             }
         }
     }
-
-    painter.setFont(getFont());
-    painter.setPen(getPen());
-    painter.drawText(curBox, getTextFlags(), m_text);
+    m_document.documentLayout()->draw(&painter, ctx);
     painter.restore();
 }
 
@@ -150,6 +107,11 @@ void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] con
 {
 }
 
+QTextCursor &TextItem::cursor()
+{
+    return m_cursor;
+}
+
 TextItem::Mode TextItem::mode() const
 {
     return m_mode;
@@ -161,213 +123,31 @@ void TextItem::setMode(Mode mode)
     setDirty(true);
 }
 
-qsizetype TextItem::caret() const
-{
-    return m_caretIndex;
-}
-
-qsizetype TextItem::caretPosInLine() const
-{
-    return m_caretPosInLine;
-}
-
-void TextItem::setCaret(qsizetype index, bool updatePosInLine)
-{
-    if (index < 0 || index > m_text.size()) {
-        return;
-    }
-
-    setDirty(true);
-    setSelectionStart(index);
-    setSelectionEnd(INVALID);
-
-    m_caretIndex = index;
-    if (updatePosInLine) {
-        const qsizetype firstCharOfCurLine{m_text.lastIndexOf(u'\n', m_caretIndex - 1)};
-        m_caretPosInLine = m_caretIndex - firstCharOfCurLine;
-    }
-}
-
-int TextItem::getLineFromY(double yPos) const
-{
-    const QFontMetricsF metrics{getFont()};
-    const double lineHeight{metrics.height()};
-
-    if (lineHeight <= 0) {
-        return 0;
-    }
-
-    const double distFromTop{std::max(yPos - m_boundingBox.y(), 0.0)};
-    return static_cast<int>(std::ceil(distFromTop / lineHeight));
-}
-
-qsizetype TextItem::getIndexFromX(double xPos, int lineNumber) const
-{
-    const QFontMetricsF metrics{getFont()};
-
-    auto [start, end] = getLineRangeForLine(lineNumber);
-    const QString line{m_text.mid(start, end - start + 1)};
-
-    const double distanceFromLeft{std::max(xPos - m_boundingBox.x(), 0.0)};
-    const double lineWidth{metrics.boundingRect(m_boundingBox, getTextFlags(), line).width()};
-
-    if (distanceFromLeft > lineWidth) {
-        if (end == m_text.size() - 1) {
-            return m_text.size();
-        }
-        return end;
-    }
-
-    qsizetype low{0};
-    qsizetype high{m_text.size()};
-    qsizetype index{0};
-    while (low <= high) {
-        const qsizetype mid{low + (high - low) / 2};
-
-        const double prefixWidth{metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(mid)).width()};
-
-        if (prefixWidth <= distanceFromLeft) {
-            index = mid;
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    if (index < line.size() - 1) {
-        const double widthBefore{metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(index)).width()};
-        const double widthAfter{metrics.boundingRect(m_boundingBox, getTextFlags(), line.left(index + 1)).width()};
-
-        const double midPoint{(widthBefore + widthAfter) / 2.0};
-        if (distanceFromLeft > midPoint) {
-            index++;
-        }
-    }
-
-    return start + index;
-}
-
 void TextItem::setCaret(QPointF cursorPos)
 {
     if (!m_boundingBox.contains(m_transform.inverted().map(cursorPos))) {
         return;
     }
 
-    setCaret(getIndexFromCursor(cursorPos));
+    m_cursor.setPosition(getIndexFromCursor(cursorPos));
 }
 
 qsizetype TextItem::getIndexFromCursor(QPointF cursorPos) const
 {
-    cursorPos = m_transform.inverted().map(cursorPos);
-    return getIndexFromX(cursorPos.x(), getLineFromY(cursorPos.y()));
-}
+    const QPointF localPos{m_transform.inverted().map(cursorPos)};
+    const QPointF docPos = localPos - m_boundingBox.topLeft();
 
-qsizetype TextItem::selectionStart() const
-{
-    return m_selectionStart;
-}
-
-qsizetype TextItem::selectionEnd() const
-{
-    return m_selectionEnd;
-}
-
-void TextItem::setSelectionStart(qsizetype index)
-{
-    setDirty(true);
-    m_selectionStart = index;
-}
-
-void TextItem::setSelectionEnd(qsizetype index)
-{
-    setDirty(true);
-    m_selectionEnd = index;
-}
-
-QString TextItem::selectedText() const
-{
-    if (!hasSelection()) {
-        return {};
-    }
-
-    const qsizetype selStart{selectionStart()};
-    const qsizetype selEnd{selectionEnd()};
-    return m_text.mid(std::min(selStart, selEnd), std::abs(selEnd - selStart));
-}
-
-void TextItem::insertText(const QString &text)
-{
-    if (text.isEmpty()) {
-        return;
-    }
-
-    setDirty(true);
-    const qsizetype textSize{text.size()};
-    const qsizetype cur{caret()};
-
-    m_text.insert(cur, text);
-    setCaret(cur + textSize);
-
-    updateBoundingBox();
+    return m_document.documentLayout()->hitTest(docPos, Qt::FuzzyHit);
 }
 
 void TextItem::updateBoundingBox()
 {
-    const QFontMetricsF metrics{getFont()};
-    const QSizeF size{metrics.size(getTextFlags(), m_text)};
+    m_document.setDefaultFont(getFont());
+    m_document.setDefaultTextOption(getTextOptions());
+    m_document.setTextWidth(-1);
 
-    m_boundingBox.setWidth(size.width());
-    m_boundingBox.setHeight(size.height());
+    m_boundingBox.setSize(m_document.size());
     setDirty(true);
-}
-
-void TextItem::deleteSubStr(qsizetype start, qsizetype end)
-{
-    if (start < 0 || start >= m_text.size() || end < 0 || end >= m_text.size()) {
-        return;
-    }
-
-    if (end < start) {
-        std::swap(start, end);
-    }
-
-    m_text.erase(std::next(m_text.cbegin(), start), std::next(m_text.cbegin(), end + 1));
-
-    const QFontMetricsF metrics{getFont()};
-    const QSizeF size{metrics.size(getTextFlags(), m_text)};
-
-    m_boundingBox.setWidth(std::max(size.width(), Common::defaultTextBoxWidth));
-    m_boundingBox.setHeight(size.height());
-    setDirty(true);
-}
-
-void TextItem::deleteSelection()
-{
-    if (!hasSelection()) {
-        return;
-    }
-
-    qsizetype selStart{selectionStart()};
-    qsizetype selEnd{selectionEnd()};
-    if (selStart > selEnd) {
-        std::swap(selStart, selEnd);
-    }
-
-    setSelectionStart(TextItem::INVALID);
-    setSelectionEnd(TextItem::INVALID);
-
-    deleteSubStr(selStart, selEnd - 1);
-    setCaret(selStart);
-    setDirty(true);
-}
-
-bool TextItem::hasSelection() const
-{
-    if (selectionStart() == selectionEnd()) {
-        return false;
-    }
-
-    return selectionStart() != INVALID && selectionEnd() != INVALID;
 }
 
 QFont TextItem::getFont() const
@@ -390,80 +170,6 @@ QPen TextItem::getPen() const
     return pen;
 }
 
-std::pair<qsizetype, qsizetype> TextItem::getLineRangeForLine(int lineNumber) const
-{
-    const qsizetype len{m_text.length()};
-
-    qsizetype startIndex{0};
-    for (qsizetype pos{0}; pos < len; pos++) {
-        if (lineNumber == 1) {
-            break;
-        }
-
-        if (m_text[pos] == u'\n') {
-            startIndex = pos + 1;
-            lineNumber--;
-        }
-    }
-
-    qsizetype endIndex{m_text.indexOf(u'\n', startIndex)};
-    if (endIndex == -1) {
-        endIndex = len - 1;
-    }
-
-    return std::make_pair(startIndex, endIndex);
-}
-
-std::pair<qsizetype, qsizetype> TextItem::getLineRangeForPosition(qsizetype position) const
-{
-    qsizetype start{m_text.lastIndexOf(u'\n', position - 1)};
-    if (start == -1 || position == 0) {
-        start = 0;
-    }
-
-    qsizetype end{m_text.indexOf(u'\n', position)};
-    if (end == -1) {
-        end = m_text.size() - 1;
-    }
-
-    return std::make_pair(start, end);
-}
-
-qsizetype TextItem::getPrevBreak(qsizetype position) const
-{
-    auto isBreak = [&](qsizetype pos) {
-        return std::ranges::any_of(Common::wordSeparators, [pos, this](const auto &sep) {
-            return m_text[pos] == sep;
-        });
-    };
-
-    while (position > 0 && isBreak(position)) {
-        position--;
-    }
-
-    for (qsizetype pos{position - 1}; pos >= 0; pos--) {
-        if (isBreak(pos)) {
-            return pos + 1;
-        }
-    }
-
-    return 0;
-};
-
-qsizetype TextItem::getNextBreak(qsizetype position) const
-{
-    const qsizetype len{m_text.length()};
-    for (qsizetype pos{position + 1}; pos < len; pos++) {
-        for (auto &sep : Common::wordSeparators) {
-            if (m_text[pos] == sep) {
-                return pos;
-            }
-        }
-    }
-
-    return len;
-};
-
 constexpr int TextItem::getTextFlags()
 {
     return Qt::TextExpandTabs;
@@ -477,9 +183,9 @@ QTextOption TextItem::getTextOptions()
     return options;
 }
 
-const QString &TextItem::text() const
+QString TextItem::text() const
 {
-    return m_text;
+    return m_document.toPlainText();
 }
 
 Item::FormType TextItem::formType() const

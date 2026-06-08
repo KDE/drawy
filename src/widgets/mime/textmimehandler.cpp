@@ -24,7 +24,7 @@ QList<std::shared_ptr<Item>> TextMimeHandler::tryReadData(const QMimeData &mimeD
     const std::shared_ptr<TextItem> text = std::make_shared<TextItem>();
 
     text->createTextBox({0, 0});
-    text->insertText(mimeData.text());
+    text->cursor().insertText(mimeData.text());
 
     return {text};
 }

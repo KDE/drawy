@@ -20,5 +20,5 @@ void TextDeserializer::deserialize(const QJsonObject &obj)
     TextItem *textItem = static_cast<TextItem *>(mItem);
     const QPointF topLeft = toPointF(value(obj, u"top_left"_s));
     textItem->createTextBox(topLeft);
-    textItem->insertText(value(obj, u"text"_s).toString());
+    textItem->cursor().insertText(value(obj, u"text"_s).toString());
 }

@@ -24,8 +24,6 @@ private Q_SLOTS:
     void shouldTestMode();
     void shouldTestCaretAndSelection();
     void shouldTestTextManipulation();
-    void shouldTestLineRange();
-    void shouldTestBreaks();
     void shouldTestNeedsCaching();
     void shouldTestLockAspectRatioWhenResizing();
 };

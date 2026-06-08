@@ -7,6 +7,8 @@
 
 #include <QPainter>
 #include <QRect>
+#include <QTextCursor>
+#include <QTextDocument>
 
 #include "item.hpp"
 
@@ -15,6 +17,8 @@ class LIBDRAWYGUI_EXPORT TextItem : public Item
 public:
     TextItem();
     ~TextItem() override;
+
+    [[nodiscard]] QTextCursor &cursor();
 
     [[nodiscard]] bool intersects(const QRectF &rect) override;
 
@@ -34,36 +38,11 @@ public:
     void setMode(Mode mode);
 
     [[nodiscard]] qsizetype getIndexFromCursor(QPointF cursor) const;
-    [[nodiscard]] int getLineFromY(double yPos) const;
-    [[nodiscard]] qsizetype getIndexFromX(double xPos, int lineNumber) const;
-
-    [[nodiscard]] qsizetype caret() const;
-    [[nodiscard]] qsizetype caretPosInLine() const;
-    void setCaret(qsizetype index, bool updatePosInLine = true);
     void setCaret(QPointF cursorPos);
 
-    [[nodiscard]] qsizetype selectionStart() const;
-    [[nodiscard]] qsizetype selectionEnd() const;
-    [[nodiscard]] QString selectedText() const;
-    void setSelectionStart(qsizetype index);
-    void setSelectionEnd(qsizetype index);
-
-    [[nodiscard]] const QString &text() const;
-    void insertText(const QString &text);
-    void deleteSubStr(qsizetype start, qsizetype end);
-    void deleteSelection();
-
-    [[nodiscard]] bool hasSelection() const;
-
-    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRangeForLine(int lineNumber) const;
-    [[nodiscard]] std::pair<qsizetype, qsizetype> getLineRangeForPosition(qsizetype position) const;
-
-    [[nodiscard]] qsizetype getPrevBreak(qsizetype pos) const;
-    [[nodiscard]] qsizetype getNextBreak(qsizetype pos) const;
+    [[nodiscard]] QString text() const;
 
     [[nodiscard]] Item::FormType formType() const override;
-
-    constexpr static int INVALID{-1};
 
     void updateAfterProperty() override;
 
@@ -84,11 +63,8 @@ private:
 
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
-    QString m_text;
-    qsizetype m_caretIndex{};
-    qsizetype m_selectionStart{};
-    qsizetype m_selectionEnd{};
-    qsizetype m_caretPosInLine{};
+    QTextDocument m_document;
+    QTextCursor m_cursor;
     Mode m_mode{Mode::Normal};
 };
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const TextItem &t);
