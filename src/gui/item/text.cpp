@@ -25,6 +25,8 @@ TextItem::TextItem()
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
 
+    m_document.setDefaultFont(getFont());
+
     QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this]() {
         updateBoundingBox();
     });
@@ -186,6 +188,11 @@ QTextOption TextItem::getTextOptions()
 QString TextItem::text() const
 {
     return m_document.toPlainText();
+}
+
+QString TextItem::html() const
+{
+    return m_document.toHtml();
 }
 
 Item::FormType TextItem::formType() const

@@ -41,6 +41,7 @@ public:
     void setCaret(QPointF cursorPos);
 
     [[nodiscard]] QString text() const;
+    [[nodiscard]] QString html() const;
 
     [[nodiscard]] Item::FormType formType() const override;
 
