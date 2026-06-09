@@ -211,14 +211,17 @@
       <description>
         <p>Allow to export selected elements as image</p>
         <p xml:lang="ca">Permet exportar els elements seleccionats com a imatges</p>
+        <p xml:lang="ca-valencia">Permet exportar els elements seleccionats com a imatges</p>
         <p xml:lang="es">Permitir exportar los elementos seleccionados como imagen.</p>
         <p xml:lang="he">לאפשר לייצא את הרכיבים הנבחרים כתמונה</p>
         <p xml:lang="ka">მონიშნული ელემენტების გამოსახულების სახით გატანის დაშვება</p>
         <p xml:lang="nl">Exporteer geselecteerde elementen als afbeelding</p>
         <p xml:lang="pt-BR">Permitir exportar os elementos selecionados como imagem</p>
+        <p xml:lang="sk">Umožňuje exportovať vybrané prvky ako obrázok</p>
         <p xml:lang="sl">Dovoli izvoz izbranih elementov kot sliko</p>
         <p xml:lang="tr">Seçili ögelerin görsel olarak dışa aktarılmasına olanak tanıyın.</p>
         <p xml:lang="uk">Уможливлено експортування позначених елементів як зображення</p>
+        <p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
       </description>
     </release>
     <release version="1.0.1" date="2026-05-04">
