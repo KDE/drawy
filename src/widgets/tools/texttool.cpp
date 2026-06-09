@@ -115,7 +115,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
         renderingContext->canvas()->setCursor(Qt::CrossCursor);
     }
 
-    if (m_isSelecting) {
+    if (m_isSelecting && m_curItem) {
         const qsizetype curIndex{m_curItem->getIndexFromCursor(worldPos)};
         auto &cursor = m_curItem->cursor();
 
@@ -137,9 +137,8 @@ void TextTool::mouseMoved(ApplicationContext *context)
             cursor.setPosition(curIndex, QTextCursor::KeepAnchor);
         }
         m_curItem->setDirty(true);
+        renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
     }
-
-    renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
     renderingContext->markForRender();
     renderingContext->markForUpdate();
 }
