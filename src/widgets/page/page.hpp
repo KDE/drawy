@@ -8,10 +8,12 @@
 #include "libdrawywidgets_private_export.h"
 #include <memory>
 class QuadTree;
-class LIBDRAWYWIDGETS_TESTS_EXPORT Page
+class ApplicationContext;
+class LIBDRAWYWIDGETS_TESTS_EXPORT Page : public QObject
 {
+    Q_OBJECT
 public:
-    Page();
+    explicit Page(ApplicationContext *context);
     ~Page();
 
     [[nodiscard]] QString name() const;
@@ -20,4 +22,5 @@ public:
 private:
     QString mName;
     std::unique_ptr<QuadTree> m_quadtree{nullptr};
+    ApplicationContext *const m_applicationContext;
 };

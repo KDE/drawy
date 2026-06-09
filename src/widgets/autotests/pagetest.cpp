@@ -16,6 +16,6 @@ PageTest::PageTest(QObject *parent)
 
 void PageTest::shouldHaveDefaultValues()
 {
-    Page p;
+    const Page p(nullptr);
     QVERIFY(p.name().isEmpty());
 }
