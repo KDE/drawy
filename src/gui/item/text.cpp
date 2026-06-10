@@ -73,12 +73,11 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 
     if (m_mode == Mode::Edit) {
         // draw caret
-        const auto cursor = m_cursor;
-        const auto block = cursor.block();
+        const auto block = m_cursor.block();
         if (const auto *layout = block.layout()) {
-            const QTextLine line = layout->lineForTextPosition(cursor.positionInBlock());
+            const QTextLine line = layout->lineForTextPosition(m_cursor.positionInBlock());
             if (line.isValid()) {
-                const qreal x = line.cursorToX(cursor.positionInBlock());
+                const qreal x = layout->position().x() + line.cursorToX(m_cursor.positionInBlock());
                 const qreal y = layout->position().y() + line.y();
                 painter.setPen(getPen());
                 painter.drawLine(QPointF(x, y), QPointF(x, y + line.height()));
