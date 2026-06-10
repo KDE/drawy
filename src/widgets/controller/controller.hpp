@@ -28,6 +28,7 @@ public:
     void keyPressed(QKeyEvent *event);
     void keyReleased(QKeyEvent *event);
     void inputMethodInvoked(QInputMethodEvent *event);
+    void inputMethodQueryInvoked(Qt::InputMethodQuery query, QVariant *value);
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
     void leave(QEvent *event);

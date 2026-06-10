@@ -7,6 +7,7 @@
 #include <QPainter>
 #include <QWidget>
 
+class QInputMethodQueryEvent;
 class Canvas : public QWidget
 {
     Q_OBJECT
@@ -34,6 +35,8 @@ public:
 
     [[nodiscard]] bool overlayDirty() const;
 
+    [[nodiscard]] QVariant inputMethodQuery(Qt::InputMethodQuery query) const override;
+
 Q_SIGNALS:
     void mousePressed(QMouseEvent *event);
     void mouseMoved(QMouseEvent *event);
@@ -41,6 +44,7 @@ Q_SIGNALS:
     void keyPressed(QKeyEvent *event);
     void keyReleased(QKeyEvent *event);
     void inputMethodInvoked(QInputMethodEvent *event);
+    void inputMethodQueryInvoked(Qt::InputMethodQuery query, QVariant *value) const;
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
     void resizeEventCalled();

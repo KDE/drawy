@@ -23,6 +23,8 @@ public:
     virtual void mouseReleased(ApplicationContext *context);
     virtual void keyPressed(ApplicationContext *context);
     virtual void keyReleased(ApplicationContext *context);
+    virtual void inputMethodInvoked(ApplicationContext *context);
+    virtual QVariant inputMethodQueryInvoked(ApplicationContext *context, Qt::InputMethodQuery query);
     virtual void mouseDoubleClick(ApplicationContext *context);
     virtual void mouseTripleClick(ApplicationContext *context);
     virtual void leave(ApplicationContext *context);

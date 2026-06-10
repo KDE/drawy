@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <QInputMethodEvent>
 #include <QPoint>
 #include <QString>
 
@@ -15,6 +16,11 @@ public:
     [[nodiscard]] Qt::MouseButton button() const;
     [[nodiscard]] qreal pressure() const;
     [[nodiscard]] QString text() const;
+    [[nodiscard]] QString preeditString() const;
+    [[nodiscard]] QList<QInputMethodEvent::Attribute> attributes() const;
+    [[nodiscard]] QString commitString() const;
+    [[nodiscard]] int replacementStart() const;
+    [[nodiscard]] int replacementLength() const;
     [[nodiscard]] int key() const;
     [[nodiscard]] Qt::KeyboardModifiers modifiers() const;
 
@@ -23,6 +29,8 @@ public:
     void setPressure(qreal pressure);
     void setKey(int key);
     void setText(const QString &text);
+    void setPreeditString(const QString &preeditString, const QList<QInputMethodEvent::Attribute> &attributes = {});
+    void setCommitString(const QString &commitString, int replacementStart = -1, int replacementLength = -1);
     void setModifiers(Qt::KeyboardModifiers modifiers);
 
 private:
@@ -30,6 +38,11 @@ private:
     QPoint m_pos;
     qreal m_pressure{1.0};
     QString m_text;
+    QString m_preeditText;
+    QList<QInputMethodEvent::Attribute> m_attributes;
+    QString m_commitText;
+    int m_replacementStart{-1};
+    int m_replacementLength{-1};
     int m_key{};
     Qt::KeyboardModifiers m_modifiers;
 };

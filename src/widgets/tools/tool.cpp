@@ -51,6 +51,14 @@ void Tool::keyPressed([[maybe_unused]] ApplicationContext *context)
 void Tool::keyReleased([[maybe_unused]] ApplicationContext *context)
 {
 }
+void Tool::inputMethodInvoked([[maybe_unused]] ApplicationContext *context)
+{
+}
+QVariant Tool::inputMethodQueryInvoked([[maybe_unused]] ApplicationContext *context, [[maybe_unused]] Qt::InputMethodQuery query)
+{
+    return {};
+}
+
 void Tool::mouseDoubleClick([[maybe_unused]] ApplicationContext *context)
 {
 }

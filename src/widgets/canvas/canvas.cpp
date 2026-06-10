@@ -166,6 +166,16 @@ void Canvas::inputMethodEvent(QInputMethodEvent *event)
     QWidget::inputMethodEvent(event);
 }
 
+QVariant Canvas::inputMethodQuery(const Qt::InputMethodQuery query) const
+{
+    QVariant value;
+    Q_EMIT inputMethodQueryInvoked(query, &value);
+    if (value.isValid()) {
+        return value;
+    }
+    return QWidget::inputMethodQuery(query);
+}
+
 void Canvas::tabletEvent(QTabletEvent *event)
 {
     Q_EMIT tablet(event);

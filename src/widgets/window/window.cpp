@@ -84,6 +84,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(renderingContext->canvas(), &Canvas::mouseReleased, controller, &Controller::mouseReleased);
     connect(renderingContext->canvas(), &Canvas::keyPressed, controller, &Controller::keyPressed);
     connect(renderingContext->canvas(), &Canvas::keyReleased, controller, &Controller::keyReleased);
+    connect(renderingContext->canvas(), &Canvas::inputMethodInvoked, controller, &Controller::inputMethodInvoked);
+    connect(renderingContext->canvas(), &Canvas::inputMethodQueryInvoked, controller, &Controller::inputMethodQueryInvoked);
     connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);

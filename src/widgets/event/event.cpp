@@ -40,6 +40,30 @@ QString Event::text() const
 {
     return m_text;
 }
+QString Event::preeditString() const
+{
+    return m_preeditText;
+}
+
+QList<QInputMethodEvent::Attribute> Event::attributes() const
+{
+    return m_attributes;
+}
+
+QString Event::commitString() const
+{
+    return m_commitText;
+}
+
+int Event::replacementStart() const
+{
+    return m_replacementStart;
+}
+
+int Event::replacementLength() const
+{
+    return m_replacementLength;
+}
 
 int Event::key() const
 {
@@ -59,6 +83,19 @@ void Event::setKey(int key)
 void Event::setText(const QString &text)
 {
     m_text = text;
+}
+
+void Event::setPreeditString(const QString &preeditString, const QList<QInputMethodEvent::Attribute> &attributes)
+{
+    m_preeditText = preeditString;
+    m_attributes = attributes;
+}
+
+void Event::setCommitString(const QString &commitString, const int replacementStart, const int replacementLength)
+{
+    m_commitText = commitString;
+    m_replacementStart = replacementStart;
+    m_replacementLength = replacementLength;
 }
 
 void Event::setModifiers(Qt::KeyboardModifiers modifiers)

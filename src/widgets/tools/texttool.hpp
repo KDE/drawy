@@ -24,6 +24,9 @@ public:
 
     void cleanup() override;
 
+    void inputMethodInvoked(ApplicationContext *context) override;
+    [[nodiscard]] QVariant inputMethodQueryInvoked(ApplicationContext *context, Qt::InputMethodQuery query) override;
+
     [[nodiscard]] std::shared_ptr<TextItem> curItem() const;
     [[nodiscard]] Tool::Type type() const override;
     [[nodiscard]] QString icon() const override;

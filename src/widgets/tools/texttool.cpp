@@ -342,6 +342,15 @@ void TextTool::cleanup()
     renderingContext->markForUpdate();
 }
 
+void TextTool::inputMethodInvoked([[maybe_unused]] ApplicationContext *context)
+{
+}
+
+QVariant TextTool::inputMethodQueryInvoked([[maybe_unused]] ApplicationContext *context, [[maybe_unused]] Qt::InputMethodQuery query)
+{
+    return {};
+}
+
 std::shared_ptr<TextItem> TextTool::curItem() const
 {
     return m_curItem;

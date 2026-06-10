@@ -263,11 +263,27 @@ void Controller::keyReleased(QKeyEvent *event)
     toolBar->curTool().keyReleased(m_context);
 }
 
-void Controller::inputMethodInvoked([[maybe_unused]] QInputMethodEvent *event)
+void Controller::inputMethodInvoked(QInputMethodEvent *event)
 {
     if (m_zoomInProgress) {
         return;
     }
+    auto contextEvent{m_context->uiContext()->appEvent()};
+    auto toolBar{m_context->uiContext()->toolBar()};
+
+    contextEvent->setPreeditString(event->preeditString(), event->attributes());
+    contextEvent->setCommitString(event->commitString(), event->replacementStart(), event->replacementLength());
+
+    toolBar->curTool().inputMethodInvoked(m_context);
+}
+
+void Controller::inputMethodQueryInvoked(Qt::InputMethodQuery query, QVariant *value)
+{
+    if (m_zoomInProgress) {
+        return;
+    }
+    auto toolBar{m_context->uiContext()->toolBar()};
+    *value = toolBar->curTool().inputMethodQueryInvoked(m_context, query);
 }
 
 void Controller::leave([[maybe_unused]] QEvent *event)
