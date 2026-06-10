@@ -21,6 +21,7 @@ private Q_SLOTS:
     void shouldTestTransformations();
     void shouldTestIntersects();
     void shouldRoundTrip();
+    void shouldTestLoadPlainText();
     void shouldTestMode();
     void shouldTestCaretAndSelection();
     void shouldTestTextManipulation();

@@ -96,6 +96,23 @@ void TextItemTest::shouldRoundTrip()
     QCOMPARE(f2.boundingBox(), f.boundingBox());
 }
 
+void TextItemTest::shouldTestLoadPlainText()
+{
+    TextItem f;
+    f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
+    f.createTextBox(QPointF(10, 10));
+    f.cursor().insertText(u"Hello World"_s);
+
+    QJsonObject obj = f.serialize(-1);
+    const auto plainText = u"Plain Text"_s;
+    obj[u"text"_s] = plainText;
+
+    TextItem f2;
+    f2.deserialize(obj);
+
+    QCOMPARE(f2.text(), plainText);
+}
+
 void TextItemTest::shouldTestMode()
 {
     TextItem i;
