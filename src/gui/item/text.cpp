@@ -25,6 +25,7 @@ TextItem::TextItem()
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
 
     m_document.setDefaultFont(getFont());
+    m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
 
     QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this]() {
         updateBoundingBox();
