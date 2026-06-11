@@ -38,9 +38,9 @@ private:
     QPoint m_pos;
     qreal m_pressure{1.0};
     QString m_text;
-    QString m_preeditText;
+    QString m_preeditString;
     QList<QInputMethodEvent::Attribute> m_attributes;
-    QString m_commitText;
+    QString m_commitString;
     int m_replacementStart{-1};
     int m_replacementLength{-1};
     int m_key{};

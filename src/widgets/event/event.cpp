@@ -42,7 +42,7 @@ QString Event::text() const
 }
 QString Event::preeditString() const
 {
-    return m_preeditText;
+    return m_preeditString;
 }
 
 QList<QInputMethodEvent::Attribute> Event::attributes() const
@@ -52,7 +52,7 @@ QList<QInputMethodEvent::Attribute> Event::attributes() const
 
 QString Event::commitString() const
 {
-    return m_commitText;
+    return m_commitString;
 }
 
 int Event::replacementStart() const
@@ -87,13 +87,13 @@ void Event::setText(const QString &text)
 
 void Event::setPreeditString(const QString &preeditString, const QList<QInputMethodEvent::Attribute> &attributes)
 {
-    m_preeditText = preeditString;
+    m_preeditString = preeditString;
     m_attributes = attributes;
 }
 
 void Event::setCommitString(const QString &commitString, const int replacementStart, const int replacementLength)
 {
-    m_commitText = commitString;
+    m_commitString = commitString;
     m_replacementStart = replacementStart;
     m_replacementLength = replacementLength;
 }

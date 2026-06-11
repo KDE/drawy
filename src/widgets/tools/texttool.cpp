@@ -24,6 +24,10 @@
 #include "properties/widgets/propertymanager.hpp"
 #include <QClipboard>
 #include <QGuiApplication>
+#include <QInputMethod>
+#include <QTextBlock>
+#include <QTextCharFormat>
+#include <QTextLayout>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -38,6 +42,8 @@ TextTool::TextTool(ApplicationContext *context)
 
 void TextTool::mousePressed(ApplicationContext *context)
 {
+    QGuiApplication::inputMethod()->commit();
+
     const UIContext *uiContext{context->uiContext()};
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
@@ -308,12 +314,86 @@ void TextTool::processKey(const Event *ev)
     }
 }
 
+void TextTool::inputMethodInvoked(ApplicationContext *context)
+{
+    if (!m_curItem || m_curItem->mode() != TextItem::Mode::Edit) {
+        return;
+    }
+    const auto ev{context->uiContext()->appEvent()};
+    auto &cursor = m_curItem->cursor();
+
+    cursor.beginEditBlock(); // the whole block is treated as a single operation on undo/redo
+
+    if (ev->replacementLength() > 0) {
+        const int start = cursor.position() + ev->replacementStart();
+        cursor.setPosition(start);
+        cursor.setPosition(start + ev->replacementLength(), QTextCursor::KeepAnchor);
+        cursor.removeSelectedText();
+    }
+    if (!ev->commitString().isEmpty()) {
+        cursor.insertText(ev->commitString());
+    }
+    m_curItem->updatePreedit(ev->preeditString(), ev->attributes());
+
+    cursor.endEditBlock();
+
+    QGuiApplication::inputMethod()->update(Qt::ImCursorPosition | Qt::ImCursorRectangle);
+    m_curItem->setDirty(true);
+    context->spatialContext()->quadtree().deleteItem(m_curItem);
+    context->spatialContext()->quadtree().insertItem(m_curItem);
+
+    context->renderingContext()->cacheGrid().markAllDirty();
+    context->renderingContext()->markForRender();
+    context->renderingContext()->markForUpdate();
+}
+
+QVariant TextTool::inputMethodQueryInvoked([[maybe_unused]] ApplicationContext *context, Qt::InputMethodQuery query)
+{
+    if (!m_curItem) {
+        return {};
+    }
+    const auto &cursor = m_curItem->cursor();
+    const QTextBlock block = cursor.block();
+
+    switch (query) {
+    case Qt::ImEnabled:
+        return (m_curItem->mode() == TextItem::Mode::Edit);
+    case Qt::ImCursorRectangle: {
+        QRectF rect = m_curItem->cursorRect();
+        rect.translate(m_curItem->normalizedBoundingBox().topLeft());
+        rect = m_curItem->transformObj().mapRect(rect);
+        return m_context->spatialContext()->coordinateTransformer().worldToView(rect).toAlignedRect();
+    }
+    case Qt::ImFont:
+        return cursor.charFormat().font();
+    case Qt::ImCursorPosition:
+        return cursor.position() - block.position();
+    case Qt::ImAbsolutePosition:
+        return cursor.position();
+    case Qt::ImSurroundingText:
+        return cursor.block().text();
+    case Qt::ImTextBeforeCursor:
+        return block.text().left(cursor.position() - block.position());
+    case Qt::ImTextAfterCursor:
+        return block.text().mid(cursor.position() - block.position());
+    case Qt::ImCurrentSelection:
+        return cursor.selectedText();
+    case Qt::ImMaximumTextLength:
+        return QVariant();
+    case Qt::ImAnchorPosition:
+        return qBound(0, cursor.anchor() - block.position(), block.length());
+    default:
+        return QVariant();
+    }
+}
+
 void TextTool::keyReleased([[maybe_unused]] ApplicationContext *context)
 {
 }
 
 void TextTool::cleanup()
 {
+    QGuiApplication::inputMethod()->commit();
     if (!m_curItem) {
         return;
     }
@@ -340,15 +420,6 @@ void TextTool::cleanup()
     m_curItem = nullptr;
     renderingContext->markForRender();
     renderingContext->markForUpdate();
-}
-
-void TextTool::inputMethodInvoked([[maybe_unused]] ApplicationContext *context)
-{
-}
-
-QVariant TextTool::inputMethodQueryInvoked([[maybe_unused]] ApplicationContext *context, [[maybe_unused]] Qt::InputMethodQuery query)
-{
-    return {};
 }
 
 std::shared_ptr<TextItem> TextTool::curItem() const
