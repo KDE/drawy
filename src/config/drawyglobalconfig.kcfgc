@@ -5,3 +5,5 @@ ClassName=DrawyGlobalConfig
 Mutators=true
 Singleton=true
 ItemAccessors=true
+Visibility=DRAWYCONFIG_EXPORT
+IncludeFiles=drawyconfig_export.h

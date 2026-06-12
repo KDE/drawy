@@ -6,6 +6,7 @@
 
 #include "configuresettingsdialog.hpp"
 #include "general/configuregeneralwidget.hpp"
+#include "input/configureinputwidget.hpp"
 #include "misc/configuremiscwidget.hpp"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -22,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureGeneralWidget(new ConfigureGeneralWidget(this))
+    , mConfigureInputWidget(new ConfigureInputWidget(this))
 #if WITH_DBUS
     , mConfigureMiscWidget(new ConfigureMiscWidget(this))
 #endif
@@ -33,6 +35,11 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     mConfigureGeneralWidgetPage = new KPageWidgetItem(mConfigureGeneralWidget, generalPageName);
     mConfigureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     addPage(mConfigureGeneralWidgetPage);
+
+    const QString inputPageName = i18n("Input");
+    mConfigureInputWidgetPage = new KPageWidgetItem(mConfigureInputWidget, inputPageName);
+    mConfigureInputWidgetPage->setIcon(QIcon::fromTheme(u"dialog-input-devices-symbolic"_s));
+    addPage(mConfigureInputWidgetPage);
 
 #if WITH_DBUS
     const QString miscPageName = i18n("Misc");
@@ -72,6 +79,7 @@ void ConfigureSettingsDialog::writeConfig()
 void ConfigureSettingsDialog::slotAccepted()
 {
     mConfigureGeneralWidget->save();
+    mConfigureInputWidget->save();
 #if WITH_DBUS
     mConfigureMiscWidget->save();
 #endif
@@ -80,6 +88,7 @@ void ConfigureSettingsDialog::slotAccepted()
 void ConfigureSettingsDialog::load()
 {
     mConfigureGeneralWidget->load();
+    mConfigureInputWidget->load();
 #if WITH_DBUS
     mConfigureMiscWidget->load();
 #endif
@@ -88,6 +97,7 @@ void ConfigureSettingsDialog::load()
 void ConfigureSettingsDialog::slotRestoreDefaults()
 {
     mConfigureGeneralWidget->restoreToDefaults();
+    mConfigureInputWidget->restoreToDefaults();
 #if WITH_DBUS
     mConfigureMiscWidget->restoreToDefaults();
 #endif

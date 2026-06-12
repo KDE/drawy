@@ -217,6 +217,10 @@ target_sources(
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp
         dialog/misc/powermanagerwidget.cpp
+        dialog/input/configureinputwidget.hpp
+        dialog/input/configureinputwidget.cpp
+        dialog/input/freehandsettingswidget.hpp
+        dialog/input/freehandsettingswidget.cpp
         iconmanager/iconmanager.hpp
         iconmanager/iconmanager.cpp
         mime/drawymimehandler.cpp

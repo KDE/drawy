@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "freehand.hpp"
+#include "drawyglobalconfig.h"
 #include "math.hpp"
 #include <QtMath>
 
@@ -10,6 +11,7 @@ namespace Common::Utils::Freehand
 {
 QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
 {
+    qDebug() << "THINNING: " << DrawyGlobalConfig::self()->thinning();
     return getStrokePath(getStrokePolygon(getStrokePoints(points, pressures, simulatePressure, thickness), thickness));
 }
 

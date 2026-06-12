@@ -9,6 +9,7 @@
 #include <KPageDialog>
 class ConfigureGeneralWidget;
 class ConfigureMiscWidget;
+class ConfigureInputWidget;
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureSettingsDialog : public KPageDialog
 {
@@ -24,6 +25,8 @@ private:
     LIBDRAWYWIDGETS_NO_EXPORT void load();
     LIBDRAWYWIDGETS_NO_EXPORT void slotRestoreDefaults();
     ConfigureGeneralWidget *const mConfigureGeneralWidget;
+    ConfigureInputWidget *const mConfigureInputWidget;
+    KPageWidgetItem *mConfigureInputWidgetPage = nullptr;
     KPageWidgetItem *mConfigureGeneralWidgetPage = nullptr;
 #if WITH_DBUS
     ConfigureMiscWidget *const mConfigureMiscWidget;
