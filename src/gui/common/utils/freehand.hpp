@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "drawyglobalconfig.h"
 #include <QList>
 #include <QPainterPath>
 #include <QPoint>
@@ -11,7 +12,7 @@
 namespace Common::Utils::Freehand
 {
 struct StrokePoint {
-    QPointF point{};
+    QPointF point;
     qreal pressure{1.0};
 };
 
@@ -23,10 +24,10 @@ struct StrokePoint {
 inline constexpr qreal minStreamline = 0.15;
 inline constexpr qreal streamlineRange = 0.85;
 
-inline constexpr qreal streamline = 0.5;
-inline constexpr qreal thinning = 0.5;
-inline constexpr qreal smoothing = 0.5;
-inline constexpr qreal t = minStreamline + (1 - streamline) * streamlineRange;
+inline const qreal streamline = DrawyGlobalConfig::self()->streamline();
+inline const qreal thinning = DrawyGlobalConfig::self()->thinning();
+inline const qreal smoothing = DrawyGlobalConfig::self()->smoothing();
+inline const qreal t = minStreamline + (1 - streamline) * streamlineRange;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
 

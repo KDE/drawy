@@ -207,6 +207,7 @@ target_link_libraries(
         Qt::Gui
         KF6::I18n
         KF6::CoreAddons
+        drawyconfig
         ${ZSTD_LINK_LIBRARIES}
 )
 

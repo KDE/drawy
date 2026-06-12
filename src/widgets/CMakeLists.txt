@@ -281,13 +281,14 @@ target_link_libraries(
         KF6::XmlGui
         KF6::I18n
         KF6::SyntaxHighlighting
+        drawyconfig
 )
 
 if(USE_DBUS)
     target_link_libraries(libdrawywidgets PRIVATE Qt::DBus)
 endif()
 
-kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
+# kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
@@ -309,7 +310,7 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_resize_debug.h IDEN
     CATEGORY_NAME org.kde.drawy_resize DESCRIPTION "drawy (resize)" EXPORT DRAWY
 )
 
-install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+# install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 set_target_properties(
     libdrawywidgets
