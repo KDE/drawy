@@ -199,8 +199,12 @@ void Controller::tablet(QTabletEvent *event)
         m_stashedTool = oldTool;
     }
 
-    // TODO: Remove magic numbers
-    ev->setPressure(event->pressure() / 1.60 + 0.375);
+    constexpr qreal targetRangeStart{0};
+    constexpr qreal targetRangeEnd{1.0};
+
+    // transform the pressure to fit within this range
+    ev->setPressure(event->pressure() * (targetRangeEnd - targetRangeStart) + targetRangeStart);
+
     toolBar->curTool().tablet(m_context);
 }
 

@@ -19,7 +19,14 @@ struct StrokePoint {
  * @brief: smoothness factor, the lower it is, the smoother the lines are but
  * they look more unnatural
  */
-inline constexpr qreal t = 0.25;
+
+inline constexpr qreal minStreamline = 0.15;
+inline constexpr qreal streamlineRange = 0.85;
+
+inline constexpr qreal streamline = 0.5;
+inline constexpr qreal thinning = 0.5;
+inline constexpr qreal smoothing = 0.5;
+inline constexpr qreal t = minStreamline + (1 - streamline) * streamlineRange;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
 
@@ -35,6 +42,13 @@ inline constexpr qreal PI = 3.14592654;
 [[nodiscard]] QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness);
 
 /**
+ * @brief the same as getStroke but has an outbound parameter that outputs the pressure value of the last point
+ *        it's useful for situations when you want this information to ensure seamless connection between two strokes
+ */
+[[nodiscard]] QPainterPath
+getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness, qreal &lastPressure);
+
+/**
  * @brief smoothens a stroke formed from a list of points
  * @param points a QList of QPointF
  * @param pressures a QList of pressure values from 0.0 to 1.0
@@ -43,7 +57,8 @@ inline constexpr qreal PI = 3.14592654;
  * @returns a QList of QPointF with the same number of points but with less
  * noise and smoother
  */
-[[nodiscard]] QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure);
+[[nodiscard]] QList<StrokePoint>
+getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness);
 
 /**
  * @brief returns a polygon formed from a vector of stroke points
@@ -66,4 +81,6 @@ inline constexpr qreal PI = 3.14592654;
  * @returns a QPainterPath
  */
 [[nodiscard]] QPainterPath getStrokeOutline(const QList<StrokePoint> &points);
+
+[[nodiscard]] qreal getStrokeRadius(const qreal thickness, const qreal pressure);
 } // namespace Common::Utils::Freehand
