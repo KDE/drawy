@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:41+0000\n"
+"POT-Creation-Date: 2026-06-16 00:41+0000\n"
 "PO-Revision-Date: 2026-05-08 11:42+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -317,7 +317,7 @@ msgctxt "@action:button"
 msgid "Move"
 msgstr "Move"
 
-#: widgets/context/uicontext.cpp:242
+#: widgets/context/uicontext.cpp:243
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -325,7 +325,7 @@ msgctxt ""
 msgid "Reorder"
 msgstr "Reordina"
 
-#: widgets/context/uicontext.cpp:252
+#: widgets/context/uicontext.cpp:253
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
@@ -804,12 +804,12 @@ msgctxt "Name of a property"
 msgid "End Arrow Head"
 msgstr "Puncta de flecha de finir"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:31
+#: widgets/properties/widgets/erasersizewidget.cpp:32
 #, kde-format
 msgid "Eraser Size"
 msgstr "Grandor de gumma"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:38
+#: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
 msgid "Font Size"
 msgstr "Dimension de Font"
@@ -847,7 +847,7 @@ msgstr "Stylo de tracto"
 msgid "Stroke Color"
 msgstr "Color de Colpo (Stroke)"
 
-#: widgets/properties/widgets/strokewidthwidget.cpp:31
+#: widgets/properties/widgets/strokewidthwidget.cpp:32
 #, kde-format
 msgid "Thickness"
 msgstr "Spissor"

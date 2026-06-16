@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:41+0000\n"
+"POT-Creation-Date: 2026-06-16 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 10:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -322,7 +322,7 @@ msgid "Move"
 msgstr "Mou"
 
 # NdT: Ordre d'elements segons l'eix Z
-#: widgets/context/uicontext.cpp:242
+#: widgets/context/uicontext.cpp:243
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -330,7 +330,7 @@ msgctxt ""
 msgid "Reorder"
 msgstr "Reordena"
 
-#: widgets/context/uicontext.cpp:252
+#: widgets/context/uicontext.cpp:253
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
@@ -809,12 +809,12 @@ msgctxt "Name of a property"
 msgid "End Arrow Head"
 msgstr "Final de la punta de fletxa"
 
-#: widgets/properties/widgets/erasersizewidget.cpp:31
+#: widgets/properties/widgets/erasersizewidget.cpp:32
 #, kde-format
 msgid "Eraser Size"
 msgstr "Mida de l'esborrador"
 
-#: widgets/properties/widgets/fontsizewidget.cpp:38
+#: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
 msgid "Font Size"
 msgstr "Mida de la lletra"
@@ -852,7 +852,7 @@ msgstr "Estil del traç"
 msgid "Stroke Color"
 msgstr "Color del traç"
 
-#: widgets/properties/widgets/strokewidthwidget.cpp:31
+#: widgets/properties/widgets/strokewidthwidget.cpp:32
 #, kde-format
 msgid "Thickness"
 msgstr "Gruix"
