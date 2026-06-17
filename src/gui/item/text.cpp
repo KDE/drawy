@@ -276,6 +276,12 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
 
 void TextItem::updateAfterProperty()
 {
+    QTextCursor cursor = m_cursor;
+    cursor.select(QTextCursor::Document);
+    QTextCharFormat format;
+    format.setFontPointSize(property(Property::Type::FontSize).value<qreal>());
+    cursor.mergeCharFormat(format);
+
     updateBoundingBox();
 }
 
