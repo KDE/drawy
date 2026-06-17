@@ -10,7 +10,6 @@
 #include <QJsonObject>
 #include <QTextBlock>
 #include <QTextLayout>
-#include <QTextLine>
 #include <utility>
 
 #include "common/constants.hpp"
@@ -58,6 +57,16 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     painter.save();
     painter.translate(m_boundingBox.topLeft() - offset);
 
+    QTransform transform{m_transform};
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
+
+    if (m_mode == Mode::Normal && qFuzzyCompare(1.0, scaleY) && !qFuzzyCompare(1.0, scaleX)) {
+        painter.scale(1.0 / scaleX, 1.0);
+        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
+        const qreal targetWidth = std::max(width * scaleX, minWrapWidth());
+        m_document.setTextWidth(targetWidth);
+    }
+
     const QColor color{getPen().color()};
     QAbstractTextDocumentLayout::PaintContext ctx;
     ctx.palette.setColor(QPalette::Text, color);
@@ -72,35 +81,52 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     }
 
     if (m_mode == Mode::Edit) {
+        QGuiApplication::inputMethod()->cursorRectangleChanged();
         // draw caret
-        const auto block = m_cursor.block();
-        if (const auto *layout = block.layout()) {
-            const QTextLine line = layout->lineForTextPosition(m_cursor.positionInBlock());
-            if (line.isValid()) {
-                const qreal x = layout->position().x() + line.cursorToX(m_cursor.positionInBlock());
-                const qreal y = layout->position().y() + line.y();
-                painter.setPen(getPen());
-                painter.drawLine(QPointF(x, y), QPointF(x, y + line.height()));
-            }
+        const QRectF rect = cursorRect(m_preeditCursorPos);
+        if (rect.isValid()) {
+            painter.setPen(getPen());
+            painter.drawLine(rect.topLeft(), rect.bottomLeft());
         }
     }
     m_document.documentLayout()->draw(&painter, ctx);
     painter.restore();
 }
 
+void TextItem::resize(const QTransform operation)
+{
+    Item::resize(operation);
+
+    const QSignalBlocker blocker{m_document};
+    QTransform transform{m_transform};
+    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
+
+    if (m_mode == Mode::Normal && qFuzzyCompare(1.0, scaleY) && !qFuzzyCompare(1.0, scaleX)) {
+        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
+        const qreal targetWidth = std::max(width * scaleX, minWrapWidth());
+
+        m_document.setTextWidth(targetWidth);
+        m_boundingBox.setHeight(m_document.size().height());
+    }
+}
+
 void TextItem::commitTransformation()
 {
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
-    Q_ASSERT(scaleX == scaleY);
-
     const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
-    const int curFontSize{property(Property::Type::FontSize).value<int>()};
-    const int newFontSize{qRound(curFontSize * scaleX)};
-
-    setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
+    if (!qFuzzyCompare(1.0, scaleX)) {
+        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
+        m_wrapWidth = std::max(width * scaleX, minWrapWidth());
+    }
 
     m_boundingBox = filtered.map(m_boundingBox).boundingRect();
+
+    if (!qFuzzyCompare(1.0, scaleY)) {
+        const qreal curFontSize{property(Property::Type::FontSize).value<qreal>()};
+        const qreal newFontSize{std::max(1.0, curFontSize * scaleY)};
+        setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
+    }
     updateBoundingBox();
 }
 
@@ -145,7 +171,10 @@ void TextItem::updateBoundingBox()
 {
     m_document.setDefaultFont(getFont());
     m_document.setDefaultTextOption(getTextOptions());
-    m_document.setTextWidth(-1);
+
+    if (m_wrapWidth > 0) {
+        m_document.setTextWidth(m_wrapWidth);
+    }
 
     m_boundingBox.setSize(m_document.size());
     setDirty(true);
@@ -180,6 +209,7 @@ QTextOption TextItem::getTextOptions()
 {
     QTextOption options{};
     options.setTabStopDistance(Common::tabStopDistance);
+    options.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
 
     return options;
 }
@@ -197,6 +227,51 @@ QString TextItem::html() const
 Item::FormType TextItem::formType() const
 {
     return Item::FormType::Text;
+}
+
+QRectF TextItem::cursorRect(int offset) const
+{
+    const auto block = m_cursor.block();
+    if (const auto *layout = block.layout()) {
+        const int pos = m_cursor.positionInBlock() + offset;
+        const QTextLine line = layout->lineForTextPosition(pos);
+        if (line.isValid()) {
+            const qreal x = layout->position().x() + line.cursorToX(pos);
+            const qreal y = layout->position().y() + line.y();
+            const qreal height = line.height();
+
+            return QRectF(x, y, 1.0, height);
+        }
+    }
+    return QRectF();
+}
+
+void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEvent::Attribute> &attributes)
+{
+    m_preeditString = preedit;
+    m_preeditCursorPos = preedit.length();
+
+    QList<QTextLayout::FormatRange> formats;
+    for (const auto &attr : attributes) {
+        if (attr.type == QInputMethodEvent::Cursor) {
+            m_preeditCursorPos = attr.start;
+        } else if (attr.type == QInputMethodEvent::TextFormat) {
+            QTextLayout::FormatRange range;
+            range.start = attr.start + m_cursor.positionInBlock();
+            range.length = attr.length;
+            range.format = qvariant_cast<QTextCharFormat>(attr.value);
+            formats.append(range);
+        }
+    }
+    auto layout = m_cursor.block().layout();
+    if (!m_preeditString.isEmpty()) {
+        layout->setPreeditArea(m_cursor.positionInBlock(), m_preeditString);
+        layout->setFormats(formats);
+    } else {
+        layout->setPreeditArea(-1, QString());
+        layout->clearFormats();
+    }
+    updateBoundingBox();
 }
 
 void TextItem::updateAfterProperty()
@@ -231,4 +306,10 @@ QDebug operator<<(QDebug d, const TextItem &t)
 bool TextItem::lockAspectRatioWhenResizing() const
 {
     return true;
+}
+
+qreal TextItem::minWrapWidth() const
+{
+    const QFontMetricsF metrics{getFont()};
+    return metrics.maxWidth();
 }

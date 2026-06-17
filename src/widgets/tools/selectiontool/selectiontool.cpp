@@ -39,7 +39,10 @@ void SelectionTool::mousePressed(ApplicationContext *context)
     updateCurrentHandler(context);
 
     if (m_curHandler) {
-        context->selectionContext()->setShouldRenderHandles(false);
+        const auto &selectedItems{context->selectionContext()->selectedItems()};
+        const bool singleTextItem = selectedItems.size() == 1 && (*selectedItems.begin())->formType() == Item::FormType::Text;
+
+        context->selectionContext()->setShouldRenderHandles(singleTextItem);
         m_curHandlerState = m_curHandler->mousePressed(context);
         return;
     }

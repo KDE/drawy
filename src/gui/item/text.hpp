@@ -5,6 +5,7 @@
 #pragma once
 #include "libdrawygui_export.h"
 
+#include <QInputMethodEvent>
 #include <QPainter>
 #include <QRect>
 #include <QTextCursor>
@@ -24,10 +25,13 @@ public:
 
     void draw(QPainter &painter, const QPointF &offset) override;
 
+    void resize(QTransform operation) override;
     void commitTransformation() override;
     [[nodiscard]] bool lockAspectRatioWhenResizing() const override;
 
     void createTextBox(const QPointF position);
+
+    [[nodiscard]] qreal minWrapWidth() const;
 
     enum class Mode : int8_t {
         Edit = 0,
@@ -42,6 +46,10 @@ public:
 
     [[nodiscard]] QString text() const;
     [[nodiscard]] QString html() const;
+
+    [[nodiscard]] QRectF cursorRect(int offset = 0) const;
+
+    void updatePreedit(const QString &preedit, const QList<QInputMethodEvent::Attribute> &attributes);
 
     [[nodiscard]] Item::FormType formType() const override;
 
@@ -67,5 +75,10 @@ private:
     QTextDocument m_document;
     QTextCursor m_cursor;
     Mode m_mode{Mode::Normal};
+
+    QString m_preeditString;
+    int m_preeditCursorPos{0};
+
+    qreal m_wrapWidth{-1};
 };
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const TextItem &t);

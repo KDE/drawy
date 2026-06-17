@@ -16,6 +16,7 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
+#include "item/text.hpp"
 #include <QPainter>
 #include <QRectF>
 
@@ -124,8 +125,17 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             return std::make_tuple(1.0, 1.0, QPointF{0, 0});
         }()};
 
-        const qreal scaleX{newWidth / m_initialSelectionBox.width()};
-        const qreal scaleY{newHeight / m_initialSelectionBox.height()};
+        qreal scaleX{newWidth / m_initialSelectionBox.width()};
+        qreal scaleY{newHeight / m_initialSelectionBox.height()};
+
+        const bool textWrap{selectedItems.size() == 1 && (*selectedItems.begin())->formType() == Item::FormType::Text
+                            && (m_activeHandleType == ResizeHandleType::Left || m_activeHandleType == ResizeHandleType::Right)};
+
+        if (textWrap) {
+            const auto *textItem = static_cast<TextItem *>(selectedItems.begin()->get());
+            scaleX = std::max(scaleX, textItem->minWrapWidth() / m_initialSelectionBox.width());
+            scaleY = 1.0;
+        }
 
         QTransform newTransform{m_initialSelectionTransform};
         newTransform.translate(centerOfScale.x(), centerOfScale.y());
@@ -159,7 +169,9 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
             dirtyRegion |= item->boundingBox();
             quadtree.deleteItem(item);
 
-            if (item->lockAspectRatioWhenResizing() || useLocked) {
+            const bool itemUseLocked = (useLocked || item->lockAspectRatioWhenResizing()) && !textWrap;
+
+            if (itemUseLocked) {
                 item->resize(m_lastLockedTransformUpdate.inverted());
                 item->resize(lockedTransformUpdate);
                 m_aspectRatioLocked[item] = true;
