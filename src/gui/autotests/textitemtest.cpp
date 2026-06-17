@@ -171,4 +171,23 @@ void TextItemTest::shouldTestLockAspectRatioWhenResizing()
     QVERIFY(i.lockAspectRatioWhenResizing());
 }
 
+void TextItemTest::shouldTestUpdatePreedit()
+{
+    TextItem item;
+    item.createTextBox(QPointF(0, 0));
+    item.cursor().insertText(u"Hello"_s);
+    item.setMode(TextItem::Mode::Edit);
+
+    const QRectF initialBounds = item.boundingBox();
+    const QString initialText = item.text();
+
+    item.updatePreedit(u"preedit"_s, {});
+    QCOMPARE(item.text(), initialText);
+    QVERIFY(item.boundingBox().size().width() > initialBounds.size().width());
+
+    item.updatePreedit({}, {});
+    QCOMPARE(item.text(), initialText);
+    QCOMPARE(item.boundingBox(), initialBounds);
+}
+
 #include "moc_textitemtest.cpp"
