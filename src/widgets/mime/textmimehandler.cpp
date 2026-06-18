@@ -5,9 +5,6 @@
 #include "mime/textmimehandler.hpp"
 #include "item/item.hpp"
 #include "item/text.hpp"
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
 #include <QMimeData>
 #include <memory>
 

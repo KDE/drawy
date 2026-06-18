@@ -5,7 +5,6 @@
  */
 #include "xboxdeserializer.hpp"
 #include "xbox.hpp"
-#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 XBoxDeserializer::XBoxDeserializer(XBoxItem *item)
     : PolygonDeserializer(item)

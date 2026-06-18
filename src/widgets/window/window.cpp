@@ -7,7 +7,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QFontDatabase>
-#include <QShortcut>
 #include <QWindow>
 
 #include <KActionCollection>

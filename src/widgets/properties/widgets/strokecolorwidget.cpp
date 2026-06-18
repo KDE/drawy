@@ -6,7 +6,6 @@
 
 #include "properties/property.hpp"
 #include <KLocalizedString>
-#include <QColor>
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 StrokeColorWidget::StrokeColorWidget(QWidget *parent)

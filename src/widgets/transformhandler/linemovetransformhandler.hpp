@@ -5,7 +5,6 @@
 #pragma once
 
 #include "movetransformhandler.hpp"
-#include <QPointF>
 
 class LineMoveTransformHandler : public MoveTransformHandler
 {

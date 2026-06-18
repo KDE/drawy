@@ -6,7 +6,6 @@
 
 #include <KLocalizedString>
 #include <QHBoxLayout>
-#include <QPushButton>
 #include <QWidget>
 
 #include "buttonactionswidget.hpp"

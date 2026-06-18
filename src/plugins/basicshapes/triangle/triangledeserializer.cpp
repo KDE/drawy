@@ -5,7 +5,6 @@
  */
 #include "triangledeserializer.hpp"
 #include "triangle.hpp"
-#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 TriangleDeserializer::TriangleDeserializer(TriangleItem *item)
     : PolygonDeserializer(item)

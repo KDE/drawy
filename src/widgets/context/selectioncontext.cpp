@@ -13,7 +13,6 @@
 #include "properties/property.hpp"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
-#include <QPainter>
 #include <utility>
 
 SelectionContext::SelectionContext(ApplicationContext *context)

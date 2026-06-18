@@ -4,7 +4,6 @@
 
 #include "freehand.hpp"
 #include "math.hpp"
-#include <QtMath>
 
 namespace Common::Utils::Freehand
 {

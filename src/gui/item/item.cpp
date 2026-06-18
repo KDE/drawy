@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "item.hpp"
-#include <QPainterPath>
 #include <QUuid>
 
 #include "common/constants.hpp"

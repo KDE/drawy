@@ -16,8 +16,6 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
-#include <QPainter>
-#include <QRectF>
 #include <algorithm>
 
 using namespace Qt::StringLiterals;

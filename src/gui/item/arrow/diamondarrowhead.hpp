@@ -5,7 +5,6 @@
 #pragma once
 
 #include "arrowhead.hpp"
-#include <QObject>
 #include <QPainter>
 
 class DiamondArrowHead : public ArrowHead

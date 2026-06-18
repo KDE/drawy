@@ -5,7 +5,6 @@
 #pragma once
 
 #include "transformhandler.hpp"
-#include <QCursor>
 #include <QObject>
 #include <QPointF>
 

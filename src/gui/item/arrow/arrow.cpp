@@ -9,7 +9,6 @@
 #include "serializer/arrowdeserializer.hpp"
 #include "serializer/arrowserializer.hpp"
 #include <QJsonObject>
-#include <QPainterPath>
 
 ArrowItem::ArrowItem()
 {
