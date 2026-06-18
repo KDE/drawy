@@ -116,8 +116,14 @@ void TextItem::commitTransformation()
     const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
     if (!qFuzzyCompare(1.0, scaleX)) {
-        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
-        m_wrapWidth = std::max(width * scaleX, minWrapWidth());
+        if (qFuzzyCompare(1.0, scaleY)) {
+            const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
+            m_wrapWidth = std::max(width * scaleX, minWrapWidth());
+        } else {
+            if (m_wrapWidth > 0) {
+                m_wrapWidth = std::max(m_wrapWidth * scaleX, minWrapWidth());
+            }
+        }
     }
 
     m_boundingBox = filtered.map(m_boundingBox).boundingRect();
