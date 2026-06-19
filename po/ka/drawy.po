@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:41+0000\n"
+"POT-Creation-Date: 2026-06-19 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -61,7 +61,7 @@ msgid "Change Eraser Size"
 msgstr "საშლელის ზომის შეცვლა"
 
 #: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "ქმედებები"
@@ -175,19 +175,19 @@ msgstr "აირჩიეთ ობიექტი"
 msgid "Ungroup Objects"
 msgstr "ელემენტების განჯგუფება"
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr "100%"
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "გადიდების ჩამოყრა"
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
@@ -408,17 +408,17 @@ msgstr "ღია ფონის ფერი"
 msgid "Dark background color"
 msgstr "მუქი ფონის ფერი"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr "ფერთა პალიტრა"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr "ღია რეჟიმი"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
 msgstr "მუქი რეჟიმი"
@@ -685,19 +685,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "საჭიროა ქმედება"
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "მონიშნულის წაშლა"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "მონიშნულის დაჯგუფება"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -840,7 +840,7 @@ msgstr "წერტილოვანი"
 msgid "Stroke Style"
 msgstr "შემოსაზღვრის სტილი"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr "გამოძრავების ფერი"
@@ -866,7 +866,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "გამოსახულების ჩასმა"
 
-#: widgets/window/window.cpp:192
+#: widgets/window/window.cpp:191
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

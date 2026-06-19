@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:41+0000\n"
+"POT-Creation-Date: 2026-06-19 00:41+0000\n"
 "PO-Revision-Date: 2026-05-17 07:47-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -64,7 +64,7 @@ msgid "Change Eraser Size"
 msgstr "Alterar tamanho da borracha"
 
 #: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "Ações"
@@ -178,19 +178,19 @@ msgstr "Selecionar objeto"
 msgid "Ungroup Objects"
 msgstr "Desagrupar objetos"
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr "100%"
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "Redefinir zoom"
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
@@ -411,17 +411,17 @@ msgstr "Cor de fundo claro"
 msgid "Dark background color"
 msgstr "Cor de fundo escuro"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr "Paleta de cor"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr "Modo claro"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modo escuro"
@@ -688,19 +688,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Ação necessária"
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "Excluir seleção"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "Agrupar seleção"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -843,7 +843,7 @@ msgstr "Pontilhado"
 msgid "Stroke Style"
 msgstr "Estilo de traço"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr "Cor do traço"
@@ -869,7 +869,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Inserir imagem"
 
-#: widgets/window/window.cpp:192
+#: widgets/window/window.cpp:191
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

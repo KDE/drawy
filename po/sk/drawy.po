@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:41+0000\n"
+"POT-Creation-Date: 2026-06-19 00:41+0000\n"
 "PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -64,7 +64,7 @@ msgid "Change Eraser Size"
 msgstr "Zmeniť veľkosť gumy"
 
 #: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "Akcie"
@@ -179,19 +179,19 @@ msgstr "Vybrať objekt"
 msgid "Ungroup Objects"
 msgstr "Zrušiť zoskupenie objektov"
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr "100%"
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "Obnoviť priblíženie"
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
@@ -413,17 +413,17 @@ msgstr "Svetlá farba pozadia"
 msgid "Dark background color"
 msgstr "Tmavá farba pozadia"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr "Paleta farieb"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr "Svetlý režim"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
 msgstr "Tmavý režim"
@@ -690,19 +690,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Vyžaduje sa akcia"
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "Odstrániť výber"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "Zoskupiť výber"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -845,7 +845,7 @@ msgstr "Bodkovaný"
 msgid "Stroke Style"
 msgstr "Ťah (štýl)"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr "Farba ťahu štetca"
@@ -871,7 +871,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Vložiť obrázok"
 
-#: widgets/window/window.cpp:192
+#: widgets/window/window.cpp:191
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

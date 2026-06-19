@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:41+0000\n"
+"POT-Creation-Date: 2026-06-19 00:41+0000\n"
 "PO-Revision-Date: 2026-06-04 01:03+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -66,7 +66,7 @@ msgid "Change Eraser Size"
 msgstr "Keisti trintuko dydį"
 
 #: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "Veiksmai"
@@ -182,19 +182,19 @@ msgstr "Žymėti objektą"
 msgid "Ungroup Objects"
 msgstr "Išgrupuoti objektą"
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr "100%"
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "Atstatyti mastelį"
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
@@ -417,17 +417,17 @@ msgstr "Šviesi fono spalva"
 msgid "Dark background color"
 msgstr "Tamsi fono spalva"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr "Spalvų paletė"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr "Šviesi veiksena"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
 msgstr "Tamsi veiksena"
@@ -694,19 +694,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Reikalingas veiksmas"
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "Ištrinti žymėjimą"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "Grupuoti žymėjimą"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -849,7 +849,7 @@ msgstr "Taškuotas"
 msgid "Stroke Style"
 msgstr "Brūkštelėjimo stilius"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr "Brūkštelėjimo spalva"
@@ -875,7 +875,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Įterpti paveikslą"
 
-#: widgets/window/window.cpp:192
+#: widgets/window/window.cpp:191
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:41+0000\n"
+"POT-Creation-Date: 2026-06-19 00:41+0000\n"
 "PO-Revision-Date: 2026-05-07 13:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -65,7 +65,7 @@ msgid "Change Eraser Size"
 msgstr "غيّر حجم الممحاة"
 
 #: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "الإجراءات"
@@ -183,19 +183,19 @@ msgstr "حدد الكائن"
 msgid "Ungroup Objects"
 msgstr "فك جمع الكائنات"
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr "100٪"
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr "صفّر التكبير"
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
@@ -420,17 +420,17 @@ msgstr "لون الخلفيّة الفاتحة"
 msgid "Dark background color"
 msgstr "لون الخلفيّة المظلمة"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr "لوح الألوان"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr "الوضع الفاتح"
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
 msgstr "الوضع المظلم"
@@ -697,19 +697,19 @@ msgctxt "@title:window"
 msgid "Action Required"
 msgstr "إجراء مطلوب"
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr "امحُ المحدد"
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr "جمّع التحديد"
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -852,7 +852,7 @@ msgstr "منقّط"
 msgid "Stroke Style"
 msgstr "نمط الحد"
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr "لون الحدّ"
@@ -878,7 +878,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "أدرج صورة"
 
-#: widgets/window/window.cpp:192
+#: widgets/window/window.cpp:191
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
