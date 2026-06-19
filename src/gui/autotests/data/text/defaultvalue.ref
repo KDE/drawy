@@ -6,6 +6,10 @@
             "value": 18
         },
         {
+            "type": "FontStyle",
+            "value": 0
+        },
+        {
             "type": "Opacity",
             "value": 255
         },

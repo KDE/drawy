@@ -128,6 +128,11 @@ void MainWindow::loadCustomFonts()
         qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles";
     }
 
+    fontID = QFontDatabase::addApplicationFont(u":/fonts/FuzzyBubbles-Bold.ttf"_s);
+    if (fontID == -1) {
+        qCWarning(DRAWY_LOG) << "Failed to load font: FuzzyBubbles-Bold";
+    }
+
     fontID = QFontDatabase::addApplicationFont(u":/fonts/Inter.ttf"_s);
     if (fontID == -1) {
         qCWarning(DRAWY_LOG) << "Failed to load font: Inter";

@@ -48,6 +48,8 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::BackgroundStyle;
     } else if (str == u"ZOrder") {
         return Property::Type::ZOrder;
+    } else if (str == u"FontStyle") {
+        return Property::Type::FontStyle;
     } else {
         qCWarning(DRAWY_GUI_LOG) << "Property::Type is not defined for: " << str;
     }
@@ -65,6 +67,8 @@ QString Property::convertEnumToString(Property::Type type)
         return u"Opacity"_s;
     case Property::Type::FontSize:
         return u"FontSize"_s;
+    case Property::Type::FontStyle:
+        return u"FontStyle"_s;
     case Property::Type::EraserSize:
         return u"EraserSize"_s;
     case Property::Type::Actions:
@@ -101,6 +105,8 @@ QString Property::information(Type type)
         return i18n("Change Opacity");
     case Property::Type::FontSize:
         return i18n("Change Font Size");
+    case Property::Type::FontStyle:
+        return i18n("Change Font Style");
     case Property::Type::EraserSize:
         return i18n("Change Eraser Size");
     case Property::Type::Actions:

@@ -26,6 +26,9 @@ inline constexpr QColor selectionBorderColor{67, 135, 244, 255};
 inline constexpr QColor selectionBackgroundColor{67, 135, 244, 50};
 inline constexpr qreal selectionHandleSize{10.0};
 
+inline constexpr QSize fontStyleIconSize{30, 30};
+inline constexpr int minFontSize{1};
+
 inline QPen selectionBorderPen()
 {
     return QPen{selectionBorderColor, selectionBorderWidth};

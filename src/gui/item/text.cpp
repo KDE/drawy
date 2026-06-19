@@ -13,6 +13,7 @@
 #include <utility>
 
 #include "common/constants.hpp"
+#include "properties/property.hpp"
 #include "serializer/textdeserializer.hpp"
 #include "serializer/textserializer.hpp"
 
@@ -23,6 +24,7 @@ TextItem::TextItem()
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::white), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
+    m_properties[Property::Type::FontStyle] = Property{0, Property::Type::FontStyle};
 
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
@@ -193,6 +195,11 @@ QFont TextItem::getFont() const
     font.setPointSize(property(Property::Type::FontSize).value<int>());
     font.setFamily(u"Fuzzy Bubbles"_s);
 
+    const int style = property(Property::Type::FontStyle).value<int>();
+    font.setBold(style & Property::FontStyle::Bold);
+    font.setItalic(style & Property::FontStyle::Italic);
+    font.setUnderline(style & Property::FontStyle::Underlined);
+
     return font;
 }
 
@@ -287,6 +294,7 @@ void TextItem::updateAfterProperty()
     cursor.select(QTextCursor::Document);
     QTextCharFormat format;
     format.setFontPointSize(property(Property::Type::FontSize).value<qreal>());
+    format.setFont(getFont());
     cursor.mergeCharFormat(format);
 
     updateBoundingBox();

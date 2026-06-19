@@ -108,6 +108,8 @@ target_sources(
         properties/widgets/endarrowtypewidget.hpp
         properties/widgets/fontsizewidget.cpp
         properties/widgets/fontsizewidget.hpp
+        properties/widgets/fontstylewidget.cpp
+        properties/widgets/fontstylewidget.hpp
         properties/widgets/propertymanager.cpp
         properties/widgets/propertymanager.hpp
         properties/widgets/propertywidget.cpp

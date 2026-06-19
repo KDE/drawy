@@ -37,7 +37,7 @@ TextTool::TextTool(ApplicationContext *context)
     m_cursor = QCursor(Qt::CrossCursor);
     m_itemFactory = std::make_unique<TextFactory>();
 
-    m_properties = {Property::Type::StrokeColor, Property::Type::FontSize};
+    m_properties = {Property::Type::StrokeColor, Property::Type::FontSize, Property::Type::FontStyle};
 }
 
 void TextTool::mousePressed(ApplicationContext *context)
@@ -63,6 +63,7 @@ void TextTool::mousePressed(ApplicationContext *context)
 
                 m_curItem->setProperty(Property::Type::StrokeColor, uiContext->propertyManager()->value(Property::Type::StrokeColor));
                 m_curItem->setProperty(Property::Type::FontSize, uiContext->propertyManager()->value(Property::Type::FontSize));
+                m_curItem->setProperty(Property::Type::FontStyle, uiContext->propertyManager()->value(Property::Type::FontStyle));
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent()->pos()));
 

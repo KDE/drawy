@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>fonts/Inter.ttf</file>
         <file>fonts/FuzzyBubbles.ttf</file>
+        <file>fonts/FuzzyBubbles-Bold.ttf</file>
         <file>cursors/rotate.png</file>
 
         <file>icons/dark/open-arrow.svg</file>

@@ -22,6 +22,7 @@ void PropertyTest::shouldConvertStringToEnum()
     QCOMPARE(Property::convertStringToEnum(u"StrokeColor"_s), Property::Type::StrokeColor);
     QCOMPARE(Property::convertStringToEnum(u"Opacity"_s), Property::Type::Opacity);
     QCOMPARE(Property::convertStringToEnum(u"FontSize"_s), Property::Type::FontSize);
+    QCOMPARE(Property::convertStringToEnum(u"FontStyle"_s), Property::Type::FontStyle);
     QCOMPARE(Property::convertStringToEnum(u"EraserSize"_s), Property::Type::EraserSize);
     QCOMPARE(Property::convertStringToEnum(u"Actions"_s), Property::Type::Actions);
     QCOMPARE(Property::convertStringToEnum(u"ZOrder"_s), Property::Type::ZOrder);
@@ -37,6 +38,7 @@ void PropertyTest::shouldConvertEnumToString()
     QCOMPARE(Property::convertEnumToString(Property::Type::StrokeColor), u"StrokeColor"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Opacity), u"Opacity"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::FontSize), u"FontSize"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::FontStyle), u"FontStyle"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::EraserSize), u"EraserSize"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Actions), u"Actions"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::ZOrder), u"ZOrder"_s);

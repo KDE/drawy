@@ -25,6 +25,7 @@ public:
         BackgroundStyle,
         EraserSize,
         FontSize,
+        FontStyle,
         Null,
         Opacity,
         StrokeColor,
@@ -33,6 +34,11 @@ public:
         ZOrder
     };
 
+    enum FontStyle : int8_t {
+        Bold = 1 << 0,
+        Italic = 1 << 1,
+        Underlined = 1 << 2
+    };
     Q_ENUM(Type)
 
     // used to show the widgets in the correct order
@@ -59,14 +65,16 @@ public:
             return 9;
         case Type::FontSize:
             return 10;
-        case Type::Alignment:
+        case Type::FontStyle:
             return 11;
-        case Type::ZOrder:
+        case Type::Alignment:
             return 12;
-        case Type::Actions:
+        case Type::ZOrder:
             return 13;
-        case Type::Null:
+        case Type::Actions:
             return 14;
+        case Type::Null:
+            return 15;
         }
 
         return 0;

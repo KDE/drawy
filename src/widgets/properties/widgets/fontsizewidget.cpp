@@ -8,13 +8,13 @@
 #include "properties/property.hpp"
 #include <KLocalizedString>
 #include <QSpinBox>
+#include <common/constants.hpp>
 
 FontSizeWidget::FontSizeWidget(QWidget *parent)
     : PropertyWidget{parent}
     , mSpinBox(new QSpinBox(parent))
 {
-    // TODO: Remove magic numbers
-    mSpinBox->setMinimum(1);
+    mSpinBox->setMinimum(Common::minFontSize);
     mSpinBox->setValue(DrawyGlobalConfig::self()->fontSize());
 
     mSpinBox->hide();
