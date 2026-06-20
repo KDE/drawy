@@ -8,8 +8,6 @@
 #include <cstdlib>
 #include <utility>
 
-#include "orderedlist.hpp"
-
 QuadTree::QuadTree(QRectF region, int capacity)
     : m_boundingBox{region}
     , m_capacity{capacity}

@@ -7,12 +7,10 @@
 #include "item/item.hpp"
 #include "mime/drawymimehandler.hpp"
 #include "mime/imagemimehandler.hpp"
-#include "mime/mimehandler.hpp"
 #include "mime/rendermimehandler.hpp"
 #include "mime/svgmimehandler.hpp"
 #include "mime/textmimehandler.hpp"
 #include <QMimeData>
-#include <memory>
 
 MimeManager::MimeManager(ApplicationContext *parent)
     : QObject(parent)

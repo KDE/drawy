@@ -7,7 +7,6 @@
 #include "toolbuttonplugin.hpp"
 #include "flowlayout.hpp"
 #include "iconmanager/iconmanager.hpp"
-#include "pluginform/pluginform.hpp"
 #include "pluginform/pluginformmanager.hpp"
 #include <KLocalizedString>
 #include <KSeparator>

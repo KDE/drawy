@@ -5,7 +5,6 @@
 #include "linetool.hpp"
 
 #include "item/factory/linefactory.hpp"
-#include "linedrawingtool.hpp"
 #include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 

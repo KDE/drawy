@@ -12,7 +12,6 @@
 #include <KColorSchemeMenu>
 #include <KHelpMenu>
 #include <KLocalizedString>
-#include <QHBoxLayout>
 #include <QMenu>
 #include <QStyle>
 #include <QToolButton>

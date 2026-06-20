@@ -12,7 +12,6 @@
 #include "context/selectioncontext.hpp"
 #include "context/uicontext.hpp"
 #include "item/item.hpp"
-#include "properties/property.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "properties/widgets/propertywidget.hpp"
 #include "toolbar.hpp"
