@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:41+0000\n"
+"POT-Creation-Date: 2026-06-21 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 13:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr "Cambiar punta de flecha inicial"
 msgid "Change End Arrow Head"
 msgstr "Cambiar punta de flecha final"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Cambiar orden Z"
@@ -204,13 +204,13 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr "Imagen"
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonplugin.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Más herramientas"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"

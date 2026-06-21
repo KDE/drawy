@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:41+0000\n"
+"POT-Creation-Date: 2026-06-21 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -91,7 +91,7 @@ msgstr "დაწყების ისრის თავის შეცვლ
 msgid "Change End Arrow Head"
 msgstr "დასრულების ისრის თავის შეცვლა"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "ZOrder-ის შეცვლა"
@@ -199,13 +199,13 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr "გამოსახულება"
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonplugin.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "მეტი ხელსაწყო"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"

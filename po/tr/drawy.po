@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:41+0000\n"
+"POT-Creation-Date: 2026-06-21 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 14:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr "Ok Kuyruğunu Değiştir"
 msgid "Change End Arrow Head"
 msgstr "Ok Başını Değiştir"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Z Sırasını Değiştir"
@@ -200,13 +200,13 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr "Görsel"
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonplugin.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Daha fazla araç"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"

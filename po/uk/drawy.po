@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:41+0000\n"
+"POT-Creation-Date: 2026-06-21 00:41+0000\n"
 "PO-Revision-Date: 2026-05-01 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -93,7 +93,7 @@ msgstr "Змінити початковий кінчик стрілки"
 msgid "Change End Arrow Head"
 msgstr "Змінити кінцевий кінчик стрілки"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Змінити просторовий порядок"
@@ -203,13 +203,13 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr "Зображення"
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonplugin.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Додаткові інструменти"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"

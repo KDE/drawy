@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-19 00:41+0000\n"
+"POT-Creation-Date: 2026-06-21 00:41+0000\n"
 "PO-Revision-Date: 2026-04-10 12:00+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -94,7 +94,7 @@ msgstr "Zmeniť začiatok šípky"
 msgid "Change End Arrow Head"
 msgstr "Zmeniť koniec šípky"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Zmeniť poradie Z"
@@ -203,13 +203,13 @@ msgctxt "@action:button"
 msgid "Image"
 msgstr "Obrázok"
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonplugin.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Ďalšie nástroje"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
