@@ -20,8 +20,8 @@ struct StrokePoint {
 inline constexpr qreal minStreamline = 0.15;
 inline constexpr qreal streamlineRange = 0.85;
 
-inline qreal streamline = DrawyGlobalConfig::self()->streamline();
-inline qreal thinning = DrawyGlobalConfig::self()->thinning();
+inline qreal streamline = 0.5;
+inline qreal thinning = 0.5;
 inline constexpr qreal smoothing = 0.5;
 
 inline const qreal t = minStreamline + (1 - streamline) * streamlineRange;
