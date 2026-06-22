@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-21 00:41+0000\n"
-"PO-Revision-Date: 2026-04-26 22:28+0200\n"
+"PO-Revision-Date: 2026-06-21 23:31+0200\n"
 "Last-Translator: Igor Dobrača <igor.dobraca@skole.hr>\n"
 "Language-Team: Croatian <kde-i18n-doc@kde.org>\n"
 "Language: hr\n"
@@ -254,11 +254,10 @@ msgid "Developer"
 msgstr "Razvojni programer"
 
 #: widgets/context/applicationcontext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "BezNaslova.%1"
+msgstr "Neimenovano"
 
 #: widgets/context/uicontext.cpp:67
 #, kde-format
@@ -363,7 +362,7 @@ msgstr "Razno"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr ""
+msgstr "Povratne informacije korisnika"
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
@@ -455,7 +454,7 @@ msgstr "Aktiviraj način rada za otklanjanje pogrešaka"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "Navodi dostupne opcije za povratne informacije korisnika"
 
 #: widgets/keybindings/actionmanager.cpp:80
 #: widgets/keybindings/actionmanager.cpp:85
