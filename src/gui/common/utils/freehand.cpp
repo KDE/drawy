@@ -9,9 +9,14 @@
 
 namespace Common::Utils::Freehand
 {
+void updateSettings()
+{
+    streamline = DrawyGlobalConfig::self()->streamline();
+    thinning = DrawyGlobalConfig::self()->thinning();
+}
+
 QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
 {
-    qDebug() << "THINNING: " << DrawyGlobalConfig::self()->thinning();
     return getStrokePath(getStrokePolygon(getStrokePoints(points, pressures, simulatePressure, thickness), thickness));
 }
 

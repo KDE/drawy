@@ -24,5 +24,4 @@ public:
 private:
     QSlider *m_streamlineSlider;
     QSlider *m_thinningSlider;
-    QSlider *m_smoothingSlider;
 };

@@ -5,6 +5,7 @@
  */
 
 #include "freehandsettingswidget.hpp"
+#include "common/utils/freehand.hpp"
 #include "drawyglobalconfig.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -16,7 +17,6 @@ FreehandSettingsWidget::FreehandSettingsWidget(QWidget *parent)
     : ConfigGroupInterface{parent, i18n("Freehand Settings")}
     , m_streamlineSlider{new QSlider(Qt::Horizontal, this)}
     , m_thinningSlider{new QSlider(Qt::Horizontal, this)}
-    , m_smoothingSlider{new QSlider(Qt::Horizontal, this)}
 {
     auto setupSliderRow = [this](QSlider *slider, const QString &name, const QString &infoText) {
         slider->setMinimum(0);
@@ -46,7 +46,6 @@ FreehandSettingsWidget::FreehandSettingsWidget(QWidget *parent)
 
     setupSliderRow(m_streamlineSlider, i18n("Stabilization"), i18n("Makes lines steadier by reducing hand shake."));
     setupSliderRow(m_thinningSlider, i18n("Pressure Sensitivity"), i18n("Controls how much pressure changes line thickness."));
-    setupSliderRow(m_smoothingSlider, i18n("Edge Smoothness"), i18n("Makes strokes look softer and more polished."));
 }
 
 FreehandSettingsWidget::~FreehandSettingsWidget() = default;
@@ -55,15 +54,15 @@ void FreehandSettingsWidget::save()
 {
     DrawyGlobalConfig::self()->setStreamline(m_streamlineSlider->value() / 10.0);
     DrawyGlobalConfig::self()->setThinning(m_thinningSlider->value() / 10.0);
-    DrawyGlobalConfig::self()->setSmoothing(m_smoothingSlider->value() / 10.0);
     DrawyGlobalConfig::self()->save();
+
+    Common::Utils::Freehand::updateSettings();
 }
 
 void FreehandSettingsWidget::load()
 {
     m_streamlineSlider->setValue(DrawyGlobalConfig::self()->streamline() * 10);
     m_thinningSlider->setValue(DrawyGlobalConfig::self()->thinning() * 10);
-    m_smoothingSlider->setValue(DrawyGlobalConfig::self()->smoothing() * 10);
 }
 
 #include "moc_freehandsettingswidget.cpp"

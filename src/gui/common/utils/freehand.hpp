@@ -5,6 +5,7 @@
 #pragma once
 
 #include "drawyglobalconfig.h"
+#include "libdrawygui_export.h"
 #include <QList>
 #include <QPainterPath>
 #include <QPoint>
@@ -16,20 +17,18 @@ struct StrokePoint {
     qreal pressure{1.0};
 };
 
-/**
- * @brief: smoothness factor, the lower it is, the smoother the lines are but
- * they look more unnatural
- */
-
 inline constexpr qreal minStreamline = 0.15;
 inline constexpr qreal streamlineRange = 0.85;
 
-inline const qreal streamline = DrawyGlobalConfig::self()->streamline();
-inline const qreal thinning = DrawyGlobalConfig::self()->thinning();
-inline const qreal smoothing = DrawyGlobalConfig::self()->smoothing();
+inline qreal streamline = DrawyGlobalConfig::self()->streamline();
+inline qreal thinning = DrawyGlobalConfig::self()->thinning();
+inline constexpr qreal smoothing = 0.5;
+
 inline const qreal t = minStreamline + (1 - streamline) * streamlineRange;
 inline constexpr qreal epsilon = 1e3; // for precision
 inline constexpr qreal PI = 3.14592654;
+
+LIBDRAWYGUI_EXPORT void updateSettings();
 
 /**
  * @brief converts a list of points into a polygon of strokes
