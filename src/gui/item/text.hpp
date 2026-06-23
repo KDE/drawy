@@ -67,7 +67,7 @@ private:
     [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QFont getFont() const;
     [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QPen getPen() const;
 
-    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT static QTextOption getTextOptions();
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QTextOption getTextOptions() const;
     constexpr LIBDRAWYGUI_NO_EXPORT static int getTextFlags();
 
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();

@@ -48,6 +48,8 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::BackgroundColor;
     } else if (str == u"BackgroundStyle") {
         return Property::Type::BackgroundStyle;
+    } else if (str == u"TextAlignment") {
+        return Property::Type::TextAlignment;
     } else if (str == u"ZOrder") {
         return Property::Type::ZOrder;
     } else if (str == u"FontStyle") {
@@ -90,6 +92,8 @@ QString Property::convertEnumToString(Property::Type type)
     case Property::Type::Alignment:
         // We don't store Alignment in XML
         return {};
+    case Property::Type::TextAlignment:
+        return u"TextAlignment"_s;
     case Property::Type::ZOrder:
         return u"ZOrder"_s;
     case Property::Type::Null:
@@ -130,6 +134,8 @@ QString Property::information(Type type)
     case Property::Type::Alignment:
         // We don't store Alignment in XML
         return {};
+    case Property::Type::TextAlignment:
+        return i18n("Change Text Alignment");
     case Property::Type::ZOrder:
         return i18n("Change ZOrder");
     case Property::Type::Null:

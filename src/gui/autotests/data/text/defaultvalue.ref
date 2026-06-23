@@ -21,6 +21,10 @@
         {
             "type": "StrokeColor",
             "value": "#ffffff"
+        },
+        {
+            "type": "TextAlignment",
+            "value": 1
         }
     ],
     "text": "",

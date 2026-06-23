@@ -32,6 +32,7 @@ public:
         StrokeColor,
         StrokeStyle,
         StrokeWidth,
+        TextAlignment,
         ZOrder
     };
 
@@ -70,14 +71,16 @@ public:
             return 11;
         case Type::FontStyle:
             return 12;
-        case Type::Alignment:
+        case Type::TextAlignment:
             return 13;
-        case Type::ZOrder:
+        case Type::Alignment:
             return 14;
-        case Type::Actions:
+        case Type::ZOrder:
             return 15;
-        case Type::Null:
+        case Type::Actions:
             return 16;
+        case Type::Null:
+            return 17;
         }
 
         return 0;

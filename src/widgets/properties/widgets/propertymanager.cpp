@@ -16,6 +16,7 @@
 #include "properties/widgets/alignmentwidget.hpp"
 #include "properties/widgets/backgroundstylewidget.hpp"
 #include "properties/widgets/stokestylewidget.hpp"
+#include "properties/widgets/textalignmentwidget.hpp"
 #include "properties/widgets/zorderwidget.hpp"
 #include "startarrowtypewidget.hpp"
 #include "strokecolorwidget.hpp"
@@ -39,6 +40,7 @@ PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     m_widgets[Property::Type::BackgroundStyle] = new BackgroundStyleWidget(parent);
     m_widgets[Property::Type::StartArrowType] = new StartArrowTypeWidget(parent);
     m_widgets[Property::Type::EndArrowType] = new EndArrowTypeWidget(parent);
+    m_widgets[Property::Type::TextAlignment] = new TextAlignmentWidget(parent);
 
     for (auto i = m_widgets.cbegin(), end = m_widgets.cend(); i != end; ++i) {
         connect(i.value(), &PropertyWidget::changed, this, &PropertyManager::propertyUpdated);

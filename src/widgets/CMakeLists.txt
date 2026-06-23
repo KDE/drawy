@@ -144,6 +144,8 @@ target_sources(
         properties/widgets/backgroundstyleactionswidget.cpp
         properties/widgets/strokestyleactionswidget.hpp
         properties/widgets/strokestyleactionswidget.cpp
+        properties/widgets/textalignmentwidget.hpp
+        properties/widgets/textalignmentwidget.cpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

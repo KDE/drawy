@@ -27,6 +27,7 @@ TextItem::TextItem()
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
     m_properties[Property::Type::FontStyle] = Property{u"Normal"_s, Property::Type::FontStyle};
     m_properties[Property::Type::FontFamily] = Property{QStringLiteral("Fuzzy Bubbles"), Property::Type::FontFamily};
+    m_properties[Property::Type::TextAlignment] = Property{static_cast<int>(Qt::AlignLeft), Property::Type::TextAlignment};
 
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
@@ -219,11 +220,17 @@ constexpr int TextItem::getTextFlags()
     return Qt::TextExpandTabs;
 }
 
-QTextOption TextItem::getTextOptions()
+QTextOption TextItem::getTextOptions() const
 {
     QTextOption options{};
     options.setTabStopDistance(Common::tabStopDistance);
     options.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
+
+    if (m_properties.contains(Property::Type::TextAlignment)) {
+        options.setAlignment(static_cast<Qt::Alignment>(property(Property::Type::TextAlignment).value<int>()));
+    } else {
+        options.setAlignment(Qt::AlignLeft);
+    }
 
     return options;
 }

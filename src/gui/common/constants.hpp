@@ -15,6 +15,8 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace Common
 {
+inline constexpr QSize textAlignmentIconSize{25, 25};
+
 inline constexpr QMargins cleanupMargin{10, 10, 10, 10}; // in pixels
 
 inline constexpr QColor eraserBorderColor{255, 0, 0};
