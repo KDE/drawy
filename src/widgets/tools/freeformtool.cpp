@@ -105,8 +105,6 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        renderingContext->canvas()->setOverlayBg(Qt::transparent);
-
         m_currentItem->finalizeStroke();
 
         m_itemList.push_back(m_currentItem);
@@ -118,6 +116,15 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         m_isDrawing = false;
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+
+        QObject::connect(
+            renderingContext,
+            &RenderingContext::canvasUpdated,
+            context,
+            [renderingContext]() -> void {
+                renderingContext->canvas()->setOverlayBg(Qt::transparent);
+            },
+            Qt::SingleShotConnection);
     }
 }
 

@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -24,9 +24,9 @@ public:
     [[nodiscard]] Tool::Type type() const override;
 
 private:
-    std::shared_ptr<FreeformItem> m_currentItem{};
-    QList<std::shared_ptr<Item>> m_itemList{};
+    std::shared_ptr<FreeformItem> m_currentItem;
+    QList<std::shared_ptr<Item>> m_itemList;
 
-    QPixmap m_currentCache{};
-    QPointF m_lastPoint{};
+    QPixmap m_currentCache;
+    QPointF m_lastPoint;
 };

@@ -111,10 +111,17 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         const QList<std::shared_ptr<Item>> itemVector{curItem};
         commandHistory->push(std::make_shared<InsertItemCommand>(itemVector));
 
-        renderingContext->canvas()->setOverlayBg(Qt::transparent);
-
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+
+        QObject::connect(
+            renderingContext,
+            &RenderingContext::canvasUpdated,
+            context,
+            [renderingContext]() -> void {
+                renderingContext->canvas()->setOverlayBg(Qt::transparent);
+            },
+            Qt::SingleShotConnection);
     }
 }
 
