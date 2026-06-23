@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 02:41+0000\n"
+"POT-Creation-Date: 2026-06-23 02:38+0000\n"
 "PO-Revision-Date: 2026-06-06 15:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -335,18 +335,23 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:34
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:39
+#, kde-format
+msgid "Input"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Misc"
 msgstr ""
@@ -412,6 +417,31 @@ msgstr ""
 #: widgets/dialog/general/defaultcolorswidget.cpp:47
 #, kde-format
 msgid "Dark Mode"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#, kde-format
+msgid "Freehand Settings"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Stabilization"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Makes lines steadier by reducing hand shake."
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Pressure Sensitivity"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Controls how much pressure changes line thickness."
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 02:41+0000\n"
+"POT-Creation-Date: 2026-06-23 02:38+0000\n"
 "PO-Revision-Date: 2026-04-19 21:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -339,18 +339,23 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr "Aurkezpena ematea"
 
-#: widgets/dialog/configuresettingsdialog.cpp:29
+#: widgets/dialog/configuresettingsdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr "Konfiguratu Drawy"
 
-#: widgets/dialog/configuresettingsdialog.cpp:32
+#: widgets/dialog/configuresettingsdialog.cpp:34
 #, kde-format
 msgid "General"
 msgstr "Orokorra"
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:39
+#, kde-format
+msgid "Input"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Misc"
 msgstr "Hainbat"
@@ -417,6 +422,31 @@ msgstr "Modu argia"
 #, kde-format
 msgid "Dark Mode"
 msgstr "Modu iluna"
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#, kde-format
+msgid "Freehand Settings"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Stabilization"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Makes lines steadier by reducing hand shake."
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Pressure Sensitivity"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Controls how much pressure changes line thickness."
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
