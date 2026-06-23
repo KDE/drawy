@@ -191,6 +191,22 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.0.2" date="2026-06-23">
+      <description>
+        <p>This update delivers a smoother, more customizable freehand drawing experience and fixes an issue where newly drawn lines flickered.</p>
+        <ul>
+          <li>
+            Drawing by hand feels much better and more natural now.
+          </li>
+          <li>
+            Added settings so you can change pen pressure and how smooth your lines look.
+          </li>
+          <li>
+            Lines and shapes will no longer blink or flash right after you draw them.
+          </li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.1" date="2026-05-04">
       <description>
         <p>This is a small patch that improves the icons, updates the appstream metadata to include the correct information, and includes some bug fixes.</p>
