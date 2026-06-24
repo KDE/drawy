@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <common/constants.hpp>
+#include <item/itemutils.hpp>
 #include <klocalizedstring.h>
 using namespace Qt::Literals::StringLiterals;
 
@@ -78,7 +79,7 @@ Property FontStyleWidget::value() const
     if (m_underlined->isChecked()) {
         value |= Property::Underlined;
     }
-    return Property{value, Property::Type::FontStyle};
+    return Property{ItemUtils::convertFontStyleToString(value), Property::Type::FontStyle};
 }
 
 void FontStyleWidget::setValue(const QVariant &val)
@@ -87,7 +88,7 @@ void FontStyleWidget::setValue(const QVariant &val)
     const QSignalBlocker blocker2(m_italic);
     const QSignalBlocker blocker3(m_underlined);
 
-    const int value = val.toInt();
+    const int value = ItemUtils::convertStringToFontStyle(val.toString());
     m_bold->setChecked(value & Property::Bold);
     m_italic->setChecked(value & Property::Italic);
     m_underlined->setChecked(value & Property::Underlined);

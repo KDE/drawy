@@ -25,4 +25,7 @@ private Q_SLOTS:
     void shouldConvertEnumBackgroundTypeToString();
     void shouldConvertBackgroundTypeStringToEnum();
     void shouldConvertItemBackgroundTypeStringToBrushStyle();
+
+    void shouldConvertFontStyleToString();
+    void shouldConvertStringToFontStyle();
 };

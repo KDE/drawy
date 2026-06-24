@@ -70,7 +70,7 @@ Property ItemDeserializer::createProperty(const QJsonObject &obj)
     if (type == Property::Type::StrokeColor || type == Property::Type::BackgroundColor) {
         val = QColor(val.toString());
     } else if (type == Property::Type::StrokeWidth || type == Property::Type::Opacity || type == Property::Type::FontSize || type == Property::Type::EraserSize
-               || type == Property::Type::ZOrder || type == Property::Type::FontStyle) {
+               || type == Property::Type::ZOrder) {
         val = val.toInt();
     }
 

@@ -7,7 +7,7 @@
         },
         {
             "type": "FontStyle",
-            "value": 0
+            "value": "Normal"
         },
         {
             "type": "Opacity",

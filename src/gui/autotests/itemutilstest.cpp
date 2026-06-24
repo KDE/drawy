@@ -99,4 +99,25 @@ void ItemUtilsTest::shouldConvertItemBackgroundTypeStringToBrushStyle()
     QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(QString()), Qt::BrushStyle::SolidPattern);
 }
 
+void ItemUtilsTest::shouldConvertFontStyleToString()
+{
+    QCOMPARE(ItemUtils::convertFontStyleToString(0), u"Normal"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold), u"Bold"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Italic), u"Italic"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Underlined), u"Underlined"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold | Property::Italic), u"Bold,Italic"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold | Property::Italic | Property::Underlined), u"Bold,Italic,Underlined"_s);
+}
+
+void ItemUtilsTest::shouldConvertStringToFontStyle()
+{
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Normal"_s), 0);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold"_s), Property::Bold);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Italic"_s), Property::Italic);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Underlined"_s), Property::Underlined);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold,Italic"_s), Property::Bold | Property::Italic);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold,Italic,Underlined"_s), Property::Bold | Property::Italic | Property::Underlined);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(QString()), 0);
+}
+
 #include "moc_itemutilstest.cpp"

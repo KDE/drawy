@@ -13,6 +13,7 @@
 #include <utility>
 
 #include "common/constants.hpp"
+#include "item/itemutils.hpp"
 #include "properties/property.hpp"
 #include "serializer/textdeserializer.hpp"
 #include "serializer/textserializer.hpp"
@@ -24,7 +25,7 @@ TextItem::TextItem()
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::white), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
-    m_properties[Property::Type::FontStyle] = Property{0, Property::Type::FontStyle};
+    m_properties[Property::Type::FontStyle] = Property{u"Normal"_s, Property::Type::FontStyle};
 
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
@@ -195,7 +196,7 @@ QFont TextItem::getFont() const
     font.setPointSize(property(Property::Type::FontSize).value<int>());
     font.setFamily(u"Fuzzy Bubbles"_s);
 
-    const int style = property(Property::Type::FontStyle).value<int>();
+    const int style = ItemUtils::convertStringToFontStyle(property(Property::Type::FontStyle).value<QString>());
     font.setBold(style & Property::FontStyle::Bold);
     font.setItalic(style & Property::FontStyle::Italic);
     font.setUnderline(style & Property::FontStyle::Underlined);

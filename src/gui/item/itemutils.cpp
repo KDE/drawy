@@ -216,3 +216,41 @@ std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
     }
     return item;
 }
+
+QString ItemUtils::convertFontStyleToString(const int style)
+{
+    if (style == 0) {
+        return u"Normal"_s;
+    }
+    QStringList list;
+    if (style & Property::Bold) {
+        list << u"Bold"_s;
+    }
+    if (style & Property::Italic) {
+        list << u"Italic"_s;
+    }
+    if (style & Property::Underlined) {
+        list << u"Underlined"_s;
+    }
+    return list.join(u","_s);
+}
+
+int ItemUtils::convertStringToFontStyle(const QString &str)
+{
+    int style = 0;
+    const auto list = str.split(u',');
+    for (const auto &s : list) {
+        if (s == u"Normal"_s) {
+            continue;
+        } else if (s == u"Bold"_s) {
+            style |= Property::Bold;
+        } else if (s == u"Italic"_s) {
+            style |= Property::Italic;
+        } else if (s == u"Underlined"_s) {
+            style |= Property::Underlined;
+        } else {
+            qCWarning(DRAWY_GUI_LOG) << "Item::FontStyle is not defined for: " << s;
+        }
+    }
+    return style;
+}
