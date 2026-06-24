@@ -93,3 +93,5 @@ void FontStyleWidget::setValue(const QVariant &val)
     m_italic->setChecked(value & Property::Italic);
     m_underlined->setChecked(value & Property::Underlined);
 }
+
+#include "moc_fontstylewidget.cpp"

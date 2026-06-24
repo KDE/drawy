@@ -5,10 +5,11 @@
  */
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
 
 class QToolButton;
-class FontStyleWidget : public PropertyWidget
+class LIBDRAWYWIDGETS_TESTS_EXPORT FontStyleWidget : public PropertyWidget
 {
     Q_OBJECT
 public:
