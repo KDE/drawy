@@ -5,11 +5,12 @@
  */
 
 #pragma once
+#include "libdrawywidgets_private_export.h"
 #include "propertywidget.hpp"
 
 class QToolButton;
 
-class TextAlignmentWidget : public PropertyWidget
+class LIBDRAWYWIDGETS_TESTS_EXPORT TextAlignmentWidget : public PropertyWidget
 {
     Q_OBJECT
 public:

@@ -37,7 +37,11 @@ TextTool::TextTool(ApplicationContext *context)
     m_cursor = QCursor(Qt::CrossCursor);
     m_itemFactory = std::make_unique<TextFactory>();
 
-    m_properties = {Property::Type::StrokeColor, Property::Type::FontSize, Property::Type::FontStyle, Property::Type::FontFamily, Property::Type::TextAlignment};
+    m_properties = {Property::Type::StrokeColor,
+                    Property::Type::FontSize,
+                    Property::Type::FontStyle,
+                    Property::Type::FontFamily,
+                    Property::Type::TextAlignment};
 }
 
 void TextTool::mousePressed(ApplicationContext *context)
