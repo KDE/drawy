@@ -346,7 +346,7 @@ msgstr "ზოგადი"
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "შეყვანა"
 
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
@@ -419,27 +419,27 @@ msgstr "მუქი რეჟიმი"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "თავისუფალი მონიშვნის მორგება"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "სტაბილიზაცია"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "ხდის ხაზებს უფრო სტაბილურს ხელის კანკალის შემცირების ხარჯზე."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "წნევის მგრძნობელობა"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "მართავს, რამდენად ცვლის დაწოლა ხაზის სისქეს."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

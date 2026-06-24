@@ -354,7 +354,7 @@ msgstr "Obecné"
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Vstup"
 
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
