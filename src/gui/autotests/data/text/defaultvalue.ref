@@ -24,7 +24,7 @@
         },
         {
             "type": "TextAlignment",
-            "value": 1
+            "value": "AlignLeft"
         }
     ],
     "text": "",

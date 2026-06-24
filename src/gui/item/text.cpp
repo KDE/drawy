@@ -27,7 +27,7 @@ TextItem::TextItem()
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
     m_properties[Property::Type::FontStyle] = Property{u"Normal"_s, Property::Type::FontStyle};
     m_properties[Property::Type::FontFamily] = Property{QStringLiteral("Fuzzy Bubbles"), Property::Type::FontFamily};
-    m_properties[Property::Type::TextAlignment] = Property{static_cast<int>(Qt::AlignLeft), Property::Type::TextAlignment};
+    m_properties[Property::Type::TextAlignment] = Property{u"AlignLeft"_s, Property::Type::TextAlignment};
 
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
@@ -227,7 +227,7 @@ QTextOption TextItem::getTextOptions() const
     options.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
 
     if (m_properties.contains(Property::Type::TextAlignment)) {
-        options.setAlignment(static_cast<Qt::Alignment>(property(Property::Type::TextAlignment).value<int>()));
+        options.setAlignment(static_cast<Qt::Alignment>(ItemUtils::convertStringToTextAlignment(property(Property::Type::TextAlignment).value<QString>())));
     } else {
         options.setAlignment(Qt::AlignLeft);
     }

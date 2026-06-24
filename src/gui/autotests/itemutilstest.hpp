@@ -28,4 +28,7 @@ private Q_SLOTS:
 
     void shouldConvertFontStyleToString();
     void shouldConvertStringToFontStyle();
+
+    void shouldConvertTextAlignmentToString();
+    void shouldConvertStringToTextAlignment();
 };

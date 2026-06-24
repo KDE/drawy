@@ -120,4 +120,22 @@ void ItemUtilsTest::shouldConvertStringToFontStyle()
     QCOMPARE(ItemUtils::convertStringToFontStyle(QString()), 0);
 }
 
+void ItemUtilsTest::shouldConvertTextAlignmentToString()
+{
+    QCOMPARE(ItemUtils::convertTextAlignmentToString(Qt::AlignLeft), u"AlignLeft"_s);
+    QCOMPARE(ItemUtils::convertTextAlignmentToString(Qt::AlignRight), u"AlignRight"_s);
+    QCOMPARE(ItemUtils::convertTextAlignmentToString(Qt::AlignCenter), u"AlignCenter"_s);
+    QCOMPARE(ItemUtils::convertTextAlignmentToString(Qt::AlignJustify), u"AlignJustify"_s);
+    QCOMPARE(ItemUtils::convertTextAlignmentToString(0), QString());
+}
+
+void ItemUtilsTest::shouldConvertStringToTextAlignment()
+{
+    QCOMPARE(ItemUtils::convertStringToTextAlignment(u"AlignLeft"_s), Qt::AlignLeft);
+    QCOMPARE(ItemUtils::convertStringToTextAlignment(u"AlignRight"_s), Qt::AlignRight);
+    QCOMPARE(ItemUtils::convertStringToTextAlignment(u"AlignCenter"_s), Qt::AlignCenter);
+    QCOMPARE(ItemUtils::convertStringToTextAlignment(u"AlignJustify"_s), Qt::AlignJustify);
+    QCOMPARE(ItemUtils::convertStringToTextAlignment(u"unknown"_s), Qt::AlignLeft);
+}
+
 #include "moc_itemutilstest.cpp"

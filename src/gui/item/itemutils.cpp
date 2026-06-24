@@ -167,6 +167,36 @@ Qt::BrushStyle ItemUtils::convertItemBackgroundTypeStringToBrushStyle(const QStr
     return Qt::BrushStyle::SolidPattern;
 }
 
+QString ItemUtils::convertTextAlignmentToString(int alignment)
+{
+    if (alignment == Qt::AlignLeft) {
+        return u"AlignLeft"_s;
+    } else if (alignment == Qt::AlignRight) {
+        return u"AlignRight"_s;
+    } else if (alignment == Qt::AlignCenter) {
+        return u"AlignCenter"_s;
+    } else if (alignment == Qt::AlignJustify) {
+        return u"AlignJustify"_s;
+    }
+    qCWarning(DRAWY_GUI_LOG) << "Item::TextAlignment is not defined for: " << alignment;
+    return {};
+}
+
+int ItemUtils::convertStringToTextAlignment(const QString &str)
+{
+    if (str == u"AlignLeft"_s) {
+        return Qt::AlignLeft;
+    } else if (str == u"AlignRight"_s) {
+        return Qt::AlignRight;
+    } else if (str == u"AlignCenter"_s) {
+        return Qt::AlignCenter;
+    } else if (str == u"AlignJustify"_s) {
+        return Qt::AlignJustify;
+    }
+    qCWarning(DRAWY_GUI_LOG) << "Item::TextAlignment is not defined for: " << str;
+    return Qt::AlignLeft;
+}
+
 std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
 {
     std::shared_ptr<Item> item;

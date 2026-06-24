@@ -40,6 +40,9 @@ enum class ZorderMove : uint8_t {
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString convertFontStyleToString(int style);
 [[nodiscard]] LIBDRAWYGUI_EXPORT int convertStringToFontStyle(const QString &str);
 
+[[nodiscard]] LIBDRAWYGUI_EXPORT QString convertTextAlignmentToString(int alignment);
+[[nodiscard]] LIBDRAWYGUI_EXPORT int convertStringToTextAlignment(const QString &str);
+
 [[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::FormType type);
 
 } // namespace ItemUtils

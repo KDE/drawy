@@ -55,7 +55,7 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
     m_alignJustify->setAutoRaise(true);
     layout->addWidget(m_alignJustify);
 
-    auto *buttonGroup = new QButtonGroup(m_widget);
+    auto buttonGroup = new QButtonGroup(m_widget);
     buttonGroup->addButton(m_alignLeft, Qt::AlignLeft);
     buttonGroup->addButton(m_alignCenter, Qt::AlignCenter);
     buttonGroup->addButton(m_alignRight, Qt::AlignRight);
@@ -70,13 +70,18 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
 
 void TextAlignmentWidget::setValue(const QVariant &value)
 {
-    const int align = value.toInt();
+    const QString align = value.toString();
     const QSignalBlocker blocker(m_widget->findChild<QButtonGroup *>());
 
-    m_alignLeft->setChecked(align == Qt::AlignLeft);
-    m_alignCenter->setChecked(align == Qt::AlignCenter);
-    m_alignRight->setChecked(align == Qt::AlignRight);
-    m_alignJustify->setChecked(align == Qt::AlignJustify);
+    if (align == u"AlignLeft"_s) {
+        m_alignLeft->setChecked(true);
+    } else if (align == u"AlignCenter"_s) {
+        m_alignCenter->setChecked(true);
+    } else if (align == u"AlignRight"_s) {
+        m_alignRight->setChecked(true);
+    } else if (align == u"AlignJustify"_s) {
+        m_alignJustify->setChecked(true);
+    }
 }
 
 QString TextAlignmentWidget::name() const
@@ -86,13 +91,13 @@ QString TextAlignmentWidget::name() const
 
 Property TextAlignmentWidget::value() const
 {
-    int alignment = Qt::AlignLeft;
+    QString alignment = u"AlignLeft"_s;
     if (m_alignCenter->isChecked()) {
-        alignment = Qt::AlignCenter;
+        alignment = u"AlignCenter"_s;
     } else if (m_alignRight->isChecked()) {
-        alignment = Qt::AlignRight;
+        alignment = u"AlignRight"_s;
     } else if (m_alignJustify->isChecked()) {
-        alignment = Qt::AlignJustify;
+        alignment = u"AlignJustify"_s;
     }
     return Property(alignment, Property::Type::TextAlignment);
 }
