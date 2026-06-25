@@ -16,6 +16,7 @@ target_link_libraries(
     KF6::ConfigWidgets
     Qt::Widgets
     libdrawywidgets
+    drawyconfig
 )
 
 install(

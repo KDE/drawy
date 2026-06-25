@@ -3,16 +3,34 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "freehand.hpp"
+#include "drawyglobalconfig.h"
 #include "math.hpp"
 
 namespace Common::Utils::Freehand
 {
-QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
+void updateSettings()
 {
-    return getStrokePath(getStrokePolygon(getStrokePoints(points, pressures, simulatePressure), thickness));
+    streamline = DrawyGlobalConfig::self()->streamline();
+    thinning = DrawyGlobalConfig::self()->thinning();
 }
 
-QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure)
+QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
+{
+    return getStrokePath(getStrokePolygon(getStrokePoints(points, pressures, simulatePressure, thickness), thickness));
+}
+
+QPainterPath getStroke(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness, qreal &lastPressure)
+{
+    const auto strokePoints{getStrokePoints(points, pressures, simulatePressure, thickness)};
+
+    if (!strokePoints.empty()) {
+        lastPressure = strokePoints.back().pressure;
+    }
+
+    return getStrokePath(getStrokePolygon(strokePoints, thickness));
+}
+
+QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qreal> &pressures, const bool simulatePressure, const qreal thickness)
 {
     using namespace Common::Utils::Math;
     if (points.size() != pressures.size()) {
@@ -30,30 +48,56 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
         return result;
     }
 
-    const qreal minDist{1};
-    const qreal minPressure{0.5};
-    const qreal distLim{16};
+    const qreal minLength{thickness};
+    qreal runningLength{0};
+
     for (qsizetype pos = 1; pos < points.size(); pos++) {
         const QPointF prev{result.back().point};
         const QPointF interpolated{lerp(prev, points[pos], t)};
 
-        const qreal dist{length(interpolated - prev)};
+        if (interpolated == prev) {
+            continue;
+        }
 
-        if (dist < minDist) {
+        const qreal dist{Math::dist(interpolated, prev)};
+        runningLength += dist;
+
+        if (runningLength < minLength) {
             continue;
         }
 
         if (simulatePressure) {
-            result.push_back(StrokePoint{interpolated, std::max(minPressure, std::min(1.0, 1.0 - dist / distLim))});
+            const qreal speed{qMin(1.0, dist / thickness)};
+            const qreal change{qMin(1.0, 1 - speed)};
+
+            const qreal press{qMin(1.0, result.back().pressure + (change - result.back().pressure) * (speed * 0.275))};
+
+            result.push_back(StrokePoint{interpolated, press});
         } else {
             result.push_back(StrokePoint{interpolated, pressures[pos]});
         }
     }
 
-    result.push_back(StrokePoint{points.back(), pressures.back()});
+    qreal reverseRunningLength{0};
+
+    // removing noise from the end
+    while (result.size() > 1) {
+        const qreal dist{Math::dist(result.back().point, points.back())};
+        reverseRunningLength += dist;
+
+        if (reverseRunningLength < minLength) {
+            result.pop_back();
+        } else {
+            break;
+        }
+    }
+
+    if (result.size() > 1 || Math::dist(points.back(), result.back().point) >= minLength) {
+        result.push_back(StrokePoint{points.back(), pressures.back()});
+    }
 
     // smoothing out the pressures for a better result
-    const qsizetype windowSize{10};
+    constexpr qsizetype windowSize{10};
     qreal pressureSum{};
     for (qsizetype pos = 0; pos < windowSize; pos++) {
         if (pos >= result.size()) {
@@ -87,7 +131,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     // if there is only one point, draw a circle
     if (points.size() == 1) {
         QList<QPointF> polygonPoints{};
-        const QPointF radiusVector{dist, 0};
+        const QPointF radiusVector{getStrokeRadius(thickness, points[0].pressure), 0};
 
         constexpr int steps{26};
         for (int i = 0; i <= steps; i++) {
@@ -102,33 +146,52 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
     QList<QPointF> rightPoints{};
 
     const auto insertCap = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> bool {
-        const QPointF vector{next.point - cur.point};
-        const qreal thickness{dist * cur.pressure};
-
-        // if it's a sharp angle, we draw a semi circular cap (looks good)
         const QPointF prevVector{cur.point - prev.point};
-        const qreal curAngle{angle(vector, prevVector)};
-        if (PI / 2.0 < curAngle && curAngle < PI * 3.0 / 2.0) {
-            QPointF radiusVector{unitVector(QPointF{prevVector.y(), -prevVector.x()}) * thickness};
-            const qreal arcAngle{5.0 * PI / 6.0};
+        const QPointF nextVector{next.point - cur.point};
+
+        if (Math::dist(prevVector, QPointF{0, 0}) == 0.0 || Math::dist(nextVector, QPointF{0, 0}) == 0.0) {
+            return false;
+        }
+
+        const QPointF prevUnit{unitVector(prevVector)};
+        const QPointF nextUnit{unitVector(nextVector)};
+
+        const qreal dot = dotProduct(prevUnit, nextUnit);
+
+        // Sharp turn detected
+        if (dot < 0.0) {
+            const qreal radius{getStrokeRadius(dist, cur.pressure)};
+
+            const qreal sweepAngle = qAcos(std::max(-1.0, std::min(1.0, dot)));
+
+            const qreal cross = prevUnit.x() * nextUnit.y() - prevUnit.y() * nextUnit.x();
+            const bool isRightTurn = (cross > 0);
+
+            const QPointF prevLeftNormal{prevUnit.y(), -prevUnit.x()};
+            const QPointF prevRightNormal{-prevUnit.y(), prevUnit.x()};
 
             constexpr int steps{13};
-            for (int i = 0; i <= steps; i++) {
-                const qreal delta{static_cast<qreal>(i) / steps};
-                const QPointF point{QPointF{rotateVector(radiusVector, arcAngle * delta) + cur.point}};
-                leftPoints.push_back(point);
-            }
 
-            if (dotProduct(prevVector, vector) == -1) {
-                radiusVector = rotateVector(radiusVector, -(PI - arcAngle - PI / 18));
+            if (isRightTurn) {
+                const QPointF startRadiusVector = prevLeftNormal * radius;
+
+                for (int i = 0; i <= steps; i++) {
+                    const qreal delta = static_cast<qreal>(i) / steps;
+                    const QPointF rotated = rotateVector(startRadiusVector, sweepAngle * delta);
+                    leftPoints.push_back(cur.point + rotated);
+                }
+
+                rightPoints.push_back(cur.point);
             } else {
-                radiusVector = rotateVector(radiusVector, PI - arcAngle - PI / 18);
-            }
+                leftPoints.push_back(cur.point);
 
-            for (int i = 0; i <= steps; i++) {
-                const qreal delta{static_cast<qreal>(i) / steps};
-                const QPointF point{QPointF{rotateVector(-radiusVector, -arcAngle * delta) + cur.point}};
-                rightPoints.push_back(point);
+                const QPointF startRadiusVector = prevRightNormal * radius;
+
+                for (int i = 0; i <= steps; i++) {
+                    const qreal delta = static_cast<qreal>(i) / steps;
+                    const QPointF rotated = rotateVector(startRadiusVector, -sweepAngle * delta);
+                    rightPoints.push_back(cur.point + rotated);
+                }
             }
 
             return true;
@@ -137,16 +200,28 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
         return false;
     };
 
-    const auto insertRegularPoint = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> void {
-        const qreal thickness{dist * cur.pressure};
+    // we want the rate of growth of minDistance to slow down
+    // as thickness increases
+    const qreal exponent{3 - 0.2 * thickness};
+    const qreal minDistance{qPow(qMax(1.0, thickness * smoothing), exponent)};
+
+    const auto insertRegularPoint = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next, bool isLast = false) -> void {
+        const qreal thickness{getStrokeRadius(dist, cur.pressure)};
         const QPointF vector{unitVector(next.point - cur.point)};
         const QPointF prevVector{unitVector(cur.point - prev.point)};
 
         const QPointF lerped{lerp(vector, prevVector, dotProduct(vector, prevVector))};
         const QPointF perp{QPointF{lerped.y(), -lerped.x()} * thickness};
 
-        leftPoints.push_back(cur.point + perp);
-        rightPoints.push_back(cur.point - perp);
+        const auto newLeftPoint{cur.point + perp};
+        if (isLast || leftPoints.empty() || Math::dist(leftPoints.back(), newLeftPoint) >= minDistance) {
+            leftPoints.push_back(newLeftPoint);
+        }
+
+        const auto newRightPoint{cur.point - perp};
+        if (isLast || rightPoints.empty() || Math::dist(rightPoints.back(), newRightPoint) >= minDistance) {
+            rightPoints.push_back(newRightPoint);
+        }
     };
 
     // inserting points
@@ -156,7 +231,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
             insertRegularPoint(points[pos - 1], points[pos], points[pos + 1]);
         }
     }
-    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2));
+    insertRegularPoint(points.back(), points.back(), *std::prev(points.end(), 2), true);
     std::swap(leftPoints.back(), rightPoints.back());
 
     constexpr int steps{26};
@@ -225,5 +300,10 @@ QPainterPath getStrokeOutline(const QList<StrokePoint> &points)
     path.lineTo(points.back().point);
 
     return path;
+}
+
+[[nodiscard]] qreal getStrokeRadius(const qreal thickness, const qreal pressure)
+{
+    return thickness * (0.5 - thinning * (0.5 - pressure));
 }
 } // namespace Common::Utils::Freehand

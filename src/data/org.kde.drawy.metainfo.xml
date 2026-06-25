@@ -230,7 +230,23 @@
         <p xml:lang="sl">Dovoli izvoz izbranih elementov kot sliko</p>
         <p xml:lang="tr">Seçili ögelerin görsel olarak dışa aktarılmasına olanak tanıyın.</p>
         <p xml:lang="uk">Уможливлено експортування позначених елементів як зображення</p>
-        <p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
+	<p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-06-23">
+      <description>
+        <p>This update delivers a smoother, more customizable freehand drawing experience and fixes an issue where newly drawn lines flickered.</p>
+        <ul>
+          <li>
+            Drawing by hand feels much better and more natural now.
+          </li>
+          <li>
+            Added settings so you can change pen pressure and how smooth your lines look.
+          </li>
+          <li>
+            Lines and shapes will no longer blink or flash right after you draw them.
+          </li>
+        </ul>
       </description>
     </release>
     <release version="1.0.1" date="2026-05-04">
