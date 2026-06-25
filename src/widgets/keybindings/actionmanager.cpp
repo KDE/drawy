@@ -53,6 +53,10 @@
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
 
+#if HAVE_WHATSNEWSNGSUPPORT
+#include <TextAddonsWidgets/WhatsNewNgDialog>
+#endif
+
 using namespace Qt::StringLiterals;
 ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationContext *context)
     : QObject(context)
@@ -144,7 +148,9 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     })->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
 
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
-
+#if HAVE_WHATSNEWSNGSUPPORT
+    createAction(Action::WhatsNew, i18nc("@action", "What's new"), {}, this, &ActionManager::slotShowWhatsNew);
+#endif
     actionCollection->readSettings();
 
     // managing actions
@@ -231,6 +237,8 @@ QString ActionManager::actionName(Action type) const
         return u"switch_to_diamond_tool"_s;
     case Action::SwitchToImageTool:
         return u"switch_to_image_tool"_s;
+    case Action::WhatsNew:
+        return u"wharsnew"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
@@ -513,6 +521,20 @@ void ActionManager::clear()
         m_context->renderingContext()->markForUpdate();
     }
 }
+
+#if HAVE_WHATSNEWSNGSUPPORT
+void ActionManager::slotShowWhatsNew()
+{
+    TextAddonsWidgets::WhatsNewNgDialog dlg;
+    dlg.setReleases(m_releases);
+    dlg.exec();
+}
+
+void ActionManager::setReleasesInfo(const QList<KAboutRelease> &releases)
+{
+    m_releases = releases;
+}
+#endif
 
 void ActionManager::saveCurrentFile()
 {

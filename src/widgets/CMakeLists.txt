@@ -272,6 +272,10 @@ if(TARGET KF6::UserFeedbackWidgets)
     target_link_libraries(libdrawywidgets PUBLIC KF6::UserFeedbackWidgets)
 endif()
 
+if(TARGET KF6::TextAddonsWidgets)
+    target_link_libraries(libdrawywidgets PUBLIC KF6::TextAddonsWidgets)
+endif()
+
 # precompiled headers support
 if(ENABLE_PCH)
     target_precompile_headers(

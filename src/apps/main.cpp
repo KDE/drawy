@@ -38,7 +38,14 @@ int main(int argc, char *argv[])
     KStyleManager::initStyle();
     KLocalizedString::setApplicationDomain("drawy"_ba);
 
-    AboutData aboutData;
+#if HAVE_WHATSNEWSNGSUPPORT
+    KAboutData aboutData = KAboutData::fromAppStreamForApplication();
+    aboutData.setCopyrightStatement(i18nc("Copyright text, keep the © symbol and the en dash for the year range", "© 2025–%1 Drawy authors", u"2026"_s));
+    aboutData.setVersion(DRAWY_VERSION);
+    aboutData.setComponentName(u"drawy"_s);
+#else
+    KAboutData aboutData = AboutData();
+#endif
 
     KCrash::initialize();
 
@@ -65,7 +72,11 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(aboutData);
 
-    MainWindow w;
+    MainWindow w
+#if HAVE_WHATSNEWSNGSUPPORT
+        (aboutData.releases())
+#endif
+            ;
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
         w.viewFullScreen(true);
     }
