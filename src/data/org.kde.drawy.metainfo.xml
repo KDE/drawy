@@ -194,16 +194,40 @@
     <release version="1.0.2" date="2026-06-23">
       <description>
         <p>This update delivers a smoother, more customizable freehand drawing experience and fixes an issue where newly drawn lines flickered.</p>
+        <p xml:lang="ca">Aquesta actualització ofereix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
+        <p xml:lang="es">Esta actualización ofrece una experiencia de dibujo a mano alzada más fluida y personalizable. Además, corrige un problema por el que las líneas recién dibujadas parpadeaban.</p>
+        <p xml:lang="ia">Iste actualisation offere un experientia de designo a mano libere plus  fluide e plus personalisabile, e corrige un problema ubi lineas traciate   recentemente tremulava.</p>
+        <p xml:lang="nl">Deze update zorgt voor een soepelere en meer aanpasbare tekenervaring uit de vrije hand en verhelpt een probleem waarbij nieuw getekende lijnen flikkerden.</p>
+        <p xml:lang="pt-BR">Esta atualização proporciona uma experiência de desenho à mão livre mais fluida e personalizável, além de corrigir um problema que causava cintilação em linhas recém-desenhadas.</p>
+        <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
         <ul>
           <li>
             Drawing by hand feels much better and more natural now.
           </li>
+          <li xml:lang="ca">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
+          <li xml:lang="es">Ahora, dibujar a mano resulta mucho más cómodo y natural.</li>
+          <li xml:lang="ia">Disegnar a mano se senti multo melior e plus natural ora.</li>
+          <li xml:lang="nl">Tekenen met de hand voelt nu veel beter en natuurlijker aan.</li>
+          <li xml:lang="pt-BR">Desenhar à mão parece muito melhor e mais natural agora.</li>
+          <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
           <li>
             Added settings so you can change pen pressure and how smooth your lines look.
           </li>
+          <li xml:lang="ca">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
+          <li xml:lang="es">Se han añadido ajustes para poder cambiar la presión del lápiz y la suavidad de las líneas.</li>
+          <li xml:lang="ia">On ha addite configurationes pro poter cambiar le pression del stilo e como tu lineas lisie appare.</li>
+          <li xml:lang="nl">Er zijn instellingen toegevoegd waarmee u de pendruk en de vloeiendheid van uw lijnen kunt aanpassen.</li>
+          <li xml:lang="pt-BR">Foram adicionadas configurações para você ajustar a pressão da caneta e a suavidade dos traços.</li>
+          <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
           <li>
             Lines and shapes will no longer blink or flash right after you draw them.
           </li>
+          <li xml:lang="ca">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
+          <li xml:lang="es">Las líneas y las formas ya no parpadearán ni destellarán justo después de dibujarlas.</li>
+          <li xml:lang="ia">Lineas e formas non plus palpeblara o fulgurara immediatemente post que tu los designa.</li>
+          <li xml:lang="nl">Lijnen en vormen zullen niet langer knipperen of flitsen direct nadat u ze hebt getekend.</li>
+          <li xml:lang="pt-BR">Linhas e formas não piscarão nem brilharão mais logo após você desenhá-las.</li>
+          <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
         </ul>
       </description>
     </release>
