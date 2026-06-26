@@ -107,11 +107,32 @@ void TextItemTest::shouldTestLoadPlainText()
     QJsonObject obj = f.serialize(-1);
     const auto plainText = u"Plain Text"_s;
     obj[u"text"_s] = plainText;
+    obj.remove(u"html"_s);
 
     TextItem f2;
     f2.deserialize(obj);
 
     QCOMPARE(f2.text(), plainText);
+}
+
+void TextItemTest::shouldTestOldLoadNew()
+{
+    TextItem f;
+    f.setId("acff679ae3c14260b56ef00f1d354883"_ba);
+    f.createTextBox(QPointF(10, 10));
+    const auto text = u"Hello World"_s;
+    f.cursor().insertText(text);
+
+    QJsonObject obj = f.serialize(-1);
+
+    const QString versionOneResult = obj[u"text"_s].toString();
+
+    TextItem f2;
+    f2.deserialize(obj);
+    const QString versionTwoResult = f2.text();
+
+    QCOMPARE(versionOneResult, text);
+    QCOMPARE(versionTwoResult, versionOneResult);
 }
 
 void TextItemTest::shouldTestMode()

@@ -21,8 +21,8 @@ void TextDeserializer::deserialize(const QJsonObject &obj)
     const QPointF topLeft = toPointF(value(obj, u"top_left"_s));
     textItem->createTextBox(topLeft);
     const QString text = value(obj, u"text"_s).toString();
-    if (Qt::mightBeRichText(text)) {
-        textItem->cursor().insertHtml(text);
+    if (obj.contains(u"html"_s)) {
+        textItem->cursor().insertHtml(value(obj, u"html"_s).toString());
     } else {
         textItem->cursor().insertText(text);
     }

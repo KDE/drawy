@@ -19,7 +19,8 @@ QJsonObject TextSerializer::serialize(int zorder) const
 {
     QJsonObject obj = ItemSerializer::serialize(zorder);
     const TextItem *text = static_cast<const TextItem *>(mItem);
-    obj[u"text"_s] = QJsonValue(text->html());
+    obj[u"text"_s] = QJsonValue(text->text());
+    obj[u"html"_s] = QJsonValue(text->html());
     obj[u"top_left"_s] = QJsonValue(toJson(text->normalizedBoundingBox().topLeft()));
     return obj;
 }

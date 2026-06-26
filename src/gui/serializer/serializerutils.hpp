@@ -11,6 +11,11 @@ class QJsonObject;
 class QPointF;
 namespace SerializerUtils
 {
+enum class Version : int8_t {
+    Initial = 1,
+    HtmlText = 2
+};
+
 [[nodiscard]] LIBDRAWYGUI_EXPORT int version();
 [[nodiscard]] LIBDRAWYGUI_EXPORT QJsonObject toJson(const QPointF &point);
 [[nodiscard]] LIBDRAWYGUI_EXPORT QByteArray compressData(const QJsonObject &obj);
