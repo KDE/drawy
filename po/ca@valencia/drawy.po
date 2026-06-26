@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-23 02:38+0000\n"
-"PO-Revision-Date: 2026-04-17 08:46+0200\n"
+"PO-Revision-Date: 2026-06-23 08:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -353,7 +353,7 @@ msgstr "General"
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
@@ -426,27 +426,27 @@ msgstr "Mode fosc"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Configuració de mà alçada"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Estabilització"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Fa que les línies siguen més estables reduint el sacsament de la mà."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Sensibilitat de la pressió"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Controla la quantitat de pressió que canvia el gruix de la línia."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
