@@ -221,6 +221,7 @@
         <p xml:lang="es">Permitir exportar los elementos seleccionados como imagen.</p>
         <p xml:lang="he">לאפשר לייצא את הרכיבים הנבחרים כתמונה</p>
         <p xml:lang="hr">Dopustiti izvoz odabranih elemenata kao slike</p>
+        <p xml:lang="ia">Permitte exportar le elementos seligite como imagine</p>
         <p xml:lang="it">Consenti di esportare gli elementi selezionati come immagine</p>
         <p xml:lang="ka">მონიშნული ელემენტების გამოსახულების სახით გატანის დაშვება</p>
         <p xml:lang="lt">Leisti eksportuoti pažymėtus elementus kaip paveikslą</p>
@@ -230,8 +231,8 @@
         <p xml:lang="sl">Dovoli izvoz izbranih elementov kot sliko</p>
         <p xml:lang="tr">Seçili ögelerin görsel olarak dışa aktarılmasına olanak tanıyın.</p>
         <p xml:lang="uk">Уможливлено експортування позначених елементів як зображення</p>
-	<p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
-	<p>Add What's new Dialog</p>
+        <p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
+        <p>Add What's new Dialog</p>
       </description>
     </release>
     <release version="1.0.2" date="2026-06-23">
