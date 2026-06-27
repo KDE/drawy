@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:42+0000\n"
-"PO-Revision-Date: 2026-05-01 06:39+0200\n"
+"PO-Revision-Date: 2026-06-26 06:36+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -355,7 +355,7 @@ msgstr "Splošno"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Vhod"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -436,27 +436,27 @@ msgstr "Temni način"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Nastavitve prostoročnega risanja"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Stabilizacija"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Z zmanjšanjem tresenja rok naredi linije bolj stabilne."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Občutljivost na pritisk"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Nadzira, koliko pritiska spremeni debelino črte."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -653,7 +653,7 @@ msgstr "Razhrošči"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "Kaj je novega"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format

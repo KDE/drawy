@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:42+0000\n"
-"PO-Revision-Date: 2026-05-01 08:28+0300\n"
+"PO-Revision-Date: 2026-06-26 12:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -356,7 +356,7 @@ msgstr "Загальне"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Введення"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -437,27 +437,27 @@ msgstr "Темний режим"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Параметри довільного малювання"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Стабілізація"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Згладжує лінії зменшенням наслідків тремтіння руки."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Чутливість до натиску"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Керує тим, наскільки тиск змінює товщину лінії."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -654,7 +654,7 @@ msgstr "Діагностика"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "Що нового?"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
