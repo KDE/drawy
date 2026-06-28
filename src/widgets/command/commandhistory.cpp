@@ -1,9 +1,11 @@
 ﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "commandhistory.hpp"
 #include "drawy_command_debug.h"
+#include <KLocalizedString>
 
 CommandHistory::CommandHistory(ApplicationContext *context, QObject *parent)
     : QObject(parent)
@@ -67,12 +69,8 @@ void CommandHistory::redo()
 void CommandHistory::updateUndoRedoActions()
 {
     Q_EMIT undoRedoChanged();
-    if (!m_undoStack->empty()) {
-        Q_EMIT undoTextChanged(m_undoStack->front()->text());
-    }
-    if (!m_redoStack->empty()) {
-        Q_EMIT redoTextChanged(m_redoStack->front()->text());
-    }
+    Q_EMIT undoTextChanged(m_undoStack->empty() ? QString() : i18nc("@info:tooltip", "Undo: %1", m_undoStack->front()->text()));
+    Q_EMIT redoTextChanged(m_redoStack->empty() ? QString() : i18nc("@info:tooltip", "Redo: %1", m_redoStack->front()->text()));
 }
 
 void CommandHistory::push(const std::shared_ptr<ItemCommand> &command)
