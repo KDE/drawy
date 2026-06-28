@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:42+0000\n"
-"PO-Revision-Date: 2026-05-01 11:24+0200\n"
+"PO-Revision-Date: 2026-06-27 17:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -353,7 +353,7 @@ msgstr "Algemeen"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Invoer"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -432,27 +432,27 @@ msgstr "Donkere modus"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Instellingen voor de vrije hand"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Stabilisatie"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Maakt lijnen stabieler door het verminderen van handtrillingen."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Gevoeligheid voor druk"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Regelt in hoeverre de druk de lijndikte beïnvloedt."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -651,7 +651,7 @@ msgstr "Debuggen"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "Wat is nieuw"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
