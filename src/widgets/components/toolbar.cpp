@@ -4,6 +4,8 @@
 
 #include "toolbar.hpp"
 #include "components/toolbuttonplugin.hpp"
+#include "components/toolbuttonselectplugin.hpp"
+#include "components/toolbuttonspluginwidget.hpp"
 #include "iconmanager/iconmanager.hpp"
 #include <KLocalizedString>
 #include <QButtonGroup>
@@ -41,26 +43,13 @@ void ToolBar::addCustomTool(const std::shared_ptr<CustomTool> &tool)
         return;
     }
 
-    auto btn = new ToolButtonPlugin(this);
-    btn->setFocusPolicy(Qt::NoFocus);
-
-    connect(btn, &ToolButtonPlugin::toolActivated, this, [this, tool, btn](const PluginForm::PluginFormInfo &item) {
-        tool->setUpdateTool(item);
-        btn->setToolTip(item.toolTip);
-        btn->setChecked(true);
-
-        if (item.useCustomIcon) {
-            IconManager::instance().setIcon(btn, item.iconName);
-        } else {
-            btn->setIcon(QIcon::fromTheme(item.iconName));
-        }
-
-        Q_EMIT toolChanged(*tool);
-    });
-
+    auto buttonsPluginWidget = new ToolButtonsPluginWidget(this, this);
     m_tools[Tool::Type::Custom] = tool;
-    m_group->addButton(btn, static_cast<int>(Tool::Type::Custom));
-    m_layout->addWidget(btn);
+    buttonsPluginWidget->setTool(tool);
+    m_group->addButton(buttonsPluginWidget->toolButtonPlugin(), static_cast<int>(Tool::Type::Custom));
+    m_layout->addWidget(buttonsPluginWidget->toolButtonPlugin());
+    m_layout->addWidget(buttonsPluginWidget->toolButtonSelectPlugin());
+    connect(buttonsPluginWidget, &ToolButtonsPluginWidget::toolChanged, this, &ToolBar::toolChanged);
 }
 
 void ToolBar::addImageTool(const std::shared_ptr<Tool> &tool)

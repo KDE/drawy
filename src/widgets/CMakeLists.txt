@@ -61,10 +61,14 @@ target_sources(
         components/topwidgets.hpp
         components/topleftwidgets.cpp
         components/topleftwidgets.hpp
-        components/toolbuttonplugin.hpp
-        components/toolbuttonplugin.cpp
+        components/toolbuttonselectplugin.hpp
+        components/toolbuttonselectplugin.cpp
         components/flowlayout.hpp
         components/flowlayout.cpp
+        components/toolbuttonspluginwidget.hpp
+        components/toolbuttonspluginwidget.cpp
+        components/toolbuttonplugin.hpp
+        components/toolbuttonplugin.cpp
         context/applicationcontext.cpp
         context/applicationcontext.hpp
         context/coordinatetransformer.cpp
