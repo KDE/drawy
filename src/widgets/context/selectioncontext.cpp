@@ -100,7 +100,7 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
     const auto propertyType{property.type()};
     for (const auto &item : items) {
-        if (item->hasProperty(propertyType) && item->property(propertyType) != property) {
+        if (item->hasProperty(propertyType) && item->needsPropertyUpdate(property)) {
             shouldUpdateProperty = true;
             break;
         }

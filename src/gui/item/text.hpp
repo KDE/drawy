@@ -55,6 +55,7 @@ public:
     void updateAfterProperty() override;
 
     [[nodiscard]] Property property(const Property::Type propertyType) const override;
+    [[nodiscard]] bool needsPropertyUpdate(const Property &property) const override;
     void setProperty(const Property::Type propertyType, Property newObj) override;
 
     [[nodiscard]] QJsonObject serialize(int zorder) const override;

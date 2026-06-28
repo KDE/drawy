@@ -95,6 +95,7 @@ public:
     void setDirty(bool value);
 
     [[nodiscard]] virtual bool hasProperty(Property::Type propertyType) const;
+    [[nodiscard]] virtual bool needsPropertyUpdate(const Property &property) const;
 
     [[nodiscard]] QByteArray id() const;
     void setId(const QByteArray &newId);

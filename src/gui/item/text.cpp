@@ -355,6 +355,59 @@ Property TextItem::property(const Property::Type propertyType) const
     }
 }
 
+bool TextItem::needsPropertyUpdate(const Property &property) const
+{
+    QTextCursor cursor = m_cursor;
+    if (m_mode == Mode::Normal) {
+        cursor.select(QTextCursor::Document);
+    }
+    if (!cursor.hasSelection()) {
+        return property != this->property(property.type());
+    }
+    const int start = cursor.selectionStart();
+    const int end = cursor.selectionEnd();
+
+    cursor.setPosition(start + 1);
+    const QTextCharFormat firstFormat = cursor.charFormat();
+
+    QTextBlock block = m_document.findBlock(start);
+    while (block.isValid() && block.position() < end) {
+        for (auto it = block.begin(); !it.atEnd(); ++it) {
+            const QTextFragment fragment = it.fragment();
+            const int fragStart = fragment.position();
+            const int fragEnd = fragStart + fragment.length();
+            if (fragEnd <= start) {
+                continue;
+            }
+            if (fragStart >= end) {
+                break;
+            }
+            const QTextCharFormat fmt = fragment.charFormat();
+            switch (property.type()) {
+            case Property::Type::StrokeColor:
+                if (fmt.foreground().color() != firstFormat.foreground().color()) {
+                    return true;
+                }
+                break;
+            case Property::Type::FontSize:
+                if (fmt.font().pointSize() != firstFormat.font().pointSize()) {
+                    return true;
+                }
+                break;
+            case Property::Type::FontFamily:
+                if (fmt.font().family() != firstFormat.font().family()) {
+                    return true;
+                }
+                break;
+            default:
+                break;
+            }
+        }
+        block = block.next();
+    }
+    return property != this->property(property.type());
+}
+
 void TextItem::setProperty(const Property::Type propertyType, Property newObj)
 {
     QTextCharFormat fmt;

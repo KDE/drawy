@@ -108,6 +108,11 @@ bool Item::hasProperty(Property::Type propertyType) const
     return m_properties.contains(propertyType);
 }
 
+bool Item::needsPropertyUpdate(const Property &property) const
+{
+    return this->property(property.type()) != property;
+}
+
 QByteArray Item::id() const
 {
     return m_id;

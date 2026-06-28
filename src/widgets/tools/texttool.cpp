@@ -155,7 +155,6 @@ void TextTool::mouseMoved(ApplicationContext *context)
         }
         m_curItem->setDirty(true);
         renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
-        uiContext->propertyBar()->updateToolProperties();
     }
     renderingContext->markForRender();
     renderingContext->markForUpdate();
