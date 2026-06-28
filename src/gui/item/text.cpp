@@ -62,6 +62,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
 {
     painter.save();
     painter.translate(m_boundingBox.topLeft() - offset);
+    painter.setOpacity(painter.opacity() * (property(Property::Type::Opacity).value<int>() / 255.0));
 
     QTransform transform{m_transform};
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
@@ -73,16 +74,12 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         m_document.setTextWidth(targetWidth);
     }
 
-    const QColor color{getPen().color()};
     QAbstractTextDocumentLayout::PaintContext ctx;
-    ctx.palette.setColor(QPalette::Text, color);
-
     if (m_mode == Mode::Edit && m_cursor.hasSelection()) {
         // draw selection
         QAbstractTextDocumentLayout::Selection selection;
         selection.cursor = m_cursor;
         selection.format.setBackground(Common::selectionBackgroundColor);
-        selection.format.setForeground(color);
         ctx.selections.append(selection);
     }
 
@@ -187,6 +184,22 @@ void TextItem::updateBoundingBox()
         m_document.setTextWidth(m_wrapWidth);
     }
 
+    if (m_document.isEmpty()) {
+        QTextCharFormat fmt;
+        fmt.setForeground(Item::property(Property::Type::StrokeColor).value<QColor>());
+
+        QFont font;
+        font.setPointSize(Item::property(Property::Type::FontSize).value<int>());
+        font.setFamily(Item::property(Property::Type::FontFamily).value<QString>());
+        const int style = ItemUtils::convertStringToFontStyle(Item::property(Property::Type::FontStyle).value<QString>());
+        font.setBold(style & Property::FontStyle::Bold);
+        font.setItalic(style & Property::FontStyle::Italic);
+        font.setUnderline(style & Property::FontStyle::Underlined);
+        fmt.setFont(font);
+
+        m_cursor.setCharFormat(fmt);
+    }
+
     m_boundingBox.setSize(m_document.size());
     setDirty(true);
 }
@@ -207,11 +220,7 @@ QFont TextItem::getFont() const
 QPen TextItem::getPen() const
 {
     QPen pen;
-
-    QColor color{property(Property::Type::StrokeColor).value<QColor>()};
-    color.setAlpha(property(Property::Type::Opacity).value<int>());
-    pen.setColor(color);
-
+    pen.setColor(property(Property::Type::StrokeColor).value<QColor>());
     return pen;
 }
 
@@ -297,15 +306,97 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
 
 void TextItem::updateAfterProperty()
 {
-    m_document.setDefaultFont(getFont());
-    QTextCursor cursor = m_cursor;
-    cursor.select(QTextCursor::Document);
-    QTextCharFormat format;
-    format.setFontPointSize(property(Property::Type::FontSize).value<qreal>());
-    format.setFont(getFont());
-    cursor.mergeCharFormat(format);
-
     updateBoundingBox();
+}
+
+Property TextItem::property(const Property::Type propertyType) const
+{
+    if (m_document.isEmpty()) {
+        return Item::property(propertyType);
+    }
+
+    QTextCursor cursor = m_cursor;
+    if (m_mode == Mode::Normal) {
+        cursor.setPosition(0);
+    }
+    if (cursor.hasSelection()) {
+        cursor.setPosition(cursor.selectionStart() + 1);
+    }
+
+    switch (propertyType) {
+    case Property::Type::StrokeColor: {
+        const QColor color = cursor.charFormat().foreground().color();
+        return Property{color, Property::Type::StrokeColor};
+    }
+    case Property::Type::FontSize: {
+        const qreal size = cursor.charFormat().font().pointSize();
+        return Property{static_cast<int>(size), Property::Type::FontSize};
+    }
+    case Property::Type::FontFamily: {
+        const QString font = cursor.charFormat().font().family();
+        return Property{font, Property::Type::FontFamily};
+    }
+    case Property::Type::FontStyle: {
+        const QFont font = cursor.charFormat().font();
+        int style = 0;
+        if (font.bold()) {
+            style |= Property::FontStyle::Bold;
+        }
+        if (font.italic()) {
+            style |= Property::FontStyle::Italic;
+        }
+        if (font.underline()) {
+            style |= Property::FontStyle::Underlined;
+        }
+        return Property{ItemUtils::convertFontStyleToString(style), Property::Type::FontStyle};
+    }
+    default:
+        return Item::property(propertyType);
+    }
+}
+
+void TextItem::setProperty(const Property::Type propertyType, Property newObj)
+{
+    QTextCharFormat fmt;
+    switch (propertyType) {
+    case Property::Type::StrokeColor:
+        fmt.setForeground(newObj.value<QColor>());
+        break;
+    case Property::Type::FontSize:
+        fmt.setFontPointSize(newObj.value<int>());
+        break;
+    case Property::Type::FontFamily:
+        fmt.setFontFamilies(QStringList{newObj.value<QString>()});
+        break;
+    case Property::Type::FontStyle: {
+        const int newStyle = ItemUtils::convertStringToFontStyle(newObj.value<QString>());
+        const int currentStyle = ItemUtils::convertStringToFontStyle(property(Property::Type::FontStyle).value<QString>());
+        const int toggledBit = newStyle ^ currentStyle;
+
+        if (toggledBit & Property::FontStyle::Bold) {
+            fmt.setFontWeight((newStyle & Property::FontStyle::Bold) ? QFont::Bold : QFont::Normal);
+        }
+        if (toggledBit & Property::FontStyle::Italic) {
+            fmt.setFontItalic(newStyle & Property::FontStyle::Italic);
+        }
+        if (toggledBit & Property::FontStyle::Underlined) {
+            fmt.setFontUnderline(newStyle & Property::FontStyle::Underlined);
+        }
+        break;
+    }
+    default:
+        Item::setProperty(propertyType, newObj);
+        return;
+    }
+
+    if (m_mode == Mode::Normal) {
+        m_cursor.select(QTextCursor::Document);
+        m_cursor.mergeCharFormat(fmt);
+        m_cursor.clearSelection();
+    } else {
+        m_cursor.mergeCharFormat(fmt);
+    }
+    Item::setProperty(propertyType, newObj);
 }
 
 QJsonObject TextItem::serialize(int zorder) const

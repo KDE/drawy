@@ -6,7 +6,6 @@
 #include "libdrawygui_export.h"
 
 #include <QInputMethodEvent>
-#include <QPainter>
 #include <QRect>
 #include <QTextCursor>
 #include <QTextDocument>
@@ -54,6 +53,9 @@ public:
     [[nodiscard]] Item::FormType formType() const override;
 
     void updateAfterProperty() override;
+
+    [[nodiscard]] Property property(const Property::Type propertyType) const override;
+    void setProperty(const Property::Type propertyType, Property newObj) override;
 
     [[nodiscard]] QJsonObject serialize(int zorder) const override;
     void deserialize(const QJsonObject &obj) override;

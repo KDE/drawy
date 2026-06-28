@@ -9,6 +9,7 @@
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
+#include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -108,6 +109,7 @@ void TextTool::mousePressed(ApplicationContext *context)
     }
 
     m_isDrawing = true;
+    uiContext->propertyBar()->updateToolProperties();
 }
 
 void TextTool::mouseMoved(ApplicationContext *context)
@@ -153,6 +155,7 @@ void TextTool::mouseMoved(ApplicationContext *context)
         }
         m_curItem->setDirty(true);
         renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
+        uiContext->propertyBar()->updateToolProperties();
     }
     renderingContext->markForRender();
     renderingContext->markForUpdate();
@@ -163,6 +166,7 @@ void TextTool::mouseReleased([[maybe_unused]] ApplicationContext *context)
     m_isSelecting = false;
     m_doubleClicked = false;
     m_tripleClicked = false;
+    context->uiContext()->propertyBar()->updateToolProperties();
 }
 
 void TextTool::mouseDoubleClick(ApplicationContext *context)
@@ -185,6 +189,7 @@ void TextTool::mouseDoubleClick(ApplicationContext *context)
         renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+        context->uiContext()->propertyBar()->updateToolProperties();
     }
 }
 
@@ -208,6 +213,7 @@ void TextTool::mouseTripleClick(ApplicationContext *context)
         renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+        context->uiContext()->propertyBar()->updateToolProperties();
     }
 }
 
@@ -244,6 +250,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     context->renderingContext()->cacheGrid().markAllDirty();
     context->renderingContext()->markForRender();
     context->renderingContext()->markForUpdate();
+    context->uiContext()->propertyBar()->updateToolProperties();
 }
 
 void TextTool::processKey(const Event *ev)
