@@ -212,4 +212,26 @@ void TextItemTest::shouldTestUpdatePreedit()
     QCOMPARE(item.boundingBox(), initialBounds);
 }
 
+void TextItemTest::shouldTestPerRangeFormatting()
+{
+    TextItem i;
+    i.setMode(TextItem::Mode::Edit);
+    i.cursor().insertText(u"Hello World"_s);
+
+    i.cursor().setPosition(0);
+    i.setProperty(Property::Type::FontStyle, Property(u"Bold"_s, Property::Type::FontStyle));
+    QCOMPARE(i.property(Property::Type::FontStyle).value<QString>(), u"Bold"_s);
+    QCOMPARE(i.cursor().charFormat().fontWeight(), QFont::Bold);
+
+    i.cursor().setPosition(5, QTextCursor::KeepAnchor); // select "Hello"
+    QCOMPARE(i.property(Property::Type::FontStyle).value<QString>(), u"Normal"_s);
+
+    i.setProperty(Property::Type::FontStyle, Property(u"Italic"_s, Property::Type::FontStyle));
+    QCOMPARE(i.property(Property::Type::FontStyle).value<QString>(), u"Italic"_s);
+
+    i.cursor().setPosition(5);
+    i.cursor().setPosition(11, QTextCursor::KeepAnchor); // select "World"
+    QCOMPARE(i.property(Property::Type::FontStyle).value<QString>(), u"Normal"_s);
+}
+
 #include "moc_textitemtest.cpp"

@@ -29,4 +29,5 @@ private Q_SLOTS:
     void shouldTestNeedsCaching();
     void shouldTestLockAspectRatioWhenResizing();
     void shouldTestUpdatePreedit();
+    void shouldTestPerRangeFormatting();
 };
