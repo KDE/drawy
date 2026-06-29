@@ -122,14 +122,19 @@ void TextTool::mouseMoved(ApplicationContext *context)
     m_mouseMoved = true;
 
     const QPointF worldPos{transformer.viewToWorld(uiContext->appEvent()->pos())};
-    const QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
-        return item->formType() == Item::FormType::Text && item->boundingBox().contains(point);
-    })};
 
-    if (!intersectingItems.empty()) {
+    if (m_isSelecting) {
         renderingContext->canvas()->setCursor(Qt::IBeamCursor);
     } else {
-        renderingContext->canvas()->setCursor(Qt::CrossCursor);
+        const QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
+            return item->formType() == Item::FormType::Text && item->boundingBox().contains(point);
+        })};
+
+        if (!intersectingItems.empty()) {
+            renderingContext->canvas()->setCursor(Qt::IBeamCursor);
+        } else {
+            renderingContext->canvas()->setCursor(Qt::CrossCursor);
+        }
     }
 
     if (m_isSelecting && m_curItem) {
