@@ -95,6 +95,8 @@ void TextTool::mousePressed(ApplicationContext *context)
         uiContext->keybindManager()->setEnabled(false);
         context->selectionContext()->setShouldRenderHandles(false);
 
+        QGuiApplication::inputMethod()->show();
+
         renderingContext->markForRender();
         renderingContext->markForUpdate();
     }
@@ -215,6 +217,8 @@ void TextTool::keyPressed(ApplicationContext *context)
         context->selectionContext()->setShouldRenderHandles(true);
         context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
         m_curItem = nullptr;
+
+        QGuiApplication::inputMethod()->hide();
 
         context->renderingContext()->cacheGrid().markAllDirty();
         context->renderingContext()->markForRender();
@@ -395,6 +399,7 @@ void TextTool::keyReleased([[maybe_unused]] ApplicationContext *context)
 void TextTool::cleanup()
 {
     QGuiApplication::inputMethod()->commit();
+    QGuiApplication::inputMethod()->hide();
     if (!m_curItem) {
         return;
     }
