@@ -6,6 +6,7 @@
 #include "imagetool.hpp"
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
+#include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
 #include "context/renderingcontext.hpp"
@@ -75,5 +76,6 @@ void ImageTool::mouseReleased(ApplicationContext *context)
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+        context->uiContext()->toolBar()->changeTool(Tool::Type::Selection);
     }
 }
