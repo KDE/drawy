@@ -132,11 +132,34 @@ void TextItem::commitTransformation()
     m_boundingBox = filtered.map(m_boundingBox).boundingRect();
 
     if (!qFuzzyCompare(1.0, scaleY)) {
+        scaleTextFragments(scaleY);
         const qreal curFontSize{property(Property::Type::FontSize).value<qreal>()};
         const qreal newFontSize{std::max(1.0, curFontSize * scaleY)};
-        setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
+        Item::setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
     }
     updateBoundingBox();
+}
+
+void TextItem::scaleTextFragments(const qreal scaleY)
+{
+    m_cursor.beginEditBlock();
+
+    QTextBlock block = m_document.firstBlock();
+    while (block.isValid()) {
+        for (auto it = block.begin(); !it.atEnd(); ++it) {
+            const QTextFragment fragment = it.fragment();
+            QTextCharFormat fmt = fragment.charFormat();
+            const qreal size = fmt.fontPointSize();
+
+            fmt.setFontPointSize(std::max(1.0, size * scaleY));
+            m_cursor.setPosition(fragment.position());
+            m_cursor.setPosition(fragment.position() + fragment.length(), QTextCursor::KeepAnchor);
+            m_cursor.setCharFormat(fmt);
+        }
+        block = block.next();
+    }
+
+    m_cursor.endEditBlock();
 }
 
 void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const

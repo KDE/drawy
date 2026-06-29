@@ -73,6 +73,7 @@ private:
     [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QTextOption getTextOptions() const;
     constexpr LIBDRAWYGUI_NO_EXPORT static int getTextFlags();
 
+    LIBDRAWYGUI_NO_EXPORT void scaleTextFragments(const qreal scaleY);
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
     QTextDocument m_document;
