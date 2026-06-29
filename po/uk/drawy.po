@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:42+0000\n"
+"POT-Creation-Date: 2026-06-29 00:42+0000\n"
 "PO-Revision-Date: 2026-06-26 12:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -126,6 +126,22 @@ msgstr "X-коробка"
 msgid "Align Items"
 msgstr "Вирівняти елементи"
 
+#: widgets/command/commandhistory.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Undo"
+msgctxt "@info:tooltip"
+msgid "Undo: %1"
+msgstr "Скасувати"
+
+#: widgets/command/commandhistory.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Redo"
+msgctxt "@info:tooltip"
+msgid "Redo: %1"
+msgstr "Повторити"
+
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
@@ -203,13 +219,13 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/toolbar.cpp:74
+#: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "Зображення"
 
-#: widgets/components/toolbuttonplugin.cpp:64
+#: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
@@ -1056,14 +1072,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "UIContext|"
 #~ msgid "Zoom In"
 #~ msgstr "Збільшити"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Undo"
-#~ msgstr "Скасувати"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Redo"
-#~ msgstr "Повторити"
 
 #~ msgctxt "ConfigureGeneralWidget|"
 #~ msgid "Auto-save"

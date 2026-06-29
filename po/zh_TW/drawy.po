@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:42+0000\n"
+"POT-Creation-Date: 2026-06-29 00:42+0000\n"
 "PO-Revision-Date: 2026-05-12 04:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -125,6 +125,22 @@ msgstr "X 方框"
 msgid "Align Items"
 msgstr "對齊項目"
 
+#: widgets/command/commandhistory.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Undo"
+msgctxt "@info:tooltip"
+msgid "Undo: %1"
+msgstr "復原"
+
+#: widgets/command/commandhistory.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Redo"
+msgctxt "@info:tooltip"
+msgid "Redo: %1"
+msgstr "重做"
+
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
@@ -199,13 +215,13 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/toolbar.cpp:74
+#: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "影像"
 
-#: widgets/components/toolbuttonplugin.cpp:64
+#: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
@@ -1055,14 +1071,6 @@ msgstr "%1 — Drawy"
 #~ msgctxt "UIContext|"
 #~ msgid "Zoom In"
 #~ msgstr "放大"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Undo"
-#~ msgstr "復原"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Redo"
-#~ msgstr "重做"
 
 #~ msgctxt "RestoreAutoSaveJob|"
 #~ msgid "Do you want to restore autosave file?"

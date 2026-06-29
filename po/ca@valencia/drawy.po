@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:42+0000\n"
+"POT-Creation-Date: 2026-06-29 00:42+0000\n"
 "PO-Revision-Date: 2026-06-26 13:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -130,6 +130,18 @@ msgstr "X Box"
 msgid "Align Items"
 msgstr "Alinea elements"
 
+#: widgets/command/commandhistory.cpp:72
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Undo: %1"
+msgstr ""
+
+#: widgets/command/commandhistory.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Redo: %1"
+msgstr ""
+
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
@@ -205,13 +217,13 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/toolbar.cpp:74
+#: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "Imatge"
 
-#: widgets/components/toolbuttonplugin.cpp:64
+#: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"

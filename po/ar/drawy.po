@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-26 00:42+0000\n"
+"POT-Creation-Date: 2026-06-29 00:42+0000\n"
 "PO-Revision-Date: 2026-05-07 13:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -128,6 +128,22 @@ msgstr "صندوق X"
 msgid "Align Items"
 msgstr "حاذِ العناصر"
 
+#: widgets/command/commandhistory.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Undo"
+msgctxt "@info:tooltip"
+msgid "Undo: %1"
+msgstr "تراجع"
+
+#: widgets/command/commandhistory.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "UIContext|"
+#| msgid "Redo"
+msgctxt "@info:tooltip"
+msgid "Redo: %1"
+msgstr "كرّر"
+
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
@@ -207,13 +223,13 @@ msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1٪"
 
-#: widgets/components/toolbar.cpp:74
+#: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr "صورة"
 
-#: widgets/components/toolbuttonplugin.cpp:64
+#: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
@@ -1065,14 +1081,6 @@ msgstr "%1 — السبورة"
 #~ msgctxt "UIContext|"
 #~ msgid "Zoom In"
 #~ msgstr "قرّب"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Undo"
-#~ msgstr "تراجع"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Redo"
-#~ msgstr "كرّر"
 
 #~ msgctxt "ConfigureGeneralWidget|"
 #~ msgid "Auto-save"
