@@ -70,8 +70,7 @@ void ImageTool::mouseReleased(ApplicationContext *context)
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
         curItem->setPixmap(pixmap);
 
-        QList<std::shared_ptr<Item>> lst;
-        lst << curItem;
+        QList<std::shared_ptr<Item>> lst{curItem};
         commandHistory->push(std::make_shared<InsertItemCommand>(lst));
 
         renderingContext->markForRender();
