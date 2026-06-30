@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:42+0000\n"
-"PO-Revision-Date: 2026-06-26 02:02-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-06-29 08:29-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -128,20 +128,16 @@ msgid "Align Items"
 msgstr "Alinhar itens"
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "Desfazer"
+msgstr "Desfazer: %1"
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "Refazer"
+msgstr "Refazer: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format

@@ -125,20 +125,16 @@ msgid "Align Items"
 msgstr "ელემენტების გასწორება"
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "გაუქმება"
+msgstr "დაბრუნება: %1"
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "გამეორება"
+msgstr "გამეორება: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format

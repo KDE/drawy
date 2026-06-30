@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:42+0000\n"
-"PO-Revision-Date: 2026-06-26 13:19+0200\n"
+"PO-Revision-Date: 2026-06-29 11:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -134,13 +134,13 @@ msgstr "Alinea elements"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr ""
+msgstr "Desfés: %1"
 
 #: widgets/command/commandhistory.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr ""
+msgstr "Refés: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
