@@ -8,6 +8,7 @@
 #include "common/utils/freehand.hpp"
 #include "drawyglobalconfig.h"
 #include <KLocalizedString>
+#include <QFormLayout>
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QLabel>
@@ -18,30 +19,32 @@ FreehandSettingsWidget::FreehandSettingsWidget(QWidget *parent)
     , m_streamlineSlider{new QSlider(Qt::Horizontal, this)}
     , m_thinningSlider{new QSlider(Qt::Horizontal, this)}
 {
-    auto setupSliderRow = [this](QSlider *slider, const QString &name, const QString &infoText) {
+    auto formLayout = new QFormLayout;
+    formLayout->setContentsMargins({});
+    m_layout->addLayout(formLayout);
+    auto setupSliderRow = [this, formLayout](QSlider *slider, const QString &name, const QString &infoText) {
         slider->setMinimum(0);
         slider->setMaximum(10);
         slider->setSingleStep(1);
         slider->setPageStep(1);
 
-        auto *rowLayout = new QHBoxLayout();
+        auto rowLayout = new QHBoxLayout();
 
-        auto *nameLabel = new QLabel(name, this);
+        auto nameLabel = new QLabel(name, this);
         nameLabel->setToolTip(infoText);
         nameLabel->setCursor(Qt::WhatsThisCursor);
 
-        auto *valueLabel = new QLabel(QString::number(slider->value()), this);
+        auto valueLabel = new QLabel(QString::number(slider->value()), this);
         valueLabel->setMinimumWidth(20);
 
         connect(slider, &QSlider::valueChanged, this, [valueLabel](int val) {
             valueLabel->setText(QString::number(val / 10.0));
         });
 
-        rowLayout->addWidget(nameLabel);
         rowLayout->addWidget(slider);
         rowLayout->addWidget(valueLabel);
 
-        m_layout->addLayout(rowLayout);
+        formLayout->addRow(nameLabel, rowLayout);
     };
 
     setupSliderRow(m_streamlineSlider, i18n("Stabilization"), i18n("Makes lines steadier by reducing hand shake."));
