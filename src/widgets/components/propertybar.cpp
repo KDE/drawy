@@ -39,7 +39,7 @@ PropertyBar::PropertyBar(ApplicationContext *context, QWidget *parent)
 
     scrollArea->setFrameShape(QFrame::NoFrame);
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addWidget(scrollArea);
 }
