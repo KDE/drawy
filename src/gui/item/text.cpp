@@ -94,7 +94,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         // draw caret
         const QRectF rect = cursorRect(m_preeditCursorPos);
         if (rect.isValid()) {
-            painter.setPen(getPen());
+            painter.setPen(property(Property::Type::StrokeColor).value<QColor>());
             painter.drawLine(rect.topLeft(), rect.bottomLeft());
         }
     }
@@ -235,18 +235,6 @@ QFont TextItem::getFont() const
     font.setItalic(style & Property::FontStyle::Italic);
     font.setUnderline(style & Property::FontStyle::Underlined);
     return font;
-}
-
-QPen TextItem::getPen() const
-{
-    QPen pen;
-    pen.setColor(property(Property::Type::StrokeColor).value<QColor>());
-    return pen;
-}
-
-constexpr int TextItem::getTextFlags()
-{
-    return Qt::TextExpandTabs;
 }
 
 QTextOption TextItem::getTextOptions() const
