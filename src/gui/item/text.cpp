@@ -32,7 +32,13 @@ TextItem::TextItem()
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
 
-    QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this]() {
+    QTextCharFormat fmt;
+    fmt.setForeground(m_properties[Property::Type::StrokeColor].value<QColor>());
+    fmt.setFont(getFont());
+    m_currentFormat = fmt;
+    updateBoundingBox();
+
+    QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this] {
         updateBoundingBox();
     });
 }
@@ -208,19 +214,10 @@ void TextItem::updateBoundingBox()
     }
 
     if (m_document.isEmpty()) {
-        QTextCharFormat fmt;
-        fmt.setForeground(Item::property(Property::Type::StrokeColor).value<QColor>());
-
-        QFont font;
-        font.setPointSize(Item::property(Property::Type::FontSize).value<int>());
-        font.setFamily(Item::property(Property::Type::FontFamily).value<QString>());
-        const int style = ItemUtils::convertStringToFontStyle(Item::property(Property::Type::FontStyle).value<QString>());
-        font.setBold(style & Property::FontStyle::Bold);
-        font.setItalic(style & Property::FontStyle::Italic);
-        font.setUnderline(style & Property::FontStyle::Underlined);
-        fmt.setFont(font);
-
-        m_cursor.setCharFormat(fmt);
+        m_cursor.setCharFormat(m_currentFormat);
+        if (m_cursor.blockCharFormat() != m_currentFormat) {
+            m_cursor.setBlockCharFormat(m_currentFormat);
+        }
     }
 
     m_boundingBox.setSize(m_document.size());
@@ -472,6 +469,7 @@ void TextItem::setProperty(const Property::Type propertyType, Property newObj)
     } else {
         m_cursor.mergeCharFormat(fmt);
     }
+    m_currentFormat.merge(fmt);
     Item::setProperty(propertyType, newObj);
 }
 

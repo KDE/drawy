@@ -78,6 +78,7 @@ private:
 
     QTextDocument m_document;
     QTextCursor m_cursor;
+    QTextCharFormat m_currentFormat;
     Mode m_mode{Mode::Normal};
 
     QString m_preeditString;
