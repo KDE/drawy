@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:42+0000\n"
-"PO-Revision-Date: 2026-05-07 13:15+0400\n"
+"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"PO-Revision-Date: 2026-06-30 22:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -129,20 +129,16 @@ msgid "Align Items"
 msgstr "حاذِ العناصر"
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "تراجع"
+msgstr "تراجع: %1"
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "كرّر"
+msgstr "كرّر: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -376,7 +372,7 @@ msgstr "عامّ"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "الدّخل"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -456,30 +452,30 @@ msgstr "الوضع الفاتح"
 msgid "Dark Mode"
 msgstr "الوضع المظلم"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "إعدادات الشكل الحر"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "التثبيت"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "يجعل الخطوط أكثر ثباتاً عن طريق تقليل اهتزاز اليد."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "حساسية الضغط"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "يتحكم في مقدار تغير الضغط في سمك الخط."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -676,7 +672,7 @@ msgstr "نقّح"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "ما الجديد"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
@@ -919,12 +915,12 @@ msgstr "السّمك"
 msgid "Order"
 msgstr "الترتيب"
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr "صورة"
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

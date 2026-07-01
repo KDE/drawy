@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:42+0000\n"
+"POT-Creation-Date: 2026-07-01 00:43+0000\n"
 "PO-Revision-Date: 2026-05-29 17:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -442,27 +442,27 @@ msgstr "يورۇق ھالەت"
 msgid "Dark Mode"
 msgstr "قاراڭغۇ ھالەت"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr ""
@@ -907,12 +907,12 @@ msgstr "قېلىنلىقى"
 msgid "Order"
 msgstr "تەرتىپلە"
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr "سۈرەت"
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

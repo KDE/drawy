@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:42+0000\n"
+"POT-Creation-Date: 2026-07-01 00:43+0000\n"
 "PO-Revision-Date: 2026-05-09 18:06+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -445,27 +445,27 @@ msgstr "Heller Modus"
 msgid "Dark Mode"
 msgstr "Dunkler Modus"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr ""
@@ -908,12 +908,12 @@ msgstr "Dicke"
 msgid "Order"
 msgstr "Reihenfolge"
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr "Bild"
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

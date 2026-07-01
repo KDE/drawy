@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:42+0000\n"
+"POT-Creation-Date: 2026-07-01 00:43+0000\n"
 "PO-Revision-Date: 2026-06-29 12:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -441,27 +441,27 @@ msgstr "Lichte modus"
 msgid "Dark Mode"
 msgstr "Donkere modus"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Instellingen voor de vrije hand"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
 msgstr "Stabilisatie"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Maakt lijnen stabieler door het verminderen van handtrillingen."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Gevoeligheid voor druk"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Regelt in hoeverre de druk de lijndikte beïnvloedt."
@@ -906,12 +906,12 @@ msgstr "Dikte"
 msgid "Order"
 msgstr "Volgorde"
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr "Afbeelding"
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

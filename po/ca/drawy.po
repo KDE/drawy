@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:42+0000\n"
+"POT-Creation-Date: 2026-07-01 00:43+0000\n"
 "PO-Revision-Date: 2026-06-29 11:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -447,27 +447,27 @@ msgstr "Mode clar"
 msgid "Dark Mode"
 msgstr "Mode fosc"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Configuració de mà alçada"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
 msgstr "Estabilització"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Fa que les línies siguin més estables reduint el sacseig de la mà."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Sensibilitat de la pressió"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Controla la quantitat de pressió que canvia el gruix de la línia."
@@ -911,12 +911,12 @@ msgstr "Gruix"
 msgid "Order"
 msgstr "Ordre"
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr "Imatge"
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
