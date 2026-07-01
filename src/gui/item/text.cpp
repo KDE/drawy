@@ -286,9 +286,10 @@ QRectF TextItem::cursorRect(int offset) const
         const int pos = m_cursor.positionInBlock() + offset;
         const QTextLine line = layout->lineForTextPosition(pos);
         if (line.isValid()) {
+            const QFontMetricsF fm(m_cursor.charFormat().font());
             const qreal x = layout->position().x() + line.cursorToX(pos);
-            const qreal y = layout->position().y() + line.y();
-            const qreal height = line.height();
+            const qreal y = layout->position().y() + line.y() + line.ascent() - fm.ascent();
+            const qreal height = fm.height();
 
             return QRectF(x, y, 1.0, height);
         }
