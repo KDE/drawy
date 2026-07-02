@@ -6,6 +6,7 @@
 #include "fontfamilywidgettest.hpp"
 #include "properties/widgets/fontfamilywidget.hpp"
 #include <QFontComboBox>
+#include <QStandardPaths>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 
@@ -13,6 +14,7 @@ QTEST_MAIN(FontFamilyWidgetTest)
 FontFamilyWidgetTest::FontFamilyWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void FontFamilyWidgetTest::shouldHaveDefaultValues()
