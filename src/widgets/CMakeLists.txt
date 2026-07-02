@@ -106,6 +106,8 @@ target_sources(
         properties/widgets/startarrowtypewidget.hpp
         properties/widgets/endarrowtypewidget.cpp
         properties/widgets/endarrowtypewidget.hpp
+        properties/widgets/fontfamilywidget.cpp
+        properties/widgets/fontfamilywidget.hpp
         properties/widgets/fontsizewidget.cpp
         properties/widgets/fontsizewidget.hpp
         properties/widgets/fontstylewidget.cpp

@@ -8,6 +8,7 @@
 #include "backgroundcolorwidget.hpp"
 #include "endarrowtypewidget.hpp"
 #include "erasersizewidget.hpp"
+#include "fontfamilywidget.hpp"
 #include "fontsizewidget.hpp"
 #include "fontstylewidget.hpp"
 #include "keybindings/actionmanager.hpp"
@@ -27,6 +28,7 @@ PropertyManager::PropertyManager(ActionManager *actionManager, QWidget *parent)
     m_widgets[Property::Type::StrokeColor] = new StrokeColorWidget(parent);
     m_widgets[Property::Type::StrokeStyle] = new StokeStyleWidget(parent);
     m_widgets[Property::Type::EraserSize] = new EraserSizeWidget(parent);
+    m_widgets[Property::Type::FontFamily] = new FontFamilyWidget(parent);
     m_widgets[Property::Type::FontSize] = new FontSizeWidget(parent);
     m_widgets[Property::Type::FontStyle] = new FontStyleWidget(parent);
     m_widgets[Property::Type::Actions] = new ActionsWidget(actionManager, parent);

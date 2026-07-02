@@ -24,6 +24,7 @@ public:
         BackgroundColor,
         BackgroundStyle,
         EraserSize,
+        FontFamily,
         FontSize,
         FontStyle,
         Null,
@@ -63,18 +64,20 @@ public:
             return 8;
         case Type::EraserSize:
             return 9;
-        case Type::FontSize:
+        case Type::FontFamily:
             return 10;
-        case Type::FontStyle:
+        case Type::FontSize:
             return 11;
-        case Type::Alignment:
+        case Type::FontStyle:
             return 12;
-        case Type::ZOrder:
+        case Type::Alignment:
             return 13;
-        case Type::Actions:
+        case Type::ZOrder:
             return 14;
-        case Type::Null:
+        case Type::Actions:
             return 15;
+        case Type::Null:
+            return 16;
         }
 
         return 0;

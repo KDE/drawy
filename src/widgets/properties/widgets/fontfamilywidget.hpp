@@ -1,0 +1,30 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Abdelhadi Wael <waelhadi380@gmail.com>
+ *
+ * SPDX-License-Identifier: LGPL-2.0-or-later
+ */
+#pragma once
+
+#include "libdrawywidgets_private_export.h"
+#include "propertywidget.hpp"
+class QEvent;
+class QFontComboBox;
+
+class LIBDRAWYWIDGETS_TESTS_EXPORT FontFamilyWidget : public PropertyWidget
+{
+    Q_OBJECT
+public:
+    explicit FontFamilyWidget(QWidget *parent = nullptr);
+
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] Property value() const override;
+
+    void setValue(const QVariant &val) override;
+    void updateWidget() override;
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+private:
+    QFontComboBox *const m_fontComboBox;
+};

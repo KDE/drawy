@@ -26,6 +26,7 @@ TextItem::TextItem()
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
     m_properties[Property::Type::FontSize] = Property{18, Property::Type::FontSize};
     m_properties[Property::Type::FontStyle] = Property{u"Normal"_s, Property::Type::FontStyle};
+    m_properties[Property::Type::FontFamily] = Property{QStringLiteral("Fuzzy Bubbles"), Property::Type::FontFamily};
 
     m_document.setDefaultFont(getFont());
     m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
@@ -179,7 +180,6 @@ qsizetype TextItem::getIndexFromCursor(QPointF cursorPos) const
 
 void TextItem::updateBoundingBox()
 {
-    m_document.setDefaultFont(getFont());
     m_document.setDefaultTextOption(getTextOptions());
 
     if (m_wrapWidth > 0) {
@@ -194,13 +194,12 @@ QFont TextItem::getFont() const
 {
     QFont font;
     font.setPointSize(property(Property::Type::FontSize).value<int>());
-    font.setFamily(u"Fuzzy Bubbles"_s);
+    font.setFamily(property(Property::Type::FontFamily).value<QString>());
 
     const int style = ItemUtils::convertStringToFontStyle(property(Property::Type::FontStyle).value<QString>());
     font.setBold(style & Property::FontStyle::Bold);
     font.setItalic(style & Property::FontStyle::Italic);
     font.setUnderline(style & Property::FontStyle::Underlined);
-
     return font;
 }
 
@@ -291,6 +290,7 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
 
 void TextItem::updateAfterProperty()
 {
+    m_document.setDefaultFont(getFont());
     QTextCursor cursor = m_cursor;
     cursor.select(QTextCursor::Document);
     QTextCharFormat format;

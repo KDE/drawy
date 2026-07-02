@@ -2,6 +2,10 @@
     "id": "acff679ae3c14260b56ef00f1d354883",
     "properties": [
         {
+            "type": "FontFamily",
+            "value": "Fuzzy Bubbles"
+        },
+        {
             "type": "FontSize",
             "value": 18
         },

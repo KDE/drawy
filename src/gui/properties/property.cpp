@@ -30,6 +30,8 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::StrokeColor;
     } else if (str == u"Opacity") {
         return Property::Type::Opacity;
+    } else if (str == u"FontFamily") {
+        return Property::Type::FontFamily;
     } else if (str == u"FontSize") {
         return Property::Type::FontSize;
     } else if (str == u"EraserSize") {
@@ -65,6 +67,8 @@ QString Property::convertEnumToString(Property::Type type)
         return u"StrokeColor"_s;
     case Property::Type::Opacity:
         return u"Opacity"_s;
+    case Property::Type::FontFamily:
+        return u"FontFamily"_s;
     case Property::Type::FontSize:
         return u"FontSize"_s;
     case Property::Type::FontStyle:
@@ -103,6 +107,8 @@ QString Property::information(Type type)
         return i18n("Change Stroke Color");
     case Property::Type::Opacity:
         return i18n("Change Opacity");
+    case Property::Type::FontFamily:
+        return i18n("Change Font Family");
     case Property::Type::FontSize:
         return i18n("Change Font Size");
     case Property::Type::FontStyle:

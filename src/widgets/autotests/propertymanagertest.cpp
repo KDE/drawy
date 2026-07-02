@@ -22,6 +22,7 @@ void PropertyManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.widget(Property::Type::StrokeStyle));
     QVERIFY(w.widget(Property::Type::EraserSize));
     QVERIFY(w.widget(Property::Type::FontSize));
+    QVERIFY(w.widget(Property::Type::FontFamily));
     QVERIFY(w.widget(Property::Type::Actions));
     QVERIFY(w.widget(Property::Type::BackgroundColor));
     QVERIFY(w.widget(Property::Type::Opacity));

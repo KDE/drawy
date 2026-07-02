@@ -18,7 +18,7 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
     m_widget = new QWidget(parent);
     m_widget->setObjectName(u"m_widget"_s);
 
-    auto *layout = new QHBoxLayout(m_widget);
+    auto layout = new QHBoxLayout(m_widget);
     layout->setObjectName(u"layout"_s);
     layout->setAlignment(Qt::AlignCenter);
 
