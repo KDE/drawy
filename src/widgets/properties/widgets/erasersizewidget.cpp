@@ -15,6 +15,7 @@ EraserSizeWidget::EraserSizeWidget(QWidget *parent)
     , mSpinBox(new QSpinBox(parent))
 {
     mSpinBox->setRange(1, 100);
+    mSpinBox->setKeyboardTracking(false);
     mSpinBox->setValue(DrawyGlobalConfig::self()->eraserSize());
     mSpinBox->hide();
     m_widget = mSpinBox;

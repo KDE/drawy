@@ -19,7 +19,6 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include "item/item.hpp"
-#include <QDateTime>
 #include <QPainter>
 #include <QRectF>
 

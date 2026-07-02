@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "config-drawy.hpp"
 #include "item/itemutils.hpp"
 #include "jobs/loadjob.hpp"
 #include "tools/tool.hpp"
@@ -12,6 +13,9 @@
 #include <QAction>
 #include <QObject>
 #include <functional>
+#if HAVE_WHATSNEWSNGSUPPORT
+#include <KAboutData>
+#endif
 class KActionCollection;
 
 class ApplicationContext;
@@ -49,6 +53,7 @@ public:
         AlignHorizontalCenter,
         AlignRight,
         Debug,
+        WhatsNew,
     };
 
     Q_ENUM(Action)
@@ -92,7 +97,10 @@ public:
     void slotUpdateZoomButtons();
     void slotUpdateHistoryButtons();
     void slotUpdateZorderAndGroupButtons();
-
+#if HAVE_WHATSNEWSNGSUPPORT
+    void slotShowWhatsNew();
+    void setReleasesInfo(const QList<KAboutRelease> &releases);
+#endif
 private:
     void slotDebug();
     void openRecentFile(const QUrl &url);
@@ -122,6 +130,10 @@ private:
 
         return result;
     }
+
+#if HAVE_WHATSNEWSNGSUPPORT
+    QList<KAboutRelease> m_releases;
+#endif
 
     ApplicationContext *const m_context;
     KActionCollection *const m_actionCollection;

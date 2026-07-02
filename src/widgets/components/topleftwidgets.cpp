@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "topleftwidgets.hpp"
+#include "config-drawy.hpp"
 #include "context/helpmenu.hpp"
 #include "context/uicontext.hpp"
 #include "frame.hpp"
@@ -12,7 +13,6 @@
 #include <KColorSchemeMenu>
 #include <KHelpMenu>
 #include <KLocalizedString>
-#include <QHBoxLayout>
 #include <QMenu>
 #include <QStyle>
 #include <QToolButton>
@@ -60,6 +60,10 @@ TopLeftWidgets::TopLeftWidgets(ActionManager *actionManager, QWidget *parent)
         menu->addSeparator();
         menu->addMenu(mHelpMenu->menu());
         menu->addSeparator();
+#if HAVE_WHATSNEWSNGSUPPORT
+        menu->addAction(actionManager->action(ActionManager::Action::WhatsNew));
+        menu->addSeparator();
+#endif
         menu->addAction(actionManager->action(KStandardActions::Quit));
     });
 

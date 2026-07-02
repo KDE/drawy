@@ -5,7 +5,6 @@
  */
 #include "diamonddeserializer.hpp"
 #include "item/diamond.hpp"
-#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 DiamondDeserializer::DiamondDeserializer(DiamondItem *item)

@@ -61,10 +61,14 @@ target_sources(
         components/topwidgets.hpp
         components/topleftwidgets.cpp
         components/topleftwidgets.hpp
-        components/toolbuttonplugin.hpp
-        components/toolbuttonplugin.cpp
+        components/toolbuttonselectplugin.hpp
+        components/toolbuttonselectplugin.cpp
         components/flowlayout.hpp
         components/flowlayout.cpp
+        components/toolbuttonspluginwidget.hpp
+        components/toolbuttonspluginwidget.cpp
+        components/toolbuttonplugin.hpp
+        components/toolbuttonplugin.cpp
         context/applicationcontext.cpp
         context/applicationcontext.hpp
         context/coordinatetransformer.cpp
@@ -223,6 +227,10 @@ target_sources(
         dialog/misc/configuremiscwidget.cpp
         dialog/misc/powermanagerwidget.hpp
         dialog/misc/powermanagerwidget.cpp
+        dialog/input/configureinputwidget.hpp
+        dialog/input/configureinputwidget.cpp
+        dialog/input/freehandsettingswidget.hpp
+        dialog/input/freehandsettingswidget.cpp
         iconmanager/iconmanager.hpp
         iconmanager/iconmanager.cpp
         mime/drawymimehandler.cpp
@@ -272,6 +280,10 @@ if(TARGET KF6::UserFeedbackWidgets)
     target_link_libraries(libdrawywidgets PUBLIC KF6::UserFeedbackWidgets)
 endif()
 
+if(TARGET KF6::TextAddonsWidgets)
+    target_link_libraries(libdrawywidgets PUBLIC KF6::TextAddonsWidgets)
+endif()
+
 # precompiled headers support
 if(ENABLE_PCH)
     target_precompile_headers(
@@ -304,13 +316,14 @@ target_link_libraries(
         KF6::XmlGui
         KF6::I18n
         KF6::SyntaxHighlighting
+        drawyconfig
 )
 
 if(USE_DBUS)
     target_link_libraries(libdrawywidgets PRIVATE Qt::DBus)
 endif()
 
-kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
+# kconfig_add_kcfg_files(libdrawywidgets settings/drawyglobalconfig.kcfgc)
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_debug.h IDENTIFIER DRAWY_LOG
     CATEGORY_NAME org.kde.drawy DESCRIPTION "drawy" EXPORT DRAWY
@@ -332,7 +345,7 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_resize_debug.h IDEN
     CATEGORY_NAME org.kde.drawy_resize DESCRIPTION "drawy (resize)" EXPORT DRAWY
 )
 
-install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
+# install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 set_target_properties(
     libdrawywidgets

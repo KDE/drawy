@@ -9,7 +9,6 @@
 #include "drawyglobalconfig.h"
 #include <QDir>
 #include <QFile>
-#include <QStandardPaths>
 
 using namespace Qt::Literals::StringLiterals;
 void AutoSaveJobUtil::createAutoSaveStandardPath()

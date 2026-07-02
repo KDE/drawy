@@ -7,8 +7,6 @@
 #include <KColorButton>
 #include <KLocalizedString>
 #include <QFormLayout>
-#include <QLabel>
-#include <QStyle>
 
 DefaultColorsWidget::DefaultColorsWidget(QWidget *parent)
     : ConfigGroupInterface{parent, i18n("Color Palette")}

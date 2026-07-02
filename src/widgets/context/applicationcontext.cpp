@@ -6,6 +6,7 @@
 
 #include "command/commandhistory.hpp"
 #include "common/constants.hpp"
+#include "common/utils/freehand.hpp"
 #include "coordinatetransformer.hpp"
 #include "drawy_debug.h"
 #include "mime/mimemanager.hpp"
@@ -29,7 +30,10 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
         setCurrentFileModified(true);
     });
+
     m_uiContext->initializeUIContext();
+
+    Common::Utils::Freehand::updateSettings();
 }
 
 ApplicationContext::~ApplicationContext()

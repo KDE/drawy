@@ -12,7 +12,6 @@
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_command_debug.h"
-#include "item/item.hpp"
 #include <KLocalizedString>
 #include <algorithm>
 

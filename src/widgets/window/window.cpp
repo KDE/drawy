@@ -7,7 +7,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QFontDatabase>
-#include <QShortcut>
 #include <QWindow>
 
 #include <KActionCollection>
@@ -54,7 +53,11 @@ namespace
 const char myConfigGroupName[] = "MainWindow";
 }
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(
+#if HAVE_WHATSNEWSNGSUPPORT
+    const QList<KAboutRelease> &releases,
+#endif
+    QWidget *parent)
     : QWidget(parent)
     , mApplicationContext(new ApplicationContext(this))
 #if WITH_DBUS
@@ -68,7 +71,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto renderingContext{mApplicationContext->renderingContext()};
     auto uiContext{mApplicationContext->uiContext()};
-
+#if HAVE_WHATSNEWSNGSUPPORT
+    uiContext->actionManager()->setReleasesInfo(releases);
+#endif
     connect(this, &MainWindow::paletteChanged, uiContext, &UIContext::slotThemeChanged);
     renderingContext->canvas()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 

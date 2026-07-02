@@ -7,6 +7,9 @@
 #include "config-drawy.hpp"
 #include "libdrawywidgets_export.h"
 #include <QWidget>
+#if HAVE_WHATSNEWSNGSUPPORT
+#include <KAboutData>
+#endif
 class AutoSaveJob;
 class ApplicationContext;
 class ManagePowerManagement;
@@ -14,7 +17,11 @@ class LIBDRAWYWIDGETS_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(
+#if HAVE_WHATSNEWSNGSUPPORT
+        const QList<KAboutRelease> &releases,
+#endif
+        QWidget *parent = nullptr);
     ~MainWindow() override;
 
     void viewFullScreen(bool fullScreen);

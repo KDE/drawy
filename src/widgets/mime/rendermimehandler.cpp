@@ -5,7 +5,6 @@
 #include "mime/rendermimehandler.hpp"
 #include "drawyglobalconfig.h"
 #include "item/item.hpp"
-#include <QByteArray>
 #include <QGuiApplication>
 #include <QImage>
 #include <QMimeData>

@@ -8,7 +8,6 @@
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
 #include <KLocalizedString>
-#include <QPushButton>
 #include <QStyle>
 #include <QToolButton>
 

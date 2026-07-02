@@ -16,6 +16,7 @@ FontSizeWidget::FontSizeWidget(QWidget *parent)
 {
     mSpinBox->setMinimum(Common::minFontSize);
     mSpinBox->setValue(DrawyGlobalConfig::self()->fontSize());
+    mSpinBox->setKeyboardTracking(false);
 
     mSpinBox->hide();
     m_widget = mSpinBox;

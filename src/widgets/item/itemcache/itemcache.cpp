@@ -12,7 +12,6 @@
 #include "data-structures/cachegrid.hpp"
 #include "drawy_debug.h"
 #include "item/item.hpp"
-#include <QtMath>
 
 ItemCache::ItemCache(ApplicationContext *context)
     : mApplicationContext(context)

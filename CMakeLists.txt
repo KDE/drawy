@@ -82,6 +82,29 @@ set_package_properties(
             OPTIONAL
 )
 
+find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
+set_package_properties(
+    KF6TextAddonsWidgets
+    PROPERTIES
+        DESCRIPTION
+            "Add text addons widget"
+        TYPE
+            OPTIONAL
+)
+
+if(TARGET KF6::TextAddonsWidgets)
+    if(
+        ${KF6CoreAddons_VERSION}
+            VERSION_GREATER_EQUAL
+            6.26.0
+        AND ${KF6TextAddonsWidgets_VERSION}
+            VERSION_GREATER_EQUAL
+            2.1.0
+    )
+        set(HAVE_WHATSNEWSNGSUPPORT TRUE)
+    endif()
+endif()
+
 # shall we use DBus?
 # enabled per default on Linux & BSD systems
 set(USE_DBUS_DEFAULT OFF)

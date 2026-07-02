@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "customtool.hpp"
-#include "pluginform/pluginform.hpp"
 #include "pluginform/pluginformmanager.hpp"
 
 CustomTool::CustomTool(ApplicationContext *context)

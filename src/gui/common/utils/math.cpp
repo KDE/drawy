@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "math.hpp"
-#include <QTransform>
 #include <QtMath>
 
 namespace Common::Utils::Math

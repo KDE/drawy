@@ -7,7 +7,6 @@
 #include "polygonitemtest.hpp"
 #include "drawy_autotest_helper.hpp"
 #include "item/polygon.hpp"
-#include <QJsonObject>
 #include <QTest>
 
 QTEST_MAIN(PolygonItemTest)

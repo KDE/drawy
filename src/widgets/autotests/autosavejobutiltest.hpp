@@ -13,7 +13,4 @@ class AutoSaveJobUtilTest : public QObject
 public:
     explicit AutoSaveJobUtilTest(QObject *parent = nullptr);
     ~AutoSaveJobUtilTest() override = default;
-
-private Q_SLOTS:
-    void shouldHaveDefaultFileName();
 };

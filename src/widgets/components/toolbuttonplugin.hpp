@@ -5,7 +5,6 @@
  */
 #pragma once
 
-#include "pluginform/pluginform.hpp"
 #include <QToolButton>
 
 class ToolButtonPlugin : public QToolButton
@@ -14,11 +13,4 @@ class ToolButtonPlugin : public QToolButton
 public:
     explicit ToolButtonPlugin(QWidget *parent = nullptr);
     ~ToolButtonPlugin() override;
-
-Q_SIGNALS:
-    void toolActivated(const PluginForm::PluginFormInfo &item);
-
-private:
-    void fillMenu();
-    void updateToolButton(const PluginForm::PluginFormInfo &item);
 };

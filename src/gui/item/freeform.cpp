@@ -24,16 +24,13 @@ FreeformItem::FreeformItem()
 
 int FreeformItem::minPointDistance()
 {
-    return 1;
+    return 0;
 }
 
 void FreeformItem::addPoint(const QPointF &point, const qreal pressure)
 {
     if (m_pointBuffer.size() >= m_maxBufferSize) {
         finalizeStroke();
-
-        m_pointBuffer.push_back(m_points.back());
-        m_pressureBuffer.push_back(m_pressures.back());
     }
 
     m_pointBuffer.push_back(point);
@@ -61,7 +58,13 @@ void FreeformItem::finalizeStroke()
 
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
-    m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness);
+    qreal lastPressure{1.0};
+
+    m_path = Common::Utils::Freehand::getStroke(m_points, m_pressures, m_simulatePressure, thickness, lastPressure);
+
+    m_pointBuffer.push_back(m_points.back());
+    m_pressureBuffer.push_back(lastPressure);
+
     m_path.setCachingEnabled(true);
 
     m_boundingBox = m_path.boundingRect().normalized();
@@ -108,11 +111,13 @@ void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, 
     const int alpha{property(Property::Type::Opacity).value<int>()};
     color.setAlpha(alpha);
 
+    const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
+
     QPen pen{};
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     pen.setColor(color);
     pen.setCapStyle(Qt::RoundCap);
-    pen.setWidthF(property(Property::Type::StrokeWidth).value<qreal>());
+    pen.setWidthF(thickness);
 
     painter.save();
     painter.setPen(pen);
@@ -124,13 +129,13 @@ void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, 
         if (m_pointBuffer.size() == 1) {
             painter.drawPoint(m_pointBuffer.front());
         } else {
-            painter.drawPath(getStrokeOutline(getStrokePoints(m_pointBuffer, m_pressureBuffer, false)));
+            painter.drawPath(getStrokeOutline(getStrokePoints(m_pointBuffer, m_pressureBuffer, false, thickness)));
         }
     } else {
         if (m_points.size() == 1) {
             painter.drawPoint(m_points.front());
         } else {
-            painter.drawPath(getStrokeOutline(getStrokePoints(m_points, m_pressures, false)));
+            painter.drawPath(getStrokeOutline(getStrokePoints(m_points, m_pressures, false, thickness)));
         }
     }
 
@@ -175,11 +180,16 @@ void FreeformItem::drawItem(QPainter &painter, const QPointF &offset) const
     // const qreal
     // thickness{property(Property::Type::StrokeWidth).value<qreal>()}; const auto
     // polygon = getStrokePolygon(getStrokePoints(m_points, m_pressures,
-    // m_simulatePressure), thickness);
+    // m_simulatePressure, thickness), thickness);
 
     // QPen pen; pen.setWidthF(0.25); pen.setCapStyle(Qt::RoundCap);
     // pen.setColor(Qt::red); painter.setPen(pen); for (auto &pt : polygon) {
     //     painter.drawPoint(pt);
+    // }
+
+    // const auto pts = getStrokePoints(m_points, m_pressures, m_simulatePressure, thickness);
+    // for (const auto &pt : pts) {
+    //     painter.drawPoint(pt.point);
     // }
 
     painter.restore();

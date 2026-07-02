@@ -17,6 +17,7 @@
   <name xml:lang="is">Drawy</name>
   <name xml:lang="it">Drawy</name>
   <name xml:lang="ka">Drawy</name>
+  <name xml:lang="ko">Drawy</name>
   <name xml:lang="lt">Drawy</name>
   <name xml:lang="nl">Drawy</name>
   <name xml:lang="pt-BR">Drawy</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="is">Handhæga, óendanlega hugmyndaflæðitólið.</summary>
   <summary xml:lang="it">Il tuo pratico e infinito strumento di brainstorming</summary>
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
+  <summary xml:lang="ko">편안한 무한 브레인스토밍 도구</summary>
   <summary xml:lang="lt">Patogus, begalinis naujų idėjų svarstymo įrankis</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
@@ -64,6 +66,7 @@
     <p xml:lang="es">Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
     <p xml:lang="eu">Drawy-k ideiak, diagramak eta ohar bisualak sortzeko aukera ematen du, mihise leun eta erantzunkorra duen arbela infinitu batean. Presioarekiko sentikorra den tableta baten laguntzaz marraztu dezakezu, testua gehitu, irudiak txertatu, eta zure edukia modu argian antolatzeko oinarrizko formak erabil ditzakezu, hala nola laukizuzenak, elipseak, geziak eta lerroak. Zure kolore-paleta aukeratu dezakezu, eta behar duzunean zure lana irudi-fitxategi gisa esportatu dezakezu. Drawy arina eta azkarra izateko diseinatuta dago, ideiak erraz jaso eta distrakziorik gabe askatasunez lan egiteko.</p>
     <p xml:lang="he">Drawy מאפשר לך ליצור רעיונות, תרשימים ופתקיות חזותיות עם לוח ציור אינסופרי עם משטח ציור חלק שמגיב היטב. אפשר לצייר עם תמיכה בלוחות ציור שרגישים ללחיצה, להוסיף טקסט, תמונות ולהשתמש בצורות בסיסיות כגון מרובעים, אליפסות, חיצים וקווים כדי לארגן את התוכן שלך בצורה ברורה. אפשר לבחור ערכת צבעים משלך ולייצא את העבודה שלך כקובצי תמונות במקרה הצורך. Drawy נבנה על מנת להישאר קליל ומהיר, מה שמקל על תיעוד רעיונות ועבודה ללא הסחות.</p>
+    <p xml:lang="hr">Drawy vam omogućuje stvaranje ideja, dijagrama i vizualnih bilješki na beskonačnoj ploči s glatkim i responzivnim platnom. Možete crtati s podrškom za tablet osjetljiv na pritisak, dodavati tekst, umetnuti slike i koristiti osnovne oblike poput pravokutnika, elipsa, strelica i linija za jasnu organizaciju sadržaja. Možete odabrati vlastitu paletu boja i izvesti svoje radove kao slikovne datoteke kad god je potrebno. Drawy je napravljen da ostane lagan i brz, što olakšava hvatanje ideja i slobodan rad bez ometanja.</p>
     <p xml:lang="ia">Drawy permitte crear ideas, diagrammas, e notas visual sur un tabula blanc infinite  con un canvas fluide e reactive. Tu pote traher con supporto pro tablettas sensibile  al pression, adder texto, inserer imagines, e usar formas basic como rectangulos, ellipses, flechas, e lineas pro organisar tu contento clarmente. Tu pote seliger tu proprie paletta de colores e exportar tu travalio como files de imagine quando necessari. Drawy es construite pro remaner leve e rapide, facente facile capturar ideas e travaliar liberemente sin distractiones.</p>
     <p xml:lang="it">Drawy ti permette di creare idee, diagrammi e appunti visivi su una lavagna virtuale infinita con una superficie di lavoro fluida e reattiva. Puoi disegnare con il supporto per tavolette sensibili alla pressione, aggiungere testo, inserire immagini e utilizzare forme geometriche semplici come rettangoli, ellissi, frecce e linee per organizzare i tuoi contenuti in modo chiaro. Puoi scegliere la tua tavolozza di colori e esportare il tuo lavoro come file immagine ogni volta che ne hai bisogno. Drawy è progettato per essere leggero e veloce, rendendo facile catturare idee e lavorare liberamente senza distrazioni.</p>
     <p xml:lang="ka">Drawy საშუალებას გაძლევთ, შექმნათ იდეები, დიაგრამები და ვიზუალური შენიშვნები უსასრულო დაფაზე რბილი და მგრძნობიარე ტილოთი. შეგიძლიათ, დახატოთ დაწოლაზე მგრძნობიარე ტაბლეტის მხარდაჭერით, დაამატოთ ტექსტი, ჩასვათ სურათები, და გამოიყენოთ ისეთი მარტივი ფიგურები, როგორიცაა მართკუთხედები, ოვალები და ისრები, რომ მოახდინოთ თქვენი შემცველობის მკაფიო ორგანიზაცია. შეგიძლიათ, აირჩიოთ თქვენი საკუთარი ფერთა პალიტრა და გაიტანოთ თქვენი ნამუშევარი გამოსახულების სახით, როცა ეს დაგჭირდებათ. Drawy აგებულია, რომ დარჩეს სწრაფი და მსუბუქი, რითიც აადვილებს იდეების დაჭერას და თავისუფლად მუშაობას ყურადღების გაფანტვის გარეშე.</p>
@@ -124,6 +127,7 @@
       <caption xml:lang="es">Creación de diagramas, notas e ideas en una pizarra infinita.</caption>
       <caption xml:lang="eu">Sortu diagramak, oharrak eta ideiak arbela infinitu batean.</caption>
       <caption xml:lang="he">ליצור תרשימים, פתקיות ורעיונות בלוחות אינסופיים</caption>
+      <caption xml:lang="hr">Stvarajte dijagrame, bilješke i ideje na beskonačnoj ploči.</caption>
       <caption xml:lang="ia">Crea diagrammas, notas  e  ideas sur un tabula blanc infinite.</caption>
       <caption xml:lang="it">Crea diagrammi, appunti e idee su una lavagna infinita.</caption>
       <caption xml:lang="ka">შექმენით დიაგრამები, შენიშვნები და იდეები უსასრულო დაფაზე.</caption>
@@ -146,6 +150,7 @@
       <caption xml:lang="es">Ajuste fácil de colores, estilos de trazos y herramientas.</caption>
       <caption xml:lang="eu">Koloreak, trazuen estiloak eta tresnak erraz doitu.</caption>
       <caption xml:lang="he">להתאים צבעים, סגנונות מתאר וכלים בקלות.</caption>
+      <caption xml:lang="hr">Lako prilagodite boje, stilove poteza i alate.</caption>
       <caption xml:lang="ia">Ajusta colores, stilos de tracia, e instrumentos con facilitate.</caption>
       <caption xml:lang="it">Regola colori, stili di tratto e strumenti con facilità.</caption>
       <caption xml:lang="ka">გაასწორეთ მარტივად ფერები, დაშტრიხვის სტილები და ხელსაწყოები.</caption>
@@ -168,6 +173,7 @@
       <caption xml:lang="es">Trabaje concentrado en un espacio de trabajo con modo oscuro.</caption>
       <caption xml:lang="eu">Arreta mantendu modu iluneko lan-eremuarekin.</caption>
       <caption xml:lang="he">להישאר במיקוד עם סביבת עבודה בגוונים כהים.</caption>
+      <caption xml:lang="hr">Ostanite fokusirani s radnim prostorom u tamnom načinu rada.</caption>
       <caption xml:lang="ia">Remane concentrate con un spatio de travalio )workspace)  in modo obscur.</caption>
       <caption xml:lang="it">Rimani concentrato grazie all'area di lavoro scura.</caption>
       <caption xml:lang="ka">იყავით კონცენტრირებული ბნელი რეჟიმის სამუშაო სივრცით.</caption>
@@ -190,6 +196,7 @@
       <caption xml:lang="es">Trabaje sin problemas con herramientas rápidas y de rápida respuesta.</caption>
       <caption xml:lang="eu">Modu leunean lan egin tresna azkar eta erantzunkorrekin.</caption>
       <caption xml:lang="he">עבודה חלקה עם כלים מהירים ותגובתיים.</caption>
+      <caption xml:lang="hr">Radi glatko s brzim i responzivnim alatima.</caption>
       <caption xml:lang="ia">Travalia sin difficultate con instrumentos rapide e reactive.</caption>
       <caption xml:lang="it">Lavora senza intoppi grazie a strumenti veloci e reattivi.</caption>
       <caption xml:lang="ka">იმუშავეთ შეუფერხებლად სწრაფი და მგრძნობიარე ხელსაწყოებით.</caption>
@@ -207,7 +214,124 @@
   <releases>
     <release version="1.1.0" type="snapshot">
       <description>
+        <p>Improve selected basic shape (bug 519895)</p>
+        <p xml:lang="ar">تحسين الشكل الأساسي المحدد (العلة 519895)</p>
+        <p xml:lang="ca">Millora la forma bàsica seleccionada (error 519895)</p>
+        <p xml:lang="ca-valencia">Millora la forma bàsica seleccionada (error 519895)</p>
+        <p xml:lang="es">Mejora de la forma básica seleccionada (fallo 519895).</p>
+        <p xml:lang="he">צורה בסיסית נבחרת השתפרה (תקלה 519895)</p>
+        <p xml:lang="ia">Meliora le forma basic seligite (bug 519895)</p>
+        <p xml:lang="ka">გაუმჯობესდა მონიშნული საბაზისო მოხაზულობა (შეცდომა 519895)</p>
+        <p xml:lang="lt">Patobulinta pasirinkta pagrindinė figūra (klaida 519895)</p>
+        <p xml:lang="nl">Geselecteerde basisvorm verbeteren (bug 519895)</p>
+        <p xml:lang="pt-BR">Melhoria da forma básica selecionada (bug 519895)</p>
+        <p xml:lang="sl">Izboljšana izbrana osnovna oblika (napaka 519895)</p>
+        <p xml:lang="tr">Seçili temel şekiller iyileştirildi (519895 numaralı hata)</p>
+        <p xml:lang="uk">Удосконалено вибрану базову форму (вада 519895)</p>
         <p>Allow to export selected elements as image</p>
+        <p xml:lang="ar">السماح بتصدير العناصر المحددة كصورة</p>
+        <p xml:lang="ca">Permet exportar els elements seleccionats com a imatges</p>
+        <p xml:lang="ca-valencia">Permet exportar els elements seleccionats com a imatges</p>
+        <p xml:lang="es">Permitir exportar los elementos seleccionados como imagen.</p>
+        <p xml:lang="he">לאפשר לייצא את הרכיבים הנבחרים כתמונה</p>
+        <p xml:lang="hr">Dopustiti izvoz odabranih elemenata kao slike</p>
+        <p xml:lang="ia">Permitte exportar le elementos seligite como imagine</p>
+        <p xml:lang="it">Consenti di esportare gli elementi selezionati come immagine</p>
+        <p xml:lang="ka">მონიშნული ელემენტების გამოსახულების სახით გატანის დაშვება</p>
+        <p xml:lang="lt">Leisti eksportuoti pažymėtus elementus kaip paveikslą</p>
+        <p xml:lang="nl">Exporteer geselecteerde elementen als afbeelding</p>
+        <p xml:lang="pt-BR">Permitir exportar os elementos selecionados como imagem</p>
+        <p xml:lang="sk">Umožňuje exportovať vybrané prvky ako obrázok</p>
+        <p xml:lang="sl">Dovoli izvoz izbranih elementov kot sliko</p>
+        <p xml:lang="tr">Seçili ögelerin görsel olarak dışa aktarılmasına olanak tanıyın.</p>
+        <p xml:lang="uk">Уможливлено експортування позначених елементів як зображення</p>
+        <p xml:lang="zh-TW">允許將所選元素匯出為影像</p>
+        <p>Add What's new Dialog</p>
+        <p xml:lang="ar">أضف حوار «ما الجديد»</p>
+        <p xml:lang="ca">Afegeix el diàleg Què hi ha de nou</p>
+        <p xml:lang="ca-valencia">Afig el diàleg Què hi ha de nou</p>
+        <p xml:lang="es">Se ha añadido el diálogo «Novedades».</p>
+        <p xml:lang="he">נוספה חלונית מה חדש</p>
+        <p xml:lang="ia">Adde nove dialogo de Que es</p>
+        <p xml:lang="ka">დაემატა დიალოგი 'რა არის ახალი'</p>
+        <p xml:lang="lt">Pridėtas „Kas naujo“ dialogas</p>
+        <p xml:lang="nl">Dialoog Wat is er nieuw toegevoegd</p>
+        <p xml:lang="pt-BR">Adicionado o diálogo "O que há de novo"</p>
+        <p xml:lang="sl">Dodano pogovorno okno »Kaj je novega«</p>
+        <p xml:lang="tr">“Neler Yeni” iletişim kutusu eklendi.</p>
+        <p xml:lang="uk">Додано вікно «Що нового?»</p>
+      </description>
+    </release>
+    <release version="1.0.2" date="2026-06-23">
+      <description>
+        <p>This update delivers a smoother, more customizable freehand drawing experience and fixes an issue where newly drawn lines flickered.</p>
+        <p xml:lang="ar">يقدّم هذا التحديث تجربة رسم يدوي أكثر سلاسة وقابلية للتخصيص، ويُصلح مشكلة وميض الخطوط المرسومة حديثًا.</p>
+        <p xml:lang="ca">Aquesta actualització ofereix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
+        <p xml:lang="ca-valencia">Esta actualització oferix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
+        <p xml:lang="es">Esta actualización ofrece una experiencia de dibujo a mano alzada más fluida y personalizable. Además, corrige un problema por el que las líneas recién dibujadas parpadeaban.</p>
+        <p xml:lang="he">העדכון הזה מספק חוויית ציור חופשי חלקה וגמישה יותר ומתקן תקלה שבה קווים חדשים שצוירו הבהבו.</p>
+        <p xml:lang="ia">Iste actualisation offere un experientia de designo a mano libere plus  fluide e plus personalisabile, e corrige un problema ubi lineas traciate   recentemente tremulava.</p>
+        <p xml:lang="it">Questo aggiornamento offre un'esperienza di disegno a mano libera più fluida e personalizzabile, e risolve un problema per cui le linee appena disegnate sfarfallavano.</p>
+        <p xml:lang="ka">ამ განახლებას თქვენამდე მოაქვს უფრო გლუვი, მორგებადი, თავისუფალი ხატვის გამოცდილება და ასწორებს პრობლემას, სადაც ახლად დახატული ხაზები ციმციმებდა.</p>
+        <p xml:lang="lt">Šis atnaujinimas pristato glotnesnį ir labiau tinkinamą piešimo ranka patyrimą ir ištaiso klaida, dėl kurios naujai nupieštos linijos mirgėjo.</p>
+        <p xml:lang="nl">Deze update zorgt voor een soepelere en meer aanpasbare tekenervaring uit de vrije hand en verhelpt een probleem waarbij nieuw getekende lijnen flikkerden.</p>
+        <p xml:lang="pt-BR">Esta atualização oferece uma experiência de desenho à mão livre mais personalizável e suave, e corrige um problema onde novas linhas desenhadas piscavam.</p>
+        <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
+        <p xml:lang="tr">Bu güncelleme, daha akıcı ve özelleştirilebilir bir serbest çizim deneyimi sunuyor ve yeni çizilen çizgilerin titremesine neden olan bir sorunu gideriyor.</p>
+        <p xml:lang="uk">У цьому оновленні реалізовано плавніший та більш придатний до налаштовування процес малювання від руки та виправлено проблему, через яку мерехтіли щойно намальовані лінії.</p>
+        <ul>
+          <li>
+            Drawing by hand feels much better and more natural now.
+          </li>
+          <li xml:lang="ar">أصبح الرسم باليد أكثر جودة وطبيعية الآن.</li>
+          <li xml:lang="ca">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
+          <li xml:lang="ca-valencia">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
+          <li xml:lang="es">Ahora, dibujar a mano resulta mucho más cómodo y natural.</li>
+          <li xml:lang="he">ציור ידני מרגיש טוב וטבעי יותר בהרבה.</li>
+          <li xml:lang="ia">Disegnar a mano se senti multo melior e plus natural ora.</li>
+          <li xml:lang="it">Disegnare a mano libera ora mi sembra molto più piacevole e naturale.</li>
+          <li xml:lang="ka">ხელით ხატვა ახლა უფრო უკეთ და ბუნებრივად ჩანს.</li>
+          <li xml:lang="lt">Piešimas ranka dabar atrodo žymiai natūralesnis.</li>
+          <li xml:lang="nl">Tekenen met de hand voelt nu veel beter en natuurlijker aan.</li>
+          <li xml:lang="pt-BR">Desenhar com a mão é muito melhor e mais natural agora.</li>
+          <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
+          <li xml:lang="tr">Elle çizim yapmak artık çok daha iyi ve doğal bir his veriyor.</li>
+          <li xml:lang="uk">У новій версії малювати від руки зручніше і природніше.</li>
+          <li>
+            Added settings so you can change pen pressure and how smooth your lines look.
+          </li>
+          <li xml:lang="ar">أُضيفت إعدادات لتغيير ضغط القلم ودرجة نعومة الخطوط.</li>
+          <li xml:lang="ca">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
+          <li xml:lang="ca-valencia">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
+          <li xml:lang="es">Se han añadido ajustes para poder cambiar la presión del lápiz y la suavidad de las líneas.</li>
+          <li xml:lang="he">נוספו הגדרות כדי לאפשר לך לשנות את לחץ העט וכמה חלק הקווים שלך נראים.</li>
+          <li xml:lang="ia">On ha addite configurationes pro poter cambiar le pression del stilo e como tu lineas lisie appare.</li>
+          <li xml:lang="it">Sono state aggiunte delle impostazioni che consentono di modificare la pressione della penna e la fluidità delle linee.</li>
+          <li xml:lang="ka">დაემატა პარამეტრები კალმის წნევისა და თქვენი ხაზების სიგლუვის შესაცვლელად.</li>
+          <li xml:lang="lt">Pridėtos nuostatos, kad galėtumėte keisti rašiklio spaudimą ir linijų glotnumą.</li>
+          <li xml:lang="nl">Er zijn instellingen toegevoegd waarmee u de pendruk en de vloeiendheid van uw lijnen kunt aanpassen.</li>
+          <li xml:lang="pt-BR">Adicionadas configurações para que você possa mudar a pressão da caneta e quão suaves serão os visuais das linhas.</li>
+          <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
+          <li xml:lang="tr">Kalem basıncını ve çizgilerin ne kadar pürüzsüz görüneceğini değiştirebileceğiniz ayarlar eklendi.</li>
+          <li xml:lang="uk">Реалізовано налаштування для зміни тиску пера та плавності вигляду ліній.</li>
+          <li>
+            Lines and shapes will no longer blink or flash right after you draw them.
+          </li>
+          <li xml:lang="ar">لن تَومِض الخطوط والأشكال أو تتلألأ فور رسمها بعد الآن.</li>
+          <li xml:lang="ca">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
+          <li xml:lang="ca-valencia">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
+          <li xml:lang="es">Las líneas y las formas ya no parpadearán ni destellarán justo después de dibujarlas.</li>
+          <li xml:lang="he">קווים וצורות לא יהבהבו יותר מיד לאחר ציורם.</li>
+          <li xml:lang="ia">Lineas e formas non plus palpeblara o fulgurara immediatemente post que tu los designa.</li>
+          <li xml:lang="it">Linee e forme non lampeggeranno più subito dopo essere state disegnate.</li>
+          <li xml:lang="ka">ხაზები და მოხაზულობები მათი დახატვის შემდეგ ციმციმს აღარ დაიწყებენ.</li>
+          <li xml:lang="lt">Linijos ir figūros, tik jas nupiešus, daugiau nebemirgės ir nebemirksės.</li>
+          <li xml:lang="nl">Lijnen en vormen zullen niet langer knipperen of flitsen direct nadat u ze hebt getekend.</li>
+          <li xml:lang="pt-BR">Linhas e formas não vão mais piscar logo após desenhá-las.</li>
+          <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
+          <li xml:lang="tr">Çizdiğiniz çizgiler ve şekiller artık hemen ardından yanıp sönmeyecek veya titreşmeyecek.</li>
+          <li xml:lang="uk">У новій версії лінії і форми не блимають одразу після малювання.</li>
+        </ul>
       </description>
     </release>
     <release version="1.0.1" date="2026-05-04">
@@ -220,6 +344,7 @@
         <p xml:lang="es">Pequeño parche que mejora los iconos, actualiza los metadatos de appstream para incluir información correcta e incluye algunas correcciones de fallos.</p>
         <p xml:lang="eu">Adabaki txiki bat da hau, ikonoak hobetu, informazio zuzena sartzeko AppStream metadatuak eguneratu, eta akats konponketa batzuk dituena.</p>
         <p xml:lang="he">זה טלאי קטן שמשפר את הסמלים, מעדכן את נתוני העל ל־appstream כך שיכללו את המידע הנכון וכולל כל מיני תיקוני תקלות.</p>
+        <p xml:lang="hr">Ovo je mali patch koji poboljšava ikone, ažurira metapodatke appstreama kako bi uključio točne informacije i uključuje neke ispravke grešaka.</p>
         <p xml:lang="ia">sto es un parve correction que meliora le icones, actualisa le metadatos  de appstream pro includer le information correcte, e include alcun correctiones de errores.</p>
         <p xml:lang="it">Si tratta di una piccola patch che migliora le icone, aggiorna i metadati appstream per includere le informazioni corrette e corregge alcuni bug.</p>
         <p xml:lang="ka">ეს პატარა პაჩია, რომელის აუმჯობესებს ხატულებს, განაახლებს appstream-ის მონაცემებს, რომ ის სწორ მონაცემებს შეიცავდეს და სწორებს რამდენიმე შეცდომას.</p>
@@ -245,6 +370,7 @@
         <p xml:lang="es">Tras meses de trabajo, ¡Drawy se ha publicado! Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
         <p xml:lang="eu">Hilabeteetako lanaren ondoren, Drawy kaleratu da azkenean! Drawy-k arbela infinitu batean ideiak, diagramak eta ohar bisualak sortzeko aukera ematen du, mihise leun eta erantzunkor batekin. Presioarekiko sentikorra den tableta baten laguntzaz marraztu dezakezu, testua gehitu, irudiak txertatu, eta zure edukia modu argian antolatzeko oinarrizko formak erabil ditzakezu, hala nola laukizuzenak, elipseak, geziak eta lerroak. Zure kolore-paleta aukeratu dezakezu, eta behar duzunean zure lana irudi-fitxategi gisa esportatu dezakezu. Drawy arina eta azkarra izateko diseinatuta dago, ideiak erraz jaso eta distrakziorik gabe askatasunez lan egiteko.</p>
         <p xml:lang="he">לאחר חודשי עבודה רבים, Drawy סוף סוף יצא לאור! Drawy מאפשר לך ליצור רעיונות, תרשימים ופתקיות חזותיות עם מרחב ציור אינסופי עם משטח ציור חלק שמגיב היטב. אפשר לצייר עם תמיכה בלוחות ציור שרגישים ללחיצה, להוסיף טקסט, תמונות ולהשתמש בצורות בסיסיות כגון מרובעים, אליפסות, חיצים וקווים כדי לארגן את התוכן שלך בצורה ברורה. אפשר לבחור ערכת צבעים משלך ולייצא את העבודה שלך כקובצי תמונות במקרה הצורך. Drawy נבנה על מנת להישאר קליל ומהיר, מה שמקל על תיעוד רעיונות ועבודה ללא הסחות.</p>
+        <p xml:lang="hr">Nakon mjeseci rada, Drawy je napokon izašla! Drawy vam omogućuje stvaranje ideja, dijagrama i vizualnih bilješki na beskonačnoj ploči s glatkim i responzivnim platnom. Možete crtati s podrškom za tablet osjetljiv na pritisak, dodavati tekst, umetnuti slike i koristiti osnovne oblike poput pravokutnika, elipsa, strelica i linija za jasnu organizaciju sadržaja. Možete odabrati vlastitu paletu boja i izvesti svoje radove kao slikovne datoteke kad god je potrebno. Drawy je napravljen da ostane lagan i brz, što olakšava hvatanje ideja i slobodan rad bez ometanja.</p>
         <p xml:lang="ia">Post menses de travalio, Drawy ha finalmente essite publicate! Drawy te permitte crear ideas, diagrammas, e notas visual sur un tabula blanc infinite con un canvas fluide e reactive. Tu pote traher  con supporto pro tablettas sensibile al pression, adder texto,  inserer imagines, e usar formas basic como rectangulos, ellipses,  flechas, e lineas pro organisar tu contento clarmente. Tu pote seliger tu proprie paletta de colores e exportar tu travalio como files de imagine quando necessari. Drawy es construite pro remaner legier e rapide, facente facile capturar ideas e travaliar liberemente sin distractiones.</p>
         <p xml:lang="it">Dopo mesi di lavoro, Drawy è finalmente disponibile! Drawy ti permette di creare idee, diagrammi e appunti visivi su una lavagna virtuale infinita con una superficie di disegno fluida e reattiva. Puoi disegnare grazie al supporto per tavolette sensibili alla pressione, aggiungere testo, inserire immagini e utilizzare forme geometriche di base come rettangoli, ellissi, frecce e linee per organizzare i tuoi contenuti in modo chiaro. Puoi scegliere la tua tavolozza di colori e esportare il tuo lavoro come file immagine ogni volta che ne hai bisogno. Drawy è progettato per essere leggero e veloce, facilitando la cattura delle idee e permettendoti di lavorare liberamente senza distrazioni.</p>
         <p xml:lang="ka">თვეების განმავლობაში მუშაობის შემდეგ, Drawy, როგორც იქნა, გამოვიდა! Drawy საშუალებას გაძლევთ, შექმნათ იდეები, დიაგრამები და ვიზუალური შენიშვნები უსასრულო დაფაზე რბილი და მგრძნობიარე ტილოთი. შეგიძლიათ, დახატოთ დაწოლაზე მგრძნობიარე ტაბლეტის მხარდაჭერით, დაამატოთ ტექსტი, ჩასვათ სურათები, და გამოიყენოთ ისეთი მარტივი ფიგურები, როგორიცაა მართკუთხედები, ოვალები და ისრები, რომ მოახდინოთ თქვენი შემცველობის მკაფიო ორგანიზაცია. შეგიძლიათ, აირჩიოთ თქვენი საკუთარი ფერთა პალიტრა და გაიტანოთ თქვენი ნამუშევარი გამოსახულების სახით, როცა ეს დაგჭირდებათ. Drawy აგებულია, რომ დარჩეს სწრაფი და მსუბუქი, რითიც აადვილებს იდეების დაჭერას და თავისუფლად მუშაობას ყურადღების გაფანტვის გარეშე.</p>

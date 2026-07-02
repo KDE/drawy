@@ -5,7 +5,6 @@
  */
 
 #include "imagedeserializer.hpp"
-#include <QBuffer>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;

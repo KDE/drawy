@@ -12,7 +12,6 @@
 #include "context/selectioncontext.hpp"
 #include "context/uicontext.hpp"
 #include "item/item.hpp"
-#include "properties/property.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include "properties/widgets/propertywidget.hpp"
 #include "toolbar.hpp"
@@ -40,7 +39,7 @@ PropertyBar::PropertyBar(ApplicationContext *context, QWidget *parent)
 
     scrollArea->setFrameShape(QFrame::NoFrame);
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addWidget(scrollArea);
 }

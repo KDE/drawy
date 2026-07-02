@@ -5,7 +5,6 @@
  */
 #include "ellipsedeserializer.hpp"
 #include "item/ellipse.hpp"
-#include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 EllipseDeserializer::EllipseDeserializer(EllipseItem *item)
     : PolygonDeserializer(item)

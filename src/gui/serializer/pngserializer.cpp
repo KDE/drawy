@@ -5,8 +5,6 @@
  */
 
 #include "serializer/pngserializer.hpp"
-#include <QString>
-#include <QXmlStreamWriter>
 
 using namespace Qt::Literals::StringLiterals;
 

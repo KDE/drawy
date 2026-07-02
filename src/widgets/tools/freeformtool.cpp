@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -67,11 +67,11 @@ void FreeformTool::mouseMoved(ApplicationContext *context)
         const QPointF curPoint{uiContext->appEvent()->pos()};
 
         // distance between the two points in the "view" coordinate system
-        const double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
+        // const double dist{std::sqrt(std::pow(m_lastPoint.x() - curPoint.x(), 2) + std::pow(m_lastPoint.y() - curPoint.y(), 2))};
 
-        if (dist < FreeformItem::minPointDistance()) {
-            return;
-        }
+        // if (dist < FreeformItem::minPointDistance()) {
+        //     return;
+        // }
 
         const qreal zoom{renderingContext->zoomFactor()};
         m_currentItem->addPoint(transformer.viewToWorld(curPoint), uiContext->appEvent()->pressure());
@@ -105,8 +105,6 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        renderingContext->canvas()->setOverlayBg(Qt::transparent);
-
         m_currentItem->finalizeStroke();
 
         m_itemList.push_back(m_currentItem);
@@ -118,6 +116,15 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         m_isDrawing = false;
         renderingContext->markForRender();
         renderingContext->markForUpdate();
+
+        QObject::connect(
+            renderingContext,
+            &RenderingContext::canvasUpdated,
+            context,
+            [renderingContext]() -> void {
+                renderingContext->canvas()->setOverlayBg(Qt::transparent);
+            },
+            Qt::SingleShotConnection);
     }
 }
 

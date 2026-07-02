@@ -16,7 +16,13 @@ target_link_libraries(
     KF6::ConfigWidgets
     Qt::Widgets
     libdrawywidgets
+    drawyconfig
 )
+
+file(GLOB_RECURSE DRAWY_ICONS "${PROJECT_SOURCE_DIR}/src/icons/*-apps-drawy.png")
+set(appIcons)
+ecm_add_app_icon(appIcons ICONS "${DRAWY_ICONS}")
+target_sources(drawy PRIVATE ${appIcons})
 
 install(
     TARGETS
