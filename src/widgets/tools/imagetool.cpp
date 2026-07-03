@@ -54,7 +54,7 @@ void ImageTool::mouseReleased(ApplicationContext *context)
 
     if (uiContext->appEvent()->button() == Qt::LeftButton) {
         const QPointF lastPoint = uiContext->appEvent()->pos();
-        const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Insert Image"), {}, m_filter);
+        const QString fileName = QFileDialog::getOpenFileName(context->parentWidget(), i18nc("@title:window", "Insert Image"), {}, m_filter);
         if (fileName.isEmpty()) {
             return;
         }
