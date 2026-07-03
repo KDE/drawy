@@ -182,13 +182,13 @@ TextItem::Mode TextItem::mode() const
     return m_mode;
 }
 
-void TextItem::setMode(Mode mode)
+void TextItem::setMode(const Mode mode)
 {
     m_mode = mode;
     setDirty(true);
 }
 
-void TextItem::setCaret(QPointF cursorPos)
+void TextItem::setCaret(const QPointF cursorPos)
 {
     if (!m_boundingBox.contains(m_transform.inverted().map(cursorPos))) {
         return;
@@ -197,7 +197,7 @@ void TextItem::setCaret(QPointF cursorPos)
     m_cursor.setPosition(getIndexFromCursor(cursorPos));
 }
 
-qsizetype TextItem::getIndexFromCursor(QPointF cursorPos) const
+qsizetype TextItem::getIndexFromCursor(const QPointF cursorPos) const
 {
     const QPointF localPos{m_transform.inverted().map(cursorPos)};
     const QPointF docPos = localPos - m_boundingBox.topLeft();
@@ -267,7 +267,7 @@ Item::FormType TextItem::formType() const
     return Item::FormType::Text;
 }
 
-QRectF TextItem::cursorRect(int offset) const
+QRectF TextItem::cursorRect(const int offset) const
 {
     const auto block = m_cursor.block();
     if (const auto *layout = block.layout()) {
@@ -417,7 +417,7 @@ bool TextItem::needsPropertyUpdate(const Property &property) const
     return property != this->property(property.type());
 }
 
-void TextItem::setProperty(const Property::Type propertyType, Property newObj)
+void TextItem::setProperty(const Property::Type propertyType, const Property newObj)
 {
     QTextCharFormat fmt;
     switch (propertyType) {
@@ -462,7 +462,7 @@ void TextItem::setProperty(const Property::Type propertyType, Property newObj)
     Item::setProperty(propertyType, newObj);
 }
 
-QJsonObject TextItem::serialize(int zorder) const
+QJsonObject TextItem::serialize(const int zorder) const
 {
     const TextSerializer serialize(this);
     return serialize.serialize(zorder);
