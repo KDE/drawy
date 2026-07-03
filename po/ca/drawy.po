@@ -890,11 +890,3 @@ msgstr "Inserció d'una imatge"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Align to Center"
-#~ msgstr "Alinea al centre"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Align to Middle"
-#~ msgstr "Alinea al mig"
