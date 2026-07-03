@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-01 00:43+0000\n"
-"PO-Revision-Date: 2026-05-01 09:18+0300\n"
+"PO-Revision-Date: 2026-07-02 08:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -127,20 +127,16 @@ msgid "Align Items"
 msgstr "יישור פריטים"
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "הסגה"
+msgstr "הסגה: %1"
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "ביצוע מחדש"
+msgstr "ביצוע מחדש: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -372,7 +368,7 @@ msgstr "כללי"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "קלט"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -453,27 +449,27 @@ msgstr "מצב כהה"
 #: widgets/dialog/input/freehandsettingswidget.cpp:18
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "הגדרות יד חופשית"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "ייצוב"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "הפיכת הקווים ליציבים יותר על ידי הפחתת רעידת הידיים."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "רגישות ללחץ"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:51
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "שליטה כמה לחץ משנה את עובי הקו."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -670,7 +666,7 @@ msgstr "ניפוי שגיאות"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "מה חדש"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
