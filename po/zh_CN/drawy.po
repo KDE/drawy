@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"POT-Creation-Date: 2026-07-04 00:41+0000\n"
 "PO-Revision-Date: 2026-01-01 18:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -719,7 +719,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "导出为图像"
 
-#: widgets/keybindings/actionmanager.cpp:644
+#: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -728,7 +728,7 @@ msgstr ""
 "文档“%1”已被修改。\n"
 "您想要保存还是丢弃更改？"
 
-#: widgets/keybindings/actionmanager.cpp:648
+#: widgets/keybindings/actionmanager.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

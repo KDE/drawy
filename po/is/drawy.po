@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"POT-Creation-Date: 2026-07-04 00:41+0000\n"
 "PO-Revision-Date: 2026-05-06 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -723,7 +723,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Flytja út í mynd"
 
-#: widgets/keybindings/actionmanager.cpp:644
+#: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -732,7 +732,7 @@ msgstr ""
 "Skjalinu \"%1\" hefur verið breytt.\n"
 "Viltu vista það eða henda breytingunum?"
 
-#: widgets/keybindings/actionmanager.cpp:648
+#: widgets/keybindings/actionmanager.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

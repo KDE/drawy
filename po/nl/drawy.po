@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"POT-Creation-Date: 2026-07-04 00:41+0000\n"
 "PO-Revision-Date: 2026-06-29 12:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -721,7 +721,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporteren naar afbeelding"
 
-#: widgets/keybindings/actionmanager.cpp:644
+#: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -730,7 +730,7 @@ msgstr ""
 "Het document '%1' is gewijzigd.\n"
 "Wilt u de wijzigingen opslaan of verwerpen?"
 
-#: widgets/keybindings/actionmanager.cpp:648
+#: widgets/keybindings/actionmanager.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"POT-Creation-Date: 2026-07-04 00:41+0000\n"
 "Language-Team: Irish Translation Team <gaeilge-gnulinux@lists.sourceforge."
 "net>\n"
 "Language: ga\n"
@@ -722,14 +722,14 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:644
+#: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:648
+#: widgets/keybindings/actionmanager.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"

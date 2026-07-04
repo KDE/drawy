@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-01 00:43+0000\n"
+"POT-Creation-Date: 2026-07-04 00:41+0000\n"
 "PO-Revision-Date: 2026-06-29 13:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -724,7 +724,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exportar a imagen"
 
-#: widgets/keybindings/actionmanager.cpp:644
+#: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -733,7 +733,7 @@ msgstr ""
 "El documento «%1» contiene modificaciones.\n"
 "¿Quiere guardar los cambios o descartarlos?"
 
-#: widgets/keybindings/actionmanager.cpp:648
+#: widgets/keybindings/actionmanager.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
