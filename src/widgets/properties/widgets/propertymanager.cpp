@@ -62,7 +62,7 @@ Property PropertyManager::value(const Property::Type type) const
 
 void PropertyManager::slotUpdateWidgets()
 {
-    for (const auto &widget : m_widgets) {
+    for (const auto &widget : std::as_const(m_widgets)) {
         widget->updateWidget();
     }
 }
