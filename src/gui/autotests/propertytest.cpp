@@ -27,6 +27,9 @@ void PropertyTest::shouldConvertStringToEnum()
     QCOMPARE(Property::convertStringToEnum(u"ZOrder"_s), Property::Type::ZOrder);
     QCOMPARE(Property::convertStringToEnum({}), Property::Type::Null);
     QCOMPARE(Property::convertStringToEnum(u"foo"_s), Property::Type::Null);
+    QCOMPARE(Property::convertStringToEnum(u"StartArrowType"_s), Property::Type::StartArrowType);
+    QCOMPARE(Property::convertStringToEnum(u"EndArrowType"_s), Property::Type::EndArrowType);
+    QCOMPARE(Property::convertStringToEnum(u"StrokeStyle"_s), Property::Type::StrokeStyle);
 }
 
 void PropertyTest::shouldConvertEnumToString()
@@ -42,6 +45,10 @@ void PropertyTest::shouldConvertEnumToString()
     QCOMPARE(Property::convertEnumToString(Property::Type::ZOrder), u"ZOrder"_s);
     QCOMPARE(Property::convertEnumToString(Property::Type::Alignment), QString());
     QCOMPARE(Property::convertEnumToString(Property::Type::Null), QString());
+    QCOMPARE(Property::convertEnumToString(Property::Type::Alignment), QString());
+    QCOMPARE(Property::convertEnumToString(Property::Type::StartArrowType), u"StartArrowType"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::EndArrowType), u"EndArrowType"_s);
+    QCOMPARE(Property::convertEnumToString(Property::Type::StrokeStyle), u"StrokeStyle"_s);
 }
 
 #include "moc_propertytest.cpp"
