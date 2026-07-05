@@ -12,12 +12,19 @@
 
 RectangleItem::RectangleItem()
 {
+    m_properties[Property::Type::CornerRectangleType] =
+        Property{ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType::Pointed), Property::Type::CornerRectangleType};
 }
 
 void RectangleItem::drawItem(QPainter &painter, const QPointF &offset) const
 {
     prepareBackground(painter);
-    painter.drawRect(QRectF(start() - offset, end() - offset));
+    if (ItemUtils::convertItemCornerRectangleTypeStringToEnum(property(Property::Type::CornerRectangleType).value<QString>())
+        == Item::CornerRectangleType::Rounded) {
+        painter.drawRoundedRect(QRectF(start() - offset, end() - offset), 45, 45);
+    } else {
+        painter.drawRect(QRectF(start() - offset, end() - offset));
+    }
 }
 
 bool RectangleItem::intersects(const QRectF &rect)
@@ -27,7 +34,12 @@ bool RectangleItem::intersects(const QRectF &rect)
     }
 
     QPainterPath path{};
-    path.addRect(QRectF{start(), end()});
+    if (ItemUtils::convertItemCornerRectangleTypeStringToEnum(property(Property::Type::CornerRectangleType).value<QString>())
+        == Item::CornerRectangleType::Rounded) {
+        path.addRoundedRect(QRectF{start(), end()}, 45, 45);
+    } else {
+        path.addRect(QRectF{start(), end()});
+    }
 
     path = transformObj().map(path);
 

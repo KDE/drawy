@@ -140,6 +140,8 @@ target_sources(
         properties/widgets/backgroundstyleactionswidget.cpp
         properties/widgets/strokestyleactionswidget.hpp
         properties/widgets/strokestyleactionswidget.cpp
+        properties/widgets/cornerrectangletypewidget.hpp
+        properties/widgets/cornerrectangletypewidget.cpp
         tools/arrowtool.cpp
         tools/arrowtool.hpp
         tools/drawingtool.cpp

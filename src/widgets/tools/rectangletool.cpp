@@ -14,6 +14,7 @@ RectangleTool::RectangleTool(ApplicationContext *context)
     m_itemFactory = std::make_unique<RectangleFactory>();
     m_properties += Property::Type::BackgroundColor;
     m_properties += Property::Type::BackgroundStyle;
+    m_properties += Property::Type::CornerRectangleType;
 }
 
 QString RectangleTool::icon() const

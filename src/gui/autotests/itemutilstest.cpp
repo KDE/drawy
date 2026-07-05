@@ -99,4 +99,18 @@ void ItemUtilsTest::shouldConvertItemBackgroundTypeStringToBrushStyle()
     QCOMPARE(ItemUtils::convertItemBackgroundTypeStringToBrushStyle(QString()), Qt::BrushStyle::SolidPattern);
 }
 
+void ItemUtilsTest::shouldConvertItemCornerRectangleTypeStringToEnum()
+{
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeStringToEnum(u"Pointed"_s), Item::CornerRectangleType::Pointed);
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeStringToEnum(u"Rounded"_s), Item::CornerRectangleType::Rounded);
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeStringToEnum(u"foo"_s), Item::CornerRectangleType::Pointed);
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeStringToEnum(QString()), Item::CornerRectangleType::Pointed);
+}
+
+void ItemUtilsTest::shouldConvertItemCornerRectangleTypeEnumToString()
+{
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType::Pointed), u"Pointed"_s);
+    QCOMPARE(ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType::Rounded), u"Rounded"_s);
+}
+
 #include "moc_itemutilstest.cpp"

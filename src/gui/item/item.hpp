@@ -66,6 +66,11 @@ public:
     };
     Q_ENUM(BackgroundType)
 
+    enum class CornerRectangleType : int8_t {
+        Rounded,
+        Pointed,
+    };
+
     [[nodiscard]] virtual FormType formType() const = 0;
 
     virtual void updateAfterProperty();

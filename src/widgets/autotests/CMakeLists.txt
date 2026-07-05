@@ -75,3 +75,5 @@ set_tests_properties(
         ENVIRONMENT
             "LSAN_OPTIONS=suppressions=${CMAKE_SOURCE_DIR}/sanitizers.supp"
 )
+
+add_drawy_unittest(cornerrectangletypewidgettest.cpp)

@@ -30,7 +30,8 @@ public:
         StrokeColor,
         StrokeStyle,
         StrokeWidth,
-        ZOrder
+        ZOrder,
+        CornerRectangleType,
     };
 
     Q_ENUM(Type)
@@ -65,8 +66,10 @@ public:
             return 12;
         case Type::Actions:
             return 13;
-        case Type::Null:
+        case Type::CornerRectangleType:
             return 14;
+        case Type::Null:
+            return 15;
         }
 
         return 0;
