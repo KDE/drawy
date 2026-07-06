@@ -21,6 +21,10 @@ void TextDeserializer::deserialize(const QJsonObject &obj)
     const QPointF topLeft = toPointF(value(obj, u"top_left"_s));
     textItem->createTextBox(topLeft);
     const QString text = value(obj, u"text"_s).toString();
+    if (obj.contains(u"wrap_width"_s)) {
+        textItem->setWrapWidth(value(obj, u"wrap_width"_s).toDouble());
+    }
+
     if (obj.contains(u"html"_s)) {
         textItem->cursor().insertHtml(value(obj, u"html"_s).toString());
     } else {

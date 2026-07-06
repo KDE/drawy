@@ -43,5 +43,6 @@
         "m32": 0,
         "m33": 1
     },
-    "type": "TEXT"
+    "type": "TEXT",
+    "wrap_width": -1
 }

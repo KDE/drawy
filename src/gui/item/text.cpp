@@ -514,6 +514,16 @@ bool TextItem::lockAspectRatioWhenResizing() const
     return true;
 }
 
+qreal TextItem::wrapWidth() const
+{
+    return m_wrapWidth;
+}
+
+void TextItem::setWrapWidth(const qreal wrapWidth)
+{
+    m_wrapWidth = wrapWidth;
+}
+
 qreal TextItem::minWrapWidth() const
 {
     const QFontMetricsF metrics{getFont()};

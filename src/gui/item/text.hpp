@@ -30,6 +30,8 @@ public:
 
     void createTextBox(const QPointF position);
 
+    void setWrapWidth(qreal wrapWidth);
+    [[nodiscard]] qreal wrapWidth() const;
     [[nodiscard]] qreal minWrapWidth() const;
 
     enum class Mode : int8_t {

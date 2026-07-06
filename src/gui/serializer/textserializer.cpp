@@ -22,5 +22,6 @@ QJsonObject TextSerializer::serialize(int zorder) const
     obj[u"text"_s] = QJsonValue(text->text());
     obj[u"html"_s] = QJsonValue(text->html());
     obj[u"top_left"_s] = QJsonValue(toJson(text->normalizedBoundingBox().topLeft()));
+    obj[u"wrap_width"_s] = QJsonValue(text->wrapWidth());
     return obj;
 }
