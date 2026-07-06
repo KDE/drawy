@@ -44,6 +44,11 @@ void FontStyleWidgetTest::shouldHaveDefaultValues()
     QVERIFY(m_underlined);
     QVERIFY(m_underlined->isCheckable());
     QVERIFY(!m_underlined->toolTip().isEmpty());
+
+    auto m_strikethrough = m_widget->findChild<QToolButton *>(u"m_strikethrough"_s);
+    QVERIFY(m_strikethrough);
+    QVERIFY(m_strikethrough->isCheckable());
+    QVERIFY(!m_strikethrough->toolTip().isEmpty());
 }
 
 #include "moc_fontstylewidgettest.cpp"

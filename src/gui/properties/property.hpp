@@ -40,7 +40,8 @@ public:
     enum FontStyle : int8_t {
         Bold = 1 << 0,
         Italic = 1 << 1,
-        Underlined = 1 << 2
+        Underlined = 1 << 2,
+        StrikeOut = 1 << 3
     };
     Q_ENUM(Type)
 

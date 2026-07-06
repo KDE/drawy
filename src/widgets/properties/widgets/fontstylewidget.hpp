@@ -24,4 +24,5 @@ private:
     QToolButton *m_bold = nullptr;
     QToolButton *m_italic = nullptr;
     QToolButton *m_underlined = nullptr;
+    QToolButton *m_strikethrough = nullptr;
 };

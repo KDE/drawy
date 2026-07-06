@@ -49,6 +49,15 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
     m_underlined->setAutoRaise(true);
     layout->addWidget(m_underlined);
 
+    m_strikethrough = new QToolButton(m_widget);
+    m_strikethrough->setObjectName("m_strikethrough");
+    m_strikethrough->setCheckable(true);
+    m_strikethrough->setIcon(QIcon::fromTheme(u"format-text-strikethrough"_s));
+    m_strikethrough->setToolTip(i18nc("@info:tooltip", "Strikethrough"));
+    m_strikethrough->setIconSize(Common::fontStyleIconSize);
+    m_strikethrough->setAutoRaise(true);
+    layout->addWidget(m_strikethrough);
+
     connect(m_bold, &QToolButton::clicked, this, [this]() {
         Q_EMIT changed(value());
     });
@@ -56,6 +65,9 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
         Q_EMIT changed(value());
     });
     connect(m_underlined, &QToolButton::clicked, this, [this]() {
+        Q_EMIT changed(value());
+    });
+    connect(m_strikethrough, &QToolButton::clicked, this, [this]() {
         Q_EMIT changed(value());
     });
 
@@ -79,6 +91,9 @@ Property FontStyleWidget::value() const
     if (m_underlined->isChecked()) {
         value |= Property::Underlined;
     }
+    if (m_strikethrough->isChecked()) {
+        value |= Property::StrikeOut;
+    }
     return Property{ItemUtils::convertFontStyleToString(value), Property::Type::FontStyle};
 }
 
@@ -87,11 +102,13 @@ void FontStyleWidget::setValue(const QVariant &val)
     const QSignalBlocker blocker1(m_bold);
     const QSignalBlocker blocker2(m_italic);
     const QSignalBlocker blocker3(m_underlined);
+    const QSignalBlocker blocker4(m_strikethrough);
 
     const int value = ItemUtils::convertStringToFontStyle(val.toString());
     m_bold->setChecked(value & Property::Bold);
     m_italic->setChecked(value & Property::Italic);
     m_underlined->setChecked(value & Property::Underlined);
+    m_strikethrough->setChecked(value & Property::StrikeOut);
 }
 
 #include "moc_fontstylewidget.cpp"

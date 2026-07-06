@@ -105,8 +105,11 @@ void ItemUtilsTest::shouldConvertFontStyleToString()
     QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold), u"Bold"_s);
     QCOMPARE(ItemUtils::convertFontStyleToString(Property::Italic), u"Italic"_s);
     QCOMPARE(ItemUtils::convertFontStyleToString(Property::Underlined), u"Underlined"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::StrikeOut), u"StrikeOut"_s);
     QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold | Property::Italic), u"Bold,Italic"_s);
     QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold | Property::Italic | Property::Underlined), u"Bold,Italic,Underlined"_s);
+    QCOMPARE(ItemUtils::convertFontStyleToString(Property::Bold | Property::Italic | Property::Underlined | Property::StrikeOut),
+             u"Bold,Italic,Underlined,StrikeOut"_s);
 }
 
 void ItemUtilsTest::shouldConvertStringToFontStyle()
@@ -115,8 +118,11 @@ void ItemUtilsTest::shouldConvertStringToFontStyle()
     QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold"_s), Property::Bold);
     QCOMPARE(ItemUtils::convertStringToFontStyle(u"Italic"_s), Property::Italic);
     QCOMPARE(ItemUtils::convertStringToFontStyle(u"Underlined"_s), Property::Underlined);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"StrikeOut"_s), Property::StrikeOut);
     QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold,Italic"_s), Property::Bold | Property::Italic);
     QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold,Italic,Underlined"_s), Property::Bold | Property::Italic | Property::Underlined);
+    QCOMPARE(ItemUtils::convertStringToFontStyle(u"Bold,Italic,Underlined,StrikeOut"_s),
+             Property::Bold | Property::Italic | Property::Underlined | Property::StrikeOut);
     QCOMPARE(ItemUtils::convertStringToFontStyle(QString()), 0);
 }
 

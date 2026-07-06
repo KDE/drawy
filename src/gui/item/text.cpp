@@ -242,6 +242,7 @@ QFont TextItem::getFont() const
     font.setBold(style & Property::FontStyle::Bold);
     font.setItalic(style & Property::FontStyle::Italic);
     font.setUnderline(style & Property::FontStyle::Underlined);
+    font.setStrikeOut(style & Property::FontStyle::StrikeOut);
     return font;
 }
 
@@ -370,6 +371,9 @@ Property TextItem::property(const Property::Type propertyType) const
         if (font.underline()) {
             style |= Property::FontStyle::Underlined;
         }
+        if (font.strikeOut()) {
+            style |= Property::FontStyle::StrikeOut;
+        }
         return Property{ItemUtils::convertFontStyleToString(style), Property::Type::FontStyle};
     }
     default:
@@ -456,6 +460,9 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         }
         if (toggledBit & Property::FontStyle::Underlined) {
             fmt.setFontUnderline(newStyle & Property::FontStyle::Underlined);
+        }
+        if (toggledBit & Property::FontStyle::StrikeOut) {
+            fmt.setFontStrikeOut(newStyle & Property::FontStyle::StrikeOut);
         }
         break;
     }

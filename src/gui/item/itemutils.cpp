@@ -286,6 +286,9 @@ QString ItemUtils::convertFontStyleToString(const int style)
     if (style & Property::Underlined) {
         list << u"Underlined"_s;
     }
+    if (style & Property::StrikeOut) {
+        list << u"StrikeOut"_s;
+    }
     return list.join(u","_s);
 }
 
@@ -302,6 +305,8 @@ int ItemUtils::convertStringToFontStyle(const QString &str)
             style |= Property::Italic;
         } else if (s == u"Underlined"_s) {
             style |= Property::Underlined;
+        } else if (s == u"StrikeOut"_s) {
+            style |= Property::StrikeOut;
         } else {
             qCWarning(DRAWY_GUI_LOG) << "Item::FontStyle is not defined for: " << s;
         }
