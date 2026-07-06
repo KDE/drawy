@@ -25,7 +25,7 @@ bool EllipseItem::intersects(const QRectF &rect)
         return false;
     }
 
-    QPainterPath path{};
+    QPainterPath path;
     path.addEllipse(QRectF{start(), end()});
 
     path = m_transform.map(path);

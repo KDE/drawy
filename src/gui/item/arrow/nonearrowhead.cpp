@@ -12,7 +12,7 @@ NoneArrowHead::NoneArrowHead(const QPointF &start, const QPointF &end)
 
 QPainterPath NoneArrowHead::getPath()
 {
-    QPainterPath path{};
+    QPainterPath path;
 
     path.moveTo(m_start);
     path.lineTo(m_end);

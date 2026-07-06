@@ -13,7 +13,7 @@ CircleArrowHead::CircleArrowHead(const QPointF &start, const QPointF &end)
 
 QPainterPath CircleArrowHead::getPath()
 {
-    QPainterPath path{};
+    QPainterPath path;
 
     using namespace Common::Utils::Math;
     const auto radius{dist(m_start, m_end) / 2.0};

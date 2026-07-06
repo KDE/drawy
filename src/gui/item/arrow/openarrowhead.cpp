@@ -13,7 +13,7 @@ OpenArrowHead::OpenArrowHead(const QPointF &start, const QPointF &end)
 
 QPainterPath OpenArrowHead::getPath()
 {
-    QPainterPath path{};
+    QPainterPath path;
 
     using namespace Common::Utils::Math;
     const auto length{dist(m_start, m_end) / 2.0};

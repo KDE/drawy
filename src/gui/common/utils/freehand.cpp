@@ -267,7 +267,7 @@ QPainterPath getStrokePath(const QList<QPointF> &points)
         return {};
     }
 
-    QPainterPath path{};
+    QPainterPath path;
     path.moveTo(points[0]);
 
     for (qsizetype pos = 0; pos < points.size(); pos++) {

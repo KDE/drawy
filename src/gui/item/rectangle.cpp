@@ -33,7 +33,7 @@ bool RectangleItem::intersects(const QRectF &rect)
         return false;
     }
 
-    QPainterPath path{};
+    QPainterPath path;
     if (ItemUtils::convertItemCornerRectangleTypeStringToEnum(property(Property::Type::CornerRectangleType).value<QString>())
         == Item::CornerRectangleType::Rounded) {
         path.addRoundedRect(QRectF{start(), end()}, 45, 45);

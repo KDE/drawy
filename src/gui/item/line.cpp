@@ -123,7 +123,7 @@ void LineItem::setEndWithShift(QPointF end)
 
 bool LineItem::intersects(const QRectF &rect)
 {
-    QPainterPath path{};
+    QPainterPath path;
     path.moveTo(start());
     path.lineTo(end());
 
