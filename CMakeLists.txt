@@ -35,7 +35,7 @@ find_package(SharedMimeInfo ${SharedMimeInfo_MINIMUM_VERSION} REQUIRED)
 
 kde_enable_exceptions()
 
-ecm_set_disabled_deprecation_versions(QT 6.12.0  KF 6.27.0)
+ecm_set_disabled_deprecation_versions(QT 6.12.0  KF 6.28.0)
 
 # Find Qt6
 find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS Widgets)
