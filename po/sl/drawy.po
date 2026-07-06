@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:41+0000\n"
+"POT-Creation-Date: 2026-07-06 00:42+0000\n"
 "PO-Revision-Date: 2026-06-29 06:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -42,66 +42,71 @@ msgstr "Neobvezni argument 'datoteka' "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Vaše priročno, neskončno orodje za viharjenje možgan!"
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
 msgstr "Spremeni širino poteze"
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
 msgstr "Spremeni barvo poteze"
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
 msgstr "Spremeni neprosojnost"
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:107
 #, kde-format
 msgid "Change Font Size"
 msgstr "Spremeni velikost pisave"
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
 msgstr "Spremeni velikost radirke"
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "Dejanja"
 
-#: gui/properties/property.cpp:109
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
 msgstr "Spremeni slog poteze"
 
-#: gui/properties/property.cpp:111
+#: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Background Color"
 msgstr "Spremeni barvo ozadja"
 
-#: gui/properties/property.cpp:113
+#: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
 msgstr "Spremeni barvo ozadja"
 
-#: gui/properties/property.cpp:115
+#: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Start Arrow Head"
 msgstr "Spremeni začetni konec puščice"
 
-#: gui/properties/property.cpp:117
+#: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change End Arrow Head"
 msgstr "Spremeni končni konec puščice"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
+#: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Spremeni Z-vrstni red"
+
+#: gui/properties/property.cpp:128
+#, kde-format
+msgid "Change Corner Rectangle Type"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -848,6 +853,23 @@ msgstr "Izberi barvo po meri"
 #, kde-format
 msgid "Color"
 msgstr "Barva"
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Rounded Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pointed Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
+#, kde-format
+msgid "Corner Type"
+msgstr ""
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

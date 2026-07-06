@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:41+0000\n"
+"POT-Creation-Date: 2026-07-06 00:42+0000\n"
 "PO-Revision-Date: 2026-07-02 08:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -43,66 +43,71 @@ msgstr "ארגומנט ‚file’ כרשות"
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "כלי סיעור המוחין השימושי והאינסופי שלך!"
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
 msgstr "שינוי עובי קו המתאר"
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
 msgstr "החלפת צבע קו מתאר"
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
 msgstr "שינוי אטימות"
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:107
 #, kde-format
 msgid "Change Font Size"
 msgstr "שינוי גודל כתב"
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
 msgstr "שינוי גודל מוחק"
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "פעולות"
 
-#: gui/properties/property.cpp:109
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
 msgstr "החלפת סגנון קו המתאר"
 
-#: gui/properties/property.cpp:111
+#: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Background Color"
 msgstr "החלפת צבע רקע"
 
-#: gui/properties/property.cpp:113
+#: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
 msgstr "החלפת סגנון רקע"
 
-#: gui/properties/property.cpp:115
+#: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Start Arrow Head"
 msgstr "שינוי ראש חץ התחלה"
 
-#: gui/properties/property.cpp:117
+#: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change End Arrow Head"
 msgstr "שינוי ראש חץ סוף"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
+#: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "שינוי מרחק (סדר בציר Z)"
+
+#: gui/properties/property.cpp:128
+#, kde-format
+msgid "Change Corner Rectangle Type"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -849,6 +854,23 @@ msgstr "בחירת צבע מותאם אישית"
 #, kde-format
 msgid "Color"
 msgstr "צבע"
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Rounded Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pointed Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
+#, kde-format
+msgid "Corner Type"
+msgstr ""
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

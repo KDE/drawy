@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:41+0000\n"
+"POT-Creation-Date: 2026-07-06 00:42+0000\n"
 "PO-Revision-Date: 2026-06-29 08:29-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -44,66 +44,71 @@ msgstr "Um argumento opcional 'arquivo' "
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "Sua ferramenta prática e infinita para brainstorming!"
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
 msgstr "Alterar largura do traço"
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
 msgstr "Alterar cor do traço"
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
 msgstr "Alterar opacidade"
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:107
 #, kde-format
 msgid "Change Font Size"
 msgstr "Alterar tamanho da fonte"
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
 msgstr "Alterar tamanho da borracha"
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "Ações"
 
-#: gui/properties/property.cpp:109
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
 msgstr "Alterar estilo de traço"
 
-#: gui/properties/property.cpp:111
+#: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Background Color"
 msgstr "Alterar cor do fundo"
 
-#: gui/properties/property.cpp:113
+#: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
 msgstr "Alterar estilo do fundo"
 
-#: gui/properties/property.cpp:115
+#: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Start Arrow Head"
 msgstr "Alterar início da seta"
 
-#: gui/properties/property.cpp:117
+#: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change End Arrow Head"
 msgstr "Alterar fim da seta"
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
+#: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
 msgstr "Alterar ordem Z"
+
+#: gui/properties/property.cpp:128
+#, kde-format
+msgid "Change Corner Rectangle Type"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -846,6 +851,23 @@ msgstr "Selecionar cor personalizada"
 #, kde-format
 msgid "Color"
 msgstr "Cor"
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Rounded Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pointed Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
+#, kde-format
+msgid "Corner Type"
+msgstr ""
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

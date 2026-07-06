@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:41+0000\n"
+"POT-Creation-Date: 2026-07-06 00:42+0000\n"
 "PO-Revision-Date: 2026-05-29 17:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -45,65 +45,70 @@ msgstr ""
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
 msgstr ""
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
 msgstr ""
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
 msgstr ""
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:107
 #, kde-format
 msgid "Change Font Size"
 msgstr ""
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
 msgstr ""
 
-#: gui/properties/property.cpp:107
+#: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr "مەشغۇلات"
 
-#: gui/properties/property.cpp:109
+#: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
 msgstr ""
 
-#: gui/properties/property.cpp:111
+#: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Background Color"
 msgstr ""
 
-#: gui/properties/property.cpp:113
+#: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
 msgstr ""
 
-#: gui/properties/property.cpp:115
+#: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Start Arrow Head"
 msgstr ""
 
-#: gui/properties/property.cpp:117
+#: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change End Arrow Head"
 msgstr ""
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:87
+#: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
+msgstr ""
+
+#: gui/properties/property.cpp:128
+#, kde-format
+msgid "Change Corner Rectangle Type"
 msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
@@ -847,6 +852,23 @@ msgstr ""
 #, kde-format
 msgid "Color"
 msgstr "رەڭ"
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Rounded Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pointed Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
+#, kde-format
+msgid "Corner Type"
+msgstr ""
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
