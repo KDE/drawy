@@ -107,9 +107,24 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
     }
 
     if (shouldUpdateProperty) {
-        const auto command{std::make_shared<UpdatePropertyCommand>(items, property)};
-        const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
-        commandHistory->push(command);
+        bool editingText{false};
+        if (items.size() == 1) {
+            if (items[0]->formType() == Item::FormType::Text) {
+                const auto textItem = std::dynamic_pointer_cast<TextItem>(items[0]);
+                if (textItem && textItem->mode() == TextItem::Mode::Edit) {
+                    editingText = true;
+                }
+            }
+        }
+
+        if (editingText) {
+            // apply directly history is handled by Qtextdocument
+            UpdatePropertyCommand(items, property).redo(m_applicationContext);
+        } else {
+            const auto command{std::make_shared<UpdatePropertyCommand>(items, property)};
+            const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
+            commandHistory->push(command);
+        }
 
         m_applicationContext->renderingContext()->canvas()->setFocus(Qt::OtherFocusReason);
         m_applicationContext->renderingContext()->markForRender();

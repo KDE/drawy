@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -30,6 +30,10 @@ void UpdatePropertyCommand::redo(ApplicationContext *context)
     QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         if (item->hasProperty(type)) {
+            if (item->formType() == Item::FormType::Text) {
+                const auto textItem = std::static_pointer_cast<TextItem>(item);
+                m_htmls[item] = textItem->html();
+            }
             m_properties[item] = item->property(type);
             item->setProperty(type, m_newProperty);
             item->setDirty(true);
@@ -48,7 +52,12 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     QRectF dirtyRegion{};
     for (const auto &item : std::as_const(m_items)) {
         if (item->hasProperty(type)) {
-            item->setProperty(type, m_properties[item]);
+            if (m_htmls.contains(item)) {
+                const auto textItem = std::static_pointer_cast<TextItem>(item);
+                textItem->setHtml(m_htmls[item]);
+            } else {
+                item->setProperty(type, m_properties[item]);
+            }
             item->setDirty(true);
             dirtyRegion |= item->boundingBox();
         }

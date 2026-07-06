@@ -45,6 +45,7 @@ public:
 
     [[nodiscard]] QString text() const;
     [[nodiscard]] QString html() const;
+    void setHtml(const QString &html);
 
     [[nodiscard]] QRectF cursorRect(int offset = 0) const;
 

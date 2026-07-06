@@ -81,12 +81,13 @@ void TextTool::mousePressed(ApplicationContext *context)
                 return;
             }
         } else {
-            if (m_curItem != nullptr) {
+            const auto clickedItem = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
+            if (m_curItem != nullptr && m_curItem != clickedItem) {
                 m_curItem->setMode(TextItem::Mode::Normal);
                 renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
             }
 
-            m_curItem = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
+            m_curItem = clickedItem;
             m_curItem->setCaret(worldPos);
 
             renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
@@ -297,6 +298,16 @@ void TextTool::processKey(const Event *ev)
     case Qt::Key_A:
         if (ctrl) {
             cursor.select(QTextCursor::Document);
+            return;
+        }
+        break;
+    case Qt::Key_Z:
+        if (ctrl) {
+            if (shift) {
+                cursor.document()->redo();
+            } else {
+                cursor.document()->undo();
+            }
             return;
         }
         break;

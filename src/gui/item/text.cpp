@@ -184,8 +184,15 @@ TextItem::Mode TextItem::mode() const
 
 void TextItem::setMode(const Mode mode)
 {
-    m_mode = mode;
-    setDirty(true);
+    if (m_mode != mode) {
+        m_mode = mode;
+        if (m_mode == Mode::Normal) {
+            m_document.setUndoRedoEnabled(false);
+        } else {
+            m_document.setUndoRedoEnabled(true);
+        }
+        setDirty(true);
+    }
 }
 
 void TextItem::setCaret(const QPointF cursorPos)
@@ -195,6 +202,7 @@ void TextItem::setCaret(const QPointF cursorPos)
     }
 
     m_cursor.setPosition(getIndexFromCursor(cursorPos));
+    setDirty(true);
 }
 
 qsizetype TextItem::getIndexFromCursor(const QPointF cursorPos) const
@@ -260,6 +268,11 @@ QString TextItem::text() const
 QString TextItem::html() const
 {
     return m_document.toHtml();
+}
+
+void TextItem::setHtml(const QString &html)
+{
+    m_document.setHtml(html);
 }
 
 Item::FormType TextItem::formType() const
@@ -451,6 +464,7 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         return;
     }
 
+    m_cursor.beginEditBlock();
     if (m_mode == Mode::Normal) {
         m_cursor.select(QTextCursor::Document);
         m_cursor.mergeCharFormat(fmt);
@@ -458,6 +472,8 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
     } else {
         m_cursor.mergeCharFormat(fmt);
     }
+    m_cursor.endEditBlock();
+
     m_currentFormat.merge(fmt);
     Item::setProperty(propertyType, newObj);
 }

@@ -1,9 +1,10 @@
-﻿// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
 
+#include "item/text.hpp"
 #include "itemcommand.hpp"
 #include "properties/property.hpp"
 class ApplicationContext;
@@ -20,4 +21,5 @@ public:
 private:
     Property m_newProperty{};
     std::unordered_map<std::shared_ptr<Item>, Property> m_properties{};
+    std::unordered_map<std::shared_ptr<Item>, QString> m_htmls{};
 };
