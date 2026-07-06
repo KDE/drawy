@@ -90,6 +90,14 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     }
 
     if (m_mode == Mode::Edit) {
+        if (m_wrapWidth > 0) {
+            QPen pen(Common::selectionBorderColor);
+            pen.setStyle(Qt::DashLine);
+            pen.setWidth(1);
+            painter.setPen(pen);
+            painter.drawRect(QRectF(0, 0, m_boundingBox.width(), m_boundingBox.height()));
+        }
+
         QGuiApplication::inputMethod()->cursorRectangleChanged();
         // draw caret
         const QRectF rect = cursorRect(m_preeditCursorPos);
