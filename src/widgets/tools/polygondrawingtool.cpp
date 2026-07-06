@@ -50,6 +50,9 @@ void PolygonDrawingTool::mousePressed(ApplicationContext *context)
         if (curItem->hasProperty(Property::Type::BackgroundStyle)) {
             curItem->setProperty(Property::Type::BackgroundStyle, uiContext->propertyManager()->value(Property::Type::BackgroundStyle));
         }
+        if (curItem->hasProperty(Property::Type::CornerRectangleType)) {
+            curItem->setProperty(Property::Type::CornerRectangleType, uiContext->propertyManager()->value(Property::Type::CornerRectangleType));
+        }
 
         curItem->initPoints(transformer.viewToWorld(uiContext->appEvent()->pos()));
 

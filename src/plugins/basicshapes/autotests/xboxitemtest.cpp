@@ -18,8 +18,9 @@ void XBoxItemTest::shouldHaveDefaultValues()
     const XBoxItem i;
     QCOMPARE(i.formType(), Item::FormType::Custom);
     const auto properties = QList<Property::Type>() << Property::Type::StrokeWidth << Property::Type::StrokeColor << Property::Type::Opacity
-                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle;
-    QCOMPARE(i.allPropertyTypes().count(), 6);
+                                                    << Property::Type::StrokeStyle << Property::Type::BackgroundColor << Property::Type::BackgroundStyle
+                                                    << Property::Type::CornerRectangleType;
+    QCOMPARE(i.allPropertyTypes().count(), 7);
     for (const auto &prop : properties) {
         QVERIFY(i.allPropertyTypes().contains(prop));
     }

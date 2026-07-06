@@ -31,4 +31,7 @@ private Q_SLOTS:
 
     void shouldConvertTextAlignmentToString();
     void shouldConvertStringToTextAlignment();
+
+    void shouldConvertItemCornerRectangleTypeStringToEnum();
+    void shouldConvertItemCornerRectangleTypeEnumToString();
 };

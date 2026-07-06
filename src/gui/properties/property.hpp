@@ -33,7 +33,8 @@ public:
         StrokeStyle,
         StrokeWidth,
         TextAlignment,
-        ZOrder
+        ZOrder,
+        CornerRectangleType,
     };
 
     enum FontStyle : int8_t {
@@ -79,8 +80,10 @@ public:
             return 15;
         case Type::Actions:
             return 16;
-        case Type::Null:
+        case Type::CornerRectangleType:
             return 17;
+        case Type::Null:
+            return 18;
         }
 
         return 0;

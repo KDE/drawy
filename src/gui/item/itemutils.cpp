@@ -197,6 +197,30 @@ int ItemUtils::convertStringToTextAlignment(const QString &str)
     return Qt::AlignLeft;
 }
 
+QString ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType type)
+{
+    switch (type) {
+    case Item::CornerRectangleType::Pointed:
+        return u"Pointed"_s;
+    case Item::CornerRectangleType::Rounded:
+        return u"Rounded"_s;
+    }
+    qCWarning(DRAWY_GUI_LOG) << "CornerRectangleType not defined in switch. It's a bug" << static_cast<int>(type);
+    return {};
+}
+
+Item::CornerRectangleType ItemUtils::convertItemCornerRectangleTypeStringToEnum(const QString &str)
+{
+    if (str == u"Pointed") {
+        return Item::CornerRectangleType::Pointed;
+    } else if (str == u"Rounded") {
+        return Item::CornerRectangleType::Rounded;
+    } else {
+        qCWarning(DRAWY_GUI_LOG) << "Item::CornerRectangleType is not defined for: " << str;
+    }
+    return Item::CornerRectangleType::Pointed;
+}
+
 std::shared_ptr<Item> ItemUtils::createItemFromType(Item::FormType type)
 {
     std::shared_ptr<Item> item;

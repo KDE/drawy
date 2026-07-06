@@ -54,6 +54,8 @@ Property::Type Property::convertStringToEnum(const QString &str)
         return Property::Type::ZOrder;
     } else if (str == u"FontStyle") {
         return Property::Type::FontStyle;
+    } else if (str == u"CornerRectangleType") {
+        return Property::Type::CornerRectangleType;
     } else {
         qCWarning(DRAWY_GUI_LOG) << "Property::Type is not defined for: " << str;
     }
@@ -96,6 +98,8 @@ QString Property::convertEnumToString(Property::Type type)
         return u"TextAlignment"_s;
     case Property::Type::ZOrder:
         return u"ZOrder"_s;
+    case Property::Type::CornerRectangleType:
+        return u"CornerRectangleType"_s;
     case Property::Type::Null:
         qCWarning(DRAWY_GUI_LOG) << "Don't save null property ";
     }
@@ -138,6 +142,8 @@ QString Property::information(Type type)
         return i18n("Change Text Alignment");
     case Property::Type::ZOrder:
         return i18n("Change ZOrder");
+    case Property::Type::CornerRectangleType:
+        return i18n("Change Corner Rectangle Type");
     case Property::Type::Null:
         qCWarning(DRAWY_GUI_LOG) << "Don't save null property ";
     }

@@ -28,6 +28,10 @@
         {
             "type": "StrokeWidth",
             "value": 1
+        },
+        {
+            "type": "CornerRectangleType",
+            "value": "Pointed"
         }
     ],
     "start": {

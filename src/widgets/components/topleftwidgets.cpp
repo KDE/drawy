@@ -11,7 +11,6 @@
 #include <KActionMenu>
 #include <KColorSchemeManager>
 #include <KColorSchemeMenu>
-#include <KHelpMenu>
 #include <KLocalizedString>
 #include <QMenu>
 #include <QStyle>

@@ -214,11 +214,13 @@
   <releases>
     <release version="1.1.0" type="snapshot">
       <description>
+        <p>Allow to draw rounded rectangle</p>
         <p>Improve selected basic shape (bug 519895)</p>
         <p xml:lang="ar">تحسين الشكل الأساسي المحدد (العلة 519895)</p>
         <p xml:lang="ca">Millora la forma bàsica seleccionada (error 519895)</p>
         <p xml:lang="ca-valencia">Millora la forma bàsica seleccionada (error 519895)</p>
         <p xml:lang="es">Mejora de la forma básica seleccionada (fallo 519895).</p>
+        <p xml:lang="eu">Oinarrizko formen hautaketa hobetu (519895 akatsa)</p>
         <p xml:lang="he">צורה בסיסית נבחרת השתפרה (תקלה 519895)</p>
         <p xml:lang="ia">Meliora le forma basic seligite (bug 519895)</p>
         <p xml:lang="ka">გაუმჯობესდა მონიშნული საბაზისო მოხაზულობა (შეცდომა 519895)</p>
@@ -233,6 +235,7 @@
         <p xml:lang="ca">Permet exportar els elements seleccionats com a imatges</p>
         <p xml:lang="ca-valencia">Permet exportar els elements seleccionats com a imatges</p>
         <p xml:lang="es">Permitir exportar los elementos seleccionados como imagen.</p>
+        <p xml:lang="eu">Hautatutako elementuak irudi gisa esportatzen utzi</p>
         <p xml:lang="he">לאפשר לייצא את הרכיבים הנבחרים כתמונה</p>
         <p xml:lang="hr">Dopustiti izvoz odabranih elemenata kao slike</p>
         <p xml:lang="ia">Permitte exportar le elementos seligite como imagine</p>
@@ -251,6 +254,7 @@
         <p xml:lang="ca">Afegeix el diàleg Què hi ha de nou</p>
         <p xml:lang="ca-valencia">Afig el diàleg Què hi ha de nou</p>
         <p xml:lang="es">Se ha añadido el diálogo «Novedades».</p>
+        <p xml:lang="eu">Zer berri elkarrizketa-koadroa gehitu da</p>
         <p xml:lang="he">נוספה חלונית מה חדש</p>
         <p xml:lang="ia">Adde nove dialogo de Que es</p>
         <p xml:lang="ka">დაემატა დიალოგი 'რა არის ახალი'</p>
@@ -269,6 +273,7 @@
         <p xml:lang="ca">Aquesta actualització ofereix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
         <p xml:lang="ca-valencia">Esta actualització oferix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
         <p xml:lang="es">Esta actualización ofrece una experiencia de dibujo a mano alzada más fluida y personalizable. Además, corrige un problema por el que las líneas recién dibujadas parpadeaban.</p>
+        <p xml:lang="eu">Eguneratze honek eskuz marrazteko esperientzia leunagoa eta neurrira egokigarriagoa eskaintzen du, eta marraztu berri diren trazuek keinuka agertzea eragiten zuen akats bat konpontzen du.</p>
         <p xml:lang="he">העדכון הזה מספק חוויית ציור חופשי חלקה וגמישה יותר ומתקן תקלה שבה קווים חדשים שצוירו הבהבו.</p>
         <p xml:lang="ia">Iste actualisation offere un experientia de designo a mano libere plus  fluide e plus personalisabile, e corrige un problema ubi lineas traciate   recentemente tremulava.</p>
         <p xml:lang="it">Questo aggiornamento offre un'esperienza di disegno a mano libera più fluida e personalizzabile, e risolve un problema per cui le linee appena disegnate sfarfallavano.</p>
@@ -287,6 +292,7 @@
           <li xml:lang="ca">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
           <li xml:lang="ca-valencia">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
           <li xml:lang="es">Ahora, dibujar a mano resulta mucho más cómodo y natural.</li>
+          <li xml:lang="eu">Eskuz marraztea askoz atseginagoa eta naturalagoa da orain.</li>
           <li xml:lang="he">ציור ידני מרגיש טוב וטבעי יותר בהרבה.</li>
           <li xml:lang="ia">Disegnar a mano se senti multo melior e plus natural ora.</li>
           <li xml:lang="it">Disegnare a mano libera ora mi sembra molto più piacevole e naturale.</li>
@@ -304,6 +310,7 @@
           <li xml:lang="ca">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
           <li xml:lang="ca-valencia">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
           <li xml:lang="es">Se han añadido ajustes para poder cambiar la presión del lápiz y la suavidad de las líneas.</li>
+          <li xml:lang="eu">Ezarpen berriak gehitu dira arkatzaren presioarekiko sentikortasuna eta trazuen leuntasuna doitzeko.</li>
           <li xml:lang="he">נוספו הגדרות כדי לאפשר לך לשנות את לחץ העט וכמה חלק הקווים שלך נראים.</li>
           <li xml:lang="ia">On ha addite configurationes pro poter cambiar le pression del stilo e como tu lineas lisie appare.</li>
           <li xml:lang="it">Sono state aggiunte delle impostazioni che consentono di modificare la pressione della penna e la fluidità delle linee.</li>
@@ -321,6 +328,7 @@
           <li xml:lang="ca">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
           <li xml:lang="ca-valencia">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
           <li xml:lang="es">Las líneas y las formas ya no parpadearán ni destellarán justo después de dibujarlas.</li>
+          <li xml:lang="eu">Marraztu ondoren, trazuek eta formek ez dute gehiago keinurik edo distirarik egingo.</li>
           <li xml:lang="he">קווים וצורות לא יהבהבו יותר מיד לאחר ציורם.</li>
           <li xml:lang="ia">Lineas e formas non plus palpeblara o fulgurara immediatemente post que tu los designa.</li>
           <li xml:lang="it">Linee e forme non lampeggeranno più subito dopo essere state disegnate.</li>

@@ -13,7 +13,7 @@ DiamondArrowHead::DiamondArrowHead(const QPointF &start, const QPointF &end)
 
 QPainterPath DiamondArrowHead::getPath()
 {
-    QPainterPath path{};
+    QPainterPath path;
 
     using namespace Common::Utils::Math;
     const auto midPoint{(m_start + m_end) / 2.0};

@@ -489,7 +489,7 @@ void ActionManager::saveAsNewFile()
     QString text{i18n("Untitled.%1", Common::drawyFileExt)};
     const QString defaultFilePath = homeDir.filePath(text);
     text = i18n("Drawy (*.%1)", Common::drawyFileExt);
-    const QString fileName{QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Save File"), defaultFilePath, text)};
+    const QString fileName{QFileDialog::getSaveFileName(m_context->parentWidget(), i18nc("@title:window", "Save File"), defaultFilePath, text)};
     if (fileName.isEmpty()) {
         return;
     }
@@ -569,7 +569,7 @@ void ActionManager::openFile()
     const QString filter = i18n("Drawy (*.%1)", Common::drawyFileExt);
 
     const QDir homeDir{QDir::home()};
-    const QString fileName = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open File"), homeDir.path(), filter);
+    const QString fileName = QFileDialog::getOpenFileName(m_context->parentWidget(), i18nc("@title:window", "Open File"), homeDir.path(), filter);
     if (fileName.isEmpty()) {
         return;
     }
@@ -589,8 +589,11 @@ void ActionManager::exportToImageElements(const QList<std::shared_ptr<Item>> &it
     const QString pngFilter = i18n("PNG (*.png)");
 
     QString selectedFilter;
-    const QString fileName{
-        QFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Export to Image"), defaultFilePath, svgFilter + u";;"_s + pngFilter, &selectedFilter)};
+    const QString fileName{QFileDialog::getSaveFileName(m_context->parentWidget(),
+                                                        i18nc("@title:window", "Export to Image"),
+                                                        defaultFilePath,
+                                                        svgFilter + u";;"_s + pngFilter,
+                                                        &selectedFilter)};
 
     if (fileName.isEmpty()) {
         return;
