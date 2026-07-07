@@ -90,4 +90,13 @@
       <default>#88C053</default>
     </entry>
   </group>
+  <group name="Selection">
+    <entry name="SelectionMode" type="Enum">
+      <choices>
+        <choice name="FullyContained"/>
+        <choice name="Overlap"/>
+      </choices>
+      <default>FullyContained</default>
+    </entry>
+  </group>
 </kcfg>
