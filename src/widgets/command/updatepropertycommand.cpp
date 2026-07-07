@@ -45,7 +45,7 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
 {
     const Property::Type type{m_newProperty.type()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         if (item->hasProperty(type)) {
             item->setProperty(type, m_properties[item]);

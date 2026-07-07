@@ -131,7 +131,7 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
 QList<Property::Type> PolygonDrawingTool::properties() const
 {
     const UIContext *uiContext{m_context->uiContext()};
-    QList<Property::Type> result{};
+    QList<Property::Type> result;
 
     const auto bgStyleString{uiContext->propertyManager()->value(Property::Type::BackgroundStyle).value<QString>()};
     const auto bgStyleEnum{ItemUtils::convertBackgroundTypeStringToEnum(bgStyleString)};

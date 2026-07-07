@@ -31,7 +31,7 @@ void InsertItemCommand::redo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
 
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
@@ -53,7 +53,7 @@ void InsertItemCommand::undo(ApplicationContext *context)
     auto &quadtree{context->spatialContext()->quadtree()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
 

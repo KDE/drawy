@@ -22,7 +22,7 @@ void PngSerializer::writePng(QFile &file, QList<std::shared_ptr<Item>> items, co
     QPainter painter(&image);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
-    QTransform t{};
+    QTransform t;
     t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
 
     painter.setTransform(t.inverted(), true);

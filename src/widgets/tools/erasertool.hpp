@@ -28,7 +28,7 @@ public:
 
 private:
     bool m_isErasing{false};
-    QRectF m_lastRect{};
+    QRectF m_lastRect;
 
     std::unordered_set<std::shared_ptr<Item>> m_toBeErased;
 };

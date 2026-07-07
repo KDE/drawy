@@ -70,7 +70,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
 
     painter.save();
 
-    QTransform painterTransform{};
+    QTransform painterTransform;
     painterTransform.setMatrix(transform.m11(),
                                transform.m12(),
                                transform.m13(),
@@ -90,7 +90,7 @@ void ItemCache::drawCached(QPainter &painter, const std::shared_ptr<Item> &item,
                 p.scale(zoom, zoom);
 
                 const QPointF topLeft{transformer.gridToWorld(cell->rect().topLeft().toPointF())};
-                QTransform cellTransform{};
+                QTransform cellTransform;
                 cellTransform.translate(topLeft.x(), topLeft.y());
                 p.setTransform(cellTransform.inverted(), true);
 

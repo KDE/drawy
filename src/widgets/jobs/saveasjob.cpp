@@ -47,7 +47,7 @@ void SaveAsJob::slotSerializeDone(const QJsonObject &obj)
 {
     Q_EMIT saveFileDone(obj);
 
-    KConfig config{};
+    KConfig config;
     KConfigGroup sessionGroup{&config, Common::configSession};
 
     // only update modified status if it's not the autosaved file

@@ -41,7 +41,7 @@ QList<StrokePoint> getStrokePoints(const QList<QPointF> &points, const QList<qre
         return QList<StrokePoint>();
     }
 
-    QList<StrokePoint> result{};
+    QList<StrokePoint> result;
     result.push_back(StrokePoint{points[0], pressures[0]});
 
     if (points.size() == 1) {
@@ -130,7 +130,7 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
 
     // if there is only one point, draw a circle
     if (points.size() == 1) {
-        QList<QPointF> polygonPoints{};
+        QList<QPointF> polygonPoints;
         const QPointF radiusVector{getStrokeRadius(thickness, points[0].pressure), 0};
 
         constexpr int steps{26};
@@ -142,8 +142,8 @@ QList<QPointF> getStrokePolygon(const QList<StrokePoint> &points, const qreal th
         return polygonPoints;
     }
 
-    QList<QPointF> leftPoints{};
-    QList<QPointF> rightPoints{};
+    QList<QPointF> leftPoints;
+    QList<QPointF> rightPoints;
 
     const auto insertCap = [&](const StrokePoint &prev, const StrokePoint &cur, const StrokePoint &next) -> bool {
         const QPointF prevVector{cur.point - prev.point};

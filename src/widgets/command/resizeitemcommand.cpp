@@ -32,7 +32,7 @@ void ResizeItemCommand::redo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
 
@@ -55,7 +55,7 @@ void ResizeItemCommand::undo(ApplicationContext *context)
     auto &transformer{context->spatialContext()->coordinateTransformer()};
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
     for (const auto &item : std::as_const(m_items)) {
         dirtyRegion |= item->boundingBox();
 

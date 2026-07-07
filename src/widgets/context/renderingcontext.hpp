@@ -53,7 +53,7 @@ private:
 
     bool m_needsReRender{false};
     bool m_needsUpdate{false};
-    QRect m_updateRegion{};
+    QRect m_updateRegion;
 
     qreal m_zoomFactor{1};
 

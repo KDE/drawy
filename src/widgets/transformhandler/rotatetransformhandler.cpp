@@ -105,7 +105,7 @@ TransformHandler::State RotateTransformHandler::mouseMoved(ApplicationContext *c
             return TransformHandler::State::Locked;
         }
 
-        QRect dirtyRegion{};
+        QRect dirtyRegion;
 
         auto &selectedItems{context->selectionContext()->selectedItems()};
         auto &quadtree{context->spatialContext()->quadtree()};

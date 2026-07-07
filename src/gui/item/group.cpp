@@ -51,7 +51,7 @@ void GroupItem::group(const QList<std::shared_ptr<Item>> &items)
 {
     m_items = items;
 
-    QRectF unitedBoundingBox{};
+    QRectF unitedBoundingBox;
     for (const auto &item : std::as_const(m_items)) {
         unitedBoundingBox |= item->boundingBox();
     }

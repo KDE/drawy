@@ -18,7 +18,7 @@ int SerializerUtils::version()
 
 QJsonObject SerializerUtils::toJson(const QPointF &point)
 {
-    QJsonObject result{};
+    QJsonObject result;
     result[u"x"_s] = QJsonValue(point.x());
     result[u"y"_s] = QJsonValue(point.y());
 

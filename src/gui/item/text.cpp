@@ -471,7 +471,7 @@ constexpr int TextItem::getTextFlags()
 
 QTextOption TextItem::getTextOptions()
 {
-    QTextOption options{};
+    QTextOption options;
     options.setTabStopDistance(Common::tabStopDistance);
 
     return options;

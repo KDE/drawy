@@ -239,7 +239,7 @@ void QuadTree::expand(const QPointF &point)
     std::unique_ptr<QuadTree> topRight{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
     std::unique_ptr<QuadTree> bottomRight{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
     std::unique_ptr<QuadTree> bottomLeft{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
-    std::unique_ptr<QuadTree> cur{};
+    std::unique_ptr<QuadTree> cur;
 
     if (x < topLeftPoint.x() || y < topLeftPoint.y()) {
         m_boundingBox.adjust(-treeW, -treeH, 0, 0);

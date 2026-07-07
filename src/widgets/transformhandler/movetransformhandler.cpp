@@ -101,7 +101,7 @@ TransformHandler::State MoveTransformHandler::mouseMoved(ApplicationContext *con
     const QPointF worldCurPos{transformer.viewToWorld(curPos)};
     const QPointF worldLastPos{transformer.viewToWorld(m_lastPos)};
 
-    QRect dirtyRegion{};
+    QRect dirtyRegion;
     for (const auto &item : selectedItems) {
         if (!item->locked()) {
             const QTransform invertedTransform{item->transformObj().inverted()};
