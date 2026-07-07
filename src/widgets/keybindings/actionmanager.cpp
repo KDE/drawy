@@ -24,6 +24,7 @@
 #include "command/deselectcommand.hpp"
 #include "command/groupcommand.hpp"
 #include "command/insertitemcommand.hpp"
+#include "command/lockcommand.hpp"
 #include "command/removeitemcommand.hpp"
 #include "command/selectcommand.hpp"
 #include "command/ungroupcommand.hpp"
@@ -52,6 +53,7 @@
 #include "serializer/pngserializer.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
+#include "tools/selectiontool/selectiontool.hpp"
 
 #if HAVE_WHATSNEWSNGSUPPORT
 #include <TextAddonsWidgets/WhatsNewNgDialog>
@@ -147,6 +149,10 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
         alignItems(ItemUtils::AlignType::AlignRight);
     })->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
 
+    createAction(Action::LockItems, i18nc("@action", "Locks"), {}, this, &ActionManager::slotLock)->setIcon(QIcon::fromTheme(u"lock"_s));
+
+    createAction(Action::UnLockItem, i18nc("@action", "Unlock"), {}, this, &ActionManager::slotUnLock)->setIcon(QIcon::fromTheme(u"unlock"_s));
+
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 #if HAVE_WHATSNEWSNGSUPPORT
     createAction(Action::WhatsNew, i18nc("@action", "What's new"), {}, this, &ActionManager::slotShowWhatsNew);
@@ -238,7 +244,11 @@ QString ActionManager::actionName(Action type) const
     case Action::SwitchToImageTool:
         return u"switch_to_image_tool"_s;
     case Action::WhatsNew:
-        return u"wharsnew"_s;
+        return u"whatsnew"_s;
+    case Action::LockItems:
+        return u"lock_items"_s;
+    case Action::UnLockItem:
+        return u"unlock_item"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
@@ -276,6 +286,30 @@ void ActionManager::redo()
     m_context->spatialContext()->commandHistory()->redo();
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
+}
+
+void ActionManager::slotLock()
+{
+    auto &selectedItems{m_context->selectionContext()->selectedItems()};
+    if (selectedItems.empty()) {
+        return;
+    }
+
+    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(items, true));
+    m_context->renderingContext()->markForRender();
+    m_context->renderingContext()->markForUpdate();
+    m_context->selectionContext()->reset();
+}
+
+void ActionManager::slotUnLock()
+{
+    const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(m_context->uiContext()->toolBar()->curTool()).getItemsUnderCursor(m_context);
+    if (items.size() == 1 && items.at(0)->locked()) {
+        m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(items, false));
+        m_context->renderingContext()->markForRender();
+        m_context->renderingContext()->markForUpdate();
+    }
 }
 
 void ActionManager::slotDebug()

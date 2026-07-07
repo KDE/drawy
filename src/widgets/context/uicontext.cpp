@@ -200,13 +200,23 @@ void UIContext::reset()
 
 void UIContext::showContextMenu() const
 {
+    auto menu = new QMenu(m_applicationContext->parentWidget());
+    if (toolBar()->curTool().type() == Tool::Type::Selection) {
+        const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(toolBar()->curTool()).getItemsUnderCursor(m_applicationContext);
+        if (items.size() == 1 && items.at(0)->locked()) {
+            menu->addAction(actionManager()->action(ActionManager::Action::UnLockItem));
+            menu->exec(QCursor::pos());
+            toolBar()->curTool().cleanup();
+            delete menu;
+            return;
+        }
+    }
+
     const auto &allItems{m_applicationContext->spatialContext()->quadtree().getAllItems()};
     const auto &selectedItems{m_applicationContext->selectionContext()->selectedItems()};
 
     const bool hasItems{!allItems.empty()};
     const bool hasSelection{!selectedItems.empty()};
-
-    auto menu = new QMenu(m_applicationContext->parentWidget());
 
     if (hasSelection) {
         menu->addAction(actionManager()->action(KStandardActions::Copy));
@@ -263,6 +273,15 @@ void UIContext::showContextMenu() const
         }
         menu->addSeparator();
         menu->addAction(actionManager()->action(ActionManager::Action::ExportSelectedElementsAsImage));
+    }
+
+    if (selectedItems.size() == 1) {
+        menu->addSeparator();
+        if ((*selectedItems.begin())->locked()) {
+            menu->addAction(actionManager()->action(ActionManager::Action::UnLockItem));
+        } else {
+            menu->addAction(actionManager()->action(ActionManager::Action::LockItems));
+        }
     }
 
     menu->addSeparator();
