@@ -215,6 +215,12 @@
     <release version="1.1.0" type="snapshot">
       <description>
         <p>Allow to draw rounded rectangle</p>
+        <p xml:lang="ar">السماح برسم مستطيل مدور الزوايا</p>
+        <p xml:lang="ka">მომრგვალებული მართკუთხედის დახატვის დაშვება</p>
+        <p xml:lang="nl">Sta afgeronde rechthoek tekenen toe</p>
+        <p xml:lang="pt-BR">Permitir desenhar um retângulo arredondado</p>
+        <p xml:lang="sl">Omogoča risanje zaobljenega pravokotnika</p>
+        <p xml:lang="uk">Уможливлено малювання прямокутника зі скругленими кутами</p>
         <p>Improve selected basic shape (bug 519895)</p>
         <p xml:lang="ar">تحسين الشكل الأساسي المحدد (العلة 519895)</p>
         <p xml:lang="ca">Millora la forma bàsica seleccionada (error 519895)</p>
