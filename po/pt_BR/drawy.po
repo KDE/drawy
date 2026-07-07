@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:42+0000\n"
-"PO-Revision-Date: 2026-06-29 08:29-0300\n"
+"POT-Creation-Date: 2026-07-07 00:40+0000\n"
+"PO-Revision-Date: 2026-07-06 08:37-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -108,7 +108,7 @@ msgstr "Alterar ordem Z"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Alterar tipo de canto do retângulo"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -231,7 +231,7 @@ msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Mais ferramentas"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -448,27 +448,27 @@ msgstr "Modo claro"
 msgid "Dark Mode"
 msgstr "Modo escuro"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:18
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Configurações de mão livre"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
 msgstr "Estabilização"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Deixa as linhas mais estáveis reduzindo o tremor das mãos."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Sensibilidade à pressão"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Controla quanto a pressão muda a grossura da linha."
@@ -806,7 +806,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Selecione ponta da seta"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr "Cor de fundo"
@@ -856,18 +856,18 @@ msgstr "Cor"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Canto arredondado"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Canto pontiagudo"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Tipo de canto"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

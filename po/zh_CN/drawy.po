@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:42+0000\n"
+"POT-Creation-Date: 2026-07-07 00:40+0000\n"
 "PO-Revision-Date: 2026-01-01 18:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -230,7 +230,7 @@ msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "更多工具"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -446,27 +446,27 @@ msgstr "浅色模式"
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:18
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr ""
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr ""
@@ -804,7 +804,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "选择箭头"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr ""

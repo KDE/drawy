@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:42+0000\n"
+"POT-Creation-Date: 2026-07-07 00:40+0000\n"
 "PO-Revision-Date: 2026-06-29 11:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -234,7 +234,7 @@ msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Més eines"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -452,27 +452,27 @@ msgstr "Mode clar"
 msgid "Dark Mode"
 msgstr "Mode fosc"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:18
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Configuració de mà alçada"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
 msgstr "Estabilització"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Fa que les línies siguen més estables reduint el sacsament de la mà."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Sensibilitat de la pressió"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Controla la quantitat de pressió que canvia el gruix de la línia."
@@ -810,7 +810,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Trieu la punta de fletxa"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr "Color de fons"

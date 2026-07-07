@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:42+0000\n"
-"PO-Revision-Date: 2026-06-29 08:54+0300\n"
+"POT-Creation-Date: 2026-07-07 00:40+0000\n"
+"PO-Revision-Date: 2026-07-06 09:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -107,7 +107,7 @@ msgstr "Змінити просторовий порядок"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Змінити тип кутів прямокутника"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -232,7 +232,7 @@ msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Додаткові інструменти"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -451,27 +451,27 @@ msgstr "Світлий режим"
 msgid "Dark Mode"
 msgstr "Темний режим"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:18
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Параметри довільного малювання"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
 msgstr "Стабілізація"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Згладжує лінії зменшенням наслідків тремтіння руки."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Чутливість до натиску"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Керує тим, наскільки тиск змінює товщину лінії."
@@ -809,7 +809,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Вибрати кінчик стрілки"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr "Колір тла"
@@ -859,18 +859,18 @@ msgstr "Колір"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Заокруглений кут"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Точковий кут"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Тип кута"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

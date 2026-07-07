@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-06 00:42+0000\n"
-"PO-Revision-Date: 2026-06-29 12:14+0200\n"
+"POT-Creation-Date: 2026-07-07 00:40+0000\n"
+"PO-Revision-Date: 2026-07-06 10:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -106,7 +106,7 @@ msgstr "Z-volgorde wijzigen"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Type hoekrechthoek wijzigen"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -229,7 +229,7 @@ msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr "Meer hulpmiddelen"
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -446,27 +446,27 @@ msgstr "Lichte modus"
 msgid "Dark Mode"
 msgstr "Donkere modus"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:18
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
 msgstr "Instellingen voor de vrije hand"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
 msgstr "Stabilisatie"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr "Maakt lijnen stabieler door het verminderen van handtrillingen."
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
 msgstr "Gevoeligheid voor druk"
 
-#: widgets/dialog/input/freehandsettingswidget.cpp:51
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Regelt in hoeverre de druk de lijndikte beïnvloedt."
@@ -806,7 +806,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr "Pijlkop selecteren"
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr "Achtergrondkleur"
@@ -856,18 +856,18 @@ msgstr "Kleur"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Afgeronde hoek"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Hoek met punt"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Type hoek"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
