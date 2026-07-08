@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:40+0000\n"
-"PO-Revision-Date: 2026-07-02 08:18+0300\n"
+"PO-Revision-Date: 2026-07-07 09:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -107,7 +107,7 @@ msgstr "שינוי מרחק (סדר בציר Z)"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "החלפת סוג ריבוע פינה"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -859,18 +859,18 @@ msgstr "צבע"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "פינה מעוגלת"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "פינה חדה"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "סוג פינה"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
