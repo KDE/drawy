@@ -137,7 +137,7 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
 
     QList<std::shared_ptr<Item>> intersectingItems{
         spatialContext->quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
-            return rect.contains(item->boundingBox());
+            return !item->locked() && rect.contains(item->boundingBox());
         })};
 
     selectionContext->setSelectedItems(intersectingItems.begin(), intersectingItems.end());
