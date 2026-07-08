@@ -454,7 +454,7 @@ void ActionManager::selectAll()
 {
     switchToTool(Tool::Type::Selection);
 
-    const auto &allItems{m_context->spatialContext()->quadtree().getAllItems()};
+    const auto &allItems{m_context->spatialContext()->quadtree().getAllItems(true /*exclude locked items*/)};
     if (!allItems.isEmpty()) {
         m_context->spatialContext()->commandHistory()->push(std::make_shared<SelectCommand>(allItems));
 

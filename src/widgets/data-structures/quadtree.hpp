@@ -53,7 +53,7 @@ public:
 
     void reorder(QList<ItemPtr> &items) const;
 
-    [[nodiscard]] QList<ItemPtr> getAllItems() const;
+    [[nodiscard]] QList<ItemPtr> getAllItems(bool excludeLocked = false) const;
     void clear();
 
     template<typename Shape, typename QueryCondition>
@@ -83,7 +83,7 @@ private:
     void subdivide();
     void expand(const QPointF &point);
 
-    [[nodiscard]] QSet<ItemPtr> getAllUniqueItems() const;
+    [[nodiscard]] QSet<ItemPtr> getAllUniqueItems(bool excludeLocked = false) const;
 };
 
 #include "quadtree.ipp"
