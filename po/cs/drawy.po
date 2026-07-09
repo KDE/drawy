@@ -1,37 +1,38 @@
 # Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the drawy package.
 # SPDX-FileCopyrightText: 2026 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:40+0000\n"
-"PO-Revision-Date: 2026-03-17 08:45+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-08 23:20+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: apps/main.cpp:43 widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr ""
+msgstr "© 2025–%1 Autoři Drawy"
 
 #: apps/main.cpp:58
 #, kde-format
@@ -42,22 +43,22 @@ msgstr "Volitelný argument 'file' "
 #: apps/main.cpp:59
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
-msgstr ""
+msgstr "Váš praktický nástroj pro neomezené brainstormingy!"
 
 #: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "Změnit šířku tahu"
 
 #: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
-msgstr ""
+msgstr "Změnit barvu tahu"
 
 #: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
-msgstr "Změnit krytí"
+msgstr "Změnit průhlednost"
 
 #: gui/properties/property.cpp:107
 #, kde-format
@@ -67,7 +68,7 @@ msgstr "Změnit velikost písma"
 #: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
-msgstr ""
+msgstr "Změnit velikost gumy"
 
 #: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
@@ -78,7 +79,7 @@ msgstr "Činnosti"
 #: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
-msgstr ""
+msgstr "Změnit styl tahu"
 
 #: gui/properties/property.cpp:115
 #, kde-format
@@ -88,32 +89,32 @@ msgstr "Změnit barvu pozadí"
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
-msgstr ""
+msgstr "Změnit styl pozadí"
 
 #: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Start Arrow Head"
-msgstr ""
+msgstr "Změnit tvar šipky na začátku"
 
 #: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change End Arrow Head"
-msgstr ""
+msgstr "Změnit tvar šipky na konci"
 
 #: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
-msgstr ""
+msgstr "Změnit pořadí"
 
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Změnit typ rohového obdélníku"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "Základní tvary"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
@@ -125,49 +126,49 @@ msgstr "Trojúhelník"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "X Box"
 
 #: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
-msgstr ""
+msgstr "Zarovnat položky"
 
 #: widgets/command/commandhistory.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr ""
+msgstr "Zpět: %1"
 
 #: widgets/command/commandhistory.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr ""
+msgstr "Znovu: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
-msgstr ""
+msgstr "Zrušit výběr objektu"
 
 #: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
-msgstr ""
+msgstr "Seskupit objekt"
 
 #: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
-msgstr ""
+msgstr "Vložit objekt"
 
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
-msgstr ""
+msgstr "Změnit velikost čáry"
 
 #: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
-msgstr ""
+msgstr "Změnit zámek"
 
 #: widgets/command/moveitemcommand.cpp:72
 #, kde-format
@@ -185,7 +186,7 @@ msgstr[2] "Odstranit %1 objektů"
 #: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
-msgstr ""
+msgstr "Změnit velikost objektu"
 
 #: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
@@ -200,13 +201,13 @@ msgstr "Vybrat objekt"
 #: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
-msgstr ""
+msgstr "Zrušit seskupení objektů"
 
 #: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
@@ -218,7 +219,7 @@ msgstr "Původní přiblížení"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -227,12 +228,10 @@ msgid "Image"
 msgstr "Obrázek"
 
 #: widgets/components/toolbuttonselectplugin.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Nástroj pro přesouvání"
+msgstr "Více nástrojů"
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
@@ -248,13 +247,13 @@ msgstr "Drawy"
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr ""
+msgstr "Váš praktický nástroj pro neomezené brainstormingy!"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "Prayag Jain"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
@@ -273,11 +272,10 @@ msgid "Developer"
 msgstr "Vývojář"
 
 #: widgets/context/applicationcontext.cpp:46
-#, fuzzy, kde-format
-#| msgid "Untitled.%1"
+#, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Nepojmenovaný.%1"
+msgstr "Nepojmenovaný"
 
 #: widgets/context/uicontext.cpp:67
 #, kde-format
@@ -289,7 +287,7 @@ msgstr "Výběr"
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
-msgstr ""
+msgstr "Volná forma"
 
 #: widgets/context/uicontext.cpp:69
 #, kde-format
@@ -340,21 +338,19 @@ msgid "Move"
 msgstr "Přesunout"
 
 #: widgets/context/uicontext.cpp:243
-#, fuzzy, kde-format
-#| msgid "Order"
+#, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
 "items"
 msgid "Reorder"
-msgstr "Pořadí"
+msgstr "Přeskupit"
 
 #: widgets/context/uicontext.cpp:253
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"
-msgstr "Zarovnání"
+msgstr "Zarovnat"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -368,7 +364,7 @@ msgstr "Probíhá prezentace"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
-msgstr ""
+msgstr "Nastavit Drawy"
 
 #: widgets/dialog/configuresettingsdialog.cpp:40
 #, kde-format
@@ -423,7 +419,7 @@ msgstr "Otevřít adresář"
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
-msgstr ""
+msgstr "Obnovit předchozí sezení při spuštění"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
 #, kde-format
@@ -431,26 +427,24 @@ msgid "Canvas"
 msgstr "Plátno"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Light background color"
-msgstr "Barva pozadí"
+msgstr "Světlá barva pozadí"
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Background Color"
+#, kde-format
 msgid "Dark background color"
-msgstr "Barva pozadí"
+msgstr "Tmavá barva pozadí"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta barev"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
-msgstr ""
+msgstr "Světlý režim"
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
@@ -460,37 +454,37 @@ msgstr "Tmavý režim"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Nastavení volné ruky"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Stabilizace"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Zajišťuje rovnoměrnější tahy tím, že tlumí chvění ruky."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Citlivost na tlak"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Určuje, do jaké míry tlak ovlivňuje tloušťku čáry."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr ""
+msgstr "Správce napájení"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr ""
+msgstr "Zakázat uzamčení obrazovky při zobrazení na celou obrazovku"
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
@@ -502,7 +496,7 @@ msgstr "Celá obrazovka"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr ""
+msgstr "Zapnout ladicí režim"
 
 #: widgets/drawycommandlineparser.cpp:22
 #, kde-format
@@ -512,12 +506,10 @@ msgstr "Seznam dostupných voleb pro uživatelskou zpětnou vazbu"
 
 #: widgets/keybindings/actionmanager.cpp:84
 #: widgets/keybindings/actionmanager.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export as SVG"
+#, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Exportovat jako SVG"
+msgstr "Exportovat jako obrázek"
 
 #: widgets/keybindings/actionmanager.cpp:91
 #, kde-format
@@ -529,7 +521,7 @@ msgstr "Seskupit položky"
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
-msgstr ""
+msgstr "Zrušit seskupení položek"
 
 #: widgets/keybindings/actionmanager.cpp:99
 #, kde-format
@@ -541,19 +533,19 @@ msgstr "Smazat"
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
-msgstr ""
+msgstr "Vyčistit plátno"
 
 #: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
-msgstr ""
+msgstr "Nástroj pro volné kreslení"
 
 #: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
-msgstr ""
+msgstr "Nástroj guma"
 
 #: widgets/keybindings/actionmanager.cpp:108
 #, kde-format
@@ -589,7 +581,7 @@ msgstr "Nástroj na text"
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
-msgstr ""
+msgstr "Nástroj šipka"
 
 #: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
@@ -601,13 +593,13 @@ msgstr "Nástroj pro přesouvání"
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr ""
+msgstr "Nástroj pro obrázky"
 
 #: widgets/keybindings/actionmanager.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
-msgstr ""
+msgstr "Nástroj diamant"
 
 #: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
@@ -619,13 +611,13 @@ msgstr "Odsunout do pozadí"
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
-msgstr ""
+msgstr "Odeslat zpět"
 
 #: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
-msgstr ""
+msgstr "Přenést dopředu"
 
 #: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
@@ -637,39 +629,37 @@ msgstr "Přenést do popředí"
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
-msgstr ""
+msgstr "Zarovnat nahoru"
 
 #: widgets/keybindings/actionmanager.cpp:134
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
-msgstr ""
+msgstr "Vystředit svisle"
 
 #: widgets/keybindings/actionmanager.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
-msgstr ""
+msgstr "Zarovnat dolů"
 
 #: widgets/keybindings/actionmanager.cpp:140
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt "@action"
 msgid "Align Left"
-msgstr "Zarovnání"
+msgstr "Zarovnat doleva"
 
 #: widgets/keybindings/actionmanager.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
-msgstr ""
+msgstr "Vystředit vodorovně"
 
 #: widgets/keybindings/actionmanager.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt "@action"
 msgid "Align Right"
-msgstr "Zarovnání"
+msgstr "Zarovnat doprava"
 
 #: widgets/keybindings/actionmanager.cpp:150
 #, kde-format
@@ -681,7 +671,7 @@ msgstr "Ladění"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "Co je nového"
 
 #: widgets/keybindings/actionmanager.cpp:489
 #, kde-format
@@ -704,7 +694,7 @@ msgstr "Uložit soubor"
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
-msgstr ""
+msgstr "Opravdu chcete plátno vymazat?"
 
 #: widgets/keybindings/actionmanager.cpp:515
 #, kde-format
@@ -721,25 +711,23 @@ msgstr "Otevřít soubor"
 #: widgets/keybindings/actionmanager.cpp:585
 #, kde-format
 msgid "Untitled.svg"
-msgstr ""
+msgstr "Nepojmenovaný.svg"
 
 #: widgets/keybindings/actionmanager.cpp:588
 #, kde-format
 msgid "SVG (*.svg)"
-msgstr ""
+msgstr "SVG (*.svg)"
 
 #: widgets/keybindings/actionmanager.cpp:589
 #, kde-format
 msgid "PNG (*.png)"
-msgstr ""
+msgstr "PNG (*.png)"
 
 #: widgets/keybindings/actionmanager.cpp:593
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Svg"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Exportovat do SVG"
+msgstr "Exportovat jako obrázek"
 
 #: widgets/keybindings/actionmanager.cpp:647
 #, kde-format
@@ -754,7 +742,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
-msgstr ""
+msgstr "Vyžadována akce"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
@@ -772,7 +760,7 @@ msgstr "Výběr skupin"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
-msgstr ""
+msgstr "Zrušit seskupení výběru"
 
 #: widgets/properties/widgets/alignmentwidget.cpp:64
 #, kde-format
@@ -780,44 +768,37 @@ msgid "Alignment"
 msgstr "Zarovnání"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
-msgstr "Žádný"
+msgstr "Žádné"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
-#, fuzzy, kde-format
-#| msgid "Arrow"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Šipka"
+msgstr "Otevřená šipka"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
 msgstr "Trojúhelník"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Triangle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "Trojúhelník"
+msgstr "Vyplněný trojúhelník"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Circle"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
 msgstr "Kolečko"
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Diamond"
+#, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
 msgstr "Diamant"
@@ -826,7 +807,7 @@ msgstr "Diamant"
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr ""
+msgstr "Vybrat hrot šipky"
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
@@ -850,7 +831,7 @@ msgstr "Plný"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
-msgstr ""
+msgstr "Diagonální kříž"
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
@@ -867,7 +848,7 @@ msgstr "Styl pozadí"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
-msgstr ""
+msgstr "Vybrat vlastní barvu"
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
@@ -878,29 +859,29 @@ msgstr "Barva"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Zakulacený roh"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Špičatý roh"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Typ rohu"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr ""
+msgstr "Konec hrotu šipky"
 
 #: widgets/properties/widgets/erasersizewidget.cpp:32
 #, kde-format
 msgid "Eraser Size"
-msgstr ""
+msgstr "Velikost gumy"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -910,13 +891,13 @@ msgstr "Velikost písma"
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
 msgid "Opacity"
-msgstr "Krytí"
+msgstr "Průhlednost"
 
 #: widgets/properties/widgets/startarrowtypewidget.cpp:21
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr ""
+msgstr "Začátek hrotu šipky"
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
@@ -933,7 +914,7 @@ msgstr "Tečkovaný"
 #: widgets/properties/widgets/stokestylewidget.cpp:63
 #, kde-format
 msgid "Stroke Style"
-msgstr ""
+msgstr "Styl tahu"
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format

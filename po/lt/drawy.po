@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:40+0000\n"
-"PO-Revision-Date: 2026-06-29 19:01+0300\n"
+"PO-Revision-Date: 2026-07-08 13:32+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -110,7 +110,7 @@ msgstr "Keisti Z tvarką"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Keisti stačiakampio kampų tipą"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -862,18 +862,18 @@ msgstr "Spalva"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Apvalus kampas"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Smailus kampas"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Kampo tipas"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
