@@ -11,6 +11,7 @@
 #include <QTextDocument>
 
 #include "item.hpp"
+class SpellCheckHighlighter;
 
 class LIBDRAWYGUI_EXPORT TextItem : public Item
 {
@@ -77,6 +78,7 @@ private:
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
     QTextDocument m_document;
+    const SpellCheckHighlighter *m_highlighter;
     QTextCursor m_cursor;
     QTextCharFormat m_currentFormat;
     Mode m_mode{Mode::Normal};

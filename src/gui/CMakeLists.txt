@@ -144,6 +144,8 @@ target_sources(
         customelements/customelementsmanager.cpp
         customelements/customelement.hpp
         customelements/customelement.cpp
+        common/utils/spellcheckhighlighter.cpp
+        common/utils/spellcheckhighlighter.hpp
 )
 
 ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER DRAWY_GUI_LOG
@@ -213,6 +215,7 @@ target_link_libraries(
         Qt::Gui
         KF6::I18n
         KF6::CoreAddons
+        KF6::SonnetCore
         drawyconfig
         ${ZSTD_LINK_LIBRARIES}
 )

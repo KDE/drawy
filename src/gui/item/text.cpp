@@ -5,6 +5,7 @@
 #include "text.hpp"
 
 #include "common/utils/math.hpp"
+#include "common/utils/spellcheckhighlighter.hpp"
 #include <QAbstractTextDocumentLayout>
 #include <QFontMetricsF>
 #include <QJsonObject>
@@ -20,7 +21,8 @@
 
 using namespace Qt::Literals::StringLiterals;
 TextItem::TextItem()
-    : m_cursor(&m_document)
+    : m_highlighter(new SpellCheckHighlighter(&m_document))
+    , m_cursor(&m_document)
 {
     m_properties[Property::Type::StrokeColor] = Property{QColor(Qt::white), Property::Type::StrokeColor};
     m_properties[Property::Type::Opacity] = Property{255, Property::Type::Opacity};
