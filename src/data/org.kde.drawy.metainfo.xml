@@ -28,6 +28,7 @@
   <summary xml:lang="ar">أداة مفيدة غير محدودة لتبادل الأفكار</summary>
   <summary xml:lang="ca">La vostra eina pràctica, infinita i de pluja d'idees</summary>
   <summary xml:lang="ca-valencia">La vostra eina pràctica, infinita i de pluja d'idees</summary>
+  <summary xml:lang="cs">Váš praktický nástroj pro neomezené brainstormingy</summary>
   <summary xml:lang="de">Ihr nützliches, unendliches Werkzeug zur Ideenfindung</summary>
   <summary xml:lang="es">Herramienta práctica y sin límites para generar lluvia de ideas</summary>
   <summary xml:lang="eu">Zure ideia-jasa tresna erabilgarri eta infinitua</summary>
@@ -56,6 +57,7 @@
     <p xml:lang="ar">تتيح لك السبورة إنشاء الأفكار والرسوم التخطيطية والملاحظات المرئية على لوحة بيضاء لا نهائية تتميز بسطح عمل سلس وسريع الاستجابة. يمكنك الرسم باستخدام الأجهزة اللوحية الحساسة للضغط، وإضافة النصوص، وإدراج الصور، واستخدام الأشكال الأساسية مثل المستطيلات والأشكال البيضاوية والسهام والخطوط لتنظيم المحتوى الخاص بك بوضوح. يمكنك اختيار لوحة الألوان الخاصة بك وتصدير عملك كملفات صور عند الحاجة. صُمم برنامج السبورة ليكون خفيفًا وسريعًا، مما يسهل عليك تسجيل الأفكار والعمل بحرية دون أي عوامل تشتيت.</p>
     <p xml:lang="ca">El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
     <p xml:lang="ca-valencia">Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar la vostra pròpia paleta de colors i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
+    <p xml:lang="cs">Drawy vám umožňuje vytvářet nápady, diagramy a vizuální poznámky na nekonečné bílé tabuli s plynulým a citlivým plátnem. Můžete kreslit pomocí tabletu s podporou citlivosti na tlak, přidávat text, vkládat obrázky a používat základní tvary, jako jsou obdélníky, elipsy, šipky a čáry, abyste svůj obsah přehledně uspořádali. Můžete si vybrat vlastní paletu barev a svou práci kdykoli exportovat jako obrazové soubory. Aplikace Drawy je navržena tak, aby byla lehká a rychlá, což usnadňuje zaznamenávání nápadů a volnou práci bez rušivých vlivů.</p>
     <p xml:lang="de">Mit Drawy können Sie Ideen, Diagramme und visuelle Notizen auf einem unendlich großen Whiteboard mit einer flüssig reagierenden Arbeitsfläche erstellen. Sie können mit druckempfindlicher Tablet-Unterstützung zeichnen, Text hinzufügen, Bilder einfügen und einfache Formen wie Rechtecke, Ellipsen, Pfeile und Linien verwenden, um Ihre Inhalte übersichtlich zu gestalten. Sie können Ihre eigene Farbpalette auswählen und Ihre Arbeit bei Bedarf als Bilddateien exportieren. Drawy ist so konzipiert, dass es schlank und schnell bleibt, sodass Sie Ideen einfach festhalten und ungestört arbeiten können.</p>
     <p xml:lang="es">Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
     <p xml:lang="eu">Drawy-k ideiak, diagramak eta ohar bisualak sortzeko aukera ematen du, mihise leun eta erantzunkorra duen arbela infinitu batean. Presioarekiko sentikorra den tableta baten laguntzaz marraztu dezakezu, testua gehitu, irudiak txertatu, eta zure edukia modu argian antolatzeko oinarrizko formak erabil ditzakezu, hala nola laukizuzenak, elipseak, geziak eta lerroak. Zure kolore-paleta aukeratu dezakezu, eta behar duzunean zure lana irudi-fitxategi gisa esportatu dezakezu. Drawy arina eta azkarra izateko diseinatuta dago, ideiak erraz jaso eta distrakziorik gabe askatasunez lan egiteko.</p>
@@ -115,6 +117,7 @@
       <caption xml:lang="ar">إنشاء مخططات وملاحظات وأفكار على لوحة بيضاء لا حدود لها.</caption>
       <caption xml:lang="ca">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
       <caption xml:lang="ca-valencia">Creeu diagrames, notes i idees en una pissarra infinita.</caption>
+      <caption xml:lang="cs">Vytvářejte schémata, poznámky a nápady na nekonečné tabuli.</caption>
       <caption xml:lang="de">Erstellen Sie Diagramme, Notizen und Ideen auf einem unendlichen Whiteboard.</caption>
       <caption xml:lang="es">Creación de diagramas, notas e ideas en una pizarra infinita.</caption>
       <caption xml:lang="eu">Sortu diagramak, oharrak eta ideiak arbela infinitu batean.</caption>
@@ -136,6 +139,7 @@
       <caption xml:lang="ar">اضبط الألوان وأنماط الخطوط والأدوات بسهولة.</caption>
       <caption xml:lang="ca">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
       <caption xml:lang="ca-valencia">Ajusteu els colors, estils de traç i eines amb facilitat.</caption>
+      <caption xml:lang="cs">Snadno upravujte barvy, styly obrysů a nástroje.</caption>
       <caption xml:lang="de">Passen Sie Farben, Zeichenstile und Werkzeuge einfach an.</caption>
       <caption xml:lang="es">Ajuste fácil de colores, estilos de trazos y herramientas.</caption>
       <caption xml:lang="eu">Koloreak, trazuen estiloak eta tresnak erraz doitu.</caption>
@@ -157,6 +161,7 @@
       <caption xml:lang="ar">حافظ على تركيزك باستخدام مساحة عمل بالوضع المظلم.</caption>
       <caption xml:lang="ca">Estigueu centrat amb un espai de treball en mode fosc.</caption>
       <caption xml:lang="ca-valencia">Esteu centrat amb un espai de treball en mode fosc.</caption>
+      <caption xml:lang="cs">Udržte si soustředění díky pracovnímu prostředí v tmavém režimu.</caption>
       <caption xml:lang="de">Bleiben Sie dank dem dunklen Modus konzentriert.</caption>
       <caption xml:lang="es">Trabaje concentrado en un espacio de trabajo con modo oscuro.</caption>
       <caption xml:lang="eu">Arreta mantendu modu iluneko lan-eremuarekin.</caption>
@@ -178,6 +183,7 @@
       <caption xml:lang="ar">اعمل بسلاسة باستخدام أدوات سريعة وسريعة الاستجابة.</caption>
       <caption xml:lang="ca">Treballeu sense problemes amb eines ràpides i fluides.</caption>
       <caption xml:lang="ca-valencia">Treballeu sense problemes amb eines ràpides i fluides.</caption>
+      <caption xml:lang="cs">Pracujte hladce s rychlými a pohotovými nástroji.</caption>
       <caption xml:lang="de">Arbeiten Sie flüssig mit reaktionsschnellen Werkzeugen.</caption>
       <caption xml:lang="es">Trabaje sin problemas con herramientas rápidas y de rápida respuesta.</caption>
       <caption xml:lang="eu">Modu leunean lan egin tresna azkar eta erantzunkorrekin.</caption>
@@ -202,6 +208,7 @@
         <p xml:lang="ar">يقدّم هذا التحديث تجربة رسم يدوي أكثر سلاسة وقابلية للتخصيص، ويُصلح مشكلة وميض الخطوط المرسومة حديثًا.</p>
         <p xml:lang="ca">Aquesta actualització ofereix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
         <p xml:lang="ca-valencia">Esta actualització oferix una experiència de dibuix a mà alçada més suau i personalitzable i soluciona un problema on les línies dibuixades recents parpellegen.</p>
+        <p xml:lang="cs">Tato aktualizace přináší plynulejší a lépe přizpůsobitelné kreslení od ruky a opravuje problém, kvůli kterému nově nakreslené čáry blikaly.</p>
         <p xml:lang="es">Esta actualización ofrece una experiencia de dibujo a mano alzada más fluida y personalizable. Además, corrige un problema por el que las líneas recién dibujadas parpadeaban.</p>
         <p xml:lang="eu">Eguneratze honek eskuz marrazteko esperientzia leunagoa eta neurrira egokigarriagoa eskaintzen du, eta marraztu berri diren trazuek keinuka agertzea eragiten zuen akats bat konpontzen du.</p>
         <p xml:lang="he">העדכון הזה מספק חוויית ציור חופשי חלקה וגמישה יותר ומתקן תקלה שבה קווים חדשים שצוירו הבהבו.</p>
@@ -220,6 +227,7 @@
           <li xml:lang="ar">أصبح الرسم باليد أكثر جودة وطبيعية الآن.</li>
           <li xml:lang="ca">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
           <li xml:lang="ca-valencia">Ara, dibuixar a mà alçada se sent molt millor i més natural.</li>
+          <li xml:lang="cs">Ruční kreslení teď připadá mnohem příjemnější a přirozenější.</li>
           <li xml:lang="es">Ahora, dibujar a mano resulta mucho más cómodo y natural.</li>
           <li xml:lang="eu">Eskuz marraztea askoz atseginagoa eta naturalagoa da orain.</li>
           <li xml:lang="he">ציור ידני מרגיש טוב וטבעי יותר בהרבה.</li>
@@ -237,6 +245,7 @@
           <li xml:lang="ar">أُضيفت إعدادات لتغيير ضغط القلم ودرجة نعومة الخطوط.</li>
           <li xml:lang="ca">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
           <li xml:lang="ca-valencia">S'ha afegit la configuració perquè pugueu canviar la pressió del llapis i com de suaus es veuen les línies.</li>
+          <li xml:lang="cs">Přidána nastavení, díky kterým můžete upravit sílu tlaku pera a plynulost čar.</li>
           <li xml:lang="es">Se han añadido ajustes para poder cambiar la presión del lápiz y la suavidad de las líneas.</li>
           <li xml:lang="eu">Ezarpen berriak gehitu dira arkatzaren presioarekiko sentikortasuna eta trazuen leuntasuna doitzeko.</li>
           <li xml:lang="he">נוספו הגדרות כדי לאפשר לך לשנות את לחץ העט וכמה חלק הקווים שלך נראים.</li>
@@ -254,6 +263,7 @@
           <li xml:lang="ar">لن تَومِض الخطوط والأشكال أو تتلألأ فور رسمها بعد الآن.</li>
           <li xml:lang="ca">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
           <li xml:lang="ca-valencia">Les línies i les formes ja no parpellejaran o faran un flaix just després de dibuixar-les.</li>
+          <li xml:lang="cs">Čáry a tvary již nebudou blikat ani zářit hned po jejich nakreslení.</li>
           <li xml:lang="es">Las líneas y las formas ya no parpadearán ni destellarán justo después de dibujarlas.</li>
           <li xml:lang="eu">Marraztu ondoren, trazuek eta formek ez dute gehiago keinurik edo distirarik egingo.</li>
           <li xml:lang="he">קווים וצורות לא יהבהבו יותר מיד לאחר ציורם.</li>
@@ -274,6 +284,7 @@
         <p xml:lang="ar">هذا تحديث بسيط يعمل على تحسين الرموز، وتحديث بيانات تعريف AppStream لتشمل المعلومات الصحيحة، بالإضافة إلى إصلاح بعض الأخطاء.</p>
         <p xml:lang="ca">Aquest és un pedaç petit que millora les icones, actualitza les metadades de l'appstream per a incloure la informació correcta i inclou algunes correccions d'errors.</p>
         <p xml:lang="ca-valencia">Este és un pedaç xicotet que millora les icones, actualitza les metadades d'appstream per a incloure la informació correcta i inclou algunes esmenes d'errors.</p>
+        <p xml:lang="cs">Toto je malá oprava, která vylepšuje ikony, aktualizuje metadata v AppStreamu tak, aby obsahovala správné informace, a obsahuje několik oprav chyb.</p>
         <p xml:lang="de">Dies ist eine kleine Aktualisierung, die das Aussehen der Symbole verbessert, die Appstream-Metadaten mit den korrekten Informationen aktualisiert, und einige Fehlerbehebungen enthält.</p>
         <p xml:lang="es">Pequeño parche que mejora los iconos, actualiza los metadatos de appstream para incluir información correcta e incluye algunas correcciones de fallos.</p>
         <p xml:lang="eu">Adabaki txiki bat da hau, ikonoak hobetu, informazio zuzena sartzeko AppStream metadatuak eguneratu, eta akats konponketa batzuk dituena.</p>
@@ -298,6 +309,7 @@
         <p xml:lang="ar">بعد أشهر من العمل، تم إطلاق برنامج السبورة أخيرًا! تتيح لك السبورة إنشاء الأفكار والرسوم التخطيطية والملاحظات المرئية على لوحة بيضاء لا نهائية تتميز بسطح عمل سلس وسريع الاستجابة. يمكنك الرسم باستخدام الأجهزة اللوحية الحساسة للضغط، وإضافة النصوص، وإدراج الصور، واستخدام الأشكال الأساسية مثل المستطيلات والأشكال البيضاوية والسهام والخطوط لتنظيم المحتوى الخاص بك بوضوح. يمكنك اختيار لوحة الألوان الخاصة بك وتصدير عملك كملفات صور عند الحاجة. صُمم برنامج السبورة ليكون خفيفًا وسريعًا، مما يسهل عليك تسجيل الأفكار والعمل بحرية دون أي عوامل تشتيت.</p>
         <p xml:lang="ca">Després de mesos de feina, finalment el Drawy s'ha publicat! El Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan sigui necessari. El Drawy està construït per a ser lleuger i ràpid, fent que sigui fàcil capturar idees i treballar lliurement sense distraccions.</p>
         <p xml:lang="ca-valencia">Després de mesos de faena, finalment Drawy s'ha publicat! Drawy us permet crear idees, diagrames i notes visuals en una pissarra infinita amb un llenç suau i fluid. Podeu dibuixar amb una tauleta sensible a la pressió, afegir text, inserir imatges i utilitzar formes bàsiques com rectangles, el·lipses, fletxes i línies per a organitzar clarament el contingut. Podeu triar una paleta de colors pròpia i exportar el treball com a fitxers d'imatge quan siga necessari. Drawy està construït per a ser lleuger i ràpid, fent que siga fàcil capturar idees i treballar lliurement sense distraccions.</p>
+        <p xml:lang="cs">Po měsících práce je Drawy konečně k dispozici! Drawy vám umožňuje vytvářet nápady, diagramy a vizuální poznámky na nekonečné bílé tabuli s plynulým a citlivým plátnem. Můžete kreslit s podporou tabletů citlivých na tlak, přidávat text, vkládat obrázky a používat základní tvary, jako jsou obdélníky, elipsy, šipky a čáry, abyste svůj obsah přehledně uspořádali. Můžete si vybrat vlastní paletu barev a svou práci kdykoli exportovat jako obrazové soubory. Drawy je navržen tak, aby zůstal lehký a rychlý, což usnadňuje zaznamenávání nápadů a volnou práci bez rušivých vlivů.</p>
         <p xml:lang="de">Nach monatelanger Arbeit ist Drawy nun endlich veröffentlicht! Mit Drawy können Sie Ideen, Diagramme und visuelle Notizen auf einem unendlich großen Whiteboard mit einer flüssig reagierenden Arbeitsfläche erstellen. Sie können mit druckempfindlicher Tablet-Unterstützung zeichnen, Text hinzufügen, Bilder einfügen und einfache Formen wie Rechtecke, Ellipsen, Pfeile und Linien verwenden, um Ihre Inhalte übersichtlich zu gestalten. Sie können Ihre eigene Farbpalette auswählen und Ihre Arbeit bei Bedarf als Bilddateien exportieren. Drawy ist so konzipiert, dass es schlank und schnell bleibt, sodass Sie Ideen einfach festhalten und ungestört arbeiten können.</p>
         <p xml:lang="es">Tras meses de trabajo, ¡Drawy se ha publicado! Drawy permite crear ideas, diagramas y notas visuales en una pizarra infinita con un lienzo fluido y adaptable. Se puede dibujar usando tabletas sensibles a la presión, añadir texto, insertar imágenes y usar formas básicas (como rectángulos, elipses, flechas y líneas) para organizar el contenido con claridad. Se puede elegir una paleta de colores propia y exportar el trabajo como archivos de imagen cuando sea necesario. Drawy está diseñado para ser ligero y rápido, lo que facilita capturar ideas y trabajar con libertad y sin distracciones.</p>
         <p xml:lang="eu">Hilabeteetako lanaren ondoren, Drawy kaleratu da azkenean! Drawy-k arbela infinitu batean ideiak, diagramak eta ohar bisualak sortzeko aukera ematen du, mihise leun eta erantzunkor batekin. Presioarekiko sentikorra den tableta baten laguntzaz marraztu dezakezu, testua gehitu, irudiak txertatu, eta zure edukia modu argian antolatzeko oinarrizko formak erabil ditzakezu, hala nola laukizuzenak, elipseak, geziak eta lerroak. Zure kolore-paleta aukeratu dezakezu, eta behar duzunean zure lana irudi-fitxategi gisa esportatu dezakezu. Drawy arina eta azkarra izateko diseinatuta dago, ideiak erraz jaso eta distrakziorik gabe askatasunez lan egiteko.</p>
