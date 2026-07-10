@@ -13,6 +13,10 @@ class ConfigureMiscWidget;
 class ConfigureUserFeedbackWidget;
 #endif
 class ConfigureInputWidget;
+namespace Sonnet
+{
+class ConfigWidget;
+}
 
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureSettingsDialog : public KPageDialog
 {
@@ -30,6 +34,8 @@ private:
     ConfigureGeneralWidget *const mConfigureGeneralWidget;
     ConfigureInputWidget *const mConfigureInputWidget;
     KPageWidgetItem *mConfigureInputWidgetPage = nullptr;
+    Sonnet::ConfigWidget *const mSonnetConfigWidget;
+    KPageWidgetItem *mSonnetConfigWidgetPage = nullptr;
     KPageWidgetItem *mConfigureGeneralWidgetPage = nullptr;
 #if WITH_DBUS
     ConfigureMiscWidget *const mConfigureMiscWidget;

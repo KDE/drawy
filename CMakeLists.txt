@@ -58,6 +58,7 @@ find_package(
         IconThemes
         I18n
         SyntaxHighlighting
+        Sonnet
 )
 
 find_package(KF6UserFeedback ${KF_MIN_VERSION} CONFIG)

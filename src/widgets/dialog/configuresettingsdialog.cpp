@@ -14,6 +14,7 @@
 #include <KWindowConfig>
 #include <QPushButton>
 #include <QWindow>
+#include <Sonnet/ConfigWidget>
 #if HAVE_KUSERFEEDBACK
 #include "userfeedback/configureuserfeedbackwidget.hpp"
 #endif
@@ -27,6 +28,7 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureGeneralWidget(new ConfigureGeneralWidget(this))
     , mConfigureInputWidget(new ConfigureInputWidget(this))
+    , mSonnetConfigWidget(new Sonnet::ConfigWidget(this))
 #if WITH_DBUS
     , mConfigureMiscWidget(new ConfigureMiscWidget(this))
 #endif
@@ -46,6 +48,11 @@ ConfigureSettingsDialog::ConfigureSettingsDialog(QWidget *parent)
     mConfigureInputWidgetPage = new KPageWidgetItem(mConfigureInputWidget, inputPageName);
     mConfigureInputWidgetPage->setIcon(QIcon::fromTheme(u"dialog-input-devices-symbolic"_s));
     addPage(mConfigureInputWidgetPage);
+
+    const QString spellCheckPageName = i18n("Spell Checking");
+    mSonnetConfigWidgetPage = new KPageWidgetItem(mSonnetConfigWidget, spellCheckPageName);
+    mSonnetConfigWidgetPage->setIcon(QIcon::fromTheme(u"tools-check-spelling"_s));
+    addPage(mSonnetConfigWidgetPage);
 
 #if WITH_DBUS
     const QString miscPageName = i18n("Misc");
@@ -90,6 +97,7 @@ void ConfigureSettingsDialog::writeConfig()
 
 void ConfigureSettingsDialog::slotAccepted()
 {
+    mSonnetConfigWidget->save();
     mConfigureGeneralWidget->save();
     mConfigureInputWidget->save();
 #if WITH_DBUS
@@ -116,6 +124,7 @@ void ConfigureSettingsDialog::slotRestoreDefaults()
 {
     mConfigureGeneralWidget->restoreToDefaults();
     mConfigureInputWidget->restoreToDefaults();
+    mSonnetConfigWidget->slotDefault();
 #if WITH_DBUS
     mConfigureMiscWidget->restoreToDefaults();
 #endif
