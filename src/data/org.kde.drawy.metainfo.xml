@@ -220,6 +220,7 @@
   <releases>
     <release version="1.1.0" type="snapshot">
       <description>
+        <p>Allow to lock items</p>
         <p>Allow to draw rounded rectangle</p>
         <p xml:lang="ar">السماح برسم مستطيل مدور الزوايا</p>
         <p xml:lang="ca">Permet dibuixar un rectangle arrodonit</p>
