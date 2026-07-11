@@ -24,7 +24,7 @@ protected:
     void highlightBlock(const QString &text) override;
 
 private:
-    bool isSpellcheckable(const QString &word) const;
+    LIBDRAWYGUI_NO_EXPORT bool isSpellcheckable(const QString &word) const;
 
     Sonnet::Speller m_speller;
     const Sonnet::GuessLanguage m_languageGuesser;
