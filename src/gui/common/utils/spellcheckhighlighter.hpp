@@ -10,6 +10,7 @@
 
 #include <QSyntaxHighlighter>
 #include <Sonnet/GuessLanguage>
+#include <Sonnet/Settings>
 #include <Sonnet/Speller>
 
 class LIBDRAWYGUI_EXPORT SpellCheckHighlighter : public QSyntaxHighlighter
@@ -23,6 +24,9 @@ protected:
     void highlightBlock(const QString &text) override;
 
 private:
+    bool isSpellcheckable(const QString &word) const;
+
     Sonnet::Speller m_speller;
     const Sonnet::GuessLanguage m_languageGuesser;
+    const Sonnet::Settings *m_settings;
 };
