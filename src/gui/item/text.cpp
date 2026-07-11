@@ -286,6 +286,11 @@ void TextItem::setHtml(const QString &html)
     m_document.setHtml(html);
 }
 
+SpellCheckHighlighter *TextItem::highlighter() const
+{
+    return m_highlighter;
+}
+
 Item::FormType TextItem::formType() const
 {
     return Item::FormType::Text;

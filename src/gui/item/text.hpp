@@ -50,6 +50,8 @@ public:
     [[nodiscard]] QString html() const;
     void setHtml(const QString &html);
 
+    [[nodiscard]] SpellCheckHighlighter *highlighter() const;
+
     [[nodiscard]] QRectF cursorRect(int offset = 0) const;
 
     void updatePreedit(const QString &preedit, const QList<QInputMethodEvent::Attribute> &attributes);
@@ -78,7 +80,7 @@ private:
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
     QTextDocument m_document;
-    const SpellCheckHighlighter *m_highlighter;
+    SpellCheckHighlighter *m_highlighter;
     QTextCursor m_cursor;
     QTextCharFormat m_currentFormat;
     Mode m_mode{Mode::Normal};

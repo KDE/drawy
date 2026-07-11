@@ -9,11 +9,14 @@
 #include "command/commandhistory.hpp"
 #include "common/constants.hpp"
 #include "common/renderitems.hpp"
+#include "common/utils/spellcheckhighlighter.hpp"
 #include "components/bottomleftwidgets.hpp"
 #include "components/propertybar.hpp"
 #include "components/toolbar.hpp"
 #include "components/topleftwidgets.hpp"
 #include "components/topwidgets.hpp"
+#include "coordinatetransformer.hpp"
+#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
 #include "drawyglobalconfig.h"
@@ -40,7 +43,6 @@
 #include "tools/texttool.hpp"
 #include <KLocalizedString>
 #include <QMenu>
-#include <ranges>
 
 UIContext::UIContext(ApplicationContext *context)
     : QObject{context}
@@ -200,7 +202,7 @@ void UIContext::reset()
 
 void UIContext::showContextMenu() const
 {
-    auto menu = new QMenu(m_applicationContext->parentWidget());
+    const auto menu = new QMenu(m_applicationContext->parentWidget());
     if (toolBar()->curTool().type() == Tool::Type::Selection) {
         const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(toolBar()->curTool()).getItemsUnderCursor(m_applicationContext);
         if (items.size() == 1 && items.at(0)->locked()) {
@@ -218,6 +220,15 @@ void UIContext::showContextMenu() const
     const bool hasItems{!allItems.empty()};
     const bool hasSelection{!selectedItems.empty()};
 
+    if (hasSelection && selectedItems.size() == 1 && (*selectedItems.begin())->formType() == Item::FormType::Text) {
+        const auto textItem = std::dynamic_pointer_cast<TextItem>(*selectedItems.begin());
+        if (textItem->mode() == TextItem::Mode::Edit) {
+            if (showSpellCheckMenu(textItem, QCursor::pos())) {
+                delete menu;
+                return;
+            }
+        }
+    }
     if (hasSelection) {
         menu->addAction(actionManager()->action(KStandardActions::Copy));
     }
@@ -304,6 +315,68 @@ void UIContext::showContextMenu() const
 
     toolBar()->curTool().cleanup();
     delete menu;
+}
+
+bool UIContext::showSpellCheckMenu(const std::shared_ptr<TextItem> &textItem, const QPoint &globalPos) const
+{
+    const auto viewPos = m_applicationContext->renderingContext()->canvas()->mapFromGlobal(globalPos);
+    const auto worldPos = m_applicationContext->spatialContext()->coordinateTransformer().viewToWorld(viewPos);
+
+    QTextCursor cursor = textItem->cursor();
+    cursor.setPosition(textItem->getIndexFromCursor(worldPos));
+    cursor.select(QTextCursor::WordUnderCursor);
+    const QString word = cursor.selectedText();
+
+    if (!textItem->highlighter()->isMisspelled(word, cursor.block().text())) {
+        return false;
+    }
+
+    const auto suggestions = textItem->highlighter()->getSuggestions(word);
+
+    auto updateUI = [this] {
+        m_applicationContext->renderingContext()->cacheGrid().markAllDirty();
+        m_applicationContext->renderingContext()->markForRender();
+        m_applicationContext->renderingContext()->markForUpdate();
+    };
+
+    // apply selection
+    textItem->cursor() = cursor;
+    textItem->setDirty(true);
+    updateUI();
+
+    const auto spellMenu = new QMenu(m_applicationContext->parentWidget());
+
+    if (!suggestions.isEmpty()) {
+        for (const QString &suggestion : suggestions) {
+            const QAction *action = spellMenu->addAction(suggestion);
+
+            connect(action, &QAction::triggered, action, [this, textItem, cursor, suggestion, updateUI]() mutable {
+                cursor.insertText(suggestion);
+                textItem->setDirty(true);
+                m_applicationContext->spatialContext()->quadtree().deleteItem(textItem);
+                m_applicationContext->spatialContext()->quadtree().insertItem(textItem);
+                updateUI();
+            });
+        }
+    } else {
+        spellMenu->addAction(i18n("No Suggestions"))->setEnabled(false);
+    }
+
+    spellMenu->addSeparator();
+
+    connect(spellMenu->addAction(i18n("Add to Dictionary")), &QAction::triggered, spellMenu, [textItem, word, updateUI] {
+        textItem->highlighter()->addWordToDictionary(word);
+        updateUI();
+    });
+
+    connect(spellMenu->addAction(i18n("Ignore")), &QAction::triggered, spellMenu, [textItem, word, updateUI] {
+        textItem->highlighter()->ignoreWord(word);
+        updateUI();
+    });
+
+    spellMenu->exec(globalPos);
+    delete spellMenu;
+    return true;
 }
 
 #include "moc_uicontext.cpp"

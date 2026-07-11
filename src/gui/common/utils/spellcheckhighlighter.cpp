@@ -20,6 +20,41 @@ SpellCheckHighlighter::~SpellCheckHighlighter()
 {
 }
 
+bool SpellCheckHighlighter::isMisspelled(const QString &word, const QString &block)
+{
+    if (m_settings->autodetectLanguage()) {
+        const QString guessed = m_languageGuesser.identify(block, m_settings->preferredLanguages());
+        if (!guessed.isEmpty()) {
+            m_speller.setLanguage(guessed);
+        }
+    } else {
+        m_speller.setLanguage(m_settings->defaultLanguage());
+    }
+
+    if (!m_speller.isValid()) {
+        return false;
+    }
+
+    return isSpellcheckable(word) && m_speller.isMisspelled(word);
+}
+
+QStringList SpellCheckHighlighter::getSuggestions(const QString &word) const
+{
+    return m_speller.suggest(word);
+}
+
+void SpellCheckHighlighter::ignoreWord(const QString &word)
+{
+    m_speller.addToSession(word);
+    rehighlight();
+}
+
+void SpellCheckHighlighter::addWordToDictionary(const QString &word)
+{
+    m_speller.addToPersonal(word);
+    rehighlight();
+}
+
 bool SpellCheckHighlighter::isSpellcheckable(const QString &word) const
 {
     if (m_settings->skipUppercase() && word.toUpper() == word) {

@@ -17,6 +17,7 @@ class TopWidgets;
 class TopLeftWidgets;
 class BottomLeftWidgets;
 class PluginFormManager;
+class TextItem;
 
 class UIContext : public QObject
 {
@@ -38,6 +39,7 @@ public:
     [[nodiscard]] PropertyManager *propertyManager() const;
 
     void showContextMenu() const;
+    [[nodiscard]] bool showSpellCheckMenu(const std::shared_ptr<TextItem> &textItem, const QPoint &globalPos) const;
     void reset();
 
     void toolChanged(Tool &);
