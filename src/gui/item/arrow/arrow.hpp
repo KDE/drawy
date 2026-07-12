@@ -43,7 +43,7 @@ private:
 
     constexpr static qreal arrowHeadMaxWidth{20};
 
-    QPainterPath m_path{};
+    QPainterPath m_path;
 };
 
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const ArrowItem &t);

@@ -256,7 +256,7 @@ QFont TextItem::getFont() const
 
 QTextOption TextItem::getTextOptions() const
 {
-    QTextOption options{};
+    QTextOption options;
     options.setTabStopDistance(Common::tabStopDistance);
     options.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
 

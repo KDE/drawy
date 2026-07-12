@@ -163,9 +163,9 @@ void QuadTree::deleteItems(const QRectF &boundingBox)
     }
 }
 
-QList<std::shared_ptr<Item>> QuadTree::getAllItems() const
+QList<std::shared_ptr<Item>> QuadTree::getAllItems(bool excludeLocked) const
 {
-    auto uniqueItems{getAllUniqueItems()};
+    auto uniqueItems{getAllUniqueItems(excludeLocked)};
 
     auto uniqueItemList{QList<std::shared_ptr<Item>>{uniqueItems.begin(), uniqueItems.end()}};
     reorder(uniqueItemList);
@@ -173,9 +173,14 @@ QList<std::shared_ptr<Item>> QuadTree::getAllItems() const
     return uniqueItemList;
 }
 
-QSet<std::shared_ptr<Item>> QuadTree::getAllUniqueItems() const
+QSet<std::shared_ptr<Item>> QuadTree::getAllUniqueItems(bool excludeLocked) const
 {
-    QSet<std::shared_ptr<Item>> curItems{m_items.begin(), m_items.end()};
+    QSet<std::shared_ptr<Item>> curItems;
+    for (const auto &item : m_items) {
+        if (!excludeLocked || !item->locked()) {
+            curItems.insert(item);
+        }
+    }
     if (m_topLeft != nullptr) {
         curItems += m_topLeft->getAllUniqueItems();
         curItems += m_topRight->getAllUniqueItems();
@@ -239,7 +244,7 @@ void QuadTree::expand(const QPointF &point)
     std::unique_ptr<QuadTree> topRight{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
     std::unique_ptr<QuadTree> bottomRight{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
     std::unique_ptr<QuadTree> bottomLeft{std::make_unique<QuadTree>(m_boundingBox, m_capacity, m_orderedList)};
-    std::unique_ptr<QuadTree> cur{};
+    std::unique_ptr<QuadTree> cur;
 
     if (x < topLeftPoint.x() || y < topLeftPoint.y()) {
         m_boundingBox.adjust(-treeW, -treeH, 0, 0);

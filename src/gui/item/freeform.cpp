@@ -113,7 +113,7 @@ void FreeformItem::drawNonSolidStroke(QPainter &painter, const QPointF &offset, 
 
     const qreal thickness{property(Property::Type::StrokeWidth).value<qreal>()};
 
-    QPen pen{};
+    QPen pen;
     pen.setStyle(ItemUtils::convertItemStrokeTypeStringToPenStyle(property(Property::Type::StrokeStyle).value<QString>()));
     pen.setColor(color);
     pen.setCapStyle(Qt::RoundCap);

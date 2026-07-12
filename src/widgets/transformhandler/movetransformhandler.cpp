@@ -101,7 +101,7 @@ TransformHandler::State MoveTransformHandler::mouseMoved(ApplicationContext *con
     const QPointF worldCurPos{transformer.viewToWorld(curPos)};
     const QPointF worldLastPos{transformer.viewToWorld(m_lastPos)};
 
-    QRect dirtyRegion{};
+    QRect dirtyRegion;
     for (const auto &item : selectedItems) {
         if (!item->locked()) {
             const QTransform invertedTransform{item->transformObj().inverted()};
@@ -184,13 +184,15 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
 
             if (selectedItems.contains(intersectingItems.back())) {
                 commandHistory->push(std::make_shared<DeselectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
-            } else {
+            } else if (!intersectingItems.back()->locked()) {
                 commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
             }
         } else {
             // deselect everything and select that one item
             commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
-            commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
+            if (!intersectingItems.back()->locked()) {
+                commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
+            }
         }
 
         renderingContext->markForRender();

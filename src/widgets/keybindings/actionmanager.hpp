@@ -54,6 +54,8 @@ public:
         AlignRight,
         Debug,
         WhatsNew,
+        LockItems,
+        UnLockItem,
     };
 
     Q_ENUM(Action)
@@ -67,6 +69,14 @@ public:
     [[nodiscard]] QAction *action(KStandardAction::StandardAction standardAction) const;
     [[nodiscard]] QString actionName(KStandardAction::StandardAction standardAction) const;
 
+    [[nodiscard]] bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
+
+#if HAVE_WHATSNEWSNGSUPPORT
+    void setReleasesInfo(const QList<KAboutRelease> &releases);
+#endif
+    void loadFile(const QString &fileName);
+
+private:
     void zoomIn();
     void zoomOut();
     void zoomReset();
@@ -83,8 +93,6 @@ public:
     void saveAsNewFile();
     void saveCurrentFile();
     void openFile();
-    void loadFile(const QString &fileName);
-    [[nodiscard]] bool confirmSaveAfterModification(); // to confirm if you want to save the file quitting/opening a new file
     void exportToImage();
     void configureSettings();
 
@@ -99,9 +107,9 @@ public:
     void slotUpdateZorderAndGroupButtons();
 #if HAVE_WHATSNEWSNGSUPPORT
     void slotShowWhatsNew();
-    void setReleasesInfo(const QList<KAboutRelease> &releases);
 #endif
-private:
+    void slotLock();
+    void slotUnLock();
     void slotDebug();
     void openRecentFile(const QUrl &url);
     void zorderMove(ItemUtils::ZorderMove move);

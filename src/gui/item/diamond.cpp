@@ -27,7 +27,7 @@ QPainterPath DiamondItem::getPath() const
 
     const QPolygonF diamond({topPoint, rightPoint, bottomPoint, leftPoint});
 
-    QPainterPath painterPath{};
+    QPainterPath painterPath;
     painterPath.addPolygon(diamond);
     painterPath.closeSubpath();
 

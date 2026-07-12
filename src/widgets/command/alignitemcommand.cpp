@@ -112,7 +112,7 @@ void AlignItemCommand::undo(ApplicationContext *context)
     auto &cacheGrid{context->renderingContext()->cacheGrid()};
     auto &quadtree{context->spatialContext()->quadtree()};
 
-    QRectF dirtyRegion{};
+    QRectF dirtyRegion;
 
     int index = 0;
     for (const auto &item : std::as_const(m_items)) {

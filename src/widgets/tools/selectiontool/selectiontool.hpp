@@ -29,10 +29,10 @@ public:
 
     [[nodiscard]] Tool::Type type() const override;
 
+    [[nodiscard]] QList<std::shared_ptr<Item>> getItemsUnderCursor(ApplicationContext *context) const;
+
 private:
     void updateCurrentHandler(ApplicationContext *context);
-
-    QList<std::shared_ptr<Item>> getItemsUnderCursor(ApplicationContext *context) const;
 
     TransformHandler *m_curHandler{};
     TransformHandler::State m_curHandlerState;

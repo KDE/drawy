@@ -64,7 +64,7 @@ void Common::renderCanvas(ApplicationContext *context)
                         painter.save();
                         painter.scale(zoom, zoom);
 
-                        QTransform cell{};
+                        QTransform cell;
                         cell.translate(topLeft.x(), topLeft.y());
                         painter.setTransform(cell.inverted(), true);
 

@@ -38,7 +38,7 @@ void SvgSerializer::writeSvg(QXmlStreamWriter &stream, QList<std::shared_ptr<Ite
     QPainter painter(&device);
 
     // Draw background.
-    QTransform t{};
+    QTransform t;
     t.translate(boundingBox.topLeft().x(), boundingBox.topLeft().y());
 
     painter.setTransform(t.inverted(), true);

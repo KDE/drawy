@@ -81,7 +81,7 @@ std::pair<QRectF, QTransform> SelectionContext::selectionBoxWithTransform() cons
     }
 
     const QRectF boundingRect{selectionBox().boundingRect()};
-    QTransform transform{};
+    QTransform transform;
     transform.translate(boundingRect.topLeft().x(), boundingRect.topLeft().y());
 
     return std::make_pair(boundingRect.translated(-boundingRect.topLeft()), transform);
