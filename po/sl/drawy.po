@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:40+0000\n"
-"PO-Revision-Date: 2026-07-06 12:12+0200\n"
+"PO-Revision-Date: 2026-07-11 08:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -664,13 +664,13 @@ msgstr "Poravnaj desno"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Zaklepi"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Odkleni"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format

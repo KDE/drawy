@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:40+0000\n"
-"PO-Revision-Date: 2026-07-06 10:55+0100\n"
+"PO-Revision-Date: 2026-07-11 12:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -665,13 +665,13 @@ msgstr "Alinear a la derecha"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Bloquear"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Desbloquear"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format

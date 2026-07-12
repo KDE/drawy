@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:40+0000\n"
-"PO-Revision-Date: 2026-07-06 10:05+0200\n"
+"PO-Revision-Date: 2026-07-11 13:57+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -662,13 +662,13 @@ msgstr "Rechts uitlijnen"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Vergrendelingen"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Ontgrendelen"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format

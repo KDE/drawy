@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:40+0000\n"
-"PO-Revision-Date: 2026-07-06 09:06+0300\n"
+"PO-Revision-Date: 2026-07-11 13:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -665,13 +665,13 @@ msgstr "Вирівняти праворуч"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Заблокувати"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Розблокувати"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format

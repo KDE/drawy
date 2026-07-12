@@ -659,13 +659,13 @@ msgstr "სწორება მარჯვნივ"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "დაბლოკვები"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "განბლოკვა"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format
