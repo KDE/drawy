@@ -32,7 +32,6 @@ TextItem::TextItem()
     m_properties[Property::Type::TextAlignment] = Property{u"AlignLeft"_s, Property::Type::TextAlignment};
 
     m_document.setDefaultFont(getFont());
-    m_document.setDefaultCursorMoveStyle(Qt::VisualMoveStyle);
 
     QTextCharFormat fmt;
     fmt.setForeground(m_properties[Property::Type::StrokeColor].value<QColor>());
