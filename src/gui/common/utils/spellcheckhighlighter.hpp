@@ -18,10 +18,10 @@ class LIBDRAWYGUI_EXPORT SpellCheckHighlighter : public QSyntaxHighlighter
     Q_OBJECT
 public:
     explicit SpellCheckHighlighter(QTextDocument *parent);
-    ~SpellCheckHighlighter() override;
+    ~SpellCheckHighlighter() override = default;
 
-    bool isMisspelled(const QString &word, const QString &block);
-    QStringList getSuggestions(const QString &word) const;
+    [[nodiscard]] bool isMisspelled(const QString &word, const QString &block);
+    [[nodiscard]] QStringList getSuggestions(const QString &word) const;
     void ignoreWord(const QString &word);
     void addWordToDictionary(const QString &word);
 
@@ -29,9 +29,9 @@ protected:
     void highlightBlock(const QString &text) override;
 
 private:
-    LIBDRAWYGUI_NO_EXPORT bool isSpellcheckable(const QString &word) const;
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT bool isSpellcheckable(const QString &word) const;
 
     Sonnet::Speller m_speller;
     const Sonnet::GuessLanguage m_languageGuesser;
-    const Sonnet::Settings *m_settings;
+    const Sonnet::Settings *const m_settings;
 };

@@ -80,7 +80,7 @@ private:
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
 
     QTextDocument m_document;
-    SpellCheckHighlighter *m_highlighter;
+    SpellCheckHighlighter *const m_highlighter;
     QTextCursor m_cursor;
     QTextCharFormat m_currentFormat;
     Mode m_mode{Mode::Normal};

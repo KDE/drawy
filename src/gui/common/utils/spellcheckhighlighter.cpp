@@ -16,10 +16,6 @@ SpellCheckHighlighter::SpellCheckHighlighter(QTextDocument *parent)
     m_speller.setLanguage(m_settings->defaultLanguage());
 }
 
-SpellCheckHighlighter::~SpellCheckHighlighter()
-{
-}
-
 bool SpellCheckHighlighter::isMisspelled(const QString &word, const QString &block)
 {
     if (m_settings->autodetectLanguage()) {
