@@ -37,58 +37,58 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
-msgstr ""
+msgstr "可选参数 '文件'"
 
 #: apps/main.cpp:59
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
-msgstr ""
+msgstr "您便捷、无限的头脑风暴工具!"
 
 #: gui/properties/property.cpp:101
 #, kde-format
 msgid "Change Stroke Width"
-msgstr ""
+msgstr "更改描边宽度"
 
 #: gui/properties/property.cpp:103
 #, kde-format
 msgid "Change Stroke Color"
-msgstr ""
+msgstr "更改描边颜色"
 
 #: gui/properties/property.cpp:105
 #, kde-format
 msgid "Change Opacity"
-msgstr ""
+msgstr "更改不透明度"
 
 #: gui/properties/property.cpp:107
 #, kde-format
 msgid "Change Font Size"
-msgstr ""
+msgstr "更改字体大小"
 
 #: gui/properties/property.cpp:109
 #, kde-format
 msgid "Change Eraser Size"
-msgstr ""
+msgstr "更改橡皮大小"
 
 #: gui/properties/property.cpp:111
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #: gui/properties/property.cpp:113
 #, kde-format
 msgid "Change Stroke Style"
-msgstr ""
+msgstr "更改描边样式"
 
 #: gui/properties/property.cpp:115
 #, kde-format
 msgid "Change Background Color"
-msgstr ""
+msgstr "更改背景颜色"
 
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Background Style"
-msgstr ""
+msgstr "更改背景样式"
 
 #: gui/properties/property.cpp:119
 #, kde-format
@@ -103,61 +103,61 @@ msgstr "更改箭头末尾端"
 #: gui/properties/property.cpp:126 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
-msgstr ""
+msgstr "调整层级"
 
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "更改边角矩形类型"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr ""
+msgstr "基本形状"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr ""
+msgstr "三角形"
 
 #: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr ""
+msgstr "X 形框"
 
 #: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
-msgstr ""
+msgstr "对齐元素"
 
 #: widgets/command/commandhistory.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr ""
+msgstr "撤销: %1"
 
 #: widgets/command/commandhistory.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr ""
+msgstr "重做: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
-msgstr ""
+msgstr "取消选中对象"
 
 #: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
-msgstr ""
+msgstr "编组对象"
 
 #: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
-msgstr ""
+msgstr "插入对象"
 
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
@@ -172,7 +172,7 @@ msgstr ""
 #: widgets/command/moveitemcommand.cpp:72
 #, kde-format
 msgid "Move Object"
-msgstr ""
+msgstr "移动对象"
 
 #: widgets/command/removeitemcommand.cpp:76
 #, kde-format
@@ -183,46 +183,46 @@ msgstr[0] "移除 %1 个对象"
 #: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
-msgstr ""
+msgstr "缩放对象"
 
 #: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
 msgid "Rotate Object"
-msgstr ""
+msgstr "旋转对象"
 
 #: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
-msgstr ""
+msgstr "选择对象"
 
 #: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
-msgstr ""
+msgstr "取消编组对象"
 
 #: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
-msgstr ""
+msgstr "重置缩放"
 
 #: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr ""
+msgstr "图像"
 
 #: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
@@ -234,51 +234,51 @@ msgstr "更多工具"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
-msgstr ""
+msgstr "打开菜单"
 
 #: widgets/context/aboutdata.cpp:13
 #, kde-format
 msgid "Drawy"
-msgstr ""
+msgstr "Drawy"
 
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr ""
+msgstr "您便捷、无限的头脑风暴工具!"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
-msgstr ""
+msgstr "Prayag Jain"
 
 #: widgets/context/aboutdata.cpp:19
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "维护者"
 
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "Laurent Montel"
 
 #: widgets/context/aboutdata.cpp:20
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "开发者"
 
 #: widgets/context/applicationcontext.cpp:46
 #, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr ""
+msgstr "未命名"
 
 #: widgets/context/uicontext.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
-msgstr ""
+msgstr "选中内容"
 
 #: widgets/context/uicontext.cpp:68
 #, kde-format
@@ -290,25 +290,25 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
-msgstr ""
+msgstr "矩形"
 
 #: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
-msgstr ""
+msgstr "菱形"
 
 #: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
-msgstr ""
+msgstr "椭圆形"
 
 #: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
-msgstr ""
+msgstr "箭头"
 
 #: widgets/context/uicontext.cpp:73
 #, kde-format
@@ -695,25 +695,25 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "保存文件"
 
 #: widgets/keybindings/actionmanager.cpp:548
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
-msgstr ""
+msgstr "您确定要清空画布吗？"
 
 #: widgets/keybindings/actionmanager.cpp:549
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: widgets/keybindings/actionmanager.cpp:606
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
-msgstr ""
+msgstr "打开文件"
 
 #: widgets/keybindings/actionmanager.cpp:619
 #, kde-format

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-11 00:40+0000\n"
-"PO-Revision-Date: 2026-07-07 09:09+0300\n"
+"PO-Revision-Date: 2026-07-12 18:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -665,13 +665,13 @@ msgstr "יישור לימין"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "נועל"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "שחרור"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format
