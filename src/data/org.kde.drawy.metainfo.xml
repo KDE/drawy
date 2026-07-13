@@ -221,9 +221,20 @@
     <release version="1.1.0" type="snapshot">
       <description>
         <p>Allow to lock items</p>
+        <p xml:lang="ca">Permet bloquejar elements</p>
+        <p xml:lang="ca-valencia">Permet bloquejar elements</p>
+        <p xml:lang="cs">Povoleno uzamykání položek</p>
+        <p xml:lang="es">Permitir el bloqueo de elementos.</p>
+        <p xml:lang="ka">ელემენტების დაბლოკვის დაშვება</p>
+        <p xml:lang="nl">Sta vergrendelen van items toe</p>
+        <p xml:lang="pt-BR">Permitir bloquear itens</p>
+        <p xml:lang="sl">Dovoli zaklepanje elementov</p>
+        <p xml:lang="tr">Ögeleri kilitleme desteği eklendi.</p>
+        <p xml:lang="uk">Уможливлено блокування записів</p>
         <p>Allow to draw rounded rectangle</p>
         <p xml:lang="ar">السماح برسم مستطيل مدور الزوايا</p>
         <p xml:lang="ca">Permet dibuixar un rectangle arrodonit</p>
+        <p xml:lang="ca-valencia">Permet dibuixar un rectangle arredonit</p>
         <p xml:lang="cs">Umožněno nakreslit zaoblený obdélník</p>
         <p xml:lang="es">Permitir dibujar rectángulos redondeados.</p>
         <p xml:lang="he">לאפשר לצייר מרובעים מעוגלים</p>
