@@ -332,7 +332,7 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
             formats.append(range);
         }
     }
-    auto layout = m_cursor.block().layout();
+    const auto layout = m_cursor.block().layout();
     if (!m_preeditString.isEmpty()) {
         layout->setPreeditArea(m_cursor.positionInBlock(), m_preeditString);
         layout->setFormats(formats);
@@ -391,6 +391,10 @@ Property TextItem::property(const Property::Type propertyType) const
             style |= Property::FontStyle::StrikeOut;
         }
         return Property{ItemUtils::convertFontStyleToString(style), Property::Type::FontStyle};
+    }
+    case Property::Type::TextAlignment: {
+        const int alignment = cursor.blockFormat().alignment();
+        return Property{ItemUtils::convertTextAlignmentToString(alignment), Property::Type::TextAlignment};
     }
     default:
         return Item::property(propertyType);
@@ -481,6 +485,15 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
             fmt.setFontStrikeOut(newStyle & Property::FontStyle::StrikeOut);
         }
         break;
+    }
+    case Property::Type::TextAlignment: {
+        QTextBlockFormat blockFmt;
+        blockFmt.setAlignment(static_cast<Qt::Alignment>(ItemUtils::convertStringToTextAlignment(newObj.value<QString>())));
+        QTextCursor docCursor(&m_document);
+        docCursor.select(QTextCursor::Document);
+        docCursor.mergeBlockFormat(blockFmt);
+        Item::setProperty(propertyType, newObj);
+        return;
     }
     default:
         Item::setProperty(propertyType, newObj);
