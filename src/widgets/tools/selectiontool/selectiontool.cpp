@@ -22,6 +22,7 @@
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
 #include "data-structures/quadtree.hpp"
+#include "drawyglobalconfig.h"
 #include "event/event.hpp"
 #include "item/arrow/arrow.hpp"
 #include "item/item.hpp"
@@ -138,9 +139,19 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
     const QRectF selectionBox{m_lastPos, curPos};
     const QRectF worldSelectionBox{transformer.viewToWorld(selectionBox)};
 
+    const bool selectOnOverlap = DrawyGlobalConfig::self()->selectionMode() == DrawyGlobalConfig::EnumSelectionMode::Overlap;
+
     QList<std::shared_ptr<Item>> intersectingItems{
-        spatialContext->quadtree().queryItems(worldSelectionBox, [](const std::shared_ptr<Item> &item, const QRectF &rect) {
-            return !item->locked() && rect.contains(item->boundingBox());
+        spatialContext->quadtree().queryItems(worldSelectionBox, [selectOnOverlap](const std::shared_ptr<Item> &item, const QRectF &rect) {
+            if (item->locked()) {
+                return false;
+            }
+
+            if (selectOnOverlap) {
+                return item->intersects(rect);
+            } else {
+                return rect.contains(item->boundingBox());
+            }
         })};
 
     selectionContext->setSelectedItems(intersectingItems.begin(), intersectingItems.end());

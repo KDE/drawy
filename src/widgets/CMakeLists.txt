@@ -235,6 +235,8 @@ target_sources(
         dialog/input/configureinputwidget.cpp
         dialog/input/freehandsettingswidget.hpp
         dialog/input/freehandsettingswidget.cpp
+        dialog/input/selectionsettingswidget.hpp
+        dialog/input/selectionsettingswidget.cpp
         iconmanager/iconmanager.hpp
         iconmanager/iconmanager.cpp
         mime/drawymimehandler.cpp

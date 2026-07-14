@@ -140,6 +140,10 @@ target_sources(
         common/utils/freehand.hpp
         common/utils/math.cpp
         common/utils/math.hpp
+        customelements/customelementsmanager.hpp
+        customelements/customelementsmanager.cpp
+        customelements/customelement.hpp
+        customelements/customelement.cpp
 )
 
 ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER DRAWY_GUI_LOG

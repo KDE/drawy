@@ -9,6 +9,7 @@
 #include <QWidget>
 
 class FreehandSettingsWidget;
+class SelectionSettingsWidget;
 class LIBDRAWYWIDGETS_TESTS_EXPORT ConfigureInputWidget : public QWidget
 {
     Q_OBJECT
@@ -22,4 +23,5 @@ public:
 
 private:
     FreehandSettingsWidget *m_freehandSettingsWidget;
+    SelectionSettingsWidget *m_selectionSettingsWidget;
 };
