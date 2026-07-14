@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:40+0000\n"
+"POT-Creation-Date: 2026-07-14 00:41+0000\n"
 "PO-Revision-Date: 2026-01-01 18:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -469,6 +469,37 @@ msgstr ""
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:14
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgid "Selection Settings"
+msgstr "选中内容"
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:15
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items fully contained"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:16
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items on overlap"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:18
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only items completely inside the selection box will be selected"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:19
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Any item touching the selection box will be selected"
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13

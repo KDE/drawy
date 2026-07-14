@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:40+0000\n"
+"POT-Creation-Date: 2026-07-14 00:41+0000\n"
 "PO-Revision-Date: 2026-07-02 23:45+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -476,6 +476,38 @@ msgstr "Presioarekiko sentikortasuna"
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
 msgstr "Presioak trazuaren lodieran zenbateko eragina duen kontrolatzen du."
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:14
+#, fuzzy, kde-format
+#| msgid "Freehand Settings"
+msgid "Selection Settings"
+msgstr "Eskuz marrazteko ezarpenak"
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:15
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items fully contained"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:16
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Selection Tool"
+msgctxt "@option:radio"
+msgid "Select items on overlap"
+msgstr "Hautapen tresna"
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:18
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only items completely inside the selection box will be selected"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:19
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Any item touching the selection box will be selected"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

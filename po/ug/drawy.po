@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:40+0000\n"
+"POT-Creation-Date: 2026-07-14 00:41+0000\n"
 "PO-Revision-Date: 2026-05-29 17:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -470,6 +470,37 @@ msgstr ""
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:14
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Selection"
+msgid "Selection Settings"
+msgstr "تاللاش"
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:15
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items fully contained"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:16
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items on overlap"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:18
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only items completely inside the selection box will be selected"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:19
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Any item touching the selection box will be selected"
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
