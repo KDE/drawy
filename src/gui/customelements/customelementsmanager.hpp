@@ -9,7 +9,9 @@
 #include "libdrawygui_export.h"
 #include <QList>
 #include <QObject>
+#include <memory>
 
+class Item;
 class LIBDRAWYGUI_EXPORT CustomElementsManager : public QObject
 {
     Q_OBJECT
@@ -21,6 +23,9 @@ public:
     void saveCustomElements();
 
     [[nodiscard]] bool isEmpty() const;
+
+    void exportToFile(const QString &fileName);
+    void addItem(const std::shared_ptr<Item> &item);
 
 private:
     explicit CustomElementsManager(QObject *parent = nullptr);

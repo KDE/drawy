@@ -144,6 +144,8 @@ target_sources(
         customelements/customelementsmanager.cpp
         customelements/customelement.hpp
         customelements/customelement.cpp
+        customelements/customelementsutils.hpp
+        customelements/customelementsutils.cpp
 )
 
 ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER DRAWY_GUI_LOG
