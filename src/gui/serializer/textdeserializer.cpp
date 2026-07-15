@@ -30,4 +30,7 @@ void TextDeserializer::deserialize(const QJsonObject &obj)
     } else {
         textItem->cursor().insertText(text);
     }
+
+    // cancel any shift that occurred due to alignment expansion logic
+    textItem->setBoundingBoxTopLeft(topLeft);
 }

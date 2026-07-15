@@ -60,6 +60,12 @@ void TextItem::createTextBox(const QPointF position)
     setDirty(true);
 }
 
+void TextItem::setBoundingBoxTopLeft(const QPointF &topLeft)
+{
+    m_boundingBox.moveTopLeft(topLeft);
+    setDirty(true);
+}
+
 bool TextItem::intersects(const QRectF &rect)
 {
     return m_transform.map(m_boundingBox).intersects(rect);
@@ -239,7 +245,21 @@ void TextItem::updateBoundingBox()
         }
     }
 
-    m_boundingBox.setSize(m_document.size());
+    const auto oldSize = m_boundingBox.size();
+    const auto newSize = m_document.size();
+    if (oldSize != newSize) {
+        const qreal diff = newSize.width() - oldSize.width();
+        const int alignment = m_cursor.blockFormat().alignment();
+
+        auto topLeft = m_boundingBox.topLeft();
+        if (alignment & Qt::AlignRight) {
+            topLeft.setX(topLeft.x() - diff);
+        } else if (alignment & Qt::AlignCenter) {
+            topLeft.setX(topLeft.x() - (diff / 2.0));
+        }
+        m_boundingBox.moveTopLeft(topLeft);
+        m_boundingBox.setSize(newSize);
+    }
     setDirty(true);
 }
 

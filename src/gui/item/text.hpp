@@ -30,6 +30,7 @@ public:
     [[nodiscard]] bool lockAspectRatioWhenResizing() const override;
 
     void createTextBox(const QPointF position);
+    void setBoundingBoxTopLeft(const QPointF &topLeft);
 
     void setWrapWidth(qreal wrapWidth);
     [[nodiscard]] qreal wrapWidth() const;
