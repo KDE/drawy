@@ -24,6 +24,7 @@ public:
     [[nodiscard]] QStringList getSuggestions(const QString &word) const;
     void ignoreWord(const QString &word);
     void addWordToDictionary(const QString &word);
+    void setActive(bool active);
 
 protected:
     void highlightBlock(const QString &text) override;
@@ -34,4 +35,5 @@ private:
     Sonnet::Speller m_speller;
     const Sonnet::GuessLanguage m_languageGuesser;
     const Sonnet::Settings *const m_settings;
+    bool m_active{false};
 };

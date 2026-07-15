@@ -197,8 +197,10 @@ void TextItem::setMode(const Mode mode)
         m_mode = mode;
         if (m_mode == Mode::Normal) {
             m_document.setUndoRedoEnabled(false);
+            m_highlighter->setActive(false);
         } else {
             m_document.setUndoRedoEnabled(true);
+            m_highlighter->setActive(true);
         }
         setDirty(true);
     }

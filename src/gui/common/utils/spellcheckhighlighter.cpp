@@ -51,6 +51,12 @@ void SpellCheckHighlighter::addWordToDictionary(const QString &word)
     rehighlight();
 }
 
+void SpellCheckHighlighter::setActive(const bool active)
+{
+    m_active = active;
+    rehighlight();
+}
+
 bool SpellCheckHighlighter::isSpellcheckable(const QString &word) const
 {
     if (m_settings->skipUppercase() && word.toUpper() == word) {
@@ -64,7 +70,7 @@ bool SpellCheckHighlighter::isSpellcheckable(const QString &word) const
 
 void SpellCheckHighlighter::highlightBlock(const QString &text)
 {
-    if (!m_settings->checkerEnabledByDefault()) {
+    if (!m_settings->checkerEnabledByDefault() || !m_active) {
         return;
     }
 
