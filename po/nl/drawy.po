@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-07-11 13:57+0200\n"
+"PO-Revision-Date: 2026-07-14 10:06+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -472,36 +472,35 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Regelt in hoeverre de druk de lijndikte beïnvloedt."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Instellingen voor de vrije hand"
+msgstr "Selectie-instellingen"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Selecteer volledig omsloten items"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Selectiehulpmiddel"
+msgstr "Selecteer items op overlap"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
 msgstr ""
+"Alleen items die zich volledig binnen het selectiekader bevinden, worden "
+"geselecteerd."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Elk item dat het selectiekader raakt, wordt geselecteerd."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

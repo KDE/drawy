@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-07-11 13:04+0200\n"
+"PO-Revision-Date: 2026-07-14 17:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -478,36 +478,37 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Controla la quantitat de pressió que canvia el gruix de la línia."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Configuració de mà alçada"
+msgstr "Configuració de la selecció"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Selecciona elements completament continguts"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Eina de selecció"
+msgstr "Selecciona elements en superposició"
 
+# skip-rule: kct-selectionbox
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
 msgstr ""
+"Només se seleccionaran els elements completament a dins del quadre de "
+"selecció"
 
+# skip-rule: kct-selectionbox
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Se seleccionarà qualsevol element que toqui el quadre de selecció"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

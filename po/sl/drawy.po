@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-07-11 08:28+0200\n"
+"PO-Revision-Date: 2026-07-14 07:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -476,36 +476,33 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Nadzira, koliko pritiska spremeni debelino črte."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Nastavitve prostoročnega risanja"
+msgstr "Nastavitve izbiranja"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Izberite elemente, ki so v celoti vključeni"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Orodje za izbiro"
+msgstr "Izberi elemente, ki se prekrivajo"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
-msgstr ""
+msgstr "Izbrani bodo samo elementi, ki so v celoti znotraj izbirnega polja"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Izbran bo vsak element, ki se dotika izbirnega polja"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

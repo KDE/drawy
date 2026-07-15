@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-07-11 13:46+0300\n"
+"PO-Revision-Date: 2026-07-14 08:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -477,36 +477,34 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Керує тим, наскільки тиск змінює товщину лінії."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Параметри довільного малювання"
+msgstr "Параметри позначення"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Позначити елементи, що містяться повністю"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Інструмент вибору"
+msgstr "Позначати елементи при накладанні"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
 msgstr ""
+"Буде позначено лише елементи, які повністю потрапляють у рамку позначення"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Буде позначено усі елементи, частини яких містяться у рамці позначення"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format

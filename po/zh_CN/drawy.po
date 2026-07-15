@@ -472,11 +472,9 @@ msgid "Controls how much pressure changes line thickness."
 msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgid "Selection Settings"
-msgstr "选中内容"
+msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
