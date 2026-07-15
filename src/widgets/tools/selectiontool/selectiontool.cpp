@@ -358,7 +358,7 @@ void SelectionTool::mouseDoubleClick(ApplicationContext *context)
 {
     const auto &items{getItemsUnderCursor(context)};
 
-    if (!items.empty() && items.back()->formType() == Item::FormType::Text) {
+    if (!items.empty() && items.back()->formType() == Item::FormType::Text && !items.back()->locked()) {
         auto toolBar{context->uiContext()->toolBar()};
 
         toolBar->changeTool(Tool::Type::Text);
