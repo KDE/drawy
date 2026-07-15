@@ -20,6 +20,7 @@
 #include "boardlayout.hpp"
 #include "canvas/canvas.hpp"
 #include "common/constants.hpp"
+#include "common/utils/spellcheckhighlighter.hpp"
 #include "components/bottomleftwidgets.hpp"
 #include "components/propertybar.hpp"
 #include "components/topleftwidgets.hpp"
@@ -64,6 +65,7 @@ MainWindow::MainWindow(
     , mManagePowerManagement(new ManagePowerManagement(this))
 #endif
 {
+    SpellCheckHighlighter::init();
     loadCustomFonts();
     m_autoSaveJob = new AutoSaveJob{mApplicationContext, this};
     auto layout{new BoardLayout(this)};

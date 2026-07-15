@@ -16,6 +16,14 @@ SpellCheckHighlighter::SpellCheckHighlighter(QTextDocument *parent)
     m_speller.setLanguage(m_settings->defaultLanguage());
 }
 
+void SpellCheckHighlighter::init()
+{
+    // loads dictionaries on startup to avoid lag on first edit
+    const Sonnet::Settings settings;
+    const Sonnet::GuessLanguage guesser;
+    guesser.identify(QStringLiteral("A"), settings.preferredLanguages());
+}
+
 bool SpellCheckHighlighter::isMisspelled(const QString &word, const QString &block)
 {
     if (m_settings->autodetectLanguage()) {

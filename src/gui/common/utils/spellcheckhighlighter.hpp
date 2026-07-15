@@ -20,6 +20,8 @@ public:
     explicit SpellCheckHighlighter(QTextDocument *parent);
     ~SpellCheckHighlighter() override = default;
 
+    static void init();
+
     [[nodiscard]] bool isMisspelled(const QString &word, const QString &block);
     [[nodiscard]] QStringList getSuggestions(const QString &word) const;
     void ignoreWord(const QString &word);
