@@ -234,4 +234,49 @@ void TextItemTest::shouldTestPerRangeFormatting()
     QCOMPARE(i.property(Property::Type::FontStyle).value<QString>(), u"Normal"_s);
 }
 
+void TextItemTest::shouldTestAlignmentExpansion()
+{
+    TextItem i;
+    i.setMode(TextItem::Mode::Edit);
+    i.createTextBox(QPointF(0, 0));
+
+    QRectF before = i.boundingBox();
+    i.cursor().insertText(u"Hello"_s);
+    QRectF after = i.boundingBox();
+    QCOMPARE(before.left(), after.left());
+    QVERIFY(after.right() > before.right());
+
+    i.setProperty(Property::Type::TextAlignment, Property(u"AlignRight"_s, Property::Type::TextAlignment));
+    before = i.boundingBox();
+    i.cursor().insertText(u"Hello"_s);
+    after = i.boundingBox();
+    QCOMPARE(before.right(), after.right());
+    QVERIFY(after.left() < before.left());
+
+    i.setProperty(Property::Type::TextAlignment, Property(u"AlignCenter"_s, Property::Type::TextAlignment));
+    before = i.boundingBox();
+    i.cursor().insertText(u"Hello"_s);
+    after = i.boundingBox();
+    QCOMPARE(before.center().x(), after.center().x());
+    QVERIFY(after.left() < before.left());
+    QVERIFY(after.right() > before.right());
+}
+
+void TextItemTest::shouldTestAlignmentDeserialization()
+{
+    TextItem i;
+    i.setMode(TextItem::Mode::Edit);
+    i.createTextBox(QPointF(0, 0));
+    i.setProperty(Property::Type::TextAlignment, Property(u"AlignRight"_s, Property::Type::TextAlignment));
+    i.cursor().insertText(u"Hello World"_s);
+
+    const QJsonObject obj = i.serialize(0);
+
+    TextItem i2;
+    i2.deserialize(obj);
+
+    QCOMPARE(i2.boundingBox(), i.boundingBox());
+    QCOMPARE(i2.property(Property::Type::TextAlignment).value<QString>(), u"AlignRight"_s);
+}
+
 #include "moc_textitemtest.cpp"

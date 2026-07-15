@@ -30,4 +30,6 @@ private Q_SLOTS:
     void shouldTestLockAspectRatioWhenResizing();
     void shouldTestUpdatePreedit();
     void shouldTestPerRangeFormatting();
+    void shouldTestAlignmentExpansion();
+    void shouldTestAlignmentDeserialization();
 };
