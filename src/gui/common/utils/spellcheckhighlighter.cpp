@@ -30,6 +30,8 @@ bool SpellCheckHighlighter::isMisspelled(const QString &word, const QString &blo
         const QString guessed = m_languageGuesser.identify(block, m_settings->preferredLanguages());
         if (!guessed.isEmpty()) {
             m_speller.setLanguage(guessed);
+        } else {
+            m_speller.setLanguage(m_settings->defaultLanguage());
         }
     } else {
         m_speller.setLanguage(m_settings->defaultLanguage());
@@ -86,6 +88,8 @@ void SpellCheckHighlighter::highlightBlock(const QString &text)
         const QString guessed = m_languageGuesser.identify(text, m_settings->preferredLanguages());
         if (!guessed.isEmpty()) {
             m_speller.setLanguage(guessed);
+        } else {
+            m_speller.setLanguage(m_settings->defaultLanguage());
         }
     } else {
         m_speller.setLanguage(m_settings->defaultLanguage());
