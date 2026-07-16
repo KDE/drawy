@@ -471,36 +471,35 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "მართავს, რამდენად შეცვლის დაწოლა ხაზის სისქეს."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "თავისუფალი მონიშვნის მორგება"
+msgstr "მონიშვნის მორგება"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "მონიშვნა ელემენტების, რომლებსაც სრულად შეიცავს"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "მონიშვნის ხელსაწყო"
+msgstr "ელემენტების მონიშვნა გადაფარვისას"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
 msgstr ""
+"მოინიშნება, მხოლოდ, ელემენტები, რომლებიც მონიშვნის მართკუთხედში მთლიანად "
+"მოხვდა"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "მოინიშნება ყველა ელემენტი, რომელსაც მონიშვნის მართკუთხედი შეეხება"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
