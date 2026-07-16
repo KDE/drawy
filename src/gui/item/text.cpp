@@ -236,6 +236,9 @@ void TextItem::updateBoundingBox()
 
     if (m_wrapWidth > 0) {
         m_document.setTextWidth(m_wrapWidth);
+    } else {
+        m_document.setTextWidth(-1);
+        m_document.setTextWidth(m_document.size().width());
     }
 
     if (m_document.isEmpty()) {
