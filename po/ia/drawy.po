@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-06-30 16:01+0200\n"
+"PO-Revision-Date: 2026-07-16 12:40+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -107,7 +107,7 @@ msgstr "Cambia  ZOrder"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Cambia typo de rectangulo de angulo"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -473,36 +473,36 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Controla quanto le pression cambia le  spissor de linea."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Preferentias a mano libere"
+msgstr "Preferentias de selection"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Selectiona elementos completemente continite."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Instrumento de Selection"
+msgstr "Selige elementos sur superposition"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
 msgstr ""
+"Solmente le elementos completemente intra le quadrato de selection essera "
+"seligite."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
 msgstr ""
+"Qualcunque elemento que tocca le quadrato de selection  essera seligite."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -693,13 +693,13 @@ msgstr "Alinea a  dextera"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Bloca"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Disbloca"
 
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format
@@ -899,18 +899,18 @@ msgstr "Color"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Angulo arrotundate"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Angulo punctate"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Typo de Angulo"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
