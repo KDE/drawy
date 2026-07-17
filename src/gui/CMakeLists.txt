@@ -146,6 +146,8 @@ target_sources(
         customelements/customelement.cpp
         common/utils/spellcheckhighlighter.cpp
         common/utils/spellcheckhighlighter.hpp
+        customelements/customelementsutils.hpp
+        customelements/customelementsutils.cpp
 )
 
 ecm_qt_declare_logging_category(libdrawygui HEADER drawy_gui_debug.h IDENTIFIER DRAWY_GUI_LOG

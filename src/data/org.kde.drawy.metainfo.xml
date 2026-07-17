@@ -221,11 +221,13 @@
     <release version="1.1.0" type="snapshot">
       <description>
         <p>Allow to lock items</p>
+        <p xml:lang="ar">السماح بقفل العناصر</p>
         <p xml:lang="ca">Permet bloquejar elements</p>
         <p xml:lang="ca-valencia">Permet bloquejar elements</p>
         <p xml:lang="cs">Povoleno uzamykání položek</p>
         <p xml:lang="es">Permitir el bloqueo de elementos.</p>
         <p xml:lang="he">מתן אפשרות לנעול פריטים</p>
+        <p xml:lang="it">Consenti di bloccare gli elementi</p>
         <p xml:lang="ka">ელემენტების დაბლოკვის დაშვება</p>
         <p xml:lang="nl">Sta vergrendelen van items toe</p>
         <p xml:lang="pt-BR">Permitir bloquear itens</p>
@@ -239,6 +241,7 @@
         <p xml:lang="cs">Umožněno nakreslit zaoblený obdélník</p>
         <p xml:lang="es">Permitir dibujar rectángulos redondeados.</p>
         <p xml:lang="he">לאפשר לצייר מרובעים מעוגלים</p>
+        <p xml:lang="it">Consenti di disegnare un rettangolo arrotondato</p>
         <p xml:lang="ka">მომრგვალებული მართკუთხედის დახატვის დაშვება</p>
         <p xml:lang="lt">Leisti piešti stačiakampį apvaliais kampais</p>
         <p xml:lang="nl">Sta afgeronde rechthoek tekenen toe</p>
@@ -255,6 +258,7 @@
         <p xml:lang="eu">Oinarrizko formen hautaketa hobetu (519895 akatsa)</p>
         <p xml:lang="he">צורה בסיסית נבחרת השתפרה (תקלה 519895)</p>
         <p xml:lang="ia">Meliora le forma basic seligite (bug 519895)</p>
+        <p xml:lang="it">Migliora la forma base selezionata (bug 519895)</p>
         <p xml:lang="ka">გაუმჯობესდა მონიშნული საბაზისო მოხაზულობა (შეცდომა 519895)</p>
         <p xml:lang="lt">Patobulinta pasirinkta pagrindinė figūra (klaida 519895)</p>
         <p xml:lang="nl">Geselecteerde basisvorm verbeteren (bug 519895)</p>
@@ -291,6 +295,7 @@
         <p xml:lang="eu">Zer berri elkarrizketa-koadroa gehitu da</p>
         <p xml:lang="he">נוספה חלונית מה חדש</p>
         <p xml:lang="ia">Adde nove dialogo de Que es</p>
+        <p xml:lang="it">Aggiunge la finestra Cosa c'è di nuovo</p>
         <p xml:lang="ka">დაემატა დიალოგი 'რა არის ახალი'</p>
         <p xml:lang="lt">Pridėtas „Kas naujo“ dialogas</p>
         <p xml:lang="nl">Dialoog Wat is er nieuw toegevoegd</p>

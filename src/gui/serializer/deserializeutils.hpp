@@ -13,4 +13,5 @@ class QJsonArray;
 namespace DeserializeUtils
 {
 [[nodiscard]] LIBDRAWYGUI_EXPORT QList<std::shared_ptr<Item>> deserializeItems(const QJsonArray &items);
+[[nodiscard]] LIBDRAWYGUI_EXPORT std::shared_ptr<Item> deserializeItem(const QJsonObject &itemObj);
 }
