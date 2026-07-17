@@ -93,6 +93,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         QAbstractTextDocumentLayout::Selection selection;
         selection.cursor = m_cursor;
         selection.format.setBackground(Common::selectionBackgroundColor);
+        selection.format.setFontUnderline(false);
         ctx.selections.append(selection);
     }
 
