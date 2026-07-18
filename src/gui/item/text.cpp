@@ -580,5 +580,5 @@ void TextItem::setWrapWidth(const qreal wrapWidth)
 qreal TextItem::minWrapWidth() const
 {
     const QFontMetricsF metrics{getFont()};
-    return metrics.maxWidth();
+    return metrics.maxWidth() + 2 * m_document.documentMargin();
 }
