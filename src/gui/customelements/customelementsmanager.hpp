@@ -20,7 +20,7 @@ public:
     static CustomElementsManager *self();
 
     void loadCustomElements();
-    void saveCustomElements();
+    void saveCustomElements(const QString &fileName = {});
 
     [[nodiscard]] bool isEmpty() const;
 

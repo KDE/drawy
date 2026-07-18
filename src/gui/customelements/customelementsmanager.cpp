@@ -54,7 +54,7 @@ void CustomElementsManager::loadCustomElements()
     }
 }
 
-void CustomElementsManager::saveCustomElements()
+void CustomElementsManager::saveCustomElements(const QString &fileName)
 {
     QJsonObject obj;
     obj["version"_L1] = QString::number(1);
@@ -63,7 +63,7 @@ void CustomElementsManager::saveCustomElements()
         elementsObj.append(element.save());
     }
     obj["librairies"_L1] = elementsObj;
-    const auto path = CustomElementsUtils::customElementsFilePath();
+    const auto path = fileName.isEmpty() ? CustomElementsUtils::customElementsFilePath() : fileName;
     QFile file(path);
     if (!file.open(QFile::WriteOnly)) {
         qCWarning(DRAWY_GUI_LOG) << "Impossible to open file: " << file.errorString();
@@ -78,8 +78,11 @@ void CustomElementsManager::saveCustomElements()
 
 void CustomElementsManager::exportToFile(const QString &fileName)
 {
-    Q_UNUSED(fileName);
-    // TODO
+    if (mCustomElements.isEmpty()) {
+        qCWarning(DRAWY_GUI_LOG) << "Custom Elements list is empty";
+        return;
+    }
+    saveCustomElements(fileName);
 }
 
 void CustomElementsManager::addItem(const std::shared_ptr<Item> &item)
