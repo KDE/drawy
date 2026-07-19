@@ -56,6 +56,7 @@ public:
         WhatsNew,
         LockItems,
         UnLockItem,
+        AddCustomElement,
     };
 
     Q_ENUM(Action)
@@ -117,6 +118,7 @@ private:
     void configureShortcuts();
     void exportSelectedElementsToImage();
     void exportToImageElements(const QList<std::shared_ptr<Item>> &items);
+    void slotAddCustomElement();
     QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys);
     QAction *createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType);
 

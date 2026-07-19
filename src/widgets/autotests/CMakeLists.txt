@@ -77,3 +77,4 @@ set_tests_properties(
 )
 
 add_drawy_unittest(cornerrectangletypewidgettest.cpp)
+add_drawy_unittest(customelementswidgettest.cpp)

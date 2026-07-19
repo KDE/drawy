@@ -5,13 +5,13 @@
  */
 
 #pragma once
-#include "customelements/customelement.hpp"
 #include "libdrawygui_export.h"
 #include <QList>
 #include <QObject>
 #include <memory>
 
 class Item;
+class CustomElementsModel;
 class LIBDRAWYGUI_EXPORT CustomElementsManager : public QObject
 {
     Q_OBJECT
@@ -27,7 +27,9 @@ public:
     void exportToFile(const QString &fileName);
     void addItem(const std::shared_ptr<Item> &item);
 
+    [[nodiscard]] CustomElementsModel *customElementsModel() const;
+
 private:
     explicit CustomElementsManager(QObject *parent = nullptr);
-    QList<CustomElement> mCustomElements;
+    CustomElementsModel *const mCustomElementsModel;
 };
