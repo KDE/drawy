@@ -180,7 +180,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
                 item->resize(transformUpdate);
             }
 
-            if (!item->needsCaching()) {
+            if (!item->needsCaching() && item->formType() != Item::FormType::Text) {
                 item->commitTransformation();
             }
 

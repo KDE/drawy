@@ -77,14 +77,10 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
     painter.translate(m_boundingBox.topLeft() - offset);
     painter.setOpacity(painter.opacity() * (property(Property::Type::Opacity).value<int>() / 255.0));
 
-    QTransform transform{m_transform};
-    const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
-
-    if (m_mode == Mode::Normal && qFuzzyCompare(1.0, scaleY) && !qFuzzyCompare(1.0, scaleX)) {
+    if (m_isHorizontalResize) {
+        QTransform transform{m_transform};
+        const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
         painter.scale(1.0 / scaleX, 1.0);
-        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
-        const qreal targetWidth = std::max(width * scaleX, minWrapWidth());
-        m_document.setTextWidth(targetWidth);
     }
 
     QAbstractTextDocumentLayout::PaintContext ctx;
@@ -126,12 +122,16 @@ void TextItem::resize(const QTransform operation)
     QTransform transform{m_transform};
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(transform)};
 
-    if (m_mode == Mode::Normal && qFuzzyCompare(1.0, scaleY) && !qFuzzyCompare(1.0, scaleX)) {
+    m_isHorizontalResize = m_mode == Mode::Normal && qFuzzyCompare(1.0, scaleY) && !qFuzzyCompare(1.0, scaleX);
+
+    if (m_isHorizontalResize) {
         const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
         const qreal targetWidth = std::max(width * scaleX, minWrapWidth());
 
-        m_document.setTextWidth(targetWidth);
-        m_boundingBox.setHeight(m_document.size().height());
+        if (qRound(m_document.textWidth()) != targetWidth) {
+            m_document.setTextWidth(targetWidth);
+            m_boundingBox.setHeight(m_document.size().height());
+        }
     }
 }
 
@@ -140,15 +140,9 @@ void TextItem::commitTransformation()
     const auto [scaleX, scaleY]{Common::Utils::Math::extractScale(m_transform)};
     const QTransform filtered{scaleX, 0, 0, scaleY, 0, 0};
 
-    if (!qFuzzyCompare(1.0, scaleX)) {
-        if (qFuzzyCompare(1.0, scaleY)) {
-            const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
-            m_wrapWidth = std::max(width * scaleX, minWrapWidth());
-        } else {
-            if (m_wrapWidth > 0) {
-                m_wrapWidth = std::max(m_wrapWidth * scaleX, minWrapWidth());
-            }
-        }
+    if (m_isHorizontalResize) {
+        const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
+        m_wrapWidth = std::max(width * scaleX, minWrapWidth());
     }
 
     m_boundingBox = filtered.map(m_boundingBox).boundingRect();
@@ -160,11 +154,16 @@ void TextItem::commitTransformation()
         Item::setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
     }
     updateBoundingBox();
+    m_isHorizontalResize = false;
 }
 
 void TextItem::scaleTextFragments(const qreal scaleY)
 {
+    const QSignalBlocker blocker{m_document};
     m_cursor.beginEditBlock();
+
+    m_document.setTextWidth(-1);
+    const qreal oldIdealWidth = m_document.idealWidth();
 
     QTextBlock block = m_document.firstBlock();
     while (block.isValid()) {
@@ -179,6 +178,13 @@ void TextItem::scaleTextFragments(const qreal scaleY)
             m_cursor.setCharFormat(fmt);
         }
         block = block.next();
+    }
+
+    m_document.setTextWidth(-1);
+    const qreal newIdealWidth = m_document.idealWidth();
+    const qreal scale = newIdealWidth / oldIdealWidth;
+    if (m_wrapWidth > 0) {
+        m_wrapWidth = std::max(m_wrapWidth * scale, minWrapWidth());
     }
 
     m_cursor.endEditBlock();
@@ -552,7 +558,7 @@ void TextItem::deserialize(const QJsonObject &obj)
 
 bool TextItem::needsCaching() const
 {
-    return true;
+    return !m_isHorizontalResize;
 }
 
 QDebug operator<<(QDebug d, const TextItem &t)

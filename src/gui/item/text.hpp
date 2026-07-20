@@ -90,5 +90,6 @@ private:
     int m_preeditCursorPos{0};
 
     qreal m_wrapWidth{-1};
+    bool m_isHorizontalResize{false};
 };
 LIBDRAWYGUI_EXPORT QDebug operator<<(QDebug d, const TextItem &t);
