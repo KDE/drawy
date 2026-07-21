@@ -16,6 +16,7 @@
 #include "components/topleftwidgets.hpp"
 #include "components/topwidgets.hpp"
 #include "coordinatetransformer.hpp"
+#include "customelements/customelementsmanager.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
@@ -49,6 +50,7 @@ UIContext::UIContext(ApplicationContext *context)
     , m_keybindManager(new KeybindManager(this))
     , m_event(new Event())
     , mPluginFormManager(PluginFormManager::self())
+    , mCustomElementsManager(CustomElementsManager::self())
     , m_applicationContext{context}
 {
 }
@@ -126,6 +128,11 @@ void UIContext::slotThemeChanged()
     const auto bgColor = isDark ? DrawyGlobalConfig::backgroundColorDark() : DrawyGlobalConfig::backgroundColorLight();
     m_applicationContext->renderingContext()->setCanvasBackground(bgColor);
     Q_EMIT themeChanged(isDark);
+}
+
+CustomElementsManager *UIContext::customElementsManager() const
+{
+    return mCustomElementsManager;
 }
 
 ToolBar *UIContext::toolBar() const
@@ -293,6 +300,8 @@ void UIContext::showContextMenu() const
         } else {
             menu->addAction(actionManager()->action(ActionManager::Action::LockItems));
         }
+        menu->addSeparator();
+        menu->addAction(actionManager()->action(ActionManager::Action::AddCustomElement));
     }
 
     menu->addSeparator();

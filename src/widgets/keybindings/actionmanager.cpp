@@ -153,6 +153,8 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::UnLockItem, i18nc("@action", "Unlock"), {}, this, &ActionManager::slotUnLock)->setIcon(QIcon::fromTheme(u"unlock"_s));
 
+    createAction(Action::AddCustomElement, i18nc("@action", "Add to Librairy"), {}, this, &ActionManager::slotAddCustomElement);
+
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 #if HAVE_WHATSNEWSNGSUPPORT
     createAction(Action::WhatsNew, i18nc("@action", "What's new"), {}, this, &ActionManager::slotShowWhatsNew);
@@ -249,6 +251,8 @@ QString ActionManager::actionName(Action type) const
         return u"lock_items"_s;
     case Action::UnLockItem:
         return u"unlock_item"_s;
+    case Action::AddCustomElement:
+        return u"add_custom_element"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
@@ -806,6 +810,15 @@ void ActionManager::slotUpdateZorderAndGroupButtons()
 
     action(Action::GroupItems)->setEnabled(selectedItems.size() > 1);
     action(Action::UngroupItems)->setEnabled(atLeastOneGroup);
+}
+
+void ActionManager::slotAddCustomElement()
+{
+    const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(m_context->uiContext()->toolBar()->curTool()).getItemsUnderCursor(m_context);
+    if (items.size() == 1 && items.at(0)->locked()) {
+        // TODO
+    }
+    // TODO
 }
 
 #include "moc_actionmanager.cpp"

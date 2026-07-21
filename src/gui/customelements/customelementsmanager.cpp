@@ -5,6 +5,7 @@
  */
 
 #include "customelementsmanager.hpp"
+#include "customelements/customelementsmodel.hpp"
 #include "customelements/customelementsutils.hpp"
 #include "drawy_gui_debug.h"
 #include "item/item.hpp"
@@ -15,7 +16,13 @@
 using namespace Qt::Literals::StringLiterals;
 CustomElementsManager::CustomElementsManager(QObject *parent)
     : QObject{parent}
+    , mCustomElementsModel(new CustomElementsModel(this))
 {
+}
+
+CustomElementsModel *CustomElementsManager::customElementsModel() const
+{
+    return mCustomElementsModel;
 }
 
 CustomElementsManager::~CustomElementsManager() = default;
@@ -42,28 +49,29 @@ void CustomElementsManager::loadCustomElements()
             qCWarning(DRAWY_GUI_LOG) << "Invalid version" << version;
             return;
         }
-        mCustomElements.clear();
+        QList<CustomElement> customElements;
         const QJsonArray array = obj["librairies"_L1].toArray();
         for (const auto &r : array) {
             CustomElement e;
             e.load(r.toObject());
             if (e.isValid()) {
-                mCustomElements.append(e);
+                customElements.append(e);
             }
         }
+        mCustomElementsModel->setCustomElements(customElements);
     }
 }
 
-void CustomElementsManager::saveCustomElements()
+void CustomElementsManager::saveCustomElements(const QString &fileName)
 {
     QJsonObject obj;
     obj["version"_L1] = QString::number(1);
     QJsonArray elementsObj;
-    for (const auto &element : std::as_const(mCustomElements)) {
+    for (const auto &element : mCustomElementsModel->customElements()) {
         elementsObj.append(element.save());
     }
     obj["librairies"_L1] = elementsObj;
-    const auto path = CustomElementsUtils::customElementsFilePath();
+    const auto path = fileName.isEmpty() ? CustomElementsUtils::customElementsFilePath() : fileName;
     QFile file(path);
     if (!file.open(QFile::WriteOnly)) {
         qCWarning(DRAWY_GUI_LOG) << "Impossible to open file: " << file.errorString();
@@ -78,21 +86,24 @@ void CustomElementsManager::saveCustomElements()
 
 void CustomElementsManager::exportToFile(const QString &fileName)
 {
-    Q_UNUSED(fileName);
-    // TODO
+    if (mCustomElementsModel->customElements().isEmpty()) {
+        qCWarning(DRAWY_GUI_LOG) << "Custom Elements list is empty";
+        return;
+    }
+    saveCustomElements(fileName);
 }
 
 void CustomElementsManager::addItem(const std::shared_ptr<Item> &item)
 {
     CustomElement element;
     element.setItem(item);
-    mCustomElements.append(element);
+    mCustomElementsModel->addCustomElement(element);
     saveCustomElements();
 }
 
 bool CustomElementsManager::isEmpty() const
 {
-    return mCustomElements.isEmpty();
+    return mCustomElementsModel->isEmpty();
 }
 
 #include "moc_customelementsmanager.cpp"

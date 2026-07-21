@@ -18,6 +18,7 @@ class TopLeftWidgets;
 class BottomLeftWidgets;
 class PluginFormManager;
 class TextItem;
+class CustomElementsManager;
 
 class UIContext : public QObject
 {
@@ -37,6 +38,7 @@ public:
     [[nodiscard]] KeybindManager *keybindManager() const;
     [[nodiscard]] ActionManager *actionManager() const;
     [[nodiscard]] PropertyManager *propertyManager() const;
+    [[nodiscard]] CustomElementsManager *customElementsManager() const;
 
     void showContextMenu() const;
     [[nodiscard]] bool showSpellCheckMenu(const std::shared_ptr<TextItem> &textItem, const QPoint &globalPos) const;
@@ -62,6 +64,7 @@ private:
     Event *const m_event;
     Tool *m_lastTool = nullptr; // Used to call the cleanup function of the last tool
     PluginFormManager *const mPluginFormManager;
+    CustomElementsManager *const mCustomElementsManager;
 
     ApplicationContext *const m_applicationContext;
 };
