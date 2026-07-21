@@ -10,20 +10,21 @@
 
 QList<std::shared_ptr<Item>> TextMimeHandler::tryReadData(const QMimeData &mimeData)
 {
-    if (!mimeData.hasText()) {
-        return {};
+    if (mimeData.hasHtml() && !mimeData.html().trimmed().isEmpty()) {
+        const auto text = std::make_shared<TextItem>();
+        text->createTextBox({0, 0});
+        text->cursor().insertHtml(mimeData.html());
+        return {text};
     }
 
-    if (mimeData.text().trimmed().isEmpty()) {
-        return {};
+    if (mimeData.hasText() && !mimeData.text().trimmed().isEmpty()) {
+        const auto text = std::make_shared<TextItem>();
+        text->createTextBox({0, 0});
+        text->cursor().insertText(mimeData.text());
+        return {text};
     }
 
-    const std::shared_ptr<TextItem> text = std::make_shared<TextItem>();
-
-    text->createTextBox({0, 0});
-    text->cursor().insertText(mimeData.text());
-
-    return {text};
+    return {};
 }
 
 void TextMimeHandler::contributeData(QMimeData &mimeData, const QList<std::shared_ptr<Item>> &selectedItems)
@@ -35,4 +36,5 @@ void TextMimeHandler::contributeData(QMimeData &mimeData, const QList<std::share
     const TextItem *item = static_cast<TextItem *>(&*selectedItems[0]);
 
     mimeData.setText(item->text());
+    mimeData.setHtml(item->html());
 }

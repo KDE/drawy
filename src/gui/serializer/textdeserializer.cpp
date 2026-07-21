@@ -26,7 +26,7 @@ void TextDeserializer::deserialize(const QJsonObject &obj)
     }
 
     if (obj.contains(u"html"_s)) {
-        textItem->cursor().insertHtml(value(obj, u"html"_s).toString());
+        textItem->setHtml(value(obj, u"html"_s).toString());
     } else {
         textItem->cursor().insertText(text);
     }

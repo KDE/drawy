@@ -170,12 +170,15 @@ void TextItem::scaleTextFragments(const qreal scaleY)
         for (auto it = block.begin(); !it.atEnd(); ++it) {
             const QTextFragment fragment = it.fragment();
             QTextCharFormat fmt = fragment.charFormat();
-            const qreal size = fmt.fontPointSize();
+            const qreal size = getFontSize(fmt);
 
             fmt.setFontPointSize(std::max(1.0, size * scaleY));
+            fmt.setProperty(QTextFormat::FontPixelSize, QVariant());
+            fmt.setProperty(QTextFormat::FontSizeAdjustment, QVariant());
+
             m_cursor.setPosition(fragment.position());
             m_cursor.setPosition(fragment.position() + fragment.length(), QTextCursor::KeepAnchor);
-            m_cursor.setCharFormat(fmt);
+            m_cursor.mergeCharFormat(fmt);
         }
         block = block.next();
     }
@@ -271,6 +274,18 @@ void TextItem::updateBoundingBox()
         m_boundingBox.setSize(newSize);
     }
     setDirty(true);
+}
+
+qreal TextItem::getFontSize(const QTextCharFormat &fmt)
+{
+    qreal size = fmt.fontPointSize();
+    if (size <= 0) {
+        size = fmt.font().pointSizeF();
+    }
+    if (size <= 0) {
+        size = fmt.font().pixelSize() * 72.0 / 96.0;
+    }
+    return std::max(size, 1.0);
 }
 
 QFont TextItem::getFont() const
@@ -394,12 +409,15 @@ Property TextItem::property(const Property::Type propertyType) const
 
     switch (propertyType) {
     case Property::Type::StrokeColor: {
+        if (!cursor.charFormat().hasProperty(QTextFormat::ForegroundBrush)) {
+            return Item::property(Property::Type::StrokeColor);
+        }
         const QColor color = cursor.charFormat().foreground().color();
         return Property{color, Property::Type::StrokeColor};
     }
     case Property::Type::FontSize: {
-        const qreal size = cursor.charFormat().font().pointSize();
-        return Property{static_cast<int>(size), Property::Type::FontSize};
+        const qreal size = getFontSize(cursor.charFormat());
+        return Property{qRound(size), Property::Type::FontSize};
     }
     case Property::Type::FontFamily: {
         const QString font = cursor.charFormat().font().family();
@@ -445,6 +463,7 @@ bool TextItem::needsPropertyUpdate(const Property &property) const
 
     cursor.setPosition(start + 1);
     const QTextCharFormat firstFormat = cursor.charFormat();
+    const qreal firstSize = getFontSize(firstFormat);
 
     QTextBlock block = m_document.findBlock(start);
     while (block.isValid() && block.position() < end) {
@@ -465,11 +484,12 @@ bool TextItem::needsPropertyUpdate(const Property &property) const
                     return true;
                 }
                 break;
-            case Property::Type::FontSize:
-                if (fmt.font().pointSize() != firstFormat.font().pointSize()) {
+            case Property::Type::FontSize: {
+                if (qRound(getFontSize(fmt)) != qRound(firstSize)) {
                     return true;
                 }
                 break;
+            }
             case Property::Type::FontFamily:
                 if (fmt.font().family() != firstFormat.font().family()) {
                     return true;
@@ -493,6 +513,10 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         break;
     case Property::Type::FontSize:
         fmt.setFontPointSize(newObj.value<int>());
+
+        // these properties take priority over point size preventing size change
+        fmt.setProperty(QTextFormat::FontPixelSize, QVariant());
+        fmt.setProperty(QTextFormat::FontSizeAdjustment, QVariant());
         break;
     case Property::Type::FontFamily:
         fmt.setFontFamilies(QStringList{newObj.value<QString>()});

@@ -74,6 +74,7 @@ protected:
     void drawItem(QPainter &painter, const QPointF &offset) const override;
 
 private:
+    [[nodiscard]] LIBDRAWYGUI_NO_EXPORT static qreal getFontSize(const QTextCharFormat &fmt);
     [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QFont getFont() const;
     [[nodiscard]] LIBDRAWYGUI_NO_EXPORT QTextOption getTextOptions() const;
 
