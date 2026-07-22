@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-14 00:41+0000\n"
-"PO-Revision-Date: 2026-05-12 04:12+0900\n"
+"POT-Creation-Date: 2026-07-22 00:42+0000\n"
+"PO-Revision-Date: 2026-07-22 01:56+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -106,7 +106,7 @@ msgstr "變更 Z 軸排序"
 #: gui/properties/property.cpp:128
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "變更矩形角落類型"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -131,20 +131,16 @@ msgid "Align Items"
 msgstr "對齊項目"
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "復原"
+msgstr "復原：%1"
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "重做"
+msgstr "重做：%1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -276,67 +272,67 @@ msgctxt "Default unsaved file name"
 msgid "Untitled"
 msgstr "未命名"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "選取"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr "自由筆畫"
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "矩形"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "鑽石"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "橢圓"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "箭頭"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "線條"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "橡皮擦"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "文字"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "移動"
 
-#: widgets/context/uicontext.cpp:253
+#: widgets/context/uicontext.cpp:260
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -344,7 +340,7 @@ msgctxt ""
 msgid "Reorder"
 msgstr "重新排序"
 
-#: widgets/context/uicontext.cpp:263
+#: widgets/context/uicontext.cpp:270
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
@@ -373,7 +369,7 @@ msgstr "一般"
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "輸入"
 
 #: widgets/dialog/configuresettingsdialog.cpp:51
 #, kde-format
@@ -451,60 +447,56 @@ msgstr "暗色模式"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "自由繪圖設定"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "防震"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "降低手部抖動的影響，讓線條更穩定。"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "筆壓靈敏度"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "控制筆壓要改變線條粗細多少。"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgid "Selection Settings"
-msgstr "選取"
+msgstr "選取設定"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "選取完全包含在其中的項目"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "選取工具"
+msgstr "選取所有有重疊到的項目"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
-msgstr ""
+msgstr "只會選取完全在選取方塊裡面的項目"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "會選取任何有碰到選取方塊的項目"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -695,83 +687,89 @@ msgstr "對齊右邊"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "鎖定"
 
 #: widgets/keybindings/actionmanager.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "解除鎖定"
 
 #: widgets/keybindings/actionmanager.cpp:156
+#, kde-format
+msgctxt "@action"
+msgid "Add to Librairy"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:158
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "除錯"
 
-#: widgets/keybindings/actionmanager.cpp:158
+#: widgets/keybindings/actionmanager.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "新功能"
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "Untitled.%1"
 msgstr "未命名.%1"
 
-#: widgets/keybindings/actionmanager.cpp:525
-#: widgets/keybindings/actionmanager.cpp:603
+#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:607
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:526
+#: widgets/keybindings/actionmanager.cpp:530
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: widgets/keybindings/actionmanager.cpp:548
+#: widgets/keybindings/actionmanager.cpp:552
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "您確定要清空整個畫布嗎？"
 
-#: widgets/keybindings/actionmanager.cpp:549
+#: widgets/keybindings/actionmanager.cpp:553
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/keybindings/actionmanager.cpp:606
+#: widgets/keybindings/actionmanager.cpp:610
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: widgets/keybindings/actionmanager.cpp:619
+#: widgets/keybindings/actionmanager.cpp:623
 #, kde-format
 msgid "Untitled.svg"
 msgstr "未命名.svg"
 
-#: widgets/keybindings/actionmanager.cpp:622
+#: widgets/keybindings/actionmanager.cpp:626
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:623
+#: widgets/keybindings/actionmanager.cpp:627
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:627
+#: widgets/keybindings/actionmanager.cpp:631
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "匯出為影像"
 
-#: widgets/keybindings/actionmanager.cpp:681
+#: widgets/keybindings/actionmanager.cpp:685
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -780,7 +778,7 @@ msgstr ""
 "文件「%1」已被修改。\n"
 "您想要儲存變更還是放棄變更？"
 
-#: widgets/keybindings/actionmanager.cpp:685
+#: widgets/keybindings/actionmanager.cpp:689
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
@@ -901,18 +899,18 @@ msgstr "色彩"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "圓滑角落"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "垂直角落"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "角落類型"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format

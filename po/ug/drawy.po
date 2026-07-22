@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-14 00:41+0000\n"
+"POT-Creation-Date: 2026-07-22 00:42+0000\n"
 "PO-Revision-Date: 2026-05-29 17:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -275,67 +275,67 @@ msgctxt "Default unsaved file name"
 msgid "Untitled"
 msgstr "ماۋزۇسىز"
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr "تاللاش"
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr "تىك تۆت بۇلۇڭ"
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr "رومبا"
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr "ئېللىپىس"
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr "يا ئوق"
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr "قۇر"
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr "ئۆچۈرگۈچ"
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr "تېكىست"
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr "يۆتكە"
 
-#: widgets/context/uicontext.cpp:253
+#: widgets/context/uicontext.cpp:260
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -343,7 +343,7 @@ msgctxt ""
 msgid "Reorder"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:263
+#: widgets/context/uicontext.cpp:270
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
@@ -705,72 +705,78 @@ msgstr ""
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format
 msgctxt "@action"
+msgid "Add to Librairy"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:158
+#, kde-format
+msgctxt "@action"
 msgid "Debug"
 msgstr "سازلا"
 
-#: widgets/keybindings/actionmanager.cpp:158
+#: widgets/keybindings/actionmanager.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:523
+#: widgets/keybindings/actionmanager.cpp:527
 #, kde-format
 msgid "Untitled.%1"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:525
-#: widgets/keybindings/actionmanager.cpp:603
+#: widgets/keybindings/actionmanager.cpp:529
+#: widgets/keybindings/actionmanager.cpp:607
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:526
+#: widgets/keybindings/actionmanager.cpp:530
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "ھۆججەت ساقلا"
 
-#: widgets/keybindings/actionmanager.cpp:548
+#: widgets/keybindings/actionmanager.cpp:552
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:549
+#: widgets/keybindings/actionmanager.cpp:553
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "تازىلا"
 
-#: widgets/keybindings/actionmanager.cpp:606
+#: widgets/keybindings/actionmanager.cpp:610
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "ھۆججەت ئاچ"
 
-#: widgets/keybindings/actionmanager.cpp:619
+#: widgets/keybindings/actionmanager.cpp:623
 #, kde-format
 msgid "Untitled.svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:622
+#: widgets/keybindings/actionmanager.cpp:626
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:623
+#: widgets/keybindings/actionmanager.cpp:627
 #, kde-format
 msgid "PNG (*.png)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:627
+#: widgets/keybindings/actionmanager.cpp:631
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:681
+#: widgets/keybindings/actionmanager.cpp:685
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -779,7 +785,7 @@ msgstr ""
 "پۈتۈك %1 ئۆزگەرتىلدى\n"
 "ئۆزگىرىشنى ساقلامسىز؟ تاشلىۋېتەمسىز؟"
 
-#: widgets/keybindings/actionmanager.cpp:685
+#: widgets/keybindings/actionmanager.cpp:689
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
