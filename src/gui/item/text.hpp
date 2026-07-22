@@ -45,6 +45,7 @@ public:
     void setMode(Mode mode);
 
     [[nodiscard]] qsizetype getIndexFromCursor(QPointF cursor) const;
+    [[nodiscard]] QString getLink(QPointF cursorPos) const;
     void setCaret(QPointF cursorPos);
 
     [[nodiscard]] QString text() const;

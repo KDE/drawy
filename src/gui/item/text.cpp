@@ -240,6 +240,14 @@ qsizetype TextItem::getIndexFromCursor(const QPointF cursorPos) const
     return m_document.documentLayout()->hitTest(docPos, Qt::FuzzyHit);
 }
 
+QString TextItem::getLink(const QPointF cursorPos) const
+{
+    const QPointF localPos{m_transform.inverted().map(cursorPos)};
+    const QPointF docPos = localPos - m_boundingBox.topLeft();
+
+    return m_document.documentLayout()->anchorAt(docPos);
+}
+
 void TextItem::updateBoundingBox()
 {
     m_document.setDefaultTextOption(getTextOptions());

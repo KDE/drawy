@@ -4,6 +4,7 @@
 
 #include "texttool.hpp"
 
+#include <KLocalizedString>
 #include <memory>
 
 #include "canvas/canvas.hpp"
@@ -24,11 +25,13 @@
 #include "keybindings/keybindmanager.hpp"
 #include "properties/widgets/propertymanager.hpp"
 #include <QClipboard>
+#include <QDesktopServices>
 #include <QGuiApplication>
 #include <QInputMethod>
 #include <QTextBlock>
 #include <QTextCharFormat>
 #include <QTextLayout>
+#include <QToolTip>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -82,6 +85,13 @@ void TextTool::mousePressed(ApplicationContext *context)
             }
         } else {
             const auto clickedItem = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
+
+            const QString link = clickedItem->getLink(worldPos);
+            if (!link.isEmpty() && (uiContext->appEvent()->modifiers() & Qt::ControlModifier)) {
+                QDesktopServices::openUrl(QUrl(link));
+                return;
+            }
+
             if (m_curItem != nullptr && m_curItem != clickedItem) {
                 m_curItem->setMode(TextItem::Mode::Normal);
                 renderingContext->cacheGrid().markDirty(transformer.worldToGrid(m_curItem->boundingBox()).toRect());
@@ -126,15 +136,25 @@ void TextTool::mouseMoved(ApplicationContext *context)
 
     if (m_isSelecting) {
         renderingContext->canvas()->setCursor(Qt::IBeamCursor);
+        QToolTip::hideText();
     } else {
         const QList<std::shared_ptr<Item>> intersectingItems{quadTree.queryItems(worldPos, [](const std::shared_ptr<Item> &item, const QPointF &point) {
             return item->formType() == Item::FormType::Text && !item->locked() && item->boundingBox().contains(point);
         })};
 
         if (!intersectingItems.empty()) {
-            renderingContext->canvas()->setCursor(Qt::IBeamCursor);
+            const auto item = std::dynamic_pointer_cast<TextItem>(intersectingItems.back());
+            const QString link = item->getLink(worldPos);
+            if (!link.isEmpty()) {
+                renderingContext->canvas()->setCursor(Qt::PointingHandCursor);
+                QToolTip::showText(QCursor::pos(), i18n("ctrl + click to open: %1", link), renderingContext->canvas());
+            } else {
+                renderingContext->canvas()->setCursor(Qt::IBeamCursor);
+                QToolTip::hideText();
+            }
         } else {
             renderingContext->canvas()->setCursor(Qt::CrossCursor);
+            QToolTip::hideText();
         }
     }
 
