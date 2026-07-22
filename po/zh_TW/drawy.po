@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-23 02:38+0000\n"
-"PO-Revision-Date: 2026-04-20 02:08+0900\n"
+"PO-Revision-Date: 2026-07-22 01:55+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -346,7 +346,7 @@ msgstr "一般"
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "輸入"
 
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
@@ -418,27 +418,27 @@ msgstr "暗色模式"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "自由繪圖設定"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "防震"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "降低手部抖動的影響，讓線條更穩定。"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "筆壓靈敏度"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "控制筆壓要改變線條粗細多少。"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
