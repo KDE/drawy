@@ -258,7 +258,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     context->uiContext()->propertyBar()->updateToolProperties();
 }
 
-void TextTool::processKey(const Event *ev)
+void TextTool::processKey(const Event *ev) const
 {
     const bool ctrl = ev->modifiers() & Qt::ControlModifier;
     const bool shift = ev->modifiers() & Qt::ShiftModifier;

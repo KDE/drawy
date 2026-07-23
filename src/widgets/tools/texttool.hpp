@@ -39,5 +39,5 @@ private:
     bool m_doubleClicked{false};
     bool m_tripleClicked{false};
 
-    void processKey(const Event *ev);
+    void processKey(const Event *ev) const;
 };
