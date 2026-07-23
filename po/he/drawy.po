@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:42+0000\n"
+"POT-Creation-Date: 2026-07-23 00:41+0000\n"
 "PO-Revision-Date: 2026-07-14 09:04+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -705,7 +705,7 @@ msgstr "שחרור"
 #: widgets/keybindings/actionmanager.cpp:156
 #, kde-format
 msgctxt "@action"
-msgid "Add to Librairy"
+msgid "Add to Library"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:158

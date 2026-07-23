@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:42+0000\n"
-"PO-Revision-Date: 2026-07-14 11:27+0200\n"
+"POT-Creation-Date: 2026-07-23 00:41+0000\n"
+"PO-Revision-Date: 2026-07-22 17:37+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -705,10 +705,12 @@ msgid "Unlock"
 msgstr "Odemknout"
 
 #: widgets/keybindings/actionmanager.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add to Librairy"
 msgctxt "@action"
-msgid "Add to Librairy"
-msgstr ""
+msgid "Add to Library"
+msgstr "Přidat do knihovny"
 
 #: widgets/keybindings/actionmanager.cpp:158
 #, kde-format

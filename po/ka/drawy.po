@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:42+0000\n"
+"POT-Creation-Date: 2026-07-23 00:41+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
@@ -699,10 +699,12 @@ msgid "Unlock"
 msgstr "განბლოკვა"
 
 #: widgets/keybindings/actionmanager.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add to Librairy"
 msgctxt "@action"
-msgid "Add to Librairy"
-msgstr ""
+msgid "Add to Library"
+msgstr "ბიბლიოთეკაში დამატება"
 
 #: widgets/keybindings/actionmanager.cpp:158
 #, kde-format

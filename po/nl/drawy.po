@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:42+0000\n"
-"PO-Revision-Date: 2026-07-14 10:06+0200\n"
+"POT-Creation-Date: 2026-07-23 00:41+0000\n"
+"PO-Revision-Date: 2026-07-22 10:51+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -702,10 +702,12 @@ msgid "Unlock"
 msgstr "Ontgrendelen"
 
 #: widgets/keybindings/actionmanager.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add to Librairy"
 msgctxt "@action"
-msgid "Add to Librairy"
-msgstr ""
+msgid "Add to Library"
+msgstr "Aan bibliotheek toevoegen"
 
 #: widgets/keybindings/actionmanager.cpp:158
 #, kde-format
