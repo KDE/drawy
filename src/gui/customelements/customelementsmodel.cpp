@@ -21,7 +21,7 @@ int CustomElementsModel::rowCount(const QModelIndex &parent) const
     return mCustomElements.count();
 }
 
-QVariant CustomElementsModel::data([[maybe_unused]] const QModelIndex &index, [[maybe_unused]] int role) const
+QVariant CustomElementsModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mCustomElements.count()) {
         return {};
@@ -30,6 +30,8 @@ QVariant CustomElementsModel::data([[maybe_unused]] const QModelIndex &index, [[
     switch (role) {
     case TimeStamp:
         return customElement.timeStamp();
+    case Icon:
+        return {};
     }
     return {};
 }

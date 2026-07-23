@@ -6,7 +6,7 @@
 #pragma once
 #include "libdrawywidgets_private_export.h"
 #include <QWidget>
-class QListView;
+class CustomElementsListView;
 class CustomElementsManager;
 class LIBDRAWYWIDGETS_TESTS_EXPORT CustomElementsWidget : public QWidget
 {
@@ -16,5 +16,5 @@ public:
     ~CustomElementsWidget() override;
 
 private:
-    QListView *const mListView;
+    CustomElementsListView *const mListView;
 };

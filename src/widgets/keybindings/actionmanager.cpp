@@ -30,6 +30,7 @@
 #include "command/ungroupcommand.hpp"
 #include "command/zordercommand.hpp"
 #include "common/constants.hpp"
+#include "customelements/customelementsmanager.hpp"
 #include "dialog/configuresettingsdialog.hpp"
 #include "event/event.hpp"
 #include "jobs/serializejob.hpp"
@@ -815,10 +816,10 @@ void ActionManager::slotUpdateZorderAndGroupButtons()
 void ActionManager::slotAddCustomElement()
 {
     const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(m_context->uiContext()->toolBar()->curTool()).getItemsUnderCursor(m_context);
-    if (items.size() == 1 && items.at(0)->locked()) {
-        // TODO
+    if (items.size() == 1) {
+        auto manager = m_context->uiContext()->customElementsManager();
+        manager->addItem(items.constFirst());
     }
-    // TODO
 }
 
 #include "moc_actionmanager.cpp"
