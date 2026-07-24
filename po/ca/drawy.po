@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-23 00:41+0000\n"
-"PO-Revision-Date: 2026-07-22 13:00+0200\n"
+"PO-Revision-Date: 2026-07-23 15:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -708,12 +708,10 @@ msgid "Unlock"
 msgstr "Desbloqueja"
 
 #: widgets/keybindings/actionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Librairy"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Library"
-msgstr "Afegeix a Librairy"
+msgstr "Afegeix a la biblioteca"
 
 #: widgets/keybindings/actionmanager.cpp:158
 #, kde-format

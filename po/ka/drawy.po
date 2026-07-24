@@ -699,9 +699,7 @@ msgid "Unlock"
 msgstr "განბლოკვა"
 
 #: widgets/keybindings/actionmanager.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Librairy"
+#, kde-format
 msgctxt "@action"
 msgid "Add to Library"
 msgstr "ბიბლიოთეკაში დამატება"
