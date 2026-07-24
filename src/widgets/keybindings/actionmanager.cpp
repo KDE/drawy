@@ -153,7 +153,7 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::UnLockItem, i18nc("@action", "Unlock"), {}, this, &ActionManager::slotUnLock)->setIcon(QIcon::fromTheme(u"unlock"_s));
 
-    createAction(Action::AddCustomElement, i18nc("@action", "Add to Librairy"), {}, this, &ActionManager::slotAddCustomElement);
+    createAction(Action::AddCustomElement, i18nc("@action", "Add to Library"), {}, this, &ActionManager::slotAddCustomElement);
 
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 #if HAVE_WHATSNEWSNGSUPPORT
