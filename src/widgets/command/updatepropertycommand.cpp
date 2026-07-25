@@ -31,6 +31,7 @@ void UpdatePropertyCommand::redo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         if (item->hasProperty(type)) {
             if (item->formType() == Item::FormType::Text) {
+                dirtyRegion |= item->boundingBox();
                 const auto textItem = std::static_pointer_cast<TextItem>(item);
                 m_htmls[item] = textItem->html();
             }
@@ -53,6 +54,7 @@ void UpdatePropertyCommand::undo(ApplicationContext *context)
     for (const auto &item : std::as_const(m_items)) {
         if (item->hasProperty(type)) {
             if (m_htmls.contains(item)) {
+                dirtyRegion |= item->boundingBox();
                 const auto textItem = std::static_pointer_cast<TextItem>(item);
                 textItem->setHtml(m_htmls[item]);
             } else {
