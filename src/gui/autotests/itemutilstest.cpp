@@ -7,6 +7,7 @@
 #include "item/item.hpp"
 #include "item/itemutils.hpp"
 #include <QTest>
+#include <QTextListFormat>
 QTEST_GUILESS_MAIN(ItemUtilsTest)
 using namespace Qt::Literals::StringLiterals;
 ItemUtilsTest::ItemUtilsTest(QObject *parent)
@@ -156,6 +157,33 @@ void ItemUtilsTest::shouldConvertItemCornerRectangleTypeEnumToString()
 {
     QCOMPARE(ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType::Pointed), u"Pointed"_s);
     QCOMPARE(ItemUtils::convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType::Rounded), u"Rounded"_s);
+}
+
+void ItemUtilsTest::shouldConvertListStyleToString()
+{
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListDisc), u"ListDisc"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListCircle), u"ListCircle"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListSquare), u"ListSquare"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListDecimal), u"ListDecimal"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListLowerAlpha), u"ListLowerAlpha"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListUpperAlpha), u"ListUpperAlpha"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListLowerRoman), u"ListLowerRoman"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListUpperRoman), u"ListUpperRoman"_s);
+    QCOMPARE(ItemUtils::convertListStyleToString(QTextListFormat::ListStyleUndefined), u"None"_s);
+}
+
+void ItemUtilsTest::shouldConvertStringToListStyle()
+{
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListDisc"_s), QTextListFormat::ListDisc);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListCircle"_s), QTextListFormat::ListCircle);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListSquare"_s), QTextListFormat::ListSquare);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListDecimal"_s), QTextListFormat::ListDecimal);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListLowerAlpha"_s), QTextListFormat::ListLowerAlpha);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListUpperAlpha"_s), QTextListFormat::ListUpperAlpha);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListLowerRoman"_s), QTextListFormat::ListLowerRoman);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"ListUpperRoman"_s), QTextListFormat::ListUpperRoman);
+    QCOMPARE(ItemUtils::convertStringToListStyle(u"None"_s), QTextListFormat::ListStyleUndefined);
+    QCOMPARE(ItemUtils::convertStringToListStyle(QString()), QTextListFormat::ListStyleUndefined);
 }
 
 #include "moc_itemutilstest.cpp"

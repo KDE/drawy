@@ -35,6 +35,7 @@ public:
         TextAlignment,
         ZOrder,
         CornerRectangleType,
+        ListStyle,
     };
 
     enum FontStyle : int8_t {
@@ -75,16 +76,18 @@ public:
             return 12;
         case Type::TextAlignment:
             return 13;
-        case Type::Alignment:
+        case Type::ListStyle:
             return 14;
-        case Type::ZOrder:
+        case Type::Alignment:
             return 15;
-        case Type::Actions:
+        case Type::ZOrder:
             return 16;
-        case Type::CornerRectangleType:
+        case Type::Actions:
             return 17;
-        case Type::Null:
+        case Type::CornerRectangleType:
             return 18;
+        case Type::Null:
+            return 19;
         }
 
         return 0;

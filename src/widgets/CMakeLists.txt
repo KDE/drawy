@@ -146,6 +146,8 @@ target_sources(
         properties/widgets/strokestyleactionswidget.cpp
         properties/widgets/textalignmentwidget.hpp
         properties/widgets/textalignmentwidget.cpp
+        properties/widgets/liststylewidget.hpp
+        properties/widgets/liststylewidget.cpp
         properties/widgets/cornerrectangletypewidget.hpp
         properties/widgets/cornerrectangletypewidget.cpp
         tools/arrowtool.cpp

@@ -25,6 +25,10 @@
         {
             "type": "TextAlignment",
             "value": "AlignLeft"
+        },
+        {
+            "type": "ListStyle",
+            "value": "None"
         }
     ],
     "text": "",

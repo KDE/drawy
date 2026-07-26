@@ -34,4 +34,7 @@ private Q_SLOTS:
 
     void shouldConvertItemCornerRectangleTypeStringToEnum();
     void shouldConvertItemCornerRectangleTypeEnumToString();
+
+    void shouldConvertListStyleToString();
+    void shouldConvertStringToListStyle();
 };

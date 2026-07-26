@@ -46,6 +46,9 @@ enum class ZorderMove : uint8_t {
 [[nodiscard]] LIBDRAWYGUI_EXPORT QString convertItemCornerRectangleTypeEnumToString(Item::CornerRectangleType type);
 [[nodiscard]] LIBDRAWYGUI_EXPORT Item::CornerRectangleType convertItemCornerRectangleTypeStringToEnum(const QString &str);
 
+[[nodiscard]] LIBDRAWYGUI_EXPORT QString convertListStyleToString(int style);
+[[nodiscard]] LIBDRAWYGUI_EXPORT int convertStringToListStyle(const QString &str);
+
 [[nodiscard]] std::shared_ptr<Item> createItemFromType(Item::FormType type);
 
 } // namespace ItemUtils

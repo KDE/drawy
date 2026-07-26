@@ -14,6 +14,7 @@
 #include "item/line.hpp"
 #include "item/rectangle.hpp"
 #include "item/text.hpp"
+#include <QTextListFormat>
 
 using namespace Qt::Literals::StringLiterals;
 Item::FormType ItemUtils::convertItemTypeStringToEnum(const QString &str)
@@ -312,4 +313,48 @@ int ItemUtils::convertStringToFontStyle(const QString &str)
         }
     }
     return style;
+}
+
+QString ItemUtils::convertListStyleToString(const int style)
+{
+    if (style == QTextListFormat::ListDisc) {
+        return u"ListDisc"_s;
+    } else if (style == QTextListFormat::ListCircle) {
+        return u"ListCircle"_s;
+    } else if (style == QTextListFormat::ListSquare) {
+        return u"ListSquare"_s;
+    } else if (style == QTextListFormat::ListDecimal) {
+        return u"ListDecimal"_s;
+    } else if (style == QTextListFormat::ListLowerAlpha) {
+        return u"ListLowerAlpha"_s;
+    } else if (style == QTextListFormat::ListUpperAlpha) {
+        return u"ListUpperAlpha"_s;
+    } else if (style == QTextListFormat::ListLowerRoman) {
+        return u"ListLowerRoman"_s;
+    } else if (style == QTextListFormat::ListUpperRoman) {
+        return u"ListUpperRoman"_s;
+    }
+    return u"None"_s;
+}
+
+int ItemUtils::convertStringToListStyle(const QString &str)
+{
+    if (str == u"ListDisc"_s) {
+        return QTextListFormat::ListDisc;
+    } else if (str == u"ListCircle"_s) {
+        return QTextListFormat::ListCircle;
+    } else if (str == u"ListSquare"_s) {
+        return QTextListFormat::ListSquare;
+    } else if (str == u"ListDecimal"_s) {
+        return QTextListFormat::ListDecimal;
+    } else if (str == u"ListLowerAlpha"_s) {
+        return QTextListFormat::ListLowerAlpha;
+    } else if (str == u"ListUpperAlpha"_s) {
+        return QTextListFormat::ListUpperAlpha;
+    } else if (str == u"ListLowerRoman"_s) {
+        return QTextListFormat::ListLowerRoman;
+    } else if (str == u"ListUpperRoman"_s) {
+        return QTextListFormat::ListUpperRoman;
+    }
+    return QTextListFormat::ListStyleUndefined;
 }

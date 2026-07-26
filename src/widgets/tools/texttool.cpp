@@ -30,7 +30,6 @@
 #include <QInputMethod>
 #include <QTextBlock>
 #include <QTextCharFormat>
-#include <QTextLayout>
 #include <QToolTip>
 
 using namespace Qt::Literals::StringLiterals;
@@ -45,7 +44,8 @@ TextTool::TextTool(ApplicationContext *context)
                     Property::Type::FontSize,
                     Property::Type::FontStyle,
                     Property::Type::FontFamily,
-                    Property::Type::TextAlignment};
+                    Property::Type::TextAlignment,
+                    Property::Type::ListStyle};
 }
 
 void TextTool::mousePressed(ApplicationContext *context)
@@ -74,6 +74,7 @@ void TextTool::mousePressed(ApplicationContext *context)
                 m_curItem->setProperty(Property::Type::FontStyle, uiContext->propertyManager()->value(Property::Type::FontStyle));
                 m_curItem->setProperty(Property::Type::FontFamily, uiContext->propertyManager()->value(Property::Type::FontFamily));
                 m_curItem->setProperty(Property::Type::TextAlignment, uiContext->propertyManager()->value(Property::Type::TextAlignment));
+                m_curItem->setProperty(Property::Type::ListStyle, uiContext->propertyManager()->value(Property::Type::ListStyle));
 
                 m_curItem->createTextBox(transformer.viewToWorld(uiContext->appEvent()->pos()));
 
@@ -288,8 +289,11 @@ void TextTool::processKey(const Event *ev) const
     switch (ev->key()) {
     case Qt::Key_Return:
     case Qt::Key_Enter:
-        // QChar::LineSeparator
-        cursor.insertText(u"\u2028"_s);
+        if (shift) {
+            cursor.insertText(u"\u2028"_s);
+        } else {
+            cursor.insertText(u"\n"_s);
+        }
         return;
     case Qt::Key_Left:
         cursor.movePosition(ctrl ? QTextCursor::WordLeft : QTextCursor::Left, moveMode);

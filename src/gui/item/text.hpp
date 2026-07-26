@@ -81,6 +81,7 @@ private:
 
     LIBDRAWYGUI_NO_EXPORT void scaleTextFragments(const qreal scaleY);
     LIBDRAWYGUI_NO_EXPORT void updateBoundingBox();
+    LIBDRAWYGUI_NO_EXPORT void updateIntendWidth();
 
     QTextDocument m_document;
     SpellCheckHighlighter *const m_highlighter;

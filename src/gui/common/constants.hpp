@@ -43,8 +43,6 @@ inline constexpr QColor darkBackgroundColor{18, 18, 18};
 inline constexpr int maxItemOpacity{255};
 inline constexpr int erasedItemOpacityDecrease{30}; // % to reduce opacity by when erasing items
 
-inline constexpr double defaultTextBoxWidth{5}; // in pixels
-
 inline constexpr int doubleClickInterval{300}; // milliseconds
 
 inline constexpr qreal tabStopDistance{4};

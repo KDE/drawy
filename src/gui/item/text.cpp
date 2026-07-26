@@ -11,6 +11,8 @@
 #include <QJsonObject>
 #include <QTextBlock>
 #include <QTextLayout>
+#include <QTextList>
+#include <QTextListFormat>
 #include <utility>
 
 #include "common/constants.hpp"
@@ -30,6 +32,7 @@ TextItem::TextItem()
     m_properties[Property::Type::FontStyle] = Property{u"Normal"_s, Property::Type::FontStyle};
     m_properties[Property::Type::FontFamily] = Property{QStringLiteral("Fuzzy Bubbles"), Property::Type::FontFamily};
     m_properties[Property::Type::TextAlignment] = Property{u"AlignLeft"_s, Property::Type::TextAlignment};
+    m_properties[Property::Type::ListStyle] = Property{u"None"_s, Property::Type::ListStyle};
 
     m_document.setDefaultFont(getFont());
 
@@ -50,13 +53,9 @@ TextItem::~TextItem()
 
 void TextItem::createTextBox(const QPointF position)
 {
-    m_boundingBox.setTopLeft(position);
-    m_boundingBox.setWidth(Common::defaultTextBoxWidth);
-
     m_document.setDefaultFont(getFont());
-    const QFontMetricsF metrics{getFont()};
-    m_boundingBox.setHeight(metrics.height());
-
+    updateBoundingBox();
+    m_boundingBox.moveTopLeft(QPointF(position.x() - m_document.indentWidth(), position.y()));
     setDirty(true);
 }
 
@@ -143,17 +142,19 @@ void TextItem::commitTransformation()
     if (m_isHorizontalResize) {
         const qreal width = m_wrapWidth > 0 ? m_wrapWidth : m_boundingBox.width();
         m_wrapWidth = std::max(width * scaleX, minWrapWidth());
+    } else if (m_wrapWidth > 0) {
+        m_wrapWidth = std::max(m_wrapWidth * scaleX, minWrapWidth());
     }
 
     m_boundingBox = filtered.map(m_boundingBox).boundingRect();
 
     if (!qFuzzyCompare(1.0, scaleY)) {
-        scaleTextFragments(scaleY);
         const qreal curFontSize{property(Property::Type::FontSize).value<qreal>()};
+        scaleTextFragments(scaleY);
         const qreal newFontSize{std::max(1.0, curFontSize * scaleY)};
         Item::setProperty(Property::Type::FontSize, Property{newFontSize, Property::Type::FontSize});
     }
-    updateBoundingBox();
+    updateIntendWidth();
     m_isHorizontalResize = false;
 }
 
@@ -161,35 +162,37 @@ void TextItem::scaleTextFragments(const qreal scaleY)
 {
     const QSignalBlocker blocker{m_document};
     m_cursor.beginEditBlock();
-
-    m_document.setTextWidth(-1);
-    const qreal oldIdealWidth = m_document.idealWidth();
-
     QTextBlock block = m_document.firstBlock();
     while (block.isValid()) {
-        for (auto it = block.begin(); !it.atEnd(); ++it) {
-            const QTextFragment fragment = it.fragment();
-            QTextCharFormat fmt = fragment.charFormat();
+        if (block.begin() == block.end()) {
+            // empty block -> could be a bullet point with no text
+            QTextCharFormat fmt = block.charFormat();
             const qreal size = getFontSize(fmt);
-
             fmt.setFontPointSize(std::max(1.0, size * scaleY));
             fmt.setProperty(QTextFormat::FontPixelSize, QVariant());
             fmt.setProperty(QTextFormat::FontSizeAdjustment, QVariant());
+            m_cursor.setPosition(block.position());
+            m_cursor.mergeBlockCharFormat(fmt);
+            m_currentFormat.merge(fmt);
+        } else {
+            for (auto it = block.begin(); !it.atEnd(); ++it) {
+                const QTextFragment fragment = it.fragment();
+                QTextCharFormat fmt = fragment.charFormat();
+                const qreal size = getFontSize(fmt);
 
-            m_cursor.setPosition(fragment.position());
-            m_cursor.setPosition(fragment.position() + fragment.length(), QTextCursor::KeepAnchor);
-            m_cursor.mergeCharFormat(fmt);
+                fmt.setFontPointSize(std::max(1.0, size * scaleY));
+                fmt.setProperty(QTextFormat::FontPixelSize, QVariant());
+                fmt.setProperty(QTextFormat::FontSizeAdjustment, QVariant());
+
+                m_cursor.setPosition(fragment.position());
+                m_cursor.setPosition(fragment.position() + fragment.length(), QTextCursor::KeepAnchor);
+                m_cursor.mergeBlockCharFormat(fmt);
+                m_cursor.mergeCharFormat(fmt);
+                m_currentFormat.merge(fmt);
+            }
         }
         block = block.next();
     }
-
-    m_document.setTextWidth(-1);
-    const qreal newIdealWidth = m_document.idealWidth();
-    const qreal scale = newIdealWidth / oldIdealWidth;
-    if (m_wrapWidth > 0) {
-        m_wrapWidth = std::max(m_wrapWidth * scale, minWrapWidth());
-    }
-
     m_cursor.endEditBlock();
 }
 
@@ -294,6 +297,35 @@ qreal TextItem::getFontSize(const QTextCharFormat &fmt)
         size = fmt.font().pixelSize() * 72.0 / 96.0;
     }
     return std::max(size, 1.0);
+}
+
+void TextItem::updateIntendWidth()
+{
+    QTextBlock block = m_document.firstBlock();
+    QFont font = block.charFormat().font();
+    while (block.isValid()) {
+        const qreal size = block.charFormat().fontPointSize();
+        if (size > font.pointSize()) {
+            font = block.charFormat().font();
+        }
+        block = block.next();
+    }
+    const QFontMetricsF metrics(font);
+    qreal indentWidth = 0.0;
+
+    const int style = ItemUtils::convertStringToListStyle(property(Property::Type::ListStyle).value<QString>());
+
+    if (style == QTextListFormat::ListDisc || style == QTextListFormat::ListCircle || style == QTextListFormat::ListSquare) {
+        indentWidth = metrics.horizontalAdvance(QStringLiteral("■ "));
+    } else if (style == QTextListFormat::ListDecimal) {
+        indentWidth = metrics.horizontalAdvance(QStringLiteral("99. "));
+    } else if (style == QTextListFormat::ListLowerRoman || style == QTextListFormat::ListUpperRoman) {
+        indentWidth = metrics.horizontalAdvance(QStringLiteral("VIII. "));
+    } else if (style == QTextListFormat::ListLowerAlpha || style == QTextListFormat::ListUpperAlpha) {
+        indentWidth = metrics.horizontalAdvance(QStringLiteral("W. "));
+    }
+    m_document.setIndentWidth(indentWidth);
+    updateBoundingBox();
 }
 
 QFont TextItem::getFont() const
@@ -452,6 +484,13 @@ Property TextItem::property(const Property::Type propertyType) const
         const int alignment = cursor.blockFormat().alignment();
         return Property{ItemUtils::convertTextAlignmentToString(alignment), Property::Type::TextAlignment};
     }
+    case Property::Type::ListStyle: {
+        if (m_cursor.currentList()) {
+            return Property{ItemUtils::convertListStyleToString(m_cursor.currentList()->format().style()), Property::Type::ListStyle};
+        } else {
+            return Property{u"None"_s, Property::Type::ListStyle};
+        }
+    }
     default:
         return Item::property(propertyType);
     }
@@ -551,11 +590,25 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
     case Property::Type::TextAlignment: {
         QTextBlockFormat blockFmt;
         blockFmt.setAlignment(static_cast<Qt::Alignment>(ItemUtils::convertStringToTextAlignment(newObj.value<QString>())));
-        QTextCursor docCursor(&m_document);
-        docCursor.select(QTextCursor::Document);
-        docCursor.mergeBlockFormat(blockFmt);
+        QTextCursor cursor = m_cursor;
+        cursor.select(QTextCursor::Document);
+        cursor.mergeBlockFormat(blockFmt);
         Item::setProperty(propertyType, newObj);
         return;
+    }
+    case Property::Type::ListStyle: {
+        const auto style = static_cast<QTextListFormat::Style>(ItemUtils::convertStringToListStyle(newObj.value<QString>()));
+        QTextCursor cursor = m_cursor;
+        cursor.select(QTextCursor::Document);
+        QTextBlockFormat blockFmt;
+        blockFmt.setIndent(0);
+
+        cursor.mergeBlockFormat(blockFmt);
+        QTextListFormat listFmt;
+        listFmt.setStyle(style);
+        cursor.createList(listFmt);
+        cursor.mergeBlockCharFormat(cursor.charFormat());
+        break;
     }
     default:
         Item::setProperty(propertyType, newObj);
@@ -566,14 +619,20 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
     if (m_mode == Mode::Normal) {
         m_cursor.select(QTextCursor::Document);
         m_cursor.mergeCharFormat(fmt);
+        m_cursor.mergeBlockCharFormat(fmt);
         m_cursor.clearSelection();
     } else {
         m_cursor.mergeCharFormat(fmt);
+        if (m_cursor.hasSelection()) {
+            m_cursor.mergeBlockCharFormat(fmt);
+        }
     }
     m_cursor.endEditBlock();
 
     m_currentFormat.merge(fmt);
     Item::setProperty(propertyType, newObj);
+
+    updateIntendWidth();
 }
 
 QJsonObject TextItem::serialize(const int zorder) const
