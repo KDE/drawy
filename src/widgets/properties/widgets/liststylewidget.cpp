@@ -17,9 +17,12 @@ ListStyleWidget::ListStyleWidget(QWidget *parent)
     , m_comboBox{new QComboBox}
 {
     m_widget = new QWidget(parent);
+    m_widget->setObjectName(u"m_widget"_s);
     const auto layout = new QHBoxLayout(m_widget);
+    layout->setObjectName(u"layout"_s);
     layout->setContentsMargins({});
 
+    m_comboBox->setObjectName(u"m_comboBox"_s);
     m_comboBox->addItem(i18n("None"), u"None"_s);
     m_comboBox->addItem(i18n("Bullet (Disc)"), u"ListDisc"_s);
     m_comboBox->addItem(i18n("Bullet (Circle)"), u"ListCircle"_s);
