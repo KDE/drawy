@@ -43,6 +43,7 @@ TextItem::TextItem()
     updateBoundingBox();
 
     QObject::connect(&m_document, &QTextDocument::contentsChanged, &m_document, [this] {
+        m_minWrapWidth = -1;
         updateBoundingBox();
     });
 }
@@ -194,6 +195,7 @@ void TextItem::scaleTextFragments(const qreal scaleY)
         block = block.next();
     }
     m_cursor.endEditBlock();
+    m_minWrapWidth = -1;
 }
 
 void TextItem::drawItem([[maybe_unused]] QPainter &painter, [[maybe_unused]] const QPointF &offset) const
@@ -676,6 +678,16 @@ void TextItem::setWrapWidth(const qreal wrapWidth)
 
 qreal TextItem::minWrapWidth() const
 {
-    const QFontMetricsF metrics{getFont()};
-    return metrics.maxWidth() + 2 * m_document.documentMargin();
+    if (m_minWrapWidth >= 0) {
+        return m_minWrapWidth;
+    }
+
+    const std::unique_ptr<QTextDocument> copy(m_document.clone());
+    QTextOption options = copy->defaultTextOption();
+    options.setWrapMode(QTextOption::WrapAnywhere);
+    copy->setDefaultTextOption(options);
+
+    copy->setTextWidth(0);
+    m_minWrapWidth = copy->size().width() + 2 * m_document.documentMargin();
+    return m_minWrapWidth;
 }
