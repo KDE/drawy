@@ -16,7 +16,7 @@ CustomElementsUtilsTest::CustomElementsUtilsTest(QObject *parent)
 
 void CustomElementsUtilsTest::shouldHaveDefaultValues()
 {
-    QCOMPARE(CustomElementsUtils::customElementsFilePath(), QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/custom-elements/"_s);
+    QCOMPARE(CustomElementsUtils::customElementsFilePath(), QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/custom-elements"_s);
 }
 
 #include "moc_customelementsutilstest.cpp"
