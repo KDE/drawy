@@ -6,12 +6,13 @@
 #include "customelementswidget.hpp"
 #include "customelements/customelementsmanager.hpp"
 #include "customelements/customelementsmodel.hpp"
+#include "customelementswidget/customelementslistview.hpp"
 #include <QListView>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 CustomElementsWidget::CustomElementsWidget(CustomElementsManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mListView(new QListView(this))
+    , mListView(new CustomElementsListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

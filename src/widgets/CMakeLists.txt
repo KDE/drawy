@@ -262,6 +262,8 @@ target_sources(
         common/renderitems.hpp
         customelementswidget/customelementswidget.hpp
         customelementswidget/customelementswidget.cpp
+        customelementswidget/customelementslistview.hpp
+        customelementswidget/customelementslistview.cpp
 )
 
 if(USE_DBUS)

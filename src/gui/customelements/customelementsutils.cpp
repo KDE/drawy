@@ -9,7 +9,7 @@
 using namespace Qt::Literals::StringLiterals;
 QString CustomElementsUtils::customElementsFilePath()
 {
-    const QString customElementsPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/custom-elements/"_s;
+    const QString customElementsPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
     QDir().mkpath(customElementsPath);
-    return customElementsPath;
+    return customElementsPath + u"/custom-elements"_s;
 }
