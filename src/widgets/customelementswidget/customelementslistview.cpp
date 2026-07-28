@@ -8,6 +8,9 @@
 CustomElementsListView::CustomElementsListView(QWidget *parent)
     : QListView(parent)
 {
+    setMouseTracking(true);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 }
 
 CustomElementsListView::~CustomElementsListView() = default;
