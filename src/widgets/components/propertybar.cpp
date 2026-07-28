@@ -46,7 +46,9 @@ PropertyBar::PropertyBar(ApplicationContext *context, QWidget *parent)
 
 QSize PropertyBar::sizeHint() const
 {
-    return m_contentWidget->sizeHint();
+    QSize size = m_contentWidget->sizeHint();
+    size.setWidth(size.width() + style()->pixelMetric(QStyle::PM_ScrollBarExtent));
+    return size;
 }
 
 void PropertyBar::setPropertyManager(PropertyManager *manager)
