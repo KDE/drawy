@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-23 00:41+0000\n"
+"POT-Creation-Date: 2026-07-28 00:42+0000\n"
 "PO-Revision-Date: 2026-07-23 15:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -538,250 +538,250 @@ msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr "Llista les opcions disponibles per als comentaris dels usuaris"
 
-#: widgets/keybindings/actionmanager.cpp:86
-#: widgets/keybindings/actionmanager.cpp:91
+#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr "Exporta com una imatge"
 
-#: widgets/keybindings/actionmanager.cpp:93
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr "Agrupa elements"
 
-#: widgets/keybindings/actionmanager.cpp:96
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr "Desagrupa elements"
 
-#: widgets/keybindings/actionmanager.cpp:101
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr "Neteja el llenç"
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr "Eina de forma lliure"
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr "Eina d'esborrador"
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr "Eina de selecció"
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr "Eina de rectangles"
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr "Eina d'el·lipses"
 
-#: widgets/keybindings/actionmanager.cpp:113
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr "Eina de línies"
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr "Eina de text"
 
-#: widgets/keybindings/actionmanager.cpp:115
+#: widgets/keybindings/actionmanager.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr "Eina de fletxes"
 
-#: widgets/keybindings/actionmanager.cpp:116
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr "Eina de moure"
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr "Eina d'imatges"
 
-#: widgets/keybindings/actionmanager.cpp:118
+#: widgets/keybindings/actionmanager.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr "Eina de diamant"
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr "Envia al darrere"
 
-#: widgets/keybindings/actionmanager.cpp:123
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr "Envia enrere"
 
-#: widgets/keybindings/actionmanager.cpp:126
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr "Porta endavant"
 
-#: widgets/keybindings/actionmanager.cpp:129
+#: widgets/keybindings/actionmanager.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr "Porta al davant"
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:134
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
 msgstr "Alinea a dalt"
 
-#: widgets/keybindings/actionmanager.cpp:136
+#: widgets/keybindings/actionmanager.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
 msgstr "Centra verticalment"
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
 msgstr "Alinea a baix"
 
-#: widgets/keybindings/actionmanager.cpp:142
+#: widgets/keybindings/actionmanager.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Align Left"
 msgstr "Alinea a l'esquerra"
 
-#: widgets/keybindings/actionmanager.cpp:145
+#: widgets/keybindings/actionmanager.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
 msgstr "Centra horitzontalment"
 
-#: widgets/keybindings/actionmanager.cpp:148
+#: widgets/keybindings/actionmanager.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Align Right"
 msgstr "Alinea a la dreta"
 
-#: widgets/keybindings/actionmanager.cpp:152
+#: widgets/keybindings/actionmanager.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
 msgstr "Bloqueja"
 
-#: widgets/keybindings/actionmanager.cpp:154
+#: widgets/keybindings/actionmanager.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
 msgstr "Desbloqueja"
 
-#: widgets/keybindings/actionmanager.cpp:156
+#: widgets/keybindings/actionmanager.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Add to Library"
 msgstr "Afegeix a la biblioteca"
 
-#: widgets/keybindings/actionmanager.cpp:158
+#: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr "Depura"
 
-#: widgets/keybindings/actionmanager.cpp:160
+#: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
 msgstr "Què hi ha de nou"
 
-#: widgets/keybindings/actionmanager.cpp:527
+#: widgets/keybindings/actionmanager.cpp:528
 #, kde-format
 msgid "Untitled.%1"
 msgstr "Sense_títol.%1"
 
-#: widgets/keybindings/actionmanager.cpp:529
-#: widgets/keybindings/actionmanager.cpp:607
+#: widgets/keybindings/actionmanager.cpp:530
+#: widgets/keybindings/actionmanager.cpp:608
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr "Drawy (*.%1)"
 
-#: widgets/keybindings/actionmanager.cpp:530
+#: widgets/keybindings/actionmanager.cpp:531
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Desa el fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:552
+#: widgets/keybindings/actionmanager.cpp:553
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr "Segur que voleu netejar el llenç?"
 
-#: widgets/keybindings/actionmanager.cpp:553
+#: widgets/keybindings/actionmanager.cpp:554
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Neteja"
 
-#: widgets/keybindings/actionmanager.cpp:610
+#: widgets/keybindings/actionmanager.cpp:611
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Obre un fitxer"
 
-#: widgets/keybindings/actionmanager.cpp:623
+#: widgets/keybindings/actionmanager.cpp:624
 #, kde-format
 msgid "Untitled.svg"
 msgstr "Sense_títol .svg"
 
-#: widgets/keybindings/actionmanager.cpp:626
+#: widgets/keybindings/actionmanager.cpp:627
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr "SVG (*.svg)"
 
-#: widgets/keybindings/actionmanager.cpp:627
+#: widgets/keybindings/actionmanager.cpp:628
 #, kde-format
 msgid "PNG (*.png)"
 msgstr "PNG (*.png)"
 
-#: widgets/keybindings/actionmanager.cpp:631
+#: widgets/keybindings/actionmanager.cpp:632
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Exporta a imatge"
 
-#: widgets/keybindings/actionmanager.cpp:685
+#: widgets/keybindings/actionmanager.cpp:686
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -790,7 +790,7 @@ msgstr ""
 "S'ha modificat el document «%1».\n"
 "Voleu desar els canvis o descartar-los?"
 
-#: widgets/keybindings/actionmanager.cpp:689
+#: widgets/keybindings/actionmanager.cpp:690
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
