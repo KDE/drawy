@@ -30,7 +30,7 @@ QVariant CustomElementsModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case TimeStamp:
         return customElement.timeStamp();
-    case Icon:
+    case Pixmap:
         return {};
     }
     return {};
