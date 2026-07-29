@@ -19,3 +19,5 @@ void CustomElementsListViewTest::shouldHaveDefaultValues()
     // TODO add check
     Q_UNUSED(w)
 }
+
+#include "moc_customelementslistviewtest.cpp"
