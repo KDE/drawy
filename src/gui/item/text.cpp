@@ -606,9 +606,19 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         blockFmt.setIndent(0);
 
         cursor.mergeBlockFormat(blockFmt);
-        QTextListFormat listFmt;
-        listFmt.setStyle(style);
-        cursor.createList(listFmt);
+        if (style != QTextListFormat::ListStyleUndefined) {
+            QTextListFormat listFmt;
+            listFmt.setStyle(style);
+            cursor.createList(listFmt);
+        } else {
+            QTextBlock block = m_document.firstBlock();
+            while (block.isValid()) {
+                if (QTextList *list = block.textList()) {
+                    list->remove(block);
+                }
+                block = block.next();
+            }
+        }
         cursor.mergeBlockCharFormat(cursor.charFormat());
         break;
     }
