@@ -54,7 +54,7 @@ public:
 
     [[nodiscard]] SpellCheckHighlighter *highlighter() const;
 
-    [[nodiscard]] QRectF cursorRect(int offset = 0) const;
+    [[nodiscard]] QRectF cursorRect() const;
 
     void updatePreedit(const QString &preedit, const QList<QInputMethodEvent::Attribute> &attributes);
 

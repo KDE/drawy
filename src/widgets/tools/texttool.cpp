@@ -115,6 +115,7 @@ void TextTool::mousePressed(ApplicationContext *context)
         context->selectionContext()->setShouldRenderHandles(false);
 
         QGuiApplication::inputMethod()->show();
+        QGuiApplication::inputMethod()->update(Qt::ImQueryInput);
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();
@@ -277,6 +278,7 @@ void TextTool::keyPressed(ApplicationContext *context)
     context->renderingContext()->markForRender();
     context->renderingContext()->markForUpdate();
     context->uiContext()->propertyBar()->updateToolProperties();
+    QGuiApplication::inputMethod()->update(Qt::ImQueryInput);
 }
 
 void TextTool::processKey(const Event *ev) const
@@ -394,7 +396,6 @@ void TextTool::inputMethodInvoked(ApplicationContext *context)
 
     cursor.endEditBlock();
 
-    QGuiApplication::inputMethod()->update(Qt::ImCursorPosition | Qt::ImCursorRectangle);
     m_curItem->setDirty(true);
     context->spatialContext()->quadtree().deleteItem(m_curItem);
     context->spatialContext()->quadtree().insertItem(m_curItem);

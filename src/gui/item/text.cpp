@@ -102,9 +102,8 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
             painter.drawRect(QRectF(0, 0, m_boundingBox.width(), m_boundingBox.height()));
         }
 
-        QGuiApplication::inputMethod()->cursorRectangleChanged();
         // draw caret
-        const QRectF rect = cursorRect(m_preeditCursorPos);
+        const QRectF rect = cursorRect();
         if (rect.isValid()) {
             painter.setPen(property(Property::Type::StrokeColor).value<QColor>());
             painter.drawLine(rect.topLeft(), rect.bottomLeft());
@@ -384,11 +383,11 @@ Item::FormType TextItem::formType() const
     return Item::FormType::Text;
 }
 
-QRectF TextItem::cursorRect(const int offset) const
+QRectF TextItem::cursorRect() const
 {
     const auto block = m_cursor.block();
     if (const auto *layout = block.layout()) {
-        const int pos = m_cursor.positionInBlock() + offset;
+        const int pos = m_cursor.positionInBlock() + m_preeditCursorPos;
         const QTextLine line = layout->lineForTextPosition(pos);
         if (line.isValid()) {
             const QFontMetricsF fm(m_cursor.charFormat().font());
