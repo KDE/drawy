@@ -415,7 +415,8 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
             QTextLayout::FormatRange range;
             range.start = attr.start + m_cursor.positionInBlock();
             range.length = attr.length;
-            range.format = qvariant_cast<QTextCharFormat>(attr.value);
+            range.format = m_cursor.charFormat();
+            range.format.merge(qvariant_cast<QTextCharFormat>(attr.value));
             formats.append(range);
         }
     }
