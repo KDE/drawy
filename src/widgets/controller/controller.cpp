@@ -12,7 +12,6 @@
 #include "command/commandhistory.hpp"
 #include "command/insertitemcommand.hpp"
 #include "common/constants.hpp"
-#include "common/renderitems.hpp"
 #include "components/toolbar.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/coordinatetransformer.hpp"
@@ -34,6 +33,7 @@ Controller::Controller(ApplicationContext *context, QObject *parent)
     , m_zoomTimer{new QTimer{this}}
 {
     connect(m_zoomTimer, &QTimer::timeout, this, &Controller::renderZoom);
+    connect(qApp, &QGuiApplication::applicationStateChanged, this, &Controller::applicationStateChanged);
 }
 
 Controller::~Controller()
@@ -416,6 +416,17 @@ void Controller::drop()
 
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
+}
+
+void Controller::applicationStateChanged(const Qt::ApplicationState state)
+{
+    if (state == Qt::ApplicationInactive || state == Qt::ApplicationSuspended) {
+        QGuiApplication::inputMethod()->reset();
+
+        const QList<QInputMethodEvent::Attribute> attributes;
+        QInputMethodEvent event(QString(), attributes);
+        inputMethodInvoked(&event);
+    }
 }
 
 void Controller::renderZoom()

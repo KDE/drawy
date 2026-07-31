@@ -36,6 +36,7 @@ public:
     void dragMove(QDragMoveEvent *event);
     void dragLeave();
     void drop();
+    void applicationStateChanged(Qt::ApplicationState state);
 
 private:
     void renderZoom();
