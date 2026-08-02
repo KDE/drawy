@@ -70,6 +70,7 @@ public:
         Rounded,
         Pointed,
     };
+    Q_ENUM(CornerRectangleType)
 
     [[nodiscard]] virtual FormType formType() const = 0;
 

@@ -16,7 +16,7 @@ class LIBDRAWYGUI_EXPORT CustomElementsModel : public QAbstractListModel
 public:
     enum CustomElementRoles {
         TimeStamp = Qt::UserRole + 1,
-        Icon,
+        Pixmap,
     };
     Q_ENUM(CustomElementRoles)
 
