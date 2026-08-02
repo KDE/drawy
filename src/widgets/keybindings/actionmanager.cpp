@@ -345,7 +345,8 @@ void ActionManager::copy()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->quadtree().reorder(items);
 
     QMimeData *data = new QMimeData;
     m_context->mimeManager()->writeData(*data, items);
