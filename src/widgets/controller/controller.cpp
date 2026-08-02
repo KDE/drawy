@@ -337,7 +337,7 @@ void Controller::dragMove(QDragMoveEvent *event)
     for (const auto &item : std::as_const(m_droppedItems)) {
         const auto transform{item->transformObj().inverted()};
 
-        const auto localInitialPos{transform.map(item->boundingBox().center())};
+        const auto localInitialPos{transform.map(boundingBox.center())};
         const auto localFinalPos{transform.map(transformer.viewToWorld(contextEvent->pos()))};
 
         const auto localDelta{localFinalPos - localInitialPos};
