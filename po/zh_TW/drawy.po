@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-28 00:42+0000\n"
-"PO-Revision-Date: 2026-07-22 01:56+0900\n"
+"PO-Revision-Date: 2026-08-04 07:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -695,11 +695,13 @@ msgctxt "@action"
 msgid "Unlock"
 msgstr "解除鎖定"
 
+# This is for Custom Elements.
+# --Kisaragi
 #: widgets/keybindings/actionmanager.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Add to Library"
-msgstr ""
+msgstr "加到元件庫"
 
 #: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
