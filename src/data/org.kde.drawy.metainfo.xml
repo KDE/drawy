@@ -220,6 +220,7 @@
         <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
         <p xml:lang="tr">Bu güncelleme, daha akıcı ve özelleştirilebilir bir serbest çizim deneyimi sunuyor ve yeni çizilen çizgilerin titremesine neden olan bir sorunu gideriyor.</p>
         <p xml:lang="uk">У цьому оновленні реалізовано плавніший та більш придатний до налаштовування процес малювання від руки та виправлено проблему, через яку мерехтіли щойно намальовані лінії.</p>
+        <p xml:lang="zh-TW">這個版本讓自由繪圖更順暢也更能自訂，並修正一個造成剛畫的線段會閃爍的問題。</p>
         <ul>
           <li>
             Drawing by hand feels much better and more natural now.
@@ -239,6 +240,7 @@
           <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
           <li xml:lang="tr">Elle çizim yapmak artık çok daha iyi ve doğal bir his veriyor.</li>
           <li xml:lang="uk">У новій версії малювати від руки зручніше і природніше.</li>
+          <li xml:lang="zh-TW">改善自由繪圖畫起來的感覺。</li>
           <li>
             Added settings so you can change pen pressure and how smooth your lines look.
           </li>
@@ -257,6 +259,7 @@
           <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
           <li xml:lang="tr">Kalem basıncını ve çizgilerin ne kadar pürüzsüz görüneceğini değiştirebileceğiniz ayarlar eklendi.</li>
           <li xml:lang="uk">Реалізовано налаштування для зміни тиску пера та плавності вигляду ліній.</li>
+          <li xml:lang="zh-TW">新增筆壓與線段柔順的設定。</li>
           <li>
             Lines and shapes will no longer blink or flash right after you draw them.
           </li>
@@ -275,6 +278,7 @@
           <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
           <li xml:lang="tr">Çizdiğiniz çizgiler ve şekiller artık hemen ardından yanıp sönmeyecek veya titreşmeyecek.</li>
           <li xml:lang="uk">У новій версії лінії і форми не блимають одразу після малювання.</li>
+          <li xml:lang="zh-TW">修正線段與形狀會在您繪製之後閃爍的問題。</li>
         </ul>
       </description>
     </release>
