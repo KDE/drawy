@@ -236,6 +236,7 @@
         <p xml:lang="sl">Dovoli zaklepanje elementov</p>
         <p xml:lang="tr">Ögeleri kilitleme desteği eklendi.</p>
         <p xml:lang="uk">Уможливлено блокування записів</p>
+        <p xml:lang="zh-TW">新增鎖定項目的功能</p>
         <p>Allow to draw rounded rectangle</p>
         <p xml:lang="ar">السماح برسم مستطيل مدور الزوايا</p>
         <p xml:lang="ca">Permet dibuixar un rectangle arrodonit</p>
@@ -252,6 +253,7 @@
         <p xml:lang="sl">Omogoča risanje zaobljenega pravokotnika</p>
         <p xml:lang="tr">Yuvarlatılmış dörtgen çizme olanağı sağlandı.</p>
         <p xml:lang="uk">Уможливлено малювання прямокутника зі скругленими кутами</p>
+        <p xml:lang="zh-TW">新增繪製圓角矩形的功能</p>
         <p>Improve selected basic shape (bug 519895)</p>
         <p xml:lang="ar">تحسين الشكل الأساسي المحدد (العلة 519895)</p>
         <p xml:lang="ca">Millora la forma bàsica seleccionada (error 519895)</p>
@@ -269,6 +271,7 @@
         <p xml:lang="sl">Izboljšana izbrana osnovna oblika (napaka 519895)</p>
         <p xml:lang="tr">Seçili temel şekiller iyileştirildi (519895 numaralı hata)</p>
         <p xml:lang="uk">Удосконалено вибрану базову форму (вада 519895)</p>
+        <p xml:lang="zh-TW">改善所選的基礎形狀 (bug 519895)</p>
         <p>Allow to export selected elements as image</p>
         <p xml:lang="ar">السماح بتصدير العناصر المحددة كصورة</p>
         <p xml:lang="ca">Permet exportar els elements seleccionats com a imatges</p>
@@ -306,6 +309,7 @@
         <p xml:lang="sl">Dodano pogovorno okno »Kaj je novega«</p>
         <p xml:lang="tr">“Neler Yeni” iletişim kutusu eklendi.</p>
         <p xml:lang="uk">Додано вікно «Що нового?»</p>
+        <p xml:lang="zh-TW">新增新功能對話框</p>
       </description>
     </release>
     <release version="1.0.2" date="2026-06-23">
@@ -327,6 +331,7 @@
         <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
         <p xml:lang="tr">Bu güncelleme, daha akıcı ve özelleştirilebilir bir serbest çizim deneyimi sunuyor ve yeni çizilen çizgilerin titremesine neden olan bir sorunu gideriyor.</p>
         <p xml:lang="uk">У цьому оновленні реалізовано плавніший та більш придатний до налаштовування процес малювання від руки та виправлено проблему, через яку мерехтіли щойно намальовані лінії.</p>
+        <p xml:lang="zh-TW">這個版本讓自由繪圖更順暢也更能自訂，並修正一個造成剛畫的線段會閃爍的問題。</p>
         <ul>
           <li>
             Drawing by hand feels much better and more natural now.
@@ -347,6 +352,7 @@
           <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
           <li xml:lang="tr">Elle çizim yapmak artık çok daha iyi ve doğal bir his veriyor.</li>
           <li xml:lang="uk">У новій версії малювати від руки зручніше і природніше.</li>
+          <li xml:lang="zh-TW">改善自由繪圖畫起來的感覺。</li>
           <li>
             Added settings so you can change pen pressure and how smooth your lines look.
           </li>
@@ -366,6 +372,7 @@
           <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
           <li xml:lang="tr">Kalem basıncını ve çizgilerin ne kadar pürüzsüz görüneceğini değiştirebileceğiniz ayarlar eklendi.</li>
           <li xml:lang="uk">Реалізовано налаштування для зміни тиску пера та плавності вигляду ліній.</li>
+          <li xml:lang="zh-TW">新增筆壓與線段柔順的設定。</li>
           <li>
             Lines and shapes will no longer blink or flash right after you draw them.
           </li>
@@ -385,6 +392,7 @@
           <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
           <li xml:lang="tr">Çizdiğiniz çizgiler ve şekiller artık hemen ardından yanıp sönmeyecek veya titreşmeyecek.</li>
           <li xml:lang="uk">У новій версії лінії і форми не блимають одразу після малювання.</li>
+          <li xml:lang="zh-TW">修正線段與形狀會在您繪製之後閃爍的問題。</li>
         </ul>
       </description>
     </release>
