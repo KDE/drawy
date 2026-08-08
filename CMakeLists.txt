@@ -246,3 +246,7 @@ ecm_setup_version(${PROJECT_VERSION}
     SOVERSION ${PROJECT_VERSION_MAJOR}
     VERSION_HEADER config-drawy.h.in
 )
+
+# Android setup
+include(ECMAddAndroidApk)
+ecm_add_android_apk(${PROJECT_NAME} ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)

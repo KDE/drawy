@@ -28,6 +28,10 @@
 #endif
 
 using namespace Qt::Literals::StringLiterals;
+
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char *argv[])
 {
     KIconTheme::initTheme();
