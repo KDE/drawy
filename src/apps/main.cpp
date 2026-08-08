@@ -3,8 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include <KCrash>
-#include <QApplication>
 #include <QCommandLineParser>
+
+#ifdef Q_OS_ANDROID
+#include <QGuiApplication>
+#else
+#include <QApplication>
+#endif
+
 
 #include <KIconTheme>
 #include <KLocalizedString>
@@ -35,7 +41,13 @@ Q_DECL_EXPORT
 int main(int argc, char *argv[])
 {
     KIconTheme::initTheme();
-    QApplication a{argc, argv};
+
+#ifdef Q_OS_ANDROID
+    QGuiApplication a(argc, argv);
+#else
+    QApplication a(argc, argv);
+#endif
+
     a.setDesktopFileName(u"org.kde.drawy"_s);
     a.setWindowIcon(QIcon(u":/drawy/drawy.svg"_s));
 
