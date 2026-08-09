@@ -220,6 +220,7 @@
   <releases>
     <release version="1.1.0" type="snapshot">
       <description>
+        <p>Improve text element support (Spell Checking, Alignment, Bold, Italic etc.) (GSoc2026)</p>
         <p>Allow to lock items</p>
         <p xml:lang="ar">السماح بقفل العناصر</p>
         <p xml:lang="ca">Permet bloquejar elements</p>
