@@ -30,7 +30,9 @@ QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mime
             return {};
         }
 
-        pixmap.load(url.toLocalFile());
+        if (!pixmap.load(url.toLocalFile())) {
+            return {};
+        }
     } else {
         return {};
     }
