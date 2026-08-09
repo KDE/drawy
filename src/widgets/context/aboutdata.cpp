@@ -16,9 +16,6 @@ AboutData::AboutData()
                  KAboutLicense::GPL_V3,
                  i18nc("Copyright text, keep the © symbol and the en dash for the year range", "© 2025–%1 Drawy authors", u"2026"_s))
 {
-    addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
-    addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
-    addAuthor(i18nc("@info:credit", "Abdelhadi Wael"), i18n("GSoc 2026 developper (Improve text component)"), u"waelhadi380@gmail.com"_s);
     setProductName("drawy"_ba);
     setOrganizationDomain("kde.org"_ba);
 }

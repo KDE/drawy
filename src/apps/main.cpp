@@ -43,12 +43,12 @@ int main(int argc, char *argv[])
     aboutData.setCopyrightStatement(i18nc("Copyright text, keep the © symbol and the en dash for the year range", "© 2025–%1 Drawy authors", u"2026"_s));
     aboutData.setVersion(DRAWY_VERSION);
     aboutData.setComponentName(u"drawy"_s);
-    aboutData.addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
-    aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
-    aboutData.addAuthor(i18nc("@info:credit", "Abdelhadi Wael"), i18n("GSoc 2026 developper (Improve text component)"), u"waelhadi380@gmail.com"_s);
 #else
     KAboutData aboutData = AboutData();
 #endif
+    aboutData.addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
+    aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
+    aboutData.addAuthor(i18nc("@info:credit", "Abdelhadi Wael"), i18n("GSoc 2026 developper (Improve text component)"), u"waelhadi380@gmail.com"_s);
 
     KCrash::initialize();
 
