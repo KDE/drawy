@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18nc("@info:credit", "Prayag Jain"), i18n("Maintainer"), u"prayagjain2@gmail.com"_s);
     aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Developer"), u"montel@kde.org"_s);
     aboutData.addAuthor(i18nc("@info:credit", "Abdelhadi Wael"), i18n("GSoc 2026 developper (Improve text component)"), u"waelhadi380@gmail.com"_s);
+    aboutData.addAuthor(i18nc("@info:credit", "Nikolay Kochulin"), i18n("Bug Fixing. Import/Export Files"), u"basiqueevangelist@yandex.ru"_s);
 
     KCrash::initialize();
 
