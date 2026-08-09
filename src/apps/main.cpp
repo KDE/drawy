@@ -15,6 +15,7 @@
 #include <KIconTheme>
 #include <KLocalizedString>
 #include <KStyleManager>
+
 #include <QTimer>
 
 #include "config-drawy.hpp"
