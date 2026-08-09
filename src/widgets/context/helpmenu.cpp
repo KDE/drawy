@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "helpmenu.hpp"
-#include "aboutdata.hpp"
 
 HelpMenu::HelpMenu(QWidget *parent)
-    : KHelpMenu(parent, AboutData())
+    : KHelpMenu(parent)
 {
 }
 
