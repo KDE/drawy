@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.27)
 
-set(DRAWY_VERSION "1.0.41")
+set(DRAWY_VERSION "1.0.42")
 project(drawy VERSION ${DRAWY_VERSION})
 
 set(DRAWY_LIB_VERSION "${DRAWY_VERSION}")
