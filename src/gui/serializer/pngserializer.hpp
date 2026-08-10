@@ -8,7 +8,6 @@
 #include "item/item.hpp"
 #include "libdrawygui_export.h"
 #include <QFile>
-class QXmlStreamWriter;
 namespace PngSerializer
 {
 LIBDRAWYGUI_EXPORT void writePng(QFile &file, QList<std::shared_ptr<Item>> items, const QColor &backgroundColor);

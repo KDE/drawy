@@ -7,7 +7,6 @@
 #include <QPainter>
 #include <QWidget>
 
-class QInputMethodQueryEvent;
 class Canvas : public QWidget
 {
     Q_OBJECT
