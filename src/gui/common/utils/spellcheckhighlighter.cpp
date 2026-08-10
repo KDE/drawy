@@ -119,3 +119,5 @@ void SpellCheckHighlighter::highlightBlock(const QString &text)
         }
     }
 }
+
+#include "moc_spellcheckhighlighter.cpp"
