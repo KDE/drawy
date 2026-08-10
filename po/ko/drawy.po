@@ -1,57 +1,59 @@
-# SPDX-FileCopyrightText: 2026 Sveinn í Felli <sv1@fellsnet.is>
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the drawy package.
+# SPDX-FileCopyrightText: 2026 Shinjo Park <kde@peremen.name>
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-10 00:42+0000\n"
-"PO-Revision-Date: 2026-05-06 09:21+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
-"Language: is\n"
+"PO-Revision-Date: 2026-06-06 15:13+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Qt-Contexts: true\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sveinn í Felli"
+msgstr "박신조"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sv1@fellsnet.is"
+msgstr "kde@peremen.name"
 
 #: apps/main.cpp:43 widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
-msgstr "© 2025–%1 höfundar Drawy"
+msgstr ""
 
 #: apps/main.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
-msgstr "Prayag Jain"
+msgstr ""
 
 #: apps/main.cpp:49
 #, kde-format
 msgid "Maintainer"
-msgstr "Umsjónarmaður"
+msgstr ""
 
 #: apps/main.cpp:50
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: apps/main.cpp:50
 #, kde-format
 msgid "Developer"
-msgstr "Forritari"
+msgstr ""
 
 #: apps/main.cpp:51
 #, kde-format
@@ -79,91 +81,88 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
-msgstr "Valfrjálst 'skrá' viðfang "
+msgstr "선택 사항 인자 'file'"
 
 #: apps/main.cpp:63
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
-msgstr "Handhæga, óendanlega hugmyndaflæðitólið!"
+msgstr ""
 
 #: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Stroke Width"
-msgstr "Breyta breidd útlínu"
+msgstr ""
 
 #: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Stroke Color"
-msgstr "Breyta lit útlínu"
+msgstr ""
 
 #: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change Opacity"
-msgstr "Breyta ógegnsæi"
+msgstr ""
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Breyta leturstærð"
+msgstr ""
 
 #: gui/properties/property.cpp:125
 #, kde-format
 msgid "Change Font Size"
-msgstr "Breyta leturstærð"
+msgstr ""
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Breyta leturstærð"
+msgstr ""
 
 #: gui/properties/property.cpp:129
 #, kde-format
 msgid "Change Eraser Size"
-msgstr "Breyta stærð útþurrkunar"
+msgstr ""
 
 #: gui/properties/property.cpp:131
 #: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
-msgstr "Aðgerðir"
+msgstr ""
 
 #: gui/properties/property.cpp:133
 #, kde-format
 msgid "Change Stroke Style"
-msgstr "Breyta stíl útlínu"
+msgstr ""
 
 #: gui/properties/property.cpp:135
 #, kde-format
 msgid "Change Background Color"
-msgstr "Breyta bakgrunnslit"
+msgstr ""
 
 #: gui/properties/property.cpp:137
 #, kde-format
 msgid "Change Background Style"
-msgstr "Breyta stíl bakgrunns"
+msgstr ""
 
 #: gui/properties/property.cpp:139
 #, kde-format
 msgid "Change Start Arrow Head"
-msgstr "Skipta um örvarodd upphafs"
+msgstr ""
 
 #: gui/properties/property.cpp:141
 #, kde-format
 msgid "Change End Arrow Head"
-msgstr "Skipta um örvarodd enda"
+msgstr ""
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Hliðjöfnun"
+msgstr ""
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
-msgstr "Breyta Z-röð"
+msgstr ""
 
 #: gui/properties/property.cpp:150
 #, kde-format
@@ -171,217 +170,212 @@ msgid "Change Corner Rectangle Type"
 msgstr ""
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Breyta stíl útlínu"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr "Grunnform"
+msgstr ""
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Triangle"
-msgstr "Þríhyrningur"
+msgstr ""
 
 #: plugins/basicshapes/xbox/xbox.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "X Box"
-msgstr "X-reitur"
+msgstr ""
 
 #: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
-msgstr "Jafna atriði"
+msgstr ""
 
 #: widgets/command/commandhistory.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr "Afturkalla"
+msgstr ""
 
 #: widgets/command/commandhistory.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "UIContext|"
-#| msgid "Redo"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr "Endurtaka"
+msgstr ""
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
 msgid "Deselect Object"
-msgstr "Afvelja hlut"
+msgstr ""
 
 #: widgets/command/groupcommand.cpp:73
 #, kde-format
 msgid "Group Object"
-msgstr "Hópa hlut"
+msgstr ""
 
 #: widgets/command/insertitemcommand.cpp:74
 #, kde-format
 msgid "Insert Object"
-msgstr "Setja inn hlut"
+msgstr ""
 
 #: widgets/command/lineresizeitemcommand.cpp:77
 #, kde-format
 msgid "Resize Line"
-msgstr "Breyta stærð línu"
+msgstr ""
 
 #: widgets/command/lockcommand.cpp:36
 #, kde-format
 msgid "Change Lock"
-msgstr "Breyta læsingu"
+msgstr ""
 
 #: widgets/command/moveitemcommand.cpp:72
 #, kde-format
 msgid "Move Object"
-msgstr "Færa hlut"
+msgstr ""
 
 #: widgets/command/removeitemcommand.cpp:76
 #, kde-format
 msgid "Remove Object"
 msgid_plural "Remove %1 Objects"
-msgstr[0] "Fjarlægja hlut"
-msgstr[1] "Fjarlægja %1 hluti"
+msgstr[0] ""
+msgstr[1] ""
 
 #: widgets/command/resizeitemcommand.cpp:78
 #, kde-format
 msgid "Resize Object"
-msgstr "Breyta stærð hlutar"
+msgstr ""
 
 #: widgets/command/rotateitemcommand.cpp:64
 #, kde-format
 msgid "Rotate Object"
-msgstr "Snúa hlut"
+msgstr ""
 
 #: widgets/command/selectcommand.cpp:49
 #, kde-format
 msgid "Select Object"
-msgstr "Veldu hlut"
+msgstr ""
 
 #: widgets/command/ungroupcommand.cpp:88
 #, kde-format
 msgid "Ungroup Objects"
-msgstr "Taka hluti úr hóp"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
-msgstr "Endurstilla aðdrátt"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
-msgstr "Mynd"
+msgstr ""
 
 #: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
-msgstr "Fleiri verkfæri"
+msgstr ""
 
 #: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
-msgstr "Opna valmynd"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:13
 #, kde-format
 msgid "Drawy"
-msgstr "Drawy"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
 msgid "Your handy, infinite  brainstorming tool!"
-msgstr "Handhæga, óendanlega hugmyndaflæðitólið!"
+msgstr ""
 
 #: widgets/context/applicationcontext.cpp:46
 #, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
-msgstr "Ónefnt"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
-msgstr "Myndval"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
-msgstr "Fríhendis"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
-msgstr "Rétthyrningur"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
-msgstr "Tígull"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
-msgstr "Sporbaugur"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
-msgstr "Ör"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
-msgstr "Lína"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
-msgstr "Útþurrkun"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
-msgstr "Texti"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
-msgstr "Færa"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:271
 #, kde-format
@@ -389,14 +383,14 @@ msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
 "items"
 msgid "Reorder"
-msgstr "Endurraða"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:281
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"
-msgstr "Hliðjafna"
+msgstr ""
 
 #: widgets/context/uicontext.cpp:371
 #, kde-format
@@ -409,11 +403,9 @@ msgid "Add to Dictionary"
 msgstr ""
 
 #: widgets/context/uicontext.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "MainWindow|"
-#| msgid "Ignore"
+#, kde-format
 msgid "Ignore"
-msgstr "Hunsa"
+msgstr ""
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -421,18 +413,18 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a presentation"
-msgstr "Halda kynningu"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
-msgstr "Grunnstilla Drawy"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:42
 #, kde-format
 msgid "General"
-msgstr "Almennt"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:47
 #, kde-format
@@ -447,76 +439,76 @@ msgstr ""
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
 msgid "Misc"
-msgstr "Ýmislegt"
+msgstr ""
 
 #: widgets/dialog/configuresettingsdialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
-msgstr "Umsagnir notenda"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:22
 #, kde-format
 msgid "Session"
-msgstr "Seta"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:30
 #, kde-format
 msgid "Time interval for automatic saving"
-msgstr "Tími á milli sjálfvirkra vistana"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:31
 #, kde-format
 msgctxt "@item %v is a number"
 msgid "%v minute"
 msgid_plural "%v minutes"
-msgstr[0] "%v mínúta"
-msgstr[1] "%v mínútur"
+msgstr[0] ""
+msgstr[1] ""
 
 #: widgets/dialog/general/autosavewidget.cpp:34
 #, kde-format
 msgid "Directory for automatic saving"
-msgstr "Mappa fyrir sjálfvirka vistun"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:45
 #, kde-format
 msgid "Open Directory"
-msgstr "Opna möppu"
+msgstr ""
 
 #: widgets/dialog/general/autosavewidget.cpp:54
 #, kde-format
 msgid "Restore previous session on start"
-msgstr "Endurheimta fyrri setu í ræsingu"
+msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:13
 #, kde-format
 msgid "Canvas"
-msgstr "Myndflötur"
+msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:21
 #, kde-format
 msgid "Light background color"
-msgstr "Ljós bakgrunnslitur"
+msgstr ""
 
 #: widgets/dialog/general/canvascolorwidget.cpp:22
 #, kde-format
 msgid "Dark background color"
-msgstr "Dökkur bakgrunnslitur"
+msgstr ""
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
-msgstr "Litaspjald"
+msgstr ""
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
-msgstr "Ljós hamur"
+msgstr ""
 
 #: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
-msgstr "Dökkur hamur"
+msgstr ""
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
@@ -544,11 +536,9 @@ msgid "Controls how much pressure changes line thickness."
 msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Myndval"
+msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
@@ -557,12 +547,10 @@ msgid "Select items fully contained"
 msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Valverkfæri"
+msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
@@ -579,187 +567,187 @@ msgstr ""
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
 msgid "Power Manager"
-msgstr "Gangstýring"
+msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:14
 #, kde-format
 msgid "Disable screenlocker during full screen"
-msgstr "Gera skjálæsingu óvirka á meðan verið er á fullum skjá"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:19
 #, kde-format
 msgctxt "@info:shell"
 msgid "Fullscreen"
-msgstr "Fylla skjá"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:20
 #, kde-format
 msgctxt "@info:shell"
 msgid "Activate Debug Mode"
-msgstr "Virkja villuleitarham"
+msgstr ""
 
 #: widgets/drawycommandlineparser.cpp:22
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr "Yfirlit yfir tiltækar leiðir fyrir umsagnir notenda"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:87
 #: widgets/keybindings/actionmanager.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
-msgstr "Flytja út sem mynd"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
-msgstr "Hópa atriði"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
-msgstr "Skipta atriðum upp úr hóp"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
-msgstr "Eyða"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
-msgstr "Hreinsa myndflöt"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
-msgstr "Fríhendisverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
-msgstr "Útþurrkunarverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
-msgstr "Valverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
-msgstr "Rétthyrningaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
-msgstr "Sporbaugaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
-msgstr "Línuverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
-msgstr "Textaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
-msgstr "Örvaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
-msgstr "Færsluverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
-msgstr "Myndaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
-msgstr "Tíglaverkfæri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
-msgstr "Setja aftast"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
-msgstr "Setja aftar"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
-msgstr "Setja framar"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
-msgstr "Setja fremst"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:134
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
-msgstr "Jafna efst"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
-msgstr "Miðja lóðrétt"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
-msgstr "Jafna neðst"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Align Left"
-msgstr "Jafna til vinstri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
-msgstr "Miðja lárétt"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Align Right"
-msgstr "Jafna til hægri"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:153
 #, kde-format
@@ -783,7 +771,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
-msgstr "Villukemba"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
@@ -794,58 +782,58 @@ msgstr ""
 #: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgid "Untitled.%1"
-msgstr "Ónefnt.%1"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:531
 #: widgets/keybindings/actionmanager.cpp:609
 #, kde-format
 msgid "Drawy (*.%1)"
-msgstr "Drawy (*.%1)"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "Vista skrá"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:554
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
-msgstr "Viltu örugglega hreinsa myndflötinn?"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:555
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "Hreinsa"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:612
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
-msgstr "Opna skrá"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:625
 #, kde-format
 msgid "Untitled.svg"
-msgstr "Ónefnt.svg"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:628
 #, kde-format
 msgid "SVG (*.svg)"
-msgstr "SVG (*.svg)"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid "PNG (*.png)"
-msgstr "PNG (*.png)"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
-msgstr "Flytja út í mynd"
+msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:687
 #, kde-format
@@ -853,125 +841,123 @@ msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"Skjalinu \"%1\" hefur verið breytt.\n"
-"Viltu vista það eða henda breytingunum?"
 
 #: widgets/keybindings/actionmanager.cpp:691
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
-msgstr "Aðgerð nauðsynleg"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
-msgstr "Eyða vali"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
-msgstr "Val hóps"
+msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
-msgstr "Taka valið úr hópi"
+msgstr ""
 
 #: widgets/properties/widgets/alignmentwidget.cpp:64
 #, kde-format
 msgid "Alignment"
-msgstr "Hliðjöfnun"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:41
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "None"
-msgstr "Ekkert"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:42
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Open Arrow"
-msgstr "Opin ör"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:43
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Triangle"
-msgstr "Þríhyrningur"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:44
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Filled Triangle"
-msgstr "Fylltur þríhyrningur"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:45
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Circle"
-msgstr "Hringur"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:46
 #, kde-format
 msgctxt "Tooltip for arrow head"
 msgid "Diamond"
-msgstr "Tígull"
+msgstr ""
 
 #: widgets/properties/widgets/arrowtypewidget.cpp:74
 #, kde-format
 msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
-msgstr "Veldu örvarodd"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
-msgstr "Bakgrunnslitur"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "None"
-msgstr "Ekkert"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:39
 #: widgets/properties/widgets/stokestylewidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Solid"
-msgstr "Gegnheilt"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal Cross"
-msgstr "Skálínukross"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Diagonal"
-msgstr "Skálína"
+msgstr ""
 
 #: widgets/properties/widgets/backgroundstylewidget.cpp:78
 #, kde-format
 msgid "Background Style"
-msgstr "Stíll bakgrunns"
+msgstr ""
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Custom Color"
-msgstr "Veldu sérsniðinn lit"
+msgstr ""
 
 #: widgets/properties/widgets/colorwidgetbase.cpp:119
 #, kde-format
 msgid "Color"
-msgstr "Litur"
+msgstr ""
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
 #, kde-format
@@ -994,23 +980,22 @@ msgstr ""
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
-msgstr "Örvaroddur enda"
+msgstr ""
 
 #: widgets/properties/widgets/erasersizewidget.cpp:32
 #, kde-format
 msgid "Eraser Size"
-msgstr "Stærð útþurrkunar"
+msgstr ""
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Leturstærð"
+msgstr ""
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
 msgid "Font Size"
-msgstr "Leturstærð"
+msgstr ""
 
 #: widgets/properties/widgets/fontstylewidget.cpp:29
 #, kde-format
@@ -1037,17 +1022,14 @@ msgid "Strikethrough"
 msgstr ""
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Leturstærð"
+msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
-msgstr "Ekkert"
+msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
@@ -1055,10 +1037,9 @@ msgid "Bullet (Disc)"
 msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Full Circle"
+#, kde-format
 msgid "Bullet (Circle)"
-msgstr "Fullur hringur"
+msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
@@ -1091,72 +1072,65 @@ msgid "Numbered (Upper Roman)"
 msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Stíll útlínu"
+msgstr ""
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
 msgid "Opacity"
-msgstr "Ógegnsæi"
+msgstr ""
 
 #: widgets/properties/widgets/startarrowtypewidget.cpp:21
 #, kde-format
 msgctxt "Name of a property"
 msgid "Start Arrow Head"
-msgstr "Örvaroddur upphafs"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dashed"
-msgstr "Strikalína"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Dotted"
-msgstr "Punktalína"
+msgstr ""
 
 #: widgets/properties/widgets/stokestylewidget.cpp:63
 #, kde-format
 msgid "Stroke Style"
-msgstr "Stíll útlínu"
+msgstr ""
 
 #: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
-msgstr "Litur útlínu"
+msgstr ""
 
 #: widgets/properties/widgets/strokewidthwidget.cpp:32
 #, kde-format
 msgid "Thickness"
-msgstr "Þykkt"
+msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
-msgstr "Jafna til vinstri"
+msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "Jafna að miðju"
+msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
-msgstr "Jafna til hægri"
+msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:58
 #, kde-format
@@ -1165,26 +1139,25 @@ msgid "Justify"
 msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Hliðjöfnun"
+msgstr ""
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
 msgid "Order"
-msgstr "Röðun"
+msgstr ""
 
 #: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
-msgstr "Mynd"
+msgstr ""
 
 #: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Setja inn mynd"
+msgstr ""
 
 #: widgets/tools/texttool.cpp:152
 #, kde-format
@@ -1195,417 +1168,4 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
-msgstr "%1 - Drawy"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Align to Middle"
-#~ msgstr "Jafna að miðju"
-
-#~ msgid "Light theme color"
-#~ msgstr "Litur í ljósu þema"
-
-#~ msgid "Dark theme color"
-#~ msgstr "Litur í dökku þema"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Select Plugin"
-#~ msgstr "Velja viðbót"
-
-#~ msgid "Line"
-#~ msgstr "Lína"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Arrow Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Arrow Tool"
-#~ msgstr "Örvaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Diamond Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Diamond Tool"
-#~ msgstr "Tíglaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Ellipse Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Sporbaugaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Eraser Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Eraser Tool"
-#~ msgstr "Útþurrkunarverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Pen Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Pen Tool"
-#~ msgstr "Pennaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Rectangle Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Image Tool"
-#~ msgstr "Rétthyrningaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Line Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Line Tool"
-#~ msgstr "Línuverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Rectangle Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Rétthyrningaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Selection Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Selection Tool"
-#~ msgstr "Valverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Text Tool"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Text Tool"
-#~ msgstr "Textaverkfæri"
-
-#, fuzzy
-#~| msgctxt "QObject|"
-#~| msgid "Update Property"
-#~ msgid "Update Property"
-#~ msgstr "Uppfæra eigindi"
-
-#~ msgctxt "ActionsWidget|"
-#~ msgid "Actions"
-#~ msgstr "Aðgerðir"
-
-#~ msgctxt "ArrowStyleWidget|"
-#~ msgid "Arrow"
-#~ msgstr "Ör"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Solid"
-#~ msgstr "Gegnheilt"
-
-#~ msgctxt "QObject|"
-#~ msgid "Arrow Tool"
-#~ msgstr "Örvaverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Sporbaugaverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Eraser Tool"
-#~ msgstr "Útþurrkunarverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Line Tool"
-#~ msgstr "Línuverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Move Tool"
-#~ msgstr "Færsluverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Rétthyrningaverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Selection Tool"
-#~ msgstr "Valverkfæri"
-
-#~ msgctxt "QObject|"
-#~ msgid "Text Tool"
-#~ msgstr "Textaverkfæri"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Top"
-#~ msgstr "Færa efst"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Up"
-#~ msgstr "Færa upp"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move Down"
-#~ msgstr "Færa niður"
-
-#~ msgctxt "ZOrderWidget|"
-#~ msgid "Move on Bottom"
-#~ msgstr "Færa neðst"
-
-#~ msgctxt "QObject|"
-#~ msgid "Your handy, infinite, brainstorming tool!"
-#~ msgstr "Handhæga, óendanlega hugmyndaflæðitólið."
-
-#~ msgctxt "UIContext|"
-#~ msgid "Save to File"
-#~ msgstr "Vista í skrá"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom Out"
-#~ msgstr "Renna frá"
-
-#~ msgctxt "UIContext|"
-#~ msgid "Zoom In"
-#~ msgstr "Renna að"
-
-#~ msgctxt "ConfigureGeneralWidget|"
-#~ msgid "Auto-save"
-#~ msgstr "Sjálfvirk vistun"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Do you want to restore autosave file?"
-#~ msgstr "Viltu endurheimta sjálfvirkt vistuðu skrána?"
-
-#~ msgctxt "RestoreAutoSaveJob|"
-#~ msgid "Restore"
-#~ msgstr "Endurheimta"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Do you want to save file?"
-#~ msgstr "Viltu vista skrá?"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Close"
-#~ msgstr "Loka"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Save And Close"
-#~ msgstr "Vista og loka"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Export to Svg"
-#~ msgstr "Flytja út í SVG-skrá"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Eraser Tool"
-#~ msgstr "Útþurrkunarverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Selection Tool"
-#~ msgstr "Valverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Rectangle Tool"
-#~ msgstr "Rétthyrningaverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Ellipse Tool"
-#~ msgstr "Sporbaugaverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Line Tool"
-#~ msgstr "Línuverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Text Tool"
-#~ msgstr "Textaverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Arrow Tool"
-#~ msgstr "Örvaverkfæri"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Move Tool"
-#~ msgstr "Færsluverkfæri"
-
-#~ msgctxt "StokeStyleWidget|"
-#~ msgid "Dot Line"
-#~ msgstr "Punktalína"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to freeform drawing tool"
-#~ msgstr "Skipta yfir í fríhendisverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to eraser tool"
-#~ msgstr "Skipta yfir í útþurrkunarverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to selection tool"
-#~ msgstr "Skipta yfir í valverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to rectangle drawing tool"
-#~ msgstr "Skipta yfir í rétthyrningaverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to ellipse drawing tool"
-#~ msgstr "Skipta yfir í sporbaugateikniverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to line drawing tool"
-#~ msgstr "Skipta yfir í línuteikniverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to the text tool"
-#~ msgstr "Skipta yfir í textaverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to arrow drawing tool"
-#~ msgstr "Skipta yfir í örvateikniverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Switch to move tool"
-#~ msgstr "Skipta yfir í færsluverkfæri"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Groups selected items"
-#~ msgstr "Hópar saman valin atriði"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Ungroups selected groups"
-#~ msgstr "Skipta upp völdum hópum"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Deletes selected items"
-#~ msgstr "Eyðir völdum atriðum"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo"
-#~ msgstr "Afturkalla"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Undo last action"
-#~ msgstr "Afturkalla síðustu aðgerð"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo"
-#~ msgstr "Endurtaka"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Redo last undone action"
-#~ msgstr "Endurtaka síðustu afturkölluðu aðgerð"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom In"
-#~ msgstr "Renna að"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom in"
-#~ msgstr "Renna að"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom Out"
-#~ msgstr "Renna frá"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Zoom out"
-#~ msgstr "Renna frá"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Select all items"
-#~ msgstr "Velja öll atriði"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Save"
-#~ msgstr "Vista"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open File"
-#~ msgstr "Opna skrá"
-
-#~ msgctxt "ActionManager|"
-#~ msgid "Open an existing file"
-#~ msgstr "Opna fyrirliggjandi skrá"
-
-#~ msgctxt "ActionManager|keybinding for the undo action"
-#~ msgid "Ctrl+Z"
-#~ msgstr "Ctrl+Z"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Y"
-#~ msgstr "Ctrl+Y"
-
-#~ msgctxt "ActionManager|keybinding for the redo action"
-#~ msgid "Ctrl+Shift+Z"
-#~ msgstr "Ctrl+Shift+Z"
-
-#~ msgctxt "ActionManager|keybinding for the zoom in action"
-#~ msgid "Ctrl++"
-#~ msgstr "Ctrl++"
-
-#~ msgctxt "ActionManager|keybinding for the zoom out action"
-#~ msgid "Ctrl+-"
-#~ msgstr "Ctrl+-"
-
-#~ msgctxt "ActionManager|keybinding for the text tool"
-#~ msgid "T"
-#~ msgstr "T"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "P"
-#~ msgstr "F"
-
-#~ msgctxt "ActionManager|keybinding for the freeform drawing tool"
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgctxt "ActionManager|keybinding for the eraser tool"
-#~ msgid "E"
-#~ msgstr "E"
-
-#~ msgctxt "ActionManager|keybinding for the selection tool"
-#~ msgid "S"
-#~ msgstr "V"
-
-#~ msgctxt "ActionManager|keybinding for the rectangle drawing tool"
-#~ msgid "R"
-#~ msgstr "R"
-
-#~ msgctxt "ActionManager|keybinding for the ellipse drawing tool"
-#~ msgid "O"
-#~ msgstr "O"
-
-#~ msgctxt "ActionManager|keybinding for the line drawing tool"
-#~ msgid "L"
-#~ msgstr "L"
-
-#~ msgctxt "ActionManager|keybinding for the arrow drawing tool"
-#~ msgid "A"
-#~ msgstr "A"
-
-#~ msgctxt "ActionManager|keybinding for the move tool"
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgctxt "ActionManager|keybinding for the select all action"
-#~ msgid "Ctrl+A"
-#~ msgstr "Ctrl+A"
-
-#~ msgctxt "ActionManager|keybinding for the delete action"
-#~ msgid "Del"
-#~ msgstr "Del"
-
-#~ msgctxt "ActionManager|keybinding for the save action"
-#~ msgid "Ctrl+S"
-#~ msgstr "Ctrl+S"
-
-#~ msgctxt "ActionManager|keybinding for the open file action"
-#~ msgid "Ctrl+O"
-#~ msgstr "Ctrl+O"
-
-#~ msgctxt "ActionManager|keybinding for the group action"
-#~ msgid "Ctrl+G"
-#~ msgstr "Ctrl+G"
-
-#~ msgctxt "ActionManager|keybinding for the ungroup action"
-#~ msgid "Ctrl+Shift+G"
-#~ msgstr "Ctrl+Shift+G"
+msgstr ""

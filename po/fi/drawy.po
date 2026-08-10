@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-06 00:41+0000\n"
+"POT-Creation-Date: 2026-08-10 00:42+0000\n"
 "PO-Revision-Date: 2026-01-02 11:41+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -24,76 +24,151 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
+#: apps/main.cpp:43 widgets/context/aboutdata.cpp:17
+#, kde-format
+msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
+msgid "© 2025–%1 Drawy authors"
+msgstr ""
+
+#: apps/main.cpp:49
+#, kde-format
+msgctxt "@info:credit"
+msgid "Prayag Jain"
+msgstr ""
+
+#: apps/main.cpp:49
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: apps/main.cpp:50
+#, kde-format
+msgctxt "@info:credit"
+msgid "Laurent Montel"
+msgstr ""
+
+#: apps/main.cpp:50
+#, kde-format
+msgid "Developer"
+msgstr ""
+
 #: apps/main.cpp:51
+#, kde-format
+msgctxt "@info:credit"
+msgid "Abdelhadi Wael"
+msgstr ""
+
+#: apps/main.cpp:51
+#, kde-format
+msgid "GSoc 2026 developper (Improve text component)"
+msgstr ""
+
+#: apps/main.cpp:52
+#, kde-format
+msgctxt "@info:credit"
+msgid "Nikolay Kochulin"
+msgstr ""
+
+#: apps/main.cpp:52
+#, kde-format
+msgid "Bug Fixing. Import/Export Files"
+msgstr ""
+
+#: apps/main.cpp:62
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr ""
 
-#: apps/main.cpp:52
+#: apps/main.cpp:63
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr ""
 
-#: gui/properties/property.cpp:97
+#: gui/properties/property.cpp:117
 #, kde-format
 msgid "Change Stroke Width"
 msgstr ""
 
-#: gui/properties/property.cpp:99
+#: gui/properties/property.cpp:119
 #, kde-format
 msgid "Change Stroke Color"
 msgstr ""
 
-#: gui/properties/property.cpp:101
+#: gui/properties/property.cpp:121
 #, kde-format
 msgid "Change Opacity"
 msgstr ""
 
-#: gui/properties/property.cpp:103
+#: gui/properties/property.cpp:123
+#, kde-format
+msgid "Change Font Family"
+msgstr ""
+
+#: gui/properties/property.cpp:125
 #, kde-format
 msgid "Change Font Size"
 msgstr ""
 
-#: gui/properties/property.cpp:105
+#: gui/properties/property.cpp:127
+#, kde-format
+msgid "Change Font Style"
+msgstr ""
+
+#: gui/properties/property.cpp:129
 #, kde-format
 msgid "Change Eraser Size"
 msgstr ""
 
-#: gui/properties/property.cpp:107
-#: widgets/properties/widgets/actionswidget.cpp:50
+#: gui/properties/property.cpp:131
+#: widgets/properties/widgets/actionswidget.cpp:49
 #, kde-format
 msgid "Actions"
 msgstr ""
 
-#: gui/properties/property.cpp:109
+#: gui/properties/property.cpp:133
 #, kde-format
 msgid "Change Stroke Style"
 msgstr ""
 
-#: gui/properties/property.cpp:111
+#: gui/properties/property.cpp:135
 #, kde-format
 msgid "Change Background Color"
 msgstr ""
 
-#: gui/properties/property.cpp:113
+#: gui/properties/property.cpp:137
 #, kde-format
 msgid "Change Background Style"
 msgstr ""
 
-#: gui/properties/property.cpp:115
+#: gui/properties/property.cpp:139
 #, kde-format
 msgid "Change Start Arrow Head"
 msgstr ""
 
-#: gui/properties/property.cpp:117
+#: gui/properties/property.cpp:141
 #, kde-format
 msgid "Change End Arrow Head"
 msgstr ""
 
-#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#: gui/properties/property.cpp:146
+#, kde-format
+msgid "Change Text Alignment"
+msgstr ""
+
+#: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
 msgid "Change ZOrder"
+msgstr ""
+
+#: gui/properties/property.cpp:150
+#, kde-format
+msgid "Change Corner Rectangle Type"
+msgstr ""
+
+#: gui/properties/property.cpp:152
+#, kde-format
+msgid "Change List Style"
 msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
@@ -116,6 +191,18 @@ msgstr ""
 #: widgets/command/alignitemcommand.cpp:140
 #, kde-format
 msgid "Align Items"
+msgstr ""
+
+#: widgets/command/commandhistory.cpp:72
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Undo: %1"
+msgstr ""
+
+#: widgets/command/commandhistory.cpp:73
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Redo: %1"
 msgstr ""
 
 #: widgets/command/deselectcommand.cpp:48
@@ -175,37 +262,37 @@ msgstr ""
 msgid "Ungroup Objects"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:41
+#: widgets/components/bottomleftwidgets.cpp:40
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:42
+#: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset Zoom"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:53
+#: widgets/components/bottomleftwidgets.cpp:52
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr ""
 
-#: widgets/components/toolbar.cpp:74
+#: widgets/components/toolbar.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Image"
 msgstr ""
 
-#: widgets/components/toolbuttonplugin.cpp:65
+#: widgets/components/toolbuttonselectplugin.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "More Tools"
 msgstr ""
 
-#: widgets/components/topleftwidgets.cpp:40
+#: widgets/components/topleftwidgets.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Menu"
@@ -221,101 +308,73 @@ msgstr ""
 msgid "Your handy, infinite  brainstorming tool!"
 msgstr ""
 
-#: widgets/context/aboutdata.cpp:17
-#, kde-format
-msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
-msgid "© 2025–%1 Drawy authors"
-msgstr ""
-
-#: widgets/context/aboutdata.cpp:19
-#, kde-format
-msgctxt "@info:credit"
-msgid "Prayag Jain"
-msgstr ""
-
-#: widgets/context/aboutdata.cpp:19
-#, kde-format
-msgid "Maintainer"
-msgstr ""
-
-#: widgets/context/aboutdata.cpp:20
-#, kde-format
-msgctxt "@info:credit"
-msgid "Laurent Montel"
-msgstr ""
-
-#: widgets/context/aboutdata.cpp:20
-#, kde-format
-msgid "Developer"
-msgstr ""
-
-#: widgets/context/applicationcontext.cpp:42
+#: widgets/context/applicationcontext.cpp:46
 #, kde-format
 msgctxt "Default unsaved file name"
 msgid "Untitled"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:67
+#: widgets/context/uicontext.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Selection"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:68
+#: widgets/context/uicontext.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Free Form"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:69
+#: widgets/context/uicontext.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Rectangle"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:70
+#: widgets/context/uicontext.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Diamond"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:71
+#: widgets/context/uicontext.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Ellipse"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:72
+#: widgets/context/uicontext.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Arrow"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:73
+#: widgets/context/uicontext.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Line"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:74
+#: widgets/context/uicontext.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Eraser"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:75
+#: widgets/context/uicontext.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Text"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:76
+#: widgets/context/uicontext.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Move"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:242
+#: widgets/context/uicontext.cpp:271
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to reorder "
@@ -323,11 +382,26 @@ msgctxt ""
 msgid "Reorder"
 msgstr ""
 
-#: widgets/context/uicontext.cpp:252
+#: widgets/context/uicontext.cpp:281
 #, kde-format
 msgctxt ""
 "Title of a submenu inside the context menu which allows users to align items"
 msgid "Align"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:371
+#, kde-format
+msgid "No Suggestions"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:376
+#, kde-format
+msgid "Add to Dictionary"
+msgstr ""
+
+#: widgets/context/uicontext.cpp:381
+#, kde-format
+msgid "Ignore"
 msgstr ""
 
 #: widgets/dbus/managepowermanagement.cpp:30
@@ -338,23 +412,33 @@ msgctxt ""
 msgid "Giving a presentation"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:35
+#: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Drawy"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:38
+#: widgets/dialog/configuresettingsdialog.cpp:42
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:44
+#: widgets/dialog/configuresettingsdialog.cpp:47
+#, kde-format
+msgid "Input"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:52
+#, kde-format
+msgid "Spell Checking"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
 msgid "Misc"
 msgstr ""
 
-#: widgets/dialog/configuresettingsdialog.cpp:50
+#: widgets/dialog/configuresettingsdialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "User Feedback"
@@ -408,19 +492,73 @@ msgstr ""
 msgid "Dark background color"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#: widgets/dialog/general/defaultcolorswidget.cpp:12
 #, kde-format
 msgid "Color Palette"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#: widgets/dialog/general/defaultcolorswidget.cpp:42
 #, kde-format
 msgid "Light Mode"
 msgstr ""
 
-#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#: widgets/dialog/general/defaultcolorswidget.cpp:45
 #, kde-format
 msgid "Dark Mode"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#, kde-format
+msgid "Freehand Settings"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
+#, kde-format
+msgid "Stabilization"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:49
+#, kde-format
+msgid "Makes lines steadier by reducing hand shake."
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#, kde-format
+msgid "Pressure Sensitivity"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:50
+#, kde-format
+msgid "Controls how much pressure changes line thickness."
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:14
+#, kde-format
+msgid "Selection Settings"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:15
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items fully contained"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:16
+#, kde-format
+msgctxt "@option:radio"
+msgid "Select items on overlap"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:18
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Only items completely inside the selection box will be selected"
+msgstr ""
+
+#: widgets/dialog/input/selectionsettingswidget.cpp:19
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Any item touching the selection box will be selected"
 msgstr ""
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
@@ -451,251 +589,275 @@ msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:80
-#: widgets/keybindings/actionmanager.cpp:85
+#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Export as Image"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:87
+#: widgets/keybindings/actionmanager.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Group Items"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:90
+#: widgets/keybindings/actionmanager.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Ungroup Items"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:95
+#: widgets/keybindings/actionmanager.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Delete"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:97
+#: widgets/keybindings/actionmanager.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Clear Canvas"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:100
+#: widgets/keybindings/actionmanager.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Freeform Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:103
+#: widgets/keybindings/actionmanager.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Eraser Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:104
+#: widgets/keybindings/actionmanager.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Selection Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:105
+#: widgets/keybindings/actionmanager.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Rectangle Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:106
+#: widgets/keybindings/actionmanager.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Ellipse Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:107
+#: widgets/keybindings/actionmanager.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Line Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:108
+#: widgets/keybindings/actionmanager.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Text Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:109
+#: widgets/keybindings/actionmanager.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Arrow Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:110
+#: widgets/keybindings/actionmanager.cpp:117
 #, kde-format
 msgctxt "@action"
 msgid "Move Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:111
+#: widgets/keybindings/actionmanager.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Image Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:112
+#: widgets/keybindings/actionmanager.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Diamond Tool"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:114
+#: widgets/keybindings/actionmanager.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Send To Back"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:117
+#: widgets/keybindings/actionmanager.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Send Backward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:120
+#: widgets/keybindings/actionmanager.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Bring Forward"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:123
+#: widgets/keybindings/actionmanager.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "Bring To Front"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:127
+#: widgets/keybindings/actionmanager.cpp:134
 #, kde-format
 msgctxt "@action"
 msgid "Align Top"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:130
+#: widgets/keybindings/actionmanager.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Center Vertically"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:133
+#: widgets/keybindings/actionmanager.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Align Bottom"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:136
+#: widgets/keybindings/actionmanager.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Align Left"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:139
+#: widgets/keybindings/actionmanager.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Center Horizontally"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:142
+#: widgets/keybindings/actionmanager.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Align Right"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:146
+#: widgets/keybindings/actionmanager.cpp:153
+#, kde-format
+msgctxt "@action"
+msgid "Locks"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:155
+#, kde-format
+msgctxt "@action"
+msgid "Unlock"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:157
+#, kde-format
+msgctxt "@action"
+msgid "Add to Library"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Debug"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:481
+#: widgets/keybindings/actionmanager.cpp:161
+#, kde-format
+msgctxt "@action"
+msgid "What's new"
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
 msgid "Untitled.%1"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:483
-#: widgets/keybindings/actionmanager.cpp:547
+#: widgets/keybindings/actionmanager.cpp:531
+#: widgets/keybindings/actionmanager.cpp:609
 #, kde-format
 msgid "Drawy (*.%1)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:484
+#: widgets/keybindings/actionmanager.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:506
+#: widgets/keybindings/actionmanager.cpp:554
 #, kde-format
 msgctxt "@action"
 msgid "Do you really want to clear the canvas?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:507
+#: widgets/keybindings/actionmanager.cpp:555
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:550
+#: widgets/keybindings/actionmanager.cpp:612
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:563
+#: widgets/keybindings/actionmanager.cpp:625
 #, kde-format
 msgid "Untitled.svg"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:566
+#: widgets/keybindings/actionmanager.cpp:628
 #, kde-format
 msgid "SVG (*.svg)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:567
+#: widgets/keybindings/actionmanager.cpp:629
 #, kde-format
 msgid "PNG (*.png)"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:571
+#: widgets/keybindings/actionmanager.cpp:633
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Image"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:622
+#: widgets/keybindings/actionmanager.cpp:687
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:626
+#: widgets/keybindings/actionmanager.cpp:691
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:31
+#: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete selection"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:32
+#: widgets/properties/widgets/actionswidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group selection"
 msgstr ""
 
-#: widgets/properties/widgets/actionswidget.cpp:33
+#: widgets/properties/widgets/actionswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ungroup selection"
@@ -748,7 +910,7 @@ msgctxt "Tooltip for a button to change arrow head"
 msgid "Select Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:20
 #, kde-format
 msgid "Background Color"
 msgstr ""
@@ -794,20 +956,121 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Rounded Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pointed Corner"
+msgstr ""
+
+#: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
+#, kde-format
+msgid "Corner Type"
+msgstr ""
+
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
 msgctxt "Name of a property"
 msgid "End Arrow Head"
 msgstr ""
 
-#: widgets/properties/widgets/erasersizewidget.cpp:31
+#: widgets/properties/widgets/erasersizewidget.cpp:32
 #, kde-format
 msgid "Eraser Size"
 msgstr ""
 
-#: widgets/properties/widgets/fontsizewidget.cpp:38
+#: widgets/properties/widgets/fontfamilywidget.cpp:79
+#, kde-format
+msgid "Font Family"
+msgstr ""
+
+#: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
 msgid "Font Size"
+msgstr ""
+
+#: widgets/properties/widgets/fontstylewidget.cpp:29
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Bold"
+msgstr ""
+
+#: widgets/properties/widgets/fontstylewidget.cpp:38
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Italic"
+msgstr ""
+
+#: widgets/properties/widgets/fontstylewidget.cpp:47
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Underlined"
+msgstr ""
+
+#: widgets/properties/widgets/fontstylewidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Strikethrough"
+msgstr ""
+
+#: widgets/properties/widgets/fontstylewidget.cpp:79
+#, kde-format
+msgid "Font Style"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:26
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:27
+#, kde-format
+msgid "Bullet (Disc)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:28
+#, kde-format
+msgid "Bullet (Circle)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:29
+#, kde-format
+msgid "Bullet (Square)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:30
+#, kde-format
+msgid "Numbered (Decimal)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:31
+#, kde-format
+msgid "Numbered (Lower Alpha)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:32
+#, kde-format
+msgid "Numbered (Upper Alpha)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:33
+#, kde-format
+msgid "Numbered (Lower Roman)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:34
+#, kde-format
+msgid "Numbered (Upper Roman)"
+msgstr ""
+
+#: widgets/properties/widgets/liststylewidget.cpp:59
+#, kde-format
+msgid "List Style"
 msgstr ""
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
@@ -838,14 +1101,43 @@ msgstr ""
 msgid "Stroke Style"
 msgstr ""
 
-#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#: widgets/properties/widgets/strokecolorwidget.cpp:19
 #, kde-format
 msgid "Stroke Color"
 msgstr ""
 
-#: widgets/properties/widgets/strokewidthwidget.cpp:31
+#: widgets/properties/widgets/strokewidthwidget.cpp:32
 #, kde-format
 msgid "Thickness"
+msgstr ""
+
+#: widgets/properties/widgets/textalignmentwidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Align Left"
+msgstr ""
+
+#: widgets/properties/widgets/textalignmentwidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Align Center"
+msgstr ""
+
+#: widgets/properties/widgets/textalignmentwidget.cpp:49
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Align Right"
+msgstr ""
+
+#: widgets/properties/widgets/textalignmentwidget.cpp:58
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Justify"
+msgstr ""
+
+#: widgets/properties/widgets/textalignmentwidget.cpp:96
+#, kde-format
+msgid "Text Alignment"
 msgstr ""
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
@@ -853,18 +1145,23 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: widgets/tools/imagetool.cpp:37
+#: widgets/tools/imagetool.cpp:38
 #, kde-format
 msgid "Image"
 msgstr ""
 
-#: widgets/tools/imagetool.cpp:56
+#: widgets/tools/imagetool.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr ""
 
-#: widgets/window/window.cpp:192
+#: widgets/tools/texttool.cpp:152
+#, kde-format
+msgid "ctrl + click to open: %1"
+msgstr ""
+
+#: widgets/window/window.cpp:206
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
