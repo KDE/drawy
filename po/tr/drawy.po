@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-10 00:42+0000\n"
-"PO-Revision-Date: 2026-07-23 21:20+0300\n"
+"PO-Revision-Date: 2026-08-10 19:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -57,23 +57,23 @@ msgstr "Geliştirici"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "GSoC 2026 geliştiricisi (metin bileşeni iyileştirmeleri)"
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "Nikolay Koçulin"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "Hata düzeltmeleri, içe/dışa aktarma düzeltmeleri"
 
 #: apps/main.cpp:62
 #, kde-format
@@ -102,10 +102,9 @@ msgid "Change Opacity"
 msgstr "Matlığı Değiştir"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Yazıtipi Puntosunu Değiştir"
+msgstr "Yazıtipi Ailesini Değiştir"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -113,10 +112,9 @@ msgid "Change Font Size"
 msgstr "Yazıtipi Puntosunu Değiştir"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Yazıtipi Puntosunu Değiştir"
+msgstr "Yazıtipi Biçemini Değiştir"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -155,10 +153,9 @@ msgid "Change End Arrow Head"
 msgstr "Ok Başını Değiştir"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Hizalama"
+msgstr "Metin Hizalamasını Değiştir"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -171,10 +168,9 @@ msgid "Change Corner Rectangle Type"
 msgstr "Dörtgen Köşesi Türünü Değiştir"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Vuruş Biçemini Değiştir"
+msgstr "Liste Biçemini Değiştir"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -397,19 +393,17 @@ msgstr "Hizala"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "Öneri Yok"
 
 #: widgets/context/uicontext.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Library"
+#, kde-format
 msgid "Add to Dictionary"
-msgstr "Kitaplığa Ekle"
+msgstr "Sözlüğe Ekle"
 
 #: widgets/context/uicontext.cpp:381
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "Yok Say"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -438,7 +432,7 @@ msgstr "Giriş"
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "Yazım Denetimi"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -995,10 +989,9 @@ msgid "Eraser Size"
 msgstr "Silgi Boyutu"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Yazıtipi Puntosu"
+msgstr "Yazıtipi Ailesi"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1009,85 +1002,80 @@ msgstr "Yazıtipi Puntosu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Kalın"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Yatık"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "Altı Çizili"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "Üzeri Çizili"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Yazıtipi Puntosu"
+msgstr "Yazıtipi Biçemi"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Yok"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "Madde İmi (Disk)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Full Circle"
+#, kde-format
 msgid "Bullet (Circle)"
-msgstr "Tam Çember"
+msgstr "Madde İmi (Daire)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "Madde İmi (Kare)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "Numaralandırılmış (Ondalık)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "Numaralandırılmış (Küçük Alfa)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "Numaralandırılmış (Büyük Alfa)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "Numaralandırılmış (Küçük Romen)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "Numaralandırılmış (Büyük Romen)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Vuruş Biçemi"
+msgstr "Liste Biçemi"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1128,25 +1116,19 @@ msgid "Thickness"
 msgstr "Kalınlık"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Sola Hizala"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "Merkeze hizala"
+msgstr "Ortaya Hizala"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Sağa Hizala"
@@ -1155,13 +1137,12 @@ msgstr "Sağa Hizala"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "İki Yana Yasla"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Hizalama"
+msgstr "Metin Hizalaması"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1182,7 +1163,7 @@ msgstr "Görsel Ekle"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "Açmak için Kontrol+Tık: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format

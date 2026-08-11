@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-10 00:42+0000\n"
-"PO-Revision-Date: 2026-07-23 06:21+0200\n"
+"PO-Revision-Date: 2026-08-10 06:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -57,23 +57,23 @@ msgstr "Razvijalec"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "Razvijalec GSoc 2026 (Izboljšanje besedilne komponente)"
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "Nikolay Kochulin"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "Odpravljanje napak. Uvoz/izvoz datotek"
 
 #: apps/main.cpp:62
 #, kde-format
@@ -102,10 +102,9 @@ msgid "Change Opacity"
 msgstr "Spremeni neprosojnost"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Spremeni velikost pisave"
+msgstr "Spremeni družino pisave"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -113,10 +112,9 @@ msgid "Change Font Size"
 msgstr "Spremeni velikost pisave"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Spremeni velikost pisave"
+msgstr "Spremeni slog pisave"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -155,10 +153,9 @@ msgid "Change End Arrow Head"
 msgstr "Spremeni končni konec puščice"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Poravnava"
+msgstr "Spremeni poravnavo besedila"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -171,15 +168,14 @@ msgid "Change Corner Rectangle Type"
 msgstr "Zamenjaj vrsto pravokotnika vogala"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Spremeni slog poteze"
+msgstr "Spremeni slog seznama"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
 msgid "Basic Shapes"
-msgstr "Osnovne oblike"
+msgstr "Osnovni liki"
 
 #: plugins/basicshapes/triangle/triangle.cpp:88
 #, kde-format
@@ -399,19 +395,15 @@ msgstr "Poravnaj"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "Ni predlogov"
 
 #: widgets/context/uicontext.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Library"
+#, kde-format
 msgid "Add to Dictionary"
-msgstr "Dodaj v knjižnico"
+msgstr "Dodaj v slovar"
 
 #: widgets/context/uicontext.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "MainWindow|"
-#| msgid "Ignore"
+#, kde-format
 msgid "Ignore"
 msgstr "Prezri"
 
@@ -442,7 +434,7 @@ msgstr "Vhod"
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "Preverjanje črkovanja"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -1000,10 +992,9 @@ msgid "Eraser Size"
 msgstr "Velikost radirke"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Velikost pisave"
+msgstr "Družina pisave"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1014,85 +1005,80 @@ msgstr "Velikost pisave"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Krepko"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Ležeče"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "Podčrtano"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "Prečrtano"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Velikost pisave"
+msgstr "Slog pisave"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
-msgstr "Noben"
+msgstr "Brez"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "Točka (disk)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Full Circle"
+#, kde-format
 msgid "Bullet (Circle)"
-msgstr "Polni krog"
+msgstr "Točka (krog)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "Točka (kvadrat)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "Oštevilčen (decimalno)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "Oštevilčen (Mala abeceda)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "Oštevilčen (Velika abeceda)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "Oštevilčen (Male rimske)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "Oštevilčen (Velike rimske)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Slog poteze"
+msgstr "Slog seznama"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1133,25 +1119,19 @@ msgid "Thickness"
 msgstr "Debelina"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Poravnaj levo"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
 msgstr "Poravnaj na sredino"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Poravnaj desno"
@@ -1160,13 +1140,12 @@ msgstr "Poravnaj desno"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "Poravnaj obojestransko"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Poravnava"
+msgstr "Poravnava besedila"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1187,7 +1166,7 @@ msgstr "Vstavi sliko"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "ctrl + klik za odpiranje: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format

@@ -56,23 +56,23 @@ msgstr "პროგრამისტი"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "GSoc 2026 developper (ტექსტური კომპონენტის გაუმჯობესება)"
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "ნიკოლაი კოჩულინი"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "შეცდომების გასწორება. შემოტანა/გატანის გასწორება"
 
 #: apps/main.cpp:62
 #, kde-format
@@ -101,10 +101,9 @@ msgid "Change Opacity"
 msgstr "გაუმჭვირვალობის შეცვლა"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "ფონტის ზომის შეცვლა"
+msgstr "ფონტის ოჯახის შეცვლა"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -112,10 +111,9 @@ msgid "Change Font Size"
 msgstr "ფონტის ზომის შეცვლა"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "ფონტის ზომის შეცვლა"
+msgstr "ფონტის სტილის შეცვლა"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -154,10 +152,9 @@ msgid "Change End Arrow Head"
 msgstr "დასრულების ისრის თავის შეცვლა"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "სწორება"
+msgstr "ტექსტის სწორების შეცვლა"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -170,10 +167,9 @@ msgid "Change Corner Rectangle Type"
 msgstr "კუთხის მართკუთხედის ტიპის შეცვლა"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "გამოძრავების სტილის შეცვლა"
+msgstr "სიის სტილის შეცვლა"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -396,19 +392,15 @@ msgstr "სწორება"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "რჩევების გარეშე"
 
 #: widgets/context/uicontext.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Library"
+#, kde-format
 msgid "Add to Dictionary"
-msgstr "ბიბლიოთეკაში დამატება"
+msgstr "ლექსიკონში ჩამატება"
 
 #: widgets/context/uicontext.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "MainWindow|"
-#| msgid "Ignore"
+#, kde-format
 msgid "Ignore"
 msgstr "იგნორი"
 
@@ -439,7 +431,7 @@ msgstr "შეყვანა"
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "მართლწერის შემოწმება"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -997,10 +989,9 @@ msgid "Eraser Size"
 msgstr "საშლელის ზომა"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "ფონტის ზომა"
+msgstr "ფონტების ოჯახი"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1011,85 +1002,80 @@ msgstr "ფონტის ზომა"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "სქელი"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "კურსივი"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "ხაზგასმული"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "გადახაზული"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "ფონტის ზომა"
+msgstr "ფონტის სტილი"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "არცერთი"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "დაუნომრავი (დისკი)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Full Circle"
+#, kde-format
 msgid "Bullet (Circle)"
-msgstr "სრული წრეწირი"
+msgstr "დაუნომრავი (წრე)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "დაუნომრავი (კვადრატი)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "დანომრილი (ათობითი)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "დანომრილი (მხედრული ანბანით)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "დანომრილი (მთავრული ანბანით)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "დანომრილი (მხედრული რომაული)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "დანომრილი (მთავრული რომაული)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "შემოსაზღვრის სტილი"
+msgstr "სიის სტილი"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1130,25 +1116,19 @@ msgid "Thickness"
 msgstr "სისქე"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "სწორება მარცხნივ"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "ცენტრზე სწორება"
+msgstr "სწორება ცენტრზე"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "სწორება მარჯვნივ"
@@ -1157,13 +1137,12 @@ msgstr "სწორება მარჯვნივ"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "სწორება"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "სწორება"
+msgstr "ტექსტის სწორება"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1184,7 +1163,7 @@ msgstr "გამოსახულების ჩასმა"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "ctrl + წკაპი გასახსნელად: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format

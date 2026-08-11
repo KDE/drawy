@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-10 00:42+0000\n"
-"PO-Revision-Date: 2026-07-23 11:51+0100\n"
+"PO-Revision-Date: 2026-08-11 01:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61,23 +61,23 @@ msgstr "Desarrollador"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "Desarrollador del GSoc 2026 (mejora del componente de texto)."
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "Nikolay Kochulin"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "Corrección de fallos. Importación/exportación de archivos."
 
 #: apps/main.cpp:62
 #, kde-format
@@ -106,10 +106,9 @@ msgid "Change Opacity"
 msgstr "Cambiar opacidad"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Cambiar tamaño del texto"
+msgstr "Cambiar familia del tipo de letra"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -117,10 +116,9 @@ msgid "Change Font Size"
 msgstr "Cambiar tamaño del texto"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Cambiar tamaño del texto"
+msgstr "Cambiar estilo del texto"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -159,10 +157,9 @@ msgid "Change End Arrow Head"
 msgstr "Cambiar punta de flecha final"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Alineación"
+msgstr "Cambiar alineación del texto"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -175,10 +172,9 @@ msgid "Change Corner Rectangle Type"
 msgstr "Cambiar tipo de rectángulo de esquina"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Cambiar estilo del trazo"
+msgstr "Cambiar estilo de lista"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -401,19 +397,17 @@ msgstr "Alineación"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "No hay sugerencias"
 
 #: widgets/context/uicontext.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add to Library"
+#, kde-format
 msgid "Add to Dictionary"
-msgstr "Añadir a la biblioteca"
+msgstr "Añadir al diccionario"
 
 #: widgets/context/uicontext.cpp:381
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -442,7 +436,7 @@ msgstr "Entrada"
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "Comprobación ortográfica"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -1001,10 +995,9 @@ msgid "Eraser Size"
 msgstr "Tamaño del borrador"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Tamaño del texto"
+msgstr "Familia del tipo de letra"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1015,84 +1008,80 @@ msgstr "Tamaño del texto"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Negrita"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Cursiva"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "Subrayado"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "Tachado"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Tamaño del texto"
+msgstr "Estilo del tipo de letra"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
-msgstr "Ninguna"
+msgstr "Ninguno"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "Viñeta (disco)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
 #, kde-format
 msgid "Bullet (Circle)"
-msgstr ""
+msgstr "Viñeta (círculo)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "Viñeta (cuadrado)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "Número (decimal)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "Número (alfa minúscula)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "Número (alfa mayúscula)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "Número (romano en minúsculas)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "Número (romano en mayúsculas)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Estilo del trazo"
+msgstr "Estilo de lista"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1133,24 +1122,19 @@ msgid "Thickness"
 msgstr "Grosor"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Alinear a la izquierda"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "Alineación"
+msgstr "Alinear al centro"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Alinear a la derecha"
@@ -1159,13 +1143,12 @@ msgstr "Alinear a la derecha"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "Justificar"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Alineación"
+msgstr "Alineación del texto"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1186,7 +1169,7 @@ msgstr "Insertar imagen"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "Ctrl + clic para abrir: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format
