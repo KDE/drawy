@@ -1,0 +1,888 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the drawy package.
+# Igor Dobrača <igor.dobraca@skole.hr>
+msgid ""
+msgstr ""
+"Project-Id-Version: drawy\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-06-23 02:38+0000\n"
+"PO-Revision-Date: 2026-06-21 23:31+0200\n"
+"Last-Translator: Igor Dobrača <igor.dobraca@skole.hr>\n"
+"Language-Team: Croatian <kde-i18n-doc@kde.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Igor Dobrača"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "igor.dobraca@gmail.com"
+
+#: apps/main.cpp:46
+#, kde-format
+msgctxt "@info:shell"
+msgid "An optional argument 'file' "
+msgstr "Neobavezni argument 'file' "
+
+#: apps/main.cpp:47
+#, kde-format
+msgid "Your handy, infinite brainstorming tool!"
+msgstr "Tvoj praktičan alat za brainstorming!"
+
+#: gui/properties/property.cpp:97
+#, kde-format
+msgid "Change Stroke Width"
+msgstr "Promijeni debljinu poteza"
+
+#: gui/properties/property.cpp:99
+#, kde-format
+msgid "Change Stroke Color"
+msgstr "Promijeni boju poteza"
+
+#: gui/properties/property.cpp:101
+#, kde-format
+msgid "Change Opacity"
+msgstr "Promijeni neprozirnost"
+
+#: gui/properties/property.cpp:103
+#, kde-format
+msgid "Change Font Size"
+msgstr "Promijeni veličinu fonta"
+
+#: gui/properties/property.cpp:105
+#, kde-format
+msgid "Change Eraser Size"
+msgstr "Promijeni veličinu gumice"
+
+#: gui/properties/property.cpp:107
+#: widgets/properties/widgets/actionswidget.cpp:50
+#, kde-format
+msgid "Actions"
+msgstr "Akcije"
+
+#: gui/properties/property.cpp:109
+#, kde-format
+msgid "Change Stroke Style"
+msgstr "Promijeni stil poteza"
+
+#: gui/properties/property.cpp:111
+#, kde-format
+msgid "Change Background Color"
+msgstr "Promijeni boju pozadine"
+
+#: gui/properties/property.cpp:113
+#, kde-format
+msgid "Change Background Style"
+msgstr "Promijeni stil pozadine"
+
+#: gui/properties/property.cpp:115
+#, kde-format
+msgid "Change Start Arrow Head"
+msgstr "Promijeni vrh početka strelice"
+
+#: gui/properties/property.cpp:117
+#, kde-format
+msgid "Change End Arrow Head"
+msgstr "Promijeni vrh završetka strelice"
+
+#: gui/properties/property.cpp:122 widgets/command/zordercommand.cpp:88
+#, kde-format
+msgid "Change ZOrder"
+msgstr "Promijeni Z-redoslijed"
+
+#: plugins/basicshapes/basicshapesplugin.cpp:31
+#, kde-format
+msgid "Basic Shapes"
+msgstr "Osnovni oblici"
+
+#: plugins/basicshapes/triangle/triangle.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Triangle"
+msgstr "Trokut"
+
+#: plugins/basicshapes/xbox/xbox.cpp:76
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "X Box"
+msgstr "X okvir"
+
+#: widgets/command/alignitemcommand.cpp:140
+#, kde-format
+msgid "Align Items"
+msgstr "Poravnaj stavke"
+
+#: widgets/command/deselectcommand.cpp:48
+#, kde-format
+msgid "Deselect Object"
+msgstr "Poništi odabir objekta"
+
+#: widgets/command/groupcommand.cpp:73
+#, kde-format
+msgid "Group Object"
+msgstr "Grupiraj objekt"
+
+#: widgets/command/insertitemcommand.cpp:74
+#, kde-format
+msgid "Insert Object"
+msgstr "Umetni objekt"
+
+#: widgets/command/lineresizeitemcommand.cpp:77
+#, kde-format
+msgid "Resize Line"
+msgstr "Promijeni veličinu linije"
+
+#: widgets/command/lockcommand.cpp:36
+#, kde-format
+msgid "Change Lock"
+msgstr "Promijeni zaključavanje"
+
+#: widgets/command/moveitemcommand.cpp:72
+#, kde-format
+msgid "Move Object"
+msgstr "Premjesti objekt"
+
+#: widgets/command/removeitemcommand.cpp:76
+#, kde-format
+msgid "Remove Object"
+msgid_plural "Remove %1 Objects"
+msgstr[0] "Ukloni %1 objekt"
+msgstr[1] "Ukloni %1 objekta"
+msgstr[2] "Ukloni %1 objekta"
+
+#: widgets/command/resizeitemcommand.cpp:78
+#, kde-format
+msgid "Resize Object"
+msgstr "Promijeni veličinu objekta"
+
+#: widgets/command/rotateitemcommand.cpp:64
+#, kde-format
+msgid "Rotate Object"
+msgstr "Rotiraj objekt"
+
+#: widgets/command/selectcommand.cpp:49
+#, kde-format
+msgid "Select Object"
+msgstr "Odaberi objekt"
+
+#: widgets/command/ungroupcommand.cpp:88
+#, kde-format
+msgid "Ungroup Objects"
+msgstr "Razgrupiraj objekte"
+
+#: widgets/components/bottomleftwidgets.cpp:41
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr "100%"
+
+#: widgets/components/bottomleftwidgets.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset Zoom"
+msgstr "Poništi zumiranje"
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@label, percent value"
+msgid "%1%"
+msgstr "%1%"
+
+#: widgets/components/toolbar.cpp:74
+#, kde-format
+msgctxt "@action:button"
+msgid "Image"
+msgstr "Slika"
+
+#: widgets/components/toolbuttonplugin.cpp:65
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "More Tools"
+msgstr "Više alata"
+
+#: widgets/components/topleftwidgets.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Menu"
+msgstr "Otvori izbornik"
+
+#: widgets/context/aboutdata.cpp:13
+#, kde-format
+msgid "Drawy"
+msgstr "Drawy"
+
+#: widgets/context/aboutdata.cpp:15
+#, kde-format
+msgid "Your handy, infinite  brainstorming tool!"
+msgstr "Tvoj praktičan alat za brainstorming!"
+
+#: widgets/context/aboutdata.cpp:17
+#, kde-format
+msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
+msgid "© 2025–%1 Drawy authors"
+msgstr "© 2025–%1 Drawy autori"
+
+#: widgets/context/aboutdata.cpp:19
+#, kde-format
+msgctxt "@info:credit"
+msgid "Prayag Jain"
+msgstr "Prayag Jain"
+
+#: widgets/context/aboutdata.cpp:19
+#, kde-format
+msgid "Maintainer"
+msgstr "Održavatelj"
+
+#: widgets/context/aboutdata.cpp:20
+#, kde-format
+msgctxt "@info:credit"
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: widgets/context/aboutdata.cpp:20
+#, kde-format
+msgid "Developer"
+msgstr "Razvojni programer"
+
+#: widgets/context/uicontext.cpp:67
+#, kde-format
+msgctxt "@action:button"
+msgid "Selection"
+msgstr "Odabir"
+
+#: widgets/context/uicontext.cpp:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Free Form"
+msgstr "Slobodno crtanje"
+
+#: widgets/context/uicontext.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "Rectangle"
+msgstr "Pravokutnik"
+
+#: widgets/context/uicontext.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Diamond"
+msgstr "Romb"
+
+#: widgets/context/uicontext.cpp:71
+#, kde-format
+msgctxt "@action:button"
+msgid "Ellipse"
+msgstr "Elipsa"
+
+#: widgets/context/uicontext.cpp:72
+#, kde-format
+msgctxt "@action:button"
+msgid "Arrow"
+msgstr "Strelica"
+
+#: widgets/context/uicontext.cpp:73
+#, kde-format
+msgctxt "@action:button"
+msgid "Line"
+msgstr "Linija"
+
+#: widgets/context/uicontext.cpp:74
+#, kde-format
+msgctxt "@action:button"
+msgid "Eraser"
+msgstr "Gumica za brisanje"
+
+#: widgets/context/uicontext.cpp:75
+#, kde-format
+msgctxt "@action:button"
+msgid "Text"
+msgstr "Tekst"
+
+#: widgets/context/uicontext.cpp:76
+#, kde-format
+msgctxt "@action:button"
+msgid "Move"
+msgstr "Premjesti"
+
+#: widgets/context/uicontext.cpp:240
+#, kde-format
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to reorder "
+"items"
+msgid "Reorder"
+msgstr "Izmjeni redoslijed"
+
+#: widgets/context/uicontext.cpp:250
+#, kde-format
+msgctxt ""
+"Title of a submenu inside the context menu which allows users to align items"
+msgid "Align"
+msgstr "Poravnaj"
+
+#: widgets/dbus/managepowermanagement.cpp:30
+#, kde-format
+msgctxt ""
+"Reason for inhibiting the screensaver activation, when the presentation mode "
+"is active"
+msgid "Giving a presentation"
+msgstr "Održavanje prezentacije"
+
+#: widgets/dialog/configuresettingsdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Drawy"
+msgstr "Konfiguriraj Drawy"
+
+#: widgets/dialog/configuresettingsdialog.cpp:34
+#, kde-format
+msgid "General"
+msgstr "Opće"
+
+#: widgets/dialog/configuresettingsdialog.cpp:39
+#, kde-format
+msgid "Input"
+msgstr ""
+
+#: widgets/dialog/configuresettingsdialog.cpp:45
+#, kde-format
+msgid "Misc"
+msgstr "Razno"
+
+#: widgets/dialog/general/autosavewidget.cpp:22
+#, kde-format
+msgid "Session"
+msgstr "Sesija"
+
+#: widgets/dialog/general/autosavewidget.cpp:30
+#, kde-format
+msgid "Time interval for automatic saving"
+msgstr "Vremenski interval za automatsko spremanje"
+
+#: widgets/dialog/general/autosavewidget.cpp:31
+#, kde-format
+msgctxt "@item %v is a number"
+msgid "%v minute"
+msgid_plural "%v minutes"
+msgstr[0] "%v minuta"
+msgstr[1] "%v minute"
+msgstr[2] "%v minuta"
+
+#: widgets/dialog/general/autosavewidget.cpp:34
+#, kde-format
+msgid "Directory for automatic saving"
+msgstr "Direktorij za automatsko spremanje"
+
+#: widgets/dialog/general/autosavewidget.cpp:45
+#, kde-format
+msgid "Open Directory"
+msgstr "Otvori direktorij"
+
+#: widgets/dialog/general/autosavewidget.cpp:54
+#, kde-format
+msgid "Restore previous session on start"
+msgstr "Vrati prethodnu sesiju pri pokretanju"
+
+#: widgets/dialog/general/canvascolorwidget.cpp:13
+#, kde-format
+msgid "Canvas"
+msgstr "Platno"
+
+#: widgets/dialog/general/canvascolorwidget.cpp:21
+#, kde-format
+msgid "Light background color"
+msgstr "Svijetla boja pozadine"
+
+#: widgets/dialog/general/canvascolorwidget.cpp:22
+#, kde-format
+msgid "Dark background color"
+msgstr "Tamna boja pozadine"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:14
+#, kde-format
+msgid "Color Palette"
+msgstr "Paleta boja"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:44
+#, kde-format
+msgid "Light Mode"
+msgstr "Svijetli način rada"
+
+#: widgets/dialog/general/defaultcolorswidget.cpp:47
+#, kde-format
+msgid "Dark Mode"
+msgstr "Tamni način rada"
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:17
+#, kde-format
+msgid "Freehand Settings"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Stabilization"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:47
+#, kde-format
+msgid "Makes lines steadier by reducing hand shake."
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Pressure Sensitivity"
+msgstr ""
+
+#: widgets/dialog/input/freehandsettingswidget.cpp:48
+#, kde-format
+msgid "Controls how much pressure changes line thickness."
+msgstr ""
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:13
+#, kde-format
+msgid "Power Manager"
+msgstr "Upravitelj napajanja"
+
+#: widgets/dialog/misc/powermanagerwidget.cpp:14
+#, kde-format
+msgid "Disable screenlocker during full screen"
+msgstr "Onemogući zaključavanje zaslona tijekom prikaza preko cijelog zaslona"
+
+#: widgets/drawycommandlineparser.cpp:19
+#, kde-format
+msgctxt "@info:shell"
+msgid "Fullscreen"
+msgstr "Puni zaslon"
+
+#: widgets/drawycommandlineparser.cpp:20
+#, kde-format
+msgctxt "@info:shell"
+msgid "Activate Debug Mode"
+msgstr "Aktiviraj način rada za otklanjanje pogrešaka"
+
+#: widgets/keybindings/actionmanager.cpp:79
+#, kde-format
+msgctxt "@action"
+msgid "Export as Image"
+msgstr "Izvezi kao sliku"
+
+#: widgets/keybindings/actionmanager.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "Group Items"
+msgstr "Grupiraj stavke"
+
+#: widgets/keybindings/actionmanager.cpp:87
+#, kde-format
+msgctxt "@action"
+msgid "Ungroup Items"
+msgstr "Razgrupiraj stavke"
+
+#: widgets/keybindings/actionmanager.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "Delete"
+msgstr "Izbriši"
+
+#: widgets/keybindings/actionmanager.cpp:94
+#, kde-format
+msgctxt "@action"
+msgid "Clear Canvas"
+msgstr "Očisti platno"
+
+#: widgets/keybindings/actionmanager.cpp:97
+#, kde-format
+msgctxt "@action"
+msgid "Freeform Tool"
+msgstr "Alat slobodnog oblika"
+
+#: widgets/keybindings/actionmanager.cpp:100
+#, kde-format
+msgctxt "@action"
+msgid "Eraser Tool"
+msgstr "Alat gumice"
+
+#: widgets/keybindings/actionmanager.cpp:101
+#, kde-format
+msgctxt "@action"
+msgid "Selection Tool"
+msgstr "Alat Odabir"
+
+#: widgets/keybindings/actionmanager.cpp:102
+#, kde-format
+msgctxt "@action"
+msgid "Rectangle Tool"
+msgstr "Alat za pravokutnik"
+
+#: widgets/keybindings/actionmanager.cpp:103
+#, kde-format
+msgctxt "@action"
+msgid "Ellipse Tool"
+msgstr "Alat za elipsu"
+
+#: widgets/keybindings/actionmanager.cpp:104
+#, kde-format
+msgctxt "@action"
+msgid "Line Tool"
+msgstr "Alat za liniju"
+
+#: widgets/keybindings/actionmanager.cpp:105
+#, kde-format
+msgctxt "@action"
+msgid "Text Tool"
+msgstr "Alat za tekst"
+
+#: widgets/keybindings/actionmanager.cpp:106
+#, kde-format
+msgctxt "@action"
+msgid "Arrow Tool"
+msgstr "Alat za strelicu"
+
+#: widgets/keybindings/actionmanager.cpp:107
+#, kde-format
+msgctxt "@action"
+msgid "Move Tool"
+msgstr "Alat Premještanje"
+
+#: widgets/keybindings/actionmanager.cpp:108
+#, kde-format
+msgctxt "@action"
+msgid "Image Tool"
+msgstr "Alat za slike"
+
+#: widgets/keybindings/actionmanager.cpp:109
+#, kde-format
+msgctxt "@action"
+msgid "Diamond Tool"
+msgstr "Alat za romb"
+
+#: widgets/keybindings/actionmanager.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Send To Back"
+msgstr "Pošalji u pozadinu"
+
+#: widgets/keybindings/actionmanager.cpp:114
+#, kde-format
+msgctxt "@action"
+msgid "Send Backward"
+msgstr "Premjesti unatrag"
+
+#: widgets/keybindings/actionmanager.cpp:117
+#, kde-format
+msgctxt "@action"
+msgid "Bring Forward"
+msgstr "Pomakni naprijed"
+
+#: widgets/keybindings/actionmanager.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Bring To Front"
+msgstr "Premjesti na vrh"
+
+#: widgets/keybindings/actionmanager.cpp:124
+#, kde-format
+msgctxt "@action"
+msgid "Align Top"
+msgstr "Poravnaj gore"
+
+#: widgets/keybindings/actionmanager.cpp:127
+#, kde-format
+msgctxt "@action"
+msgid "Center Vertically"
+msgstr "Centriraj okomito"
+
+#: widgets/keybindings/actionmanager.cpp:130
+#, kde-format
+msgctxt "@action"
+msgid "Align Bottom"
+msgstr "Poravnaj dolje"
+
+#: widgets/keybindings/actionmanager.cpp:133
+#, kde-format
+msgctxt "@action"
+msgid "Align Left"
+msgstr "Poravnaj lijevo"
+
+#: widgets/keybindings/actionmanager.cpp:136
+#, kde-format
+msgctxt "@action"
+msgid "Center Horizontally"
+msgstr "Centriraj vodoravno"
+
+#: widgets/keybindings/actionmanager.cpp:139
+#, kde-format
+msgctxt "@action"
+msgid "Align Right"
+msgstr "Poravnaj udesno"
+
+#: widgets/keybindings/actionmanager.cpp:143
+#, kde-format
+msgctxt "@action"
+msgid "Debug"
+msgstr "Otklanjanje pogrešaka"
+
+#: widgets/keybindings/actionmanager.cpp:476
+#, kde-format
+msgid "Untitled.%1"
+msgstr "BezNaslova.%1"
+
+#: widgets/keybindings/actionmanager.cpp:478
+#: widgets/keybindings/actionmanager.cpp:542
+#, kde-format
+msgid "Drawy (*.%1)"
+msgstr "Drawy (*.%1)"
+
+#: widgets/keybindings/actionmanager.cpp:479
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr "Spremi datoteku"
+
+#: widgets/keybindings/actionmanager.cpp:501
+#, kde-format
+msgctxt "@action"
+msgid "Do you really want to clear the canvas?"
+msgstr "Želite li zaista očistiti platno?"
+
+#: widgets/keybindings/actionmanager.cpp:502
+#, kde-format
+msgctxt "@action"
+msgid "Clear"
+msgstr "Obriši"
+
+#: widgets/keybindings/actionmanager.cpp:545
+#, kde-format
+msgctxt "@title:window"
+msgid "Open File"
+msgstr "Otvori datoteku"
+
+#: widgets/keybindings/actionmanager.cpp:558
+#, kde-format
+msgid "Untitled.svg"
+msgstr "BezNaslova.svg"
+
+#: widgets/keybindings/actionmanager.cpp:561
+#, kde-format
+msgid "SVG (*.svg)"
+msgstr "SVG (*.svg)"
+
+#: widgets/keybindings/actionmanager.cpp:562
+#, kde-format
+msgid "PNG (*.png)"
+msgstr "PNG (*.png)"
+
+#: widgets/keybindings/actionmanager.cpp:566
+#, kde-format
+msgctxt "@title:window"
+msgid "Export to Image"
+msgstr "Izvoz u sliku"
+
+#: widgets/keybindings/actionmanager.cpp:632
+#, kde-format
+msgid ""
+"The document \"%1\" has been modified.\n"
+"Do you want to save your changes or discard them?"
+msgstr ""
+"Dokument \"%1\" je izmijenjen.\n"
+"Želite li spremiti promjene ili ih odbaciti?"
+
+#: widgets/keybindings/actionmanager.cpp:636
+#, kde-format
+msgctxt "@title:window"
+msgid "Action Required"
+msgstr "Potrebna akcija"
+
+#: widgets/properties/widgets/actionswidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Delete selection"
+msgstr "Izbriši odabir"
+
+#: widgets/properties/widgets/actionswidget.cpp:32
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Group selection"
+msgstr "Grupiraj odabir"
+
+#: widgets/properties/widgets/actionswidget.cpp:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Ungroup selection"
+msgstr "Razgrupiraj odabir"
+
+#: widgets/properties/widgets/alignmentwidget.cpp:64
+#, kde-format
+msgid "Alignment"
+msgstr "Poravnavanje"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:41
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "None"
+msgstr "Ništa"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:42
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "Open Arrow"
+msgstr "Otvorena strelica"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:43
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "Triangle"
+msgstr "Trokut"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:44
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "Filled Triangle"
+msgstr "Ispunjeni trokut"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:45
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "Circle"
+msgstr "Krug"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:46
+#, kde-format
+msgctxt "Tooltip for arrow head"
+msgid "Diamond"
+msgstr "Romb"
+
+#: widgets/properties/widgets/arrowtypewidget.cpp:74
+#, kde-format
+msgctxt "Tooltip for a button to change arrow head"
+msgid "Select Arrow Head"
+msgstr "Odaberite vrh strelice"
+
+#: widgets/properties/widgets/backgroundcolorwidget.cpp:21
+#, kde-format
+msgid "Background Color"
+msgstr "Boja pozadine"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:30
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "None"
+msgstr "Ništa"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:39
+#: widgets/properties/widgets/stokestylewidget.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Solid"
+msgstr "Puna crta"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Diagonal Cross"
+msgstr "Dijagonalni križ"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:57
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Diagonal"
+msgstr "Dijagonalno"
+
+#: widgets/properties/widgets/backgroundstylewidget.cpp:78
+#, kde-format
+msgid "Background Style"
+msgstr "Stil pozadine"
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:70
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Custom Color"
+msgstr "Odaberite prilagođenu boju"
+
+#: widgets/properties/widgets/colorwidgetbase.cpp:119
+#, kde-format
+msgid "Color"
+msgstr "Boja"
+
+#: widgets/properties/widgets/endarrowtypewidget.cpp:20
+#, kde-format
+msgctxt "Name of a property"
+msgid "End Arrow Head"
+msgstr "Završni vrh strelice"
+
+#: widgets/properties/widgets/erasersizewidget.cpp:31
+#, kde-format
+msgid "Eraser Size"
+msgstr "Veličina gumice"
+
+#: widgets/properties/widgets/fontsizewidget.cpp:38
+#, kde-format
+msgid "Font Size"
+msgstr "Veličina fonta"
+
+#: widgets/properties/widgets/opacitywidget.cpp:99
+#, kde-format
+msgid "Opacity"
+msgstr "Neprozirnost"
+
+#: widgets/properties/widgets/startarrowtypewidget.cpp:21
+#, kde-format
+msgctxt "Name of a property"
+msgid "Start Arrow Head"
+msgstr "Početni vrh strelice"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Dashed"
+msgstr "Isprekidano"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Dotted"
+msgstr "Točkasto"
+
+#: widgets/properties/widgets/stokestylewidget.cpp:63
+#, kde-format
+msgid "Stroke Style"
+msgstr "Stil poteza"
+
+#: widgets/properties/widgets/strokecolorwidget.cpp:20
+#, kde-format
+msgid "Stroke Color"
+msgstr "Boja poteza"
+
+#: widgets/properties/widgets/strokewidthwidget.cpp:31
+#, kde-format
+msgid "Thickness"
+msgstr "Debljina"
+
+#: widgets/properties/widgets/zorderwidget.cpp:46
+#, kde-format
+msgid "Order"
+msgstr "Redoslijed"
+
+#: widgets/tools/imagetool.cpp:37
+#, kde-format
+msgid "Image"
+msgstr "Slika"
+
+#: widgets/tools/imagetool.cpp:56
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Umetni sliku"
+
+#: widgets/window/window.cpp:184
+#, kde-format
+msgctxt "@title:window %1 is a filename"
+msgid "%1 — Drawy"
+msgstr "%1 — Drawy"
