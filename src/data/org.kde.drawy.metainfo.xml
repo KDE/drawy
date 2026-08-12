@@ -221,6 +221,17 @@
     <release version="1.1.0" type="snapshot">
       <description>
         <p>Improve text element support (Spell Checking, Alignment, Bold, Italic etc.) (GSoc2026)</p>
+        <p xml:lang="ar">تحسين دعم عناصر النص (التدقيق الإملائي، المحاذاة، الخط العريض، الخط المائل، إلخ) (GSoc2026)</p>
+        <p xml:lang="ca">Millora la implementació d'elements de text (Verificació ortogràfica, alineació, negreta, cursiva, etc.) (GSoc2026)</p>
+        <p xml:lang="ca-valencia">Millora la implementació d'elements de text (Verificació ortogràfica, alineació, negreta, cursiva, etc.) (GSoc2026)</p>
+        <p xml:lang="cs">Vylepšena podpora textových prvků (kontrola pravopisu, zarovnání, tučné písmo, kurzíva atd.) (GSoc2026)</p>
+        <p xml:lang="es">Mejorar la compatibilidad con elementos de texto (comprobación ortográfica, alineación, negrita, cursiva, etc.) (GSoc2026).</p>
+        <p xml:lang="ka">გაუმჯობესდა ტექსტური ელემენტის მხარდაჭერა (მართლწერის შემოწმება, სწორება, გასქელება, კურსივი და ა.შ.) (GSoc2026)</p>
+        <p xml:lang="nl">Tekstelement ondersteuning verbeterd (Spellingcontrole, uitlijning, vet, cursief etc.) (GSoc2026)</p>
+        <p xml:lang="pt-BR">Melhoria do suporte a elementos de texto (verificação ortográfica, alinhamento, negrito, itálico, etc.) (GSoC 2026)</p>
+        <p xml:lang="sl">Izboljšana podpora za besedilne elemente (preverjanje črkovanja, poravnava, krepko, poševno itd.) (GSoc2026)</p>
+        <p xml:lang="tr">Metin ögesi desteği iyileştirildi (yazım denetimi, hizalama, kalın, yatık vb.).</p>
+        <p xml:lang="uk">Удосконалено підтримку текстового елемента (перевірка правопису, вирівнювання, напівжирний, курсив тощо) (GSoc2026)</p>
         <p>Allow to lock items</p>
         <p xml:lang="ar">السماح بقفل العناصر</p>
         <p xml:lang="ca">Permet bloquejar elements</p>
