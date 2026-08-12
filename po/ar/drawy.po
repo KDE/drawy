@@ -532,7 +532,7 @@ msgstr "التثبيت"
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr "يجعل الخطوط أكثر ثباتاً عن طريق تقليل اهتزاز اليد."
+msgstr "يجعل الخطوط أكثر ثباتًا عن طريق تقليل اهتزاز اليد."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
