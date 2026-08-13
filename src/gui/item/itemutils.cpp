@@ -70,6 +70,7 @@ QString ItemUtils::convertItemTypeEnumToString(Item::FormType type)
         return u"CUSTOM"_s;
     case Item::FormType::Invalid:
         qCWarning(DRAWY_GUI_LOG) << "Don't invalid type";
+        break;
     }
     return {};
 }
