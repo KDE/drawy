@@ -68,6 +68,24 @@ void ImageItem::setPixmap(QPixmap pixmap)
     m_pixmap = std::move(pixmap);
 }
 
+QSizeF ImageItem::pastedSize() const
+{
+    qreal width{static_cast<qreal>(m_pixmap.width())};
+    qreal height{static_cast<qreal>(m_pixmap.height())};
+
+    if (std::max(width, height) > Common::pastedImageBoxSize) {
+        if (width > height) {
+            height = height / width * Common::pastedImageBoxSize;
+            width = Common::pastedImageBoxSize;
+        } else {
+            width = width / height * Common::pastedImageBoxSize;
+            height = Common::pastedImageBoxSize;
+        }
+    }
+
+    return QSizeF{width, height};
+}
+
 void ImageItem::setBox(QRectF box)
 {
     m_boundingBox = box;

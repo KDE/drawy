@@ -7,6 +7,8 @@
 
 #include "item.hpp"
 
+#include <QSizeF>
+
 class QPixmap;
 
 class LIBDRAWYGUI_EXPORT ImageItem : public Item
@@ -28,6 +30,8 @@ public:
 
     [[nodiscard]] const QPixmap &pixmap() const;
     void setPixmap(QPixmap pixmap);
+
+    QSizeF pastedSize() const;
 
     void setBox(QRectF box);
 

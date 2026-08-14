@@ -66,10 +66,10 @@ void ImageTool::mouseReleased(ApplicationContext *context)
         pixmap.load(fileName);
 
         const std::shared_ptr<ImageItem> curItem = std::dynamic_pointer_cast<ImageItem>(m_itemFactory->create());
-        curItem->setBox(QRectF(transformer.viewToWorld(lastPoint), transformer.viewToWorld(QSizeF(100, 100))));
 
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
         curItem->setPixmap(pixmap);
+        curItem->setBox(QRectF(transformer.viewToWorld(lastPoint), transformer.viewToWorld(curItem->pastedSize())));
 
         QList<std::shared_ptr<Item>> lst{curItem};
         commandHistory->push(std::make_shared<InsertItemCommand>(lst));
