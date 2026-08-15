@@ -59,23 +59,23 @@ msgstr "Vývojár"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "Vývojár GSoC 2026 (vylepšenie textového komponentu)"
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "Nikolay Kochulin"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "Oprava chýb. Import/export súborov"
 
 #: apps/main.cpp:62
 #, kde-format
@@ -104,10 +104,9 @@ msgid "Change Opacity"
 msgstr "Zmeniť nepriehľadnosť"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Zmeniť veľkosť písma"
+msgstr "Zmeniť rodinu písma"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -115,10 +114,9 @@ msgid "Change Font Size"
 msgstr "Zmeniť veľkosť písma"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Zmeniť veľkosť písma"
+msgstr "Zmeniť štýl písma"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -157,10 +155,9 @@ msgid "Change End Arrow Head"
 msgstr "Zmeniť koniec šípky"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Zarovnanie"
+msgstr "Zmeniť zarovnanie textu"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -170,13 +167,12 @@ msgstr "Zmeniť poradie Z"
 #: gui/properties/property.cpp:150
 #, kde-format
 msgid "Change Corner Rectangle Type"
-msgstr ""
+msgstr "Zmeniť typ rohu obdĺžnika"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Zmeniť štýl ťahu"
+msgstr "Zmeniť štýl zoznamu"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -204,13 +200,13 @@ msgstr "Zarovnať položky"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr ""
+msgstr "Späť: %1"
 
 #: widgets/command/commandhistory.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr ""
+msgstr "Znovu: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -400,17 +396,17 @@ msgstr "Zarovnať"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "Žiadne návrhy"
 
 #: widgets/context/uicontext.cpp:376
 #, kde-format
 msgid "Add to Dictionary"
-msgstr ""
+msgstr "Pridať do slovníka"
 
 #: widgets/context/uicontext.cpp:381
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovať"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -434,12 +430,12 @@ msgstr "Hlavné"
 #: widgets/dialog/configuresettingsdialog.cpp:47
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Vstup"
 
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "Kontrola pravopisu"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -519,60 +515,56 @@ msgstr "Tmavý režim"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Nastavenie voľnej ruky"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Stabilizácia"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:49
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
-msgstr ""
+msgstr "Ustáli čiary potlačením chvenia ruky."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Citlivosť na tlak"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:50
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Určuje, ako veľmi tlak mení hrúbku čiary."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Výber"
+msgstr "Nastavenie výberu"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Vybrať len úplne obsiahnuté položky"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Nástroj pre výber"
+msgstr "Vybrať položky pri prekrytí"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
-msgstr ""
+msgstr "Vyberú sa len položky úplne vnútri výberového rámca"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Vyberie sa každá položka, ktorá sa dotýka výberového rámca"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -763,19 +755,19 @@ msgstr "Zarovnať doprava"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Zámky"
 
 #: widgets/keybindings/actionmanager.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Odomknúť"
 
 #: widgets/keybindings/actionmanager.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Add to Library"
-msgstr ""
+msgstr "Pridať do knižnice"
 
 #: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
@@ -787,7 +779,7 @@ msgstr "Ladenie"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "Čo je nové"
 
 #: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
@@ -975,18 +967,18 @@ msgstr "Farba"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rounded Corner"
-msgstr ""
+msgstr "Zaoblený roh"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pointed Corner"
-msgstr ""
+msgstr "Ostrý roh"
 
 #: widgets/properties/widgets/cornerrectangletypewidget.cpp:53
 #, kde-format
 msgid "Corner Type"
-msgstr ""
+msgstr "Typ rohu"
 
 #: widgets/properties/widgets/endarrowtypewidget.cpp:20
 #, kde-format
@@ -1000,10 +992,9 @@ msgid "Eraser Size"
 msgstr "Veľkosť gumy"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Veľkosť písma"
+msgstr "Rodina písma"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1014,84 +1005,80 @@ msgstr "Veľkosť písma"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "Podčiarknuté"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "Prečiarknuté"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Veľkosť písma"
+msgstr "Štýl písma"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Žiadny"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "Odrážka (koliesko)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
 #, kde-format
 msgid "Bullet (Circle)"
-msgstr ""
+msgstr "Odrážka (krúžok)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "Odrážka (štvorček)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "Číslovanie (arabské číslice)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "Číslovanie (malé písmená)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "Číslovanie (veľké písmená)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "Číslovanie (malé rímske číslice)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "Číslovanie (veľké rímske číslice)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Ťah (štýl)"
+msgstr "Štýl zoznamu"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1132,25 +1119,19 @@ msgid "Thickness"
 msgstr "Hrúbka"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Zarovnať doľava"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Align to Center"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
 msgstr "Zarovnať na stred"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Zarovnať doprava"
@@ -1159,13 +1140,12 @@ msgstr "Zarovnať doprava"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "Do bloku"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Zarovnanie"
+msgstr "Zarovnanie textu"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1186,7 +1166,7 @@ msgstr "Vložiť obrázok"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "ctrl + kliknutie otvorí: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format
