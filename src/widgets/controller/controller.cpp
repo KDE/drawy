@@ -462,6 +462,58 @@ void Controller::renderZoom()
     m_zoomDelta = 0;
     m_zoomPixmap = QPixmap{};
     m_zoomPixmapOffsetPos = QPointF{0, 0};
+    m_pinchAccumulator = 0.0;
+}
+
+void Controller::zoomAt(const QPoint &pos, const int delta)
+{
+    if (delta == 0) {
+        return;
+    }
+
+    auto canvas{m_context->renderingContext()->canvas()};
+    auto contextEvent{m_context->uiContext()->appEvent()};
+
+    contextEvent->setPos(pos, canvas->scale());
+
+    if (canvas->overlayDirty()) {
+        canvas->setOverlayBg(canvas->overlayBg());
+    }
+
+    if (m_zoomPixmap.isNull()) {
+        m_zoomPixmap = canvas->canvasPixmap();
+    }
+
+    const int curDelta{delta > 0 ? 1 : -1};
+    const qreal oldZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta)};
+    const qreal newZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta + curDelta)};
+    const qreal prevZoomFactor{m_context->renderingContext()->zoomFactor() * oldZoomFactor};
+
+    if (curDelta < 0 && prevZoomFactor - Common::zoomOutLimit <= 1e-9) {
+        return;
+    }
+
+    if (curDelta > 0 && Common::zoomInLimit - prevZoomFactor <= 1e-9) {
+        return;
+    }
+
+    m_zoomDelta += curDelta;
+    const QPointF &cursor{contextEvent->pos() / oldZoomFactor + m_zoomPixmapOffsetPos}; // converting to pixmap coordinates
+
+    // calculate new offset position based on cursor position
+    m_zoomPixmapOffsetPos.setX(cursor.x() - (cursor.x() - m_zoomPixmapOffsetPos.x()) * oldZoomFactor / newZoomFactor);
+    m_zoomPixmapOffsetPos.setY(cursor.y() - (cursor.y() - m_zoomPixmapOffsetPos.y()) * oldZoomFactor / newZoomFactor);
+
+    canvas->setCanvasBg(canvas->canvasBg());
+    canvas->paintCanvas([&](QPainter &painter) -> void {
+        painter.scale(newZoomFactor, newZoomFactor);
+        painter.drawPixmap(-m_zoomPixmapOffsetPos, m_zoomPixmap);
+    });
+
+    m_context->renderingContext()->markForUpdate();
+
+    m_zoomInProgress = true;
+    m_zoomTimer->start(Common::zoomRenderWaitTime);
 }
 
 void Controller::wheel(QWheelEvent *event)
@@ -474,50 +526,18 @@ void Controller::wheel(QWheelEvent *event)
     contextEvent->setPos(event->position().toPoint(), canvas->scale());
     contextEvent->setModifiers(event->modifiers());
 
-    if (canvas->overlayDirty()) {
-        canvas->setOverlayBg(canvas->overlayBg());
-    }
-
     if (event->modifiers() & Qt::ControlModifier) {
-        if (m_zoomPixmap.isNull()) {
-            m_zoomPixmap = canvas->canvasPixmap();
-        }
-
         const int curDelta{event->angleDelta().y() > 0 ? 1 : -1};
-        const qreal oldZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta)};
-        const qreal newZoomFactor{std::pow(Common::zoomMultiplier, m_zoomDelta + curDelta)};
-        const qreal prevZoomFactor{m_context->renderingContext()->zoomFactor() * oldZoomFactor};
-
-        if (curDelta < 0 && prevZoomFactor - Common::zoomOutLimit <= 1e-9) {
-            return;
-        }
-
-        if (curDelta > 0 && Common::zoomInLimit - prevZoomFactor <= 1e-9) {
-            return;
-        }
-
-        m_zoomDelta += curDelta;
-        const QPointF &cursor{contextEvent->pos() / oldZoomFactor + m_zoomPixmapOffsetPos}; // converting to pixmap coordinates
-
-        // calculate new offset position based on cursor position
-        m_zoomPixmapOffsetPos.setX(cursor.x() - (cursor.x() - m_zoomPixmapOffsetPos.x()) * oldZoomFactor / newZoomFactor);
-        m_zoomPixmapOffsetPos.setY(cursor.y() - (cursor.y() - m_zoomPixmapOffsetPos.y()) * oldZoomFactor / newZoomFactor);
-
-        canvas->setCanvasBg(canvas->canvasBg());
-        canvas->paintCanvas([&](QPainter &painter) -> void {
-            painter.scale(newZoomFactor, newZoomFactor);
-            painter.drawPixmap(-m_zoomPixmapOffsetPos, m_zoomPixmap);
-        });
-
-        m_context->renderingContext()->markForUpdate();
-
-        m_zoomInProgress = true;
-        m_zoomTimer->start(Common::zoomRenderWaitTime);
+        zoomAt(event->position().toPoint(), curDelta);
         return;
     }
 
     if (m_zoomInProgress) {
         return;
+    }
+
+    if (canvas->overlayDirty()) {
+        canvas->setOverlayBg(canvas->overlayBg());
     }
 
     m_context->spatialContext()->setOffsetPos(offsetPos - event->angleDelta() / zoomFactor);
@@ -526,6 +546,28 @@ void Controller::wheel(QWheelEvent *event)
     m_context->renderingContext()->markForUpdate();
 
     QGuiApplication::inputMethod()->update(Qt::ImQueryInput);
+}
+
+void Controller::nativeGesture(QNativeGestureEvent *event)
+{
+    if (event->gestureType() != Qt::ZoomNativeGesture) {
+        return;
+    }
+
+    m_pinchAccumulator += event->value();
+
+    constexpr qreal pinchThreshold{0.05};
+    if (m_pinchAccumulator >= pinchThreshold) {
+        while (m_pinchAccumulator >= pinchThreshold) {
+            zoomAt(event->position().toPoint(), 1);
+            m_pinchAccumulator -= pinchThreshold;
+        }
+    } else if (m_pinchAccumulator <= -pinchThreshold) {
+        while (m_pinchAccumulator <= -pinchThreshold) {
+            zoomAt(event->position().toPoint(), -1);
+            m_pinchAccumulator += pinchThreshold;
+        }
+    }
 }
 
 #include "moc_controller.cpp"

@@ -231,6 +231,12 @@ void Canvas::dropEvent(QDropEvent *event)
 
 bool Canvas::event(QEvent *event)
 {
+    if (event->type() == QEvent::NativeGesture) {
+        auto *gestureEvent = static_cast<QNativeGestureEvent *>(event);
+        Q_EMIT nativeGesture(gestureEvent);
+        return true;
+    }
+
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *ev = dynamic_cast<QKeyEvent *>(event);
         if (ev && ((ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab))) {

@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QMouseEvent>
+#include <QNativeGestureEvent>
 #include <QObject>
 #include <memory>
 
@@ -31,6 +32,7 @@ public:
     void inputMethodQueryInvoked(Qt::InputMethodQuery query, QVariant *value);
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
+    void nativeGesture(QNativeGestureEvent *event);
     void leave(QEvent *event);
     void dragEnter(QDragEnterEvent *event);
     void dragMove(QDragMoveEvent *event);
@@ -40,6 +42,7 @@ public:
 
 private:
     void renderZoom();
+    void zoomAt(const QPoint &pos, int delta);
     ApplicationContext *const m_context;
     qint64 m_lastTime{};
     qint64 m_lastClickTime{};
@@ -62,4 +65,5 @@ private:
     Tool::Type m_stashedTool{Tool::Type::Eraser};
 
     bool m_zoomInProgress{false};
+    qreal m_pinchAccumulator{0.0};
 };
