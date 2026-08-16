@@ -150,7 +150,7 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
         alignItems(ItemUtils::AlignType::AlignRight);
     })->setIcon(QIcon::fromTheme(u"align-horizontal-right"_s));
 
-    createAction(Action::LockItems, i18nc("@action", "Locks"), {}, this, &ActionManager::slotLock)->setIcon(QIcon::fromTheme(u"lock"_s));
+    createAction(Action::LockItems, i18nc("@action", "Lock"), {}, this, &ActionManager::slotLock)->setIcon(QIcon::fromTheme(u"lock"_s));
 
     createAction(Action::UnLockItem, i18nc("@action", "Unlock"), {}, this, &ActionManager::slotUnLock)->setIcon(QIcon::fromTheme(u"unlock"_s));
 
