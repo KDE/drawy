@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <QNativeGestureEvent>
 #include <QPainter>
 #include <QWidget>
 
@@ -46,6 +47,7 @@ Q_SIGNALS:
     void inputMethodQueryInvoked(Qt::InputMethodQuery query, QVariant *value) const;
     void tablet(QTabletEvent *event);
     void wheel(QWheelEvent *event);
+    void nativeGesture(QNativeGestureEvent *event);
     void resizeEventCalled();
     void leave(QEvent *event);
     void dragEnter(QDragEnterEvent *event);
