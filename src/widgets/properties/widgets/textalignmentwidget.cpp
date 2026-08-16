@@ -12,6 +12,7 @@
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QIcon>
+#include <QStyle>
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 
@@ -22,14 +23,18 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
     m_widget->setObjectName(u"m_widget"_s);
 
     auto layout = new QHBoxLayout(m_widget);
-    layout->setAlignment(Qt::AlignCenter);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setAlignment(Qt::AlignLeft);
     layout->setObjectName(u"layout"_s);
+
+    const int iconSize{m_widget->style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+    const QSize size{iconSize, iconSize};
 
     m_alignLeft = new QToolButton(m_widget);
     m_alignLeft->setCheckable(true);
     m_alignLeft->setIcon(QIcon::fromTheme(u"format-justify-left"_s));
     m_alignLeft->setToolTip(i18nc("@info:tooltip", "Align Left"));
-    m_alignLeft->setIconSize(Common::textAlignmentIconSize);
+    m_alignLeft->setIconSize(size);
     m_alignLeft->setAutoRaise(true);
     m_alignLeft->setObjectName(u"m_alignLeft"_s);
     layout->addWidget(m_alignLeft);
@@ -38,7 +43,7 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
     m_alignCenter->setCheckable(true);
     m_alignCenter->setIcon(QIcon::fromTheme(u"format-justify-center"_s));
     m_alignCenter->setToolTip(i18nc("@info:tooltip", "Align Center"));
-    m_alignCenter->setIconSize(Common::textAlignmentIconSize);
+    m_alignCenter->setIconSize(size);
     m_alignCenter->setAutoRaise(true);
     m_alignCenter->setObjectName(u"m_alignCenter"_s);
     layout->addWidget(m_alignCenter);
@@ -47,7 +52,7 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
     m_alignRight->setCheckable(true);
     m_alignRight->setIcon(QIcon::fromTheme(u"format-justify-right"_s));
     m_alignRight->setToolTip(i18nc("@info:tooltip", "Align Right"));
-    m_alignRight->setIconSize(Common::textAlignmentIconSize);
+    m_alignRight->setIconSize(size);
     m_alignRight->setAutoRaise(true);
     m_alignRight->setObjectName(u"m_alignRight"_s);
     layout->addWidget(m_alignRight);
@@ -56,7 +61,7 @@ TextAlignmentWidget::TextAlignmentWidget(QWidget *parent)
     m_alignJustify->setCheckable(true);
     m_alignJustify->setIcon(QIcon::fromTheme(u"format-justify-fill"_s));
     m_alignJustify->setToolTip(i18nc("@info:tooltip", "Justify"));
-    m_alignJustify->setIconSize(Common::textAlignmentIconSize);
+    m_alignJustify->setIconSize(size);
     m_alignJustify->setAutoRaise(true);
     m_alignJustify->setObjectName(u"m_alignJustify"_s);
     layout->addWidget(m_alignJustify);

@@ -6,6 +6,7 @@
 
 #include "fontstylewidget.hpp"
 #include <QHBoxLayout>
+#include <QStyle>
 #include <QToolButton>
 #include <common/constants.hpp>
 #include <item/itemutils.hpp>
@@ -20,14 +21,18 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
 
     auto layout = new QHBoxLayout(m_widget);
     layout->setObjectName(u"layout"_s);
-    layout->setAlignment(Qt::AlignCenter);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setAlignment(Qt::AlignLeft);
+
+    const int iconSize{m_widget->style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+    const QSize size{iconSize, iconSize};
 
     m_bold = new QToolButton(m_widget);
     m_bold->setObjectName("m_bold");
     m_bold->setCheckable(true);
     m_bold->setIcon(QIcon::fromTheme(u"format-text-bold"_s));
     m_bold->setToolTip(i18nc("@info:tooltip", "Bold"));
-    m_bold->setIconSize(Common::fontStyleIconSize);
+    m_bold->setIconSize(size);
     m_bold->setAutoRaise(true);
     layout->addWidget(m_bold);
 
@@ -36,7 +41,7 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
     m_italic->setCheckable(true);
     m_italic->setIcon(QIcon::fromTheme(u"format-text-italic"_s));
     m_italic->setToolTip(i18nc("@info:tooltip", "Italic"));
-    m_italic->setIconSize(Common::fontStyleIconSize);
+    m_italic->setIconSize(size);
     m_italic->setAutoRaise(true);
     layout->addWidget(m_italic);
 
@@ -45,7 +50,7 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
     m_underlined->setCheckable(true);
     m_underlined->setIcon(QIcon::fromTheme(u"format-text-underline"_s));
     m_underlined->setToolTip(i18nc("@info:tooltip", "Underlined"));
-    m_underlined->setIconSize(Common::fontStyleIconSize);
+    m_underlined->setIconSize(size);
     m_underlined->setAutoRaise(true);
     layout->addWidget(m_underlined);
 
@@ -54,7 +59,7 @@ FontStyleWidget::FontStyleWidget(QWidget *parent)
     m_strikethrough->setCheckable(true);
     m_strikethrough->setIcon(QIcon::fromTheme(u"format-text-strikethrough"_s));
     m_strikethrough->setToolTip(i18nc("@info:tooltip", "Strikethrough"));
-    m_strikethrough->setIconSize(Common::fontStyleIconSize);
+    m_strikethrough->setIconSize(size);
     m_strikethrough->setAutoRaise(true);
     layout->addWidget(m_strikethrough);
 
