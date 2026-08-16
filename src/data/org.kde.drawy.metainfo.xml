@@ -231,6 +231,7 @@
         <p xml:lang="lt">Pagerintas tekstinių elementų palaikymas (Rašybos tikrinimas, lygiavimas, pusjuodis tekstas, kursyvinis tekstas ir t.t.) (GSoc2026)</p>
         <p xml:lang="nl">Tekstelement ondersteuning verbeterd (Spellingcontrole, uitlijning, vet, cursief etc.) (GSoc2026)</p>
         <p xml:lang="pt-BR">Melhoria do suporte a elementos de texto (verificação ortográfica, alinhamento, negrito, itálico, etc.) (GSoC 2026)</p>
+        <p xml:lang="sk">Vylepšená podpora textových prvkov (kontrola pravopisu, zarovnanie, tučné, kurzíva atď.) (GSoC 2026)</p>
         <p xml:lang="sl">Izboljšana podpora za besedilne elemente (preverjanje črkovanja, poravnava, krepko, poševno itd.) (GSoc2026)</p>
         <p xml:lang="tr">Metin ögesi desteği iyileştirildi (yazım denetimi, hizalama, kalın, yatık vb.).</p>
         <p xml:lang="uk">Удосконалено підтримку текстового елемента (перевірка правопису, вирівнювання, напівжирний, курсив тощо) (GSoc2026)</p>
@@ -247,6 +248,7 @@
         <p xml:lang="lt">Leisti užrakinti elementus</p>
         <p xml:lang="nl">Sta vergrendelen van items toe</p>
         <p xml:lang="pt-BR">Permitir bloquear itens</p>
+        <p xml:lang="sk">Možnosť zamknúť položky</p>
         <p xml:lang="sl">Dovoli zaklepanje elementov</p>
         <p xml:lang="tr">Ögeleri kilitleme desteği eklendi.</p>
         <p xml:lang="uk">Уможливлено блокування записів</p>
@@ -264,6 +266,7 @@
         <p xml:lang="lt">Leisti piešti stačiakampį apvaliais kampais</p>
         <p xml:lang="nl">Sta afgeronde rechthoek tekenen toe</p>
         <p xml:lang="pt-BR">Permitir desenhar um retângulo arredondado</p>
+        <p xml:lang="sk">Možnosť kresliť zaoblený obdĺžnik</p>
         <p xml:lang="sl">Omogoča risanje zaobljenega pravokotnika</p>
         <p xml:lang="tr">Yuvarlatılmış dörtgen çizme olanağı sağlandı.</p>
         <p xml:lang="uk">Уможливлено малювання прямокутника зі скругленими кутами</p>
@@ -282,6 +285,7 @@
         <p xml:lang="lt">Patobulinta pasirinkta pagrindinė figūra (klaida 519895)</p>
         <p xml:lang="nl">Geselecteerde basisvorm verbeteren (bug 519895)</p>
         <p xml:lang="pt-BR">Melhoria da forma básica selecionada (bug 519895)</p>
+        <p xml:lang="sk">Vylepšený vybraný základný tvar (chyba 519895)</p>
         <p xml:lang="sl">Izboljšana izbrana osnovna oblika (napaka 519895)</p>
         <p xml:lang="tr">Seçili temel şekiller iyileştirildi (519895 numaralı hata)</p>
         <p xml:lang="uk">Удосконалено вибрану базову форму (вада 519895)</p>
@@ -320,6 +324,7 @@
         <p xml:lang="lt">Pridėtas „Kas naujo“ dialogas</p>
         <p xml:lang="nl">Dialoog Wat is er nieuw toegevoegd</p>
         <p xml:lang="pt-BR">Adicionado o diálogo "O que há de novo"</p>
+        <p xml:lang="sk">Pridaný dialóg Čo je nové</p>
         <p xml:lang="sl">Dodano pogovorno okno »Kaj je novega«</p>
         <p xml:lang="tr">“Neler Yeni” iletişim kutusu eklendi.</p>
         <p xml:lang="uk">Додано вікно «Що нового?»</p>
@@ -342,6 +347,7 @@
         <p xml:lang="lt">Šis atnaujinimas pristato glotnesnį ir labiau tinkinamą piešimo ranka patyrimą ir ištaiso klaida, dėl kurios naujai nupieštos linijos mirgėjo.</p>
         <p xml:lang="nl">Deze update zorgt voor een soepelere en meer aanpasbare tekenervaring uit de vrije hand en verhelpt een probleem waarbij nieuw getekende lijnen flikkerden.</p>
         <p xml:lang="pt-BR">Esta atualização oferece uma experiência de desenho à mão livre mais personalizável e suave, e corrige um problema onde novas linhas desenhadas piscavam.</p>
+        <p xml:lang="sk">Táto aktualizácia prináša plynulejšie a lepšie prispôsobiteľné kreslenie voľnou rukou a opravuje blikanie novo nakreslených čiar.</p>
         <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
         <p xml:lang="tr">Bu güncelleme, daha akıcı ve özelleştirilebilir bir serbest çizim deneyimi sunuyor ve yeni çizilen çizgilerin titremesine neden olan bir sorunu gideriyor.</p>
         <p xml:lang="uk">У цьому оновленні реалізовано плавніший та більш придатний до налаштовування процес малювання від руки та виправлено проблему, через яку мерехтіли щойно намальовані лінії.</p>
@@ -363,6 +369,7 @@
           <li xml:lang="lt">Piešimas ranka dabar atrodo žymiai natūralesnis.</li>
           <li xml:lang="nl">Tekenen met de hand voelt nu veel beter en natuurlijker aan.</li>
           <li xml:lang="pt-BR">Desenhar com a mão é muito melhor e mais natural agora.</li>
+          <li xml:lang="sk">Kreslenie rukou je teraz oveľa príjemnejšie a prirodzenejšie.</li>
           <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
           <li xml:lang="tr">Elle çizim yapmak artık çok daha iyi ve doğal bir his veriyor.</li>
           <li xml:lang="uk">У новій версії малювати від руки зручніше і природніше.</li>
@@ -383,6 +390,7 @@
           <li xml:lang="lt">Pridėtos nuostatos, kad galėtumėte keisti rašiklio spaudimą ir linijų glotnumą.</li>
           <li xml:lang="nl">Er zijn instellingen toegevoegd waarmee u de pendruk en de vloeiendheid van uw lijnen kunt aanpassen.</li>
           <li xml:lang="pt-BR">Adicionadas configurações para que você possa mudar a pressão da caneta e quão suaves serão os visuais das linhas.</li>
+          <li xml:lang="sk">Pribudli nastavenia, ktorými zmeníte tlak pera a hladkosť čiar.</li>
           <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
           <li xml:lang="tr">Kalem basıncını ve çizgilerin ne kadar pürüzsüz görüneceğini değiştirebileceğiniz ayarlar eklendi.</li>
           <li xml:lang="uk">Реалізовано налаштування для зміни тиску пера та плавності вигляду ліній.</li>
@@ -403,6 +411,7 @@
           <li xml:lang="lt">Linijos ir figūros, tik jas nupiešus, daugiau nebemirgės ir nebemirksės.</li>
           <li xml:lang="nl">Lijnen en vormen zullen niet langer knipperen of flitsen direct nadat u ze hebt getekend.</li>
           <li xml:lang="pt-BR">Linhas e formas não vão mais piscar logo após desenhá-las.</li>
+          <li xml:lang="sk">Čiary a tvary už hneď po nakreslení neblikajú.</li>
           <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
           <li xml:lang="tr">Çizdiğiniz çizgiler ve şekiller artık hemen ardından yanıp sönmeyecek veya titreşmeyecek.</li>
           <li xml:lang="uk">У новій версії лінії і форми не блимають одразу після малювання.</li>
