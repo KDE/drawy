@@ -6,9 +6,11 @@
 
 #include <QResizeEvent>
 #include <QScreen>
+#include <QShowEvent>
 
 Canvas::Canvas(QWidget *parent)
     : QWidget{parent}
+    , m_scale{devicePixelRatioF()}
     , m_maxSize(m_sizeHint)
 {
     m_sizeHint = screen()->size() * m_scale;
@@ -122,12 +124,21 @@ void Canvas::paintEvent([[maybe_unused]] QPaintEvent *event)
 
 void Canvas::resizeEvent(QResizeEvent *event)
 {
-    Q_EMIT resizeEventCalled();
-
     setScale(devicePixelRatioF());
     resize();
 
+    Q_EMIT resizeEventCalled();
+
     QWidget::resizeEvent(event);
+}
+
+void Canvas::showEvent(QShowEvent *event)
+{
+    QWidget::showEvent(event);
+    if (m_scale != devicePixelRatioF()) {
+        setScale(devicePixelRatioF());
+        Q_EMIT resizeEventCalled();
+    }
 }
 
 void Canvas::mousePressEvent(QMouseEvent *event)
@@ -225,6 +236,11 @@ bool Canvas::event(QEvent *event)
         if (ev && ((ev->key() == Qt::Key_Tab) || (ev->key() == Qt::Key_Backtab))) {
             Q_EMIT keyPressed(ev);
             return true;
+        }
+    } else if (event->type() == QEvent::DevicePixelRatioChange || event->type() == QEvent::ScreenChangeInternal) {
+        if (m_scale != devicePixelRatioF()) {
+            setScale(devicePixelRatioF());
+            Q_EMIT resizeEventCalled();
         }
     }
     return QWidget::event(event);
