@@ -95,6 +95,7 @@ MainWindow::MainWindow(
     connect(renderingContext->canvas(), &Canvas::inputMethodQueryInvoked, controller, &Controller::inputMethodQueryInvoked);
     connect(renderingContext->canvas(), &Canvas::tablet, controller, &Controller::tablet);
     connect(renderingContext->canvas(), &Canvas::wheel, controller, &Controller::wheel);
+    connect(renderingContext->canvas(), &Canvas::nativeGesture, controller, &Controller::nativeGesture);
     connect(renderingContext->canvas(), &Canvas::leave, controller, &Controller::leave);
     connect(renderingContext->canvas(), &Canvas::dragEnter, controller, &Controller::dragEnter);
     connect(renderingContext->canvas(), &Canvas::dragMove, controller, &Controller::dragMove);
