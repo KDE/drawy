@@ -224,6 +224,7 @@
         <p xml:lang="ka">ამ განახლებას თქვენამდე მოაქვს უფრო გლუვი, მორგებადი, თავისუფალი ხატვის გამოცდილება და ასწორებს პრობლემას, სადაც ახლად დახატული ხაზები ციმციმებდა.</p>
         <p xml:lang="nl">Deze update zorgt voor een soepelere en meer aanpasbare tekenervaring uit de vrije hand en verhelpt een probleem waarbij nieuw getekende lijnen flikkerden.</p>
         <p xml:lang="pt-BR">Esta atualização proporciona uma experiência de desenho à mão livre mais fluida e personalizável, além de corrigir um problema que causava cintilação em linhas recém-desenhadas.</p>
+        <p xml:lang="sk">Táto aktualizácia prináša plynulejšie a lepšie prispôsobiteľné kreslenie voľnou rukou a opravuje blikanie novo nakreslených čiar.</p>
         <p xml:lang="sl">Ta posodobitev zagotavlja bolj gladko in prilagodljivo izkušnjo risanja s prosto roko ter odpravlja težavo, pri kateri so na novo narisane črte utripale.</p>
         <p xml:lang="tr">Bu güncelleme, daha akıcı ve özelleştirilebilir bir serbest çizim deneyimi sunuyor ve yeni çizilen çizgilerin titremesine neden olan bir sorunu gideriyor.</p>
         <p xml:lang="uk">У цьому оновленні реалізовано плавніший та більш придатний до налаштовування процес малювання від руки та виправлено проблему, через яку мерехтіли щойно намальовані лінії.</p>
@@ -244,6 +245,7 @@
           <li xml:lang="ka">ხელით ხატვა ახლა უფრო უკეთ და ბუნებრივად ჩანს.</li>
           <li xml:lang="nl">Tekenen met de hand voelt nu veel beter en natuurlijker aan.</li>
           <li xml:lang="pt-BR">Desenhar à mão parece muito melhor e mais natural agora.</li>
+          <li xml:lang="sk">Kreslenie rukou je teraz oveľa príjemnejšie a prirodzenejšie.</li>
           <li xml:lang="sl">Risanje z roko se zdaj zdi veliko boljše in bolj naravno.</li>
           <li xml:lang="tr">Elle çizim yapmak artık çok daha iyi ve doğal bir his veriyor.</li>
           <li xml:lang="uk">У новій версії малювати від руки зручніше і природніше.</li>
@@ -263,6 +265,7 @@
           <li xml:lang="ka">დაემატა პარამეტრები კალმის წნევისა და თქვენი ხაზების სიგლუვის შესაცვლელად.</li>
           <li xml:lang="nl">Er zijn instellingen toegevoegd waarmee u de pendruk en de vloeiendheid van uw lijnen kunt aanpassen.</li>
           <li xml:lang="pt-BR">Foram adicionadas configurações para você ajustar a pressão da caneta e a suavidade dos traços.</li>
+          <li xml:lang="sk">Pribudli nastavenia, ktorými zmeníte tlak pera a hladkosť čiar.</li>
           <li xml:lang="sl">Dodane nastavitve za spreminjanje pritiska peresa in gladkosti črt.</li>
           <li xml:lang="tr">Kalem basıncını ve çizgilerin ne kadar pürüzsüz görüneceğini değiştirebileceğiniz ayarlar eklendi.</li>
           <li xml:lang="uk">Реалізовано налаштування для зміни тиску пера та плавності вигляду ліній.</li>
@@ -282,6 +285,7 @@
           <li xml:lang="ka">ხაზები და მოხაზულობები აღარ ციმციმებს მათი დახატვის შემდეგ.</li>
           <li xml:lang="nl">Lijnen en vormen zullen niet langer knipperen of flitsen direct nadat u ze hebt getekend.</li>
           <li xml:lang="pt-BR">Linhas e formas não piscarão nem brilharão mais logo após você desenhá-las.</li>
+          <li xml:lang="sk">Čiary a tvary už hneď po nakreslení neblikajú.</li>
           <li xml:lang="sl">Črte in oblike ne bodo več utripale takoj po risanju.</li>
           <li xml:lang="tr">Çizdiğiniz çizgiler ve şekiller artık hemen ardından yanıp sönmeyecek veya titreşmeyecek.</li>
           <li xml:lang="uk">У новій версії лінії і форми не блимають одразу після малювання.</li>
