@@ -25,7 +25,7 @@ QString CustomTool::icon() const
 
 QList<Property::Type> CustomTool::properties() const
 {
-    return m_properties;
+    return PolygonDrawingTool::properties();
 }
 
 void CustomTool::setUpdateTool(const PluginForm::PluginFormInfo &pluginInfo)
