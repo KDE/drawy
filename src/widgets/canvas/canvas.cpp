@@ -272,7 +272,7 @@ QPixmap Canvas::canvasPixmap() const
 
 QPixmap Canvas::overlayPixmap() const
 {
-    return QPixmap{*m_canvas};
+    return QPixmap{*m_overlay};
 }
 
 #include "moc_canvas.cpp"
