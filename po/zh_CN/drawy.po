@@ -104,10 +104,9 @@ msgid "Change Opacity"
 msgstr "更改不透明度"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "更改字体大小"
+msgstr ""
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -115,10 +114,9 @@ msgid "Change Font Size"
 msgstr "更改字体大小"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "更改字体大小"
+msgstr ""
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -172,10 +170,9 @@ msgid "Change Corner Rectangle Type"
 msgstr "更改边角矩形类型"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "更改描边样式"
+msgstr ""
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -1118,25 +1115,19 @@ msgid "Thickness"
 msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "靠左对齐"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "靠左对齐"
+msgstr ""
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "靠右对齐"
