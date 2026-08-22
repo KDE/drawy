@@ -227,6 +227,7 @@
         <p xml:lang="cs">Vylepšena podpora textových prvků (kontrola pravopisu, zarovnání, tučné písmo, kurzíva atd.) (GSoc2026)</p>
         <p xml:lang="es">Mejorar la compatibilidad con elementos de texto (comprobación ortográfica, alineación, negrita, cursiva, etc.) (GSoc2026).</p>
         <p xml:lang="he">השתפרה התמיכה ברכיבי טקסט (בדיקת איות, יישור, הדגשה, הטייה וכו׳) (GSoc2026)</p>
+        <p xml:lang="it">Miglioramento del supporto dell'elemento del testo (controllo ortografico, allineamento, grassetto, corsivo, ecc.) (GSoc2026)</p>
         <p xml:lang="ka">გაუმჯობესდა ტექსტური ელემენტის მხარდაჭერა (მართლწერის შემოწმება, სწორება, გასქელება, კურსივი და ა.შ.) (GSoc2026)</p>
         <p xml:lang="lt">Pagerintas tekstinių elementų palaikymas (Rašybos tikrinimas, lygiavimas, pusjuodis tekstas, kursyvinis tekstas ir t.t.) (GSoc2026)</p>
         <p xml:lang="nl">Tekstelement ondersteuning verbeterd (Spellingcontrole, uitlijning, vet, cursief etc.) (GSoc2026)</p>
