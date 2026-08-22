@@ -22,7 +22,7 @@ AutoSaveJob::AutoSaveJob(ApplicationContext *context, QObject *parent)
 
 AutoSaveJob::~AutoSaveJob() = default;
 
-void AutoSaveJob::start()
+void AutoSaveJob::start() const
 {
     constexpr int mseconds = 60 * 1000;
     QTimer::singleShot(DrawyGlobalConfig::self()->delay() * mseconds, this, &AutoSaveJob::saveFile);

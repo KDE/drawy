@@ -15,7 +15,7 @@ public:
     explicit AutoSaveJob(ApplicationContext *context, QObject *parent = nullptr);
     ~AutoSaveJob() override;
 
-    void start();
+    void start() const;
     void saveFile();
 
 private:
