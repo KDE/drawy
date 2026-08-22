@@ -20,6 +20,7 @@
 #include "item/factory/itemfactory.hpp"
 #include "item/line.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <utility>
 
 LineDrawingTool::LineDrawingTool(ApplicationContext *context)
     : DrawingTool(context)
@@ -107,8 +108,8 @@ void LineDrawingTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        const QList<std::shared_ptr<Item>> itemVector{curItem};
-        commandHistory->push(std::make_shared<InsertItemCommand>(itemVector));
+        QList<std::shared_ptr<Item>> itemVector{curItem};
+        commandHistory->push(std::make_shared<InsertItemCommand>(std::move(itemVector)));
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
 

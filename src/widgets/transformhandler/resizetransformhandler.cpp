@@ -19,6 +19,7 @@
 #include "item/text.hpp"
 #include <QPainter>
 #include <QRectF>
+#include <utility>
 
 using namespace Qt::StringLiterals;
 
@@ -223,8 +224,8 @@ TransformHandler::State ResizeTransformHandler::mouseReleased(ApplicationContext
         }
         auto commandHistory{context->spatialContext()->commandHistory()};
 
-        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-        commandHistory->push(std::make_shared<ResizeItemCommand>(items, m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
+        QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        commandHistory->push(std::make_shared<ResizeItemCommand>(std::move(items), m_lastTransformUpdate, m_lastLockedTransformUpdate, m_aspectRatioLocked));
 
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();

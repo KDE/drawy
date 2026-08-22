@@ -13,6 +13,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 CustomElementsManager::CustomElementsManager(QObject *parent)
     : QObject{parent}
@@ -55,7 +56,7 @@ void CustomElementsManager::loadCustomElements()
             CustomElement e;
             e.load(r.toObject());
             if (e.isValid()) {
-                customElements.append(e);
+                customElements.append(std::move(e));
             }
         }
         mCustomElementsModel->setCustomElements(customElements);

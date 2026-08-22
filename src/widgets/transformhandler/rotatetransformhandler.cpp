@@ -17,6 +17,7 @@
 #include "data-structures/quadtree.hpp"
 #include "event/event.hpp"
 #include <algorithm>
+#include <utility>
 
 using namespace Qt::StringLiterals;
 
@@ -157,8 +158,8 @@ TransformHandler::State RotateTransformHandler::mouseReleased(ApplicationContext
             // redo rotation as a command
             auto commandHistory{context->spatialContext()->commandHistory()};
 
-            const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-            commandHistory->push(std::make_shared<RotateItemCommand>(items, m_lastRotationAngle, m_worldCenterPos));
+            QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            commandHistory->push(std::make_shared<RotateItemCommand>(std::move(items), m_lastRotationAngle, m_worldCenterPos));
 
             context->renderingContext()->markForRender();
             context->renderingContext()->markForUpdate();

@@ -23,6 +23,7 @@
 #include "event/event.hpp"
 #include "item/item.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 
 EraserTool::EraserTool(ApplicationContext *context)
@@ -122,7 +123,7 @@ void EraserTool::mouseReleased(ApplicationContext *context)
         }
 
         if (!erasedItems.empty()) {
-            commandHistory->push(std::make_shared<RemoveItemCommand>(erasedItems));
+            commandHistory->push(std::make_shared<RemoveItemCommand>(std::move(erasedItems)));
         }
 
         renderingContext->markForRender();

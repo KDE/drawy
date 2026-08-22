@@ -11,6 +11,7 @@
 #include <QMimeData>
 #include <QUrl>
 #include <memory>
+#include <utility>
 
 ImageMimeHandler::ImageMimeHandler(ApplicationContext *context)
     : m_context(context)
@@ -38,7 +39,7 @@ QList<std::shared_ptr<Item>> ImageMimeHandler::tryReadData(const QMimeData &mime
     }
 
     const std::shared_ptr<ImageItem> image = std::make_shared<ImageItem>();
-    image->setPixmap(pixmap);
+    image->setPixmap(std::move(pixmap));
 
     const QSizeF boxSize{image->pastedSize() / m_context->renderingContext()->zoomFactor()};
 

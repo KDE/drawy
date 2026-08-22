@@ -11,6 +11,7 @@
 #include "serializer/itemdeserializer.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -21,9 +22,9 @@ QList<std::shared_ptr<Item>> DeserializeUtils::deserializeItems(const QJsonArray
 
     for (const auto &val : items) {
         const QJsonObject itemObj = val.toObject();
-        const std::shared_ptr<Item> item = DeserializeUtils::deserializeItem(itemObj);
+        std::shared_ptr<Item> item = DeserializeUtils::deserializeItem(itemObj);
         if (item) {
-            itemsToAdd.append(item);
+            itemsToAdd.append(std::move(item));
         } else {
             qCWarning(DRAWY_GUI_LOG) << "Impossible to deserialize item";
         }

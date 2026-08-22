@@ -20,6 +20,7 @@
 #include <QFileDialog>
 #include <QImageReader>
 #include <QList>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -68,11 +69,11 @@ void ImageTool::mouseReleased(ApplicationContext *context)
         const std::shared_ptr<ImageItem> curItem = std::dynamic_pointer_cast<ImageItem>(m_itemFactory->create());
 
         curItem->setProperty(Property::Type::Opacity, uiContext->propertyManager()->value(Property::Type::Opacity));
-        curItem->setPixmap(pixmap);
+        curItem->setPixmap(std::move(pixmap));
         curItem->setBox(QRectF(transformer.viewToWorld(lastPoint), transformer.viewToWorld(curItem->pastedSize())));
 
         QList<std::shared_ptr<Item>> lst{curItem};
-        commandHistory->push(std::make_shared<InsertItemCommand>(lst));
+        commandHistory->push(std::make_shared<InsertItemCommand>(std::move(lst)));
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();

@@ -12,6 +12,7 @@
 #include "itemutils.hpp"
 #include "serializer/freeformdeserializer.hpp"
 #include "serializer/freeformserializer.hpp"
+#include <utility>
 
 FreeformItem::FreeformItem()
 {
@@ -46,8 +47,8 @@ void FreeformItem::finalizeStroke()
     }
 
     if (m_points.empty()) {
-        m_points = m_pointBuffer;
-        m_pressures = m_pressureBuffer;
+        m_points = std::move(m_pointBuffer);
+        m_pressures = std::move(m_pressureBuffer);
     } else {
         m_points.append(m_pointBuffer.mid(1));
         m_pressures.append(m_pressureBuffer.mid(1));

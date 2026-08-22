@@ -300,8 +300,8 @@ void ActionManager::slotLock()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(items, true));
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(std::move(items), true));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
     m_context->selectionContext()->reset();
@@ -309,9 +309,9 @@ void ActionManager::slotLock()
 
 void ActionManager::slotUnLock()
 {
-    const QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(m_context->uiContext()->toolBar()->curTool()).getItemsUnderCursor(m_context);
+    QList<std::shared_ptr<Item>> items = dynamic_cast<SelectionTool &>(m_context->uiContext()->toolBar()->curTool()).getItemsUnderCursor(m_context);
     if (items.size() == 1 && items.at(0)->locked()) {
-        m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(items, false));
+        m_context->spatialContext()->commandHistory()->push(std::make_shared<LockCommand>(std::move(items), false));
         m_context->renderingContext()->markForRender();
         m_context->renderingContext()->markForUpdate();
     }
@@ -420,8 +420,8 @@ void ActionManager::zorderMove(ItemUtils::ZorderMove move)
         return;
     }
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->push(std::make_shared<ZorderCommand>(items, move));
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->push(std::make_shared<ZorderCommand>(std::move(items), move));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -433,8 +433,8 @@ void ActionManager::alignItems(ItemUtils::AlignType alignType)
         return;
     }
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
-    auto alignCommand = std::make_shared<AlignItemCommand>(items, alignType);
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    auto alignCommand = std::make_shared<AlignItemCommand>(std::move(items), alignType);
     if (alignCommand->hasChanged()) {
         m_context->spatialContext()->commandHistory()->push(alignCommand);
         m_context->renderingContext()->markForRender();
@@ -454,8 +454,8 @@ void ActionManager::groupItems()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->push(std::make_shared<GroupCommand>(m_context, items));
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->push(std::make_shared<GroupCommand>(m_context, std::move(items)));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -467,8 +467,8 @@ void ActionManager::ungroupItems()
         return;
     }
 
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
-    m_context->spatialContext()->commandHistory()->push(std::make_shared<UngroupCommand>(items));
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    m_context->spatialContext()->commandHistory()->push(std::make_shared<UngroupCommand>(std::move(items)));
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 }
@@ -478,15 +478,15 @@ void ActionManager::deleteSelection()
     auto &selectedItems{m_context->selectionContext()->selectedItems()};
     auto commandHistory{m_context->spatialContext()->commandHistory()};
 
-    const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
-    commandHistory->push(std::make_shared<RemoveItemCommand>(items));
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    commandHistory->push(std::make_shared<RemoveItemCommand>(std::move(items)));
 
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
 
-    const QList<std::shared_ptr<Item>> &selectedItemsVector{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> selectedItemsVector{selectedItems.begin(), selectedItems.end()};
     if (!selectedItemsVector.isEmpty()) {
-        m_context->spatialContext()->commandHistory()->push(std::make_shared<DeselectCommand>(selectedItemsVector));
+        m_context->spatialContext()->commandHistory()->push(std::make_shared<DeselectCommand>(std::move(selectedItemsVector)));
     }
 }
 
@@ -494,9 +494,9 @@ void ActionManager::selectAll()
 {
     switchToTool(Tool::Type::Selection);
 
-    const auto &allItems{m_context->spatialContext()->quadtree().getAllItems(true /*exclude locked items*/)};
+    auto allItems{m_context->spatialContext()->quadtree().getAllItems(true /*exclude locked items*/)};
     if (!allItems.isEmpty()) {
-        m_context->spatialContext()->commandHistory()->push(std::make_shared<SelectCommand>(allItems));
+        m_context->spatialContext()->commandHistory()->push(std::make_shared<SelectCommand>(std::move(allItems)));
 
         m_context->renderingContext()->markForRender();
         m_context->renderingContext()->markForUpdate();
@@ -555,8 +555,8 @@ void ActionManager::clear()
                                            i18nc("@action", "Clear"),
                                            KStandardGuiItem::ok(),
                                            KStandardGuiItem::cancel())) {
-        const auto &allItems{m_context->spatialContext()->quadtree().getAllItems()};
-        m_context->spatialContext()->commandHistory()->push(std::make_shared<RemoveItemCommand>(allItems));
+        auto allItems{m_context->spatialContext()->quadtree().getAllItems()};
+        m_context->spatialContext()->commandHistory()->push(std::make_shared<RemoveItemCommand>(std::move(allItems)));
         m_context->renderingContext()->markForRender();
         m_context->renderingContext()->markForUpdate();
     }

@@ -103,7 +103,7 @@ public:
     template<typename T>
     void setValue(T value)
     {
-        m_value = value;
+        m_value = std::move(value);
     }
 
     template<typename T>

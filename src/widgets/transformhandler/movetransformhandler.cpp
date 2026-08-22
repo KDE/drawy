@@ -21,6 +21,7 @@
 #include "item/item.hpp"
 #include <QPainter>
 #include <QRectF>
+#include <utility>
 
 void MoveTransformHandler::renderHandles(ApplicationContext *context)
 {
@@ -150,7 +151,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
 
     if (delta != QPointF{0, 0}) {
         auto &selectedItems{context->selectionContext()->selectedItems()};
-        const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+        QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
         for (auto &item : items) {
             if (!item->locked()) {
@@ -163,7 +164,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             }
         }
 
-        commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+        commandHistory->push(std::make_shared<MoveItemCommand>(std::move(items), worldOriginalPos, worldFinalPos));
     } else {
         auto uiContext{context->uiContext()};
 
@@ -173,11 +174,11 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
         })};
 
         const auto selectedItems{context->selectionContext()->selectedItems()};
-        const QList<std::shared_ptr<Item>> selectedItemsList{selectedItems.begin(), selectedItems.end()};
+        QList<std::shared_ptr<Item>> selectedItemsList{selectedItems.begin(), selectedItems.end()};
 
         if (intersectingItems.empty()) {
             // if the users clicks in an empty region, deselect everything
-            commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
+            commandHistory->push(std::make_shared<DeselectCommand>(std::move(selectedItemsList)));
 
         } else if (uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier)) {
             // if the users holds shift and clicks on an element, deselect or select it, depending on the situation
@@ -189,7 +190,7 @@ TransformHandler::State MoveTransformHandler::mouseReleased(ApplicationContext *
             }
         } else {
             // deselect everything and select that one item
-            commandHistory->push(std::make_shared<DeselectCommand>(selectedItemsList));
+            commandHistory->push(std::make_shared<DeselectCommand>(std::move(selectedItemsList)));
             if (!intersectingItems.back()->locked()) {
                 commandHistory->push(std::make_shared<SelectCommand>(QList<std::shared_ptr<Item>>{intersectingItems.back()}));
             }

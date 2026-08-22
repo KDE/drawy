@@ -90,7 +90,7 @@ void TextItem::draw(QPainter &painter, const QPointF &offset)
         selection.cursor = m_cursor;
         selection.format.setBackground(Common::selectionBackgroundColor);
         selection.format.setFontUnderline(false);
-        ctx.selections.append(selection);
+        ctx.selections.append(std::move(selection));
     }
 
     if (m_mode == Mode::Edit) {
@@ -416,7 +416,7 @@ void TextItem::updatePreedit(const QString &preedit, const QList<QInputMethodEve
             range.length = attr.length;
             range.format = m_cursor.charFormat();
             range.format.merge(qvariant_cast<QTextCharFormat>(attr.value));
-            formats.append(range);
+            formats.append(std::move(range));
         }
     }
     const auto layout = m_cursor.block().layout();
@@ -553,7 +553,7 @@ bool TextItem::needsPropertyUpdate(const Property &property) const
     return property != this->property(property.type());
 }
 
-void TextItem::setProperty(const Property::Type propertyType, const Property newObj)
+void TextItem::setProperty(const Property::Type propertyType, Property newObj)
 {
     QTextCharFormat fmt;
     switch (propertyType) {
@@ -595,7 +595,7 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         QTextCursor cursor = m_cursor;
         cursor.select(QTextCursor::Document);
         cursor.mergeBlockFormat(blockFmt);
-        Item::setProperty(propertyType, newObj);
+        Item::setProperty(propertyType, std::move(newObj));
         return;
     }
     case Property::Type::ListStyle: {
@@ -623,7 +623,7 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
         break;
     }
     default:
-        Item::setProperty(propertyType, newObj);
+        Item::setProperty(propertyType, std::move(newObj));
         return;
     }
 
@@ -642,7 +642,7 @@ void TextItem::setProperty(const Property::Type propertyType, const Property new
     m_cursor.endEditBlock();
 
     m_currentFormat.merge(fmt);
-    Item::setProperty(propertyType, newObj);
+    Item::setProperty(propertyType, std::move(newObj));
 
     updateIntendWidth();
 }

@@ -6,6 +6,7 @@
 
 #include "imagedeserializer.hpp"
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -28,5 +29,5 @@ void ImageDeserializer::deserialize(const QJsonObject &obj)
     const QByteArray data{QByteArray::fromBase64(value(obj, u"image_data"_s).toString().toUtf8())};
     QPixmap pixmap;
     pixmap.loadFromData(data, "PNG");
-    image->setPixmap(pixmap);
+    image->setPixmap(std::move(pixmap));
 }

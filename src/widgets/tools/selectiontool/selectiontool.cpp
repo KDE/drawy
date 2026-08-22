@@ -26,6 +26,7 @@
 #include "event/event.hpp"
 #include "item/arrow/arrow.hpp"
 #include "item/item.hpp"
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 SelectionTool::SelectionTool(ApplicationContext *context)
@@ -65,10 +66,10 @@ void SelectionTool::mousePressed(ApplicationContext *context)
         const auto &selectedItems{selectionContext->selectedItems()};
 
         if (!(event->modifiers() & Qt::ShiftModifier)) {
-            const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+            QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
             if (!items.empty()) {
-                commandHistory->push(std::make_shared<DeselectCommand>(items));
+                commandHistory->push(std::make_shared<DeselectCommand>(std::move(items)));
             }
         }
 
@@ -198,7 +199,7 @@ void SelectionTool::mouseReleased(ApplicationContext *context)
             context->selectionContext()->reset();
 
             auto commandHistory{context->spatialContext()->commandHistory()};
-            commandHistory->push(std::make_shared<SelectCommand>(items));
+            commandHistory->push(std::make_shared<SelectCommand>(std::move(items)));
         }
 
         renderingContext->canvas()->setOverlayBg(Qt::transparent);
@@ -286,7 +287,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
 
     auto event{context->uiContext()->appEvent()};
     auto commandHistory{context->spatialContext()->commandHistory()};
-    const QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{selectedItems.begin(), selectedItems.end()};
 
     int delta{Common::translationDelta};
     if (event->modifiers() & Qt::ShiftModifier) {
@@ -316,7 +317,7 @@ void SelectionTool::keyPressed(ApplicationContext *context)
     }
 
     if (updated) {
-        commandHistory->push(std::make_shared<MoveItemCommand>(items, worldOriginalPos, worldFinalPos));
+        commandHistory->push(std::make_shared<MoveItemCommand>(std::move(items), worldOriginalPos, worldFinalPos));
         context->renderingContext()->markForRender();
         context->renderingContext()->markForUpdate();
     }

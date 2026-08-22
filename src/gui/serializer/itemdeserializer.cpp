@@ -9,6 +9,7 @@
 #include "item/item.hpp"
 #include <QJsonArray>
 #include <QJsonObject>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 ItemDeserializer::ItemDeserializer(Item *item)
@@ -25,8 +26,9 @@ void ItemDeserializer::deserialize(const QJsonObject &obj)
 
     QJsonArray properties = array(value(obj, u"properties"_s));
     for (const auto &propertyValue : std::as_const(properties)) {
-        const Property prop{createProperty(object(propertyValue))};
-        mItem->setProperty(prop.type(), prop);
+        Property prop{createProperty(object(propertyValue))};
+        const Property::Type type{prop.type()};
+        mItem->setProperty(type, std::move(prop));
     }
 
     mItem->setTransform(toTransform(value(obj, u"transform"_s)));

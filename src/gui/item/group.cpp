@@ -8,6 +8,7 @@
 #include "serializer/groupserializer.hpp"
 
 #include <QJsonObject>
+#include <utility>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset)
 {
@@ -169,9 +170,9 @@ QList<Property> GroupItem::properties() const
     auto types = propertyTypes();
     std::sort(types.begin(), types.end());
     for (const auto type : std::as_const(types)) {
-        const Property prop = property(type);
+        Property prop = property(type);
         if (prop.type() != Property::Type::Null) {
-            result.append(prop);
+            result.append(std::move(prop));
         }
     }
     return result;

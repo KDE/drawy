@@ -21,6 +21,7 @@
 #include "item/itemutils.hpp"
 #include "item/polygon.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <utility>
 
 PolygonDrawingTool::PolygonDrawingTool(ApplicationContext *context)
     : DrawingTool(context)
@@ -111,8 +112,8 @@ void PolygonDrawingTool::mouseReleased(ApplicationContext *context)
         auto renderingContext{context->renderingContext()};
         auto commandHistory{spatialContext->commandHistory()};
 
-        const QList<std::shared_ptr<Item>> itemVector{curItem};
-        commandHistory->push(std::make_shared<InsertItemCommand>(itemVector));
+        QList<std::shared_ptr<Item>> itemVector{curItem};
+        commandHistory->push(std::make_shared<InsertItemCommand>(std::move(itemVector)));
 
         renderingContext->markForRender();
         renderingContext->markForUpdate();

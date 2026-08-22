@@ -94,7 +94,7 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
         return;
     }
 
-    const QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
+    QList<std::shared_ptr<Item>> items{m_selectedItems.begin(), m_selectedItems.end()};
 
     bool shouldUpdateProperty{false}; // we must only insert it in the command history if the new property is different
 
@@ -119,9 +119,9 @@ void SelectionContext::updatePropertyOfSelectedItems(const Property &property)
 
         if (editingText) {
             // apply directly history is handled by Qtextdocument
-            UpdatePropertyCommand(items, property).redo(m_applicationContext);
+            UpdatePropertyCommand(std::move(items), property).redo(m_applicationContext);
         } else {
-            const auto command{std::make_shared<UpdatePropertyCommand>(items, property)};
+            const auto command{std::make_shared<UpdatePropertyCommand>(std::move(items), property)};
             const auto commandHistory{m_applicationContext->spatialContext()->commandHistory()};
             commandHistory->push(command);
         }

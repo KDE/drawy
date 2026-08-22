@@ -18,6 +18,7 @@
 #include "item/factory/freeformfactory.hpp"
 #include "item/freeform.hpp"
 #include "properties/widgets/propertymanager.hpp"
+#include <utility>
 using namespace Qt::Literals::StringLiterals;
 
 FreeformTool::FreeformTool(ApplicationContext *context)
@@ -108,7 +109,7 @@ void FreeformTool::mouseReleased(ApplicationContext *context)
         m_currentItem->finalizeStroke();
 
         m_itemList.push_back(m_currentItem);
-        commandHistory->push(std::make_shared<InsertItemCommand>(m_itemList));
+        commandHistory->push(std::make_shared<InsertItemCommand>(std::move(m_itemList)));
 
         m_currentItem.reset();
         m_currentCache = QPixmap{};
