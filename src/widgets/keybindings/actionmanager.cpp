@@ -436,7 +436,7 @@ void ActionManager::alignItems(ItemUtils::AlignType alignType)
     const QList<std::shared_ptr<Item>> &items{selectedItems.begin(), selectedItems.end()};
     auto alignCommand = std::make_shared<AlignItemCommand>(items, alignType);
     if (alignCommand->hasChanged()) {
-        m_context->spatialContext()->commandHistory()->push(std::move(alignCommand));
+        m_context->spatialContext()->commandHistory()->push(alignCommand);
         m_context->renderingContext()->markForRender();
         m_context->renderingContext()->markForUpdate();
     }
