@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-10 00:42+0000\n"
+"POT-Creation-Date: 2026-08-23 00:42+0000\n"
 "PO-Revision-Date: 2026-08-10 06:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1152,12 +1152,12 @@ msgstr "Poravnava besedila"
 msgid "Order"
 msgstr "Vrstni red"
 
-#: widgets/tools/imagetool.cpp:38
+#: widgets/tools/imagetool.cpp:39
 #, kde-format
 msgid "Image"
 msgstr "Slika"
 
-#: widgets/tools/imagetool.cpp:57
+#: widgets/tools/imagetool.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-10 00:42+0000\n"
+"POT-Creation-Date: 2026-08-23 00:42+0000\n"
 "PO-Revision-Date: 2026-05-06 09:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1175,12 +1175,12 @@ msgstr "Hliðjöfnun"
 msgid "Order"
 msgstr "Röðun"
 
-#: widgets/tools/imagetool.cpp:38
+#: widgets/tools/imagetool.cpp:39
 #, kde-format
 msgid "Image"
 msgstr "Mynd"
 
-#: widgets/tools/imagetool.cpp:57
+#: widgets/tools/imagetool.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

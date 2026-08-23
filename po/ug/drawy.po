@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-10 00:42+0000\n"
+"POT-Creation-Date: 2026-08-23 00:42+0000\n"
 "PO-Revision-Date: 2026-05-29 17:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -1164,12 +1164,12 @@ msgstr "توغرىلاش"
 msgid "Order"
 msgstr "تەرتىپلە"
 
-#: widgets/tools/imagetool.cpp:38
+#: widgets/tools/imagetool.cpp:39
 #, kde-format
 msgid "Image"
 msgstr "سۈرەت"
 
-#: widgets/tools/imagetool.cpp:57
+#: widgets/tools/imagetool.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

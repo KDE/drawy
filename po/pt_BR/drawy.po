@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-10 00:42+0000\n"
+"POT-Creation-Date: 2026-08-23 00:42+0000\n"
 "PO-Revision-Date: 2026-08-10 06:17-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1151,12 +1151,12 @@ msgstr "Alinhamento do texto"
 msgid "Order"
 msgstr "Ordem"
 
-#: widgets/tools/imagetool.cpp:38
+#: widgets/tools/imagetool.cpp:39
 #, kde-format
 msgid "Image"
 msgstr "Imagem"
 
-#: widgets/tools/imagetool.cpp:57
+#: widgets/tools/imagetool.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"

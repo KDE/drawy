@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-10 00:42+0000\n"
+"POT-Creation-Date: 2026-08-23 00:42+0000\n"
 "PO-Revision-Date: 2026-07-08 13:32+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1174,12 +1174,12 @@ msgstr "Lygiavimas"
 msgid "Order"
 msgstr "Tvarka"
 
-#: widgets/tools/imagetool.cpp:38
+#: widgets/tools/imagetool.cpp:39
 #, kde-format
 msgid "Image"
 msgstr "Paveikslas"
 
-#: widgets/tools/imagetool.cpp:57
+#: widgets/tools/imagetool.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
