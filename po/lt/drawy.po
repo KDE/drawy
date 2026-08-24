@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-23 00:42+0000\n"
-"PO-Revision-Date: 2026-07-08 13:32+0300\n"
+"PO-Revision-Date: 2026-08-23 22:25+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -61,23 +61,23 @@ msgstr "Plėtotojas"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
-msgstr ""
+msgstr "Abdelhadi Wael"
 
 #: apps/main.cpp:51
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
-msgstr ""
+msgstr "GSoc 2026 plėtotojas (Patobulintas teksto komponentas)"
 
 #: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
-msgstr ""
+msgstr "Nikolay Kochulin"
 
 #: apps/main.cpp:52
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
-msgstr ""
+msgstr "Klaidų pataisymai. Failų importavimas/eksportavimas"
 
 #: apps/main.cpp:62
 #, kde-format
@@ -106,10 +106,9 @@ msgid "Change Opacity"
 msgstr "Keisti nepermatomumą"
 
 #: gui/properties/property.cpp:123
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Family"
-msgstr "Keisti šrifto dydį"
+msgstr "Keisti šriftą"
 
 #: gui/properties/property.cpp:125
 #, kde-format
@@ -117,10 +116,9 @@ msgid "Change Font Size"
 msgstr "Keisti šrifto dydį"
 
 #: gui/properties/property.cpp:127
-#, fuzzy, kde-format
-#| msgid "Change Font Size"
+#, kde-format
 msgid "Change Font Style"
-msgstr "Keisti šrifto dydį"
+msgstr "Keisti šrifto stilių"
 
 #: gui/properties/property.cpp:129
 #, kde-format
@@ -159,10 +157,9 @@ msgid "Change End Arrow Head"
 msgstr "Keisti galutinį rodyklės smaigalį"
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "Lygiavimas"
+msgstr "Keisti teksto lygiavimą"
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -175,10 +172,9 @@ msgid "Change Corner Rectangle Type"
 msgstr "Keisti stačiakampio kampų tipą"
 
 #: gui/properties/property.cpp:152
-#, fuzzy, kde-format
-#| msgid "Change Stroke Style"
+#, kde-format
 msgid "Change List Style"
-msgstr "Keisti brūkštelėjimo stilių"
+msgstr "Keisti sąrašo stilių"
 
 #: plugins/basicshapes/basicshapesplugin.cpp:31
 #, kde-format
@@ -403,17 +399,17 @@ msgstr "Lygiuoti"
 #: widgets/context/uicontext.cpp:371
 #, kde-format
 msgid "No Suggestions"
-msgstr ""
+msgstr "Nėra pasiūlymų"
 
 #: widgets/context/uicontext.cpp:376
 #, kde-format
 msgid "Add to Dictionary"
-msgstr ""
+msgstr "Įtraukti į žodyną"
 
 #: widgets/context/uicontext.cpp:381
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "Nepaisyti"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -442,7 +438,7 @@ msgstr "Įvedimas"
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "Rašybos tikrinimas"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -546,36 +542,33 @@ msgid "Controls how much pressure changes line thickness."
 msgstr "Valdo, koks spaudimo kiekis keičia linijos storį."
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgid "Freehand Settings"
+#, kde-format
 msgid "Selection Settings"
-msgstr "Piešimo ranka nuostatos"
+msgstr "Žymėjimo nuostatos"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
 msgctxt "@option:radio"
 msgid "Select items fully contained"
-msgstr ""
+msgstr "Žymėti elementus, esančius visiškai žymėjimo viduje"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Selection Tool"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Select items on overlap"
-msgstr "Žymėjimo įrankis"
+msgstr "Žymėti elementus, kuriuos žymėjimas priliečia"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:18
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only items completely inside the selection box will be selected"
-msgstr ""
+msgstr "Bus pažymėti tik elementai, esantys visiškai žymėjimo srities viduje"
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:19
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Any item touching the selection box will be selected"
-msgstr ""
+msgstr "Bus pažymėtas bet kuris žymėjimą liečiantis elementas"
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
@@ -766,19 +759,19 @@ msgstr "Lygiuoti dešinėje"
 #, kde-format
 msgctxt "@action"
 msgid "Locks"
-msgstr ""
+msgstr "Užrakinti"
 
 #: widgets/keybindings/actionmanager.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "Atrakinti"
 
 #: widgets/keybindings/actionmanager.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Add to Library"
-msgstr ""
+msgstr "Pridėti į biblioteką"
 
 #: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
@@ -1003,10 +996,9 @@ msgid "Eraser Size"
 msgstr "Trintuko dydis"
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "Šrifto dydis"
+msgstr "Šriftas"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1017,84 +1009,80 @@ msgstr "Šrifto dydis"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Pusjuodis"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kursyvas"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
-msgstr ""
+msgstr "Pabrauktas"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "Perbrauktas"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "Šrifto dydis"
+msgstr "Šrifto stilius"
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Nėra"
 
 #: widgets/properties/widgets/liststylewidget.cpp:27
 #, kde-format
 msgid "Bullet (Disc)"
-msgstr ""
+msgstr "Ženklintas (Diskas)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:28
 #, kde-format
 msgid "Bullet (Circle)"
-msgstr ""
+msgstr "Ženklintas (Apskritimas)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:29
 #, kde-format
 msgid "Bullet (Square)"
-msgstr ""
+msgstr "Ženklintas (Kvadratas)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:30
 #, kde-format
 msgid "Numbered (Decimal)"
-msgstr ""
+msgstr "Sunumeruotas (Dešimtainiai skaitmenys)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:31
 #, kde-format
 msgid "Numbered (Lower Alpha)"
-msgstr ""
+msgstr "Sunumeruotas (Mažosios raidės)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:32
 #, kde-format
 msgid "Numbered (Upper Alpha)"
-msgstr ""
+msgstr "Sunumeruotas (Didžiosios raidės)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:33
 #, kde-format
 msgid "Numbered (Lower Roman)"
-msgstr ""
+msgstr "Sunumeruotas (Mažieji romėniški skaitmenys)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:34
 #, kde-format
 msgid "Numbered (Upper Roman)"
-msgstr ""
+msgstr "Sunumeruotas (Didieji romėniški skaitmenys)"
 
 #: widgets/properties/widgets/liststylewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Stroke Style"
+#, kde-format
 msgid "List Style"
-msgstr "Brūkštelėjimo stilius"
+msgstr "Sąrašo stilius"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1135,24 +1123,19 @@ msgid "Thickness"
 msgstr "Storis"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Lygiuoti kairėje"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "Lygiavimas"
+msgstr "Lygiuoti centre"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Lygiuoti dešinėje"
@@ -1161,13 +1144,12 @@ msgstr "Lygiuoti dešinėje"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "Abipusė lygiuotė"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "Lygiavimas"
+msgstr "Teksto lygiavimas"
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
@@ -1188,7 +1170,7 @@ msgstr "Įterpti paveikslą"
 #: widgets/tools/texttool.cpp:152
 #, kde-format
 msgid "ctrl + click to open: %1"
-msgstr ""
+msgstr "vald + spustelėjimas norint atverti: %1"
 
 #: widgets/window/window.cpp:206
 #, kde-format
