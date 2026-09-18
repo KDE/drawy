@@ -238,6 +238,7 @@
         <p xml:lang="sl">Izboljšana podpora za besedilne elemente (preverjanje črkovanja, poravnava, krepko, poševno itd.) (GSoc2026)</p>
         <p xml:lang="tr">Metin ögesi desteği iyileştirildi (yazım denetimi, hizalama, kalın, yatık vb.).</p>
         <p xml:lang="uk">Удосконалено підтримку текстового елемента (перевірка правопису, вирівнювання, напівжирний, курсив тощо) (GSoc2026)</p>
+        <p xml:lang="zh-TW">改善文字元素支援（拼字檢查、對齊、粗體斜體等等；GSoC 2026）</p>
         <p>Allow to lock items</p>
         <p xml:lang="ar">السماح بقفل العناصر</p>
         <p xml:lang="ca">Permet bloquejar elements</p>
