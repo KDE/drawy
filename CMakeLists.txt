@@ -233,7 +233,6 @@ ecm_qt_install_logging_categories(
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
-update_xdg_mimetypes(${KDE_INSTALL_MIMEDIR})
 ki18n_install(po)
 if(KF6DocTools_FOUND)
     kdoctools_install(po)
