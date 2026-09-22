@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-23 00:42+0000\n"
-"PO-Revision-Date: 2026-05-29 17:30-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -49,7 +49,7 @@ msgstr "ئاسرىغۇچى"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: apps/main.cpp:50
 #, kde-format
@@ -156,10 +156,9 @@ msgid "Change End Arrow Head"
 msgstr ""
 
 #: gui/properties/property.cpp:146
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Change Text Alignment"
-msgstr "توغرىلاش"
+msgstr ""
 
 #: gui/properties/property.cpp:148 widgets/command/zordercommand.cpp:87
 #, kde-format
@@ -202,13 +201,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Undo: %1"
-msgstr ""
+msgstr "يېنىۋال: %1"
 
 #: widgets/command/commandhistory.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Redo: %1"
-msgstr ""
+msgstr "قايتىلا: %1"
 
 #: widgets/command/deselectcommand.cpp:48
 #, kde-format
@@ -270,7 +269,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label, percent text"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: widgets/components/bottomleftwidgets.cpp:41
 #, kde-format
@@ -282,7 +281,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -305,7 +304,7 @@ msgstr "تىزىملىك ئاچ"
 #: widgets/context/aboutdata.cpp:13
 #, kde-format
 msgid "Drawy"
-msgstr "Drawy"
+msgstr ""
 
 #: widgets/context/aboutdata.cpp:15
 #, kde-format
@@ -401,12 +400,12 @@ msgstr ""
 #: widgets/context/uicontext.cpp:376
 #, kde-format
 msgid "Add to Dictionary"
-msgstr ""
+msgstr "لۇغەتكە قوش"
 
 #: widgets/context/uicontext.cpp:381
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "پەرۋا قىلما"
 
 #: widgets/dbus/managepowermanagement.cpp:30
 #, kde-format
@@ -430,12 +429,12 @@ msgstr "ئادەتتىكى"
 #: widgets/dialog/configuresettingsdialog.cpp:47
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "كىرگۈز"
 
 #: widgets/dialog/configuresettingsdialog.cpp:52
 #, kde-format
 msgid "Spell Checking"
-msgstr ""
+msgstr "ئىملا تەكشۈرۈش"
 
 #: widgets/dialog/configuresettingsdialog.cpp:58
 #, kde-format
@@ -536,11 +535,9 @@ msgid "Controls how much pressure changes line thickness."
 msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Selection"
+#, kde-format
 msgid "Selection Settings"
-msgstr "تاللاش"
+msgstr ""
 
 #: widgets/dialog/input/selectionsettingswidget.cpp:15
 #, kde-format
@@ -763,7 +760,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Unlock"
-msgstr ""
+msgstr "قۇلۇپ ئاچ"
 
 #: widgets/keybindings/actionmanager.cpp:157
 #, kde-format
@@ -781,7 +778,7 @@ msgstr "سازلا"
 #, kde-format
 msgctxt "@action"
 msgid "What's new"
-msgstr ""
+msgstr "يېڭىلىق"
 
 #: widgets/keybindings/actionmanager.cpp:529
 #, kde-format
@@ -845,8 +842,6 @@ msgid ""
 "The document \"%1\" has been modified.\n"
 "Do you want to save your changes or discard them?"
 msgstr ""
-"پۈتۈك %1 ئۆزگەرتىلدى\n"
-"ئۆزگىرىشنى ساقلامسىز؟ تاشلىۋېتەمسىز؟"
 
 #: widgets/keybindings/actionmanager.cpp:691
 #, kde-format
@@ -994,10 +989,9 @@ msgid "Eraser Size"
 msgstr ""
 
 #: widgets/properties/widgets/fontfamilywidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Family"
-msgstr "خەت چوڭلۇقى"
+msgstr "خەت نۇسخا تۈركۈمى"
 
 #: widgets/properties/widgets/fontsizewidget.cpp:39
 #, kde-format
@@ -1008,13 +1002,13 @@ msgstr "خەت چوڭلۇقى"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "توم"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "يانتۇ"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:47
 #, kde-format
@@ -1026,18 +1020,15 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
-msgstr ""
+msgstr "ئۆچۈرۈش سىزىقى"
 
 #: widgets/properties/widgets/fontstylewidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Font Size"
+#, kde-format
 msgid "Font Style"
-msgstr "خەت چوڭلۇقى"
+msgstr ""
 
 #: widgets/properties/widgets/liststylewidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "Tooltip for arrow head"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "يوق"
 
@@ -1084,7 +1075,7 @@ msgstr ""
 #: widgets/properties/widgets/liststylewidget.cpp:59
 #, kde-format
 msgid "List Style"
-msgstr ""
+msgstr "تىزىملىك ئۇسلۇبى"
 
 #: widgets/properties/widgets/opacitywidget.cpp:99
 #, kde-format
@@ -1125,24 +1116,19 @@ msgid "Thickness"
 msgstr "قېلىنلىقى"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Left"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "سولغا توغرىلا"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
-msgstr "توغرىلاش"
+msgstr "مەركەزگە توغرىلا"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Align Right"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "ئوڭغا توغرىلا"
@@ -1151,13 +1137,12 @@ msgstr "ئوڭغا توغرىلا"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
-msgstr ""
+msgstr "ئوڭ-سول تەرىپى تەكشى"
 
 #: widgets/properties/widgets/textalignmentwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Alignment"
+#, kde-format
 msgid "Text Alignment"
-msgstr "توغرىلاش"
+msgstr ""
 
 #: widgets/properties/widgets/zorderwidget.cpp:46
 #, kde-format
