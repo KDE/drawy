@@ -66,7 +66,7 @@ void CustomElementsManager::loadCustomElements()
 void CustomElementsManager::saveCustomElements(const QString &fileName)
 {
     QJsonObject obj;
-    obj["version"_L1] = QString::number(1);
+    obj["version"_L1] = 1;
     QJsonArray elementsObj;
     for (const auto &element : mCustomElementsModel->customElements()) {
         elementsObj.append(element.save());
