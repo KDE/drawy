@@ -63,6 +63,7 @@ void RestoreAutoSaveJob::restoreFile()
             // the last file was not saved which means we should mark it as modified
             m_context->setCurrentFileModified(true);
         }
+        deleteLater();
     });
 
     job->start();
