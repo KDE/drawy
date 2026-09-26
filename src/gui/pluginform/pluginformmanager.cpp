@@ -113,7 +113,7 @@ PluginUtilData PluginFormManager::createPluginMetaData(const KPluginMetaData &me
 std::unique_ptr<ItemFactory> PluginFormManager::generateItemFactory(const PluginForm::PluginFormInfo &pluginInfo)
 {
     for (const auto &p : std::as_const(mPluginList)) {
-        if (p.plugin->pluginName() == pluginInfo.pluginName) {
+        if (p.plugin && p.plugin->pluginName() == pluginInfo.pluginName) {
             return p.plugin->generateItemFactory(pluginInfo);
         }
     }
@@ -123,7 +123,7 @@ std::unique_ptr<ItemFactory> PluginFormManager::generateItemFactory(const Plugin
 std::shared_ptr<Item> PluginFormManager::createItem(const QString &pluginName, const QString &customPluginName)
 {
     for (const auto &p : std::as_const(mPluginList)) {
-        if (p.plugin->pluginName() == pluginName) {
+        if (p.plugin && p.plugin->pluginName() == pluginName) {
             return p.plugin->createItem(customPluginName);
         }
     }
