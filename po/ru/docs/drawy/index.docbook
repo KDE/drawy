@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-kapplication "<application
+>Drawy</application
+>">
+  <!ENTITY kappname "&i18n-kapplication;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE">
+]>
+
+<!--
+	SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+	SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
+<book id="drawy" lang="&language;">
+
+<bookinfo id="drawyinfo">
+
+<title
+>Руководство пользователя &i18n-kapplication;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Александр</firstname
+><surname
+>Яворский</surname
+><affiliation
+><address
+><email
+>kekcuha@gmail.com</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2026</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<legalnotice
+>&CCBYSA4Notice;</legalnotice>
+
+<date
+>23 февраля 2026 г.</date>
+<releaseinfo
+></releaseinfo>
+
+<abstract>
+<para
+>&i18n-kapplication; — находящийся в разработке инструмент для работы с бесконечной доской. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>доска</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+<para
+>&i18n-kapplication; — находящийся в разработке инструмент для работы с бесконечной доской, написанный на Qt/C++.</para>
+
+<sect1 id="using-kapp">
+<title
+>Использование &i18n-kapplication;</title>
+
+<para
+>&i18n-kapplication; — это находящийся в разработке инструмент для работы с бесконечной доской, написанный на Qt/C++ и призванный стать настольной альтернативой замечательному веб-приложению Excalidraw.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Авторские права и лицензия</title>
+
+<para
+>&i18n-kapplication;</para>
+<para
+>Авторские права на программу 2026 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Авторские права на документацию &copy; &Laurent.Montel; &Laurent.Montel.mail; </para>
+
+<para
+>Перевод на русский — Александр Яворский<email
+>kekcuha@gmail.com</email
+></para
+> &underCCBYSA4; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
