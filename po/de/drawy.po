@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: drawy_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-23 02:38+0000\n"
-"PO-Revision-Date: 2026-04-21 17:45+0200\n"
-"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
+"PO-Revision-Date: 2026-09-29 22:59+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -347,7 +347,7 @@ msgstr "Allgemein"
 #: widgets/dialog/configuresettingsdialog.cpp:39
 #, kde-format
 msgid "Input"
-msgstr ""
+msgstr "Eingabe"
 
 #: widgets/dialog/configuresettingsdialog.cpp:45
 #, kde-format
@@ -420,27 +420,28 @@ msgstr "Dunkler Modus"
 #: widgets/dialog/input/freehandsettingswidget.cpp:17
 #, kde-format
 msgid "Freehand Settings"
-msgstr ""
+msgstr "Freihandeinstellungen"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Stabilization"
-msgstr ""
+msgstr "Stabilisierung"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:47
 #, kde-format
 msgid "Makes lines steadier by reducing hand shake."
 msgstr ""
+"Sorgt für gleichmäßigere Linien, indem das Zittern der Hand verringert wird."
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Pressure Sensitivity"
-msgstr ""
+msgstr "Druckempfindlichkeit"
 
 #: widgets/dialog/input/freehandsettingswidget.cpp:48
 #, kde-format
 msgid "Controls how much pressure changes line thickness."
-msgstr ""
+msgstr "Steuert, wie stark sich die Linienstärke durch Druck verändert."
 
 #: widgets/dialog/misc/powermanagerwidget.cpp:13
 #, kde-format
