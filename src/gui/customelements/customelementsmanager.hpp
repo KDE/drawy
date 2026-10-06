@@ -6,7 +6,6 @@
 
 #pragma once
 #include "libdrawygui_export.h"
-#include <QList>
 #include <QObject>
 #include <memory>
 

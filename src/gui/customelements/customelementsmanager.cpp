@@ -8,7 +8,6 @@
 #include "customelements/customelementsmodel.hpp"
 #include "customelements/customelementsutils.hpp"
 #include "drawy_gui_debug.h"
-#include "item/item.hpp"
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
