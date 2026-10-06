@@ -20,11 +20,11 @@ FontStyleWidgetTest::FontStyleWidgetTest(QObject *parent)
 
 void FontStyleWidgetTest::shouldHaveDefaultValues()
 {
-    auto parent = new QWidget();
-    const FontStyleWidget w(parent);
+    QWidget parent;
+    const FontStyleWidget w(&parent);
     QVERIFY(!w.name().isEmpty());
 
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);

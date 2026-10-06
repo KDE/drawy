@@ -20,11 +20,11 @@ TextAlignmentWidgetTest::TextAlignmentWidgetTest(QObject *parent)
 
 void TextAlignmentWidgetTest::shouldHaveDefaultValues()
 {
-    const auto parent = new QWidget();
-    const TextAlignmentWidget w(parent);
+    QWidget parent;
+    const TextAlignmentWidget w(&parent);
     QVERIFY(!w.name().isEmpty());
 
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);

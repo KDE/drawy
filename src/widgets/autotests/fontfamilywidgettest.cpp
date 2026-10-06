@@ -19,11 +19,11 @@ FontFamilyWidgetTest::FontFamilyWidgetTest(QObject *parent)
 
 void FontFamilyWidgetTest::shouldHaveDefaultValues()
 {
-    const auto parent = new QWidget();
-    const FontFamilyWidget w(parent);
+    QWidget parent;
+    const FontFamilyWidget w(&parent);
     QVERIFY(!w.name().isEmpty());
 
-    auto m_fontComboBox = parent->findChild<QFontComboBox *>(u"m_fontComboBox"_s);
+    auto m_fontComboBox = parent.findChild<QFontComboBox *>(u"m_fontComboBox"_s);
     QVERIFY(m_fontComboBox);
     QCOMPARE(m_fontComboBox->sizePolicy().horizontalPolicy(), QSizePolicy::Ignored);
     QCOMPARE(m_fontComboBox->sizePolicy().verticalPolicy(), QSizePolicy::Fixed);

@@ -20,14 +20,14 @@ ListStyleWidgetTest::ListStyleWidgetTest(QObject *parent)
 
 void ListStyleWidgetTest::shouldHaveDefaultValues()
 {
-    const auto parent = new QWidget();
-    ListStyleWidget w(parent);
+    QWidget parent;
+    ListStyleWidget w(&parent);
 
     QVERIFY(!w.name().isEmpty());
     QVERIFY(w.widget());
     QCOMPARE(w.widget()->objectName(), u"m_widget"_s);
 
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);

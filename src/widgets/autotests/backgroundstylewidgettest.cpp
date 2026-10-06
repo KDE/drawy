@@ -17,11 +17,11 @@ BackgroundStyleWidgetTest::BackgroundStyleWidgetTest(QObject *parent)
 
 void BackgroundStyleWidgetTest::shouldHaveDefaultValues()
 {
-    auto parent = new QWidget();
-    const BackgroundStyleWidget w(parent);
+    QWidget parent;
+    const BackgroundStyleWidget w(&parent);
     QVERIFY(!w.name().isEmpty());
 
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);

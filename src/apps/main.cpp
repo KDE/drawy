@@ -11,6 +11,8 @@
 #include <KStyleManager>
 #include <QTimer>
 
+#include <memory>
+
 #include "config-drawy.hpp"
 #include "context/aboutdata.hpp"
 #include "drawycommandlineparser.hpp"
@@ -76,22 +78,22 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(aboutData);
 
-    MainWindow w
+    auto w = std::make_unique<MainWindow>(
 #if HAVE_WHATSNEWSNGSUPPORT
-        (aboutData.releases())
+        aboutData.releases()
 #endif
-            ;
+    );
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::FullScreen))) {
-        w.viewFullScreen(true);
+        w->viewFullScreen(true);
     }
     if (parser.isSet(commandLineParser.optionParserFromEnum(DrawyCommandLineParser::OptionParser::Debug))) {
-        w.activeDebug();
+        w->activeDebug();
     }
 
     const QStringList &args = parser.positionalArguments();
 
     if (!args.isEmpty()) {
-        w.loadFile(args.constFirst());
+        w->loadFile(args.constFirst());
     }
 
 #ifdef Q_OS_UNIX
@@ -103,15 +105,19 @@ int main(int argc, char *argv[])
     QObject::connect(KSignalHandler::self(), &KSignalHandler::signalReceived, &a, [&w](int signal) {
         if (signal == SIGINT || signal == SIGTERM) {
             printf("Shutting down...\n");
-            w.close();
+            w->close();
         }
     });
 #endif
 
-    w.show();
+    w->show();
 
     if (parser.isSet(DrawyCommandLineParser::optionParserFromEnum(DrawyCommandLineParser::OptionParser::SelfTest))) {
         QTimer::singleShot(std::chrono::milliseconds(250), &a, &QCoreApplication::quit);
     }
-    return a.exec();
+    const int ret = a.exec();
+    w.reset();
+    // KSelectAction & co. delete their menu with deleteLater(): process it now that the event loop is gone
+    QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+    return ret;
 }

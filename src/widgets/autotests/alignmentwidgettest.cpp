@@ -17,13 +17,13 @@ AlignmentWidgetTest::AlignmentWidgetTest(QObject *parent)
 
 void AlignmentWidgetTest::shouldHaveDefaultValues()
 {
-    auto parent = new QWidget();
-    const AlignmentWidget w(nullptr, parent);
+    QWidget parent;
+    const AlignmentWidget w(nullptr, &parent);
     QVERIFY(!w.name().isEmpty());
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
-    auto layout = parent->findChild<QGridLayout *>(u"layout"_s);
+    auto layout = parent.findChild<QGridLayout *>(u"layout"_s);
     QVERIFY(layout);
     QCOMPARE(layout->contentsMargins(), QMargins{});
 

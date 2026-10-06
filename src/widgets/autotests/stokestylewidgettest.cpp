@@ -19,9 +19,9 @@ StokeStyleWidgetTest::StokeStyleWidgetTest(QObject *parent)
 
 void StokeStyleWidgetTest::shouldHaveDefaultValues()
 {
-    auto parent = new QWidget();
-    const StokeStyleWidget w(parent);
-    auto m_widget = parent->findChild<QWidget *>(u"m_widget"_s);
+    QWidget parent;
+    const StokeStyleWidget w(&parent);
+    auto m_widget = parent.findChild<QWidget *>(u"m_widget"_s);
     QVERIFY(m_widget);
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);
