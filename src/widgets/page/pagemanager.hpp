@@ -21,6 +21,7 @@ public:
     [[nodiscard]] QString currentName() const;
 
     [[nodiscard]] int currentPage() const;
+    [[nodiscard]] Page *currentPageObject() const;
     void setCurrentPage(int newCurrentPage);
 
     // PageManager takes ownership of page

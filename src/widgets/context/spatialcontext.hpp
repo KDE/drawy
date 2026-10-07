@@ -9,6 +9,7 @@ class QuadTree;
 class CoordinateTransformer;
 class ApplicationContext;
 class CommandHistory;
+class Page;
 
 class SpatialContext : public QObject
 {
@@ -28,13 +29,8 @@ public:
     void reset();
 
 private:
-    std::unique_ptr<QuadTree> m_quadtree{nullptr};
+    [[nodiscard]] Page *currentPage() const;
     std::unique_ptr<CoordinateTransformer> m_coordinateTransformer{nullptr};
-    std::unique_ptr<CommandHistory> m_commandHistory{nullptr};
-
-    // Stores the position of the topleft corner of the viewport with respect to
-    // to the world center. If viewport moves down/right, the coordinates increase
-    QPointF m_offsetPos{};
 
     ApplicationContext *const m_applicationContext;
 };

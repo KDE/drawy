@@ -10,6 +10,7 @@
 #include "coordinatetransformer.hpp"
 #include "drawy_debug.h"
 #include "mime/mimemanager.hpp"
+#include "page/page.hpp"
 #include "page/pagemanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
@@ -27,6 +28,7 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_mimeManager(new MimeManager(this))
     , m_pageManager(new PageManager(this))
 {
+    m_pageManager->insertPage(0, new Page(this));
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
     connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {

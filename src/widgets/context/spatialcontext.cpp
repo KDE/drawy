@@ -7,22 +7,18 @@
 #include <memory>
 
 #include "applicationcontext.hpp"
-#include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "coordinatetransformer.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
-#include "renderingcontext.hpp"
+#include "page/page.hpp"
+#include "page/pagemanager.hpp"
 
 SpatialContext::SpatialContext(ApplicationContext *context)
     : QObject{context}
     , m_applicationContext{context}
 {
-    auto canvas{m_applicationContext->renderingContext()->canvas()};
-
-    m_quadtree = std::make_unique<QuadTree>(QRect{{0, 0}, canvas->sizeHint()}, 10000);
     m_coordinateTransformer = std::make_unique<CoordinateTransformer>(m_applicationContext);
-    m_commandHistory = std::make_unique<CommandHistory>(m_applicationContext);
 }
 
 SpatialContext::~SpatialContext()
@@ -30,9 +26,16 @@ SpatialContext::~SpatialContext()
     qCDebug(DRAWY_LOG) << "Object deleted: SpatialContext";
 }
 
+Page *SpatialContext::currentPage() const
+{
+    Page *page{m_applicationContext->pageManager()->currentPageObject()};
+    Q_ASSERT(page);
+    return page;
+}
+
 QuadTree &SpatialContext::quadtree() const
 {
-    return *m_quadtree;
+    return currentPage()->quadtree();
 }
 
 CoordinateTransformer &SpatialContext::coordinateTransformer() const
@@ -42,17 +45,17 @@ CoordinateTransformer &SpatialContext::coordinateTransformer() const
 
 CommandHistory *SpatialContext::commandHistory() const
 {
-    return m_commandHistory.get();
+    return currentPage()->commandHistory();
 }
 
 const QPointF &SpatialContext::offsetPos() const
 {
-    return m_offsetPos;
+    return currentPage()->offsetPos();
 }
 
 void SpatialContext::setOffsetPos(const QPointF &pos)
 {
-    m_offsetPos = pos;
+    currentPage()->setOffsetPos(pos);
 }
 
 void SpatialContext::reset()

@@ -14,6 +14,8 @@
 #include "coordinatetransformer.hpp"
 #include "data-structures/cachegrid.hpp"
 #include "item/itemcache/itemcache.hpp"
+#include "page/page.hpp"
+#include "page/pagemanager.hpp"
 #include "spatialcontext.hpp"
 
 #include "drawy_debug.h"
@@ -84,33 +86,34 @@ ItemCache &RenderingContext::itemCache() const
 
 qreal RenderingContext::zoomFactor() const
 {
-    return m_zoomFactor;
+    return m_applicationContext->pageManager()->currentPageObject()->zoomFactor();
 }
 
 void RenderingContext::zoomIn()
 {
-    updateZoomFactor(qMin(Common::zoomInLimit, m_zoomFactor * Common::zoomMultiplier));
+    updateZoomFactor(qMin(Common::zoomInLimit, zoomFactor() * Common::zoomMultiplier));
 }
 
 bool RenderingContext::canZoomIn() const
 {
-    return m_zoomFactor < Common::zoomInLimit;
+    return zoomFactor() < Common::zoomInLimit;
 }
 
 void RenderingContext::zoomOut()
 {
-    updateZoomFactor(qMax(Common::zoomOutLimit, m_zoomFactor / Common::zoomMultiplier));
+    updateZoomFactor(qMax(Common::zoomOutLimit, zoomFactor() / Common::zoomMultiplier));
 }
 
 bool RenderingContext::canZoomOut() const
 {
-    return m_zoomFactor > Common::zoomOutLimit;
+    return zoomFactor() > Common::zoomOutLimit;
 }
 
 void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
 {
-    const qreal oldZoomFactor = m_zoomFactor;
-    m_zoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
+    const qreal oldZoomFactor = zoomFactor();
+    const qreal newZoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
+    m_applicationContext->pageManager()->currentPageObject()->setZoomFactor(newZoomFactor);
 
     QPointF offsetPos{m_applicationContext->spatialContext()->offsetPos()};
 
@@ -123,8 +126,8 @@ void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
         center.setY(offsetPos.toPoint().y() + height / 2);
     }
 
-    offsetPos.setX(center.x() - (center.x() - offsetPos.x()) * oldZoomFactor / m_zoomFactor);
-    offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / m_zoomFactor);
+    offsetPos.setX(center.x() - (center.x() - offsetPos.x()) * oldZoomFactor / newZoomFactor);
+    offsetPos.setY(center.y() - (center.y() - offsetPos.y()) * oldZoomFactor / newZoomFactor);
 
     cacheGrid().markAllDirty();
     itemCache().clear();
@@ -132,13 +135,14 @@ void RenderingContext::updateZoomFactor(qreal newValue, QPoint center)
     m_applicationContext->renderingContext()->markForRender();
     m_applicationContext->renderingContext()->markForUpdate();
 
-    Q_EMIT zoomFactorChanged(m_zoomFactor);
+    Q_EMIT zoomFactorChanged(newZoomFactor);
 }
 
 void RenderingContext::setZoomFactor(qreal newValue)
 {
-    m_zoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
-    Q_EMIT zoomFactorChanged(m_zoomFactor);
+    const qreal newZoomFactor = qBound(Common::zoomOutLimit, newValue, Common::zoomInLimit);
+    m_applicationContext->pageManager()->currentPageObject()->setZoomFactor(newZoomFactor);
+    Q_EMIT zoomFactorChanged(newZoomFactor);
 }
 
 int RenderingContext::fps() const

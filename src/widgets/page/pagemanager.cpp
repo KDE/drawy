@@ -114,6 +114,14 @@ int PageManager::currentPage() const
     return mCurrentPage;
 }
 
+Page *PageManager::currentPageObject() const
+{
+    if (isIndexValid(mCurrentPage)) {
+        return mPages.at(mCurrentPage);
+    }
+    return nullptr;
+}
+
 void PageManager::setCurrentPage(int newCurrentPage)
 {
     if (!isIndexValid(newCurrentPage)) {

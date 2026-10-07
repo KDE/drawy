@@ -55,8 +55,6 @@ private:
     bool m_needsUpdate{false};
     QRect m_updateRegion;
 
-    qreal m_zoomFactor{1};
-
     std::unique_ptr<CacheGrid> m_cacheGrid{nullptr};
     std::unique_ptr<ItemCache> m_itemCache{nullptr};
     ApplicationContext *const m_applicationContext;
