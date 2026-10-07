@@ -51,6 +51,7 @@
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "mime/mimemanager.hpp"
+#include "page/pagemanager.hpp"
 #include "serializer/pngserializer.hpp"
 #include "serializer/serializerutils.hpp"
 #include "serializer/svgserializer.hpp"
@@ -539,6 +540,7 @@ void ActionManager::saveAsNewFile()
         .offsetPos = m_context->spatialContext()->offsetPos(),
         .zoomFactor = m_context->renderingContext()->zoomFactor(),
         .items = m_context->spatialContext()->quadtree().getAllItems(),
+        .pages = m_context->pageManager()->pages(),
     };
     job->setSaveAsInfo(info);
     connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
@@ -590,6 +592,8 @@ void ActionManager::saveCurrentFile()
         .offsetPos = m_context->spatialContext()->offsetPos(),
         .zoomFactor = m_context->renderingContext()->zoomFactor(),
         .items = m_context->spatialContext()->quadtree().getAllItems(),
+        .pages = m_context->pageManager()->pages(),
+        .currentPage = m_context->pageManager()->currentPage(),
     };
 
     job->setSaveAsInfo(info);

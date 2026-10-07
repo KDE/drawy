@@ -6,8 +6,10 @@
 #pragma once
 #include "item/item.hpp"
 #include "libdrawywidgets_private_export.h"
+#include <QList>
 #include <QObject>
 #include <QPointF>
+class Page;
 class QDebug;
 class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT SaveAsJob : public QObject
@@ -16,9 +18,14 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT SaveAsJob : public QObject
 public:
     struct SaveAsInfo {
         QString filePath;
+        // TODO Remove it
         QPointF offsetPos{0, 0};
+        // TODO Remove it
         qreal zoomFactor{1.0};
+        // TODO Remove it
         QList<std::shared_ptr<Item>> items;
+        QList<Page *> pages;
+        int currentPage = 0;
         bool isAutoSave{false};
     };
 

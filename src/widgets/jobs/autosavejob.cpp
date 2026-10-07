@@ -11,6 +11,7 @@
 #include "drawy_autosave_debug.h"
 #include "drawyglobalconfig.h"
 #include "jobs/saveasjob.hpp"
+#include "page/pagemanager.hpp"
 #include "serializer/serializerutils.hpp"
 #include <QTimer>
 
@@ -33,11 +34,16 @@ void AutoSaveJob::saveFile()
     const QString fileName = DrawyGlobalConfig::self()->path();
     auto saveAsJob = new SaveAsJob(mApplicationContext, this);
 
-    const SaveAsJob::SaveAsInfo info{.filePath = fileName,
-                                     .offsetPos = mApplicationContext->spatialContext()->offsetPos(),
-                                     .zoomFactor = mApplicationContext->renderingContext()->zoomFactor(),
-                                     .items = mApplicationContext->spatialContext()->quadtree().getAllItems(),
-                                     .isAutoSave = true};
+    const SaveAsJob::SaveAsInfo info{
+        .filePath = fileName,
+        .offsetPos = mApplicationContext->spatialContext()->offsetPos(),
+        .zoomFactor = mApplicationContext->renderingContext()->zoomFactor(),
+        .items = mApplicationContext->spatialContext()->quadtree().getAllItems(),
+        .pages = mApplicationContext->pageManager()->pages(),
+        .currentPage = mApplicationContext->pageManager()->currentPage(),
+
+        .isAutoSave = true,
+    };
 
     saveAsJob->setSaveAsInfo(info);
     connect(saveAsJob, &SaveAsJob::saveFileDone, this, [fileName, this](const QJsonObject &obj) {

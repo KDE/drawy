@@ -6,8 +6,10 @@
 #pragma once
 #include "item/item.hpp"
 #include "libdrawywidgets_private_export.h"
+#include <QList>
 #include <QObject>
 #include <QPointF>
+class Page;
 class QDebug;
 class QJsonObject;
 class ApplicationContext;
@@ -16,9 +18,15 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT SerializeJob : public QObject
     Q_OBJECT
 public:
     struct SerializeInfo {
+        // TODO remove it
         QPointF offsetPos{0, 0};
+        // TODO remove it
         qreal zoomFactor{1.0};
+        // TODO remove it
         QList<std::shared_ptr<Item>> items;
+
+        int currentPage = 0;
+        QList<Page *> pages;
     };
 
     explicit SerializeJob(ApplicationContext *context, QObject *parent = nullptr);
