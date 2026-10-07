@@ -31,6 +31,7 @@ public:
 
 Q_SIGNALS:
     void deserializeDone(const DeserializeJob::DeserializeInfo &info);
+    void deserializeFailed();
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void deserializeItems();

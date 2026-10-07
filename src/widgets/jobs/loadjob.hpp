@@ -33,9 +33,11 @@ public:
 
 Q_SIGNALS:
     void loadDone(const LoadJob::LoadInfo &info);
+    void loadFailed();
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);
+    LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeFailed();
     QString mFileName;
     bool mIsAutoSave{false};
     ApplicationContext *const mApplicationContext;

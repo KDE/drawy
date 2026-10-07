@@ -672,6 +672,10 @@ void ActionManager::loadFile(const QString &fileName)
     auto job = new LoadJob(m_context, this);
     job->setFileName(fileName);
     connect(job, &LoadJob::loadDone, this, &ActionManager::slotLoadDone);
+    connect(job, &LoadJob::loadFailed, this, [this, fileName]() {
+        slotLoadFailed(fileName);
+    });
+
     job->start();
 }
 
@@ -702,6 +706,11 @@ bool ActionManager::confirmSaveAfterModification()
     }
 
     return true;
+}
+
+void ActionManager::slotLoadFailed(const QString &fileName)
+{
+    KMessageBox::error(m_context->parentWidget(), i18n("Unable to load \"%1\".", fileName), i18nc("@title:window", "Load File"));
 }
 
 void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)

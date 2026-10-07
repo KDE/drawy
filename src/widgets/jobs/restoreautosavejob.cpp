@@ -66,6 +66,10 @@ void RestoreAutoSaveJob::restoreFile()
         deleteLater();
     });
 
+    connect(job, &LoadJob::loadFailed, this, [this]() {
+        removeAutoSaveFile();
+    });
+
     job->start();
 }
 

@@ -25,6 +25,7 @@ void DeserializeJob::start()
 {
     if (!canStart()) {
         qCWarning(DRAWY_LOG) << "JsonObject is not valid";
+        Q_EMIT deserializeFailed();
         deleteLater();
         return;
     }

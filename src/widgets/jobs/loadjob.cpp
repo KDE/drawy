@@ -25,6 +25,7 @@ void LoadJob::start()
 {
     if (!canStart()) {
         qCWarning(DRAWY_LOG) << "File path is not defined";
+        Q_EMIT loadFailed();
         deleteLater();
         return;
     }
@@ -32,6 +33,7 @@ void LoadJob::start()
     QFile file(mFileName);
     if (!file.open(QIODevice::ReadOnly)) {
         qCWarning(DRAWY_LOG) << "Failed to open file:" << file.errorString();
+        Q_EMIT loadFailed();
         deleteLater();
         return;
     }
@@ -44,6 +46,7 @@ void LoadJob::start()
     const QJsonDocument doc = QJsonDocument::fromJson(byteArray, &parseError);
     if (doc.isNull() || !doc.isObject()) {
         qCWarning(DRAWY_LOG) << "JSON parse failed:" << parseError.errorString() << "offset:" << parseError.offset;
+        Q_EMIT loadFailed();
         deleteLater();
         return;
     }
@@ -52,8 +55,15 @@ void LoadJob::start()
     auto job = new DeserializeJob(this);
     job->setJsonObject(docObj);
     connect(job, &DeserializeJob::deserializeDone, this, &LoadJob::slotDeserializeDone);
+    connect(job, &DeserializeJob::deserializeFailed, this, &LoadJob::slotDeserializeFailed);
 
     job->start();
+}
+
+void LoadJob::slotDeserializeFailed()
+{
+    Q_EMIT loadFailed();
+    deleteLater();
 }
 
 void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
