@@ -18,7 +18,7 @@ int SerializerUtils::version()
 
 int SerializerUtils::pageVersion()
 {
-    return 2;
+    return static_cast<int>(Version::Page);
 }
 
 QJsonObject SerializerUtils::toJson(const QPointF &point)

@@ -42,7 +42,7 @@ void SerializeJob::start()
 void SerializeJob::serializeItems()
 {
     QJsonObject obj;
-    obj[u"version"_s] = SerializerUtils::version();
+    obj[u"version"_s] = SerializerUtils::version(); // TODO change to pageVersion when ok
     serializePage(obj);
     Q_EMIT serializeDone(obj);
     deleteLater();

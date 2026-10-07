@@ -13,7 +13,8 @@ namespace SerializerUtils
 {
 enum class Version : int8_t {
     Initial = 1,
-    HtmlText = 2
+    HtmlText = 2,
+    Page = 3,
 };
 
 [[nodiscard]] LIBDRAWYGUI_EXPORT int version();

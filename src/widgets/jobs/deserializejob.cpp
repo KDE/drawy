@@ -31,10 +31,14 @@ void DeserializeJob::start()
         return;
     }
     const int version = mJsonObject["version"_L1].toInt();
-    if (version == SerializerUtils::version()) {
-        deserializeItems();
-    } else if (version == SerializerUtils::pageVersion()) {
+    if (version == SerializerUtils::pageVersion()) {
         deserializePages();
+    } else if (version >= static_cast<int>(SerializerUtils::Version::Initial) && version <= SerializerUtils::version()) {
+        deserializeItems();
+    } else {
+        qCWarning(DRAWY_LOG) << "Invalid file version:" << version;
+        Q_EMIT deserializeFailed();
+        deleteLater();
     }
 }
 
