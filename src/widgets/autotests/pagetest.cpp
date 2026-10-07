@@ -19,3 +19,5 @@ void PageTest::shouldHaveDefaultValues()
     const Page p(nullptr);
     QVERIFY(p.name().isEmpty());
 }
+
+#include "moc_pagetest.cpp"

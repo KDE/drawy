@@ -268,6 +268,8 @@ target_sources(
         customelementswidget/customelementslistviewdelegate.cpp
         page/page.hpp
         page/page.cpp
+        page/pagemanager.hpp
+        page/pagemanager.cpp
 )
 
 if(USE_DBUS)
@@ -360,6 +362,10 @@ ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_powermanager_debug.
 
 ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_resize_debug.h IDENTIFIER DRAWY_RESIZE_LOG
     CATEGORY_NAME org.kde.drawy_resize DESCRIPTION "drawy (resize)" EXPORT DRAWY
+)
+
+ecm_qt_declare_logging_category(libdrawywidgets HEADER drawy_page_debug.h IDENTIFIER DRAWY_PAGE_LOG
+    CATEGORY_NAME org.kde.drawy_page DESCRIPTION "drawy (page)" EXPORT DRAWY
 )
 
 # install(FILES settings/drawyglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})

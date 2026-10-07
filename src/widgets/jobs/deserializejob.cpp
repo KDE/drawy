@@ -54,6 +54,7 @@ void DeserializeJob::setJsonObject(const QJsonObject &newJsonObject)
 
 void DeserializeJob::deserializePages()
 {
+    // TODO deserialize pages
     deserializeItems();
 }
 

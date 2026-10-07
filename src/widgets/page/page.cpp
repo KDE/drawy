@@ -29,3 +29,5 @@ void Page::setName(const QString &newName)
 {
     mName = newName;
 }
+
+#include "moc_page.cpp"
