@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -11,6 +12,7 @@ class SpatialContext;
 class UIContext;
 class SelectionContext;
 class MimeManager;
+class PageManager;
 
 /**
  * @note: This class was made a Singleton recently, so in many places it is
@@ -30,6 +32,7 @@ public:
     [[nodiscard]] UIContext *uiContext() const;
     [[nodiscard]] SelectionContext *selectionContext() const;
     [[nodiscard]] MimeManager *mimeManager() const;
+    [[nodiscard]] PageManager *pageManager() const;
 
     void reset(); // resets the canvas to a blank state
 
@@ -59,5 +62,6 @@ private:
     UIContext *const m_uiContext;
     SelectionContext *const m_selectionContext;
     MimeManager *const m_mimeManager;
+    PageManager *const m_pageManager;
     bool mDebug = false;
 };

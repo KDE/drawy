@@ -10,6 +10,7 @@
 #include "coordinatetransformer.hpp"
 #include "drawy_debug.h"
 #include "mime/mimemanager.hpp"
+#include "page/pagemanager.hpp"
 #include "renderingcontext.hpp"
 #include "selectioncontext.hpp"
 #include "spatialcontext.hpp"
@@ -24,6 +25,7 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_uiContext(new UIContext(this))
     , m_selectionContext(new SelectionContext(this))
     , m_mimeManager(new MimeManager(this))
+    , m_pageManager(new PageManager(this))
 {
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
@@ -44,6 +46,11 @@ ApplicationContext::~ApplicationContext()
 QString ApplicationContext::unsavedFileName() const
 {
     return i18nc("Default unsaved file name", "Untitled");
+}
+
+PageManager *ApplicationContext::pageManager() const
+{
+    return m_pageManager;
 }
 
 QString ApplicationContext::currentFileName() const
