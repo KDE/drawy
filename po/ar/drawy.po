@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:42+0000\n"
+"POT-Creation-Date: 2026-10-07 00:44+0000\n"
 "PO-Revision-Date: 2026-08-10 21:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,63 +28,63 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: apps/main.cpp:43 widgets/context/aboutdata.cpp:17
+#: apps/main.cpp:45 widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
 msgstr "© 2025-%1 مؤلفو السبورة"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:51
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
 msgstr "براياغ جاين"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:51
 #, kde-format
 msgid "Maintainer"
 msgstr "الصائن"
 
-#: apps/main.cpp:50
+#: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "لوران مونتال"
 
-#: apps/main.cpp:50
+#: apps/main.cpp:52
 #, kde-format
 msgid "Developer"
 msgstr "مطوّر"
 
-#: apps/main.cpp:51
+#: apps/main.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
 msgstr "عبد الهادي وائل"
 
-#: apps/main.cpp:51
+#: apps/main.cpp:53
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
 msgstr "مطور في برنامج GSoc 2026 (تحسين مكون النص)"
 
-#: apps/main.cpp:52
+#: apps/main.cpp:54
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
 msgstr "نيكولاي كوتشولين"
 
-#: apps/main.cpp:52
+#: apps/main.cpp:54
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
 msgstr "إصلاح الأخطاء. استيراد/تصدير الملفات"
 
-#: apps/main.cpp:62
+#: apps/main.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "مُعطى اختياري 'ملفّ' "
 
-#: apps/main.cpp:63
+#: apps/main.cpp:65
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "أداة مفيدة غير محدودة لتبادل الأفكار!"

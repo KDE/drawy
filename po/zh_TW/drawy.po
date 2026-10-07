@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-23 00:42+0000\n"
+"POT-Creation-Date: 2026-10-07 00:44+0000\n"
 "PO-Revision-Date: 2026-09-17 02:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -25,63 +25,63 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: apps/main.cpp:43 widgets/context/aboutdata.cpp:17
+#: apps/main.cpp:45 widgets/context/aboutdata.cpp:17
 #, kde-format
 msgctxt "Copyright text, keep the © symbol and the en dash for the year range"
 msgid "© 2025–%1 Drawy authors"
 msgstr "© 2025–%1 Drawy Drawy 作者群"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:51
 #, kde-format
 msgctxt "@info:credit"
 msgid "Prayag Jain"
 msgstr "Prayag Jain"
 
-#: apps/main.cpp:49
+#: apps/main.cpp:51
 #, kde-format
 msgid "Maintainer"
 msgstr "維護者"
 
-#: apps/main.cpp:50
+#: apps/main.cpp:52
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: apps/main.cpp:50
+#: apps/main.cpp:52
 #, kde-format
 msgid "Developer"
 msgstr "開發者"
 
-#: apps/main.cpp:51
+#: apps/main.cpp:53
 #, kde-format
 msgctxt "@info:credit"
 msgid "Abdelhadi Wael"
 msgstr "Abdelhadi Wael"
 
-#: apps/main.cpp:51
+#: apps/main.cpp:53
 #, kde-format
 msgid "GSoc 2026 developper (Improve text component)"
 msgstr "GSoC 2026 開發者（改善文字元件）"
 
-#: apps/main.cpp:52
+#: apps/main.cpp:54
 #, kde-format
 msgctxt "@info:credit"
 msgid "Nikolay Kochulin"
 msgstr "Nikolay Kochulin"
 
-#: apps/main.cpp:52
+#: apps/main.cpp:54
 #, kde-format
 msgid "Bug Fixing. Import/Export Files"
 msgstr "錯誤修正、檔案匯入與匯出"
 
-#: apps/main.cpp:62
+#: apps/main.cpp:64
 #, kde-format
 msgctxt "@info:shell"
 msgid "An optional argument 'file' "
 msgstr "選擇性參數 'file'"
 
-#: apps/main.cpp:63
+#: apps/main.cpp:65
 #, kde-format
 msgid "Your handy, infinite brainstorming tool!"
 msgstr "好用的無限畫布腦力激盪工具。"
