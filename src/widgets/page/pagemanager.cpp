@@ -19,6 +19,15 @@ bool PageManager::isIndexValid(int index) const
     return index >= 0 && index < mPages.count();
 }
 
+void PageManager::movePage(int from, int to)
+{
+    if (from < 0 || from > mPages.count() || to < 0 || to > mPages.count()) {
+        qCWarning(DRAWY_PAGE_LOG) << "Invalid index: to " << to << " from " << from;
+        return;
+    }
+    mPages.move(from, to);
+}
+
 void PageManager::updateCurrentPage(int index)
 {
     if (mCurrentPage != index) {

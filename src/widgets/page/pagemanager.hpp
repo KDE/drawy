@@ -32,6 +32,8 @@ public:
     // PageManager takes ownership of newPages and deletes the previous pages
     void setPages(const QList<Page *> &newPages);
 
+    void movePage(int from, int to);
+
 Q_SIGNALS:
     void currentPageChanged(int index);
 
