@@ -225,6 +225,7 @@
   <releases>
     <release version="1.1.0" type="snapshot">
       <description>
+        <p>Add page support</p>
         <p>Improve text element support (Spell Checking, Alignment, Bold, Italic etc.) (GSoc2026)</p>
         <p xml:lang="ar">تحسين دعم عناصر النص (التدقيق الإملائي، المحاذاة، الخط العريض، الخط المائل، إلخ) (GSoc2026)</p>
         <p xml:lang="ca">Millora la implementació d'elements de text (Verificació ortogràfica, alineació, negreta, cursiva, etc.) (GSoc2026)</p>
