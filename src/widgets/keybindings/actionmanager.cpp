@@ -36,6 +36,7 @@
 #include "event/event.hpp"
 #include "jobs/serializejob.hpp"
 #include "keybindmanager.hpp"
+#include "page/page.hpp"
 
 #include "canvas/canvas.hpp"
 #include "components/propertybar.hpp"
@@ -565,6 +566,7 @@ void ActionManager::newFile()
     }
 
     m_context->reset();
+    m_context->pageManager()->setPages({new Page(m_context)});
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
     m_context->setCurrentFileModified(false);
