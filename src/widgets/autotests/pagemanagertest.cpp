@@ -169,4 +169,29 @@ void PageManagerTest::shouldSetPages()
     QCOMPARE(m.currentPage(), -1);
 }
 
+void PageManagerTest::shouldMovePage()
+{
+    PageManager m;
+    m.insertPage(0, createPage(QStringLiteral("1")));
+    m.insertPage(1, createPage(QStringLiteral("2")));
+    m.insertPage(2, createPage(QStringLiteral("3")));
+    QSignalSpy movedSpy(&m, &PageManager::pageMoved);
+
+    // Current page follows the moved page
+    m.movePage(0, 2);
+    QCOMPARE(movedSpy.count(), 1);
+    QCOMPARE(m.currentPage(), 2);
+    QCOMPARE(m.currentName(), QStringLiteral("1"));
+    QCOMPARE(m.pages().at(0)->name(), QStringLiteral("2"));
+
+    // Moving another page over the current one shifts it
+    m.movePage(0, 2);
+    QCOMPARE(m.currentPage(), 1);
+    QCOMPARE(m.currentName(), QStringLiteral("1"));
+
+    // Invalid index
+    m.movePage(0, 3);
+    QCOMPARE(movedSpy.count(), 2);
+}
+
 #include "moc_pagemanagertest.cpp"

@@ -74,6 +74,7 @@ add_drawy_unittest(svgexporttest.cpp)
 add_drawy_unittest(imagetooltest.cpp)
 add_drawy_unittest(pagetest.cpp)
 add_drawy_unittest(pagemanagertest.cpp)
+add_drawy_unittest(pagemodeltest.cpp)
 set_tests_properties(
     svgexporttest
     PROPERTIES

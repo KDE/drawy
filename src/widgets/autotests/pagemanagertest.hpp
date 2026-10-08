@@ -25,4 +25,5 @@ private Q_SLOTS:
     void shouldNotSetInvalidCurrentPage();
     void shouldRenamePage();
     void shouldSetPages();
+    void shouldMovePage();
 };

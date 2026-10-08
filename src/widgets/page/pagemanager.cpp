@@ -21,11 +21,17 @@ bool PageManager::isIndexValid(int index) const
 
 void PageManager::movePage(int from, int to)
 {
-    if (from < 0 || from > mPages.count() || to < 0 || to > mPages.count()) {
+    if (from < 0 || from >= mPages.count() || to < 0 || to >= mPages.count()) {
         qCWarning(DRAWY_PAGE_LOG) << "Invalid index: to " << to << " from " << from;
         return;
     }
+    const Page *current{currentPageObject()};
     mPages.move(from, to);
+    Q_EMIT pageMoved(from, to);
+    // Keep the same page current, its index may have changed
+    if (current) {
+        updateCurrentPage(mPages.indexOf(current));
+    }
 }
 
 void PageManager::updateCurrentPage(int index)
@@ -53,6 +59,7 @@ void PageManager::insertPage(int index, Page *page)
     } else if (index <= mCurrentPage) {
         updateCurrentPage(mCurrentPage + 1);
     }
+    Q_EMIT pageInserted(index);
 }
 
 void PageManager::removePage(int index)
@@ -70,6 +77,7 @@ void PageManager::removePage(int index)
         // The current page changed even if its index is the same
         Q_EMIT currentPageChanged(mCurrentPage);
     }
+    Q_EMIT pageRemoved(index);
 }
 
 QList<Page *> PageManager::pages() const
@@ -90,12 +98,14 @@ void PageManager::setPages(const QList<Page *> &newPages)
     }
     mCurrentPage = mPages.isEmpty() ? -1 : 0;
     Q_EMIT currentPageChanged(mCurrentPage);
+    Q_EMIT pagesReset();
 }
 
 void PageManager::renamePage(int index, const QString &name)
 {
     if (isIndexValid(index)) {
         mPages[index]->setName(name);
+        Q_EMIT pageRenamed(index, name);
     } else {
         qCWarning(DRAWY_PAGE_LOG) << "invalid index" << index;
     }

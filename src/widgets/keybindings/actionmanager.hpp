@@ -57,6 +57,10 @@ public:
         LockItems,
         UnLockItem,
         AddCustomElement,
+        NewPage,
+        DeletePage,
+        NextPage,
+        PreviousPage,
     };
 
     Q_ENUM(Action)
@@ -76,6 +80,9 @@ public:
     void setReleasesInfo(const QList<KAboutRelease> &releases);
 #endif
     void loadFile(const QString &fileName);
+
+    void activatePage(int index);
+    void deletePage(int index);
 
 private:
     void zoomIn();
@@ -120,6 +127,12 @@ private:
     void exportToImageElements(const QList<std::shared_ptr<Item>> &items);
     void slotAddCustomElement();
     void slotLoadFailed(const QString &fileName);
+    void slotNewPage();
+    void slotDeletePage();
+    void slotNextPage();
+    void slotPreviousPage();
+    void slotUpdatePageButtons();
+    void refreshCurrentPage();
     QAction *createAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys);
     QAction *createToolAction(const Action &actionType, const QString &title, const QList<QKeySequence> &keys, Tool::Type toolType);
 

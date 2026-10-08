@@ -37,6 +37,11 @@ public:
 
 Q_SIGNALS:
     void currentPageChanged(int index);
+    void pageInserted(int index);
+    void pageRemoved(int index);
+    void pageMoved(int from, int to);
+    void pageRenamed(int index, const QString &name);
+    void pagesReset();
 
 private:
     [[nodiscard]] bool isIndexValid(int index) const;

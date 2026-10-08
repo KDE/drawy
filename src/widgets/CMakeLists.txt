@@ -270,6 +270,12 @@ target_sources(
         page/page.cpp
         page/pagemanager.hpp
         page/pagemanager.cpp
+        page/pagemodel.hpp
+        page/pagemodel.cpp
+        page/pageslistview.hpp
+        page/pageslistview.cpp
+        page/pageswidget.hpp
+        page/pageswidget.cpp
 )
 
 if(USE_DBUS)

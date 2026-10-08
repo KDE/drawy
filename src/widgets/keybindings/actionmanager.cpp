@@ -46,12 +46,15 @@
 #include "context/selectioncontext.hpp"
 #include "context/spatialcontext.hpp"
 #include "context/uicontext.hpp"
+#include "data-structures/cachegrid.hpp"
 #include "data-structures/quadtree.hpp"
 #include "debug/debugdialog.hpp"
 #include "drawy_debug.h"
+#include "item/itemcache/itemcache.hpp"
 #include "jobs/loadjobutil.hpp"
 #include "jobs/saveasjob.hpp"
 #include "mime/mimemanager.hpp"
+#include "page/page.hpp"
 #include "page/pagemanager.hpp"
 #include "serializer/pngserializer.hpp"
 #include "serializer/serializerutils.hpp"
@@ -158,6 +161,26 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
 
     createAction(Action::AddCustomElement, i18nc("@action", "Add to Library"), {}, this, &ActionManager::slotAddCustomElement);
 
+    createAction(Action::NewPage,
+                 i18nc("@action", "New Page"),
+                 {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_N))},
+                 this,
+                 &ActionManager::slotNewPage)
+        ->setIcon(QIcon::fromTheme(u"list-add"_s));
+    createAction(Action::DeletePage, i18nc("@action", "Delete Page"), {}, this, &ActionManager::slotDeletePage)->setIcon(QIcon::fromTheme(u"list-remove"_s));
+    createAction(Action::NextPage,
+                 i18nc("@action", "Next Page"),
+                 {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_PageDown))},
+                 this,
+                 &ActionManager::slotNextPage)
+        ->setIcon(QIcon::fromTheme(u"go-next"_s));
+    createAction(Action::PreviousPage,
+                 i18nc("@action", "Previous Page"),
+                 {QKeySequence(QKeyCombination(Qt::CTRL, Qt::Key_PageUp))},
+                 this,
+                 &ActionManager::slotPreviousPage)
+        ->setIcon(QIcon::fromTheme(u"go-previous"_s));
+
     createAction(Action::Debug, i18nc("@action", "Debug"), {}, this, &ActionManager::slotDebug);
 #if HAVE_WHATSNEWSNGSUPPORT
     createAction(Action::WhatsNew, i18nc("@action", "What's new"), {}, this, &ActionManager::slotShowWhatsNew);
@@ -181,6 +204,20 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     connect(action(Action::SendBackward), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
     connect(action(Action::BringToFront), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
     connect(action(Action::SendToBack), &QAction::triggered, this, &ActionManager::slotUpdateZorderAndGroupButtons);
+
+    const auto pageManager = m_context->pageManager();
+    connect(pageManager, &PageManager::currentPageChanged, this, &ActionManager::slotUpdatePageButtons);
+    connect(pageManager, &PageManager::pageInserted, this, &ActionManager::slotUpdatePageButtons);
+    connect(pageManager, &PageManager::pageRemoved, this, &ActionManager::slotUpdatePageButtons);
+    connect(pageManager, &PageManager::pageMoved, this, &ActionManager::slotUpdatePageButtons);
+    connect(pageManager, &PageManager::pagesReset, this, &ActionManager::slotUpdatePageButtons);
+    connect(pageManager, &PageManager::pageMoved, this, [this]() {
+        m_context->setCurrentFileModified(true);
+    });
+    connect(pageManager, &PageManager::pageRenamed, this, [this]() {
+        m_context->setCurrentFileModified(true);
+    });
+    slotUpdatePageButtons();
 
     m_recentFiles->loadEntries(KConfigGroup(KSharedConfig::openConfig(), u"Recent Files"_s));
 }
@@ -257,6 +294,14 @@ QString ActionManager::actionName(Action type) const
         return u"unlock_item"_s;
     case Action::AddCustomElement:
         return u"add_custom_element"_s;
+    case Action::NewPage:
+        return u"new_page"_s;
+    case Action::DeletePage:
+        return u"delete_page"_s;
+    case Action::NextPage:
+        return u"next_page"_s;
+    case Action::PreviousPage:
+        return u"previous_page"_s;
     }
     Q_UNREACHABLE();
     return u""_s;
@@ -714,6 +759,93 @@ bool ActionManager::confirmSaveAfterModification()
 void ActionManager::slotLoadFailed(const QString &fileName)
 {
     KMessageBox::error(m_context->parentWidget(), i18n("Unable to load \"%1\".", fileName), i18nc("@title:window", "Load File"));
+}
+
+void ActionManager::slotNewPage()
+{
+    const auto pageManager = m_context->pageManager();
+    const int index{pageManager->currentPage() + 1};
+    auto page = new Page(m_context);
+    page->setName(i18nc("@label default page name", "Page %1", pageManager->pages().count() + 1));
+    pageManager->insertPage(index, page);
+    activatePage(index);
+    m_context->setCurrentFileModified(true);
+}
+
+void ActionManager::slotDeletePage()
+{
+    deletePage(m_context->pageManager()->currentPage());
+}
+
+void ActionManager::deletePage(int index)
+{
+    const auto pageManager = m_context->pageManager();
+    if (pageManager->pages().count() <= 1 || index < 0 || index >= pageManager->pages().count()) {
+        return;
+    }
+
+    const Page *page{pageManager->pages().at(index)};
+    if (page->quadtree().size() > 0) {
+        const int answer = KMessageBox::warningContinueCancel(m_context->parentWidget(),
+                                                              i18n("Do you really want to delete the page \"%1\" and its content?", page->name()),
+                                                              i18nc("@title:window", "Delete Page"),
+                                                              KStandardGuiItem::del());
+        if (answer != KMessageBox::Continue) {
+            return;
+        }
+    }
+
+    const bool isCurrentPage{index == pageManager->currentPage()};
+    if (isCurrentPage) {
+        // Selected items belong to the page which will be deleted
+        m_context->selectionContext()->reset();
+    }
+    pageManager->removePage(index);
+    if (isCurrentPage) {
+        refreshCurrentPage();
+    }
+    m_context->setCurrentFileModified(true);
+}
+
+void ActionManager::slotNextPage()
+{
+    activatePage(m_context->pageManager()->currentPage() + 1);
+}
+
+void ActionManager::slotPreviousPage()
+{
+    activatePage(m_context->pageManager()->currentPage() - 1);
+}
+
+void ActionManager::activatePage(int index)
+{
+    const auto pageManager = m_context->pageManager();
+    if (index < 0 || index >= pageManager->pages().count() || index == pageManager->currentPage()) {
+        return;
+    }
+    m_context->selectionContext()->reset();
+    pageManager->setCurrentPage(index);
+    refreshCurrentPage();
+}
+
+void ActionManager::refreshCurrentPage()
+{
+    const auto renderingContext = m_context->renderingContext();
+    renderingContext->setZoomFactor(m_context->pageManager()->currentPageObject()->zoomFactor());
+    renderingContext->cacheGrid().markAllDirty();
+    renderingContext->itemCache().clear();
+    renderingContext->markForRender();
+    renderingContext->markForUpdate();
+}
+
+void ActionManager::slotUpdatePageButtons()
+{
+    const auto pageManager = m_context->pageManager();
+    const int count{static_cast<int>(pageManager->pages().count())};
+    const int current{pageManager->currentPage()};
+    action(Action::PreviousPage)->setEnabled(current > 0);
+    action(Action::NextPage)->setEnabled(current >= 0 && current < count - 1);
+    action(Action::DeletePage)->setEnabled(count > 1);
 }
 
 void ActionManager::slotLoadDone(const LoadJobUtil::DeserializeInfo &info)

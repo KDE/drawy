@@ -86,7 +86,7 @@ void UIContext::initializeUIContext()
             m_topWidgets->initialize();
         }
     });
-    m_bottomLeftWidgets = new BottomLeftWidgets(m_actionManager, m_applicationContext->parentWidget());
+    m_bottomLeftWidgets = new BottomLeftWidgets(m_actionManager, m_applicationContext->pageManager(), m_applicationContext->parentWidget());
     connect(m_bottomLeftWidgets, &BottomLeftWidgets::resetZoom, this, [this]() {
         m_applicationContext->renderingContext()->updateZoomFactor(1);
     });
