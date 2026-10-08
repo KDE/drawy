@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:44+0000\n"
+"POT-Creation-Date: 2026-10-08 00:43+0000\n"
 "PO-Revision-Date: 2026-08-10 06:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -837,7 +837,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Izvozi v sliko"
 
-#: widgets/keybindings/actionmanager.cpp:687
+#: widgets/keybindings/actionmanager.cpp:691
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -846,11 +846,24 @@ msgstr ""
 "Dokument \"%1\" je bil spremenjen.\n"
 "Ali želite shraniti spremembe ali jih zavreči?"
 
-#: widgets/keybindings/actionmanager.cpp:691
+#: widgets/keybindings/actionmanager.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Zahtevana dejavnost"
+
+#: widgets/keybindings/actionmanager.cpp:713
+#, kde-format
+msgid "Unable to load \"%1\"."
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:713
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save File"
+msgctxt "@title:window"
+msgid "Load File"
+msgstr "Shrani datoteko"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

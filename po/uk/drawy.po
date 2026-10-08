@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:44+0000\n"
+"POT-Creation-Date: 2026-10-08 00:43+0000\n"
 "PO-Revision-Date: 2026-08-10 13:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -839,7 +839,7 @@ msgctxt "@title:window"
 msgid "Export to Image"
 msgstr "Експортування до зображення"
 
-#: widgets/keybindings/actionmanager.cpp:687
+#: widgets/keybindings/actionmanager.cpp:691
 #, kde-format
 msgid ""
 "The document \"%1\" has been modified.\n"
@@ -848,11 +848,24 @@ msgstr ""
 "До документа «%1» було внесено зміни.\n"
 "Хочете зберегти внесені зміни чи відкинути їх?"
 
-#: widgets/keybindings/actionmanager.cpp:691
+#: widgets/keybindings/actionmanager.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "Action Required"
 msgstr "Потрібна дія"
+
+#: widgets/keybindings/actionmanager.cpp:713
+#, kde-format
+msgid "Unable to load \"%1\"."
+msgstr ""
+
+#: widgets/keybindings/actionmanager.cpp:713
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save File"
+msgctxt "@title:window"
+msgid "Load File"
+msgstr "Збереження файла"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
