@@ -27,7 +27,7 @@ public:
 
     QuadTree &quadtree() const;
 
-    qreal zoomFactor() const;
+    [[nodiscard]] qreal zoomFactor() const;
     void setZoomFactor(qreal newZoomFactor);
 
 private:

@@ -44,8 +44,8 @@ Q_SIGNALS:
     void pagesReset();
 
 private:
-    [[nodiscard]] bool isIndexValid(int index) const;
-    void updateCurrentPage(int index);
+    [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT bool isIndexValid(int index) const;
+    LIBDRAWYWIDGETS_NO_EXPORT void updateCurrentPage(int index);
     int mCurrentPage = -1;
     QList<Page *> mPages;
 };

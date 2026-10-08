@@ -28,8 +28,8 @@ public:
     [[nodiscard]] bool moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) override;
 
 private:
-    void slotResetModel();
-    void slotCurrentPageChanged();
+    LIBDRAWYWIDGETS_NO_EXPORT void slotResetModel();
+    LIBDRAWYWIDGETS_NO_EXPORT void slotCurrentPageChanged();
     PageManager *const mPageManager;
     bool mMovingRows = false;
 };

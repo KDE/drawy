@@ -21,8 +21,8 @@ protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
-    void slotSelectCurrentPage();
-    void slotCurrentRowChanged(const QModelIndex &current);
-    void movePage(int row, int destinationRow);
+    LIBDRAWYWIDGETS_NO_EXPORT void slotSelectCurrentPage();
+    LIBDRAWYWIDGETS_NO_EXPORT void slotCurrentRowChanged(const QModelIndex &current);
+    LIBDRAWYWIDGETS_NO_EXPORT void movePage(int row, int destinationRow);
     ActionManager *const mActionManager;
 };
