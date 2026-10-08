@@ -28,7 +28,9 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_pageManager(new PageManager(this))
 {
     connect(m_pageManager, &PageManager::currentPageChanged, m_spatialContext, &SpatialContext::updateCommandHistoryConnections);
-    m_pageManager->insertPage(0, new Page(this));
+    auto page = new Page(this);
+    page->setName(Page::defaultName(0));
+    m_pageManager->insertPage(0, page);
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
     connect(m_spatialContext, &SpatialContext::undoRedoChanged, this, [this]() -> void {

@@ -6,7 +6,6 @@
 #include "pagemodel.hpp"
 #include "page.hpp"
 #include "pagemanager.hpp"
-#include <KLocalizedString>
 #include <QFont>
 
 PageModel::PageModel(PageManager *pageManager, QObject *parent)
@@ -65,9 +64,6 @@ QVariant PageModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole:
     case Qt::ToolTipRole:
-        if (page->name().isEmpty()) {
-            return i18nc("@label default page name", "Page %1", index.row() + 1);
-        }
         return page->name();
     case Qt::EditRole:
         return page->name();

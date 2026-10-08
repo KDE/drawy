@@ -566,7 +566,9 @@ void ActionManager::newFile()
     }
 
     m_context->reset();
-    m_context->pageManager()->setPages({new Page(m_context)});
+    auto page = new Page(m_context);
+    page->setName(Page::defaultName(0));
+    m_context->pageManager()->setPages({page});
     m_context->renderingContext()->markForRender();
     m_context->renderingContext()->markForUpdate();
     m_context->setCurrentFileModified(false);
@@ -768,7 +770,7 @@ void ActionManager::slotNewPage()
     const auto pageManager = m_context->pageManager();
     const int index{pageManager->currentPage() + 1};
     auto page = new Page(m_context);
-    page->setName(i18nc("@label default page name", "Page %1", pageManager->pages().count() + 1));
+    page->setName(Page::defaultName(pageManager->pages().count()));
     pageManager->insertPage(index, page);
     activatePage(index);
     m_context->setCurrentFileModified(true);

@@ -17,6 +17,8 @@ public:
     explicit Page(ApplicationContext *context);
     ~Page();
 
+    [[nodiscard]] static QString defaultName(int index);
+
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 

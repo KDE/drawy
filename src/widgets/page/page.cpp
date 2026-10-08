@@ -8,6 +8,7 @@
 #include "command/commandhistory.hpp"
 #include "context/applicationcontext.hpp"
 #include "context/renderingcontext.hpp"
+#include <KLocalizedString>
 
 Page::Page(ApplicationContext *context)
     : QObject(context)
@@ -35,6 +36,11 @@ qreal Page::zoomFactor() const
 void Page::setZoomFactor(qreal newZoomFactor)
 {
     m_zoomFactor = newZoomFactor;
+}
+
+QString Page::defaultName(int index)
+{
+    return i18nc("@label default page name", "Page %1", index + 1);
 }
 
 QString Page::name() const

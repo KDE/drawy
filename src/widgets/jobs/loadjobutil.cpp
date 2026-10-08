@@ -40,7 +40,7 @@ void LoadJobUtil::loadFile(ApplicationContext *context, const LoadJobUtil::Deser
     pages.reserve(info.pages.count());
     for (const auto &p : info.pages) {
         auto page = new Page(context);
-        page->setName(p.name);
+        page->setName(p.name.isEmpty() ? Page::defaultName(pages.count()) : p.name);
         page->setOffsetPos(p.offsetPos);
         page->setZoomFactor(p.zoomFactor);
         QuadTree &quadtree{page->quadtree()};
@@ -50,7 +50,9 @@ void LoadJobUtil::loadFile(ApplicationContext *context, const LoadJobUtil::Deser
         pages.append(page);
     }
     if (pages.isEmpty()) {
-        pages.append(new Page(context));
+        auto page = new Page(context);
+        page->setName(Page::defaultName(0));
+        pages.append(page);
     }
 
     PageManager *pageManager = context->pageManager();

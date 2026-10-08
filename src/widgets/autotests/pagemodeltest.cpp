@@ -54,8 +54,7 @@ void PageModelTest::shouldFollowPageManager()
     m.insertPage(1, createPage(QString()));
     QCOMPARE(model.rowCount(), 2);
     QCOMPARE(model.index(0).data().toString(), QStringLiteral("1"));
-    // Display a default name when the page has none
-    QCOMPARE(model.index(1).data().toString(), QStringLiteral("Page 2"));
+    QVERIFY(model.index(1).data().toString().isEmpty());
     QVERIFY(model.index(1).data(Qt::EditRole).toString().isEmpty());
 
     QVERIFY(model.index(0).data(PageModel::IsCurrentPageRole).toBool());
