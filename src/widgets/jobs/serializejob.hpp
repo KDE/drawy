@@ -4,27 +4,19 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #pragma once
-#include "item/item.hpp"
 #include "libdrawywidgets_private_export.h"
 #include <QList>
 #include <QObject>
-#include <QPointF>
 class Page;
 class QDebug;
 class QJsonObject;
 class ApplicationContext;
+class QJsonArray;
 class LIBDRAWYWIDGETS_TESTS_EXPORT SerializeJob : public QObject
 {
     Q_OBJECT
 public:
     struct SerializeInfo {
-        // TODO remove it
-        QPointF offsetPos{0, 0};
-        // TODO remove it
-        qreal zoomFactor{1.0};
-        // TODO remove it
-        QList<std::shared_ptr<Item>> items;
-
         int currentPage = 0;
         QList<Page *> pages;
     };
@@ -44,7 +36,7 @@ Q_SIGNALS:
 
 private:
     LIBDRAWYWIDGETS_NO_EXPORT void serializeItems();
-    LIBDRAWYWIDGETS_NO_EXPORT void serializePage(QJsonObject &obj);
+    [[nodiscard]] LIBDRAWYWIDGETS_NO_EXPORT QJsonArray serializePages() const;
     SerializeInfo mSerializeInfo;
     ApplicationContext *const mApplicationContext;
 };

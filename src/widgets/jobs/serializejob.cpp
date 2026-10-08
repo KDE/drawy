@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "serializejob.hpp"
-#include "context/applicationcontext.hpp"
-#include "context/spatialcontext.hpp"
 #include "data-structures/quadtree.hpp"
 #include "drawy_debug.h"
+#include "page/page.hpp"
 #include "serializer/serializerutils.hpp"
 #include <QDebug>
 #include <QJsonArray>
@@ -42,26 +41,32 @@ void SerializeJob::start()
 void SerializeJob::serializeItems()
 {
     QJsonObject obj;
-    obj[u"version"_s] = SerializerUtils::version(); // TODO change to pageVersion when ok
-    serializePage(obj);
+    obj[u"version"_s] = SerializerUtils::pageVersion();
+    obj[u"current_page"_s] = mSerializeInfo.currentPage;
+    obj[u"pages"_s] = serializePages();
     Q_EMIT serializeDone(obj);
     deleteLater();
 }
 
-void SerializeJob::serializePage(QJsonObject &obj)
+QJsonArray SerializeJob::serializePages() const
 {
-    obj[u"offset_pos"_s] = SerializerUtils::toJson(mSerializeInfo.offsetPos);
-    obj[u"zoom_factor"_s] = mSerializeInfo.zoomFactor;
+    QJsonArray pageArray;
+    for (const auto *page : std::as_const(mSerializeInfo.pages)) {
+        QJsonObject pageObj;
+        pageObj[u"offset_pos"_s] = SerializerUtils::toJson(page->offsetPos());
+        pageObj[u"zoom_factor"_s] = page->zoomFactor();
+        pageObj[u"page_name"_s] = page->name();
 
-    QJsonArray array;
-    for (const auto &item : std::as_const(mSerializeInfo.items)) {
-        int zorder = -1;
-        if (mApplicationContext) {
-            zorder = mApplicationContext->spatialContext()->quadtree().zIndex(item);
+        QJsonArray array;
+        const auto items = page->quadtree().getAllItems();
+        for (const auto &item : items) {
+            const int zorder = page->quadtree().zIndex(item);
+            array.push_back(item->serialize(zorder));
         }
-        array.push_back(item->serialize(zorder));
+        pageObj[u"items"_s] = array;
+        pageArray.append(pageObj);
     }
-    obj[u"items"_s] = array;
+    return pageArray;
 }
 
 SerializeJob::SerializeInfo SerializeJob::serializeInfo() const
@@ -76,9 +81,8 @@ void SerializeJob::setSerializeInfo(const SerializeInfo &newSerializeInfo)
 
 QDebug operator<<(QDebug d, const SerializeJob::SerializeInfo &t)
 {
-    d.space() << "offsetPos:" << t.offsetPos;
-    d.space() << "zoomFactor:" << t.zoomFactor;
-    d.space() << "items:" << t.items.count();
+    d.space() << "currentPage:" << t.currentPage;
+    d.space() << "Number of pages:" << t.pages.count();
     return d;
 }
 

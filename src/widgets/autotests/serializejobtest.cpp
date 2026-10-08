@@ -16,9 +16,8 @@ SerializeJobTest::SerializeJobTest(QObject *parent)
 void SerializeJobTest::shouldHaveDefaultValues()
 {
     const SerializeJob::SerializeInfo info;
-    QCOMPARE(info.offsetPos, {});
-    QCOMPARE(info.zoomFactor, 1.0);
-    QVERIFY(info.items.isEmpty());
+    QCOMPARE(info.currentPage, 0);
+    QVERIFY(info.pages.isEmpty());
 
     const SerializeJob j(nullptr);
     QVERIFY(j.canStart());

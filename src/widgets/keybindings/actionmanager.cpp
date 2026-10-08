@@ -323,9 +323,8 @@ void ActionManager::slotDebug()
     auto d = new DebugDialog;
     auto job = new SerializeJob(m_context, this);
     const SerializeJob::SerializeInfo info{
-        .offsetPos = m_context->spatialContext()->offsetPos(),
-        .zoomFactor = m_context->renderingContext()->zoomFactor(),
-        .items = m_context->spatialContext()->quadtree().getAllItems(),
+        .currentPage = m_context->pageManager()->currentPage(),
+        .pages = m_context->pageManager()->pages(),
     };
     job->setSerializeInfo(info);
     connect(job, &SerializeJob::serializeDone, this, [d](const QJsonObject &obj) {
@@ -537,10 +536,8 @@ void ActionManager::saveAsNewFile()
     auto job = new SaveAsJob(m_context, this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
-        .offsetPos = m_context->spatialContext()->offsetPos(),
-        .zoomFactor = m_context->renderingContext()->zoomFactor(),
-        .items = m_context->spatialContext()->quadtree().getAllItems(),
         .pages = m_context->pageManager()->pages(),
+        .currentPage = m_context->pageManager()->currentPage(),
     };
     job->setSaveAsInfo(info);
     connect(job, &SaveAsJob::saveFileDone, this, [fileName](const QJsonObject &obj) {
@@ -589,9 +586,6 @@ void ActionManager::saveCurrentFile()
     auto job = new SaveAsJob(m_context, this);
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
-        .offsetPos = m_context->spatialContext()->offsetPos(),
-        .zoomFactor = m_context->renderingContext()->zoomFactor(),
-        .items = m_context->spatialContext()->quadtree().getAllItems(),
         .pages = m_context->pageManager()->pages(),
         .currentPage = m_context->pageManager()->currentPage(),
     };

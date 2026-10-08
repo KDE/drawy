@@ -37,11 +37,10 @@ void SaveAsJob::start()
     }
 
     auto job = new SerializeJob(mApplicationContext, this);
-    const SerializeJob::SerializeInfo info{.offsetPos = mSaveAsInfo.offsetPos,
-                                           .zoomFactor = mSaveAsInfo.zoomFactor,
-                                           .items = mSaveAsInfo.items,
-                                           .currentPage = mSaveAsInfo.currentPage,
-                                           .pages = mSaveAsInfo.pages};
+    const SerializeJob::SerializeInfo info{
+        .currentPage = mSaveAsInfo.currentPage,
+        .pages = mSaveAsInfo.pages,
+    };
     job->setSerializeInfo(info);
     connect(job, &SerializeJob::serializeDone, this, &SaveAsJob::slotSerializeDone);
     job->start();
@@ -93,9 +92,8 @@ void SaveAsJob::setSaveAsInfo(const SaveAsInfo &newSaveAsInfo)
 QDebug operator<<(QDebug d, const SaveAsJob::SaveAsInfo &t)
 {
     d.space() << "filePath:" << t.filePath;
-    d.space() << "offsetPos:" << t.offsetPos;
-    d.space() << "zoomFactor:" << t.zoomFactor;
-    d.space() << "items:" << t.items.count();
+    d.space() << "currentPage:" << t.currentPage;
+    d.space() << "Number of pages:" << t.pages.count();
     return d;
 }
 

@@ -5,9 +5,6 @@
  */
 #include "autosavejob.hpp"
 #include "context/applicationcontext.hpp"
-#include "context/renderingcontext.hpp"
-#include "context/spatialcontext.hpp"
-#include "data-structures/quadtree.hpp"
 #include "drawy_autosave_debug.h"
 #include "drawyglobalconfig.h"
 #include "jobs/saveasjob.hpp"
@@ -36,12 +33,8 @@ void AutoSaveJob::saveFile()
 
     const SaveAsJob::SaveAsInfo info{
         .filePath = fileName,
-        .offsetPos = mApplicationContext->spatialContext()->offsetPos(),
-        .zoomFactor = mApplicationContext->renderingContext()->zoomFactor(),
-        .items = mApplicationContext->spatialContext()->quadtree().getAllItems(),
         .pages = mApplicationContext->pageManager()->pages(),
         .currentPage = mApplicationContext->pageManager()->currentPage(),
-
         .isAutoSave = true,
     };
 
