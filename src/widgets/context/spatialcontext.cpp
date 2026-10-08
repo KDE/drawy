@@ -58,6 +58,26 @@ void SpatialContext::setOffsetPos(const QPointF &pos)
     currentPage()->setOffsetPos(pos);
 }
 
+void SpatialContext::updateCommandHistoryConnections()
+{
+    for (const auto &connection : std::as_const(m_commandHistoryConnections)) {
+        disconnect(connection);
+    }
+    m_commandHistoryConnections.clear();
+
+    const Page *page{m_applicationContext->pageManager()->currentPageObject()};
+    if (!page) {
+        return;
+    }
+    const CommandHistory *commandHistory{page->commandHistory()};
+    m_commandHistoryConnections = {
+        connect(commandHistory, &CommandHistory::undoRedoChanged, this, &SpatialContext::undoRedoChanged),
+        connect(commandHistory, &CommandHistory::redoTextChanged, this, &SpatialContext::redoTextChanged),
+        connect(commandHistory, &CommandHistory::undoTextChanged, this, &SpatialContext::undoTextChanged),
+    };
+    Q_EMIT commandHistoryChanged();
+}
+
 void SpatialContext::reset()
 {
     quadtree().clear();

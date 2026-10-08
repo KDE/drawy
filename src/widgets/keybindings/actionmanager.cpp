@@ -14,6 +14,7 @@
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
+#include <QJsonDocument>
 #include <QMimeData>
 #include <QXmlStreamWriter>
 #include <memory>
@@ -164,12 +165,13 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     actionCollection->readSettings();
 
     // managing actions
-    const auto commandHistory = m_context->spatialContext()->commandHistory();
-    connect(commandHistory, &CommandHistory::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
-    connect(commandHistory, &CommandHistory::redoTextChanged, this, [this](const QString &toolTip) {
+    const auto spatialContext = m_context->spatialContext();
+    connect(spatialContext, &SpatialContext::undoRedoChanged, this, &ActionManager::slotUpdateHistoryButtons);
+    connect(spatialContext, &SpatialContext::commandHistoryChanged, this, &ActionManager::slotUpdateHistoryButtons);
+    connect(spatialContext, &SpatialContext::redoTextChanged, this, [this](const QString &toolTip) {
         action(KStandardActions::Redo)->setToolTip(toolTip);
     });
-    connect(commandHistory, &CommandHistory::undoTextChanged, this, [this](const QString &toolTip) {
+    connect(spatialContext, &SpatialContext::undoTextChanged, this, [this](const QString &toolTip) {
         action(KStandardActions::Undo)->setToolTip(toolTip);
     });
     connect(m_context->renderingContext(), &RenderingContext::zoomFactorChanged, this, &ActionManager::slotUpdateZoomButtons);
@@ -714,7 +716,7 @@ void ActionManager::slotLoadFailed(const QString &fileName)
     KMessageBox::error(m_context->parentWidget(), i18n("Unable to load \"%1\".", fileName), i18nc("@title:window", "Load File"));
 }
 
-void ActionManager::slotLoadDone(const LoadJob::LoadInfo &info)
+void ActionManager::slotLoadDone(const LoadJobUtil::DeserializeInfo &info)
 {
     LoadJobUtil::loadFile(m_context, info);
 }

@@ -5,21 +5,14 @@
  */
 #pragma once
 
-#include "deserializejob.hpp"
 #include "libdrawywidgets_private_export.h"
+#include "loadjobutil.hpp"
 #include <QObject>
 class ApplicationContext;
 class LIBDRAWYWIDGETS_TESTS_EXPORT LoadJob : public QObject
 {
     Q_OBJECT
 public:
-    struct LoadInfo {
-        QPointF offsetPos{0, 0};
-        qreal zoomFactor{1.0};
-        QList<std::shared_ptr<Item>> items;
-        bool isAutoSave{false};
-    };
-
     explicit LoadJob(ApplicationContext *context, QObject *parent = nullptr);
     ~LoadJob() override;
 
@@ -32,11 +25,11 @@ public:
     void setIsAutoSave(bool value);
 
 Q_SIGNALS:
-    void loadDone(const LoadJob::LoadInfo &info);
+    void loadDone(const LoadJobUtil::DeserializeInfo &info);
     void loadFailed();
 
 private:
-    LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const DeserializeJob::DeserializeInfo &info);
+    LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeDone(const LoadJobUtil::DeserializeInfo &info);
     LIBDRAWYWIDGETS_NO_EXPORT void slotDeserializeFailed();
     QString mFileName;
     bool mIsAutoSave{false};

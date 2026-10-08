@@ -4,7 +4,6 @@
 
 #include "applicationcontext.hpp"
 
-#include "command/commandhistory.hpp"
 #include "common/constants.hpp"
 #include "common/utils/freehand.hpp"
 #include "coordinatetransformer.hpp"
@@ -28,10 +27,11 @@ ApplicationContext::ApplicationContext(QWidget *parent)
     , m_mimeManager(new MimeManager(this))
     , m_pageManager(new PageManager(this))
 {
+    connect(m_pageManager, &PageManager::currentPageChanged, m_spatialContext, &SpatialContext::updateCommandHistoryConnections);
     m_pageManager->insertPage(0, new Page(this));
     m_spatialContext->coordinateTransformer().setCoordinateTransformer();
 
-    connect(m_spatialContext->commandHistory(), &CommandHistory::undoRedoChanged, this, [this]() -> void {
+    connect(m_spatialContext, &SpatialContext::undoRedoChanged, this, [this]() -> void {
         setCurrentFileModified(true);
     });
 

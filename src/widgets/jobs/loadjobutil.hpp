@@ -5,9 +5,23 @@
  */
 #pragma once
 
-#include "jobs/loadjob.hpp"
+#include "item/item.hpp"
+#include <QPointF>
+#include <QString>
 class ApplicationContext;
 namespace LoadJobUtil
 {
-void loadFile(ApplicationContext *context, const LoadJob::LoadInfo &info);
+struct DeserializePageInfo {
+    QString name;
+    QPointF offsetPos{0, 0};
+    qreal zoomFactor{1.0};
+    QList<std::shared_ptr<Item>> items;
+};
+
+struct DeserializeInfo {
+    int currentPage = 0;
+    QList<DeserializePageInfo> pages;
+};
+
+void loadFile(ApplicationContext *context, const LoadJobUtil::DeserializeInfo &info);
 };

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once
+#include <QList>
 #include <QObject>
 #include <QPointF>
 class QuadTree;
@@ -28,9 +29,19 @@ public:
 
     void reset();
 
+    // Forwards the signals of the current page's command history
+    void updateCommandHistoryConnections();
+
+Q_SIGNALS:
+    void undoRedoChanged();
+    void redoTextChanged(const QString &redoText);
+    void undoTextChanged(const QString &undoText);
+    void commandHistoryChanged();
+
 private:
     [[nodiscard]] Page *currentPage() const;
     std::unique_ptr<CoordinateTransformer> m_coordinateTransformer{nullptr};
 
     ApplicationContext *const m_applicationContext;
+    QList<QMetaObject::Connection> m_commandHistoryConnections;
 };

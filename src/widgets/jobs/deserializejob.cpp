@@ -8,6 +8,7 @@
 #include "serializer/deserializeutils.hpp"
 #include "serializer/itemdeserializer.hpp"
 #include "serializer/serializerutils.hpp"
+#include <KLocalizedString>
 #include <QJsonArray>
 using namespace Qt::Literals::StringLiterals;
 DeserializeJob::DeserializeJob(QObject *parent)
@@ -54,23 +55,38 @@ void DeserializeJob::setJsonObject(const QJsonObject &newJsonObject)
 
 void DeserializeJob::deserializePages()
 {
-    // TODO deserialize pages
-    deserializeItems();
+    LoadJobUtil::DeserializeInfo info;
+    info.currentPage = mJsonObject["current_page"_L1].toInt();
+    const QJsonArray pagesObj = mJsonObject["pages"_L1].toArray();
+    QList<LoadJobUtil::DeserializePageInfo> pages;
+    for (const auto &page : pagesObj) {
+        const QJsonObject pageObj = page.toObject();
+        LoadJobUtil::DeserializePageInfo pageInfo;
+
+        pageInfo.zoomFactor = ItemDeserializer::value(pageObj, u"zoom_factor"_s).toDouble();
+        pageInfo.offsetPos = ItemDeserializer::toPointF(ItemDeserializer::value(pageObj, u"offset_pos"_s));
+        const QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(pageObj, u"items"_s));
+        pageInfo.items = DeserializeUtils::deserializeItems(itemsArray);
+        pageInfo.name = pageObj[u"page_name"_s].toString();
+        pages.append(std::move(pageInfo));
+    }
+    info.pages = std::move(pages);
+    Q_EMIT deserializeDone(info);
 }
 
 void DeserializeJob::deserializeItems()
 {
+    LoadJobUtil::DeserializeInfo info;
+    info.currentPage = 0;
+    QList<LoadJobUtil::DeserializePageInfo> pages;
+    LoadJobUtil::DeserializePageInfo pageInfo;
     const QJsonArray itemsArray = ItemDeserializer::array(ItemDeserializer::value(mJsonObject, u"items"_s));
-    const QList<std::shared_ptr<Item>> items = DeserializeUtils::deserializeItems(itemsArray);
-
-    const qreal zoomFactor = ItemDeserializer::value(mJsonObject, u"zoom_factor"_s).toDouble();
-
-    const QPointF offsetPos = ItemDeserializer::toPointF(ItemDeserializer::value(mJsonObject, u"offset_pos"_s));
-    const DeserializeInfo info{
-        .offsetPos = offsetPos,
-        .zoomFactor = zoomFactor,
-        .items = items,
-    };
+    pageInfo.items = DeserializeUtils::deserializeItems(itemsArray);
+    pageInfo.zoomFactor = ItemDeserializer::value(mJsonObject, u"zoom_factor"_s).toDouble();
+    pageInfo.offsetPos = ItemDeserializer::toPointF(ItemDeserializer::value(mJsonObject, u"offset_pos"_s));
+    pageInfo.name = i18n("Page 1");
+    pages.append(std::move(pageInfo));
+    info.pages = std::move(pages);
     Q_EMIT deserializeDone(info);
 }
 

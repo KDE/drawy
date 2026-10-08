@@ -114,7 +114,7 @@ private:
     void slotDebug();
     void openRecentFile(const QUrl &url);
     void zorderMove(ItemUtils::ZorderMove move);
-    void slotLoadDone(const LoadJob::LoadInfo &info);
+    void slotLoadDone(const LoadJobUtil::DeserializeInfo &info);
     void configureShortcuts();
     void exportSelectedElementsToImage();
     void exportToImageElements(const QList<std::shared_ptr<Item>> &items);

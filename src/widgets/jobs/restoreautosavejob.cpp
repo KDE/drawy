@@ -54,7 +54,7 @@ void RestoreAutoSaveJob::restoreFile()
     job->setFileName(AutoSaveJobUtil::temporaryFileName());
     job->setIsAutoSave(true);
 
-    connect(job, &LoadJob::loadDone, this, [this, lastSavedFile, lastSavedFileModified](const LoadJob::LoadInfo &info) {
+    connect(job, &LoadJob::loadDone, this, [this, lastSavedFile, lastSavedFileModified](const LoadJobUtil::DeserializeInfo &info) {
         LoadJobUtil::loadFile(m_context, info);
         if (!lastSavedFile.isEmpty()) {
             m_context->setCurrentFileName(lastSavedFile);

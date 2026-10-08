@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include "item/item.hpp"
+#include "jobs/loadjobutil.hpp"
 #include "libdrawywidgets_private_export.h"
 #include <QJsonObject>
 #include <QObject>
@@ -14,12 +14,6 @@ class LIBDRAWYWIDGETS_TESTS_EXPORT DeserializeJob : public QObject
 {
     Q_OBJECT
 public:
-    struct DeserializeInfo {
-        QPointF offsetPos{0, 0};
-        qreal zoomFactor{1.0};
-        QList<std::shared_ptr<Item>> items;
-    };
-
     explicit DeserializeJob(QObject *parent = nullptr);
     ~DeserializeJob() override;
 
@@ -30,7 +24,7 @@ public:
     void setJsonObject(const QJsonObject &newJsonObject);
 
 Q_SIGNALS:
-    void deserializeDone(const DeserializeJob::DeserializeInfo &info);
+    void deserializeDone(const LoadJobUtil::DeserializeInfo &info);
     void deserializeFailed();
 
 private:

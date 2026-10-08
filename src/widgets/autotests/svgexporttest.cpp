@@ -44,16 +44,20 @@ void SvgExportTest::shouldNotChangeOutput()
     QFETCH(const QString, output);
     LoadJob loadJob(nullptr);
     loadJob.setFileName(QLatin1StringView(DRAWY_DATA_DIR) + u"/svg/"_s + input);
-    connect(&loadJob, &LoadJob::loadDone, this, [output](const LoadJob::LoadInfo &info) {
+    bool loaded = false;
+    connect(&loadJob, &LoadJob::loadDone, this, [output, &loaded](const LoadJobUtil::DeserializeInfo &info) {
+        loaded = true;
         QByteArray data;
         QXmlStreamWriter writer(&data);
         writer.setAutoFormatting(true);
 
-        SvgSerializer::writeSvg(writer, info.items, Common::darkBackgroundColor);
+        QCOMPARE(info.pages.count(), 1);
+        SvgSerializer::writeSvg(writer, info.pages.at(0).items, Common::darkBackgroundColor);
 
         AutoTestHelper::compareFile(u"/svg/"_s, data, output);
     });
     loadJob.start();
+    QVERIFY(loaded);
 }
 
 void SvgExportTest::cleanupTestCase()

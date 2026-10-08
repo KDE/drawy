@@ -7,7 +7,10 @@
 #include "common/utils/compression.hpp"
 #include "context/applicationcontext.hpp"
 #include "drawy_debug.h"
+#include "jobs/deserializejob.hpp"
 #include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
 LoadJob::LoadJob(ApplicationContext *context, QObject *parent)
     : QObject{parent}
     , mApplicationContext(context)
@@ -66,15 +69,9 @@ void LoadJob::slotDeserializeFailed()
     deleteLater();
 }
 
-void LoadJob::slotDeserializeDone(const DeserializeJob::DeserializeInfo &info)
+void LoadJob::slotDeserializeDone(const LoadJobUtil::DeserializeInfo &info)
 {
-    const LoadJob::LoadInfo loadInfo{
-        .offsetPos = info.offsetPos,
-        .zoomFactor = info.zoomFactor,
-        .items = info.items,
-    };
-
-    Q_EMIT loadDone(loadInfo);
+    Q_EMIT loadDone(info);
 
     if (!mIsAutoSave) {
         if (mApplicationContext) {
