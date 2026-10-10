@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-08-10 13:37+0300\n"
+"PO-Revision-Date: 2026-10-09 09:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -288,13 +288,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Керування сторінками"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2 з %3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -611,7 +611,7 @@ msgstr "Показати доступні варіанти для відгукі
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Сторінка 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -792,27 +792,25 @@ msgstr "Додати до бібліотеки"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Нова сторінка"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Вилучити"
+msgstr "Вилучити сторінку"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Наступна сторінка"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Попередня сторінка"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -900,55 +898,45 @@ msgstr "Потрібна дія"
 #: widgets/keybindings/actionmanager.cpp:765
 #, kde-format
 msgid "Unable to load \"%1\"."
-msgstr ""
+msgstr "Не вдалося завантажити «%1»."
 
 #: widgets/keybindings/actionmanager.cpp:765
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load File"
-msgstr "Збереження файла"
+msgstr "Завантаження файла"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "Ви справді хочете очистити полотно?"
+msgstr "Ви справді хочете вилучити сторінку «%1» і її вміст?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Вилучити"
+msgstr "Вилучення сторінки"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Сторінка %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Перейменувати…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Пересунути вище"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Пересунути нижче"
@@ -957,7 +945,7 @@ msgstr "Пересунути нижче"
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Сторінки"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

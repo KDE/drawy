@@ -284,13 +284,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "გვერდების მართვა"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -606,7 +606,7 @@ msgstr "მომხმარებლის უკუკავშირის �
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "გვერდი 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -787,27 +787,25 @@ msgstr "ბიბლიოთეკაში დამატება"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "ახალი გვერდი"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "წაშლა"
+msgstr "გვერდის წაშლა"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "შემდეგი გვერდი"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "წინა გვერდი"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -904,44 +902,36 @@ msgid "Load File"
 msgstr "ფაილის ჩატვირთვა"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "მართლა გნებავთ ტილოს გასუფთავება?"
+msgstr "მართლა გნებავთ, წაშალოთ გვერდი \"%1\" და მისი შემცველობა?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "წაშლა"
+msgstr "გვერდის წაშლა"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "გვერდი %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "სახელის გადარქმევა…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "აწევა"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "ჩამოწევა"
@@ -950,7 +940,7 @@ msgstr "ჩამოწევა"
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "გვერდი"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

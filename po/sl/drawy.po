@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-10-08 07:14+0200\n"
+"PO-Revision-Date: 2026-10-09 07:17+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -287,13 +287,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Upravljaj strani"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -609,7 +609,7 @@ msgstr "Navaja razpoložljive možnosti za povratne informacije uporabnika"
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Stran 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -790,27 +790,25 @@ msgstr "Dodaj v knjižnico"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Nova stran"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Izbriši"
+msgstr "Izbriši stran"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Naslednja stran"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Prejšnja stran"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -907,44 +905,36 @@ msgid "Load File"
 msgstr "Naloži datoteko"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "Ali zares želite počistiti platno?"
+msgstr "Ali res želite izbrisati stran \"%1\" in njeno vsebino?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Izbriši"
+msgstr "Izbriši stran"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Stran %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Preimenuj…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Premakni gor"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Premakni dol"
@@ -953,7 +943,7 @@ msgstr "Premakni dol"
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Strani"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

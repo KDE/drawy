@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-10-08 13:35+0100\n"
+"PO-Revision-Date: 2026-10-09 15:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -289,13 +289,13 @@ msgstr "%1 %"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Gestión de páginas"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -612,7 +612,7 @@ msgstr "Lista todas las opciones disponibles para los comentarios del usuario"
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Página 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -793,27 +793,25 @@ msgstr "Añadir a la biblioteca"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Nueva página"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Borrar"
+msgstr "Borrar página"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Página siguiente"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Página anterior"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -910,53 +908,45 @@ msgid "Load File"
 msgstr "Cargar archivo"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "¿Realmente quiere borrar el lienzo?"
+msgstr "¿Realmente quiere borrar la página «%1» y su contenido?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Borrar"
+msgstr "Borrar página"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Página %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Cambiar nombre…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Move"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Mover"
+msgstr "Subir"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Herramienta de mover"
+msgstr "Bajar"
 
 #: widgets/page/pageswidget.cpp:26
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Páginas"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

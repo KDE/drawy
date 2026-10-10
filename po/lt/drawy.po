@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-08-23 22:25+0300\n"
+"PO-Revision-Date: 2026-10-09 18:40+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -291,13 +291,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Tvarkyti puslapius"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -613,7 +613,7 @@ msgstr "Išvardija prieinamas naudotojo grįžtamojo ryšio parinktis"
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Puslapis 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -794,27 +794,25 @@ msgstr "Pridėti į biblioteką"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Naujas puslapis"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Ištrinti"
+msgstr "Ištrinti puslapį"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Kitas puslapis"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Ankstesnis puslapis"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -902,64 +900,54 @@ msgstr "Reikalingas veiksmas"
 #: widgets/keybindings/actionmanager.cpp:765
 #, kde-format
 msgid "Unable to load \"%1\"."
-msgstr ""
+msgstr "Nepavyko įkelti „%1“."
 
 #: widgets/keybindings/actionmanager.cpp:765
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load File"
-msgstr "Įrašyti failą"
+msgstr "Įkelti failą"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "Ar tikrai norite išvalyti piešimo drobę?"
+msgstr "Ar tikrai norite ištrinti puslapį „%1“ ir jo turinį?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Ištrinti"
+msgstr "Ištrinti puslapį"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Puslapis %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Pervadinti…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Move"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Perkelti"
+msgstr "Pakelti"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Perkėlimo įrankis"
+msgstr "Nuleisti"
 
 #: widgets/page/pageswidget.cpp:26
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Puslapiai"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

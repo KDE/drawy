@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-10-08 20:00+0200\n"
+"PO-Revision-Date: 2026-10-09 12:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -285,13 +285,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Pagina's beheren"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -609,7 +609,7 @@ msgstr ""
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Pagina 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -790,27 +790,25 @@ msgstr "Aan bibliotheek toevoegen"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Nieuwe pagina"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Verwijderen"
+msgstr "Pagina verwijderen"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Volgende pagina"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Vorige pagina"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -907,44 +905,36 @@ msgid "Load File"
 msgstr "Bestand laden"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "Wilt u het werkveld wissen?"
+msgstr "Wilt u werkelijk de pagina \"%1\" en zijn inhoud verwijderen?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Verwijderen"
+msgstr "Pagina verwijderen"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Pagina %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Hernoemen…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Omhoog verplaatsen"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "ZOrderWidget|"
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Omlaag verplaatsen"
@@ -953,7 +943,7 @@ msgstr "Omlaag verplaatsen"
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Pagina's"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format

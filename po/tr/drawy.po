@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:44+0000\n"
-"PO-Revision-Date: 2026-10-08 18:57+0300\n"
+"PO-Revision-Date: 2026-10-09 19:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -285,13 +285,13 @@ msgstr "%​%1"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
-msgstr ""
+msgstr "Sayfaları yönet"
 
 #: widgets/components/bottomleftwidgets.cpp:113
 #, kde-format
 msgctxt "@action:button page name (index/count)"
 msgid "%1 (%2/%3)"
-msgstr ""
+msgstr "%1 (%2/%3)"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -606,7 +606,7 @@ msgstr "Kullanıcı geri bildirimi seçeneklerini listeler"
 #: widgets/jobs/deserializejob.cpp:87
 #, kde-format
 msgid "Page 1"
-msgstr ""
+msgstr "Sayfa 1"
 
 #: widgets/keybindings/actionmanager.cpp:93
 #: widgets/keybindings/actionmanager.cpp:98
@@ -787,27 +787,25 @@ msgstr "Kitaplığa Ekle"
 #, kde-format
 msgctxt "@action"
 msgid "New Page"
-msgstr ""
+msgstr "Yeni Sayfa"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Page"
-msgstr "Sil"
+msgstr "Sayfayı Sil"
 
 #: widgets/keybindings/actionmanager.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Next Page"
-msgstr ""
+msgstr "Sonraki Sayfa"
 
 #: widgets/keybindings/actionmanager.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "Previous Page"
-msgstr ""
+msgstr "Önceki Sayfa"
 
 #: widgets/keybindings/actionmanager.cpp:185
 #, kde-format
@@ -904,53 +902,45 @@ msgid "Load File"
 msgstr "Dosya Yükle"
 
 #: widgets/keybindings/actionmanager.cpp:794
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Do you really want to clear the canvas?"
+#, kde-format
 msgid "Do you really want to delete the page \"%1\" and its content?"
-msgstr "Tuvali temizlemeyi gerçekten istiyor musunuz?"
+msgstr "“%1” sayfasını ve içeriğini silmeyi gerçekten istiyor musunuz?"
 
 #: widgets/keybindings/actionmanager.cpp:795
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Page"
-msgstr "Sil"
+msgstr "Sayfayı Sil"
 
 #: widgets/page/page.cpp:43
 #, kde-format
 msgctxt "@label default page name"
 msgid "Page %1"
-msgstr ""
+msgstr "Sayfa %1"
 
 #: widgets/page/pageslistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
-msgstr ""
+msgstr "Yeniden Adlandır…"
 
 #: widgets/page/pageslistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Move"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Taşı"
+msgstr "Yukarı Taşı"
 
 #: widgets/page/pageslistview.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move Tool"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Taşıma Aracı"
+msgstr "Aşağı Taşı"
 
 #: widgets/page/pageswidget.cpp:26
 #, kde-format
 msgctxt "@label"
 msgid "Pages"
-msgstr ""
+msgstr "Sayfalar"
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
