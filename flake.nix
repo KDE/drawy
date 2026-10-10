@@ -6,7 +6,7 @@
   description = "x86_64 dev environment for Drawy, the whiteboard app.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     systems = {
       url = "github:nix-systems/default";
@@ -36,7 +36,24 @@
             inherit (self.checks.${system}.pre-commit-check) shellHook enabledPackages;
           in
           pkgs.mkShell {
-            inherit shellHook;
+            shellHook = ''
+              ${shellHook}
+
+              export RELEASEME_DIR="$PWD/.cache/releaseme"
+
+              # make releaseme available
+              if [ ! -d "$RELEASEME_DIR/.git" ]; then
+                mkdir -p "$(dirname "$RELEASEME_DIR")"
+                echo "Cloning KDE releaseme..."
+                git clone https://invent.kde.org/sdk/releaseme "$RELEASEME_DIR" || {
+                  echo "Error: Failed to clone KDE releaseme." >&2
+                  return 1
+                }
+              fi
+
+              export PATH="$RELEASEME_DIR:$PATH"
+            '';
+
             buildInputs =
               enabledPackages
               ++ (with pkgs; [
@@ -63,6 +80,10 @@
                 kdePackages.kxmlgui
                 kdePackages.syntax-highlighting
                 kdePackages.kdoctools
+
+                # for releaseme
+                ruby
+                gnupg
               ]);
           };
       });
