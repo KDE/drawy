@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "bottomleftwidgets.hpp"
+#include "common/constants.hpp"
 #include "context/uicontext.hpp"
 #include "frame.hpp"
 #include "keybindings/actionmanager.hpp"
@@ -44,6 +45,9 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, PageManager *
     zoomOutButton->setDefaultAction(actionManager->action(KStandardActions::ZoomOut));
 
     auto zoomLabel{new QToolButton{zoomControlFrame}};
+    const int maxZoomValue{qRound(Common::zoomInLimit * 100)};
+    zoomLabel->setText(i18nc("@label, percent value", "%1%", maxZoomValue));
+    zoomLabel->setFixedWidth(zoomLabel->sizeHint().width());
     zoomLabel->setText(i18nc("@label, percent text", "100%"));
     zoomLabel->setAutoRaise(true);
     zoomLabel->setToolTip(i18nc("@info:tooltip", "Reset Zoom"));
@@ -77,9 +81,9 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, PageManager *
 
     m_pageButton->setParent(pageControlFrame);
     m_pageButton->setAutoRaise(true);
-    m_pageButton->setIconSize(iconSize);
-    m_pageButton->setIcon(QIcon::fromTheme(u"view-list-details"_s));
     m_pageButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_pageButton->setMinimumHeight(previousPageButton->sizeHint().height());
+    m_pageButton->setFixedWidth(Common::pageSwitcherWidth);
     m_pageButton->setToolTip(i18nc("@info:tooltip", "Manage Pages"));
     connect(m_pageButton, &QToolButton::clicked, this, &BottomLeftWidgets::showPagesPopup);
 
@@ -111,7 +115,12 @@ void BottomLeftWidgets::updatePageButton()
         return;
     }
     const QString name{m_pageModel->index(current).data(Qt::DisplayRole).toString()};
-    m_pageButton->setText(i18nc("@action:button page name (index/count)", "%1 (%2/%3)", name, current + 1, count));
+    const QString fullText{i18nc("@action:button page name", "%1", name)};
+    const int margin{m_pageButton->style()->pixelMetric(QStyle::PM_ButtonMargin, nullptr, m_pageButton)};
+    const int iconWidth{m_pageButton->icon().isNull() ? 0 : m_pageButton->iconSize().width() + margin};
+    const int availableWidth{qMax(0, Common::pageSwitcherWidth - iconWidth - 2 * margin)};
+    m_pageButton->setText(m_pageButton->fontMetrics().elidedText(fullText, Qt::ElideRight, availableWidth));
+    m_pageButton->setToolTip(fullText);
 }
 
 void BottomLeftWidgets::showPagesPopup()
@@ -127,6 +136,7 @@ void BottomLeftWidgets::showPagesPopup()
         m_pagesPopup->setFocusProxy(pagesWidget);
         m_pagesPopup->resize(250, 300);
     }
+
     // Open above the button as it is in the bottom of the window
     const QPoint buttonTopLeft{m_pageButton->mapToGlobal(QPoint{0, 0})};
     m_pagesPopup->move(buttonTopLeft.x(), buttonTopLeft.y() - m_pagesPopup->height());
