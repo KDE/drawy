@@ -52,6 +52,8 @@ inline constexpr qreal zoomInLimit{30}; // 100% * 30 = 3000% zoom
 inline constexpr qreal zoomMultiplier{1.1}; // it's standard practice to multiply/divide by 1.1 when zooming
 inline constexpr int zoomRenderWaitTime{250}; // milliseconds
 
+inline constexpr int pageSwitcherWidth{100}; // in px
+
 inline constexpr QSize maxItemCacheCellSize{500, 500}; // in pixels
 inline constexpr int itemCacheMultiplier{2}; // For per-item cache; increasing this value decreases thrashing but
                                              // increases memory usage
