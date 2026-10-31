@@ -163,7 +163,7 @@ ActionManager::ActionManager(KActionCollection *actionCollection, ApplicationCon
     createAction(Action::AddCustomElement, i18nc("@action", "Add to Library"), {}, this, &ActionManager::slotAddCustomElement);
 
     createAction(Action::NewPage,
-                 i18nc("@action", "New Page"),
+                 i18nc("@action", "Create New Page"),
                  {QKeySequence(QKeyCombination(Qt::CTRL | Qt::SHIFT, Qt::Key_N))},
                  this,
                  &ActionManager::slotNewPage)

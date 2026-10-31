@@ -6,10 +6,14 @@
 
 #include <QHBoxLayout>
 #include <QWidget>
+
 class ActionManager;
 class PageManager;
 class PageModel;
 class QToolButton;
+class Frame;
+class PagesWidget;
+
 class BottomLeftWidgets : public QWidget
 {
     Q_OBJECT
@@ -29,4 +33,6 @@ private:
     QToolButton *const m_pageButton;
     ActionManager *const m_actionManager;
     QWidget *m_pagesPopup = nullptr;
+    Frame *m_pageControlFrame = nullptr;
+    PagesWidget *m_pagesWidget = nullptr;
 };
