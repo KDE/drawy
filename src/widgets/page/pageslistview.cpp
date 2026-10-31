@@ -10,12 +10,39 @@
 #include <QAction>
 #include <QContextMenuEvent>
 #include <QMenu>
+#include <QStyleOptionToolButton>
+#include <QStyledItemDelegate>
 
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+class PageItemDelegate : public QStyledItemDelegate
+{
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
+        QSize size{QStyledItemDelegate::sizeHint(option, index)};
+        if (option.widget) {
+            const int iconWidth{option.widget->style()->pixelMetric(QStyle::PM_ToolBarIconSize, nullptr, option.widget)};
+            QStyleOptionToolButton opt;
+            opt.initFrom(option.widget);
+            opt.iconSize = QSize{iconWidth, iconWidth};
+            const int targetHeight{option.widget->style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, option.widget).height()};
+            size.setHeight(qMax(size.height(), targetHeight));
+        }
+        return size;
+    }
+};
+}
+
 PagesListView::PagesListView(ActionManager *actionManager, QWidget *parent)
     : QListView(parent)
     , mActionManager(actionManager)
 {
+    setFrameShape(QFrame::NoFrame);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setDragDropMode(QAbstractItemView::InternalMove);
     setDefaultDropAction(Qt::MoveAction);
@@ -23,6 +50,12 @@ PagesListView::PagesListView(ActionManager *actionManager, QWidget *parent)
     setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setUniformItemSizes(true);
+    setItemDelegate(new PageItemDelegate(this));
+
+    QPalette pal{palette()};
+    pal.setColor(QPalette::Base, Qt::transparent);
+    setPalette(pal);
+    viewport()->setAutoFillBackground(false);
 
     auto deleteAction = new QAction(this);
     deleteAction->setShortcut(QKeySequence::Delete);
@@ -36,6 +69,33 @@ PagesListView::PagesListView(ActionManager *actionManager, QWidget *parent)
 }
 
 PagesListView::~PagesListView() = default;
+
+QSize PagesListView::sizeHint() const
+{
+    if (!model()) {
+        return QListView::sizeHint();
+    }
+    const int count{model()->rowCount()};
+    if (count == 0) {
+        return {0, 0};
+    }
+    int rowHeight{sizeHintForRow(0)};
+    if (rowHeight <= 0) {
+        const int iconWidth{style()->pixelMetric(QStyle::PM_ToolBarIconSize)};
+        QStyleOptionToolButton opt;
+        opt.initFrom(this);
+        opt.iconSize = QSize{iconWidth, iconWidth};
+        rowHeight = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, this).height();
+    }
+    const int totalItemHeight{rowHeight * count + spacing() * qMax(0, count - 1)};
+    const int frameMargin{frameWidth() * 2};
+    return {QListView::sizeHint().width(), totalItemHeight + frameMargin};
+}
+
+QSize PagesListView::minimumSizeHint() const
+{
+    return {0, 0};
+}
 
 void PagesListView::setModel(QAbstractItemModel *model)
 {

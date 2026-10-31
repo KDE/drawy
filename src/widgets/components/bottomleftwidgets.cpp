@@ -74,6 +74,8 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, PageManager *
     auto pageControlFrame{new Frame{this}};
     auto pageControlLayout{new QHBoxLayout{pageControlFrame}};
 
+    m_pageControlFrame = pageControlFrame;
+
     auto previousPageButton{new QToolButton{pageControlFrame}};
     previousPageButton->setAutoRaise(true);
     previousPageButton->setIconSize(iconSize);
@@ -100,6 +102,20 @@ BottomLeftWidgets::BottomLeftWidgets(ActionManager *actionManager, PageManager *
     connect(m_pageModel, &QAbstractItemModel::modelReset, this, &BottomLeftWidgets::updatePageButton);
     connect(m_pageModel, &QAbstractItemModel::dataChanged, this, &BottomLeftWidgets::updatePageButton);
     connect(m_pageModel, &QAbstractItemModel::rowsMoved, this, &BottomLeftWidgets::updatePageButton);
+
+    auto updatePopupGeometry = [this]() {
+        if (m_pagesPopup && m_pagesPopup->isVisible() && m_pagesWidget) {
+            const int margin{style()->pixelMetric(QStyle::PM_LayoutLeftMargin)};
+            const int contentHeight{m_pagesWidget->sizeHint().height() + 2 * margin};
+            const int targetHeight{qMin(contentHeight, Common::pagesPopupMaxHeight)};
+            const QPoint buttonTopLeft{m_pageControlFrame->mapToGlobal(QPoint{0, 0})};
+            m_pagesPopup->setGeometry(buttonTopLeft.x(), buttonTopLeft.y() - targetHeight - 10, Common::pagesPopupWidth, targetHeight);
+        }
+    };
+    connect(m_pageModel, &QAbstractItemModel::modelReset, this, updatePopupGeometry);
+    connect(m_pageModel, &QAbstractItemModel::rowsInserted, this, updatePopupGeometry);
+    connect(m_pageModel, &QAbstractItemModel::rowsRemoved, this, updatePopupGeometry);
+
     updatePageButton();
 
     m_layout->addWidget(zoomControlFrame, 0, Qt::AlignLeft);
@@ -126,20 +142,27 @@ void BottomLeftWidgets::updatePageButton()
 void BottomLeftWidgets::showPagesPopup()
 {
     if (!m_pagesPopup) {
-        auto popup{new QFrame{this, Qt::Popup}};
-        popup->setFrameShape(QFrame::StyledPanel);
+        auto popup{new Frame{this}};
+        popup->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint);
+        popup->setAttribute(Qt::WA_TranslucentBackground);
         m_pagesPopup = popup;
         auto popupLayout{new QVBoxLayout{m_pagesPopup}};
-        popupLayout->setContentsMargins({});
-        auto pagesWidget{new PagesWidget{m_actionManager, m_pageModel, m_pagesPopup}};
-        popupLayout->addWidget(pagesWidget);
-        m_pagesPopup->setFocusProxy(pagesWidget);
-        m_pagesPopup->resize(250, 300);
+        const int margin{style()->pixelMetric(QStyle::PM_LayoutLeftMargin)};
+        popupLayout->setContentsMargins(margin, margin, margin, margin);
+        m_pagesWidget = new PagesWidget{m_actionManager, m_pageModel, m_pagesPopup};
+        popupLayout->addWidget(m_pagesWidget);
+        m_pagesPopup->setFocusProxy(m_pagesWidget);
+        m_pagesPopup->setFixedWidth(Common::pagesPopupWidth);
+        m_pagesPopup->setMaximumHeight(Common::pagesPopupMaxHeight);
     }
 
-    // Open above the button as it is in the bottom of the window
-    const QPoint buttonTopLeft{m_pageButton->mapToGlobal(QPoint{0, 0})};
-    m_pagesPopup->move(buttonTopLeft.x(), buttonTopLeft.y() - m_pagesPopup->height());
+    const int margin{style()->pixelMetric(QStyle::PM_LayoutLeftMargin)};
+    const int contentHeight{m_pagesWidget->sizeHint().height() + 2 * margin};
+    const int targetHeight{qMin(contentHeight, Common::pagesPopupMaxHeight)};
+
+    // Open above the frame as it is in the bottom of the window
+    const QPoint buttonTopLeft{m_pageControlFrame->mapToGlobal(QPoint{0, 0})};
+    m_pagesPopup->setGeometry(buttonTopLeft.x(), buttonTopLeft.y() - targetHeight - 10, Common::pagesPopupWidth, targetHeight);
     m_pagesPopup->show();
     m_pagesPopup->setFocus();
 }

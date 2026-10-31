@@ -10,6 +10,7 @@
 class ActionManager;
 class PagesListView;
 class QAbstractItemModel;
+class QToolButton;
 class LIBDRAWYWIDGETS_TESTS_EXPORT PagesWidget : public QWidget
 {
     Q_OBJECT
@@ -17,6 +18,9 @@ public:
     explicit PagesWidget(ActionManager *actionManager, QAbstractItemModel *model, QWidget *parent = nullptr);
     ~PagesWidget() override;
 
+    [[nodiscard]] QSize sizeHint() const override;
+
 private:
     PagesListView *const mListView;
+    QToolButton *mNewPageButton = nullptr;
 };

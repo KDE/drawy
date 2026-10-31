@@ -17,6 +17,9 @@ public:
 
     void setModel(QAbstractItemModel *model) override;
 
+    [[nodiscard]] QSize sizeHint() const override;
+    [[nodiscard]] QSize minimumSizeHint() const override;
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
