@@ -93,6 +93,8 @@ void SelectionTool::mousePressed(ApplicationContext *context)
         renderingContext->markForRender();
         renderingContext->markForUpdate();
 
+        renderHighlights(context);
+
         m_curHandlerState = lockState;
         return;
     }
@@ -227,15 +229,20 @@ void SelectionTool::renderHighlights(ApplicationContext *context)
         auto transformer{context->spatialContext()->coordinateTransformer()};
 
         if (!intersectingItems.empty()) {
-            canvas->paintOverlay([&intersectingItems, &transformer](QPainter &painter) {
-                QPen pen{Common::selectionBorderColor};
-                pen.setStyle(Qt::DotLine);
+            const auto &item{intersectingItems.back()};
+            const auto &selectedItems{context->selectionContext()->selectedItems()};
 
-                painter.setPen(pen);
-                painter.drawPolygon(transformer.worldToView(intersectingItems.back()->displayBoundingBox()));
-            });
+            if (!selectedItems.contains(item)) {
+                canvas->paintOverlay([&item, &transformer](QPainter &painter) {
+                    QPen pen{Common::selectionBorderColor};
+                    pen.setStyle(Qt::DotLine);
 
-            m_highlightDrawn = true;
+                    painter.setPen(pen);
+                    painter.drawPolygon(transformer.worldToView(item->displayBoundingBox()));
+                });
+
+                m_highlightDrawn = true;
+            }
         }
 
         context->renderingContext()->markForUpdate();
