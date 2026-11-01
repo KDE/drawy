@@ -31,13 +31,16 @@ void ResizeTransformHandler::renderHandles(ApplicationContext *context)
     }
 
     const auto viewSelectionBox{context->spatialContext()->coordinateTransformer().worldToView(context->selectionContext()->selectionBox())};
+    const auto viewRect{viewSelectionBox.boundingRect()};
+    const qreal minViewDim{std::min(viewRect.width(), viewRect.height())};
+    const qreal handleSize{minViewDim > 0.0 ? std::max(3.0, std::min(Common::selectionHandleSize, minViewDim * 0.25)) : Common::selectionHandleSize};
 
-    context->renderingContext()->canvas()->paintCanvas([viewSelectionBox, context](QPainter &painter) {
+    context->renderingContext()->canvas()->paintCanvas([viewSelectionBox, handleSize, context](QPainter &painter) {
         painter.setPen(Common::selectionBorderPen());
         painter.setBrush(context->renderingContext()->canvas()->canvasBg());
 
         for (const QPointF &point : viewSelectionBox) {
-            painter.drawRect(createHandle(point, Common::selectionHandleSize));
+            painter.drawRect(createHandle(point, handleSize));
         }
     });
 }
@@ -276,7 +279,9 @@ std::tuple<qreal, qreal, QPointF> ResizeTransformHandler::topHandler(const QRect
 
 QList<ResizeTransformHandler::ResizeHandle> ResizeTransformHandler::getHandles(const QRectF selectionBox, const qreal zoom)
 {
-    const qreal handleSize{20.0 / zoom};
+    const qreal minDimension{std::min(selectionBox.width(), selectionBox.height())};
+    const qreal baseHandleSize{(20.0 * std::min(1.0, std::max(0.4, zoom))) / zoom};
+    const qreal handleSize{minDimension > 0.0 ? std::min(baseHandleSize, minDimension * 0.3) : baseHandleSize};
     const qreal handleSizeHalf{handleSize / 2.0};
 
     return {

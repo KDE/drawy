@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
+// SPDX-FileCopyrightText: 2026 Prayag Jain <prayagjain2@gmail.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -33,9 +33,15 @@ bool RotateTransformHandler::shouldActivate(ApplicationContext *context)
     const QPointF curPos{context->uiContext()->appEvent()->pos()};
 
     const QList<QPointF> points{selectionBox.topLeft(), selectionBox.topRight(), selectionBox.bottomRight(), selectionBox.bottomLeft()};
-    constexpr qreal rotationHandleSize{50.0};
 
     auto &transformer{context->spatialContext()->coordinateTransformer()};
+    const auto viewSelectionBox{transformer.worldToView(context->selectionContext()->selectionBox())};
+    const auto viewRect{viewSelectionBox.boundingRect()};
+    const qreal minViewDim{std::min(viewRect.width(), viewRect.height())};
+    const qreal zoom{context->renderingContext()->zoomFactor()};
+
+    const qreal baseRotateSize{50.0 * std::min(1.0, std::max(0.4, zoom))};
+    const qreal rotationHandleSize{minViewDim > 0.0 ? std::max(12.0, std::min(baseRotateSize, minViewDim * 0.4)) : baseRotateSize};
 
     for (const QPointF point : points) {
         if (createHandle(transformer.worldToView(selectionBoxTransform.map(point)), rotationHandleSize).contains(curPos)) {
