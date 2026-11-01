@@ -29,7 +29,7 @@ void TextAlignmentWidgetTest::shouldHaveDefaultValues()
 
     auto layout = m_widget->findChild<QHBoxLayout *>(u"layout"_s);
     QVERIFY(layout);
-    QCOMPARE(layout->alignment(), Qt::AlignCenter);
+    QCOMPARE(layout->alignment(), Qt::AlignLeft);
 
     auto m_alignLeft = m_widget->findChild<QToolButton *>(u"m_alignLeft"_s);
     QVERIFY(m_alignLeft);
