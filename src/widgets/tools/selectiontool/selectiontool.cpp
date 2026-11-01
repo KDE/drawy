@@ -77,6 +77,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
 
         if (intersectingItems.empty()) {
             m_isSelecting = true;
+            m_dragAfterSelection = false;
         } else {
             auto &item{intersectingItems.back()};
 
@@ -87,6 +88,7 @@ void SelectionTool::mousePressed(ApplicationContext *context)
             }
 
             m_isSelecting = false;
+            m_dragAfterSelection = !(event->modifiers() & Qt::ShiftModifier);
             lockState = TransformHandler::State::Unlocked;
         }
 
@@ -113,9 +115,31 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
 
     m_lastMouseMoveTime = curTime;
 
-    updateCurrentHandler(context);
-
     auto uiContext{context->uiContext()};
+
+    if (m_dragAfterSelection) {
+        m_dragAfterSelection = false;
+
+        const auto originalButton = uiContext->appEvent()->button();
+        const auto curPos = uiContext->appEvent()->pos();
+        uiContext->appEvent()->setButton(Qt::LeftButton);
+        uiContext->appEvent()->setPos(m_lastPos.toPoint());
+
+        updateCurrentHandler(context);
+
+        if (m_curHandler) {
+            const auto &selectedItems{context->selectionContext()->selectedItems()};
+            const bool singleTextItem = selectedItems.size() == 1 && (*selectedItems.begin())->formType() == Item::FormType::Text;
+
+            context->selectionContext()->setShouldRenderHandles(singleTextItem);
+            m_curHandlerState = m_curHandler->mousePressed(context);
+        }
+
+        uiContext->appEvent()->setButton(originalButton);
+        uiContext->appEvent()->setPos(curPos);
+    } else {
+        updateCurrentHandler(context);
+    }
 
     renderHighlights(context);
 
@@ -174,6 +198,8 @@ void SelectionTool::mouseMoved(ApplicationContext *context)
 
 void SelectionTool::mouseReleased(ApplicationContext *context)
 {
+    m_dragAfterSelection = false;
+
     updateCurrentHandler(context);
 
     context->selectionContext()->setShouldRenderHandles(true);

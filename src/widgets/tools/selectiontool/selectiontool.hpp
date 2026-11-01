@@ -40,6 +40,7 @@ private:
     QPointF m_lastPos{};
     bool m_isSelecting{false};
     bool m_highlightDrawn{false};
+    bool m_dragAfterSelection{false};
 
     qint64 m_lastMouseMoveTime{};
 };
