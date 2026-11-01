@@ -4,16 +4,19 @@
 
 #include "selectioncontext.hpp"
 
+#include <cmath>
+#include <utility>
+
 #include "applicationcontext.hpp"
 #include "canvas/canvas.hpp"
 #include "command/commandhistory.hpp"
 #include "command/updatepropertycommand.hpp"
+#include "common/utils/math.hpp"
 #include "drawy_debug.h"
 #include "item/item.hpp"
 #include "properties/property.hpp"
 #include "renderingcontext.hpp"
 #include "spatialcontext.hpp"
-#include <utility>
 
 SelectionContext::SelectionContext(ApplicationContext *context)
     : QObject{context}
@@ -61,6 +64,24 @@ QPolygonF SelectionContext::selectionBox() const
         return (*m_selectedItems.begin())->displayBoundingBox();
     }
 
+    const auto angleOpt{sharedOrientationAngle()};
+    if (angleOpt.has_value()) {
+        const qreal theta{*angleOpt};
+        if (std::abs(theta) > 1e-4 && std::abs(theta - 2.0 * M_PI) > 1e-4) {
+            QTransform unrotateTransform;
+            unrotateTransform.rotateRadians(-theta);
+
+            QRectF alignedBox;
+            for (const auto &item : std::as_const(m_selectedItems)) {
+                alignedBox |= unrotateTransform.map(item->displayBoundingBox()).boundingRect();
+            }
+
+            QTransform rotateTransform;
+            rotateTransform.rotateRadians(theta);
+            return rotateTransform.map(QPolygonF(alignedBox));
+        }
+    }
+
     // always return a unified rectangle if there are more items
     QRectF selectionBox;
     for (const auto &item : std::as_const(m_selectedItems)) {
@@ -80,11 +101,64 @@ std::pair<QRectF, QTransform> SelectionContext::selectionBoxWithTransform() cons
         return std::make_pair(item->normalizedBoundingBox(), item->transformObj());
     }
 
+    const auto angleOpt{sharedOrientationAngle()};
+    if (angleOpt.has_value()) {
+        const qreal theta{*angleOpt};
+        if (std::abs(theta) > 1e-4 && std::abs(theta - 2.0 * M_PI) > 1e-4) {
+            QTransform unrotateTransform;
+            unrotateTransform.rotateRadians(-theta);
+
+            QRectF alignedBox;
+            for (const auto &item : std::as_const(m_selectedItems)) {
+                alignedBox |= unrotateTransform.map(item->displayBoundingBox()).boundingRect();
+            }
+
+            QTransform rotateTransform;
+            rotateTransform.rotateRadians(theta);
+            const QTransform transform{QTransform::fromTranslate(alignedBox.topLeft().x(), alignedBox.topLeft().y()) * rotateTransform};
+
+            return std::make_pair(QRectF{0, 0, alignedBox.width(), alignedBox.height()}, transform);
+        }
+    }
+
     const QRectF boundingRect{selectionBox().boundingRect()};
     QTransform transform;
     transform.translate(boundingRect.topLeft().x(), boundingRect.topLeft().y());
 
     return std::make_pair(boundingRect.translated(-boundingRect.topLeft()), transform);
+}
+
+bool SelectionContext::hasSameOrientation() const
+{
+    return sharedOrientationAngle().has_value();
+}
+
+std::optional<qreal> SelectionContext::sharedOrientationAngle() const
+{
+    if (m_selectedItems.empty()) {
+        return std::nullopt;
+    }
+
+    if (m_selectedItems.size() == 1) {
+        return Common::Utils::Math::angle((*m_selectedItems.begin())->transformObj().inverted());
+    }
+
+    auto it{m_selectedItems.begin()};
+    const qreal targetAngle{Common::Utils::Math::angle((*it)->transformObj().inverted())};
+    ++it;
+
+    constexpr qreal epsilon{1e-4};
+    for (; it != m_selectedItems.end(); ++it) {
+        const qreal curAngle{Common::Utils::Math::angle((*it)->transformObj().inverted())};
+        qreal diff{std::abs(curAngle - targetAngle)};
+        diff = std::min(diff, 2.0 * M_PI - diff);
+
+        if (diff > epsilon) {
+            return std::nullopt;
+        }
+    }
+
+    return targetAngle;
 }
 
 // PUBLIC SLOTS

@@ -4,16 +4,18 @@
 
 #pragma once
 
+#include "libdrawywidgets_private_export.h"
 #include "transformhandler/transformhandler.hpp"
 #include "transformhandlerutils.hpp"
 #include <QObject>
+#include <optional>
 #include <unordered_set>
 
 class Property;
 class Item;
 class ApplicationContext;
 
-class SelectionContext : public QObject
+class LIBDRAWYWIDGETS_TESTS_EXPORT SelectionContext : public QObject
 {
     Q_OBJECT
 public:
@@ -44,6 +46,9 @@ public:
 
     [[nodiscard]] QPolygonF selectionBox() const;
     [[nodiscard]] std::pair<QRectF, QTransform> selectionBoxWithTransform() const;
+
+    [[nodiscard]] bool hasSameOrientation() const;
+    [[nodiscard]] std::optional<qreal> sharedOrientationAngle() const;
 
     template<typename Iterator>
     void setSelectedItems(Iterator begin, Iterator end)

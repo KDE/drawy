@@ -163,7 +163,7 @@ TransformHandler::State ResizeTransformHandler::mouseMoved(ApplicationContext *c
         const QTransform transformUpdate{invTransform * newTransform};
         const QTransform lockedTransformUpdate{invTransform * newTransformLocked};
 
-        const bool useLocked{uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier) || selectedItems.size() > 1};
+        const bool useLocked{uiContext->appEvent()->modifiers().testFlag(Qt::ShiftModifier) || !context->selectionContext()->hasSameOrientation()};
 
         QRectF dirtyRegion;
         for (const auto &item : selectedItems) {
