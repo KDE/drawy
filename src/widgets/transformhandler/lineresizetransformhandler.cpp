@@ -67,6 +67,16 @@ TransformHandler::State LineResizeTransformHandler::mousePressed(ApplicationCont
         context->renderingContext()->canvas()->setCursor(Qt::ClosedHandCursor);
 
         auto item{getSelectedLineItem(context)};
+        auto &transformer{context->spatialContext()->coordinateTransformer()};
+        const auto mousePos{context->uiContext()->appEvent()->pos()};
+        const auto handles{getHandles(item)};
+        auto it{std::ranges::find_if(handles, [&transformer, mousePos](const auto &handle) {
+            return createHandle(transformer.worldToView(handle.rect.center()), Common::selectionHandleSize).contains(mousePos);
+        })};
+
+        if (it != handles.end()) {
+            m_curHandleType = it->handleType;
+        }
 
         m_initialPos = [&item, this] {
             switch (m_curHandleType) {
@@ -79,6 +89,7 @@ TransformHandler::State LineResizeTransformHandler::mousePressed(ApplicationCont
             }
         }();
 
+        m_lastPos = m_initialPos;
         qCDebug(DRAWY_RESIZE_LOG) << "LineResizeTransformHandler::mousePressed m_initialPos " << m_initialPos;
         m_isActive = true;
     }
@@ -143,7 +154,17 @@ TransformHandler::State LineResizeTransformHandler::mouseMoved(ApplicationContex
 
 TransformHandler::State LineResizeTransformHandler::mouseReleased(ApplicationContext *context)
 {
+    if (!m_isActive) {
+        return TransformHandler::State::Unlocked;
+    }
+
     m_isActive = false;
+
+    context->renderingContext()->canvas()->setCursor(Qt::OpenHandCursor);
+
+    if (m_lastPos == m_initialPos || m_curHandleType == ResizeHandleType::None) {
+        return TransformHandler::State::Unlocked;
+    }
 
     const LineResizeItemCommand::HandleType handleType{[this] {
         switch (m_curHandleType) {
