@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:43+0000\n"
+"POT-Creation-Date: 2026-11-02 00:52+0000\n"
 "PO-Revision-Date: 2026-08-26 11:56+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -262,35 +262,38 @@ msgstr "Valitse olio"
 msgid "Ungroup Objects"
 msgstr "Poista olioiden ryhmitys"
 
-#: widgets/components/bottomleftwidgets.cpp:47
-#, kde-format
-msgctxt "@label, percent text"
-msgid "100%"
-msgstr "100 %"
-
 #: widgets/components/bottomleftwidgets.cpp:49
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Reset Zoom"
-msgstr "Palauta lähennys"
-
-#: widgets/components/bottomleftwidgets.cpp:61
+#: widgets/components/bottomleftwidgets.cpp:65
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1 %"
 
-#: widgets/components/bottomleftwidgets.cpp:83
+#: widgets/components/bottomleftwidgets.cpp:51
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr "100 %"
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset Zoom"
+msgstr "Palauta lähennys"
+
+#: widgets/components/bottomleftwidgets.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:114
-#, kde-format
-msgctxt "@action:button page name (index/count)"
-msgid "%1 (%2/%3)"
-msgstr ""
+#: widgets/components/bottomleftwidgets.cpp:135
+#, fuzzy, kde-format
+#| msgctxt "@label, percent value"
+#| msgid "%1%"
+msgctxt "@action:button page name"
+msgid "%1"
+msgstr "%1 %"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -764,9 +767,11 @@ msgid "Align Right"
 msgstr "Tasaa oikealle"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Locks"
 msgctxt "@action"
-msgid "Locks"
+msgid "Lock"
 msgstr "Lukitukset"
 
 #: widgets/keybindings/actionmanager.cpp:161
@@ -782,12 +787,14 @@ msgid "Add to Library"
 msgstr "Lisää kirjastoon"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Delete"
 msgctxt "@action"
-msgid "New Page"
-msgstr ""
+msgid "Create New Page"
+msgstr "Poista"
 
-#: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
+#: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete"
@@ -924,13 +931,13 @@ msgctxt "@label default page name"
 msgid "Page %1"
 msgstr ""
 
-#: widgets/page/pageslistview.cpp:84
+#: widgets/page/pageslistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
 msgstr ""
 
-#: widgets/page/pageslistview.cpp:87
+#: widgets/page/pageslistview.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Move"
@@ -938,19 +945,13 @@ msgctxt "@action"
 msgid "Move Up"
 msgstr "Siirrä"
 
-#: widgets/page/pageslistview.cpp:91
+#: widgets/page/pageslistview.cpp:151
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Move Tool"
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Siirtotyökalu"
-
-#: widgets/page/pageswidget.cpp:26
-#, kde-format
-msgctxt "@label"
-msgid "Pages"
-msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:30
 #, kde-format
@@ -1101,31 +1102,31 @@ msgstr "Fonttiperhe"
 msgid "Font Size"
 msgstr "Fonttikoko"
 
-#: widgets/properties/widgets/fontstylewidget.cpp:29
+#: widgets/properties/widgets/fontstylewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr "Lihavointi"
 
-#: widgets/properties/widgets/fontstylewidget.cpp:38
+#: widgets/properties/widgets/fontstylewidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr "Kursiivi"
 
-#: widgets/properties/widgets/fontstylewidget.cpp:47
+#: widgets/properties/widgets/fontstylewidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
 msgstr "Alleviivaus"
 
-#: widgets/properties/widgets/fontstylewidget.cpp:56
+#: widgets/properties/widgets/fontstylewidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
 msgstr "Yliviivaus"
 
-#: widgets/properties/widgets/fontstylewidget.cpp:79
+#: widgets/properties/widgets/fontstylewidget.cpp:84
 #, kde-format
 msgid "Font Style"
 msgstr "Fonttityyli"
@@ -1218,31 +1219,31 @@ msgstr "Viivan väri"
 msgid "Thickness"
 msgstr "Paksuus"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:31
+#: widgets/properties/widgets/textalignmentwidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "Tasaa vasemmalle"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:40
+#: widgets/properties/widgets/textalignmentwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
 msgstr "Keskitä"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:49
+#: widgets/properties/widgets/textalignmentwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "Tasaa oikealle"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:58
+#: widgets/properties/widgets/textalignmentwidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
 msgstr "Tasaa"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:96
+#: widgets/properties/widgets/textalignmentwidget.cpp:101
 #, kde-format
 msgid "Text Alignment"
 msgstr "Tekstin tasaus"
@@ -1268,7 +1269,7 @@ msgstr "Lisää kuva"
 msgid "ctrl + click to open: %1"
 msgstr "Avaa Ctrl+napsauttamalla: %1"
 
-#: widgets/window/window.cpp:206
+#: widgets/window/window.cpp:207
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"

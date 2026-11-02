@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-13 00:43+0000\n"
+"POT-Creation-Date: 2026-11-02 00:52+0000\n"
 "PO-Revision-Date: 2026-01-01 18:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -264,35 +264,38 @@ msgstr "选择对象"
 msgid "Ungroup Objects"
 msgstr "取消编组对象"
 
-#: widgets/components/bottomleftwidgets.cpp:47
-#, kde-format
-msgctxt "@label, percent text"
-msgid "100%"
-msgstr "100%"
-
 #: widgets/components/bottomleftwidgets.cpp:49
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Reset Zoom"
-msgstr "重置缩放"
-
-#: widgets/components/bottomleftwidgets.cpp:61
+#: widgets/components/bottomleftwidgets.cpp:65
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
 msgstr "%1%"
 
-#: widgets/components/bottomleftwidgets.cpp:83
+#: widgets/components/bottomleftwidgets.cpp:51
+#, kde-format
+msgctxt "@label, percent text"
+msgid "100%"
+msgstr "100%"
+
+#: widgets/components/bottomleftwidgets.cpp:53
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset Zoom"
+msgstr "重置缩放"
+
+#: widgets/components/bottomleftwidgets.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Manage Pages"
 msgstr ""
 
-#: widgets/components/bottomleftwidgets.cpp:114
-#, kde-format
-msgctxt "@action:button page name (index/count)"
-msgid "%1 (%2/%3)"
-msgstr ""
+#: widgets/components/bottomleftwidgets.cpp:135
+#, fuzzy, kde-format
+#| msgctxt "@label, percent value"
+#| msgid "%1%"
+msgctxt "@action:button page name"
+msgid "%1"
+msgstr "%1%"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -767,7 +770,7 @@ msgstr "靠右对齐"
 #: widgets/keybindings/actionmanager.cpp:159
 #, kde-format
 msgctxt "@action"
-msgid "Locks"
+msgid "Lock"
 msgstr ""
 
 #: widgets/keybindings/actionmanager.cpp:161
@@ -785,10 +788,10 @@ msgstr ""
 #: widgets/keybindings/actionmanager.cpp:166
 #, kde-format
 msgctxt "@action"
-msgid "New Page"
+msgid "Create New Page"
 msgstr ""
 
-#: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:97
+#: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Delete Page"
@@ -921,28 +924,22 @@ msgctxt "@label default page name"
 msgid "Page %1"
 msgstr ""
 
-#: widgets/page/pageslistview.cpp:84
+#: widgets/page/pageslistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Rename…"
 msgstr ""
 
-#: widgets/page/pageslistview.cpp:87
+#: widgets/page/pageslistview.cpp:147
 #, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr ""
 
-#: widgets/page/pageslistview.cpp:91
+#: widgets/page/pageslistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr ""
-
-#: widgets/page/pageswidget.cpp:26
-#, kde-format
-msgctxt "@label"
-msgid "Pages"
 msgstr ""
 
 #: widgets/properties/widgets/actionswidget.cpp:30
@@ -1094,31 +1091,31 @@ msgstr ""
 msgid "Font Size"
 msgstr ""
 
-#: widgets/properties/widgets/fontstylewidget.cpp:29
+#: widgets/properties/widgets/fontstylewidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr ""
 
-#: widgets/properties/widgets/fontstylewidget.cpp:38
+#: widgets/properties/widgets/fontstylewidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr ""
 
-#: widgets/properties/widgets/fontstylewidget.cpp:47
+#: widgets/properties/widgets/fontstylewidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underlined"
 msgstr ""
 
-#: widgets/properties/widgets/fontstylewidget.cpp:56
+#: widgets/properties/widgets/fontstylewidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strikethrough"
 msgstr ""
 
-#: widgets/properties/widgets/fontstylewidget.cpp:79
+#: widgets/properties/widgets/fontstylewidget.cpp:84
 #, kde-format
 msgid "Font Style"
 msgstr ""
@@ -1211,31 +1208,31 @@ msgstr ""
 msgid "Thickness"
 msgstr ""
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:31
+#: widgets/properties/widgets/textalignmentwidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Left"
 msgstr "靠左对齐"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:40
+#: widgets/properties/widgets/textalignmentwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Center"
 msgstr ""
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:49
+#: widgets/properties/widgets/textalignmentwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Align Right"
 msgstr "靠右对齐"
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:58
+#: widgets/properties/widgets/textalignmentwidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Justify"
 msgstr ""
 
-#: widgets/properties/widgets/textalignmentwidget.cpp:96
+#: widgets/properties/widgets/textalignmentwidget.cpp:101
 #, kde-format
 msgid "Text Alignment"
 msgstr ""
@@ -1261,7 +1258,7 @@ msgstr ""
 msgid "ctrl + click to open: %1"
 msgstr ""
 
-#: widgets/window/window.cpp:206
+#: widgets/window/window.cpp:207
 #, kde-format
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
