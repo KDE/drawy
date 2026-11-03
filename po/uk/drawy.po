@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 09:12+0300\n"
+"PO-Revision-Date: 2026-11-02 09:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -292,12 +292,10 @@ msgid "Manage Pages"
 msgstr "Керування сторінками"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -774,9 +772,7 @@ msgid "Align Right"
 msgstr "Вирівняти праворуч"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
 msgstr "Заблокувати"
@@ -794,12 +790,10 @@ msgid "Add to Library"
 msgstr "Додати до бібліотеки"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "Нова сторінка"
+msgstr "Створити сторінку"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format

@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -288,12 +288,10 @@ msgid "Manage Pages"
 msgstr "გვერდების მართვა"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -769,12 +767,10 @@ msgid "Align Right"
 msgstr "სწორება მარჯვნივ"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
-msgstr "დაბლოკვები"
+msgstr "ჩაკეტვა"
 
 #: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
@@ -789,12 +785,10 @@ msgid "Add to Library"
 msgstr "ბიბლიოთეკაში დამატება"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "ახალი გვერდი"
+msgstr "ახალი გვერდის შექმნა"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format

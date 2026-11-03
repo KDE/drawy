@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 09:13-0300\n"
+"PO-Revision-Date: 2026-11-02 07:58-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -291,12 +291,10 @@ msgid "Manage Pages"
 msgstr "Gerenciar páginas"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -771,12 +769,10 @@ msgid "Align Right"
 msgstr "Alinhar à direita"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
-msgstr "Bloqueios"
+msgstr "Bloquear"
 
 #: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
@@ -791,12 +787,10 @@ msgid "Add to Library"
 msgstr "Adicionar à biblioteca"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "Nova página"
+msgstr "Criar nova página"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format

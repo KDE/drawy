@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 15:49+0100\n"
+"PO-Revision-Date: 2026-11-03 00:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -293,12 +293,10 @@ msgid "Manage Pages"
 msgstr "Gestión de páginas"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1 %"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -775,9 +773,7 @@ msgid "Align Right"
 msgstr "Alinear a la derecha"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
 msgstr "Bloquear"
@@ -795,12 +791,10 @@ msgid "Add to Library"
 msgstr "Añadir a la biblioteca"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "Nueva página"
+msgstr "Crear nueva página"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format
@@ -1270,11 +1264,3 @@ msgstr "Ctrl + clic para abrir: %1"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@action:button page name (index/count)"
-#~ msgid "%1 (%2/%3)"
-#~ msgstr "%1 (%2/%3)"
-
-#~ msgctxt "@label"
-#~ msgid "Pages"
-#~ msgstr "Páginas"
