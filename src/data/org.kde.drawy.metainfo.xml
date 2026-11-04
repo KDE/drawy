@@ -250,6 +250,7 @@
         <p xml:lang="sl">Dodana podpora strani</p>
         <p xml:lang="tr">Sayfa desteği eklendi.</p>
         <p xml:lang="uk">Додано підтримку сторінок</p>
+        <p xml:lang="zh-TW">新增頁面支援</p>
         <p>Improve text element support (Spell Checking, Alignment, Bold, Italic etc.) (GSoc2026)</p>
         <p xml:lang="ar">تحسين دعم عناصر النص (التدقيق الإملائي، المحاذاة، الخط العريض، الخط المائل، إلخ) (GSoc2026)</p>
         <p xml:lang="ca">Millora la implementació d'elements de text (Verificació ortogràfica, alineació, negreta, cursiva, etc.) (GSoc2026)</p>
