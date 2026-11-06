@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:52+0000\n"
-"PO-Revision-Date: 2026-10-31 18:29+0400\n"
+"PO-Revision-Date: 2026-11-05 09:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -296,12 +296,10 @@ msgid "Manage Pages"
 msgstr "أدِر الصفحات"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1٪"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -779,12 +777,10 @@ msgid "Align Right"
 msgstr "حاذِ يمينًا"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
-msgstr "الأقفال"
+msgstr "اقفل"
 
 #: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
@@ -799,12 +795,10 @@ msgid "Add to Library"
 msgstr "أضف إلى المكتبة"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "صفحة جديدة"
+msgstr "أنشئ صفحة جديدة"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format
