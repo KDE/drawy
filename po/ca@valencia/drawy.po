@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drawy\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 09:26+0200\n"
+"PO-Revision-Date: 2026-11-03 09:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -273,7 +273,7 @@ msgstr "Desagrupa objectes"
 #, kde-format
 msgctxt "@label, percent value"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: widgets/components/bottomleftwidgets.cpp:51
 #, kde-format
@@ -294,12 +294,10 @@ msgid "Manage Pages"
 msgstr "Gestiona pàgines"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -778,9 +776,7 @@ msgid "Align Right"
 msgstr "Alinea a la dreta"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
 msgstr "Bloqueja"
@@ -798,12 +794,10 @@ msgid "Add to Library"
 msgstr "Afig a la biblioteca"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "Pàgina nova"
+msgstr "Crea una pàgina nova"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format
@@ -1274,11 +1268,3 @@ msgstr "«Ctrl+clic» per a obrir: %1"
 msgctxt "@title:window %1 is a filename"
 msgid "%1 — Drawy"
 msgstr "%1 — Drawy"
-
-#~ msgctxt "@action:button page name (index/count)"
-#~ msgid "%1 (%2/%3)"
-#~ msgstr "%1 (%2/%3)"
-
-#~ msgctxt "@label"
-#~ msgid "Pages"
-#~ msgstr "Pàgines"
