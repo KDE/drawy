@@ -19,6 +19,7 @@
   <name xml:lang="ka">Drawy</name>
   <name xml:lang="ko">Drawy</name>
   <name xml:lang="lt">Drawy</name>
+  <name xml:lang="nb">Drawy</name>
   <name xml:lang="nl">Drawy</name>
   <name xml:lang="pt-BR">Drawy</name>
   <name xml:lang="ru">Drawy</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="ka">თქვენი მოსახერხებელი, უსასრულო განსჯის ხელსაწყო</summary>
   <summary xml:lang="ko">편안한 무한 브레인스토밍 도구</summary>
   <summary xml:lang="lt">Patogus, begalinis naujų idėjų svarstymo įrankis</summary>
+  <summary xml:lang="nb">Et hendig verktøy for idémyldring</summary>
   <summary xml:lang="nl">Uw handige, oneindige hulpmiddel voor brainstormen</summary>
   <summary xml:lang="pt-BR">Sua ferramenta prática e infinita para brainstorming</summary>
   <summary xml:lang="ru">Удобный безграничный инструмент для мозгового штурма</summary>
@@ -283,6 +285,7 @@
         <p xml:lang="it">Consenti di bloccare gli elementi</p>
         <p xml:lang="ka">ელემენტების დაბლოკვის დაშვება</p>
         <p xml:lang="lt">Leisti užrakinti elementus</p>
+        <p xml:lang="nb">Tillat låsing av elementer</p>
         <p xml:lang="nl">Sta vergrendelen van items toe</p>
         <p xml:lang="pt-BR">Permitir bloquear itens</p>
         <p xml:lang="ru">Добавлена возможность блокировать объекты</p>
@@ -303,6 +306,7 @@
         <p xml:lang="it">Consenti di disegnare un rettangolo arrotondato</p>
         <p xml:lang="ka">მომრგვალებული მართკუთხედის დახატვის დაშვება</p>
         <p xml:lang="lt">Leisti piešti stačiakampį apvaliais kampais</p>
+        <p xml:lang="nb">Tillat tegning av avrundede rektangler</p>
         <p xml:lang="nl">Sta afgeronde rechthoek tekenen toe</p>
         <p xml:lang="pt-BR">Permitir desenhar um retângulo arredondado</p>
         <p xml:lang="ru">Добавлено рисование скруглённых прямоугольников</p>
