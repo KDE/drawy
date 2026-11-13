@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-kapplication "<application
+>السبورة</application
+>">
+  <!ENTITY kappname "&i18n-kapplication;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE">
+]>
+
+<!--
+	SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+	SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
+<book id="drawy" lang="&language;">
+
+<bookinfo id="drawyinfo">
+
+<title
+>دليل السبورة</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2026</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<legalnotice
+>&CCBYSA4Notice;</legalnotice>
+
+<date
+>2026-02-23</date>
+<releaseinfo
+></releaseinfo>
+
+<abstract>
+<para
+>السبورة أداة سبورة بيضاء لا نهائية قيد التطوير. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>لوحة بيضاء</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+<para
+>السبورة أداة سبورة بيضاء لا نهائية قيد التطوير، مكتوبة بلغة Qt/C++.</para>
+
+<sect1 id="using-kapp">
+<title
+>استخدام السبورة</title>
+
+<para
+>السبورة أداة سبورة بيضاء لا نهائية قيد التطوير، مكتوبة بلغة Qt/C++، تهدف إلى أن تكون بديلًا سطح مكتب أصليًا لأداة Excalidraw المذهلة القائمة على الويب.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>الحقوق والترخيص</title>
+
+<para
+>السبورة</para>
+<para
+>حقوق ملكية التطبيق © &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>حقوق ملكية التوثيق © لمؤلفه &Laurent.Montel; &Laurent.Montel.mail; </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underCCBYSA4; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
