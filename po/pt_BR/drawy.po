@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@kde.org>
 # SPDX-FileCopyrightText: 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 # SPDX-FileCopyrightText: 2026 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
