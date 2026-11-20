@@ -292,12 +292,10 @@ msgid "Manage Pages"
 msgstr "Spravovať stránky"
 
 #: widgets/components/bottomleftwidgets.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@label, percent value"
-#| msgid "%1%"
+#, kde-format
 msgctxt "@action:button page name"
 msgid "%1"
-msgstr "%1%"
+msgstr "%1"
 
 #: widgets/components/toolbar.cpp:63
 #, kde-format
@@ -772,12 +770,10 @@ msgid "Align Right"
 msgstr "Zarovnať doprava"
 
 #: widgets/keybindings/actionmanager.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Locks"
+#, kde-format
 msgctxt "@action"
 msgid "Lock"
-msgstr "Zámky"
+msgstr "Zamknúť"
 
 #: widgets/keybindings/actionmanager.cpp:161
 #, kde-format
@@ -792,12 +788,10 @@ msgid "Add to Library"
 msgstr "Pridať do knižnice"
 
 #: widgets/keybindings/actionmanager.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Page"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Page"
-msgstr "Nová stránka"
+msgstr "Vytvoriť novú stránku"
 
 #: widgets/keybindings/actionmanager.cpp:171 widgets/page/pageslistview.cpp:157
 #, kde-format
