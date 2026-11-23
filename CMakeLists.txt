@@ -224,7 +224,9 @@ if(WARNINGS_AS_ERRORS)
 endif()
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-
+if(KF6_VERSION VERSION_GREATER_EQUAL "6.33.0")
+    add_definitions(-DQT_LEAN_HEADERS=2)
+endif()
 add_subdirectory(src)
 
 ecm_qt_install_logging_categories(
