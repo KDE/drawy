@@ -8,6 +8,7 @@
 #include "serializer/groupserializer.hpp"
 
 #include <QJsonObject>
+#include <QVariantHash>
 #include <utility>
 
 void GroupItem::draw(QPainter &painter, const QPointF &offset)

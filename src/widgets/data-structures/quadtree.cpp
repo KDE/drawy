@@ -8,6 +8,8 @@
 #include <cstdlib>
 #include <utility>
 
+#include <QSet>
+
 QuadTree::QuadTree(QRectF region, int capacity)
     : m_boundingBox{region}
     , m_capacity{capacity}

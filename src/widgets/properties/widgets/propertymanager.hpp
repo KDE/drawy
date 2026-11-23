@@ -6,6 +6,7 @@
 #include "libdrawywidgets_private_export.h"
 #include "properties/property.hpp"
 #include "properties/widgets/propertywidget.hpp"
+#include <QMap>
 #include <QObject>
 
 class ActionManager;
